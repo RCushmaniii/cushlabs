@@ -1,0 +1,1324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary Meta Tags (Title: 55 chars, Description: 155 chars) -->
+  <title>CushLabs.ai | AI Integration & Software Development</title>
+  <meta name="description" content="AI consulting and modern software development for SMBs. Production-ready chatbots, automation, and custom applications. Launching soon.">
+  
+  <!-- Robots -->
+  <meta name="robots" content="index, follow">
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  
+  <!-- Canonical URL (UPDATE THIS to your actual domain) -->
+  <link rel="canonical" href="https://cushlabs.ai/">
+  
+  <!-- Hreflang for bilingual support -->
+  <link rel="alternate" hreflang="en" href="https://cushlabs.ai/">
+  <link rel="alternate" hreflang="es" href="https://cushlabs.ai/?lang=es">
+  <link rel="alternate" hreflang="x-default" href="https://cushlabs.ai/">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://cushlabs.ai/">
+  <meta property="og:title" content="CushLabs.ai | AI Integration & Software Development">
+  <meta property="og:description" content="AI consulting and modern software development for SMBs. Production-ready chatbots, automation, and custom applications. Launching soon.">
+  <meta property="og:image" content="https://cushlabs.ai/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="es_MX">
+  <meta property="og:site_name" content="CushLabs.ai">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://cushlabs.ai/">
+  <meta name="twitter:title" content="CushLabs.ai | AI Integration & Software Development">
+  <meta name="twitter:description" content="AI consulting and modern software development for SMBs. Production-ready chatbots, automation, and custom applications. Launching soon.">
+  <meta name="twitter:image" content="https://cushlabs.ai/og-image.jpg">
+  
+  <!-- Additional SEO Meta -->
+  <meta name="author" content="CushLabs.ai">
+  <meta name="theme-color" content="#000000">
+  <meta name="color-scheme" content="dark">
+  <meta name="format-detection" content="telephone=no">
+  
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;1,8..60,400&display=swap" rel="stylesheet">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%23000' width='100' height='100' rx='20'/%3E%3Ctext x='50' y='68' text-anchor='middle' fill='%23FF6A3D' font-size='50' font-family='system-ui'%3EC%3C/text%3E%3C/svg%3E">
+  <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%23000' width='100' height='100' rx='20'/%3E%3Ctext x='50' y='68' text-anchor='middle' fill='%23FF6A3D' font-size='50' font-family='system-ui'%3EC%3C/text%3E%3C/svg%3E">
+
+  <!-- Structured Data: Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "CushLabs.ai",
+    "url": "https://cushlabs.ai",
+    "logo": "https://cushlabs.ai/logo.png",
+    "description": "AI consulting and modern software development for SMBs. Production-ready chatbots, automation, and custom applications.",
+    "email": "info@cushlabs.ai",
+    "sameAs": [],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "info@cushlabs.ai",
+      "contactType": "sales"
+    },
+    "foundingDate": "2025",
+    "areaServed": ["US", "MX"],
+    "knowsLanguage": ["en", "es"]
+  }
+  </script>
+  
+  <!-- Structured Data: WebPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "CushLabs.ai - Coming Soon",
+    "description": "AI consulting and modern software development for SMBs. Production-ready chatbots, automation, and custom applications.",
+    "url": "https://cushlabs.ai",
+    "inLanguage": ["en", "es"],
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "CushLabs.ai",
+      "url": "https://cushlabs.ai"
+    }
+  }
+  </script>
+
+  <style>
+    /* ========================================
+       CSS Custom Properties
+       ======================================== */
+    :root {
+      /* Colors */
+      --color-black: #000000;
+      --color-white: #FFFFFF;
+      --color-orange: #FF6A3D;
+      --color-orange-glow: rgba(255, 106, 61, 0.15);
+      --color-orange-soft: rgba(255, 106, 61, 0.08);
+      --color-gray-900: #0A0A0A;
+      --color-gray-800: #141414;
+      --color-gray-700: #1A1A1A;
+      --color-gray-600: #2A2A2A;
+      --color-gray-400: #666666;
+      --color-gray-300: #888888;
+      --color-gray-200: #AAAAAA;
+      
+      /* Typography */
+      --font-display: 'Space Grotesk', sans-serif;
+      --font-body: 'Source Serif 4', Georgia, serif;
+      
+      /* Fluid Typography Scale */
+      --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+      --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+      --text-base: clamp(1rem, 0.9rem + 0.5vw, 1.125rem);
+      --text-lg: clamp(1.125rem, 1rem + 0.6vw, 1.375rem);
+      --text-xl: clamp(1.25rem, 1.1rem + 0.75vw, 1.625rem);
+      --text-2xl: clamp(1.5rem, 1.2rem + 1.5vw, 2.25rem);
+      --text-3xl: clamp(2rem, 1.5rem + 2.5vw, 3.5rem);
+      --text-4xl: clamp(2.5rem, 1.8rem + 3.5vw, 5rem);
+      --text-5xl: clamp(3rem, 2rem + 5vw, 7rem);
+      
+      /* Spacing */
+      --space-xs: clamp(0.5rem, 0.4rem + 0.5vw, 0.75rem);
+      --space-sm: clamp(0.75rem, 0.6rem + 0.75vw, 1.25rem);
+      --space-md: clamp(1rem, 0.8rem + 1vw, 1.75rem);
+      --space-lg: clamp(1.5rem, 1rem + 2.5vw, 3rem);
+      --space-xl: clamp(2rem, 1.5rem + 3vw, 4.5rem);
+      --space-2xl: clamp(3rem, 2rem + 5vw, 7rem);
+      --space-3xl: clamp(4rem, 2.5rem + 7.5vw, 10rem);
+      
+      /* Layout */
+      --max-width: 1440px;
+      --content-width: min(90%, 1200px);
+      
+      /* Transitions */
+      --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+      --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+      --duration-fast: 200ms;
+      --duration-normal: 400ms;
+      --duration-slow: 800ms;
+    }
+
+    /* ========================================
+       Reset & Base
+       ======================================== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      font-family: var(--font-body);
+      font-size: var(--text-base);
+      font-weight: 400;
+      line-height: 1.7;
+      color: var(--color-gray-200);
+      background-color: var(--color-black);
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    ::selection {
+      background: var(--color-orange);
+      color: var(--color-black);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* ========================================
+       Language Switcher
+       ======================================== */
+    .lang-switcher {
+      position: fixed;
+      top: var(--space-md);
+      right: var(--space-md);
+      display: flex;
+      align-items: center;
+      gap: var(--space-xs);
+      z-index: 100;
+      opacity: 0;
+      animation: fadeSlideUp var(--duration-slow) var(--ease-out-expo) 1s forwards;
+    }
+
+    .lang-btn {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 10px;
+      background: transparent;
+      border: 1px solid var(--color-gray-700);
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all var(--duration-fast) var(--ease-out-quart);
+      opacity: 0.5;
+    }
+
+    .lang-btn:hover {
+      border-color: var(--color-gray-500);
+      opacity: 0.8;
+    }
+
+    .lang-btn.active {
+      border-color: var(--color-orange);
+      opacity: 1;
+      background: rgba(255, 106, 61, 0.08);
+    }
+
+    .lang-flag {
+      width: 20px;
+      height: 14px;
+      object-fit: cover;
+      border-radius: 2px;
+      /* Placeholder styling - remove when using real flags */
+      background: var(--color-gray-600);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 8px;
+      color: var(--color-gray-300);
+    }
+
+    .lang-label {
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--color-gray-300);
+    }
+
+    .lang-btn.active .lang-label {
+      color: var(--color-white);
+    }
+
+    /* Hide inactive language content */
+    [data-lang="es"] { display: none; }
+    html[lang="es"] [data-lang="en"] { display: none; }
+    html[lang="es"] [data-lang="es"] { display: block; }
+
+    /* Inline elements need inline display */
+    span[data-lang="es"] { display: none; }
+    html[lang="es"] span[data-lang="en"] { display: none; }
+    html[lang="es"] span[data-lang="es"] { display: inline; }
+
+    /* Paragraph elements */
+    p[data-lang="es"] { display: none; }
+    html[lang="es"] p[data-lang="en"] { display: none; }
+    html[lang="es"] p[data-lang="es"] { display: block; }
+
+    /* ========================================
+       Layout Utilities
+       ======================================== */
+    .container {
+      width: var(--content-width);
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 var(--space-md);
+    }
+
+    .section {
+      padding: var(--space-2xl) 0;
+      position: relative;
+    }
+
+    /* ========================================
+       Background & Ambient Effects
+       ======================================== */
+    .bg-gradient {
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      background: 
+        radial-gradient(ellipse 80% 50% at 50% -20%, var(--color-gray-800) 0%, transparent 50%),
+        radial-gradient(ellipse 60% 40% at 100% 100%, var(--color-orange-soft) 0%, transparent 40%),
+        var(--color-black);
+    }
+
+    .spotlight {
+      position: fixed;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, var(--color-orange-glow) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: -1;
+      opacity: 0;
+      transform: translate(-50%, -50%);
+      transition: opacity var(--duration-slow) var(--ease-out-expo);
+      will-change: transform, opacity;
+    }
+
+    .spotlight.active {
+      opacity: 1;
+    }
+
+    .noise-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      pointer-events: none;
+      opacity: 0.015;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    }
+
+    /* ========================================
+       Hero Section
+       ======================================== */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: var(--space-2xl) 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 20%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: clamp(300px, 60vw, 800px);
+      height: clamp(300px, 60vw, 800px);
+      background: radial-gradient(circle, var(--color-orange-glow) 0%, transparent 60%);
+      filter: blur(60px);
+      opacity: 0.6;
+      z-index: -1;
+      animation: pulse 8s ease-in-out infinite;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 15%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: clamp(200px, 40vw, 500px);
+      height: clamp(150px, 25vw, 300px);
+      background: radial-gradient(ellipse, rgba(255, 255, 255, 0.03) 0%, transparent 70%);
+      filter: blur(40px);
+      z-index: -1;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 0.4; transform: translateX(-50%) scale(1); }
+      50% { opacity: 0.7; transform: translateX(-50%) scale(1.1); }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-xs);
+      margin-bottom: var(--space-lg);
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeSlideUp var(--duration-slow) var(--ease-out-expo) 0.2s forwards;
+    }
+
+    .brand-dot {
+      width: 10px;
+      height: 10px;
+      background: var(--color-orange);
+      border-radius: 50%;
+      animation: brandPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes brandPulse {
+      0%, 100% { box-shadow: 0 0 0 0 var(--color-orange-glow); }
+      50% { box-shadow: 0 0 20px 5px var(--color-orange-glow); }
+    }
+
+    .brand-text {
+      font-family: var(--font-display);
+      font-size: var(--text-sm);
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--color-gray-300);
+    }
+
+    .hero-headline {
+      font-family: var(--font-display);
+      font-size: var(--text-4xl);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--color-white);
+      margin: 0 auto var(--space-md);
+      max-width: 18ch;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeSlideUp var(--duration-slow) var(--ease-out-expo) 0.4s forwards;
+    }
+
+    .hero-headline br {
+      display: block;
+    }
+
+    .hero-headline .highlight {
+      background: linear-gradient(135deg, var(--color-orange) 0%, #FF8A5C 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-subheadline {
+      font-family: var(--font-body);
+      font-size: var(--text-lg);
+      font-weight: 400;
+      line-height: 1.6;
+      color: var(--color-gray-300);
+      max-width: 48ch;
+      margin: 0 auto var(--space-xl);
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeSlideUp var(--duration-slow) var(--ease-out-expo) 0.6s forwards;
+    }
+
+    @keyframes fadeSlideUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ========================================
+       Countdown Timer
+       ======================================== */
+    .countdown {
+      display: flex;
+      justify-content: center;
+      gap: clamp(1rem, 3vw, 2.5rem);
+      margin-bottom: var(--space-xl);
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeSlideUp var(--duration-slow) var(--ease-out-expo) 0.8s forwards;
+    }
+
+    .countdown-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: clamp(60px, 12vw, 120px);
+    }
+
+    .countdown-value {
+      font-family: var(--font-display);
+      font-size: var(--text-3xl);
+      font-weight: 700;
+      color: var(--color-white);
+      line-height: 1;
+      letter-spacing: -0.02em;
+      position: relative;
+    }
+
+    .countdown-value::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--color-orange), transparent);
+      opacity: 0.5;
+    }
+
+    .countdown-label {
+      font-family: var(--font-display);
+      font-size: var(--text-xs);
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--color-gray-400);
+      margin-top: var(--space-sm);
+    }
+
+    .countdown-separator {
+      font-family: var(--font-display);
+      font-size: var(--text-2xl);
+      color: var(--color-gray-600);
+      align-self: flex-start;
+      margin-top: 0.1em;
+      opacity: 0.5;
+      animation: blink 1s ease-in-out infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 0.5; }
+      50% { opacity: 0.2; }
+    }
+
+    /* ========================================
+       Scroll Indicator
+       ======================================== */
+    .scroll-indicator {
+      position: absolute;
+      bottom: var(--space-lg);
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0;
+      animation: fadeSlideUp var(--duration-slow) var(--ease-out-expo) 1.2s forwards;
+    }
+
+    .scroll-line {
+      width: 1px;
+      height: 60px;
+      background: linear-gradient(to bottom, var(--color-gray-400), transparent);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .scroll-line::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 20px;
+      background: var(--color-orange);
+      animation: scrollDown 2s ease-in-out infinite;
+    }
+
+    @keyframes scrollDown {
+      0% { transform: translateY(-100%); }
+      50% { transform: translateY(200%); }
+      100% { transform: translateY(200%); }
+    }
+
+    /* ========================================
+       About Section
+       ======================================== */
+    .about {
+      position: relative;
+    }
+
+    .about-content {
+      max-width: 720px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .section-label {
+      font-family: var(--font-display);
+      font-size: var(--text-xs);
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--color-orange);
+      margin-bottom: var(--space-md);
+      display: block;
+    }
+
+    .about-text {
+      font-family: var(--font-body);
+      font-size: var(--text-xl);
+      font-weight: 300;
+      line-height: 1.8;
+      color: var(--color-gray-200);
+      font-style: italic;
+    }
+
+    .about-text strong {
+      color: var(--color-white);
+      font-weight: 500;
+      font-style: normal;
+    }
+
+    .divider {
+      width: 80px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--color-orange), transparent);
+      margin: var(--space-lg) auto 0;
+      opacity: 0.6;
+    }
+
+    /* ========================================
+       Personal Intro Section
+       ======================================== */
+    .personal-intro {
+      padding-top: 0;
+    }
+
+    .personal-content {
+      max-width: 720px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .personal-greeting {
+      font-family: var(--font-display);
+      font-size: var(--text-xl);
+      font-weight: 500;
+      color: var(--color-white);
+      margin-bottom: var(--space-md);
+    }
+
+    .personal-text {
+      font-family: var(--font-body);
+      font-size: var(--text-base);
+      color: var(--color-gray-300);
+      line-height: 1.8;
+      margin-bottom: var(--space-sm);
+    }
+
+    .quote {
+      margin: var(--space-lg) 0;
+      padding: var(--space-lg);
+      position: relative;
+      background: linear-gradient(135deg, var(--color-gray-800) 0%, var(--color-gray-900) 100%);
+      border-left: 3px solid var(--color-orange);
+      border-radius: 0 4px 4px 0;
+    }
+
+    .quote::before {
+      content: '"';
+      position: absolute;
+      top: -10px;
+      left: var(--space-md);
+      font-family: var(--font-display);
+      font-size: 4rem;
+      color: var(--color-orange);
+      opacity: 0.3;
+      line-height: 1;
+    }
+
+    .quote-text {
+      font-family: var(--font-body);
+      font-size: var(--text-lg);
+      font-style: italic;
+      color: var(--color-gray-200);
+      line-height: 1.7;
+      margin-bottom: var(--space-sm);
+    }
+
+    .quote-author {
+      font-family: var(--font-display);
+      font-size: var(--text-sm);
+      font-weight: 600;
+      color: var(--color-orange);
+      font-style: normal;
+    }
+
+    .personal-closing {
+      font-family: var(--font-body);
+      font-size: var(--text-lg);
+      color: var(--color-gray-200);
+      margin-top: var(--space-md);
+    }
+
+    .personal-closing strong {
+      color: var(--color-white);
+    }
+
+    /* ========================================
+       Features / Value Section
+       ======================================== */
+    .features {
+      background: linear-gradient(180deg, transparent 0%, var(--color-gray-900) 50%, transparent 100%);
+    }
+
+    .features-header {
+      text-align: center;
+      margin-bottom: var(--space-xl);
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: var(--text-2xl);
+      font-weight: 700;
+      color: var(--color-white);
+      letter-spacing: -0.01em;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-lg);
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .feature-card {
+      padding: var(--space-lg);
+      background: linear-gradient(135deg, var(--color-gray-800) 0%, var(--color-gray-900) 100%);
+      border: 1px solid var(--color-gray-700);
+      border-radius: 4px;
+      position: relative;
+      overflow: hidden;
+      transition: all var(--duration-normal) var(--ease-out-quart);
+    }
+
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, var(--color-orange), transparent);
+      opacity: 0;
+      transition: opacity var(--duration-normal) var(--ease-out-quart);
+    }
+
+    .feature-card:hover {
+      border-color: var(--color-gray-600);
+      transform: translateY(-4px);
+    }
+
+    .feature-card:hover::before {
+      opacity: 1;
+    }
+
+    .feature-icon {
+      width: 40px;
+      height: 40px;
+      margin-bottom: var(--space-md);
+      color: var(--color-orange);
+      opacity: 0.9;
+    }
+
+    .feature-title {
+      font-family: var(--font-display);
+      font-size: var(--text-base);
+      font-weight: 600;
+      color: var(--color-white);
+      margin-bottom: var(--space-xs);
+      letter-spacing: 0.01em;
+    }
+
+    .feature-text {
+      font-family: var(--font-body);
+      font-size: var(--text-sm);
+      color: var(--color-gray-300);
+      line-height: 1.6;
+    }
+
+    /* ========================================
+       Contact Section
+       ======================================== */
+    .contact {
+      text-align: center;
+      padding-top: var(--space-lg);
+      padding-bottom: var(--space-2xl);
+    }
+
+    .contact-text {
+      font-family: var(--font-body);
+      font-size: var(--text-lg);
+      color: var(--color-gray-300);
+      margin-bottom: var(--space-md);
+    }
+
+    .contact-email {
+      font-family: var(--font-display);
+      font-size: var(--text-xl);
+      font-weight: 600;
+      color: var(--color-white);
+      position: relative;
+      display: inline-block;
+      padding-bottom: 4px;
+      transition: color var(--duration-fast) var(--ease-out-quart);
+    }
+
+    .contact-email::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--color-orange);
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform var(--duration-normal) var(--ease-out-expo);
+    }
+
+    .contact-email:hover {
+      color: var(--color-orange);
+    }
+
+    .contact-email:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
+    /* ========================================
+       Footer
+       ======================================== */
+    .footer {
+      padding: var(--space-lg) 0;
+      text-align: center;
+      border-top: 1px solid var(--color-gray-800);
+    }
+
+    .footer-text {
+      font-family: var(--font-display);
+      font-size: var(--text-xs);
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-gray-500);
+    }
+
+    /* ========================================
+       Scroll Animations
+       ======================================== */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity var(--duration-slow) var(--ease-out-expo),
+                  transform var(--duration-slow) var(--ease-out-expo);
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .fade-in-stagger {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity var(--duration-slow) var(--ease-out-expo),
+                  transform var(--duration-slow) var(--ease-out-expo);
+    }
+
+    .fade-in-stagger.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Stagger delays for grid items */
+    .feature-card:nth-child(1) { transition-delay: 0ms; }
+    .feature-card:nth-child(2) { transition-delay: 100ms; }
+    .feature-card:nth-child(3) { transition-delay: 200ms; }
+    .feature-card:nth-child(4) { transition-delay: 300ms; }
+
+    /* ========================================
+       Parallax Layer
+       ======================================== */
+    .parallax-layer {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      will-change: transform;
+    }
+
+    .parallax-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.3;
+    }
+
+    .parallax-orb-1 {
+      width: 400px;
+      height: 400px;
+      background: var(--color-orange-glow);
+      top: 20%;
+      right: -10%;
+    }
+
+    .parallax-orb-2 {
+      width: 300px;
+      height: 300px;
+      background: rgba(255, 106, 61, 0.08);
+      bottom: 30%;
+      left: -5%;
+    }
+
+    /* ========================================
+       Responsive Adjustments
+       ======================================== */
+    @media (max-width: 768px) {
+      .hero {
+        padding: var(--space-xl) 0;
+        min-height: 100svh;
+      }
+
+      .countdown {
+        gap: var(--space-sm);
+      }
+
+      .countdown-separator {
+        display: none;
+      }
+
+      .scroll-indicator {
+        display: none;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-headline br {
+        display: none;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-headline {
+        max-width: 100%;
+      }
+
+      .countdown-item {
+        min-width: 55px;
+      }
+    }
+
+    /* Reduced Motion */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Language Switcher -->
+  <div class="lang-switcher">
+    <button class="lang-btn active" data-lang-switch="en" aria-label="Switch to English">
+      <!-- Replace src with your flag image: e.g., src="images/flag-en.png" -->
+      <img class="lang-flag" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 14'%3E%3Crect fill='%23234' width='20' height='14'/%3E%3Ctext x='10' y='10' text-anchor='middle' fill='%23999' font-size='6'%3EEN%3C/text%3E%3C/svg%3E" alt="English">
+      <span class="lang-label">EN</span>
+    </button>
+    <button class="lang-btn" data-lang-switch="es" aria-label="Cambiar a Español">
+      <!-- Replace src with your flag image: e.g., src="images/flag-es.png" -->
+      <img class="lang-flag" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 14'%3E%3Crect fill='%23234' width='20' height='14'/%3E%3Ctext x='10' y='10' text-anchor='middle' fill='%23999' font-size='6'%3EES%3C/text%3E%3C/svg%3E" alt="Español">
+      <span class="lang-label">ES</span>
+    </button>
+  </div>
+
+  <!-- Background Effects -->
+  <div class="bg-gradient" aria-hidden="true"></div>
+  <div class="noise-overlay" aria-hidden="true"></div>
+  <div class="spotlight" id="spotlight" aria-hidden="true"></div>
+  
+  <!-- Parallax Background Layer -->
+  <div class="parallax-layer" id="parallaxLayer" aria-hidden="true">
+    <div class="parallax-orb parallax-orb-1"></div>
+    <div class="parallax-orb parallax-orb-2"></div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container hero-content">
+      <div class="brand">
+        <span class="brand-dot"></span>
+        <span class="brand-text">CushLabs.ai</span>
+      </div>
+      
+      <h1 class="hero-headline">
+        <span data-lang="en"><span class="highlight">AI Integration</span> &<br>Modern Software Development<br>for SMBs</span>
+        <span data-lang="es"><span class="highlight">Integración de IA</span> y<br>Desarrollo de Software Moderno<br>para PyMEs</span>
+      </h1>
+      
+      <p class="hero-subheadline">
+        <span data-lang="en">Full site launching in 35 days. I help businesses leverage AI, automate workflows, and build modern tools that are ready for real-world use.</span>
+        <span data-lang="es">El sitio completo estará disponible en 35 días. Ayudo a negocios a aprovechar la IA, automatizar tareas y crear herramientas modernas listas para uso real.</span>
+      </p>
+
+      <!-- Countdown Timer -->
+      <div class="countdown" role="timer" aria-label="Countdown to launch">
+        <div class="countdown-item">
+          <span class="countdown-value" id="days">35</span>
+          <span class="countdown-label"><span data-lang="en">Days</span><span data-lang="es">Días</span></span>
+        </div>
+        <span class="countdown-separator" aria-hidden="true">:</span>
+        <div class="countdown-item">
+          <span class="countdown-value" id="hours">00</span>
+          <span class="countdown-label"><span data-lang="en">Hours</span><span data-lang="es">Horas</span></span>
+        </div>
+        <span class="countdown-separator" aria-hidden="true">:</span>
+        <div class="countdown-item">
+          <span class="countdown-value" id="minutes">00</span>
+          <span class="countdown-label"><span data-lang="en">Minutes</span><span data-lang="es">Minutos</span></span>
+        </div>
+        <span class="countdown-separator" aria-hidden="true">:</span>
+        <div class="countdown-item">
+          <span class="countdown-value" id="seconds">00</span>
+          <span class="countdown-label"><span data-lang="en">Seconds</span><span data-lang="es">Segundos</span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-indicator" aria-hidden="true">
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="section about">
+    <div class="container">
+      <div class="about-content fade-in">
+        <span class="section-label"><span data-lang="en">About</span><span data-lang="es">Acerca de</span></span>
+        <p class="about-text" data-lang="en">
+          I've built scalable systems through different technology shifts, and now I use that experience to create practical AI solutions for businesses. I build <strong>production-ready tools</strong> myself—chatbots, automation workflows, custom web apps, and intelligent systems that integrate directly with your business operations.
+        </p>
+        <p class="about-text" data-lang="es">
+          He construido sistemas escalables a través de distintos cambios tecnológicos, y ahora uso esa experiencia para crear soluciones de IA prácticas para empresas. Yo mismo desarrollo <strong>herramientas listas para producción</strong>: chatbots, flujos de automatización, aplicaciones web personalizadas y sistemas inteligentes que se integran directamente con las operaciones de tu negocio.
+        </p>
+        <div class="divider" aria-hidden="true"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Personal Intro Section -->
+  <section class="section personal-intro">
+    <div class="container">
+      <div class="personal-content fade-in">
+        <p class="personal-greeting" data-lang="en">Hi, I'm <strong>Robert</strong> — the AI engineer behind CushLabs.</p>
+        <p class="personal-greeting" data-lang="es">Hola, soy <strong>Robert</strong> — el ingeniero de IA detrás de CushLabs.</p>
+        
+        <p class="personal-text" data-lang="en">
+          I've always had a deep passion for technology and how it can truly help people. One of the things I do best is helping business owners, entrepreneurs, and managers understand how to use AI without jargon, confusion, or unnecessary complexity.
+        </p>
+        <p class="personal-text" data-lang="es">
+          Siempre he sentido una profunda pasión por la tecnología y cómo puede realmente ayudar a las personas. Una de las cosas que mejor hago es ayudar a dueños de negocios, emprendedores y gerentes a entender cómo usar la IA sin jerga, confusión o complejidad innecesaria.
+        </p>
+        
+        <p class="personal-text" data-lang="en">
+          My goal is simple: make technology clear, make it practical, and make it genuinely useful for your business.
+        </p>
+        <p class="personal-text" data-lang="es">
+          Mi objetivo es simple: hacer la tecnología clara, práctica y genuinamente útil para tu negocio.
+        </p>
+        
+        <p class="personal-text" data-lang="en">
+          I focus on solving real problems — and that's why this quote has always guided my approach:
+        </p>
+        <p class="personal-text" data-lang="es">
+          Me enfoco en resolver problemas reales — y por eso esta cita siempre ha guiado mi enfoque:
+        </p>
+        
+        <blockquote class="quote">
+          <p class="quote-text" data-lang="en">"You've got to start with the customer experience and work back toward the technology — not the other way around."</p>
+          <p class="quote-text" data-lang="es">"Tienes que empezar con la experiencia del cliente y trabajar hacia atrás hacia la tecnología — no al revés."</p>
+          <cite class="quote-author">— Steve Jobs</cite>
+        </blockquote>
+        
+        <p class="personal-closing" data-lang="en">That's exactly how I work: <strong>real value first, technology second.</strong></p>
+        <p class="personal-closing" data-lang="es">Así es exactamente como trabajo: <strong>primero el valor real, después la tecnología.</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features / Value Proposition Section -->
+  <section class="section features">
+    <div class="container">
+      <header class="features-header fade-in">
+        <span class="section-label"><span data-lang="en">Why Work With Me</span><span data-lang="es">Por Qué Trabajar Conmigo</span></span>
+        <h2 class="section-title"><span data-lang="en">What Makes Me Different</span><span data-lang="es">Lo Que Me Hace Diferente</span></h2>
+      </header>
+
+      <div class="features-grid">
+        <article class="feature-card fade-in-stagger">
+          <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+            <path d="M2 17l10 5 10-5"/>
+            <path d="M2 12l10 5 10-5"/>
+          </svg>
+          <h3 class="feature-title"><span data-lang="en">Experienced Architecture, Modern Mindset</span><span data-lang="es">Experiencia en Arquitectura, Mentalidad Moderna</span></h3>
+          <p class="feature-text"><span data-lang="en">Hands-on experience designing secure, scalable systems that support real business needs.</span><span data-lang="es">Experiencia práctica diseñando sistemas seguros y escalables para necesidades reales de negocio.</span></p>
+        </article>
+
+        <article class="feature-card fade-in-stagger">
+          <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="16 18 22 12 16 6"/>
+            <polyline points="8 6 2 12 8 18"/>
+            <line x1="12" y1="2" x2="12" y2="22"/>
+          </svg>
+          <h3 class="feature-title"><span data-lang="en">Modern Full-Stack + Applied AI</span><span data-lang="es">Full-Stack Moderno + IA Aplicada</span></h3>
+          <p class="feature-text"><span data-lang="en">React, Python, Node, Supabase—combined with practical, high-impact AI engineering.</span><span data-lang="es">React, Python, Node, Supabase—combinados con capacidades de IA útiles y efectivas.</span></p>
+        </article>
+
+        <article class="feature-card fade-in-stagger">
+          <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+            <circle cx="9" cy="10" r="1"/>
+            <circle cx="15" cy="10" r="1"/>
+          </svg>
+          <h3 class="feature-title"><span data-lang="en">Clear, Human Communication</span><span data-lang="es">Comunicación Clara y Humana</span></h3>
+          <p class="feature-text"><span data-lang="en">I explain technical concepts simply and clearly—ideal for founders, operators, and business owners.</span><span data-lang="es">Explico lo técnico de manera simple y directa—ideal para fundadores, operadores y dueños de negocio.</span></p>
+        </article>
+
+        <article class="feature-card fade-in-stagger">
+          <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+            <line x1="8" y1="21" x2="16" y2="21"/>
+            <line x1="12" y1="17" x2="12" y2="21"/>
+            <path d="M6 8h.01M9 8h.01"/>
+            <rect x="12" y="7" width="6" height="4" rx="1"/>
+          </svg>
+          <h3 class="feature-title"><span data-lang="en">Real, End-to-End Solutions</span><span data-lang="es">Soluciones Reales de Principio a Fin</span></h3>
+          <p class="feature-text"><span data-lang="en">I deliver complete systems, not prototypes. Admin dashboards, databases, analytics, automations, and full production deployments.</span><span data-lang="es">Entrego sistemas completos, no prototipos. Dashboards de administración, bases de datos, analíticas, automatizaciones y despliegues reales en producción.</span></p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section contact">
+    <div class="container fade-in">
+      <span class="section-label"><span data-lang="en">Get in Touch</span><span data-lang="es">Contáctame</span></span>
+      <p class="contact-text"><span data-lang="en">Want early access or consulting info?</span><span data-lang="es">¿Quieres acceso anticipado o información de consultoría?</span></p>
+      <a href="mailto:info@cushlabs.ai" class="contact-email">info@cushlabs.ai</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer-text"><span data-lang="en">© 2025 CushLabs.ai — All rights reserved</span><span data-lang="es">© 2025 CushLabs.ai — Todos los derechos reservados</span></p>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      'use strict';
+
+      // ==========================================
+      // Language Switcher
+      // ==========================================
+      const langBtns = document.querySelectorAll('[data-lang-switch]');
+      
+      function setLanguage(lang) {
+        document.documentElement.lang = lang;
+        langBtns.forEach(btn => {
+          btn.classList.toggle('active', btn.dataset.langSwitch === lang);
+        });
+        // Optional: remember preference
+        try { localStorage.setItem('cushlabs-lang', lang); } catch(e) {}
+      }
+
+      langBtns.forEach(btn => {
+        btn.addEventListener('click', () => setLanguage(btn.dataset.langSwitch));
+      });
+
+      // Auto-detect language: check saved preference first, then browser language
+      (function detectLanguage() {
+        let lang = 'en'; // fallback
+        try {
+          const saved = localStorage.getItem('cushlabs-lang');
+          if (saved === 'en' || saved === 'es') {
+            lang = saved;
+          } else {
+            // Check browser language (e.g., "es-MX", "es", "en-US", "en")
+            const browserLang = navigator.language || navigator.userLanguage || 'en';
+            if (browserLang.toLowerCase().startsWith('es')) {
+              lang = 'es';
+            }
+          }
+        } catch(e) {
+          // localStorage blocked (private browsing) - just use browser detection
+          const browserLang = navigator.language || navigator.userLanguage || 'en';
+          if (browserLang.toLowerCase().startsWith('es')) {
+            lang = 'es';
+          }
+        }
+        setLanguage(lang);
+      })();
+
+      // ==========================================
+      // Countdown Timer
+      // ==========================================
+      const LAUNCH_DAYS = 35;
+      const launchDate = new Date();
+      launchDate.setDate(launchDate.getDate() + LAUNCH_DAYS);
+      launchDate.setHours(0, 0, 0, 0);
+
+      const daysEl = document.getElementById('days');
+      const hoursEl = document.getElementById('hours');
+      const minutesEl = document.getElementById('minutes');
+      const secondsEl = document.getElementById('seconds');
+
+      function updateCountdown() {
+        const now = new Date().getTime();
+        const distance = launchDate.getTime() - now;
+
+        if (distance < 0) {
+          daysEl.textContent = '00';
+          hoursEl.textContent = '00';
+          minutesEl.textContent = '00';
+          secondsEl.textContent = '00';
+          return;
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        daysEl.textContent = String(days).padStart(2, '0');
+        hoursEl.textContent = String(hours).padStart(2, '0');
+        minutesEl.textContent = String(minutes).padStart(2, '0');
+        secondsEl.textContent = String(seconds).padStart(2, '0');
+      }
+
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+
+      // ==========================================
+      // Spotlight Cursor Effect (Desktop Only)
+      // ==========================================
+      const spotlight = document.getElementById('spotlight');
+      let mouseX = 0, mouseY = 0;
+      let spotlightX = 0, spotlightY = 0;
+      let isMouseMoving = false;
+      let rafId = null;
+
+      function lerp(start, end, factor) {
+        return start + (end - start) * factor;
+      }
+
+      function animateSpotlight() {
+        spotlightX = lerp(spotlightX, mouseX, 0.08);
+        spotlightY = lerp(spotlightY, mouseY, 0.08);
+        spotlight.style.transform = `translate(${spotlightX - 300}px, ${spotlightY - 300}px)`;
+        rafId = requestAnimationFrame(animateSpotlight);
+      }
+
+      if (window.matchMedia('(pointer: fine)').matches) {
+        document.addEventListener('mousemove', function(e) {
+          mouseX = e.clientX;
+          mouseY = e.clientY;
+          if (!isMouseMoving) {
+            isMouseMoving = true;
+            spotlight.classList.add('active');
+            spotlightX = mouseX;
+            spotlightY = mouseY;
+            animateSpotlight();
+          }
+        });
+
+        document.addEventListener('mouseleave', function() {
+          isMouseMoving = false;
+          spotlight.classList.remove('active');
+          if (rafId) cancelAnimationFrame(rafId);
+        });
+      }
+
+      // ==========================================
+      // Scroll-Based Animations (Intersection Observer)
+      // ==========================================
+      const observerOptions = {
+        root: null,
+        rootMargin: '0px 0px -10% 0px',
+        threshold: 0.1
+      };
+
+      const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll('.fade-in, .fade-in-stagger').forEach(function(el) {
+        observer.observe(el);
+      });
+
+      // ==========================================
+      // Subtle Parallax on Scroll
+      // ==========================================
+      const parallaxLayer = document.getElementById('parallaxLayer');
+      let ticking = false;
+
+      function updateParallax() {
+        const scrollY = window.scrollY;
+        const translateY = scrollY * 0.15;
+        parallaxLayer.style.transform = `translateY(${translateY}px)`;
+        ticking = false;
+      }
+
+      window.addEventListener('scroll', function() {
+        if (!ticking) {
+          requestAnimationFrame(updateParallax);
+          ticking = true;
+        }
+      }, { passive: true });
+
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,287 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import projectsData from "../data/projects.generated.json";
+import { t } from "../i18n";
+
+const { projects } = projectsData;
+const locale = (Astro.currentLocale === "es" ? "es" : "en") as "en" | "es";
+const dict = t(locale);
+---
+
+<BaseLayout
+  title="Work | CushLabs.ai - Projects & Case Studies"
+  description="Explore CushLabs.ai's portfolio of AI integrations, automation tools, and modern web applications. Real-world projects demonstrating production-ready solutions."
+>
+  <div class="container mx-auto px-4 max-w-7xl">
+    <header class="py-16 md:py-24 text-center">
+      <a
+        href={locale === "es" ? "/es" : "/"}
+        class="inline-flex items-center gap-2 text-sm font-display font-semibold text-muted hover:text-cush-orange transition-colors mb-8"
+      >
+        <span>←</span>
+        <span>{dict.work.back}</span>
+      </a>
+      <h1
+        class="font-display text-4xl md:text-6xl font-bold text-foreground mb-4 tracking-tight"
+      >
+        {dict.work.title}
+      </h1>
+      <p class="text-lg text-muted max-w-2xl mx-auto">
+        {dict.work.subtitle}
+      </p>
+    </header>
+
+    <div class="flex flex-wrap gap-2 justify-center mb-12" id="filters">
+      <button
+        class="filter-btn active px-4 py-2 rounded-lg border border-border bg-transparent font-display text-sm font-semibold text-muted hover:border-border hover:text-foreground transition-all"
+        data-filter="all"
+      >
+        {dict.work.filterAll}
+      </button>
+      <button
+        class="filter-btn px-4 py-2 rounded-lg border border-border bg-transparent font-display text-sm font-semibold text-muted hover:border-border hover:text-foreground transition-all"
+        data-filter="featured"
+      >
+        {dict.work.filterFeatured}
+      </button>
+    </div>
+
+    <div
+      id="projects"
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pb-24"
+    >
+      {
+        projects.map((project) => (
+          <article
+            class={`project-card group relative bg-surface border rounded-xl p-6 transition-all duration-300 hover:-translate-y-1 ${project.isFeatured ? "border-cush-orange" : "border-border hover:border-border"}`}
+            data-categories={project.categories.join(",")}
+            data-featured={project.isFeatured}
+            data-detail-href={
+              locale === "es"
+                ? `/es/projects/${project.name}`
+                : `/projects/${project.name}`
+            }
+          >
+            <a
+              href={
+                locale === "es"
+                  ? `/es/projects/${project.name}`
+                  : `/projects/${project.name}`
+              }
+              aria-label={`${dict.work.details}: ${project.title}`}
+              class="absolute inset-0 z-0 rounded-xl focus:outline-none focus:ring-2 focus:ring-cush-orange/40"
+            />
+            <div class="relative z-10">
+              <div class="flex items-center gap-2 mb-3 flex-wrap">
+                {project.isFeatured && (
+                  <span class="px-2 py-1 bg-cush-orange text-cush-black text-xs font-display font-semibold rounded uppercase tracking-wide">
+                    {dict.work.filterFeatured}
+                  </span>
+                )}
+                {project.status && (
+                  <span
+                    class={`px-2 py-1 text-xs font-display font-semibold rounded uppercase tracking-wide ${
+                      project.status === "shipped"
+                        ? "bg-green-500/15 text-green-400"
+                        : project.status === "wip"
+                          ? "bg-yellow-500/15 text-yellow-400"
+                          : "bg-cush-gray-800 text-cush-gray-300"
+                    }`}
+                  >
+                    {project.status}
+                  </span>
+                )}
+              </div>
+
+              <h2 class="font-display text-xl font-bold text-foreground mb-2 tracking-tight">
+                <a
+                  href={
+                    locale === "es"
+                      ? `/es/projects/${project.name}`
+                      : `/projects/${project.name}`
+                  }
+                  class="hover:opacity-90 transition-opacity"
+                >
+                  {project.title}
+                </a>
+              </h2>
+
+              <p class="text-sm text-muted mb-4 line-clamp-3">
+                {project.summary ||
+                  project.description ||
+                  "No description available"}
+              </p>
+
+              <div class="flex flex-wrap gap-2 mb-4">
+                {[...project.categories, ...project.stack, ...project.tags]
+                  .slice(0, 4)
+                  .map((tag) => (
+                    <span class="px-2 py-1 bg-base/40 border border-border rounded text-xs text-muted font-display">
+                      {tag}
+                    </span>
+                  ))}
+                {project.language && (
+                  <span class="px-2 py-1 bg-base/40 border border-border rounded text-xs text-muted font-display">
+                    {project.language}
+                  </span>
+                )}
+              </div>
+
+              <div class="flex items-center justify-between pt-4 border-t border-border">
+                <div class="flex items-center gap-3 text-xs text-muted font-display">
+                  {project.stars > 0 && (
+                    <span class="flex items-center gap-1">
+                      ⭐ {project.stars}
+                    </span>
+                  )}
+                  <span>
+                    📅 {new Date(project.lastPushed).toLocaleDateString()}
+                  </span>
+                </div>
+
+                <div class="flex gap-2">
+                  <a
+                    href={
+                      locale === "es"
+                        ? `/es/projects/${project.name}`
+                        : `/projects/${project.name}`
+                    }
+                    class="inline-flex items-center gap-1 px-3 py-1.5 bg-base/40 border border-border text-foreground text-xs font-display font-semibold rounded hover:opacity-90 transition-all"
+                  >
+                    {dict.work.details} →
+                  </a>
+                  {project.demoUrl && (
+                    <a
+                      href={project.demoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="inline-flex items-center gap-1 px-3 py-1.5 bg-cush-orange text-cush-black text-xs font-display font-semibold rounded hover:bg-opacity-90 transition-all"
+                    >
+                      {dict.work.demo} ↗
+                    </a>
+                  )}
+                  <a
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-1 px-3 py-1.5 bg-base/40 border border-border text-foreground text-xs font-display font-semibold rounded hover:opacity-90 transition-all"
+                  >
+                    {dict.work.code} ↗
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="absolute inset-0 bg-gradient-radial from-cush-orange/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl pointer-events-none" />
+          </article>
+        ))
+      }
+    </div>
+
+    <div id="empty" class="hidden text-center py-24">
+      <h3 class="font-display text-2xl font-bold text-foreground mb-4">
+        {dict.work.emptyTitle}
+      </h3>
+      <p class="text-muted">{dict.work.emptySubtitle}</p>
+    </div>
+  </div>
+</BaseLayout>
+
+<script>
+  let currentFilter = "all";
+
+  function setFilter(filter = "") {
+    currentFilter = filter;
+
+    document.querySelectorAll(".filter-btn").forEach((btn) => {
+      if (!(btn instanceof HTMLButtonElement)) return;
+      btn.classList.toggle(
+        "active",
+        btn.getAttribute("data-filter") === filter
+      );
+      if (btn.classList.contains("active")) {
+        btn.classList.add(
+          "border-cush-orange",
+          "bg-cush-orange/10",
+          "text-cush-orange"
+        );
+        btn.classList.remove("border-border", "text-muted");
+      } else {
+        btn.classList.remove(
+          "border-cush-orange",
+          "bg-cush-orange/10",
+          "text-cush-orange"
+        );
+        btn.classList.add("border-border", "text-muted");
+      }
+    });
+
+    renderProjects();
+  }
+
+  function renderProjects() {
+    const projects = document.querySelectorAll(".project-card");
+    let visibleCount = 0;
+
+    projects.forEach((card) => {
+      if (!(card instanceof HTMLElement)) return;
+      const categories = (card.getAttribute("data-categories") || "")
+        .split(",")
+        .filter(Boolean);
+      const isFeatured = card.getAttribute("data-featured") === "true";
+
+      let show = false;
+      if (currentFilter === "all") {
+        show = true;
+      } else if (currentFilter === "featured") {
+        show = isFeatured;
+      } else if (currentFilter.startsWith("cat-")) {
+        const category = currentFilter.replace("cat-", "");
+        show = categories.includes(category);
+      }
+
+      if (show) {
+        card.style.display = "block";
+        visibleCount++;
+      } else {
+        card.style.display = "none";
+      }
+    });
+
+    const empty = document.getElementById("empty");
+    const projectsContainer = document.getElementById("projects");
+    if (visibleCount === 0) {
+      empty?.classList.remove("hidden");
+      projectsContainer?.classList.add("hidden");
+    } else {
+      empty?.classList.add("hidden");
+      projectsContainer?.classList.remove("hidden");
+    }
+  }
+
+  document.querySelectorAll(".filter-btn").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      if (!(btn instanceof HTMLButtonElement)) return;
+      const filter = btn.getAttribute("data-filter");
+      if (filter) setFilter(filter);
+    });
+  });
+
+  renderProjects();
+</script>
+
+<style>
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .bg-gradient-radial {
+    background: radial-gradient(
+      circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+      var(--tw-gradient-stops)
+    );
+  }
+</style>

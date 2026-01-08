@@ -1,0 +1,205 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { t } from "../i18n";
+
+const locale = (Astro.currentLocale === "es" ? "es" : "en") as "en" | "es";
+const dict = t(locale);
+
+const whatsappRaw = (
+  import.meta.env.PUBLIC_WHATSAPP_NUMBER ||
+  import.meta.env.WHATSAPP_NUMBER ||
+  ""
+).trim();
+const whatsappDigits = whatsappRaw.replace(/\D/g, "");
+const whatsappLink = whatsappDigits
+  ? `https://wa.me/${whatsappDigits}?text=${encodeURIComponent("Hi! I’d like to talk about a project.")}`
+  : null;
+
+const email = "info@cushlabs.ai";
+---
+
+<BaseLayout
+  title={`${dict.contact.title} | CushLabs.ai`}
+  description={dict.contact.subheadline}
+>
+  <main class="pb-24">
+    <section class="relative overflow-hidden border-b border-border">
+      <div
+        class="absolute inset-0 -z-10 bg-gradient-to-r from-cush-orange/10 via-transparent to-transparent"
+      >
+      </div>
+      <div class="mx-auto max-w-7xl px-4 py-16 md:py-20">
+        <div class="max-w-3xl">
+          <h1
+            class="font-display text-4xl md:text-6xl font-bold text-foreground tracking-tight"
+          >
+            {dict.contact.headline}
+          </h1>
+          <p class="mt-4 text-lg text-muted max-w-2xl">
+            {dict.contact.subheadline}
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-7xl px-4 pt-12">
+      <div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
+        <aside class="rounded-2xl border border-border bg-surface p-6 md:p-8">
+          <h2 class="font-display text-2xl font-bold text-foreground">
+            {dict.contact.infoTitle}
+          </h2>
+          <p class="mt-2 text-muted">{dict.contact.infoSubtitle}</p>
+
+          <div class="mt-6 flex flex-col gap-3">
+            {
+              whatsappLink && (
+                <a
+                  href={whatsappLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center justify-center gap-2 rounded-lg bg-green-600 px-5 py-3 text-sm font-display font-semibold text-white hover:bg-green-700 transition-colors"
+                >
+                  <span>{dict.contact.whatsapp}</span>
+                </a>
+              )
+            }
+
+            <a
+              href={`mailto:${email}?subject=${encodeURIComponent("CushLabs Inquiry")}`}
+              class="inline-flex items-center justify-center gap-2 rounded-lg border border-border bg-base/40 px-5 py-3 text-sm font-display font-semibold text-foreground hover:opacity-90 transition-opacity"
+            >
+              <span>{dict.contact.email}</span>
+            </a>
+          </div>
+
+          <dl class="mt-8 space-y-4 text-sm">
+            <div class="flex items-start justify-between gap-4">
+              <dt class="text-muted">{dict.contact.timezone}</dt>
+              <dd class="text-foreground text-right">
+                {dict.contact.timezoneValue}
+              </dd>
+            </div>
+            <div class="flex items-start justify-between gap-4">
+              <dt class="text-muted">{dict.contact.email}</dt>
+              <dd class="text-foreground text-right">
+                {dict.contact.emailValue}
+              </dd>
+            </div>
+          </dl>
+
+          <div class="mt-8">
+            <a
+              href={locale === "es" ? "/es/reservar" : "/consultation"}
+              class="text-sm font-display font-semibold text-cush-orange hover:opacity-80 transition-opacity"
+            >
+              {dict.contact.consultation} →
+            </a>
+          </div>
+        </aside>
+
+        <section class="rounded-2xl border border-border bg-surface p-6 md:p-8">
+          <form
+            id="contact-form"
+            class="space-y-4"
+            action={`mailto:${email}`}
+            method="post"
+            enctype="text/plain"
+          >
+            <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+              <div>
+                <label
+                  for="name"
+                  class="block text-sm font-display font-semibold text-foreground"
+                >
+                  {dict.contact.formName}
+                  <span class="text-cush-orange">*</span>
+                </label>
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  required
+                  class="mt-2 w-full rounded-lg border border-border bg-base/40 px-3 py-2 text-foreground placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-cush-orange"
+                />
+              </div>
+
+              <div>
+                <label
+                  for="email"
+                  class="block text-sm font-display font-semibold text-foreground"
+                >
+                  {dict.contact.formEmail}
+                  <span class="text-cush-orange">*</span>
+                </label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  required
+                  class="mt-2 w-full rounded-lg border border-border bg-base/40 px-3 py-2 text-foreground placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-cush-orange"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label
+                for="phone"
+                class="block text-sm font-display font-semibold text-foreground"
+              >
+                {dict.contact.formPhone}
+              </label>
+              <input
+                id="phone"
+                name="phone"
+                type="tel"
+                placeholder={dict.contact.formPhoneHint}
+                class="mt-2 w-full rounded-lg border border-border bg-base/40 px-3 py-2 text-foreground placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-cush-orange"
+              />
+            </div>
+
+            <div>
+              <label
+                for="message"
+                class="block text-sm font-display font-semibold text-foreground"
+              >
+                {dict.contact.formMessage}
+                <span class="text-cush-orange">*</span>
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                required
+                rows={6}
+                placeholder={dict.contact.formMessageHint}
+                class="mt-2 w-full rounded-lg border border-border bg-base/40 px-3 py-2 text-foreground placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-cush-orange"
+              ></textarea>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <input
+                id="consent"
+                name="consent"
+                type="checkbox"
+                required
+                class="mt-1 h-4 w-4 rounded border-border bg-base/40 text-cush-orange focus:ring-cush-orange"
+              />
+              <label for="consent" class="text-sm text-muted">
+                {dict.contact.formConsent}
+                <span class="text-cush-orange">*</span>
+              </label>
+            </div>
+
+            <div class="pt-2">
+              <button
+                type="submit"
+                class="inline-flex items-center justify-center rounded-lg bg-cush-orange px-6 py-3 text-sm font-display font-semibold text-black hover:opacity-90 transition-opacity"
+              >
+                {dict.contact.formSubmit}
+              </button>
+            </div>
+          </form>
+        </section>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

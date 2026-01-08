@@ -1,0 +1,29 @@
+---
+import type { Locale } from "../i18n";
+import { t } from "../i18n";
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const dict = t(locale);
+---
+
+<footer class="border-t border-border py-10">
+  <div
+    class="mx-auto flex max-w-7xl flex-col gap-6 px-4 md:flex-row md:items-center md:justify-between"
+  >
+    <p class="text-sm text-muted">{new Date().getFullYear()} CushLabs.ai</p>
+    <div class="flex items-center gap-4">
+      <a
+        class="text-sm text-muted hover:text-foreground transition-colors"
+        href="mailto:info@cushlabs.ai">{dict.nav.contact}</a
+      >
+      <a
+        class="text-sm text-muted hover:text-foreground transition-colors"
+        href={locale === "es" ? "/es/work" : "/work"}>{dict.nav.work}</a
+      >
+    </div>
+  </div>
+</footer>

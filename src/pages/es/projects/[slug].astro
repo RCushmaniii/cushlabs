@@ -1,0 +1,297 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import projectsData from "../../../data/projects.generated.json";
+import { t } from "../../../i18n";
+import { getProjectDetailOverride } from "../../../data/projectDetails";
+
+type Project = (typeof projectsData.projects)[number];
+
+export function getStaticPaths() {
+  return projectsData.projects.map((project) => ({
+    params: { slug: project.name },
+    props: { project },
+  }));
+}
+
+const locale = "es" as const;
+const dict = t(locale);
+
+const { project } = Astro.props as { project: Project };
+const override = getProjectDetailOverride(project.name);
+const detail = override?.es ?? null;
+
+const title = `${project.title} | ${dict.work.title} | CushLabs.ai`;
+const description = (
+  detail?.subheadline ||
+  project.description ||
+  project.summary ||
+  ""
+).replace(/<[^>]*>/g, "");
+
+const demoUrl =
+  override?.demoUrl || project.demoUrl || project.homepage || null;
+const codeUrl = project.url;
+
+const githubMatch = project.url.match(/github\.com\/([^/]+)\/([^/]+)(?:\/|$)/i);
+const ogImageUrl = githubMatch
+  ? `https://opengraph.githubassets.com/1/${githubMatch[1]}/${githubMatch[2]}`
+  : null;
+const images = override?.images?.length
+  ? override.images
+  : ogImageUrl
+    ? [{ src: ogImageUrl, alt: { en: project.title, es: project.title } }]
+    : [];
+
+const tech = Array.from(
+  new Set(
+    [...(project.stack || []), project.language].filter(Boolean) as string[]
+  )
+);
+const topics = Array.from(
+  new Set([...(project.topics || []), ...(project.tags || [])])
+);
+
+const stars = project.stars;
+const forks = project.forks;
+const lastPushed = new Date(project.lastPushed).toLocaleDateString();
+---
+
+<BaseLayout title={title} description={description}>
+  <main class="pb-24">
+    <div class="mx-auto max-w-7xl px-4 pt-10">
+      <a
+        href="/es/work"
+        class="inline-flex items-center gap-2 text-sm font-display font-semibold text-muted hover:text-cush-orange transition-colors"
+      >
+        <span>←</span>
+        <span>{dict.project.backToWork}</span>
+      </a>
+
+      <header class="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-3 lg:items-start">
+        <div class="lg:col-span-2">
+          <h1
+            class="font-display text-4xl md:text-6xl font-bold text-foreground tracking-tight"
+          >
+            {detail?.headline || project.title}
+          </h1>
+          <p class="mt-4 text-lg text-muted max-w-3xl">
+            {
+              detail?.subheadline ||
+                project.description ||
+                project.summary ||
+                ""
+            }
+          </p>
+
+          <div class="mt-6 flex flex-wrap gap-2">
+            {
+              project.isFeatured && (
+                <span class="px-2 py-1 bg-cush-orange text-cush-black text-xs font-display font-semibold rounded uppercase tracking-wide">
+                  {dict.work.filterFeatured}
+                </span>
+              )
+            }
+            {
+              project.status && (
+                <span class="px-2 py-1 text-xs font-display font-semibold rounded uppercase tracking-wide bg-base/40 border border-border text-muted">
+                  {project.status}
+                </span>
+              )
+            }
+          </div>
+        </div>
+
+        <aside class="rounded-2xl border border-border bg-surface p-6">
+          <h2 class="font-display text-lg font-bold text-foreground">
+            {dict.project.links}
+          </h2>
+          <div class="mt-4 flex flex-col gap-3">
+            {
+              demoUrl && (
+                <a
+                  href={demoUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center justify-center gap-2 rounded-lg bg-cush-orange px-5 py-3 text-sm font-display font-semibold text-black hover:opacity-90 transition-opacity"
+                >
+                  {dict.project.liveDemo}
+                  <span aria-hidden="true">↗</span>
+                </a>
+              )
+            }
+            <a
+              href={codeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center gap-2 rounded-lg border border-border bg-base/40 px-5 py-3 text-sm font-display font-semibold text-foreground hover:opacity-90 transition-opacity"
+            >
+              {dict.project.sourceCode}
+              <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+
+          <dl class="mt-6 space-y-3 text-sm">
+            <div class="flex items-start justify-between gap-4">
+              <dt class="text-muted">{dict.project.lastUpdated}</dt>
+              <dd class="text-foreground text-right">{lastPushed}</dd>
+            </div>
+            <div class="flex items-start justify-between gap-4">
+              <dt class="text-muted">{dict.project.stars}</dt>
+              <dd class="text-foreground text-right">{stars}</dd>
+            </div>
+            <div class="flex items-start justify-between gap-4">
+              <dt class="text-muted">{dict.project.forks}</dt>
+              <dd class="text-foreground text-right">{forks}</dd>
+            </div>
+          </dl>
+        </aside>
+      </header>
+
+      <section class="mt-10 grid grid-cols-1 gap-8 lg:grid-cols-3">
+        <div class="lg:col-span-2 space-y-8">
+          {
+            images.length > 0 && (
+              <div class="rounded-2xl border border-border bg-surface overflow-hidden">
+                <div class="p-4 md:p-6 border-b border-border">
+                  <h2 class="font-display text-lg font-bold text-foreground">
+                    Vista previa
+                  </h2>
+                </div>
+                <div class="p-4 md:p-6">
+                  <div
+                    class={`grid gap-4 ${images.length > 1 ? "md:grid-cols-2" : "grid-cols-1"}`}
+                  >
+                    {images.map((img) => (
+                      <figure class="rounded-xl border border-border bg-base/40 overflow-hidden">
+                        <img
+                          src={img.src}
+                          alt={img.alt.es}
+                          loading="lazy"
+                          class="w-full h-auto"
+                        />
+                      </figure>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )
+          }
+
+          <div class="rounded-2xl border border-border bg-surface p-6 md:p-8">
+            <h2 class="font-display text-2xl font-bold text-foreground">
+              {dict.project.overview}
+            </h2>
+            <div class="mt-4 space-y-4 text-muted">
+              {
+                detail ? (
+                  <>
+                    <h3 class="font-display text-lg font-bold text-foreground">
+                      {detail.overallVerdictTitle}
+                    </h3>
+                    <p>{detail.overallVerdictBody}</p>
+
+                    <h3 class="font-display text-lg font-bold text-foreground">
+                      {detail.whatItDoesWellTitle}
+                    </h3>
+                    <ul class="list-disc pl-5 space-y-2">
+                      {detail.whatItDoesWell.map((item) => (
+                        <li>{item}</li>
+                      ))}
+                    </ul>
+                  </>
+                ) : (
+                  <p>{project.description || project.summary || ""}</p>
+                )
+              }
+            </div>
+          </div>
+
+          {
+            detail && (
+              <div class="rounded-2xl border border-border bg-surface p-6 md:p-8">
+                <h2 class="font-display text-2xl font-bold text-foreground">
+                  {dict.project.highlights}
+                </h2>
+                <div class="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2">
+                  <div class="rounded-xl border border-border bg-base/40 p-5">
+                    <h3 class="font-display text-lg font-bold text-foreground">
+                      {dict.project.goodFor}
+                    </h3>
+                    <ul class="mt-3 list-disc pl-5 space-y-2 text-muted">
+                      {detail.goodFor.map((item) => (
+                        <li>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div class="rounded-xl border border-border bg-base/40 p-5">
+                    <h3 class="font-display text-lg font-bold text-foreground">
+                      {dict.project.notFor}
+                    </h3>
+                    <ul class="mt-3 list-disc pl-5 space-y-2 text-muted">
+                      {detail.notFor.map((item) => (
+                        <li>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="mt-6 rounded-xl border border-border bg-base/40 p-5">
+                  <h3 class="font-display text-lg font-bold text-foreground">
+                    {dict.project.whatYouGet}
+                  </h3>
+                  <ul class="mt-3 list-disc pl-5 space-y-2 text-muted">
+                    {detail.whatYouGet.map((item) => (
+                      <li>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            )
+          }
+        </div>
+
+        <aside class="space-y-6">
+          <div class="rounded-2xl border border-border bg-surface p-6">
+            <h2 class="font-display text-lg font-bold text-foreground">
+              {dict.project.tech}
+            </h2>
+            <div class="mt-4 flex flex-wrap gap-2">
+              {
+                tech.length ? (
+                  tech.map((tag) => (
+                    <span class="px-2 py-1 bg-base/40 border border-border rounded text-xs text-muted font-display">
+                      {tag}
+                    </span>
+                  ))
+                ) : (
+                  <p class="text-sm text-muted">—</p>
+                )
+              }
+            </div>
+          </div>
+
+          <div class="rounded-2xl border border-border bg-surface p-6">
+            <h2 class="font-display text-lg font-bold text-foreground">
+              {dict.project.topics}
+            </h2>
+            <div class="mt-4 flex flex-wrap gap-2">
+              {
+                topics.length ? (
+                  topics
+                    .slice(0, 16)
+                    .map((tag) => (
+                      <span class="px-2 py-1 bg-base/40 border border-border rounded text-xs text-muted font-display">
+                        {tag}
+                      </span>
+                    ))
+                ) : (
+                  <p class="text-sm text-muted">—</p>
+                )
+              }
+            </div>
+          </div>
+        </aside>
+      </section>
+    </div>
+  </main>
+</BaseLayout>

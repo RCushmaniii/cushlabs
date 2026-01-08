@@ -1,0 +1,471 @@
+---
+import { t } from "../i18n";
+
+type Locale = "en" | "es";
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const dict = t(locale);
+
+const urlFallback = (import.meta.env.PUBLIC_CONSULTATION_URL || "").trim();
+const url30 =
+  (import.meta.env.PUBLIC_CONSULTATION_URL_30 || "").trim() || urlFallback;
+const url60 =
+  (import.meta.env.PUBLIC_CONSULTATION_URL_60 || "").trim() || urlFallback;
+
+const whatsappRaw = (
+  import.meta.env.PUBLIC_WHATSAPP_NUMBER ||
+  import.meta.env.WHATSAPP_NUMBER ||
+  ""
+).trim();
+const whatsappDigits = whatsappRaw.replace(/\D/g, "");
+const whatsappLink = whatsappDigits ? `https://wa.me/${whatsappDigits}` : null;
+
+const email = "info@cushlabs.ai";
+const intakeEndpoint = "/api/consultation-intake";
+
+const contactPath = locale === "es" ? "/es/contact" : "/contact";
+const bookingStrings = {
+  noEmbed: dict.consultation.noEmbed,
+  iframeTitle: dict.consultation.iframeTitle,
+};
+---
+
+<section class="mx-auto max-w-7xl px-4 pt-10">
+  <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:items-start">
+    <div class="lg:col-span-7">
+      <div class="rounded-2xl border border-border bg-surface p-6 md:p-8">
+        <div class="flex items-start justify-between gap-6">
+          <div>
+            <h2 class="font-display text-2xl font-bold text-foreground">
+              {dict.consultation.flowTitle}
+            </h2>
+            <p class="mt-2 text-muted">{dict.consultation.flowSubtitle}</p>
+          </div>
+          <div
+            class="hidden md:flex shrink-0 items-center gap-2 rounded-xl border border-border bg-base/40 px-3 py-2"
+            aria-live="polite"
+          >
+            <span
+              class="text-xs font-display font-semibold uppercase tracking-wider text-muted"
+              >{dict.consultation.flowProgressLabel}</span
+            >
+            <span
+              class="text-xs font-display font-semibold text-foreground"
+              data-flow-progress>1 / 4</span
+            >
+          </div>
+        </div>
+
+        <ol
+          class="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2"
+          aria-label={dict.consultation.flowStepsLabel}
+        >
+          <li
+            class="rounded-xl border border-border bg-base/40 p-4"
+            data-flow-step-indicator
+            data-step="1"
+          >
+            <p
+              class="text-xs font-display font-semibold uppercase tracking-wider text-muted"
+            >
+              1
+            </p>
+            <p class="mt-1 font-display font-semibold text-foreground">
+              {dict.consultation.flowStep1}
+            </p>
+          </li>
+          <li
+            class="rounded-xl border border-border bg-base/40 p-4 opacity-70"
+            data-flow-step-indicator
+            data-step="2"
+          >
+            <p
+              class="text-xs font-display font-semibold uppercase tracking-wider text-muted"
+            >
+              2
+            </p>
+            <p class="mt-1 font-display font-semibold text-foreground">
+              {dict.consultation.flowStep2}
+            </p>
+          </li>
+          <li
+            class="rounded-xl border border-border bg-base/40 p-4 opacity-70"
+            data-flow-step-indicator
+            data-step="3"
+          >
+            <p
+              class="text-xs font-display font-semibold uppercase tracking-wider text-muted"
+            >
+              3
+            </p>
+            <p class="mt-1 font-display font-semibold text-foreground">
+              {dict.consultation.flowStep3}
+            </p>
+          </li>
+          <li
+            class="rounded-xl border border-border bg-base/40 p-4 opacity-70"
+            data-flow-step-indicator
+            data-step="4"
+          >
+            <p
+              class="text-xs font-display font-semibold uppercase tracking-wider text-muted"
+            >
+              4
+            </p>
+            <p class="mt-1 font-display font-semibold text-foreground">
+              {dict.consultation.flowStep4}
+            </p>
+          </li>
+        </ol>
+
+        <form class="mt-8" data-consultation-flow novalidate>
+          <input type="hidden" name="locale" value={locale} />
+          <input type="hidden" name="source" value="consultation" />
+
+          <fieldset data-flow-panel data-step="1" class="space-y-5">
+            <legend class="sr-only">{dict.consultation.flowStep1}</legend>
+
+            <div>
+              <label
+                class="block text-sm font-display font-semibold text-foreground"
+                for="duration"
+              >
+                {dict.consultation.durationLabel}
+              </label>
+              <p id="duration-hint" class="mt-1 text-sm text-muted">
+                {dict.consultation.durationHint}
+              </p>
+
+              <div
+                class="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2"
+                role="radiogroup"
+                aria-describedby="duration-hint"
+              >
+                <label
+                  class="cursor-pointer rounded-xl border border-border bg-surface p-4 hover:border-cush-orange transition-colors"
+                >
+                  <input
+                    class="mr-2"
+                    type="radio"
+                    name="duration"
+                    value="30"
+                    required
+                    data-duration-radio
+                  />
+                  <span class="font-display font-semibold text-foreground">
+                    {dict.consultation.duration30}
+                  </span>
+                </label>
+                <label
+                  class="cursor-pointer rounded-xl border border-border bg-surface p-4 hover:border-cush-orange transition-colors"
+                >
+                  <input
+                    class="mr-2"
+                    type="radio"
+                    name="duration"
+                    value="60"
+                    required
+                    data-duration-radio
+                  />
+                  <span class="font-display font-semibold text-foreground">
+                    {dict.consultation.duration60}
+                  </span>
+                </label>
+              </div>
+            </div>
+
+            <div class="flex items-center justify-end gap-3">
+              <button
+                type="button"
+                class="inline-flex items-center justify-center rounded-xl bg-cush-orange px-6 py-3 text-sm font-display font-semibold text-black hover:opacity-90 transition-opacity disabled:opacity-50"
+                data-flow-next
+                disabled
+              >
+                {dict.consultation.next}
+              </button>
+            </div>
+          </fieldset>
+
+          <fieldset data-flow-panel data-step="2" class="space-y-5" hidden>
+            <legend class="sr-only">{dict.consultation.flowStep2}</legend>
+
+            <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+              <div>
+                <label
+                  class="block text-sm font-display font-semibold text-foreground"
+                  for="name"
+                >
+                  {dict.consultation.nameLabel}
+                </label>
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  autocomplete="name"
+                  required
+                  class="mt-2 w-full rounded-xl border border-border bg-base/40 px-4 py-3 text-sm text-foreground placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-cush-orange/40"
+                />
+              </div>
+              <div>
+                <label
+                  class="block text-sm font-display font-semibold text-foreground"
+                  for="email"
+                >
+                  {dict.consultation.emailLabel}
+                </label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  autocomplete="email"
+                  required
+                  class="mt-2 w-full rounded-xl border border-border bg-base/40 px-4 py-3 text-sm text-foreground placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-cush-orange/40"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label
+                class="block text-sm font-display font-semibold text-foreground"
+                for="phone"
+              >
+                {dict.consultation.phoneLabel}
+              </label>
+              <p id="phone-hint" class="mt-1 text-sm text-muted">
+                {dict.consultation.phoneHint}
+              </p>
+              <input
+                id="phone"
+                name="phone"
+                type="tel"
+                autocomplete="tel"
+                aria-describedby="phone-hint"
+                class="mt-2 w-full rounded-xl border border-border bg-base/40 px-4 py-3 text-sm text-foreground placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-cush-orange/40"
+              />
+            </div>
+
+            <div class="flex items-center justify-between gap-3">
+              <button
+                type="button"
+                class="inline-flex items-center justify-center rounded-xl border border-border bg-surface px-6 py-3 text-sm font-display font-semibold text-foreground hover:border-cush-orange hover:text-cush-orange transition-colors"
+                data-flow-back
+              >
+                {dict.consultation.back}
+              </button>
+              <button
+                type="button"
+                class="inline-flex items-center justify-center rounded-xl bg-cush-orange px-6 py-3 text-sm font-display font-semibold text-black hover:opacity-90 transition-opacity"
+                data-flow-next
+              >
+                {dict.consultation.next}
+              </button>
+            </div>
+          </fieldset>
+
+          <fieldset data-flow-panel data-step="3" class="space-y-5" hidden>
+            <legend class="sr-only">{dict.consultation.flowStep3}</legend>
+
+            <div>
+              <label
+                class="block text-sm font-display font-semibold text-foreground"
+                for="notes"
+              >
+                {dict.consultation.notesLabel}
+              </label>
+              <p id="notes-hint" class="mt-1 text-sm text-muted">
+                {dict.consultation.notesHint}
+              </p>
+              <textarea
+                id="notes"
+                name="notes"
+                rows={6}
+                aria-describedby="notes-hint"
+                class="mt-2 w-full rounded-xl border border-border bg-base/40 px-4 py-3 text-sm text-foreground placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-cush-orange/40"
+              ></textarea>
+            </div>
+
+            <div class="flex items-center justify-between gap-3">
+              <button
+                type="button"
+                class="inline-flex items-center justify-center rounded-xl border border-border bg-surface px-6 py-3 text-sm font-display font-semibold text-foreground hover:border-cush-orange hover:text-cush-orange transition-colors"
+                data-flow-back
+              >
+                {dict.consultation.back}
+              </button>
+              <button
+                type="button"
+                class="inline-flex items-center justify-center rounded-xl bg-cush-orange px-6 py-3 text-sm font-display font-semibold text-black hover:opacity-90 transition-opacity"
+                data-flow-next
+              >
+                {dict.consultation.next}
+              </button>
+            </div>
+          </fieldset>
+
+          <fieldset data-flow-panel data-step="4" class="space-y-5" hidden>
+            <legend class="sr-only">{dict.consultation.flowStep4}</legend>
+
+            <div
+              class="rounded-2xl border border-border bg-surface overflow-hidden"
+            >
+              <div class="p-6 md:p-8 border-b border-border">
+                <h3 class="font-display text-2xl font-bold text-foreground">
+                  {dict.consultation.embedTitle}
+                </h3>
+                <p class="mt-2 text-muted">{dict.consultation.embedSubtitle}</p>
+              </div>
+
+              <div data-booking-container>
+                <div class="p-6 md:p-8">
+                  <div class="rounded-xl border border-border bg-base/40 p-5">
+                    <p class="text-muted">
+                      {dict.consultation.bookingSelectDurationFirst}
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="p-6 md:p-8 border-t border-border">
+                <div class="flex flex-col gap-3">
+                  <a
+                    data-open-new-tab
+                    href={url30 ||
+                      url60 ||
+                      (locale === "es" ? "/es/contact" : "/contact")}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center justify-center rounded-xl border border-border bg-base/40 px-5 py-3 text-sm font-display font-semibold text-foreground hover:border-cush-orange hover:text-cush-orange transition-colors"
+                  >
+                    {dict.consultation.openInNewTab}
+                  </a>
+
+                  {
+                    whatsappLink && (
+                      <a
+                        href={whatsappLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="inline-flex items-center justify-center rounded-xl bg-green-600 px-5 py-3 text-sm font-display font-semibold text-white hover:bg-green-700 transition-colors"
+                      >
+                        {dict.consultation.whatsapp}
+                      </a>
+                    )
+                  }
+
+                  <a
+                    href={`mailto:${email}?subject=${encodeURIComponent(dict.consultation.emailSubject)}`}
+                    class="inline-flex items-center justify-center rounded-xl border border-border bg-base/40 px-5 py-3 text-sm font-display font-semibold text-foreground hover:opacity-90 transition-opacity"
+                  >
+                    {dict.consultation.email}
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex items-center justify-between gap-3">
+              <button
+                type="button"
+                class="inline-flex items-center justify-center rounded-xl border border-border bg-surface px-6 py-3 text-sm font-display font-semibold text-foreground hover:border-cush-orange hover:text-cush-orange transition-colors"
+                data-flow-back
+              >
+                {dict.consultation.back}
+              </button>
+              <a
+                href={locale === "es" ? "/es/work" : "/work"}
+                class="inline-flex items-center justify-center rounded-xl border border-border bg-surface px-6 py-3 text-sm font-display font-semibold text-foreground hover:border-cush-orange hover:text-cush-orange transition-colors"
+              >
+                {dict.consultation.secondaryCta}
+              </a>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+
+      <div class="mt-8 grid grid-cols-1 gap-4 md:grid-cols-2">
+        <div class="rounded-2xl border border-border bg-surface p-6">
+          <h3 class="font-display text-lg font-bold text-foreground">
+            {dict.consultation.whatWeCoverTitle}
+          </h3>
+          <p class="mt-2 text-muted">{dict.consultation.whatWeCoverBody}</p>
+        </div>
+        <div class="rounded-2xl border border-border bg-surface p-6">
+          <h3 class="font-display text-lg font-bold text-foreground">
+            {dict.consultation.afterCallTitle}
+          </h3>
+          <p class="mt-2 text-muted">{dict.consultation.afterCallBody}</p>
+        </div>
+      </div>
+    </div>
+
+    <aside class="lg:col-span-5">
+      <div
+        class="rounded-2xl border border-border bg-surface p-6 md:p-8 lg:sticky lg:top-28"
+      >
+        <h2 class="font-display text-2xl font-bold text-foreground">
+          {dict.consultation.sidebarTitle}
+        </h2>
+        <p class="mt-2 text-muted">{dict.consultation.sidebarSubtitle}</p>
+
+        <dl class="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-3 lg:grid-cols-1">
+          <div class="rounded-xl border border-border bg-base/40 p-4">
+            <dt
+              class="text-xs font-display font-semibold uppercase tracking-wider text-muted"
+            >
+              {dict.consultation.detail1Label}
+            </dt>
+            <dd class="mt-2 text-sm font-display font-semibold text-foreground">
+              {dict.consultation.detail1Value}
+            </dd>
+          </div>
+          <div class="rounded-xl border border-border bg-base/40 p-4">
+            <dt
+              class="text-xs font-display font-semibold uppercase tracking-wider text-muted"
+            >
+              {dict.consultation.detail2Label}
+            </dt>
+            <dd class="mt-2 text-sm font-display font-semibold text-foreground">
+              {dict.consultation.detail2Value}
+            </dd>
+          </div>
+          <div class="rounded-xl border border-border bg-base/40 p-4">
+            <dt
+              class="text-xs font-display font-semibold uppercase tracking-wider text-muted"
+            >
+              {dict.consultation.detail3Label}
+            </dt>
+            <dd class="mt-2 text-sm font-display font-semibold text-foreground">
+              {dict.consultation.detail3Value}
+            </dd>
+          </div>
+        </dl>
+
+        <div class="mt-6 rounded-xl border border-border bg-base/40 p-5">
+          <p class="text-sm text-muted">{dict.consultation.flowPrivacyNote}</p>
+        </div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<script
+  type="application/json"
+  data-consultation-booking-config
+  is:inline
+  set:html={JSON.stringify({
+    url30,
+    url60,
+    intakeEndpoint,
+    contactPath,
+    bookingStrings,
+    locale,
+  })}
+/>
+
+<script>
+  import { initBookingFlow } from "../scripts/bookingFlow";
+  initBookingFlow();
+</script>

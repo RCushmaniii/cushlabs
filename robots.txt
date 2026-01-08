@@ -1,0 +1,8 @@
+# CushLabs.ai robots.txt
+# https://cushlabs.ai/robots.txt
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://cushlabs.ai/sitemap.xml

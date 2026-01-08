@@ -1,0 +1,38 @@
+{
+  "name": "cushlabs-site",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "npm run generate-projects && astro build",
+    "start": "astro preview",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "check": "npm run lint && npm run typecheck",
+    "astro:check": "astro check",
+    "preview": "astro preview",
+    "astro": "astro",
+    "generate-projects": "tsx scripts/generate-projects.ts",
+    "audit:predeploy": "tsx scripts/audit-predeploy.ts"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.6",
+    "@astrojs/tailwind": "^5.1.2",
+    "astro": "^4.16.18",
+    "tailwindcss": "^3.4.17"
+  },
+  "devDependencies": {
+    "@octokit/rest": "^20.0.2",
+    "@types/node": "^20.10.6",
+    "@typescript-eslint/eslint-plugin": "^8.50.0",
+    "@typescript-eslint/parser": "^8.50.0",
+    "dotenv": "^16.3.1",
+    "eslint": "^9.39.2",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-astro": "^1.5.0",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "prettier": "^3.7.4",
+    "tsx": "^4.7.0",
+    "typescript": "^5.9.3"
+  }
+}

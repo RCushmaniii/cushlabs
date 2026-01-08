@@ -1,0 +1,105 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ConsultationBookingFlow from "../components/ConsultationBookingFlow.astro";
+import { t } from "../i18n";
+
+const locale = (Astro.currentLocale === "es" ? "es" : "en") as "en" | "es";
+const dict = t(locale);
+---
+
+<BaseLayout
+  title={`${dict.consultation.title} | CushLabs.ai`}
+  description={dict.consultation.description}
+>
+  <main class="pb-24">
+    <section class="relative overflow-hidden border-b border-border">
+      <div class="absolute inset-0 -z-10">
+        <div
+          class="absolute inset-0 bg-gradient-to-br from-cush-orange/15 via-transparent to-transparent"
+        >
+        </div>
+        <div
+          class="absolute -left-24 top-16 h-64 w-64 rounded-full bg-cush-orange/10 blur-3xl"
+        >
+        </div>
+      </div>
+
+      <div class="mx-auto max-w-7xl px-4 py-14 md:py-18">
+        <div class="max-w-3xl">
+          <p
+            class="inline-flex items-center rounded-full border border-border bg-surface px-3 py-1 text-xs font-display font-semibold uppercase tracking-wider text-muted"
+          >
+            {dict.consultation.kicker}
+          </p>
+          <h1
+            class="mt-4 font-display text-4xl font-bold text-foreground tracking-tight md:text-6xl"
+          >
+            {dict.consultation.headline}
+          </h1>
+          <p class="mt-4 max-w-2xl text-lg text-muted">
+            {dict.consultation.subheadline}
+          </p>
+
+          <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+            <a
+              href="#schedule"
+              class="inline-flex items-center justify-center gap-2 rounded-xl bg-cush-orange px-6 py-3 text-sm font-display font-semibold text-black hover:opacity-90 transition-opacity glow-orange"
+            >
+              {dict.consultation.primaryCta}
+              <span aria-hidden="true">→</span>
+            </a>
+            <a
+              href={locale === "es" ? "/es/work" : "/work"}
+              class="inline-flex items-center justify-center gap-2 rounded-xl border border-border bg-surface px-6 py-3 text-sm font-display font-semibold text-foreground hover:border-cush-orange hover:text-cush-orange transition-colors"
+            >
+              {dict.consultation.secondaryCta}
+            </a>
+          </div>
+
+          <dl class="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-3">
+            <div class="rounded-2xl border border-border bg-surface p-4">
+              <dt
+                class="text-xs font-display font-semibold uppercase tracking-wider text-muted"
+              >
+                {dict.consultation.detail1Label}
+              </dt>
+              <dd
+                class="mt-2 text-sm font-display font-semibold text-foreground"
+              >
+                {dict.consultation.detail1Value}
+              </dd>
+            </div>
+            <div class="rounded-2xl border border-border bg-surface p-4">
+              <dt
+                class="text-xs font-display font-semibold uppercase tracking-wider text-muted"
+              >
+                {dict.consultation.detail2Label}
+              </dt>
+              <dd
+                class="mt-2 text-sm font-display font-semibold text-foreground"
+              >
+                {dict.consultation.detail2Value}
+              </dd>
+            </div>
+            <div class="rounded-2xl border border-border bg-surface p-4">
+              <dt
+                class="text-xs font-display font-semibold uppercase tracking-wider text-muted"
+              >
+                {dict.consultation.detail3Label}
+              </dt>
+              <dd
+                class="mt-2 text-sm font-display font-semibold text-foreground"
+              >
+                {dict.consultation.detail3Value}
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <div id="schedule">
+      <ConsultationBookingFlow locale={locale} />
+    </div>
+  </main>
+</BaseLayout>

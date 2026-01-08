@@ -1,0 +1,158 @@
+---
+import type { Locale } from "../i18n";
+import { getLocalizedPath, t } from "../i18n";
+
+interface Props {
+  locale: Locale;
+  pathname: string;
+}
+
+const { locale, pathname } = Astro.props;
+const dict = t(locale);
+
+const toEn = getLocalizedPath(pathname, "en");
+const toEs = getLocalizedPath(pathname, "es");
+---
+
+<header
+  class="sticky top-0 z-50 border-b border-border bg-base/80 backdrop-blur"
+>
+  <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4">
+    <a
+      href={locale === "es" ? "/es" : "/"}
+      class="font-display text-sm font-semibold tracking-wider uppercase"
+    >
+      {dict.home.brand}
+    </a>
+
+    <nav class="hidden items-center gap-6 md:flex">
+      <a
+        href={locale === "es" ? "/es/work" : "/work"}
+        class="text-sm text-muted hover:text-foreground transition-colors"
+        >{dict.nav.work}</a
+      >
+      <a
+        href={locale === "es" ? "/es/blog" : "/blog"}
+        class="text-sm text-muted hover:text-foreground transition-colors"
+        >{dict.nav.blog}</a
+      >
+      <a
+        href={locale === "es" ? "/es/case-studies" : "/case-studies"}
+        class="text-sm text-muted hover:text-foreground transition-colors"
+        >{dict.nav.caseStudies}</a
+      >
+      <a
+        href={locale === "es" ? "/es/contact" : "/contact"}
+        class="text-sm text-muted hover:text-foreground transition-colors"
+        >{dict.nav.contact}</a
+      >
+    </nav>
+
+    <div class="flex items-center gap-3">
+      <button
+        type="button"
+        class="rounded-lg border border-border bg-surface p-2 text-foreground hover:opacity-90"
+        data-theme-toggle
+        aria-label="Toggle theme"
+      >
+        <svg
+          data-theme-icon="sun"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="h-4 w-4"
+        >
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v2"></path>
+          <path d="M12 20v2"></path>
+          <path d="m4.93 4.93 1.41 1.41"></path>
+          <path d="m17.66 17.66 1.41 1.41"></path>
+          <path d="M2 12h2"></path>
+          <path d="M20 12h2"></path>
+          <path d="m6.34 17.66-1.41 1.41"></path>
+          <path d="m19.07 4.93-1.41 1.41"></path>
+        </svg>
+        <svg
+          data-theme-icon="moon"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="h-4 w-4 hidden"
+        >
+          <path d="M12 3a7 7 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+        </svg>
+        <span class="sr-only" data-theme-label>Toggle theme</span>
+      </button>
+
+      <div
+        class="flex items-center gap-1 rounded-lg border border-border bg-surface p-1"
+      >
+        <a
+          class={`px-2 py-1 text-xs font-display font-semibold rounded-md ${locale === "en" ? "bg-cush-orange text-black" : "text-muted hover:text-foreground"}`}
+          href={toEn}
+          hreflang="en"
+        >
+          EN
+        </a>
+        <a
+          class={`px-2 py-1 text-xs font-display font-semibold rounded-md ${locale === "es" ? "bg-cush-orange text-black" : "text-muted hover:text-foreground"}`}
+          href={toEs}
+          hreflang="es"
+        >
+          ES
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  function syncThemeToggleUI() {
+    const isDark = document.documentElement.classList.contains("dark");
+    const btn = document.querySelector("[data-theme-toggle]");
+    const sun = document.querySelector('[data-theme-icon="sun"]');
+    const moon = document.querySelector('[data-theme-icon="moon"]');
+    const label = document.querySelector("[data-theme-label]");
+
+    // If current theme is dark, show sun (switch to light). If current theme is light, show moon (switch to dark).
+    if (sun && moon) {
+      sun.classList.toggle("hidden", !isDark);
+      moon.classList.toggle("hidden", isDark);
+    }
+
+    if (btn) {
+      btn.setAttribute(
+        "aria-label",
+        isDark ? "Switch to light theme" : "Switch to dark theme"
+      );
+    }
+    if (label) {
+      label.textContent = isDark
+        ? "Switch to light theme"
+        : "Switch to dark theme";
+    }
+  }
+
+  const btn = document.querySelector("[data-theme-toggle]");
+  if (btn) {
+    btn.addEventListener("click", () => {
+      const isDark = document.documentElement.classList.toggle("dark");
+      try {
+        localStorage.setItem("theme", isDark ? "dark" : "light");
+      } catch (e) {
+        // no-op
+      }
+      syncThemeToggleUI();
+    });
+  }
+
+  syncThemeToggleUI();
+</script>
