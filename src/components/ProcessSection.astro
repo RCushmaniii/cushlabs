@@ -1,0 +1,46 @@
+---
+import { t } from "../i18n";
+
+interface Props {
+  locale: "en" | "es";
+}
+
+const { locale } = Astro.props;
+const dict = t(locale);
+
+const steps = [
+  dict.process.step1,
+  dict.process.step2,
+  dict.process.step3,
+  dict.process.step4,
+];
+---
+
+<section class="py-20 lg:py-28 bg-surface/50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
+        {dict.process.title}
+      </h2>
+      <p class="text-lg text-muted max-w-2xl mx-auto">
+        {dict.process.subtitle}
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-4 gap-8">
+      {steps.map((step) => (
+        <div class="text-center">
+          <div class="text-5xl font-bold text-cush-orange/20 mb-4 font-display">
+            {step.number}
+          </div>
+          <h3 class="font-display text-xl font-semibold text-foreground mb-2">
+            {step.title}
+          </h3>
+          <p class="text-muted">
+            {step.description}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

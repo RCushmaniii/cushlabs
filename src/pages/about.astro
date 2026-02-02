@@ -1,0 +1,400 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Container from "../components/layout/Container.astro";
+
+const locale = (Astro.currentLocale === "es" ? "es" : "en") as "en" | "es";
+
+const content = {
+  en: {
+    meta: {
+      title: "About — Why Businesses Trust CushLabs.ai",
+      description: "20+ years IT experience, 500+ professional connections, and a track record of delivering AI solutions that actually work. Learn why small businesses choose CushLabs.",
+    },
+    hero: {
+      badge: "Why CushLabs",
+      headline: "You Need AI That Works — Not Another Tech Experiment",
+      subheadline: "I've spent 20+ years solving real business problems with technology. Now I help small businesses get the same AI advantages that big companies have — without the enterprise price tag or complexity.",
+      ctaPrimary: "Book a Free Call",
+      ctaSecondary: "See Real Solutions",
+    },
+    trust: {
+      title: "Built on Experience, Not Hype",
+      stats: [
+        { value: "20+", label: "Years in IT", sublabel: "Developer → Manager → Consultant" },
+        { value: "500+", label: "LinkedIn Connections", sublabel: "Established IT Network" },
+        { value: "100%", label: "Bilingual", sublabel: "English & Spanish" },
+        { value: "2", label: "Markets Served", sublabel: "US & Mexico" },
+      ],
+    },
+    problem: {
+      title: "The Problem I Solve",
+      intro: "You've probably seen AI promises everywhere. But most small businesses face the same frustrations:",
+      items: [
+        "Enterprise AI tools are expensive and overkill for your needs",
+        "DIY chatbots feel robotic and frustrate your customers",
+        "Tech consultants speak jargon and over-engineer everything",
+        "You're spending hours on repetitive tasks that should be automated",
+        "You're not sure what AI can actually do for YOUR business",
+      ],
+      conclusion: "Sound familiar? That's exactly why I started CushLabs.",
+    },
+    approach: {
+      title: "How I Work Differently",
+      items: [
+        {
+          title: "Practical Over Perfect",
+          description: "I build solutions that work in the real world, not impressive demos that fall apart in production. You get tools your team will actually use.",
+        },
+        {
+          title: "Fixed Pricing, No Surprises",
+          description: "You'll know the cost upfront. No hourly billing that spirals, no scope creep, no mystery invoices at the end.",
+        },
+        {
+          title: "Fast Delivery",
+          description: "Most projects go live in 2-4 weeks. You'll see working software quickly — not months of planning and meetings.",
+        },
+        {
+          title: "You Own Everything",
+          description: "Full documentation, clean code, no vendor lock-in. If we part ways, you keep everything I built.",
+        },
+      ],
+    },
+    about: {
+      title: "About Robert",
+      intro: "I started CushLabs after 20 years watching businesses struggle with technology that was supposed to make things easier.",
+      body: "I've been a developer, a senior IT manager, and a project manager. I've seen what works and what doesn't — from the inside. Now I work directly with founders and small teams from my base in Guadalajara, Mexico. No layers, no account managers, no handoffs. The person you talk to is the person building your solution.",
+      highlight: "I believe AI should be accessible to everyone — not just companies with enterprise budgets.",
+      linkedin: "Connect on LinkedIn",
+    },
+    clients: {
+      title: "Who I Work With",
+      intro: "CushLabs is a great fit if you're:",
+      items: [
+        "A small business owner tired of repetitive tasks eating up your week",
+        "A founder who wants AI working for you, not another tool to manage",
+        "An operations lead looking to cut support volume without hiring",
+        "A team in the US or Mexico who values bilingual communication",
+        "Someone who wants straight talk, not tech jargon",
+      ],
+      notFor: "Not a fit? If you need enterprise-scale infrastructure, a large development team, or cutting-edge AI research — I'll happily refer you to someone better suited.",
+    },
+    cta: {
+      title: "Ready to Talk?",
+      subtitle: "Book a free discovery call. Tell me what's eating up your time, and I'll tell you honestly whether AI can help — and what it would take.",
+      button: "Book Free Call",
+      reassurance: "No pitch. No pressure. Just clarity.",
+    },
+  },
+  es: {
+    meta: {
+      title: "Acerca — Por Qué las Empresas Confían en CushLabs.ai",
+      description: "20+ años de experiencia en TI, 500+ conexiones profesionales, y un historial de entregar soluciones de IA que realmente funcionan. Descubre por qué los pequeños negocios eligen CushLabs.",
+    },
+    hero: {
+      badge: "Por Qué CushLabs",
+      headline: "Necesitas IA Que Funcione — No Otro Experimento Tecnológico",
+      subheadline: "He pasado 20+ años resolviendo problemas reales de negocio con tecnología. Ahora ayudo a pequeños negocios a obtener las mismas ventajas de IA que tienen las grandes empresas — sin el precio ni la complejidad empresarial.",
+      ctaPrimary: "Agendar Llamada Gratis",
+      ctaSecondary: "Ver Soluciones Reales",
+    },
+    trust: {
+      title: "Construido sobre Experiencia, No Promesas",
+      stats: [
+        { value: "20+", label: "Años en TI", sublabel: "Desarrollador → Gerente → Consultor" },
+        { value: "500+", label: "Conexiones en LinkedIn", sublabel: "Red Establecida en TI" },
+        { value: "100%", label: "Bilingüe", sublabel: "Inglés y Español" },
+        { value: "2", label: "Mercados Atendidos", sublabel: "EE.UU. y México" },
+      ],
+    },
+    problem: {
+      title: "El Problema Que Resuelvo",
+      intro: "Probablemente has visto promesas de IA en todas partes. Pero la mayoría de los pequeños negocios enfrentan las mismas frustraciones:",
+      items: [
+        "Las herramientas de IA empresariales son caras y excesivas para tus necesidades",
+        "Los chatbots caseros se sienten robóticos y frustran a tus clientes",
+        "Los consultores de tecnología hablan jerga y sobre-diseñan todo",
+        "Pasas horas en tareas repetitivas que deberían estar automatizadas",
+        "No estás seguro de qué puede hacer realmente la IA por TU negocio",
+      ],
+      conclusion: "¿Te suena familiar? Por eso exactamente empecé CushLabs.",
+    },
+    approach: {
+      title: "Cómo Trabajo Diferente",
+      items: [
+        {
+          title: "Práctico Sobre Perfecto",
+          description: "Construyo soluciones que funcionan en el mundo real, no demos impresionantes que fallan en producción. Obtienes herramientas que tu equipo realmente usará.",
+        },
+        {
+          title: "Precios Fijos, Sin Sorpresas",
+          description: "Sabrás el costo desde el inicio. Sin facturación por hora que escala, sin cambios de alcance, sin facturas misteriosas al final.",
+        },
+        {
+          title: "Entrega Rápida",
+          description: "La mayoría de proyectos se lanzan en 2-4 semanas. Verás software funcionando rápidamente — no meses de planeación y reuniones.",
+        },
+        {
+          title: "Tú Eres Dueño de Todo",
+          description: "Documentación completa, código limpio, sin dependencia de proveedor. Si nos separamos, te quedas con todo lo que construí.",
+        },
+      ],
+    },
+    about: {
+      title: "Sobre Robert",
+      intro: "Empecé CushLabs después de 20 años viendo negocios luchar con tecnología que se suponía debía facilitar las cosas.",
+      body: "He sido desarrollador, gerente senior de TI, y gerente de proyectos. He visto qué funciona y qué no — desde adentro. Ahora trabajo directamente con fundadores y equipos pequeños desde mi base en Guadalajara, México. Sin capas, sin ejecutivos de cuenta, sin traspasos. La persona con quien hablas es la persona que construye tu solución.",
+      highlight: "Creo que la IA debe ser accesible para todos — no solo para empresas con presupuestos empresariales.",
+      linkedin: "Conectar en LinkedIn",
+    },
+    clients: {
+      title: "Con Quién Trabajo",
+      intro: "CushLabs es ideal si eres:",
+      items: [
+        "Un dueño de pequeño negocio cansado de tareas repetitivas que consumen tu semana",
+        "Un fundador que quiere IA trabajando para ti, no otra herramienta que administrar",
+        "Un líder de operaciones buscando reducir volumen de soporte sin contratar",
+        "Un equipo en EE.UU. o México que valora la comunicación bilingüe",
+        "Alguien que quiere hablar directo, no jerga técnica",
+      ],
+      notFor: "¿No es para ti? Si necesitas infraestructura a escala empresarial, un gran equipo de desarrollo, o investigación de IA de vanguardia — con gusto te refiero a alguien mejor preparado.",
+    },
+    cta: {
+      title: "¿Listo Para Hablar?",
+      subtitle: "Agenda una llamada de descubrimiento gratuita. Cuéntame qué te está consumiendo el tiempo, y te diré honestamente si la IA puede ayudar — y qué implicaría.",
+      button: "Agendar Llamada Gratis",
+      reassurance: "Sin pitch. Sin presión. Solo claridad.",
+    },
+  },
+};
+
+const t = content[locale];
+---
+
+<BaseLayout title={t.meta.title} description={t.meta.description}>
+  <!-- Hero Section -->
+  <section class="relative pt-24 pb-16 overflow-hidden">
+    <!-- Background Image (subtle) -->
+    <div class="absolute inset-0 -z-20">
+      <img
+        src="/images/hero/about-hero.jpg"
+        alt=""
+        class="w-full h-full object-cover opacity-[0.12] dark:opacity-[0.08]"
+      />
+      <div class="absolute inset-0 bg-gradient-to-b from-white/50 via-transparent to-white dark:from-gray-950/50 dark:via-transparent dark:to-gray-950"></div>
+    </div>
+    <!-- Gradient Orbs -->
+    <div class="absolute inset-0 -z-10">
+      <div class="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-cush-orange/15 rounded-full blur-[120px]"></div>
+      <div class="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-cush-orange/10 rounded-full blur-[100px]"></div>
+    </div>
+
+    <Container>
+      <div class="text-center max-w-4xl mx-auto">
+        <span class="inline-block px-3 py-1 text-xs font-display font-semibold text-cush-orange bg-cush-orange/10 rounded-full mb-4">
+          {t.hero.badge}
+        </span>
+        <h1 class="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+          {t.hero.headline}
+        </h1>
+        <p class="text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-3xl mx-auto">
+          {t.hero.subheadline}
+        </p>
+
+        <!-- CTAs -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a
+            href={locale === "es" ? "/es/reservar" : "/consultation"}
+            class="group inline-flex items-center gap-2 px-6 py-3 bg-cush-orange text-white font-display font-semibold rounded-lg hover:bg-cush-orange/90 transition-all shadow-lg shadow-cush-orange/25"
+          >
+            {t.hero.ctaPrimary}
+            <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+          <a
+            href={locale === "es" ? "/es/solutions" : "/solutions"}
+            class="group inline-flex items-center gap-2 px-6 py-3 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 font-display font-semibold rounded-lg hover:border-cush-orange hover:text-cush-orange transition-all"
+          >
+            {t.hero.ctaSecondary}
+            <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </Container>
+  </section>
+
+  <!-- Trust Signals -->
+  <section class="py-16 border-y border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900/50">
+    <Container>
+      <h2 class="text-center font-display text-2xl font-bold text-gray-900 dark:text-white mb-10">
+        {t.trust.title}
+      </h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        {t.trust.stats.map((stat) => (
+          <div class="text-center">
+            <div class="font-display text-4xl md:text-5xl font-bold text-cush-orange mb-2">{stat.value}</div>
+            <div class="font-display font-semibold text-gray-900 dark:text-white">{stat.label}</div>
+            <div class="text-sm text-gray-500 dark:text-gray-400">{stat.sublabel}</div>
+          </div>
+        ))}
+      </div>
+    </Container>
+  </section>
+
+  <!-- The Problem I Solve -->
+  <section class="py-20 lg:py-28">
+    <Container>
+      <div class="max-w-3xl mx-auto">
+        <h2 class="font-display text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
+          {t.problem.title}
+        </h2>
+        <p class="text-lg text-gray-600 dark:text-gray-400 mb-8">
+          {t.problem.intro}
+        </p>
+        <ul class="space-y-4 mb-8">
+          {t.problem.items.map((item) => (
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-red-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span class="text-gray-700 dark:text-gray-300">{item}</span>
+            </li>
+          ))}
+        </ul>
+        <p class="text-xl font-display font-semibold text-cush-orange">
+          {t.problem.conclusion}
+        </p>
+      </div>
+    </Container>
+  </section>
+
+  <!-- How I Work Differently -->
+  <section class="py-20 lg:py-28 bg-gray-50 dark:bg-gray-900/50">
+    <Container>
+      <h2 class="font-display text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-12 text-center">
+        {t.approach.title}
+      </h2>
+      <div class="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+        {t.approach.items.map((item, index) => (
+          <div class="p-6 md:p-8 rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800/50">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 rounded-lg bg-cush-orange/10 flex items-center justify-center flex-shrink-0">
+                <span class="font-display font-bold text-cush-orange">{String(index + 1).padStart(2, '0')}</span>
+              </div>
+              <h3 class="font-display text-xl font-bold text-gray-900 dark:text-white">
+                {item.title}
+              </h3>
+            </div>
+            <p class="text-gray-600 dark:text-gray-400">
+              {item.description}
+            </p>
+          </div>
+        ))}
+      </div>
+    </Container>
+  </section>
+
+  <!-- About Robert -->
+  <section class="py-20 lg:py-28">
+    <Container>
+      <div class="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+        <div class="order-2 lg:order-1">
+          <h2 class="font-display text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
+            {t.about.title}
+          </h2>
+          <p class="text-lg text-gray-600 dark:text-gray-400 mb-4">
+            {t.about.intro}
+          </p>
+          <p class="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
+            {t.about.body}
+          </p>
+          <blockquote class="border-l-4 border-cush-orange pl-6 py-2 mb-8">
+            <p class="text-xl font-display font-medium text-gray-900 dark:text-white italic">
+              "{t.about.highlight}"
+            </p>
+          </blockquote>
+          <a
+            href="https://www.linkedin.com/in/rcushmaniii/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 text-cush-orange font-display font-semibold hover:underline"
+          >
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+            {t.about.linkedin}
+          </a>
+        </div>
+
+        <div class="order-1 lg:order-2">
+          <div class="relative aspect-square max-w-md mx-auto rounded-2xl overflow-hidden shadow-2xl">
+            <img
+              src="/images/about/robert-about.webp"
+              alt="Robert Cushman, Founder of CushLabs.ai"
+              class="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+      </div>
+    </Container>
+  </section>
+
+  <!-- Who I Work With -->
+  <section class="py-20 lg:py-28 bg-gray-50 dark:bg-gray-900/50">
+    <Container>
+      <div class="max-w-3xl mx-auto">
+        <h2 class="font-display text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
+          {t.clients.title}
+        </h2>
+        <p class="text-lg text-gray-600 dark:text-gray-400 mb-8">
+          {t.clients.intro}
+        </p>
+        <ul class="space-y-4 mb-8">
+          {t.clients.items.map((item) => (
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span class="text-gray-700 dark:text-gray-300">{item}</span>
+            </li>
+          ))}
+        </ul>
+        <p class="text-sm text-gray-500 dark:text-gray-400 italic">
+          {t.clients.notFor}
+        </p>
+      </div>
+    </Container>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="py-24 lg:py-32 relative overflow-hidden">
+    <div class="absolute inset-0 -z-10">
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cush-orange/20 rounded-full blur-[120px]"></div>
+    </div>
+
+    <Container>
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="font-display text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+          {t.cta.title}
+        </h2>
+        <p class="text-xl text-gray-600 dark:text-gray-400 mb-8">
+          {t.cta.subtitle}
+        </p>
+        <a
+          href={locale === "es" ? "/es/reservar" : "/consultation"}
+          class="inline-flex items-center gap-3 px-8 py-4 bg-cush-orange text-white font-display font-bold text-lg rounded-xl hover:bg-cush-orange/90 transition-all shadow-lg shadow-cush-orange/25 hover:shadow-xl hover:shadow-cush-orange/30"
+        >
+          {t.cta.button}
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+        <p class="mt-4 text-sm text-gray-500 dark:text-gray-400">
+          {t.cta.reassurance}
+        </p>
+      </div>
+    </Container>
+  </section>
+</BaseLayout>

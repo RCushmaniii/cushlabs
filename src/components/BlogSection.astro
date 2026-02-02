@@ -1,0 +1,86 @@
+---
+import { t } from "../i18n";
+
+interface Props {
+  locale: "en" | "es";
+}
+
+const { locale } = Astro.props;
+const dict = t(locale);
+
+// Format date based on locale
+function formatDate(dateStr: string): string {
+  const date = new Date(dateStr);
+  return date.toLocaleDateString(locale === 'es' ? 'es-MX' : 'en-US', {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+  });
+}
+
+// Generate slug from title
+function slugify(title: string): string {
+  return title
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)/g, '');
+}
+
+const blogUrl = locale === "es" ? "/es/blog" : "/blog";
+---
+
+<section class="py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
+        {dict.blog.title}
+      </h2>
+      <p class="text-lg text-muted max-w-2xl mx-auto">
+        {dict.blog.subtitle}
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      {dict.blog.posts.map((post) => (
+        <a href={`${blogUrl}/${slugify(post.title)}`} class="group block">
+          <div class="p-0 overflow-hidden bg-surface border border-border rounded-xl hover:border-cush-orange/50 hover:shadow-lg transition-all duration-300">
+            <div class="relative aspect-[16/9] bg-cush-gray-900/50 overflow-hidden">
+              <img
+                src={post.image}
+                alt={post.title}
+                class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            <div class="p-6">
+              <div class="flex flex-wrap gap-2 mb-3">
+                {post.tags.map((tag) => (
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-cush-orange/10 text-cush-orange">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              <h3 class="font-display text-lg font-semibold text-foreground mb-2 group-hover:text-cush-orange transition-colors">
+                {post.title}
+              </h3>
+              <p class="text-sm text-muted line-clamp-2 mb-4">
+                {post.description}
+              </p>
+              <p class="text-xs text-muted">
+                {formatDate(post.date)}
+              </p>
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+
+    <div class="text-center mt-12">
+      <a
+        href={blogUrl}
+        class="inline-flex items-center gap-2 px-6 py-3 border border-border bg-surface text-foreground font-display font-semibold rounded-lg hover:border-cush-orange hover:text-cush-orange transition-all duration-300"
+      >
+        {dict.blog.viewAll}
+      </a>
+    </div>
+  </div>
+</section>

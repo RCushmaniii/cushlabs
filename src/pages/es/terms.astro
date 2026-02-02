@@ -1,0 +1,93 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import type { Locale } from "../../i18n";
+
+const locale: Locale = "es";
+
+const content = {
+  title: "Términos de Servicio | CushLabs.ai",
+  description: "Lea los términos y condiciones para usar los servicios de CushLabs.ai.",
+  heading: "Términos de Servicio",
+  lastUpdated: "Última actualización: Febrero 2026",
+  sections: [
+    {
+      title: "Aceptación de Términos",
+      content: "Al acceder o utilizar los servicios de CushLabs.ai, usted acepta estar sujeto a estos Términos de Servicio. Si no está de acuerdo con estos términos, por favor no utilice nuestros servicios."
+    },
+    {
+      title: "Servicios",
+      content: "CushLabs.ai proporciona servicios de consultoría de IA, automatización y desarrollo de software. El alcance específico, los entregables y los términos de cualquier compromiso se detallarán en un acuerdo de servicio separado."
+    },
+    {
+      title: "Propiedad Intelectual",
+      content: "A menos que se especifique lo contrario en un acuerdo de servicio, usted conserva la propiedad de sus datos y contenido. CushLabs.ai conserva la propiedad de sus herramientas propietarias, metodologías y propiedad intelectual preexistente."
+    },
+    {
+      title: "Confidencialidad",
+      content: "Tratamos toda la información del cliente como confidencial. No divulgaremos su información comercial a terceros sin su consentimiento, excepto según lo requiera la ley."
+    },
+    {
+      title: "Términos de Pago",
+      content: "Los términos de pago se especificarán en los acuerdos de servicio individuales. A menos que se acuerde lo contrario, las facturas vencen dentro de los 30 días posteriores a su recepción."
+    },
+    {
+      title: "Limitación de Responsabilidad",
+      content: "CushLabs.ai no será responsable de ningún daño indirecto, incidental, especial o consecuente derivado del uso de nuestros servicios. Nuestra responsabilidad total no excederá los honorarios pagados por el servicio específico en cuestión."
+    },
+    {
+      title: "Terminación",
+      content: "Cualquiera de las partes puede terminar un compromiso de servicio con notificación por escrito según lo especificado en el acuerdo de servicio. Al terminar, usted sigue siendo responsable de cualquier tarifa incurrida antes de la terminación."
+    },
+    {
+      title: "Ley Aplicable",
+      content: "Estos términos se regirán e interpretarán de acuerdo con las leyes aplicables. Cualquier disputa se resolverá mediante negociación de buena fe o, si es necesario, arbitraje vinculante."
+    },
+    {
+      title: "Cambios a los Términos",
+      content: "Nos reservamos el derecho de modificar estos términos en cualquier momento. El uso continuado de nuestros servicios después de los cambios constituye la aceptación de los términos modificados."
+    },
+    {
+      title: "Contacto",
+      content: "Para preguntas sobre estos Términos de Servicio, contáctenos en info@cushlabs.ai."
+    }
+  ]
+};
+---
+
+<BaseLayout title={content.title} description={content.description}>
+  <main class="min-h-screen bg-white dark:bg-gray-950">
+    <!-- Hero -->
+    <section class="relative pt-24 pb-12">
+      <div class="absolute inset-0 -z-10">
+        <div class="absolute top-20 left-1/4 w-96 h-96 bg-cush-orange/10 rounded-full blur-3xl"></div>
+      </div>
+
+      <div class="mx-auto max-w-3xl px-4 text-center">
+        <h1 class="font-display text-4xl font-bold text-gray-900 dark:text-white md:text-5xl">
+          {content.heading}
+        </h1>
+        <p class="mt-4 text-gray-500 dark:text-gray-400">
+          {content.lastUpdated}
+        </p>
+      </div>
+    </section>
+
+    <!-- Content -->
+    <section class="pb-24">
+      <div class="mx-auto max-w-3xl px-4">
+        <div class="prose prose-gray dark:prose-invert max-w-none">
+          {content.sections.map((section) => (
+            <div class="mb-8">
+              <h2 class="font-display text-xl font-semibold text-gray-900 dark:text-white mb-3">
+                {section.title}
+              </h2>
+              <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                {section.content}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

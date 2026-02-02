@@ -1,0 +1,132 @@
+---
+import Container from '../layout/Container.astro';
+
+interface Props {
+  locale: 'en' | 'es';
+}
+
+const { locale } = Astro.props;
+
+const content = {
+  en: {
+    badge: 'Trusted AI Consulting',
+    headline: 'AI That Actually Works for You',
+    subheadline: 'I help small businesses automate support, streamline operations, and reclaim 20+ hours a week — without hiring or complex tech projects.',
+    stats: ['20+ Years IT Experience', 'Fully Bilingual (EN/ES)', 'Serving US & Mexico'],
+    ctaPrimary: 'Book a Free Call',
+    ctaSecondary: 'See How It Works',
+  },
+  es: {
+    badge: 'Consultoría de IA de Confianza',
+    headline: 'IA Que Realmente Trabaja Para Ti',
+    subheadline: 'Ayudo a pequeños negocios a automatizar soporte, optimizar operaciones y recuperar 20+ horas por semana — sin contratar ni proyectos técnicos complejos.',
+    stats: ['20+ Años de Experiencia en TI', 'Totalmente Bilingüe (EN/ES)', 'Sirviendo EE.UU. y México'],
+    ctaPrimary: 'Agendar Llamada Gratis',
+    ctaSecondary: 'Ver Cómo Funciona',
+  },
+};
+
+const t = content[locale];
+---
+
+<section class="relative flex items-center overflow-hidden pt-12 pb-8">
+  <!-- Background Image (very subtle) -->
+  <div class="absolute inset-0 -z-20">
+    <img
+      src="/images/hero/home-hero2.jpg"
+      alt=""
+      class="w-full h-full object-cover opacity-[0.12] dark:opacity-[0.08]"
+    />
+    <div class="absolute inset-0 bg-gradient-to-b from-white/50 via-transparent to-white dark:from-gray-950/50 dark:via-transparent dark:to-gray-950"></div>
+  </div>
+  <!-- Gradient Background with Orbs -->
+  <div class="absolute inset-0 -z-10">
+    <div class="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-cush-orange/20 rounded-full blur-[120px] animate-pulse"></div>
+    <div class="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-cush-orange/10 rounded-full blur-[100px] animate-pulse" style="animation-delay: 1s;"></div>
+    <div class="absolute top-1/2 right-1/3 w-[300px] h-[300px] bg-cush-orange/5 rounded-full blur-[80px] animate-pulse" style="animation-delay: 2s;"></div>
+    <div class="absolute inset-0 opacity-[0.03] dark:opacity-[0.05]" style="background-image: linear-gradient(rgba(0,0,0,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.1) 1px, transparent 1px); background-size: 60px 60px;"></div>
+  </div>
+
+  <Container size="lg">
+    <div class="text-center max-w-4xl mx-auto">
+      <!-- Trust Badge -->
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cush-orange/10 border border-cush-orange/20 mb-5 animate-fade-in">
+        <svg class="w-4 h-4 text-cush-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+        </svg>
+        <span class="text-sm font-medium text-cush-orange">{t.badge}</span>
+      </div>
+
+      <!-- Headline -->
+      <h1 class="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white mb-4 leading-tight tracking-tight animate-fade-in-up">
+        {t.headline}
+      </h1>
+
+      <!-- Subheadline -->
+      <p class="text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-5 max-w-2xl mx-auto animate-fade-in-up" style="animation-delay: 0.1s;">
+        {t.subheadline}
+      </p>
+
+      <!-- Quick Stats -->
+      <div class="flex flex-wrap justify-center gap-6 mb-6 animate-fade-in-up" style="animation-delay: 0.2s;">
+        {t.stats.map((stat) => (
+          <div class="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
+            <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            <span>{stat}</span>
+          </div>
+        ))}
+      </div>
+
+      <!-- CTA Buttons -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up" style="animation-delay: 0.3s;">
+        <a
+          href={locale === 'es' ? '/es/reservar' : '/consultation'}
+          class="group inline-flex items-center gap-2 px-6 py-3 bg-cush-orange text-white font-display font-semibold rounded-lg hover:bg-cush-orange/90 transition-all duration-300 shadow-lg shadow-cush-orange/25 hover:shadow-xl hover:shadow-cush-orange/30"
+        >
+          {t.ctaPrimary}
+          <svg class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+        <a
+          href="#video"
+          class="inline-flex items-center gap-2 px-6 py-3 border-2 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white font-display font-semibold rounded-lg hover:border-cush-orange hover:text-cush-orange dark:hover:border-cush-orange dark:hover:text-cush-orange transition-all duration-300"
+        >
+          {t.ctaSecondary}
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </Container>
+</section>
+
+
+<style>
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.6s ease-out forwards;
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.6s ease-out forwards;
+  }
+</style>

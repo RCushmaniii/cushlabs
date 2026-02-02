@@ -83,6 +83,6 @@ export default [
   },
 
   {
-    ignores: ["dist/", ".astro/", "node_modules/", "public/"],
+    ignores: ["dist/", ".astro/", "node_modules/", "public/", "nextjs-react-agency-starter/"],
   },
 ];

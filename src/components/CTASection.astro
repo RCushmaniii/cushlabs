@@ -1,0 +1,32 @@
+---
+import { t } from "../i18n";
+
+interface Props {
+  locale: "en" | "es";
+}
+
+const { locale } = Astro.props;
+const dict = t(locale);
+
+const consultationUrl = locale === "es" ? "/es/reservar" : "/consultation";
+---
+
+<section class="py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto">
+      <h2 class="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">
+        {dict.cta.title}
+      </h2>
+      <p class="text-lg text-muted mb-8">
+        {dict.cta.subtitle}
+      </p>
+      <a
+        href={consultationUrl}
+        class="inline-flex items-center gap-2 px-8 py-4 bg-cush-orange text-cush-black font-display font-semibold rounded-lg hover:bg-opacity-90 transition-all duration-300 hover:scale-105 text-lg"
+      >
+        {dict.cta.button}
+        <span>→</span>
+      </a>
+    </div>
+  </div>
+</section>

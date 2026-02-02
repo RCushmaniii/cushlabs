@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cd:*)",
+      "Bash(npm run dev:*)",
+      "Bash(npm run build:*)",
+      "Bash(npx astro build:*)",
+      "Bash(npm run check:*)",
+      "Bash(npm run lint)",
+      "Bash(npx astro check:*)",
+      "Bash(npm install:*)",
+      "WebSearch",
+      "Bash(npm uninstall:*)"
+    ]
+  }
+}

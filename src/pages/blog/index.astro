@@ -1,0 +1,120 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Container from "../../components/layout/Container.astro";
+import { t } from "../../i18n";
+
+const locale = (Astro.currentLocale === "es" ? "es" : "en") as "en" | "es";
+const dict = t(locale);
+
+// Format date based on locale
+function formatDate(dateStr: string): string {
+  const date = new Date(dateStr);
+  return date.toLocaleDateString(locale === 'es' ? 'es-MX' : 'en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
+}
+
+// Generate slug from title
+function slugify(title: string): string {
+  return title
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)/g, '');
+}
+
+const hero = {
+  en: {
+    badge: "Blog",
+    headline: "Insights & Ideas",
+    subheadline: "Practical thoughts on AI, automation, and building technology that actually works for small businesses.",
+  },
+  es: {
+    badge: "Blog",
+    headline: "Ideas y Perspectivas",
+    subheadline: "Reflexiones prácticas sobre IA, automatización y construcción de tecnología que realmente funciona para pequeños negocios.",
+  },
+};
+
+const t_hero = hero[locale];
+---
+
+<BaseLayout
+  title={`${dict.blog.title} | CushLabs.ai`}
+  description={t_hero.subheadline}
+>
+  <!-- Hero Section -->
+  <section class="relative pt-24 pb-16 overflow-hidden">
+    <!-- Background Image (subtle) -->
+    <div class="absolute inset-0 -z-20">
+      <img
+        src="/images/hero/blog-hero.jpg"
+        alt=""
+        class="w-full h-full object-cover opacity-[0.12] dark:opacity-[0.08]"
+      />
+      <div class="absolute inset-0 bg-gradient-to-b from-white/50 via-transparent to-white dark:from-gray-950/50 dark:via-transparent dark:to-gray-950"></div>
+    </div>
+    <!-- Gradient Orbs -->
+    <div class="absolute inset-0 -z-10">
+      <div class="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-cush-orange/15 rounded-full blur-[120px]"></div>
+      <div class="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-cush-orange/10 rounded-full blur-[100px]"></div>
+    </div>
+
+    <Container>
+      <div class="text-center max-w-3xl mx-auto">
+        <span class="inline-block px-3 py-1 text-xs font-display font-semibold text-cush-orange bg-cush-orange/10 rounded-full mb-4">
+          {t_hero.badge}
+        </span>
+        <h1 class="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+          {t_hero.headline}
+        </h1>
+        <p class="text-lg text-gray-600 dark:text-gray-400">
+          {t_hero.subheadline}
+        </p>
+      </div>
+    </Container>
+  </section>
+
+  <main class="py-16 lg:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Blog Grid -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {dict.blog.posts.map((post) => (
+          <a
+            href={locale === "es" ? `/es/blog/${slugify(post.title)}` : `/blog/${slugify(post.title)}`}
+            class="group block"
+          >
+            <article class="h-full p-0 overflow-hidden bg-surface border border-border rounded-xl hover:border-cush-orange/50 hover:shadow-lg transition-all duration-300">
+              <div class="relative aspect-[16/9] bg-cush-gray-900/50 overflow-hidden">
+                <img
+                  src={post.image}
+                  alt={post.title}
+                  class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <div class="p-6">
+                <div class="flex flex-wrap gap-2 mb-3">
+                  {post.tags.map((tag) => (
+                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-cush-orange/10 text-cush-orange">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <h2 class="font-display text-xl font-semibold text-foreground mb-2 group-hover:text-cush-orange transition-colors">
+                  {post.title}
+                </h2>
+                <p class="text-sm text-muted line-clamp-2 mb-4">
+                  {post.description}
+                </p>
+                <p class="text-xs text-muted">
+                  {formatDate(post.date)}
+                </p>
+              </div>
+            </article>
+          </a>
+        ))}
+      </div>
+    </div>
+  </main>
+</BaseLayout>

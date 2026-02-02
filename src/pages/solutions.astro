@@ -1,0 +1,347 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Container from "../components/layout/Container.astro";
+import Section from "../components/layout/Section.astro";
+import projectsData from "../data/projects.generated.json";
+
+const { projects } = projectsData;
+const locale = (Astro.currentLocale === "es" ? "es" : "en") as "en" | "es";
+
+const meta = {
+  en: {
+    title: "AI Solutions That Work — CushLabs.ai",
+    description: "Production-ready AI systems for support automation, document processing, and operations. Real projects delivering measurable ROI for small businesses.",
+  },
+  es: {
+    title: "Soluciones de IA Que Funcionan — CushLabs.ai",
+    description: "Sistemas de IA listos para producción para automatización de soporte, procesamiento de documentos y operaciones. Proyectos reales entregando ROI medible para pequeños negocios.",
+  },
+};
+
+const content = {
+  en: {
+    badge: "Solutions",
+    headline: "AI Systems Built to Save Teams Time & Money",
+    subheadline: "Production-ready solutions for support, operations, and internal workflows — built for small teams who want AI without enterprise complexity.",
+    ctaPrimary: "Book Free Consultation",
+    ctaSecondary: "Watch Portfolio Video",
+    reassurance: "No sales pitch. No obligation. Just clarity.",
+    filters: {
+      all: "All",
+      featured: "Featured",
+    },
+    card: {
+      featured: "Featured",
+      details: "Use Case",
+      demo: "Live Demo",
+      howItWorks: "How It Works",
+    },
+    empty: {
+      title: "No projects found",
+      subtitle: "Try adjusting your filters",
+    },
+    bottomCta: {
+      headline: "See Something That Fits Your Business?",
+      subtitle: "Book a free discovery call and I'll show you how a similar solution could work for you.",
+      button: "Book Discovery Call",
+    },
+  },
+  es: {
+    badge: "Soluciones",
+    headline: "Sistemas de IA Diseñados para Ahorrar Tiempo y Dinero",
+    subheadline: "Soluciones listas para producción para soporte, operaciones y flujos internos — construidas para equipos pequeños que quieren IA sin complejidad empresarial.",
+    ctaPrimary: "Agendar Consulta Gratis",
+    ctaSecondary: "Ver Video del Portafolio",
+    reassurance: "Sin pitch de ventas. Sin compromiso. Solo claridad.",
+    filters: {
+      all: "Todo",
+      featured: "Destacados",
+    },
+    card: {
+      featured: "Destacado",
+      details: "Caso de Uso",
+      demo: "Demo en Vivo",
+      howItWorks: "Cómo Funciona",
+    },
+    empty: {
+      title: "No se encontraron proyectos",
+      subtitle: "Intenta ajustar los filtros",
+    },
+    bottomCta: {
+      headline: "¿Ves Algo Que Encaja Con Tu Negocio?",
+      subtitle: "Agenda una llamada de descubrimiento gratuita y te mostraré cómo una solución similar podría funcionar para ti.",
+      button: "Agendar Llamada",
+    },
+  },
+};
+
+const t = content[locale];
+---
+
+<BaseLayout title={meta[locale].title} description={meta[locale].description}>
+  <!-- Hero Section -->
+  <section class="relative pt-24 pb-16 overflow-hidden">
+    <!-- Background Image (very subtle) -->
+    <div class="absolute inset-0 -z-20">
+      <img
+        src="/images/hero/solutuions-hero.jpg"
+        alt=""
+        class="w-full h-full object-cover opacity-[0.12] dark:opacity-[0.08]"
+      />
+      <div class="absolute inset-0 bg-gradient-to-b from-white/50 via-transparent to-white dark:from-gray-950/50 dark:via-transparent dark:to-gray-950"></div>
+    </div>
+    <!-- Gradient Orbs -->
+    <div class="absolute inset-0 -z-10">
+      <div class="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-cush-orange/15 rounded-full blur-[120px]"></div>
+      <div class="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-cush-orange/10 rounded-full blur-[100px]"></div>
+    </div>
+    <Container>
+      <div class="text-center max-w-3xl mx-auto">
+        <span class="inline-block px-3 py-1 text-xs font-display font-semibold text-cush-orange bg-cush-orange/10 rounded-full mb-4">
+          {t.badge}
+        </span>
+        <h1 class="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+          {t.headline}
+        </h1>
+        <p class="text-lg text-gray-600 dark:text-gray-400 mb-8">
+          {t.subheadline}
+        </p>
+
+        <!-- CTAs -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-4">
+          <a
+            href={locale === "es" ? "/es/reservar" : "/consultation"}
+            class="group inline-flex items-center gap-2 px-6 py-3 bg-cush-orange text-white font-display font-semibold rounded-lg hover:bg-cush-orange/90 transition-all shadow-lg shadow-cush-orange/25"
+          >
+            {t.ctaPrimary}
+            <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+          <a
+            href="#projects"
+            class="group inline-flex items-center gap-2 px-6 py-3 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 font-display font-semibold rounded-lg hover:border-cush-orange hover:text-cush-orange transition-all"
+          >
+            {t.ctaSecondary}
+            <svg class="w-5 h-5 group-hover:translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
+          </a>
+        </div>
+
+        <!-- Reassurance -->
+        <p class="text-sm text-gray-500 dark:text-gray-500">
+          {t.reassurance}
+        </p>
+      </div>
+    </Container>
+  </section>
+
+  <!-- Filters & Projects -->
+  <Section id="projects" spacing="sm">
+    <Container>
+      <div class="flex flex-wrap gap-2 justify-center mb-8" id="filters">
+        <button
+          class="filter-btn active px-4 py-2 rounded-lg border border-cush-orange bg-cush-orange/10 font-display text-sm font-semibold text-cush-orange transition-all"
+          data-filter="all"
+        >
+          {t.filters.all}
+        </button>
+        <button
+          class="filter-btn px-4 py-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-transparent font-display text-sm font-semibold text-gray-600 dark:text-gray-400 hover:border-cush-orange hover:text-cush-orange transition-all"
+          data-filter="featured"
+        >
+          {t.filters.featured}
+        </button>
+      </div>
+
+      <!-- Projects Grid -->
+      <div id="projects" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {projects.map((project) => (
+          <article
+            class:list={[
+              "project-card group relative bg-white dark:bg-gray-900 border rounded-xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg",
+              project.isFeatured ? "border-cush-orange/50" : "border-gray-200 dark:border-gray-800 hover:border-cush-orange/30"
+            ]}
+            data-categories={project.categories.join(",")}
+            data-featured={project.isFeatured}
+          >
+            <!-- Badges -->
+            <div class="flex items-center gap-2 mb-3 flex-wrap">
+              {project.isFeatured && (
+                <span class="px-2 py-1 bg-cush-orange text-white text-xs font-display font-semibold rounded">
+                  {t.card.featured}
+                </span>
+              )}
+              {project.status && (
+                <span
+                  class:list={[
+                    "px-2 py-1 text-xs font-display font-semibold rounded",
+                    project.status === "shipped" ? "bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400" :
+                    project.status === "wip" ? "bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-400" :
+                    "bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400"
+                  ]}
+                >
+                  {project.status === "shipped" ? (locale === "es" ? "Lanzado" : "Shipped") :
+                   project.status === "wip" ? (locale === "es" ? "En Progreso" : "In Progress") :
+                   project.status}
+                </span>
+              )}
+            </div>
+
+            <!-- Title -->
+            <h2 class="font-display text-xl font-bold text-gray-900 dark:text-white mb-2">
+              <a
+                href={locale === "es" ? `/es/projects/${project.name}` : `/projects/${project.name}`}
+                class="hover:text-cush-orange transition-colors"
+              >
+                {project.title}
+              </a>
+            </h2>
+
+            <!-- Description - outcome focused if available -->
+            <p class="text-sm text-gray-600 dark:text-gray-400 mb-4 line-clamp-3">
+              {project.summary || project.description || "No description available"}
+            </p>
+
+            <!-- Tags (limited) -->
+            <div class="flex flex-wrap gap-1.5 mb-4">
+              {[...project.categories, ...project.stack].slice(0, 3).map((tag) => (
+                <span class="px-2 py-0.5 bg-gray-100 dark:bg-gray-800 rounded text-xs text-gray-600 dark:text-gray-400">
+                  {tag}
+                </span>
+              ))}
+            </div>
+
+            <!-- Actions -->
+            <div class="flex items-center gap-2 pt-4 border-t border-gray-100 dark:border-gray-800">
+              <a
+                href={locale === "es" ? `/es/projects/${project.name}` : `/projects/${project.name}`}
+                class="inline-flex items-center gap-1 px-3 py-2 bg-cush-orange text-white text-xs font-display font-semibold rounded hover:bg-cush-orange/90 transition-all"
+              >
+                {t.card.details} →
+              </a>
+              {project.demoUrl && (
+                <a
+                  href={project.demoUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-1 px-3 py-2 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 text-xs font-display font-semibold rounded hover:border-cush-orange hover:text-cush-orange transition-all"
+                >
+                  {t.card.demo} ↗
+                </a>
+              )}
+              <a
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-1 px-3 py-2 border border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-400 text-xs font-display rounded hover:border-gray-300 dark:hover:border-gray-600 transition-all"
+              >
+                {t.card.howItWorks} ↗
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+
+      <!-- Empty State -->
+      <div id="empty" class="hidden text-center py-24">
+        <h3 class="font-display text-2xl font-bold text-gray-900 dark:text-white mb-4">
+          {t.empty.title}
+        </h3>
+        <p class="text-gray-600 dark:text-gray-400">{t.empty.subtitle}</p>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Bottom CTA Section -->
+  <Section spacing="xl" class="bg-gray-900 dark:bg-black">
+    <Container size="md">
+      <div class="relative text-center">
+        <div class="absolute inset-0 -z-10">
+          <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[250px] bg-cush-orange/20 rounded-full blur-[80px]"></div>
+        </div>
+        <h2 class="text-3xl md:text-4xl font-display font-bold text-white mb-4">
+          {t.bottomCta.headline}
+        </h2>
+        <p class="text-lg text-gray-400 mb-8 max-w-xl mx-auto">
+          {t.bottomCta.subtitle}
+        </p>
+        <a
+          href={locale === "es" ? "/es/reservar" : "/consultation"}
+          class="group inline-flex items-center gap-2 px-8 py-4 bg-cush-orange text-white font-display font-semibold rounded-lg hover:bg-cush-orange/90 transition-all shadow-lg shadow-cush-orange/25"
+        >
+          {t.bottomCta.button}
+          <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+      </div>
+    </Container>
+  </Section>
+</BaseLayout>
+
+<script>
+  let currentFilter = "all";
+
+  function setFilter(filter: string) {
+    currentFilter = filter;
+
+    document.querySelectorAll(".filter-btn").forEach((btn) => {
+      if (!(btn instanceof HTMLButtonElement)) return;
+      const isActive = btn.getAttribute("data-filter") === filter;
+
+      if (isActive) {
+        btn.classList.add("border-cush-orange", "bg-cush-orange/10", "text-cush-orange");
+        btn.classList.remove("border-gray-200", "dark:border-gray-700", "text-gray-600", "dark:text-gray-400");
+      } else {
+        btn.classList.remove("border-cush-orange", "bg-cush-orange/10", "text-cush-orange");
+        btn.classList.add("border-gray-200", "dark:border-gray-700", "text-gray-600", "dark:text-gray-400");
+      }
+    });
+
+    renderProjects();
+  }
+
+  function renderProjects() {
+    const projects = document.querySelectorAll(".project-card");
+    let visibleCount = 0;
+
+    projects.forEach((card) => {
+      if (!(card instanceof HTMLElement)) return;
+      const isFeatured = card.getAttribute("data-featured") === "true";
+
+      let show = currentFilter === "all" || (currentFilter === "featured" && isFeatured);
+
+      card.style.display = show ? "block" : "none";
+      if (show) visibleCount++;
+    });
+
+    const empty = document.getElementById("empty");
+    const projectsContainer = document.getElementById("projects");
+    if (visibleCount === 0) {
+      empty?.classList.remove("hidden");
+      projectsContainer?.classList.add("hidden");
+    } else {
+      empty?.classList.add("hidden");
+      projectsContainer?.classList.remove("hidden");
+    }
+  }
+
+  document.querySelectorAll(".filter-btn").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      if (!(btn instanceof HTMLButtonElement)) return;
+      const filter = btn.getAttribute("data-filter");
+      if (filter) setFilter(filter);
+    });
+  });
+</script>
+
+<style>
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>

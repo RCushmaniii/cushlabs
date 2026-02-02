@@ -1,0 +1,94 @@
+---
+import Container from '../layout/Container.astro';
+import Section from '../layout/Section.astro';
+
+interface Props {
+  locale: 'en' | 'es';
+}
+
+const { locale } = Astro.props;
+
+const content = {
+  en: {
+    title: 'Results That Matter',
+    metrics: [
+      { value: '40-50%', label: 'Ticket Deflection' },
+      { value: '80%+', label: 'Data Entry Time Saved' },
+      { value: '2-4 weeks', label: 'From Kickoff to Live' },
+    ],
+    testimonial: {
+      quote: 'The automation Robert built saves us 20+ hours per week. ROI was obvious within the first month.',
+      author: 'Sarah Rodriguez',
+      title: 'Operations Director',
+    },
+  },
+  es: {
+    title: 'Resultados Que Importan',
+    metrics: [
+      { value: '40-50%', label: 'Reducción de Tickets' },
+      { value: '80%+', label: 'Ahorro en Captura de Datos' },
+      { value: '2-4 semanas', label: 'De Inicio a Producción' },
+    ],
+    testimonial: {
+      quote: 'La automatización que Robert construyó nos ahorra 20+ horas por semana. El ROI fue obvio desde el primer mes.',
+      author: 'Sarah Rodriguez',
+      title: 'Directora de Operaciones',
+    },
+  },
+};
+
+const t = content[locale];
+---
+
+<Section spacing="lg" class="bg-gray-50 dark:bg-gray-900/50">
+  <Container>
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-display font-bold text-gray-900 dark:text-white">
+        {t.title}
+      </h2>
+    </div>
+
+    <!-- Metric Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-12">
+      {t.metrics.map((metric) => (
+        <div class="text-center p-6 rounded-xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800">
+          <div class="text-4xl md:text-5xl font-display font-bold text-cush-orange mb-2">
+            {metric.value}
+          </div>
+          <div class="text-sm text-gray-600 dark:text-gray-400 uppercase tracking-wider">
+            {metric.label}
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Featured Testimonial -->
+    <div class="max-w-3xl mx-auto">
+      <div class="relative p-8 rounded-2xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 shadow-sm">
+        <!-- Quote mark -->
+        <svg class="absolute top-4 left-4 w-8 h-8 text-cush-orange/20" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+        </svg>
+
+        <blockquote class="relative z-10">
+          <p class="text-xl md:text-2xl text-gray-900 dark:text-white font-medium leading-relaxed mb-6">
+            "{t.testimonial.quote}"
+          </p>
+          <footer class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-cush-orange/10 flex items-center justify-center text-cush-orange font-bold">
+              {t.testimonial.author.charAt(0)}
+            </div>
+            <div>
+              <cite class="not-italic font-semibold text-gray-900 dark:text-white">
+                {t.testimonial.author}
+              </cite>
+              <p class="text-sm text-gray-600 dark:text-gray-400">
+                {t.testimonial.title}
+              </p>
+            </div>
+          </footer>
+        </blockquote>
+      </div>
+    </div>
+  </Container>
+</Section>

@@ -1,0 +1,116 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Container from "../components/layout/Container.astro";
+
+// Detect locale from URL or default to English
+const pathname = Astro.url.pathname;
+const isSpanish = pathname.startsWith('/es');
+const locale = isSpanish ? 'es' : 'en';
+
+const content = {
+  en: {
+    title: "Page Not Found — CushLabs.ai",
+    code: "404",
+    headline: "Oops! This page doesn't exist.",
+    description: "The page you're looking for might have been moved, deleted, or never existed in the first place.",
+    suggestion: "Here are some helpful links instead:",
+    links: [
+      { href: "/", label: "Home" },
+      { href: "/services", label: "Services" },
+      { href: "/solutions", label: "Solutions" },
+      { href: "/contact", label: "Contact" },
+    ],
+    cta: "Back to Home",
+    contact: "Or if you think something's broken,",
+    contactLink: "let me know",
+  },
+  es: {
+    title: "Página No Encontrada — CushLabs.ai",
+    code: "404",
+    headline: "¡Ups! Esta página no existe.",
+    description: "La página que buscas pudo haber sido movida, eliminada, o nunca existió.",
+    suggestion: "Aquí tienes algunos enlaces útiles:",
+    links: [
+      { href: "/es", label: "Inicio" },
+      { href: "/es/services", label: "Servicios" },
+      { href: "/es/solutions", label: "Soluciones" },
+      { href: "/es/contact", label: "Contacto" },
+    ],
+    cta: "Volver al Inicio",
+    contact: "O si crees que algo está roto,",
+    contactLink: "avísame",
+  },
+};
+
+const t = content[locale];
+---
+
+<BaseLayout title={t.title} description={t.description}>
+  <section class="min-h-[80vh] flex items-center justify-center relative overflow-hidden">
+    <!-- Background -->
+    <div class="absolute inset-0 -z-10">
+      <div class="absolute top-1/3 left-1/4 w-[400px] h-[400px] bg-cush-orange/10 rounded-full blur-[120px]"></div>
+      <div class="absolute bottom-1/3 right-1/4 w-[300px] h-[300px] bg-cush-orange/5 rounded-full blur-[100px]"></div>
+      <div class="absolute inset-0 opacity-[0.02] dark:opacity-[0.04]" style="background-image: linear-gradient(rgba(0,0,0,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.1) 1px, transparent 1px); background-size: 60px 60px;"></div>
+    </div>
+
+    <Container size="sm">
+      <div class="text-center">
+        <!-- 404 Code -->
+        <div class="relative inline-block mb-8">
+          <span class="font-display text-[150px] md:text-[200px] font-bold text-gray-100 dark:text-gray-900 leading-none select-none">
+            {t.code}
+          </span>
+          <span class="absolute inset-0 flex items-center justify-center font-display text-[150px] md:text-[200px] font-bold text-cush-orange/20 leading-none select-none" style="transform: translate(4px, 4px);">
+            {t.code}
+          </span>
+        </div>
+
+        <!-- Headline -->
+        <h1 class="font-display text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          {t.headline}
+        </h1>
+
+        <!-- Description -->
+        <p class="text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-md mx-auto">
+          {t.description}
+        </p>
+
+        <!-- Helpful Links -->
+        <p class="text-sm text-gray-500 dark:text-gray-500 mb-4">{t.suggestion}</p>
+        <div class="flex flex-wrap justify-center gap-3 mb-10">
+          {t.links.map((link) => (
+            <a
+              href={link.href}
+              class="px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-800 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+            >
+              {link.label}
+            </a>
+          ))}
+        </div>
+
+        <!-- Primary CTA -->
+        <a
+          href={locale === 'es' ? '/es' : '/'}
+          class="group inline-flex items-center gap-2 px-8 py-4 bg-cush-orange text-white font-display font-semibold rounded-lg hover:bg-cush-orange/90 transition-all shadow-lg shadow-cush-orange/25"
+        >
+          <svg class="w-5 h-5 rotate-180 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+          {t.cta}
+        </a>
+
+        <!-- Contact fallback -->
+        <p class="mt-8 text-sm text-gray-500 dark:text-gray-500">
+          {t.contact}{" "}
+          <a
+            href={locale === 'es' ? '/es/contact' : '/contact'}
+            class="text-cush-orange hover:underline"
+          >
+            {t.contactLink}
+          </a>.
+        </p>
+      </div>
+    </Container>
+  </section>
+</BaseLayout>

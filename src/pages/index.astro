@@ -1,152 +1,58 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { t } from "../i18n";
+import Hero from "../components/home/Hero.astro";
+import VideoSection from "../components/home/VideoSection.astro";
+import ProblemSolution from "../components/home/ProblemSolution.astro";
+import ServicesOverview from "../components/home/ServicesOverview.astro";
+import HowItWorks from "../components/home/HowItWorks.astro";
+import Results from "../components/home/Results.astro";
+import FeaturedWorkSection from "../components/FeaturedWorkSection.astro";
+import TestimonialsSection from "../components/TestimonialsSection.astro";
+import FAQ from "../components/home/FAQ.astro";
+import CTASection from "../components/home/CTASection.astro";
 
 const locale = (Astro.currentLocale === "es" ? "es" : "en") as "en" | "es";
-const dict = t(locale);
+
+const meta = {
+  en: {
+    title: "CushLabs.ai — AI Automation for Small Business",
+    description: "I help small businesses automate support, streamline operations, and reclaim 20+ hours a week with practical AI solutions. Bilingual service for US & Mexico.",
+  },
+  es: {
+    title: "CushLabs.ai — Automatización con IA para Pequeños Negocios",
+    description: "Ayudo a pequeños negocios a automatizar soporte, optimizar operaciones y recuperar 20+ horas a la semana con soluciones de IA prácticas. Servicio bilingüe para EE.UU. y México.",
+  },
+};
 ---
 
-<BaseLayout
-  title="CushLabs.ai | AI Integration & Software Development"
-  description="AI consulting and modern software development for SMBs. Production-ready chatbots, automation, and custom applications. Launching soon."
->
-  <main
-    class="min-h-screen flex flex-col items-center justify-center text-center px-4"
-  >
-    <div class="relative z-10 max-w-4xl mx-auto">
-      <div
-        class="inline-flex items-center gap-2 mb-8 opacity-0 animate-[fadeIn_0.8s_ease-out_0.2s_forwards]"
-      >
-        <div class="w-2.5 h-2.5 bg-cush-orange rounded-full"></div>
-        <span
-          class="font-display text-sm font-semibold tracking-wider uppercase text-muted"
-          >{dict.home.brand}</span
-        >
-      </div>
+<BaseLayout title={meta[locale].title} description={meta[locale].description}>
+  <!-- Section 1: Hero -->
+  <Hero locale={locale} />
 
-      <h1
-        class="font-display text-5xl md:text-7xl font-bold text-foreground mb-6 leading-tight tracking-tight opacity-0 animate-[fadeIn_0.8s_ease-out_0.4s_forwards]"
-      >
-        {
-          dict.home.headline.split("\n").map((line, i) =>
-            i === 0 ? (
-              line
-            ) : (
-              <>
-                <br />
-                {line}
-              </>
-            )
-          )
-        }
-      </h1>
+  <!-- Section 2: Video Explainer -->
+  <VideoSection locale={locale} />
 
-      <p
-        class="text-lg md:text-xl text-muted mb-8 max-w-2xl mx-auto opacity-0 animate-[fadeIn_0.8s_ease-out_0.6s_forwards]"
-      >
-        {dict.home.subheadline}
-      </p>
+  <!-- Section 3: Problem → Solution Bridge -->
+  <ProblemSolution locale={locale} />
 
-      <div
-        class="flex flex-col sm:flex-row gap-4 justify-center items-center opacity-0 animate-[fadeIn_0.8s_ease-out_0.8s_forwards]"
-      >
-        <a
-          href={locale === "es" ? "/es/reservar" : "/consultation"}
-          class="inline-flex items-center gap-2 px-6 py-3 bg-cush-orange text-cush-black font-display font-semibold rounded-lg hover:bg-opacity-90 transition-all duration-300 hover:scale-105"
-        >
-          {dict.home.ctaConsultation}
-          <span>→</span>
-        </a>
-        <a
-          href={locale === "es" ? "/es/work" : "/work"}
-          class="inline-flex items-center gap-2 px-6 py-3 border border-border bg-surface text-foreground font-display font-semibold rounded-lg hover:border-cush-orange hover:text-cush-orange transition-all duration-300"
-        >
-          {dict.home.ctaWork}
-        </a>
-      </div>
+  <!-- Section 4: Services Overview -->
+  <ServicesOverview locale={locale} />
 
-      <div class="mt-16 opacity-0 animate-[fadeIn_0.8s_ease-out_1s_forwards]">
-        <p class="text-sm text-muted mb-2">{dict.home.launchingSoon}</p>
-        <div
-          class="inline-flex items-center gap-4 text-2xl font-display font-bold text-foreground"
-        >
-          <div class="flex flex-col items-center">
-            <span id="days">00</span>
-            <span class="text-xs text-muted font-normal">Days</span>
-          </div>
-          <span class="text-muted">:</span>
-          <div class="flex flex-col items-center">
-            <span id="hours">00</span>
-            <span class="text-xs text-muted font-normal">Hours</span>
-          </div>
-          <span class="text-muted">:</span>
-          <div class="flex flex-col items-center">
-            <span id="minutes">00</span>
-            <span class="text-xs text-muted font-normal">Minutes</span>
-          </div>
-          <span class="text-muted">:</span>
-          <div class="flex flex-col items-center">
-            <span id="seconds">00</span>
-            <span class="text-xs text-muted font-normal">Seconds</span>
-          </div>
-        </div>
-      </div>
-    </div>
+  <!-- Section 5: How It Works -->
+  <HowItWorks locale={locale} />
 
-    <div
-      class="absolute top-1/4 left-1/2 -translate-x-1/2 w-96 h-96 bg-cush-orange/10 rounded-full blur-3xl -z-10 animate-pulse"
-    >
-    </div>
-  </main>
+  <!-- Section 6: Results -->
+  <Results locale={locale} />
+
+  <!-- Section 7: Recent Work -->
+  <FeaturedWorkSection locale={locale} />
+
+  <!-- Section 8: Testimonials -->
+  <TestimonialsSection locale={locale} />
+
+  <!-- Section 9: FAQ -->
+  <FAQ locale={locale} />
+
+  <!-- Section 10: Final CTA -->
+  <CTASection locale={locale} />
 </BaseLayout>
-
-<script>
-  const LAUNCH_DAYS = 35;
-  const launchDate = new Date();
-  launchDate.setDate(launchDate.getDate() + LAUNCH_DAYS);
-
-  function updateCountdown() {
-    const now = new Date().getTime();
-    const distance = launchDate.getTime() - now;
-
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor(
-      (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-    );
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-    document.getElementById("days")!.textContent = String(days).padStart(
-      2,
-      "0"
-    );
-    document.getElementById("hours")!.textContent = String(hours).padStart(
-      2,
-      "0"
-    );
-    document.getElementById("minutes")!.textContent = String(minutes).padStart(
-      2,
-      "0"
-    );
-    document.getElementById("seconds")!.textContent = String(seconds).padStart(
-      2,
-      "0"
-    );
-  }
-
-  updateCountdown();
-  setInterval(updateCountdown, 1000);
-</script>
-
-<style>
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-</style>

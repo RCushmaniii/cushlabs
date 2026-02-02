@@ -1,0 +1,116 @@
+---
+import Container from '../layout/Container.astro';
+import Section from '../layout/Section.astro';
+
+interface Props {
+  locale: 'en' | 'es';
+}
+
+const { locale } = Astro.props;
+
+const content = {
+  en: {
+    title: 'How It Works',
+    subtitle: 'A simple process — you\'re live in 2-4 weeks.',
+    steps: [
+      {
+        number: 1,
+        title: 'Discovery',
+        description: '30-minute call to understand your business, identify the highest-impact automation opportunity, and define clear goals. No commitment required.',
+        icon: 'clipboard',
+      },
+      {
+        number: 2,
+        title: 'Build',
+        description: 'I design and implement your solution — chatbots, automations, or document workflows. You see progress weekly, not at the end.',
+        icon: 'code',
+      },
+      {
+        number: 3,
+        title: 'Launch',
+        description: 'We deploy, test with real users, and I hand over everything documented. Optional ongoing support if you want it.',
+        icon: 'rocket',
+      },
+    ],
+  },
+  es: {
+    title: 'Cómo Funciona',
+    subtitle: 'Un proceso simple — estás en vivo en 2-4 semanas.',
+    steps: [
+      {
+        number: 1,
+        title: 'Descubrimiento',
+        description: 'Llamada de 30 minutos para entender tu negocio, identificar la oportunidad de automatización de mayor impacto y definir metas claras. Sin compromiso.',
+        icon: 'clipboard',
+      },
+      {
+        number: 2,
+        title: 'Construcción',
+        description: 'Diseño e implemento tu solución — chatbots, automatizaciones o flujos de documentos. Ves progreso semanalmente, no al final.',
+        icon: 'code',
+      },
+      {
+        number: 3,
+        title: 'Lanzamiento',
+        description: 'Desplegamos, probamos con usuarios reales y te entrego todo documentado. Soporte continuo opcional si lo deseas.',
+        icon: 'rocket',
+      },
+    ],
+  },
+};
+
+const t = content[locale];
+---
+
+<Section spacing="lg" class="bg-white dark:bg-gray-950">
+  <Container>
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-display font-bold text-gray-900 dark:text-white mb-4">
+        {t.title}
+      </h2>
+      <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+        {t.subtitle}
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto relative">
+      <!-- Connecting line (desktop only) -->
+      <div class="hidden md:block absolute top-8 left-[16.67%] right-[16.67%] h-0.5 bg-gray-200 dark:bg-gray-800"></div>
+
+      {t.steps.map((step) => (
+        <div class="relative text-center">
+          <!-- Icon Container -->
+          <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-cush-orange/10 text-cush-orange mb-6 relative z-10 bg-white dark:bg-gray-950">
+            {step.icon === 'clipboard' && (
+              <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+              </svg>
+            )}
+            {step.icon === 'code' && (
+              <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+              </svg>
+            )}
+            {step.icon === 'rocket' && (
+              <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" />
+              </svg>
+            )}
+            <!-- Step Number Badge -->
+            <span class="absolute -top-2 -right-2 w-6 h-6 bg-cush-orange text-white text-sm font-bold rounded-full flex items-center justify-center">
+              {step.number}
+            </span>
+          </div>
+
+          <!-- Content -->
+          <h3 class="text-xl font-display font-semibold text-gray-900 dark:text-white mb-3">
+            {step.title}
+          </h3>
+          <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+            {step.description}
+          </p>
+        </div>
+      ))}
+    </div>
+  </Container>
+</Section>

@@ -15,35 +15,46 @@ const toEs = getLocalizedPath(pathname, "es");
 ---
 
 <header
-  class="sticky top-0 z-50 border-b border-border bg-base/80 backdrop-blur"
+  id="main-header"
+  class="sticky top-0 z-50 border-b border-border bg-white/90 dark:bg-cush-gray-900/90 backdrop-blur-sm transition-colors duration-300"
 >
   <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4">
     <a
       href={locale === "es" ? "/es" : "/"}
-      class="font-display text-sm font-semibold tracking-wider uppercase"
+      class="flex items-center gap-2 font-display text-base font-semibold tracking-wider uppercase text-gray-900 dark:text-white"
     >
+      <img
+        src="/images/logo/test_logo.jpg"
+        alt="CushLabs logo"
+        class="h-8 w-8 rounded-md object-cover"
+      />
       {dict.home.brand}
     </a>
 
     <nav class="hidden items-center gap-6 md:flex">
       <a
-        href={locale === "es" ? "/es/work" : "/work"}
-        class="text-sm text-muted hover:text-foreground transition-colors"
-        >{dict.nav.work}</a
+        href={locale === "es" ? "/es/about" : "/about"}
+        class="text-base text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
+        >{dict.nav.about}</a
+      >
+      <a
+        href={locale === "es" ? "/es/services" : "/services"}
+        class="text-base text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
+        >{locale === "es" ? "Servicios" : "Services"}</a
+      >
+      <a
+        href={locale === "es" ? "/es/solutions" : "/solutions"}
+        class="text-base text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
+        >{locale === "es" ? "Soluciones" : "Solutions"}</a
       >
       <a
         href={locale === "es" ? "/es/blog" : "/blog"}
-        class="text-sm text-muted hover:text-foreground transition-colors"
+        class="text-base text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
         >{dict.nav.blog}</a
       >
       <a
-        href={locale === "es" ? "/es/case-studies" : "/case-studies"}
-        class="text-sm text-muted hover:text-foreground transition-colors"
-        >{dict.nav.caseStudies}</a
-      >
-      <a
         href={locale === "es" ? "/es/contact" : "/contact"}
-        class="text-sm text-muted hover:text-foreground transition-colors"
+        class="text-base text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
         >{dict.nav.contact}</a
       >
     </nav>
@@ -92,23 +103,16 @@ const toEs = getLocalizedPath(pathname, "es");
         <span class="sr-only" data-theme-label>Toggle theme</span>
       </button>
 
-      <div
-        class="flex items-center gap-1 rounded-lg border border-border bg-surface p-1"
-      >
+      <div class="flex items-center rounded-lg border border-border bg-surface">
         <a
-          class={`px-2 py-1 text-xs font-display font-semibold rounded-md ${locale === "en" ? "bg-cush-orange text-black" : "text-muted hover:text-foreground"}`}
+          class={`px-2.5 py-1.5 text-xs font-display font-semibold transition-colors ${locale === "en" ? "bg-cush-orange text-black rounded-l-md" : "text-muted hover:text-foreground"}`}
           href={toEn}
           hreflang="en"
-        >
-          EN
-        </a>
-        <a
-          class={`px-2 py-1 text-xs font-display font-semibold rounded-md ${locale === "es" ? "bg-cush-orange text-black" : "text-muted hover:text-foreground"}`}
+        >EN</a><a
+          class={`px-2.5 py-1.5 text-xs font-display font-semibold transition-colors ${locale === "es" ? "bg-cush-orange text-black rounded-r-md" : "text-muted hover:text-foreground"}`}
           href={toEs}
           hreflang="es"
-        >
-          ES
-        </a>
+        >ES</a>
       </div>
     </div>
   </div>

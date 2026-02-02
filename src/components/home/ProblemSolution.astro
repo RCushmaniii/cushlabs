@@ -1,0 +1,63 @@
+---
+import Container from '../layout/Container.astro';
+import Section from '../layout/Section.astro';
+
+interface Props {
+  locale: 'en' | 'es';
+}
+
+const { locale } = Astro.props;
+
+const content = {
+  en: {
+    problemTitle: 'The Problem',
+    problemLead: 'Your team is buried in repetitive work.',
+    problemText: 'Support tickets pile up. Data gets re-keyed from invoices. New hires take months to learn undocumented processes. You know AI could help — but where do you start?',
+    solutionTitle: 'The Solution',
+    solutionLead: 'AI that handles the routine, so your team can focus on what matters.',
+    solutionText: 'I build practical automation — chatbots, document processing, workflow systems — that deliver measurable ROI in 60-90 days. Fixed pricing. No tech jargon. You own everything I build.',
+  },
+  es: {
+    problemTitle: 'El Problema',
+    problemLead: 'Tu equipo está enterrado en trabajo repetitivo.',
+    problemText: 'Los tickets de soporte se acumulan. Los datos se vuelven a capturar de facturas. Los nuevos empleados tardan meses en aprender procesos sin documentar. Sabes que la IA podría ayudar — pero ¿por dónde empezar?',
+    solutionTitle: 'La Solución',
+    solutionLead: 'IA que maneja lo rutinario, para que tu equipo se enfoque en lo importante.',
+    solutionText: 'Construyo automatización práctica — chatbots, procesamiento de documentos, sistemas de flujo de trabajo — que entregan ROI medible en 60-90 días. Precios fijos. Sin jerga técnica. Todo lo que construyo es tuyo.',
+  },
+};
+
+const t = content[locale];
+---
+
+<Section spacing="lg" class="bg-white dark:bg-gray-950">
+  <Container size="md">
+    <div class="grid md:grid-cols-2 gap-12 md:gap-16">
+      <!-- Problem -->
+      <div>
+        <h2 class="text-sm font-display font-semibold text-cush-orange uppercase tracking-wider mb-4">
+          {t.problemTitle}
+        </h2>
+        <p class="text-2xl md:text-3xl font-display font-bold text-gray-900 dark:text-white mb-4">
+          {t.problemLead}
+        </p>
+        <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+          {t.problemText}
+        </p>
+      </div>
+
+      <!-- Solution -->
+      <div>
+        <h2 class="text-sm font-display font-semibold text-green-600 dark:text-green-500 uppercase tracking-wider mb-4">
+          {t.solutionTitle}
+        </h2>
+        <p class="text-2xl md:text-3xl font-display font-bold text-gray-900 dark:text-white mb-4">
+          {t.solutionLead}
+        </p>
+        <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+          {t.solutionText}
+        </p>
+      </div>
+    </div>
+  </Container>
+</Section>

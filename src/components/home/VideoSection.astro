@@ -1,0 +1,99 @@
+---
+import Container from '../layout/Container.astro';
+import Section from '../layout/Section.astro';
+
+interface Props {
+  locale: 'en' | 'es';
+}
+
+const { locale } = Astro.props;
+
+const content = {
+  en: {
+    label: 'See how it works',
+    note: '2-minute video — no commitment',
+  },
+  es: {
+    label: 'Ver cómo funciona',
+    note: 'Video de 2 minutos — sin compromiso',
+  },
+};
+
+const t = content[locale];
+---
+
+<Section id="video" spacing="sm" class="relative">
+  <Container size="md">
+    <div class="relative max-w-4xl mx-auto rounded-2xl overflow-hidden shadow-2xl shadow-black/20 border border-gray-200 dark:border-gray-800">
+      <!-- Video Container -->
+      <div id="video-container" class="relative aspect-video bg-gray-900 cursor-pointer group">
+        <!-- Poster/Thumbnail -->
+        <div id="video-poster" class="absolute inset-0">
+          <img
+            src="/videos/putting_ai_to_work_poster.jpg"
+            alt="Putting AI to Work video thumbnail"
+            class="w-full h-full object-cover"
+          />
+          <!-- Play Button Overlay -->
+          <div class="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/30 transition-colors">
+            <div class="text-center">
+              <div class="w-20 h-20 mx-auto mb-4 rounded-full bg-cush-orange/90 flex items-center justify-center group-hover:bg-cush-orange group-hover:scale-110 transition-all duration-300 shadow-lg shadow-black/30">
+                <svg class="w-10 h-10 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
+              <p class="text-white font-medium mb-1 drop-shadow-md">{t.label}</p>
+              <p class="text-white/70 text-sm drop-shadow-md">{t.note}</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Video Element (lazy loaded, hidden until played) -->
+        <video
+          id="hero-video"
+          class="w-full h-full object-cover hidden"
+          controls
+          preload="none"
+          playsinline
+        >
+          <source src="/videos/Putting_AI_to_Work.mp4" type="video/mp4" />
+        </video>
+      </div>
+    </div>
+  </Container>
+</Section>
+
+<script>
+  const container = document.getElementById('video-container');
+  const poster = document.getElementById('video-poster');
+  const video = document.getElementById('hero-video') as HTMLVideoElement;
+
+  if (container && poster && video) {
+    // Preload video after page finishes loading (low priority)
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(() => {
+        video.preload = 'auto';
+      }, { timeout: 3000 });
+    } else {
+      // Fallback for Safari
+      window.addEventListener('load', () => {
+        setTimeout(() => {
+          video.preload = 'auto';
+        }, 2000);
+      });
+    }
+
+    poster.addEventListener('click', () => {
+      poster.classList.add('hidden');
+      video.classList.remove('hidden');
+      video.play();
+    });
+
+    video.addEventListener('ended', () => {
+      video.pause();
+      video.currentTime = 0;
+      video.classList.add('hidden');
+      poster.classList.remove('hidden');
+    });
+  }
+</script>

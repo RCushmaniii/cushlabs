@@ -1,27 +1,48 @@
 ---
 // Inline script to apply theme before paint (prevents flash)
+// Defaults to light during daytime (7am-7pm Mexico City time), dark at night
 ---
 
 <script is:inline>
   (function () {
     try {
       const stored = localStorage.getItem("theme");
-      const prefersDark =
-        window.matchMedia &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches;
-      const theme =
-        stored === "light" || stored === "dark"
-          ? stored
-          : prefersDark
-            ? "dark"
-            : "light";
+
+      // If user has explicitly set a theme, respect it
+      if (stored === "light" || stored === "dark") {
+        if (stored === "dark") {
+          document.documentElement.classList.add("dark");
+        } else {
+          document.documentElement.classList.remove("dark");
+        }
+        return;
+      }
+
+      // No stored preference - use time-based default (Mexico City timezone)
+      // Mexico City is America/Mexico_City (UTC-6 standard, UTC-5 DST)
+      function isDaytimeInMexicoCity() {
+        try {
+          const now = new Date();
+          const mexicoTime = new Date(now.toLocaleString("en-US", { timeZone: "America/Mexico_City" }));
+          const hour = mexicoTime.getHours();
+          // Daytime: 7am (7) to 7pm (19)
+          return hour >= 7 && hour < 19;
+        } catch (e) {
+          // Fallback: assume daytime if timezone API fails
+          return true;
+        }
+      }
+
+      const isDaytime = isDaytimeInMexicoCity();
+      const theme = isDaytime ? "light" : "dark";
+
       if (theme === "dark") {
         document.documentElement.classList.add("dark");
       } else {
         document.documentElement.classList.remove("dark");
       }
     } catch (e) {
-      // no-op
+      // no-op - default to light
     }
   })();
 </script>

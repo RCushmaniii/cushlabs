@@ -1,0 +1,129 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { t } from "../../i18n";
+
+// Get all posts for static paths
+export function getStaticPaths() {
+  const enDict = t('en');
+
+  const paths = enDict.blog.posts.map((post) => {
+    const slug = post.title
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/(^-|-$)/g, '');
+    return {
+      params: { slug },
+      props: { post },
+    };
+  });
+
+  return paths;
+}
+
+const locale = (Astro.currentLocale === "es" ? "es" : "en") as "en" | "es";
+const dict = t(locale);
+
+// Helper functions
+function slugify(title: string): string {
+  return title
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)/g, '');
+}
+
+function formatDate(dateStr: string): string {
+  const date = new Date(dateStr);
+  return date.toLocaleDateString(locale === 'es' ? 'es-MX' : 'en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
+}
+
+const { slug } = Astro.params;
+
+// Find the post by slug in current locale
+const post = dict.blog.posts.find((p) => slugify(p.title) === slug);
+
+if (!post) {
+  return Astro.redirect(locale === 'es' ? '/es/blog' : '/blog');
+}
+
+const blogUrl = locale === "es" ? "/es/blog" : "/blog";
+---
+
+<BaseLayout
+  title={`${post.title} | CushLabs.ai`}
+  description={post.description}
+>
+  <main class="min-h-screen py-20 lg:py-28">
+    <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Back Link -->
+      <div class="mb-8">
+        <a
+          href={blogUrl}
+          class="inline-flex items-center gap-2 text-muted hover:text-cush-orange transition-colors"
+        >
+          <span>←</span>
+          <span>{locale === "es" ? "Volver al blog" : "Back to Blog"}</span>
+        </a>
+      </div>
+
+      <!-- Header -->
+      <header class="mb-12">
+        <div class="flex flex-wrap gap-2 mb-4">
+          {post.tags.map((tag) => (
+            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-cush-orange/10 text-cush-orange">
+              {tag}
+            </span>
+          ))}
+        </div>
+        <h1 class="font-display text-4xl md:text-5xl font-bold text-foreground mb-4 leading-tight">
+          {post.title}
+        </h1>
+        <p class="text-xl text-muted mb-6">
+          {post.description}
+        </p>
+        <time class="text-sm text-muted">
+          {formatDate(post.date)}
+        </time>
+      </header>
+
+      <!-- Featured Image -->
+      <div class="relative aspect-[16/9] mb-12 rounded-xl overflow-hidden">
+        <img
+          src={post.image}
+          alt={post.title}
+          class="h-full w-full object-cover"
+        />
+      </div>
+
+      <!-- Content Placeholder -->
+      <div class="prose prose-lg dark:prose-invert max-w-none">
+        <p class="text-muted text-lg leading-relaxed">
+          {locale === "es"
+            ? "Este artículo está en desarrollo. Pronto compartiremos contenido completo sobre este tema. Mientras tanto, no dudes en programar una consulta gratuita si tienes preguntas específicas."
+            : "This article is coming soon. We'll be sharing full content on this topic shortly. In the meantime, feel free to schedule a free consultation if you have specific questions."}
+        </p>
+
+        <div class="mt-12 p-8 bg-surface border border-border rounded-xl text-center">
+          <h3 class="font-display text-2xl font-bold text-foreground mb-4">
+            {locale === "es" ? "¿Tienes preguntas?" : "Have Questions?"}
+          </h3>
+          <p class="text-muted mb-6">
+            {locale === "es"
+              ? "Agenda una consulta gratuita para discutir tus proyectos de IA y automatización."
+              : "Schedule a free consultation to discuss your AI and automation projects."}
+          </p>
+          <a
+            href={locale === "es" ? "/es/reservar" : "/consultation"}
+            class="inline-flex items-center gap-2 px-6 py-3 bg-cush-orange text-cush-black font-display font-semibold rounded-lg hover:bg-opacity-90 transition-all duration-300 hover:scale-105"
+          >
+            {locale === "es" ? "Agendar Consulta" : "Schedule Consultation"}
+            <span>→</span>
+          </a>
+        </div>
+      </div>
+    </article>
+  </main>
+</BaseLayout>

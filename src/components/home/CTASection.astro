@@ -1,0 +1,61 @@
+---
+import Container from '../layout/Container.astro';
+import Section from '../layout/Section.astro';
+
+interface Props {
+  locale: 'en' | 'es';
+}
+
+const { locale } = Astro.props;
+
+const content = {
+  en: {
+    headline: 'Ready to Reclaim 20+ Hours a Week?',
+    subtitle: 'Book a free 30-minute discovery call. I\'ll identify your highest-ROI automation opportunity — no commitment, no jargon.',
+    cta: 'Book Free Call',
+    note: 'I respond within 24 hours · Flexible hours for US & Mexico',
+  },
+  es: {
+    headline: '¿Listo para Recuperar 20+ Horas a la Semana?',
+    subtitle: 'Agenda una llamada de descubrimiento gratuita de 30 minutos. Identificaré tu oportunidad de automatización de mayor ROI — sin compromiso, sin jerga.',
+    cta: 'Agendar Llamada Gratis',
+    note: 'Respondo en menos de 24 horas · Horarios flexibles para EE.UU. y México',
+  },
+};
+
+const t = content[locale];
+---
+
+<Section spacing="xl" class="bg-gray-900 dark:bg-black">
+  <Container size="md">
+    <div class="relative text-center">
+      <!-- Background Glow -->
+      <div class="absolute inset-0 -z-10">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-cush-orange/20 rounded-full blur-[100px]"></div>
+      </div>
+
+      <!-- Content -->
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-white mb-6">
+        {t.headline}
+      </h2>
+
+      <p class="text-lg md:text-xl text-gray-400 mb-8 max-w-xl mx-auto">
+        {t.subtitle}
+      </p>
+
+      <a
+        href={locale === 'es' ? '/es/reservar' : '/consultation'}
+        class="group inline-flex items-center gap-2 px-8 py-4 bg-cush-orange text-white font-display font-semibold rounded-lg hover:bg-cush-orange/90 transition-all duration-300 shadow-lg shadow-cush-orange/25 hover:shadow-xl hover:shadow-cush-orange/30"
+      >
+        {t.cta}
+        <svg class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+      </a>
+
+      <p class="mt-6 text-sm text-gray-500">
+        {t.note}
+      </p>
+    </div>
+  </Container>
+</Section>

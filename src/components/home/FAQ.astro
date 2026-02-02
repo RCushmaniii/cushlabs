@@ -1,0 +1,100 @@
+---
+import Container from '../layout/Container.astro';
+import Section from '../layout/Section.astro';
+
+interface Props {
+  locale: 'en' | 'es';
+}
+
+const { locale } = Astro.props;
+
+const content = {
+  en: {
+    title: 'Common Questions',
+    faqs: [
+      {
+        question: 'How much does this cost?',
+        answer: 'Projects range from $1,500 to $15,000+ depending on scope, with most clients investing $3,500-$8,500. I\'ll give you exact pricing after our discovery call — no surprises.',
+      },
+      {
+        question: 'How long until I see results?',
+        answer: 'Most solutions are live in 2-4 weeks. You\'ll typically see measurable ROI within 60-90 days of launch.',
+      },
+      {
+        question: 'Do I need technical skills to use this?',
+        answer: 'No. I build solutions your team can use without coding. Everything comes with documentation and training.',
+      },
+      {
+        question: 'What if it doesn\'t work?',
+        answer: 'We test extensively before launch. If something isn\'t performing, I optimize it during the 30-day support window included in every project.',
+      },
+      {
+        question: 'Do you work with companies in Mexico?',
+        answer: 'Yes. I\'m fully bilingual (English/Spanish) and serve clients in both the US and Mexico. Flexible hours for both time zones.',
+      },
+    ],
+  },
+  es: {
+    title: 'Preguntas Frecuentes',
+    faqs: [
+      {
+        question: '¿Cuánto cuesta?',
+        answer: 'Los proyectos van desde $1,500 hasta $15,000+ USD dependiendo del alcance, con la mayoría de clientes invirtiendo $3,500-$8,500. Te daré el precio exacto después de nuestra llamada de descubrimiento — sin sorpresas.',
+      },
+      {
+        question: '¿Cuánto tiempo hasta ver resultados?',
+        answer: 'La mayoría de las soluciones están en vivo en 2-4 semanas. Típicamente verás ROI medible dentro de 60-90 días del lanzamiento.',
+      },
+      {
+        question: '¿Necesito habilidades técnicas para usar esto?',
+        answer: 'No. Construyo soluciones que tu equipo puede usar sin programar. Todo viene con documentación y capacitación.',
+      },
+      {
+        question: '¿Qué pasa si no funciona?',
+        answer: 'Probamos extensivamente antes del lanzamiento. Si algo no está funcionando, lo optimizo durante la ventana de soporte de 30 días incluida en cada proyecto.',
+      },
+      {
+        question: '¿Trabajas con empresas en México?',
+        answer: 'Sí. Soy totalmente bilingüe (inglés/español) y sirvo a clientes tanto en EE.UU. como en México. Horarios flexibles para ambas zonas horarias.',
+      },
+    ],
+  },
+};
+
+const t = content[locale];
+---
+
+<Section spacing="lg" class="bg-white dark:bg-gray-950">
+  <Container size="md">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-display font-bold text-gray-900 dark:text-white">
+        {t.title}
+      </h2>
+    </div>
+
+    <div class="space-y-4">
+      {t.faqs.map((faq, index) => (
+        <details class="group border border-gray-200 dark:border-gray-800 rounded-xl overflow-hidden">
+          <summary class="flex items-center justify-between p-6 cursor-pointer bg-white dark:bg-gray-900 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+            <h3 class="text-lg font-display font-semibold text-gray-900 dark:text-white pr-4">
+              {faq.question}
+            </h3>
+            <svg
+              class="w-5 h-5 text-gray-500 transform transition-transform group-open:rotate-180 flex-shrink-0"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </summary>
+          <div class="px-6 pb-6 pt-2 bg-white dark:bg-gray-900">
+            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+              {faq.answer}
+            </p>
+          </div>
+        </details>
+      ))}
+    </div>
+  </Container>
+</Section>

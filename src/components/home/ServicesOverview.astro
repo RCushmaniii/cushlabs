@@ -1,0 +1,198 @@
+---
+import Container from '../layout/Container.astro';
+import Section from '../layout/Section.astro';
+
+interface Props {
+  locale: 'en' | 'es';
+}
+
+const { locale } = Astro.props;
+
+const content = {
+  en: {
+    title: 'What I Build',
+    subtitle: 'Practical AI solutions with fixed pricing and measurable ROI.',
+    featured: {
+      badge: 'Most Popular',
+      title: 'AI Support Automation',
+      benefit1: 'Your customers get instant answers 24/7.',
+      benefit2: 'Your team handles 40-50% fewer tickets.',
+      bestFor: 'Best for: E-commerce · SaaS · Professional Services',
+      price: 'Starting at $3,500',
+      cta: 'Learn More',
+    },
+    services: [
+      {
+        title: 'Document Automation',
+        description: 'Stop re-keying data from invoices and forms. AI extracts and routes in seconds.',
+        bestFor: 'Best for: Finance · Legal · Healthcare Admin',
+        price: 'Starting at $3,000',
+        cta: 'Learn More',
+      },
+      {
+        title: 'Operations & SOP Systems',
+        description: 'Turn tribal knowledge into documented, trainable processes your team actually follows.',
+        bestFor: 'Best for: Manufacturing · Warehouse · Distribution',
+        price: 'Starting at $4,500',
+        cta: 'Learn More',
+      },
+    ],
+    viewAll: 'View All Services & Pricing',
+  },
+  es: {
+    title: 'Lo Que Construyo',
+    subtitle: 'Soluciones de IA prácticas con precios fijos y ROI medible.',
+    featured: {
+      badge: 'Más Popular',
+      title: 'Automatización de Soporte con IA',
+      benefit1: 'Tus clientes obtienen respuestas instantáneas 24/7.',
+      benefit2: 'Tu equipo maneja 40-50% menos tickets.',
+      bestFor: 'Ideal para: E-commerce · SaaS · Servicios Profesionales',
+      price: 'Desde $3,500 USD',
+      cta: 'Saber Más',
+    },
+    services: [
+      {
+        title: 'Automatización de Documentos',
+        description: 'Deja de recapturar datos de facturas y formularios. La IA extrae y enruta en segundos.',
+        bestFor: 'Ideal para: Finanzas · Legal · Admin de Salud',
+        price: 'Desde $3,000 USD',
+        cta: 'Saber Más',
+      },
+      {
+        title: 'Sistemas de Operaciones y SOPs',
+        description: 'Convierte el conocimiento tribal en procesos documentados que tu equipo realmente sigue.',
+        bestFor: 'Ideal para: Manufactura · Almacén · Distribución',
+        price: 'Desde $4,500 USD',
+        cta: 'Saber Más',
+      },
+    ],
+    viewAll: 'Ver Todos los Servicios y Precios',
+  },
+};
+
+const t = content[locale];
+---
+
+<Section spacing="lg" class="bg-gray-50 dark:bg-gray-900/50">
+  <Container>
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-display font-bold text-gray-900 dark:text-white mb-4">
+        {t.title}
+      </h2>
+      <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+        {t.subtitle}
+      </p>
+    </div>
+
+    <div class="max-w-5xl mx-auto">
+      <!-- Featured Service Card -->
+      <div class="mb-8 p-8 rounded-2xl border-2 border-cush-orange/30 bg-white dark:bg-gray-900 shadow-lg relative overflow-hidden">
+        <!-- Badge -->
+        <div class="absolute top-4 right-4">
+          <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-cush-orange text-white text-xs font-semibold">
+            <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+            </svg>
+            {t.featured.badge}
+          </span>
+        </div>
+
+        <div class="flex items-start gap-6">
+          <!-- Icon -->
+          <div class="hidden sm:flex w-16 h-16 rounded-xl bg-cush-orange/10 items-center justify-center text-cush-orange flex-shrink-0">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+            </svg>
+          </div>
+
+          <div class="flex-1">
+            <h3 class="text-xl md:text-2xl font-display font-bold text-gray-900 dark:text-white mb-3">
+              {t.featured.title}
+            </h3>
+            <ul class="space-y-2 mb-4">
+              <li class="flex items-center gap-2 text-gray-600 dark:text-gray-300">
+                <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                {t.featured.benefit1}
+              </li>
+              <li class="flex items-center gap-2 text-gray-600 dark:text-gray-300">
+                <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                {t.featured.benefit2}
+              </li>
+            </ul>
+            <p class="text-sm text-gray-500 dark:text-gray-500 mb-4">{t.featured.bestFor}</p>
+            <div class="flex flex-col sm:flex-row sm:items-center gap-4">
+              <span class="text-2xl font-display font-bold text-gray-900 dark:text-white">{t.featured.price}</span>
+              <a
+                href={locale === 'es' ? '/es/services#support' : '/services#support'}
+                class="inline-flex items-center gap-2 text-cush-orange font-medium hover:underline"
+              >
+                {t.featured.cta}
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Other Services Grid -->
+      <div class="grid md:grid-cols-2 gap-6">
+        {t.services.map((service, index) => (
+          <div class="p-6 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 hover:border-cush-orange/30 transition-colors">
+            <!-- Icon -->
+            <div class="w-12 h-12 rounded-lg bg-cush-orange/10 flex items-center justify-center text-cush-orange mb-4">
+              {index === 0 ? (
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+              ) : (
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+                </svg>
+              )}
+            </div>
+
+            <h3 class="text-lg font-display font-semibold text-gray-900 dark:text-white mb-2">
+              {service.title}
+            </h3>
+            <p class="text-gray-600 dark:text-gray-400 text-sm mb-3">
+              {service.description}
+            </p>
+            <p class="text-xs text-gray-500 dark:text-gray-500 mb-4">{service.bestFor}</p>
+            <div class="flex items-center justify-between">
+              <span class="text-lg font-display font-bold text-gray-900 dark:text-white">{service.price}</span>
+              <a
+                href={locale === 'es' ? `/es/services#service-${index}` : `/services#service-${index}`}
+                class="inline-flex items-center gap-1 text-sm text-cush-orange font-medium hover:underline"
+              >
+                {service.cta}
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- View All Link -->
+      <div class="text-center mt-8">
+        <a
+          href={locale === 'es' ? '/es/services' : '/services'}
+          class="inline-flex items-center gap-2 text-cush-orange font-medium hover:underline"
+        >
+          {t.viewAll}
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </Container>
+</Section>

@@ -1,0 +1,162 @@
+---
+interface Props {
+  title: string;
+  subtitle?: string;
+  imageSrc: string;
+  imageAlt?: string;
+  badge?: string;
+  backLink?: {
+    href: string;
+    label: string;
+  };
+}
+
+const { title, subtitle, imageSrc, imageAlt = "Hero image", badge, backLink } = Astro.props;
+---
+
+<section class="relative min-h-[50vh] md:min-h-[60vh] flex items-center justify-center overflow-hidden">
+  <!-- Parallax Background Image -->
+  <div class="parallax-bg absolute inset-0 -z-20">
+    <img
+      src={imageSrc}
+      alt={imageAlt}
+      class="w-full h-[120%] object-cover object-center"
+      style="transform: translateY(var(--parallax-offset, 0px));"
+    />
+  </div>
+
+  <!-- Gradient Overlay - darker for text readability -->
+  <div class="absolute inset-0 -z-10 bg-gradient-to-b from-black/50 via-black/60 to-background"></div>
+
+  <!-- Aurora Effect -->
+  <div class="absolute inset-0 -z-10 opacity-40">
+    <div class="aurora-blob absolute top-1/4 left-1/4 w-96 h-96 bg-cush-orange/20 rounded-full blur-3xl animate-aurora-1"></div>
+    <div class="aurora-blob absolute bottom-1/4 right-1/4 w-80 h-80 bg-cush-orange/10 rounded-full blur-3xl animate-aurora-2"></div>
+  </div>
+
+  <!-- Content -->
+  <div class="relative z-10 max-w-4xl mx-auto px-4 text-center py-20">
+    {backLink && (
+      <a
+        href={backLink.href}
+        class="inline-flex items-center gap-2 text-sm font-display font-semibold text-white/80 hover:text-cush-orange transition-colors mb-8"
+      >
+        <span>←</span>
+        <span>{backLink.label}</span>
+      </a>
+    )}
+
+    {badge && (
+      <div class="inline-flex items-center gap-2 mb-6 animate-fade-in">
+        <div class="w-2.5 h-2.5 bg-cush-orange rounded-full"></div>
+        <span class="font-display text-sm font-semibold tracking-wider uppercase text-white/80">
+          {badge}
+        </span>
+      </div>
+    )}
+
+    <h1 class="kinetic-headline font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight tracking-tight">
+      {title}
+    </h1>
+
+    {subtitle && (
+      <p class="text-lg md:text-xl text-white/80 max-w-2xl mx-auto animate-fade-in-delay">
+        {subtitle}
+      </p>
+    )}
+
+    <slot />
+  </div>
+</section>
+
+<script>
+  // Parallax effect on scroll
+  const parallaxBg = document.querySelector('.parallax-bg img') as HTMLImageElement;
+
+  if (parallaxBg) {
+    // Check for reduced motion preference
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (!prefersReducedMotion) {
+      window.addEventListener('scroll', () => {
+        const scrolled = window.scrollY;
+        const offset = scrolled * 0.4;
+        parallaxBg.style.setProperty('--parallax-offset', `${offset}px`);
+        parallaxBg.style.transform = `translateY(${offset}px)`;
+      }, { passive: true });
+    }
+  }
+</script>
+
+<style>
+  @keyframes aurora-1 {
+    0%, 100% {
+      transform: translate(0, 0) scale(1);
+    }
+    33% {
+      transform: translate(30px, -30px) scale(1.1);
+    }
+    66% {
+      transform: translate(-20px, 20px) scale(0.9);
+    }
+  }
+
+  @keyframes aurora-2 {
+    0%, 100% {
+      transform: translate(0, 0) scale(1);
+    }
+    33% {
+      transform: translate(-40px, 20px) scale(0.9);
+    }
+    66% {
+      transform: translate(30px, -30px) scale(1.1);
+    }
+  }
+
+  .animate-aurora-1 {
+    animation: aurora-1 20s ease-in-out infinite;
+  }
+
+  .animate-aurora-2 {
+    animation: aurora-2 25s ease-in-out infinite;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+
+  .animate-fade-in-delay {
+    opacity: 0;
+    animation: fadeIn 0.8s ease-out 0.3s forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Kinetic headline - subtle weight shift on hover */
+  .kinetic-headline {
+    transition: font-weight 0.3s ease;
+  }
+
+  /* Respect reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-aurora-1,
+    .animate-aurora-2 {
+      animation: none;
+    }
+
+    .animate-fade-in,
+    .animate-fade-in-delay {
+      animation: none;
+      opacity: 1;
+    }
+  }
+</style>

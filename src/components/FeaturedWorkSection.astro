@@ -1,0 +1,105 @@
+---
+import { t } from "../i18n";
+
+interface Props {
+  locale: "en" | "es";
+}
+
+const { locale } = Astro.props;
+const dict = t(locale);
+
+// Import generated projects data
+import projectsData from "../data/projects.generated.json";
+
+// Default images for projects without custom images
+const defaultImages = [
+  '/images/work/work-1.jpg',
+  '/images/work/work-2.jpg',
+  '/images/work/work-3.jpg',
+];
+
+// Helper to strip HTML/markdown from summary text
+function stripMarkup(text: string): string {
+  if (!text) return '';
+  return text
+    .replace(/<[^>]*>/g, '') // Remove HTML tags
+    .replace(/\*\*/g, '')     // Remove bold markdown
+    .replace(/\*/g, '')       // Remove italic markdown
+    .trim();
+}
+
+// Get first 3 featured projects, or first 3 projects if none are featured
+const allProjects = projectsData.projects || [];
+const featuredProjects = allProjects
+  .filter((p: any) => p.isFeatured)
+  .slice(0, 3);
+const projectsRaw = featuredProjects.length > 0
+  ? featuredProjects
+  : allProjects.slice(0, 3);
+
+// Add default images and normalized data to projects
+const projects = projectsRaw.map((p: any, i: number) => ({
+  ...p,
+  displayImage: p.image || defaultImages[i % defaultImages.length],
+  displaySummary: stripMarkup(p.summary || p.description || ''),
+  displayTags: p.stack?.length > 0 ? p.stack : (p.tags?.length > 0 ? p.tags : p.topics || []),
+}));
+
+const solutionsUrl = locale === "es" ? "/es/solutions" : "/solutions";
+---
+
+<section class="py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
+        {dict.featuredWork.title}
+      </h2>
+      <p class="text-lg text-muted max-w-2xl mx-auto">
+        {dict.featuredWork.subtitle}
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      {projects.map((project: any) => (
+        <a
+          href={locale === "es" ? `/es/projects/${project.name}` : `/projects/${project.name}`}
+          class="group block"
+        >
+          <div class="p-0 overflow-hidden bg-surface border border-border rounded-xl hover:border-cush-orange/50 hover:shadow-lg transition-all duration-300">
+            <div class="relative aspect-[16/9] bg-cush-gray-900/50 overflow-hidden">
+              <img
+                src={project.displayImage}
+                alt={`${project.title} cover`}
+                class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            <div class="p-6">
+              <div class="flex flex-wrap gap-2 mb-3">
+                {project.displayTags?.slice(0, 2).map((tech: string) => (
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-cush-orange/10 text-cush-orange">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+              <h3 class="font-display text-lg font-semibold text-foreground mb-2 group-hover:text-cush-orange transition-colors">
+                {project.title}
+              </h3>
+              <p class="text-sm text-muted line-clamp-2">
+                {project.displaySummary}
+              </p>
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+
+    <div class="text-center mt-12">
+      <a
+        href={solutionsUrl}
+        class="inline-flex items-center gap-2 px-6 py-3 border border-border bg-surface text-foreground font-display font-semibold rounded-lg hover:border-cush-orange hover:text-cush-orange transition-all duration-300"
+      >
+        {dict.featuredWork.viewAll}
+      </a>
+    </div>
+  </div>
+</section>

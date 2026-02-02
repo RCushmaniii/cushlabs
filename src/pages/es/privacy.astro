@@ -1,0 +1,81 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import type { Locale } from "../../i18n";
+
+const locale: Locale = "es";
+
+const content = {
+  title: "Política de Privacidad | CushLabs.ai",
+  description: "Conozca cómo CushLabs.ai recopila, utiliza y protege su información personal.",
+  heading: "Política de Privacidad",
+  lastUpdated: "Última actualización: Febrero 2026",
+  sections: [
+    {
+      title: "Información que Recopilamos",
+      content: "Recopilamos la información que usted nos proporciona directamente, como cuando completa un formulario de contacto, agenda una consulta o se comunica con nosotros por correo electrónico. Esto puede incluir su nombre, dirección de correo electrónico, número de teléfono, nombre de la empresa y cualquier otra información que decida proporcionar."
+    },
+    {
+      title: "Cómo Usamos su Información",
+      content: "Utilizamos la información que recopilamos para responder a sus consultas, proporcionar nuestros servicios de consultoría, enviarle actualizaciones sobre nuestros servicios (con su consentimiento) y mejorar nuestro sitio web y servicios."
+    },
+    {
+      title: "Compartir Información",
+      content: "No vendemos, intercambiamos ni transferimos su información personal a terceros sin su consentimiento, excepto cuando sea necesario para proporcionar nuestros servicios o según lo requiera la ley."
+    },
+    {
+      title: "Seguridad de Datos",
+      content: "Implementamos medidas de seguridad apropiadas para proteger su información personal contra acceso no autorizado, alteración, divulgación o destrucción."
+    },
+    {
+      title: "Cookies",
+      content: "Nuestro sitio web puede utilizar cookies para mejorar su experiencia de navegación. Puede optar por desactivar las cookies a través de la configuración de su navegador, aunque esto puede afectar algunas funcionalidades del sitio web."
+    },
+    {
+      title: "Sus Derechos",
+      content: "Usted tiene derecho a acceder, corregir o eliminar su información personal. Para ejercer estos derechos, contáctenos en info@cushlabs.ai."
+    },
+    {
+      title: "Contáctenos",
+      content: "Si tiene alguna pregunta sobre esta Política de Privacidad, contáctenos en info@cushlabs.ai."
+    }
+  ]
+};
+---
+
+<BaseLayout title={content.title} description={content.description}>
+  <main class="min-h-screen bg-white dark:bg-gray-950">
+    <!-- Hero -->
+    <section class="relative pt-24 pb-12">
+      <div class="absolute inset-0 -z-10">
+        <div class="absolute top-20 left-1/4 w-96 h-96 bg-cush-orange/10 rounded-full blur-3xl"></div>
+      </div>
+
+      <div class="mx-auto max-w-3xl px-4 text-center">
+        <h1 class="font-display text-4xl font-bold text-gray-900 dark:text-white md:text-5xl">
+          {content.heading}
+        </h1>
+        <p class="mt-4 text-gray-500 dark:text-gray-400">
+          {content.lastUpdated}
+        </p>
+      </div>
+    </section>
+
+    <!-- Content -->
+    <section class="pb-24">
+      <div class="mx-auto max-w-3xl px-4">
+        <div class="prose prose-gray dark:prose-invert max-w-none">
+          {content.sections.map((section) => (
+            <div class="mb-8">
+              <h2 class="font-display text-xl font-semibold text-gray-900 dark:text-white mb-3">
+                {section.title}
+              </h2>
+              <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                {section.content}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

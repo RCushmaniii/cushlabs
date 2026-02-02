@@ -1,0 +1,118 @@
+---
+import Container from '../layout/Container.astro';
+import Section from '../layout/Section.astro';
+
+interface Props {
+  locale: 'en' | 'es';
+}
+
+const { locale } = Astro.props;
+
+const features = [
+  {
+    icon: 'chat',
+    title: locale === 'es' ? 'Chatbots de IA' : 'AI Chatbots',
+    description: locale === 'es'
+      ? 'Asistentes conversacionales que entienden tu negocio y atienden a tus clientes 24/7.'
+      : 'Conversational assistants that understand your business and serve your customers 24/7.',
+  },
+  {
+    icon: 'automation',
+    title: locale === 'es' ? 'Automatización' : 'Automation',
+    description: locale === 'es'
+      ? 'Conecta tus herramientas y elimina tareas repetitivas con flujos inteligentes.'
+      : 'Connect your tools and eliminate repetitive tasks with intelligent workflows.',
+  },
+  {
+    icon: 'code',
+    title: locale === 'es' ? 'Apps Personalizadas' : 'Custom Apps',
+    description: locale === 'es'
+      ? 'Aplicaciones a medida que resuelven problemas específicos de tu negocio.'
+      : 'Tailored applications that solve your specific business problems.',
+  },
+  {
+    icon: 'brain',
+    title: locale === 'es' ? 'Consultoría de IA' : 'AI Consulting',
+    description: locale === 'es'
+      ? 'Estrategia clara para integrar IA en tu negocio sin complicaciones técnicas.'
+      : 'Clear strategy to integrate AI into your business without technical headaches.',
+  },
+  {
+    icon: 'globe',
+    title: locale === 'es' ? 'Bilingüe' : 'Bilingual',
+    description: locale === 'es'
+      ? 'Atención completa en español e inglés, ideal para mercados de EE.UU. y México.'
+      : 'Full service in English and Spanish, ideal for US and Mexico markets.',
+  },
+  {
+    icon: 'support',
+    title: locale === 'es' ? 'Soporte Continuo' : 'Ongoing Support',
+    description: locale === 'es'
+      ? 'No te dejo solo después del lanzamiento. Soporte y mejoras cuando las necesites.'
+      : "I don't leave you alone after launch. Support and improvements when you need them.",
+  },
+];
+---
+
+<Section spacing="lg">
+  <Container>
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-display font-bold text-gray-900 dark:text-white mb-4">
+        {locale === 'es' ? 'Lo Que Ofrezco' : 'What I Offer'}
+      </h2>
+      <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+        {locale === 'es'
+          ? 'Soluciones de IA prácticas que entregan resultados reales para tu negocio.'
+          : 'Practical AI solutions that deliver real results for your business.'}
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+      {features.map((feature) => (
+        <div class="group p-6 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/50 hover:border-cush-orange/50 hover:shadow-lg hover:shadow-cush-orange/5 transition-all duration-300">
+          <!-- Icon -->
+          <div class="w-12 h-12 rounded-lg bg-cush-orange/10 flex items-center justify-center mb-4 text-cush-orange group-hover:bg-cush-orange group-hover:text-white transition-colors duration-300">
+            {feature.icon === 'chat' && (
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+              </svg>
+            )}
+            {feature.icon === 'automation' && (
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            )}
+            {feature.icon === 'code' && (
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+              </svg>
+            )}
+            {feature.icon === 'brain' && (
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+              </svg>
+            )}
+            {feature.icon === 'globe' && (
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+              </svg>
+            )}
+            {feature.icon === 'support' && (
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
+              </svg>
+            )}
+          </div>
+
+          <!-- Content -->
+          <h3 class="text-lg font-display font-semibold text-gray-900 dark:text-white mb-2">
+            {feature.title}
+          </h3>
+          <p class="text-gray-600 dark:text-gray-400 text-sm">
+            {feature.description}
+          </p>
+        </div>
+      ))}
+    </div>
+  </Container>
+</Section>

@@ -1,0 +1,81 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import type { Locale } from "../i18n";
+
+const locale: Locale = "en";
+
+const content = {
+  title: "Privacy Policy | CushLabs.ai",
+  description: "Learn how CushLabs.ai collects, uses, and protects your personal information.",
+  heading: "Privacy Policy",
+  lastUpdated: "Last updated: February 2026",
+  sections: [
+    {
+      title: "Information We Collect",
+      content: "We collect information you provide directly to us, such as when you fill out a contact form, book a consultation, or communicate with us via email. This may include your name, email address, phone number, company name, and any other information you choose to provide."
+    },
+    {
+      title: "How We Use Your Information",
+      content: "We use the information we collect to respond to your inquiries, provide our consulting services, send you updates about our services (with your consent), and improve our website and services."
+    },
+    {
+      title: "Information Sharing",
+      content: "We do not sell, trade, or otherwise transfer your personal information to third parties without your consent, except as necessary to provide our services or as required by law."
+    },
+    {
+      title: "Data Security",
+      content: "We implement appropriate security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction."
+    },
+    {
+      title: "Cookies",
+      content: "Our website may use cookies to enhance your browsing experience. You can choose to disable cookies through your browser settings, though this may affect some website functionality."
+    },
+    {
+      title: "Your Rights",
+      content: "You have the right to access, correct, or delete your personal information. To exercise these rights, please contact us at info@cushlabs.ai."
+    },
+    {
+      title: "Contact Us",
+      content: "If you have any questions about this Privacy Policy, please contact us at info@cushlabs.ai."
+    }
+  ]
+};
+---
+
+<BaseLayout title={content.title} description={content.description}>
+  <main class="min-h-screen bg-white dark:bg-gray-950">
+    <!-- Hero -->
+    <section class="relative pt-24 pb-12">
+      <div class="absolute inset-0 -z-10">
+        <div class="absolute top-20 left-1/4 w-96 h-96 bg-cush-orange/10 rounded-full blur-3xl"></div>
+      </div>
+
+      <div class="mx-auto max-w-3xl px-4 text-center">
+        <h1 class="font-display text-4xl font-bold text-gray-900 dark:text-white md:text-5xl">
+          {content.heading}
+        </h1>
+        <p class="mt-4 text-gray-500 dark:text-gray-400">
+          {content.lastUpdated}
+        </p>
+      </div>
+    </section>
+
+    <!-- Content -->
+    <section class="pb-24">
+      <div class="mx-auto max-w-3xl px-4">
+        <div class="prose prose-gray dark:prose-invert max-w-none">
+          {content.sections.map((section) => (
+            <div class="mb-8">
+              <h2 class="font-display text-xl font-semibold text-gray-900 dark:text-white mb-3">
+                {section.title}
+              </h2>
+              <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                {section.content}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

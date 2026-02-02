@@ -1,0 +1,93 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import type { Locale } from "../i18n";
+
+const locale: Locale = "en";
+
+const content = {
+  title: "Terms of Service | CushLabs.ai",
+  description: "Read the terms and conditions for using CushLabs.ai services.",
+  heading: "Terms of Service",
+  lastUpdated: "Last updated: February 2026",
+  sections: [
+    {
+      title: "Acceptance of Terms",
+      content: "By accessing or using CushLabs.ai services, you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our services."
+    },
+    {
+      title: "Services",
+      content: "CushLabs.ai provides AI consulting, automation, and software development services. The specific scope, deliverables, and terms of any engagement will be outlined in a separate service agreement."
+    },
+    {
+      title: "Intellectual Property",
+      content: "Unless otherwise specified in a service agreement, you retain ownership of your data and content. CushLabs.ai retains ownership of its proprietary tools, methodologies, and pre-existing intellectual property."
+    },
+    {
+      title: "Confidentiality",
+      content: "We treat all client information as confidential. We will not disclose your business information to third parties without your consent, except as required by law."
+    },
+    {
+      title: "Payment Terms",
+      content: "Payment terms will be specified in individual service agreements. Unless otherwise agreed, invoices are due within 30 days of receipt."
+    },
+    {
+      title: "Limitation of Liability",
+      content: "CushLabs.ai shall not be liable for any indirect, incidental, special, or consequential damages arising from the use of our services. Our total liability shall not exceed the fees paid for the specific service in question."
+    },
+    {
+      title: "Termination",
+      content: "Either party may terminate a service engagement with written notice as specified in the service agreement. Upon termination, you remain responsible for any fees incurred prior to termination."
+    },
+    {
+      title: "Governing Law",
+      content: "These terms shall be governed by and construed in accordance with applicable laws. Any disputes shall be resolved through good-faith negotiation or, if necessary, binding arbitration."
+    },
+    {
+      title: "Changes to Terms",
+      content: "We reserve the right to modify these terms at any time. Continued use of our services after changes constitutes acceptance of the modified terms."
+    },
+    {
+      title: "Contact",
+      content: "For questions about these Terms of Service, please contact us at info@cushlabs.ai."
+    }
+  ]
+};
+---
+
+<BaseLayout title={content.title} description={content.description}>
+  <main class="min-h-screen bg-white dark:bg-gray-950">
+    <!-- Hero -->
+    <section class="relative pt-24 pb-12">
+      <div class="absolute inset-0 -z-10">
+        <div class="absolute top-20 left-1/4 w-96 h-96 bg-cush-orange/10 rounded-full blur-3xl"></div>
+      </div>
+
+      <div class="mx-auto max-w-3xl px-4 text-center">
+        <h1 class="font-display text-4xl font-bold text-gray-900 dark:text-white md:text-5xl">
+          {content.heading}
+        </h1>
+        <p class="mt-4 text-gray-500 dark:text-gray-400">
+          {content.lastUpdated}
+        </p>
+      </div>
+    </section>
+
+    <!-- Content -->
+    <section class="pb-24">
+      <div class="mx-auto max-w-3xl px-4">
+        <div class="prose prose-gray dark:prose-invert max-w-none">
+          {content.sections.map((section) => (
+            <div class="mb-8">
+              <h2 class="font-display text-xl font-semibold text-gray-900 dark:text-white mb-3">
+                {section.title}
+              </h2>
+              <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                {section.content}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
