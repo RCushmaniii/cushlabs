@@ -26,8 +26,8 @@ const canonicalURL = new URL(canonicalPath, Astro.site);
 const enURL = new URL(getLocalizedPath(pathname, "en"), Astro.site);
 const esURL = new URL(getLocalizedPath(pathname, "es"), Astro.site);
 
-// OG Image - use custom if provided, otherwise default (fallback to hero image until proper OG image exists)
-const defaultOgImage = `${Astro.site}images/hero/home-hero2.jpg`;
+// OG Image - use custom if provided, otherwise default
+const defaultOgImage = `${Astro.site}images/og/cushlabs_logo_lt.jpg`;
 const resolvedOgImage = ogImage ? `${Astro.site}${ogImage.replace(/^\//, '')}` : defaultOgImage;
 
 // Locale mapping for OG
