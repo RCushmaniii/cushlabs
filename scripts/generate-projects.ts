@@ -1,6 +1,6 @@
 import { config } from 'dotenv';
 import { Octokit } from '@octokit/rest';
-import { writeFileSync } from 'fs';
+import { writeFileSync, existsSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
@@ -8,6 +8,9 @@ config();
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
+
+// Check for existing projects file
+const outputPath = join(__dirname, '../src/data/projects.generated.json');
 
 interface Project {
   id: number;
@@ -35,10 +38,14 @@ interface Project {
 }
 
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
-const GITHUB_OWNER = process.env.GITHUB_OWNER || 'cushdog';
+const GITHUB_OWNER = process.env.GITHUB_OWNER || 'RCushmaniii';
 
 if (!GITHUB_TOKEN) {
-  console.error('❌ GITHUB_TOKEN environment variable is required');
+  if (existsSync(outputPath)) {
+    console.log('⚠️  GITHUB_TOKEN not set, using existing projects.generated.json');
+    process.exit(0);
+  }
+  console.error('❌ GITHUB_TOKEN environment variable is required (no existing projects file found)');
   process.exit(1);
 }
 
@@ -208,8 +215,6 @@ async function generateProjects() {
     console.log(`  ✅ ${project.title} (${categories.join(', ') || 'uncategorized'})`);
   }
 
-  const outputPath = join(__dirname, '../src/data/projects.generated.json');
-  
   const output = {
     generatedAt: new Date().toISOString(),
     count: projects.length,
