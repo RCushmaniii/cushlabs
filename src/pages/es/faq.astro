@@ -1,0 +1,169 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import type { Locale } from "../../i18n";
+
+const locale: Locale = "es";
+
+const content = {
+  title: "Preguntas Frecuentes | CushLabs.ai",
+  description: "Obtén respuestas a preguntas comunes sobre consultoría de IA, tiempos de implementación, precios, seguridad de datos y trabajar con CushLabs.ai.",
+  heading: "Preguntas Frecuentes",
+  subheading: "Todo lo que necesitas saber sobre trabajar conmigo",
+  categories: [
+    {
+      name: "Precios y Proceso",
+      faqs: [
+        {
+          question: "¿Cuánto cuesta? ¿Es accesible para PyMEs?",
+          answer: "Los Sprints de Descubrimiento típicamente empiezan en miles de dólares. Las construcciones completas son de alcance fijo y se cotizan después del descubrimiento. Diseñado para PyMEs, no presupuestos empresariales. Sabrás el costo exacto antes de empezar—sin sorpresas."
+        },
+        {
+          question: "¿Cuánto tiempo toma la implementación? ¿Necesitamos ingenieros?",
+          answer: "La mayoría de los proyectos se entregan en 2-6 semanas dependiendo del alcance. No necesitas ingenieros—solo un punto de contacto que hable inglés (líder de Ops/Ventas/TI) para coordinar. Yo manejo la construcción, integración, pruebas y entrega."
+        },
+        {
+          question: "¿Qué está incluido en un proyecto?",
+          answer: "Cada proyecto incluye: auditoría de conocimiento y estructura de fuentes, personalidad del asistente y reglas de tono, validación y rutas de transferencia humana, panel de análisis, despliegue consciente del rendimiento, y documentación completa con un manual operativo."
+        },
+      ]
+    },
+    {
+      name: "Calidad y Seguridad",
+      faqs: [
+        {
+          question: "¿Qué pasa si la IA da respuestas incorrectas y daña nuestra reputación?",
+          answer: "Construyo con validación y atribución de fuentes. Cada respuesta está basada en tus fuentes de conocimiento aprobadas, y el sistema transfiere a un humano cuando hay incertidumbre. Sin código espagueti—solo sistemas probados y de grado de producción."
+        },
+        {
+          question: "¿Cómo manejas la seguridad de datos y privacidad?",
+          answer: "Diseño consciente de la privacidad con controles de acceso de mínimo privilegio, registros de auditoría y límites claros de datos. Tus documentos internos permanecen privados. Documento el manejo de datos antes del lanzamiento y sigo disciplina de TI empresarial de más de 17 años de experiencia de liderazgo en Fortune 500."
+        },
+        {
+          question: "¿Esto ralentizará nuestro sitio web o afectará el SEO?",
+          answer: "No. Diseño despliegues conscientes del rendimiento que respetan la velocidad del sitio y el SEO. Enfoque de huella mínima—sin embeds pesados que maten conversiones. Valido la velocidad de página y ofrezco páginas dedicadas si un embed sería muy pesado."
+        },
+      ]
+    },
+    {
+      name: "Trabajando Juntos",
+      faqs: [
+        {
+          question: "¿Con quién estaré trabajando?",
+          answer: "Trabajas directamente conmigo—Robert Cushman. No soy una agencia grande con gerentes de cuenta y traspasos. Hago el descubrimiento, desarrollo, gestión de proyecto, y soy personalmente responsable del éxito de tu proyecto. Comunicación directa, sin intermediarios."
+        },
+        {
+          question: "¿Trabajas con empresas en México?",
+          answer: "Sí. Soy totalmente bilingüe (inglés/español) y sirvo a clientes tanto en EE.UU. como en México. Las salidas de tu asistente son totalmente bilingües, y ofrezco horarios flexibles para ambas zonas horarias."
+        },
+        {
+          question: "No tenemos a nadie que hable inglés fluido. ¿Puedes trabajar con equipos solo de español?",
+          answer: "La entrega del proyecto se hace en inglés para velocidad y claridad, pero las salidas de tu asistente son totalmente bilingües (EN/ES). Si no tienes un campeón que hable inglés, ofrezco un complemento de socio bilingüe para facilitar la coordinación. De cualquier manera, tus clientes reciben soporte profesional en español."
+        },
+      ]
+    },
+    {
+      name: "Alternativas y Comparaciones",
+      faqs: [
+        {
+          question: "¿No podemos simplemente usar ChatGPT, Intercom, Zendesk, o contratar un freelancer?",
+          answer: "Las herramientas genéricas no validan respuestas contra tu base de conocimiento, no proporcionan control de tono bilingüe, ni se conectan a resultados de negocio. Los freelancers rara vez entregan sistemas con pruebas, monitoreo y ciclos de iteración. Yo entrego sistemas de resultados—no demos."
+        },
+        {
+          question: "¿Qué te hace diferente de otros consultores de IA?",
+          answer: "Metodología de descubrimiento primero (no empiezo con herramientas, empiezo con tu problema de negocio), ingeniería de grado de producción (no solo demos), sistemas de resultados atados a KPIs de negocio, listo para cruces fronterizos para mercados de EE.UU./México, y disciplina empresarial con velocidad de solista."
+        },
+        {
+          question: "¿Qué pasa si no funciona o no estamos satisfechos?",
+          answer: "Probamos extensivamente antes del lanzamiento. Si algo no está funcionando, lo optimizo durante la ventana de soporte de 30 días incluida en cada proyecto. Mi objetivo son sistemas que entreguen ROI medible—típicamente dentro de 60-90 días del lanzamiento."
+        },
+      ]
+    },
+  ],
+  cta: {
+    heading: "¿Aún tienes preguntas?",
+    text: "Agenda una llamada gratuita de 20 minutos. Sin compromiso, sin presión—solo respuestas honestas sobre si puedo ayudar.",
+    button: "Agendar Llamada Gratis",
+    href: "/es/reservar"
+  }
+};
+---
+
+<BaseLayout title={content.title} description={content.description}>
+  <main class="min-h-screen bg-white dark:bg-gray-950">
+    <!-- Hero -->
+    <section class="relative pt-24 pb-12">
+      <div class="absolute inset-0 -z-10">
+        <div class="absolute top-20 left-1/4 w-96 h-96 bg-cush-orange/10 rounded-full blur-3xl"></div>
+      </div>
+
+      <div class="mx-auto max-w-3xl px-4 text-center">
+        <h1 class="font-display text-4xl font-bold text-gray-900 dark:text-white md:text-5xl">
+          {content.heading}
+        </h1>
+        <p class="mt-4 text-lg text-gray-600 dark:text-gray-400">
+          {content.subheading}
+        </p>
+      </div>
+    </section>
+
+    <!-- FAQ Content -->
+    <section class="pb-16">
+      <div class="mx-auto max-w-3xl px-4">
+        {content.categories.map((category, catIndex) => (
+          <div class="mb-12">
+            <h2 class="font-display text-xl font-semibold text-cush-orange mb-6">
+              {category.name}
+            </h2>
+            <div class="space-y-4">
+              {category.faqs.map((faq) => (
+                <details class="group border border-gray-200 dark:border-gray-800 rounded-xl overflow-hidden">
+                  <summary class="flex items-center justify-between p-6 cursor-pointer bg-white dark:bg-gray-900 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+                    <h3 class="text-lg font-display font-semibold text-gray-900 dark:text-white pr-4">
+                      {faq.question}
+                    </h3>
+                    <svg
+                      class="w-5 h-5 text-gray-500 transform transition-transform group-open:rotate-180 flex-shrink-0"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </summary>
+                  <div class="px-6 pb-6 pt-2 bg-white dark:bg-gray-900">
+                    <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                      {faq.answer}
+                    </p>
+                  </div>
+                </details>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="pb-24">
+      <div class="mx-auto max-w-3xl px-4">
+        <div class="text-center p-8 rounded-2xl bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-800">
+          <h2 class="font-display text-2xl font-bold text-gray-900 dark:text-white mb-3">
+            {content.cta.heading}
+          </h2>
+          <p class="text-gray-600 dark:text-gray-400 mb-6">
+            {content.cta.text}
+          </p>
+          <a
+            href={content.cta.href}
+            class="inline-flex items-center gap-2 px-6 py-3 bg-cush-orange text-white font-display font-semibold rounded-lg hover:bg-cush-orange/90 transition-colors"
+          >
+            {content.cta.button}
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

@@ -11,51 +11,55 @@ const { locale } = Astro.props;
 const content = {
   en: {
     title: 'Common Questions',
+    viewAll: 'View All FAQs',
+    viewAllHref: '/faq',
     faqs: [
       {
-        question: 'How much does this cost?',
-        answer: 'Projects range from $1,500 to $15,000+ depending on scope, with most clients investing $3,500-$8,500. I\'ll give you exact pricing after our discovery call — no surprises.',
+        question: 'How much does this cost? Is it SMB-affordable?',
+        answer: 'Discovery Sprints typically start in the low four figures. Full builds are fixed-scope and quoted after discovery. Designed for SMBs, not enterprise budgets. You\'ll know the cost before I start.',
       },
       {
-        question: 'How long until I see results?',
-        answer: 'Most solutions are live in 2-4 weeks. You\'ll typically see measurable ROI within 60-90 days of launch.',
+        question: 'How long does implementation take?',
+        answer: 'Most projects deliver in 2-6 weeks depending on scope. You don\'t need engineers—just a point of contact to coordinate. I handle the build, integration, testing, and handoff.',
       },
       {
-        question: 'Do I need technical skills to use this?',
-        answer: 'No. I build solutions your team can use without coding. Everything comes with documentation and training.',
+        question: 'What if the AI gives wrong answers?',
+        answer: 'I build with validation and source attribution. Every answer is grounded in your approved knowledge sources, and the system hands off to a human when uncertain. No hallucinations—just tested, production-grade systems.',
       },
       {
-        question: 'What if it doesn\'t work?',
-        answer: 'We test extensively before launch. If something isn\'t performing, I optimize it during the 30-day support window included in every project.',
+        question: 'How do you handle data security?',
+        answer: 'Privacy-aware design with least-privilege access controls, audit logs, and clear data boundaries. Your internal documents stay private. I follow enterprise IT discipline from 17+ years of Fortune 500 experience.',
       },
       {
         question: 'Do you work with companies in Mexico?',
-        answer: 'Yes. I\'m fully bilingual (English/Spanish) and serve clients in both the US and Mexico. Flexible hours for both time zones.',
+        answer: 'Yes. I\'m fully bilingual (English/Spanish) and serve clients in both the US and Mexico. Your customers get professional support in both languages.',
       },
     ],
   },
   es: {
     title: 'Preguntas Frecuentes',
+    viewAll: 'Ver Todas las Preguntas',
+    viewAllHref: '/es/faq',
     faqs: [
       {
-        question: '¿Cuánto cuesta?',
-        answer: 'Los proyectos van desde $1,500 hasta $15,000+ USD dependiendo del alcance, con la mayoría de clientes invirtiendo $3,500-$8,500. Te daré el precio exacto después de nuestra llamada de descubrimiento — sin sorpresas.',
+        question: '¿Cuánto cuesta? ¿Es accesible para PyMEs?',
+        answer: 'Los Sprints de Descubrimiento típicamente empiezan en miles de dólares. Las construcciones completas son de alcance fijo y se cotizan después del descubrimiento. Diseñado para PyMEs, no presupuestos empresariales. Sabrás el costo antes de empezar.',
       },
       {
-        question: '¿Cuánto tiempo hasta ver resultados?',
-        answer: 'La mayoría de las soluciones están en vivo en 2-4 semanas. Típicamente verás ROI medible dentro de 60-90 días del lanzamiento.',
+        question: '¿Cuánto tiempo toma la implementación?',
+        answer: 'La mayoría de los proyectos se entregan en 2-6 semanas dependiendo del alcance. No necesitas ingenieros—solo un punto de contacto para coordinar. Yo manejo la construcción, integración, pruebas y entrega.',
       },
       {
-        question: '¿Necesito habilidades técnicas para usar esto?',
-        answer: 'No. Construyo soluciones que tu equipo puede usar sin programar. Todo viene con documentación y capacitación.',
+        question: '¿Qué pasa si la IA da respuestas incorrectas?',
+        answer: 'Construyo con validación y atribución de fuentes. Cada respuesta está basada en tus fuentes de conocimiento aprobadas, y el sistema transfiere a un humano cuando hay incertidumbre. Sin alucinaciones—solo sistemas probados y de grado de producción.',
       },
       {
-        question: '¿Qué pasa si no funciona?',
-        answer: 'Probamos extensivamente antes del lanzamiento. Si algo no está funcionando, lo optimizo durante la ventana de soporte de 30 días incluida en cada proyecto.',
+        question: '¿Cómo manejas la seguridad de datos?',
+        answer: 'Diseño consciente de la privacidad con controles de acceso de mínimo privilegio, registros de auditoría y límites claros de datos. Tus documentos internos permanecen privados. Sigo disciplina de TI empresarial de más de 17 años de experiencia en Fortune 500.',
       },
       {
         question: '¿Trabajas con empresas en México?',
-        answer: 'Sí. Soy totalmente bilingüe (inglés/español) y sirvo a clientes tanto en EE.UU. como en México. Horarios flexibles para ambas zonas horarias.',
+        answer: 'Sí. Soy totalmente bilingüe (inglés/español) y sirvo a clientes tanto en EE.UU. como en México. Tus clientes reciben soporte profesional en ambos idiomas.',
       },
     ],
   },
@@ -95,6 +99,19 @@ const t = content[locale];
           </div>
         </details>
       ))}
+    </div>
+
+    <!-- View All Link -->
+    <div class="text-center mt-8">
+      <a
+        href={t.viewAllHref}
+        class="inline-flex items-center gap-2 text-cush-orange font-medium hover:underline"
+      >
+        {t.viewAll}
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+      </a>
     </div>
   </Container>
 </Section>

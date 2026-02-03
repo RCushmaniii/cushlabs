@@ -1,0 +1,169 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import type { Locale } from "../i18n";
+
+const locale: Locale = "en";
+
+const content = {
+  title: "Frequently Asked Questions | CushLabs.ai",
+  description: "Get answers to common questions about AI consulting, implementation timelines, pricing, data security, and working with CushLabs.ai.",
+  heading: "Frequently Asked Questions",
+  subheading: "Everything you need to know about working with me",
+  categories: [
+    {
+      name: "Pricing & Process",
+      faqs: [
+        {
+          question: "How much does this cost? Is it SMB-affordable?",
+          answer: "Discovery Sprints typically start in the low four figures. Full builds are fixed-scope and quoted after discovery. Designed for SMBs, not enterprise budgets. You'll know the exact cost before I start—no surprises."
+        },
+        {
+          question: "How long does implementation take? Do we need engineers?",
+          answer: "Most projects deliver in 2-6 weeks depending on scope. You don't need engineers—just an English-speaking point of contact (Ops/Sales/IT lead) to coordinate. I handle the build, integration, testing, and handoff."
+        },
+        {
+          question: "What's included in a project?",
+          answer: "Every project includes: knowledge audit and source structure, assistant personality and tone rules, validation and human handoff paths, analytics dashboard, performance-conscious deployment, and full documentation with an operational runbook."
+        },
+      ]
+    },
+    {
+      name: "Quality & Security",
+      faqs: [
+        {
+          question: "What if the AI gives wrong answers and damages our reputation?",
+          answer: "I build with validation and source attribution. Every answer is grounded in your approved knowledge sources, and the system hands off to a human when it's uncertain. No prompt spaghetti—just tested, production-grade systems."
+        },
+        {
+          question: "How do you handle data security and privacy?",
+          answer: "Privacy-aware design with least-privilege access controls, audit logs, and clear data boundaries. Your internal documents stay private. I document data handling before launch and follow enterprise IT discipline from 17+ years of Fortune 500 IT leadership experience."
+        },
+        {
+          question: "Will this slow down our website or hurt SEO?",
+          answer: "No. I design performance-conscious deployments that respect site speed and SEO. Minimal footprint approach—no conversion-killing heavy embeds. I validate page speed and offer dedicated pages if an embed would be too heavy."
+        },
+      ]
+    },
+    {
+      name: "Working Together",
+      faqs: [
+        {
+          question: "Who will I be working with?",
+          answer: "You work directly with me—Robert Cushman. I'm not a big agency with account managers and handoffs. I do the discovery, development, project management, and I'm personally responsible for your project's success. Direct communication, no middlemen."
+        },
+        {
+          question: "Do you work with companies in Mexico?",
+          answer: "Yes. I'm fully bilingual (English/Spanish) and serve clients in both the US and Mexico. Your assistant outputs are fully bilingual, and I offer flexible hours for both time zones."
+        },
+        {
+          question: "We don't have anyone fluent in English. Can you work with Spanish-only teams?",
+          answer: "Project delivery runs in English for speed and clarity, but your assistant outputs are fully bilingual (EN/ES). If you don't have an English-speaking champion, I offer a bilingual partner add-on to bridge coordination. Either way, your customers get professional Spanish support."
+        },
+      ]
+    },
+    {
+      name: "Alternatives & Comparisons",
+      faqs: [
+        {
+          question: "Can't we just use ChatGPT, Intercom, Zendesk, or hire a freelancer?",
+          answer: "Generic tools don't validate answers against your knowledge base, provide bilingual tone control, or connect to business outcomes. Freelancers rarely ship systems with testing, monitoring, and iteration loops. I deliver outcome systems—not demos."
+        },
+        {
+          question: "What makes you different from other AI consultants?",
+          answer: "Discovery-first methodology (I don't start with tools, I start with your business problem), production-grade engineering (not just demos), outcome systems tied to business KPIs, cross-border ready for US/Mexico markets, and enterprise discipline with solo speed."
+        },
+        {
+          question: "What if it doesn't work or we're not satisfied?",
+          answer: "We test extensively before launch. If something isn't performing, I optimize it during the 30-day support window included in every project. My goal is systems that deliver measurable ROI—typically within 60-90 days of launch."
+        },
+      ]
+    },
+  ],
+  cta: {
+    heading: "Still have questions?",
+    text: "Book a free 20-minute call. No commitment, no pressure—just honest answers about whether I can help.",
+    button: "Book a Free Call",
+    href: "/consultation"
+  }
+};
+---
+
+<BaseLayout title={content.title} description={content.description}>
+  <main class="min-h-screen bg-white dark:bg-gray-950">
+    <!-- Hero -->
+    <section class="relative pt-24 pb-12">
+      <div class="absolute inset-0 -z-10">
+        <div class="absolute top-20 left-1/4 w-96 h-96 bg-cush-orange/10 rounded-full blur-3xl"></div>
+      </div>
+
+      <div class="mx-auto max-w-3xl px-4 text-center">
+        <h1 class="font-display text-4xl font-bold text-gray-900 dark:text-white md:text-5xl">
+          {content.heading}
+        </h1>
+        <p class="mt-4 text-lg text-gray-600 dark:text-gray-400">
+          {content.subheading}
+        </p>
+      </div>
+    </section>
+
+    <!-- FAQ Content -->
+    <section class="pb-16">
+      <div class="mx-auto max-w-3xl px-4">
+        {content.categories.map((category, catIndex) => (
+          <div class="mb-12">
+            <h2 class="font-display text-xl font-semibold text-cush-orange mb-6">
+              {category.name}
+            </h2>
+            <div class="space-y-4">
+              {category.faqs.map((faq) => (
+                <details class="group border border-gray-200 dark:border-gray-800 rounded-xl overflow-hidden">
+                  <summary class="flex items-center justify-between p-6 cursor-pointer bg-white dark:bg-gray-900 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+                    <h3 class="text-lg font-display font-semibold text-gray-900 dark:text-white pr-4">
+                      {faq.question}
+                    </h3>
+                    <svg
+                      class="w-5 h-5 text-gray-500 transform transition-transform group-open:rotate-180 flex-shrink-0"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </summary>
+                  <div class="px-6 pb-6 pt-2 bg-white dark:bg-gray-900">
+                    <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                      {faq.answer}
+                    </p>
+                  </div>
+                </details>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="pb-24">
+      <div class="mx-auto max-w-3xl px-4">
+        <div class="text-center p-8 rounded-2xl bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-800">
+          <h2 class="font-display text-2xl font-bold text-gray-900 dark:text-white mb-3">
+            {content.cta.heading}
+          </h2>
+          <p class="text-gray-600 dark:text-gray-400 mb-6">
+            {content.cta.text}
+          </p>
+          <a
+            href={content.cta.href}
+            class="inline-flex items-center gap-2 px-6 py-3 bg-cush-orange text-white font-display font-semibold rounded-lg hover:bg-cush-orange/90 transition-colors"
+          >
+            {content.cta.button}
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
