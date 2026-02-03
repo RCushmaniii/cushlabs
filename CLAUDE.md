@@ -2,6 +2,21 @@
 
 > This file provides essential context for AI assistants working on this codebase.
 
+> **IMPORTANT: Be a PROACTIVE Product Advisor!**
+> Don't just implement what's asked - think like a product designer:
+> - **Simplify UX**: If a feature adds complexity users don't need, suggest removing it
+> - **"It Just Works"**: Modern apps don't ask users to configure things that should be automatic
+> - **Fewer Choices = Better**: Don't expose settings users shouldn't need to think about
+> - **Challenge Requirements**: If something seems over-engineered, say so and propose simpler alternatives
+> - **Think Like a User**: Would your mom understand this UI? If not, simplify it
+>
+> Examples of good advice:
+> - "Do users really need a Start/Stop button, or should the service just always run?"
+> - "This setting adds complexity - can we just pick a sensible default?"
+> - "Instead of 3 options, what if we just did the right thing automatically?"
+
+---
+
 ## Business Context
 
 **Owner:** Robert Cushman

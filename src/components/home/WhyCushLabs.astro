@@ -1,0 +1,136 @@
+---
+import Container from '../layout/Container.astro';
+import Section from '../layout/Section.astro';
+
+interface Props {
+  locale: 'en' | 'es';
+}
+
+const { locale } = Astro.props;
+
+const content = {
+  en: {
+    title: 'Why Work With Me',
+    subtitle: 'What makes CushLabs different',
+    differentiators: [
+      {
+        icon: 'user',
+        title: 'You Work Directly With Me',
+        description: "No account managers. No handoffs. No agency layers. I do the discovery, development, and project management myself. You get direct communication with the person building your solution—and I'm personally responsible for your project's success.",
+      },
+      {
+        icon: 'target',
+        title: 'Discovery-First Methodology',
+        description: "I don't start with tools. I start by understanding your business problem, defining success metrics, and scoping the smallest v1 that proves value. You get a buildable plan before any code is written.",
+      },
+      {
+        icon: 'shield',
+        title: 'Production-Grade Engineering',
+        description: "Secure-by-default systems with validation, logging, and testing—so your assistant doesn't guess, hallucinate, or break quietly. 17+ years of Fortune 500 IT discipline in every build.",
+      },
+      {
+        icon: 'chart',
+        title: 'Outcome Systems, Not Widgets',
+        description: "Assistants tied to business KPIs—support deflection, lead capture, time-to-answer—with analytics and iteration loops. I build systems that deliver measurable ROI, not demos that impress once.",
+      },
+      {
+        icon: 'globe',
+        title: 'Cross-Border Ready',
+        description: "Built for Mexico/LATAM teams serving U.S. and Canadian customers. Fully bilingual assistant outputs with English-first project execution for speed. Flexible hours for both time zones.",
+      },
+    ],
+  },
+  es: {
+    title: 'Por Qué Trabajar Conmigo',
+    subtitle: 'Lo que hace diferente a CushLabs',
+    differentiators: [
+      {
+        icon: 'user',
+        title: 'Trabajas Directamente Conmigo',
+        description: "Sin gerentes de cuenta. Sin traspasos. Sin capas de agencia. Yo hago el descubrimiento, desarrollo y gestión del proyecto personalmente. Tienes comunicación directa con quien construye tu solución—y soy personalmente responsable del éxito de tu proyecto.",
+      },
+      {
+        icon: 'target',
+        title: 'Metodología de Descubrimiento Primero',
+        description: "No empiezo con herramientas. Empiezo entendiendo tu problema de negocio, definiendo métricas de éxito, y delimitando el v1 más pequeño que demuestre valor. Obtienes un plan construible antes de escribir código.",
+      },
+      {
+        icon: 'shield',
+        title: 'Ingeniería de Grado de Producción',
+        description: "Sistemas seguros por defecto con validación, registros y pruebas—para que tu asistente no adivine, alucine, o falle silenciosamente. Más de 17 años de disciplina TI Fortune 500 en cada construcción.",
+      },
+      {
+        icon: 'chart',
+        title: 'Sistemas de Resultados, No Widgets',
+        description: "Asistentes atados a KPIs de negocio—deflección de soporte, captura de leads, tiempo de respuesta—con análisis y ciclos de iteración. Construyo sistemas que entregan ROI medible, no demos que impresionan una vez.",
+      },
+      {
+        icon: 'globe',
+        title: 'Listo para Cruces Fronterizos',
+        description: "Construido para equipos de México/LATAM sirviendo a clientes de EE.UU. y Canadá. Salidas de asistente totalmente bilingües con ejecución de proyecto en inglés para velocidad. Horarios flexibles para ambas zonas horarias.",
+      },
+    ],
+  },
+};
+
+const t = content[locale];
+
+const icons = {
+  user: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />`,
+  target: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />`,
+  shield: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />`,
+  chart: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />`,
+  globe: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />`,
+};
+---
+
+<Section spacing="lg" class="bg-gray-50 dark:bg-gray-900/50">
+  <Container size="lg">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-display font-bold text-gray-900 dark:text-white mb-4">
+        {t.title}
+      </h2>
+      <p class="text-lg text-gray-600 dark:text-gray-400">
+        {t.subtitle}
+      </p>
+    </div>
+
+    <!-- Featured First Item (You Work Directly With Me) -->
+    <div class="mb-8">
+      <div class="p-8 rounded-2xl border-2 border-cush-orange/30 bg-white dark:bg-gray-900 shadow-lg">
+        <div class="flex flex-col md:flex-row md:items-start gap-6">
+          <div class="flex-shrink-0">
+            <div class="w-16 h-16 rounded-xl bg-cush-orange/10 flex items-center justify-center text-cush-orange">
+              <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" set:html={icons[t.differentiators[0].icon]} />
+            </div>
+          </div>
+          <div>
+            <h3 class="text-xl md:text-2xl font-display font-bold text-gray-900 dark:text-white mb-3">
+              {t.differentiators[0].title}
+            </h3>
+            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+              {t.differentiators[0].description}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Other Differentiators Grid -->
+    <div class="grid md:grid-cols-2 gap-6">
+      {t.differentiators.slice(1).map((item) => (
+        <div class="p-6 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 hover:border-cush-orange/30 transition-colors">
+          <div class="w-12 h-12 rounded-lg bg-cush-orange/10 flex items-center justify-center text-cush-orange mb-4">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" set:html={icons[item.icon]} />
+          </div>
+          <h3 class="text-lg font-display font-semibold text-gray-900 dark:text-white mb-2">
+            {item.title}
+          </h3>
+          <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+            {item.description}
+          </p>
+        </div>
+      ))}
+    </div>
+  </Container>
+</Section>

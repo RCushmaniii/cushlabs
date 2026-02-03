@@ -6,6 +6,7 @@ import ProblemSolution from "../components/home/ProblemSolution.astro";
 import ServicesOverview from "../components/home/ServicesOverview.astro";
 import HowItWorks from "../components/home/HowItWorks.astro";
 import Results from "../components/home/Results.astro";
+import WhyCushLabs from "../components/home/WhyCushLabs.astro";
 import FeaturedWorkSection from "../components/FeaturedWorkSection.astro";
 import TestimonialsSection from "../components/TestimonialsSection.astro";
 import FAQ from "../components/home/FAQ.astro";
@@ -44,15 +45,18 @@ const meta = {
   <!-- Section 6: Results -->
   <Results locale={locale} />
 
-  <!-- Section 7: Recent Work -->
+  <!-- Section 7: Why CushLabs -->
+  <WhyCushLabs locale={locale} />
+
+  <!-- Section 8: Recent Work -->
   <FeaturedWorkSection locale={locale} />
 
-  <!-- Section 8: Testimonials -->
+  <!-- Section 9: Testimonials -->
   <TestimonialsSection locale={locale} />
 
-  <!-- Section 9: FAQ -->
+  <!-- Section 10: FAQ -->
   <FAQ locale={locale} />
 
-  <!-- Section 10: Final CTA -->
+  <!-- Section 11: Final CTA -->
   <CTASection locale={locale} />
 </BaseLayout>
