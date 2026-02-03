@@ -10,20 +10,84 @@ const { locale } = Astro.props;
 
 const content = {
   en: {
-    problemTitle: 'The Problem',
-    problemLead: 'Your team is buried in repetitive work.',
-    problemText: 'Support tickets pile up. Data gets re-keyed from invoices. New hires take months to learn undocumented processes. You know AI could help — but where do you start?',
-    solutionTitle: 'The Solution',
-    solutionLead: 'AI that handles the routine, so your team can focus on what matters.',
-    solutionText: 'I build practical automation — chatbots, document processing, workflow systems — that deliver measurable ROI in 60-90 days. Fixed pricing. No tech jargon. You own everything I build.',
+    intro: "If you're a founder or ops leader at a growing SMB, this probably sounds familiar:",
+    problems: [
+      {
+        title: "Same questions, all day.",
+        text: "Pricing, order status, policies, how-to—your team answers the same things over and over while response times slip.",
+      },
+      {
+        title: "Knowledge lives everywhere.",
+        text: "Answers are scattered across WhatsApp, Google Docs, PDFs, and \"just ask Juan.\" Onboarding new hires is painful.",
+      },
+      {
+        title: "Leads disappear after hours.",
+        text: "Prospects visit your site, ask questions, then vanish because nobody responds fast enough—especially nights and weekends.",
+      },
+      {
+        title: "No bandwidth for AI projects.",
+        text: "Your lean team can't spare someone to own a big implementation. You need something that works without becoming a second job.",
+      },
+      {
+        title: "You've been burned before.",
+        text: "Fear of paying for a bot that sounds dumb, hallucinates wrong answers, or creates more tickets than it solves.",
+      },
+      {
+        title: "Hard to measure what's working.",
+        text: "No clean metrics for where customers get stuck, what questions repeat, or what content is missing.",
+      },
+    ],
+    closer: "Every missed message costs revenue. Every wrong answer costs trust.",
+    solutionTitle: "The Solution",
+    solutionLead: "AI that handles the routine, so your team can focus on what matters.",
+    solutionText: "I turn your scattered business knowledge—buried in Google Docs, WhatsApp threads, and \"ask Juan\"—into secure AI assistants that answer customer questions, qualify leads, and reduce support tickets.",
+    solutionBullets: [
+      "Bilingual (EN/ES) systems built for real operations",
+      "Validated answers grounded in your approved sources",
+      "Analytics showing what's working",
+      "Clean handoff to your team when human judgment is needed",
+    ],
+    solutionCloser: "No fragile demos. No one-and-done widgets. I build systems tied to outcomes you can measure: support deflection, lead conversion, time-to-answer.",
   },
   es: {
-    problemTitle: 'El Problema',
-    problemLead: 'Tu equipo está enterrado en trabajo repetitivo.',
-    problemText: 'Los tickets de soporte se acumulan. Los datos se vuelven a capturar de facturas. Los nuevos empleados tardan meses en aprender procesos sin documentar. Sabes que la IA podría ayudar — pero ¿por dónde empezar?',
-    solutionTitle: 'La Solución',
-    solutionLead: 'IA que maneja lo rutinario, para que tu equipo se enfoque en lo importante.',
-    solutionText: 'Construyo automatización práctica — chatbots, procesamiento de documentos, sistemas de flujo de trabajo — que entregan ROI medible en 60-90 días. Precios fijos. Sin jerga técnica. Todo lo que construyo es tuyo.',
+    intro: "Si eres fundador o líder de operaciones en una PyME en crecimiento, esto probablemente te suena familiar:",
+    problems: [
+      {
+        title: "Las mismas preguntas, todo el día.",
+        text: "Precios, estado de pedidos, políticas, instrucciones—tu equipo responde lo mismo una y otra vez mientras los tiempos de respuesta se alargan.",
+      },
+      {
+        title: "El conocimiento está en todas partes.",
+        text: "Las respuestas están dispersas en WhatsApp, Google Docs, PDFs, y \"pregúntale a Juan.\" Capacitar nuevos empleados es doloroso.",
+      },
+      {
+        title: "Los leads desaparecen fuera de horario.",
+        text: "Los prospectos visitan tu sitio, hacen preguntas, y se van porque nadie responde lo suficientemente rápido—especialmente noches y fines de semana.",
+      },
+      {
+        title: "Sin tiempo para proyectos de IA.",
+        text: "Tu equipo pequeño no puede asignar a alguien para manejar una gran implementación. Necesitas algo que funcione sin convertirse en un segundo trabajo.",
+      },
+      {
+        title: "Ya te han decepcionado antes.",
+        text: "Miedo de pagar por un bot que suena tonto, alucina respuestas incorrectas, o crea más tickets de los que resuelve.",
+      },
+      {
+        title: "Difícil medir qué está funcionando.",
+        text: "Sin métricas claras de dónde se atoran los clientes, qué preguntas se repiten, o qué contenido falta.",
+      },
+    ],
+    closer: "Cada mensaje perdido cuesta ingresos. Cada respuesta incorrecta cuesta confianza.",
+    solutionTitle: "La Solución",
+    solutionLead: "IA que maneja lo rutinario, para que tu equipo se enfoque en lo importante.",
+    solutionText: "Convierto tu conocimiento de negocio disperso—enterrado en Google Docs, hilos de WhatsApp, y \"pregúntale a Juan\"—en asistentes de IA seguros que responden preguntas de clientes, califican leads, y reducen tickets de soporte.",
+    solutionBullets: [
+      "Sistemas bilingües (EN/ES) construidos para operaciones reales",
+      "Respuestas validadas basadas en tus fuentes aprobadas",
+      "Análisis que muestra qué está funcionando",
+      "Transferencia limpia a tu equipo cuando se necesita juicio humano",
+    ],
+    solutionCloser: "Sin demos frágiles. Sin widgets de una sola vez. Construyo sistemas atados a resultados que puedes medir: deflección de soporte, conversión de leads, tiempo de respuesta.",
   },
 };
 
@@ -31,33 +95,66 @@ const t = content[locale];
 ---
 
 <Section spacing="lg" class="bg-white dark:bg-gray-950">
-  <Container size="md">
-    <div class="grid md:grid-cols-2 gap-12 md:gap-16">
-      <!-- Problem -->
-      <div>
-        <h2 class="text-sm font-display font-semibold text-cush-orange uppercase tracking-wider mb-4">
-          {t.problemTitle}
-        </h2>
-        <p class="text-2xl md:text-3xl font-display font-bold text-gray-900 dark:text-white mb-4">
-          {t.problemLead}
-        </p>
-        <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
-          {t.problemText}
-        </p>
+  <Container size="lg">
+    <!-- Problem Section -->
+    <div class="mb-16">
+      <p class="text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-3xl">
+        {t.intro}
+      </p>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+        {t.problems.map((problem) => (
+          <div class="p-5 rounded-xl bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-800">
+            <div class="flex items-start gap-3">
+              <div class="flex-shrink-0 mt-1">
+                <svg class="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-display font-semibold text-gray-900 dark:text-white mb-1">
+                  {problem.title}
+                </h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400">
+                  {problem.text}
+                </p>
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
 
-      <!-- Solution -->
-      <div>
-        <h2 class="text-sm font-display font-semibold text-green-600 dark:text-green-500 uppercase tracking-wider mb-4">
-          {t.solutionTitle}
-        </h2>
-        <p class="text-2xl md:text-3xl font-display font-bold text-gray-900 dark:text-white mb-4">
-          {t.solutionLead}
-        </p>
-        <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
-          {t.solutionText}
-        </p>
+      <p class="text-xl md:text-2xl font-display font-bold text-gray-900 dark:text-white text-center">
+        {t.closer}
+      </p>
+    </div>
+
+    <!-- Solution Section -->
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-sm font-display font-semibold text-green-600 dark:text-green-500 uppercase tracking-wider mb-4">
+        {t.solutionTitle}
+      </h2>
+      <p class="text-2xl md:text-3xl font-display font-bold text-gray-900 dark:text-white mb-6">
+        {t.solutionLead}
+      </p>
+      <p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-8">
+        {t.solutionText}
+      </p>
+
+      <div class="flex flex-wrap justify-center gap-3 mb-8">
+        {t.solutionBullets.map((bullet) => (
+          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800">
+            <svg class="w-4 h-4 text-green-600 dark:text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            <span class="text-sm text-green-800 dark:text-green-300">{bullet}</span>
+          </div>
+        ))}
       </div>
+
+      <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+        {t.solutionCloser}
+      </p>
     </div>
   </Container>
 </Section>
