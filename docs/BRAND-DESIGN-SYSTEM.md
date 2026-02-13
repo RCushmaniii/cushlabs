@@ -494,6 +494,7 @@ Every CushLabs repository must include these files for consistency:
 | File | Purpose | Template |
 |------|---------|----------|
 | `README.md` | Professional, metric-driven project overview | See [`docs/templates/readme-instructions.md`](templates/readme-instructions.md) |
+| `portfolio.md` | Portfolio sync metadata (repo root) | See [`docs/templates/portfolio-metadata-instructions.md`](templates/portfolio-metadata-instructions.md) |
 | `CLAUDE.md` | AI assistant instructions for the repo | Reference the [Product Advisor block](../CLAUDE.md) |
 | `.env.example` | Document all required environment variables | — |
 | `.gitignore` | Prevent secrets, node_modules, build artifacts | — |
@@ -509,6 +510,20 @@ All READMEs across CushLabs repos must follow the generation instructions at [`d
 - **Calm, professional tone** — Executive-level clarity
 - **Complete quick start** — A developer should be able to deploy in <30 minutes
 - **No placeholders** — If content doesn't exist yet, omit the section entirely
+
+### Portfolio Metadata Standards
+
+Every repo that should appear on cushlabs.ai must have a `portfolio.md` in the repo root. Full instructions at [`docs/templates/portfolio-metadata-instructions.md`](templates/portfolio-metadata-instructions.md). Key rules:
+
+- **File goes in repo root** — not `/docs/` or `/src/`
+- **Tagline max 60 chars** — lead with outcome, include a metric
+- **Problem & Solution** — exactly 2 sentences each, no fluff
+- **Key features need outcomes** — "90% accuracy" not "fast and powerful"
+- **Metrics only if real** — omit the field entirely if no data exists
+- **Valid categories**: `AI Automation`, `Document Processing`, `Web Tools`
+- **Valid statuses**: `Production`, `Demo`, `Archived`
+
+The cushlabs.ai build script syncs these files from GitHub at build time to populate the portfolio grid.
 
 ### CLAUDE.md Standards
 
