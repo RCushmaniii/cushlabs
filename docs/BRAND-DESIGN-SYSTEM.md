@@ -485,6 +485,62 @@ Drop this into any new repo's global stylesheet:
 
 ---
 
+## Repo Standards
+
+Every CushLabs repository must include these files for consistency:
+
+### Required Files
+
+| File | Purpose | Template |
+|------|---------|----------|
+| `README.md` | Professional, metric-driven project overview | See [`docs/templates/readme-instructions.md`](templates/readme-instructions.md) |
+| `CLAUDE.md` | AI assistant instructions for the repo | Reference the [Product Advisor block](../CLAUDE.md) |
+| `.env.example` | Document all required environment variables | — |
+| `.gitignore` | Prevent secrets, node_modules, build artifacts | — |
+| `LICENSE` | MIT unless otherwise specified | — |
+
+### README Standards
+
+All READMEs across CushLabs repos must follow the generation instructions at [`docs/templates/readme-instructions.md`](templates/readme-instructions.md). Key rules:
+
+- **No hype language** — "Reduces manual entry by 73%" not "Revolutionary AI solution"
+- **PowerShell-first** — All commands assume Windows 11 + PowerShell
+- **Benefits over features** — Measurable outcomes, not vague descriptions
+- **Calm, professional tone** — Executive-level clarity
+- **Complete quick start** — A developer should be able to deploy in <30 minutes
+- **No placeholders** — If content doesn't exist yet, omit the section entirely
+
+### CLAUDE.md Standards
+
+Every repo's CLAUDE.md should include:
+
+1. **Product Advisor block** — The proactive UX simplification guidance (see main CLAUDE.md)
+2. **Project context** — What the repo does, who it's for, current state
+3. **Technical architecture** — Stack, key config, project structure
+4. **Development commands** — How to run, build, test, deploy
+5. **Environment variables** — What's needed and where to get values
+6. **Coding conventions** — Patterns specific to that repo
+
+### Commit Message Format
+
+```
+type: short description
+
+Longer explanation if needed.
+
+Co-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>
+```
+
+Types: `feat`, `fix`, `docs`, `chore`, `refactor`, `style`, `test`, `perf`
+
+### Branch Strategy
+
+- `main` — Production-ready, always deployable
+- Feature branches off `main` for larger work
+- Auto-push after commit (per global CLAUDE.md)
+
+---
+
 ## Design Principles Summary
 
 1. **Minimal & modern** — No-frills functionality with subtle animations
