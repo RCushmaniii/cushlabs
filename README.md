@@ -1,257 +1,172 @@
-# CushLabs.ai — Website & Portfolio
+# CushLabs.ai
 
-A premium, bilingual (EN/ES) website for CushLabs.ai, an AI consulting and modern software development studio. Features an automated GitHub portfolio system.
+AI consulting and software development for SMBs. Bilingual (EN/ES) business site with automated GitHub portfolio sync.
+
+**Live:** [cushlabs.ai](https://cushlabs.ai)
+
+---
 
 ## Overview
 
-Static website with automated portfolio generation from GitHub repositories. The main landing page requires zero build step, while the `/work` portfolio uses a Node.js script to auto-generate project data from your GitHub repos.
+Production website for CushLabs.ai — an AI integration and software development consultancy serving US and Mexico. The site is fully bilingual (English/Spanish), statically generated with Astro, and includes an automated portfolio system that syncs project data from GitHub repositories at build time.
 
 ## Features
 
-### Main Site
+| Feature | Outcome |
+|---------|---------|
+| Bilingual EN/ES | Full content parity with hreflang SEO — `/` for English, `/es/` for Spanish |
+| Automated Portfolio | GitHub repos with `portfolio.md` auto-sync to the `/projects` page at build time |
+| Static Generation | Zero server costs, sub-second page loads, edge-cached globally |
+| Dark Mode | System-aware with manual toggle, persisted in localStorage |
+| Structured Data | Organization + WebPage JSON-LD schemas for rich search results |
+| Accessible | Semantic HTML, ARIA labels, `prefers-reduced-motion` support, WCAG AA contrast |
 
-- **Bilingual Support**: English and Spanish with automatic browser language detection
-- **Responsive Design**: Mobile-first, fluid typography with `clamp()`, works across all devices
-- **Performance Optimized**: ~30KB total, no external JS dependencies, lazy animations
-- **Visual Effects**: Subtle parallax, cursor spotlight (desktop), smooth scroll animations
-- **Live Countdown**: Dynamic timer counting down to launch date
-- **Accessible**: Semantic HTML, ARIA labels, respects `prefers-reduced-motion`
+## Tech Stack
 
-### Portfolio System (`/work`)
-
-- **Automated GitHub Integration**: Auto-generates portfolio from your GitHub repos
-- **Metadata via Topics**: Use GitHub topics to categorize and tag projects
-- **Weekly Auto-Updates**: GitHub Actions refreshes portfolio data automatically
-- **Smart Demo Detection**: Extracts demo URLs from repo homepage, README, or GitHub Pages
-- **Dynamic Filtering**: Client-side filtering by category, stack, and featured status
-- **SEO Optimized**: Same domain authority, proper metadata, sitemap integration
+| Tool | Purpose |
+|------|---------|
+| [Astro](https://astro.build) 4.16 | Static site generator |
+| [Tailwind CSS](https://tailwindcss.com) 3.4 | Utility-first styling |
+| [TypeScript](https://www.typescriptlang.org) 5.9 | Type safety |
+| [Netlify](https://www.netlify.com) | Hosting & deployment |
+| GitHub Actions | Weekly portfolio data refresh |
 
 ## Quick Start
 
-### 1. Install Dependencies (for portfolio generation)
+### Prerequisites
 
-```bash
+- Node.js 18.17+
+- npm (included with Node.js)
+- GitHub Personal Access Token with `public_repo` scope
+
+### 1. Clone and install
+
+```powershell
+git clone https://github.com/RCushmaniii/cushlabs.git
+cd cushlabs
 npm install
 ```
 
-### 2. Set Up GitHub Token
+### 2. Configure environment
 
-Create a `.env` file:
-
-```bash
-GITHUB_TOKEN=your_github_personal_access_token
-GITHUB_OWNER=cushdog
+```powershell
+Copy-Item .env.example .env
+notepad .env
 ```
 
-Get a token at: GitHub Settings → Developer settings → Personal access tokens → Generate (needs `public_repo` scope)
+Required variables:
 
-### 3. Generate Portfolio
+```
+GITHUB_TOKEN=your_github_personal_access_token
+GITHUB_OWNER=RCushmaniii
+```
 
-```bash
+### 3. Generate portfolio data
+
+```powershell
 npm run generate-projects
 ```
 
-This creates `src/data/projects.generated.json` from your GitHub repos.
+This fetches `portfolio.md` from each GitHub repo and outputs `src/data/projects.generated.json`.
 
-### 4. Deploy
+### 4. Start dev server
 
-Deploy the entire site to Vercel, Netlify, or any static host. The GitHub Actions workflow will automatically refresh your portfolio weekly.
-
-### Local Preview
-
-```bash
-# Using Python
-python -m http.server 8000
-
-# Using Node.js
-npx serve .
+```powershell
+npm run dev
 ```
 
-Open `http://localhost:8000` for the main site and `http://localhost:8000/work.html` for the portfolio.
+Open `http://localhost:4321` — English home page loads by default, Spanish at `/es/`.
 
-## File Structure
+## Project Structure
 
 ```
 cushlabs/
-├── index.html                          # Main landing page
-├── work.html                           # Portfolio page
-├── work.js                             # Portfolio client-side rendering
-├── robots.txt                          # Search engine crawler instructions
-├── sitemap.xml                         # XML sitemap (includes /work)
-├── package.json                        # Node dependencies
-├── tsconfig.json                       # TypeScript config
-├── README.md                           # This file
-├── WORK_SETUP.md                       # Detailed portfolio setup guide
-├── .env.example                        # Environment variables template
-├── .gitignore                          # Git ignore rules
-├── scripts/
-│   └── generate-projects.ts            # GitHub repo scanner script
 ├── src/
-│   └── data/
-│       └── projects.generated.json     # Auto-generated portfolio data
-├── .github/
-│   └── workflows/
-│       └── refresh-projects.yml        # Weekly auto-update workflow
-└── images/                             # Optional assets
-    ├── og-image.jpg                    # Social sharing image (1200x630px)
-    └── logo.png                        # Logo for structured data
+│   ├── components/          # Reusable Astro components
+│   │   └── home/            # Homepage section components
+│   ├── layouts/
+│   │   └── BaseLayout.astro # Master layout (SEO, hreflang, schema)
+│   ├── pages/               # File-based routing
+│   │   ├── index.astro      # Home (EN)
+│   │   ├── about.astro
+│   │   ├── contact.astro
+│   │   ├── services.astro
+│   │   ├── solutions.astro
+│   │   ├── consultation.astro
+│   │   ├── blog/
+│   │   ├── projects/
+│   │   └── es/              # Spanish mirror pages
+│   ├── i18n/
+│   │   ├── index.ts         # i18n utilities
+│   │   └── translations/
+│   │       ├── en.ts
+│   │       └── es.ts
+│   ├── data/
+│   │   ├── projectDetails.ts
+│   │   └── projects.generated.json
+│   └── styles/
+│       └── global.css       # Tailwind + CSS variables
+├── api/
+│   └── consultation-intake.ts
+├── scripts/
+│   ├── generate-projects.ts # GitHub API sync
+│   └── audit-predeploy.ts
+├── docs/                    # Reference docs & templates
+│   ├── BRAND-DESIGN-SYSTEM.md
+│   └── templates/
+├── public/
+│   └── images/
+├── astro.config.mjs
+├── tailwind.config.mjs
+└── package.json
 ```
 
-## Configuration
+## URL Structure
 
-### Countdown Timer
+| English (default) | Spanish |
+|-------------------|---------|
+| `/` | `/es` |
+| `/about` | `/es/about` |
+| `/services` | `/es/services` |
+| `/solutions` | `/es/solutions` |
+| `/projects` | `/es/projects` |
+| `/blog` | `/es/blog` |
+| `/contact` | `/es/contact` |
+| `/consultation` | `/es/reservar` |
 
-The countdown is set to 35 days from page load. To set a fixed launch date, edit the JavaScript:
+## Available Commands
 
-```javascript
-// Current: 35 days from now
-const LAUNCH_DAYS = 35;
-const launchDate = new Date();
-launchDate.setDate(launchDate.getDate() + LAUNCH_DAYS);
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start dev server at `localhost:4321` |
+| `npm run build` | Sync GitHub projects + production build |
+| `npm run preview` | Preview production build locally |
+| `npm run check` | Run ESLint + TypeScript checks |
+| `npm run generate-projects` | Sync GitHub repos to JSON |
+| `npm run audit:predeploy` | Pre-deployment validation |
 
-// Alternative: Fixed date
-const launchDate = new Date("2025-02-01T00:00:00");
-```
+## Portfolio System
 
-### Flag Images
+Projects appear on the site automatically when a repo has a `portfolio.md` file in its root with `include_in_portfolio: true`. See [`docs/templates/portfolio-metadata-instructions.md`](docs/templates/portfolio-metadata-instructions.md) for the full schema.
 
-Replace the placeholder SVGs with your flag images:
+The build script (`scripts/generate-projects.ts`) fetches portfolio metadata from all `RCushmaniii` repos via the GitHub API and outputs `src/data/projects.generated.json`. A GitHub Actions workflow refreshes this data weekly.
 
-```html
-<!-- English (around line 180) -->
-<img class="lang-flag" src="images/flag-en.png" alt="English" />
+## Design System
 
-<!-- Spanish (around line 185) -->
-<img class="lang-flag" src="images/flag-es.png" alt="Español" />
-```
+Brand colors, typography, spacing, component patterns, and repo standards are documented in [`docs/BRAND-DESIGN-SYSTEM.md`](docs/BRAND-DESIGN-SYSTEM.md).
 
-Recommended dimensions: 20×14px (3:2 or 4:3 aspect ratio)
+| Token | Value | Usage |
+|-------|-------|-------|
+| `cush-orange` | `#FF6A3D` | Primary accent |
+| Display font | Space Grotesk | Headings, nav, buttons |
+| Body font | Source Serif 4 | Paragraphs, content |
 
-### Contact Email
+## Bilingual Parity Rule
 
-Update the mailto link in the Contact section:
+> There is no such thing as fixing just the English side. There is only fixing BOTH sides or fixing NOTHING.
 
-```html
-<a href="mailto:info@cushlabs.ai" class="contact-email">info@cushlabs.ai</a>
-```
-
-## SEO Checklist
-
-The page includes comprehensive technical SEO. Before launch, complete these items:
-
-### Required Actions
-
-| Task                 | File                  | Action                                            |
-| -------------------- | --------------------- | ------------------------------------------------- |
-| Update canonical URL | `index.html`          | Replace `https://cushlabs.ai/` with actual domain |
-| Update sitemap URLs  | `sitemap.xml`         | Replace domain placeholder                        |
-| Update robots.txt    | `robots.txt`          | Replace domain in sitemap reference               |
-| Create OG image      | `images/og-image.jpg` | 1200×630px branded image for social shares        |
-| Create logo          | `images/logo.png`     | Logo file for structured data                     |
-
-### Included SEO Features
-
-- **Meta tags**: Optimized title (55 chars) and description (155 chars)
-- **Open Graph**: Full Facebook/LinkedIn sharing tags
-- **Twitter Cards**: Large image card format
-- **Hreflang**: Bilingual support (EN/ES) for international SEO
-- **Structured Data**: Organization + WebPage JSON-LD schemas
-- **Robots**: Proper indexing directives
-- **Canonical**: Self-referencing canonical URL
-- **Heading hierarchy**: Single H1, proper H2/H3 nesting
-
-### Post-Launch
-
-1. Submit sitemap to Google Search Console
-2. Verify structured data with Google Rich Results Test
-3. Test social sharing with Facebook Debugger and Twitter Card Validator
-
-## Browser Support
-
-| Browser        | Version | Support |
-| -------------- | ------- | ------- |
-| Chrome         | 80+     | ✅ Full |
-| Safari         | 13+     | ✅ Full |
-| Firefox        | 75+     | ✅ Full |
-| Edge           | 80+     | ✅ Full |
-| iOS Safari     | 13+     | ✅ Full |
-| Android Chrome | 80+     | ✅ Full |
-
-Older browsers gracefully degrade (no animations, basic layout preserved).
-
-## Performance
-
-| Metric                  | Target  | Actual           |
-| ----------------------- | ------- | ---------------- |
-| Total Size              | < 50KB  | ~30KB            |
-| External Requests       | Minimal | 2 (Google Fonts) |
-| Time to Interactive     | < 1s    | ~500ms           |
-| Cumulative Layout Shift | 0       | 0                |
-
-### Optimization Notes
-
-- Fonts preconnected for faster loading
-- Intersection Observer for lazy scroll animations
-- `requestAnimationFrame` for smooth parallax/spotlight
-- Passive event listeners on scroll
-- `will-change` hints for GPU acceleration
-
-## Customization
-
-### Colors
-
-Edit CSS custom properties in `:root`:
-
-```css
---color-black: #000000;
---color-white: #ffffff;
---color-orange: #ff6a3d; /* Primary accent */
---color-orange-glow: rgba(255, 106, 61, 0.15);
-```
-
-### Fonts
-
-Currently uses Google Fonts (Space Grotesk + Source Serif 4). To change:
-
-1. Update the `<link>` tag in `<head>`
-2. Update `--font-display` and `--font-body` in CSS
-
-### Content
-
-All text content is inline in the HTML. Search for `data-lang="en"` and `data-lang="es"` to find translatable strings.
-
-## Accessibility
-
-- Semantic HTML5 elements (`<header>`, `<section>`, `<article>`, `<footer>`)
-- ARIA labels on interactive elements
-- Sufficient color contrast (WCAG AA)
-- Keyboard navigable
-- Respects `prefers-reduced-motion` media query
-- Screen reader compatible
+Every page, translation key, and SEO tag must exist in both languages. See [`docs/architecture/BILINGUAL-PARITY-CHECKLIST.md`](docs/architecture/BILINGUAL-PARITY-CHECKLIST.md).
 
 ## License
 
-© 2025 CushLabs.ai — All rights reserved.
-
-## Portfolio Setup
-
-For detailed instructions on setting up and customizing the automated portfolio, see **[WORK_SETUP.md](./WORK_SETUP.md)**.
-
-### Quick Portfolio Tips
-
-1. **Add topics to your repos** following the convention:
-
-   - `featured` - Highlight on portfolio
-   - `cat-ai`, `cat-web`, `cat-automation` - Categories
-   - `stack-nextjs`, `stack-react`, `stack-python` - Tech stack
-   - `status-shipped`, `status-wip` - Project status
-
-2. **Set repo homepage** to your demo URL in GitHub repo settings
-
-3. **Run generator** locally to test before deploying
-
-4. **GitHub Actions** handles weekly updates automatically
-
-## Support
-
-For questions or issues: info@cushlabs.ai
+Copyright 2025 CushLabs.ai. All rights reserved.
