@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import ConsultationBookingFlow from "../components/ConsultationBookingFlow.astro";
+import BookingFormSteps from "../components/booking/BookingFormSteps.astro";
 import { t } from "../i18n";
 
 const locale = (Astro.currentLocale === "es" ? "es" : "en") as "en" | "es";
@@ -98,8 +98,23 @@ const dict = t(locale);
       </div>
     </section>
 
-    <div id="schedule">
-      <ConsultationBookingFlow locale={locale} />
-    </div>
+    <section id="schedule" class="mx-auto max-w-7xl px-4 pt-10">
+      <BookingFormSteps locale={locale} />
+
+      <div class="mt-8 grid grid-cols-1 gap-4 md:grid-cols-2 max-w-4xl mx-auto">
+        <div class="rounded-2xl border border-border bg-surface p-6">
+          <h3 class="font-display text-lg font-bold text-foreground">
+            {dict.consultation.whatWeCoverTitle}
+          </h3>
+          <p class="mt-2 text-muted">{dict.consultation.whatWeCoverBody}</p>
+        </div>
+        <div class="rounded-2xl border border-border bg-surface p-6">
+          <h3 class="font-display text-lg font-bold text-foreground">
+            {dict.consultation.afterCallTitle}
+          </h3>
+          <p class="mt-2 text-muted">{dict.consultation.afterCallBody}</p>
+        </div>
+      </div>
+    </section>
   </main>
 </BaseLayout>
