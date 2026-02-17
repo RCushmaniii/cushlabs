@@ -334,7 +334,7 @@ export const en = {
     fullName: 'Full name',
     email: 'Email',
     phoneNumber: 'Phone number',
-    phoneHint: 'We\'ll use it to remind you of this appointment.',
+    phoneHint: 'Optional — include country code for WhatsApp.',
     notesLabel: 'What would you like to discuss?',
     notesPlaceholder: 'e.g. We want to automate our customer support...',
     notesHint: 'Optional — helps me prepare for our conversation',
