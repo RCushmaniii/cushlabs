@@ -1,7 +1,103 @@
 {
   "generatedAt": "2026-02-16T21:01:20.239Z",
-  "count": 26,
+  "count": 27,
   "projects": [
+    {
+      "id": 1154149780,
+      "name": "mazebreak-trello",
+      "title": "MazeBreak Trello Board Automation",
+      "description": "Trello Power-Up and project management automation for MazeBreak Roblox game development",
+      "summary": "Idempotent sprint board provisioning via Trello REST API for Roblox game development. One command creates 8 workflow lists, labeled cards with dependency chains, and 4 instruction cards.",
+      "url": "https://github.com/RCushmaniii/mazebreak-trello",
+      "demoUrl": "https://mazebreak-trello.vercel.app",
+      "homepage": "https://mazebreak-trello.vercel.app",
+      "topics": [
+        "developer-tools",
+        "automation",
+        "project-management",
+        "trello",
+        "game-development",
+        "api-integration",
+        "featured"
+      ],
+      "categories": [],
+      "tags": [
+        "developer-tools",
+        "automation",
+        "project-management",
+        "trello",
+        "game-development",
+        "api-integration"
+      ],
+      "stack": [
+        "Node.js",
+        "Trello REST API",
+        "Vercel"
+      ],
+      "status": "shipped",
+      "language": "JavaScript",
+      "languages": {
+        "JavaScript": 45000,
+        "HTML": 12000,
+        "CSS": 8000
+      },
+      "stars": 0,
+      "forks": 0,
+      "lastPushed": "2026-02-17T21:19:20Z",
+      "createdAt": "2026-02-10T04:00:00Z",
+      "isFeatured": true,
+      "isArchived": false,
+      "isPrivate": true
+    },
+    {
+      "id": 1154149781,
+      "name": "mazebreak-wiki",
+      "title": "MazeBreak GDD Wiki",
+      "description": "Private documentation wiki for the MazeBreak Game Design Document. Built with React, Tailwind CSS, and Clerk auth.",
+      "summary": "Private, searchable documentation wiki for the MazeBreak Game Design Document. Provides instant access to all 24 GDD chapters with full-text search, chapter-based navigation, and Clerk-authenticated a",
+      "url": "https://github.com/RCushmaniii/mazebreak-wiki",
+      "demoUrl": "https://mazebreak-wiki.vercel.app",
+      "homepage": "https://mazebreak-wiki.vercel.app",
+      "topics": [
+        "developer-tools",
+        "documentation",
+        "react",
+        "game-development",
+        "search",
+        "authentication",
+        "featured"
+      ],
+      "categories": [],
+      "tags": [
+        "developer-tools",
+        "documentation",
+        "react",
+        "game-development",
+        "search",
+        "authentication"
+      ],
+      "stack": [
+        "React 19",
+        "Vite 7",
+        "Tailwind CSS",
+        "Clerk",
+        "Fuse.js"
+      ],
+      "status": "shipped",
+      "language": "JavaScript",
+      "languages": {
+        "JavaScript": 40257,
+        "CSS": 7727,
+        "HTML": 1101
+      },
+      "stars": 0,
+      "forks": 0,
+      "lastPushed": "2026-02-10T04:43:42Z",
+      "createdAt": "2026-02-10T04:11:19Z",
+      "isFeatured": true,
+      "isArchived": false,
+      "isPrivate": false
+    },
     {
       "id": 1130115840,
       "name": "cushlabs",
@@ -197,34 +293,6 @@
       "forks": 0,
       "lastPushed": "2026-02-11T22:32:55Z",
       "createdAt": "2025-11-23T00:24:28Z",
-      "isFeatured": false,
-      "isArchived": false,
-      "isPrivate": false
-    },
-    {
-      "id": 1154149781,
-      "name": "mazebreak-wiki",
-      "title": "Mazebreak Wiki",
-      "description": "Private documentation wiki for the MazeBreak Game Design Document. Built with React, Tailwind CSS, and Clerk auth.",
-      "summary": "Private, searchable documentation wiki for the MazeBreak Game Design Document. Provides instant access to all 24 GDD chapters with full-text search, chapter-based navigation, and Clerk-authenticated a",
-      "url": "https://github.com/RCushmaniii/mazebreak-wiki",
-      "demoUrl": "https://mazebreak-wiki.vercel.app",
-      "homepage": "https://mazebreak-wiki.vercel.app",
-      "topics": [],
-      "categories": [],
-      "tags": [],
-      "stack": [],
-      "status": null,
-      "language": "JavaScript",
-      "languages": {
-        "JavaScript": 40257,
-        "CSS": 7727,
-        "HTML": 1101
-      },
-      "stars": 0,
-      "forks": 0,
-      "lastPushed": "2026-02-10T04:43:42Z",
-      "createdAt": "2026-02-10T04:11:19Z",
       "isFeatured": false,
       "isArchived": false,
       "isPrivate": false
