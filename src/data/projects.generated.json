@@ -47,7 +47,7 @@
       "createdAt": "2026-02-10T04:00:00Z",
       "isFeatured": true,
       "isArchived": false,
-      "isPrivate": true
+      "isPrivate": false
     },
     {
       "id": 1154149781,
