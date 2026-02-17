@@ -1,7 +1,51 @@
 {
-  "generatedAt": "2026-02-15T04:22:35.303Z",
+  "generatedAt": "2026-02-16T21:01:20.239Z",
   "count": 26,
   "projects": [
+    {
+      "id": 1130115840,
+      "name": "cushlabs",
+      "title": "Cushlabs",
+      "description": "AI consulting and software development for SMBs — bilingual (EN/ES) site built with Astro + Tailwind CSS",
+      "summary": "AI consulting and software development for SMBs. Bilingual (EN/ES) business site with automated GitHub portfolio sync.",
+      "url": "https://github.com/RCushmaniii/cushlabs",
+      "demoUrl": "https://cushlabs.ai",
+      "homepage": "https://cushlabs.ai",
+      "topics": [
+        "ai-consulting",
+        "astro",
+        "bilingual",
+        "cushlabs",
+        "static-site",
+        "tailwindcss"
+      ],
+      "categories": [],
+      "tags": [
+        "ai-consulting",
+        "astro",
+        "bilingual",
+        "cushlabs",
+        "static-site",
+        "tailwindcss"
+      ],
+      "stack": [],
+      "status": null,
+      "language": "Astro",
+      "languages": {
+        "Astro": 291619,
+        "HTML": 61067,
+        "TypeScript": 56226,
+        "JavaScript": 10565,
+        "CSS": 1697
+      },
+      "stars": 0,
+      "forks": 0,
+      "lastPushed": "2026-02-16T20:38:40Z",
+      "createdAt": "2026-01-08T03:52:43Z",
+      "isFeatured": false,
+      "isArchived": false,
+      "isPrivate": false
+    },
     {
       "id": 1157421817,
       "name": "comp-plan-simulator",
@@ -110,36 +154,6 @@
       "forks": 0,
       "lastPushed": "2026-02-14T02:05:32Z",
       "createdAt": "2026-02-13T18:42:29Z",
-      "isFeatured": false,
-      "isArchived": false,
-      "isPrivate": false
-    },
-    {
-      "id": 1130115840,
-      "name": "cushlabs",
-      "title": "Cushlabs",
-      "description": "",
-      "summary": "A premium, bilingual (EN/ES) website for CushLabs.ai, an AI consulting and modern software development studio. Features an automated GitHub portfolio system.",
-      "url": "https://github.com/RCushmaniii/cushlabs",
-      "demoUrl": null,
-      "homepage": null,
-      "topics": [],
-      "categories": [],
-      "tags": [],
-      "stack": [],
-      "status": null,
-      "language": "Astro",
-      "languages": {
-        "Astro": 291495,
-        "HTML": 61067,
-        "TypeScript": 56226,
-        "JavaScript": 10565,
-        "CSS": 1697
-      },
-      "stars": 0,
-      "forks": 0,
-      "lastPushed": "2026-02-13T18:59:14Z",
-      "createdAt": "2026-01-08T03:52:43Z",
       "isFeatured": false,
       "isArchived": false,
       "isPrivate": false
