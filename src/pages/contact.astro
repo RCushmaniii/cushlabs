@@ -322,7 +322,7 @@ const hero = content[locale];
         if (display) display.textContent = addr;
       }
 
-      // Contact form — submit via API
+      // Contact form — submit via Formspree
       const form = document.getElementById('contact-form-el') as HTMLFormElement | null;
       if (!form) return;
 
@@ -360,16 +360,28 @@ const hero = content[locale];
         spinner.classList.remove('hidden');
 
         try {
-          const res = await fetch('/api/contact', {
+          const res = await fetch('https://formspree.io/f/mlgwnqky', {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ name, email, phone, message, locale }),
+            headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json',
+            },
+            body: JSON.stringify({
+              name,
+              email,
+              _replyto: email,
+              phone: phone || undefined,
+              message,
+              _subject: `New contact from ${name} — CushLabs.ai`,
+              _language: locale,
+            }),
           });
 
           const data = await res.json();
 
-          if (!res.ok || !data.ok) {
-            throw new Error(data.error || 'Unknown error');
+          if (!res.ok) {
+            const msg = data.errors?.map((e: { message: string }) => e.message).join(', ') || 'Unknown error';
+            throw new Error(msg);
           }
 
           // Success — hide form, show confirmation

@@ -42,6 +42,8 @@ const images = override?.images?.length
     ? [{ src: ogImageUrl, alt: { en: project.title, es: project.title } }]
     : [];
 
+const videoUrl = override?.videoUrl ?? null;
+
 const tech = Array.from(
   new Set(
     [...(project.stack || []), project.language].filter(Boolean) as string[]
@@ -63,7 +65,7 @@ const lastPushed = new Date(project.lastPushed).toLocaleDateString();
         href="/es/solutions"
         class="inline-flex items-center gap-2 text-sm font-display font-semibold text-muted hover:text-cush-orange transition-colors"
       >
-        <span>←</span>
+        <span>&larr;</span>
         <span>{dict.project.backToWork}</span>
       </a>
 
@@ -115,7 +117,7 @@ const lastPushed = new Date(project.lastPushed).toLocaleDateString();
                   class="inline-flex items-center justify-center gap-2 rounded-lg bg-cush-orange px-5 py-3 text-sm font-display font-semibold text-black hover:opacity-90 transition-opacity"
                 >
                   {dict.project.liveDemo}
-                  <span aria-hidden="true">↗</span>
+                  <span aria-hidden="true">&nearr;</span>
                 </a>
               )
             }
@@ -126,7 +128,7 @@ const lastPushed = new Date(project.lastPushed).toLocaleDateString();
               class="inline-flex items-center justify-center gap-2 rounded-lg border border-border bg-base/40 px-5 py-3 text-sm font-display font-semibold text-foreground hover:opacity-90 transition-opacity"
             >
               {dict.project.sourceCode}
-              <span aria-hidden="true">↗</span>
+              <span aria-hidden="true">&nearr;</span>
             </a>
           </div>
 
@@ -149,37 +151,104 @@ const lastPushed = new Date(project.lastPushed).toLocaleDateString();
 
       <section class="mt-10 grid grid-cols-1 gap-8 lg:grid-cols-3">
         <div class="lg:col-span-2 space-y-8">
-          {
-            images.length > 0 && (
-              <div class="rounded-2xl border border-border bg-surface overflow-hidden">
-                <div class="p-4 md:p-6 border-b border-border">
-                  <h2 class="font-display text-lg font-bold text-foreground">
-                    Vista previa
-                  </h2>
-                </div>
-                <div class="p-4 md:p-6">
-                  <div
-                    class={`grid gap-4 ${images.length > 1 ? "md:grid-cols-2" : "grid-cols-1"}`}
-                  >
+
+          {/* Video Section */}
+          {videoUrl && (
+            <div class="rounded-2xl border border-border bg-surface overflow-hidden">
+              <div class="p-4 md:p-6 border-b border-border">
+                <h2 class="font-display text-lg font-bold text-foreground">
+                  Video Demostrativo
+                </h2>
+              </div>
+              <div class="p-4 md:p-6">
+                <video
+                  controls
+                  preload="metadata"
+                  class="w-full rounded-xl"
+                  poster={images[0]?.src}
+                >
+                  <source src={videoUrl} type="video/mp4" />
+                  Tu navegador no soporta el elemento de video.
+                </video>
+              </div>
+            </div>
+          )}
+
+          {/* Image Slider */}
+          {images.length > 0 && (
+            <div class="rounded-2xl border border-border bg-surface overflow-hidden">
+              <div class="p-4 md:p-6 border-b border-border flex items-center justify-between">
+                <h2 class="font-display text-lg font-bold text-foreground">
+                  Capturas de Pantalla
+                </h2>
+                {images.length > 1 && (
+                  <span class="text-sm text-muted" id="slide-counter">1 / {images.length}</span>
+                )}
+              </div>
+              <div class="relative group">
+                <div id="slider" class="overflow-hidden">
+                  <div id="slider-track" class="flex transition-transform duration-300 ease-in-out">
                     {images.map((img) => (
-                      <figure class="rounded-xl border border-border bg-base/40 overflow-hidden">
-                        <img
-                          src={img.src}
-                          alt={img.alt.es}
-                          loading="lazy"
-                          class="w-full h-auto"
-                        />
-                      </figure>
+                      <div class="w-full flex-shrink-0 p-4 md:p-6">
+                        <figure class="rounded-xl border border-border bg-base/40 overflow-hidden">
+                          <img
+                            src={img.src}
+                            alt={img.alt.es}
+                            loading="lazy"
+                            class="w-full h-auto"
+                          />
+                        </figure>
+                      </div>
                     ))}
                   </div>
                 </div>
+                {images.length > 1 && (
+                  <>
+                    <button
+                      id="prev-btn"
+                      class="absolute left-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/60 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:bg-black/80"
+                      aria-label="Imagen anterior"
+                    >
+                      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    </button>
+                    <button
+                      id="next-btn"
+                      class="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/60 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:bg-black/80"
+                      aria-label="Siguiente imagen"
+                    >
+                      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                    </button>
+                  </>
+                )}
               </div>
-            )
-          }
+              {images.length > 1 && (
+                <div class="flex justify-center gap-2 pb-4">
+                  {images.map((_, i) => (
+                    <button
+                      class:list={["slider-dot w-2.5 h-2.5 rounded-full transition-colors", i === 0 ? "bg-cush-orange" : "bg-gray-300 dark:bg-gray-600"]}
+                      data-index={i}
+                      aria-label={`Ir a imagen ${i + 1}`}
+                    />
+                  ))}
+                </div>
+              )}
+            </div>
+          )}
 
+          {/* The Challenge */}
+          {detail?.problemTitle && detail?.problemBody && (
+            <div class="rounded-2xl border border-border bg-surface p-6 md:p-8">
+              <h2 class="font-display text-2xl font-bold text-foreground">
+                {detail.problemTitle}
+              </h2>
+              <p class="mt-4 text-muted">{detail.problemBody}</p>
+            </div>
+          )}
+
+          {/* Overview / The Solution */}
           <div class="rounded-2xl border border-border bg-surface p-6 md:p-8">
             <h2 class="font-display text-2xl font-bold text-foreground">
-              {dict.project.overview}
+              {detail?.problemTitle ? "La Soluci\u00f3n" : dict.project.overview}
             </h2>
             <div class="mt-4 space-y-4 text-muted">
               {
@@ -206,6 +275,26 @@ const lastPushed = new Date(project.lastPushed).toLocaleDateString();
             </div>
           </div>
 
+          {/* Key Results */}
+          {detail?.resultsTitle && detail?.results && detail.results.length > 0 && (
+            <div class="rounded-2xl border border-cush-orange/30 bg-cush-orange/5 dark:bg-cush-orange/10 p-6 md:p-8">
+              <h2 class="font-display text-2xl font-bold text-foreground">
+                {detail.resultsTitle}
+              </h2>
+              <ul class="mt-4 space-y-3">
+                {detail.results.map((item) => (
+                  <li class="flex items-start gap-3 text-muted">
+                    <svg class="w-5 h-5 text-cush-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {/* Highlights */}
           {
             detail && (
               <div class="rounded-2xl border border-border bg-surface p-6 md:p-8">
@@ -264,7 +353,7 @@ const lastPushed = new Date(project.lastPushed).toLocaleDateString();
                     </span>
                   ))
                 ) : (
-                  <p class="text-sm text-muted">—</p>
+                  <p class="text-sm text-muted">&mdash;</p>
                 )
               }
             </div>
@@ -285,13 +374,71 @@ const lastPushed = new Date(project.lastPushed).toLocaleDateString();
                       </span>
                     ))
                 ) : (
-                  <p class="text-sm text-muted">—</p>
+                  <p class="text-sm text-muted">&mdash;</p>
                 )
               }
             </div>
           </div>
         </aside>
       </section>
+
+      {/* Bottom CTA */}
+      <section class="mt-16 rounded-2xl bg-gray-900 dark:bg-black p-8 md:p-12 text-center relative overflow-hidden">
+        <div class="absolute inset-0 -z-10">
+          <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[200px] bg-cush-orange/20 rounded-full blur-[80px]"></div>
+        </div>
+        <h2 class="font-display text-2xl md:text-3xl font-bold text-white mb-3">
+          &iquest;Tienes un desaf&iacute;o similar?
+        </h2>
+        <p class="text-gray-400 mb-6 max-w-lg mx-auto">
+          Hablemos sobre c&oacute;mo una soluci&oacute;n as&iacute; podr&iacute;a funcionar para tu equipo. Llamada gratis, sin compromiso.
+        </p>
+        <a
+          href="/es/reservar"
+          class="group inline-flex items-center gap-2 px-6 py-3 bg-cush-orange text-white font-display font-semibold rounded-lg hover:bg-cush-orange/90 transition-all shadow-lg shadow-cush-orange/25"
+        >
+          Agendar Llamada Gratis
+          <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+      </section>
     </div>
   </main>
+
+  {/* Slider script */}
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const track = document.getElementById('slider-track') as HTMLElement | null;
+      const prevBtn = document.getElementById('prev-btn');
+      const nextBtn = document.getElementById('next-btn');
+      const counter = document.getElementById('slide-counter');
+      const dots = document.querySelectorAll('.slider-dot');
+
+      if (!track || dots.length === 0) return;
+
+      const total = dots.length;
+      let current = 0;
+
+      function goTo(index: number) {
+        current = ((index % total) + total) % total;
+        track!.style.transform = `translateX(-${current * 100}%)`;
+        if (counter) counter.textContent = `${current + 1} / ${total}`;
+        dots.forEach((dot, i) => {
+          dot.classList.toggle('bg-cush-orange', i === current);
+          dot.classList.toggle('bg-gray-300', i !== current);
+          dot.classList.toggle('dark:bg-gray-600', i !== current);
+        });
+      }
+
+      prevBtn?.addEventListener('click', () => goTo(current - 1));
+      nextBtn?.addEventListener('click', () => goTo(current + 1));
+      dots.forEach((dot) => {
+        dot.addEventListener('click', () => {
+          const idx = parseInt((dot as HTMLElement).dataset.index || '0');
+          goTo(idx);
+        });
+      });
+    });
+  </script>
 </BaseLayout>

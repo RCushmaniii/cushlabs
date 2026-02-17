@@ -11,11 +11,17 @@ export type ProjectDetailLocale = {
   notFor: string[];
   whatYouGetTitle: string;
   whatYouGet: string[];
+  problemTitle?: string;
+  problemBody?: string;
+  resultsTitle?: string;
+  results?: string[];
 };
 
 export type ProjectDetailOverride = {
   slug: string;
   demoUrl?: string;
+  thumbnail?: string;
+  videoUrl?: string;
   images?: { src: string; alt: { en: string; es: string } }[];
   en: ProjectDetailLocale;
   es: ProjectDetailLocale;
@@ -25,9 +31,8 @@ const details: Record<string, ProjectDetailOverride> = {
   "mazebreak-wiki": {
     slug: "mazebreak-wiki",
     demoUrl: "https://mazebreak-wiki.vercel.app",
-    images: [
-      { src: "/images/mazebreak-wiki-01.png", alt: { en: "MazeBreak GDD Wiki — documentation engine for game design", es: "MazeBreak GDD Wiki — motor de documentación para diseño de juegos" } },
-    ],
+    thumbnail: "https://opengraph.githubassets.com/1/RCushmaniii/mazebreak-wiki",
+    images: [],
     en: {
       headline: "MazeBreak GDD Wiki",
       subheadline:
@@ -64,6 +69,17 @@ const details: Record<string, ProjectDetailOverride> = {
         "Custom markdown rendering pipeline with syntax highlighting and callout detection",
         "Responsive three-column layout: sidebar + content + table of contents",
         "Vercel deployment with automated builds and SPA routing",
+      ],
+      problemTitle: "The Challenge",
+      problemBody:
+        "Game design documents are typically 30+ page Word files that are difficult to navigate, search, and reference during active development. Team members waste time scrolling through monolithic documents to find specific stats, design rules, or system specifications. There is no fast way to cross-reference related systems or search across sections.",
+      resultsTitle: "Results",
+      results: [
+        "Eliminated time spent scrolling through the Word document during development sessions",
+        "Design rules and stat tables are accessible in 2-3 keystrokes from any browser",
+        "Content stays current with the same Git workflow used for game code",
+        "Both team members have authenticated access without sharing credentials",
+        "357 KB gzipped bundle serving the entire GDD as a single-page application",
       ],
     },
     es: {
@@ -103,13 +119,30 @@ const details: Record<string, ProjectDetailOverride> = {
         "Layout responsivo de tres columnas: sidebar + contenido + tabla de contenidos",
         "Despliegue en Vercel con builds automatizados y enrutamiento SPA",
       ],
+      problemTitle: "El Desafío",
+      problemBody:
+        "Los documentos de diseño de juegos suelen ser archivos Word de más de 30 páginas difíciles de navegar, buscar y consultar durante el desarrollo activo. Los miembros del equipo pierden tiempo desplazándose por documentos monolíticos para encontrar estadísticas específicas, reglas de diseño o especificaciones del sistema. No hay forma rápida de hacer referencias cruzadas entre sistemas relacionados.",
+      resultsTitle: "Resultados",
+      results: [
+        "Eliminó el tiempo perdido desplazándose por el documento Word durante sesiones de desarrollo",
+        "Reglas de diseño y tablas de estadísticas accesibles en 2-3 teclas desde cualquier navegador",
+        "El contenido se mantiene actualizado con el mismo flujo Git usado para el código del juego",
+        "Ambos miembros del equipo tienen acceso autenticado sin compartir credenciales",
+        "Bundle de 357 KB gzipped sirviendo todo el GDD como aplicación de una sola página",
+      ],
     },
   },
   "mazebreak-trello": {
     slug: "mazebreak-trello",
     demoUrl: "https://mazebreak-trello.vercel.app",
+    thumbnail: "https://mazebreak-trello.vercel.app/images/mazebreak-trello.jpg",
+    videoUrl: "https://mazebreak-trello.vercel.app/video/MazeBreak__Sprint_as_Code.mp4",
     images: [
-      { src: "/images/mazebreak-trello-01.png", alt: { en: "MazeBreak Trello Board Automation — sprint board provisioning", es: "MazeBreak Trello Board Automation — aprovisionamiento de tableros sprint" } },
+      { src: "https://mazebreak-trello.vercel.app/images/mazebreak-trello.jpg", alt: { en: "MazeBreak Trello — Sprint board provisioning landing page", es: "MazeBreak Trello — Landing page de aprovisionamiento de tableros sprint" } },
+      { src: "https://mazebreak-trello.vercel.app/images/mazebreak-trello01.jpg", alt: { en: "Animated terminal demo showing board creation", es: "Demo animada de terminal mostrando creación de tablero" } },
+      { src: "https://mazebreak-trello.vercel.app/images/mazebreak-trello02.jpg", alt: { en: "Interactive board hotspots and workflow lists", es: "Hotspots interactivos del tablero y listas de flujo" } },
+      { src: "https://mazebreak-trello.vercel.app/images/mazebreak-trello03.jpg", alt: { en: "Card structure with checklists and dependencies", es: "Estructura de tarjetas con checklists y dependencias" } },
+      { src: "https://mazebreak-trello.vercel.app/images/mazebreak-trello04.jpg", alt: { en: "Documentation site and setup instructions", es: "Sitio de documentación e instrucciones de configuración" } },
     ],
     en: {
       headline: "MazeBreak Trello Board Automation",
@@ -148,6 +181,17 @@ const details: Record<string, ProjectDetailOverride> = {
         "Vercel deployment with proper routing configuration",
         "Full SEO implementation (JSON-LD, Open Graph, Twitter Cards)",
       ],
+      problemTitle: "The Challenge",
+      problemBody:
+        "Setting up a sprint board manually in Trello is slow, error-prone, and not repeatable. Cards lack consistent structure — some have checklists, some don't. Dependencies between cards exist only in people's heads. When a board needs to be rebuilt for a new sprint, all that structure has to be recreated from scratch.",
+      resultsTitle: "Results",
+      results: [
+        "Sprint 0 board goes from zero to fully provisioned in under 30 seconds",
+        "Every card has the same quality structure — no card is a second-class citizen",
+        "Dependencies are visible and encoded, not tribal knowledge",
+        "Developer notes surface architecture pitfalls at the point of work",
+        "Board can be torn down and rebuilt identically at any time",
+      ],
     },
     es: {
       headline: "MazeBreak Trello Board Automation",
@@ -185,6 +229,17 @@ const details: Record<string, ProjectDetailOverride> = {
         "Sitio de documentación explicando configuración y uso",
         "Despliegue en Vercel con configuración de enrutamiento apropiada",
         "Implementación SEO completa (JSON-LD, Open Graph, Twitter Cards)",
+      ],
+      problemTitle: "El Desafío",
+      problemBody:
+        "Configurar un tablero sprint manualmente en Trello es lento, propenso a errores y no es repetible. Las tarjetas carecen de estructura consistente — algunas tienen checklists, otras no. Las dependencias entre tarjetas existen solo en la cabeza de las personas. Cuando un tablero necesita reconstruirse para un nuevo sprint, toda esa estructura se tiene que recrear desde cero.",
+      resultsTitle: "Resultados",
+      results: [
+        "El tablero de Sprint 0 pasa de cero a completamente configurado en menos de 30 segundos",
+        "Cada tarjeta tiene la misma estructura de calidad — ninguna tarjeta es ciudadana de segunda clase",
+        "Las dependencias son visibles y codificadas, no conocimiento tribal",
+        "Las notas de desarrollo muestran trampas de arquitectura en el punto de trabajo",
+        "El tablero se puede destruir y reconstruir idénticamente en cualquier momento",
       ],
     },
   },
