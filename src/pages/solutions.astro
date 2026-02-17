@@ -3,8 +3,16 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Container from "../components/layout/Container.astro";
 import Section from "../components/layout/Section.astro";
 import projectsData from "../data/projects.generated.json";
+import { getProjectDetailOverride } from "../data/projectDetails";
 
 const { projects } = projectsData;
+
+function getThumbnail(project: typeof projects[number]): string | null {
+  const override = getProjectDetailOverride(project.name);
+  if (override?.thumbnail) return override.thumbnail;
+  const match = project.url.match(/github\.com\/([^/]+)\/([^/]+)(?:\/|$)/i);
+  return match ? `https://opengraph.githubassets.com/1/${match[1]}/${match[2]}` : null;
+}
 const locale = (Astro.currentLocale === "es" ? "es" : "en") as "en" | "es";
 
 const meta = {
@@ -160,12 +168,27 @@ const t = content[locale];
         {projects.map((project) => (
           <article
             class:list={[
-              "project-card group relative bg-white dark:bg-gray-900 border rounded-xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg",
+              "project-card group relative bg-white dark:bg-gray-900 border rounded-xl overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg",
               project.isFeatured ? "border-cush-orange/50" : "border-gray-200 dark:border-gray-800 hover:border-cush-orange/30"
             ]}
             data-categories={project.categories.join(",")}
             data-featured={project.isFeatured}
           >
+            {/* Thumbnail */}
+            {getThumbnail(project) && (
+              <a href={locale === "es" ? `/es/projects/${project.name}` : `/projects/${project.name}`} class="block">
+                <div class="aspect-[16/9] overflow-hidden bg-gray-100 dark:bg-gray-800">
+                  <img
+                    src={getThumbnail(project)!}
+                    alt={project.title}
+                    loading="lazy"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+              </a>
+            )}
+
+            <div class="p-6">
             <!-- Badges -->
             <div class="flex items-center gap-2 mb-3 flex-wrap">
               {project.isFeatured && (
@@ -239,6 +262,7 @@ const t = content[locale];
               >
                 {t.card.howItWorks} ↗
               </a>
+            </div>
             </div>
           </article>
         ))}

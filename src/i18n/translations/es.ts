@@ -143,6 +143,7 @@ export const es = {
   project: {
     backToWork: 'Volver a Trabajo',
     overview: 'Resumen',
+    theSolution: 'La Solución',
     highlights: 'Puntos clave',
     goodFor: 'Ideal para',
     notFor: 'No resuelve por completo',
@@ -155,6 +156,11 @@ export const es = {
     forks: 'Forks',
     tech: 'Tecnología',
     topics: 'Temas',
+    videoWalkthrough: 'Video Demostrativo',
+    screenshots: 'Capturas de Pantalla',
+    ctaHeadline: '¿Tienes un desafío similar?',
+    ctaBody: 'Hablemos sobre cómo una solución así podría funcionar para tu equipo. Llamada gratis, sin compromiso.',
+    ctaButton: 'Agendar Llamada Gratis',
   },
   theme: {
     label: 'Tema',

@@ -143,6 +143,7 @@ export const en = {
   project: {
     backToWork: 'Back to Work',
     overview: 'Overview',
+    theSolution: 'The Solution',
     highlights: 'Highlights',
     goodFor: 'Good for',
     notFor: 'Not a complete solution for',
@@ -155,6 +156,11 @@ export const en = {
     forks: 'Forks',
     tech: 'Tech',
     topics: 'Topics',
+    videoWalkthrough: 'Video Walkthrough',
+    screenshots: 'Screenshots',
+    ctaHeadline: 'Have a similar challenge?',
+    ctaBody: "Let's talk about how a solution like this could work for your team. Free call, no pitch.",
+    ctaButton: 'Book a Free Call',
   },
   theme: {
     label: 'Theme',
