@@ -114,10 +114,7 @@ const hero = content[locale];
           <form
             id="contact-form-el"
             class="space-y-4"
-            data-u={emailUser}
-            data-d={emailDomain}
-            method="post"
-            enctype="text/plain"
+            data-locale={locale}
           >
             <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
               <div>
@@ -203,15 +200,40 @@ const hero = content[locale];
               </label>
             </div>
 
+            <!-- Error message -->
+            <div id="form-error" class="hidden rounded-lg bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 p-3 text-sm text-red-700 dark:text-red-400"></div>
+
             <div class="pt-2">
               <button
                 type="submit"
-                class="inline-flex items-center justify-center rounded-lg bg-cush-orange px-6 py-3 text-sm font-display font-semibold text-black hover:opacity-90 transition-opacity"
+                id="submit-btn"
+                class="inline-flex items-center justify-center gap-2 rounded-lg bg-cush-orange px-6 py-3 text-sm font-display font-semibold text-black hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {dict.contact.formSubmit}
+                <span id="submit-text">{dict.contact.formSubmit}</span>
+                <svg id="submit-spinner" class="hidden w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24">
+                  <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                  <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
+                </svg>
               </button>
             </div>
           </form>
+
+          <!-- Success message (replaces form) -->
+          <div id="form-success" class="hidden text-center py-8">
+            <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 dark:bg-green-900/30 mb-4">
+              <svg class="w-8 h-8 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <h3 class="font-display text-xl font-bold text-foreground mb-2">
+              {locale === "es" ? "Mensaje enviado" : "Message sent"}
+            </h3>
+            <p class="text-muted">
+              {locale === "es"
+                ? "Te responderé dentro de 24 horas — usualmente más rápido."
+                : "I'll get back to you within 24 hours — usually faster."}
+            </p>
+          </div>
         </div>
 
         <!-- Contact Info (Secondary) -->
@@ -285,26 +307,86 @@ const hero = content[locale];
     </section>
   </main>
 
-  <!-- Assemble obfuscated email at runtime to defeat scrapers -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
+      // Assemble obfuscated email for the sidebar button and display
       const btn = document.getElementById('email-btn') as HTMLAnchorElement | null;
-      if (!btn) return;
-      const u = btn.dataset.u;
-      const d = btn.dataset.d;
-      const s = btn.dataset.s;
-      const addr = u + '@' + d;
+      if (btn) {
+        const u = btn.dataset.u;
+        const d = btn.dataset.d;
+        const s = btn.dataset.s;
+        const addr = u + '@' + d;
+        btn.href = 'mailto:' + addr + '?subject=' + s;
 
-      // Set mailto link on email button
-      btn.href = 'mailto:' + addr + '?subject=' + s;
+        const display = document.getElementById('email-display');
+        if (display) display.textContent = addr;
+      }
 
-      // Populate the displayed email text
-      const display = document.getElementById('email-display');
-      if (display) display.textContent = addr;
-
-      // Set form action
+      // Contact form — submit via API
       const form = document.getElementById('contact-form-el') as HTMLFormElement | null;
-      if (form) form.action = 'mailto:' + addr;
+      if (!form) return;
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement;
+        const submitText = document.getElementById('submit-text')!;
+        const spinner = document.getElementById('submit-spinner')!;
+        const errorEl = document.getElementById('form-error')!;
+        const successEl = document.getElementById('form-success')!;
+
+        // Reset error state
+        errorEl.classList.add('hidden');
+
+        // Get form values
+        const name = (form.querySelector('#name') as HTMLInputElement).value.trim();
+        const email = (form.querySelector('#email') as HTMLInputElement).value.trim();
+        const phone = (form.querySelector('#phone') as HTMLInputElement).value.trim();
+        const message = (form.querySelector('#message') as HTMLTextAreaElement).value.trim();
+        const consent = (form.querySelector('#consent') as HTMLInputElement).checked;
+        const locale = form.dataset.locale || 'en';
+
+        if (!name || !email || !message || !consent) {
+          errorEl.textContent = locale === 'es'
+            ? 'Completa los campos requeridos y acepta los términos.'
+            : 'Please complete the required fields and accept the terms.';
+          errorEl.classList.remove('hidden');
+          return;
+        }
+
+        // Show loading state
+        submitBtn.disabled = true;
+        submitText.textContent = locale === 'es' ? 'Enviando...' : 'Sending...';
+        spinner.classList.remove('hidden');
+
+        try {
+          const res = await fetch('/api/contact', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ name, email, phone, message, locale }),
+          });
+
+          const data = await res.json();
+
+          if (!res.ok || !data.ok) {
+            throw new Error(data.error || 'Unknown error');
+          }
+
+          // Success — hide form, show confirmation
+          form.classList.add('hidden');
+          successEl.classList.remove('hidden');
+        } catch (err) {
+          errorEl.textContent = locale === 'es'
+            ? 'Hubo un error al enviar. Intenta de nuevo o escríbeme por WhatsApp.'
+            : 'Something went wrong. Please try again or reach out via WhatsApp.';
+          errorEl.classList.remove('hidden');
+
+          // Reset button
+          submitBtn.disabled = false;
+          submitText.textContent = locale === 'es' ? 'Enviar Mensaje' : 'Send Message';
+          spinner.classList.add('hidden');
+        }
+      });
     });
   </script>
 </BaseLayout>
