@@ -38,11 +38,11 @@ interface Project {
 }
 
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
-const GITHUB_OWNER = process.env.GITHUB_OWNER || 'RCushmaniii';
+const GITHUB_OWNER = process.env.GITHUB_OWNER ?? 'RCushmaniii';
 
 if (!GITHUB_TOKEN) {
   if (existsSync(outputPath)) {
-    console.log('⚠️  GITHUB_TOKEN not set, using existing projects.generated.json');
+    console.warn('⚠️  GITHUB_TOKEN not set, using existing projects.generated.json');
     process.exit(0);
   }
   console.error('❌ GITHUB_TOKEN environment variable is required (no existing projects file found)');
@@ -59,8 +59,8 @@ async function extractDemoUrlFromReadme(owner: string, repo: string): Promise<st
       mediaType: { format: 'raw' }
     });
 
-    const content = typeof data === 'string' ? data : Buffer.from(data as any).toString('utf-8');
-    
+    const content = typeof data === 'string' ? data : String(data);
+
     const demoPatterns = [
       /\[(?:demo|live|production|deployed|preview|site)\]\s*\(([^)]+)\)/gi,
       /(?:demo|live|production|deployed|preview|site):\s*(https?:\/\/[^\s<)]+)/gi,
@@ -75,7 +75,7 @@ async function extractDemoUrlFromReadme(owner: string, repo: string): Promise<st
     }
 
     return null;
-  } catch (error) {
+  } catch {
     return null;
   }
 }
@@ -88,13 +88,13 @@ async function extractSummaryFromReadme(owner: string, repo: string, description
       mediaType: { format: 'raw' }
     });
 
-    const content = typeof data === 'string' ? data : Buffer.from(data as any).toString('utf-8');
-    
+    const content = typeof data === 'string' ? data : String(data);
+
     const lines = content.split('\n').filter(line => {
       const trimmed = line.trim();
-      return trimmed && 
-             !trimmed.startsWith('#') && 
-             !trimmed.startsWith('!') && 
+      return trimmed &&
+             !trimmed.startsWith('#') &&
+             !trimmed.startsWith('!') &&
              !trimmed.startsWith('[') &&
              !trimmed.startsWith('```') &&
              trimmed.length > 50;
@@ -105,7 +105,7 @@ async function extractSummaryFromReadme(owner: string, repo: string, description
     }
 
     return description;
-  } catch (error) {
+  } catch {
     return description;
   }
 }
@@ -131,7 +131,7 @@ function categorizeTopic(topic: string): { category?: string; tag?: string; stac
 }
 
 async function generateProjects() {
-  console.log('🔍 Fetching repositories from GitHub...');
+  console.warn('🔍 Fetching repositories from GitHub...');
 
   const repos = await octokit.paginate(octokit.repos.listForUser, {
     username: GITHUB_OWNER,
@@ -140,19 +140,19 @@ async function generateProjects() {
     per_page: 100
   });
 
-  console.log(`📦 Found ${repos.length} repositories`);
+  console.warn(`📦 Found ${repos.length} repositories`);
 
   const projects: Project[] = [];
 
   for (const repo of repos) {
-    console.log(`\n📝 Processing: ${repo.name}`);
+    console.warn(`\n📝 Processing: ${repo.name}`);
 
     const categories: string[] = [];
     const tags: string[] = [];
     const stack: string[] = [];
     let status: string | null = null;
 
-    (repo.topics || []).forEach(topic => {
+    (repo.topics ?? []).forEach(topic => {
       const categorized = categorizeTopic(topic);
       if (categorized.category) categories.push(categorized.category);
       if (categorized.tag) tags.push(categorized.tag);
@@ -160,16 +160,14 @@ async function generateProjects() {
       if (categorized.status) status = categorized.status;
     });
 
-    const isFeatured = repo.topics?.includes('featured') || false;
+    const isFeatured = repo.topics?.includes('featured') ?? false;
 
-    const description = repo.description || '';
+    const description = repo.description ?? '';
     const summary = await extractSummaryFromReadme(GITHUB_OWNER, repo.name, description);
 
-    let demoUrl: string | null = repo.homepage || null;
-    
-    if (!demoUrl) {
-      demoUrl = await extractDemoUrlFromReadme(GITHUB_OWNER, repo.name);
-    }
+    let demoUrl: string | null = repo.homepage ?? null;
+
+    demoUrl ??= await extractDemoUrlFromReadme(GITHUB_OWNER, repo.name);
 
     if (!demoUrl && repo.has_pages) {
       demoUrl = `https://${GITHUB_OWNER}.github.io/${repo.name}`;
@@ -182,8 +180,8 @@ async function generateProjects() {
         repo: repo.name
       });
       languages = langData;
-    } catch (error) {
-      console.log(`  ⚠️  Could not fetch languages`);
+    } catch {
+      console.warn(`  ⚠️  Could not fetch languages`);
     }
 
     const project: Project = {
@@ -195,24 +193,24 @@ async function generateProjects() {
       url: repo.html_url,
       demoUrl,
       homepage: repo.homepage ?? null,
-      topics: repo.topics || [],
+      topics: repo.topics ?? [],
       categories,
       tags,
       stack,
       status,
       language: repo.language ?? null,
       languages,
-      stars: repo.stargazers_count || 0,
-      forks: repo.forks_count || 0,
-      lastPushed: repo.pushed_at || repo.updated_at || '',
-      createdAt: repo.created_at || '',
+      stars: repo.stargazers_count ?? 0,
+      forks: repo.forks_count ?? 0,
+      lastPushed: repo.pushed_at ?? repo.updated_at ?? '',
+      createdAt: repo.created_at ?? '',
       isFeatured,
-      isArchived: repo.archived || false,
-      isPrivate: repo.private || false
+      isArchived: repo.archived ?? false,
+      isPrivate: repo.private
     };
 
     projects.push(project);
-    console.log(`  ✅ ${project.title} (${categories.join(', ') || 'uncategorized'})`);
+    console.warn(`  ✅ ${project.title} (${categories.join(', ') || 'uncategorized'})`);
   }
 
   const output = {
@@ -226,9 +224,9 @@ async function generateProjects() {
   };
 
   writeFileSync(outputPath, JSON.stringify(output, null, 2));
-  console.log(`\n✨ Generated ${projects.length} projects → ${outputPath}`);
-  console.log(`   Featured: ${projects.filter(p => p.isFeatured).length}`);
-  console.log(`   Categories: ${new Set(projects.flatMap(p => p.categories)).size}`);
+  console.warn(`\n✨ Generated ${projects.length} projects → ${outputPath}`);
+  console.warn(`   Featured: ${projects.filter(p => p.isFeatured).length}`);
+  console.warn(`   Categories: ${new Set(projects.flatMap(p => p.categories)).size}`);
 }
 
 generateProjects().catch(error => {
