@@ -11,6 +11,44 @@ A fully bilingual (EN/ES) static marketing site for **CushLabs AI Services** —
 
 ---
 
+## Architecture Slide Deck
+
+Visual walkthrough slides for presenting the CushLabs.ai system in interviews. Located in `public/images/portfolio/`.
+
+### Slide 1 — Title
+![CushLabs AI Services: The Self-Maintaining Bilingual Portfolio](/images/portfolio/cushlabs-01.png)
+*A Technical Deep Dive into Automated Architecture*
+
+### Slide 2 — System Overview
+![Not Just a Website, But a System](/images/portfolio/cushlabs-02.png)
+*Three pillars: Fully Bilingual (true localization with smart routing), Automated Sync (GitHub-to-Site pipeline), and Serverless Booking (custom wizard bypassing generic iframe embeds). Built with Astro, Tailwind CSS, TypeScript. Deployed on Vercel.*
+
+### Slide 3 — Premium Design Behavior
+![Premium Design is About Behavior, Not Just Colors](/images/portfolio/cushlabs-03.png)
+*Zero-flash theme toggling (pre-paint script), time-based theming (7am–7pm logic), SVG fractalNoise texture at 1.5% opacity, micro-interactions (card lift, thumbnail zoom), and typography pairing (Space Grotesk display + Source Serif 4 body).*
+
+### Slide 4 — Enterprise SEO Stack
+![Engineering Visibility: The Enterprise SEO Stack](/images/portfolio/cushlabs-04.png)
+*Layered stack: JSON-LD Schema.org structured data, auto-generated hreflang tags and canonicals, lazy video loading via requestIdleCallback, zero-JS FAQ accordion (CSS-only), and zero-JS interactive components.*
+
+### Slide 5 — Bilingual Architecture
+![True Bilingual Architecture (No-Library Approach)](/images/portfolio/cushlabs-05.png)
+*Standard i18next: 40KB+ bundle, runtime overhead. Custom TypeScript solution: 24 lines of code, zero runtime bloat. Key features: smart routing, type-safe dictionaries, build-time parity enforcement via pre-deploy audit.*
+
+### Slide 6 — Serverless Booking Wizard
+![The Serverless Booking Wizard](/images/portfolio/cushlabs-06.png)
+*3-step flow: Date & Time Selection → Details Input → Confirmation. Cloudflare Worker queries Google Calendar API for real-time availability. No iframes or external redirects. Auto-selects "Today" or "Tomorrow" based on current time (6pm cutoff). Fully branded UI matching the design system.*
+
+### Slide 7 — WhatsApp Integration
+![Localization Beyond Language: The WhatsApp Integration](/images/portfolio/cushlabs-07.png)
+*LATAM clients prefer WhatsApp over email. The system provides first-class deep links that respect the user's current language context — pre-filled message changes based on EN/ES locale.*
+
+### Slide 8 — Security & Anti-Scraping
+![Security & Anti-Scraping](/images/portfolio/cushlabs-08.png)
+*Email split-attribute obfuscation: `[data-u="robert"]` + `[data-d="cushlabs.ai"]` assembled into `mailto:` link only on click via JavaScript. The email address never exists as a contiguous string in the source code. Invisible to scrapers, seamless for humans.*
+
+---
+
 ## Features & Benefits Overview
 
 ### 1. Full Bilingual Architecture (EN/ES)

@@ -28,6 +28,125 @@ export type ProjectDetailOverride = {
 };
 
 const details: Record<string, ProjectDetailOverride> = {
+  "cushlabs": {
+    slug: "cushlabs",
+    demoUrl: "https://cushlabs.ai",
+    thumbnail: "/images/portfolio/cushlabs-01.png",
+    images: [
+      { src: "/images/portfolio/cushlabs-01.png", alt: { en: "CushLabs AI Services — The Self-Maintaining Bilingual Portfolio", es: "CushLabs AI Services — El Portafolio Bilingue Auto-Mantenido" } },
+      { src: "/images/portfolio/cushlabs-02.png", alt: { en: "Not Just a Website, But a System — bilingual, automated sync, serverless booking", es: "No Solo un Sitio Web, Sino un Sistema — bilingue, sincronizacion automatizada, reservas serverless" } },
+      { src: "/images/portfolio/cushlabs-03.png", alt: { en: "Premium Design is About Behavior — zero-flash theming, time-based dark mode, micro-interactions", es: "El Diseno Premium es Sobre Comportamiento — temas sin flash, modo oscuro basado en hora, micro-interacciones" } },
+      { src: "/images/portfolio/cushlabs-04.png", alt: { en: "Engineering Visibility — the enterprise SEO stack with JSON-LD, hreflang, and lazy loading", es: "Visibilidad de Ingenieria — el stack SEO empresarial con JSON-LD, hreflang y carga lazy" } },
+      { src: "/images/portfolio/cushlabs-05.png", alt: { en: "True Bilingual Architecture — 24-line custom TypeScript i18n vs 40KB+ i18next", es: "Arquitectura Bilingue Real — i18n TypeScript personalizado de 24 lineas vs i18next de 40KB+" } },
+      { src: "/images/portfolio/cushlabs-06.png", alt: { en: "The Serverless Booking Wizard — Cloudflare Worker to Google Calendar API, 3-step flow", es: "El Asistente de Reservas Serverless — Cloudflare Worker a Google Calendar API, flujo de 3 pasos" } },
+      { src: "/images/portfolio/cushlabs-07.png", alt: { en: "Localization Beyond Language — WhatsApp integration with locale-aware pre-filled messages", es: "Localizacion Mas Alla del Idioma — integracion WhatsApp con mensajes prellenados segun el idioma" } },
+      { src: "/images/portfolio/cushlabs-08.png", alt: { en: "Security and Anti-Scraping — split-attribute email obfuscation", es: "Seguridad y Anti-Scraping — ofuscacion de email por atributos divididos" } },
+    ],
+    en: {
+      headline: "CushLabs.ai — The Self-Maintaining Bilingual Portfolio",
+      subheadline:
+        "A static marketing site that punches above its weight: automated GitHub portfolio sync, custom serverless booking wizard, 24-line i18n system, and enterprise SEO — all shipping as static HTML on Vercel.",
+      overallVerdictTitle: "The Solution",
+      overallVerdictBody:
+        "CushLabs.ai is not just a marketing site — it's a self-maintaining portfolio system. A GitHub Actions pipeline syncs all public repos weekly, extracting metadata, demo URLs from READMEs, and language breakdowns. Rich content overrides layer curated marketing copy on top of auto-synced data. A custom Cloudflare Worker queries Google Calendar's FreeBusy API for real-time booking availability. A 24-line TypeScript i18n system replaces i18next with zero runtime overhead. And a pre-deploy audit catches missing translations, leaked secrets, and broken builds before anything reaches production.",
+      whatItDoesWellTitle: "Technical Highlights",
+      whatItDoesWell: [
+        "Automated GitHub-to-site portfolio pipeline via Actions + Octokit — zero manual data entry",
+        "Custom 24-line TypeScript i18n with build-time tree-shaking — no i18next, no runtime bloat",
+        "Serverless booking wizard: Cloudflare Worker + Google Calendar FreeBusy API + auto-generated Meet links",
+        "Time-based dark mode default (7am–7pm Mexico City) with pre-paint script to prevent FOUC",
+        "requestIdleCallback video preloading — zero bytes on initial page load, protects Core Web Vitals",
+        "Pre-deploy audit: secret leak detection, i18n parity enforcement, build artifact verification",
+        "Anti-scraper email obfuscation via split data attributes assembled only in client-side JS",
+      ],
+      goodForTitle: "Good for",
+      goodFor: [
+        "Consultancies needing a bilingual marketing site that stays current automatically",
+        "Solo founders who want a portfolio that updates itself when they push code to GitHub",
+        "Businesses serving LATAM markets that need WhatsApp as a first-class contact channel",
+        "Anyone who wants a custom booking flow without embedding Calendly or Cal.com iframes",
+      ],
+      notForTitle: "Not a complete solution for",
+      notFor: [
+        "Sites needing more than two languages (the i18n system is purpose-built for EN/ES)",
+        "E-commerce or transactional sites requiring server-side rendering",
+        "Teams needing a CMS for non-technical content editors",
+      ],
+      whatYouGetTitle: "What you get",
+      whatYouGet: [
+        "Astro 4 static site with Tailwind CSS and full TypeScript type safety",
+        "Automated portfolio sync via GitHub Actions (weekly + on-demand)",
+        "Custom booking system: Cloudflare Worker + Google Calendar integration",
+        "Enterprise SEO: hreflang, JSON-LD, Open Graph, Twitter Cards, auto-sitemap",
+        "Pre-deploy audit script with 6 validation checks",
+        "Premium design: SVG noise texture, gradient orbs, staggered animations, micro-interactions",
+      ],
+      problemTitle: "The Challenge",
+      problemBody:
+        "Building a bilingual marketing site for a consultancy serving the US and Mexico introduces compounding complexity: every page needs full content parity in two languages, the portfolio goes stale the moment you stop manually updating it, booking widgets from third parties break the design consistency, and SEO for bilingual sites is notoriously tricky with hreflang, canonical URLs, and sitemaps that must cover both languages correctly. Most solutions involve heavyweight i18n libraries, CMS platforms, and embedded third-party widgets — adding cost, complexity, and runtime overhead to what should be a fast static site.",
+      resultsTitle: "Results",
+      results: [
+        "27 portfolio projects synced automatically from GitHub with zero manual maintenance",
+        "Full bilingual parity enforced by automated pre-deploy audit — no translation drift",
+        "Zero-runtime i18n: 24 lines of TypeScript vs ~40KB+ for i18next",
+        "Booking flow creates Google Calendar events with Meet links — no third-party embed",
+        "Static HTML output with zero server runtime cost on Vercel",
+        "Pre-paint theme script eliminates flash-of-wrong-theme on every page load",
+      ],
+    },
+    es: {
+      headline: "CushLabs.ai — El Portafolio Bilingue Auto-Mantenido",
+      subheadline:
+        "Un sitio de marketing estatico que supera sus expectativas: sincronizacion automatica de portafolio desde GitHub, asistente de reservas serverless personalizado, sistema i18n de 24 lineas y SEO empresarial — todo desplegado como HTML estatico en Vercel.",
+      overallVerdictTitle: "La Solucion",
+      overallVerdictBody:
+        "CushLabs.ai no es solo un sitio de marketing — es un sistema de portafolio auto-mantenido. Un pipeline de GitHub Actions sincroniza todos los repos publicos semanalmente, extrayendo metadatos, URLs de demo de los READMEs y desgloses de lenguajes. Las sobrecargas de contenido enriquecido agregan copy de marketing curado sobre los datos auto-sincronizados. Un Cloudflare Worker personalizado consulta la API FreeBusy de Google Calendar para disponibilidad de reservas en tiempo real. Un sistema i18n TypeScript de 24 lineas reemplaza i18next sin overhead en runtime. Y una auditoria pre-deploy detecta traducciones faltantes, secretos filtrados y builds rotos antes de que algo llegue a produccion.",
+      whatItDoesWellTitle: "Destacados Tecnicos",
+      whatItDoesWell: [
+        "Pipeline automatizado GitHub-a-sitio via Actions + Octokit — cero entrada manual de datos",
+        "i18n TypeScript personalizado de 24 lineas con tree-shaking en build — sin i18next, sin bloat en runtime",
+        "Asistente de reservas serverless: Cloudflare Worker + API FreeBusy de Google Calendar + links Meet auto-generados",
+        "Modo oscuro por defecto basado en hora (7am–7pm Ciudad de Mexico) con script pre-paint para prevenir FOUC",
+        "Precarga de video con requestIdleCallback — cero bytes en carga inicial, protege Core Web Vitals",
+        "Auditoria pre-deploy: deteccion de secretos filtrados, verificacion de paridad i18n, validacion de artefactos de build",
+        "Ofuscacion anti-scraper de email via atributos de datos divididos ensamblados solo en JS del cliente",
+      ],
+      goodForTitle: "Ideal para",
+      goodFor: [
+        "Consultorias que necesitan un sitio de marketing bilingue que se mantenga actualizado automaticamente",
+        "Fundadores individuales que quieren un portafolio que se actualiza solo al pushear codigo a GitHub",
+        "Negocios que sirven mercados LATAM y necesitan WhatsApp como canal de contacto de primera clase",
+        "Cualquiera que quiera un flujo de reservas personalizado sin embeber iframes de Calendly o Cal.com",
+      ],
+      notForTitle: "No resuelve por completo",
+      notFor: [
+        "Sitios que necesitan mas de dos idiomas (el sistema i18n esta construido para EN/ES)",
+        "E-commerce o sitios transaccionales que requieren renderizado del lado del servidor",
+        "Equipos que necesitan un CMS para editores de contenido no tecnicos",
+      ],
+      whatYouGetTitle: "Que obtienes",
+      whatYouGet: [
+        "Sitio estatico Astro 4 con Tailwind CSS y seguridad de tipos TypeScript completa",
+        "Sincronizacion automatica de portafolio via GitHub Actions (semanal + bajo demanda)",
+        "Sistema de reservas personalizado: Cloudflare Worker + integracion Google Calendar",
+        "SEO empresarial: hreflang, JSON-LD, Open Graph, Twitter Cards, sitemap automatico",
+        "Script de auditoria pre-deploy con 6 verificaciones de validacion",
+        "Diseno premium: textura SVG de ruido, orbes de gradiente, animaciones escalonadas, micro-interacciones",
+      ],
+      problemTitle: "El Desafio",
+      problemBody:
+        "Construir un sitio de marketing bilingue para una consultoria que sirve a EE.UU. y Mexico introduce complejidad acumulada: cada pagina necesita paridad completa de contenido en dos idiomas, el portafolio se vuelve obsoleto en el momento en que dejas de actualizarlo manualmente, los widgets de reservas de terceros rompen la consistencia del diseno, y el SEO para sitios bilingues es notoriamente complicado con hreflang, URLs canonicas y sitemaps que deben cubrir ambos idiomas correctamente. La mayoria de las soluciones involucran bibliotecas i18n pesadas, plataformas CMS y widgets de terceros embebidos — agregando costo, complejidad y overhead en runtime a lo que deberia ser un sitio estatico rapido.",
+      resultsTitle: "Resultados",
+      results: [
+        "27 proyectos de portafolio sincronizados automaticamente desde GitHub sin mantenimiento manual",
+        "Paridad bilingue completa aplicada por auditoria pre-deploy automatizada — sin drift de traducciones",
+        "i18n sin runtime: 24 lineas de TypeScript vs ~40KB+ para i18next",
+        "Flujo de reservas crea eventos de Google Calendar con links Meet — sin embed de terceros",
+        "Salida HTML estatica con cero costo de runtime de servidor en Vercel",
+        "Script de tema pre-paint elimina flash de tema incorrecto en cada carga de pagina",
+      ],
+    },
+  },
   "mazebreak-wiki": {
     slug: "mazebreak-wiki",
     demoUrl: "https://mazebreak-wiki.vercel.app",
