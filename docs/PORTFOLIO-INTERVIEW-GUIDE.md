@@ -15,6 +15,10 @@ A fully bilingual (EN/ES) static marketing site for **CushLabs AI Services** —
 
 Visual walkthrough slides for presenting the CushLabs.ai system in interviews. Located in `public/images/portfolio/`.
 
+### Video Brief
+![Video poster — A Website That Works For You](/images/portfolio/cushlabs-video-poster.jpg)
+*Video walkthrough: `public/images/portfolio/cushlabs-brief.mp4` — also available on the live project detail page at `/projects/cushlabs`.*
+
 ### Slide 1 — Title
 ![CushLabs AI Services: The Self-Maintaining Bilingual Portfolio](/images/portfolio/cushlabs-01.png)
 *A Technical Deep Dive into Automated Architecture*

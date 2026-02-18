@@ -22,6 +22,7 @@ export type ProjectDetailOverride = {
   demoUrl?: string;
   thumbnail?: string;
   videoUrl?: string;
+  videoPoster?: string;
   images?: { src: string; alt: { en: string; es: string } }[];
   en: ProjectDetailLocale;
   es: ProjectDetailLocale;
@@ -32,6 +33,8 @@ const details: Record<string, ProjectDetailOverride> = {
     slug: "cushlabs",
     demoUrl: "https://cushlabs.ai",
     thumbnail: "/images/portfolio/cushlabs-01.png",
+    videoUrl: "/images/portfolio/cushlabs-brief.mp4",
+    videoPoster: "/images/portfolio/cushlabs-video-poster.jpg",
     images: [
       { src: "/images/portfolio/cushlabs-01.png", alt: { en: "CushLabs AI Services — The Self-Maintaining Bilingual Portfolio", es: "CushLabs AI Services — El Portafolio Bilingue Auto-Mantenido" } },
       { src: "/images/portfolio/cushlabs-02.png", alt: { en: "Not Just a Website, But a System — bilingual, automated sync, serverless booking", es: "No Solo un Sitio Web, Sino un Sistema — bilingue, sincronizacion automatizada, reservas serverless" } },

@@ -43,6 +43,7 @@ const images = override?.images?.length
     : [];
 
 const videoUrl = override?.videoUrl ?? null;
+const videoPoster = override?.videoPoster ?? images[0]?.src ?? undefined;
 
 const tech = Array.from(
   new Set(
@@ -165,7 +166,7 @@ const lastPushed = new Date(project.lastPushed).toLocaleDateString();
                   controls
                   preload="metadata"
                   class="w-full rounded-xl"
-                  poster={images[0]?.src}
+                  poster={videoPoster}
                 >
                   <source src={videoUrl} type="video/mp4" />
                   <track kind="captions" />
