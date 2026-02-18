@@ -168,6 +168,7 @@ const lastPushed = new Date(project.lastPushed).toLocaleDateString();
                   poster={images[0]?.src}
                 >
                   <source src={videoUrl} type="video/mp4" />
+                  <track kind="captions" />
                   Tu navegador no soporta el elemento de video.
                 </video>
               </div>

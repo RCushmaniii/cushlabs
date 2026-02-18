@@ -289,11 +289,16 @@ async function checkStaticArtifacts() {
 
   const expected = [
     "index.html",
-    "work/index.html",
+    "solutions/index.html",
     "consultation/index.html",
+    "contact/index.html",
+    "about/index.html",
+    "blog/index.html",
     "es/index.html",
-    "es/work/index.html",
+    "es/solutions/index.html",
     "es/reservar/index.html",
+    "es/contact/index.html",
+    "es/about/index.html",
     "projects/react-vite-tailwind-base/index.html",
     "es/projects/react-vite-tailwind-base/index.html",
   ];
