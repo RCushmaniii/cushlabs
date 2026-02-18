@@ -3,6 +3,7 @@ import { Octokit } from '@octokit/rest';
 import { writeFileSync, existsSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
+import matter from 'gray-matter';
 
 config();
 
@@ -12,6 +13,12 @@ const __dirname = dirname(__filename);
 // Check for existing projects file
 const outputPath = join(__dirname, '../src/data/projects.generated.json');
 
+interface HeroImage {
+  src: string;
+  altEn: string;
+  altEs: string;
+}
+
 interface Project {
   id: number;
   name: string;
@@ -20,6 +27,7 @@ interface Project {
   summary: string;
   url: string;
   demoUrl: string | null;
+  liveUrl: string | null;
   homepage: string | null;
   topics: string[];
   categories: string[];
@@ -35,6 +43,42 @@ interface Project {
   isFeatured: boolean;
   isArchived: boolean;
   isPrivate: boolean;
+  // Portfolio.md fields
+  tagline: string | null;
+  thumbnail: string | null;
+  problem: string | null;
+  solution: string | null;
+  keyFeatures: string[];
+  metrics: string[];
+  priority: number;
+  dateCompleted: string | null;
+  heroImages: HeroImage[];
+  videoUrl: string | null;
+  videoPoster: string | null;
+}
+
+interface PortfolioFrontmatter {
+  portfolio_enabled?: boolean;
+  portfolio_priority?: number;
+  portfolio_featured?: boolean;
+  title?: string;
+  tagline?: string;
+  slug?: string;
+  category?: string;
+  tech_stack?: string[];
+  thumbnail?: string;
+  status?: string;
+  problem?: string;
+  solution?: string;
+  key_features?: string[];
+  metrics?: string[];
+  demo_url?: string;
+  live_url?: string;
+  hero_images?: { src: string; alt_en: string; alt_es: string }[];
+  video_url?: string;
+  video_poster?: string;
+  tags?: string[];
+  date_completed?: string;
 }
 
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
@@ -50,6 +94,27 @@ if (!GITHUB_TOKEN) {
 }
 
 const octokit = new Octokit({ auth: GITHUB_TOKEN });
+
+async function fetchPortfolioMd(owner: string, repo: string): Promise<PortfolioFrontmatter | null> {
+  // Try PORTFOLIO.md first, then portfolio.md
+  for (const filename of ['PORTFOLIO.md', 'portfolio.md']) {
+    try {
+      const { data } = await octokit.repos.getContent({
+        owner,
+        repo,
+        path: filename,
+        mediaType: { format: 'raw' }
+      });
+
+      const content = typeof data === 'string' ? data : String(data);
+      const { data: frontmatter } = matter(content);
+      return frontmatter as PortfolioFrontmatter;
+    } catch {
+      // File not found, try next filename
+    }
+  }
+  return null;
+}
 
 async function extractDemoUrlFromReadme(owner: string, repo: string): Promise<string | null> {
   try {
@@ -143,10 +208,26 @@ async function generateProjects() {
   console.warn(`📦 Found ${repos.length} repositories`);
 
   const projects: Project[] = [];
+  let skippedByPortfolio = 0;
 
   for (const repo of repos) {
     console.warn(`\n📝 Processing: ${repo.name}`);
 
+    // Fetch portfolio.md alongside other data
+    const portfolio = await fetchPortfolioMd(GITHUB_OWNER, repo.name);
+
+    if (portfolio) {
+      console.warn(`  📄 Found PORTFOLIO.md`);
+    }
+
+    // If portfolio explicitly disables this repo, skip it
+    if (portfolio && portfolio.portfolio_enabled === false) {
+      console.warn(`  ⏭️  Skipped (portfolio_enabled: false)`);
+      skippedByPortfolio++;
+      continue;
+    }
+
+    // Parse topics into categories/tags/stack/status
     const categories: string[] = [];
     const tags: string[] = [];
     const stack: string[] = [];
@@ -160,7 +241,7 @@ async function generateProjects() {
       if (categorized.status) status = categorized.status;
     });
 
-    const isFeatured = repo.topics?.includes('featured') ?? false;
+    let isFeatured = repo.topics?.includes('featured') ?? false;
 
     const description = repo.description ?? '';
     const summary = await extractSummaryFromReadme(GITHUB_OWNER, repo.name, description);
@@ -184,14 +265,50 @@ async function generateProjects() {
       console.warn(`  ⚠️  Could not fetch languages`);
     }
 
+    // Apply portfolio.md overrides
+    if (portfolio) {
+      if (portfolio.title) {
+        console.warn(`  📌 Title override: "${portfolio.title}"`);
+      }
+      if (portfolio.category) {
+        // Add portfolio category if not already present
+        if (!categories.includes(portfolio.category)) {
+          categories.push(portfolio.category);
+        }
+      }
+      if (portfolio.tech_stack) {
+        // Portfolio tech_stack replaces topic-derived stack
+        stack.length = 0;
+        stack.push(...portfolio.tech_stack);
+      }
+      if (portfolio.status) {
+        status = portfolio.status;
+      }
+      if (portfolio.demo_url) {
+        demoUrl = portfolio.demo_url;
+      }
+      if (portfolio.portfolio_featured !== undefined) {
+        isFeatured = portfolio.portfolio_featured;
+      }
+      if (portfolio.tags) {
+        // Merge portfolio tags with topic-derived tags (deduplicated)
+        for (const tag of portfolio.tags) {
+          if (!tags.includes(tag)) {
+            tags.push(tag);
+          }
+        }
+      }
+    }
+
     const project: Project = {
       id: repo.id,
       name: repo.name,
-      title: prettifyRepoName(repo.name),
+      title: portfolio?.title ?? prettifyRepoName(repo.name),
       description,
       summary,
       url: repo.html_url,
       demoUrl,
+      liveUrl: portfolio?.live_url ?? null,
       homepage: repo.homepage ?? null,
       topics: repo.topics ?? [],
       categories,
@@ -206,27 +323,49 @@ async function generateProjects() {
       createdAt: repo.created_at ?? '',
       isFeatured,
       isArchived: repo.archived ?? false,
-      isPrivate: repo.private
+      isPrivate: repo.private,
+      // Portfolio.md fields
+      tagline: portfolio?.tagline ?? null,
+      thumbnail: portfolio?.thumbnail ?? null,
+      problem: portfolio?.problem ?? null,
+      solution: portfolio?.solution ?? null,
+      keyFeatures: portfolio?.key_features ?? [],
+      metrics: portfolio?.metrics ?? [],
+      priority: portfolio?.portfolio_priority ?? 99,
+      dateCompleted: portfolio?.date_completed ?? null,
+      heroImages: (portfolio?.hero_images ?? []).map(img => ({
+        src: img.src,
+        altEn: img.alt_en,
+        altEs: img.alt_es
+      })),
+      videoUrl: portfolio?.video_url ?? null,
+      videoPoster: portfolio?.video_poster ?? null
     };
 
     projects.push(project);
-    console.warn(`  ✅ ${project.title} (${categories.join(', ') || 'uncategorized'})`);
+    console.warn(`  ✅ ${project.title} (${categories.join(', ') || 'uncategorized'}) [priority: ${project.priority}]`);
   }
+
+  // Sort: priority ascending (lower = higher), then featured first, then lastPushed descending
+  const sorted = projects.sort((a, b) => {
+    if (a.priority !== b.priority) return a.priority - b.priority;
+    if (a.isFeatured && !b.isFeatured) return -1;
+    if (!a.isFeatured && b.isFeatured) return 1;
+    return new Date(b.lastPushed).getTime() - new Date(a.lastPushed).getTime();
+  });
 
   const output = {
     generatedAt: new Date().toISOString(),
-    count: projects.length,
-    projects: projects.sort((a, b) => {
-      if (a.isFeatured && !b.isFeatured) return -1;
-      if (!a.isFeatured && b.isFeatured) return 1;
-      return new Date(b.lastPushed).getTime() - new Date(a.lastPushed).getTime();
-    })
+    count: sorted.length,
+    projects: sorted
   };
 
   writeFileSync(outputPath, JSON.stringify(output, null, 2));
-  console.warn(`\n✨ Generated ${projects.length} projects → ${outputPath}`);
-  console.warn(`   Featured: ${projects.filter(p => p.isFeatured).length}`);
-  console.warn(`   Categories: ${new Set(projects.flatMap(p => p.categories)).size}`);
+  console.warn(`\n✨ Generated ${sorted.length} projects → ${outputPath}`);
+  console.warn(`   Featured: ${sorted.filter(p => p.isFeatured).length}`);
+  console.warn(`   With PORTFOLIO.md: ${sorted.filter(p => p.tagline !== null).length}`);
+  console.warn(`   Skipped (portfolio_enabled: false): ${skippedByPortfolio}`);
+  console.warn(`   Categories: ${new Set(sorted.flatMap(p => p.categories)).size}`);
 }
 
 generateProjects().catch(error => {

@@ -8,8 +8,12 @@ import { getProjectDetailOverride } from "../data/projectDetails";
 const { projects } = projectsData;
 
 function getThumbnail(project: typeof projects[number]): string | null {
+  // 1. Portfolio.md thumbnail (from generated JSON)
+  if ('thumbnail' in project && project.thumbnail) return project.thumbnail as string;
+  // 2. projectDetails.ts override
   const override = getProjectDetailOverride(project.name);
   if (override?.thumbnail) return override.thumbnail;
+  // 3. GitHub OpenGraph fallback
   const match = project.url.match(/github\.com\/([^/]+)\/([^/]+)(?:\/|$)/i);
   return match ? `https://opengraph.githubassets.com/1/${match[1]}/${match[2]}` : null;
 }
