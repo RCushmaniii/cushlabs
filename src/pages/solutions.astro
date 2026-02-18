@@ -8,8 +8,11 @@ import { getProjectDetailOverride } from "../data/projectDetails";
 const { projects } = projectsData;
 
 function getThumbnail(project: typeof projects[number]): string | null {
-  // 1. Portfolio.md thumbnail (from generated JSON)
-  if ('thumbnail' in project && project.thumbnail) return project.thumbnail as string;
+  // 1. Portfolio.md thumbnail — only trust absolute URLs or /images/portfolio/ paths
+  if ('thumbnail' in project && project.thumbnail) {
+    const thumb = project.thumbnail as string;
+    if (thumb.startsWith('https://') || thumb.startsWith('/images/portfolio/')) return thumb;
+  }
   // 2. projectDetails.ts override
   const override = getProjectDetailOverride(project.name);
   if (override?.thumbnail) return override.thumbnail;
