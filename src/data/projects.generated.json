@@ -1,103 +1,7 @@
 {
-  "generatedAt": "2026-02-16T21:01:20.239Z",
+  "generatedAt": "2026-02-18T02:15:09.621Z",
   "count": 27,
   "projects": [
-    {
-      "id": 1154149780,
-      "name": "mazebreak-trello",
-      "title": "MazeBreak Trello Board Automation",
-      "description": "Trello Power-Up and project management automation for MazeBreak Roblox game development",
-      "summary": "Idempotent sprint board provisioning via Trello REST API for Roblox game development. One command creates 8 workflow lists, labeled cards with dependency chains, and 4 instruction cards.",
-      "url": "https://github.com/RCushmaniii/mazebreak-trello",
-      "demoUrl": "https://mazebreak-trello.vercel.app",
-      "homepage": "https://mazebreak-trello.vercel.app",
-      "topics": [
-        "developer-tools",
-        "automation",
-        "project-management",
-        "trello",
-        "game-development",
-        "api-integration",
-        "featured"
-      ],
-      "categories": [],
-      "tags": [
-        "developer-tools",
-        "automation",
-        "project-management",
-        "trello",
-        "game-development",
-        "api-integration"
-      ],
-      "stack": [
-        "Node.js",
-        "Trello REST API",
-        "Vercel"
-      ],
-      "status": "shipped",
-      "language": "JavaScript",
-      "languages": {
-        "JavaScript": 45000,
-        "HTML": 12000,
-        "CSS": 8000
-      },
-      "stars": 0,
-      "forks": 0,
-      "lastPushed": "2026-02-17T21:19:20Z",
-      "createdAt": "2026-02-10T04:00:00Z",
-      "isFeatured": true,
-      "isArchived": false,
-      "isPrivate": false
-    },
-    {
-      "id": 1154149781,
-      "name": "mazebreak-wiki",
-      "title": "MazeBreak GDD Wiki",
-      "description": "Private documentation wiki for the MazeBreak Game Design Document. Built with React, Tailwind CSS, and Clerk auth.",
-      "summary": "Private, searchable documentation wiki for the MazeBreak Game Design Document. Provides instant access to all 24 GDD chapters with full-text search, chapter-based navigation, and Clerk-authenticated a",
-      "url": "https://github.com/RCushmaniii/mazebreak-wiki",
-      "demoUrl": "https://mazebreak-wiki.vercel.app",
-      "homepage": "https://mazebreak-wiki.vercel.app",
-      "topics": [
-        "developer-tools",
-        "documentation",
-        "react",
-        "game-development",
-        "search",
-        "authentication",
-        "featured"
-      ],
-      "categories": [],
-      "tags": [
-        "developer-tools",
-        "documentation",
-        "react",
-        "game-development",
-        "search",
-        "authentication"
-      ],
-      "stack": [
-        "React 19",
-        "Vite 7",
-        "Tailwind CSS",
-        "Clerk",
-        "Fuse.js"
-      ],
-      "status": "shipped",
-      "language": "JavaScript",
-      "languages": {
-        "JavaScript": 40257,
-        "CSS": 7727,
-        "HTML": 1101
-      },
-      "stars": 0,
-      "forks": 0,
-      "lastPushed": "2026-02-10T04:43:42Z",
-      "createdAt": "2026-02-10T04:11:19Z",
-      "isFeatured": true,
-      "isArchived": false,
-      "isPrivate": false
-    },
     {
       "id": 1130115840,
       "name": "cushlabs",
@@ -128,16 +32,174 @@
       "status": null,
       "language": "Astro",
       "languages": {
-        "Astro": 291619,
+        "Astro": 341151,
+        "TypeScript": 81311,
         "HTML": 61067,
-        "TypeScript": 56226,
-        "JavaScript": 10565,
+        "JavaScript": 26662,
         "CSS": 1697
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-02-16T20:38:40Z",
+      "lastPushed": "2026-02-18T02:14:28Z",
       "createdAt": "2026-01-08T03:52:43Z",
+      "isFeatured": false,
+      "isArchived": false,
+      "isPrivate": false
+    },
+    {
+      "id": 1102173157,
+      "name": "ny-ai-chatbot",
+      "title": "Ny Ai Chatbot",
+      "description": "Production-ready AI chatbot with embeddable widget for websites. Features include knowledge base integration, multi-language support, and customizable admin dashboard.",
+      "summary": "**Drop-in AI chatbot widget with RAG intelligence for small business websites.**",
+      "url": "https://github.com/RCushmaniii/ny-ai-chatbot",
+      "demoUrl": "https://www.nyenglishteacher.com",
+      "homepage": "https://www.nyenglishteacher.com",
+      "topics": [
+        "ai-chatbot",
+        "nextjs",
+        "rag-chatbot",
+        "tailwindcss",
+        "vercel-deployment"
+      ],
+      "categories": [],
+      "tags": [
+        "ai-chatbot",
+        "nextjs",
+        "rag-chatbot",
+        "tailwindcss",
+        "vercel-deployment"
+      ],
+      "stack": [],
+      "status": null,
+      "language": "TypeScript",
+      "languages": {
+        "TypeScript": 938656,
+        "JavaScript": 13855,
+        "PLpgSQL": 10195,
+        "CSS": 8090,
+        "PowerShell": 5924
+      },
+      "stars": 0,
+      "forks": 0,
+      "lastPushed": "2026-02-18T02:08:40Z",
+      "createdAt": "2025-11-23T00:24:28Z",
+      "isFeatured": false,
+      "isArchived": false,
+      "isPrivate": false
+    },
+    {
+      "id": 1154149781,
+      "name": "mazebreak-wiki",
+      "title": "Mazebreak Wiki",
+      "description": "Private documentation wiki for the MazeBreak Game Design Document. Built with React, Tailwind CSS, and Clerk auth.",
+      "summary": "Private, searchable documentation wiki for the MazeBreak Game Design Document. Provides instant access to all 24 GDD chapters with full-text search, chapter-based navigation, and Clerk-authenticated a",
+      "url": "https://github.com/RCushmaniii/mazebreak-wiki",
+      "demoUrl": "https://mazebreak-wiki.vercel.app",
+      "homepage": "https://mazebreak-wiki.vercel.app",
+      "topics": [],
+      "categories": [],
+      "tags": [],
+      "stack": [],
+      "status": null,
+      "language": "JavaScript",
+      "languages": {
+        "JavaScript": 44791,
+        "CSS": 13759,
+        "HTML": 1101
+      },
+      "stars": 0,
+      "forks": 0,
+      "lastPushed": "2026-02-18T01:10:57Z",
+      "createdAt": "2026-02-10T04:11:19Z",
+      "isFeatured": false,
+      "isArchived": false,
+      "isPrivate": false
+    },
+    {
+      "id": 1159724330,
+      "name": "mazebreak-trello",
+      "title": "Mazebreak Trello",
+      "description": "Trello Power-Up and project management automation for MazeBreak Roblox game development",
+      "summary": "Trello Power-Up and project management automation for **MazeBreak** — a combat-driven Roblox maze game.",
+      "url": "https://github.com/RCushmaniii/mazebreak-trello",
+      "demoUrl": "https://mazebreak-trello.vercel.app/",
+      "homepage": null,
+      "topics": [
+        "game-development",
+        "nodejs",
+        "project-management",
+        "roblox",
+        "trello",
+        "trello-power-up",
+        "vercel"
+      ],
+      "categories": [],
+      "tags": [
+        "game-development",
+        "nodejs",
+        "project-management",
+        "roblox",
+        "trello",
+        "trello-power-up",
+        "vercel"
+      ],
+      "stack": [],
+      "status": null,
+      "language": "HTML",
+      "languages": {
+        "HTML": 144714,
+        "JavaScript": 26409
+      },
+      "stars": 0,
+      "forks": 0,
+      "lastPushed": "2026-02-17T22:19:11Z",
+      "createdAt": "2026-02-17T04:40:23Z",
+      "isFeatured": false,
+      "isArchived": false,
+      "isPrivate": false
+    },
+    {
+      "id": 1120026584,
+      "name": "context-writing-system",
+      "title": "Context Writing System",
+      "description": "Context-engineering system to lock brand voice, enforce truth, and generate consistent AI-written content at scale.",
+      "summary": "**Clone your voice. Crush content. Scale forever.**",
+      "url": "https://github.com/RCushmaniii/context-writing-system",
+      "demoUrl": "https://cushlabs-writing-system.vercel.app",
+      "homepage": "https://cushlabs-writing-system.vercel.app",
+      "topics": [
+        "ai-assistant",
+        "ai-content-generation",
+        "business-writing",
+        "content-management",
+        "context-engineering",
+        "llm-tools",
+        "writing-system"
+      ],
+      "categories": [],
+      "tags": [
+        "ai-assistant",
+        "ai-content-generation",
+        "business-writing",
+        "content-management",
+        "context-engineering",
+        "llm-tools",
+        "writing-system"
+      ],
+      "stack": [],
+      "status": null,
+      "language": "HTML",
+      "languages": {
+        "HTML": 136130,
+        "JavaScript": 38483,
+        "CSS": 30168,
+        "PowerShell": 1981
+      },
+      "stars": 1,
+      "forks": 0,
+      "lastPushed": "2026-02-17T01:08:58Z",
+      "createdAt": "2025-12-20T10:31:00Z",
       "isFeatured": false,
       "isArchived": false,
       "isPrivate": false
@@ -255,49 +317,6 @@
       "isPrivate": false
     },
     {
-      "id": 1102173157,
-      "name": "ny-ai-chatbot",
-      "title": "Ny Ai Chatbot",
-      "description": "Production-ready AI chatbot with embeddable widget for websites. Features include knowledge base integration, multi-language support, and customizable admin dashboard.",
-      "summary": "**Drop-in AI chatbot widget with RAG intelligence for small business websites.**",
-      "url": "https://github.com/RCushmaniii/ny-ai-chatbot",
-      "demoUrl": "https://www.nyenglishteacher.com",
-      "homepage": "https://www.nyenglishteacher.com",
-      "topics": [
-        "ai-chatbot",
-        "nextjs",
-        "rag-chatbot",
-        "tailwindcss",
-        "vercel-deployment"
-      ],
-      "categories": [],
-      "tags": [
-        "ai-chatbot",
-        "nextjs",
-        "rag-chatbot",
-        "tailwindcss",
-        "vercel-deployment"
-      ],
-      "stack": [],
-      "status": null,
-      "language": "TypeScript",
-      "languages": {
-        "TypeScript": 954602,
-        "JavaScript": 13855,
-        "HTML": 11005,
-        "PLpgSQL": 10195,
-        "CSS": 8090,
-        "PowerShell": 5924
-      },
-      "stars": 0,
-      "forks": 0,
-      "lastPushed": "2026-02-11T22:32:55Z",
-      "createdAt": "2025-11-23T00:24:28Z",
-      "isFeatured": false,
-      "isArchived": false,
-      "isPrivate": false
-    },
-    {
       "id": 1132479691,
       "name": "ai-filesense",
       "title": "Ai Filesense",
@@ -347,51 +366,6 @@
       "forks": 0,
       "lastPushed": "2026-02-09T02:18:04Z",
       "createdAt": "2026-01-12T02:37:39Z",
-      "isFeatured": false,
-      "isArchived": false,
-      "isPrivate": false
-    },
-    {
-      "id": 1120026584,
-      "name": "context-writing-system",
-      "title": "Context Writing System",
-      "description": "Context-engineering system to lock brand voice, enforce truth, and generate consistent AI-written content at scale.",
-      "summary": "**Clone your voice. Crush content. Scale forever.**",
-      "url": "https://github.com/RCushmaniii/context-writing-system",
-      "demoUrl": "https://cushlabs-writing-system.vercel.app",
-      "homepage": "https://cushlabs-writing-system.vercel.app",
-      "topics": [
-        "ai-assistant",
-        "ai-content-generation",
-        "business-writing",
-        "content-management",
-        "context-engineering",
-        "llm-tools",
-        "writing-system"
-      ],
-      "categories": [],
-      "tags": [
-        "ai-assistant",
-        "ai-content-generation",
-        "business-writing",
-        "content-management",
-        "context-engineering",
-        "llm-tools",
-        "writing-system"
-      ],
-      "stack": [],
-      "status": null,
-      "language": "HTML",
-      "languages": {
-        "HTML": 134056,
-        "JavaScript": 38483,
-        "CSS": 30168,
-        "PowerShell": 1981
-      },
-      "stars": 1,
-      "forks": 0,
-      "lastPushed": "2026-02-09T02:12:31Z",
-      "createdAt": "2025-12-20T10:31:00Z",
       "isFeatured": false,
       "isArchived": false,
       "isPrivate": false
@@ -634,7 +608,7 @@
       "description": "A brutally honest defensibility assessment for founders. Find out if your business idea can survive competition, platform changes, and solo-founder realities before you build.",
       "summary": "A defensibility assessment tool that uses AI to evaluate startup ideas and detect founder optimism bias. Analyzes 23 questions across 4 sections, generates verdicts (KILL/FLIP/BUILD/BET), and identifi",
       "url": "https://github.com/RCushmaniii/ai-idea-validator",
-      "demoUrl": "https://ai-idea-validator.netlify.app**",
+      "demoUrl": "",
       "homepage": "",
       "topics": [
         "framer-motion",
