@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-02-18T17:00:14.107Z",
+  "generatedAt": "2026-02-18T22:31:04.052Z",
   "count": 21,
   "projects": [
     {
@@ -49,7 +49,7 @@
       "status": "Production",
       "language": "Astro",
       "languages": {
-        "Astro": 341502,
+        "Astro": 341656,
         "TypeScript": 97253,
         "HTML": 61067,
         "JavaScript": 26662,
@@ -57,7 +57,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-02-18T16:54:15Z",
+      "lastPushed": "2026-02-18T21:38:34Z",
       "createdAt": "2026-01-08T03:52:43Z",
       "isFeatured": true,
       "isArchived": false,
@@ -127,14 +127,90 @@
       "videoPoster": "/images/portfolio/cushlabs-video-poster.jpg"
     },
     {
+      "id": 1133839610,
+      "name": "ai-filesense-website",
+      "title": "AI Filesense Website",
+      "description": "Marketing website for AI FileSense - An ai-powered local file organization system for Windows. Landing page, downloads, privacy policy, terms of service, and changelog.",
+      "summary": "**Marketing website for AI FileSense — the Windows desktop app that organizes your files locally using Claude AI.**",
+      "url": "https://github.com/RCushmaniii/ai-filesense-website",
+      "demoUrl": "https://ai-filesense-website.vercel.app/",
+      "liveUrl": "https://ai-filesense-website.vercel.app",
+      "homepage": "https://ai-filesense-website.vercel.app",
+      "topics": [
+        "ai",
+        "claude-ai",
+        "file-organization",
+        "file-organizer",
+        "i18n",
+        "marketing-site",
+        "nextjs",
+        "resend-email",
+        "tailwind-css",
+        "typescript",
+        "windows-app"
+      ],
+      "categories": [
+        "Marketing"
+      ],
+      "tags": [
+        "ai",
+        "claude-ai",
+        "file-organization",
+        "file-organizer",
+        "i18n",
+        "marketing-site",
+        "nextjs",
+        "resend-email",
+        "tailwind-css",
+        "typescript",
+        "windows-app"
+      ],
+      "stack": [
+        "TypeScript",
+        "Next.js",
+        "TODO: Add tech"
+      ],
+      "status": "Production",
+      "language": "TypeScript",
+      "languages": {
+        "TypeScript": 198924,
+        "MDX": 27835,
+        "CSS": 1058,
+        "JavaScript": 396
+      },
+      "stars": 0,
+      "forks": 0,
+      "lastPushed": "2026-02-18T22:08:41Z",
+      "createdAt": "2026-01-13T22:16:37Z",
+      "isFeatured": true,
+      "isArchived": false,
+      "isPrivate": false,
+      "tagline": "Marketing website for AI FileSense - An ai-powered local file organization system for Windows. Landing page, downloads, privacy policy, terms of service, and changelog.",
+      "thumbnail": "",
+      "problem": "Finally organize your Desktop, Documents, and Downloads without uploading anything to the cloud. Smart AI classification that respects your privacy.",
+      "solution": "Your documents, finally organized.",
+      "keyFeatures": [
+        "How It Works",
+        "Built for Privacy, Designed for You",
+        "11 Smart Folders",
+        "Ready to Get Organized?"
+      ],
+      "metrics": [],
+      "priority": 2,
+      "dateCompleted": "2026-01",
+      "heroImages": [],
+      "videoUrl": null,
+      "videoPoster": null
+    },
+    {
       "id": 1102173157,
       "name": "ny-ai-chatbot",
-      "title": "AI Customer Support Chatbot",
+      "title": "NY AI Chatbot",
       "description": "Production-ready AI chatbot with embeddable widget for websites. Features include knowledge base integration, multi-language support, and customizable admin dashboard.",
       "summary": "**Drop-in AI chatbot widget with RAG intelligence for small business websites.**",
       "url": "https://github.com/RCushmaniii/ny-ai-chatbot",
-      "demoUrl": "https://www.nyenglishteacher.com",
-      "liveUrl": "",
+      "demoUrl": "https://ny-ai-chatbot.vercel.app",
+      "liveUrl": "https://ny-ai-chatbot.vercel.app",
       "homepage": "https://www.nyenglishteacher.com",
       "topics": [
         "ai-chatbot",
@@ -144,7 +220,7 @@
         "vercel-deployment"
       ],
       "categories": [
-        "AI Automation"
+        "AI / Chatbots"
       ],
       "tags": [
         "ai-chatbot",
@@ -152,21 +228,31 @@
         "rag-chatbot",
         "tailwindcss",
         "vercel-deployment",
+        "typescript",
+        "openai",
+        "rag",
+        "pgvector",
+        "drizzle",
+        "clerk",
+        "tailwind",
+        "bilingual",
         "chatbot",
-        "RAG",
-        "customer-support",
-        "ai-automation",
-        "embeddable-widget"
+        "ai",
+        "vercel"
       ],
       "stack": [
-        "Next.js 14",
+        "Next.js 15",
         "TypeScript",
-        "Tailwind CSS",
-        "Vercel AI SDK",
-        "RAG Pipeline",
-        "Vector Database"
+        "OpenAI GPT-4o",
+        "pgvector",
+        "Drizzle ORM",
+        "Clerk",
+        "React 19",
+        "Tailwind CSS 4",
+        "shadcn/ui",
+        "Vercel AI SDK"
       ],
-      "status": null,
+      "status": "Production",
       "language": "TypeScript",
       "languages": {
         "TypeScript": 938680,
@@ -177,22 +263,71 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-02-18T03:55:49Z",
+      "lastPushed": "2026-02-18T21:48:48Z",
       "createdAt": "2025-11-23T00:24:28Z",
       "isFeatured": true,
       "isArchived": false,
       "isPrivate": false,
-      "tagline": "Production-ready embeddable widget that reduces support tickets by 40-60%",
-      "thumbnail": "",
-      "problem": null,
-      "solution": null,
-      "keyFeatures": [],
-      "metrics": [],
-      "priority": 1,
-      "dateCompleted": null,
-      "heroImages": [],
-      "videoUrl": null,
-      "videoPoster": null
+      "tagline": "Revenue-first RAG chatbot that converts visitors into booked strategy sessions",
+      "thumbnail": "/images/portfolio/ny-eng-chatbot-01.png",
+      "problem": "Language schools treat chatbots as deflection tools — reduce ticket volume, speed up FAQ answers, dead-end the conversation. The result is a cost center that never generates revenue. Meanwhile, anonymous website visitors leave without converting because there's no sales-aware system guiding them toward high-value actions like booking a strategy session.",
+      "solution": "An AI chatbot explicitly engineered as an automated sales agent. Every architectural layer — system prompts, RAG citations, error handling, rate limits — is designed to drive conversational conversion. The bot uses benefit-driven language with real client social proof, links RAG source citations to high-value service pages, and hard-codes CTAs for free strategy sessions directly into the system prompt.",
+      "keyFeatures": [
+        "Revenue-first RAG architecture merging website content and manual knowledge sources (top 5 by cosine similarity)",
+        "System prompts hard-coded with sales CTAs — every conversation steers toward booking a strategy session",
+        "Dual-source knowledge base: scraped website content (0.5 threshold) + curated documents (0.6 threshold)",
+        "Source citations that drive traffic to high-value service pages, increasing time-on-site and eliminating hallucination",
+        "Full EN/ES bilingual support with locale-aware personality and benefit-driven language",
+        "Embeddable widget (iframe + script tag) deployable on any client domain with CORS configuration",
+        "Admin dashboard with chat analytics, knowledge management, and bot settings"
+      ],
+      "metrics": [
+        "5-layer revenue engine: System Prompts, Error CTAs, Localization, Rate Limits as Strategy, Source Citations",
+        "2 RAG knowledge sources merged by cosine similarity with configurable thresholds",
+        "Sub-second streaming responses via Vercel AI SDK with OpenAI GPT-4o",
+        "Zero-auth guest experience via sessionId cookies — no signup friction before conversion"
+      ],
+      "priority": 2,
+      "dateCompleted": "2025-12",
+      "heroImages": [
+        {
+          "src": "/images/portfolio/ny-eng-chatbot-01.png",
+          "altEn": "Conversational Conversion — The Architecture of a Revenue-First Chatbot",
+          "altEs": "Conversion Conversacional — La Arquitectura de un Chatbot Orientado a Ingresos"
+        },
+        {
+          "src": "/images/portfolio/ny-eng-chatbot-02.png",
+          "altEn": "Moving Beyond the Support Cost Center — from Deflector to Converter",
+          "altEs": "Mas Alla del Centro de Costos de Soporte — de Deflector a Convertidor"
+        },
+        {
+          "src": "/images/portfolio/ny-eng-chatbot-03.png",
+          "altEn": "The Five Gears of the Revenue Engine — Brain, Trigger, Chameleon, Soft Wall, Bridge",
+          "altEs": "Los Cinco Engranajes del Motor de Ingresos — Cerebro, Disparador, Camaleon, Muro Suave, Puente"
+        },
+        {
+          "src": "/images/portfolio/ny-eng-chatbot-04.png",
+          "altEn": "System Prompts Are Hard-Coded to Sell — CTAs baked into the bot's DNA",
+          "altEs": "Los Prompts del Sistema Estan Programados para Vender — CTAs integrados en el ADN del bot"
+        },
+        {
+          "src": "/images/portfolio/ny-eng-chatbot-05.png",
+          "altEn": "Benefit-Driven Language Builds Authority — Pivot to Value technique with client social proof",
+          "altEs": "El Lenguaje Orientado a Beneficios Construye Autoridad — tecnica Pivot to Value con prueba social de clientes"
+        },
+        {
+          "src": "/images/portfolio/ny-eng-chatbot-06.png",
+          "altEn": "Source Citations Drive Traffic to High-Value Pages — RAG grounding that doubles as SEO",
+          "altEs": "Las Citas de Fuentes Dirigen Trafico a Paginas de Alto Valor — grounding RAG que funciona como SEO"
+        },
+        {
+          "src": "/images/portfolio/ny-eng-chatbot-07.png",
+          "altEn": "Not a Support Tool — An Automated Sales Agent that books strategy sessions",
+          "altEs": "No es una Herramienta de Soporte — Un Agente de Ventas Automatizado que agenda sesiones de estrategia"
+        }
+      ],
+      "videoUrl": "/video/ny-eng-chatbot-brief.mp4",
+      "videoPoster": "/video/ny-eng-chatbot-brief-poster.jpg"
     },
     {
       "id": 1120026584,
@@ -257,82 +392,6 @@
       "metrics": [],
       "priority": 2,
       "dateCompleted": "2025-12",
-      "heroImages": [],
-      "videoUrl": null,
-      "videoPoster": null
-    },
-    {
-      "id": 1133839610,
-      "name": "ai-filesense-website",
-      "title": "AI Filesense Website",
-      "description": "Marketing website for AI FileSense - An ai-powered local file organization system for Windows. Landing page, downloads, privacy policy, terms of service, and changelog.",
-      "summary": "**Marketing website for AI FileSense — the Windows desktop app that organizes your files locally using Claude AI.**",
-      "url": "https://github.com/RCushmaniii/ai-filesense-website",
-      "demoUrl": "https://ai-filesense-website.vercel.app/",
-      "liveUrl": "https://ai-filesense-website.vercel.app",
-      "homepage": "https://ai-filesense-website.vercel.app",
-      "topics": [
-        "ai",
-        "claude-ai",
-        "file-organization",
-        "file-organizer",
-        "i18n",
-        "marketing-site",
-        "nextjs",
-        "resend-email",
-        "tailwind-css",
-        "typescript",
-        "windows-app"
-      ],
-      "categories": [
-        "Marketing"
-      ],
-      "tags": [
-        "ai",
-        "claude-ai",
-        "file-organization",
-        "file-organizer",
-        "i18n",
-        "marketing-site",
-        "nextjs",
-        "resend-email",
-        "tailwind-css",
-        "typescript",
-        "windows-app"
-      ],
-      "stack": [
-        "TypeScript",
-        "Next.js",
-        "TODO: Add tech"
-      ],
-      "status": "Production",
-      "language": "TypeScript",
-      "languages": {
-        "TypeScript": 198924,
-        "MDX": 27835,
-        "CSS": 1058,
-        "JavaScript": 396
-      },
-      "stars": 0,
-      "forks": 0,
-      "lastPushed": "2026-01-28T16:19:56Z",
-      "createdAt": "2026-01-13T22:16:37Z",
-      "isFeatured": true,
-      "isArchived": false,
-      "isPrivate": false,
-      "tagline": "Marketing website for AI FileSense - An ai-powered local file organization system for Windows. Landing page, downloads, privacy policy, terms of service, and changelog.",
-      "thumbnail": "",
-      "problem": "Finally organize your Desktop, Documents, and Downloads without uploading anything to the cloud. Smart AI classification that respects your privacy.",
-      "solution": "Your documents, finally organized.",
-      "keyFeatures": [
-        "How It Works",
-        "Built for Privacy, Designed for You",
-        "11 Smart Folders",
-        "Ready to Get Organized?"
-      ],
-      "metrics": [],
-      "priority": 2,
-      "dateCompleted": "2026-01",
       "heroImages": [],
       "videoUrl": null,
       "videoPoster": null
@@ -692,7 +751,7 @@
       "summary": "AI FileSense uses artificial intelligence to understand and organize your files based on their actual content—not just filenames. Clean up your Desktop in minutes with AI-powered categorization.",
       "url": "https://github.com/RCushmaniii/ai-filesense",
       "demoUrl": "https://ai-filesense-website.vercel.app/",
-      "liveUrl": "",
+      "liveUrl": "https://ai-filesense-website.vercel.app/",
       "homepage": "https://ai-filesense-website.vercel.app/",
       "topics": [
         "ai",
@@ -740,7 +799,7 @@
       "status": "In Development",
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 296813,
+        "TypeScript": 296775,
         "Rust": 233825,
         "JavaScript": 8353,
         "CSS": 1968,
@@ -748,7 +807,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-02-18T16:43:17Z",
+      "lastPushed": "2026-02-18T22:16:45Z",
       "createdAt": "2026-01-12T02:37:39Z",
       "isFeatured": true,
       "isArchived": false,
@@ -842,14 +901,14 @@
       "status": "Production",
       "language": "Python",
       "languages": {
-        "Python": 534641,
+        "Python": 533555,
         "PowerShell": 4838,
         "Inno Setup": 3850,
         "Batchfile": 240
       },
       "stars": 1,
       "forks": 0,
-      "lastPushed": "2026-02-18T16:28:25Z",
+      "lastPushed": "2026-02-18T22:14:55Z",
       "createdAt": "2025-10-23T22:24:30Z",
       "isFeatured": true,
       "isArchived": false,
