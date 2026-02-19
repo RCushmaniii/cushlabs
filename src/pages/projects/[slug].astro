@@ -38,12 +38,27 @@ const ogImageUrl = githubMatch
   : null;
 const images = override?.images?.length
   ? override.images
-  : ogImageUrl
-    ? [{ src: ogImageUrl, alt: { en: project.title, es: project.title } }]
-    : [];
+  : project.heroImages?.length
+    ? project.heroImages.map((img: { src: string; altEn: string; altEs: string }) => ({
+        src: img.src,
+        alt: { en: img.altEn, es: img.altEs },
+      }))
+    : ogImageUrl
+      ? [{ src: ogImageUrl, alt: { en: project.title, es: project.title } }]
+      : [];
 
-const videoUrl = override?.videoUrl ?? null;
-const videoPoster = override?.videoPoster ?? images[0]?.src ?? undefined;
+const videoUrl = override?.videoUrl ?? project.videoUrl ?? null;
+const videoPoster = override?.videoPoster ?? project.videoPoster ?? images[0]?.src ?? undefined;
+
+// Portfolio.md fallbacks for rich content sections
+const problemTitle = detail?.problemTitle ?? (project.problem ? "The Challenge" : null);
+const problemBody = detail?.problemBody ?? project.problem ?? null;
+const solutionBody = detail?.overallVerdictBody ?? project.solution ?? null;
+const features = detail?.whatItDoesWell ?? (project.keyFeatures?.length ? project.keyFeatures : null);
+const featuresTitle = detail?.whatItDoesWellTitle ?? (features ? "Key Features" : null);
+const results = detail?.results ?? (project.metrics?.length ? project.metrics : null);
+const resultsTitle = detail?.resultsTitle ?? (results ? "Results" : null);
+const hasRichContent = !!(detail || project.problem || project.solution || project.keyFeatures?.length);
 
 const tech = Array.from(
   new Set(
@@ -80,6 +95,7 @@ const lastPushed = new Date(project.lastPushed).toLocaleDateString();
           <p class="mt-4 text-lg text-muted max-w-3xl">
             {
               detail?.subheadline ||
+                project.tagline ||
                 project.description ||
                 project.summary ||
                 ""
@@ -238,37 +254,38 @@ const lastPushed = new Date(project.lastPushed).toLocaleDateString();
           )}
 
           {/* The Challenge */}
-          {detail?.problemTitle && detail?.problemBody && (
+          {problemTitle && problemBody && (
             <div class="rounded-2xl border border-border bg-surface p-6 md:p-8">
               <h2 class="font-display text-2xl font-bold text-foreground">
-                {detail.problemTitle}
+                {problemTitle}
               </h2>
-              <p class="mt-4 text-muted">{detail.problemBody}</p>
+              <p class="mt-4 text-muted">{problemBody}</p>
             </div>
           )}
 
           {/* Overview / The Solution */}
           <div class="rounded-2xl border border-border bg-surface p-6 md:p-8">
             <h2 class="font-display text-2xl font-bold text-foreground">
-              {detail?.problemTitle ? dict.project.theSolution : dict.project.overview}
+              {problemTitle ? dict.project.theSolution : dict.project.overview}
             </h2>
             <div class="mt-4 space-y-4 text-muted">
               {
-                detail ? (
+                (solutionBody || features) ? (
                   <>
-                    <h3 class="font-display text-lg font-bold text-foreground">
-                      {detail.overallVerdictTitle}
-                    </h3>
-                    <p>{detail.overallVerdictBody}</p>
+                    {solutionBody && <p>{solutionBody}</p>}
 
-                    <h3 class="font-display text-lg font-bold text-foreground">
-                      {detail.whatItDoesWellTitle}
-                    </h3>
-                    <ul class="list-disc pl-5 space-y-2">
-                      {detail.whatItDoesWell.map((item) => (
-                        <li>{item}</li>
-                      ))}
-                    </ul>
+                    {features && featuresTitle && (
+                      <>
+                        <h3 class="font-display text-lg font-bold text-foreground">
+                          {featuresTitle}
+                        </h3>
+                        <ul class="list-disc pl-5 space-y-2">
+                          {features.map((item) => (
+                            <li>{item}</li>
+                          ))}
+                        </ul>
+                      </>
+                    )}
                   </>
                 ) : (
                   <p>{project.description || project.summary || ""}</p>
@@ -277,14 +294,14 @@ const lastPushed = new Date(project.lastPushed).toLocaleDateString();
             </div>
           </div>
 
-          {/* Key Results */}
-          {detail?.resultsTitle && detail?.results && detail.results.length > 0 && (
+          {/* Key Results / Metrics */}
+          {resultsTitle && results && results.length > 0 && (
             <div class="rounded-2xl border border-cush-orange/30 bg-cush-orange/5 dark:bg-cush-orange/10 p-6 md:p-8">
               <h2 class="font-display text-2xl font-bold text-foreground">
-                {detail.resultsTitle}
+                {resultsTitle}
               </h2>
               <ul class="mt-4 space-y-3">
-                {detail.results.map((item) => (
+                {results.map((item) => (
                   <li class="flex items-start gap-3 text-muted">
                     <svg class="w-5 h-5 text-cush-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
