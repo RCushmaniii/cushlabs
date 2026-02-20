@@ -27,18 +27,9 @@ key_features:
   - "24-line TypeScript i18n replacing 40KB+ i18next with zero runtime overhead"
   - "Pre-deploy audit enforcing translation parity, secret leak detection, and build validation"
   - "requestIdleCallback video preloading — zero bytes on initial page load"
-metrics:
-  - "27 portfolio projects synced automatically from GitHub"
-  - "0 KB runtime i18n overhead (24 lines vs ~40KB+ i18next)"
-  - "6 automated pre-deploy validation checks before every production build"
-  - "Sub-second page loads with static HTML edge-cached globally"
 
-# === LINKS ===
-demo_url: "https://cushlabs.ai"
-live_url: "https://cushlabs.ai"
-
-# === OPTIONAL ===
-hero_images:
+# === MEDIA: PORTFOLIO SLIDES ===
+slides:
   - src: "/images/portfolio/cushlabs-01.png"
     alt_en: "CushLabs AI Services — The Self-Maintaining Bilingual Portfolio"
     alt_es: "CushLabs AI Services — El Portafolio Bilingue Auto-Mantenido"
@@ -63,8 +54,21 @@ hero_images:
   - src: "/images/portfolio/cushlabs-08.png"
     alt_en: "Security and Anti-Scraping — split-attribute email obfuscation"
     alt_es: "Seguridad y Anti-Scraping — ofuscacion de email por atributos divididos"
+
+# === MEDIA: VIDEO ===
 video_url: "/images/portfolio/cushlabs-brief.mp4"
 video_poster: "/images/portfolio/cushlabs-video-poster.jpg"
+
+# === LINKS ===
+demo_url: "https://cushlabs.ai"
+live_url: "https://cushlabs.ai"
+
+# === OPTIONAL ===
+metrics:
+  - "27 portfolio projects synced automatically from GitHub"
+  - "0 KB runtime i18n overhead (24 lines vs ~40KB+ i18next)"
+  - "6 automated pre-deploy validation checks before every production build"
+  - "Sub-second page loads with static HTML edge-cached globally"
 tags:
   - "astro"
   - "tailwind"
