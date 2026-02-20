@@ -57,7 +57,7 @@ slides:
 
 # === MEDIA: VIDEO ===
 video_url: "/images/portfolio/cushlabs-brief.mp4"
-video_poster: "/images/portfolio/cushlabs-video-poster.jpg"
+video_poster: "/images/portfolio/cushlabs-brief-poster.jpg"
 
 # === LINKS ===
 demo_url: "https://cushlabs.ai"
