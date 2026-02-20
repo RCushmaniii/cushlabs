@@ -47,9 +47,8 @@ const content = {
     },
     card: {
       featured: "Featured",
-      details: "Use Case",
+      details: "View Project",
       demo: "Live Demo",
-      howItWorks: "How It Works",
     },
     empty: {
       title: "No projects found",
@@ -74,9 +73,8 @@ const content = {
     },
     card: {
       featured: "Destacado",
-      details: "Caso de Uso",
+      details: "Ver Proyecto",
       demo: "Demo en Vivo",
-      howItWorks: "Cómo Funciona",
     },
     empty: {
       title: "No se encontraron proyectos",
@@ -172,107 +170,114 @@ const t = content[locale];
 
       <!-- Projects Grid -->
       <div id="projects" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {projects.map((project) => (
-          <article
-            class:list={[
-              "project-card group relative bg-white dark:bg-gray-900 border rounded-xl overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg",
-              project.isFeatured ? "border-cush-orange/50" : "border-gray-200 dark:border-gray-800 hover:border-cush-orange/30"
-            ]}
-            data-categories={project.categories.join(",")}
-            data-featured={project.isFeatured}
-          >
-            {/* Thumbnail */}
-            {getThumbnail(project) && (
-              <a href={locale === "es" ? `/es/projects/${project.name}` : `/projects/${project.name}`} class="block">
+        {projects.map((project) => {
+          const thumb = getThumbnail(project);
+          const detailHref = locale === "es" ? `/es/projects/${project.name}` : `/projects/${project.name}`;
+          const tagline = project.tagline || project.summary || project.description || "";
+          const category = project.categories[0] || null;
+          const techBadges = project.stack.slice(0, 4);
+
+          return (
+            <article
+              class:list={[
+                "project-card group relative flex flex-col bg-white dark:bg-gray-900 border rounded-xl overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg",
+                project.isFeatured ? "border-cush-orange/50" : "border-gray-200 dark:border-gray-800 hover:border-cush-orange/30"
+              ]}
+              data-categories={project.categories.join(",")}
+              data-featured={project.isFeatured}
+            >
+              {/* Thumbnail */}
+              <a href={detailHref} class="block">
                 <div class="aspect-[16/9] overflow-hidden bg-gray-100 dark:bg-gray-800">
-                  <img
-                    src={getThumbnail(project)!}
-                    alt={project.title}
-                    loading="lazy"
-                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
+                  {thumb ? (
+                    <img
+                      src={thumb}
+                      alt={project.title}
+                      loading="lazy"
+                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                  ) : (
+                    <div class="w-full h-full flex items-center justify-center">
+                      <span class="font-display text-2xl font-bold text-gray-300 dark:text-gray-600">{project.title.slice(0, 2)}</span>
+                    </div>
+                  )}
                 </div>
               </a>
-            )}
 
-            <div class="p-6">
-            <!-- Badges -->
-            <div class="flex items-center gap-2 mb-3 flex-wrap">
-              {project.isFeatured && (
-                <span class="px-2 py-1 bg-cush-orange text-white text-xs font-display font-semibold rounded">
-                  {t.card.featured}
-                </span>
-              )}
-              {project.status && (
-                <span
-                  class:list={[
-                    "px-2 py-1 text-xs font-display font-semibold rounded",
-                    project.status === "shipped" ? "bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400" :
-                    project.status === "wip" ? "bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-400" :
-                    "bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400"
-                  ]}
-                >
-                  {project.status === "shipped" ? (locale === "es" ? "Lanzado" : "Shipped") :
-                   project.status === "wip" ? (locale === "es" ? "En Progreso" : "In Progress") :
-                   project.status}
-                </span>
-              )}
-            </div>
+              <div class="flex flex-col flex-1 p-5">
+                {/* Top row: category + status */}
+                <div class="flex items-center gap-2 mb-3 flex-wrap">
+                  {category && (
+                    <span class="px-2 py-0.5 bg-cush-orange/10 text-cush-orange text-xs font-display font-semibold rounded">
+                      {category}
+                    </span>
+                  )}
+                  {project.status && (
+                    <span
+                      class:list={[
+                        "px-2 py-0.5 text-xs font-display font-semibold rounded",
+                        project.status === "Production" ? "bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400" :
+                        project.status === "Demo" ? "bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400" :
+                        "bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400"
+                      ]}
+                    >
+                      {project.status === "Production" ? (locale === "es" ? "Produccion" : "Production") :
+                       project.status === "Demo" ? "Demo" :
+                       project.status === "Archived" ? (locale === "es" ? "Archivado" : "Archived") :
+                       project.status}
+                    </span>
+                  )}
+                  {project.isFeatured && (
+                    <span class="px-2 py-0.5 bg-cush-orange text-white text-xs font-display font-semibold rounded">
+                      {t.card.featured}
+                    </span>
+                  )}
+                </div>
 
-            <!-- Title -->
-            <h2 class="font-display text-xl font-bold text-gray-900 dark:text-white mb-2">
-              <a
-                href={locale === "es" ? `/es/projects/${project.name}` : `/projects/${project.name}`}
-                class="hover:text-cush-orange transition-colors"
-              >
-                {project.title}
-              </a>
-            </h2>
+                {/* Title */}
+                <h2 class="font-display text-lg font-bold text-gray-900 dark:text-white mb-1.5 leading-tight">
+                  <a href={detailHref} class="hover:text-cush-orange transition-colors">
+                    {project.title}
+                  </a>
+                </h2>
 
-            <!-- Description - outcome focused if available -->
-            <p class="text-sm text-gray-600 dark:text-gray-400 mb-4 line-clamp-3">
-              {project.summary || project.description || "No description available"}
-            </p>
+                {/* Tagline */}
+                <p class="text-sm text-gray-600 dark:text-gray-400 mb-4 line-clamp-2">
+                  {tagline}
+                </p>
 
-            <!-- Tags (limited) -->
-            <div class="flex flex-wrap gap-1.5 mb-4">
-              {[...project.categories, ...project.stack].slice(0, 3).map((tag) => (
-                <span class="px-2 py-0.5 bg-gray-100 dark:bg-gray-800 rounded text-xs text-gray-600 dark:text-gray-400">
-                  {tag}
-                </span>
-              ))}
-            </div>
+                {/* Tech stack badges */}
+                <div class="flex flex-wrap gap-1.5 mb-4 mt-auto">
+                  {techBadges.map((tech) => (
+                    <span class="px-2 py-0.5 bg-gray-100 dark:bg-gray-800 rounded text-xs text-gray-500 dark:text-gray-400 font-display">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
 
-            <!-- Actions -->
-            <div class="flex items-center gap-2 pt-4 border-t border-gray-100 dark:border-gray-800">
-              <a
-                href={locale === "es" ? `/es/projects/${project.name}` : `/projects/${project.name}`}
-                class="inline-flex items-center gap-1 px-3 py-2 bg-cush-orange text-white text-xs font-display font-semibold rounded hover:bg-cush-orange/90 transition-all"
-              >
-                {t.card.details} →
-              </a>
-              {project.demoUrl && (
-                <a
-                  href={project.demoUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="inline-flex items-center gap-1 px-3 py-2 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 text-xs font-display font-semibold rounded hover:border-cush-orange hover:text-cush-orange transition-all"
-                >
-                  {t.card.demo} ↗
-                </a>
-              )}
-              <a
-                href={project.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="inline-flex items-center gap-1 px-3 py-2 border border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-400 text-xs font-display rounded hover:border-gray-300 dark:hover:border-gray-600 transition-all"
-              >
-                {t.card.howItWorks} ↗
-              </a>
-            </div>
-            </div>
-          </article>
-        ))}
+                {/* Actions */}
+                <div class="flex items-center gap-2 pt-3 border-t border-gray-100 dark:border-gray-800">
+                  <a
+                    href={detailHref}
+                    class="inline-flex items-center gap-1 px-3 py-1.5 bg-cush-orange text-white text-xs font-display font-semibold rounded hover:bg-cush-orange/90 transition-all"
+                  >
+                    {t.card.details} →
+                  </a>
+                  {project.demoUrl && (
+                    <a
+                      href={project.demoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="inline-flex items-center gap-1 px-3 py-1.5 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 text-xs font-display font-semibold rounded hover:border-cush-orange hover:text-cush-orange transition-all"
+                    >
+                      {t.card.demo} ↗
+                    </a>
+                  )}
+                </div>
+              </div>
+            </article>
+          );
+        })}
       </div>
 
       <!-- Empty State -->
@@ -369,9 +374,9 @@ const t = content[locale];
 </script>
 
 <style>
-  .line-clamp-3 {
+  .line-clamp-2 {
     display: -webkit-box;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
