@@ -1,131 +1,7 @@
 {
-  "generatedAt": "2026-02-20T19:00:58.000Z",
+  "generatedAt": "2026-02-20T22:46:23.315Z",
   "count": 21,
   "projects": [
-    {
-      "id": 1130115840,
-      "name": "cushlabs",
-      "title": "CushLabs.ai",
-      "description": "AI consulting and software development for SMBs — bilingual (EN/ES) site built with Astro + Tailwind CSS",
-      "summary": "AI consulting and software development for SMBs. Bilingual (EN/ES) business site with automated GitHub portfolio sync.",
-      "url": "https://github.com/RCushmaniii/cushlabs",
-      "demoUrl": "https://cushlabs.ai",
-      "liveUrl": "https://cushlabs.ai",
-      "homepage": "https://cushlabs.ai",
-      "topics": [
-        "ai-consulting",
-        "astro",
-        "bilingual",
-        "cushlabs",
-        "static-site",
-        "tailwindcss"
-      ],
-      "categories": [
-        "Web Tools"
-      ],
-      "tags": [
-        "ai-consulting",
-        "astro",
-        "bilingual",
-        "cushlabs",
-        "static-site",
-        "tailwindcss",
-        "tailwind",
-        "typescript",
-        "i18n",
-        "cloudflare-workers",
-        "google-calendar",
-        "github-actions",
-        "seo",
-        "serverless"
-      ],
-      "stack": [
-        "Astro",
-        "TypeScript",
-        "Tailwind CSS",
-        "Cloudflare Workers",
-        "Google Calendar API"
-      ],
-      "status": "Production",
-      "language": "Astro",
-      "languages": {
-        "Astro": 343622,
-        "TypeScript": 110918,
-        "HTML": 61067,
-        "JavaScript": 26662,
-        "CSS": 1697
-      },
-      "stars": 0,
-      "forks": 0,
-      "lastPushed": "2026-02-20T18:59:52Z",
-      "createdAt": "2026-01-08T03:52:43Z",
-      "isFeatured": true,
-      "isArchived": false,
-      "isPrivate": false,
-      "tagline": "Self-maintaining bilingual portfolio with serverless booking",
-      "thumbnail": "/images/portfolio/cushlabs-01.png",
-      "problem": "Bilingual marketing sites go stale the moment you stop manually updating them, and third-party booking widgets break design consistency. SEO for two-language sites compounds the complexity with hreflang, canonical URLs, and sitemaps that must cover both languages correctly.",
-      "solution": "A static Astro site with a GitHub Actions pipeline that auto-syncs portfolio data weekly, a custom Cloudflare Worker booking wizard that queries Google Calendar in real time, and a 24-line TypeScript i18n system that enforces bilingual parity at build time.",
-      "keyFeatures": [
-        "Automated GitHub-to-site portfolio sync — 27 projects with zero manual data entry",
-        "Custom serverless booking wizard creating Google Calendar events with Meet links",
-        "24-line TypeScript i18n replacing 40KB+ i18next with zero runtime overhead",
-        "Pre-deploy audit enforcing translation parity, secret leak detection, and build validation",
-        "requestIdleCallback video preloading — zero bytes on initial page load"
-      ],
-      "metrics": [
-        "27 portfolio projects synced automatically from GitHub",
-        "0 KB runtime i18n overhead (24 lines vs ~40KB+ i18next)",
-        "6 automated pre-deploy validation checks before every production build",
-        "Sub-second page loads with static HTML edge-cached globally"
-      ],
-      "priority": 1,
-      "dateCompleted": "2026-02",
-      "slides": [
-        {
-          "src": "/images/portfolio/cushlabs-01.png",
-          "altEn": "CushLabs AI Services — The Self-Maintaining Bilingual Portfolio",
-          "altEs": "CushLabs AI Services — El Portafolio Bilingue Auto-Mantenido"
-        },
-        {
-          "src": "/images/portfolio/cushlabs-02.png",
-          "altEn": "Not Just a Website, But a System — bilingual, automated sync, serverless booking",
-          "altEs": "No Solo un Sitio Web, Sino un Sistema — bilingue, sincronizacion automatizada, reservas serverless"
-        },
-        {
-          "src": "/images/portfolio/cushlabs-03.png",
-          "altEn": "Premium Design is About Behavior — zero-flash theming, time-based dark mode, micro-interactions",
-          "altEs": "El Diseno Premium es Sobre Comportamiento — temas sin flash, modo oscuro basado en hora, micro-interacciones"
-        },
-        {
-          "src": "/images/portfolio/cushlabs-04.png",
-          "altEn": "Engineering Visibility — the enterprise SEO stack with JSON-LD, hreflang, and lazy loading",
-          "altEs": "Visibilidad de Ingenieria — el stack SEO empresarial con JSON-LD, hreflang y carga lazy"
-        },
-        {
-          "src": "/images/portfolio/cushlabs-05.png",
-          "altEn": "True Bilingual Architecture — 24-line custom TypeScript i18n vs 40KB+ i18next",
-          "altEs": "Arquitectura Bilingue Real — i18n TypeScript personalizado de 24 lineas vs i18next de 40KB+"
-        },
-        {
-          "src": "/images/portfolio/cushlabs-06.png",
-          "altEn": "The Serverless Booking Wizard — Cloudflare Worker to Google Calendar API, 3-step flow",
-          "altEs": "El Asistente de Reservas Serverless — Cloudflare Worker a Google Calendar API, flujo de 3 pasos"
-        },
-        {
-          "src": "/images/portfolio/cushlabs-07.png",
-          "altEn": "Localization Beyond Language — WhatsApp integration with locale-aware pre-filled messages",
-          "altEs": "Localizacion Mas Alla del Idioma — integracion WhatsApp con mensajes prellenados segun el idioma"
-        },
-        {
-          "src": "/images/portfolio/cushlabs-08.png",
-          "altEn": "Security and Anti-Scraping — split-attribute email obfuscation",
-          "altEs": "Seguridad y Anti-Scraping — ofuscacion de email por atributos divididos"
-        }
-      ],
-      "videoUrl": "/images/portfolio/cushlabs-brief.mp4",
-      "videoPoster": "/images/portfolio/cushlabs-video-poster.jpg"
-    },
     {
       "id": 1068781109,
       "name": "react-vite-tailwind-base",
@@ -670,6 +546,289 @@
       "videoPoster": null
     },
     {
+      "id": 1127520844,
+      "name": "marble-does-not-yield",
+      "title": "The Marble Does Not Yield",
+      "description": "A cinematic, single-page storytelling experience built with Next.js 14—combining markdown-driven prose, bilingual content, scroll-triggered imagery, and accessibility-first design.",
+      "summary": "> A cinematic, single-page narrative experience that combines long-form bilingual storytelling with restrained animation, audio narration, and accessibility-first design.",
+      "url": "https://github.com/RCushmaniii/marble-does-not-yield",
+      "demoUrl": "https://marble-does-not-yield.vercel.app/",
+      "liveUrl": "https://marble-does-not-yield.vercel.app/",
+      "homepage": "https://marble-does-not-yield.vercel.app",
+      "topics": [
+        "cdn",
+        "cdn-distribution",
+        "html5-audio",
+        "longform",
+        "markdown",
+        "narrative-design",
+        "nextjs",
+        "reactjs",
+        "static-site",
+        "storytelling",
+        "tailwindcss",
+        "typescript",
+        "vercel"
+      ],
+      "categories": [
+        "Creative"
+      ],
+      "tags": [
+        "cdn",
+        "cdn-distribution",
+        "html5-audio",
+        "longform",
+        "markdown",
+        "narrative-design",
+        "nextjs",
+        "reactjs",
+        "static-site",
+        "storytelling",
+        "tailwindcss",
+        "typescript",
+        "vercel",
+        "next-js",
+        "ai-assisted-development",
+        "bilingual",
+        "accessibility",
+        "audio-narration"
+      ],
+      "stack": [
+        "Next.js 14",
+        "TypeScript",
+        "React Server Components",
+        "Tailwind CSS",
+        "Vercel"
+      ],
+      "status": "Production",
+      "language": "TypeScript",
+      "languages": {
+        "TypeScript": 52724,
+        "CSS": 2913,
+        "JavaScript": 215
+      },
+      "stars": 0,
+      "forks": 0,
+      "lastPushed": "2026-02-20T22:45:45Z",
+      "createdAt": "2026-01-04T03:47:35Z",
+      "isFeatured": true,
+      "isArchived": false,
+      "isPrivate": false,
+      "tagline": "Bilingual literary web app with scroll-driven storytelling and WCAG AAA compliance",
+      "thumbnail": "/images/portfolio/marble-does-not-yield-thumb.jpg",
+      "problem": "Long-form bilingual literary content needs a web experience that serves the narrative, not the framework. Full i18n libraries add runtime overhead for a two-language site, streaming services complicate optional audio narration, and accessibility becomes critical when the content demands sustained attention.",
+      "solution": "A static-first Next.js app where every technical decision serves the reading experience. Custom i18n with JSON labels + Markdown prose, author-read audio via a single play/pause toggle, scroll-driven IntersectionObserver animations that respect prefers-reduced-motion, and 104 kB First Load JS through React Server Components.",
+      "keyFeatures": [
+        "Custom i18n architecture — JSON for labels + Markdown for prose, zero-overhead language switching without any i18n framework",
+        "Scroll-driven storytelling with multi-stage color fade animations (3.5s) via IntersectionObserver, all respecting prefers-reduced-motion",
+        "WCAG AAA compliance with proper contrast ratios, semantic HTML, and reduced-motion support for cognitively loaded content",
+        "104 kB First Load JS — static generation with React Server Components eliminates client-side hydration cost",
+        "Six-iteration UX refinement from complex audio player to minimal toggle, demonstrating taste and restraint"
+      ],
+      "metrics": [
+        "104 kB First Load JS — zero client-side hydration cost",
+        "WCAG AAA compliance across both language variants",
+        "Six-iteration UX refinement process documented end-to-end",
+        "Zero i18n framework dependencies for full bilingual support"
+      ],
+      "priority": 3,
+      "dateCompleted": "2025-10",
+      "slides": [
+        {
+          "src": "/images/portfolio/marble-does-not-yield-01.png",
+          "altEn": "The Marble Does Not Yield slide 1",
+          "altEs": "The Marble Does Not Yield diapositiva 1"
+        },
+        {
+          "src": "/images/portfolio/marble-does-not-yield-02.png",
+          "altEn": "The Marble Does Not Yield slide 2",
+          "altEs": "The Marble Does Not Yield diapositiva 2"
+        },
+        {
+          "src": "/images/portfolio/marble-does-not-yield-03.png",
+          "altEn": "The Marble Does Not Yield slide 3",
+          "altEs": "The Marble Does Not Yield diapositiva 3"
+        },
+        {
+          "src": "/images/portfolio/marble-does-not-yield-04.png",
+          "altEn": "The Marble Does Not Yield slide 4",
+          "altEs": "The Marble Does Not Yield diapositiva 4"
+        },
+        {
+          "src": "/images/portfolio/marble-does-not-yield-05.png",
+          "altEn": "The Marble Does Not Yield slide 5",
+          "altEs": "The Marble Does Not Yield diapositiva 5"
+        },
+        {
+          "src": "/images/portfolio/marble-does-not-yield-06.png",
+          "altEn": "The Marble Does Not Yield slide 6",
+          "altEs": "The Marble Does Not Yield diapositiva 6"
+        },
+        {
+          "src": "/images/portfolio/marble-does-not-yield-07.png",
+          "altEn": "The Marble Does Not Yield slide 7",
+          "altEs": "The Marble Does Not Yield diapositiva 7"
+        },
+        {
+          "src": "/images/portfolio/marble-does-not-yield-08.png",
+          "altEn": "The Marble Does Not Yield slide 8",
+          "altEs": "The Marble Does Not Yield diapositiva 8"
+        },
+        {
+          "src": "/images/portfolio/marble-does-not-yield-09.png",
+          "altEn": "The Marble Does Not Yield slide 9",
+          "altEs": "The Marble Does Not Yield diapositiva 9"
+        },
+        {
+          "src": "/images/portfolio/marble-does-not-yield-10.png",
+          "altEn": "The Marble Does Not Yield slide 10",
+          "altEs": "The Marble Does Not Yield diapositiva 10"
+        }
+      ],
+      "videoUrl": "/video/marble-does-not-yield-brief.mp4",
+      "videoPoster": "/video/marble-does-not-yield-brief-poster.jpg"
+    },
+    {
+      "id": 1082205398,
+      "name": "stock-alert",
+      "title": "AI StockAlert",
+      "description": "Professional Windows desktop application for real-time multi-stock price monitoring with intelligent alerting and visual configuration management.",
+      "summary": "> AI StockAlert: Stock price monitoring with multi-channel alerts for Windows.",
+      "url": "https://github.com/RCushmaniii/stock-alert",
+      "demoUrl": "https://ai-stock-alert-website.netlify.app/",
+      "liveUrl": "https://aistockalert.app/",
+      "homepage": "https://ai-stock-alert-website.netlify.app/",
+      "topics": [
+        "desktop-app",
+        "python",
+        "stock-alerts",
+        "stock-market",
+        "stock-price",
+        "system-tray",
+        "windows",
+        "windows-notifications"
+      ],
+      "categories": [
+        "Tools"
+      ],
+      "tags": [
+        "desktop-app",
+        "python",
+        "stock-alerts",
+        "stock-market",
+        "stock-price",
+        "system-tray",
+        "windows",
+        "windows-notifications",
+        "fintech",
+        "pyqt",
+        "real-time",
+        "notifications",
+        "whatsapp"
+      ],
+      "stack": [
+        "Python",
+        "PyQt6",
+        "Finnhub API",
+        "Twilio/WhatsApp Business API",
+        "cx_Freeze",
+        "Vercel Serverless"
+      ],
+      "status": "Production",
+      "language": "Python",
+      "languages": {
+        "Python": 533555,
+        "PowerShell": 4838,
+        "Inno Setup": 3850,
+        "Batchfile": 240
+      },
+      "stars": 1,
+      "forks": 0,
+      "lastPushed": "2026-02-20T20:37:31Z",
+      "createdAt": "2025-10-23T22:24:30Z",
+      "isFeatured": true,
+      "isArchived": false,
+      "isPrivate": false,
+      "tagline": "Professional Windows desktop application for real-time stock price monitoring with intelligent multi-channel alerting via Windows notifications and WhatsApp.",
+      "thumbnail": "public/images/stockalert-thumb.jpg",
+      "problem": "Active traders and investors need to monitor multiple stock positions simultaneously but can't watch screens all day. Missing critical price movements can result in significant financial losses or missed opportunities. Existing solutions are either too complex, require expensive subscriptions, or lack reliable mobile notifications.",
+      "solution": "AI StockAlert is a professional Windows desktop application that monitors stock prices in real-time and sends instant alerts when prices cross user-defined thresholds. It combines the reliability of Windows desktop notifications with the convenience of WhatsApp mobile alerts, ensuring users never miss important price movements.",
+      "keyFeatures": [
+        "Real-time price monitoring for up to 15 stocks with configurable check intervals (free tier)",
+        "Multi-channel alerts: Windows toast notifications with audio and WhatsApp mobile messages",
+        "Smart consolidated notifications - multiple alerts combined into single notification per check cycle",
+        "Automatic market hours detection - only monitors during US market hours (9:30 AM - 4:00 PM ET)",
+        "Bilingual interface (English/Spanish) with full i18n support",
+        "Multi-currency display: Toggle between USD and Mexican Pesos (MXN) with live exchange rates",
+        "Background service runs silently in system tray - alerts work even when UI is closed",
+        "Company profile enrichment with logos, industry, and market cap data from Finnhub",
+        "Integrated news feed for monitored stocks (up to 5 tickers)",
+        "Professional installer with Windows Start Menu integration and auto-start capability",
+        "Dark/light theme support with one-click toggle"
+      ],
+      "metrics": [
+        "Sub-2-second alert delivery from price change detection to notification",
+        "15 stocks monitored simultaneously on free tier",
+        "60 API calls/minute rate-limited token bucket for optimal Finnhub usage"
+      ],
+      "priority": 3,
+      "dateCompleted": "2026-02",
+      "slides": [
+        {
+          "src": "public/images/stockalert-01.png",
+          "altEn": "Moving From Market Noise to Actionable Signal — hero slide with laptop and WhatsApp phone",
+          "altEs": "Del ruido del mercado a la senal accionable — diapositiva principal con laptop y WhatsApp"
+        },
+        {
+          "src": "public/images/stockalert-02.png",
+          "altEn": "The Trap of Manual Monitoring — the gap between wanting to know and finding out in time",
+          "altEs": "La trampa del monitoreo manual — la brecha entre querer saber y enterarse a tiempo"
+        },
+        {
+          "src": "public/images/stockalert-03.png",
+          "altEn": "Why Traditional Tools Fail — email alerts buried, push notifications swiped away, terminals cost $20-$200/month",
+          "altEs": "Por que fallan las herramientas tradicionales — emails enterrados, notificaciones ignoradas, terminales de $20-$200/mes"
+        },
+        {
+          "src": "public/images/stockalert-04.png",
+          "altEn": "The Message You Actually Check — WhatsApp alert on phone, the app you check 50+ times a day",
+          "altEs": "El mensaje que realmente revisas — alerta de WhatsApp en tu telefono, la app que revisas mas de 50 veces al dia"
+        },
+        {
+          "src": "public/images/stockalert-05.png",
+          "altEn": "Intelligent Background Monitoring — auto-starts with Windows, filters for market hours, instant delivery",
+          "altEs": "Monitoreo inteligente en segundo plano — inicio automatico con Windows, filtrado por horario de mercado, entrega instantanea"
+        },
+        {
+          "src": "public/images/stockalert-06.png",
+          "altEn": "A Business Model That Respects the User — one-time purchase, bring your own key, no subscription fatigue",
+          "altEs": "Un modelo de negocio que respeta al usuario — compra unica, trae tu propia clave, sin fatiga de suscripcion"
+        },
+        {
+          "src": "public/images/stockalert-07.png",
+          "altEn": "Your Data Stays on Your Device — local first, no cloud accounts, API keys never leave your machine",
+          "altEs": "Tus datos se quedan en tu dispositivo — local primero, sin cuentas en la nube, las claves API nunca salen de tu maquina"
+        },
+        {
+          "src": "public/images/stockalert-08.png",
+          "altEn": "Beyond Code: A Case Study in Product Strategy — pain points mapped to real solutions",
+          "altEs": "Mas alla del codigo: un caso de estudio en estrategia de producto — problemas reales mapeados a soluciones reales"
+        },
+        {
+          "src": "public/images/stockalert-09.png",
+          "altEn": "Trust-Building Commerce — the anti-SaaS model with no forced retention, no account creation, no hidden fees",
+          "altEs": "Comercio basado en confianza — el modelo anti-SaaS sin retencion forzada, sin creacion de cuentas, sin tarifas ocultas"
+        },
+        {
+          "src": "public/images/stockalert-10.png",
+          "altEn": "The Bottom Line — solves a manual problem, leverages WhatsApp, respects the user's wallet and privacy",
+          "altEs": "En resumen — resuelve un problema manual, aprovecha WhatsApp, respeta la billetera y la privacidad del usuario"
+        }
+      ],
+      "videoUrl": null,
+      "videoPoster": "public/video/AI-StockAlert-A-Case-Study-poster.jpg"
+    },
+    {
       "id": 1117217007,
       "name": "ai-webscraper",
       "title": "AI-Powered Web Scraper",
@@ -1027,280 +1186,98 @@
       "videoPoster": "public/video/AI-FileSense-brief-poster.jpg"
     },
     {
-      "id": 1082205398,
-      "name": "stock-alert",
+      "id": 1140204033,
+      "name": "ai-stock-alert-website",
       "title": "AI StockAlert",
-      "description": "Professional Windows desktop application for real-time multi-stock price monitoring with intelligent alerting and visual configuration management.",
-      "summary": "> AI StockAlert: Stock price monitoring with multi-channel alerts for Windows.",
-      "url": "https://github.com/RCushmaniii/stock-alert",
-      "demoUrl": "https://ai-stock-alert-website.netlify.app/",
+      "description": " Bilingual (EN/ES) Windows app for WhatsApp stock price alerts. Privacy-focused, no subscriptions, bring your own Finnhub API key.",
+      "summary": "> **Portfolio Demo**: This is a production-quality SaaS marketing website built to demonstrate modern web development practices. AI StockAlert is a fictional product—no software is available for downl",
+      "url": "https://github.com/RCushmaniii/ai-stock-alert-website",
+      "demoUrl": "https://aistockalert.app/",
       "liveUrl": "https://aistockalert.app/",
       "homepage": "https://ai-stock-alert-website.netlify.app/",
       "topics": [
-        "desktop-app",
-        "python",
+        "price-alerts",
         "stock-alerts",
-        "stock-market",
-        "stock-price",
-        "system-tray",
-        "windows",
-        "windows-notifications"
+        "stock-data",
+        "whatsapp",
+        "windows-alert",
+        "windows-app"
       ],
       "categories": [
-        "Tools"
+        "Templates"
       ],
       "tags": [
-        "desktop-app",
-        "python",
+        "price-alerts",
         "stock-alerts",
-        "stock-market",
-        "stock-price",
-        "system-tray",
-        "windows",
-        "windows-notifications",
-        "fintech",
-        "pyqt",
-        "real-time",
-        "notifications",
-        "whatsapp"
-      ],
-      "stack": [
-        "Python",
-        "PyQt6",
-        "Finnhub API",
-        "Twilio/WhatsApp Business API",
-        "cx_Freeze",
-        "Vercel Serverless"
-      ],
-      "status": "Production",
-      "language": "Python",
-      "languages": {
-        "Python": 533555,
-        "PowerShell": 4838,
-        "Inno Setup": 3850,
-        "Batchfile": 240
-      },
-      "stars": 1,
-      "forks": 0,
-      "lastPushed": "2026-02-20T18:57:24Z",
-      "createdAt": "2025-10-23T22:24:30Z",
-      "isFeatured": true,
-      "isArchived": false,
-      "isPrivate": false,
-      "tagline": "Professional Windows desktop application for real-time stock price monitoring with intelligent multi-channel alerting via Windows notifications and WhatsApp.",
-      "thumbnail": "public/images/stockalert-thumb.jpg",
-      "problem": "Active traders and investors need to monitor multiple stock positions simultaneously but can't watch screens all day. Missing critical price movements can result in significant financial losses or missed opportunities. Existing solutions are either too complex, require expensive subscriptions, or lack reliable mobile notifications.",
-      "solution": "AI StockAlert is a professional Windows desktop application that monitors stock prices in real-time and sends instant alerts when prices cross user-defined thresholds. It combines the reliability of Windows desktop notifications with the convenience of WhatsApp mobile alerts, ensuring users never miss important price movements.",
-      "keyFeatures": [
-        "Real-time price monitoring for up to 15 stocks with configurable check intervals (free tier)",
-        "Multi-channel alerts: Windows toast notifications with audio and WhatsApp mobile messages",
-        "Smart consolidated notifications - multiple alerts combined into single notification per check cycle",
-        "Automatic market hours detection - only monitors during US market hours (9:30 AM - 4:00 PM ET)",
-        "Bilingual interface (English/Spanish) with full i18n support",
-        "Multi-currency display: Toggle between USD and Mexican Pesos (MXN) with live exchange rates",
-        "Background service runs silently in system tray - alerts work even when UI is closed",
-        "Company profile enrichment with logos, industry, and market cap data from Finnhub",
-        "Integrated news feed for monitored stocks (up to 5 tickers)",
-        "Professional installer with Windows Start Menu integration and auto-start capability",
-        "Dark/light theme support with one-click toggle"
-      ],
-      "metrics": [
-        "Sub-2-second alert delivery from price change detection to notification",
-        "15 stocks monitored simultaneously on free tier",
-        "60 API calls/minute rate-limited token bucket for optimal Finnhub usage"
-      ],
-      "priority": 3,
-      "dateCompleted": "2026-02",
-      "slides": [
-        {
-          "src": "public/images/stockalert-01.png",
-          "altEn": "AI StockAlert main dashboard",
-          "altEs": "Real-time stock monitoring dashboard with live prices and alert status."
-        },
-        {
-          "src": "public/images/stockalert-02.png",
-          "altEn": "AI StockAlert alert configuration",
-          "altEs": "Configure price thresholds with above/below triggers for each stock."
-        },
-        {
-          "src": "public/images/stockalert-03.png",
-          "altEn": "AI StockAlert settings panel",
-          "altEs": "Full settings panel with API key, language, theme, and notification preferences."
-        },
-        {
-          "src": "public/images/stockalert-04.png",
-          "altEn": "AI StockAlert WhatsApp integration",
-          "altEs": "WhatsApp mobile alerts deliver price notifications anywhere."
-        },
-        {
-          "src": "public/images/stockalert-05.png",
-          "altEn": "AI StockAlert system tray",
-          "altEs": "Runs silently in the system tray — monitoring continues even when the window is closed."
-        },
-        {
-          "src": "public/images/stockalert-06.png",
-          "altEn": "AI StockAlert Windows notification",
-          "altEs": "Native Windows toast notifications with stock details and audio alerts."
-        },
-        {
-          "src": "public/images/stockalert-07.png",
-          "altEn": "AI StockAlert dark theme",
-          "altEs": "Dark theme for comfortable monitoring during extended sessions."
-        },
-        {
-          "src": "public/images/stockalert-08.png",
-          "altEn": "AI StockAlert company profiles",
-          "altEs": "Enriched company profiles with logos, industry, and market cap data."
-        },
-        {
-          "src": "public/images/stockalert-09.png",
-          "altEn": "AI StockAlert news feed",
-          "altEs": "Integrated news feed for monitored stocks keeps you informed."
-        },
-        {
-          "src": "public/images/stockalert-10.png",
-          "altEn": "AI StockAlert multi-currency display",
-          "altEs": "Toggle between USD and MXN with live exchange rate conversion."
-        }
-      ],
-      "videoUrl": null,
-      "videoPoster": "public/video/AI-StockAlert-A-Case-Study-poster.jpg"
-    },
-    {
-      "id": 1127520844,
-      "name": "marble-does-not-yield",
-      "title": "The Marble Does Not Yield",
-      "description": "A cinematic, single-page storytelling experience built with Next.js 14—combining markdown-driven prose, bilingual content, scroll-triggered imagery, and accessibility-first design.",
-      "summary": "> A cinematic, single-page narrative experience that combines long-form bilingual storytelling with restrained animation, audio narration, and accessibility-first design.",
-      "url": "https://github.com/RCushmaniii/marble-does-not-yield",
-      "demoUrl": "https://marble-does-not-yield.vercel.app/",
-      "liveUrl": "https://marble-does-not-yield.vercel.app/",
-      "homepage": "https://marble-does-not-yield.vercel.app",
-      "topics": [
-        "cdn",
-        "cdn-distribution",
-        "html5-audio",
-        "longform",
-        "markdown",
-        "narrative-design",
+        "stock-data",
+        "whatsapp",
+        "windows-alert",
+        "windows-app",
         "nextjs",
-        "reactjs",
-        "static-site",
-        "storytelling",
-        "tailwindcss",
-        "typescript",
-        "vercel"
-      ],
-      "categories": [
-        "AI Automation"
-      ],
-      "tags": [
-        "cdn",
-        "cdn-distribution",
-        "html5-audio",
-        "longform",
-        "markdown",
-        "narrative-design",
-        "nextjs",
-        "reactjs",
-        "static-site",
-        "storytelling",
-        "tailwindcss",
-        "typescript",
-        "vercel",
-        "next-js",
-        "ai-assisted-development",
+        "marketing-website",
         "bilingual",
-        "accessibility",
-        "audio-narration"
+        "i18n",
+        "saas",
+        "static-site",
+        "seo",
+        "tailwind",
+        "playwright",
+        "netlify"
       ],
       "stack": [
-        "Next.js 14 (App Router)",
+        "Next.js 16",
+        "React 19",
         "TypeScript",
-        "React Server Components",
-        "Tailwind CSS",
-        "@tailwindcss/typography",
-        "react-markdown",
-        "remark-gfm",
-        "rehype-raw",
-        "Vercel (deployment)",
-        "Markdown (content pipeline)"
+        "Tailwind CSS 4",
+        "Framer Motion",
+        "next-intl",
+        "next-themes",
+        "shadcn/ui",
+        "Radix UI",
+        "Playwright",
+        "Formspree",
+        "Netlify"
       ],
-      "status": null,
+      "status": "Complete",
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 52724,
-        "CSS": 2913,
-        "JavaScript": 215
+        "TypeScript": 162097,
+        "CSS": 5636,
+        "JavaScript": 559
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-02-20T18:57:23Z",
-      "createdAt": "2026-01-04T03:47:35Z",
+      "lastPushed": "2026-02-20T20:32:50Z",
+      "createdAt": "2026-01-23T00:50:02Z",
       "isFeatured": true,
       "isArchived": false,
       "isPrivate": false,
-      "tagline": "Bilingual narrative web app demonstrating AI-augmented development and human-centered design.",
-      "thumbnail": "/images/portfolio/marble-does-not-yield-thumb.jpg",
-      "problem": null,
-      "solution": null,
-      "keyFeatures": [],
-      "metrics": [],
-      "priority": 3,
-      "dateCompleted": null,
-      "slides": [
-        {
-          "src": "/images/portfolio/marble-does-not-yield-01.png",
-          "altEn": "The Marble Does Not Yield slide 1",
-          "altEs": "The Marble Does Not Yield diapositiva 1"
-        },
-        {
-          "src": "/images/portfolio/marble-does-not-yield-02.png",
-          "altEn": "The Marble Does Not Yield slide 2",
-          "altEs": "The Marble Does Not Yield diapositiva 2"
-        },
-        {
-          "src": "/images/portfolio/marble-does-not-yield-03.png",
-          "altEn": "The Marble Does Not Yield slide 3",
-          "altEs": "The Marble Does Not Yield diapositiva 3"
-        },
-        {
-          "src": "/images/portfolio/marble-does-not-yield-04.png",
-          "altEn": "The Marble Does Not Yield slide 4",
-          "altEs": "The Marble Does Not Yield diapositiva 4"
-        },
-        {
-          "src": "/images/portfolio/marble-does-not-yield-05.png",
-          "altEn": "The Marble Does Not Yield slide 5",
-          "altEs": "The Marble Does Not Yield diapositiva 5"
-        },
-        {
-          "src": "/images/portfolio/marble-does-not-yield-06.png",
-          "altEn": "The Marble Does Not Yield slide 6",
-          "altEs": "The Marble Does Not Yield diapositiva 6"
-        },
-        {
-          "src": "/images/portfolio/marble-does-not-yield-07.png",
-          "altEn": "The Marble Does Not Yield slide 7",
-          "altEs": "The Marble Does Not Yield diapositiva 7"
-        },
-        {
-          "src": "/images/portfolio/marble-does-not-yield-08.png",
-          "altEn": "The Marble Does Not Yield slide 8",
-          "altEs": "The Marble Does Not Yield diapositiva 8"
-        },
-        {
-          "src": "/images/portfolio/marble-does-not-yield-09.png",
-          "altEn": "The Marble Does Not Yield slide 9",
-          "altEs": "The Marble Does Not Yield diapositiva 9"
-        },
-        {
-          "src": "/images/portfolio/marble-does-not-yield-10.png",
-          "altEn": "The Marble Does Not Yield slide 10",
-          "altEs": "The Marble Does Not Yield diapositiva 10"
-        }
+      "tagline": "Bilingual SaaS marketing website with full product launch surface area — built for signal, not noise",
+      "thumbnail": "public/images/portfolio/stockalert-thumb.jpg",
+      "problem": "Businesses launching software products hit the same bottleneck: the marketing website. Agency builds cost $10K-50K+ and take weeks. Templates look generic. Bilingual support is always an afterthought. SEO, performance, structured data, and accessibility get skipped 'until later' — and later never comes. Products launch with placeholder pages, broken contact forms, and zero search visibility.",
+      "solution": "A production-ready, bilingual (EN/ES) marketing website that covers the complete surface area of a real SaaS product launch — 9 pages across 18 localized routes, with SEO, structured data, animations, dark/light themes, e2e tests, and static deployment. Built to demonstrate that one person with the right architecture can ship what normally takes a team.",
+      "keyFeatures": [
+        "9 fully built pages: Homepage, Features, Use Cases, Pricing, Download, Setup Guide, Contact, Terms, Privacy",
+        "Full bilingual support (EN/ES) with localized URLs — /en/features vs /es/caracteristicas",
+        "Static site generation — no server required, sub-second loads, deployed to Netlify CDN",
+        "SEO from day one — dynamic sitemap with hreflang alternates, robots.txt, JSON-LD structured data, page-level metadata",
+        "Dark/light theme with system preference detection",
+        "Scroll-triggered animations and staggered card reveals via Framer Motion",
+        "Working contact form (Formspree + react-hook-form + Zod validation)",
+        "23 Playwright e2e tests covering navigation, language switching, theme toggling, and responsive behavior",
+        "Immutable asset caching (1yr static, 30d media, 1yr fonts) via Netlify headers",
+        "Accessible UI built on Radix primitives via shadcn/ui"
       ],
-      "videoUrl": "/video/marble-does-not-yield-brief.mp4",
+      "metrics": [
+        "9 pages x 2 languages = 18 localized routes",
+        "23 end-to-end Playwright tests",
+        "100% static — $0 server cost",
+        "Sub-second page loads via CDN"
+      ],
+      "priority": 4,
+      "dateCompleted": "2026-02",
+      "slides": [],
+      "videoUrl": null,
       "videoPoster": null
     },
     {
@@ -1523,6 +1500,62 @@
       "videoPoster": null
     },
     {
+      "id": 1130115840,
+      "name": "cushlabs",
+      "title": "Cushlabs",
+      "description": "AI consulting and software development for SMBs — bilingual (EN/ES) site built with Astro + Tailwind CSS",
+      "summary": "AI consulting and software development for SMBs. Bilingual (EN/ES) business site with automated GitHub portfolio sync.",
+      "url": "https://github.com/RCushmaniii/cushlabs",
+      "demoUrl": "https://cushlabs.ai",
+      "liveUrl": null,
+      "homepage": "https://cushlabs.ai",
+      "topics": [
+        "ai-consulting",
+        "astro",
+        "bilingual",
+        "cushlabs",
+        "static-site",
+        "tailwindcss"
+      ],
+      "categories": [],
+      "tags": [
+        "ai-consulting",
+        "astro",
+        "bilingual",
+        "cushlabs",
+        "static-site",
+        "tailwindcss"
+      ],
+      "stack": [],
+      "status": null,
+      "language": "Astro",
+      "languages": {
+        "Astro": 344048,
+        "TypeScript": 110918,
+        "HTML": 61067,
+        "JavaScript": 26662,
+        "CSS": 1697
+      },
+      "stars": 0,
+      "forks": 0,
+      "lastPushed": "2026-02-20T22:30:02Z",
+      "createdAt": "2026-01-08T03:52:43Z",
+      "isFeatured": false,
+      "isArchived": false,
+      "isPrivate": false,
+      "tagline": null,
+      "thumbnail": null,
+      "problem": null,
+      "solution": null,
+      "keyFeatures": [],
+      "metrics": [],
+      "priority": 99,
+      "dateCompleted": null,
+      "slides": [],
+      "videoUrl": null,
+      "videoPoster": null
+    },
+    {
       "id": 1141547356,
       "name": "ai-idea-validator",
       "title": "AI Idea Validator",
@@ -1596,80 +1629,6 @@
         "23 questions across 4 sections covering defensibility, risk, and failure modes",
         "4 verdict outcomes with confidence scores and detailed rationale",
         "Real-time AI analysis with sub-3-second response times"
-      ],
-      "priority": 99,
-      "dateCompleted": "2025-01",
-      "slides": [],
-      "videoUrl": null,
-      "videoPoster": null
-    },
-    {
-      "id": 1140204033,
-      "name": "ai-stock-alert-website",
-      "title": "StockAlert Marketing Website",
-      "description": " Bilingual (EN/ES) Windows app for WhatsApp stock price alerts. Privacy-focused, no subscriptions, bring your own Finnhub API key.",
-      "summary": "> **Portfolio Demo**: This is a production-quality SaaS marketing website built to demonstrate modern web development practices. AI StockAlert is a fictional product—no software is available for downl",
-      "url": "https://github.com/RCushmaniii/ai-stock-alert-website",
-      "demoUrl": "https://aistockalert.app/",
-      "liveUrl": "https://aistockalert.app/",
-      "homepage": "https://ai-stock-alert-website.netlify.app/",
-      "topics": [
-        "price-alerts",
-        "stock-alerts",
-        "stock-data",
-        "whatsapp",
-        "windows-alert",
-        "windows-app"
-      ],
-      "categories": [
-        "Marketing Website"
-      ],
-      "tags": [
-        "price-alerts",
-        "stock-alerts",
-        "stock-data",
-        "whatsapp",
-        "windows-alert",
-        "windows-app"
-      ],
-      "stack": [
-        "Next.js 16",
-        "React 19",
-        "TypeScript",
-        "Tailwind CSS 4",
-        "Playwright",
-        "shadcn/ui"
-      ],
-      "status": "Production",
-      "language": "TypeScript",
-      "languages": {
-        "TypeScript": 162097,
-        "CSS": 5636,
-        "JavaScript": 559
-      },
-      "stars": 0,
-      "forks": 0,
-      "lastPushed": "2026-02-20T18:57:34Z",
-      "createdAt": "2026-01-23T00:50:02Z",
-      "isFeatured": false,
-      "isArchived": false,
-      "isPrivate": false,
-      "tagline": "Static marketing site with i18n, theming, and e2e tests",
-      "thumbnail": "/portfolio/stockalert-thumbnail.png",
-      "problem": "StockAlert needed a professional marketing presence to showcase features, provide secure downloads, and support international users. Trust was critical for users downloading executable files.",
-      "solution": "Built a static Next.js site with full internationalization (EN/ES), dark/light theming, and a security trust card to build download confidence. Comprehensive Playwright testing ensures reliability.",
-      "keyFeatures": [
-        "9 pages with full English/Spanish localization and localized URLs",
-        "Security trust card with VirusTotal verification for download confidence",
-        "23 Playwright e2e tests with 100% pass rate",
-        "Dark/light theme with system preference detection",
-        "Sub-second page loads via static site generation"
-      ],
-      "metrics": [
-        "23 e2e tests passing",
-        "18 localized pages (9 EN + 9 ES)",
-        "0 ESLint errors",
-        "6.8s full test suite runtime"
       ],
       "priority": 99,
       "dateCompleted": "2025-01",
