@@ -13,8 +13,9 @@ const __dirname = dirname(__filename);
 // Check for existing projects file
 const outputPath = join(__dirname, '../src/data/projects.generated.json');
 
-interface HeroImage {
+interface Slide {
   src: string;
+  srcEs?: string;
   altEn: string;
   altEs: string;
 }
@@ -52,7 +53,7 @@ interface Project {
   metrics: string[];
   priority: number;
   dateCompleted: string | null;
-  heroImages: HeroImage[];
+  slides: Slide[];
   videoUrl: string | null;
   videoPoster: string | null;
 }
@@ -74,7 +75,7 @@ interface PortfolioFrontmatter {
   metrics?: string[];
   demo_url?: string;
   live_url?: string;
-  hero_images?: { src: string; alt_en: string; alt_es: string }[];
+  slides?: { src: string; src_es?: string; alt_en: string; alt_es: string }[];
   video_url?: string;
   video_poster?: string;
   tags?: string[];
@@ -333,8 +334,9 @@ async function generateProjects() {
       metrics: portfolio?.metrics ?? [],
       priority: portfolio?.portfolio_priority ?? 99,
       dateCompleted: portfolio?.date_completed ?? null,
-      heroImages: (portfolio?.hero_images ?? []).map(img => ({
+      slides: (portfolio?.slides ?? []).map(img => ({
         src: img.src,
+        ...(img.src_es ? { srcEs: img.src_es } : {}),
         altEn: img.alt_en,
         altEs: img.alt_es
       })),

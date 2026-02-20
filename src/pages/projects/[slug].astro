@@ -38,8 +38,8 @@ const ogImageUrl = githubMatch
   : null;
 const images = override?.images?.length
   ? override.images
-  : project.heroImages?.length
-    ? project.heroImages.map((img: { src: string; altEn: string; altEs: string }) => ({
+  : project.slides?.length
+    ? project.slides.map((img: { src: string; srcEs?: string; altEn: string; altEs: string }) => ({
         src: img.src,
         alt: { en: img.altEn, es: img.altEs },
       }))

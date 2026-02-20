@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-02-19T22:44:54.531Z",
+  "generatedAt": "2026-02-20T18:58:54.035Z",
   "count": 21,
   "projects": [
     {
@@ -57,7 +57,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-02-19T03:12:23Z",
+      "lastPushed": "2026-02-20T18:57:23Z",
       "createdAt": "2026-01-08T03:52:43Z",
       "isFeatured": true,
       "isArchived": false,
@@ -81,7 +81,7 @@
       ],
       "priority": 1,
       "dateCompleted": "2026-02",
-      "heroImages": [
+      "slides": [
         {
           "src": "/images/portfolio/cushlabs-01.png",
           "altEn": "CushLabs AI Services — The Self-Maintaining Bilingual Portfolio",
@@ -127,82 +127,401 @@
       "videoPoster": "/images/portfolio/cushlabs-video-poster.jpg"
     },
     {
-      "id": 1127520844,
-      "name": "marble-does-not-yield",
-      "title": "Marble Does Not Yield",
-      "description": "A cinematic, single-page storytelling experience built with Next.js 14—combining markdown-driven prose, bilingual content, scroll-triggered imagery, and accessibility-first design.",
-      "summary": "> A cinematic, single-page narrative experience that combines long-form bilingual storytelling with restrained animation, audio narration, and accessibility-first design.",
-      "url": "https://github.com/RCushmaniii/marble-does-not-yield",
-      "demoUrl": "https://marble-does-not-yield.vercel.app",
-      "liveUrl": "https://marble-does-not-yield.vercel.app",
-      "homepage": "https://marble-does-not-yield.vercel.app",
+      "id": 1068781109,
+      "name": "react-vite-tailwind-base",
+      "title": "React Vite Tailwind Base",
+      "description": "React 19 template with ShadCN UI, TypeScript, and Vite 7. Features a fully interactive appointment booking system with calendar integration, real-time data visualizations using Recharts, and 17+ accessible components. Mobile-first design, SEO optimized, and built with modern best practices. Perfect for SaaS apps, dashboards, and booking systems.",
+      "summary": "A modern, production-ready React template with **ShadCN UI**, **data visualizations**, and a complete **interactive appointment booking showcase**. Built with best practices, mobile-first design, and ",
+      "url": "https://github.com/RCushmaniii/react-vite-tailwind-base",
+      "demoUrl": "https://react-vite-tailwind-base.vercel.app",
+      "liveUrl": "https://react-vite-tailwind-base.vercel.app",
+      "homepage": "https://react-vite-tailwind-base.vercel.app",
       "topics": [
-        "cdn",
-        "cdn-distribution",
-        "html5-audio",
-        "longform",
-        "markdown",
-        "narrative-design",
-        "nextjs",
-        "reactjs",
-        "static-site",
-        "storytelling",
+        "react",
+        "shadcn",
+        "shadcn-ui",
         "tailwindcss",
-        "typescript",
-        "vercel"
+        "vite"
       ],
       "categories": [
-        "Creative"
+        "Templates"
       ],
       "tags": [
-        "cdn",
-        "cdn-distribution",
-        "html5-audio",
-        "longform",
-        "markdown",
-        "narrative-design",
-        "nextjs",
-        "reactjs",
-        "static-site",
-        "storytelling",
+        "react",
+        "shadcn",
+        "shadcn-ui",
         "tailwindcss",
-        "typescript",
-        "vercel"
+        "vite",
+        "starter-template"
+      ],
+      "stack": [
+        "TypeScript",
+        "React 19",
+        "Vite 7",
+        "Tailwind CSS",
+        "ShadCN UI",
+        "Recharts"
+      ],
+      "status": "Production",
+      "language": "TypeScript",
+      "languages": {
+        "TypeScript": 124273,
+        "JavaScript": 15673,
+        "HTML": 3826,
+        "CSS": 2102
+      },
+      "stars": 2,
+      "forks": 0,
+      "lastPushed": "2026-02-20T18:57:41Z",
+      "createdAt": "2025-10-02T22:40:01Z",
+      "isFeatured": true,
+      "isArchived": false,
+      "isPrivate": false,
+      "tagline": "React 19 + Vite 7 + ShadCN UI starter with appointment booking, calendar, charts, and 17+ components.",
+      "thumbnail": null,
+      "problem": "Starting new React projects requires significant boilerplate setup for routing, UI components, and common features.",
+      "solution": "Production-ready template with appointment booking, calendar, charts, and 17+ accessible components out of the box.",
+      "keyFeatures": [
+        "Interactive appointment booking with calendar integration",
+        "Real-time data visualizations using Recharts",
+        "17+ accessible ShadCN UI components",
+        "Mobile-first responsive design"
+      ],
+      "metrics": [],
+      "priority": 2,
+      "dateCompleted": "2026-01",
+      "slides": [],
+      "videoUrl": null,
+      "videoPoster": null
+    },
+    {
+      "id": 1114660708,
+      "name": "freelance-income-planner",
+      "title": "Freelance Income Planner",
+      "description": "A privacy-first income simulator for freelancers. Instantly see how rate changes, sick days, and taxes impact your real take-home pay. Bill in USD, spend in MXN. Plan for feast or famine. All calculations happen in your browser—your data never leaves your device.",
+      "summary": "description: A bilingual income planning tool for freelancers and consultants.",
+      "url": "https://github.com/RCushmaniii/freelance-income-planner",
+      "demoUrl": "https://freelance-income-planner.vercel.app",
+      "liveUrl": "https://freelance-income-planner.vercel.app",
+      "homepage": "https://freelance-income-planner.vercel.app/",
+      "topics": [
+        "bilingual",
+        "digital-nomad",
+        "freelance",
+        "i18n",
+        "income-calculator",
+        "nextjs",
+        "react",
+        "tailwindcss",
+        "typescript"
+      ],
+      "categories": [
+        "Tools"
+      ],
+      "tags": [
+        "bilingual",
+        "digital-nomad",
+        "freelance",
+        "i18n",
+        "income-calculator",
+        "nextjs",
+        "react",
+        "tailwindcss",
+        "typescript"
       ],
       "stack": [
         "TypeScript",
         "Next.js",
+        "React",
         "Tailwind CSS"
       ],
       "status": "Production",
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 52724,
-        "CSS": 2913,
-        "JavaScript": 215
+        "TypeScript": 272425,
+        "CSS": 4579,
+        "JavaScript": 997
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-02-19T04:50:45Z",
-      "createdAt": "2026-01-04T03:47:35Z",
+      "lastPushed": "2026-02-20T18:57:40Z",
+      "createdAt": "2025-12-11T17:38:35Z",
       "isFeatured": true,
       "isArchived": false,
       "isPrivate": false,
-      "tagline": "A cinematic, single-page storytelling experience built with Next.js 14—combining markdown-driven prose, bilingual content, scroll-triggered imagery, and accessibility-first design.",
-      "thumbnail": "",
-      "problem": "Una historia de dolor, vulnerabilidad y la negativa a ceder.",
-      "solution": "A cinematic, single-page storytelling experience built with Next.js 14—combining markdown-driven prose, bilingual content, scroll-triggered imagery, and accessibility-first design.",
+      "tagline": "Privacy-first income simulator for freelancers. See how rate changes, sick days, and taxes impact take-home pay.",
+      "thumbnail": null,
+      "problem": "Freelancers struggle to predict actual take-home pay with variable rates, taxes, and currency conversions.",
+      "solution": "Privacy-first calculator that runs entirely in-browser. Bill in USD, spend in MXN, plan for feast or famine.",
       "keyFeatures": [
-        "TODO: Feature 1 with measurable impact",
-        "TODO: Feature 2 explaining capability",
-        "TODO: Feature 3 showing value"
+        "Real-time income projections with tax calculations",
+        "Multi-currency support (USD/MXN)",
+        "Privacy-first: all data stays in browser",
+        "Bilingual interface (English/Spanish)"
       ],
       "metrics": [],
       "priority": 2,
-      "dateCompleted": "2026-01",
-      "heroImages": [],
+      "dateCompleted": "2025-12",
+      "slides": [],
       "videoUrl": null,
       "videoPoster": null
+    },
+    {
+      "id": 1119144204,
+      "name": "nextjs-react-agency-starter",
+      "title": "Nextjs React Agency Starter",
+      "description": "The Next.js React Agency Starter provides a clean, scalable, and production-ready foundation for building modern agency and portfolio websites using Next.js, React, and TypeScript.",
+      "summary": "**A production-grade starter kit for modern agency, marketing, and portfolio websites.**",
+      "url": "https://github.com/RCushmaniii/nextjs-react-agency-starter",
+      "demoUrl": "https://nextjs-react-agency-starter.vercel.app/",
+      "liveUrl": "https://nextjs-react-agency-starter.vercel.app/",
+      "homepage": "https://nextjs-react-agency-starter.vercel.app/",
+      "topics": [
+        "nextjs",
+        "react",
+        "starter-kit",
+        "tailwindcss"
+      ],
+      "categories": [
+        "Templates"
+      ],
+      "tags": [
+        "nextjs",
+        "react",
+        "starter-kit",
+        "tailwindcss"
+      ],
+      "stack": [
+        "TypeScript",
+        "Next.js",
+        "React",
+        "Tailwind CSS"
+      ],
+      "status": "Production",
+      "language": "TypeScript",
+      "languages": {
+        "TypeScript": 99022,
+        "MDX": 27835,
+        "CSS": 1030,
+        "JavaScript": 260
+      },
+      "stars": 0,
+      "forks": 0,
+      "lastPushed": "2026-02-20T18:57:35Z",
+      "createdAt": "2025-12-18T20:18:05Z",
+      "isFeatured": true,
+      "isArchived": false,
+      "isPrivate": false,
+      "tagline": "The Next.js React Agency Starter provides a clean, scalable, and production-ready foundation for building modern agency and portfolio websites using Next.js, React, and TypeScript.",
+      "thumbnail": null,
+      "problem": "Finally organize your Desktop, Documents, and Downloads without uploading anything to the cloud. Smart AI classification that respects your privacy.",
+      "solution": "Simple, Transparent Pricing",
+      "keyFeatures": [
+        "Meet AI FileSense",
+        "Everything You Need",
+        "Simple, Transparent Pricing",
+        "Ready for a Cleaner Desktop?"
+      ],
+      "metrics": [],
+      "priority": 2,
+      "dateCompleted": "2025-12",
+      "slides": [],
+      "videoUrl": null,
+      "videoPoster": null
+    },
+    {
+      "id": 1120026584,
+      "name": "context-writing-system",
+      "title": "Cushlabs Writing System",
+      "description": "Context-engineering system to lock brand voice, enforce truth, and generate consistent AI-written content at scale.",
+      "summary": "**Clone your voice. Crush content. Scale forever.**",
+      "url": "https://github.com/RCushmaniii/context-writing-system",
+      "demoUrl": "https://cushlabs-writing-system.vercel.app",
+      "liveUrl": "https://cushlabs-writing-system.vercel.app",
+      "homepage": "https://cushlabs-writing-system.vercel.app",
+      "topics": [
+        "ai-assistant",
+        "ai-content-generation",
+        "business-writing",
+        "content-management",
+        "context-engineering",
+        "llm-tools",
+        "writing-system"
+      ],
+      "categories": [
+        "AI Automation"
+      ],
+      "tags": [
+        "ai-assistant",
+        "ai-content-generation",
+        "business-writing",
+        "content-management",
+        "context-engineering",
+        "llm-tools",
+        "writing-system"
+      ],
+      "stack": [
+        "HTML",
+        "TODO: Add tech"
+      ],
+      "status": "Production",
+      "language": "HTML",
+      "languages": {
+        "HTML": 136130,
+        "JavaScript": 38483,
+        "CSS": 30168,
+        "PowerShell": 1981
+      },
+      "stars": 1,
+      "forks": 0,
+      "lastPushed": "2026-02-20T18:57:28Z",
+      "createdAt": "2025-12-20T10:31:00Z",
+      "isFeatured": true,
+      "isArchived": false,
+      "isPrivate": false,
+      "tagline": "Context-engineering system to lock brand voice, enforce truth, and generate consistent AI-written content at scale.",
+      "thumbnail": null,
+      "problem": "TODO: Describe the pain point this project solves.",
+      "solution": "Clone your brand's voice once—unleash AI to dominate every page, email, and pitch.",
+      "keyFeatures": [
+        "What This System Does",
+        "Core Components",
+        "How It Works",
+        "Key Principles"
+      ],
+      "metrics": [],
+      "priority": 2,
+      "dateCompleted": "2025-12",
+      "slides": [],
+      "videoUrl": null,
+      "videoPoster": null
+    },
+    {
+      "id": 1102173157,
+      "name": "ny-ai-chatbot",
+      "title": "NY AI Chatbot",
+      "description": "Production-ready AI chatbot with embeddable widget for websites. Features include knowledge base integration, multi-language support, and customizable admin dashboard.",
+      "summary": "**Drop-in AI chatbot widget with RAG intelligence for small business websites.**",
+      "url": "https://github.com/RCushmaniii/ny-ai-chatbot",
+      "demoUrl": "https://ny-ai-chatbot.vercel.app",
+      "liveUrl": "https://ny-ai-chatbot.vercel.app",
+      "homepage": "https://www.nyenglishteacher.com",
+      "topics": [
+        "ai-chatbot",
+        "nextjs",
+        "rag-chatbot",
+        "tailwindcss",
+        "vercel-deployment"
+      ],
+      "categories": [
+        "AI Automation"
+      ],
+      "tags": [
+        "ai-chatbot",
+        "nextjs",
+        "rag-chatbot",
+        "tailwindcss",
+        "vercel-deployment",
+        "typescript",
+        "openai",
+        "rag",
+        "pgvector",
+        "drizzle",
+        "clerk",
+        "tailwind",
+        "bilingual",
+        "chatbot",
+        "ai",
+        "vercel"
+      ],
+      "stack": [
+        "Next.js 15",
+        "TypeScript",
+        "OpenAI GPT-4o",
+        "pgvector",
+        "Drizzle ORM",
+        "Clerk",
+        "React 19",
+        "Tailwind CSS 4",
+        "shadcn/ui",
+        "Vercel AI SDK"
+      ],
+      "status": "Production",
+      "language": "TypeScript",
+      "languages": {
+        "TypeScript": 938680,
+        "JavaScript": 13855,
+        "PLpgSQL": 10195,
+        "CSS": 8090,
+        "PowerShell": 5924
+      },
+      "stars": 0,
+      "forks": 0,
+      "lastPushed": "2026-02-20T18:57:26Z",
+      "createdAt": "2025-11-23T00:24:28Z",
+      "isFeatured": true,
+      "isArchived": false,
+      "isPrivate": false,
+      "tagline": "Revenue-first RAG chatbot that converts visitors into booked strategy sessions",
+      "thumbnail": "/images/portfolio/ny-eng-chatbot-thumbnail.jpg",
+      "problem": "Language schools treat chatbots as deflection tools — reduce ticket volume, speed up FAQ answers, dead-end the conversation. The result is a cost center that never generates revenue. Meanwhile, anonymous website visitors leave without converting because there's no sales-aware system guiding them toward high-value actions like booking a strategy session.",
+      "solution": "An AI chatbot explicitly engineered as an automated sales agent. Every architectural layer — system prompts, RAG citations, error handling, rate limits — is designed to drive conversational conversion. The bot uses benefit-driven language with real client social proof, links RAG source citations to high-value service pages, and hard-codes CTAs for free strategy sessions directly into the system prompt.",
+      "keyFeatures": [
+        "Revenue-first RAG architecture merging website content and manual knowledge sources (top 5 by cosine similarity)",
+        "System prompts hard-coded with sales CTAs — every conversation steers toward booking a strategy session",
+        "Dual-source knowledge base: scraped website content (0.5 threshold) + curated documents (0.6 threshold)",
+        "Source citations that drive traffic to high-value service pages, increasing time-on-site and eliminating hallucination",
+        "Full EN/ES bilingual support with locale-aware personality and benefit-driven language",
+        "Embeddable widget (iframe + script tag) deployable on any client domain with CORS configuration",
+        "Admin dashboard with chat analytics, knowledge management, and bot settings"
+      ],
+      "metrics": [
+        "5-layer revenue engine: System Prompts, Error CTAs, Localization, Rate Limits as Strategy, Source Citations",
+        "2 RAG knowledge sources merged by cosine similarity with configurable thresholds",
+        "Sub-second streaming responses via Vercel AI SDK with OpenAI GPT-4o",
+        "Zero-auth guest experience via sessionId cookies — no signup friction before conversion"
+      ],
+      "priority": 2,
+      "dateCompleted": "2025-12",
+      "slides": [
+        {
+          "src": "/images/portfolio/ny-eng-chatbot-01.png",
+          "altEn": "Conversational Conversion — The Architecture of a Revenue-First Chatbot",
+          "altEs": "Conversion Conversacional — La Arquitectura de un Chatbot Orientado a Ingresos"
+        },
+        {
+          "src": "/images/portfolio/ny-eng-chatbot-02.png",
+          "altEn": "Moving Beyond the Support Cost Center — from Deflector to Converter",
+          "altEs": "Mas Alla del Centro de Costos de Soporte — de Deflector a Convertidor"
+        },
+        {
+          "src": "/images/portfolio/ny-eng-chatbot-03.png",
+          "altEn": "The Five Gears of the Revenue Engine — Brain, Trigger, Chameleon, Soft Wall, Bridge",
+          "altEs": "Los Cinco Engranajes del Motor de Ingresos — Cerebro, Disparador, Camaleon, Muro Suave, Puente"
+        },
+        {
+          "src": "/images/portfolio/ny-eng-chatbot-04.png",
+          "altEn": "System Prompts Are Hard-Coded to Sell — CTAs baked into the bot's DNA",
+          "altEs": "Los Prompts del Sistema Estan Programados para Vender — CTAs integrados en el ADN del bot"
+        },
+        {
+          "src": "/images/portfolio/ny-eng-chatbot-05.png",
+          "altEn": "Benefit-Driven Language Builds Authority — Pivot to Value technique with client social proof",
+          "altEs": "El Lenguaje Orientado a Beneficios Construye Autoridad — tecnica Pivot to Value con prueba social de clientes"
+        },
+        {
+          "src": "/images/portfolio/ny-eng-chatbot-06.png",
+          "altEn": "Source Citations Drive Traffic to High-Value Pages — RAG grounding that doubles as SEO",
+          "altEs": "Las Citas de Fuentes Dirigen Trafico a Paginas de Alto Valor — grounding RAG que funciona como SEO"
+        },
+        {
+          "src": "/images/portfolio/ny-eng-chatbot-07.png",
+          "altEn": "Not a Support Tool — An Automated Sales Agent that books strategy sessions",
+          "altEs": "No es una Herramienta de Soporte — Un Agente de Ventas Automatizado que agenda sesiones de estrategia"
+        }
+      ],
+      "videoUrl": "/video/ny-eng-chatbot-brief.mp4",
+      "videoPoster": "/video/ny-eng-chatbot-brief-poster.jpg"
     },
     {
       "id": 1133839610,
@@ -262,13 +581,13 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-02-19T04:14:52Z",
+      "lastPushed": "2026-02-20T18:57:25Z",
       "createdAt": "2026-01-13T22:16:37Z",
       "isFeatured": true,
       "isArchived": false,
       "isPrivate": false,
       "tagline": "Marketing website for AI FileSense - An AI-powered local file organization system for Windows. Landing page, downloads, privacy policy, terms of service, and changelog.",
-      "thumbnail": "",
+      "thumbnail": null,
       "problem": "Finally organize your Desktop, Documents, and Downloads without uploading anything to the cloud. Smart AI classification that respects your privacy.",
       "solution": "Your documents, finally organized.",
       "keyFeatures": [
@@ -280,404 +599,7 @@
       "metrics": [],
       "priority": 2,
       "dateCompleted": "2026-01",
-      "heroImages": [],
-      "videoUrl": null,
-      "videoPoster": null
-    },
-    {
-      "id": 1102173157,
-      "name": "ny-ai-chatbot",
-      "title": "NY AI Chatbot",
-      "description": "Production-ready AI chatbot with embeddable widget for websites. Features include knowledge base integration, multi-language support, and customizable admin dashboard.",
-      "summary": "**Drop-in AI chatbot widget with RAG intelligence for small business websites.**",
-      "url": "https://github.com/RCushmaniii/ny-ai-chatbot",
-      "demoUrl": "https://ny-ai-chatbot.vercel.app",
-      "liveUrl": "https://ny-ai-chatbot.vercel.app",
-      "homepage": "https://www.nyenglishteacher.com",
-      "topics": [
-        "ai-chatbot",
-        "nextjs",
-        "rag-chatbot",
-        "tailwindcss",
-        "vercel-deployment"
-      ],
-      "categories": [
-        "AI / Chatbots"
-      ],
-      "tags": [
-        "ai-chatbot",
-        "nextjs",
-        "rag-chatbot",
-        "tailwindcss",
-        "vercel-deployment",
-        "typescript",
-        "openai",
-        "rag",
-        "pgvector",
-        "drizzle",
-        "clerk",
-        "tailwind",
-        "bilingual",
-        "chatbot",
-        "ai",
-        "vercel"
-      ],
-      "stack": [
-        "Next.js 15",
-        "TypeScript",
-        "OpenAI GPT-4o",
-        "pgvector",
-        "Drizzle ORM",
-        "Clerk",
-        "React 19",
-        "Tailwind CSS 4",
-        "shadcn/ui",
-        "Vercel AI SDK"
-      ],
-      "status": "Production",
-      "language": "TypeScript",
-      "languages": {
-        "TypeScript": 938680,
-        "JavaScript": 13855,
-        "PLpgSQL": 10195,
-        "CSS": 8090,
-        "PowerShell": 5924
-      },
-      "stars": 0,
-      "forks": 0,
-      "lastPushed": "2026-02-18T22:32:55Z",
-      "createdAt": "2025-11-23T00:24:28Z",
-      "isFeatured": true,
-      "isArchived": false,
-      "isPrivate": false,
-      "tagline": "Revenue-first RAG chatbot that converts visitors into booked strategy sessions",
-      "thumbnail": "/images/portfolio/ny-eng-chatbot-thumbnail.jpg",
-      "problem": "Language schools treat chatbots as deflection tools — reduce ticket volume, speed up FAQ answers, dead-end the conversation. The result is a cost center that never generates revenue. Meanwhile, anonymous website visitors leave without converting because there's no sales-aware system guiding them toward high-value actions like booking a strategy session.",
-      "solution": "An AI chatbot explicitly engineered as an automated sales agent. Every architectural layer — system prompts, RAG citations, error handling, rate limits — is designed to drive conversational conversion. The bot uses benefit-driven language with real client social proof, links RAG source citations to high-value service pages, and hard-codes CTAs for free strategy sessions directly into the system prompt.",
-      "keyFeatures": [
-        "Revenue-first RAG architecture merging website content and manual knowledge sources (top 5 by cosine similarity)",
-        "System prompts hard-coded with sales CTAs — every conversation steers toward booking a strategy session",
-        "Dual-source knowledge base: scraped website content (0.5 threshold) + curated documents (0.6 threshold)",
-        "Source citations that drive traffic to high-value service pages, increasing time-on-site and eliminating hallucination",
-        "Full EN/ES bilingual support with locale-aware personality and benefit-driven language",
-        "Embeddable widget (iframe + script tag) deployable on any client domain with CORS configuration",
-        "Admin dashboard with chat analytics, knowledge management, and bot settings"
-      ],
-      "metrics": [
-        "5-layer revenue engine: System Prompts, Error CTAs, Localization, Rate Limits as Strategy, Source Citations",
-        "2 RAG knowledge sources merged by cosine similarity with configurable thresholds",
-        "Sub-second streaming responses via Vercel AI SDK with OpenAI GPT-4o",
-        "Zero-auth guest experience via sessionId cookies — no signup friction before conversion"
-      ],
-      "priority": 2,
-      "dateCompleted": "2025-12",
-      "heroImages": [
-        {
-          "src": "/images/portfolio/ny-eng-chatbot-01.png",
-          "altEn": "Conversational Conversion — The Architecture of a Revenue-First Chatbot",
-          "altEs": "Conversion Conversacional — La Arquitectura de un Chatbot Orientado a Ingresos"
-        },
-        {
-          "src": "/images/portfolio/ny-eng-chatbot-02.png",
-          "altEn": "Moving Beyond the Support Cost Center — from Deflector to Converter",
-          "altEs": "Mas Alla del Centro de Costos de Soporte — de Deflector a Convertidor"
-        },
-        {
-          "src": "/images/portfolio/ny-eng-chatbot-03.png",
-          "altEn": "The Five Gears of the Revenue Engine — Brain, Trigger, Chameleon, Soft Wall, Bridge",
-          "altEs": "Los Cinco Engranajes del Motor de Ingresos — Cerebro, Disparador, Camaleon, Muro Suave, Puente"
-        },
-        {
-          "src": "/images/portfolio/ny-eng-chatbot-04.png",
-          "altEn": "System Prompts Are Hard-Coded to Sell — CTAs baked into the bot's DNA",
-          "altEs": "Los Prompts del Sistema Estan Programados para Vender — CTAs integrados en el ADN del bot"
-        },
-        {
-          "src": "/images/portfolio/ny-eng-chatbot-05.png",
-          "altEn": "Benefit-Driven Language Builds Authority — Pivot to Value technique with client social proof",
-          "altEs": "El Lenguaje Orientado a Beneficios Construye Autoridad — tecnica Pivot to Value con prueba social de clientes"
-        },
-        {
-          "src": "/images/portfolio/ny-eng-chatbot-06.png",
-          "altEn": "Source Citations Drive Traffic to High-Value Pages — RAG grounding that doubles as SEO",
-          "altEs": "Las Citas de Fuentes Dirigen Trafico a Paginas de Alto Valor — grounding RAG que funciona como SEO"
-        },
-        {
-          "src": "/images/portfolio/ny-eng-chatbot-07.png",
-          "altEn": "Not a Support Tool — An Automated Sales Agent that books strategy sessions",
-          "altEs": "No es una Herramienta de Soporte — Un Agente de Ventas Automatizado que agenda sesiones de estrategia"
-        }
-      ],
-      "videoUrl": "/video/ny-eng-chatbot-brief.mp4",
-      "videoPoster": "/video/ny-eng-chatbot-brief-poster.jpg"
-    },
-    {
-      "id": 1120026584,
-      "name": "context-writing-system",
-      "title": "Cushlabs Writing System",
-      "description": "Context-engineering system to lock brand voice, enforce truth, and generate consistent AI-written content at scale.",
-      "summary": "**Clone your voice. Crush content. Scale forever.**",
-      "url": "https://github.com/RCushmaniii/context-writing-system",
-      "demoUrl": "https://cushlabs-writing-system.vercel.app",
-      "liveUrl": "https://cushlabs-writing-system.vercel.app",
-      "homepage": "https://cushlabs-writing-system.vercel.app",
-      "topics": [
-        "ai-assistant",
-        "ai-content-generation",
-        "business-writing",
-        "content-management",
-        "context-engineering",
-        "llm-tools",
-        "writing-system"
-      ],
-      "categories": [
-        "AI Automation"
-      ],
-      "tags": [
-        "ai-assistant",
-        "ai-content-generation",
-        "business-writing",
-        "content-management",
-        "context-engineering",
-        "llm-tools",
-        "writing-system"
-      ],
-      "stack": [
-        "HTML",
-        "TODO: Add tech"
-      ],
-      "status": "Production",
-      "language": "HTML",
-      "languages": {
-        "HTML": 136130,
-        "JavaScript": 38483,
-        "CSS": 30168,
-        "PowerShell": 1981
-      },
-      "stars": 1,
-      "forks": 0,
-      "lastPushed": "2026-02-18T16:17:55Z",
-      "createdAt": "2025-12-20T10:31:00Z",
-      "isFeatured": true,
-      "isArchived": false,
-      "isPrivate": false,
-      "tagline": "Context-engineering system to lock brand voice, enforce truth, and generate consistent AI-written content at scale.",
-      "thumbnail": "",
-      "problem": "TODO: Describe the pain point this project solves.",
-      "solution": "Clone your brand's voice once—unleash AI to dominate every page, email, and pitch.",
-      "keyFeatures": [
-        "What This System Does",
-        "Core Components",
-        "How It Works",
-        "Key Principles"
-      ],
-      "metrics": [],
-      "priority": 2,
-      "dateCompleted": "2025-12",
-      "heroImages": [],
-      "videoUrl": null,
-      "videoPoster": null
-    },
-    {
-      "id": 1119144204,
-      "name": "nextjs-react-agency-starter",
-      "title": "Nextjs React Agency Starter",
-      "description": "The Next.js React Agency Starter provides a clean, scalable, and production-ready foundation for building modern agency and portfolio websites using Next.js, React, and TypeScript.",
-      "summary": "**A production-grade starter kit for modern agency, marketing, and portfolio websites.**",
-      "url": "https://github.com/RCushmaniii/nextjs-react-agency-starter",
-      "demoUrl": "https://nextjs-react-agency-starter.vercel.app/",
-      "liveUrl": "https://nextjs-react-agency-starter.vercel.app/",
-      "homepage": "https://nextjs-react-agency-starter.vercel.app/",
-      "topics": [
-        "nextjs",
-        "react",
-        "starter-kit",
-        "tailwindcss"
-      ],
-      "categories": [
-        "Templates"
-      ],
-      "tags": [
-        "nextjs",
-        "react",
-        "starter-kit",
-        "tailwindcss"
-      ],
-      "stack": [
-        "TypeScript",
-        "Next.js",
-        "React",
-        "Tailwind CSS"
-      ],
-      "status": "Production",
-      "language": "TypeScript",
-      "languages": {
-        "TypeScript": 99022,
-        "MDX": 27835,
-        "CSS": 1030,
-        "JavaScript": 260
-      },
-      "stars": 0,
-      "forks": 0,
-      "lastPushed": "2026-01-22T18:08:36Z",
-      "createdAt": "2025-12-18T20:18:05Z",
-      "isFeatured": true,
-      "isArchived": false,
-      "isPrivate": false,
-      "tagline": "The Next.js React Agency Starter provides a clean, scalable, and production-ready foundation for building modern agency and portfolio websites using Next.js, React, and TypeScript.",
-      "thumbnail": "",
-      "problem": "Finally organize your Desktop, Documents, and Downloads without uploading anything to the cloud. Smart AI classification that respects your privacy.",
-      "solution": "Simple, Transparent Pricing",
-      "keyFeatures": [
-        "Meet AI FileSense",
-        "Everything You Need",
-        "Simple, Transparent Pricing",
-        "Ready for a Cleaner Desktop?"
-      ],
-      "metrics": [],
-      "priority": 2,
-      "dateCompleted": "2025-12",
-      "heroImages": [],
-      "videoUrl": null,
-      "videoPoster": null
-    },
-    {
-      "id": 1114660708,
-      "name": "freelance-income-planner",
-      "title": "Freelance Income Planner",
-      "description": "A privacy-first income simulator for freelancers. Instantly see how rate changes, sick days, and taxes impact your real take-home pay. Bill in USD, spend in MXN. Plan for feast or famine. All calculations happen in your browser—your data never leaves your device.",
-      "summary": "description: A bilingual income planning tool for freelancers and consultants.",
-      "url": "https://github.com/RCushmaniii/freelance-income-planner",
-      "demoUrl": "https://freelance-income-planner.vercel.app",
-      "liveUrl": "https://freelance-income-planner.vercel.app",
-      "homepage": "https://freelance-income-planner.vercel.app/",
-      "topics": [
-        "bilingual",
-        "digital-nomad",
-        "freelance",
-        "i18n",
-        "income-calculator",
-        "nextjs",
-        "react",
-        "tailwindcss",
-        "typescript"
-      ],
-      "categories": [
-        "Tools"
-      ],
-      "tags": [
-        "bilingual",
-        "digital-nomad",
-        "freelance",
-        "i18n",
-        "income-calculator",
-        "nextjs",
-        "react",
-        "tailwindcss",
-        "typescript"
-      ],
-      "stack": [
-        "TypeScript",
-        "Next.js",
-        "React",
-        "Tailwind CSS"
-      ],
-      "status": "Production",
-      "language": "TypeScript",
-      "languages": {
-        "TypeScript": 272425,
-        "CSS": 4579,
-        "JavaScript": 997
-      },
-      "stars": 0,
-      "forks": 0,
-      "lastPushed": "2026-01-19T20:35:08Z",
-      "createdAt": "2025-12-11T17:38:35Z",
-      "isFeatured": true,
-      "isArchived": false,
-      "isPrivate": false,
-      "tagline": "Privacy-first income simulator for freelancers. See how rate changes, sick days, and taxes impact take-home pay.",
-      "thumbnail": "",
-      "problem": "Freelancers struggle to predict actual take-home pay with variable rates, taxes, and currency conversions.",
-      "solution": "Privacy-first calculator that runs entirely in-browser. Bill in USD, spend in MXN, plan for feast or famine.",
-      "keyFeatures": [
-        "Real-time income projections with tax calculations",
-        "Multi-currency support (USD/MXN)",
-        "Privacy-first: all data stays in browser",
-        "Bilingual interface (English/Spanish)"
-      ],
-      "metrics": [],
-      "priority": 2,
-      "dateCompleted": "2025-12",
-      "heroImages": [],
-      "videoUrl": null,
-      "videoPoster": null
-    },
-    {
-      "id": 1068781109,
-      "name": "react-vite-tailwind-base",
-      "title": "React Vite Tailwind Base",
-      "description": "React 19 template with ShadCN UI, TypeScript, and Vite 7. Features a fully interactive appointment booking system with calendar integration, real-time data visualizations using Recharts, and 17+ accessible components. Mobile-first design, SEO optimized, and built with modern best practices. Perfect for SaaS apps, dashboards, and booking systems.",
-      "summary": "A modern, production-ready React template with **ShadCN UI**, **data visualizations**, and a complete **interactive appointment booking showcase**. Built with best practices, mobile-first design, and ",
-      "url": "https://github.com/RCushmaniii/react-vite-tailwind-base",
-      "demoUrl": "https://react-vite-tailwind-base.vercel.app",
-      "liveUrl": "https://react-vite-tailwind-base.vercel.app",
-      "homepage": "https://react-vite-tailwind-base.vercel.app",
-      "topics": [
-        "react",
-        "shadcn",
-        "shadcn-ui",
-        "tailwindcss",
-        "vite"
-      ],
-      "categories": [
-        "Templates"
-      ],
-      "tags": [
-        "react",
-        "shadcn",
-        "shadcn-ui",
-        "tailwindcss",
-        "vite",
-        "starter-template"
-      ],
-      "stack": [
-        "TypeScript",
-        "React 19",
-        "Vite 7",
-        "Tailwind CSS",
-        "ShadCN UI",
-        "Recharts"
-      ],
-      "status": "Production",
-      "language": "TypeScript",
-      "languages": {
-        "TypeScript": 124273,
-        "JavaScript": 15673,
-        "HTML": 3826,
-        "CSS": 2102
-      },
-      "stars": 2,
-      "forks": 0,
-      "lastPushed": "2026-01-19T20:35:08Z",
-      "createdAt": "2025-10-02T22:40:01Z",
-      "isFeatured": true,
-      "isArchived": false,
-      "isPrivate": false,
-      "tagline": "React 19 + Vite 7 + ShadCN UI starter with appointment booking, calendar, charts, and 17+ components.",
-      "thumbnail": "",
-      "problem": "Starting new React projects requires significant boilerplate setup for routing, UI components, and common features.",
-      "solution": "Production-ready template with appointment booking, calendar, charts, and 17+ accessible components out of the box.",
-      "keyFeatures": [
-        "Interactive appointment booking with calendar integration",
-        "Real-time data visualizations using Recharts",
-        "17+ accessible ShadCN UI components",
-        "Mobile-first responsive design"
-      ],
-      "metrics": [],
-      "priority": 2,
-      "dateCompleted": "2026-01",
-      "heroImages": [],
+      "slides": [],
       "videoUrl": null,
       "videoPoster": null
     },
@@ -730,121 +652,225 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-02-18T16:26:48Z",
+      "lastPushed": "2026-02-20T18:57:28Z",
       "createdAt": "2025-11-05T18:11:38Z",
       "isFeatured": false,
       "isArchived": false,
       "isPrivate": false,
       "tagline": "AI-powered ATS resume analysis with instant, actionable feedback",
-      "thumbnail": "",
+      "thumbnail": null,
       "problem": null,
       "solution": null,
       "keyFeatures": [],
       "metrics": [],
       "priority": 2,
       "dateCompleted": null,
-      "heroImages": [],
+      "slides": [],
       "videoUrl": null,
       "videoPoster": null
     },
     {
-      "id": 1082205398,
-      "name": "stock-alert",
-      "title": "AI StockAlert",
-      "description": "Professional Windows desktop application for real-time multi-stock price monitoring with intelligent alerting and visual configuration management.",
-      "summary": "> AI StockAlert: Stock price monitoring with multi-channel alerts for Windows.",
-      "url": "https://github.com/RCushmaniii/stock-alert",
-      "demoUrl": "https://ai-stock-alert-website.netlify.app/",
-      "liveUrl": "https://aistockalert.app/",
-      "homepage": "https://ai-stock-alert-website.netlify.app/",
-      "topics": [
-        "desktop-app",
-        "python",
-        "stock-alerts",
-        "stock-market",
-        "stock-price",
-        "system-tray",
-        "windows",
-        "windows-notifications"
+      "id": 1117217007,
+      "name": "ai-webscraper",
+      "title": "AI-Powered Web Scraper",
+      "description": "A full-stack web application for scraping websites with a React frontend, Python FastAPI backend, and Supabase for data storage.",
+      "summary": "| ![Login](.github/assets/ai-ws-login.jpg) | ![Report](.github/assets/ai-ws-analysis-report.jpg) |",
+      "url": "https://github.com/RCushmaniii/ai-webscraper",
+      "demoUrl": null,
+      "liveUrl": "",
+      "homepage": null,
+      "topics": [],
+      "categories": [
+        "AI Automation"
       ],
+      "tags": [
+        "web-scraping",
+        "data-extraction",
+        "automation",
+        "fastapi",
+        "react"
+      ],
+      "stack": [
+        "React",
+        "Python",
+        "FastAPI",
+        "Supabase",
+        "PostgreSQL"
+      ],
+      "status": null,
+      "language": "Python",
+      "languages": {
+        "Python": 566891,
+        "TypeScript": 485230,
+        "PLpgSQL": 54863,
+        "Batchfile": 4729,
+        "JavaScript": 4239,
+        "CSS": 2586,
+        "HTML": 1752,
+        "Dockerfile": 595
+      },
+      "stars": 0,
+      "forks": 0,
+      "lastPushed": "2026-02-20T18:57:42Z",
+      "createdAt": "2025-12-16T02:09:11Z",
+      "isFeatured": true,
+      "isArchived": false,
+      "isPrivate": false,
+      "tagline": "Full-stack data extraction platform with intelligent parsing and cloud storage",
+      "thumbnail": null,
+      "problem": null,
+      "solution": null,
+      "keyFeatures": [],
+      "metrics": [],
+      "priority": 3,
+      "dateCompleted": null,
+      "slides": [],
+      "videoUrl": null,
+      "videoPoster": null
+    },
+    {
+      "id": 1093081979,
+      "name": "component-portfolio",
+      "title": "Component Portfolio",
+      "description": "Production-ready React components for the missing middle—copy-paste solutions with performance optimization. Built for developers who need immediate, practical tools.",
+      "summary": "A spectacular collection of production-ready, accessible, and performant React components with interactive demos and real-time controls.",
+      "url": "https://github.com/RCushmaniii/component-portfolio",
+      "demoUrl": "https://component-portfolio.netlify.app/",
+      "liveUrl": "",
+      "homepage": null,
+      "topics": [],
       "categories": [
         "Tools"
       ],
       "tags": [
-        "desktop-app",
-        "python",
-        "stock-alerts",
-        "stock-market",
-        "stock-price",
-        "system-tray",
-        "windows",
-        "windows-notifications",
-        "fintech",
-        "pyqt",
-        "real-time",
-        "notifications",
-        "whatsapp"
+        "todo"
       ],
       "stack": [
-        "Python",
-        "PyQt6",
-        "Finnhub API",
-        "Twilio/WhatsApp Business API",
-        "cx_Freeze",
-        "Vercel Serverless"
+        "JavaScript",
+        "TODO: Add tech"
       ],
       "status": "Production",
-      "language": "Python",
+      "language": "JavaScript",
       "languages": {
-        "Python": 533555,
-        "PowerShell": 4838,
-        "Inno Setup": 3850,
-        "Batchfile": 240
+        "JavaScript": 229264,
+        "PowerShell": 17956,
+        "CSS": 4549,
+        "HTML": 3310
       },
-      "stars": 1,
+      "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-02-19T22:37:07Z",
-      "createdAt": "2025-10-23T22:24:30Z",
+      "lastPushed": "2026-02-20T18:57:42Z",
+      "createdAt": "2025-11-09T21:33:52Z",
       "isFeatured": true,
       "isArchived": false,
       "isPrivate": false,
-      "tagline": "Professional Windows desktop application for real-time stock price monitoring with intelligent multi-channel alerting via Windows notifications and WhatsApp.",
-      "thumbnail": "public/images/stockalert-thumb.jpg",
-      "problem": "Active traders and investors need to monitor multiple stock positions simultaneously but can't watch screens all day. Missing critical price movements can result in significant financial losses or missed opportunities. Existing solutions are either too complex, require expensive subscriptions, or lack reliable mobile notifications.",
-      "solution": "AI StockAlert is a professional Windows desktop application that monitors stock prices in real-time and sends instant alerts when prices cross user-defined thresholds. It combines the reliability of Windows desktop notifications with the convenience of WhatsApp mobile alerts, ensuring users never miss important price movements.",
+      "tagline": "Production-ready React components for the missing middle—copy-paste solutions with performance optimization. Built for developers who need immediate, practical tools.",
+      "thumbnail": null,
+      "problem": "TODO: Describe the pain point this project solves.",
+      "solution": "Production-ready React components for the missing middle—copy-paste solutions with performance optimization. Built for developers who need immediate, practical tools.",
       "keyFeatures": [
-        "Real-time price monitoring for up to 15 stocks with configurable check intervals (free tier)",
-        "Multi-channel alerts: Windows toast notifications with audio and WhatsApp mobile messages",
-        "Smart consolidated notifications - multiple alerts combined into single notification per check cycle",
-        "Automatic market hours detection - only monitors during US market hours (9:30 AM - 4:00 PM ET)",
-        "Bilingual interface (English/Spanish) with full i18n support",
-        "Multi-currency display: Toggle between USD and Mexican Pesos (MXN) with live exchange rates",
-        "Background service runs silently in system tray - alerts work even when UI is closed",
-        "Company profile enrichment with logos, industry, and market cap data from Finnhub",
-        "Integrated news feed for monitored stocks (up to 5 tickers)",
-        "Professional installer with Windows Start Menu integration and auto-start capability",
-        "Dark/light theme support with one-click toggle"
+        "TODO: Feature 1 with measurable impact",
+        "TODO: Feature 2 explaining capability",
+        "TODO: Feature 3 showing value"
       ],
-      "metrics": [
-        "Sub-2-second alert delivery from price change detection to notification",
-        "15 stocks monitored simultaneously on free tier",
-        "60 API calls/minute rate-limited token bucket for optimal Finnhub usage"
-      ],
+      "metrics": [],
       "priority": 3,
-      "dateCompleted": "2026-02",
-      "heroImages": [
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {}
-      ],
+      "dateCompleted": "2025-11",
+      "slides": [],
       "videoUrl": null,
+      "videoPoster": null
+    },
+    {
+      "id": 1154149781,
+      "name": "mazebreak-wiki",
+      "title": "MazeBreak GDD Wiki",
+      "description": "Private documentation wiki for the MazeBreak Game Design Document. Built with React, Tailwind CSS, and Clerk auth.",
+      "summary": "Private, searchable documentation wiki for the MazeBreak Game Design Document. Provides instant access to all 24 GDD chapters with full-text search, chapter-based navigation, and Clerk-authenticated a",
+      "url": "https://github.com/RCushmaniii/mazebreak-wiki",
+      "demoUrl": "https://mazebreak-wiki.vercel.app/",
+      "liveUrl": "https://mazebreak-wiki.vercel.app/",
+      "homepage": "https://mazebreak-wiki.vercel.app",
+      "topics": [],
+      "categories": [
+        "Developer Tools"
+      ],
+      "tags": [
+        "developer-tools",
+        "documentation",
+        "react",
+        "game-development",
+        "search",
+        "authentication"
+      ],
+      "stack": [
+        "React 19",
+        "Vite 7",
+        "Tailwind CSS 3",
+        "Clerk Authentication",
+        "Fuse.js",
+        "React Router v6",
+        "Vercel"
+      ],
+      "status": null,
+      "language": "JavaScript",
+      "languages": {
+        "JavaScript": 44791,
+        "CSS": 13759,
+        "HTML": 1101
+      },
+      "stars": 0,
+      "forks": 0,
+      "lastPushed": "2026-02-20T18:57:30Z",
+      "createdAt": "2026-02-10T04:11:19Z",
+      "isFeatured": true,
+      "isArchived": false,
+      "isPrivate": false,
+      "tagline": "Private, searchable game design document wiki for a Roblox development team",
+      "thumbnail": "/images/mazebreak-wiki-01.png",
+      "problem": null,
+      "solution": null,
+      "keyFeatures": [],
+      "metrics": [],
+      "priority": 3,
+      "dateCompleted": null,
+      "slides": [
+        {
+          "src": "/images/mazebreak-wiki-01.png",
+          "altEn": "MazeBreak GDD Wiki slide 1",
+          "altEs": "MazeBreak GDD Wiki diapositiva 1"
+        },
+        {
+          "src": "/images/mazebreak-wiki-02.png",
+          "altEn": "MazeBreak GDD Wiki slide 2",
+          "altEs": "MazeBreak GDD Wiki diapositiva 2"
+        },
+        {
+          "src": "/images/mazebreak-wiki-03.png",
+          "altEn": "MazeBreak GDD Wiki slide 3",
+          "altEs": "MazeBreak GDD Wiki diapositiva 3"
+        },
+        {
+          "src": "/images/mazebreak-wiki-04.png",
+          "altEn": "MazeBreak GDD Wiki slide 4",
+          "altEs": "MazeBreak GDD Wiki diapositiva 4"
+        },
+        {
+          "src": "/images/mazebreak-wiki-05.png",
+          "altEn": "MazeBreak GDD Wiki slide 5",
+          "altEs": "MazeBreak GDD Wiki diapositiva 5"
+        },
+        {
+          "src": "/images/mazebreak-wiki-06.png",
+          "altEn": "MazeBreak GDD Wiki slide 6",
+          "altEs": "MazeBreak GDD Wiki diapositiva 6"
+        },
+        {
+          "src": "/images/mazebreak-wiki-07.png",
+          "altEn": "MazeBreak GDD Wiki slide 7",
+          "altEs": "MazeBreak GDD Wiki diapositiva 7"
+        }
+      ],
+      "videoUrl": "/video/MazeBreak__Taming_the_GDD.mp4",
       "videoPoster": null
     },
     {
@@ -911,7 +937,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-02-19T03:35:31Z",
+      "lastPushed": "2026-02-20T18:57:25Z",
       "createdAt": "2026-01-12T02:37:39Z",
       "isFeatured": true,
       "isArchived": false,
@@ -940,253 +966,341 @@
       ],
       "priority": 3,
       "dateCompleted": "2026-02",
-      "heroImages": [
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {}
+      "slides": [
+        {
+          "src": "public/images/ai-filesense-02.png",
+          "altEn": "Turn Chaos into Clarity — AI FileSense hero slide",
+          "altEs": "Intelligent. Safe. Accessible."
+        },
+        {
+          "src": "public/images/ai-filesense-03.png",
+          "altEn": "We are drowning in data but starving for order",
+          "altEs": "The problem: thousands of unorganized files creating decision fatigue and buried assets."
+        },
+        {
+          "src": "public/images/ai-filesense-04.png",
+          "altEn": "The Barriers to Organization",
+          "altEs": "Manual sorting, inconsistent systems, and technical complexity keep people from organizing."
+        },
+        {
+          "src": "public/images/ai-filesense-05.png",
+          "altEn": "The Barriers to Organization (continued)",
+          "altEs": "Hours of low-value decision making, ad-hoc folders that fail, and AI tools that require complex APIs."
+        },
+        {
+          "src": "public/images/ai-filesense-06.png",
+          "altEn": "AI FileSense — Just click and go",
+          "altEs": "Zero configuration. No API keys required. Powered by Claude Haiku."
+        },
+        {
+          "src": "public/images/ai-filesense-07.png",
+          "altEn": "Classification based on content, not just filenames",
+          "altEs": "Deep parsing reads PDFs, DOCX, PPTX, TXT, CSV, and MD files to understand what each document actually is."
+        },
+        {
+          "src": "public/images/ai-filesense-09.png",
+          "altEn": "Confidence and Human Control",
+          "altEs": "Smart routing: high-confidence files are auto-filed, low-confidence files route to Review for human decision."
+        },
+        {
+          "src": "public/images/ai-filesense-10.png",
+          "altEn": "AI for the Non-Technical 99%",
+          "altEs": "Zero config, no terminal, no API keys. The developer handles backend complexity so users don't have to."
+        },
+        {
+          "src": "public/images/ai-filesense-11.png",
+          "altEn": "Uncompromising Safety",
+          "altEs": "Privacy by design: files never leave the device, injection prevention via serialization, no files ever deleted."
+        },
+        {
+          "src": "public/images/ai-filesense-12.png",
+          "altEn": "The Safety Net",
+          "altEs": "Full undo support, test mode to preview changes, and crash recovery with atomic writes."
+        },
+        {
+          "src": "public/images/ai-filesense-13.png",
+          "altEn": "From Digital Chaos to Automated Order — full system architecture",
+          "altEs": "Complete system view: from digital clutter through local AI processing to the universal 12-folder structure."
+        }
       ],
       "videoUrl": null,
-      "videoPoster": null
+      "videoPoster": "public/video/AI-FileSense-brief-poster.jpg"
     },
     {
-      "id": 1154149781,
-      "name": "mazebreak-wiki",
-      "title": "MazeBreak GDD Wiki",
-      "description": "Private documentation wiki for the MazeBreak Game Design Document. Built with React, Tailwind CSS, and Clerk auth.",
-      "summary": "Private, searchable documentation wiki for the MazeBreak Game Design Document. Provides instant access to all 24 GDD chapters with full-text search, chapter-based navigation, and Clerk-authenticated a",
-      "url": "https://github.com/RCushmaniii/mazebreak-wiki",
-      "demoUrl": "https://mazebreak-wiki.vercel.app/",
-      "liveUrl": "https://mazebreak-wiki.vercel.app/",
-      "homepage": "https://mazebreak-wiki.vercel.app",
-      "topics": [],
-      "categories": [
-        "Developer Tools"
+      "id": 1082205398,
+      "name": "stock-alert",
+      "title": "AI StockAlert",
+      "description": "Professional Windows desktop application for real-time multi-stock price monitoring with intelligent alerting and visual configuration management.",
+      "summary": "> AI StockAlert: Stock price monitoring with multi-channel alerts for Windows.",
+      "url": "https://github.com/RCushmaniii/stock-alert",
+      "demoUrl": "https://ai-stock-alert-website.netlify.app/",
+      "liveUrl": "https://aistockalert.app/",
+      "homepage": "https://ai-stock-alert-website.netlify.app/",
+      "topics": [
+        "desktop-app",
+        "python",
+        "stock-alerts",
+        "stock-market",
+        "stock-price",
+        "system-tray",
+        "windows",
+        "windows-notifications"
       ],
-      "tags": [
-        "developer-tools",
-        "documentation",
-        "react",
-        "game-development",
-        "search",
-        "authentication"
-      ],
-      "stack": [
-        "React 19",
-        "Vite 7",
-        "Tailwind CSS 3",
-        "Clerk Authentication",
-        "Fuse.js",
-        "React Router v6",
-        "Vercel"
-      ],
-      "status": null,
-      "language": "JavaScript",
-      "languages": {
-        "JavaScript": 44791,
-        "CSS": 13759,
-        "HTML": 1101
-      },
-      "stars": 0,
-      "forks": 0,
-      "lastPushed": "2026-02-18T01:10:57Z",
-      "createdAt": "2026-02-10T04:11:19Z",
-      "isFeatured": true,
-      "isArchived": false,
-      "isPrivate": false,
-      "tagline": "Private, searchable game design document wiki for a Roblox development team",
-      "thumbnail": "/images/mazebreak-wiki-01.png",
-      "problem": null,
-      "solution": null,
-      "keyFeatures": [],
-      "metrics": [],
-      "priority": 3,
-      "dateCompleted": null,
-      "heroImages": [
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {}
-      ],
-      "videoUrl": null,
-      "videoPoster": null
-    },
-    {
-      "id": 1093081979,
-      "name": "component-portfolio",
-      "title": "Component Portfolio",
-      "description": "Production-ready React components for the missing middle—copy-paste solutions with performance optimization. Built for developers who need immediate, practical tools.",
-      "summary": "A spectacular collection of production-ready, accessible, and performant React components with interactive demos and real-time controls.",
-      "url": "https://github.com/RCushmaniii/component-portfolio",
-      "demoUrl": "https://component-portfolio.netlify.app/",
-      "liveUrl": "",
-      "homepage": null,
-      "topics": [],
       "categories": [
         "Tools"
       ],
       "tags": [
-        "todo"
+        "desktop-app",
+        "python",
+        "stock-alerts",
+        "stock-market",
+        "stock-price",
+        "system-tray",
+        "windows",
+        "windows-notifications",
+        "fintech",
+        "pyqt",
+        "real-time",
+        "notifications",
+        "whatsapp"
       ],
       "stack": [
-        "JavaScript",
-        "TODO: Add tech"
+        "Python",
+        "PyQt6",
+        "Finnhub API",
+        "Twilio/WhatsApp Business API",
+        "cx_Freeze",
+        "Vercel Serverless"
       ],
       "status": "Production",
-      "language": "JavaScript",
-      "languages": {
-        "JavaScript": 229264,
-        "PowerShell": 17956,
-        "CSS": 4549,
-        "HTML": 3310
-      },
-      "stars": 0,
-      "forks": 0,
-      "lastPushed": "2026-01-19T20:33:54Z",
-      "createdAt": "2025-11-09T21:33:52Z",
-      "isFeatured": true,
-      "isArchived": false,
-      "isPrivate": false,
-      "tagline": "Production-ready React components for the missing middle—copy-paste solutions with performance optimization. Built for developers who need immediate, practical tools.",
-      "thumbnail": "",
-      "problem": "TODO: Describe the pain point this project solves.",
-      "solution": "Production-ready React components for the missing middle—copy-paste solutions with performance optimization. Built for developers who need immediate, practical tools.",
-      "keyFeatures": [
-        "TODO: Feature 1 with measurable impact",
-        "TODO: Feature 2 explaining capability",
-        "TODO: Feature 3 showing value"
-      ],
-      "metrics": [],
-      "priority": 3,
-      "dateCompleted": "2025-11",
-      "heroImages": [],
-      "videoUrl": null,
-      "videoPoster": null
-    },
-    {
-      "id": 1117217007,
-      "name": "ai-webscraper",
-      "title": "AI-Powered Web Scraper",
-      "description": "A full-stack web application for scraping websites with a React frontend, Python FastAPI backend, and Supabase for data storage.",
-      "summary": "| ![Login](.github/assets/ai-ws-login.jpg) | ![Report](.github/assets/ai-ws-analysis-report.jpg) |",
-      "url": "https://github.com/RCushmaniii/ai-webscraper",
-      "demoUrl": null,
-      "liveUrl": "",
-      "homepage": null,
-      "topics": [],
-      "categories": [
-        "AI Automation"
-      ],
-      "tags": [
-        "web-scraping",
-        "data-extraction",
-        "automation",
-        "fastapi",
-        "react"
-      ],
-      "stack": [
-        "React",
-        "Python",
-        "FastAPI",
-        "Supabase",
-        "PostgreSQL"
-      ],
-      "status": null,
       "language": "Python",
       "languages": {
-        "Python": 566891,
-        "TypeScript": 485230,
-        "PLpgSQL": 54863,
-        "Batchfile": 4729,
-        "JavaScript": 4239,
-        "CSS": 2586,
-        "HTML": 1752,
-        "Dockerfile": 595
+        "Python": 533555,
+        "PowerShell": 4838,
+        "Inno Setup": 3850,
+        "Batchfile": 240
       },
-      "stars": 0,
+      "stars": 1,
       "forks": 0,
-      "lastPushed": "2026-01-19T20:29:59Z",
-      "createdAt": "2025-12-16T02:09:11Z",
+      "lastPushed": "2026-02-20T18:57:24Z",
+      "createdAt": "2025-10-23T22:24:30Z",
       "isFeatured": true,
       "isArchived": false,
       "isPrivate": false,
-      "tagline": "Full-stack data extraction platform with intelligent parsing and cloud storage",
-      "thumbnail": "",
-      "problem": null,
-      "solution": null,
-      "keyFeatures": [],
-      "metrics": [],
+      "tagline": "Professional Windows desktop application for real-time stock price monitoring with intelligent multi-channel alerting via Windows notifications and WhatsApp.",
+      "thumbnail": "public/images/stockalert-thumb.jpg",
+      "problem": "Active traders and investors need to monitor multiple stock positions simultaneously but can't watch screens all day. Missing critical price movements can result in significant financial losses or missed opportunities. Existing solutions are either too complex, require expensive subscriptions, or lack reliable mobile notifications.",
+      "solution": "AI StockAlert is a professional Windows desktop application that monitors stock prices in real-time and sends instant alerts when prices cross user-defined thresholds. It combines the reliability of Windows desktop notifications with the convenience of WhatsApp mobile alerts, ensuring users never miss important price movements.",
+      "keyFeatures": [
+        "Real-time price monitoring for up to 15 stocks with configurable check intervals (free tier)",
+        "Multi-channel alerts: Windows toast notifications with audio and WhatsApp mobile messages",
+        "Smart consolidated notifications - multiple alerts combined into single notification per check cycle",
+        "Automatic market hours detection - only monitors during US market hours (9:30 AM - 4:00 PM ET)",
+        "Bilingual interface (English/Spanish) with full i18n support",
+        "Multi-currency display: Toggle between USD and Mexican Pesos (MXN) with live exchange rates",
+        "Background service runs silently in system tray - alerts work even when UI is closed",
+        "Company profile enrichment with logos, industry, and market cap data from Finnhub",
+        "Integrated news feed for monitored stocks (up to 5 tickers)",
+        "Professional installer with Windows Start Menu integration and auto-start capability",
+        "Dark/light theme support with one-click toggle"
+      ],
+      "metrics": [
+        "Sub-2-second alert delivery from price change detection to notification",
+        "15 stocks monitored simultaneously on free tier",
+        "60 API calls/minute rate-limited token bucket for optimal Finnhub usage"
+      ],
       "priority": 3,
-      "dateCompleted": null,
-      "heroImages": [],
+      "dateCompleted": "2026-02",
+      "slides": [
+        {
+          "src": "public/images/stockalert-01.png",
+          "altEn": "AI StockAlert main dashboard",
+          "altEs": "Real-time stock monitoring dashboard with live prices and alert status."
+        },
+        {
+          "src": "public/images/stockalert-02.png",
+          "altEn": "AI StockAlert alert configuration",
+          "altEs": "Configure price thresholds with above/below triggers for each stock."
+        },
+        {
+          "src": "public/images/stockalert-03.png",
+          "altEn": "AI StockAlert settings panel",
+          "altEs": "Full settings panel with API key, language, theme, and notification preferences."
+        },
+        {
+          "src": "public/images/stockalert-04.png",
+          "altEn": "AI StockAlert WhatsApp integration",
+          "altEs": "WhatsApp mobile alerts deliver price notifications anywhere."
+        },
+        {
+          "src": "public/images/stockalert-05.png",
+          "altEn": "AI StockAlert system tray",
+          "altEs": "Runs silently in the system tray — monitoring continues even when the window is closed."
+        },
+        {
+          "src": "public/images/stockalert-06.png",
+          "altEn": "AI StockAlert Windows notification",
+          "altEs": "Native Windows toast notifications with stock details and audio alerts."
+        },
+        {
+          "src": "public/images/stockalert-07.png",
+          "altEn": "AI StockAlert dark theme",
+          "altEs": "Dark theme for comfortable monitoring during extended sessions."
+        },
+        {
+          "src": "public/images/stockalert-08.png",
+          "altEn": "AI StockAlert company profiles",
+          "altEs": "Enriched company profiles with logos, industry, and market cap data."
+        },
+        {
+          "src": "public/images/stockalert-09.png",
+          "altEn": "AI StockAlert news feed",
+          "altEs": "Integrated news feed for monitored stocks keeps you informed."
+        },
+        {
+          "src": "public/images/stockalert-10.png",
+          "altEn": "AI StockAlert multi-currency display",
+          "altEs": "Toggle between USD and MXN with live exchange rate conversion."
+        }
+      ],
       "videoUrl": null,
-      "videoPoster": null
+      "videoPoster": "public/video/AI-StockAlert-A-Case-Study-poster.jpg"
     },
     {
-      "id": 1108213747,
-      "name": "ai-chatbot-saas",
-      "title": "AI Chatbot SaaS Platform",
-      "description": "Multi-tenant AI chatbot SaaS platform - Ragbot by CushLabs.AI",
-      "summary": "<h1 align=\"center\">Bilingual AI Front Desk & Sales Assistant (SaaS)</h1>",
-      "url": "https://github.com/RCushmaniii/ai-chatbot-saas",
-      "demoUrl": "https://ai-chatbot-saas-delta.vercel.app",
-      "liveUrl": "",
-      "homepage": "https://ai-chatbot-saas-delta.vercel.app",
-      "topics": [],
+      "id": 1127520844,
+      "name": "marble-does-not-yield",
+      "title": "The Marble Does Not Yield",
+      "description": "A cinematic, single-page storytelling experience built with Next.js 14—combining markdown-driven prose, bilingual content, scroll-triggered imagery, and accessibility-first design.",
+      "summary": "> A cinematic, single-page narrative experience that combines long-form bilingual storytelling with restrained animation, audio narration, and accessibility-first design.",
+      "url": "https://github.com/RCushmaniii/marble-does-not-yield",
+      "demoUrl": "https://marble-does-not-yield.vercel.app/",
+      "liveUrl": "https://marble-does-not-yield.vercel.app/",
+      "homepage": "https://marble-does-not-yield.vercel.app",
+      "topics": [
+        "cdn",
+        "cdn-distribution",
+        "html5-audio",
+        "longform",
+        "markdown",
+        "narrative-design",
+        "nextjs",
+        "reactjs",
+        "static-site",
+        "storytelling",
+        "tailwindcss",
+        "typescript",
+        "vercel"
+      ],
       "categories": [
         "AI Automation"
       ],
       "tags": [
-        "saas",
-        "chatbot",
-        "multi-tenant",
-        "ai",
-        "white-label",
-        "platform"
+        "cdn",
+        "cdn-distribution",
+        "html5-audio",
+        "longform",
+        "markdown",
+        "narrative-design",
+        "nextjs",
+        "reactjs",
+        "static-site",
+        "storytelling",
+        "tailwindcss",
+        "typescript",
+        "vercel",
+        "next-js",
+        "ai-assisted-development",
+        "bilingual",
+        "accessibility",
+        "audio-narration"
       ],
       "stack": [
-        "Next.js 14",
+        "Next.js 14 (App Router)",
         "TypeScript",
-        "PostgreSQL",
-        "Prisma ORM",
-        "OpenAI API",
-        "Stripe",
-        "Vercel"
+        "React Server Components",
+        "Tailwind CSS",
+        "@tailwindcss/typography",
+        "react-markdown",
+        "remark-gfm",
+        "rehype-raw",
+        "Vercel (deployment)",
+        "Markdown (content pipeline)"
       ],
       "status": null,
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 1041346,
-        "JavaScript": 12530,
-        "CSS": 10149
+        "TypeScript": 52724,
+        "CSS": 2913,
+        "JavaScript": 215
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-02-18T04:13:00Z",
-      "createdAt": "2025-12-02T07:09:31Z",
-      "isFeatured": false,
+      "lastPushed": "2026-02-20T18:57:23Z",
+      "createdAt": "2026-01-04T03:47:35Z",
+      "isFeatured": true,
       "isArchived": false,
       "isPrivate": false,
-      "tagline": "White-label chatbot platform for agencies to deploy custom AI assistants",
-      "thumbnail": "",
+      "tagline": "Bilingual narrative web app demonstrating AI-augmented development and human-centered design.",
+      "thumbnail": "/images/portfolio/marble-does-not-yield-thumb.jpg",
       "problem": null,
       "solution": null,
       "keyFeatures": [],
       "metrics": [],
-      "priority": 4,
+      "priority": 3,
       "dateCompleted": null,
-      "heroImages": [],
-      "videoUrl": null,
+      "slides": [
+        {
+          "src": "/images/portfolio/marble-does-not-yield-01.png",
+          "altEn": "The Marble Does Not Yield slide 1",
+          "altEs": "The Marble Does Not Yield diapositiva 1"
+        },
+        {
+          "src": "/images/portfolio/marble-does-not-yield-02.png",
+          "altEn": "The Marble Does Not Yield slide 2",
+          "altEs": "The Marble Does Not Yield diapositiva 2"
+        },
+        {
+          "src": "/images/portfolio/marble-does-not-yield-03.png",
+          "altEn": "The Marble Does Not Yield slide 3",
+          "altEs": "The Marble Does Not Yield diapositiva 3"
+        },
+        {
+          "src": "/images/portfolio/marble-does-not-yield-04.png",
+          "altEn": "The Marble Does Not Yield slide 4",
+          "altEs": "The Marble Does Not Yield diapositiva 4"
+        },
+        {
+          "src": "/images/portfolio/marble-does-not-yield-05.png",
+          "altEn": "The Marble Does Not Yield slide 5",
+          "altEs": "The Marble Does Not Yield diapositiva 5"
+        },
+        {
+          "src": "/images/portfolio/marble-does-not-yield-06.png",
+          "altEn": "The Marble Does Not Yield slide 6",
+          "altEs": "The Marble Does Not Yield diapositiva 6"
+        },
+        {
+          "src": "/images/portfolio/marble-does-not-yield-07.png",
+          "altEn": "The Marble Does Not Yield slide 7",
+          "altEs": "The Marble Does Not Yield diapositiva 7"
+        },
+        {
+          "src": "/images/portfolio/marble-does-not-yield-08.png",
+          "altEn": "The Marble Does Not Yield slide 8",
+          "altEs": "The Marble Does Not Yield diapositiva 8"
+        },
+        {
+          "src": "/images/portfolio/marble-does-not-yield-09.png",
+          "altEn": "The Marble Does Not Yield slide 9",
+          "altEs": "The Marble Does Not Yield diapositiva 9"
+        },
+        {
+          "src": "/images/portfolio/marble-does-not-yield-10.png",
+          "altEn": "The Marble Does Not Yield slide 10",
+          "altEs": "The Marble Does Not Yield diapositiva 10"
+        }
+      ],
+      "videoUrl": "/video/marble-does-not-yield-brief.mp4",
       "videoPoster": null
     },
     {
@@ -1238,7 +1352,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-02-17T22:19:11Z",
+      "lastPushed": "2026-02-20T18:57:31Z",
       "createdAt": "2026-02-17T04:40:23Z",
       "isFeatured": false,
       "isArchived": false,
@@ -1251,14 +1365,95 @@
       "metrics": [],
       "priority": 4,
       "dateCompleted": null,
-      "heroImages": [
-        {},
-        {},
-        {},
-        {},
-        {},
-        {}
+      "slides": [
+        {
+          "src": "/images/mazebreak-trello.jpg",
+          "altEn": "MazeBreak Trello Board Automation slide 1",
+          "altEs": "MazeBreak Trello Board Automation diapositiva 1"
+        },
+        {
+          "src": "/images/mazebreak-trello01.jpg",
+          "altEn": "MazeBreak Trello Board Automation slide 2",
+          "altEs": "MazeBreak Trello Board Automation diapositiva 2"
+        },
+        {
+          "src": "/images/mazebreak-trello02.jpg",
+          "altEn": "MazeBreak Trello Board Automation slide 3",
+          "altEs": "MazeBreak Trello Board Automation diapositiva 3"
+        },
+        {
+          "src": "/images/mazebreak-trello03.jpg",
+          "altEn": "MazeBreak Trello Board Automation slide 4",
+          "altEs": "MazeBreak Trello Board Automation diapositiva 4"
+        },
+        {
+          "src": "/images/mazebreak-trello04.jpg",
+          "altEn": "MazeBreak Trello Board Automation slide 5",
+          "altEs": "MazeBreak Trello Board Automation diapositiva 5"
+        },
+        {
+          "src": "/images/mazebreak-trello05.jpg",
+          "altEn": "MazeBreak Trello Board Automation slide 6",
+          "altEs": "MazeBreak Trello Board Automation diapositiva 6"
+        }
       ],
+      "videoUrl": "/video/MazeBreak__Sprint_as_Code.mp4",
+      "videoPoster": null
+    },
+    {
+      "id": 1108213747,
+      "name": "ai-chatbot-saas",
+      "title": "AI Chatbot SaaS Platform",
+      "description": "Multi-tenant AI chatbot SaaS platform - Ragbot by CushLabs.AI",
+      "summary": "<h1 align=\"center\">Bilingual AI Front Desk & Sales Assistant (SaaS)</h1>",
+      "url": "https://github.com/RCushmaniii/ai-chatbot-saas",
+      "demoUrl": "https://ai-chatbot-saas-delta.vercel.app",
+      "liveUrl": "",
+      "homepage": "https://ai-chatbot-saas-delta.vercel.app",
+      "topics": [],
+      "categories": [
+        "AI Automation"
+      ],
+      "tags": [
+        "saas",
+        "chatbot",
+        "multi-tenant",
+        "ai",
+        "white-label",
+        "platform"
+      ],
+      "stack": [
+        "Next.js 14",
+        "TypeScript",
+        "PostgreSQL",
+        "Prisma ORM",
+        "OpenAI API",
+        "Stripe",
+        "Vercel"
+      ],
+      "status": null,
+      "language": "TypeScript",
+      "languages": {
+        "TypeScript": 1041346,
+        "JavaScript": 12530,
+        "CSS": 10149
+      },
+      "stars": 0,
+      "forks": 0,
+      "lastPushed": "2026-02-20T18:57:29Z",
+      "createdAt": "2025-12-02T07:09:31Z",
+      "isFeatured": false,
+      "isArchived": false,
+      "isPrivate": false,
+      "tagline": "White-label chatbot platform for agencies to deploy custom AI assistants",
+      "thumbnail": null,
+      "problem": null,
+      "solution": null,
+      "keyFeatures": [],
+      "metrics": [],
+      "priority": 4,
+      "dateCompleted": null,
+      "slides": [],
       "videoUrl": null,
       "videoPoster": null
     },
@@ -1310,84 +1505,175 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-01-01T00:33:58Z",
+      "lastPushed": "2026-02-20T18:57:43Z",
       "createdAt": "2025-12-14T00:31:03Z",
       "isFeatured": false,
       "isArchived": false,
       "isPrivate": false,
       "tagline": "Production-ready authentication starter with Next.js 14 and Supabase",
-      "thumbnail": "",
+      "thumbnail": null,
       "problem": null,
       "solution": null,
       "keyFeatures": [],
       "metrics": [],
       "priority": 7,
       "dateCompleted": null,
-      "heroImages": [],
+      "slides": [],
       "videoUrl": null,
       "videoPoster": null
     },
     {
-      "id": 1157421817,
-      "name": "comp-plan-simulator",
-      "title": "Comp Plan Simulator",
-      "description": "Interactive compensation plan simulator for direct-selling companies",
-      "summary": "Interactive compensation plan simulator for direct-selling companies. Model commission structures, override percentages, and network parameters — then see real-time financial impact before making plan",
-      "url": "https://github.com/RCushmaniii/comp-plan-simulator",
-      "demoUrl": "https://comp-plan-simulator.vercel.app",
-      "liveUrl": null,
-      "homepage": "https://comp-plan-simulator.vercel.app",
+      "id": 1141547356,
+      "name": "ai-idea-validator",
+      "title": "AI Idea Validator",
+      "description": "A brutally honest defensibility assessment for founders. Find out if your business idea can survive competition, platform changes, and solo-founder realities before you build.",
+      "summary": "A defensibility assessment tool that uses AI to evaluate startup ideas and detect founder optimism bias. Analyzes 23 questions across 4 sections, generates verdicts (KILL/FLIP/BUILD/BET), and identifi",
+      "url": "https://github.com/RCushmaniii/ai-idea-validator",
+      "demoUrl": "https://ai-idea-validator.netlify.app/",
+      "liveUrl": "https://ai-idea-validator.netlify.app/",
+      "homepage": "",
       "topics": [
-        "compensation-plan",
-        "cushlabs",
-        "direct-selling",
         "framer-motion",
+        "i18n",
+        "marketing-website",
         "nextjs",
-        "recharts",
+        "playwright",
+        "react",
         "shadcn-ui",
-        "simulator",
+        "stock-market",
         "tailwindcss",
-        "typescript",
-        "zustand"
+        "typescript"
       ],
-      "categories": [],
+      "categories": [
+        "AI Automation"
+      ],
       "tags": [
-        "compensation-plan",
-        "cushlabs",
-        "direct-selling",
         "framer-motion",
+        "i18n",
+        "marketing-website",
         "nextjs",
-        "recharts",
+        "playwright",
+        "react",
         "shadcn-ui",
-        "simulator",
+        "stock-market",
         "tailwindcss",
-        "typescript",
-        "zustand"
+        "typescript"
       ],
-      "stack": [],
-      "status": null,
+      "stack": [
+        "Next.js 15",
+        "React 19",
+        "TypeScript",
+        "OpenAI API",
+        "Tailwind CSS 4"
+      ],
+      "status": "Production",
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 92910,
-        "CSS": 5485,
+        "TypeScript": 303557,
+        "CSS": 4877,
+        "JavaScript": 618
+      },
+      "stars": 0,
+      "forks": 0,
+      "lastPushed": "2026-02-20T18:57:35Z",
+      "createdAt": "2026-01-25T01:59:32Z",
+      "isFeatured": false,
+      "isArchived": false,
+      "isPrivate": false,
+      "tagline": "Brutal startup defensibility assessment powered by AI",
+      "thumbnail": "/portfolio/ai-idea-validator.png",
+      "problem": "Founders waste years building ideas that are structurally replaceable—not because they're bad, but because they lack defensibility. Traditional validation focuses on execution, ignoring whether the idea can survive competition and platform changes.",
+      "solution": "An AI-powered assessment tool that cuts through founder optimism with 23 targeted questions, then uses GPT to generate brutally honest verdicts (KILL/FLIP/BUILD/BET) while detecting contradictions between self-assessments and written responses.",
+      "keyFeatures": [
+        "AI-driven verdict generation that analyzes qualitative responses, not just scores",
+        "Contradiction detection comparing founder self-assessment vs written answers",
+        "Score adjustment showing gap between perceived and AI-evaluated risk",
+        "Bilingual support (English/Spanish) with full i18n",
+        "JSON import/export for AI-assisted workflow integration",
+        "Offline fallback with heuristic analysis when API unavailable"
+      ],
+      "metrics": [
+        "23 questions across 4 sections covering defensibility, risk, and failure modes",
+        "4 verdict outcomes with confidence scores and detailed rationale",
+        "Real-time AI analysis with sub-3-second response times"
+      ],
+      "priority": 99,
+      "dateCompleted": "2025-01",
+      "slides": [],
+      "videoUrl": null,
+      "videoPoster": null
+    },
+    {
+      "id": 1140204033,
+      "name": "ai-stock-alert-website",
+      "title": "StockAlert Marketing Website",
+      "description": " Bilingual (EN/ES) Windows app for WhatsApp stock price alerts. Privacy-focused, no subscriptions, bring your own Finnhub API key.",
+      "summary": "> **Portfolio Demo**: This is a production-quality SaaS marketing website built to demonstrate modern web development practices. AI StockAlert is a fictional product—no software is available for downl",
+      "url": "https://github.com/RCushmaniii/ai-stock-alert-website",
+      "demoUrl": "https://aistockalert.app/",
+      "liveUrl": "https://aistockalert.app/",
+      "homepage": "https://ai-stock-alert-website.netlify.app/",
+      "topics": [
+        "price-alerts",
+        "stock-alerts",
+        "stock-data",
+        "whatsapp",
+        "windows-alert",
+        "windows-app"
+      ],
+      "categories": [
+        "Marketing Website"
+      ],
+      "tags": [
+        "price-alerts",
+        "stock-alerts",
+        "stock-data",
+        "whatsapp",
+        "windows-alert",
+        "windows-app"
+      ],
+      "stack": [
+        "Next.js 16",
+        "React 19",
+        "TypeScript",
+        "Tailwind CSS 4",
+        "Playwright",
+        "shadcn/ui"
+      ],
+      "status": "Production",
+      "language": "TypeScript",
+      "languages": {
+        "TypeScript": 162097,
+        "CSS": 5636,
         "JavaScript": 559
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-02-14T15:49:53Z",
-      "createdAt": "2026-02-13T19:55:19Z",
+      "lastPushed": "2026-02-20T18:57:34Z",
+      "createdAt": "2026-01-23T00:50:02Z",
       "isFeatured": false,
       "isArchived": false,
       "isPrivate": false,
-      "tagline": null,
-      "thumbnail": null,
-      "problem": null,
-      "solution": null,
-      "keyFeatures": [],
-      "metrics": [],
+      "tagline": "Static marketing site with i18n, theming, and e2e tests",
+      "thumbnail": "/portfolio/stockalert-thumbnail.png",
+      "problem": "StockAlert needed a professional marketing presence to showcase features, provide secure downloads, and support international users. Trust was critical for users downloading executable files.",
+      "solution": "Built a static Next.js site with full internationalization (EN/ES), dark/light theming, and a security trust card to build download confidence. Comprehensive Playwright testing ensures reliability.",
+      "keyFeatures": [
+        "9 pages with full English/Spanish localization and localized URLs",
+        "Security trust card with VirusTotal verification for download confidence",
+        "23 Playwright e2e tests with 100% pass rate",
+        "Dark/light theme with system preference detection",
+        "Sub-second page loads via static site generation"
+      ],
+      "metrics": [
+        "23 e2e tests passing",
+        "18 localized pages (9 EN + 9 ES)",
+        "0 ESLint errors",
+        "6.8s full test suite runtime"
+      ],
       "priority": 99,
-      "dateCompleted": null,
-      "heroImages": [],
+      "dateCompleted": "2025-01",
+      "slides": [],
       "videoUrl": null,
       "videoPoster": null
     },
@@ -1454,13 +1740,13 @@
       },
       "stars": 0,
       "forks": 1,
-      "lastPushed": "2026-02-14T02:05:32Z",
+      "lastPushed": "2026-02-20T18:57:33Z",
       "createdAt": "2026-02-13T18:42:29Z",
       "isFeatured": false,
       "isArchived": false,
       "isPrivate": false,
       "tagline": "20-criteria weighted scoring tool with real-time verdict",
-      "thumbnail": "",
+      "thumbnail": null,
       "problem": "Operations leaders evaluating build vs. outsource logistics decisions rely on gut feel and incomplete financial comparisons. There's no structured way to weigh 20+ competing factors and present the analysis to a board.",
       "solution": "Interactive weighted scoring tool that scores 20 criteria across 5 categories in real time as users adjust priority weights. Produces a data-driven verdict with shareable URLs and print-ready output for board presentations.",
       "keyFeatures": [
@@ -1473,162 +1759,71 @@
       "metrics": [],
       "priority": 99,
       "dateCompleted": "2026-02",
-      "heroImages": [],
+      "slides": [],
       "videoUrl": null,
       "videoPoster": null
     },
     {
-      "id": 1140204033,
-      "name": "ai-stock-alert-website",
-      "title": "StockAlert Marketing Website",
-      "description": " Bilingual (EN/ES) Windows app for WhatsApp stock price alerts. Privacy-focused, no subscriptions, bring your own Finnhub API key.",
-      "summary": "> **Portfolio Demo**: This is a production-quality SaaS marketing website built to demonstrate modern web development practices. AI StockAlert is a fictional product—no software is available for downl",
-      "url": "https://github.com/RCushmaniii/ai-stock-alert-website",
-      "demoUrl": "https://aistockalert.app/",
-      "liveUrl": "https://aistockalert.app/",
-      "homepage": "https://ai-stock-alert-website.netlify.app/",
+      "id": 1157421817,
+      "name": "comp-plan-simulator",
+      "title": "Comp Plan Simulator",
+      "description": "Interactive compensation plan simulator for direct-selling companies",
+      "summary": "Interactive compensation plan simulator for direct-selling companies. Model commission structures, override percentages, and network parameters — then see real-time financial impact before making plan",
+      "url": "https://github.com/RCushmaniii/comp-plan-simulator",
+      "demoUrl": "https://comp-plan-simulator.vercel.app",
+      "liveUrl": "",
+      "homepage": "https://comp-plan-simulator.vercel.app",
       "topics": [
-        "price-alerts",
-        "stock-alerts",
-        "stock-data",
-        "whatsapp",
-        "windows-alert",
-        "windows-app"
+        "compensation-plan",
+        "cushlabs",
+        "direct-selling",
+        "framer-motion",
+        "nextjs",
+        "recharts",
+        "shadcn-ui",
+        "simulator",
+        "tailwindcss",
+        "typescript",
+        "zustand"
       ],
-      "categories": [
-        "Marketing Website"
-      ],
+      "categories": [],
       "tags": [
-        "price-alerts",
-        "stock-alerts",
-        "stock-data",
-        "whatsapp",
-        "windows-alert",
-        "windows-app"
+        "compensation-plan",
+        "cushlabs",
+        "direct-selling",
+        "framer-motion",
+        "nextjs",
+        "recharts",
+        "shadcn-ui",
+        "simulator",
+        "tailwindcss",
+        "typescript",
+        "zustand"
       ],
-      "stack": [
-        "Next.js 16",
-        "React 19",
-        "TypeScript",
-        "Tailwind CSS 4",
-        "Playwright",
-        "shadcn/ui"
-      ],
-      "status": "Production",
+      "stack": [],
+      "status": null,
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 162097,
-        "CSS": 5636,
+        "TypeScript": 92910,
+        "CSS": 5485,
         "JavaScript": 559
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-02-07T23:51:27Z",
-      "createdAt": "2026-01-23T00:50:02Z",
+      "lastPushed": "2026-02-20T18:57:32Z",
+      "createdAt": "2026-02-13T19:55:19Z",
       "isFeatured": false,
       "isArchived": false,
       "isPrivate": false,
-      "tagline": "Static marketing site with i18n, theming, and e2e tests",
-      "thumbnail": "/portfolio/stockalert-thumbnail.png",
-      "problem": "StockAlert needed a professional marketing presence to showcase features, provide secure downloads, and support international users. Trust was critical for users downloading executable files.",
-      "solution": "Built a static Next.js site with full internationalization (EN/ES), dark/light theming, and a security trust card to build download confidence. Comprehensive Playwright testing ensures reliability.",
-      "keyFeatures": [
-        "9 pages with full English/Spanish localization and localized URLs",
-        "Security trust card with VirusTotal verification for download confidence",
-        "23 Playwright e2e tests with 100% pass rate",
-        "Dark/light theme with system preference detection",
-        "Sub-second page loads via static site generation"
-      ],
-      "metrics": [
-        "23 e2e tests passing",
-        "18 localized pages (9 EN + 9 ES)",
-        "0 ESLint errors",
-        "6.8s full test suite runtime"
-      ],
+      "tagline": null,
+      "thumbnail": null,
+      "problem": null,
+      "solution": null,
+      "keyFeatures": [],
+      "metrics": [],
       "priority": 99,
-      "dateCompleted": "2025-01",
-      "heroImages": [],
-      "videoUrl": null,
-      "videoPoster": null
-    },
-    {
-      "id": 1141547356,
-      "name": "ai-idea-validator",
-      "title": "AI Idea Validator",
-      "description": "A brutally honest defensibility assessment for founders. Find out if your business idea can survive competition, platform changes, and solo-founder realities before you build.",
-      "summary": "A defensibility assessment tool that uses AI to evaluate startup ideas and detect founder optimism bias. Analyzes 23 questions across 4 sections, generates verdicts (KILL/FLIP/BUILD/BET), and identifi",
-      "url": "https://github.com/RCushmaniii/ai-idea-validator",
-      "demoUrl": "https://ai-idea-validator.netlify.app/",
-      "liveUrl": "https://ai-idea-validator.netlify.app/",
-      "homepage": "",
-      "topics": [
-        "framer-motion",
-        "i18n",
-        "marketing-website",
-        "nextjs",
-        "playwright",
-        "react",
-        "shadcn-ui",
-        "stock-market",
-        "tailwindcss",
-        "typescript"
-      ],
-      "categories": [
-        "AI Automation"
-      ],
-      "tags": [
-        "framer-motion",
-        "i18n",
-        "marketing-website",
-        "nextjs",
-        "playwright",
-        "react",
-        "shadcn-ui",
-        "stock-market",
-        "tailwindcss",
-        "typescript"
-      ],
-      "stack": [
-        "Next.js 15",
-        "React 19",
-        "TypeScript",
-        "OpenAI API",
-        "Tailwind CSS 4"
-      ],
-      "status": "Production",
-      "language": "TypeScript",
-      "languages": {
-        "TypeScript": 303557,
-        "CSS": 4877,
-        "JavaScript": 618
-      },
-      "stars": 0,
-      "forks": 0,
-      "lastPushed": "2026-01-27T06:15:58Z",
-      "createdAt": "2026-01-25T01:59:32Z",
-      "isFeatured": false,
-      "isArchived": false,
-      "isPrivate": false,
-      "tagline": "Brutal startup defensibility assessment powered by AI",
-      "thumbnail": "/portfolio/ai-idea-validator.png",
-      "problem": "Founders waste years building ideas that are structurally replaceable—not because they're bad, but because they lack defensibility. Traditional validation focuses on execution, ignoring whether the idea can survive competition and platform changes.",
-      "solution": "An AI-powered assessment tool that cuts through founder optimism with 23 targeted questions, then uses GPT to generate brutally honest verdicts (KILL/FLIP/BUILD/BET) while detecting contradictions between self-assessments and written responses.",
-      "keyFeatures": [
-        "AI-driven verdict generation that analyzes qualitative responses, not just scores",
-        "Contradiction detection comparing founder self-assessment vs written answers",
-        "Score adjustment showing gap between perceived and AI-evaluated risk",
-        "Bilingual support (English/Spanish) with full i18n",
-        "JSON import/export for AI-assisted workflow integration",
-        "Offline fallback with heuristic analysis when API unavailable"
-      ],
-      "metrics": [
-        "23 questions across 4 sections covering defensibility, risk, and failure modes",
-        "4 verdict outcomes with confidence scores and detailed rationale",
-        "Real-time AI analysis with sub-3-second response times"
-      ],
-      "priority": 99,
-      "dateCompleted": "2025-01",
-      "heroImages": [],
+      "dateCompleted": null,
+      "slides": [],
       "videoUrl": null,
       "videoPoster": null
     }
