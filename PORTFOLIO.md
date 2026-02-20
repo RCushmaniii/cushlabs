@@ -15,7 +15,7 @@ tech_stack:
   - "Tailwind CSS"
   - "Cloudflare Workers"
   - "Google Calendar API"
-thumbnail: "/images/portfolio/cushlabs-01.png"
+thumbnail: "\images\portfolio\cushlabs-thumbnail.jpg"
 status: "Production"
 
 # === DETAIL PAGE ===
@@ -58,6 +58,7 @@ slides:
 # === MEDIA: VIDEO ===
 video_url: "/images/portfolio/cushlabs-brief.mp4"
 video_poster: "/images/portfolio/cushlabs-brief-poster.jpg"
+
 
 # === LINKS ===
 demo_url: "https://cushlabs.ai"
