@@ -1,13 +1,102 @@
 {
-  "generatedAt": "2026-02-21T04:49:14.176Z",
+  "generatedAt": "2026-02-21T16:59:45.485Z",
   "count": 23,
   "projects": [
+    {
+      "id": 1141547356,
+      "name": "ai-idea-validator",
+      "title": "AI Idea Validator",
+      "description": "A brutally honest defensibility assessment for founders. Find out if your business idea can survive competition, platform changes, and solo-founder realities before you build.",
+      "summary": "> A brutally honest defensibility assessment for founders. Find out if your business idea can survive competition, platform changes, and solo-founder realities before you build.",
+      "url": "https://github.com/RCushmaniii/ai-idea-validator",
+      "demoUrl": "https://ai-idea-validator.netlify.app/",
+      "liveUrl": "https://ai-idea-validator.netlify.app/",
+      "homepage": "",
+      "topics": [
+        "framer-motion",
+        "i18n",
+        "marketing-website",
+        "nextjs",
+        "playwright",
+        "react",
+        "shadcn-ui",
+        "stock-market",
+        "tailwindcss",
+        "typescript"
+      ],
+      "categories": [
+        "AI Automation"
+      ],
+      "tags": [
+        "framer-motion",
+        "i18n",
+        "marketing-website",
+        "nextjs",
+        "playwright",
+        "react",
+        "shadcn-ui",
+        "stock-market",
+        "tailwindcss",
+        "typescript",
+        "ai",
+        "startup-validation",
+        "openai",
+        "defensibility",
+        "founder-tools",
+        "contradiction-detection",
+        "bilingual"
+      ],
+      "stack": [
+        "Next.js 15",
+        "React 19",
+        "TypeScript",
+        "OpenAI GPT-4o-mini",
+        "Tailwind CSS 4",
+        "Netlify",
+        "Formspree"
+      ],
+      "status": null,
+      "language": "TypeScript",
+      "languages": {
+        "TypeScript": 303557,
+        "CSS": 4877,
+        "JavaScript": 618
+      },
+      "stars": 0,
+      "forks": 0,
+      "lastPushed": "2026-02-21T06:42:29Z",
+      "createdAt": "2026-01-25T01:59:32Z",
+      "isFeatured": true,
+      "isArchived": false,
+      "isPrivate": false,
+      "tagline": "Brutal startup defensibility assessment powered by AI contradiction detection",
+      "thumbnail": "https://ai-idea-validator.netlify.app/portfolio/ai-idea-validator.png",
+      "problem": null,
+      "solution": null,
+      "keyFeatures": [],
+      "metrics": [],
+      "priority": 1,
+      "dateCompleted": null,
+      "slides": [
+        {
+          "src": null
+        },
+        {
+          "src": null
+        },
+        {
+          "src": null
+        }
+      ],
+      "videoUrl": null,
+      "videoPoster": null
+    },
     {
       "id": 1130115840,
       "name": "cushlabs",
       "title": "CushLabs.ai",
       "description": "AI consulting and software development for SMBs — bilingual (EN/ES) site built with Astro + Tailwind CSS",
-      "summary": "AI consulting and software development for SMBs. Bilingual (EN/ES) business site with automated GitHub portfolio sync.",
+      "summary": "> AI consulting and software development for SMBs. Bilingual (EN/ES) business site with automated GitHub portfolio sync and serverless booking.",
       "url": "https://github.com/RCushmaniii/cushlabs",
       "demoUrl": "https://cushlabs.ai",
       "liveUrl": "https://cushlabs.ai",
@@ -21,7 +110,7 @@
         "tailwindcss"
       ],
       "categories": [
-        "Web Tools"
+        "Tools"
       ],
       "tags": [
         "ai-consulting",
@@ -40,16 +129,18 @@
         "serverless"
       ],
       "stack": [
-        "Astro",
-        "TypeScript",
-        "Tailwind CSS",
+        "Astro 4.16",
+        "TypeScript 5.9",
+        "Tailwind CSS 3.4",
         "Cloudflare Workers",
-        "Google Calendar API"
+        "Google Calendar API",
+        "GitHub Actions",
+        "JSON-LD"
       ],
-      "status": "Production",
+      "status": null,
       "language": "Astro",
       "languages": {
-        "Astro": 344031,
+        "Astro": 344187,
         "TypeScript": 112284,
         "HTML": 61067,
         "JavaScript": 26662,
@@ -57,74 +148,41 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-02-21T04:46:00Z",
+      "lastPushed": "2026-02-21T06:31:16Z",
       "createdAt": "2026-01-08T03:52:43Z",
       "isFeatured": true,
       "isArchived": false,
       "isPrivate": false,
-      "tagline": "Self-maintaining bilingual portfolio with serverless booking",
+      "tagline": "Self-maintaining bilingual portfolio with serverless booking and build-time i18n enforcement",
       "thumbnail": "/images/portfolio/cushlabs-01.png",
-      "problem": "Bilingual marketing sites go stale the moment you stop manually updating them, and third-party booking widgets break design consistency. SEO for two-language sites compounds the complexity with hreflang, canonical URLs, and sitemaps that must cover both languages correctly.",
-      "solution": "A static Astro site with a GitHub Actions pipeline that auto-syncs portfolio data weekly, a custom Cloudflare Worker booking wizard that queries Google Calendar in real time, and a 24-line TypeScript i18n system that enforces bilingual parity at build time.",
-      "keyFeatures": [
-        "Automated GitHub-to-site portfolio sync — 27 projects with zero manual data entry",
-        "Custom serverless booking wizard creating Google Calendar events with Meet links",
-        "24-line TypeScript i18n replacing 40KB+ i18next with zero runtime overhead",
-        "Pre-deploy audit enforcing translation parity, secret leak detection, and build validation",
-        "requestIdleCallback video preloading — zero bytes on initial page load"
-      ],
-      "metrics": [
-        "27 portfolio projects synced automatically from GitHub",
-        "0 KB runtime i18n overhead (24 lines vs ~40KB+ i18next)",
-        "6 automated pre-deploy validation checks before every production build",
-        "Sub-second page loads with static HTML edge-cached globally"
-      ],
+      "problem": null,
+      "solution": null,
+      "keyFeatures": [],
+      "metrics": [],
       "priority": 1,
-      "dateCompleted": "2026-02",
+      "dateCompleted": null,
       "slides": [
         {
-          "src": "/images/portfolio/cushlabs-01.png",
-          "altEn": "CushLabs AI Services — The Self-Maintaining Bilingual Portfolio",
-          "altEs": "CushLabs AI Services — El Portafolio Bilingue Auto-Mantenido"
+          "src": null
         },
         {
-          "src": "/images/portfolio/cushlabs-02.png",
-          "altEn": "Not Just a Website, But a System — bilingual, automated sync, serverless booking",
-          "altEs": "No Solo un Sitio Web, Sino un Sistema — bilingue, sincronizacion automatizada, reservas serverless"
+          "src": null
         },
         {
-          "src": "/images/portfolio/cushlabs-03.png",
-          "altEn": "Premium Design is About Behavior — zero-flash theming, time-based dark mode, micro-interactions",
-          "altEs": "El Diseno Premium es Sobre Comportamiento — temas sin flash, modo oscuro basado en hora, micro-interacciones"
+          "src": null
         },
         {
-          "src": "/images/portfolio/cushlabs-04.png",
-          "altEn": "Engineering Visibility — the enterprise SEO stack with JSON-LD, hreflang, and lazy loading",
-          "altEs": "Visibilidad de Ingenieria — el stack SEO empresarial con JSON-LD, hreflang y carga lazy"
+          "src": null
         },
         {
-          "src": "/images/portfolio/cushlabs-05.png",
-          "altEn": "True Bilingual Architecture — 24-line custom TypeScript i18n vs 40KB+ i18next",
-          "altEs": "Arquitectura Bilingue Real — i18n TypeScript personalizado de 24 lineas vs i18next de 40KB+"
+          "src": null
         },
         {
-          "src": "/images/portfolio/cushlabs-06.png",
-          "altEn": "The Serverless Booking Wizard — Cloudflare Worker to Google Calendar API, 3-step flow",
-          "altEs": "El Asistente de Reservas Serverless — Cloudflare Worker a Google Calendar API, flujo de 3 pasos"
-        },
-        {
-          "src": "/images/portfolio/cushlabs-07.png",
-          "altEn": "Localization Beyond Language — WhatsApp integration with locale-aware pre-filled messages",
-          "altEs": "Localizacion Mas Alla del Idioma — integracion WhatsApp con mensajes prellenados segun el idioma"
-        },
-        {
-          "src": "/images/portfolio/cushlabs-08.png",
-          "altEn": "Security and Anti-Scraping — split-attribute email obfuscation",
-          "altEs": "Seguridad y Anti-Scraping — ofuscacion de email por atributos divididos"
+          "src": null
         }
       ],
-      "videoUrl": "/images/portfolio/cushlabs-brief.mp4",
-      "videoPoster": "/images/portfolio/cushlabs-brief-poster.jpg"
+      "videoUrl": null,
+      "videoPoster": null
     },
     {
       "id": 953305892,
@@ -271,6 +329,139 @@
       ],
       "videoUrl": "https://www.nyenglishteacher.com/video/ny-eng-brief.mp4",
       "videoPoster": "https://www.nyenglishteacher.com/video/ny-eng-brief-poster.jpg"
+    },
+    {
+      "id": 1062817398,
+      "name": "ai-scrabble-practice",
+      "title": "AI Scrabble Practice",
+      "description": "A practice tool for Scrabble players built with React, Vite, Tailwind, and pnpm. Features include word scoring, word validation via free dictionary APIs, and a rack solver to generate playable words.",
+      "summary": "> AI-powered Scrabble practice suite with word validation, anagram solving, and intelligent hints — backed by a 370,000+ word dictionary.",
+      "url": "https://github.com/RCushmaniii/ai-scrabble-practice",
+      "demoUrl": "https://scrabble-mini.netlify.app",
+      "liveUrl": "https://scrabble-mini.netlify.app",
+      "homepage": "https://scrabble-mini.netlify.app/",
+      "topics": [
+        "anagram-solver",
+        "free-game",
+        "openai-api",
+        "react",
+        "scrabble",
+        "scrabble-game",
+        "scrabble-word-finder",
+        "tailwindcss",
+        "typescipt",
+        "vite"
+      ],
+      "categories": [
+        "Games"
+      ],
+      "tags": [
+        "anagram-solver",
+        "free-game",
+        "openai-api",
+        "react",
+        "scrabble",
+        "scrabble-game",
+        "scrabble-word-finder",
+        "tailwindcss",
+        "typescipt",
+        "vite",
+        "typescript",
+        "ai",
+        "openai",
+        "tailwind-css",
+        "playwright",
+        "i18n"
+      ],
+      "stack": [
+        "React 19",
+        "TypeScript",
+        "Vite 7",
+        "OpenAI GPT-4o-mini",
+        "Playwright"
+      ],
+      "status": "Production",
+      "language": "TypeScript",
+      "languages": {
+        "TypeScript": 188238,
+        "JavaScript": 13705,
+        "CSS": 6947,
+        "HTML": 1011
+      },
+      "stars": 1,
+      "forks": 0,
+      "lastPushed": "2026-02-21T16:58:58Z",
+      "createdAt": "2025-09-23T19:15:28Z",
+      "isFeatured": true,
+      "isArchived": false,
+      "isPrivate": true,
+      "tagline": "Five AI-powered practice tools backed by a 370K-word dictionary",
+      "thumbnail": "https://scrabble-mini.netlify.app/images/ai-scrabble-practice-thumb.jpg",
+      "problem": "Scrabble practice tools are either too simple (word checkers) or too powerful (board solvers) — neither builds actual skill. Players bounce between fragmented sites for validation, anagram solving, and word discovery with no structured practice mode.",
+      "solution": "A unified five-tool practice suite that consolidates word validation, anagram solving, strategic word finding, AI-powered natural language search, and timed gameplay into a single bilingual app with sub-second response times.",
+      "keyFeatures": [
+        "370,105-word dictionary with O(1) Set-based validation — sub-millisecond lookups even on mobile",
+        "Magic Search translates plain English queries into validated words with scores via GPT-4o-mini",
+        "Timed Practice Game with realistic tile draws, 60-second rounds, progressive scoring, and AI hints",
+        "Anagram Solver processes 7-tile hands with wildcard support in under 500ms",
+        "Full EN/ES bilingual interface with locale-based routing and Playwright E2E test coverage"
+      ],
+      "metrics": [
+        "370,105-word dictionary with sub-millisecond validation",
+        "Anagram solving in under 500ms for 7-tile hands",
+        "5 practice tools in a single unified interface"
+      ],
+      "priority": 2,
+      "dateCompleted": "2025-09",
+      "slides": [
+        {
+          "src": "https://scrabble-mini.netlify.app/images/ai-scrabble-practice-01.png",
+          "altEn": "AI Scrabble Practice Suite — Five tools for serious Scrabble practice",
+          "altEs": "AI Scrabble Practice Suite — Cinco herramientas para practicar Scrabble en serio"
+        },
+        {
+          "src": "https://scrabble-mini.netlify.app/images/ai-scrabble-practice-02.png",
+          "altEn": "The Practice Gap — word checkers don't teach, board solvers don't let you learn",
+          "altEs": "La brecha de practica — los verificadores no ensenan, los solucionadores no te dejan aprender"
+        },
+        {
+          "src": "https://scrabble-mini.netlify.app/images/ai-scrabble-practice-03.png",
+          "altEn": "Word Validator — instant validation with letter-by-letter score breakdown",
+          "altEs": "Validador de Palabras — validacion instantanea con desglose de puntuacion letra por letra"
+        },
+        {
+          "src": "https://scrabble-mini.netlify.app/images/ai-scrabble-practice-04.png",
+          "altEn": "Anagram Solver — find every playable word from your tile rack with wildcard support",
+          "altEs": "Solucionador de Anagramas — encuentra cada palabra jugable desde tu atril con comodines"
+        },
+        {
+          "src": "https://scrabble-mini.netlify.app/images/ai-scrabble-practice-06.png",
+          "altEn": "Word Finder — search by letter, position, and length with scoring statistics",
+          "altEs": "Buscador de Palabras — busca por letra, posicion y longitud con estadisticas de puntuacion"
+        },
+        {
+          "src": "https://scrabble-mini.netlify.app/images/ai-scrabble-practice-07.png",
+          "altEn": "Magic Search — ask for words in plain English, powered by GPT-4o-mini",
+          "altEs": "Busqueda Magica — pide palabras en lenguaje natural, impulsado por GPT-4o-mini"
+        },
+        {
+          "src": "https://scrabble-mini.netlify.app/images/ai-scrabble-practice-08.png",
+          "altEn": "Practice Game — build words against the clock with AI hints and progressive scoring",
+          "altEs": "Juego de Practica — forma palabras contra reloj con pistas de IA y puntuacion progresiva"
+        },
+        {
+          "src": "https://scrabble-mini.netlify.app/images/ai-scrabble-practice-09.png",
+          "altEn": "Bilingual and Tested — full EN/ES support with Playwright E2E coverage",
+          "altEs": "Bilingue y Probado — soporte completo EN/ES con cobertura E2E de Playwright"
+        },
+        {
+          "src": "https://scrabble-mini.netlify.app/images/ai-scrabble-practice-10.png",
+          "altEn": "Technical Architecture — React 19, TypeScript, Vite 7, OpenAI, 370K-word dictionary",
+          "altEs": "Arquitectura Tecnica — React 19, TypeScript, Vite 7, OpenAI, diccionario de 370K palabras"
+        }
+      ],
+      "videoUrl": "https://scrabble-mini.netlify.app/video/ai-scrabble-practice-brief.mp4",
+      "videoPoster": "https://scrabble-mini.netlify.app/video/ai-scrabble-practice-brief-poster.jpg"
     },
     {
       "id": 1133839610,
@@ -799,79 +990,6 @@
       ],
       "videoUrl": "https://ny-ai-chatbot.vercel.app/video/ny-eng-chatbot-brief.mp4",
       "videoPoster": "https://ny-ai-chatbot.vercel.app/video/ny-eng-chatbot-brief-poster.jpg"
-    },
-    {
-      "id": 1062817398,
-      "name": "ai-scrabble-practice",
-      "title": "AI Scrabble Practice",
-      "description": "A practice tool for Scrabble players built with React, Vite, Tailwind, and pnpm. Features include word scoring, word validation via free dictionary APIs, and a rack solver to generate playable words.",
-      "summary": "> A comprehensive web application for Scrabble players to validate words, discover high-scoring plays, and solve tile combinations using a 370,000+ word dictionary.",
-      "url": "https://github.com/RCushmaniii/ai-scrabble-practice",
-      "demoUrl": "https://scrabble-mini.netlify.app/",
-      "liveUrl": "https://scrabble-mini.netlify.app/",
-      "homepage": "https://scrabble-mini.netlify.app/",
-      "topics": [
-        "anagram-solver",
-        "free-game",
-        "openai-api",
-        "react",
-        "scrabble",
-        "scrabble-game",
-        "scrabble-word-finder",
-        "tailwindcss",
-        "typescipt",
-        "vite"
-      ],
-      "categories": [
-        "Games"
-      ],
-      "tags": [
-        "anagram-solver",
-        "free-game",
-        "openai-api",
-        "react",
-        "scrabble",
-        "scrabble-game",
-        "scrabble-word-finder",
-        "tailwindcss",
-        "typescipt",
-        "vite"
-      ],
-      "stack": [
-        "TypeScript",
-        "React",
-        "Tailwind CSS"
-      ],
-      "status": "Production",
-      "language": "TypeScript",
-      "languages": {
-        "TypeScript": 195668,
-        "JavaScript": 10002,
-        "HTML": 365,
-        "CSS": 308
-      },
-      "stars": 1,
-      "forks": 0,
-      "lastPushed": "2026-01-22T18:08:39Z",
-      "createdAt": "2025-09-23T19:15:28Z",
-      "isFeatured": true,
-      "isArchived": false,
-      "isPrivate": true,
-      "tagline": "A practice tool for Scrabble players built with React, Vite, Tailwind, and pnpm. Features include word scoring, word validation via free dictionary APIs, and a rack solver to generate playable words.",
-      "thumbnail": null,
-      "problem": "TODO: Describe the pain point this project solves.",
-      "solution": "A practice tool for Scrabble players built with React, Vite, Tailwind, and pnpm. Features include word scoring, word validation via free dictionary APIs, and a rack solver to generate playable words.",
-      "keyFeatures": [
-        "TODO: Feature 1 with measurable impact",
-        "TODO: Feature 2 explaining capability",
-        "TODO: Feature 3 showing value"
-      ],
-      "metrics": [],
-      "priority": 2,
-      "dateCompleted": "2025-09",
-      "slides": [],
-      "videoUrl": null,
-      "videoPoster": null
     },
     {
       "id": 1090479901,
@@ -1918,92 +2036,11 @@
       "videoPoster": null
     },
     {
-      "id": 1141547356,
-      "name": "ai-idea-validator",
-      "title": "AI Idea Validator",
-      "description": "A brutally honest defensibility assessment for founders. Find out if your business idea can survive competition, platform changes, and solo-founder realities before you build.",
-      "summary": "A defensibility assessment tool that uses AI to evaluate startup ideas and detect founder optimism bias. Analyzes 23 questions across 4 sections, generates verdicts (KILL/FLIP/BUILD/BET), and identifi",
-      "url": "https://github.com/RCushmaniii/ai-idea-validator",
-      "demoUrl": "https://ai-idea-validator.netlify.app/",
-      "liveUrl": "https://ai-idea-validator.netlify.app/",
-      "homepage": "",
-      "topics": [
-        "framer-motion",
-        "i18n",
-        "marketing-website",
-        "nextjs",
-        "playwright",
-        "react",
-        "shadcn-ui",
-        "stock-market",
-        "tailwindcss",
-        "typescript"
-      ],
-      "categories": [
-        "AI Automation"
-      ],
-      "tags": [
-        "framer-motion",
-        "i18n",
-        "marketing-website",
-        "nextjs",
-        "playwright",
-        "react",
-        "shadcn-ui",
-        "stock-market",
-        "tailwindcss",
-        "typescript"
-      ],
-      "stack": [
-        "Next.js 15",
-        "React 19",
-        "TypeScript",
-        "OpenAI API",
-        "Tailwind CSS 4"
-      ],
-      "status": "Production",
-      "language": "TypeScript",
-      "languages": {
-        "TypeScript": 303557,
-        "CSS": 4877,
-        "JavaScript": 618
-      },
-      "stars": 0,
-      "forks": 0,
-      "lastPushed": "2026-02-20T18:57:35Z",
-      "createdAt": "2026-01-25T01:59:32Z",
-      "isFeatured": false,
-      "isArchived": false,
-      "isPrivate": false,
-      "tagline": "Brutal startup defensibility assessment powered by AI",
-      "thumbnail": "https://ai-idea-validator.netlify.app/portfolio/ai-idea-validator.png",
-      "problem": "Founders waste years building ideas that are structurally replaceable—not because they're bad, but because they lack defensibility. Traditional validation focuses on execution, ignoring whether the idea can survive competition and platform changes.",
-      "solution": "An AI-powered assessment tool that cuts through founder optimism with 23 targeted questions, then uses GPT to generate brutally honest verdicts (KILL/FLIP/BUILD/BET) while detecting contradictions between self-assessments and written responses.",
-      "keyFeatures": [
-        "AI-driven verdict generation that analyzes qualitative responses, not just scores",
-        "Contradiction detection comparing founder self-assessment vs written answers",
-        "Score adjustment showing gap between perceived and AI-evaluated risk",
-        "Bilingual support (English/Spanish) with full i18n",
-        "JSON import/export for AI-assisted workflow integration",
-        "Offline fallback with heuristic analysis when API unavailable"
-      ],
-      "metrics": [
-        "23 questions across 4 sections covering defensibility, risk, and failure modes",
-        "4 verdict outcomes with confidence scores and detailed rationale",
-        "Real-time AI analysis with sub-3-second response times"
-      ],
-      "priority": 99,
-      "dateCompleted": "2025-01",
-      "slides": [],
-      "videoUrl": null,
-      "videoPoster": null
-    },
-    {
       "id": 1157375639,
       "name": "ai-build-vs-outsource",
       "title": "Build vs. Outsource Decision Framework",
       "description": "An interactive web-based decision tool that helps operations leaders evaluate whether to build logistics capacity in-house or outsource to a third-party logistics provider (3PL). ",
-      "summary": "An interactive weighted scoring tool that helps operations leaders evaluate whether to build logistics capacity in-house or outsource to a 3PL. Scores 20 criteria across 5 categories in real time as u",
+      "summary": "> Interactive decision-support tools for operations leaders at growth-stage direct-selling companies. Structured analysis, real-time feedback, board-ready output — no spreadsheets, no guesswork.",
       "url": "https://github.com/RCushmaniii/ai-build-vs-outsource",
       "demoUrl": "https://ai-build-vs-outsource.vercel.app",
       "liveUrl": "https://ai-build-vs-outsource.vercel.app",
@@ -2061,7 +2098,7 @@
       },
       "stars": 0,
       "forks": 1,
-      "lastPushed": "2026-02-20T18:57:33Z",
+      "lastPushed": "2026-02-21T06:08:32Z",
       "createdAt": "2026-02-13T18:42:29Z",
       "isFeatured": false,
       "isArchived": false,
@@ -2131,7 +2168,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-02-20T18:57:32Z",
+      "lastPushed": "2026-02-21T04:55:42Z",
       "createdAt": "2026-02-13T19:55:19Z",
       "isFeatured": false,
       "isArchived": false,
