@@ -3,7 +3,7 @@ export const en = {
     home: 'Home',
     about: 'About',
     work: 'Work',
-    solutions: 'Solutions',
+    solutions: 'Portfolio',
     blog: 'Blog',
     contact: 'Contact',
   },
@@ -141,7 +141,7 @@ export const en = {
     code: 'Code',
   },
   project: {
-    backToWork: 'Back to Work',
+    backToWork: 'Back to Portfolio',
     overview: 'Overview',
     theSolution: 'The Solution',
     highlights: 'Highlights',
