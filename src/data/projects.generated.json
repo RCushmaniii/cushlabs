@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-02-21T02:08:48.313Z",
+  "generatedAt": "2026-02-21T02:25:35.044Z",
   "count": 21,
   "projects": [
     {
@@ -57,7 +57,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-02-21T02:07:53Z",
+      "lastPushed": "2026-02-21T02:08:48Z",
       "createdAt": "2026-01-08T03:52:43Z",
       "isFeatured": true,
       "isArchived": false,
@@ -125,6 +125,137 @@
       ],
       "videoUrl": "/images/portfolio/cushlabs-brief.mp4",
       "videoPoster": "/images/portfolio/cushlabs-brief-poster.jpg"
+    },
+    {
+      "id": 1133839610,
+      "name": "ai-filesense-website",
+      "title": "AI FileSense Website",
+      "description": "Marketing website for AI FileSense - An ai-powered local file organization system for Windows. Landing page, downloads, privacy policy, terms of service, and changelog.",
+      "summary": "**Marketing website for AI FileSense — the Windows desktop app that organizes your files locally using Claude AI.**",
+      "url": "https://github.com/RCushmaniii/ai-filesense-website",
+      "demoUrl": "https://ai-filesense-website.vercel.app/",
+      "liveUrl": "https://ai-filesense-website.vercel.app",
+      "homepage": "https://ai-filesense-website.vercel.app",
+      "topics": [
+        "ai",
+        "claude-ai",
+        "file-organization",
+        "file-organizer",
+        "i18n",
+        "marketing-site",
+        "nextjs",
+        "resend-email",
+        "tailwind-css",
+        "typescript",
+        "windows-app"
+      ],
+      "categories": [
+        "Marketing"
+      ],
+      "tags": [
+        "ai",
+        "claude-ai",
+        "file-organization",
+        "file-organizer",
+        "i18n",
+        "marketing-site",
+        "nextjs",
+        "resend-email",
+        "tailwind-css",
+        "typescript",
+        "windows-app",
+        "tailwind",
+        "bilingual",
+        "seo",
+        "resend",
+        "marketing",
+        "software-distribution"
+      ],
+      "stack": [
+        "Next.js 14",
+        "TypeScript",
+        "Tailwind CSS",
+        "next-intl",
+        "Resend"
+      ],
+      "status": "Production",
+      "language": "TypeScript",
+      "languages": {
+        "TypeScript": 204073,
+        "MDX": 33998,
+        "CSS": 1058,
+        "JavaScript": 396
+      },
+      "stars": 0,
+      "forks": 0,
+      "lastPushed": "2026-02-21T02:19:58Z",
+      "createdAt": "2026-01-13T22:16:37Z",
+      "isFeatured": true,
+      "isArchived": false,
+      "isPrivate": false,
+      "tagline": "Bilingual marketing site with Lighthouse 100 and lead capture",
+      "thumbnail": "https://ai-filesense-website.vercel.app/images/portfolio/ai-filesense-website-thumb.jpg",
+      "problem": "Most indie software developers and small businesses ship a desktop app and then have nothing — no discoverability, no trust signals, no bilingual reach, no support system, and no conversion path. A download link with no context doesn't convert visitors into users.",
+      "solution": "A 17-page bilingual marketing and support website that handles everything between 'I built an app' and 'I have a business' — SEO-optimized, conversion-focused, with a working contact/lead system and a complete support hub.",
+      "keyFeatures": [
+        "17 pages across 7 sections — full marketing funnel from homepage to terms of service",
+        "Bilingual from day one (EN + ES-MX) — locale-based routing with hreflang sitemap alternates",
+        "Working contact/lead capture — Zod + React Hook Form + Server Actions + Resend + honeypot spam protection",
+        "Complete support hub — Getting Started guide, 11-question FAQ, validated contact form",
+        "Production SEO — dynamic metadata, auto-generated sitemap, Open Graph cards, canonical URLs"
+      ],
+      "metrics": [
+        "17 pages across 7 sections covering the full product lifecycle",
+        "Lighthouse 100 Performance, 100 Best Practices, 92 SEO, 92 Accessibility",
+        "0.3s FCP, 0.4s LCP, 0ms TBT — zero layout shift",
+        "Auto-generated sitemap with hreflang alternates for 30+ locale-specific URLs"
+      ],
+      "priority": 2,
+      "dateCompleted": "2026-02",
+      "slides": [
+        {
+          "src": "https://ai-filesense-website.vercel.app/images/portfolio/ai-filesense-website-01.png",
+          "altEn": "Homepage hero with video explainer and download CTA",
+          "altEs": "Hero de la pagina principal con video explicativo y boton de descarga"
+        },
+        {
+          "src": "https://ai-filesense-website.vercel.app/images/portfolio/ai-filesense-website-02.png",
+          "altEn": "How It Works — 3-step process breakdown",
+          "altEs": "Como Funciona — desglose del proceso en 3 pasos"
+        },
+        {
+          "src": "https://ai-filesense-website.vercel.app/images/portfolio/ai-filesense-website-03.png",
+          "altEn": "Features section with trust signals",
+          "altEs": "Seccion de caracteristicas con senales de confianza"
+        },
+        {
+          "src": "https://ai-filesense-website.vercel.app/images/portfolio/ai-filesense-website-04.png",
+          "altEn": "The 12-Folder Smart System overview",
+          "altEs": "Vista general del Sistema Inteligente de 12 Carpetas"
+        },
+        {
+          "src": "https://ai-filesense-website.vercel.app/images/portfolio/ai-filesense-website-05.png",
+          "altEn": "Features page — differentiators and competitive advantages",
+          "altEs": "Pagina de caracteristicas — diferenciadores y ventajas competitivas"
+        },
+        {
+          "src": "https://ai-filesense-website.vercel.app/images/portfolio/ai-filesense-website-06.png",
+          "altEn": "Support hub with Getting Started guide",
+          "altEs": "Centro de soporte con guia de inicio"
+        },
+        {
+          "src": "https://ai-filesense-website.vercel.app/images/portfolio/ai-filesense-website-07.png",
+          "altEn": "Download page with system requirements and quick-start",
+          "altEs": "Pagina de descarga con requisitos del sistema e inicio rapido"
+        },
+        {
+          "src": "https://ai-filesense-website.vercel.app/images/portfolio/ai-filesense-website-08.png",
+          "altEn": "Dark mode — full theme support across all pages",
+          "altEs": "Modo oscuro — soporte completo de temas en todas las paginas"
+        }
+      ],
+      "videoUrl": "https://ai-filesense-website.vercel.app/videos/AI-FileSense-Website-brief.mp4",
+      "videoPoster": "https://ai-filesense-website.vercel.app/images/portfolio/AI-FileSense-Website-brief-poster.jpg"
     },
     {
       "id": 1068781109,
@@ -524,86 +655,6 @@
       "videoPoster": "https://ny-ai-chatbot.vercel.app/video/ny-eng-chatbot-brief-poster.jpg"
     },
     {
-      "id": 1133839610,
-      "name": "ai-filesense-website",
-      "title": "AI FileSense Website",
-      "description": "Marketing website for AI FileSense - An ai-powered local file organization system for Windows. Landing page, downloads, privacy policy, terms of service, and changelog.",
-      "summary": "**Marketing website for AI FileSense — the Windows desktop app that organizes your files locally using Claude AI.**",
-      "url": "https://github.com/RCushmaniii/ai-filesense-website",
-      "demoUrl": "https://ai-filesense-website.vercel.app/",
-      "liveUrl": "https://ai-filesense-website.vercel.app",
-      "homepage": "https://ai-filesense-website.vercel.app",
-      "topics": [
-        "ai",
-        "claude-ai",
-        "file-organization",
-        "file-organizer",
-        "i18n",
-        "marketing-site",
-        "nextjs",
-        "resend-email",
-        "tailwind-css",
-        "typescript",
-        "windows-app"
-      ],
-      "categories": [
-        "Marketing"
-      ],
-      "tags": [
-        "ai",
-        "claude-ai",
-        "file-organization",
-        "file-organizer",
-        "i18n",
-        "marketing-site",
-        "nextjs",
-        "resend-email",
-        "tailwind-css",
-        "typescript",
-        "windows-app"
-      ],
-      "stack": [
-        "TypeScript",
-        "Next.js 14",
-        "Tailwind CSS",
-        "next-intl",
-        "React Hook Form",
-        "Zod",
-        "Resend"
-      ],
-      "status": "Production",
-      "language": "TypeScript",
-      "languages": {
-        "TypeScript": 204073,
-        "MDX": 33991,
-        "CSS": 1058,
-        "JavaScript": 396
-      },
-      "stars": 0,
-      "forks": 0,
-      "lastPushed": "2026-02-20T18:57:25Z",
-      "createdAt": "2026-01-13T22:16:37Z",
-      "isFeatured": true,
-      "isArchived": false,
-      "isPrivate": false,
-      "tagline": "Marketing website for AI FileSense - An AI-powered local file organization system for Windows. Landing page, downloads, privacy policy, terms of service, and changelog.",
-      "thumbnail": null,
-      "problem": "Finally organize your Desktop, Documents, and Downloads without uploading anything to the cloud. Smart AI classification that respects your privacy.",
-      "solution": "Your documents, finally organized.",
-      "keyFeatures": [
-        "How It Works",
-        "Built for Privacy, Designed for You",
-        "12 Smart Folders",
-        "Ready to Get Organized?"
-      ],
-      "metrics": [],
-      "priority": 2,
-      "dateCompleted": "2026-01",
-      "slides": [],
-      "videoUrl": null,
-      "videoPoster": null
-    },
-    {
       "id": 1090479901,
       "name": "ai-resume-tailor",
       "title": "AI Resume Tailor",
@@ -668,6 +719,151 @@
       "slides": [],
       "videoUrl": null,
       "videoPoster": null
+    },
+    {
+      "id": 1132479691,
+      "name": "ai-filesense",
+      "title": "AI FileSense",
+      "description": " AI-powered local file organizer for Windows. Scans your documents, uses Claude AI to intelligently classify files, and organizes them into a clean folder structure with full undo support. ",
+      "summary": "AI FileSense uses artificial intelligence to understand and organize your files based on their actual content—not just filenames. Clean up your Desktop in minutes with AI-powered categorization.",
+      "url": "https://github.com/RCushmaniii/ai-filesense",
+      "demoUrl": "https://ai-filesense-website.vercel.app/",
+      "liveUrl": "",
+      "homepage": "https://ai-filesense-website.vercel.app/",
+      "topics": [
+        "ai",
+        "desktop-app",
+        "document-management",
+        "file-manager",
+        "file-organizer",
+        "local-first",
+        "privacy-protection",
+        "rust",
+        "tauri",
+        "typescript",
+        "windows-app"
+      ],
+      "categories": [
+        "AI Automation"
+      ],
+      "tags": [
+        "ai",
+        "desktop-app",
+        "document-management",
+        "file-manager",
+        "file-organizer",
+        "local-first",
+        "privacy-protection",
+        "rust",
+        "tauri",
+        "typescript",
+        "windows-app",
+        "file-organization",
+        "privacy-first",
+        "bilingual",
+        "windows"
+      ],
+      "stack": [
+        "Tauri 2",
+        "Rust",
+        "React",
+        "TypeScript",
+        "Claude Haiku"
+      ],
+      "status": "Demo",
+      "language": "TypeScript",
+      "languages": {
+        "TypeScript": 298302,
+        "Rust": 239279,
+        "JavaScript": 8353,
+        "CSS": 1968,
+        "HTML": 362
+      },
+      "stars": 0,
+      "forks": 0,
+      "lastPushed": "2026-02-21T02:24:38Z",
+      "createdAt": "2026-01-12T02:37:39Z",
+      "isFeatured": true,
+      "isArchived": false,
+      "isPrivate": false,
+      "tagline": "Local AI file organizer — private, safe, zero config",
+      "thumbnail": "https://raw.githubusercontent.com/RCushmaniii/ai-filesense/main/public/images/ai-filesense-thumb.jpg",
+      "problem": "Most people have thousands of documents scattered across Desktop, Documents, and Downloads with no system — manual sorting takes hours and most quit in minutes. Cloud-based solutions require uploading sensitive files to third-party servers, and existing AI tools demand API keys and terminal commands that lock out non-technical users.",
+      "solution": "A lightweight Windows desktop app (~5 MB) that uses Claude Haiku to read document content and classify files into a consistent 12-folder system without files ever leaving the device. Zero configuration required — the developer provides the API key so users never touch a terminal or API console.",
+      "keyFeatures": [
+        "Content-based AI classification — reads PDFs, DOCX, PPTX, TXT, not just filenames",
+        "Full undo support — rollback a single file or entire session, even after app restart",
+        "Confidence-based routing — uncertain files go to Review for human decision, never mis-filed",
+        "Privacy-first — files stay local, only 300-char snippets sent to AI, prompt injection prevention",
+        "Zero config freemium — developer-provided API key, no accounts, no setup, 10 free scans"
+      ],
+      "metrics": [
+        "$0.0015 per file classified",
+        "~5 minutes from install to organized",
+        "12 universal folder categories",
+        "10 free scans per user (backend-enforced)"
+      ],
+      "priority": 3,
+      "dateCompleted": "2026-02",
+      "slides": [
+        {
+          "src": "https://raw.githubusercontent.com/RCushmaniii/ai-filesense/main/public/images/ai-filesense-02.png",
+          "altEn": "Turn Chaos into Clarity — AI FileSense hero slide",
+          "altEs": "Convierte el Caos en Claridad — diapositiva principal de AI FileSense"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/RCushmaniii/ai-filesense/main/public/images/ai-filesense-03.png",
+          "altEn": "We are drowning in data but starving for order",
+          "altEs": "Nos ahogamos en datos pero nos falta orden"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/RCushmaniii/ai-filesense/main/public/images/ai-filesense-04.png",
+          "altEn": "The Barriers to Organization — manual sorting, inconsistent systems, technical complexity",
+          "altEs": "Las Barreras para la Organizacion — clasificacion manual, sistemas inconsistentes, complejidad tecnica"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/RCushmaniii/ai-filesense/main/public/images/ai-filesense-05.png",
+          "altEn": "Hours of low-value decision making, ad-hoc folders that fail, AI tools requiring complex APIs",
+          "altEs": "Horas de decisiones de bajo valor, carpetas improvisadas que fallan, herramientas IA que requieren APIs complejas"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/RCushmaniii/ai-filesense/main/public/images/ai-filesense-06.png",
+          "altEn": "AI FileSense — Just click and go. Zero configuration. Powered by Claude Haiku.",
+          "altEs": "AI FileSense — Solo haz clic. Cero configuracion. Impulsado por Claude Haiku."
+        },
+        {
+          "src": "https://raw.githubusercontent.com/RCushmaniii/ai-filesense/main/public/images/ai-filesense-07.png",
+          "altEn": "Classification based on content, not just filenames — deep parsing of PDFs, DOCX, PPTX, TXT",
+          "altEs": "Clasificacion basada en contenido, no solo nombres de archivo — analisis de PDFs, DOCX, PPTX, TXT"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/RCushmaniii/ai-filesense/main/public/images/ai-filesense-09.png",
+          "altEn": "Confidence and Human Control — smart routing for uncertain files",
+          "altEs": "Confianza y Control Humano — enrutamiento inteligente para archivos inciertos"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/RCushmaniii/ai-filesense/main/public/images/ai-filesense-10.png",
+          "altEn": "AI for the Non-Technical 99% — no terminal, no API keys, no config",
+          "altEs": "IA para el 99% No Tecnico — sin terminal, sin API keys, sin configuracion"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/RCushmaniii/ai-filesense/main/public/images/ai-filesense-11.png",
+          "altEn": "Uncompromising Safety — privacy by design, injection prevention, no files ever deleted",
+          "altEs": "Seguridad Sin Compromiso — privacidad por diseno, prevencion de inyeccion, ningun archivo eliminado"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/RCushmaniii/ai-filesense/main/public/images/ai-filesense-12.png",
+          "altEn": "The Safety Net — full undo, test mode, crash recovery with atomic writes",
+          "altEs": "La Red de Seguridad — deshacer completo, modo prueba, recuperacion de fallos con escrituras atomicas"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/RCushmaniii/ai-filesense/main/public/images/ai-filesense-13.png",
+          "altEn": "From Digital Chaos to Automated Order — full system architecture",
+          "altEs": "Del Caos Digital al Orden Automatizado — arquitectura completa del sistema"
+        }
+      ],
+      "videoUrl": "https://raw.githubusercontent.com/RCushmaniii/ai-filesense/main/public/video/AI_FileSense-brief.mp4",
+      "videoPoster": "https://raw.githubusercontent.com/RCushmaniii/ai-filesense/main/public/video/AI-FileSense-brief-poster.jpg"
     },
     {
       "id": 1082205398,
@@ -1155,159 +1351,6 @@
       ],
       "videoUrl": "https://mazebreak-wiki.vercel.app/video/MazeBreak__Taming_the_GDD.mp4",
       "videoPoster": null
-    },
-    {
-      "id": 1132479691,
-      "name": "ai-filesense",
-      "title": "AI FileSense",
-      "description": " AI-powered local file organizer for Windows. Scans your documents, uses Claude AI to intelligently classify files, and organizes them into a clean folder structure with full undo support. ",
-      "summary": "AI FileSense uses artificial intelligence to understand and organize your files based on their actual content—not just filenames. Clean up your Desktop in minutes with AI-powered categorization.",
-      "url": "https://github.com/RCushmaniii/ai-filesense",
-      "demoUrl": "https://ai-filesense-website.vercel.app/",
-      "liveUrl": "https://ai-filesense-website.vercel.app/",
-      "homepage": "https://ai-filesense-website.vercel.app/",
-      "topics": [
-        "ai",
-        "desktop-app",
-        "document-management",
-        "file-manager",
-        "file-organizer",
-        "local-first",
-        "privacy-protection",
-        "rust",
-        "tauri",
-        "typescript",
-        "windows-app"
-      ],
-      "categories": [
-        "AI Automation"
-      ],
-      "tags": [
-        "ai",
-        "desktop-app",
-        "document-management",
-        "file-manager",
-        "file-organizer",
-        "local-first",
-        "privacy-protection",
-        "rust",
-        "tauri",
-        "typescript",
-        "windows-app",
-        "file-organization",
-        "privacy-first",
-        "bilingual",
-        "windows"
-      ],
-      "stack": [
-        "Tauri 2",
-        "Rust",
-        "React",
-        "TypeScript",
-        "SQLite",
-        "Claude Haiku",
-        "shadcn/ui",
-        "Tailwind CSS"
-      ],
-      "status": "In Development",
-      "language": "TypeScript",
-      "languages": {
-        "TypeScript": 298302,
-        "Rust": 239279,
-        "JavaScript": 8353,
-        "CSS": 1968,
-        "HTML": 362
-      },
-      "stars": 0,
-      "forks": 0,
-      "lastPushed": "2026-02-20T18:57:25Z",
-      "createdAt": "2026-01-12T02:37:39Z",
-      "isFeatured": true,
-      "isArchived": false,
-      "isPrivate": false,
-      "tagline": "AI-powered local file organization for Windows — private, safe, and accessible to everyone",
-      "thumbnail": "public/images/ai-filesense-thumb.jpg",
-      "problem": "Most people have hundreds or thousands of documents scattered across Desktop, Documents, and Downloads with no system. Manual organization takes hours and most people quit after 10 minutes. Cloud-based solutions require uploading sensitive personal files to third-party servers. Existing AI tools demand API keys, terminals, and developer knowledge — locking out the 99% of users who aren't technical.",
-      "solution": "A Windows desktop app that uses AI to read document content and classify files into a clean, consistent 12-folder system. Files never leave the device. Every move is logged and fully reversible. Zero configuration required — the developer provides the API key so users never touch a terminal or API console.",
-      "keyFeatures": [
-        "Content-based AI classification — reads PDFs, DOCX, PPTX, TXT, not just filenames",
-        "12-folder numbered system (Work, Money, Home, Health, Legal, School, Family, Clients, Projects, Travel, Archive, Review) with smart subcategories",
-        "Full undo support — rollback a single file or entire session, even after app restart",
-        "Crash recovery — detects incomplete sessions and offers resume, rollback, or discard",
-        "Confidence-based routing — uncertain files go to Review for human decision, never mis-filed",
-        "Native bilingual UI — English + Spanish (Mexico) throughout, including AI-generated questions",
-        "Zero config freemium — developer-provided API key, no accounts, no setup",
-        "Privacy-first — files stay local, only 300-char snippets sent to AI, prompt injection prevention via serde_json",
-        "Test mode by default — preview all changes before anything actually moves",
-        "~5 MB app size (Tauri 2) vs ~200 MB for Electron equivalents"
-      ],
-      "metrics": [
-        "$0.0015 per file classified",
-        "~5 minutes from install to organized",
-        "12 universal folder categories",
-        "10 free scans per user (backend-enforced)"
-      ],
-      "priority": 3,
-      "dateCompleted": "2026-02",
-      "slides": [
-        {
-          "src": "public/images/ai-filesense-02.png",
-          "altEn": "Turn Chaos into Clarity — AI FileSense hero slide",
-          "altEs": "Intelligent. Safe. Accessible."
-        },
-        {
-          "src": "public/images/ai-filesense-03.png",
-          "altEn": "We are drowning in data but starving for order",
-          "altEs": "The problem: thousands of unorganized files creating decision fatigue and buried assets."
-        },
-        {
-          "src": "public/images/ai-filesense-04.png",
-          "altEn": "The Barriers to Organization",
-          "altEs": "Manual sorting, inconsistent systems, and technical complexity keep people from organizing."
-        },
-        {
-          "src": "public/images/ai-filesense-05.png",
-          "altEn": "The Barriers to Organization (continued)",
-          "altEs": "Hours of low-value decision making, ad-hoc folders that fail, and AI tools that require complex APIs."
-        },
-        {
-          "src": "public/images/ai-filesense-06.png",
-          "altEn": "AI FileSense — Just click and go",
-          "altEs": "Zero configuration. No API keys required. Powered by Claude Haiku."
-        },
-        {
-          "src": "public/images/ai-filesense-07.png",
-          "altEn": "Classification based on content, not just filenames",
-          "altEs": "Deep parsing reads PDFs, DOCX, PPTX, TXT, CSV, and MD files to understand what each document actually is."
-        },
-        {
-          "src": "public/images/ai-filesense-09.png",
-          "altEn": "Confidence and Human Control",
-          "altEs": "Smart routing: high-confidence files are auto-filed, low-confidence files route to Review for human decision."
-        },
-        {
-          "src": "public/images/ai-filesense-10.png",
-          "altEn": "AI for the Non-Technical 99%",
-          "altEs": "Zero config, no terminal, no API keys. The developer handles backend complexity so users don't have to."
-        },
-        {
-          "src": "public/images/ai-filesense-11.png",
-          "altEn": "Uncompromising Safety",
-          "altEs": "Privacy by design: files never leave the device, injection prevention via serialization, no files ever deleted."
-        },
-        {
-          "src": "public/images/ai-filesense-12.png",
-          "altEn": "The Safety Net",
-          "altEs": "Full undo support, test mode to preview changes, and crash recovery with atomic writes."
-        },
-        {
-          "src": "public/images/ai-filesense-13.png",
-          "altEn": "From Digital Chaos to Automated Order — full system architecture",
-          "altEs": "Complete system view: from digital clutter through local AI processing to the universal 12-folder structure."
-        }
-      ],
-      "videoUrl": null,
-      "videoPoster": "public/video/AI-FileSense-brief-poster.jpg"
     },
     {
       "id": 1140204033,

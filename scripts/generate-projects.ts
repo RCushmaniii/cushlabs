@@ -321,7 +321,9 @@ async function generateProjects() {
     }
 
     // Resolve relative asset paths to absolute URLs for external repos
-    const deployUrl = portfolio?.live_url || portfolio?.demo_url || demoUrl;
+    // Only use URLs explicitly set in PORTFOLIO.md — GitHub homepage/README URLs
+    // may point to a different project's deployment (e.g. a marketing site)
+    const deployUrl = portfolio?.live_url || portfolio?.demo_url || null;
     const resolve = (path: string | undefined | null) => resolveAssetUrl(path, repo.name, deployUrl);
 
     const project: Project = {
