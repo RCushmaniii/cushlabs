@@ -1,7 +1,131 @@
 {
-  "generatedAt": "2026-02-21T04:43:53.558Z",
+  "generatedAt": "2026-02-21T04:49:14.176Z",
   "count": 23,
   "projects": [
+    {
+      "id": 1130115840,
+      "name": "cushlabs",
+      "title": "CushLabs.ai",
+      "description": "AI consulting and software development for SMBs — bilingual (EN/ES) site built with Astro + Tailwind CSS",
+      "summary": "AI consulting and software development for SMBs. Bilingual (EN/ES) business site with automated GitHub portfolio sync.",
+      "url": "https://github.com/RCushmaniii/cushlabs",
+      "demoUrl": "https://cushlabs.ai",
+      "liveUrl": "https://cushlabs.ai",
+      "homepage": "https://cushlabs.ai",
+      "topics": [
+        "ai-consulting",
+        "astro",
+        "bilingual",
+        "cushlabs",
+        "static-site",
+        "tailwindcss"
+      ],
+      "categories": [
+        "Web Tools"
+      ],
+      "tags": [
+        "ai-consulting",
+        "astro",
+        "bilingual",
+        "cushlabs",
+        "static-site",
+        "tailwindcss",
+        "tailwind",
+        "typescript",
+        "i18n",
+        "cloudflare-workers",
+        "google-calendar",
+        "github-actions",
+        "seo",
+        "serverless"
+      ],
+      "stack": [
+        "Astro",
+        "TypeScript",
+        "Tailwind CSS",
+        "Cloudflare Workers",
+        "Google Calendar API"
+      ],
+      "status": "Production",
+      "language": "Astro",
+      "languages": {
+        "Astro": 344031,
+        "TypeScript": 112284,
+        "HTML": 61067,
+        "JavaScript": 26662,
+        "CSS": 1697
+      },
+      "stars": 0,
+      "forks": 0,
+      "lastPushed": "2026-02-21T04:46:00Z",
+      "createdAt": "2026-01-08T03:52:43Z",
+      "isFeatured": true,
+      "isArchived": false,
+      "isPrivate": false,
+      "tagline": "Self-maintaining bilingual portfolio with serverless booking",
+      "thumbnail": "/images/portfolio/cushlabs-01.png",
+      "problem": "Bilingual marketing sites go stale the moment you stop manually updating them, and third-party booking widgets break design consistency. SEO for two-language sites compounds the complexity with hreflang, canonical URLs, and sitemaps that must cover both languages correctly.",
+      "solution": "A static Astro site with a GitHub Actions pipeline that auto-syncs portfolio data weekly, a custom Cloudflare Worker booking wizard that queries Google Calendar in real time, and a 24-line TypeScript i18n system that enforces bilingual parity at build time.",
+      "keyFeatures": [
+        "Automated GitHub-to-site portfolio sync — 27 projects with zero manual data entry",
+        "Custom serverless booking wizard creating Google Calendar events with Meet links",
+        "24-line TypeScript i18n replacing 40KB+ i18next with zero runtime overhead",
+        "Pre-deploy audit enforcing translation parity, secret leak detection, and build validation",
+        "requestIdleCallback video preloading — zero bytes on initial page load"
+      ],
+      "metrics": [
+        "27 portfolio projects synced automatically from GitHub",
+        "0 KB runtime i18n overhead (24 lines vs ~40KB+ i18next)",
+        "6 automated pre-deploy validation checks before every production build",
+        "Sub-second page loads with static HTML edge-cached globally"
+      ],
+      "priority": 1,
+      "dateCompleted": "2026-02",
+      "slides": [
+        {
+          "src": "/images/portfolio/cushlabs-01.png",
+          "altEn": "CushLabs AI Services — The Self-Maintaining Bilingual Portfolio",
+          "altEs": "CushLabs AI Services — El Portafolio Bilingue Auto-Mantenido"
+        },
+        {
+          "src": "/images/portfolio/cushlabs-02.png",
+          "altEn": "Not Just a Website, But a System — bilingual, automated sync, serverless booking",
+          "altEs": "No Solo un Sitio Web, Sino un Sistema — bilingue, sincronizacion automatizada, reservas serverless"
+        },
+        {
+          "src": "/images/portfolio/cushlabs-03.png",
+          "altEn": "Premium Design is About Behavior — zero-flash theming, time-based dark mode, micro-interactions",
+          "altEs": "El Diseno Premium es Sobre Comportamiento — temas sin flash, modo oscuro basado en hora, micro-interacciones"
+        },
+        {
+          "src": "/images/portfolio/cushlabs-04.png",
+          "altEn": "Engineering Visibility — the enterprise SEO stack with JSON-LD, hreflang, and lazy loading",
+          "altEs": "Visibilidad de Ingenieria — el stack SEO empresarial con JSON-LD, hreflang y carga lazy"
+        },
+        {
+          "src": "/images/portfolio/cushlabs-05.png",
+          "altEn": "True Bilingual Architecture — 24-line custom TypeScript i18n vs 40KB+ i18next",
+          "altEs": "Arquitectura Bilingue Real — i18n TypeScript personalizado de 24 lineas vs i18next de 40KB+"
+        },
+        {
+          "src": "/images/portfolio/cushlabs-06.png",
+          "altEn": "The Serverless Booking Wizard — Cloudflare Worker to Google Calendar API, 3-step flow",
+          "altEs": "El Asistente de Reservas Serverless — Cloudflare Worker a Google Calendar API, flujo de 3 pasos"
+        },
+        {
+          "src": "/images/portfolio/cushlabs-07.png",
+          "altEn": "Localization Beyond Language — WhatsApp integration with locale-aware pre-filled messages",
+          "altEs": "Localizacion Mas Alla del Idioma — integracion WhatsApp con mensajes prellenados segun el idioma"
+        },
+        {
+          "src": "/images/portfolio/cushlabs-08.png",
+          "altEn": "Security and Anti-Scraping — split-attribute email obfuscation",
+          "altEs": "Seguridad y Anti-Scraping — ofuscacion de email por atributos divididos"
+        }
+      ],
+      "videoUrl": "/images/portfolio/cushlabs-brief.mp4",
+      "videoPoster": "/images/portfolio/cushlabs-brief-poster.jpg"
+    },
     {
       "id": 953305892,
       "name": "ny-eng",
@@ -147,130 +271,6 @@
       ],
       "videoUrl": "https://www.nyenglishteacher.com/video/ny-eng-brief.mp4",
       "videoPoster": "https://www.nyenglishteacher.com/video/ny-eng-brief-poster.jpg"
-    },
-    {
-      "id": 1130115840,
-      "name": "cushlabs",
-      "title": "CushLabs.ai",
-      "description": "AI consulting and software development for SMBs — bilingual (EN/ES) site built with Astro + Tailwind CSS",
-      "summary": "AI consulting and software development for SMBs. Bilingual (EN/ES) business site with automated GitHub portfolio sync.",
-      "url": "https://github.com/RCushmaniii/cushlabs",
-      "demoUrl": "https://cushlabs.ai",
-      "liveUrl": "https://cushlabs.ai",
-      "homepage": "https://cushlabs.ai",
-      "topics": [
-        "ai-consulting",
-        "astro",
-        "bilingual",
-        "cushlabs",
-        "static-site",
-        "tailwindcss"
-      ],
-      "categories": [
-        "Web Tools"
-      ],
-      "tags": [
-        "ai-consulting",
-        "astro",
-        "bilingual",
-        "cushlabs",
-        "static-site",
-        "tailwindcss",
-        "tailwind",
-        "typescript",
-        "i18n",
-        "cloudflare-workers",
-        "google-calendar",
-        "github-actions",
-        "seo",
-        "serverless"
-      ],
-      "stack": [
-        "Astro",
-        "TypeScript",
-        "Tailwind CSS",
-        "Cloudflare Workers",
-        "Google Calendar API"
-      ],
-      "status": "Production",
-      "language": "Astro",
-      "languages": {
-        "Astro": 344031,
-        "TypeScript": 112159,
-        "HTML": 61067,
-        "JavaScript": 26662,
-        "CSS": 1697
-      },
-      "stars": 0,
-      "forks": 0,
-      "lastPushed": "2026-02-21T04:34:38Z",
-      "createdAt": "2026-01-08T03:52:43Z",
-      "isFeatured": true,
-      "isArchived": false,
-      "isPrivate": false,
-      "tagline": "Self-maintaining bilingual portfolio with serverless booking",
-      "thumbnail": "/images/portfolio/cushlabs-01.png",
-      "problem": "Bilingual marketing sites go stale the moment you stop manually updating them, and third-party booking widgets break design consistency. SEO for two-language sites compounds the complexity with hreflang, canonical URLs, and sitemaps that must cover both languages correctly.",
-      "solution": "A static Astro site with a GitHub Actions pipeline that auto-syncs portfolio data weekly, a custom Cloudflare Worker booking wizard that queries Google Calendar in real time, and a 24-line TypeScript i18n system that enforces bilingual parity at build time.",
-      "keyFeatures": [
-        "Automated GitHub-to-site portfolio sync — 27 projects with zero manual data entry",
-        "Custom serverless booking wizard creating Google Calendar events with Meet links",
-        "24-line TypeScript i18n replacing 40KB+ i18next with zero runtime overhead",
-        "Pre-deploy audit enforcing translation parity, secret leak detection, and build validation",
-        "requestIdleCallback video preloading — zero bytes on initial page load"
-      ],
-      "metrics": [
-        "27 portfolio projects synced automatically from GitHub",
-        "0 KB runtime i18n overhead (24 lines vs ~40KB+ i18next)",
-        "6 automated pre-deploy validation checks before every production build",
-        "Sub-second page loads with static HTML edge-cached globally"
-      ],
-      "priority": 1,
-      "dateCompleted": "2026-02",
-      "slides": [
-        {
-          "src": "/images/portfolio/cushlabs-01.png",
-          "altEn": "CushLabs AI Services — The Self-Maintaining Bilingual Portfolio",
-          "altEs": "CushLabs AI Services — El Portafolio Bilingue Auto-Mantenido"
-        },
-        {
-          "src": "/images/portfolio/cushlabs-02.png",
-          "altEn": "Not Just a Website, But a System — bilingual, automated sync, serverless booking",
-          "altEs": "No Solo un Sitio Web, Sino un Sistema — bilingue, sincronizacion automatizada, reservas serverless"
-        },
-        {
-          "src": "/images/portfolio/cushlabs-03.png",
-          "altEn": "Premium Design is About Behavior — zero-flash theming, time-based dark mode, micro-interactions",
-          "altEs": "El Diseno Premium es Sobre Comportamiento — temas sin flash, modo oscuro basado en hora, micro-interacciones"
-        },
-        {
-          "src": "/images/portfolio/cushlabs-04.png",
-          "altEn": "Engineering Visibility — the enterprise SEO stack with JSON-LD, hreflang, and lazy loading",
-          "altEs": "Visibilidad de Ingenieria — el stack SEO empresarial con JSON-LD, hreflang y carga lazy"
-        },
-        {
-          "src": "/images/portfolio/cushlabs-05.png",
-          "altEn": "True Bilingual Architecture — 24-line custom TypeScript i18n vs 40KB+ i18next",
-          "altEs": "Arquitectura Bilingue Real — i18n TypeScript personalizado de 24 lineas vs i18next de 40KB+"
-        },
-        {
-          "src": "/images/portfolio/cushlabs-06.png",
-          "altEn": "The Serverless Booking Wizard — Cloudflare Worker to Google Calendar API, 3-step flow",
-          "altEs": "El Asistente de Reservas Serverless — Cloudflare Worker a Google Calendar API, flujo de 3 pasos"
-        },
-        {
-          "src": "/images/portfolio/cushlabs-07.png",
-          "altEn": "Localization Beyond Language — WhatsApp integration with locale-aware pre-filled messages",
-          "altEs": "Localizacion Mas Alla del Idioma — integracion WhatsApp con mensajes prellenados segun el idioma"
-        },
-        {
-          "src": "/images/portfolio/cushlabs-08.png",
-          "altEn": "Security and Anti-Scraping — split-attribute email obfuscation",
-          "altEs": "Seguridad y Anti-Scraping — ofuscacion de email por atributos divididos"
-        }
-      ],
-      "videoUrl": "/images/portfolio/cushlabs-brief.mp4",
-      "videoPoster": "/images/portfolio/cushlabs-brief-poster.jpg"
     },
     {
       "id": 1133839610,
@@ -1567,7 +1567,7 @@
     {
       "id": 1140204033,
       "name": "ai-stock-alert-website",
-      "title": "AI StockAlert",
+      "title": "AI StockAlert Website",
       "description": " Bilingual (EN/ES) Windows app for WhatsApp stock price alerts. Privacy-focused, no subscriptions, bring your own Finnhub API key.",
       "summary": "> **Portfolio Demo**: This is a production-quality SaaS marketing website built to demonstrate modern web development practices. AI StockAlert is a fictional product—no software is available for downl",
       "url": "https://github.com/RCushmaniii/ai-stock-alert-website",
@@ -1619,7 +1619,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-02-21T04:31:36Z",
+      "lastPushed": "2026-02-21T04:48:49Z",
       "createdAt": "2026-01-23T00:50:02Z",
       "isFeatured": true,
       "isArchived": false,
