@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-02-21T20:21:49.220Z",
+  "generatedAt": "2026-02-21T21:03:15.499Z",
   "count": 23,
   "projects": [
     {
@@ -59,7 +59,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-02-21T16:59:58Z",
+      "lastPushed": "2026-02-21T20:22:19Z",
       "createdAt": "2026-01-08T03:52:43Z",
       "isFeatured": true,
       "isArchived": false,
@@ -82,95 +82,6 @@
         {
           "src": null
         },
-        {
-          "src": null
-        },
-        {
-          "src": null
-        },
-        {
-          "src": null
-        }
-      ],
-      "videoUrl": null,
-      "videoPoster": null
-    },
-    {
-      "id": 1141547356,
-      "name": "ai-idea-validator",
-      "title": "AI Idea Validator",
-      "description": "A brutally honest defensibility assessment for founders. Find out if your business idea can survive competition, platform changes, and solo-founder realities before you build.",
-      "summary": "> A brutally honest defensibility assessment for founders. Find out if your business idea can survive competition, platform changes, and solo-founder realities before you build.",
-      "url": "https://github.com/RCushmaniii/ai-idea-validator",
-      "demoUrl": "https://ai-idea-validator.netlify.app/",
-      "liveUrl": "https://ai-idea-validator.netlify.app/",
-      "homepage": "",
-      "topics": [
-        "framer-motion",
-        "i18n",
-        "marketing-website",
-        "nextjs",
-        "playwright",
-        "react",
-        "shadcn-ui",
-        "stock-market",
-        "tailwindcss",
-        "typescript"
-      ],
-      "categories": [
-        "AI Automation"
-      ],
-      "tags": [
-        "framer-motion",
-        "i18n",
-        "marketing-website",
-        "nextjs",
-        "playwright",
-        "react",
-        "shadcn-ui",
-        "stock-market",
-        "tailwindcss",
-        "typescript",
-        "ai",
-        "startup-validation",
-        "openai",
-        "defensibility",
-        "founder-tools",
-        "contradiction-detection",
-        "bilingual"
-      ],
-      "stack": [
-        "Next.js 15",
-        "React 19",
-        "TypeScript",
-        "OpenAI GPT-4o-mini",
-        "Tailwind CSS 4",
-        "Netlify",
-        "Formspree"
-      ],
-      "status": null,
-      "language": "TypeScript",
-      "languages": {
-        "TypeScript": 303557,
-        "CSS": 4877,
-        "JavaScript": 618
-      },
-      "stars": 0,
-      "forks": 0,
-      "lastPushed": "2026-02-21T06:42:29Z",
-      "createdAt": "2026-01-25T01:59:32Z",
-      "isFeatured": true,
-      "isArchived": false,
-      "isPrivate": false,
-      "tagline": "Brutal startup defensibility assessment powered by AI contradiction detection",
-      "thumbnail": "https://ai-idea-validator.netlify.app/portfolio/ai-idea-validator.png",
-      "problem": null,
-      "solution": null,
-      "keyFeatures": [],
-      "metrics": [],
-      "priority": 1,
-      "dateCompleted": null,
-      "slides": [
         {
           "src": null
         },
@@ -1056,6 +967,129 @@
       "slides": [],
       "videoUrl": null,
       "videoPoster": null
+    },
+    {
+      "id": 1141547356,
+      "name": "ai-idea-validator",
+      "title": "AI Idea Validator",
+      "description": "A brutally honest defensibility assessment for founders. Find out if your business idea can survive competition, platform changes, and solo-founder realities before you build.",
+      "summary": "> A brutally honest defensibility assessment for founders. Find out if your business idea can survive competition, platform changes, and solo-founder realities before you build.",
+      "url": "https://github.com/RCushmaniii/ai-idea-validator",
+      "demoUrl": "https://ai-idea-validator.netlify.app/",
+      "liveUrl": "https://ai-idea-validator.netlify.app/",
+      "homepage": "",
+      "topics": [
+        "framer-motion",
+        "i18n",
+        "marketing-website",
+        "nextjs",
+        "playwright",
+        "react",
+        "shadcn-ui",
+        "stock-market",
+        "tailwindcss",
+        "typescript"
+      ],
+      "categories": [
+        "AI Automation"
+      ],
+      "tags": [
+        "framer-motion",
+        "i18n",
+        "marketing-website",
+        "nextjs",
+        "playwright",
+        "react",
+        "shadcn-ui",
+        "stock-market",
+        "tailwindcss",
+        "typescript",
+        "ai",
+        "startup-validation",
+        "openai",
+        "defensibility",
+        "founder-tools",
+        "contradiction-detection",
+        "bilingual"
+      ],
+      "stack": [
+        "Next.js 15",
+        "React 19",
+        "TypeScript",
+        "OpenAI GPT-4o-mini",
+        "Tailwind CSS 4"
+      ],
+      "status": "Production",
+      "language": "TypeScript",
+      "languages": {
+        "TypeScript": 303557,
+        "CSS": 4877,
+        "JavaScript": 618
+      },
+      "stars": 0,
+      "forks": 0,
+      "lastPushed": "2026-02-21T21:02:33Z",
+      "createdAt": "2026-01-25T01:59:32Z",
+      "isFeatured": true,
+      "isArchived": false,
+      "isPrivate": false,
+      "tagline": "Brutal startup defensibility assessment with AI contradiction detection",
+      "thumbnail": "https://ai-idea-validator.netlify.app/images/portfolio/aI-Idea-validator-thumb.jpg",
+      "problem": "Founders waste months building ideas that are structurally replaceable because traditional validation tools ignore defensibility. Self-assessment alone can't catch optimism bias — founders consistently rate their moats high while describing products with no switching costs.",
+      "solution": "A 23-question structured assessment that probes defensibility across moats, platform risk, lock-in, and failure modes. GPT-4o-mini cross-references numeric scores against written responses, detects contradictions, and delivers one of four verdicts — KILL, FLIP, BUILD, or BET — with specific reasoning in under 3 seconds.",
+      "keyFeatures": [
+        "23-question defensibility assessment across 4 sections with AI-powered contradiction detection",
+        "4 honest verdicts (KILL/FLIP/BUILD/BET) with confidence scores and detailed rationale",
+        "AI cross-references numeric self-assessment vs written responses to surface optimism bias",
+        "Full EN/ES bilingual support including AI-generated verdicts and analysis",
+        "Offline heuristic fallback — always returns a verdict, even without API access"
+      ],
+      "metrics": [
+        "Sub-3-second AI analysis via GPT-4o-mini",
+        "23 questions across 4 defensibility sections",
+        "4 verdicts with confidence scores and specific rationale"
+      ],
+      "priority": 3,
+      "dateCompleted": "2026-02",
+      "slides": [
+        {
+          "src": "https://ai-idea-validator.netlify.app/images/portfolio/aI-Idea-validator-01.png",
+          "altEn": "AI Idea Validator — Brutal honesty for founders who want the truth before they build",
+          "altEs": "AI Idea Validator — Honestidad brutal para fundadores que quieren la verdad antes de construir"
+        },
+        {
+          "src": "https://ai-idea-validator.netlify.app/images/portfolio/aI-Idea-validator-02.png",
+          "altEn": "The $50,000 Problem — building something structurally replaceable because nobody asked about defensibility",
+          "altEs": "El Problema de $50,000 — construir algo estructuralmente reemplazable porque nadie pregunto sobre defensibilidad"
+        },
+        {
+          "src": "https://ai-idea-validator.netlify.app/images/portfolio/aI-Idea-validator-03.png",
+          "altEn": "23 Questions That Matter — moats, platform risk, switching costs, and failure modes",
+          "altEs": "23 Preguntas Que Importan — fosos, riesgo de plataforma, costos de cambio y modos de fallo"
+        },
+        {
+          "src": "https://ai-idea-validator.netlify.app/images/portfolio/aI-Idea-validator-04.png",
+          "altEn": "Contradiction Detection — AI reads your scores AND your words, then flags where they diverge",
+          "altEs": "Deteccion de Contradicciones — la IA lee tus puntuaciones Y tus palabras, luego senala donde divergen"
+        },
+        {
+          "src": "https://ai-idea-validator.netlify.app/images/portfolio/aI-Idea-validator-05.png",
+          "altEn": "Four Verdicts, Zero Diplomacy — KILL, FLIP, BUILD, or BET with confidence scores",
+          "altEs": "Cuatro Veredictos, Cero Diplomacia — KILL, FLIP, BUILD o BET con puntuaciones de confianza"
+        },
+        {
+          "src": "https://ai-idea-validator.netlify.app/images/portfolio/aI-Idea-validator-06.png",
+          "altEn": "The Advisor Who Doesn't Need to Be Polite — AI delivers what mentors won't say",
+          "altEs": "El Asesor Que No Necesita Ser Amable — la IA entrega lo que los mentores no dicen"
+        },
+        {
+          "src": "https://ai-idea-validator.netlify.app/images/portfolio/aI-Idea-validator-07.png",
+          "altEn": "Privacy-First, Zero Storage — no accounts, no tracking, your idea stays yours",
+          "altEs": "Privacidad Primero, Cero Almacenamiento — sin cuentas, sin rastreo, tu idea sigue siendo tuya"
+        }
+      ],
+      "videoUrl": "https://ai-idea-validator.netlify.app/video/aI-Idea-validator-brief.mp4",
+      "videoPoster": "https://ai-idea-validator.netlify.app/video/aI-Idea-validator-brief-poster.jpg"
     },
     {
       "id": 1082205398,
@@ -2228,7 +2262,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-02-21T04:55:42Z",
+      "lastPushed": "2026-02-21T20:22:35Z",
       "createdAt": "2026-02-13T19:55:19Z",
       "isFeatured": false,
       "isArchived": false,
