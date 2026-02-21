@@ -1,7 +1,153 @@
 {
-  "generatedAt": "2026-02-21T04:32:32.045Z",
-  "count": 21,
+  "generatedAt": "2026-02-21T04:43:53.558Z",
+  "count": 23,
   "projects": [
+    {
+      "id": 953305892,
+      "name": "ny-eng",
+      "title": "NY English Teacher",
+      "description": "Professional bilingual (EN/ES) business English coaching platform built with Astro, featuring interactive assessments, lead generation, content management, and booking integration. Optimized for SEO, performance, and conversion.",
+      "summary": "**Executive English coaching platform for professionals who need to command the room.**",
+      "url": "https://github.com/RCushmaniii/ny-eng",
+      "demoUrl": "https://www.nyenglishteacher.com",
+      "liveUrl": "https://www.nyenglishteacher.com",
+      "homepage": "https://nyenglishteacher.com/",
+      "topics": [
+        "astro",
+        "bilingual",
+        "business-english",
+        "content-management-system",
+        "conversion-optimization",
+        "i18n",
+        "lead-generation",
+        "quiz-system",
+        "react",
+        "seo-optimization",
+        "supabase",
+        "tailwindcss",
+        "typescript"
+      ],
+      "categories": [
+        "Client Work"
+      ],
+      "tags": [
+        "astro",
+        "bilingual",
+        "business-english",
+        "content-management-system",
+        "conversion-optimization",
+        "i18n",
+        "lead-generation",
+        "quiz-system",
+        "react",
+        "seo-optimization",
+        "supabase",
+        "tailwindcss",
+        "typescript",
+        "tailwind",
+        "cloudflare-workers",
+        "google-calendar",
+        "neon-postgresql",
+        "seo",
+        "solopreneur",
+        "coaching"
+      ],
+      "stack": [
+        "Astro 5.5",
+        "React 19",
+        "TypeScript",
+        "Cloudflare Workers",
+        "Neon PostgreSQL"
+      ],
+      "status": "Production",
+      "language": "Astro",
+      "languages": {
+        "Astro": 1177388,
+        "HTML": 837214,
+        "TypeScript": 647981,
+        "JavaScript": 351713,
+        "CSS": 40569,
+        "Python": 29891,
+        "MDX": 23164,
+        "PLpgSQL": 4239
+      },
+      "stars": 0,
+      "forks": 0,
+      "lastPushed": "2026-02-21T04:38:47Z",
+      "createdAt": "2025-03-23T03:27:14Z",
+      "isFeatured": true,
+      "isArchived": false,
+      "isPrivate": true,
+      "tagline": "Lead generation platform replacing 4 roles on $0/month infrastructure",
+      "thumbnail": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-thumb.jpg",
+      "problem": "Solo professional service providers burn 10-15 hours per week on manual qualification, scheduling ping-pong, and follow-ups. Their websites look identical to commodity competitors, making it impossible to justify premium pricing while the Spanish-speaking professional market remains underserved.",
+      "solution": "A fully automated lead generation platform that functions as four digital employees — SDR, marketing department, executive assistant, and brand manager — on free-tier infrastructure. Every conversation steers toward booking, every page justifies premium pricing, and the full EN/ES bilingual system doubles the addressable market from a single codebase.",
+      "keyFeatures": [
+        "4 role-specific diagnostic quizzes pre-qualify leads with mapped communication gaps — no discovery calls needed",
+        "3-step booking flow via Cloudflare Workers + Google Calendar OAuth — interest to confirmed Google Meet in under 60 seconds",
+        "Full EN/ES bilingual mirror with localized routing (/es/servicios/, /es/reservar/) and bidirectional hreflang SEO",
+        "Premium positioning hard-coded into UX — named executive testimonials from Driscoll's, CEVA Logistics, no discount codes",
+        "$0/month infrastructure — Astro static, Cloudflare Workers free tier, Neon free tier, Vercel serverless free tier"
+      ],
+      "metrics": [
+        "100 Lighthouse performance score — zero database queries on page load",
+        "$0/month infrastructure cost across all services",
+        "< 60 seconds from interest to confirmed booking with Google Meet link",
+        "2x addressable market from a single codebase via bilingual system",
+        "10-15 hours/week of administrative and sales work automated away"
+      ],
+      "priority": 1,
+      "dateCompleted": "2026-02",
+      "slides": [
+        {
+          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-01.png",
+          "altEn": "The Architecture of Authority — Constructing a multinational agency presence with a team of one",
+          "altEs": "La Arquitectura de la Autoridad — Construyendo presencia de agencia multinacional con un equipo de uno"
+        },
+        {
+          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-02.png",
+          "altEn": "An Automated Performance Engine — Zero manual qualification, 60-second booking flow, 100% gross margin",
+          "altEs": "Un Motor de Rendimiento Automatizado — Cero calificacion manual, reserva en 60 segundos, 100% margen bruto"
+        },
+        {
+          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-03.png",
+          "altEn": "Digital Employee 01: The SDR — Diagnostic intelligence replaces discovery calls with pre-qualified leads",
+          "altEs": "Empleado Digital 01: El SDR — Inteligencia diagnostica reemplaza llamadas de descubrimiento con leads precalificados"
+        },
+        {
+          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-04.png",
+          "altEn": "Digital Employee 02: Marketing Dept — The bilingual mirror doubles addressable market from a single codebase",
+          "altEs": "Empleado Digital 02: Depto. de Marketing — El espejo bilingue duplica el mercado alcanzable desde una sola base de codigo"
+        },
+        {
+          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-05.png",
+          "altEn": "Digital Employee 03: The Executive Assistant — Interest to confirmed Google Meet booking in under 60 seconds",
+          "altEs": "Empleado Digital 03: La Asistente Ejecutiva — De interes a reserva confirmada en Google Meet en menos de 60 segundos"
+        },
+        {
+          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-06.png",
+          "altEn": "Digital Employee 04: The Brand Manager — Premium positioning hard-coded into the UX with named executive testimonials",
+          "altEs": "Empleado Digital 04: El Brand Manager — Posicionamiento premium integrado en la UX con testimonios ejecutivos reales"
+        },
+        {
+          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-07.png",
+          "altEn": "The Speed of Trust — Lighthouse 100 performance score, instant loads signal competence to premium buyers",
+          "altEs": "La Velocidad de la Confianza — Puntuacion Lighthouse 100, cargas instantaneas que senalan competencia a compradores premium"
+        },
+        {
+          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-08.png",
+          "altEn": "The Universal Model — Blueprint for any high-touch expertise business: diagnostic lead magnet + automated booking + premium signals = authority",
+          "altEs": "El Modelo Universal — Plano para cualquier negocio de expertise: lead magnet diagnostico + reserva automatizada + senales premium = autoridad"
+        },
+        {
+          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-09.png",
+          "altEn": "The Zero-Cost Tech Stack — Enterprise-grade performance on a solopreneur budget with $0 monthly infrastructure",
+          "altEs": "El Tech Stack de Costo Cero — Rendimiento empresarial con presupuesto de solopreneur y $0 de infraestructura mensual"
+        }
+      ],
+      "videoUrl": "https://www.nyenglishteacher.com/video/ny-eng-brief.mp4",
+      "videoPoster": "https://www.nyenglishteacher.com/video/ny-eng-brief-poster.jpg"
+    },
     {
       "id": 1130115840,
       "name": "cushlabs",
@@ -57,7 +203,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-02-21T03:51:50Z",
+      "lastPushed": "2026-02-21T04:34:38Z",
       "createdAt": "2026-01-08T03:52:43Z",
       "isFeatured": true,
       "isArchived": false,
@@ -655,6 +801,79 @@
       "videoPoster": "https://ny-ai-chatbot.vercel.app/video/ny-eng-chatbot-brief-poster.jpg"
     },
     {
+      "id": 1062817398,
+      "name": "ai-scrabble-practice",
+      "title": "AI Scrabble Practice",
+      "description": "A practice tool for Scrabble players built with React, Vite, Tailwind, and pnpm. Features include word scoring, word validation via free dictionary APIs, and a rack solver to generate playable words.",
+      "summary": "> A comprehensive web application for Scrabble players to validate words, discover high-scoring plays, and solve tile combinations using a 370,000+ word dictionary.",
+      "url": "https://github.com/RCushmaniii/ai-scrabble-practice",
+      "demoUrl": "https://scrabble-mini.netlify.app/",
+      "liveUrl": "https://scrabble-mini.netlify.app/",
+      "homepage": "https://scrabble-mini.netlify.app/",
+      "topics": [
+        "anagram-solver",
+        "free-game",
+        "openai-api",
+        "react",
+        "scrabble",
+        "scrabble-game",
+        "scrabble-word-finder",
+        "tailwindcss",
+        "typescipt",
+        "vite"
+      ],
+      "categories": [
+        "Games"
+      ],
+      "tags": [
+        "anagram-solver",
+        "free-game",
+        "openai-api",
+        "react",
+        "scrabble",
+        "scrabble-game",
+        "scrabble-word-finder",
+        "tailwindcss",
+        "typescipt",
+        "vite"
+      ],
+      "stack": [
+        "TypeScript",
+        "React",
+        "Tailwind CSS"
+      ],
+      "status": "Production",
+      "language": "TypeScript",
+      "languages": {
+        "TypeScript": 195668,
+        "JavaScript": 10002,
+        "HTML": 365,
+        "CSS": 308
+      },
+      "stars": 1,
+      "forks": 0,
+      "lastPushed": "2026-01-22T18:08:39Z",
+      "createdAt": "2025-09-23T19:15:28Z",
+      "isFeatured": true,
+      "isArchived": false,
+      "isPrivate": true,
+      "tagline": "A practice tool for Scrabble players built with React, Vite, Tailwind, and pnpm. Features include word scoring, word validation via free dictionary APIs, and a rack solver to generate playable words.",
+      "thumbnail": null,
+      "problem": "TODO: Describe the pain point this project solves.",
+      "solution": "A practice tool for Scrabble players built with React, Vite, Tailwind, and pnpm. Features include word scoring, word validation via free dictionary APIs, and a rack solver to generate playable words.",
+      "keyFeatures": [
+        "TODO: Feature 1 with measurable impact",
+        "TODO: Feature 2 explaining capability",
+        "TODO: Feature 3 showing value"
+      ],
+      "metrics": [],
+      "priority": 2,
+      "dateCompleted": "2025-09",
+      "slides": [],
+      "videoUrl": null,
+      "videoPoster": null
+    },
+    {
       "id": 1090479901,
       "name": "ai-resume-tailor",
       "title": "AI Resume Tailor",
@@ -719,6 +938,139 @@
       "slides": [],
       "videoUrl": null,
       "videoPoster": null
+    },
+    {
+      "id": 1082205398,
+      "name": "stock-alert",
+      "title": "AI StockAlert",
+      "description": "Professional Windows desktop application for real-time multi-stock price monitoring with intelligent alerting and visual configuration management.",
+      "summary": "> AI StockAlert: Stock price monitoring with multi-channel alerts for Windows.",
+      "url": "https://github.com/RCushmaniii/stock-alert",
+      "demoUrl": "https://aistockalert.app/",
+      "liveUrl": null,
+      "homepage": "https://aistockalert.app/",
+      "topics": [
+        "desktop-app",
+        "python",
+        "stock-alerts",
+        "stock-market",
+        "stock-price",
+        "system-tray",
+        "windows",
+        "windows-notifications"
+      ],
+      "categories": [
+        "Tools"
+      ],
+      "tags": [
+        "desktop-app",
+        "python",
+        "stock-alerts",
+        "stock-market",
+        "stock-price",
+        "system-tray",
+        "windows",
+        "windows-notifications",
+        "fintech",
+        "pyqt",
+        "real-time",
+        "notifications",
+        "whatsapp"
+      ],
+      "stack": [
+        "Python",
+        "PyQt6",
+        "Finnhub API",
+        "Twilio/WhatsApp",
+        "Vercel Serverless"
+      ],
+      "status": "Production",
+      "language": "Python",
+      "languages": {
+        "Python": 533555,
+        "PowerShell": 4838,
+        "Inno Setup": 3850,
+        "Batchfile": 240
+      },
+      "stars": 1,
+      "forks": 0,
+      "lastPushed": "2026-02-21T04:43:16Z",
+      "createdAt": "2025-10-23T22:24:30Z",
+      "isFeatured": true,
+      "isArchived": false,
+      "isPrivate": false,
+      "tagline": "Windows desktop app for real-time stock alerts via WhatsApp and Windows notifications",
+      "thumbnail": "https://raw.githubusercontent.com/RCushmaniii/stock-alert/main/public/images/stockalert-thumb.jpg",
+      "problem": "Active traders need to monitor multiple stock positions simultaneously but can't watch screens all day. Existing solutions are too complex, require expensive subscriptions, or lack reliable mobile notifications that actually get seen.",
+      "solution": "A professional Windows desktop application that monitors stock prices in real-time and sends instant alerts via both Windows toast notifications and WhatsApp messages when prices cross user-defined thresholds. It runs silently in the system tray with zero subscription fees.",
+      "keyFeatures": [
+        "Real-time price monitoring for up to 15 stocks with configurable intervals and automatic market hours detection",
+        "Multi-channel alerts: Windows toast notifications with audio plus WhatsApp mobile messages via Twilio",
+        "Smart consolidated notifications — multiple alerts combined into a single notification per check cycle",
+        "Bilingual interface (EN/ES) with multi-currency display toggling between USD and MXN with live exchange rates",
+        "Background service runs silently in system tray — alerts work even when UI is closed, auto-starts with Windows"
+      ],
+      "metrics": [
+        "Sub-2-second alert delivery from price change detection to notification",
+        "15 stocks monitored simultaneously on free tier",
+        "60 API calls/minute rate-limited token bucket for optimal Finnhub usage"
+      ],
+      "priority": 3,
+      "dateCompleted": "2026-02",
+      "slides": [
+        {
+          "src": "https://raw.githubusercontent.com/RCushmaniii/stock-alert/main/public/images/stockalert-01.png",
+          "altEn": "Moving From Market Noise to Actionable Signal — hero slide with laptop and WhatsApp phone",
+          "altEs": "Del ruido del mercado a la senal accionable — diapositiva principal con laptop y WhatsApp"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/RCushmaniii/stock-alert/main/public/images/stockalert-02.png",
+          "altEn": "The Trap of Manual Monitoring — the gap between wanting to know and finding out in time",
+          "altEs": "La trampa del monitoreo manual — la brecha entre querer saber y enterarse a tiempo"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/RCushmaniii/stock-alert/main/public/images/stockalert-03.png",
+          "altEn": "Why Traditional Tools Fail — email alerts buried, push notifications swiped away, terminals cost $20-$200/month",
+          "altEs": "Por que fallan las herramientas tradicionales — emails enterrados, notificaciones ignoradas, terminales de $20-$200/mes"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/RCushmaniii/stock-alert/main/public/images/stockalert-04.png",
+          "altEn": "The Message You Actually Check — WhatsApp alert on phone, the app you check 50+ times a day",
+          "altEs": "El mensaje que realmente revisas — alerta de WhatsApp en tu telefono, la app que revisas mas de 50 veces al dia"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/RCushmaniii/stock-alert/main/public/images/stockalert-05.png",
+          "altEn": "Intelligent Background Monitoring — auto-starts with Windows, filters for market hours, instant delivery",
+          "altEs": "Monitoreo inteligente en segundo plano — inicio automatico con Windows, filtrado por horario de mercado, entrega instantanea"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/RCushmaniii/stock-alert/main/public/images/stockalert-06.png",
+          "altEn": "A Business Model That Respects the User — one-time purchase, bring your own key, no subscription fatigue",
+          "altEs": "Un modelo de negocio que respeta al usuario — compra unica, trae tu propia clave, sin fatiga de suscripcion"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/RCushmaniii/stock-alert/main/public/images/stockalert-07.png",
+          "altEn": "Your Data Stays on Your Device — local first, no cloud accounts, API keys never leave your machine",
+          "altEs": "Tus datos se quedan en tu dispositivo — local primero, sin cuentas en la nube, las claves API nunca salen de tu maquina"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/RCushmaniii/stock-alert/main/public/images/stockalert-08.png",
+          "altEn": "Beyond Code: A Case Study in Product Strategy — pain points mapped to real solutions",
+          "altEs": "Mas alla del codigo: un caso de estudio en estrategia de producto — problemas reales mapeados a soluciones reales"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/RCushmaniii/stock-alert/main/public/images/stockalert-09.png",
+          "altEn": "Trust-Building Commerce — the anti-SaaS model with no forced retention, no account creation, no hidden fees",
+          "altEs": "Comercio basado en confianza — el modelo anti-SaaS sin retencion forzada, sin creacion de cuentas, sin tarifas ocultas"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/RCushmaniii/stock-alert/main/public/images/stockalert-10.png",
+          "altEn": "The Bottom Line — solves a manual problem, leverages WhatsApp, respects the user's wallet and privacy",
+          "altEs": "En resumen — resuelve un problema manual, aprovecha WhatsApp, respeta la billetera y la privacidad del usuario"
+        }
+      ],
+      "videoUrl": "https://raw.githubusercontent.com/RCushmaniii/stock-alert/main/public/video/AI-StockAlert-brief.mp4",
+      "videoPoster": "https://raw.githubusercontent.com/RCushmaniii/stock-alert/main/public/video/AI-StockAlert-brief-poster.jpg"
     },
     {
       "id": 1132479691,
@@ -864,146 +1216,6 @@
       ],
       "videoUrl": "https://raw.githubusercontent.com/RCushmaniii/ai-filesense/main/public/video/AI_FileSense-brief.mp4",
       "videoPoster": "https://raw.githubusercontent.com/RCushmaniii/ai-filesense/main/public/video/AI-FileSense-brief-poster.jpg"
-    },
-    {
-      "id": 1082205398,
-      "name": "stock-alert",
-      "title": "AI StockAlert",
-      "description": "Professional Windows desktop application for real-time multi-stock price monitoring with intelligent alerting and visual configuration management.",
-      "summary": "> AI StockAlert: Stock price monitoring with multi-channel alerts for Windows.",
-      "url": "https://github.com/RCushmaniii/stock-alert",
-      "demoUrl": "https://ai-stock-alert-website.netlify.app/",
-      "liveUrl": "https://aistockalert.app/",
-      "homepage": "https://ai-stock-alert-website.netlify.app/",
-      "topics": [
-        "desktop-app",
-        "python",
-        "stock-alerts",
-        "stock-market",
-        "stock-price",
-        "system-tray",
-        "windows",
-        "windows-notifications"
-      ],
-      "categories": [
-        "Tools"
-      ],
-      "tags": [
-        "desktop-app",
-        "python",
-        "stock-alerts",
-        "stock-market",
-        "stock-price",
-        "system-tray",
-        "windows",
-        "windows-notifications",
-        "fintech",
-        "pyqt",
-        "real-time",
-        "notifications",
-        "whatsapp"
-      ],
-      "stack": [
-        "Python",
-        "PyQt6",
-        "Finnhub API",
-        "Twilio/WhatsApp Business API",
-        "cx_Freeze",
-        "Vercel Serverless"
-      ],
-      "status": "Production",
-      "language": "Python",
-      "languages": {
-        "Python": 533555,
-        "PowerShell": 4838,
-        "Inno Setup": 3850,
-        "Batchfile": 240
-      },
-      "stars": 1,
-      "forks": 0,
-      "lastPushed": "2026-02-21T02:02:23Z",
-      "createdAt": "2025-10-23T22:24:30Z",
-      "isFeatured": true,
-      "isArchived": false,
-      "isPrivate": false,
-      "tagline": "Professional Windows desktop application for real-time stock price monitoring with intelligent multi-channel alerting via Windows notifications and WhatsApp.",
-      "thumbnail": "public/images/stockalert-thumb.jpg",
-      "problem": "Active traders and investors need to monitor multiple stock positions simultaneously but can't watch screens all day. Missing critical price movements can result in significant financial losses or missed opportunities. Existing solutions are either too complex, require expensive subscriptions, or lack reliable mobile notifications.",
-      "solution": "AI StockAlert is a professional Windows desktop application that monitors stock prices in real-time and sends instant alerts when prices cross user-defined thresholds. It combines the reliability of Windows desktop notifications with the convenience of WhatsApp mobile alerts, ensuring users never miss important price movements.",
-      "keyFeatures": [
-        "Real-time price monitoring for up to 15 stocks with configurable check intervals (free tier)",
-        "Multi-channel alerts: Windows toast notifications with audio and WhatsApp mobile messages",
-        "Smart consolidated notifications - multiple alerts combined into single notification per check cycle",
-        "Automatic market hours detection - only monitors during US market hours (9:30 AM - 4:00 PM ET)",
-        "Bilingual interface (English/Spanish) with full i18n support",
-        "Multi-currency display: Toggle between USD and Mexican Pesos (MXN) with live exchange rates",
-        "Background service runs silently in system tray - alerts work even when UI is closed",
-        "Company profile enrichment with logos, industry, and market cap data from Finnhub",
-        "Integrated news feed for monitored stocks (up to 5 tickers)",
-        "Professional installer with Windows Start Menu integration and auto-start capability",
-        "Dark/light theme support with one-click toggle"
-      ],
-      "metrics": [
-        "Sub-2-second alert delivery from price change detection to notification",
-        "15 stocks monitored simultaneously on free tier",
-        "60 API calls/minute rate-limited token bucket for optimal Finnhub usage"
-      ],
-      "priority": 3,
-      "dateCompleted": "2026-02",
-      "slides": [
-        {
-          "src": "public/images/stockalert-01.png",
-          "altEn": "Moving From Market Noise to Actionable Signal — hero slide with laptop and WhatsApp phone",
-          "altEs": "Del ruido del mercado a la senal accionable — diapositiva principal con laptop y WhatsApp"
-        },
-        {
-          "src": "public/images/stockalert-02.png",
-          "altEn": "The Trap of Manual Monitoring — the gap between wanting to know and finding out in time",
-          "altEs": "La trampa del monitoreo manual — la brecha entre querer saber y enterarse a tiempo"
-        },
-        {
-          "src": "public/images/stockalert-03.png",
-          "altEn": "Why Traditional Tools Fail — email alerts buried, push notifications swiped away, terminals cost $20-$200/month",
-          "altEs": "Por que fallan las herramientas tradicionales — emails enterrados, notificaciones ignoradas, terminales de $20-$200/mes"
-        },
-        {
-          "src": "public/images/stockalert-04.png",
-          "altEn": "The Message You Actually Check — WhatsApp alert on phone, the app you check 50+ times a day",
-          "altEs": "El mensaje que realmente revisas — alerta de WhatsApp en tu telefono, la app que revisas mas de 50 veces al dia"
-        },
-        {
-          "src": "public/images/stockalert-05.png",
-          "altEn": "Intelligent Background Monitoring — auto-starts with Windows, filters for market hours, instant delivery",
-          "altEs": "Monitoreo inteligente en segundo plano — inicio automatico con Windows, filtrado por horario de mercado, entrega instantanea"
-        },
-        {
-          "src": "public/images/stockalert-06.png",
-          "altEn": "A Business Model That Respects the User — one-time purchase, bring your own key, no subscription fatigue",
-          "altEs": "Un modelo de negocio que respeta al usuario — compra unica, trae tu propia clave, sin fatiga de suscripcion"
-        },
-        {
-          "src": "public/images/stockalert-07.png",
-          "altEn": "Your Data Stays on Your Device — local first, no cloud accounts, API keys never leave your machine",
-          "altEs": "Tus datos se quedan en tu dispositivo — local primero, sin cuentas en la nube, las claves API nunca salen de tu maquina"
-        },
-        {
-          "src": "public/images/stockalert-08.png",
-          "altEn": "Beyond Code: A Case Study in Product Strategy — pain points mapped to real solutions",
-          "altEs": "Mas alla del codigo: un caso de estudio en estrategia de producto — problemas reales mapeados a soluciones reales"
-        },
-        {
-          "src": "public/images/stockalert-09.png",
-          "altEn": "Trust-Building Commerce — the anti-SaaS model with no forced retention, no account creation, no hidden fees",
-          "altEs": "Comercio basado en confianza — el modelo anti-SaaS sin retencion forzada, sin creacion de cuentas, sin tarifas ocultas"
-        },
-        {
-          "src": "public/images/stockalert-10.png",
-          "altEn": "The Bottom Line — solves a manual problem, leverages WhatsApp, respects the user's wallet and privacy",
-          "altEs": "En resumen — resuelve un problema manual, aprovecha WhatsApp, respeta la billetera y la privacidad del usuario"
-        }
-      ],
-      "videoUrl": null,
-      "videoPoster": "public/video/AI-StockAlert-brief-poster.jpg"
     },
     {
       "id": 1127520844,

@@ -76,6 +76,7 @@ interface PortfolioFrontmatter {
   demo_url?: string;
   live_url?: string;
   slides?: { src: string; src_es?: string; alt_en: string; alt_es: string }[];
+  hero_images?: { src: string; src_es?: string; alt_en: string; alt_es: string }[];
   video_url?: string;
   video_poster?: string;
   tags?: string[];
@@ -218,9 +219,9 @@ function categorizeTopic(topic: string): { category?: string; tag?: string; stac
 async function generateProjects() {
   console.warn('🔍 Fetching repositories from GitHub...');
 
-  const repos = await octokit.paginate(octokit.repos.listForUser, {
-    username: GITHUB_OWNER,
-    type: 'owner',
+  const repos = await octokit.paginate(octokit.repos.listForAuthenticatedUser, {
+    visibility: 'all',
+    affiliation: 'owner',
     sort: 'updated',
     per_page: 100
   });
@@ -359,7 +360,7 @@ async function generateProjects() {
       metrics: portfolio?.metrics ?? [],
       priority: portfolio?.portfolio_priority ?? 99,
       dateCompleted: portfolio?.date_completed ?? null,
-      slides: (portfolio?.slides ?? []).map(img => ({
+      slides: (portfolio?.slides ?? portfolio?.hero_images ?? []).map(img => ({
         src: resolve(img.src)!,
         ...(img.src_es ? { srcEs: resolve(img.src_es)! } : {}),
         altEn: img.alt_en,
