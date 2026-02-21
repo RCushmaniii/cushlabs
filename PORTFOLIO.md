@@ -15,7 +15,7 @@ tech_stack:
   - "Tailwind CSS"
   - "Cloudflare Workers"
   - "Google Calendar API"
-thumbnail: "\images\portfolio\cushlabs-thumbnail.jpg"
+thumbnail: "/images/portfolio/cushlabs-01.png"
 status: "Production"
 
 # === DETAIL PAGE ===
