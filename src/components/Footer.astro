@@ -42,7 +42,8 @@ const content = {
         { label: "Terms of Service", href: "/terms" },
       ],
     },
-    copyright: `© ${new Date().getFullYear()} CushLabs.ai. All rights reserved.`,
+    copyrightPrefix: `© ${new Date().getFullYear()}`,
+    copyrightSuffix: "All rights reserved.",
   },
   es: {
     tagline: "Consultoría de IA para pequeños negocios. Automatización práctica que se entrega rápido—chatbots, procesamiento de documentos y soluciones personalizadas que realmente se usan.",
@@ -78,7 +79,8 @@ const content = {
         { label: "Términos de Servicio", href: "/es/terms" },
       ],
     },
-    copyright: `© ${new Date().getFullYear()} CushLabs.ai. Todos los derechos reservados.`,
+    copyrightPrefix: `© ${new Date().getFullYear()}`,
+    copyrightSuffix: "Todos los derechos reservados.",
   },
 };
 
@@ -198,7 +200,7 @@ const t = content[locale];
     <!-- Bottom Bar -->
     <div class="mt-12 pt-8 border-t border-gray-200 dark:border-gray-800 flex flex-col sm:flex-row justify-between items-center gap-4">
       <p class="text-sm text-gray-500 dark:text-gray-400">
-        {t.copyright}
+        {t.copyrightPrefix} <a href="https://cushlabs.ai" class="hover:text-cush-orange transition-colors">CushLabs.ai</a>. {t.copyrightSuffix}
       </p>
       <div class="flex items-center gap-4">
         <!-- LinkedIn -->

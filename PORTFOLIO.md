@@ -1,75 +1,18 @@
 ---
-# === CONTROL FLAGS ===
+# =============================================================================
+# PORTFOLIO.md — CushLabs.ai
+# =============================================================================
 portfolio_enabled: true
 portfolio_priority: 1
 portfolio_featured: true
+portfolio_last_reviewed: "2026-02-20"
 
-# === CARD DISPLAY ===
 title: "CushLabs.ai"
-tagline: "Self-maintaining bilingual portfolio with serverless booking"
+tagline: "Self-maintaining bilingual portfolio with serverless booking and build-time i18n enforcement"
 slug: "cushlabs"
-category: "Web Tools"
-tech_stack:
-  - "Astro"
-  - "TypeScript"
-  - "Tailwind CSS"
-  - "Cloudflare Workers"
-  - "Google Calendar API"
-thumbnail: "/images/portfolio/cushlabs-01.png"
-status: "Production"
 
-# === DETAIL PAGE ===
-problem: "Bilingual marketing sites go stale the moment you stop manually updating them, and third-party booking widgets break design consistency. SEO for two-language sites compounds the complexity with hreflang, canonical URLs, and sitemaps that must cover both languages correctly."
-solution: "A static Astro site with a GitHub Actions pipeline that auto-syncs portfolio data weekly, a custom Cloudflare Worker booking wizard that queries Google Calendar in real time, and a 24-line TypeScript i18n system that enforces bilingual parity at build time."
-key_features:
-  - "Automated GitHub-to-site portfolio sync — 27 projects with zero manual data entry"
-  - "Custom serverless booking wizard creating Google Calendar events with Meet links"
-  - "24-line TypeScript i18n replacing 40KB+ i18next with zero runtime overhead"
-  - "Pre-deploy audit enforcing translation parity, secret leak detection, and build validation"
-  - "requestIdleCallback video preloading — zero bytes on initial page load"
-
-# === MEDIA: PORTFOLIO SLIDES ===
-slides:
-  - src: "/images/portfolio/cushlabs-01.png"
-    alt_en: "CushLabs AI Services — The Self-Maintaining Bilingual Portfolio"
-    alt_es: "CushLabs AI Services — El Portafolio Bilingue Auto-Mantenido"
-  - src: "/images/portfolio/cushlabs-02.png"
-    alt_en: "Not Just a Website, But a System — bilingual, automated sync, serverless booking"
-    alt_es: "No Solo un Sitio Web, Sino un Sistema — bilingue, sincronizacion automatizada, reservas serverless"
-  - src: "/images/portfolio/cushlabs-03.png"
-    alt_en: "Premium Design is About Behavior — zero-flash theming, time-based dark mode, micro-interactions"
-    alt_es: "El Diseno Premium es Sobre Comportamiento — temas sin flash, modo oscuro basado en hora, micro-interacciones"
-  - src: "/images/portfolio/cushlabs-04.png"
-    alt_en: "Engineering Visibility — the enterprise SEO stack with JSON-LD, hreflang, and lazy loading"
-    alt_es: "Visibilidad de Ingenieria — el stack SEO empresarial con JSON-LD, hreflang y carga lazy"
-  - src: "/images/portfolio/cushlabs-05.png"
-    alt_en: "True Bilingual Architecture — 24-line custom TypeScript i18n vs 40KB+ i18next"
-    alt_es: "Arquitectura Bilingue Real — i18n TypeScript personalizado de 24 lineas vs i18next de 40KB+"
-  - src: "/images/portfolio/cushlabs-06.png"
-    alt_en: "The Serverless Booking Wizard — Cloudflare Worker to Google Calendar API, 3-step flow"
-    alt_es: "El Asistente de Reservas Serverless — Cloudflare Worker a Google Calendar API, flujo de 3 pasos"
-  - src: "/images/portfolio/cushlabs-07.png"
-    alt_en: "Localization Beyond Language — WhatsApp integration with locale-aware pre-filled messages"
-    alt_es: "Localizacion Mas Alla del Idioma — integracion WhatsApp con mensajes prellenados segun el idioma"
-  - src: "/images/portfolio/cushlabs-08.png"
-    alt_en: "Security and Anti-Scraping — split-attribute email obfuscation"
-    alt_es: "Seguridad y Anti-Scraping — ofuscacion de email por atributos divididos"
-
-# === MEDIA: VIDEO ===
-video_url: "/images/portfolio/cushlabs-brief.mp4"
-video_poster: "/images/portfolio/cushlabs-brief-poster.jpg"
-
-
-# === LINKS ===
-demo_url: "https://cushlabs.ai"
-live_url: "https://cushlabs.ai"
-
-# === OPTIONAL ===
-metrics:
-  - "27 portfolio projects synced automatically from GitHub"
-  - "0 KB runtime i18n overhead (24 lines vs ~40KB+ i18next)"
-  - "6 automated pre-deploy validation checks before every production build"
-  - "Sub-second page loads with static HTML edge-cached globally"
+category: "Tools"
+target_audience: "Solo consultants and small agencies needing a low-maintenance bilingual web presence"
 tags:
   - "astro"
   - "tailwind"
@@ -81,31 +24,105 @@ tags:
   - "seo"
   - "bilingual"
   - "serverless"
-date_completed: "2026-02"
+
+thumbnail: "/images/portfolio/cushlabs-01.png"
+hero_images:
+  - "/images/portfolio/cushlabs-01.png"
+  - "/images/portfolio/cushlabs-02.png"
+  - "/images/portfolio/cushlabs-03.png"
+  - "/images/portfolio/cushlabs-04.png"
+  - "/images/portfolio/cushlabs-05.png"
+  - "/images/portfolio/cushlabs-06.png"
+demo_video_url: ""
+
+live_url: "https://cushlabs.ai"
+demo_url: "https://cushlabs.ai"
+case_study_url: ""
+
+problem_solved: |
+  Bilingual marketing sites go stale the moment you stop manually updating them. Portfolio pages die after 3-4 projects because maintenance costs multiply across languages. Third-party booking widgets break design consistency and add monthly fees. And static sites — while fast and cheap — traditionally can't handle dynamic features like scheduling without a full backend.
+
+key_outcomes:
+  - "27+ portfolio projects synced automatically from GitHub with zero manual data entry"
+  - "0 KB i18n runtime overhead — 24-line custom system replaces 40KB+ i18next"
+  - "6 automated pre-deploy checks enforcing bilingual parity, secret scanning, and build validation"
+  - "Sub-second page loads with static HTML edge-cached globally"
+  - "$0/month booking system via Cloudflare Workers replacing $8-16/month Calendly"
+  - "100% EN/ES content parity enforced at build time — no language drift"
+
+tech_stack:
+  - "Astro 4.16"
+  - "TypeScript 5.9"
+  - "Tailwind CSS 3.4"
+  - "Cloudflare Workers"
+  - "Google Calendar API"
+  - "GitHub Actions"
+  - "JSON-LD"
+
+complexity: "Production"
 ---
 
-## Architecture Overview
+## Overview
 
-CushLabs.ai is a self-maintaining portfolio system built as a static Astro site. The core insight is that the GitHub account itself is the source of truth for project data — a weekly GitHub Actions pipeline fetches every public repo, extracts metadata (languages, stars, topics, demo URLs from READMEs), and writes structured JSON consumed at build time. Rich marketing content is layered on top via a TypeScript override system, keeping automated data and curated copy cleanly separated.
+CushLabs.ai is the production website for CushLabs AI Services — an AI integration and software development consultancy serving small and mid-sized businesses in the US and Mexico. Built as a static Astro site with serverless escape hatches, it solves three problems that plague solo consultants: portfolio staleness, bilingual content drift, and dependency on third-party scheduling services.
 
-## Key Engineering Decisions
+The core architecture treats the GitHub account as the source of truth for project data. A weekly GitHub Actions pipeline fetches `portfolio.md` metadata from every repository, outputs structured JSON, and the site consumes it at build time. Rich marketing content layers on top via a TypeScript override system, keeping automated data and curated copy cleanly separated. The booking flow is a custom Cloudflare Worker that replaces Calendly entirely — same UX, matching design system, zero monthly cost.
 
-**Custom i18n over i18next:** For a two-language static site, the entire i18n runtime is three functions totaling 24 lines. Every page knows its locale at build time from the URL structure — there's no client-side language detection or runtime switching. A pre-deploy audit dynamically imports both translation files and diffs every nested key, failing the build if any key exists in one language but not the other.
+The i18n system is deliberately minimal: three functions totaling 24 lines, with a pre-deploy audit that diffs every nested key between English and Spanish translation files and fails the build on any mismatch. Bilingual parity isn't a guideline — it's a gate.
 
-**Cloudflare Worker over Calendly:** The booking wizard is a 3-step flow (date/time, details, confirmation) backed by a Cloudflare Worker that authenticates to Google Calendar via OAuth2, checks FreeBusy availability, generates 30-minute slots filtering out conflicts and same-day bookings under 3.5 hours away, and creates calendar events with auto-generated Google Meet links. Rate limiting (5 bookings/hour/IP), input sanitization, and 5-minute slot caching are built in. The UI matches the site's design system — no iframe, no third-party branding.
+## The Challenge
 
-**requestIdleCallback for video:** The homepage video ships with `preload="none"` and switches to `preload="auto"` only when the browser reports idle time via `requestIdleCallback` (with a 3-second timeout fallback, plus a Safari-specific `load` event + 2-second delay path). The video contributes zero bytes to initial page weight.
+- **Portfolio maintenance doesn't scale.** Every new project means editing the site, re-deploying, and hoping the descriptions stay current. Multiply by two languages and most consultants abandon their portfolio after a handful of entries. The maintenance cost quietly kills the section that's supposed to demonstrate capability.
 
-## Security
+- **Bilingual sites drift apart.** English gets updated, Spanish gets forgotten, and search engines penalize the inconsistency with hreflang errors. Most agencies solve this with CMS translation workflows. For a solo consultant, that's overhead that doesn't ship.
 
-- Email obfuscation: address split across `data-u` and `data-d` attributes, assembled into `mailto:` only via client-side JS
-- Pre-deploy secret scanning: regex patterns for GitHub tokens (`ghp_`, `github_pat_`) and OpenAI keys (`sk-`) across all tracked source files
-- Booking API rate limiting: IP-based, 5 requests per hour per client
-- Input sanitization: HTML/control character stripping, 200-char truncation on all booking fields
-- CORS: configurable allowed origins on the Cloudflare Worker
+- **Booking widgets undermine premium positioning.** Calendly works, but embedding an iframe with mismatched fonts, colors, and spacing inside a carefully designed site sends the wrong message about attention to detail. And it's another $8-16/month subscription for something that's essentially a calendar query and a form.
 
-## CI/CD Pipeline
+- **Static sites hit a wall at dynamic features.** Forms, booking flows, and API integrations typically require a server. Going full-stack adds hosting costs, cold start latency, and infrastructure maintenance — all for a site that's 95% static content.
 
-1. **GitHub Actions** runs weekly portfolio sync — smart diffs to only commit when data changes, `[skip ci]` to prevent loops
-2. **Graceful degradation** — if `GITHUB_TOKEN` is missing, build proceeds with last-known-good data
-3. **Pre-deploy audit** runs 6 checks: repo hygiene, env vars, secret leaks, i18n parity, TypeScript/Astro type check, and build artifact verification (13 expected HTML paths across both languages)
+## The Solution
+
+**Self-maintaining portfolio via GitHub sync:**
+A weekly GitHub Actions pipeline scans every repository, extracts `portfolio.md` metadata, and outputs structured JSON consumed at build time. Smart diffing only commits when data changes, `[skip ci]` prevents deployment loops, and graceful degradation uses last-known-good data when the GitHub token is unavailable. Adding a project to the portfolio means pushing a file to any repo — the site handles the rest.
+
+**Custom serverless booking wizard:**
+A Cloudflare Worker authenticates to Google Calendar via OAuth2, queries FreeBusy availability, generates 30-minute slots (filtering conflicts and same-day bookings under 3.5 hours away), and creates calendar events with auto-generated Google Meet links. Rate limiting (5/hour/IP), input sanitization (HTML stripping, 200-char truncation), and 5-minute slot caching are built in. The UI matches the site's design system exactly.
+
+**Build-time bilingual enforcement:**
+A 24-line TypeScript i18n system handles locale resolution at compile time with zero runtime cost. The pre-deploy audit dynamically imports both translation files and diffs every nested key — if any key exists in one language but not the other, the build fails. Six total checks run before every deploy: repo hygiene, env vars, secret leak scanning, i18n parity, TypeScript validation, and build artifact verification across 13 expected HTML paths.
+
+**Static core with serverless edges:**
+Astro generates pure HTML for the content-heavy pages, edge-cached globally for sub-second loads. The booking wizard and contact form route through Cloudflare Workers — no server, no cold starts, no infrastructure cost beyond free tier.
+
+## Technical Highlights
+
+- **Zero-maintenance portfolio pipeline** — GitHub Actions weekly sync, smart diffs, `[skip ci]` loop prevention, graceful degradation without tokens
+- **24-line custom i18n** replacing i18next — compile-time locale resolution, build-time parity enforcement, zero runtime JavaScript
+- **Cloudflare Worker booking system** — Google Calendar OAuth2, FreeBusy queries, Meet link generation, IP rate limiting, input sanitization
+- **requestIdleCallback video preloading** — homepage video contributes zero bytes to initial page weight, upgrades during idle time with Safari-specific fallback
+- **Split-attribute email obfuscation** — `data-u` / `data-d` assembly via client-side JS defeats scraper bots
+- **6-check pre-deploy audit** — repo hygiene, env vars, secret scanning (GitHub tokens, OpenAI keys), i18n parity, TypeScript, build artifacts
+- **Organization + WebPage JSON-LD schemas** for rich search results
+- **WCAG AA accessibility** — semantic HTML, ARIA labels, `prefers-reduced-motion`, contrast ratios
+
+## Results
+
+**For the Business Owner:**
+- Portfolio updates require zero site maintenance — push a `portfolio.md` to any repo and it appears on the site within a week
+- Bilingual content never drifts — build-time enforcement catches missing translations before they reach production
+- Booking flow matches the brand exactly, replacing a $96-192/year Calendly subscription with a free Cloudflare Worker
+- Sub-second page loads globally via static HTML edge caching
+- Zero hosting cost for the static site (Netlify/Vercel free tier)
+
+**For the Developer Evaluating This Work:**
+- Production-quality static site architecture with clean serverless integration at the dynamic edges
+- i18n system that solves the "two languages, one truth" problem without heavyweight dependencies
+- GitHub Actions pipeline demonstrating CI/CD patterns: smart diffing, loop prevention, graceful degradation
+- Pre-deploy audit pattern transferable to any project requiring multi-dimensional build validation
+- Cloudflare Worker demonstrating OAuth2 service integration, rate limiting, and input sanitization in a serverless context
+
+**For the IT Manager Considering CushLabs as a Vendor:**
+- The site itself is a working demonstration of the engineering quality CushLabs delivers to clients
+- Every system is automated — portfolio sync, bilingual enforcement, pre-deploy validation — reflecting a bias toward eliminating manual processes
+- Security practices (secret scanning, email obfuscation, rate limiting, input sanitization) are built in, not bolted on
+- The approach prioritizes long-term maintainability over impressive-looking complexity

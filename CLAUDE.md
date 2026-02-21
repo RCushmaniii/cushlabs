@@ -232,7 +232,7 @@ Proper sitemap must:
 
 ## Development Commands
 
-```bash
+```powershell
 npm run dev              # Start dev server
 npm run build            # Full build (syncs GitHub projects first)
 npm run check            # Lint + TypeScript check

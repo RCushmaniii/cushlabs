@@ -2,6 +2,7 @@
   "name": "cushlabs-site",
   "version": "1.0.0",
   "type": "module",
+  "license": "SEE LICENSE IN LICENSE",
   "scripts": {
     "dev": "astro dev",
     "build": "npm run generate-projects && astro build",
