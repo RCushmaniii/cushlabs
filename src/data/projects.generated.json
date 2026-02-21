@@ -1,7 +1,131 @@
 {
-  "generatedAt": "2026-02-20T22:46:23.315Z",
+  "generatedAt": "2026-02-21T02:07:06.843Z",
   "count": 21,
   "projects": [
+    {
+      "id": 1130115840,
+      "name": "cushlabs",
+      "title": "CushLabs.ai",
+      "description": "AI consulting and software development for SMBs — bilingual (EN/ES) site built with Astro + Tailwind CSS",
+      "summary": "AI consulting and software development for SMBs. Bilingual (EN/ES) business site with automated GitHub portfolio sync.",
+      "url": "https://github.com/RCushmaniii/cushlabs",
+      "demoUrl": "https://cushlabs.ai",
+      "liveUrl": "https://cushlabs.ai",
+      "homepage": "https://cushlabs.ai",
+      "topics": [
+        "ai-consulting",
+        "astro",
+        "bilingual",
+        "cushlabs",
+        "static-site",
+        "tailwindcss"
+      ],
+      "categories": [
+        "Web Tools"
+      ],
+      "tags": [
+        "ai-consulting",
+        "astro",
+        "bilingual",
+        "cushlabs",
+        "static-site",
+        "tailwindcss",
+        "tailwind",
+        "typescript",
+        "i18n",
+        "cloudflare-workers",
+        "google-calendar",
+        "github-actions",
+        "seo",
+        "serverless"
+      ],
+      "stack": [
+        "Astro",
+        "TypeScript",
+        "Tailwind CSS",
+        "Cloudflare Workers",
+        "Google Calendar API"
+      ],
+      "status": "Production",
+      "language": "Astro",
+      "languages": {
+        "Astro": 344048,
+        "TypeScript": 110918,
+        "HTML": 61067,
+        "JavaScript": 26662,
+        "CSS": 1697
+      },
+      "stars": 0,
+      "forks": 0,
+      "lastPushed": "2026-02-21T02:06:36Z",
+      "createdAt": "2026-01-08T03:52:43Z",
+      "isFeatured": true,
+      "isArchived": false,
+      "isPrivate": false,
+      "tagline": "Self-maintaining bilingual portfolio with serverless booking",
+      "thumbnail": "/images/portfolio/cushlabs-01.png",
+      "problem": "Bilingual marketing sites go stale the moment you stop manually updating them, and third-party booking widgets break design consistency. SEO for two-language sites compounds the complexity with hreflang, canonical URLs, and sitemaps that must cover both languages correctly.",
+      "solution": "A static Astro site with a GitHub Actions pipeline that auto-syncs portfolio data weekly, a custom Cloudflare Worker booking wizard that queries Google Calendar in real time, and a 24-line TypeScript i18n system that enforces bilingual parity at build time.",
+      "keyFeatures": [
+        "Automated GitHub-to-site portfolio sync — 27 projects with zero manual data entry",
+        "Custom serverless booking wizard creating Google Calendar events with Meet links",
+        "24-line TypeScript i18n replacing 40KB+ i18next with zero runtime overhead",
+        "Pre-deploy audit enforcing translation parity, secret leak detection, and build validation",
+        "requestIdleCallback video preloading — zero bytes on initial page load"
+      ],
+      "metrics": [
+        "27 portfolio projects synced automatically from GitHub",
+        "0 KB runtime i18n overhead (24 lines vs ~40KB+ i18next)",
+        "6 automated pre-deploy validation checks before every production build",
+        "Sub-second page loads with static HTML edge-cached globally"
+      ],
+      "priority": 1,
+      "dateCompleted": "2026-02",
+      "slides": [
+        {
+          "src": "/images/portfolio/cushlabs-01.png",
+          "altEn": "CushLabs AI Services — The Self-Maintaining Bilingual Portfolio",
+          "altEs": "CushLabs AI Services — El Portafolio Bilingue Auto-Mantenido"
+        },
+        {
+          "src": "/images/portfolio/cushlabs-02.png",
+          "altEn": "Not Just a Website, But a System — bilingual, automated sync, serverless booking",
+          "altEs": "No Solo un Sitio Web, Sino un Sistema — bilingue, sincronizacion automatizada, reservas serverless"
+        },
+        {
+          "src": "/images/portfolio/cushlabs-03.png",
+          "altEn": "Premium Design is About Behavior — zero-flash theming, time-based dark mode, micro-interactions",
+          "altEs": "El Diseno Premium es Sobre Comportamiento — temas sin flash, modo oscuro basado en hora, micro-interacciones"
+        },
+        {
+          "src": "/images/portfolio/cushlabs-04.png",
+          "altEn": "Engineering Visibility — the enterprise SEO stack with JSON-LD, hreflang, and lazy loading",
+          "altEs": "Visibilidad de Ingenieria — el stack SEO empresarial con JSON-LD, hreflang y carga lazy"
+        },
+        {
+          "src": "/images/portfolio/cushlabs-05.png",
+          "altEn": "True Bilingual Architecture — 24-line custom TypeScript i18n vs 40KB+ i18next",
+          "altEs": "Arquitectura Bilingue Real — i18n TypeScript personalizado de 24 lineas vs i18next de 40KB+"
+        },
+        {
+          "src": "/images/portfolio/cushlabs-06.png",
+          "altEn": "The Serverless Booking Wizard — Cloudflare Worker to Google Calendar API, 3-step flow",
+          "altEs": "El Asistente de Reservas Serverless — Cloudflare Worker a Google Calendar API, flujo de 3 pasos"
+        },
+        {
+          "src": "/images/portfolio/cushlabs-07.png",
+          "altEn": "Localization Beyond Language — WhatsApp integration with locale-aware pre-filled messages",
+          "altEs": "Localizacion Mas Alla del Idioma — integracion WhatsApp con mensajes prellenados segun el idioma"
+        },
+        {
+          "src": "/images/portfolio/cushlabs-08.png",
+          "altEn": "Security and Anti-Scraping — split-attribute email obfuscation",
+          "altEs": "Seguridad y Anti-Scraping — ofuscacion de email por atributos divididos"
+        }
+      ],
+      "videoUrl": "/images/portfolio/cushlabs-brief.mp4",
+      "videoPoster": "/images/portfolio/cushlabs-brief-poster.jpg"
+    },
     {
       "id": 1068781109,
       "name": "react-vite-tailwind-base",
@@ -339,7 +463,7 @@
       "isArchived": false,
       "isPrivate": false,
       "tagline": "Revenue-first RAG chatbot that converts visitors into booked strategy sessions",
-      "thumbnail": "/images/portfolio/ny-eng-chatbot-thumbnail.jpg",
+      "thumbnail": "https://ny-ai-chatbot.vercel.app/images/portfolio/ny-eng-chatbot-thumbnail.jpg",
       "problem": "Language schools treat chatbots as deflection tools — reduce ticket volume, speed up FAQ answers, dead-end the conversation. The result is a cost center that never generates revenue. Meanwhile, anonymous website visitors leave without converting because there's no sales-aware system guiding them toward high-value actions like booking a strategy session.",
       "solution": "An AI chatbot explicitly engineered as an automated sales agent. Every architectural layer — system prompts, RAG citations, error handling, rate limits — is designed to drive conversational conversion. The bot uses benefit-driven language with real client social proof, links RAG source citations to high-value service pages, and hard-codes CTAs for free strategy sessions directly into the system prompt.",
       "keyFeatures": [
@@ -361,43 +485,43 @@
       "dateCompleted": "2025-12",
       "slides": [
         {
-          "src": "/images/portfolio/ny-eng-chatbot-01.png",
+          "src": "https://ny-ai-chatbot.vercel.app/images/portfolio/ny-eng-chatbot-01.png",
           "altEn": "Conversational Conversion — The Architecture of a Revenue-First Chatbot",
           "altEs": "Conversion Conversacional — La Arquitectura de un Chatbot Orientado a Ingresos"
         },
         {
-          "src": "/images/portfolio/ny-eng-chatbot-02.png",
+          "src": "https://ny-ai-chatbot.vercel.app/images/portfolio/ny-eng-chatbot-02.png",
           "altEn": "Moving Beyond the Support Cost Center — from Deflector to Converter",
           "altEs": "Mas Alla del Centro de Costos de Soporte — de Deflector a Convertidor"
         },
         {
-          "src": "/images/portfolio/ny-eng-chatbot-03.png",
+          "src": "https://ny-ai-chatbot.vercel.app/images/portfolio/ny-eng-chatbot-03.png",
           "altEn": "The Five Gears of the Revenue Engine — Brain, Trigger, Chameleon, Soft Wall, Bridge",
           "altEs": "Los Cinco Engranajes del Motor de Ingresos — Cerebro, Disparador, Camaleon, Muro Suave, Puente"
         },
         {
-          "src": "/images/portfolio/ny-eng-chatbot-04.png",
+          "src": "https://ny-ai-chatbot.vercel.app/images/portfolio/ny-eng-chatbot-04.png",
           "altEn": "System Prompts Are Hard-Coded to Sell — CTAs baked into the bot's DNA",
           "altEs": "Los Prompts del Sistema Estan Programados para Vender — CTAs integrados en el ADN del bot"
         },
         {
-          "src": "/images/portfolio/ny-eng-chatbot-05.png",
+          "src": "https://ny-ai-chatbot.vercel.app/images/portfolio/ny-eng-chatbot-05.png",
           "altEn": "Benefit-Driven Language Builds Authority — Pivot to Value technique with client social proof",
           "altEs": "El Lenguaje Orientado a Beneficios Construye Autoridad — tecnica Pivot to Value con prueba social de clientes"
         },
         {
-          "src": "/images/portfolio/ny-eng-chatbot-06.png",
+          "src": "https://ny-ai-chatbot.vercel.app/images/portfolio/ny-eng-chatbot-06.png",
           "altEn": "Source Citations Drive Traffic to High-Value Pages — RAG grounding that doubles as SEO",
           "altEs": "Las Citas de Fuentes Dirigen Trafico a Paginas de Alto Valor — grounding RAG que funciona como SEO"
         },
         {
-          "src": "/images/portfolio/ny-eng-chatbot-07.png",
+          "src": "https://ny-ai-chatbot.vercel.app/images/portfolio/ny-eng-chatbot-07.png",
           "altEn": "Not a Support Tool — An Automated Sales Agent that books strategy sessions",
           "altEs": "No es una Herramienta de Soporte — Un Agente de Ventas Automatizado que agenda sesiones de estrategia"
         }
       ],
-      "videoUrl": "/video/ny-eng-chatbot-brief.mp4",
-      "videoPoster": "/video/ny-eng-chatbot-brief-poster.jpg"
+      "videoUrl": "https://ny-ai-chatbot.vercel.app/video/ny-eng-chatbot-brief.mp4",
+      "videoPoster": "https://ny-ai-chatbot.vercel.app/video/ny-eng-chatbot-brief-poster.jpg"
     },
     {
       "id": 1133839610,
@@ -546,149 +670,6 @@
       "videoPoster": null
     },
     {
-      "id": 1127520844,
-      "name": "marble-does-not-yield",
-      "title": "The Marble Does Not Yield",
-      "description": "A cinematic, single-page storytelling experience built with Next.js 14—combining markdown-driven prose, bilingual content, scroll-triggered imagery, and accessibility-first design.",
-      "summary": "> A cinematic, single-page narrative experience that combines long-form bilingual storytelling with restrained animation, audio narration, and accessibility-first design.",
-      "url": "https://github.com/RCushmaniii/marble-does-not-yield",
-      "demoUrl": "https://marble-does-not-yield.vercel.app/",
-      "liveUrl": "https://marble-does-not-yield.vercel.app/",
-      "homepage": "https://marble-does-not-yield.vercel.app",
-      "topics": [
-        "cdn",
-        "cdn-distribution",
-        "html5-audio",
-        "longform",
-        "markdown",
-        "narrative-design",
-        "nextjs",
-        "reactjs",
-        "static-site",
-        "storytelling",
-        "tailwindcss",
-        "typescript",
-        "vercel"
-      ],
-      "categories": [
-        "Creative"
-      ],
-      "tags": [
-        "cdn",
-        "cdn-distribution",
-        "html5-audio",
-        "longform",
-        "markdown",
-        "narrative-design",
-        "nextjs",
-        "reactjs",
-        "static-site",
-        "storytelling",
-        "tailwindcss",
-        "typescript",
-        "vercel",
-        "next-js",
-        "ai-assisted-development",
-        "bilingual",
-        "accessibility",
-        "audio-narration"
-      ],
-      "stack": [
-        "Next.js 14",
-        "TypeScript",
-        "React Server Components",
-        "Tailwind CSS",
-        "Vercel"
-      ],
-      "status": "Production",
-      "language": "TypeScript",
-      "languages": {
-        "TypeScript": 52724,
-        "CSS": 2913,
-        "JavaScript": 215
-      },
-      "stars": 0,
-      "forks": 0,
-      "lastPushed": "2026-02-20T22:45:45Z",
-      "createdAt": "2026-01-04T03:47:35Z",
-      "isFeatured": true,
-      "isArchived": false,
-      "isPrivate": false,
-      "tagline": "Bilingual literary web app with scroll-driven storytelling and WCAG AAA compliance",
-      "thumbnail": "/images/portfolio/marble-does-not-yield-thumb.jpg",
-      "problem": "Long-form bilingual literary content needs a web experience that serves the narrative, not the framework. Full i18n libraries add runtime overhead for a two-language site, streaming services complicate optional audio narration, and accessibility becomes critical when the content demands sustained attention.",
-      "solution": "A static-first Next.js app where every technical decision serves the reading experience. Custom i18n with JSON labels + Markdown prose, author-read audio via a single play/pause toggle, scroll-driven IntersectionObserver animations that respect prefers-reduced-motion, and 104 kB First Load JS through React Server Components.",
-      "keyFeatures": [
-        "Custom i18n architecture — JSON for labels + Markdown for prose, zero-overhead language switching without any i18n framework",
-        "Scroll-driven storytelling with multi-stage color fade animations (3.5s) via IntersectionObserver, all respecting prefers-reduced-motion",
-        "WCAG AAA compliance with proper contrast ratios, semantic HTML, and reduced-motion support for cognitively loaded content",
-        "104 kB First Load JS — static generation with React Server Components eliminates client-side hydration cost",
-        "Six-iteration UX refinement from complex audio player to minimal toggle, demonstrating taste and restraint"
-      ],
-      "metrics": [
-        "104 kB First Load JS — zero client-side hydration cost",
-        "WCAG AAA compliance across both language variants",
-        "Six-iteration UX refinement process documented end-to-end",
-        "Zero i18n framework dependencies for full bilingual support"
-      ],
-      "priority": 3,
-      "dateCompleted": "2025-10",
-      "slides": [
-        {
-          "src": "/images/portfolio/marble-does-not-yield-01.png",
-          "altEn": "The Marble Does Not Yield slide 1",
-          "altEs": "The Marble Does Not Yield diapositiva 1"
-        },
-        {
-          "src": "/images/portfolio/marble-does-not-yield-02.png",
-          "altEn": "The Marble Does Not Yield slide 2",
-          "altEs": "The Marble Does Not Yield diapositiva 2"
-        },
-        {
-          "src": "/images/portfolio/marble-does-not-yield-03.png",
-          "altEn": "The Marble Does Not Yield slide 3",
-          "altEs": "The Marble Does Not Yield diapositiva 3"
-        },
-        {
-          "src": "/images/portfolio/marble-does-not-yield-04.png",
-          "altEn": "The Marble Does Not Yield slide 4",
-          "altEs": "The Marble Does Not Yield diapositiva 4"
-        },
-        {
-          "src": "/images/portfolio/marble-does-not-yield-05.png",
-          "altEn": "The Marble Does Not Yield slide 5",
-          "altEs": "The Marble Does Not Yield diapositiva 5"
-        },
-        {
-          "src": "/images/portfolio/marble-does-not-yield-06.png",
-          "altEn": "The Marble Does Not Yield slide 6",
-          "altEs": "The Marble Does Not Yield diapositiva 6"
-        },
-        {
-          "src": "/images/portfolio/marble-does-not-yield-07.png",
-          "altEn": "The Marble Does Not Yield slide 7",
-          "altEs": "The Marble Does Not Yield diapositiva 7"
-        },
-        {
-          "src": "/images/portfolio/marble-does-not-yield-08.png",
-          "altEn": "The Marble Does Not Yield slide 8",
-          "altEs": "The Marble Does Not Yield diapositiva 8"
-        },
-        {
-          "src": "/images/portfolio/marble-does-not-yield-09.png",
-          "altEn": "The Marble Does Not Yield slide 9",
-          "altEs": "The Marble Does Not Yield diapositiva 9"
-        },
-        {
-          "src": "/images/portfolio/marble-does-not-yield-10.png",
-          "altEn": "The Marble Does Not Yield slide 10",
-          "altEs": "The Marble Does Not Yield diapositiva 10"
-        }
-      ],
-      "videoUrl": "/video/marble-does-not-yield-brief.mp4",
-      "videoPoster": "/video/marble-does-not-yield-brief-poster.jpg"
-    },
-    {
       "id": 1082205398,
       "name": "stock-alert",
       "title": "AI StockAlert",
@@ -744,7 +725,7 @@
       },
       "stars": 1,
       "forks": 0,
-      "lastPushed": "2026-02-20T20:37:31Z",
+      "lastPushed": "2026-02-21T02:02:23Z",
       "createdAt": "2025-10-23T22:24:30Z",
       "isFeatured": true,
       "isArchived": false,
@@ -826,7 +807,150 @@
         }
       ],
       "videoUrl": null,
-      "videoPoster": "public/video/AI-StockAlert-A-Case-Study-poster.jpg"
+      "videoPoster": "public/video/AI-StockAlert-brief-poster.jpg"
+    },
+    {
+      "id": 1127520844,
+      "name": "marble-does-not-yield",
+      "title": "The Marble Does Not Yield",
+      "description": "A cinematic, single-page storytelling experience built with Next.js 14—combining markdown-driven prose, bilingual content, scroll-triggered imagery, and accessibility-first design.",
+      "summary": "> A cinematic, single-page narrative experience that combines long-form bilingual storytelling with restrained animation, audio narration, and accessibility-first design.",
+      "url": "https://github.com/RCushmaniii/marble-does-not-yield",
+      "demoUrl": "https://marble-does-not-yield.vercel.app/",
+      "liveUrl": "https://marble-does-not-yield.vercel.app/",
+      "homepage": "https://marble-does-not-yield.vercel.app",
+      "topics": [
+        "cdn",
+        "cdn-distribution",
+        "html5-audio",
+        "longform",
+        "markdown",
+        "narrative-design",
+        "nextjs",
+        "reactjs",
+        "static-site",
+        "storytelling",
+        "tailwindcss",
+        "typescript",
+        "vercel"
+      ],
+      "categories": [
+        "Creative"
+      ],
+      "tags": [
+        "cdn",
+        "cdn-distribution",
+        "html5-audio",
+        "longform",
+        "markdown",
+        "narrative-design",
+        "nextjs",
+        "reactjs",
+        "static-site",
+        "storytelling",
+        "tailwindcss",
+        "typescript",
+        "vercel",
+        "next-js",
+        "ai-assisted-development",
+        "bilingual",
+        "accessibility",
+        "audio-narration"
+      ],
+      "stack": [
+        "Next.js 14",
+        "TypeScript",
+        "React Server Components",
+        "Tailwind CSS",
+        "Vercel"
+      ],
+      "status": "Production",
+      "language": "TypeScript",
+      "languages": {
+        "TypeScript": 52724,
+        "CSS": 2913,
+        "JavaScript": 215
+      },
+      "stars": 0,
+      "forks": 0,
+      "lastPushed": "2026-02-20T22:45:45Z",
+      "createdAt": "2026-01-04T03:47:35Z",
+      "isFeatured": true,
+      "isArchived": false,
+      "isPrivate": false,
+      "tagline": "Bilingual literary web app with scroll-driven storytelling and WCAG AAA compliance",
+      "thumbnail": "https://marble-does-not-yield.vercel.app/images/portfolio/marble-does-not-yield-thumb.jpg",
+      "problem": "Long-form bilingual literary content needs a web experience that serves the narrative, not the framework. Full i18n libraries add runtime overhead for a two-language site, streaming services complicate optional audio narration, and accessibility becomes critical when the content demands sustained attention.",
+      "solution": "A static-first Next.js app where every technical decision serves the reading experience. Custom i18n with JSON labels + Markdown prose, author-read audio via a single play/pause toggle, scroll-driven IntersectionObserver animations that respect prefers-reduced-motion, and 104 kB First Load JS through React Server Components.",
+      "keyFeatures": [
+        "Custom i18n architecture — JSON for labels + Markdown for prose, zero-overhead language switching without any i18n framework",
+        "Scroll-driven storytelling with multi-stage color fade animations (3.5s) via IntersectionObserver, all respecting prefers-reduced-motion",
+        "WCAG AAA compliance with proper contrast ratios, semantic HTML, and reduced-motion support for cognitively loaded content",
+        "104 kB First Load JS — static generation with React Server Components eliminates client-side hydration cost",
+        "Six-iteration UX refinement from complex audio player to minimal toggle, demonstrating taste and restraint"
+      ],
+      "metrics": [
+        "104 kB First Load JS — zero client-side hydration cost",
+        "WCAG AAA compliance across both language variants",
+        "Six-iteration UX refinement process documented end-to-end",
+        "Zero i18n framework dependencies for full bilingual support"
+      ],
+      "priority": 3,
+      "dateCompleted": "2025-10",
+      "slides": [
+        {
+          "src": "https://marble-does-not-yield.vercel.app/images/portfolio/marble-does-not-yield-01.png",
+          "altEn": "The Marble Does Not Yield slide 1",
+          "altEs": "The Marble Does Not Yield diapositiva 1"
+        },
+        {
+          "src": "https://marble-does-not-yield.vercel.app/images/portfolio/marble-does-not-yield-02.png",
+          "altEn": "The Marble Does Not Yield slide 2",
+          "altEs": "The Marble Does Not Yield diapositiva 2"
+        },
+        {
+          "src": "https://marble-does-not-yield.vercel.app/images/portfolio/marble-does-not-yield-03.png",
+          "altEn": "The Marble Does Not Yield slide 3",
+          "altEs": "The Marble Does Not Yield diapositiva 3"
+        },
+        {
+          "src": "https://marble-does-not-yield.vercel.app/images/portfolio/marble-does-not-yield-04.png",
+          "altEn": "The Marble Does Not Yield slide 4",
+          "altEs": "The Marble Does Not Yield diapositiva 4"
+        },
+        {
+          "src": "https://marble-does-not-yield.vercel.app/images/portfolio/marble-does-not-yield-05.png",
+          "altEn": "The Marble Does Not Yield slide 5",
+          "altEs": "The Marble Does Not Yield diapositiva 5"
+        },
+        {
+          "src": "https://marble-does-not-yield.vercel.app/images/portfolio/marble-does-not-yield-06.png",
+          "altEn": "The Marble Does Not Yield slide 6",
+          "altEs": "The Marble Does Not Yield diapositiva 6"
+        },
+        {
+          "src": "https://marble-does-not-yield.vercel.app/images/portfolio/marble-does-not-yield-07.png",
+          "altEn": "The Marble Does Not Yield slide 7",
+          "altEs": "The Marble Does Not Yield diapositiva 7"
+        },
+        {
+          "src": "https://marble-does-not-yield.vercel.app/images/portfolio/marble-does-not-yield-08.png",
+          "altEn": "The Marble Does Not Yield slide 8",
+          "altEs": "The Marble Does Not Yield diapositiva 8"
+        },
+        {
+          "src": "https://marble-does-not-yield.vercel.app/images/portfolio/marble-does-not-yield-09.png",
+          "altEn": "The Marble Does Not Yield slide 9",
+          "altEs": "The Marble Does Not Yield diapositiva 9"
+        },
+        {
+          "src": "https://marble-does-not-yield.vercel.app/images/portfolio/marble-does-not-yield-10.png",
+          "altEn": "The Marble Does Not Yield slide 10",
+          "altEs": "The Marble Does Not Yield diapositiva 10"
+        }
+      ],
+      "videoUrl": "https://marble-does-not-yield.vercel.app/video/marble-does-not-yield-brief.mp4",
+      "videoPoster": "https://marble-does-not-yield.vercel.app/video/marble-does-not-yield-brief-poster.jpg"
     },
     {
       "id": 1117217007,
@@ -985,7 +1109,7 @@
       "isArchived": false,
       "isPrivate": false,
       "tagline": "Private, searchable game design document wiki for a Roblox development team",
-      "thumbnail": "/images/mazebreak-wiki-01.png",
+      "thumbnail": "https://mazebreak-wiki.vercel.app/images/mazebreak-wiki-01.png",
       "problem": null,
       "solution": null,
       "keyFeatures": [],
@@ -994,42 +1118,42 @@
       "dateCompleted": null,
       "slides": [
         {
-          "src": "/images/mazebreak-wiki-01.png",
+          "src": "https://mazebreak-wiki.vercel.app/images/mazebreak-wiki-01.png",
           "altEn": "MazeBreak GDD Wiki slide 1",
           "altEs": "MazeBreak GDD Wiki diapositiva 1"
         },
         {
-          "src": "/images/mazebreak-wiki-02.png",
+          "src": "https://mazebreak-wiki.vercel.app/images/mazebreak-wiki-02.png",
           "altEn": "MazeBreak GDD Wiki slide 2",
           "altEs": "MazeBreak GDD Wiki diapositiva 2"
         },
         {
-          "src": "/images/mazebreak-wiki-03.png",
+          "src": "https://mazebreak-wiki.vercel.app/images/mazebreak-wiki-03.png",
           "altEn": "MazeBreak GDD Wiki slide 3",
           "altEs": "MazeBreak GDD Wiki diapositiva 3"
         },
         {
-          "src": "/images/mazebreak-wiki-04.png",
+          "src": "https://mazebreak-wiki.vercel.app/images/mazebreak-wiki-04.png",
           "altEn": "MazeBreak GDD Wiki slide 4",
           "altEs": "MazeBreak GDD Wiki diapositiva 4"
         },
         {
-          "src": "/images/mazebreak-wiki-05.png",
+          "src": "https://mazebreak-wiki.vercel.app/images/mazebreak-wiki-05.png",
           "altEn": "MazeBreak GDD Wiki slide 5",
           "altEs": "MazeBreak GDD Wiki diapositiva 5"
         },
         {
-          "src": "/images/mazebreak-wiki-06.png",
+          "src": "https://mazebreak-wiki.vercel.app/images/mazebreak-wiki-06.png",
           "altEn": "MazeBreak GDD Wiki slide 6",
           "altEs": "MazeBreak GDD Wiki diapositiva 6"
         },
         {
-          "src": "/images/mazebreak-wiki-07.png",
+          "src": "https://mazebreak-wiki.vercel.app/images/mazebreak-wiki-07.png",
           "altEn": "MazeBreak GDD Wiki slide 7",
           "altEs": "MazeBreak GDD Wiki diapositiva 7"
         }
       ],
-      "videoUrl": "/video/MazeBreak__Taming_the_GDD.mp4",
+      "videoUrl": "https://mazebreak-wiki.vercel.app/video/MazeBreak__Taming_the_GDD.mp4",
       "videoPoster": null
     },
     {
@@ -1335,7 +1459,7 @@
       "isArchived": false,
       "isPrivate": false,
       "tagline": "Idempotent sprint board provisioning via Trello REST API for Roblox game development",
-      "thumbnail": "/images/mazebreak-trello.jpg",
+      "thumbnail": "https://mazebreak-trello.vercel.app/images/mazebreak-trello.jpg",
       "problem": null,
       "solution": null,
       "keyFeatures": [],
@@ -1344,37 +1468,37 @@
       "dateCompleted": null,
       "slides": [
         {
-          "src": "/images/mazebreak-trello.jpg",
+          "src": "https://mazebreak-trello.vercel.app/images/mazebreak-trello.jpg",
           "altEn": "MazeBreak Trello Board Automation slide 1",
           "altEs": "MazeBreak Trello Board Automation diapositiva 1"
         },
         {
-          "src": "/images/mazebreak-trello01.jpg",
+          "src": "https://mazebreak-trello.vercel.app/images/mazebreak-trello01.jpg",
           "altEn": "MazeBreak Trello Board Automation slide 2",
           "altEs": "MazeBreak Trello Board Automation diapositiva 2"
         },
         {
-          "src": "/images/mazebreak-trello02.jpg",
+          "src": "https://mazebreak-trello.vercel.app/images/mazebreak-trello02.jpg",
           "altEn": "MazeBreak Trello Board Automation slide 3",
           "altEs": "MazeBreak Trello Board Automation diapositiva 3"
         },
         {
-          "src": "/images/mazebreak-trello03.jpg",
+          "src": "https://mazebreak-trello.vercel.app/images/mazebreak-trello03.jpg",
           "altEn": "MazeBreak Trello Board Automation slide 4",
           "altEs": "MazeBreak Trello Board Automation diapositiva 4"
         },
         {
-          "src": "/images/mazebreak-trello04.jpg",
+          "src": "https://mazebreak-trello.vercel.app/images/mazebreak-trello04.jpg",
           "altEn": "MazeBreak Trello Board Automation slide 5",
           "altEs": "MazeBreak Trello Board Automation diapositiva 5"
         },
         {
-          "src": "/images/mazebreak-trello05.jpg",
+          "src": "https://mazebreak-trello.vercel.app/images/mazebreak-trello05.jpg",
           "altEn": "MazeBreak Trello Board Automation slide 6",
           "altEs": "MazeBreak Trello Board Automation diapositiva 6"
         }
       ],
-      "videoUrl": "/video/MazeBreak__Sprint_as_Code.mp4",
+      "videoUrl": "https://mazebreak-trello.vercel.app/video/MazeBreak__Sprint_as_Code.mp4",
       "videoPoster": null
     },
     {
@@ -1500,62 +1624,6 @@
       "videoPoster": null
     },
     {
-      "id": 1130115840,
-      "name": "cushlabs",
-      "title": "Cushlabs",
-      "description": "AI consulting and software development for SMBs — bilingual (EN/ES) site built with Astro + Tailwind CSS",
-      "summary": "AI consulting and software development for SMBs. Bilingual (EN/ES) business site with automated GitHub portfolio sync.",
-      "url": "https://github.com/RCushmaniii/cushlabs",
-      "demoUrl": "https://cushlabs.ai",
-      "liveUrl": null,
-      "homepage": "https://cushlabs.ai",
-      "topics": [
-        "ai-consulting",
-        "astro",
-        "bilingual",
-        "cushlabs",
-        "static-site",
-        "tailwindcss"
-      ],
-      "categories": [],
-      "tags": [
-        "ai-consulting",
-        "astro",
-        "bilingual",
-        "cushlabs",
-        "static-site",
-        "tailwindcss"
-      ],
-      "stack": [],
-      "status": null,
-      "language": "Astro",
-      "languages": {
-        "Astro": 344048,
-        "TypeScript": 110918,
-        "HTML": 61067,
-        "JavaScript": 26662,
-        "CSS": 1697
-      },
-      "stars": 0,
-      "forks": 0,
-      "lastPushed": "2026-02-20T22:30:02Z",
-      "createdAt": "2026-01-08T03:52:43Z",
-      "isFeatured": false,
-      "isArchived": false,
-      "isPrivate": false,
-      "tagline": null,
-      "thumbnail": null,
-      "problem": null,
-      "solution": null,
-      "keyFeatures": [],
-      "metrics": [],
-      "priority": 99,
-      "dateCompleted": null,
-      "slides": [],
-      "videoUrl": null,
-      "videoPoster": null
-    },
-    {
       "id": 1141547356,
       "name": "ai-idea-validator",
       "title": "AI Idea Validator",
@@ -1614,7 +1682,7 @@
       "isArchived": false,
       "isPrivate": false,
       "tagline": "Brutal startup defensibility assessment powered by AI",
-      "thumbnail": "/portfolio/ai-idea-validator.png",
+      "thumbnail": "https://ai-idea-validator.netlify.app/portfolio/ai-idea-validator.png",
       "problem": "Founders waste years building ideas that are structurally replaceable—not because they're bad, but because they lack defensibility. Traditional validation focuses on execution, ignoring whether the idea can survive competition and platform changes.",
       "solution": "An AI-powered assessment tool that cuts through founder optimism with 23 targeted questions, then uses GPT to generate brutally honest verdicts (KILL/FLIP/BUILD/BET) while detecting contradictions between self-assessments and written responses.",
       "keyFeatures": [

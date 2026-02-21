@@ -84,6 +84,25 @@ interface PortfolioFrontmatter {
 
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
 const GITHUB_OWNER = process.env.GITHUB_OWNER ?? 'RCushmaniii';
+const SELF_REPO = 'cushlabs'; // Assets in this repo are local — keep relative paths
+
+/**
+ * Resolve a relative asset path to an absolute URL.
+ * - Paths in the cushlabs repo itself stay relative (served from public/)
+ * - Other repos: use their deployment URL (Vercel CDN) if available
+ * - Fallback: raw.githubusercontent.com
+ */
+function resolveAssetUrl(path: string | undefined | null, repoName: string, deployUrl: string | null): string | null {
+  if (!path) return null;
+  if (!path.startsWith('/')) return path; // already absolute URL
+  if (repoName === SELF_REPO) return path; // local asset
+
+  if (deployUrl) {
+    const base = deployUrl.replace(/\/+$/, '');
+    return `${base}${path}`;
+  }
+  return `https://raw.githubusercontent.com/${GITHUB_OWNER}/${repoName}/main/public${path}`;
+}
 
 if (!GITHUB_TOKEN) {
   if (existsSync(outputPath)) {
@@ -301,6 +320,10 @@ async function generateProjects() {
       }
     }
 
+    // Resolve relative asset paths to absolute URLs for external repos
+    const deployUrl = portfolio?.live_url || portfolio?.demo_url || demoUrl;
+    const resolve = (path: string | undefined | null) => resolveAssetUrl(path, repo.name, deployUrl);
+
     const project: Project = {
       id: repo.id,
       name: repo.name,
@@ -327,7 +350,7 @@ async function generateProjects() {
       isPrivate: repo.private,
       // Portfolio.md fields
       tagline: portfolio?.tagline ?? null,
-      thumbnail: portfolio?.thumbnail ?? null,
+      thumbnail: resolve(portfolio?.thumbnail),
       problem: portfolio?.problem ?? null,
       solution: portfolio?.solution ?? null,
       keyFeatures: portfolio?.key_features ?? [],
@@ -335,13 +358,13 @@ async function generateProjects() {
       priority: portfolio?.portfolio_priority ?? 99,
       dateCompleted: portfolio?.date_completed ?? null,
       slides: (portfolio?.slides ?? []).map(img => ({
-        src: img.src,
-        ...(img.src_es ? { srcEs: img.src_es } : {}),
+        src: resolve(img.src)!,
+        ...(img.src_es ? { srcEs: resolve(img.src_es)! } : {}),
         altEn: img.alt_en,
         altEs: img.alt_es
       })),
-      videoUrl: portfolio?.video_url ?? null,
-      videoPoster: portfolio?.video_poster ?? null
+      videoUrl: resolve(portfolio?.video_url),
+      videoPoster: resolve(portfolio?.video_poster)
     };
 
     projects.push(project);
