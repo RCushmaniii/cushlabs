@@ -289,13 +289,13 @@ async function checkStaticArtifacts() {
 
   const expected = [
     "index.html",
-    "solutions/index.html",
+    "portfolio/index.html",
     "consultation/index.html",
     "contact/index.html",
     "about/index.html",
     "blog/index.html",
     "es/index.html",
-    "es/solutions/index.html",
+    "es/portfolio/index.html",
     "es/reservar/index.html",
     "es/contact/index.html",
     "es/about/index.html",

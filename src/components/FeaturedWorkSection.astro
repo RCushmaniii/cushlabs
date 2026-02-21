@@ -45,7 +45,7 @@ const projects = projectsRaw.map((p: any, i: number) => ({
   displayTags: p.stack?.length > 0 ? p.stack : (p.tags?.length > 0 ? p.tags : p.topics || []),
 }));
 
-const solutionsUrl = locale === "es" ? "/es/solutions" : "/solutions";
+const solutionsUrl = locale === "es" ? "/es/portfolio" : "/portfolio";
 ---
 
 <section class="py-20 lg:py-28">
