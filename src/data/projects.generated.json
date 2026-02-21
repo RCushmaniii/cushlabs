@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-02-21T02:29:52.164Z",
+  "generatedAt": "2026-02-21T04:32:32.045Z",
   "count": 21,
   "projects": [
     {
@@ -49,15 +49,15 @@
       "status": "Production",
       "language": "Astro",
       "languages": {
-        "Astro": 344048,
-        "TypeScript": 112150,
+        "Astro": 344031,
+        "TypeScript": 112159,
         "HTML": 61067,
         "JavaScript": 26662,
         "CSS": 1697
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-02-21T02:28:56Z",
+      "lastPushed": "2026-02-21T03:51:50Z",
       "createdAt": "2026-01-08T03:52:43Z",
       "isFeatured": true,
       "isArchived": false,
@@ -188,7 +188,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-02-21T02:19:58Z",
+      "lastPushed": "2026-02-21T02:37:54Z",
       "createdAt": "2026-01-13T22:16:37Z",
       "isFeatured": true,
       "isArchived": false,
@@ -1393,19 +1393,12 @@
       ],
       "stack": [
         "Next.js 16",
-        "React 19",
         "TypeScript",
         "Tailwind CSS 4",
-        "Framer Motion",
         "next-intl",
-        "next-themes",
-        "shadcn/ui",
-        "Radix UI",
-        "Playwright",
-        "Formspree",
-        "Netlify"
+        "Playwright"
       ],
-      "status": "Complete",
+      "status": "Production",
       "language": "TypeScript",
       "languages": {
         "TypeScript": 162097,
@@ -1414,26 +1407,21 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-02-20T20:32:50Z",
+      "lastPushed": "2026-02-21T04:31:36Z",
       "createdAt": "2026-01-23T00:50:02Z",
       "isFeatured": true,
       "isArchived": false,
       "isPrivate": false,
-      "tagline": "Bilingual SaaS marketing website with full product launch surface area — built for signal, not noise",
-      "thumbnail": "public/images/portfolio/stockalert-thumb.jpg",
-      "problem": "Businesses launching software products hit the same bottleneck: the marketing website. Agency builds cost $10K-50K+ and take weeks. Templates look generic. Bilingual support is always an afterthought. SEO, performance, structured data, and accessibility get skipped 'until later' — and later never comes. Products launch with placeholder pages, broken contact forms, and zero search visibility.",
-      "solution": "A production-ready, bilingual (EN/ES) marketing website that covers the complete surface area of a real SaaS product launch — 9 pages across 18 localized routes, with SEO, structured data, animations, dark/light themes, e2e tests, and static deployment. Built to demonstrate that one person with the right architecture can ship what normally takes a team.",
+      "tagline": "Bilingual SaaS marketing site — 18 routes, e2e tested, zero server cost",
+      "thumbnail": "https://aistockalert.app/images/ai-stockalert-website-thumb.jpg",
+      "problem": "Businesses launching software products hit the same bottleneck: the marketing website. Agency builds cost $10K-50K+ and take weeks. Templates look generic. Bilingual support is always an afterthought — and SEO, structured data, and accessibility get skipped entirely.",
+      "solution": "A production-ready bilingual (EN/ES) marketing website covering the complete surface area of a real SaaS launch — 9 pages across 18 localized routes, with SEO, structured data, animations, dark/light themes, e2e tests, and static deployment to Netlify CDN.",
       "keyFeatures": [
-        "9 fully built pages: Homepage, Features, Use Cases, Pricing, Download, Setup Guide, Contact, Terms, Privacy",
-        "Full bilingual support (EN/ES) with localized URLs — /en/features vs /es/caracteristicas",
-        "Static site generation — no server required, sub-second loads, deployed to Netlify CDN",
-        "SEO from day one — dynamic sitemap with hreflang alternates, robots.txt, JSON-LD structured data, page-level metadata",
-        "Dark/light theme with system preference detection",
-        "Scroll-triggered animations and staggered card reveals via Framer Motion",
-        "Working contact form (Formspree + react-hook-form + Zod validation)",
+        "9 pages x 2 languages = 18 localized routes with native URL routing via next-intl",
+        "SEO from day one — dynamic sitemap with hreflang alternates, JSON-LD structured data, page-level metadata",
         "23 Playwright e2e tests covering navigation, language switching, theme toggling, and responsive behavior",
-        "Immutable asset caching (1yr static, 30d media, 1yr fonts) via Netlify headers",
-        "Accessible UI built on Radix primitives via shadcn/ui"
+        "Static site generation — zero server cost, sub-second loads, deployed to Netlify global CDN",
+        "Working contact form (Formspree + react-hook-form + Zod), dark/light themes, scroll-triggered animations"
       ],
       "metrics": [
         "9 pages x 2 languages = 18 localized routes",
@@ -1443,9 +1431,60 @@
       ],
       "priority": 4,
       "dateCompleted": "2026-02",
-      "slides": [],
-      "videoUrl": null,
-      "videoPoster": null
+      "slides": [
+        {
+          "src": "https://aistockalert.app/images/ai-stockalert-website-01.png",
+          "altEn": "AI StockAlert — The Blueprint for High-Performance Bilingual SaaS Marketing",
+          "altEs": "AI StockAlert — El Plan para Marketing SaaS Bilingue de Alto Rendimiento"
+        },
+        {
+          "src": "https://aistockalert.app/images/ai-stockalert-website-02.png",
+          "altEn": "The Launch Bottleneck — agency costs, template trap, skill gap, zero visibility",
+          "altEs": "El Cuello de Botella del Lanzamiento — costos de agencia, trampa de plantillas, brecha de habilidades"
+        },
+        {
+          "src": "https://aistockalert.app/images/ai-stockalert-website-03.png",
+          "altEn": "Not a Wireframe, A Production Reality — live at aistockalert.app",
+          "altEs": "No es un Wireframe, Es Produccion Real — en vivo en aistockalert.app"
+        },
+        {
+          "src": "https://aistockalert.app/images/ai-stockalert-website-04.png",
+          "altEn": "Internationalization Done Right — native routing, localized pathnames for SEO",
+          "altEs": "Internacionalizacion Bien Hecha — rutas nativas, nombres de ruta localizados para SEO"
+        },
+        {
+          "src": "https://aistockalert.app/images/ai-stockalert-website-05.png",
+          "altEn": "Built for Speed and Scale — 0 server costs, sub-1s load time, Lighthouse 100",
+          "altEs": "Construido para Velocidad y Escala — 0 costos de servidor, carga sub-1s, Lighthouse 100"
+        },
+        {
+          "src": "https://aistockalert.app/images/ai-stockalert-website-06.png",
+          "altEn": "Invisible Tech, Visible Results — dynamic metadata, hreflang, JSON-LD structured data",
+          "altEs": "Tecnologia Invisible, Resultados Visibles — metadata dinamica, hreflang, datos estructurados JSON-LD"
+        },
+        {
+          "src": "https://aistockalert.app/images/ai-stockalert-website-07.png",
+          "altEn": "Polished to Perfection — themes, typography, validated forms, responsive and accessible",
+          "altEs": "Pulido a la Perfeccion — temas, tipografia, formularios validados, responsivo y accesible"
+        },
+        {
+          "src": "https://aistockalert.app/images/ai-stockalert-website-08.png",
+          "altEn": "Trust, Verified — 23 Playwright e2e tests before every deploy",
+          "altEs": "Confianza Verificada — 23 pruebas e2e de Playwright antes de cada despliegue"
+        },
+        {
+          "src": "https://aistockalert.app/images/ai-stockalert-website-09.png",
+          "altEn": "Tech Spec to Business Value — bilingual = 2x market, static = 100% uptime",
+          "altEs": "De Especificacion Tecnica a Valor de Negocio — bilingue = 2x mercado, estatico = 100% uptime"
+        },
+        {
+          "src": "https://aistockalert.app/images/ai-stockalert-website-10.png",
+          "altEn": "Why Owners Love This Blueprint — cost efficiency, speed, future-proof, verified",
+          "altEs": "Por Que los Duenos Aman Este Plan — eficiencia de costos, velocidad, a prueba de futuro, verificado"
+        }
+      ],
+      "videoUrl": "https://aistockalert.app/videos/AI-StockAlert-brief.mp4",
+      "videoPoster": "https://aistockalert.app/videos/AI-StockAlert-brief-poster.jpg"
     },
     {
       "id": 1159724330,
