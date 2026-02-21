@@ -1,7 +1,100 @@
 {
-  "generatedAt": "2026-02-21T16:59:45.485Z",
+  "generatedAt": "2026-02-21T20:21:49.220Z",
   "count": 23,
   "projects": [
+    {
+      "id": 1130115840,
+      "name": "cushlabs",
+      "title": "CushLabs.ai",
+      "description": "AI consulting and software development for SMBs — bilingual (EN/ES) site built with Astro + Tailwind CSS",
+      "summary": "> AI consulting and software development for SMBs. Bilingual (EN/ES) business site with automated GitHub portfolio sync and serverless booking.",
+      "url": "https://github.com/RCushmaniii/cushlabs",
+      "demoUrl": "https://cushlabs.ai",
+      "liveUrl": "https://cushlabs.ai",
+      "homepage": "https://cushlabs.ai",
+      "topics": [
+        "ai-consulting",
+        "astro",
+        "bilingual",
+        "cushlabs",
+        "static-site",
+        "tailwindcss"
+      ],
+      "categories": [
+        "Tools"
+      ],
+      "tags": [
+        "ai-consulting",
+        "astro",
+        "bilingual",
+        "cushlabs",
+        "static-site",
+        "tailwindcss",
+        "tailwind",
+        "typescript",
+        "i18n",
+        "cloudflare-workers",
+        "google-calendar",
+        "github-actions",
+        "seo",
+        "serverless"
+      ],
+      "stack": [
+        "Astro 4.16",
+        "TypeScript 5.9",
+        "Tailwind CSS 3.4",
+        "Cloudflare Workers",
+        "Google Calendar API",
+        "GitHub Actions",
+        "JSON-LD"
+      ],
+      "status": null,
+      "language": "Astro",
+      "languages": {
+        "Astro": 344187,
+        "TypeScript": 112284,
+        "HTML": 61067,
+        "JavaScript": 26662,
+        "CSS": 1697
+      },
+      "stars": 0,
+      "forks": 0,
+      "lastPushed": "2026-02-21T16:59:58Z",
+      "createdAt": "2026-01-08T03:52:43Z",
+      "isFeatured": true,
+      "isArchived": false,
+      "isPrivate": false,
+      "tagline": "Self-maintaining bilingual portfolio with serverless booking and build-time i18n enforcement",
+      "thumbnail": "/images/portfolio/cushlabs-01.png",
+      "problem": null,
+      "solution": null,
+      "keyFeatures": [],
+      "metrics": [],
+      "priority": 1,
+      "dateCompleted": null,
+      "slides": [
+        {
+          "src": null
+        },
+        {
+          "src": null
+        },
+        {
+          "src": null
+        },
+        {
+          "src": null
+        },
+        {
+          "src": null
+        },
+        {
+          "src": null
+        }
+      ],
+      "videoUrl": null,
+      "videoPoster": null
+    },
     {
       "id": 1141547356,
       "name": "ai-idea-validator",
@@ -78,99 +171,6 @@
       "priority": 1,
       "dateCompleted": null,
       "slides": [
-        {
-          "src": null
-        },
-        {
-          "src": null
-        },
-        {
-          "src": null
-        }
-      ],
-      "videoUrl": null,
-      "videoPoster": null
-    },
-    {
-      "id": 1130115840,
-      "name": "cushlabs",
-      "title": "CushLabs.ai",
-      "description": "AI consulting and software development for SMBs — bilingual (EN/ES) site built with Astro + Tailwind CSS",
-      "summary": "> AI consulting and software development for SMBs. Bilingual (EN/ES) business site with automated GitHub portfolio sync and serverless booking.",
-      "url": "https://github.com/RCushmaniii/cushlabs",
-      "demoUrl": "https://cushlabs.ai",
-      "liveUrl": "https://cushlabs.ai",
-      "homepage": "https://cushlabs.ai",
-      "topics": [
-        "ai-consulting",
-        "astro",
-        "bilingual",
-        "cushlabs",
-        "static-site",
-        "tailwindcss"
-      ],
-      "categories": [
-        "Tools"
-      ],
-      "tags": [
-        "ai-consulting",
-        "astro",
-        "bilingual",
-        "cushlabs",
-        "static-site",
-        "tailwindcss",
-        "tailwind",
-        "typescript",
-        "i18n",
-        "cloudflare-workers",
-        "google-calendar",
-        "github-actions",
-        "seo",
-        "serverless"
-      ],
-      "stack": [
-        "Astro 4.16",
-        "TypeScript 5.9",
-        "Tailwind CSS 3.4",
-        "Cloudflare Workers",
-        "Google Calendar API",
-        "GitHub Actions",
-        "JSON-LD"
-      ],
-      "status": null,
-      "language": "Astro",
-      "languages": {
-        "Astro": 344187,
-        "TypeScript": 112284,
-        "HTML": 61067,
-        "JavaScript": 26662,
-        "CSS": 1697
-      },
-      "stars": 0,
-      "forks": 0,
-      "lastPushed": "2026-02-21T06:31:16Z",
-      "createdAt": "2026-01-08T03:52:43Z",
-      "isFeatured": true,
-      "isArchived": false,
-      "isPrivate": false,
-      "tagline": "Self-maintaining bilingual portfolio with serverless booking and build-time i18n enforcement",
-      "thumbnail": "/images/portfolio/cushlabs-01.png",
-      "problem": null,
-      "solution": null,
-      "keyFeatures": [],
-      "metrics": [],
-      "priority": 1,
-      "dateCompleted": null,
-      "slides": [
-        {
-          "src": null
-        },
-        {
-          "src": null
-        },
-        {
-          "src": null
-        },
         {
           "src": null
         },
@@ -1683,6 +1683,152 @@
       "videoPoster": null
     },
     {
+      "id": 1157375639,
+      "name": "ai-build-vs-outsource",
+      "title": "Build vs. Outsource Decision Framework",
+      "description": "An interactive web-based decision tool that helps operations leaders evaluate whether to build logistics capacity in-house or outsource to a third-party logistics provider (3PL). ",
+      "summary": "> Interactive decision-support tools for operations leaders at growth-stage direct-selling companies. Structured analysis, real-time feedback, board-ready output — no spreadsheets, no guesswork.",
+      "url": "https://github.com/RCushmaniii/ai-build-vs-outsource",
+      "demoUrl": "https://ai-build-vs-outsource.vercel.app",
+      "liveUrl": "https://ai-build-vs-outsource.vercel.app",
+      "homepage": "https://ai-build-vs-outsource.vercel.app",
+      "topics": [
+        "3pl",
+        "build-vs-outsource",
+        "dark-mode",
+        "decision-framework",
+        "framer-motion",
+        "i18n",
+        "logistics",
+        "nextjs",
+        "react",
+        "recharts",
+        "supply-chain",
+        "tailwindcss",
+        "typescript",
+        "vercel",
+        "weighted-scoring"
+      ],
+      "categories": [
+        "Web Tools"
+      ],
+      "tags": [
+        "3pl",
+        "build-vs-outsource",
+        "dark-mode",
+        "decision-framework",
+        "framer-motion",
+        "i18n",
+        "logistics",
+        "nextjs",
+        "react",
+        "recharts",
+        "supply-chain",
+        "tailwindcss",
+        "typescript",
+        "vercel",
+        "weighted-scoring",
+        "tailwind",
+        "decision-tools",
+        "operations",
+        "bilingual",
+        "data-visualization"
+      ],
+      "stack": [
+        "Next.js 16",
+        "React 19",
+        "Tailwind CSS 4",
+        "Framer Motion",
+        "Recharts"
+      ],
+      "status": "Production",
+      "language": "TypeScript",
+      "languages": {
+        "TypeScript": 163582,
+        "CSS": 5459,
+        "JavaScript": 559
+      },
+      "stars": 0,
+      "forks": 1,
+      "lastPushed": "2026-02-21T20:21:04Z",
+      "createdAt": "2026-02-13T18:42:29Z",
+      "isFeatured": true,
+      "isArchived": false,
+      "isPrivate": false,
+      "tagline": "Interactive decision tools with weighted scoring, cost modeling, and board-ready output",
+      "thumbnail": "https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-thumb.jpg",
+      "problem": "Operations leaders at growth-stage companies face high-stakes build-or-outsource decisions armed with gut feel, incomplete spreadsheets, and circular boardroom arguments. No tool combines structured weighted scoring with real-time cost modeling and shareable, board-ready output.",
+      "solution": "A suite of interactive decision-support tools that replace guesswork with data-driven analysis. A 20-criterion weighted scoring framework evaluates build vs. outsource across five categories, while an operational cost simulator reveals hidden step-function costs — all shareable via URL-encoded state.",
+      "keyFeatures": [
+        "20-criterion weighted scoring across 5 categories (Financial, Operational, Strategic, Control, Risk) with real-time verdict",
+        "Operational Cost Simulator with three-layer cost model — fixed, variable, and step-function costs with break-even analysis",
+        "6 decision presets and 5 growth scenario presets for rapid what-if analysis",
+        "Shareable URL encoding — full tool state in query params for board presentations",
+        "Full EN/ES bilingual support with dark/light theme toggle and print-ready layouts"
+      ],
+      "metrics": [
+        "20 weighted criteria across 5 decision categories",
+        "6 decision presets + 5 growth scenario presets",
+        "Full state shareable via URL — no backend required"
+      ],
+      "priority": 4,
+      "dateCompleted": "2026-02",
+      "slides": [
+        {
+          "src": "https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-01.png",
+          "altEn": "Operations Decision Tools Suite — structured analysis replaces boardroom guesswork",
+          "altEs": "Suite de Herramientas de Decision Operativa — analisis estructurado reemplaza suposiciones en la sala de juntas"
+        },
+        {
+          "src": "https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-02.png",
+          "altEn": "The Problem — gut feel, incomplete spreadsheets, and circular arguments drive million-dollar decisions",
+          "altEs": "El Problema — instinto, hojas de calculo incompletas y argumentos circulares impulsan decisiones millonarias"
+        },
+        {
+          "src": "https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-03.png",
+          "altEn": "20-Criterion Weighted Scoring — five categories with real-time verdict and radar chart",
+          "altEs": "Puntuacion Ponderada de 20 Criterios — cinco categorias con veredicto en tiempo real y grafico radar"
+        },
+        {
+          "src": "https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-04.png",
+          "altEn": "Scenario Presets — Growth Emergency, Control First, Cost Optimizer shift the verdict instantly",
+          "altEs": "Presets de Escenarios — Emergencia de Crecimiento, Control Primero, Optimizador de Costos cambian el veredicto al instante"
+        },
+        {
+          "src": "https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-05.png",
+          "altEn": "Expandable Rationale — each criterion includes industry analysis and scoring guidance",
+          "altEs": "Justificacion Expandible — cada criterio incluye analisis de industria y guia de puntuacion"
+        },
+        {
+          "src": "https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-06.png",
+          "altEn": "Operational Cost Simulator — three-layer cost model with volume slider and cost-per-order curves",
+          "altEs": "Simulador de Costos Operativos — modelo de costos de tres capas con control de volumen y curvas de costo por orden"
+        },
+        {
+          "src": "https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-07.png",
+          "altEn": "Step-Function Costs Revealed — watch cost-per-order jump when new hires and warehouse expansions trigger",
+          "altEs": "Costos Escalonados Revelados — observa el salto del costo por orden cuando se activan nuevas contrataciones y expansiones"
+        },
+        {
+          "src": "https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-08.png",
+          "altEn": "Break-Even and Margin Analysis — utilization gauges and margin visualization with profitability threshold",
+          "altEs": "Analisis de Punto de Equilibrio y Margen — indicadores de utilizacion y visualizacion de margen con umbral de rentabilidad"
+        },
+        {
+          "src": "https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-09.png",
+          "altEn": "Shareable and Board-Ready — full state encoded in URL params, print-optimized layouts for PDFs",
+          "altEs": "Compartible y Listo para Presentar — estado completo codificado en URL, disenos optimizados para impresion PDF"
+        },
+        {
+          "src": "https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-10.png",
+          "altEn": "Technical Architecture — Next.js 16, React 19, Recharts, Framer Motion, bilingual, zero backend",
+          "altEs": "Arquitectura Tecnica — Next.js 16, React 19, Recharts, Framer Motion, bilingue, sin backend"
+        }
+      ],
+      "videoUrl": "https://ai-build-vs-outsource.vercel.app/video/ai-build-vs-outsource-brief.mp4",
+      "videoPoster": "https://ai-build-vs-outsource.vercel.app/video/ai-build-vs-outsource-brief-poster.jpg"
+    },
+    {
       "id": 1140204033,
       "name": "ai-stock-alert-website",
       "title": "AI StockAlert Website",
@@ -2031,92 +2177,6 @@
       "metrics": [],
       "priority": 7,
       "dateCompleted": null,
-      "slides": [],
-      "videoUrl": null,
-      "videoPoster": null
-    },
-    {
-      "id": 1157375639,
-      "name": "ai-build-vs-outsource",
-      "title": "Build vs. Outsource Decision Framework",
-      "description": "An interactive web-based decision tool that helps operations leaders evaluate whether to build logistics capacity in-house or outsource to a third-party logistics provider (3PL). ",
-      "summary": "> Interactive decision-support tools for operations leaders at growth-stage direct-selling companies. Structured analysis, real-time feedback, board-ready output — no spreadsheets, no guesswork.",
-      "url": "https://github.com/RCushmaniii/ai-build-vs-outsource",
-      "demoUrl": "https://ai-build-vs-outsource.vercel.app",
-      "liveUrl": "https://ai-build-vs-outsource.vercel.app",
-      "homepage": "https://ai-build-vs-outsource.vercel.app",
-      "topics": [
-        "3pl",
-        "build-vs-outsource",
-        "dark-mode",
-        "decision-framework",
-        "framer-motion",
-        "i18n",
-        "logistics",
-        "nextjs",
-        "react",
-        "recharts",
-        "supply-chain",
-        "tailwindcss",
-        "typescript",
-        "vercel",
-        "weighted-scoring"
-      ],
-      "categories": [
-        "Web Tools"
-      ],
-      "tags": [
-        "3pl",
-        "build-vs-outsource",
-        "dark-mode",
-        "decision-framework",
-        "framer-motion",
-        "i18n",
-        "logistics",
-        "nextjs",
-        "react",
-        "recharts",
-        "supply-chain",
-        "tailwindcss",
-        "typescript",
-        "vercel",
-        "weighted-scoring"
-      ],
-      "stack": [
-        "Next.js",
-        "React",
-        "Tailwind CSS",
-        "Framer Motion",
-        "Recharts"
-      ],
-      "status": "Production",
-      "language": "TypeScript",
-      "languages": {
-        "TypeScript": 163582,
-        "CSS": 5459,
-        "JavaScript": 559
-      },
-      "stars": 0,
-      "forks": 1,
-      "lastPushed": "2026-02-21T06:08:32Z",
-      "createdAt": "2026-02-13T18:42:29Z",
-      "isFeatured": false,
-      "isArchived": false,
-      "isPrivate": false,
-      "tagline": "20-criteria weighted scoring tool with real-time verdict",
-      "thumbnail": null,
-      "problem": "Operations leaders evaluating build vs. outsource logistics decisions rely on gut feel and incomplete financial comparisons. There's no structured way to weigh 20+ competing factors and present the analysis to a board.",
-      "solution": "Interactive weighted scoring tool that scores 20 criteria across 5 categories in real time as users adjust priority weights. Produces a data-driven verdict with shareable URLs and print-ready output for board presentations.",
-      "keyFeatures": [
-        "Real-time verdict updates across 20 weighted criteria (1-10 scale)",
-        "5-category radar chart comparing Build vs. 3PL at a glance",
-        "6 scenario presets for rapid what-if analysis",
-        "Shareable URL encoding with weight state in query params",
-        "Full EN/ES bilingual support with theme toggle"
-      ],
-      "metrics": [],
-      "priority": 99,
-      "dateCompleted": "2026-02",
       "slides": [],
       "videoUrl": null,
       "videoPoster": null
