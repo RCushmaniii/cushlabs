@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-02-22T22:55:49.441Z",
-  "count": 23,
+  "generatedAt": "2026-02-22T23:04:48.651Z",
+  "count": 20,
   "projects": [
     {
       "id": 1130115840,
@@ -59,7 +59,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-02-22T22:12:40Z",
+      "lastPushed": "2026-02-22T22:57:43Z",
       "createdAt": "2026-01-08T03:52:43Z",
       "isFeatured": true,
       "isArchived": false,
@@ -298,7 +298,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-02-22T22:55:19Z",
+      "lastPushed": "2026-02-22T22:55:45Z",
       "createdAt": "2025-12-11T17:38:35Z",
       "isFeatured": true,
       "isArchived": false,
@@ -1838,117 +1838,6 @@
       "videoPoster": "https://marble-does-not-yield.vercel.app/video/marble-does-not-yield-brief-poster.jpg"
     },
     {
-      "id": 1117217007,
-      "name": "ai-webscraper",
-      "title": "AI-Powered Web Scraper",
-      "description": "A full-stack web application for scraping websites with a React frontend, Python FastAPI backend, and Supabase for data storage.",
-      "summary": "| ![Login](.github/assets/ai-ws-login.jpg) | ![Report](.github/assets/ai-ws-analysis-report.jpg) |",
-      "url": "https://github.com/RCushmaniii/ai-webscraper",
-      "demoUrl": null,
-      "liveUrl": "",
-      "homepage": null,
-      "topics": [],
-      "categories": [
-        "AI Automation"
-      ],
-      "tags": [
-        "web-scraping",
-        "data-extraction",
-        "automation",
-        "fastapi",
-        "react"
-      ],
-      "stack": [
-        "React",
-        "Python",
-        "FastAPI",
-        "Supabase",
-        "PostgreSQL"
-      ],
-      "status": null,
-      "language": "Python",
-      "languages": {
-        "Python": 566891,
-        "TypeScript": 485230,
-        "PLpgSQL": 54863,
-        "Batchfile": 4729,
-        "JavaScript": 4239,
-        "CSS": 2586,
-        "HTML": 1752,
-        "Dockerfile": 595
-      },
-      "stars": 0,
-      "forks": 0,
-      "lastPushed": "2026-02-20T18:57:42Z",
-      "createdAt": "2025-12-16T02:09:11Z",
-      "isFeatured": true,
-      "isArchived": false,
-      "isPrivate": false,
-      "tagline": "Full-stack data extraction platform with intelligent parsing and cloud storage",
-      "thumbnail": null,
-      "problem": null,
-      "solution": null,
-      "keyFeatures": [],
-      "metrics": [],
-      "priority": 3,
-      "dateCompleted": null,
-      "slides": [],
-      "videoUrl": null,
-      "videoPoster": null
-    },
-    {
-      "id": 1093081979,
-      "name": "component-portfolio",
-      "title": "Component Portfolio",
-      "description": "Production-ready React components for the missing middle—copy-paste solutions with performance optimization. Built for developers who need immediate, practical tools.",
-      "summary": "A spectacular collection of production-ready, accessible, and performant React components with interactive demos and real-time controls.",
-      "url": "https://github.com/RCushmaniii/component-portfolio",
-      "demoUrl": "https://component-portfolio.netlify.app/",
-      "liveUrl": "",
-      "homepage": null,
-      "topics": [],
-      "categories": [
-        "Tools"
-      ],
-      "tags": [
-        "todo"
-      ],
-      "stack": [
-        "JavaScript",
-        "TODO: Add tech"
-      ],
-      "status": "Production",
-      "language": "JavaScript",
-      "languages": {
-        "JavaScript": 229264,
-        "PowerShell": 17956,
-        "CSS": 4549,
-        "HTML": 3310
-      },
-      "stars": 0,
-      "forks": 0,
-      "lastPushed": "2026-02-20T18:57:42Z",
-      "createdAt": "2025-11-09T21:33:52Z",
-      "isFeatured": true,
-      "isArchived": false,
-      "isPrivate": false,
-      "tagline": "Production-ready React components for the missing middle—copy-paste solutions with performance optimization. Built for developers who need immediate, practical tools.",
-      "thumbnail": null,
-      "problem": "TODO: Describe the pain point this project solves.",
-      "solution": "Production-ready React components for the missing middle—copy-paste solutions with performance optimization. Built for developers who need immediate, practical tools.",
-      "keyFeatures": [
-        "TODO: Feature 1 with measurable impact",
-        "TODO: Feature 2 explaining capability",
-        "TODO: Feature 3 showing value"
-      ],
-      "metrics": [],
-      "priority": 3,
-      "dateCompleted": "2025-11",
-      "slides": [],
-      "videoUrl": null,
-      "videoPoster": null
-    },
-    {
       "id": 1154149781,
       "name": "mazebreak-wiki",
       "title": "MazeBreak GDD Wiki",
@@ -2606,71 +2495,6 @@
         }
       ],
       "videoUrl": "https://mazebreak-trello.vercel.app/video/MazeBreak__Sprint_as_Code.mp4",
-      "videoPoster": null
-    },
-    {
-      "id": 1115984732,
-      "name": "nextjs-supabase-auth-starter",
-      "title": "Next.js Supabase Auth Starter",
-      "description": "A production-ready Next.js + Supabase SaaS base scaffold with sane defaults and clear v1 boundaries.",
-      "summary": "A minimal, production-minded Next.js App Router starter focused on **Supabase Auth**, **SSR session refresh**, and an **RLS-first database posture**.",
-      "url": "https://github.com/RCushmaniii/nextjs-supabase-auth-starter",
-      "demoUrl": "https://nextjs-supabase-auth-starter.vercel.app",
-      "liveUrl": "",
-      "homepage": "https://nextjs-supabase-auth-starter.vercel.app",
-      "topics": [
-        "bilingual",
-        "magiclink",
-        "nextjs",
-        "starter-kit",
-        "supabase-auth"
-      ],
-      "categories": [
-        "Templates"
-      ],
-      "tags": [
-        "bilingual",
-        "magiclink",
-        "nextjs",
-        "starter-kit",
-        "supabase-auth",
-        "supabase",
-        "authentication",
-        "starter-template",
-        "typescript"
-      ],
-      "stack": [
-        "Next.js 14",
-        "TypeScript",
-        "Supabase",
-        "Tailwind CSS",
-        "Server Components"
-      ],
-      "status": null,
-      "language": "TypeScript",
-      "languages": {
-        "TypeScript": 55816,
-        "PLpgSQL": 1895,
-        "JavaScript": 196,
-        "CSS": 114
-      },
-      "stars": 0,
-      "forks": 0,
-      "lastPushed": "2026-02-20T18:57:43Z",
-      "createdAt": "2025-12-14T00:31:03Z",
-      "isFeatured": false,
-      "isArchived": false,
-      "isPrivate": false,
-      "tagline": "Production-ready authentication starter with Next.js 14 and Supabase",
-      "thumbnail": null,
-      "problem": null,
-      "solution": null,
-      "keyFeatures": [],
-      "metrics": [],
-      "priority": 7,
-      "dateCompleted": null,
-      "slides": [],
-      "videoUrl": null,
       "videoPoster": null
     }
   ]
