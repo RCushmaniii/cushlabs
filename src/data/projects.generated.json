@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-02-22T05:36:41.011Z",
+  "generatedAt": "2026-02-22T19:47:33.662Z",
   "count": 23,
   "projects": [
     {
@@ -59,7 +59,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-02-22T04:59:02Z",
+      "lastPushed": "2026-02-22T05:36:52Z",
       "createdAt": "2026-01-08T03:52:43Z",
       "isFeatured": true,
       "isArchived": false,
@@ -240,6 +240,415 @@
       ],
       "videoUrl": "https://www.nyenglishteacher.com/video/ny-eng-brief.mp4",
       "videoPoster": "https://www.nyenglishteacher.com/video/ny-eng-brief-poster.jpg"
+    },
+    {
+      "id": 1120026584,
+      "name": "context-writing-system",
+      "title": "Context Engineering Kit",
+      "description": "Context-engineering system to lock brand voice, enforce truth, and generate consistent AI-written content at scale.",
+      "summary": "**Clone your voice. Crush content. Scale forever.**",
+      "url": "https://github.com/RCushmaniii/context-writing-system",
+      "demoUrl": "https://cushlabs-writing-system.vercel.app",
+      "liveUrl": "https://cushlabs-writing-system.vercel.app",
+      "homepage": "https://cushlabs-writing-system.vercel.app",
+      "topics": [
+        "ai-assistant",
+        "ai-content-generation",
+        "business-writing",
+        "content-management",
+        "context-engineering",
+        "llm-tools",
+        "writing-system"
+      ],
+      "categories": [
+        "AI Automation"
+      ],
+      "tags": [
+        "ai-assistant",
+        "ai-content-generation",
+        "business-writing",
+        "content-management",
+        "context-engineering",
+        "llm-tools",
+        "writing-system",
+        "ai",
+        "content-generation",
+        "brand-voice",
+        "automation",
+        "json",
+        "markdown",
+        "vercel"
+      ],
+      "stack": [
+        "HTML / CSS / JS",
+        "JSON Context Files",
+        "Markdown Skills",
+        "Vercel"
+      ],
+      "status": "Production",
+      "language": "HTML",
+      "languages": {
+        "HTML": 249878,
+        "CSS": 41745,
+        "JavaScript": 39010,
+        "PowerShell": 1981
+      },
+      "stars": 1,
+      "forks": 0,
+      "lastPushed": "2026-02-22T19:46:19Z",
+      "createdAt": "2025-12-20T10:31:00Z",
+      "isFeatured": true,
+      "isArchived": false,
+      "isPrivate": false,
+      "tagline": "Context-engineering framework that makes AI write like you, not like AI",
+      "thumbnail": "https://cushlabs-writing-system.vercel.app/images/context-writing-system-thumb.jpg",
+      "problem": "AI-generated content starts strong but drifts into generic corporate filler within minutes. Teams spend more time editing AI output than they saved generating it — killing hype, restoring voice, and fact-checking hallucinated claims. Every new chat session starts from zero because there's no persistent memory of who you are, what you sell, or what you're allowed to say.",
+      "solution": "A structured context-engineering framework that stores your voice, audience profile, business facts, and claim rules in persistent JSON truth files. When you request any content type — landing page, email, LinkedIn post — the AI loads these truth files plus format-specific skills to produce consistent, on-brand output without hallucinated claims or generic phrasing. First drafts arrive 90% ready. You review instead of rewrite.",
+      "keyFeatures": [
+        "Four Pillars of Truth — Voice DNA, Business Profile, Ideal Client Profile, and Claims Policy lock your reality in structured JSON",
+        "Format-Specific Skills — dedicated content blueprints for landing pages, cold emails, LinkedIn posts, sales decks, and READMEs",
+        "Automated Credibility Protection — claims policy enforces what can and cannot be stated, blocking hallucinations before they ship",
+        "Hierarchical Control Stack — truth and claims always override voice, audience, and format rules, eliminating ambiguity",
+        "Static Explorer UI — branded dashboard to browse your entire writing system, deployed on Vercel with zero build step"
+      ],
+      "metrics": [
+        "First drafts arrive 90% ready — review instead of rewrite",
+        "Editing time reduced from 45 minutes to 5 minutes per asset",
+        "Zero hallucinated claims — credibility enforced by policy",
+        "One voice system powers every content channel"
+      ],
+      "priority": 2,
+      "dateCompleted": "2025-12",
+      "slides": [
+        {
+          "src": "https://cushlabs-writing-system.vercel.app/images/context-writing-system-01.png",
+          "altEn": "The Context Engineering Kit — Structure beats prompts, truth beats cleverness",
+          "altEs": "El Kit de Ingenieria de Contexto — La estructura supera a los prompts, la verdad supera a la astucia"
+        },
+        {
+          "src": "https://cushlabs-writing-system.vercel.app/images/context-writing-system-02.png",
+          "altEn": "You are using AI but it sounds like AI — content quality degrades over time as tone flattens into generic corporate filler",
+          "altEs": "Usas IA pero suena a IA — la calidad del contenido se degrada con el tiempo hasta convertirse en relleno corporativo generico"
+        },
+        {
+          "src": "https://cushlabs-writing-system.vercel.app/images/context-writing-system-03.png",
+          "altEn": "It's not a prompt problem, it's a memory problem — you rebuild context from scratch every time",
+          "altEs": "No es un problema de prompts, es un problema de memoria — reconstruyes el contexto desde cero cada vez"
+        },
+        {
+          "src": "https://cushlabs-writing-system.vercel.app/images/context-writing-system-04.png",
+          "altEn": "Locking your reality with the four pillars of truth — Voice DNA, Business Profile, Ideal Client, and Claims Policy",
+          "altEs": "Bloqueando tu realidad con los cuatro pilares de verdad — ADN de Voz, Perfil de Negocio, Cliente Ideal y Politica de Afirmaciones"
+        },
+        {
+          "src": "https://cushlabs-writing-system.vercel.app/images/context-writing-system-05.png",
+          "altEn": "Clone your voice once, use it everywhere — teaches AI your rhythm, tone, and boundaries instantly",
+          "altEs": "Clona tu voz una vez, usala en todas partes — ensena a la IA tu ritmo, tono y limites al instante"
+        },
+        {
+          "src": "https://cushlabs-writing-system.vercel.app/images/context-writing-system-06.png",
+          "altEn": "Automated credibility protection — no hallucinations, no fake metrics, if it violates the policy it doesn't ship",
+          "altEs": "Proteccion de credibilidad automatizada — sin alucinaciones, sin metricas falsas, si viola la politica no se publica"
+        },
+        {
+          "src": "https://cushlabs-writing-system.vercel.app/images/context-writing-system-07.png",
+          "altEn": "Format-specific skills — dedicated content blueprints for LinkedIn, sales decks, cold emails, landing pages, and tech READMEs",
+          "altEs": "Habilidades especificas por formato — plantillas dedicadas para LinkedIn, presentaciones, emails frios, landing pages y READMEs tecnicos"
+        },
+        {
+          "src": "https://cushlabs-writing-system.vercel.app/images/context-writing-system-08.png",
+          "altEn": "No ambiguity — a strict hierarchy of control where truth and claims policy always override voice, audience, and format rules",
+          "altEs": "Sin ambiguedad — una jerarquia estricta de control donde la verdad y la politica de afirmaciones siempre prevalecen sobre voz, audiencia y formato"
+        },
+        {
+          "src": "https://cushlabs-writing-system.vercel.app/images/context-writing-system-09.png",
+          "altEn": "Reviewing not rewriting — first drafts arrive 90% ready, reducing 45 minutes of editing to 5 minutes of review",
+          "altEs": "Revisar en vez de reescribir — los primeros borradores llegan 90% listos, reduciendo 45 minutos de edicion a 5 minutos de revision"
+        },
+        {
+          "src": "https://cushlabs-writing-system.vercel.app/images/context-writing-system-10.png",
+          "altEn": "One identity, many channels — consistent brand voice across every platform powered by the same truth files",
+          "altEs": "Una identidad, muchos canales — voz de marca consistente en cada plataforma impulsada por los mismos archivos de verdad"
+        },
+        {
+          "src": "https://cushlabs-writing-system.vercel.app/images/context-writing-system-11.png",
+          "altEn": "Build your infrastructure — systems beat inspiration, ready to engineer your context",
+          "altEs": "Construye tu infraestructura — los sistemas superan la inspiracion, listo para disenar tu contexto"
+        }
+      ],
+      "videoUrl": "https://cushlabs-writing-system.vercel.app/videos/context-writing-system-brief.mp4",
+      "videoPoster": "https://cushlabs-writing-system.vercel.app/videos/context-writing-system-brief-poster.jpg"
+    },
+    {
+      "id": 1068781109,
+      "name": "react-vite-tailwind-base",
+      "title": "React Vite Tailwind Base",
+      "description": "React 19 template with ShadCN UI, TypeScript, and Vite 7. Features a fully interactive appointment booking system with calendar integration, real-time data visualizations using Recharts, and 17+ accessible components. Mobile-first design, SEO optimized, and built with modern best practices. Perfect for SaaS apps, dashboards, and booking systems.",
+      "summary": "A modern, production-ready React template with **ShadCN UI**, **data visualizations**, and a complete **interactive appointment booking showcase**. Built with best practices, mobile-first design, and ",
+      "url": "https://github.com/RCushmaniii/react-vite-tailwind-base",
+      "demoUrl": "https://react-vite-tailwind-base.vercel.app",
+      "liveUrl": "https://react-vite-tailwind-base.vercel.app",
+      "homepage": "https://react-vite-tailwind-base.vercel.app",
+      "topics": [
+        "react",
+        "shadcn",
+        "shadcn-ui",
+        "tailwindcss",
+        "vite"
+      ],
+      "categories": [
+        "Templates"
+      ],
+      "tags": [
+        "react",
+        "shadcn",
+        "shadcn-ui",
+        "tailwindcss",
+        "vite",
+        "starter-template"
+      ],
+      "stack": [
+        "TypeScript",
+        "React 19",
+        "Vite 7",
+        "Tailwind CSS",
+        "ShadCN UI",
+        "Recharts"
+      ],
+      "status": "Production",
+      "language": "TypeScript",
+      "languages": {
+        "TypeScript": 124273,
+        "JavaScript": 15673,
+        "HTML": 3826,
+        "CSS": 2102
+      },
+      "stars": 2,
+      "forks": 0,
+      "lastPushed": "2026-02-22T19:40:14Z",
+      "createdAt": "2025-10-02T22:40:01Z",
+      "isFeatured": true,
+      "isArchived": false,
+      "isPrivate": false,
+      "tagline": "React 19 + Vite 7 + ShadCN UI starter with appointment booking, calendar, charts, and 17+ components.",
+      "thumbnail": null,
+      "problem": "Starting new React projects requires significant boilerplate setup for routing, UI components, and common features.",
+      "solution": "Production-ready template with appointment booking, calendar, charts, and 17+ accessible components out of the box.",
+      "keyFeatures": [
+        "Interactive appointment booking with calendar integration",
+        "Real-time data visualizations using Recharts",
+        "17+ accessible ShadCN UI components",
+        "Mobile-first responsive design"
+      ],
+      "metrics": [],
+      "priority": 2,
+      "dateCompleted": "2026-01",
+      "slides": [],
+      "videoUrl": null,
+      "videoPoster": null
+    },
+    {
+      "id": 1114660708,
+      "name": "freelance-income-planner",
+      "title": "Freelance Income Planner",
+      "description": "A privacy-first income simulator for freelancers. Instantly see how rate changes, sick days, and taxes impact your real take-home pay. Bill in USD, spend in MXN. Plan for feast or famine. All calculations happen in your browser—your data never leaves your device.",
+      "summary": "description: A bilingual income planning tool for freelancers and consultants.",
+      "url": "https://github.com/RCushmaniii/freelance-income-planner",
+      "demoUrl": "https://freelance-income-planner.vercel.app",
+      "liveUrl": "https://freelance-income-planner.vercel.app",
+      "homepage": "https://freelance-income-planner.vercel.app/",
+      "topics": [
+        "bilingual",
+        "digital-nomad",
+        "freelance",
+        "i18n",
+        "income-calculator",
+        "nextjs",
+        "react",
+        "tailwindcss",
+        "typescript"
+      ],
+      "categories": [
+        "Tools"
+      ],
+      "tags": [
+        "bilingual",
+        "digital-nomad",
+        "freelance",
+        "i18n",
+        "income-calculator",
+        "nextjs",
+        "react",
+        "tailwindcss",
+        "typescript"
+      ],
+      "stack": [
+        "TypeScript",
+        "Next.js",
+        "React",
+        "Tailwind CSS"
+      ],
+      "status": "Production",
+      "language": "TypeScript",
+      "languages": {
+        "TypeScript": 270895,
+        "CSS": 4579,
+        "JavaScript": 997
+      },
+      "stars": 0,
+      "forks": 0,
+      "lastPushed": "2026-02-22T19:23:53Z",
+      "createdAt": "2025-12-11T17:38:35Z",
+      "isFeatured": true,
+      "isArchived": false,
+      "isPrivate": false,
+      "tagline": "Privacy-first income simulator for freelancers. See how rate changes, sick days, and taxes impact take-home pay.",
+      "thumbnail": null,
+      "problem": "Freelancers struggle to predict actual take-home pay with variable rates, taxes, and currency conversions.",
+      "solution": "Privacy-first calculator that runs entirely in-browser. Bill in USD, spend in MXN, plan for feast or famine.",
+      "keyFeatures": [
+        "Real-time income projections with tax calculations",
+        "Multi-currency support (USD/MXN)",
+        "Privacy-first: all data stays in browser",
+        "Bilingual interface (English/Spanish)"
+      ],
+      "metrics": [],
+      "priority": 2,
+      "dateCompleted": "2025-12",
+      "slides": [],
+      "videoUrl": null,
+      "videoPoster": null
+    },
+    {
+      "id": 1133839610,
+      "name": "ai-filesense-website",
+      "title": "AI FileSense Website",
+      "description": "Marketing website for AI FileSense - An ai-powered local file organization system for Windows. Landing page, downloads, privacy policy, terms of service, and changelog.",
+      "summary": "**Marketing website for AI FileSense — the Windows desktop app that organizes your files locally using Claude AI.**",
+      "url": "https://github.com/RCushmaniii/ai-filesense-website",
+      "demoUrl": "https://ai-filesense-website.vercel.app/",
+      "liveUrl": "https://ai-filesense-website.vercel.app",
+      "homepage": "https://ai-filesense-website.vercel.app",
+      "topics": [
+        "ai",
+        "claude-ai",
+        "file-organization",
+        "file-organizer",
+        "i18n",
+        "marketing-site",
+        "nextjs",
+        "resend-email",
+        "tailwind-css",
+        "typescript",
+        "windows-app"
+      ],
+      "categories": [
+        "Marketing"
+      ],
+      "tags": [
+        "ai",
+        "claude-ai",
+        "file-organization",
+        "file-organizer",
+        "i18n",
+        "marketing-site",
+        "nextjs",
+        "resend-email",
+        "tailwind-css",
+        "typescript",
+        "windows-app",
+        "tailwind",
+        "bilingual",
+        "seo",
+        "resend",
+        "marketing",
+        "software-distribution"
+      ],
+      "stack": [
+        "Next.js 14",
+        "TypeScript",
+        "Tailwind CSS",
+        "next-intl",
+        "Resend"
+      ],
+      "status": "Production",
+      "language": "TypeScript",
+      "languages": {
+        "TypeScript": 199657,
+        "MDX": 33998,
+        "CSS": 1058,
+        "JavaScript": 396
+      },
+      "stars": 0,
+      "forks": 0,
+      "lastPushed": "2026-02-22T19:19:15Z",
+      "createdAt": "2026-01-13T22:16:37Z",
+      "isFeatured": true,
+      "isArchived": false,
+      "isPrivate": false,
+      "tagline": "Bilingual marketing site with Lighthouse 100 and lead capture",
+      "thumbnail": "https://ai-filesense-website.vercel.app/images/portfolio/ai-filesense-website-thumb.jpg",
+      "problem": "Most indie software developers and small businesses ship a desktop app and then have nothing — no discoverability, no trust signals, no bilingual reach, no support system, and no conversion path. A download link with no context doesn't convert visitors into users.",
+      "solution": "A 17-page bilingual marketing and support website that handles everything between 'I built an app' and 'I have a business' — SEO-optimized, conversion-focused, with a working contact/lead system and a complete support hub.",
+      "keyFeatures": [
+        "17 pages across 7 sections — full marketing funnel from homepage to terms of service",
+        "Bilingual from day one (EN + ES-MX) — locale-based routing with hreflang sitemap alternates",
+        "Working contact/lead capture — Zod + React Hook Form + Server Actions + Resend + honeypot spam protection",
+        "Complete support hub — Getting Started guide, 11-question FAQ, validated contact form",
+        "Production SEO — dynamic metadata, auto-generated sitemap, Open Graph cards, canonical URLs"
+      ],
+      "metrics": [
+        "17 pages across 7 sections covering the full product lifecycle",
+        "Lighthouse 100 Performance, 100 Best Practices, 92 SEO, 92 Accessibility",
+        "0.3s FCP, 0.4s LCP, 0ms TBT — zero layout shift",
+        "Auto-generated sitemap with hreflang alternates for 30+ locale-specific URLs"
+      ],
+      "priority": 2,
+      "dateCompleted": "2026-02",
+      "slides": [
+        {
+          "src": "https://ai-filesense-website.vercel.app/images/portfolio/ai-filesense-website-01.png",
+          "altEn": "Homepage hero with video explainer and download CTA",
+          "altEs": "Hero de la pagina principal con video explicativo y boton de descarga"
+        },
+        {
+          "src": "https://ai-filesense-website.vercel.app/images/portfolio/ai-filesense-website-02.png",
+          "altEn": "How It Works — 3-step process breakdown",
+          "altEs": "Como Funciona — desglose del proceso en 3 pasos"
+        },
+        {
+          "src": "https://ai-filesense-website.vercel.app/images/portfolio/ai-filesense-website-03.png",
+          "altEn": "Features section with trust signals",
+          "altEs": "Seccion de caracteristicas con senales de confianza"
+        },
+        {
+          "src": "https://ai-filesense-website.vercel.app/images/portfolio/ai-filesense-website-04.png",
+          "altEn": "The 12-Folder Smart System overview",
+          "altEs": "Vista general del Sistema Inteligente de 12 Carpetas"
+        },
+        {
+          "src": "https://ai-filesense-website.vercel.app/images/portfolio/ai-filesense-website-05.png",
+          "altEn": "Features page — differentiators and competitive advantages",
+          "altEs": "Pagina de caracteristicas — diferenciadores y ventajas competitivas"
+        },
+        {
+          "src": "https://ai-filesense-website.vercel.app/images/portfolio/ai-filesense-website-06.png",
+          "altEn": "Support hub with Getting Started guide",
+          "altEs": "Centro de soporte con guia de inicio"
+        },
+        {
+          "src": "https://ai-filesense-website.vercel.app/images/portfolio/ai-filesense-website-07.png",
+          "altEn": "Download page with system requirements and quick-start",
+          "altEs": "Pagina de descarga con requisitos del sistema e inicio rapido"
+        },
+        {
+          "src": "https://ai-filesense-website.vercel.app/images/portfolio/ai-filesense-website-08.png",
+          "altEn": "Dark mode — full theme support across all pages",
+          "altEs": "Modo oscuro — soporte completo de temas en todas las paginas"
+        }
+      ],
+      "videoUrl": "https://ai-filesense-website.vercel.app/videos/AI-FileSense-Website-brief.mp4",
+      "videoPoster": "https://ai-filesense-website.vercel.app/images/portfolio/AI-FileSense-Website-brief-poster.jpg"
     },
     {
       "id": 1119144204,
@@ -491,73 +900,6 @@
       "videoPoster": "https://ai-resume-tailor-client.vercel.app/video/ai-resume-tailor-brief-poster.jpg"
     },
     {
-      "id": 1120026584,
-      "name": "context-writing-system",
-      "title": "Cushlabs Writing System",
-      "description": "Context-engineering system to lock brand voice, enforce truth, and generate consistent AI-written content at scale.",
-      "summary": "**Clone your voice. Crush content. Scale forever.**",
-      "url": "https://github.com/RCushmaniii/context-writing-system",
-      "demoUrl": "https://cushlabs-writing-system.vercel.app",
-      "liveUrl": "https://cushlabs-writing-system.vercel.app",
-      "homepage": "https://cushlabs-writing-system.vercel.app",
-      "topics": [
-        "ai-assistant",
-        "ai-content-generation",
-        "business-writing",
-        "content-management",
-        "context-engineering",
-        "llm-tools",
-        "writing-system"
-      ],
-      "categories": [
-        "AI Automation"
-      ],
-      "tags": [
-        "ai-assistant",
-        "ai-content-generation",
-        "business-writing",
-        "content-management",
-        "context-engineering",
-        "llm-tools",
-        "writing-system"
-      ],
-      "stack": [
-        "HTML",
-        "TODO: Add tech"
-      ],
-      "status": "Production",
-      "language": "HTML",
-      "languages": {
-        "HTML": 255166,
-        "CSS": 40453,
-        "JavaScript": 39010,
-        "PowerShell": 1981
-      },
-      "stars": 1,
-      "forks": 0,
-      "lastPushed": "2026-02-22T04:27:14Z",
-      "createdAt": "2025-12-20T10:31:00Z",
-      "isFeatured": true,
-      "isArchived": false,
-      "isPrivate": false,
-      "tagline": "Context-engineering system to lock brand voice, enforce truth, and generate consistent AI-written content at scale.",
-      "thumbnail": null,
-      "problem": "TODO: Describe the pain point this project solves.",
-      "solution": "Clone your brand's voice once—unleash AI to dominate every page, email, and pitch.",
-      "keyFeatures": [
-        "What This System Does",
-        "Core Components",
-        "How It Works",
-        "Key Principles"
-      ],
-      "metrics": [],
-      "priority": 2,
-      "dateCompleted": "2025-12",
-      "slides": [],
-      "videoUrl": null,
-      "videoPoster": null
-    },
-    {
       "id": 1062817398,
       "name": "ai-scrabble-practice",
       "title": "AI Scrabble Practice",
@@ -689,277 +1031,6 @@
       ],
       "videoUrl": "https://scrabble-mini.netlify.app/video/ai-scrabble-practice-brief.mp4",
       "videoPoster": "https://scrabble-mini.netlify.app/video/ai-scrabble-practice-brief-poster.jpg"
-    },
-    {
-      "id": 1133839610,
-      "name": "ai-filesense-website",
-      "title": "AI FileSense Website",
-      "description": "Marketing website for AI FileSense - An ai-powered local file organization system for Windows. Landing page, downloads, privacy policy, terms of service, and changelog.",
-      "summary": "**Marketing website for AI FileSense — the Windows desktop app that organizes your files locally using Claude AI.**",
-      "url": "https://github.com/RCushmaniii/ai-filesense-website",
-      "demoUrl": "https://ai-filesense-website.vercel.app/",
-      "liveUrl": "https://ai-filesense-website.vercel.app",
-      "homepage": "https://ai-filesense-website.vercel.app",
-      "topics": [
-        "ai",
-        "claude-ai",
-        "file-organization",
-        "file-organizer",
-        "i18n",
-        "marketing-site",
-        "nextjs",
-        "resend-email",
-        "tailwind-css",
-        "typescript",
-        "windows-app"
-      ],
-      "categories": [
-        "Marketing"
-      ],
-      "tags": [
-        "ai",
-        "claude-ai",
-        "file-organization",
-        "file-organizer",
-        "i18n",
-        "marketing-site",
-        "nextjs",
-        "resend-email",
-        "tailwind-css",
-        "typescript",
-        "windows-app",
-        "tailwind",
-        "bilingual",
-        "seo",
-        "resend",
-        "marketing",
-        "software-distribution"
-      ],
-      "stack": [
-        "Next.js 14",
-        "TypeScript",
-        "Tailwind CSS",
-        "next-intl",
-        "Resend"
-      ],
-      "status": "Production",
-      "language": "TypeScript",
-      "languages": {
-        "TypeScript": 204073,
-        "MDX": 33998,
-        "CSS": 1058,
-        "JavaScript": 396
-      },
-      "stars": 0,
-      "forks": 0,
-      "lastPushed": "2026-02-21T02:37:54Z",
-      "createdAt": "2026-01-13T22:16:37Z",
-      "isFeatured": true,
-      "isArchived": false,
-      "isPrivate": false,
-      "tagline": "Bilingual marketing site with Lighthouse 100 and lead capture",
-      "thumbnail": "https://ai-filesense-website.vercel.app/images/portfolio/ai-filesense-website-thumb.jpg",
-      "problem": "Most indie software developers and small businesses ship a desktop app and then have nothing — no discoverability, no trust signals, no bilingual reach, no support system, and no conversion path. A download link with no context doesn't convert visitors into users.",
-      "solution": "A 17-page bilingual marketing and support website that handles everything between 'I built an app' and 'I have a business' — SEO-optimized, conversion-focused, with a working contact/lead system and a complete support hub.",
-      "keyFeatures": [
-        "17 pages across 7 sections — full marketing funnel from homepage to terms of service",
-        "Bilingual from day one (EN + ES-MX) — locale-based routing with hreflang sitemap alternates",
-        "Working contact/lead capture — Zod + React Hook Form + Server Actions + Resend + honeypot spam protection",
-        "Complete support hub — Getting Started guide, 11-question FAQ, validated contact form",
-        "Production SEO — dynamic metadata, auto-generated sitemap, Open Graph cards, canonical URLs"
-      ],
-      "metrics": [
-        "17 pages across 7 sections covering the full product lifecycle",
-        "Lighthouse 100 Performance, 100 Best Practices, 92 SEO, 92 Accessibility",
-        "0.3s FCP, 0.4s LCP, 0ms TBT — zero layout shift",
-        "Auto-generated sitemap with hreflang alternates for 30+ locale-specific URLs"
-      ],
-      "priority": 2,
-      "dateCompleted": "2026-02",
-      "slides": [
-        {
-          "src": "https://ai-filesense-website.vercel.app/images/portfolio/ai-filesense-website-01.png",
-          "altEn": "Homepage hero with video explainer and download CTA",
-          "altEs": "Hero de la pagina principal con video explicativo y boton de descarga"
-        },
-        {
-          "src": "https://ai-filesense-website.vercel.app/images/portfolio/ai-filesense-website-02.png",
-          "altEn": "How It Works — 3-step process breakdown",
-          "altEs": "Como Funciona — desglose del proceso en 3 pasos"
-        },
-        {
-          "src": "https://ai-filesense-website.vercel.app/images/portfolio/ai-filesense-website-03.png",
-          "altEn": "Features section with trust signals",
-          "altEs": "Seccion de caracteristicas con senales de confianza"
-        },
-        {
-          "src": "https://ai-filesense-website.vercel.app/images/portfolio/ai-filesense-website-04.png",
-          "altEn": "The 12-Folder Smart System overview",
-          "altEs": "Vista general del Sistema Inteligente de 12 Carpetas"
-        },
-        {
-          "src": "https://ai-filesense-website.vercel.app/images/portfolio/ai-filesense-website-05.png",
-          "altEn": "Features page — differentiators and competitive advantages",
-          "altEs": "Pagina de caracteristicas — diferenciadores y ventajas competitivas"
-        },
-        {
-          "src": "https://ai-filesense-website.vercel.app/images/portfolio/ai-filesense-website-06.png",
-          "altEn": "Support hub with Getting Started guide",
-          "altEs": "Centro de soporte con guia de inicio"
-        },
-        {
-          "src": "https://ai-filesense-website.vercel.app/images/portfolio/ai-filesense-website-07.png",
-          "altEn": "Download page with system requirements and quick-start",
-          "altEs": "Pagina de descarga con requisitos del sistema e inicio rapido"
-        },
-        {
-          "src": "https://ai-filesense-website.vercel.app/images/portfolio/ai-filesense-website-08.png",
-          "altEn": "Dark mode — full theme support across all pages",
-          "altEs": "Modo oscuro — soporte completo de temas en todas las paginas"
-        }
-      ],
-      "videoUrl": "https://ai-filesense-website.vercel.app/videos/AI-FileSense-Website-brief.mp4",
-      "videoPoster": "https://ai-filesense-website.vercel.app/images/portfolio/AI-FileSense-Website-brief-poster.jpg"
-    },
-    {
-      "id": 1068781109,
-      "name": "react-vite-tailwind-base",
-      "title": "React Vite Tailwind Base",
-      "description": "React 19 template with ShadCN UI, TypeScript, and Vite 7. Features a fully interactive appointment booking system with calendar integration, real-time data visualizations using Recharts, and 17+ accessible components. Mobile-first design, SEO optimized, and built with modern best practices. Perfect for SaaS apps, dashboards, and booking systems.",
-      "summary": "A modern, production-ready React template with **ShadCN UI**, **data visualizations**, and a complete **interactive appointment booking showcase**. Built with best practices, mobile-first design, and ",
-      "url": "https://github.com/RCushmaniii/react-vite-tailwind-base",
-      "demoUrl": "https://react-vite-tailwind-base.vercel.app",
-      "liveUrl": "https://react-vite-tailwind-base.vercel.app",
-      "homepage": "https://react-vite-tailwind-base.vercel.app",
-      "topics": [
-        "react",
-        "shadcn",
-        "shadcn-ui",
-        "tailwindcss",
-        "vite"
-      ],
-      "categories": [
-        "Templates"
-      ],
-      "tags": [
-        "react",
-        "shadcn",
-        "shadcn-ui",
-        "tailwindcss",
-        "vite",
-        "starter-template"
-      ],
-      "stack": [
-        "TypeScript",
-        "React 19",
-        "Vite 7",
-        "Tailwind CSS",
-        "ShadCN UI",
-        "Recharts"
-      ],
-      "status": "Production",
-      "language": "TypeScript",
-      "languages": {
-        "TypeScript": 124273,
-        "JavaScript": 15673,
-        "HTML": 3826,
-        "CSS": 2102
-      },
-      "stars": 2,
-      "forks": 0,
-      "lastPushed": "2026-02-20T18:57:41Z",
-      "createdAt": "2025-10-02T22:40:01Z",
-      "isFeatured": true,
-      "isArchived": false,
-      "isPrivate": false,
-      "tagline": "React 19 + Vite 7 + ShadCN UI starter with appointment booking, calendar, charts, and 17+ components.",
-      "thumbnail": null,
-      "problem": "Starting new React projects requires significant boilerplate setup for routing, UI components, and common features.",
-      "solution": "Production-ready template with appointment booking, calendar, charts, and 17+ accessible components out of the box.",
-      "keyFeatures": [
-        "Interactive appointment booking with calendar integration",
-        "Real-time data visualizations using Recharts",
-        "17+ accessible ShadCN UI components",
-        "Mobile-first responsive design"
-      ],
-      "metrics": [],
-      "priority": 2,
-      "dateCompleted": "2026-01",
-      "slides": [],
-      "videoUrl": null,
-      "videoPoster": null
-    },
-    {
-      "id": 1114660708,
-      "name": "freelance-income-planner",
-      "title": "Freelance Income Planner",
-      "description": "A privacy-first income simulator for freelancers. Instantly see how rate changes, sick days, and taxes impact your real take-home pay. Bill in USD, spend in MXN. Plan for feast or famine. All calculations happen in your browser—your data never leaves your device.",
-      "summary": "description: A bilingual income planning tool for freelancers and consultants.",
-      "url": "https://github.com/RCushmaniii/freelance-income-planner",
-      "demoUrl": "https://freelance-income-planner.vercel.app",
-      "liveUrl": "https://freelance-income-planner.vercel.app",
-      "homepage": "https://freelance-income-planner.vercel.app/",
-      "topics": [
-        "bilingual",
-        "digital-nomad",
-        "freelance",
-        "i18n",
-        "income-calculator",
-        "nextjs",
-        "react",
-        "tailwindcss",
-        "typescript"
-      ],
-      "categories": [
-        "Tools"
-      ],
-      "tags": [
-        "bilingual",
-        "digital-nomad",
-        "freelance",
-        "i18n",
-        "income-calculator",
-        "nextjs",
-        "react",
-        "tailwindcss",
-        "typescript"
-      ],
-      "stack": [
-        "TypeScript",
-        "Next.js",
-        "React",
-        "Tailwind CSS"
-      ],
-      "status": "Production",
-      "language": "TypeScript",
-      "languages": {
-        "TypeScript": 272425,
-        "CSS": 4579,
-        "JavaScript": 997
-      },
-      "stars": 0,
-      "forks": 0,
-      "lastPushed": "2026-02-20T18:57:40Z",
-      "createdAt": "2025-12-11T17:38:35Z",
-      "isFeatured": true,
-      "isArchived": false,
-      "isPrivate": false,
-      "tagline": "Privacy-first income simulator for freelancers. See how rate changes, sick days, and taxes impact take-home pay.",
-      "thumbnail": null,
-      "problem": "Freelancers struggle to predict actual take-home pay with variable rates, taxes, and currency conversions.",
-      "solution": "Privacy-first calculator that runs entirely in-browser. Bill in USD, spend in MXN, plan for feast or famine.",
-      "keyFeatures": [
-        "Real-time income projections with tax calculations",
-        "Multi-currency support (USD/MXN)",
-        "Privacy-first: all data stays in browser",
-        "Bilingual interface (English/Spanish)"
-      ],
-      "metrics": [],
-      "priority": 2,
-      "dateCompleted": "2025-12",
-      "slides": [],
-      "videoUrl": null,
-      "videoPoster": null
     },
     {
       "id": 1102173157,
