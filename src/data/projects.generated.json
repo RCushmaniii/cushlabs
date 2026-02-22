@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-02-22T19:55:22.519Z",
+  "generatedAt": "2026-02-22T22:12:10.571Z",
   "count": 23,
   "projects": [
     {
@@ -59,7 +59,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-02-22T19:47:50Z",
+      "lastPushed": "2026-02-22T19:55:35Z",
       "createdAt": "2026-01-08T03:52:43Z",
       "isFeatured": true,
       "isArchived": false,
@@ -242,6 +242,220 @@
       "videoPoster": "https://www.nyenglishteacher.com/video/ny-eng-brief-poster.jpg"
     },
     {
+      "id": 1068781109,
+      "name": "react-vite-tailwind-base",
+      "title": "React Vite Tailwind Base",
+      "description": "React 19 template with ShadCN UI, TypeScript, and Vite 7. Features a fully interactive appointment booking system with calendar integration, real-time data visualizations using Recharts, and 17+ accessible components. Mobile-first design, SEO optimized, and built with modern best practices. Perfect for SaaS apps, dashboards, and booking systems.",
+      "summary": "> A production-ready React template with ShadCN UI, data visualizations, and a complete interactive appointment booking showcase.",
+      "url": "https://github.com/RCushmaniii/react-vite-tailwind-base",
+      "demoUrl": "https://react-vite-tailwind-base.vercel.app/components",
+      "liveUrl": "https://react-vite-tailwind-base.vercel.app",
+      "homepage": "https://react-vite-tailwind-base.vercel.app",
+      "topics": [
+        "react",
+        "shadcn",
+        "shadcn-ui",
+        "tailwindcss",
+        "vite"
+      ],
+      "categories": [
+        "Templates"
+      ],
+      "tags": [
+        "react",
+        "shadcn",
+        "shadcn-ui",
+        "tailwindcss",
+        "vite",
+        "typescript",
+        "tailwind-css",
+        "recharts",
+        "template",
+        "data-visualization",
+        "radix-ui",
+        "msw"
+      ],
+      "stack": [
+        "React 19",
+        "TypeScript 5.8",
+        "Vite 7",
+        "Tailwind CSS 4",
+        "ShadCN UI (Radix)",
+        "Recharts 3",
+        "React Router 7",
+        "MSW"
+      ],
+      "status": "Production",
+      "language": "TypeScript",
+      "languages": {
+        "TypeScript": 121804,
+        "JavaScript": 13119,
+        "HTML": 3826,
+        "CSS": 3819
+      },
+      "stars": 2,
+      "forks": 0,
+      "lastPushed": "2026-02-22T22:11:16Z",
+      "createdAt": "2025-10-02T22:40:01Z",
+      "isFeatured": true,
+      "isArchived": false,
+      "isPrivate": false,
+      "tagline": "Production-ready React 19 starter with ShadCN UI, charts, and a working booking system",
+      "thumbnail": "https://react-vite-tailwind-base.vercel.app/images/react-vite-tailwind-base-thumb.jpg",
+      "problem": "Starting a new React project means 1-2 days of unbillable configuration — TypeScript, Tailwind, component libraries, routing, linting, formatting, path aliases — before writing a single feature. Most starter templates solve this with empty scaffolding that still leaves developers guessing at integration patterns.",
+      "solution": "A production-ready foundation that ships with working features instead of blank pages. Clone, install, dev — and you're looking at a working appointment booking system, data visualization dashboard, and 17+ pre-configured ShadCN components in under 5 minutes. Every dependency is pinned to stable February 2026 versions.",
+      "keyFeatures": [
+        "17+ pre-configured ShadCN UI components — buttons, cards, calendars, dialogs, sliders, tabs, all sharing the same design tokens",
+        "Complete appointment booking flow — service selection, calendar, time slots, pricing, and confirmation built from composable components",
+        "Data visualization dashboard — three Recharts visualizations (area, pie, bar) integrated with responsive containers and Tailwind theming",
+        "Invisible infrastructure — TypeScript strict mode, ESLint, Prettier, and pnpm verify pipeline that fails the build on type errors",
+        "MSW API mocking — full CRUD mock endpoints so frontend development doesn't depend on a backend"
+      ],
+      "metrics": [
+        "Zero-to-running in under 5 minutes with 3 commands",
+        "17+ accessible ShadCN UI components pre-configured",
+        "1-2 days of setup time eliminated per project",
+        "All dependencies pinned to stable Feb 2026 versions"
+      ],
+      "priority": 2,
+      "dateCompleted": "2026-02",
+      "slides": [
+        {
+          "src": "https://react-vite-tailwind-base.vercel.app/images/react-vite-tailwind-base-01.png",
+          "altEn": "Modern React Foundation — React 19 + Vite 7 + ShadCN, stable versions pinned February 2026",
+          "altEs": "Base Moderna de React — React 19 + Vite 7 + ShadCN, versiones estables fijadas en febrero 2026"
+        },
+        {
+          "src": "https://react-vite-tailwind-base.vercel.app/images/react-vite-tailwind-base-02.png",
+          "altEn": "The Startup Ritual — the endless manual setup loop of installing React, configuring Tailwind, fixing class conflicts, and wiring component libraries",
+          "altEs": "El Ritual de Inicio — el ciclo interminable de instalar React, configurar Tailwind, resolver conflictos de clases y conectar librerias de componentes"
+        },
+        {
+          "src": "https://react-vite-tailwind-base.vercel.app/images/react-vite-tailwind-base-03.png",
+          "altEn": "The Hidden Cost of Setup — 1 to 2 days of unbillable time lost per project before writing any business logic",
+          "altEs": "El Costo Oculto de la Configuracion — 1 a 2 dias de tiempo no facturable perdido por proyecto antes de escribir logica de negocio"
+        },
+        {
+          "src": "https://react-vite-tailwind-base.vercel.app/images/react-vite-tailwind-base-04.png",
+          "altEn": "Redefining Ready — the norm is a blank page with dependencies installed, this foundation is production-ready immediately",
+          "altEs": "Redefiniendo Listo — lo normal es una pagina en blanco con dependencias instaladas, esta base esta lista para produccion de inmediato"
+        },
+        {
+          "src": "https://react-vite-tailwind-base.vercel.app/images/react-vite-tailwind-base-05.png",
+          "altEn": "The Stack — React 19, TypeScript 5.8, Vite 7, Tailwind CSS 4, ShadCN UI, React Router 7, no experimental packages",
+          "altEs": "El Stack — React 19, TypeScript 5.8, Vite 7, Tailwind CSS 4, ShadCN UI, React Router 7, sin paquetes experimentales"
+        },
+        {
+          "src": "https://react-vite-tailwind-base.vercel.app/images/react-vite-tailwind-base-06.png",
+          "altEn": "17+ pre-configured components — buttons, cards, calendars, dialogs, sliders, tabs, avatars, badges, and switches, all accessible",
+          "altEs": "17+ componentes preconfigurados — botones, tarjetas, calendarios, dialogos, sliders, tabs, avatares, insignias e interruptores, todos accesibles"
+        },
+        {
+          "src": "https://react-vite-tailwind-base.vercel.app/images/react-vite-tailwind-base-07.png",
+          "altEn": "Reference implementation — a working appointment booking flow with service selection, calendar, time slots, pricing, and confirmation",
+          "altEs": "Implementacion de referencia — flujo de reserva de citas funcional con seleccion de servicio, calendario, horarios, precios y confirmacion"
+        },
+        {
+          "src": "https://react-vite-tailwind-base.vercel.app/images/react-vite-tailwind-base-08.png",
+          "altEn": "The invisible infrastructure — TypeScript strict mode, ESLint, Prettier, pnpm verify, and MSW API mocking in the build pipeline",
+          "altEs": "La infraestructura invisible — TypeScript modo estricto, ESLint, Prettier, pnpm verify y mocking de API con MSW en el pipeline de build"
+        },
+        {
+          "src": "https://react-vite-tailwind-base.vercel.app/images/react-vite-tailwind-base-09.png",
+          "altEn": "Who this is for — freelancers and solo devs, IT departments building internal tools, and agencies needing a consistent starting point",
+          "altEs": "Para quien es — freelancers y desarrolladores independientes, departamentos de TI construyendo herramientas internas y agencias que necesitan un punto de partida consistente"
+        },
+        {
+          "src": "https://react-vite-tailwind-base.vercel.app/images/react-vite-tailwind-base-10.png",
+          "altEn": "The first 5 minutes — git clone, pnpm install, pnpm dev, ready in 300 seconds with a working app and real interactions",
+          "altEs": "Los primeros 5 minutos — git clone, pnpm install, pnpm dev, listo en 300 segundos con una app funcional e interacciones reales"
+        }
+      ],
+      "videoUrl": "https://react-vite-tailwind-base.vercel.app/video/react-vite-tailwind-base-brief.mp4",
+      "videoPoster": "https://react-vite-tailwind-base.vercel.app/video/react-vite-tailwind-base-brief-poster.jpg"
+    },
+    {
+      "id": 1114660708,
+      "name": "freelance-income-planner",
+      "title": "Freelance Income Planner",
+      "description": "A privacy-first income simulator for freelancers. Instantly see how rate changes, sick days, and taxes impact your real take-home pay. Bill in USD, spend in MXN. Plan for feast or famine. All calculations happen in your browser—your data never leaves your device.",
+      "summary": "description: A bilingual income planning tool for freelancers and consultants.",
+      "url": "https://github.com/RCushmaniii/freelance-income-planner",
+      "demoUrl": "https://freelance-income-planner.vercel.app",
+      "liveUrl": "https://freelance-income-planner.vercel.app",
+      "homepage": "https://freelance-income-planner.vercel.app/",
+      "topics": [
+        "bilingual",
+        "digital-nomad",
+        "freelance",
+        "i18n",
+        "income-calculator",
+        "nextjs",
+        "react",
+        "tailwindcss",
+        "typescript"
+      ],
+      "categories": [
+        "Tools"
+      ],
+      "tags": [
+        "bilingual",
+        "digital-nomad",
+        "freelance",
+        "i18n",
+        "income-calculator",
+        "nextjs",
+        "react",
+        "tailwindcss",
+        "typescript",
+        "privacy-first"
+      ],
+      "stack": [
+        "Next.js 14 (App Router)",
+        "TypeScript 5.5",
+        "React 18.3",
+        "Tailwind CSS 3.4",
+        "Zustand 4.4",
+        "Recharts 2.10",
+        "Vercel"
+      ],
+      "status": null,
+      "language": "TypeScript",
+      "languages": {
+        "TypeScript": 271536,
+        "CSS": 4579,
+        "JavaScript": 997
+      },
+      "stars": 0,
+      "forks": 0,
+      "lastPushed": "2026-02-22T22:10:11Z",
+      "createdAt": "2025-12-11T17:38:35Z",
+      "isFeatured": true,
+      "isArchived": false,
+      "isPrivate": false,
+      "tagline": "Privacy-first income simulator for freelancers. See how rate changes, sick days, and taxes impact take-home pay.",
+      "thumbnail": ".github/screenshots/app-screen-shot.jpg",
+      "problem": null,
+      "solution": null,
+      "keyFeatures": [],
+      "metrics": [],
+      "priority": 2,
+      "dateCompleted": null,
+      "slides": [
+        {
+          "src": null
+        },
+        {
+          "src": null
+        },
+        {
+          "src": null
+        }
+      ],
+      "videoUrl": null,
+      "videoPoster": null
+    },
+    {
       "id": 1120026584,
       "name": "context-writing-system",
       "title": "AI Writing System",
@@ -295,7 +509,7 @@
       },
       "stars": 1,
       "forks": 0,
-      "lastPushed": "2026-02-22T19:55:00Z",
+      "lastPushed": "2026-02-22T21:11:16Z",
       "createdAt": "2025-12-20T10:31:00Z",
       "isFeatured": true,
       "isArchived": false,
@@ -378,146 +592,6 @@
       ],
       "videoUrl": "https://cushlabs-writing-system.vercel.app/public/videos/context-writing-system-brief.mp4",
       "videoPoster": "https://cushlabs-writing-system.vercel.app/public/videos/context-writing-system-brief-poster.jpg"
-    },
-    {
-      "id": 1068781109,
-      "name": "react-vite-tailwind-base",
-      "title": "React Vite Tailwind Base",
-      "description": "React 19 template with ShadCN UI, TypeScript, and Vite 7. Features a fully interactive appointment booking system with calendar integration, real-time data visualizations using Recharts, and 17+ accessible components. Mobile-first design, SEO optimized, and built with modern best practices. Perfect for SaaS apps, dashboards, and booking systems.",
-      "summary": "A modern, production-ready React template with **ShadCN UI**, **data visualizations**, and a complete **interactive appointment booking showcase**. Built with best practices, mobile-first design, and ",
-      "url": "https://github.com/RCushmaniii/react-vite-tailwind-base",
-      "demoUrl": "https://react-vite-tailwind-base.vercel.app",
-      "liveUrl": "https://react-vite-tailwind-base.vercel.app",
-      "homepage": "https://react-vite-tailwind-base.vercel.app",
-      "topics": [
-        "react",
-        "shadcn",
-        "shadcn-ui",
-        "tailwindcss",
-        "vite"
-      ],
-      "categories": [
-        "Templates"
-      ],
-      "tags": [
-        "react",
-        "shadcn",
-        "shadcn-ui",
-        "tailwindcss",
-        "vite",
-        "starter-template"
-      ],
-      "stack": [
-        "TypeScript",
-        "React 19",
-        "Vite 7",
-        "Tailwind CSS",
-        "ShadCN UI",
-        "Recharts"
-      ],
-      "status": "Production",
-      "language": "TypeScript",
-      "languages": {
-        "TypeScript": 124273,
-        "JavaScript": 15673,
-        "HTML": 3826,
-        "CSS": 2102
-      },
-      "stars": 2,
-      "forks": 0,
-      "lastPushed": "2026-02-22T19:40:14Z",
-      "createdAt": "2025-10-02T22:40:01Z",
-      "isFeatured": true,
-      "isArchived": false,
-      "isPrivate": false,
-      "tagline": "React 19 + Vite 7 + ShadCN UI starter with appointment booking, calendar, charts, and 17+ components.",
-      "thumbnail": null,
-      "problem": "Starting new React projects requires significant boilerplate setup for routing, UI components, and common features.",
-      "solution": "Production-ready template with appointment booking, calendar, charts, and 17+ accessible components out of the box.",
-      "keyFeatures": [
-        "Interactive appointment booking with calendar integration",
-        "Real-time data visualizations using Recharts",
-        "17+ accessible ShadCN UI components",
-        "Mobile-first responsive design"
-      ],
-      "metrics": [],
-      "priority": 2,
-      "dateCompleted": "2026-01",
-      "slides": [],
-      "videoUrl": null,
-      "videoPoster": null
-    },
-    {
-      "id": 1114660708,
-      "name": "freelance-income-planner",
-      "title": "Freelance Income Planner",
-      "description": "A privacy-first income simulator for freelancers. Instantly see how rate changes, sick days, and taxes impact your real take-home pay. Bill in USD, spend in MXN. Plan for feast or famine. All calculations happen in your browser—your data never leaves your device.",
-      "summary": "description: A bilingual income planning tool for freelancers and consultants.",
-      "url": "https://github.com/RCushmaniii/freelance-income-planner",
-      "demoUrl": "https://freelance-income-planner.vercel.app",
-      "liveUrl": "https://freelance-income-planner.vercel.app",
-      "homepage": "https://freelance-income-planner.vercel.app/",
-      "topics": [
-        "bilingual",
-        "digital-nomad",
-        "freelance",
-        "i18n",
-        "income-calculator",
-        "nextjs",
-        "react",
-        "tailwindcss",
-        "typescript"
-      ],
-      "categories": [
-        "Tools"
-      ],
-      "tags": [
-        "bilingual",
-        "digital-nomad",
-        "freelance",
-        "i18n",
-        "income-calculator",
-        "nextjs",
-        "react",
-        "tailwindcss",
-        "typescript"
-      ],
-      "stack": [
-        "TypeScript",
-        "Next.js",
-        "React",
-        "Tailwind CSS"
-      ],
-      "status": "Production",
-      "language": "TypeScript",
-      "languages": {
-        "TypeScript": 270895,
-        "CSS": 4579,
-        "JavaScript": 997
-      },
-      "stars": 0,
-      "forks": 0,
-      "lastPushed": "2026-02-22T19:23:53Z",
-      "createdAt": "2025-12-11T17:38:35Z",
-      "isFeatured": true,
-      "isArchived": false,
-      "isPrivate": false,
-      "tagline": "Privacy-first income simulator for freelancers. See how rate changes, sick days, and taxes impact take-home pay.",
-      "thumbnail": null,
-      "problem": "Freelancers struggle to predict actual take-home pay with variable rates, taxes, and currency conversions.",
-      "solution": "Privacy-first calculator that runs entirely in-browser. Bill in USD, spend in MXN, plan for feast or famine.",
-      "keyFeatures": [
-        "Real-time income projections with tax calculations",
-        "Multi-currency support (USD/MXN)",
-        "Privacy-first: all data stays in browser",
-        "Bilingual interface (English/Spanish)"
-      ],
-      "metrics": [],
-      "priority": 2,
-      "dateCompleted": "2025-12",
-      "slides": [],
-      "videoUrl": null,
-      "videoPoster": null
     },
     {
       "id": 1133839610,
@@ -2321,6 +2395,63 @@
       "videoPoster": "https://aistockalert.app/videos/AI-StockAlert-brief-poster.jpg"
     },
     {
+      "id": 1108213747,
+      "name": "ai-chatbot-saas",
+      "title": "AI Chatbot SaaS Platform",
+      "description": "Multi-tenant AI chatbot SaaS platform - Ragbot by CushLabs.AI",
+      "summary": "<h1 align=\"center\">Bilingual AI Front Desk & Sales Assistant (SaaS)</h1>",
+      "url": "https://github.com/RCushmaniii/ai-chatbot-saas",
+      "demoUrl": "https://ai-chatbot-saas-delta.vercel.app",
+      "liveUrl": "",
+      "homepage": "https://ai-chatbot-saas-delta.vercel.app",
+      "topics": [],
+      "categories": [
+        "AI Automation"
+      ],
+      "tags": [
+        "saas",
+        "chatbot",
+        "multi-tenant",
+        "ai",
+        "white-label",
+        "platform"
+      ],
+      "stack": [
+        "Next.js 14",
+        "TypeScript",
+        "PostgreSQL",
+        "Prisma ORM",
+        "OpenAI API",
+        "Stripe",
+        "Vercel"
+      ],
+      "status": null,
+      "language": "TypeScript",
+      "languages": {
+        "TypeScript": 1042029,
+        "JavaScript": 12530,
+        "CSS": 10149
+      },
+      "stars": 0,
+      "forks": 0,
+      "lastPushed": "2026-02-22T19:56:51Z",
+      "createdAt": "2025-12-02T07:09:31Z",
+      "isFeatured": false,
+      "isArchived": false,
+      "isPrivate": false,
+      "tagline": "White-label chatbot platform for agencies to deploy custom AI assistants",
+      "thumbnail": null,
+      "problem": null,
+      "solution": null,
+      "keyFeatures": [],
+      "metrics": [],
+      "priority": 4,
+      "dateCompleted": null,
+      "slides": [],
+      "videoUrl": null,
+      "videoPoster": null
+    },
+    {
       "id": 1159724330,
       "name": "mazebreak-trello",
       "title": "MazeBreak Trello Board Automation",
@@ -2415,63 +2546,6 @@
         }
       ],
       "videoUrl": "https://mazebreak-trello.vercel.app/video/MazeBreak__Sprint_as_Code.mp4",
-      "videoPoster": null
-    },
-    {
-      "id": 1108213747,
-      "name": "ai-chatbot-saas",
-      "title": "AI Chatbot SaaS Platform",
-      "description": "Multi-tenant AI chatbot SaaS platform - Ragbot by CushLabs.AI",
-      "summary": "<h1 align=\"center\">Bilingual AI Front Desk & Sales Assistant (SaaS)</h1>",
-      "url": "https://github.com/RCushmaniii/ai-chatbot-saas",
-      "demoUrl": "https://ai-chatbot-saas-delta.vercel.app",
-      "liveUrl": "",
-      "homepage": "https://ai-chatbot-saas-delta.vercel.app",
-      "topics": [],
-      "categories": [
-        "AI Automation"
-      ],
-      "tags": [
-        "saas",
-        "chatbot",
-        "multi-tenant",
-        "ai",
-        "white-label",
-        "platform"
-      ],
-      "stack": [
-        "Next.js 14",
-        "TypeScript",
-        "PostgreSQL",
-        "Prisma ORM",
-        "OpenAI API",
-        "Stripe",
-        "Vercel"
-      ],
-      "status": null,
-      "language": "TypeScript",
-      "languages": {
-        "TypeScript": 1041346,
-        "JavaScript": 12530,
-        "CSS": 10149
-      },
-      "stars": 0,
-      "forks": 0,
-      "lastPushed": "2026-02-20T18:57:29Z",
-      "createdAt": "2025-12-02T07:09:31Z",
-      "isFeatured": false,
-      "isArchived": false,
-      "isPrivate": false,
-      "tagline": "White-label chatbot platform for agencies to deploy custom AI assistants",
-      "thumbnail": null,
-      "problem": null,
-      "solution": null,
-      "keyFeatures": [],
-      "metrics": [],
-      "priority": 4,
-      "dateCompleted": null,
-      "slides": [],
-      "videoUrl": null,
       "videoPoster": null
     },
     {
