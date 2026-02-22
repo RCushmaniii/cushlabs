@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-02-22T19:47:33.662Z",
+  "generatedAt": "2026-02-22T19:55:22.519Z",
   "count": 23,
   "projects": [
     {
@@ -59,7 +59,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-02-22T05:36:52Z",
+      "lastPushed": "2026-02-22T19:47:50Z",
       "createdAt": "2026-01-08T03:52:43Z",
       "isFeatured": true,
       "isArchived": false,
@@ -244,7 +244,7 @@
     {
       "id": 1120026584,
       "name": "context-writing-system",
-      "title": "Context Engineering Kit",
+      "title": "AI Writing System",
       "description": "Context-engineering system to lock brand voice, enforce truth, and generate consistent AI-written content at scale.",
       "summary": "**Clone your voice. Crush content. Scale forever.**",
       "url": "https://github.com/RCushmaniii/context-writing-system",
@@ -295,13 +295,13 @@
       },
       "stars": 1,
       "forks": 0,
-      "lastPushed": "2026-02-22T19:46:19Z",
+      "lastPushed": "2026-02-22T19:55:00Z",
       "createdAt": "2025-12-20T10:31:00Z",
       "isFeatured": true,
       "isArchived": false,
       "isPrivate": false,
-      "tagline": "Context-engineering framework that makes AI write like you, not like AI",
-      "thumbnail": "https://cushlabs-writing-system.vercel.app/images/context-writing-system-thumb.jpg",
+      "tagline": "Clone your brand voice once — AI writes like you across every channel, no drift",
+      "thumbnail": "https://cushlabs-writing-system.vercel.app/public/images/context-writing-system-thumb.jpg",
       "problem": "AI-generated content starts strong but drifts into generic corporate filler within minutes. Teams spend more time editing AI output than they saved generating it — killing hype, restoring voice, and fact-checking hallucinated claims. Every new chat session starts from zero because there's no persistent memory of who you are, what you sell, or what you're allowed to say.",
       "solution": "A structured context-engineering framework that stores your voice, audience profile, business facts, and claim rules in persistent JSON truth files. When you request any content type — landing page, email, LinkedIn post — the AI loads these truth files plus format-specific skills to produce consistent, on-brand output without hallucinated claims or generic phrasing. First drafts arrive 90% ready. You review instead of rewrite.",
       "keyFeatures": [
@@ -321,63 +321,63 @@
       "dateCompleted": "2025-12",
       "slides": [
         {
-          "src": "https://cushlabs-writing-system.vercel.app/images/context-writing-system-01.png",
-          "altEn": "The Context Engineering Kit — Structure beats prompts, truth beats cleverness",
-          "altEs": "El Kit de Ingenieria de Contexto — La estructura supera a los prompts, la verdad supera a la astucia"
+          "src": "https://cushlabs-writing-system.vercel.app/public/images/context-writing-system-01.png",
+          "altEn": "AI Writing System — Structure beats prompts, truth beats cleverness",
+          "altEs": "Sistema de Escritura IA — La estructura supera a los prompts, la verdad supera a la astucia"
         },
         {
-          "src": "https://cushlabs-writing-system.vercel.app/images/context-writing-system-02.png",
+          "src": "https://cushlabs-writing-system.vercel.app/public/images/context-writing-system-02.png",
           "altEn": "You are using AI but it sounds like AI — content quality degrades over time as tone flattens into generic corporate filler",
           "altEs": "Usas IA pero suena a IA — la calidad del contenido se degrada con el tiempo hasta convertirse en relleno corporativo generico"
         },
         {
-          "src": "https://cushlabs-writing-system.vercel.app/images/context-writing-system-03.png",
+          "src": "https://cushlabs-writing-system.vercel.app/public/images/context-writing-system-03.png",
           "altEn": "It's not a prompt problem, it's a memory problem — you rebuild context from scratch every time",
           "altEs": "No es un problema de prompts, es un problema de memoria — reconstruyes el contexto desde cero cada vez"
         },
         {
-          "src": "https://cushlabs-writing-system.vercel.app/images/context-writing-system-04.png",
+          "src": "https://cushlabs-writing-system.vercel.app/public/images/context-writing-system-04.png",
           "altEn": "Locking your reality with the four pillars of truth — Voice DNA, Business Profile, Ideal Client, and Claims Policy",
           "altEs": "Bloqueando tu realidad con los cuatro pilares de verdad — ADN de Voz, Perfil de Negocio, Cliente Ideal y Politica de Afirmaciones"
         },
         {
-          "src": "https://cushlabs-writing-system.vercel.app/images/context-writing-system-05.png",
+          "src": "https://cushlabs-writing-system.vercel.app/public/images/context-writing-system-05.png",
           "altEn": "Clone your voice once, use it everywhere — teaches AI your rhythm, tone, and boundaries instantly",
           "altEs": "Clona tu voz una vez, usala en todas partes — ensena a la IA tu ritmo, tono y limites al instante"
         },
         {
-          "src": "https://cushlabs-writing-system.vercel.app/images/context-writing-system-06.png",
+          "src": "https://cushlabs-writing-system.vercel.app/public/images/context-writing-system-06.png",
           "altEn": "Automated credibility protection — no hallucinations, no fake metrics, if it violates the policy it doesn't ship",
           "altEs": "Proteccion de credibilidad automatizada — sin alucinaciones, sin metricas falsas, si viola la politica no se publica"
         },
         {
-          "src": "https://cushlabs-writing-system.vercel.app/images/context-writing-system-07.png",
+          "src": "https://cushlabs-writing-system.vercel.app/public/images/context-writing-system-07.png",
           "altEn": "Format-specific skills — dedicated content blueprints for LinkedIn, sales decks, cold emails, landing pages, and tech READMEs",
           "altEs": "Habilidades especificas por formato — plantillas dedicadas para LinkedIn, presentaciones, emails frios, landing pages y READMEs tecnicos"
         },
         {
-          "src": "https://cushlabs-writing-system.vercel.app/images/context-writing-system-08.png",
+          "src": "https://cushlabs-writing-system.vercel.app/public/images/context-writing-system-08.png",
           "altEn": "No ambiguity — a strict hierarchy of control where truth and claims policy always override voice, audience, and format rules",
           "altEs": "Sin ambiguedad — una jerarquia estricta de control donde la verdad y la politica de afirmaciones siempre prevalecen sobre voz, audiencia y formato"
         },
         {
-          "src": "https://cushlabs-writing-system.vercel.app/images/context-writing-system-09.png",
+          "src": "https://cushlabs-writing-system.vercel.app/public/images/context-writing-system-09.png",
           "altEn": "Reviewing not rewriting — first drafts arrive 90% ready, reducing 45 minutes of editing to 5 minutes of review",
           "altEs": "Revisar en vez de reescribir — los primeros borradores llegan 90% listos, reduciendo 45 minutos de edicion a 5 minutos de revision"
         },
         {
-          "src": "https://cushlabs-writing-system.vercel.app/images/context-writing-system-10.png",
+          "src": "https://cushlabs-writing-system.vercel.app/public/images/context-writing-system-10.png",
           "altEn": "One identity, many channels — consistent brand voice across every platform powered by the same truth files",
           "altEs": "Una identidad, muchos canales — voz de marca consistente en cada plataforma impulsada por los mismos archivos de verdad"
         },
         {
-          "src": "https://cushlabs-writing-system.vercel.app/images/context-writing-system-11.png",
+          "src": "https://cushlabs-writing-system.vercel.app/public/images/context-writing-system-11.png",
           "altEn": "Build your infrastructure — systems beat inspiration, ready to engineer your context",
           "altEs": "Construye tu infraestructura — los sistemas superan la inspiracion, listo para disenar tu contexto"
         }
       ],
-      "videoUrl": "https://cushlabs-writing-system.vercel.app/videos/context-writing-system-brief.mp4",
-      "videoPoster": "https://cushlabs-writing-system.vercel.app/videos/context-writing-system-brief-poster.jpg"
+      "videoUrl": "https://cushlabs-writing-system.vercel.app/public/videos/context-writing-system-brief.mp4",
+      "videoPoster": "https://cushlabs-writing-system.vercel.app/public/videos/context-writing-system-brief-poster.jpg"
     },
     {
       "id": 1068781109,
