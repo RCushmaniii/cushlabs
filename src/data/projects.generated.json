@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-02-22T22:12:10.571Z",
+  "generatedAt": "2026-02-22T22:55:49.441Z",
   "count": 23,
   "projects": [
     {
@@ -59,7 +59,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-02-22T19:55:35Z",
+      "lastPushed": "2026-02-22T22:12:40Z",
       "createdAt": "2026-01-08T03:52:43Z",
       "isFeatured": true,
       "isArchived": false,
@@ -242,6 +242,147 @@
       "videoPoster": "https://www.nyenglishteacher.com/video/ny-eng-brief-poster.jpg"
     },
     {
+      "id": 1114660708,
+      "name": "freelance-income-planner",
+      "title": "Freelance Income Planner",
+      "description": "A privacy-first income simulator for freelancers. Instantly see how rate changes, sick days, and taxes impact your real take-home pay. Bill in USD, spend in MXN. Plan for feast or famine. All calculations happen in your browser—your data never leaves your device.",
+      "summary": "description: A bilingual income planning tool for freelancers and consultants.",
+      "url": "https://github.com/RCushmaniii/freelance-income-planner",
+      "demoUrl": "https://freelance-income-planner.vercel.app",
+      "liveUrl": "https://freelance-income-planner.vercel.app",
+      "homepage": "https://freelance-income-planner.vercel.app/",
+      "topics": [
+        "bilingual",
+        "digital-nomad",
+        "freelance",
+        "i18n",
+        "income-calculator",
+        "nextjs",
+        "react",
+        "tailwindcss",
+        "typescript"
+      ],
+      "categories": [
+        "Tools"
+      ],
+      "tags": [
+        "bilingual",
+        "digital-nomad",
+        "freelance",
+        "i18n",
+        "income-calculator",
+        "nextjs",
+        "react",
+        "tailwindcss",
+        "typescript",
+        "privacy-first",
+        "zustand",
+        "recharts",
+        "multi-currency"
+      ],
+      "stack": [
+        "Next.js 14",
+        "TypeScript 5.5",
+        "React 18.3",
+        "Tailwind CSS 3.4",
+        "Zustand 4.4",
+        "Recharts 2.10",
+        "Vercel"
+      ],
+      "status": "Production",
+      "language": "TypeScript",
+      "languages": {
+        "TypeScript": 271536,
+        "CSS": 4579,
+        "JavaScript": 997
+      },
+      "stars": 0,
+      "forks": 0,
+      "lastPushed": "2026-02-22T22:55:19Z",
+      "createdAt": "2025-12-11T17:38:35Z",
+      "isFeatured": true,
+      "isArchived": false,
+      "isPrivate": false,
+      "tagline": "Privacy-first income simulator — see how rates, taxes, and currencies impact take-home pay",
+      "thumbnail": "https://freelance-income-planner.vercel.app/images/freelance-income-planner-thumb.jpg",
+      "problem": "Freelancers can't predict take-home pay reliably. Variable hours, shifting tax rates, business expenses, and cross-currency billing make it nearly impossible to answer 'can I afford this lifestyle?' without a spreadsheet. Existing tools either require account creation, send data to servers, or don't handle multi-currency scenarios.",
+      "solution": "A privacy-first bilingual income calculator that runs entirely in the browser. Enter your rate, hours, taxes, and expenses — get an instant breakdown of real take-home pay. Supports 9 currency pair combinations (USD/MXN/EUR), three-scenario forecasting with seasonal modeling, and honest deficit reporting. No login, no database, no cookies.",
+      "keyFeatures": [
+        "Real-time income projections with transparent calculation breakdowns — math updates as you type, no submit button",
+        "Dual-currency engine supporting 9 currency pair combinations (USD/MXN/EUR) with bidirectional conversion",
+        "Three-scenario forecasting — pessimistic, realistic, optimistic with monthly projection charts and runway analysis",
+        "Zero data leaves the browser — 100% client-side computation with localStorage persistence",
+        "Fully bilingual interface (EN/ES) with automatic number formatting per locale"
+      ],
+      "metrics": [
+        "Answers 'what's my real take-home?' in under 30 seconds",
+        "151 edge cases validated in the calculation engine",
+        "9 currency pair combinations (USD/MXN/EUR)",
+        "Zero data transmitted — 100% client-side computation"
+      ],
+      "priority": 2,
+      "dateCompleted": "2026-02",
+      "slides": [
+        {
+          "src": "https://freelance-income-planner.vercel.app/images/freelance-income-planner-01.png",
+          "altEn": "Freelance Income Planner — financial clarity for independent workers, answering what do I actually take home",
+          "altEs": "Planificador de Ingresos Freelance — claridad financiera para trabajadores independientes, respondiendo cuanto realmente me llevo a casa"
+        },
+        {
+          "src": "https://freelance-income-planner.vercel.app/images/freelance-income-planner-02.png",
+          "altEn": "$100/hr does not equal wealthy — taxes, admin time, expenses, and currency conversion create a fog that hides real earnings",
+          "altEs": "$100/hr no significa ser rico — impuestos, tiempo administrativo, gastos y conversion de moneda crean una niebla que oculta las ganancias reales"
+        },
+        {
+          "src": "https://freelance-income-planner.vercel.app/images/freelance-income-planner-03.png",
+          "altEn": "The tool gap — spreadsheets are fragile, accounting software is backward-looking, online calculators are too simple",
+          "altEs": "La brecha de herramientas — las hojas de calculo son fragiles, el software contable mira al pasado, las calculadoras en linea son demasiado simples"
+        },
+        {
+          "src": "https://freelance-income-planner.vercel.app/images/freelance-income-planner-04.png",
+          "altEn": "No login, no loading — no signup wall, no onboarding carousel, no database, no cookies, clarity without ceremony",
+          "altEs": "Sin login, sin carga — sin muro de registro, sin carrusel de onboarding, sin base de datos, sin cookies, claridad sin ceremonias"
+        },
+        {
+          "src": "https://freelance-income-planner.vercel.app/images/freelance-income-planner-05.png",
+          "altEn": "The Snapshot — sensible defaults pre-filled, math updates as you type, proof the tool works in 30 seconds",
+          "altEs": "La Instantanea — valores predeterminados sensatos, las matematicas se actualizan al escribir, prueba de que la herramienta funciona en 30 segundos"
+        },
+        {
+          "src": "https://freelance-income-planner.vercel.app/images/freelance-income-planner-06.png",
+          "altEn": "The Reality Check — pre-tax logic shows how business expenses reduce taxable income, revealing effective hourly rate of $68/hr on a $100/hr billed rate",
+          "altEs": "La Verificacion de Realidad — la logica pre-impuestos muestra como los gastos de negocio reducen el ingreso gravable, revelando una tarifa efectiva de $68/hr sobre una tarifa facturada de $100/hr"
+        },
+        {
+          "src": "https://freelance-income-planner.vercel.app/images/freelance-income-planner-07.png",
+          "altEn": "Modeling the future — drag the slider to test rate increases from -20% to +50% and instantly see the impact on annual net",
+          "altEs": "Modelando el futuro — arrastra el slider para probar aumentos de tarifa de -20% a +50% y ver al instante el impacto en el neto anual"
+        },
+        {
+          "src": "https://freelance-income-planner.vercel.app/images/freelance-income-planner-08.png",
+          "altEn": "Earn in one currency, live in another — dual-currency engine with 9 combinations showing real purchasing power in your local currency",
+          "altEs": "Gana en una moneda, vive en otra — motor de doble moneda con 9 combinaciones mostrando poder adquisitivo real en tu moneda local"
+        },
+        {
+          "src": "https://freelance-income-planner.vercel.app/images/freelance-income-planner-09.png",
+          "altEn": "Freelancing is seasonal — three-scenario planning with monthly projection charts modeling feast and famine cycles and savings runway",
+          "altEs": "El freelance es estacional — planificacion de tres escenarios con graficos de proyeccion mensual modelando ciclos de abundancia y escasez y pista de ahorros"
+        },
+        {
+          "src": "https://freelance-income-planner.vercel.app/images/freelance-income-planner-10.png",
+          "altEn": "Engineered for reliability — deterministic math validated against 151 edge cases, fully bilingual with automatic number formatting",
+          "altEs": "Disenado para confiabilidad — matematicas deterministas validadas contra 151 casos limite, completamente bilingue con formato numerico automatico"
+        },
+        {
+          "src": "https://freelance-income-planner.vercel.app/images/freelance-income-planner-11.png",
+          "altEn": "Who is this for — hourly freelancers, cross-border workers earning in USD living in MXN/EUR, privacy advocates, and agency owners",
+          "altEs": "Para quien es — freelancers por hora, trabajadores transfronterizos que ganan en USD y viven en MXN/EUR, defensores de la privacidad y duenos de agencias"
+        }
+      ],
+      "videoUrl": "https://freelance-income-planner.vercel.app/video/freelance-income-planner-brief.mp4",
+      "videoPoster": "https://freelance-income-planner.vercel.app/video/freelance-income-planner-brief-poster.jpg"
+    },
+    {
       "id": 1068781109,
       "name": "react-vite-tailwind-base",
       "title": "React Vite Tailwind Base",
@@ -295,7 +436,7 @@
       },
       "stars": 2,
       "forks": 0,
-      "lastPushed": "2026-02-22T22:11:16Z",
+      "lastPushed": "2026-02-22T22:49:44Z",
       "createdAt": "2025-10-02T22:40:01Z",
       "isFeatured": true,
       "isArchived": false,
@@ -373,87 +514,6 @@
       ],
       "videoUrl": "https://react-vite-tailwind-base.vercel.app/video/react-vite-tailwind-base-brief.mp4",
       "videoPoster": "https://react-vite-tailwind-base.vercel.app/video/react-vite-tailwind-base-brief-poster.jpg"
-    },
-    {
-      "id": 1114660708,
-      "name": "freelance-income-planner",
-      "title": "Freelance Income Planner",
-      "description": "A privacy-first income simulator for freelancers. Instantly see how rate changes, sick days, and taxes impact your real take-home pay. Bill in USD, spend in MXN. Plan for feast or famine. All calculations happen in your browser—your data never leaves your device.",
-      "summary": "description: A bilingual income planning tool for freelancers and consultants.",
-      "url": "https://github.com/RCushmaniii/freelance-income-planner",
-      "demoUrl": "https://freelance-income-planner.vercel.app",
-      "liveUrl": "https://freelance-income-planner.vercel.app",
-      "homepage": "https://freelance-income-planner.vercel.app/",
-      "topics": [
-        "bilingual",
-        "digital-nomad",
-        "freelance",
-        "i18n",
-        "income-calculator",
-        "nextjs",
-        "react",
-        "tailwindcss",
-        "typescript"
-      ],
-      "categories": [
-        "Tools"
-      ],
-      "tags": [
-        "bilingual",
-        "digital-nomad",
-        "freelance",
-        "i18n",
-        "income-calculator",
-        "nextjs",
-        "react",
-        "tailwindcss",
-        "typescript",
-        "privacy-first"
-      ],
-      "stack": [
-        "Next.js 14 (App Router)",
-        "TypeScript 5.5",
-        "React 18.3",
-        "Tailwind CSS 3.4",
-        "Zustand 4.4",
-        "Recharts 2.10",
-        "Vercel"
-      ],
-      "status": null,
-      "language": "TypeScript",
-      "languages": {
-        "TypeScript": 271536,
-        "CSS": 4579,
-        "JavaScript": 997
-      },
-      "stars": 0,
-      "forks": 0,
-      "lastPushed": "2026-02-22T22:10:11Z",
-      "createdAt": "2025-12-11T17:38:35Z",
-      "isFeatured": true,
-      "isArchived": false,
-      "isPrivate": false,
-      "tagline": "Privacy-first income simulator for freelancers. See how rate changes, sick days, and taxes impact take-home pay.",
-      "thumbnail": ".github/screenshots/app-screen-shot.jpg",
-      "problem": null,
-      "solution": null,
-      "keyFeatures": [],
-      "metrics": [],
-      "priority": 2,
-      "dateCompleted": null,
-      "slides": [
-        {
-          "src": null
-        },
-        {
-          "src": null
-        },
-        {
-          "src": null
-        }
-      ],
-      "videoUrl": null,
-      "videoPoster": null
     },
     {
       "id": 1120026584,
