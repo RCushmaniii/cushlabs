@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-02-22T04:58:51.737Z",
+  "generatedAt": "2026-02-22T05:36:41.011Z",
   "count": 23,
   "projects": [
     {
@@ -59,7 +59,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-02-21T21:17:07Z",
+      "lastPushed": "2026-02-22T04:59:02Z",
       "createdAt": "2026-01-08T03:52:43Z",
       "isFeatured": true,
       "isArchived": false,
@@ -240,6 +240,127 @@
       ],
       "videoUrl": "https://www.nyenglishteacher.com/video/ny-eng-brief.mp4",
       "videoPoster": "https://www.nyenglishteacher.com/video/ny-eng-brief-poster.jpg"
+    },
+    {
+      "id": 1119144204,
+      "name": "nextjs-react-agency-starter",
+      "title": "Next.js Agency Starter",
+      "description": "The Next.js React Agency Starter provides a clean, scalable, and production-ready foundation for building modern agency and portfolio websites using Next.js, React, and TypeScript.",
+      "summary": "> A production-grade starter template for agency, marketing, and portfolio websites — built for real client work, not tutorials.",
+      "url": "https://github.com/RCushmaniii/nextjs-react-agency-starter",
+      "demoUrl": "https://nextjs-react-agency-starter.vercel.app/",
+      "liveUrl": "https://nextjs-react-agency-starter.vercel.app/",
+      "homepage": "https://nextjs-react-agency-starter.vercel.app/",
+      "topics": [
+        "nextjs",
+        "react",
+        "starter-kit",
+        "tailwindcss"
+      ],
+      "categories": [
+        "Templates"
+      ],
+      "tags": [
+        "nextjs",
+        "react",
+        "starter-kit",
+        "tailwindcss",
+        "typescript",
+        "tailwind-css",
+        "mdx",
+        "starter-template",
+        "agency",
+        "resend"
+      ],
+      "stack": [
+        "Next.js 14",
+        "TypeScript",
+        "Tailwind CSS",
+        "MDX",
+        "Resend"
+      ],
+      "status": "Production",
+      "language": "TypeScript",
+      "languages": {
+        "TypeScript": 172649,
+        "MDX": 27835,
+        "CSS": 1030,
+        "JavaScript": 260
+      },
+      "stars": 0,
+      "forks": 0,
+      "lastPushed": "2026-02-22T05:36:07Z",
+      "createdAt": "2025-12-18T20:18:05Z",
+      "isFeatured": true,
+      "isArchived": false,
+      "isPrivate": false,
+      "tagline": "Production-grade agency website template with MDX content and email pipeline",
+      "thumbnail": "https://nextjs-react-agency-starter.vercel.app/images/portfolio/nextjs-react-agency-starter-thumb.jpg",
+      "problem": "Most web starter templates are either over-engineered with opinionated abstractions or under-built with missing production essentials. Agency developers waste time rebuilding the same infrastructure — forms, content management, SEO, dark mode — for every client project.",
+      "solution": "A production-grade Next.js starter that ships with a unified UI system, MDX-powered blog and case study content, and a complete contact form pipeline with Zod validation and Resend email delivery. Clone it, customize the brand, and ship — no placeholders, no TODOs.",
+      "keyFeatures": [
+        "Cohesive UI system with layout primitives (Container, Section, Stack) and reusable components",
+        "MDX content workflow for blogs and case studies — drop in a file, no CMS or database needed",
+        "Production contact pipeline: React Hook Form + Zod validation + Server Actions + Resend email",
+        "SEO-first: auto-generated sitemap/robots.txt, structured data, Open Graph, Twitter Cards",
+        "Dark mode with localStorage persistence, WCAG AA accessibility, 90+ Lighthouse scores"
+      ],
+      "metrics": [
+        "90+ Lighthouse performance scores out of the box",
+        "Zero database dependencies — file-based MDX content",
+        "End-to-end contact form with validation and email delivery"
+      ],
+      "priority": 2,
+      "dateCompleted": "2025-12",
+      "slides": [
+        {
+          "src": "https://nextjs-react-agency-starter.vercel.app/images/portfolio/nextjs-react-agency-starter-01.png",
+          "altEn": "Next.js Agency Starter — production-grade foundation for agency and marketing websites",
+          "altEs": "Next.js Agency Starter — base de produccion para sitios web de agencias y marketing"
+        },
+        {
+          "src": "https://nextjs-react-agency-starter.vercel.app/images/portfolio/nextjs-react-agency-starter-02.png",
+          "altEn": "The Template Trap — over-engineered or under-built, neither saves agency developers time",
+          "altEs": "La Trampa de las Plantillas — sobre-ingeniadas o incompletas, ninguna ahorra tiempo"
+        },
+        {
+          "src": "https://nextjs-react-agency-starter.vercel.app/images/portfolio/nextjs-react-agency-starter-03.png",
+          "altEn": "Cohesive UI System — layout primitives and reusable components with unified design language",
+          "altEs": "Sistema UI Cohesivo — primitivas de layout y componentes reutilizables con lenguaje de diseno unificado"
+        },
+        {
+          "src": "https://nextjs-react-agency-starter.vercel.app/images/portfolio/nextjs-react-agency-starter-04.png",
+          "altEn": "MDX Content Workflow — blog posts and case studies as files, no CMS or database required",
+          "altEs": "Flujo de Contenido MDX — posts de blog y casos de estudio como archivos, sin CMS ni base de datos"
+        },
+        {
+          "src": "https://nextjs-react-agency-starter.vercel.app/images/portfolio/nextjs-react-agency-starter-05.png",
+          "altEn": "Production Contact Pipeline — validation, server actions, and Resend email delivery end-to-end",
+          "altEs": "Pipeline de Contacto en Produccion — validacion, server actions y entrega de email con Resend"
+        },
+        {
+          "src": "https://nextjs-react-agency-starter.vercel.app/images/portfolio/nextjs-react-agency-starter-06.png",
+          "altEn": "SEO Built In — auto-generated sitemap, robots.txt, structured data, Open Graph metadata",
+          "altEs": "SEO Integrado — sitemap automatico, robots.txt, datos estructurados, metadata Open Graph"
+        },
+        {
+          "src": "https://nextjs-react-agency-starter.vercel.app/images/portfolio/nextjs-react-agency-starter-07.png",
+          "altEn": "Dark Mode and Accessibility — WCAG AA compliance, keyboard navigation, focus states",
+          "altEs": "Modo Oscuro y Accesibilidad — cumplimiento WCAG AA, navegacion por teclado, estados de foco"
+        },
+        {
+          "src": "https://nextjs-react-agency-starter.vercel.app/images/portfolio/nextjs-react-agency-starter-08.png",
+          "altEn": "TypeScript Strict Mode — no implicit any, typed props and returns on every component",
+          "altEs": "TypeScript Strict Mode — sin any implicito, props y retornos tipados en cada componente"
+        },
+        {
+          "src": "https://nextjs-react-agency-starter.vercel.app/images/portfolio/nextjs-react-agency-starter-09.png",
+          "altEn": "Clone, Customize, Ship — CSS variables for brand colors, modular components for rapid delivery",
+          "altEs": "Clona, Personaliza, Entrega — variables CSS para colores de marca, componentes modulares"
+        }
+      ],
+      "videoUrl": "https://nextjs-react-agency-starter.vercel.app/video/nextjs-react-agency-starter-brief.mp4",
+      "videoPoster": "https://nextjs-react-agency-starter.vercel.app/video/nextjs-react-agency-starter-brief-poster.jpg"
     },
     {
       "id": 1090479901,
@@ -2127,76 +2248,6 @@
       ],
       "videoUrl": "https://aistockalert.app/videos/AI-StockAlert-brief.mp4",
       "videoPoster": "https://aistockalert.app/videos/AI-StockAlert-brief-poster.jpg"
-    },
-    {
-      "id": 1119144204,
-      "name": "nextjs-react-agency-starter",
-      "title": "Next.js Agency Starter",
-      "description": "The Next.js React Agency Starter provides a clean, scalable, and production-ready foundation for building modern agency and portfolio websites using Next.js, React, and TypeScript.",
-      "summary": "> A production-grade starter template for agency, marketing, and portfolio websites — built for real client work, not tutorials.",
-      "url": "https://github.com/RCushmaniii/nextjs-react-agency-starter",
-      "demoUrl": "https://nextjs-react-agency-starter.vercel.app/",
-      "liveUrl": "https://nextjs-react-agency-starter.vercel.app/",
-      "homepage": "https://nextjs-react-agency-starter.vercel.app/",
-      "topics": [
-        "nextjs",
-        "react",
-        "starter-kit",
-        "tailwindcss"
-      ],
-      "categories": [
-        "Templates"
-      ],
-      "tags": [
-        "nextjs",
-        "react",
-        "starter-kit",
-        "tailwindcss",
-        "typescript",
-        "tailwind-css",
-        "mdx",
-        "starter-template",
-        "agency",
-        "resend"
-      ],
-      "stack": [
-        "Next.js 14",
-        "TypeScript",
-        "Tailwind CSS",
-        "MDX",
-        "React Hook Form",
-        "Zod",
-        "Resend",
-        "React Email",
-        "Framer Motion",
-        "Vercel"
-      ],
-      "status": null,
-      "language": "TypeScript",
-      "languages": {
-        "TypeScript": 170936,
-        "MDX": 27835,
-        "CSS": 1030,
-        "JavaScript": 260
-      },
-      "stars": 0,
-      "forks": 0,
-      "lastPushed": "2026-02-22T04:17:32Z",
-      "createdAt": "2025-12-18T20:18:05Z",
-      "isFeatured": false,
-      "isArchived": false,
-      "isPrivate": false,
-      "tagline": "Production-grade starter template for agency and marketing websites with MDX content and email integration",
-      "thumbnail": null,
-      "problem": null,
-      "solution": null,
-      "keyFeatures": [],
-      "metrics": [],
-      "priority": 4,
-      "dateCompleted": null,
-      "slides": [],
-      "videoUrl": null,
-      "videoPoster": null
     },
     {
       "id": 1159724330,
