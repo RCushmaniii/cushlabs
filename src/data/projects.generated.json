@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-02-21T21:16:56.192Z",
+  "generatedAt": "2026-02-22T04:58:51.737Z",
   "count": 23,
   "projects": [
     {
@@ -59,7 +59,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-02-21T21:03:29Z",
+      "lastPushed": "2026-02-21T21:17:07Z",
       "createdAt": "2026-01-08T03:52:43Z",
       "isFeatured": true,
       "isArchived": false,
@@ -240,6 +240,201 @@
       ],
       "videoUrl": "https://www.nyenglishteacher.com/video/ny-eng-brief.mp4",
       "videoPoster": "https://www.nyenglishteacher.com/video/ny-eng-brief-poster.jpg"
+    },
+    {
+      "id": 1090479901,
+      "name": "ai-resume-tailor",
+      "title": "AI Resume Tailor",
+      "description": "Helps candidates create a tailored resume for a specific job. ",
+      "summary": "> Bilingual AI-powered ATS resume optimization — instant structured feedback, zero friction, privacy by design.",
+      "url": "https://github.com/RCushmaniii/ai-resume-tailor",
+      "demoUrl": "https://ai-resume-tailor-client.vercel.app",
+      "liveUrl": "https://ai-resume-tailor-client.vercel.app",
+      "homepage": "https://ai-resume-tailor-client.vercel.app",
+      "topics": [],
+      "categories": [
+        "AI SaaS"
+      ],
+      "tags": [
+        "ai",
+        "saas",
+        "resume",
+        "ats",
+        "job-search",
+        "bilingual",
+        "openai",
+        "stripe",
+        "clerk",
+        "flask"
+      ],
+      "stack": [
+        "React 19",
+        "Flask / Python",
+        "OpenAI GPT-4",
+        "Stripe",
+        "Neon PostgreSQL"
+      ],
+      "status": "Production",
+      "language": "TypeScript",
+      "languages": {
+        "TypeScript": 534402,
+        "Python": 305806,
+        "JavaScript": 19451,
+        "HTML": 3968,
+        "Batchfile": 2499,
+        "CSS": 1995
+      },
+      "stars": 0,
+      "forks": 0,
+      "lastPushed": "2026-02-22T04:58:25Z",
+      "createdAt": "2025-11-05T18:11:38Z",
+      "isFeatured": true,
+      "isArchived": false,
+      "isPrivate": false,
+      "tagline": "AI-powered ATS resume optimization with bilingual support and instant feedback",
+      "thumbnail": "https://ai-resume-tailor-client.vercel.app/images/ai-resume-tailor-thumb.jpg",
+      "problem": "Over 75% of resumes are rejected by Applicant Tracking Systems before a human ever sees them. Most job seekers have no visibility into why they're filtered out, and existing tools either charge upfront, require accounts, or provide generic advice that isn't tied to the specific job posting.",
+      "solution": "A bilingual SaaS application that returns structured ATS analysis — match score, missing keywords with severity coding, and actionable suggestions — in under 10 seconds. Guests get 5 free analyses with no signup, and no resume data is ever stored.",
+      "keyFeatures": [
+        "Structured ATS analysis with 0-100 match score, keyword gaps, and severity-coded suggestions via GPT-4",
+        "Zero-friction guest access — 5 free analyses before any signup prompt, value delivered first",
+        "Full EN/ES bilingual support across all UI, error messages, and AI-generated analysis output",
+        "Privacy-first architecture — no resume data stored, processing happens in a single request/response cycle",
+        "Stripe embedded checkout with guest-to-paid conversion and Clerk auth (Google, LinkedIn, email)"
+      ],
+      "metrics": [
+        "Structured ATS feedback in under 10 seconds",
+        "5 free analyses before any signup prompt",
+        "Zero resume data stored — privacy by architecture"
+      ],
+      "priority": 2,
+      "dateCompleted": "2026-02",
+      "slides": [
+        {
+          "src": "https://ai-resume-tailor-client.vercel.app/images/ai-resume-tailor-01.png",
+          "altEn": "AI Resume Tailor — Bilingual ATS optimization that shows you exactly why resumes get rejected",
+          "altEs": "AI Resume Tailor — Optimizacion ATS bilingue que te muestra exactamente por que rechazan tu CV"
+        },
+        {
+          "src": "https://ai-resume-tailor-client.vercel.app/images/ai-resume-tailor-02.png",
+          "altEn": "The ATS Black Box — 75% of resumes rejected before a human sees them, zero visibility into why",
+          "altEs": "La Caja Negra del ATS — 75% de CVs rechazados antes de que un humano los vea, sin visibilidad del por que"
+        },
+        {
+          "src": "https://ai-resume-tailor-client.vercel.app/images/ai-resume-tailor-03.png",
+          "altEn": "Structured Analysis — 0-100 match score with keyword gaps and severity-coded suggestions",
+          "altEs": "Analisis Estructurado — puntuacion de coincidencia 0-100 con brechas de palabras clave y sugerencias codificadas"
+        },
+        {
+          "src": "https://ai-resume-tailor-client.vercel.app/images/ai-resume-tailor-04.png",
+          "altEn": "Missing Keywords Detected — severity-coded priority indicators showing exactly what to fix first",
+          "altEs": "Palabras Clave Faltantes Detectadas — indicadores de prioridad codificados mostrando que corregir primero"
+        },
+        {
+          "src": "https://ai-resume-tailor-client.vercel.app/images/ai-resume-tailor-05.png",
+          "altEn": "Zero Friction — 5 free analyses with no signup, no email, no commitment required",
+          "altEs": "Cero Friccion — 5 analisis gratis sin registro, sin email, sin compromiso requerido"
+        },
+        {
+          "src": "https://ai-resume-tailor-client.vercel.app/images/ai-resume-tailor-06.png",
+          "altEn": "Full Bilingual Support — native English and Spanish across UI, analysis, and AI-generated feedback",
+          "altEs": "Soporte Bilingue Completo — ingles y espanol nativo en UI, analisis y retroalimentacion generada por IA"
+        },
+        {
+          "src": "https://ai-resume-tailor-client.vercel.app/images/ai-resume-tailor-07.png",
+          "altEn": "Privacy by Architecture — no resume data stored, analysis happens in a single request/response cycle",
+          "altEs": "Privacidad por Arquitectura — ningun dato de CV almacenado, analisis en un solo ciclo solicitud/respuesta"
+        },
+        {
+          "src": "https://ai-resume-tailor-client.vercel.app/images/ai-resume-tailor-08.png",
+          "altEn": "Stripe Embedded Checkout — guest-to-paid conversion with no signup wall before purchase",
+          "altEs": "Checkout Integrado de Stripe — conversion de invitado a pago sin muro de registro antes de la compra"
+        },
+        {
+          "src": "https://ai-resume-tailor-client.vercel.app/images/ai-resume-tailor-09.png",
+          "altEn": "Clerk Authentication — Google, LinkedIn, and email/password with automatic Neon profile provisioning",
+          "altEs": "Autenticacion Clerk — Google, LinkedIn y email/contrasena con aprovisionamiento automatico de perfil en Neon"
+        },
+        {
+          "src": "https://ai-resume-tailor-client.vercel.app/images/ai-resume-tailor-10.png",
+          "altEn": "Full-Stack Architecture — React 19 on Vercel, Flask on Render, Neon Postgres, Stripe, Clerk",
+          "altEs": "Arquitectura Full-Stack — React 19 en Vercel, Flask en Render, Neon Postgres, Stripe, Clerk"
+        },
+        {
+          "src": "https://ai-resume-tailor-client.vercel.app/images/ai-resume-tailor-11.png",
+          "altEn": "Results — structured feedback in under 10 seconds, zero data retention, full bilingual coverage",
+          "altEs": "Resultados — retroalimentacion estructurada en menos de 10 segundos, cero retencion de datos, cobertura bilingue"
+        }
+      ],
+      "videoUrl": "https://ai-resume-tailor-client.vercel.app/video/ai-resume-tailor-brief.mp4",
+      "videoPoster": "https://ai-resume-tailor-client.vercel.app/video/ai-resume-tailor-brief-poster.jpg"
+    },
+    {
+      "id": 1120026584,
+      "name": "context-writing-system",
+      "title": "Cushlabs Writing System",
+      "description": "Context-engineering system to lock brand voice, enforce truth, and generate consistent AI-written content at scale.",
+      "summary": "**Clone your voice. Crush content. Scale forever.**",
+      "url": "https://github.com/RCushmaniii/context-writing-system",
+      "demoUrl": "https://cushlabs-writing-system.vercel.app",
+      "liveUrl": "https://cushlabs-writing-system.vercel.app",
+      "homepage": "https://cushlabs-writing-system.vercel.app",
+      "topics": [
+        "ai-assistant",
+        "ai-content-generation",
+        "business-writing",
+        "content-management",
+        "context-engineering",
+        "llm-tools",
+        "writing-system"
+      ],
+      "categories": [
+        "AI Automation"
+      ],
+      "tags": [
+        "ai-assistant",
+        "ai-content-generation",
+        "business-writing",
+        "content-management",
+        "context-engineering",
+        "llm-tools",
+        "writing-system"
+      ],
+      "stack": [
+        "HTML",
+        "TODO: Add tech"
+      ],
+      "status": "Production",
+      "language": "HTML",
+      "languages": {
+        "HTML": 255166,
+        "CSS": 40453,
+        "JavaScript": 39010,
+        "PowerShell": 1981
+      },
+      "stars": 1,
+      "forks": 0,
+      "lastPushed": "2026-02-22T04:27:14Z",
+      "createdAt": "2025-12-20T10:31:00Z",
+      "isFeatured": true,
+      "isArchived": false,
+      "isPrivate": false,
+      "tagline": "Context-engineering system to lock brand voice, enforce truth, and generate consistent AI-written content at scale.",
+      "thumbnail": null,
+      "problem": "TODO: Describe the pain point this project solves.",
+      "solution": "Clone your brand's voice once—unleash AI to dominate every page, email, and pitch.",
+      "keyFeatures": [
+        "What This System Does",
+        "Core Components",
+        "How It Works",
+        "Key Principles"
+      ],
+      "metrics": [],
+      "priority": 2,
+      "dateCompleted": "2025-12",
+      "slides": [],
+      "videoUrl": null,
+      "videoPoster": null
     },
     {
       "id": 1062817398,
@@ -646,136 +841,6 @@
       "videoPoster": null
     },
     {
-      "id": 1119144204,
-      "name": "nextjs-react-agency-starter",
-      "title": "Nextjs React Agency Starter",
-      "description": "The Next.js React Agency Starter provides a clean, scalable, and production-ready foundation for building modern agency and portfolio websites using Next.js, React, and TypeScript.",
-      "summary": "**A production-grade starter kit for modern agency, marketing, and portfolio websites.**",
-      "url": "https://github.com/RCushmaniii/nextjs-react-agency-starter",
-      "demoUrl": "https://nextjs-react-agency-starter.vercel.app/",
-      "liveUrl": "https://nextjs-react-agency-starter.vercel.app/",
-      "homepage": "https://nextjs-react-agency-starter.vercel.app/",
-      "topics": [
-        "nextjs",
-        "react",
-        "starter-kit",
-        "tailwindcss"
-      ],
-      "categories": [
-        "Templates"
-      ],
-      "tags": [
-        "nextjs",
-        "react",
-        "starter-kit",
-        "tailwindcss"
-      ],
-      "stack": [
-        "TypeScript",
-        "Next.js",
-        "React",
-        "Tailwind CSS"
-      ],
-      "status": "Production",
-      "language": "TypeScript",
-      "languages": {
-        "TypeScript": 99022,
-        "MDX": 27835,
-        "CSS": 1030,
-        "JavaScript": 260
-      },
-      "stars": 0,
-      "forks": 0,
-      "lastPushed": "2026-02-20T18:57:35Z",
-      "createdAt": "2025-12-18T20:18:05Z",
-      "isFeatured": true,
-      "isArchived": false,
-      "isPrivate": false,
-      "tagline": "The Next.js React Agency Starter provides a clean, scalable, and production-ready foundation for building modern agency and portfolio websites using Next.js, React, and TypeScript.",
-      "thumbnail": null,
-      "problem": "Finally organize your Desktop, Documents, and Downloads without uploading anything to the cloud. Smart AI classification that respects your privacy.",
-      "solution": "Simple, Transparent Pricing",
-      "keyFeatures": [
-        "Meet AI FileSense",
-        "Everything You Need",
-        "Simple, Transparent Pricing",
-        "Ready for a Cleaner Desktop?"
-      ],
-      "metrics": [],
-      "priority": 2,
-      "dateCompleted": "2025-12",
-      "slides": [],
-      "videoUrl": null,
-      "videoPoster": null
-    },
-    {
-      "id": 1120026584,
-      "name": "context-writing-system",
-      "title": "Cushlabs Writing System",
-      "description": "Context-engineering system to lock brand voice, enforce truth, and generate consistent AI-written content at scale.",
-      "summary": "**Clone your voice. Crush content. Scale forever.**",
-      "url": "https://github.com/RCushmaniii/context-writing-system",
-      "demoUrl": "https://cushlabs-writing-system.vercel.app",
-      "liveUrl": "https://cushlabs-writing-system.vercel.app",
-      "homepage": "https://cushlabs-writing-system.vercel.app",
-      "topics": [
-        "ai-assistant",
-        "ai-content-generation",
-        "business-writing",
-        "content-management",
-        "context-engineering",
-        "llm-tools",
-        "writing-system"
-      ],
-      "categories": [
-        "AI Automation"
-      ],
-      "tags": [
-        "ai-assistant",
-        "ai-content-generation",
-        "business-writing",
-        "content-management",
-        "context-engineering",
-        "llm-tools",
-        "writing-system"
-      ],
-      "stack": [
-        "HTML",
-        "TODO: Add tech"
-      ],
-      "status": "Production",
-      "language": "HTML",
-      "languages": {
-        "HTML": 136130,
-        "JavaScript": 38483,
-        "CSS": 30168,
-        "PowerShell": 1981
-      },
-      "stars": 1,
-      "forks": 0,
-      "lastPushed": "2026-02-20T18:57:28Z",
-      "createdAt": "2025-12-20T10:31:00Z",
-      "isFeatured": true,
-      "isArchived": false,
-      "isPrivate": false,
-      "tagline": "Context-engineering system to lock brand voice, enforce truth, and generate consistent AI-written content at scale.",
-      "thumbnail": null,
-      "problem": "TODO: Describe the pain point this project solves.",
-      "solution": "Clone your brand's voice once—unleash AI to dominate every page, email, and pitch.",
-      "keyFeatures": [
-        "What This System Does",
-        "Core Components",
-        "How It Works",
-        "Key Principles"
-      ],
-      "metrics": [],
-      "priority": 2,
-      "dateCompleted": "2025-12",
-      "slides": [],
-      "videoUrl": null,
-      "videoPoster": null
-    },
-    {
       "id": 1102173157,
       "name": "ny-ai-chatbot",
       "title": "NY AI Chatbot",
@@ -901,72 +966,6 @@
       ],
       "videoUrl": "https://ny-ai-chatbot.vercel.app/video/ny-eng-chatbot-brief.mp4",
       "videoPoster": "https://ny-ai-chatbot.vercel.app/video/ny-eng-chatbot-brief-poster.jpg"
-    },
-    {
-      "id": 1090479901,
-      "name": "ai-resume-tailor",
-      "title": "AI Resume Tailor",
-      "description": "Helps candidates create a tailored resume for a specific job. ",
-      "summary": "**Live App:** [https://ai-resume-tailor-client.vercel.app](https://ai-resume-tailor-client.vercel.app)",
-      "url": "https://github.com/RCushmaniii/ai-resume-tailor",
-      "demoUrl": "https://ai-resume-tailor-client.vercel.app",
-      "liveUrl": "https://ai-resume-tailor-client.vercel.app",
-      "homepage": "https://ai-resume-tailor-client.vercel.app",
-      "topics": [],
-      "categories": [
-        "AI SaaS"
-      ],
-      "tags": [
-        "ai",
-        "saas",
-        "job-search",
-        "automation",
-        "resume",
-        "career-tools"
-      ],
-      "stack": [
-        "React 19",
-        "TypeScript",
-        "Tailwind CSS",
-        "shadcn/ui",
-        "Flask",
-        "Python 3.11",
-        "OpenAI GPT-4",
-        "Clerk",
-        "Neon Postgres",
-        "Stripe",
-        "Vercel",
-        "Render"
-      ],
-      "status": null,
-      "language": "TypeScript",
-      "languages": {
-        "TypeScript": 584239,
-        "Python": 291160,
-        "JavaScript": 19451,
-        "HTML": 19382,
-        "PLpgSQL": 17338,
-        "Batchfile": 2499,
-        "CSS": 1995
-      },
-      "stars": 0,
-      "forks": 0,
-      "lastPushed": "2026-02-20T18:57:28Z",
-      "createdAt": "2025-11-05T18:11:38Z",
-      "isFeatured": false,
-      "isArchived": false,
-      "isPrivate": false,
-      "tagline": "AI-powered ATS resume analysis with instant, actionable feedback",
-      "thumbnail": null,
-      "problem": null,
-      "solution": null,
-      "keyFeatures": [],
-      "metrics": [],
-      "priority": 2,
-      "dateCompleted": null,
-      "slides": [],
-      "videoUrl": null,
-      "videoPoster": null
     },
     {
       "id": 1141547356,
@@ -1776,7 +1775,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-02-21T21:16:34Z",
+      "lastPushed": "2026-02-21T21:18:08Z",
       "createdAt": "2026-02-13T19:55:19Z",
       "isFeatured": true,
       "isArchived": false,
@@ -2128,6 +2127,76 @@
       ],
       "videoUrl": "https://aistockalert.app/videos/AI-StockAlert-brief.mp4",
       "videoPoster": "https://aistockalert.app/videos/AI-StockAlert-brief-poster.jpg"
+    },
+    {
+      "id": 1119144204,
+      "name": "nextjs-react-agency-starter",
+      "title": "Next.js Agency Starter",
+      "description": "The Next.js React Agency Starter provides a clean, scalable, and production-ready foundation for building modern agency and portfolio websites using Next.js, React, and TypeScript.",
+      "summary": "> A production-grade starter template for agency, marketing, and portfolio websites — built for real client work, not tutorials.",
+      "url": "https://github.com/RCushmaniii/nextjs-react-agency-starter",
+      "demoUrl": "https://nextjs-react-agency-starter.vercel.app/",
+      "liveUrl": "https://nextjs-react-agency-starter.vercel.app/",
+      "homepage": "https://nextjs-react-agency-starter.vercel.app/",
+      "topics": [
+        "nextjs",
+        "react",
+        "starter-kit",
+        "tailwindcss"
+      ],
+      "categories": [
+        "Templates"
+      ],
+      "tags": [
+        "nextjs",
+        "react",
+        "starter-kit",
+        "tailwindcss",
+        "typescript",
+        "tailwind-css",
+        "mdx",
+        "starter-template",
+        "agency",
+        "resend"
+      ],
+      "stack": [
+        "Next.js 14",
+        "TypeScript",
+        "Tailwind CSS",
+        "MDX",
+        "React Hook Form",
+        "Zod",
+        "Resend",
+        "React Email",
+        "Framer Motion",
+        "Vercel"
+      ],
+      "status": null,
+      "language": "TypeScript",
+      "languages": {
+        "TypeScript": 170936,
+        "MDX": 27835,
+        "CSS": 1030,
+        "JavaScript": 260
+      },
+      "stars": 0,
+      "forks": 0,
+      "lastPushed": "2026-02-22T04:17:32Z",
+      "createdAt": "2025-12-18T20:18:05Z",
+      "isFeatured": false,
+      "isArchived": false,
+      "isPrivate": false,
+      "tagline": "Production-grade starter template for agency and marketing websites with MDX content and email integration",
+      "thumbnail": null,
+      "problem": null,
+      "solution": null,
+      "keyFeatures": [],
+      "metrics": [],
+      "priority": 4,
+      "dateCompleted": null,
+      "slides": [],
+      "videoUrl": null,
+      "videoPoster": null
     },
     {
       "id": 1159724330,
