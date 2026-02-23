@@ -1,99 +1,522 @@
 {
-  "generatedAt": "2026-02-22T23:04:48.651Z",
+  "generatedAt": "2026-02-23T00:25:15.502Z",
   "count": 20,
   "projects": [
     {
-      "id": 1130115840,
-      "name": "cushlabs",
-      "title": "CushLabs.ai",
-      "description": "AI consulting and software development for SMBs — bilingual (EN/ES) site built with Astro + Tailwind CSS",
-      "summary": "> AI consulting and software development for SMBs. Bilingual (EN/ES) business site with automated GitHub portfolio sync and serverless booking.",
-      "url": "https://github.com/RCushmaniii/cushlabs",
-      "demoUrl": "https://cushlabs.ai",
-      "liveUrl": "https://cushlabs.ai",
-      "homepage": "https://cushlabs.ai",
+      "id": 1120026584,
+      "name": "context-writing-system",
+      "title": "AI Writing System",
+      "description": "Context-engineering system to lock brand voice, enforce truth, and generate consistent AI-written content at scale.",
+      "summary": "**Clone your voice. Crush content. Scale forever.**",
+      "url": "https://github.com/RCushmaniii/context-writing-system",
+      "demoUrl": "https://cushlabs-writing-system.vercel.app",
+      "liveUrl": "https://cushlabs-writing-system.vercel.app",
+      "homepage": "https://cushlabs-writing-system.vercel.app",
       "topics": [
-        "ai-consulting",
-        "astro",
-        "bilingual",
-        "cushlabs",
-        "static-site",
-        "tailwindcss"
+        "ai-assistant",
+        "ai-content-generation",
+        "business-writing",
+        "content-management",
+        "context-engineering",
+        "llm-tools",
+        "writing-system"
       ],
       "categories": [
-        "Tools"
+        "AI Automation"
       ],
       "tags": [
-        "ai-consulting",
-        "astro",
-        "bilingual",
-        "cushlabs",
-        "static-site",
-        "tailwindcss",
-        "tailwind",
-        "typescript",
-        "i18n",
-        "cloudflare-workers",
-        "google-calendar",
-        "github-actions",
-        "seo",
-        "serverless"
+        "ai-assistant",
+        "ai-content-generation",
+        "business-writing",
+        "content-management",
+        "context-engineering",
+        "llm-tools",
+        "writing-system",
+        "ai",
+        "content-generation",
+        "brand-voice",
+        "automation",
+        "json",
+        "markdown",
+        "vercel"
       ],
       "stack": [
-        "Astro 4.16",
-        "TypeScript 5.9",
-        "Tailwind CSS 3.4",
-        "Cloudflare Workers",
-        "Google Calendar API",
-        "GitHub Actions",
-        "JSON-LD"
+        "HTML / CSS / JS",
+        "JSON Context Files",
+        "Markdown Skills",
+        "Vercel"
       ],
-      "status": null,
-      "language": "Astro",
+      "status": "Production",
+      "language": "HTML",
       "languages": {
-        "Astro": 344187,
-        "TypeScript": 112284,
-        "HTML": 61067,
-        "JavaScript": 26662,
-        "CSS": 1697
+        "HTML": 249878,
+        "CSS": 41745,
+        "JavaScript": 39010,
+        "PowerShell": 1981
       },
-      "stars": 0,
+      "stars": 1,
       "forks": 0,
-      "lastPushed": "2026-02-22T22:57:43Z",
-      "createdAt": "2026-01-08T03:52:43Z",
+      "lastPushed": "2026-02-23T00:23:50Z",
+      "createdAt": "2025-12-20T10:31:00Z",
       "isFeatured": true,
       "isArchived": false,
       "isPrivate": false,
-      "tagline": "Self-maintaining bilingual portfolio with serverless booking and build-time i18n enforcement",
-      "thumbnail": "/images/portfolio/cushlabs-01.png",
-      "problem": null,
-      "solution": null,
-      "keyFeatures": [],
-      "metrics": [],
+      "tagline": "Clone your brand voice once — AI writes like you across every channel, no drift",
+      "thumbnail": "https://cushlabs-writing-system.vercel.app/public/images/context-writing-system-thumb.jpg",
+      "problem": "AI-generated content starts strong but drifts into generic corporate filler within minutes. Teams spend more time editing AI output than they saved generating it — killing hype, restoring voice, and fact-checking hallucinated claims. Every new chat session starts from zero because there's no persistent memory of who you are, what you sell, or what you're allowed to say.",
+      "solution": "A structured context-engineering framework that stores your voice, audience profile, business facts, and claim rules in persistent JSON truth files. When you request any content type — landing page, email, LinkedIn post — the AI loads these truth files plus format-specific skills to produce consistent, on-brand output without hallucinated claims or generic phrasing. First drafts arrive 90% ready. You review instead of rewrite.",
+      "keyFeatures": [
+        "Four Pillars of Truth — Voice DNA, Business Profile, Ideal Client Profile, and Claims Policy lock your reality in structured JSON",
+        "Format-Specific Skills — dedicated content blueprints for landing pages, cold emails, LinkedIn posts, sales decks, and READMEs",
+        "Automated Credibility Protection — claims policy enforces what can and cannot be stated, blocking hallucinations before they ship",
+        "Hierarchical Control Stack — truth and claims always override voice, audience, and format rules, eliminating ambiguity",
+        "Static Explorer UI — branded dashboard to browse your entire writing system, deployed on Vercel with zero build step"
+      ],
+      "metrics": [
+        "First drafts arrive 90% ready — review instead of rewrite",
+        "Editing time reduced from 45 minutes to 5 minutes per asset",
+        "Zero hallucinated claims — credibility enforced by policy",
+        "One voice system powers every content channel"
+      ],
       "priority": 1,
-      "dateCompleted": null,
+      "dateCompleted": "2025-12",
       "slides": [
         {
-          "src": null
+          "src": "https://cushlabs-writing-system.vercel.app/public/images/context-writing-system-01.png",
+          "altEn": "AI Writing System — Structure beats prompts, truth beats cleverness",
+          "altEs": "Sistema de Escritura IA — La estructura supera a los prompts, la verdad supera a la astucia"
         },
         {
-          "src": null
+          "src": "https://cushlabs-writing-system.vercel.app/public/images/context-writing-system-02.png",
+          "altEn": "You are using AI but it sounds like AI — content quality degrades over time as tone flattens into generic corporate filler",
+          "altEs": "Usas IA pero suena a IA — la calidad del contenido se degrada con el tiempo hasta convertirse en relleno corporativo generico"
         },
         {
-          "src": null
+          "src": "https://cushlabs-writing-system.vercel.app/public/images/context-writing-system-03.png",
+          "altEn": "It's not a prompt problem, it's a memory problem — you rebuild context from scratch every time",
+          "altEs": "No es un problema de prompts, es un problema de memoria — reconstruyes el contexto desde cero cada vez"
         },
         {
-          "src": null
+          "src": "https://cushlabs-writing-system.vercel.app/public/images/context-writing-system-04.png",
+          "altEn": "Locking your reality with the four pillars of truth — Voice DNA, Business Profile, Ideal Client, and Claims Policy",
+          "altEs": "Bloqueando tu realidad con los cuatro pilares de verdad — ADN de Voz, Perfil de Negocio, Cliente Ideal y Politica de Afirmaciones"
         },
         {
-          "src": null
+          "src": "https://cushlabs-writing-system.vercel.app/public/images/context-writing-system-05.png",
+          "altEn": "Clone your voice once, use it everywhere — teaches AI your rhythm, tone, and boundaries instantly",
+          "altEs": "Clona tu voz una vez, usala en todas partes — ensena a la IA tu ritmo, tono y limites al instante"
         },
         {
-          "src": null
+          "src": "https://cushlabs-writing-system.vercel.app/public/images/context-writing-system-06.png",
+          "altEn": "Automated credibility protection — no hallucinations, no fake metrics, if it violates the policy it doesn't ship",
+          "altEs": "Proteccion de credibilidad automatizada — sin alucinaciones, sin metricas falsas, si viola la politica no se publica"
+        },
+        {
+          "src": "https://cushlabs-writing-system.vercel.app/public/images/context-writing-system-07.png",
+          "altEn": "Format-specific skills — dedicated content blueprints for LinkedIn, sales decks, cold emails, landing pages, and tech READMEs",
+          "altEs": "Habilidades especificas por formato — plantillas dedicadas para LinkedIn, presentaciones, emails frios, landing pages y READMEs tecnicos"
+        },
+        {
+          "src": "https://cushlabs-writing-system.vercel.app/public/images/context-writing-system-08.png",
+          "altEn": "No ambiguity — a strict hierarchy of control where truth and claims policy always override voice, audience, and format rules",
+          "altEs": "Sin ambiguedad — una jerarquia estricta de control donde la verdad y la politica de afirmaciones siempre prevalecen sobre voz, audiencia y formato"
+        },
+        {
+          "src": "https://cushlabs-writing-system.vercel.app/public/images/context-writing-system-09.png",
+          "altEn": "Reviewing not rewriting — first drafts arrive 90% ready, reducing 45 minutes of editing to 5 minutes of review",
+          "altEs": "Revisar en vez de reescribir — los primeros borradores llegan 90% listos, reduciendo 45 minutos de edicion a 5 minutos de revision"
+        },
+        {
+          "src": "https://cushlabs-writing-system.vercel.app/public/images/context-writing-system-10.png",
+          "altEn": "One identity, many channels — consistent brand voice across every platform powered by the same truth files",
+          "altEs": "Una identidad, muchos canales — voz de marca consistente en cada plataforma impulsada por los mismos archivos de verdad"
+        },
+        {
+          "src": "https://cushlabs-writing-system.vercel.app/public/images/context-writing-system-11.png",
+          "altEn": "Build your infrastructure — systems beat inspiration, ready to engineer your context",
+          "altEs": "Construye tu infraestructura — los sistemas superan la inspiracion, listo para disenar tu contexto"
         }
       ],
-      "videoUrl": null,
-      "videoPoster": null
+      "videoUrl": "https://cushlabs-writing-system.vercel.app/public/videos/context-writing-system-brief.mp4",
+      "videoPoster": "https://cushlabs-writing-system.vercel.app/public/videos/context-writing-system-brief-poster.jpg"
+    },
+    {
+      "id": 1090479901,
+      "name": "ai-resume-tailor",
+      "title": "AI Resume Tailor",
+      "description": "Helps candidates create a tailored resume for a specific job. ",
+      "summary": "> Bilingual AI-powered ATS resume optimization — instant structured feedback, zero friction, privacy by design.",
+      "url": "https://github.com/RCushmaniii/ai-resume-tailor",
+      "demoUrl": "https://ai-resume-tailor-client.vercel.app",
+      "liveUrl": "https://ai-resume-tailor-client.vercel.app",
+      "homepage": "https://ai-resume-tailor-client.vercel.app",
+      "topics": [],
+      "categories": [
+        "AI SaaS"
+      ],
+      "tags": [
+        "ai",
+        "saas",
+        "resume",
+        "ats",
+        "job-search",
+        "bilingual",
+        "openai",
+        "stripe",
+        "clerk",
+        "flask"
+      ],
+      "stack": [
+        "React 19",
+        "Flask / Python",
+        "OpenAI GPT-4",
+        "Stripe",
+        "Neon PostgreSQL"
+      ],
+      "status": "Production",
+      "language": "TypeScript",
+      "languages": {
+        "TypeScript": 534402,
+        "Python": 305806,
+        "JavaScript": 19451,
+        "HTML": 3968,
+        "Batchfile": 2499,
+        "CSS": 1995
+      },
+      "stars": 0,
+      "forks": 0,
+      "lastPushed": "2026-02-23T00:23:48Z",
+      "createdAt": "2025-11-05T18:11:38Z",
+      "isFeatured": true,
+      "isArchived": false,
+      "isPrivate": false,
+      "tagline": "AI-powered ATS resume optimization with bilingual support and instant feedback",
+      "thumbnail": "https://ai-resume-tailor-client.vercel.app/images/ai-resume-tailor-thumb.jpg",
+      "problem": "Over 75% of resumes are rejected by Applicant Tracking Systems before a human ever sees them. Most job seekers have no visibility into why they're filtered out, and existing tools either charge upfront, require accounts, or provide generic advice that isn't tied to the specific job posting.",
+      "solution": "A bilingual SaaS application that returns structured ATS analysis — match score, missing keywords with severity coding, and actionable suggestions — in under 10 seconds. Guests get 5 free analyses with no signup, and no resume data is ever stored.",
+      "keyFeatures": [
+        "Structured ATS analysis with 0-100 match score, keyword gaps, and severity-coded suggestions via GPT-4",
+        "Zero-friction guest access — 5 free analyses before any signup prompt, value delivered first",
+        "Full EN/ES bilingual support across all UI, error messages, and AI-generated analysis output",
+        "Privacy-first architecture — no resume data stored, processing happens in a single request/response cycle",
+        "Stripe embedded checkout with guest-to-paid conversion and Clerk auth (Google, LinkedIn, email)"
+      ],
+      "metrics": [
+        "Structured ATS feedback in under 10 seconds",
+        "5 free analyses before any signup prompt",
+        "Zero resume data stored — privacy by architecture"
+      ],
+      "priority": 1,
+      "dateCompleted": "2026-02",
+      "slides": [
+        {
+          "src": "https://ai-resume-tailor-client.vercel.app/images/ai-resume-tailor-01.png",
+          "altEn": "AI Resume Tailor — Bilingual ATS optimization that shows you exactly why resumes get rejected",
+          "altEs": "AI Resume Tailor — Optimizacion ATS bilingue que te muestra exactamente por que rechazan tu CV"
+        },
+        {
+          "src": "https://ai-resume-tailor-client.vercel.app/images/ai-resume-tailor-02.png",
+          "altEn": "The ATS Black Box — 75% of resumes rejected before a human sees them, zero visibility into why",
+          "altEs": "La Caja Negra del ATS — 75% de CVs rechazados antes de que un humano los vea, sin visibilidad del por que"
+        },
+        {
+          "src": "https://ai-resume-tailor-client.vercel.app/images/ai-resume-tailor-03.png",
+          "altEn": "Structured Analysis — 0-100 match score with keyword gaps and severity-coded suggestions",
+          "altEs": "Analisis Estructurado — puntuacion de coincidencia 0-100 con brechas de palabras clave y sugerencias codificadas"
+        },
+        {
+          "src": "https://ai-resume-tailor-client.vercel.app/images/ai-resume-tailor-04.png",
+          "altEn": "Missing Keywords Detected — severity-coded priority indicators showing exactly what to fix first",
+          "altEs": "Palabras Clave Faltantes Detectadas — indicadores de prioridad codificados mostrando que corregir primero"
+        },
+        {
+          "src": "https://ai-resume-tailor-client.vercel.app/images/ai-resume-tailor-05.png",
+          "altEn": "Zero Friction — 5 free analyses with no signup, no email, no commitment required",
+          "altEs": "Cero Friccion — 5 analisis gratis sin registro, sin email, sin compromiso requerido"
+        },
+        {
+          "src": "https://ai-resume-tailor-client.vercel.app/images/ai-resume-tailor-06.png",
+          "altEn": "Full Bilingual Support — native English and Spanish across UI, analysis, and AI-generated feedback",
+          "altEs": "Soporte Bilingue Completo — ingles y espanol nativo en UI, analisis y retroalimentacion generada por IA"
+        },
+        {
+          "src": "https://ai-resume-tailor-client.vercel.app/images/ai-resume-tailor-07.png",
+          "altEn": "Privacy by Architecture — no resume data stored, analysis happens in a single request/response cycle",
+          "altEs": "Privacidad por Arquitectura — ningun dato de CV almacenado, analisis en un solo ciclo solicitud/respuesta"
+        },
+        {
+          "src": "https://ai-resume-tailor-client.vercel.app/images/ai-resume-tailor-08.png",
+          "altEn": "Stripe Embedded Checkout — guest-to-paid conversion with no signup wall before purchase",
+          "altEs": "Checkout Integrado de Stripe — conversion de invitado a pago sin muro de registro antes de la compra"
+        },
+        {
+          "src": "https://ai-resume-tailor-client.vercel.app/images/ai-resume-tailor-09.png",
+          "altEn": "Clerk Authentication — Google, LinkedIn, and email/password with automatic Neon profile provisioning",
+          "altEs": "Autenticacion Clerk — Google, LinkedIn y email/contrasena con aprovisionamiento automatico de perfil en Neon"
+        },
+        {
+          "src": "https://ai-resume-tailor-client.vercel.app/images/ai-resume-tailor-10.png",
+          "altEn": "Full-Stack Architecture — React 19 on Vercel, Flask on Render, Neon Postgres, Stripe, Clerk",
+          "altEs": "Arquitectura Full-Stack — React 19 en Vercel, Flask en Render, Neon Postgres, Stripe, Clerk"
+        },
+        {
+          "src": "https://ai-resume-tailor-client.vercel.app/images/ai-resume-tailor-11.png",
+          "altEn": "Results — structured feedback in under 10 seconds, zero data retention, full bilingual coverage",
+          "altEs": "Resultados — retroalimentacion estructurada en menos de 10 segundos, cero retencion de datos, cobertura bilingue"
+        }
+      ],
+      "videoUrl": "https://ai-resume-tailor-client.vercel.app/video/ai-resume-tailor-brief.mp4",
+      "videoPoster": "https://ai-resume-tailor-client.vercel.app/video/ai-resume-tailor-brief-poster.jpg"
+    },
+    {
+      "id": 1102173157,
+      "name": "ny-ai-chatbot",
+      "title": "NY AI Chatbot",
+      "description": "Production-ready AI chatbot with embeddable widget for websites. Features include knowledge base integration, multi-language support, and customizable admin dashboard.",
+      "summary": "**Drop-in AI chatbot widget with RAG intelligence for small business websites.**",
+      "url": "https://github.com/RCushmaniii/ny-ai-chatbot",
+      "demoUrl": "https://ny-ai-chatbot.vercel.app",
+      "liveUrl": "https://ny-ai-chatbot.vercel.app",
+      "homepage": "https://www.nyenglishteacher.com",
+      "topics": [
+        "ai-chatbot",
+        "nextjs",
+        "rag-chatbot",
+        "tailwindcss",
+        "vercel-deployment"
+      ],
+      "categories": [
+        "AI Automation"
+      ],
+      "tags": [
+        "ai-chatbot",
+        "nextjs",
+        "rag-chatbot",
+        "tailwindcss",
+        "vercel-deployment",
+        "typescript",
+        "openai",
+        "rag",
+        "pgvector",
+        "drizzle",
+        "clerk",
+        "tailwind",
+        "bilingual",
+        "chatbot",
+        "ai",
+        "vercel"
+      ],
+      "stack": [
+        "Next.js 15",
+        "TypeScript",
+        "OpenAI GPT-4o",
+        "pgvector",
+        "Drizzle ORM",
+        "Clerk",
+        "React 19",
+        "Tailwind CSS 4",
+        "shadcn/ui",
+        "Vercel AI SDK"
+      ],
+      "status": "Production",
+      "language": "TypeScript",
+      "languages": {
+        "TypeScript": 938680,
+        "JavaScript": 13855,
+        "PLpgSQL": 10195,
+        "CSS": 8090,
+        "PowerShell": 5924
+      },
+      "stars": 0,
+      "forks": 0,
+      "lastPushed": "2026-02-23T00:23:47Z",
+      "createdAt": "2025-11-23T00:24:28Z",
+      "isFeatured": true,
+      "isArchived": false,
+      "isPrivate": false,
+      "tagline": "Revenue-first RAG chatbot that converts visitors into booked strategy sessions",
+      "thumbnail": "https://ny-ai-chatbot.vercel.app/images/portfolio/ny-eng-chatbot-thumbnail.jpg",
+      "problem": "Language schools treat chatbots as deflection tools — reduce ticket volume, speed up FAQ answers, dead-end the conversation. The result is a cost center that never generates revenue. Meanwhile, anonymous website visitors leave without converting because there's no sales-aware system guiding them toward high-value actions like booking a strategy session.",
+      "solution": "An AI chatbot explicitly engineered as an automated sales agent. Every architectural layer — system prompts, RAG citations, error handling, rate limits — is designed to drive conversational conversion. The bot uses benefit-driven language with real client social proof, links RAG source citations to high-value service pages, and hard-codes CTAs for free strategy sessions directly into the system prompt.",
+      "keyFeatures": [
+        "Revenue-first RAG architecture merging website content and manual knowledge sources (top 5 by cosine similarity)",
+        "System prompts hard-coded with sales CTAs — every conversation steers toward booking a strategy session",
+        "Dual-source knowledge base: scraped website content (0.5 threshold) + curated documents (0.6 threshold)",
+        "Source citations that drive traffic to high-value service pages, increasing time-on-site and eliminating hallucination",
+        "Full EN/ES bilingual support with locale-aware personality and benefit-driven language",
+        "Embeddable widget (iframe + script tag) deployable on any client domain with CORS configuration",
+        "Admin dashboard with chat analytics, knowledge management, and bot settings"
+      ],
+      "metrics": [
+        "5-layer revenue engine: System Prompts, Error CTAs, Localization, Rate Limits as Strategy, Source Citations",
+        "2 RAG knowledge sources merged by cosine similarity with configurable thresholds",
+        "Sub-second streaming responses via Vercel AI SDK with OpenAI GPT-4o",
+        "Zero-auth guest experience via sessionId cookies — no signup friction before conversion"
+      ],
+      "priority": 1,
+      "dateCompleted": "2025-12",
+      "slides": [
+        {
+          "src": "https://ny-ai-chatbot.vercel.app/images/portfolio/ny-eng-chatbot-01.png",
+          "altEn": "Conversational Conversion — The Architecture of a Revenue-First Chatbot",
+          "altEs": "Conversion Conversacional — La Arquitectura de un Chatbot Orientado a Ingresos"
+        },
+        {
+          "src": "https://ny-ai-chatbot.vercel.app/images/portfolio/ny-eng-chatbot-02.png",
+          "altEn": "Moving Beyond the Support Cost Center — from Deflector to Converter",
+          "altEs": "Mas Alla del Centro de Costos de Soporte — de Deflector a Convertidor"
+        },
+        {
+          "src": "https://ny-ai-chatbot.vercel.app/images/portfolio/ny-eng-chatbot-03.png",
+          "altEn": "The Five Gears of the Revenue Engine — Brain, Trigger, Chameleon, Soft Wall, Bridge",
+          "altEs": "Los Cinco Engranajes del Motor de Ingresos — Cerebro, Disparador, Camaleon, Muro Suave, Puente"
+        },
+        {
+          "src": "https://ny-ai-chatbot.vercel.app/images/portfolio/ny-eng-chatbot-04.png",
+          "altEn": "System Prompts Are Hard-Coded to Sell — CTAs baked into the bot's DNA",
+          "altEs": "Los Prompts del Sistema Estan Programados para Vender — CTAs integrados en el ADN del bot"
+        },
+        {
+          "src": "https://ny-ai-chatbot.vercel.app/images/portfolio/ny-eng-chatbot-05.png",
+          "altEn": "Benefit-Driven Language Builds Authority — Pivot to Value technique with client social proof",
+          "altEs": "El Lenguaje Orientado a Beneficios Construye Autoridad — tecnica Pivot to Value con prueba social de clientes"
+        },
+        {
+          "src": "https://ny-ai-chatbot.vercel.app/images/portfolio/ny-eng-chatbot-06.png",
+          "altEn": "Source Citations Drive Traffic to High-Value Pages — RAG grounding that doubles as SEO",
+          "altEs": "Las Citas de Fuentes Dirigen Trafico a Paginas de Alto Valor — grounding RAG que funciona como SEO"
+        },
+        {
+          "src": "https://ny-ai-chatbot.vercel.app/images/portfolio/ny-eng-chatbot-07.png",
+          "altEn": "Not a Support Tool — An Automated Sales Agent that books strategy sessions",
+          "altEs": "No es una Herramienta de Soporte — Un Agente de Ventas Automatizado que agenda sesiones de estrategia"
+        }
+      ],
+      "videoUrl": "https://ny-ai-chatbot.vercel.app/video/ny-eng-chatbot-brief.mp4",
+      "videoPoster": "https://ny-ai-chatbot.vercel.app/video/ny-eng-chatbot-brief-poster.jpg"
+    },
+    {
+      "id": 1141547356,
+      "name": "ai-idea-validator",
+      "title": "AI Idea Validator",
+      "description": "A brutally honest defensibility assessment for founders. Find out if your business idea can survive competition, platform changes, and solo-founder realities before you build.",
+      "summary": "> A brutally honest defensibility assessment for founders. Find out if your business idea can survive competition, platform changes, and solo-founder realities before you build.",
+      "url": "https://github.com/RCushmaniii/ai-idea-validator",
+      "demoUrl": "https://ai-idea-validator.netlify.app/",
+      "liveUrl": "https://ai-idea-validator.netlify.app/",
+      "homepage": "",
+      "topics": [
+        "framer-motion",
+        "i18n",
+        "marketing-website",
+        "nextjs",
+        "playwright",
+        "react",
+        "shadcn-ui",
+        "stock-market",
+        "tailwindcss",
+        "typescript"
+      ],
+      "categories": [
+        "AI Automation"
+      ],
+      "tags": [
+        "framer-motion",
+        "i18n",
+        "marketing-website",
+        "nextjs",
+        "playwright",
+        "react",
+        "shadcn-ui",
+        "stock-market",
+        "tailwindcss",
+        "typescript",
+        "ai",
+        "startup-validation",
+        "openai",
+        "defensibility",
+        "founder-tools",
+        "contradiction-detection",
+        "bilingual"
+      ],
+      "stack": [
+        "Next.js 15",
+        "React 19",
+        "TypeScript",
+        "OpenAI GPT-4o-mini",
+        "Tailwind CSS 4"
+      ],
+      "status": "Production",
+      "language": "TypeScript",
+      "languages": {
+        "TypeScript": 303557,
+        "CSS": 4877,
+        "JavaScript": 618
+      },
+      "stars": 0,
+      "forks": 0,
+      "lastPushed": "2026-02-23T00:23:54Z",
+      "createdAt": "2026-01-25T01:59:32Z",
+      "isFeatured": true,
+      "isArchived": false,
+      "isPrivate": false,
+      "tagline": "Brutal startup defensibility assessment with AI contradiction detection",
+      "thumbnail": "https://ai-idea-validator.netlify.app/images/portfolio/aI-Idea-validator-thumb.jpg",
+      "problem": "Founders waste months building ideas that are structurally replaceable because traditional validation tools ignore defensibility. Self-assessment alone can't catch optimism bias — founders consistently rate their moats high while describing products with no switching costs.",
+      "solution": "A 23-question structured assessment that probes defensibility across moats, platform risk, lock-in, and failure modes. GPT-4o-mini cross-references numeric scores against written responses, detects contradictions, and delivers one of four verdicts — KILL, FLIP, BUILD, or BET — with specific reasoning in under 3 seconds.",
+      "keyFeatures": [
+        "23-question defensibility assessment across 4 sections with AI-powered contradiction detection",
+        "4 honest verdicts (KILL/FLIP/BUILD/BET) with confidence scores and detailed rationale",
+        "AI cross-references numeric self-assessment vs written responses to surface optimism bias",
+        "Full EN/ES bilingual support including AI-generated verdicts and analysis",
+        "Offline heuristic fallback — always returns a verdict, even without API access"
+      ],
+      "metrics": [
+        "Sub-3-second AI analysis via GPT-4o-mini",
+        "23 questions across 4 defensibility sections",
+        "4 verdicts with confidence scores and specific rationale"
+      ],
+      "priority": 2,
+      "dateCompleted": "2026-02",
+      "slides": [
+        {
+          "src": "https://ai-idea-validator.netlify.app/images/portfolio/aI-Idea-validator-01.png",
+          "altEn": "AI Idea Validator — Brutal honesty for founders who want the truth before they build",
+          "altEs": "AI Idea Validator — Honestidad brutal para fundadores que quieren la verdad antes de construir"
+        },
+        {
+          "src": "https://ai-idea-validator.netlify.app/images/portfolio/aI-Idea-validator-02.png",
+          "altEn": "The $50,000 Problem — building something structurally replaceable because nobody asked about defensibility",
+          "altEs": "El Problema de $50,000 — construir algo estructuralmente reemplazable porque nadie pregunto sobre defensibilidad"
+        },
+        {
+          "src": "https://ai-idea-validator.netlify.app/images/portfolio/aI-Idea-validator-03.png",
+          "altEn": "23 Questions That Matter — moats, platform risk, switching costs, and failure modes",
+          "altEs": "23 Preguntas Que Importan — fosos, riesgo de plataforma, costos de cambio y modos de fallo"
+        },
+        {
+          "src": "https://ai-idea-validator.netlify.app/images/portfolio/aI-Idea-validator-04.png",
+          "altEn": "Contradiction Detection — AI reads your scores AND your words, then flags where they diverge",
+          "altEs": "Deteccion de Contradicciones — la IA lee tus puntuaciones Y tus palabras, luego senala donde divergen"
+        },
+        {
+          "src": "https://ai-idea-validator.netlify.app/images/portfolio/aI-Idea-validator-05.png",
+          "altEn": "Four Verdicts, Zero Diplomacy — KILL, FLIP, BUILD, or BET with confidence scores",
+          "altEs": "Cuatro Veredictos, Cero Diplomacia — KILL, FLIP, BUILD o BET con puntuaciones de confianza"
+        },
+        {
+          "src": "https://ai-idea-validator.netlify.app/images/portfolio/aI-Idea-validator-06.png",
+          "altEn": "The Advisor Who Doesn't Need to Be Polite — AI delivers what mentors won't say",
+          "altEs": "El Asesor Que No Necesita Ser Amable — la IA entrega lo que los mentores no dicen"
+        },
+        {
+          "src": "https://ai-idea-validator.netlify.app/images/portfolio/aI-Idea-validator-07.png",
+          "altEn": "Privacy-First, Zero Storage — no accounts, no tracking, your idea stays yours",
+          "altEs": "Privacidad Primero, Cero Almacenamiento — sin cuentas, sin rastreo, tu idea sigue siendo tuya"
+        }
+      ],
+      "videoUrl": "https://ai-idea-validator.netlify.app/video/aI-Idea-validator-brief.mp4",
+      "videoPoster": "https://ai-idea-validator.netlify.app/video/aI-Idea-validator-brief-poster.jpg"
     },
     {
       "id": 953305892,
@@ -166,7 +589,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-02-21T04:38:47Z",
+      "lastPushed": "2026-02-23T00:23:52Z",
       "createdAt": "2025-03-23T03:27:14Z",
       "isFeatured": true,
       "isArchived": false,
@@ -189,7 +612,7 @@
         "2x addressable market from a single codebase via bilingual system",
         "10-15 hours/week of administrative and sales work automated away"
       ],
-      "priority": 1,
+      "priority": 2,
       "dateCompleted": "2026-02",
       "slides": [
         {
@@ -383,277 +806,6 @@
       "videoPoster": "https://freelance-income-planner.vercel.app/video/freelance-income-planner-brief-poster.jpg"
     },
     {
-      "id": 1068781109,
-      "name": "react-vite-tailwind-base",
-      "title": "React Vite Tailwind Base",
-      "description": "React 19 template with ShadCN UI, TypeScript, and Vite 7. Features a fully interactive appointment booking system with calendar integration, real-time data visualizations using Recharts, and 17+ accessible components. Mobile-first design, SEO optimized, and built with modern best practices. Perfect for SaaS apps, dashboards, and booking systems.",
-      "summary": "> A production-ready React template with ShadCN UI, data visualizations, and a complete interactive appointment booking showcase.",
-      "url": "https://github.com/RCushmaniii/react-vite-tailwind-base",
-      "demoUrl": "https://react-vite-tailwind-base.vercel.app/components",
-      "liveUrl": "https://react-vite-tailwind-base.vercel.app",
-      "homepage": "https://react-vite-tailwind-base.vercel.app",
-      "topics": [
-        "react",
-        "shadcn",
-        "shadcn-ui",
-        "tailwindcss",
-        "vite"
-      ],
-      "categories": [
-        "Templates"
-      ],
-      "tags": [
-        "react",
-        "shadcn",
-        "shadcn-ui",
-        "tailwindcss",
-        "vite",
-        "typescript",
-        "tailwind-css",
-        "recharts",
-        "template",
-        "data-visualization",
-        "radix-ui",
-        "msw"
-      ],
-      "stack": [
-        "React 19",
-        "TypeScript 5.8",
-        "Vite 7",
-        "Tailwind CSS 4",
-        "ShadCN UI (Radix)",
-        "Recharts 3",
-        "React Router 7",
-        "MSW"
-      ],
-      "status": "Production",
-      "language": "TypeScript",
-      "languages": {
-        "TypeScript": 121804,
-        "JavaScript": 13119,
-        "HTML": 3826,
-        "CSS": 3819
-      },
-      "stars": 2,
-      "forks": 0,
-      "lastPushed": "2026-02-22T22:49:44Z",
-      "createdAt": "2025-10-02T22:40:01Z",
-      "isFeatured": true,
-      "isArchived": false,
-      "isPrivate": false,
-      "tagline": "Production-ready React 19 starter with ShadCN UI, charts, and a working booking system",
-      "thumbnail": "https://react-vite-tailwind-base.vercel.app/images/react-vite-tailwind-base-thumb.jpg",
-      "problem": "Starting a new React project means 1-2 days of unbillable configuration — TypeScript, Tailwind, component libraries, routing, linting, formatting, path aliases — before writing a single feature. Most starter templates solve this with empty scaffolding that still leaves developers guessing at integration patterns.",
-      "solution": "A production-ready foundation that ships with working features instead of blank pages. Clone, install, dev — and you're looking at a working appointment booking system, data visualization dashboard, and 17+ pre-configured ShadCN components in under 5 minutes. Every dependency is pinned to stable February 2026 versions.",
-      "keyFeatures": [
-        "17+ pre-configured ShadCN UI components — buttons, cards, calendars, dialogs, sliders, tabs, all sharing the same design tokens",
-        "Complete appointment booking flow — service selection, calendar, time slots, pricing, and confirmation built from composable components",
-        "Data visualization dashboard — three Recharts visualizations (area, pie, bar) integrated with responsive containers and Tailwind theming",
-        "Invisible infrastructure — TypeScript strict mode, ESLint, Prettier, and pnpm verify pipeline that fails the build on type errors",
-        "MSW API mocking — full CRUD mock endpoints so frontend development doesn't depend on a backend"
-      ],
-      "metrics": [
-        "Zero-to-running in under 5 minutes with 3 commands",
-        "17+ accessible ShadCN UI components pre-configured",
-        "1-2 days of setup time eliminated per project",
-        "All dependencies pinned to stable Feb 2026 versions"
-      ],
-      "priority": 2,
-      "dateCompleted": "2026-02",
-      "slides": [
-        {
-          "src": "https://react-vite-tailwind-base.vercel.app/images/react-vite-tailwind-base-01.png",
-          "altEn": "Modern React Foundation — React 19 + Vite 7 + ShadCN, stable versions pinned February 2026",
-          "altEs": "Base Moderna de React — React 19 + Vite 7 + ShadCN, versiones estables fijadas en febrero 2026"
-        },
-        {
-          "src": "https://react-vite-tailwind-base.vercel.app/images/react-vite-tailwind-base-02.png",
-          "altEn": "The Startup Ritual — the endless manual setup loop of installing React, configuring Tailwind, fixing class conflicts, and wiring component libraries",
-          "altEs": "El Ritual de Inicio — el ciclo interminable de instalar React, configurar Tailwind, resolver conflictos de clases y conectar librerias de componentes"
-        },
-        {
-          "src": "https://react-vite-tailwind-base.vercel.app/images/react-vite-tailwind-base-03.png",
-          "altEn": "The Hidden Cost of Setup — 1 to 2 days of unbillable time lost per project before writing any business logic",
-          "altEs": "El Costo Oculto de la Configuracion — 1 a 2 dias de tiempo no facturable perdido por proyecto antes de escribir logica de negocio"
-        },
-        {
-          "src": "https://react-vite-tailwind-base.vercel.app/images/react-vite-tailwind-base-04.png",
-          "altEn": "Redefining Ready — the norm is a blank page with dependencies installed, this foundation is production-ready immediately",
-          "altEs": "Redefiniendo Listo — lo normal es una pagina en blanco con dependencias instaladas, esta base esta lista para produccion de inmediato"
-        },
-        {
-          "src": "https://react-vite-tailwind-base.vercel.app/images/react-vite-tailwind-base-05.png",
-          "altEn": "The Stack — React 19, TypeScript 5.8, Vite 7, Tailwind CSS 4, ShadCN UI, React Router 7, no experimental packages",
-          "altEs": "El Stack — React 19, TypeScript 5.8, Vite 7, Tailwind CSS 4, ShadCN UI, React Router 7, sin paquetes experimentales"
-        },
-        {
-          "src": "https://react-vite-tailwind-base.vercel.app/images/react-vite-tailwind-base-06.png",
-          "altEn": "17+ pre-configured components — buttons, cards, calendars, dialogs, sliders, tabs, avatars, badges, and switches, all accessible",
-          "altEs": "17+ componentes preconfigurados — botones, tarjetas, calendarios, dialogos, sliders, tabs, avatares, insignias e interruptores, todos accesibles"
-        },
-        {
-          "src": "https://react-vite-tailwind-base.vercel.app/images/react-vite-tailwind-base-07.png",
-          "altEn": "Reference implementation — a working appointment booking flow with service selection, calendar, time slots, pricing, and confirmation",
-          "altEs": "Implementacion de referencia — flujo de reserva de citas funcional con seleccion de servicio, calendario, horarios, precios y confirmacion"
-        },
-        {
-          "src": "https://react-vite-tailwind-base.vercel.app/images/react-vite-tailwind-base-08.png",
-          "altEn": "The invisible infrastructure — TypeScript strict mode, ESLint, Prettier, pnpm verify, and MSW API mocking in the build pipeline",
-          "altEs": "La infraestructura invisible — TypeScript modo estricto, ESLint, Prettier, pnpm verify y mocking de API con MSW en el pipeline de build"
-        },
-        {
-          "src": "https://react-vite-tailwind-base.vercel.app/images/react-vite-tailwind-base-09.png",
-          "altEn": "Who this is for — freelancers and solo devs, IT departments building internal tools, and agencies needing a consistent starting point",
-          "altEs": "Para quien es — freelancers y desarrolladores independientes, departamentos de TI construyendo herramientas internas y agencias que necesitan un punto de partida consistente"
-        },
-        {
-          "src": "https://react-vite-tailwind-base.vercel.app/images/react-vite-tailwind-base-10.png",
-          "altEn": "The first 5 minutes — git clone, pnpm install, pnpm dev, ready in 300 seconds with a working app and real interactions",
-          "altEs": "Los primeros 5 minutos — git clone, pnpm install, pnpm dev, listo en 300 segundos con una app funcional e interacciones reales"
-        }
-      ],
-      "videoUrl": "https://react-vite-tailwind-base.vercel.app/video/react-vite-tailwind-base-brief.mp4",
-      "videoPoster": "https://react-vite-tailwind-base.vercel.app/video/react-vite-tailwind-base-brief-poster.jpg"
-    },
-    {
-      "id": 1120026584,
-      "name": "context-writing-system",
-      "title": "AI Writing System",
-      "description": "Context-engineering system to lock brand voice, enforce truth, and generate consistent AI-written content at scale.",
-      "summary": "**Clone your voice. Crush content. Scale forever.**",
-      "url": "https://github.com/RCushmaniii/context-writing-system",
-      "demoUrl": "https://cushlabs-writing-system.vercel.app",
-      "liveUrl": "https://cushlabs-writing-system.vercel.app",
-      "homepage": "https://cushlabs-writing-system.vercel.app",
-      "topics": [
-        "ai-assistant",
-        "ai-content-generation",
-        "business-writing",
-        "content-management",
-        "context-engineering",
-        "llm-tools",
-        "writing-system"
-      ],
-      "categories": [
-        "AI Automation"
-      ],
-      "tags": [
-        "ai-assistant",
-        "ai-content-generation",
-        "business-writing",
-        "content-management",
-        "context-engineering",
-        "llm-tools",
-        "writing-system",
-        "ai",
-        "content-generation",
-        "brand-voice",
-        "automation",
-        "json",
-        "markdown",
-        "vercel"
-      ],
-      "stack": [
-        "HTML / CSS / JS",
-        "JSON Context Files",
-        "Markdown Skills",
-        "Vercel"
-      ],
-      "status": "Production",
-      "language": "HTML",
-      "languages": {
-        "HTML": 249878,
-        "CSS": 41745,
-        "JavaScript": 39010,
-        "PowerShell": 1981
-      },
-      "stars": 1,
-      "forks": 0,
-      "lastPushed": "2026-02-22T21:11:16Z",
-      "createdAt": "2025-12-20T10:31:00Z",
-      "isFeatured": true,
-      "isArchived": false,
-      "isPrivate": false,
-      "tagline": "Clone your brand voice once — AI writes like you across every channel, no drift",
-      "thumbnail": "https://cushlabs-writing-system.vercel.app/public/images/context-writing-system-thumb.jpg",
-      "problem": "AI-generated content starts strong but drifts into generic corporate filler within minutes. Teams spend more time editing AI output than they saved generating it — killing hype, restoring voice, and fact-checking hallucinated claims. Every new chat session starts from zero because there's no persistent memory of who you are, what you sell, or what you're allowed to say.",
-      "solution": "A structured context-engineering framework that stores your voice, audience profile, business facts, and claim rules in persistent JSON truth files. When you request any content type — landing page, email, LinkedIn post — the AI loads these truth files plus format-specific skills to produce consistent, on-brand output without hallucinated claims or generic phrasing. First drafts arrive 90% ready. You review instead of rewrite.",
-      "keyFeatures": [
-        "Four Pillars of Truth — Voice DNA, Business Profile, Ideal Client Profile, and Claims Policy lock your reality in structured JSON",
-        "Format-Specific Skills — dedicated content blueprints for landing pages, cold emails, LinkedIn posts, sales decks, and READMEs",
-        "Automated Credibility Protection — claims policy enforces what can and cannot be stated, blocking hallucinations before they ship",
-        "Hierarchical Control Stack — truth and claims always override voice, audience, and format rules, eliminating ambiguity",
-        "Static Explorer UI — branded dashboard to browse your entire writing system, deployed on Vercel with zero build step"
-      ],
-      "metrics": [
-        "First drafts arrive 90% ready — review instead of rewrite",
-        "Editing time reduced from 45 minutes to 5 minutes per asset",
-        "Zero hallucinated claims — credibility enforced by policy",
-        "One voice system powers every content channel"
-      ],
-      "priority": 2,
-      "dateCompleted": "2025-12",
-      "slides": [
-        {
-          "src": "https://cushlabs-writing-system.vercel.app/public/images/context-writing-system-01.png",
-          "altEn": "AI Writing System — Structure beats prompts, truth beats cleverness",
-          "altEs": "Sistema de Escritura IA — La estructura supera a los prompts, la verdad supera a la astucia"
-        },
-        {
-          "src": "https://cushlabs-writing-system.vercel.app/public/images/context-writing-system-02.png",
-          "altEn": "You are using AI but it sounds like AI — content quality degrades over time as tone flattens into generic corporate filler",
-          "altEs": "Usas IA pero suena a IA — la calidad del contenido se degrada con el tiempo hasta convertirse en relleno corporativo generico"
-        },
-        {
-          "src": "https://cushlabs-writing-system.vercel.app/public/images/context-writing-system-03.png",
-          "altEn": "It's not a prompt problem, it's a memory problem — you rebuild context from scratch every time",
-          "altEs": "No es un problema de prompts, es un problema de memoria — reconstruyes el contexto desde cero cada vez"
-        },
-        {
-          "src": "https://cushlabs-writing-system.vercel.app/public/images/context-writing-system-04.png",
-          "altEn": "Locking your reality with the four pillars of truth — Voice DNA, Business Profile, Ideal Client, and Claims Policy",
-          "altEs": "Bloqueando tu realidad con los cuatro pilares de verdad — ADN de Voz, Perfil de Negocio, Cliente Ideal y Politica de Afirmaciones"
-        },
-        {
-          "src": "https://cushlabs-writing-system.vercel.app/public/images/context-writing-system-05.png",
-          "altEn": "Clone your voice once, use it everywhere — teaches AI your rhythm, tone, and boundaries instantly",
-          "altEs": "Clona tu voz una vez, usala en todas partes — ensena a la IA tu ritmo, tono y limites al instante"
-        },
-        {
-          "src": "https://cushlabs-writing-system.vercel.app/public/images/context-writing-system-06.png",
-          "altEn": "Automated credibility protection — no hallucinations, no fake metrics, if it violates the policy it doesn't ship",
-          "altEs": "Proteccion de credibilidad automatizada — sin alucinaciones, sin metricas falsas, si viola la politica no se publica"
-        },
-        {
-          "src": "https://cushlabs-writing-system.vercel.app/public/images/context-writing-system-07.png",
-          "altEn": "Format-specific skills — dedicated content blueprints for LinkedIn, sales decks, cold emails, landing pages, and tech READMEs",
-          "altEs": "Habilidades especificas por formato — plantillas dedicadas para LinkedIn, presentaciones, emails frios, landing pages y READMEs tecnicos"
-        },
-        {
-          "src": "https://cushlabs-writing-system.vercel.app/public/images/context-writing-system-08.png",
-          "altEn": "No ambiguity — a strict hierarchy of control where truth and claims policy always override voice, audience, and format rules",
-          "altEs": "Sin ambiguedad — una jerarquia estricta de control donde la verdad y la politica de afirmaciones siempre prevalecen sobre voz, audiencia y formato"
-        },
-        {
-          "src": "https://cushlabs-writing-system.vercel.app/public/images/context-writing-system-09.png",
-          "altEn": "Reviewing not rewriting — first drafts arrive 90% ready, reducing 45 minutes of editing to 5 minutes of review",
-          "altEs": "Revisar en vez de reescribir — los primeros borradores llegan 90% listos, reduciendo 45 minutos de edicion a 5 minutos de revision"
-        },
-        {
-          "src": "https://cushlabs-writing-system.vercel.app/public/images/context-writing-system-10.png",
-          "altEn": "One identity, many channels — consistent brand voice across every platform powered by the same truth files",
-          "altEs": "Una identidad, muchos canales — voz de marca consistente en cada plataforma impulsada por los mismos archivos de verdad"
-        },
-        {
-          "src": "https://cushlabs-writing-system.vercel.app/public/images/context-writing-system-11.png",
-          "altEn": "Build your infrastructure — systems beat inspiration, ready to engineer your context",
-          "altEs": "Construye tu infraestructura — los sistemas superan la inspiracion, listo para disenar tu contexto"
-        }
-      ],
-      "videoUrl": "https://cushlabs-writing-system.vercel.app/public/videos/context-writing-system-brief.mp4",
-      "videoPoster": "https://cushlabs-writing-system.vercel.app/public/videos/context-writing-system-brief-poster.jpg"
-    },
-    {
       "id": 1133839610,
       "name": "ai-filesense-website",
       "title": "AI FileSense Website",
@@ -715,9 +867,9 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-02-22T19:19:15Z",
+      "lastPushed": "2026-02-23T00:23:59Z",
       "createdAt": "2026-01-13T22:16:37Z",
-      "isFeatured": true,
+      "isFeatured": false,
       "isArchived": false,
       "isPrivate": false,
       "tagline": "Bilingual marketing site with Lighthouse 100 and lead capture",
@@ -737,7 +889,7 @@
         "0.3s FCP, 0.4s LCP, 0ms TBT — zero layout shift",
         "Auto-generated sitemap with hreflang alternates for 30+ locale-specific URLs"
       ],
-      "priority": 2,
+      "priority": 3,
       "dateCompleted": "2026-02",
       "slides": [
         {
@@ -783,638 +935,6 @@
       ],
       "videoUrl": "https://ai-filesense-website.vercel.app/videos/AI-FileSense-Website-brief.mp4",
       "videoPoster": "https://ai-filesense-website.vercel.app/images/portfolio/AI-FileSense-Website-brief-poster.jpg"
-    },
-    {
-      "id": 1119144204,
-      "name": "nextjs-react-agency-starter",
-      "title": "Next.js Agency Starter",
-      "description": "The Next.js React Agency Starter provides a clean, scalable, and production-ready foundation for building modern agency and portfolio websites using Next.js, React, and TypeScript.",
-      "summary": "> A production-grade starter template for agency, marketing, and portfolio websites — built for real client work, not tutorials.",
-      "url": "https://github.com/RCushmaniii/nextjs-react-agency-starter",
-      "demoUrl": "https://nextjs-react-agency-starter.vercel.app/",
-      "liveUrl": "https://nextjs-react-agency-starter.vercel.app/",
-      "homepage": "https://nextjs-react-agency-starter.vercel.app/",
-      "topics": [
-        "nextjs",
-        "react",
-        "starter-kit",
-        "tailwindcss"
-      ],
-      "categories": [
-        "Templates"
-      ],
-      "tags": [
-        "nextjs",
-        "react",
-        "starter-kit",
-        "tailwindcss",
-        "typescript",
-        "tailwind-css",
-        "mdx",
-        "starter-template",
-        "agency",
-        "resend"
-      ],
-      "stack": [
-        "Next.js 14",
-        "TypeScript",
-        "Tailwind CSS",
-        "MDX",
-        "Resend"
-      ],
-      "status": "Production",
-      "language": "TypeScript",
-      "languages": {
-        "TypeScript": 172649,
-        "MDX": 27835,
-        "CSS": 1030,
-        "JavaScript": 260
-      },
-      "stars": 0,
-      "forks": 0,
-      "lastPushed": "2026-02-22T05:36:07Z",
-      "createdAt": "2025-12-18T20:18:05Z",
-      "isFeatured": true,
-      "isArchived": false,
-      "isPrivate": false,
-      "tagline": "Production-grade agency website template with MDX content and email pipeline",
-      "thumbnail": "https://nextjs-react-agency-starter.vercel.app/images/portfolio/nextjs-react-agency-starter-thumb.jpg",
-      "problem": "Most web starter templates are either over-engineered with opinionated abstractions or under-built with missing production essentials. Agency developers waste time rebuilding the same infrastructure — forms, content management, SEO, dark mode — for every client project.",
-      "solution": "A production-grade Next.js starter that ships with a unified UI system, MDX-powered blog and case study content, and a complete contact form pipeline with Zod validation and Resend email delivery. Clone it, customize the brand, and ship — no placeholders, no TODOs.",
-      "keyFeatures": [
-        "Cohesive UI system with layout primitives (Container, Section, Stack) and reusable components",
-        "MDX content workflow for blogs and case studies — drop in a file, no CMS or database needed",
-        "Production contact pipeline: React Hook Form + Zod validation + Server Actions + Resend email",
-        "SEO-first: auto-generated sitemap/robots.txt, structured data, Open Graph, Twitter Cards",
-        "Dark mode with localStorage persistence, WCAG AA accessibility, 90+ Lighthouse scores"
-      ],
-      "metrics": [
-        "90+ Lighthouse performance scores out of the box",
-        "Zero database dependencies — file-based MDX content",
-        "End-to-end contact form with validation and email delivery"
-      ],
-      "priority": 2,
-      "dateCompleted": "2025-12",
-      "slides": [
-        {
-          "src": "https://nextjs-react-agency-starter.vercel.app/images/portfolio/nextjs-react-agency-starter-01.png",
-          "altEn": "Next.js Agency Starter — production-grade foundation for agency and marketing websites",
-          "altEs": "Next.js Agency Starter — base de produccion para sitios web de agencias y marketing"
-        },
-        {
-          "src": "https://nextjs-react-agency-starter.vercel.app/images/portfolio/nextjs-react-agency-starter-02.png",
-          "altEn": "The Template Trap — over-engineered or under-built, neither saves agency developers time",
-          "altEs": "La Trampa de las Plantillas — sobre-ingeniadas o incompletas, ninguna ahorra tiempo"
-        },
-        {
-          "src": "https://nextjs-react-agency-starter.vercel.app/images/portfolio/nextjs-react-agency-starter-03.png",
-          "altEn": "Cohesive UI System — layout primitives and reusable components with unified design language",
-          "altEs": "Sistema UI Cohesivo — primitivas de layout y componentes reutilizables con lenguaje de diseno unificado"
-        },
-        {
-          "src": "https://nextjs-react-agency-starter.vercel.app/images/portfolio/nextjs-react-agency-starter-04.png",
-          "altEn": "MDX Content Workflow — blog posts and case studies as files, no CMS or database required",
-          "altEs": "Flujo de Contenido MDX — posts de blog y casos de estudio como archivos, sin CMS ni base de datos"
-        },
-        {
-          "src": "https://nextjs-react-agency-starter.vercel.app/images/portfolio/nextjs-react-agency-starter-05.png",
-          "altEn": "Production Contact Pipeline — validation, server actions, and Resend email delivery end-to-end",
-          "altEs": "Pipeline de Contacto en Produccion — validacion, server actions y entrega de email con Resend"
-        },
-        {
-          "src": "https://nextjs-react-agency-starter.vercel.app/images/portfolio/nextjs-react-agency-starter-06.png",
-          "altEn": "SEO Built In — auto-generated sitemap, robots.txt, structured data, Open Graph metadata",
-          "altEs": "SEO Integrado — sitemap automatico, robots.txt, datos estructurados, metadata Open Graph"
-        },
-        {
-          "src": "https://nextjs-react-agency-starter.vercel.app/images/portfolio/nextjs-react-agency-starter-07.png",
-          "altEn": "Dark Mode and Accessibility — WCAG AA compliance, keyboard navigation, focus states",
-          "altEs": "Modo Oscuro y Accesibilidad — cumplimiento WCAG AA, navegacion por teclado, estados de foco"
-        },
-        {
-          "src": "https://nextjs-react-agency-starter.vercel.app/images/portfolio/nextjs-react-agency-starter-08.png",
-          "altEn": "TypeScript Strict Mode — no implicit any, typed props and returns on every component",
-          "altEs": "TypeScript Strict Mode — sin any implicito, props y retornos tipados en cada componente"
-        },
-        {
-          "src": "https://nextjs-react-agency-starter.vercel.app/images/portfolio/nextjs-react-agency-starter-09.png",
-          "altEn": "Clone, Customize, Ship — CSS variables for brand colors, modular components for rapid delivery",
-          "altEs": "Clona, Personaliza, Entrega — variables CSS para colores de marca, componentes modulares"
-        }
-      ],
-      "videoUrl": "https://nextjs-react-agency-starter.vercel.app/video/nextjs-react-agency-starter-brief.mp4",
-      "videoPoster": "https://nextjs-react-agency-starter.vercel.app/video/nextjs-react-agency-starter-brief-poster.jpg"
-    },
-    {
-      "id": 1090479901,
-      "name": "ai-resume-tailor",
-      "title": "AI Resume Tailor",
-      "description": "Helps candidates create a tailored resume for a specific job. ",
-      "summary": "> Bilingual AI-powered ATS resume optimization — instant structured feedback, zero friction, privacy by design.",
-      "url": "https://github.com/RCushmaniii/ai-resume-tailor",
-      "demoUrl": "https://ai-resume-tailor-client.vercel.app",
-      "liveUrl": "https://ai-resume-tailor-client.vercel.app",
-      "homepage": "https://ai-resume-tailor-client.vercel.app",
-      "topics": [],
-      "categories": [
-        "AI SaaS"
-      ],
-      "tags": [
-        "ai",
-        "saas",
-        "resume",
-        "ats",
-        "job-search",
-        "bilingual",
-        "openai",
-        "stripe",
-        "clerk",
-        "flask"
-      ],
-      "stack": [
-        "React 19",
-        "Flask / Python",
-        "OpenAI GPT-4",
-        "Stripe",
-        "Neon PostgreSQL"
-      ],
-      "status": "Production",
-      "language": "TypeScript",
-      "languages": {
-        "TypeScript": 534402,
-        "Python": 305806,
-        "JavaScript": 19451,
-        "HTML": 3968,
-        "Batchfile": 2499,
-        "CSS": 1995
-      },
-      "stars": 0,
-      "forks": 0,
-      "lastPushed": "2026-02-22T04:58:25Z",
-      "createdAt": "2025-11-05T18:11:38Z",
-      "isFeatured": true,
-      "isArchived": false,
-      "isPrivate": false,
-      "tagline": "AI-powered ATS resume optimization with bilingual support and instant feedback",
-      "thumbnail": "https://ai-resume-tailor-client.vercel.app/images/ai-resume-tailor-thumb.jpg",
-      "problem": "Over 75% of resumes are rejected by Applicant Tracking Systems before a human ever sees them. Most job seekers have no visibility into why they're filtered out, and existing tools either charge upfront, require accounts, or provide generic advice that isn't tied to the specific job posting.",
-      "solution": "A bilingual SaaS application that returns structured ATS analysis — match score, missing keywords with severity coding, and actionable suggestions — in under 10 seconds. Guests get 5 free analyses with no signup, and no resume data is ever stored.",
-      "keyFeatures": [
-        "Structured ATS analysis with 0-100 match score, keyword gaps, and severity-coded suggestions via GPT-4",
-        "Zero-friction guest access — 5 free analyses before any signup prompt, value delivered first",
-        "Full EN/ES bilingual support across all UI, error messages, and AI-generated analysis output",
-        "Privacy-first architecture — no resume data stored, processing happens in a single request/response cycle",
-        "Stripe embedded checkout with guest-to-paid conversion and Clerk auth (Google, LinkedIn, email)"
-      ],
-      "metrics": [
-        "Structured ATS feedback in under 10 seconds",
-        "5 free analyses before any signup prompt",
-        "Zero resume data stored — privacy by architecture"
-      ],
-      "priority": 2,
-      "dateCompleted": "2026-02",
-      "slides": [
-        {
-          "src": "https://ai-resume-tailor-client.vercel.app/images/ai-resume-tailor-01.png",
-          "altEn": "AI Resume Tailor — Bilingual ATS optimization that shows you exactly why resumes get rejected",
-          "altEs": "AI Resume Tailor — Optimizacion ATS bilingue que te muestra exactamente por que rechazan tu CV"
-        },
-        {
-          "src": "https://ai-resume-tailor-client.vercel.app/images/ai-resume-tailor-02.png",
-          "altEn": "The ATS Black Box — 75% of resumes rejected before a human sees them, zero visibility into why",
-          "altEs": "La Caja Negra del ATS — 75% de CVs rechazados antes de que un humano los vea, sin visibilidad del por que"
-        },
-        {
-          "src": "https://ai-resume-tailor-client.vercel.app/images/ai-resume-tailor-03.png",
-          "altEn": "Structured Analysis — 0-100 match score with keyword gaps and severity-coded suggestions",
-          "altEs": "Analisis Estructurado — puntuacion de coincidencia 0-100 con brechas de palabras clave y sugerencias codificadas"
-        },
-        {
-          "src": "https://ai-resume-tailor-client.vercel.app/images/ai-resume-tailor-04.png",
-          "altEn": "Missing Keywords Detected — severity-coded priority indicators showing exactly what to fix first",
-          "altEs": "Palabras Clave Faltantes Detectadas — indicadores de prioridad codificados mostrando que corregir primero"
-        },
-        {
-          "src": "https://ai-resume-tailor-client.vercel.app/images/ai-resume-tailor-05.png",
-          "altEn": "Zero Friction — 5 free analyses with no signup, no email, no commitment required",
-          "altEs": "Cero Friccion — 5 analisis gratis sin registro, sin email, sin compromiso requerido"
-        },
-        {
-          "src": "https://ai-resume-tailor-client.vercel.app/images/ai-resume-tailor-06.png",
-          "altEn": "Full Bilingual Support — native English and Spanish across UI, analysis, and AI-generated feedback",
-          "altEs": "Soporte Bilingue Completo — ingles y espanol nativo en UI, analisis y retroalimentacion generada por IA"
-        },
-        {
-          "src": "https://ai-resume-tailor-client.vercel.app/images/ai-resume-tailor-07.png",
-          "altEn": "Privacy by Architecture — no resume data stored, analysis happens in a single request/response cycle",
-          "altEs": "Privacidad por Arquitectura — ningun dato de CV almacenado, analisis en un solo ciclo solicitud/respuesta"
-        },
-        {
-          "src": "https://ai-resume-tailor-client.vercel.app/images/ai-resume-tailor-08.png",
-          "altEn": "Stripe Embedded Checkout — guest-to-paid conversion with no signup wall before purchase",
-          "altEs": "Checkout Integrado de Stripe — conversion de invitado a pago sin muro de registro antes de la compra"
-        },
-        {
-          "src": "https://ai-resume-tailor-client.vercel.app/images/ai-resume-tailor-09.png",
-          "altEn": "Clerk Authentication — Google, LinkedIn, and email/password with automatic Neon profile provisioning",
-          "altEs": "Autenticacion Clerk — Google, LinkedIn y email/contrasena con aprovisionamiento automatico de perfil en Neon"
-        },
-        {
-          "src": "https://ai-resume-tailor-client.vercel.app/images/ai-resume-tailor-10.png",
-          "altEn": "Full-Stack Architecture — React 19 on Vercel, Flask on Render, Neon Postgres, Stripe, Clerk",
-          "altEs": "Arquitectura Full-Stack — React 19 en Vercel, Flask en Render, Neon Postgres, Stripe, Clerk"
-        },
-        {
-          "src": "https://ai-resume-tailor-client.vercel.app/images/ai-resume-tailor-11.png",
-          "altEn": "Results — structured feedback in under 10 seconds, zero data retention, full bilingual coverage",
-          "altEs": "Resultados — retroalimentacion estructurada en menos de 10 segundos, cero retencion de datos, cobertura bilingue"
-        }
-      ],
-      "videoUrl": "https://ai-resume-tailor-client.vercel.app/video/ai-resume-tailor-brief.mp4",
-      "videoPoster": "https://ai-resume-tailor-client.vercel.app/video/ai-resume-tailor-brief-poster.jpg"
-    },
-    {
-      "id": 1062817398,
-      "name": "ai-scrabble-practice",
-      "title": "AI Scrabble Practice",
-      "description": "A practice tool for Scrabble players built with React, Vite, Tailwind, and pnpm. Features include word scoring, word validation via free dictionary APIs, and a rack solver to generate playable words.",
-      "summary": "> AI-powered Scrabble practice suite with word validation, anagram solving, and intelligent hints — backed by a 370,000+ word dictionary.",
-      "url": "https://github.com/RCushmaniii/ai-scrabble-practice",
-      "demoUrl": "https://scrabble-mini.netlify.app",
-      "liveUrl": "https://scrabble-mini.netlify.app",
-      "homepage": "https://scrabble-mini.netlify.app/",
-      "topics": [
-        "anagram-solver",
-        "free-game",
-        "openai-api",
-        "react",
-        "scrabble",
-        "scrabble-game",
-        "scrabble-word-finder",
-        "tailwindcss",
-        "typescipt",
-        "vite"
-      ],
-      "categories": [
-        "Games"
-      ],
-      "tags": [
-        "anagram-solver",
-        "free-game",
-        "openai-api",
-        "react",
-        "scrabble",
-        "scrabble-game",
-        "scrabble-word-finder",
-        "tailwindcss",
-        "typescipt",
-        "vite",
-        "typescript",
-        "ai",
-        "openai",
-        "tailwind-css",
-        "playwright",
-        "i18n"
-      ],
-      "stack": [
-        "React 19",
-        "TypeScript",
-        "Vite 7",
-        "OpenAI GPT-4o-mini",
-        "Playwright"
-      ],
-      "status": "Production",
-      "language": "TypeScript",
-      "languages": {
-        "TypeScript": 188238,
-        "JavaScript": 13705,
-        "CSS": 6947,
-        "HTML": 1011
-      },
-      "stars": 1,
-      "forks": 0,
-      "lastPushed": "2026-02-21T16:58:58Z",
-      "createdAt": "2025-09-23T19:15:28Z",
-      "isFeatured": true,
-      "isArchived": false,
-      "isPrivate": true,
-      "tagline": "Five AI-powered practice tools backed by a 370K-word dictionary",
-      "thumbnail": "https://scrabble-mini.netlify.app/images/ai-scrabble-practice-thumb.jpg",
-      "problem": "Scrabble practice tools are either too simple (word checkers) or too powerful (board solvers) — neither builds actual skill. Players bounce between fragmented sites for validation, anagram solving, and word discovery with no structured practice mode.",
-      "solution": "A unified five-tool practice suite that consolidates word validation, anagram solving, strategic word finding, AI-powered natural language search, and timed gameplay into a single bilingual app with sub-second response times.",
-      "keyFeatures": [
-        "370,105-word dictionary with O(1) Set-based validation — sub-millisecond lookups even on mobile",
-        "Magic Search translates plain English queries into validated words with scores via GPT-4o-mini",
-        "Timed Practice Game with realistic tile draws, 60-second rounds, progressive scoring, and AI hints",
-        "Anagram Solver processes 7-tile hands with wildcard support in under 500ms",
-        "Full EN/ES bilingual interface with locale-based routing and Playwright E2E test coverage"
-      ],
-      "metrics": [
-        "370,105-word dictionary with sub-millisecond validation",
-        "Anagram solving in under 500ms for 7-tile hands",
-        "5 practice tools in a single unified interface"
-      ],
-      "priority": 2,
-      "dateCompleted": "2025-09",
-      "slides": [
-        {
-          "src": "https://scrabble-mini.netlify.app/images/ai-scrabble-practice-01.png",
-          "altEn": "AI Scrabble Practice Suite — Five tools for serious Scrabble practice",
-          "altEs": "AI Scrabble Practice Suite — Cinco herramientas para practicar Scrabble en serio"
-        },
-        {
-          "src": "https://scrabble-mini.netlify.app/images/ai-scrabble-practice-02.png",
-          "altEn": "The Practice Gap — word checkers don't teach, board solvers don't let you learn",
-          "altEs": "La brecha de practica — los verificadores no ensenan, los solucionadores no te dejan aprender"
-        },
-        {
-          "src": "https://scrabble-mini.netlify.app/images/ai-scrabble-practice-03.png",
-          "altEn": "Word Validator — instant validation with letter-by-letter score breakdown",
-          "altEs": "Validador de Palabras — validacion instantanea con desglose de puntuacion letra por letra"
-        },
-        {
-          "src": "https://scrabble-mini.netlify.app/images/ai-scrabble-practice-04.png",
-          "altEn": "Anagram Solver — find every playable word from your tile rack with wildcard support",
-          "altEs": "Solucionador de Anagramas — encuentra cada palabra jugable desde tu atril con comodines"
-        },
-        {
-          "src": "https://scrabble-mini.netlify.app/images/ai-scrabble-practice-06.png",
-          "altEn": "Word Finder — search by letter, position, and length with scoring statistics",
-          "altEs": "Buscador de Palabras — busca por letra, posicion y longitud con estadisticas de puntuacion"
-        },
-        {
-          "src": "https://scrabble-mini.netlify.app/images/ai-scrabble-practice-07.png",
-          "altEn": "Magic Search — ask for words in plain English, powered by GPT-4o-mini",
-          "altEs": "Busqueda Magica — pide palabras en lenguaje natural, impulsado por GPT-4o-mini"
-        },
-        {
-          "src": "https://scrabble-mini.netlify.app/images/ai-scrabble-practice-08.png",
-          "altEn": "Practice Game — build words against the clock with AI hints and progressive scoring",
-          "altEs": "Juego de Practica — forma palabras contra reloj con pistas de IA y puntuacion progresiva"
-        },
-        {
-          "src": "https://scrabble-mini.netlify.app/images/ai-scrabble-practice-09.png",
-          "altEn": "Bilingual and Tested — full EN/ES support with Playwright E2E coverage",
-          "altEs": "Bilingue y Probado — soporte completo EN/ES con cobertura E2E de Playwright"
-        },
-        {
-          "src": "https://scrabble-mini.netlify.app/images/ai-scrabble-practice-10.png",
-          "altEn": "Technical Architecture — React 19, TypeScript, Vite 7, OpenAI, 370K-word dictionary",
-          "altEs": "Arquitectura Tecnica — React 19, TypeScript, Vite 7, OpenAI, diccionario de 370K palabras"
-        }
-      ],
-      "videoUrl": "https://scrabble-mini.netlify.app/video/ai-scrabble-practice-brief.mp4",
-      "videoPoster": "https://scrabble-mini.netlify.app/video/ai-scrabble-practice-brief-poster.jpg"
-    },
-    {
-      "id": 1102173157,
-      "name": "ny-ai-chatbot",
-      "title": "NY AI Chatbot",
-      "description": "Production-ready AI chatbot with embeddable widget for websites. Features include knowledge base integration, multi-language support, and customizable admin dashboard.",
-      "summary": "**Drop-in AI chatbot widget with RAG intelligence for small business websites.**",
-      "url": "https://github.com/RCushmaniii/ny-ai-chatbot",
-      "demoUrl": "https://ny-ai-chatbot.vercel.app",
-      "liveUrl": "https://ny-ai-chatbot.vercel.app",
-      "homepage": "https://www.nyenglishteacher.com",
-      "topics": [
-        "ai-chatbot",
-        "nextjs",
-        "rag-chatbot",
-        "tailwindcss",
-        "vercel-deployment"
-      ],
-      "categories": [
-        "AI Automation"
-      ],
-      "tags": [
-        "ai-chatbot",
-        "nextjs",
-        "rag-chatbot",
-        "tailwindcss",
-        "vercel-deployment",
-        "typescript",
-        "openai",
-        "rag",
-        "pgvector",
-        "drizzle",
-        "clerk",
-        "tailwind",
-        "bilingual",
-        "chatbot",
-        "ai",
-        "vercel"
-      ],
-      "stack": [
-        "Next.js 15",
-        "TypeScript",
-        "OpenAI GPT-4o",
-        "pgvector",
-        "Drizzle ORM",
-        "Clerk",
-        "React 19",
-        "Tailwind CSS 4",
-        "shadcn/ui",
-        "Vercel AI SDK"
-      ],
-      "status": "Production",
-      "language": "TypeScript",
-      "languages": {
-        "TypeScript": 938680,
-        "JavaScript": 13855,
-        "PLpgSQL": 10195,
-        "CSS": 8090,
-        "PowerShell": 5924
-      },
-      "stars": 0,
-      "forks": 0,
-      "lastPushed": "2026-02-20T18:57:26Z",
-      "createdAt": "2025-11-23T00:24:28Z",
-      "isFeatured": true,
-      "isArchived": false,
-      "isPrivate": false,
-      "tagline": "Revenue-first RAG chatbot that converts visitors into booked strategy sessions",
-      "thumbnail": "https://ny-ai-chatbot.vercel.app/images/portfolio/ny-eng-chatbot-thumbnail.jpg",
-      "problem": "Language schools treat chatbots as deflection tools — reduce ticket volume, speed up FAQ answers, dead-end the conversation. The result is a cost center that never generates revenue. Meanwhile, anonymous website visitors leave without converting because there's no sales-aware system guiding them toward high-value actions like booking a strategy session.",
-      "solution": "An AI chatbot explicitly engineered as an automated sales agent. Every architectural layer — system prompts, RAG citations, error handling, rate limits — is designed to drive conversational conversion. The bot uses benefit-driven language with real client social proof, links RAG source citations to high-value service pages, and hard-codes CTAs for free strategy sessions directly into the system prompt.",
-      "keyFeatures": [
-        "Revenue-first RAG architecture merging website content and manual knowledge sources (top 5 by cosine similarity)",
-        "System prompts hard-coded with sales CTAs — every conversation steers toward booking a strategy session",
-        "Dual-source knowledge base: scraped website content (0.5 threshold) + curated documents (0.6 threshold)",
-        "Source citations that drive traffic to high-value service pages, increasing time-on-site and eliminating hallucination",
-        "Full EN/ES bilingual support with locale-aware personality and benefit-driven language",
-        "Embeddable widget (iframe + script tag) deployable on any client domain with CORS configuration",
-        "Admin dashboard with chat analytics, knowledge management, and bot settings"
-      ],
-      "metrics": [
-        "5-layer revenue engine: System Prompts, Error CTAs, Localization, Rate Limits as Strategy, Source Citations",
-        "2 RAG knowledge sources merged by cosine similarity with configurable thresholds",
-        "Sub-second streaming responses via Vercel AI SDK with OpenAI GPT-4o",
-        "Zero-auth guest experience via sessionId cookies — no signup friction before conversion"
-      ],
-      "priority": 2,
-      "dateCompleted": "2025-12",
-      "slides": [
-        {
-          "src": "https://ny-ai-chatbot.vercel.app/images/portfolio/ny-eng-chatbot-01.png",
-          "altEn": "Conversational Conversion — The Architecture of a Revenue-First Chatbot",
-          "altEs": "Conversion Conversacional — La Arquitectura de un Chatbot Orientado a Ingresos"
-        },
-        {
-          "src": "https://ny-ai-chatbot.vercel.app/images/portfolio/ny-eng-chatbot-02.png",
-          "altEn": "Moving Beyond the Support Cost Center — from Deflector to Converter",
-          "altEs": "Mas Alla del Centro de Costos de Soporte — de Deflector a Convertidor"
-        },
-        {
-          "src": "https://ny-ai-chatbot.vercel.app/images/portfolio/ny-eng-chatbot-03.png",
-          "altEn": "The Five Gears of the Revenue Engine — Brain, Trigger, Chameleon, Soft Wall, Bridge",
-          "altEs": "Los Cinco Engranajes del Motor de Ingresos — Cerebro, Disparador, Camaleon, Muro Suave, Puente"
-        },
-        {
-          "src": "https://ny-ai-chatbot.vercel.app/images/portfolio/ny-eng-chatbot-04.png",
-          "altEn": "System Prompts Are Hard-Coded to Sell — CTAs baked into the bot's DNA",
-          "altEs": "Los Prompts del Sistema Estan Programados para Vender — CTAs integrados en el ADN del bot"
-        },
-        {
-          "src": "https://ny-ai-chatbot.vercel.app/images/portfolio/ny-eng-chatbot-05.png",
-          "altEn": "Benefit-Driven Language Builds Authority — Pivot to Value technique with client social proof",
-          "altEs": "El Lenguaje Orientado a Beneficios Construye Autoridad — tecnica Pivot to Value con prueba social de clientes"
-        },
-        {
-          "src": "https://ny-ai-chatbot.vercel.app/images/portfolio/ny-eng-chatbot-06.png",
-          "altEn": "Source Citations Drive Traffic to High-Value Pages — RAG grounding that doubles as SEO",
-          "altEs": "Las Citas de Fuentes Dirigen Trafico a Paginas de Alto Valor — grounding RAG que funciona como SEO"
-        },
-        {
-          "src": "https://ny-ai-chatbot.vercel.app/images/portfolio/ny-eng-chatbot-07.png",
-          "altEn": "Not a Support Tool — An Automated Sales Agent that books strategy sessions",
-          "altEs": "No es una Herramienta de Soporte — Un Agente de Ventas Automatizado que agenda sesiones de estrategia"
-        }
-      ],
-      "videoUrl": "https://ny-ai-chatbot.vercel.app/video/ny-eng-chatbot-brief.mp4",
-      "videoPoster": "https://ny-ai-chatbot.vercel.app/video/ny-eng-chatbot-brief-poster.jpg"
-    },
-    {
-      "id": 1141547356,
-      "name": "ai-idea-validator",
-      "title": "AI Idea Validator",
-      "description": "A brutally honest defensibility assessment for founders. Find out if your business idea can survive competition, platform changes, and solo-founder realities before you build.",
-      "summary": "> A brutally honest defensibility assessment for founders. Find out if your business idea can survive competition, platform changes, and solo-founder realities before you build.",
-      "url": "https://github.com/RCushmaniii/ai-idea-validator",
-      "demoUrl": "https://ai-idea-validator.netlify.app/",
-      "liveUrl": "https://ai-idea-validator.netlify.app/",
-      "homepage": "",
-      "topics": [
-        "framer-motion",
-        "i18n",
-        "marketing-website",
-        "nextjs",
-        "playwright",
-        "react",
-        "shadcn-ui",
-        "stock-market",
-        "tailwindcss",
-        "typescript"
-      ],
-      "categories": [
-        "AI Automation"
-      ],
-      "tags": [
-        "framer-motion",
-        "i18n",
-        "marketing-website",
-        "nextjs",
-        "playwright",
-        "react",
-        "shadcn-ui",
-        "stock-market",
-        "tailwindcss",
-        "typescript",
-        "ai",
-        "startup-validation",
-        "openai",
-        "defensibility",
-        "founder-tools",
-        "contradiction-detection",
-        "bilingual"
-      ],
-      "stack": [
-        "Next.js 15",
-        "React 19",
-        "TypeScript",
-        "OpenAI GPT-4o-mini",
-        "Tailwind CSS 4"
-      ],
-      "status": "Production",
-      "language": "TypeScript",
-      "languages": {
-        "TypeScript": 303557,
-        "CSS": 4877,
-        "JavaScript": 618
-      },
-      "stars": 0,
-      "forks": 0,
-      "lastPushed": "2026-02-21T21:02:33Z",
-      "createdAt": "2026-01-25T01:59:32Z",
-      "isFeatured": true,
-      "isArchived": false,
-      "isPrivate": false,
-      "tagline": "Brutal startup defensibility assessment with AI contradiction detection",
-      "thumbnail": "https://ai-idea-validator.netlify.app/images/portfolio/aI-Idea-validator-thumb.jpg",
-      "problem": "Founders waste months building ideas that are structurally replaceable because traditional validation tools ignore defensibility. Self-assessment alone can't catch optimism bias — founders consistently rate their moats high while describing products with no switching costs.",
-      "solution": "A 23-question structured assessment that probes defensibility across moats, platform risk, lock-in, and failure modes. GPT-4o-mini cross-references numeric scores against written responses, detects contradictions, and delivers one of four verdicts — KILL, FLIP, BUILD, or BET — with specific reasoning in under 3 seconds.",
-      "keyFeatures": [
-        "23-question defensibility assessment across 4 sections with AI-powered contradiction detection",
-        "4 honest verdicts (KILL/FLIP/BUILD/BET) with confidence scores and detailed rationale",
-        "AI cross-references numeric self-assessment vs written responses to surface optimism bias",
-        "Full EN/ES bilingual support including AI-generated verdicts and analysis",
-        "Offline heuristic fallback — always returns a verdict, even without API access"
-      ],
-      "metrics": [
-        "Sub-3-second AI analysis via GPT-4o-mini",
-        "23 questions across 4 defensibility sections",
-        "4 verdicts with confidence scores and specific rationale"
-      ],
-      "priority": 3,
-      "dateCompleted": "2026-02",
-      "slides": [
-        {
-          "src": "https://ai-idea-validator.netlify.app/images/portfolio/aI-Idea-validator-01.png",
-          "altEn": "AI Idea Validator — Brutal honesty for founders who want the truth before they build",
-          "altEs": "AI Idea Validator — Honestidad brutal para fundadores que quieren la verdad antes de construir"
-        },
-        {
-          "src": "https://ai-idea-validator.netlify.app/images/portfolio/aI-Idea-validator-02.png",
-          "altEn": "The $50,000 Problem — building something structurally replaceable because nobody asked about defensibility",
-          "altEs": "El Problema de $50,000 — construir algo estructuralmente reemplazable porque nadie pregunto sobre defensibilidad"
-        },
-        {
-          "src": "https://ai-idea-validator.netlify.app/images/portfolio/aI-Idea-validator-03.png",
-          "altEn": "23 Questions That Matter — moats, platform risk, switching costs, and failure modes",
-          "altEs": "23 Preguntas Que Importan — fosos, riesgo de plataforma, costos de cambio y modos de fallo"
-        },
-        {
-          "src": "https://ai-idea-validator.netlify.app/images/portfolio/aI-Idea-validator-04.png",
-          "altEn": "Contradiction Detection — AI reads your scores AND your words, then flags where they diverge",
-          "altEs": "Deteccion de Contradicciones — la IA lee tus puntuaciones Y tus palabras, luego senala donde divergen"
-        },
-        {
-          "src": "https://ai-idea-validator.netlify.app/images/portfolio/aI-Idea-validator-05.png",
-          "altEn": "Four Verdicts, Zero Diplomacy — KILL, FLIP, BUILD, or BET with confidence scores",
-          "altEs": "Cuatro Veredictos, Cero Diplomacia — KILL, FLIP, BUILD o BET con puntuaciones de confianza"
-        },
-        {
-          "src": "https://ai-idea-validator.netlify.app/images/portfolio/aI-Idea-validator-06.png",
-          "altEn": "The Advisor Who Doesn't Need to Be Polite — AI delivers what mentors won't say",
-          "altEs": "El Asesor Que No Necesita Ser Amable — la IA entrega lo que los mentores no dicen"
-        },
-        {
-          "src": "https://ai-idea-validator.netlify.app/images/portfolio/aI-Idea-validator-07.png",
-          "altEn": "Privacy-First, Zero Storage — no accounts, no tracking, your idea stays yours",
-          "altEs": "Privacidad Primero, Cero Almacenamiento — sin cuentas, sin rastreo, tu idea sigue siendo tuya"
-        }
-      ],
-      "videoUrl": "https://ai-idea-validator.netlify.app/video/aI-Idea-validator-brief.mp4",
-      "videoPoster": "https://ai-idea-validator.netlify.app/video/aI-Idea-validator-brief-poster.jpg"
     },
     {
       "id": 1082205398,
@@ -1471,9 +991,9 @@
       },
       "stars": 1,
       "forks": 0,
-      "lastPushed": "2026-02-21T04:43:16Z",
+      "lastPushed": "2026-02-23T00:23:57Z",
       "createdAt": "2025-10-23T22:24:30Z",
-      "isFeatured": true,
+      "isFeatured": false,
       "isArchived": false,
       "isPrivate": false,
       "tagline": "Windows desktop app for real-time stock alerts via WhatsApp and Windows notifications",
@@ -1610,9 +1130,9 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-02-21T02:24:38Z",
+      "lastPushed": "2026-02-23T00:23:56Z",
       "createdAt": "2026-01-12T02:37:39Z",
-      "isFeatured": true,
+      "isFeatured": false,
       "isArchived": false,
       "isPrivate": false,
       "tagline": "Local AI file organizer — private, safe, zero config",
@@ -1695,521 +1215,6 @@
       "videoPoster": "https://raw.githubusercontent.com/RCushmaniii/ai-filesense/main/public/video/AI-FileSense-brief-poster.jpg"
     },
     {
-      "id": 1127520844,
-      "name": "marble-does-not-yield",
-      "title": "The Marble Does Not Yield",
-      "description": "A cinematic, single-page storytelling experience built with Next.js 14—combining markdown-driven prose, bilingual content, scroll-triggered imagery, and accessibility-first design.",
-      "summary": "> A cinematic, single-page narrative experience that combines long-form bilingual storytelling with restrained animation, audio narration, and accessibility-first design.",
-      "url": "https://github.com/RCushmaniii/marble-does-not-yield",
-      "demoUrl": "https://marble-does-not-yield.vercel.app/",
-      "liveUrl": "https://marble-does-not-yield.vercel.app/",
-      "homepage": "https://marble-does-not-yield.vercel.app",
-      "topics": [
-        "cdn",
-        "cdn-distribution",
-        "html5-audio",
-        "longform",
-        "markdown",
-        "narrative-design",
-        "nextjs",
-        "reactjs",
-        "static-site",
-        "storytelling",
-        "tailwindcss",
-        "typescript",
-        "vercel"
-      ],
-      "categories": [
-        "Creative"
-      ],
-      "tags": [
-        "cdn",
-        "cdn-distribution",
-        "html5-audio",
-        "longform",
-        "markdown",
-        "narrative-design",
-        "nextjs",
-        "reactjs",
-        "static-site",
-        "storytelling",
-        "tailwindcss",
-        "typescript",
-        "vercel",
-        "next-js",
-        "ai-assisted-development",
-        "bilingual",
-        "accessibility",
-        "audio-narration"
-      ],
-      "stack": [
-        "Next.js 14",
-        "TypeScript",
-        "React Server Components",
-        "Tailwind CSS",
-        "Vercel"
-      ],
-      "status": "Production",
-      "language": "TypeScript",
-      "languages": {
-        "TypeScript": 52724,
-        "CSS": 2913,
-        "JavaScript": 215
-      },
-      "stars": 0,
-      "forks": 0,
-      "lastPushed": "2026-02-20T22:45:45Z",
-      "createdAt": "2026-01-04T03:47:35Z",
-      "isFeatured": true,
-      "isArchived": false,
-      "isPrivate": false,
-      "tagline": "Bilingual literary web app with scroll-driven storytelling and WCAG AAA compliance",
-      "thumbnail": "https://marble-does-not-yield.vercel.app/images/portfolio/marble-does-not-yield-thumb.jpg",
-      "problem": "Long-form bilingual literary content needs a web experience that serves the narrative, not the framework. Full i18n libraries add runtime overhead for a two-language site, streaming services complicate optional audio narration, and accessibility becomes critical when the content demands sustained attention.",
-      "solution": "A static-first Next.js app where every technical decision serves the reading experience. Custom i18n with JSON labels + Markdown prose, author-read audio via a single play/pause toggle, scroll-driven IntersectionObserver animations that respect prefers-reduced-motion, and 104 kB First Load JS through React Server Components.",
-      "keyFeatures": [
-        "Custom i18n architecture — JSON for labels + Markdown for prose, zero-overhead language switching without any i18n framework",
-        "Scroll-driven storytelling with multi-stage color fade animations (3.5s) via IntersectionObserver, all respecting prefers-reduced-motion",
-        "WCAG AAA compliance with proper contrast ratios, semantic HTML, and reduced-motion support for cognitively loaded content",
-        "104 kB First Load JS — static generation with React Server Components eliminates client-side hydration cost",
-        "Six-iteration UX refinement from complex audio player to minimal toggle, demonstrating taste and restraint"
-      ],
-      "metrics": [
-        "104 kB First Load JS — zero client-side hydration cost",
-        "WCAG AAA compliance across both language variants",
-        "Six-iteration UX refinement process documented end-to-end",
-        "Zero i18n framework dependencies for full bilingual support"
-      ],
-      "priority": 3,
-      "dateCompleted": "2025-10",
-      "slides": [
-        {
-          "src": "https://marble-does-not-yield.vercel.app/images/portfolio/marble-does-not-yield-01.png",
-          "altEn": "The Marble Does Not Yield slide 1",
-          "altEs": "The Marble Does Not Yield diapositiva 1"
-        },
-        {
-          "src": "https://marble-does-not-yield.vercel.app/images/portfolio/marble-does-not-yield-02.png",
-          "altEn": "The Marble Does Not Yield slide 2",
-          "altEs": "The Marble Does Not Yield diapositiva 2"
-        },
-        {
-          "src": "https://marble-does-not-yield.vercel.app/images/portfolio/marble-does-not-yield-03.png",
-          "altEn": "The Marble Does Not Yield slide 3",
-          "altEs": "The Marble Does Not Yield diapositiva 3"
-        },
-        {
-          "src": "https://marble-does-not-yield.vercel.app/images/portfolio/marble-does-not-yield-04.png",
-          "altEn": "The Marble Does Not Yield slide 4",
-          "altEs": "The Marble Does Not Yield diapositiva 4"
-        },
-        {
-          "src": "https://marble-does-not-yield.vercel.app/images/portfolio/marble-does-not-yield-05.png",
-          "altEn": "The Marble Does Not Yield slide 5",
-          "altEs": "The Marble Does Not Yield diapositiva 5"
-        },
-        {
-          "src": "https://marble-does-not-yield.vercel.app/images/portfolio/marble-does-not-yield-06.png",
-          "altEn": "The Marble Does Not Yield slide 6",
-          "altEs": "The Marble Does Not Yield diapositiva 6"
-        },
-        {
-          "src": "https://marble-does-not-yield.vercel.app/images/portfolio/marble-does-not-yield-07.png",
-          "altEn": "The Marble Does Not Yield slide 7",
-          "altEs": "The Marble Does Not Yield diapositiva 7"
-        },
-        {
-          "src": "https://marble-does-not-yield.vercel.app/images/portfolio/marble-does-not-yield-08.png",
-          "altEn": "The Marble Does Not Yield slide 8",
-          "altEs": "The Marble Does Not Yield diapositiva 8"
-        },
-        {
-          "src": "https://marble-does-not-yield.vercel.app/images/portfolio/marble-does-not-yield-09.png",
-          "altEn": "The Marble Does Not Yield slide 9",
-          "altEs": "The Marble Does Not Yield diapositiva 9"
-        },
-        {
-          "src": "https://marble-does-not-yield.vercel.app/images/portfolio/marble-does-not-yield-10.png",
-          "altEn": "The Marble Does Not Yield slide 10",
-          "altEs": "The Marble Does Not Yield diapositiva 10"
-        }
-      ],
-      "videoUrl": "https://marble-does-not-yield.vercel.app/video/marble-does-not-yield-brief.mp4",
-      "videoPoster": "https://marble-does-not-yield.vercel.app/video/marble-does-not-yield-brief-poster.jpg"
-    },
-    {
-      "id": 1154149781,
-      "name": "mazebreak-wiki",
-      "title": "MazeBreak GDD Wiki",
-      "description": "Private documentation wiki for the MazeBreak Game Design Document. Built with React, Tailwind CSS, and Clerk auth.",
-      "summary": "Private, searchable documentation wiki for the MazeBreak Game Design Document. Provides instant access to all 24 GDD chapters with full-text search, chapter-based navigation, and Clerk-authenticated a",
-      "url": "https://github.com/RCushmaniii/mazebreak-wiki",
-      "demoUrl": "https://mazebreak-wiki.vercel.app/",
-      "liveUrl": "https://mazebreak-wiki.vercel.app/",
-      "homepage": "https://mazebreak-wiki.vercel.app",
-      "topics": [],
-      "categories": [
-        "Developer Tools"
-      ],
-      "tags": [
-        "developer-tools",
-        "documentation",
-        "react",
-        "game-development",
-        "search",
-        "authentication"
-      ],
-      "stack": [
-        "React 19",
-        "Vite 7",
-        "Tailwind CSS 3",
-        "Clerk Authentication",
-        "Fuse.js",
-        "React Router v6",
-        "Vercel"
-      ],
-      "status": null,
-      "language": "JavaScript",
-      "languages": {
-        "JavaScript": 44791,
-        "CSS": 13759,
-        "HTML": 1101
-      },
-      "stars": 0,
-      "forks": 0,
-      "lastPushed": "2026-02-20T18:57:30Z",
-      "createdAt": "2026-02-10T04:11:19Z",
-      "isFeatured": true,
-      "isArchived": false,
-      "isPrivate": false,
-      "tagline": "Private, searchable game design document wiki for a Roblox development team",
-      "thumbnail": "https://mazebreak-wiki.vercel.app/images/mazebreak-wiki-01.png",
-      "problem": null,
-      "solution": null,
-      "keyFeatures": [],
-      "metrics": [],
-      "priority": 3,
-      "dateCompleted": null,
-      "slides": [
-        {
-          "src": "https://mazebreak-wiki.vercel.app/images/mazebreak-wiki-01.png",
-          "altEn": "MazeBreak GDD Wiki slide 1",
-          "altEs": "MazeBreak GDD Wiki diapositiva 1"
-        },
-        {
-          "src": "https://mazebreak-wiki.vercel.app/images/mazebreak-wiki-02.png",
-          "altEn": "MazeBreak GDD Wiki slide 2",
-          "altEs": "MazeBreak GDD Wiki diapositiva 2"
-        },
-        {
-          "src": "https://mazebreak-wiki.vercel.app/images/mazebreak-wiki-03.png",
-          "altEn": "MazeBreak GDD Wiki slide 3",
-          "altEs": "MazeBreak GDD Wiki diapositiva 3"
-        },
-        {
-          "src": "https://mazebreak-wiki.vercel.app/images/mazebreak-wiki-04.png",
-          "altEn": "MazeBreak GDD Wiki slide 4",
-          "altEs": "MazeBreak GDD Wiki diapositiva 4"
-        },
-        {
-          "src": "https://mazebreak-wiki.vercel.app/images/mazebreak-wiki-05.png",
-          "altEn": "MazeBreak GDD Wiki slide 5",
-          "altEs": "MazeBreak GDD Wiki diapositiva 5"
-        },
-        {
-          "src": "https://mazebreak-wiki.vercel.app/images/mazebreak-wiki-06.png",
-          "altEn": "MazeBreak GDD Wiki slide 6",
-          "altEs": "MazeBreak GDD Wiki diapositiva 6"
-        },
-        {
-          "src": "https://mazebreak-wiki.vercel.app/images/mazebreak-wiki-07.png",
-          "altEn": "MazeBreak GDD Wiki slide 7",
-          "altEs": "MazeBreak GDD Wiki diapositiva 7"
-        }
-      ],
-      "videoUrl": "https://mazebreak-wiki.vercel.app/video/MazeBreak__Taming_the_GDD.mp4",
-      "videoPoster": null
-    },
-    {
-      "id": 1157421817,
-      "name": "comp-plan-simulator",
-      "title": "Compensation Plan Simulator",
-      "description": "Interactive compensation plan simulator for direct-selling companies",
-      "summary": "Interactive compensation plan simulator for direct-selling companies. Model commission structures, override percentages, and network parameters — then see real-time financial impact before making plan",
-      "url": "https://github.com/RCushmaniii/comp-plan-simulator",
-      "demoUrl": "https://comp-plan-simulator.vercel.app",
-      "liveUrl": "https://comp-plan-simulator.vercel.app",
-      "homepage": "https://comp-plan-simulator.vercel.app",
-      "topics": [
-        "compensation-plan",
-        "cushlabs",
-        "direct-selling",
-        "framer-motion",
-        "nextjs",
-        "recharts",
-        "shadcn-ui",
-        "simulator",
-        "tailwindcss",
-        "typescript",
-        "zustand"
-      ],
-      "categories": [
-        "Web Tools"
-      ],
-      "tags": [
-        "compensation-plan",
-        "cushlabs",
-        "direct-selling",
-        "framer-motion",
-        "nextjs",
-        "recharts",
-        "shadcn-ui",
-        "simulator",
-        "tailwindcss",
-        "typescript",
-        "zustand",
-        "compensation",
-        "financial-modeling",
-        "interactive",
-        "bilingual",
-        "data-visualization"
-      ],
-      "stack": [
-        "Next.js 16",
-        "TypeScript",
-        "Zustand",
-        "Recharts",
-        "Tailwind CSS 4"
-      ],
-      "status": "Production",
-      "language": "TypeScript",
-      "languages": {
-        "TypeScript": 92910,
-        "CSS": 5485,
-        "JavaScript": 559
-      },
-      "stars": 0,
-      "forks": 0,
-      "lastPushed": "2026-02-21T21:18:08Z",
-      "createdAt": "2026-02-13T19:55:19Z",
-      "isFeatured": true,
-      "isArchived": false,
-      "isPrivate": false,
-      "tagline": "Model direct-selling comp plan changes in real time before rolling them out",
-      "thumbnail": "https://comp-plan-simulator.vercel.app/images/comp-plan-sim-thumb.jpg",
-      "problem": "Direct-selling companies live and die by their compensation plan, yet most design changes with spreadsheets and gut instinct. A 2-point override increase at the leader tier might sound harmless until it erodes $200K in annual margin — and nobody sees the ripple effects until it's too late.",
-      "solution": "A fully interactive client-side simulator that lets operations leaders configure two compensation plans side-by-side across 45 inputs and see instant financial impact via KPI dashboards, revenue waterfalls, payout distributions, and break-even curves — all shareable via URL with zero backend.",
-      "keyFeatures": [
-        "45 interactive inputs (18 per plan x 2 + 9 network params) with real-time financial recalculation",
-        "Side-by-side Current vs Proposed comparison with 6 KPIs, dollar deltas, and percentage deltas",
-        "Revenue waterfall, payout distribution, and break-even crossover charts via Recharts",
-        "Shareable URL state encoding — full scenario compressed into a link for team review",
-        "Full EN/ES bilingual support with dark/light themes and 4 built-in scenario presets"
-      ],
-      "metrics": [
-        "45 interactive inputs with sub-second recalculation",
-        "4 chart types: waterfall, stacked bar, line with crossover, comparison table",
-        "Full state shareable via URL — zero backend, zero data exposure"
-      ],
-      "priority": 4,
-      "dateCompleted": "2026-02",
-      "slides": [
-        {
-          "src": "https://comp-plan-simulator.vercel.app/images/comp-plan-sim-01.png",
-          "altEn": "Compensation Plan Simulator — model the financial impact of comp plan changes before going live",
-          "altEs": "Simulador de Plan de Compensacion — modela el impacto financiero de cambios al plan antes de lanzarlos"
-        },
-        {
-          "src": "https://comp-plan-simulator.vercel.app/images/comp-plan-sim-02.png",
-          "altEn": "The Problem — spreadsheets and gut instinct drive decisions that affect margins and distributor retention",
-          "altEs": "El Problema — hojas de calculo e instinto impulsan decisiones que afectan margenes y retencion de distribuidores"
-        },
-        {
-          "src": "https://comp-plan-simulator.vercel.app/images/comp-plan-sim-03.png",
-          "altEn": "Configure Tab — adjust personal discounts, override rates, depth, and qualification rules across 3 tiers",
-          "altEs": "Pestana de Configuracion — ajusta descuentos, tasas de sobreescritura, profundidad y reglas por 3 niveles"
-        },
-        {
-          "src": "https://comp-plan-simulator.vercel.app/images/comp-plan-sim-04.png",
-          "altEn": "Financial Dashboard — 6 real-time KPIs with delta indicators against the alternate plan",
-          "altEs": "Dashboard Financiero — 6 KPIs en tiempo real con indicadores delta contra el plan alternativo"
-        },
-        {
-          "src": "https://comp-plan-simulator.vercel.app/images/comp-plan-sim-05.png",
-          "altEn": "Revenue Waterfall — stacked chart showing gross revenue through discounts, overrides, down to net margin",
-          "altEs": "Cascada de Ingresos — grafico apilado desde ingresos brutos, descuentos, sobreescrituras, hasta margen neto"
-        },
-        {
-          "src": "https://comp-plan-simulator.vercel.app/images/comp-plan-sim-06.png",
-          "altEn": "Break-Even Analysis — current vs proposed cost curves at up to 3x volume with crossover detection",
-          "altEs": "Analisis de Punto de Equilibrio — curvas de costo actual vs propuesto hasta 3x volumen con deteccion de cruce"
-        },
-        {
-          "src": "https://comp-plan-simulator.vercel.app/images/comp-plan-sim-07.png",
-          "altEn": "Comparison Table — side-by-side metrics with dollar deltas and color-coded good/bad indicators",
-          "altEs": "Tabla Comparativa — metricas lado a lado con deltas en dolares e indicadores de color bueno/malo"
-        },
-        {
-          "src": "https://comp-plan-simulator.vercel.app/images/comp-plan-sim-08.png",
-          "altEn": "4 Scenario Presets — Default, Aggressive Overrides, Flat Structure, High Growth for rapid what-if analysis",
-          "altEs": "4 Presets de Escenarios — Predeterminado, Sobreescrituras Agresivas, Estructura Plana, Alto Crecimiento"
-        },
-        {
-          "src": "https://comp-plan-simulator.vercel.app/images/comp-plan-sim-09.png",
-          "altEn": "Technical Architecture — Zustand state, pure calculation functions, URL-encoded sharing, zero backend",
-          "altEs": "Arquitectura Tecnica — estado Zustand, funciones de calculo puras, compartir por URL, sin backend"
-        }
-      ],
-      "videoUrl": "https://comp-plan-simulator.vercel.app/video/comp-plan-sim-brief.mp4",
-      "videoPoster": "https://comp-plan-simulator.vercel.app/video/comp-plan-sim-brief-poster.jpg"
-    },
-    {
-      "id": 1157375639,
-      "name": "ai-build-vs-outsource",
-      "title": "Build vs. Outsource Decision Framework",
-      "description": "An interactive web-based decision tool that helps operations leaders evaluate whether to build logistics capacity in-house or outsource to a third-party logistics provider (3PL). ",
-      "summary": "> Interactive decision-support tools for operations leaders at growth-stage direct-selling companies. Structured analysis, real-time feedback, board-ready output — no spreadsheets, no guesswork.",
-      "url": "https://github.com/RCushmaniii/ai-build-vs-outsource",
-      "demoUrl": "https://ai-build-vs-outsource.vercel.app",
-      "liveUrl": "https://ai-build-vs-outsource.vercel.app",
-      "homepage": "https://ai-build-vs-outsource.vercel.app",
-      "topics": [
-        "3pl",
-        "build-vs-outsource",
-        "dark-mode",
-        "decision-framework",
-        "framer-motion",
-        "i18n",
-        "logistics",
-        "nextjs",
-        "react",
-        "recharts",
-        "supply-chain",
-        "tailwindcss",
-        "typescript",
-        "vercel",
-        "weighted-scoring"
-      ],
-      "categories": [
-        "Web Tools"
-      ],
-      "tags": [
-        "3pl",
-        "build-vs-outsource",
-        "dark-mode",
-        "decision-framework",
-        "framer-motion",
-        "i18n",
-        "logistics",
-        "nextjs",
-        "react",
-        "recharts",
-        "supply-chain",
-        "tailwindcss",
-        "typescript",
-        "vercel",
-        "weighted-scoring",
-        "tailwind",
-        "decision-tools",
-        "operations",
-        "bilingual",
-        "data-visualization"
-      ],
-      "stack": [
-        "Next.js 16",
-        "React 19",
-        "Tailwind CSS 4",
-        "Framer Motion",
-        "Recharts"
-      ],
-      "status": "Production",
-      "language": "TypeScript",
-      "languages": {
-        "TypeScript": 163582,
-        "CSS": 5459,
-        "JavaScript": 559
-      },
-      "stars": 0,
-      "forks": 1,
-      "lastPushed": "2026-02-21T20:21:04Z",
-      "createdAt": "2026-02-13T18:42:29Z",
-      "isFeatured": true,
-      "isArchived": false,
-      "isPrivate": false,
-      "tagline": "Interactive decision tools with weighted scoring, cost modeling, and board-ready output",
-      "thumbnail": "https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-thumb.jpg",
-      "problem": "Operations leaders at growth-stage companies face high-stakes build-or-outsource decisions armed with gut feel, incomplete spreadsheets, and circular boardroom arguments. No tool combines structured weighted scoring with real-time cost modeling and shareable, board-ready output.",
-      "solution": "A suite of interactive decision-support tools that replace guesswork with data-driven analysis. A 20-criterion weighted scoring framework evaluates build vs. outsource across five categories, while an operational cost simulator reveals hidden step-function costs — all shareable via URL-encoded state.",
-      "keyFeatures": [
-        "20-criterion weighted scoring across 5 categories (Financial, Operational, Strategic, Control, Risk) with real-time verdict",
-        "Operational Cost Simulator with three-layer cost model — fixed, variable, and step-function costs with break-even analysis",
-        "6 decision presets and 5 growth scenario presets for rapid what-if analysis",
-        "Shareable URL encoding — full tool state in query params for board presentations",
-        "Full EN/ES bilingual support with dark/light theme toggle and print-ready layouts"
-      ],
-      "metrics": [
-        "20 weighted criteria across 5 decision categories",
-        "6 decision presets + 5 growth scenario presets",
-        "Full state shareable via URL — no backend required"
-      ],
-      "priority": 4,
-      "dateCompleted": "2026-02",
-      "slides": [
-        {
-          "src": "https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-01.png",
-          "altEn": "Operations Decision Tools Suite — structured analysis replaces boardroom guesswork",
-          "altEs": "Suite de Herramientas de Decision Operativa — analisis estructurado reemplaza suposiciones en la sala de juntas"
-        },
-        {
-          "src": "https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-02.png",
-          "altEn": "The Problem — gut feel, incomplete spreadsheets, and circular arguments drive million-dollar decisions",
-          "altEs": "El Problema — instinto, hojas de calculo incompletas y argumentos circulares impulsan decisiones millonarias"
-        },
-        {
-          "src": "https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-03.png",
-          "altEn": "20-Criterion Weighted Scoring — five categories with real-time verdict and radar chart",
-          "altEs": "Puntuacion Ponderada de 20 Criterios — cinco categorias con veredicto en tiempo real y grafico radar"
-        },
-        {
-          "src": "https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-04.png",
-          "altEn": "Scenario Presets — Growth Emergency, Control First, Cost Optimizer shift the verdict instantly",
-          "altEs": "Presets de Escenarios — Emergencia de Crecimiento, Control Primero, Optimizador de Costos cambian el veredicto al instante"
-        },
-        {
-          "src": "https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-05.png",
-          "altEn": "Expandable Rationale — each criterion includes industry analysis and scoring guidance",
-          "altEs": "Justificacion Expandible — cada criterio incluye analisis de industria y guia de puntuacion"
-        },
-        {
-          "src": "https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-06.png",
-          "altEn": "Operational Cost Simulator — three-layer cost model with volume slider and cost-per-order curves",
-          "altEs": "Simulador de Costos Operativos — modelo de costos de tres capas con control de volumen y curvas de costo por orden"
-        },
-        {
-          "src": "https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-07.png",
-          "altEn": "Step-Function Costs Revealed — watch cost-per-order jump when new hires and warehouse expansions trigger",
-          "altEs": "Costos Escalonados Revelados — observa el salto del costo por orden cuando se activan nuevas contrataciones y expansiones"
-        },
-        {
-          "src": "https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-08.png",
-          "altEn": "Break-Even and Margin Analysis — utilization gauges and margin visualization with profitability threshold",
-          "altEs": "Analisis de Punto de Equilibrio y Margen — indicadores de utilizacion y visualizacion de margen con umbral de rentabilidad"
-        },
-        {
-          "src": "https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-09.png",
-          "altEn": "Shareable and Board-Ready — full state encoded in URL params, print-optimized layouts for PDFs",
-          "altEs": "Compartible y Listo para Presentar — estado completo codificado en URL, disenos optimizados para impresion PDF"
-        },
-        {
-          "src": "https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-10.png",
-          "altEn": "Technical Architecture — Next.js 16, React 19, Recharts, Framer Motion, bilingual, zero backend",
-          "altEs": "Arquitectura Tecnica — Next.js 16, React 19, Recharts, Framer Motion, bilingue, sin backend"
-        }
-      ],
-      "videoUrl": "https://ai-build-vs-outsource.vercel.app/video/ai-build-vs-outsource-brief.mp4",
-      "videoPoster": "https://ai-build-vs-outsource.vercel.app/video/ai-build-vs-outsource-brief-poster.jpg"
-    },
-    {
       "id": 1140204033,
       "name": "ai-stock-alert-website",
       "title": "AI StockAlert Website",
@@ -2264,9 +1269,9 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-02-21T04:48:49Z",
+      "lastPushed": "2026-02-23T00:24:02Z",
       "createdAt": "2026-01-23T00:50:02Z",
-      "isFeatured": true,
+      "isFeatured": false,
       "isArchived": false,
       "isPrivate": false,
       "tagline": "Bilingual SaaS marketing site — 18 routes, e2e tested, zero server cost",
@@ -2344,11 +1349,144 @@
       "videoPoster": "https://aistockalert.app/videos/AI-StockAlert-brief-poster.jpg"
     },
     {
+      "id": 1157421817,
+      "name": "comp-plan-simulator",
+      "title": "Compensation Plan Simulator",
+      "description": "Interactive compensation plan simulator for direct-selling companies",
+      "summary": "Interactive compensation plan simulator for direct-selling companies. Model commission structures, override percentages, and network parameters — then see real-time financial impact before making plan",
+      "url": "https://github.com/RCushmaniii/comp-plan-simulator",
+      "demoUrl": "https://comp-plan-simulator.vercel.app",
+      "liveUrl": "https://comp-plan-simulator.vercel.app",
+      "homepage": "https://comp-plan-simulator.vercel.app",
+      "topics": [
+        "compensation-plan",
+        "cushlabs",
+        "direct-selling",
+        "framer-motion",
+        "nextjs",
+        "recharts",
+        "shadcn-ui",
+        "simulator",
+        "tailwindcss",
+        "typescript",
+        "zustand"
+      ],
+      "categories": [
+        "Web Tools"
+      ],
+      "tags": [
+        "compensation-plan",
+        "cushlabs",
+        "direct-selling",
+        "framer-motion",
+        "nextjs",
+        "recharts",
+        "shadcn-ui",
+        "simulator",
+        "tailwindcss",
+        "typescript",
+        "zustand",
+        "compensation",
+        "financial-modeling",
+        "interactive",
+        "bilingual",
+        "data-visualization"
+      ],
+      "stack": [
+        "Next.js 16",
+        "TypeScript",
+        "Zustand",
+        "Recharts",
+        "Tailwind CSS 4"
+      ],
+      "status": "Production",
+      "language": "TypeScript",
+      "languages": {
+        "TypeScript": 92910,
+        "CSS": 5485,
+        "JavaScript": 559
+      },
+      "stars": 0,
+      "forks": 0,
+      "lastPushed": "2026-02-23T00:24:00Z",
+      "createdAt": "2026-02-13T19:55:19Z",
+      "isFeatured": false,
+      "isArchived": false,
+      "isPrivate": false,
+      "tagline": "Model direct-selling comp plan changes in real time before rolling them out",
+      "thumbnail": "https://comp-plan-simulator.vercel.app/images/comp-plan-sim-thumb.jpg",
+      "problem": "Direct-selling companies live and die by their compensation plan, yet most design changes with spreadsheets and gut instinct. A 2-point override increase at the leader tier might sound harmless until it erodes $200K in annual margin — and nobody sees the ripple effects until it's too late.",
+      "solution": "A fully interactive client-side simulator that lets operations leaders configure two compensation plans side-by-side across 45 inputs and see instant financial impact via KPI dashboards, revenue waterfalls, payout distributions, and break-even curves — all shareable via URL with zero backend.",
+      "keyFeatures": [
+        "45 interactive inputs (18 per plan x 2 + 9 network params) with real-time financial recalculation",
+        "Side-by-side Current vs Proposed comparison with 6 KPIs, dollar deltas, and percentage deltas",
+        "Revenue waterfall, payout distribution, and break-even crossover charts via Recharts",
+        "Shareable URL state encoding — full scenario compressed into a link for team review",
+        "Full EN/ES bilingual support with dark/light themes and 4 built-in scenario presets"
+      ],
+      "metrics": [
+        "45 interactive inputs with sub-second recalculation",
+        "4 chart types: waterfall, stacked bar, line with crossover, comparison table",
+        "Full state shareable via URL — zero backend, zero data exposure"
+      ],
+      "priority": 4,
+      "dateCompleted": "2026-02",
+      "slides": [
+        {
+          "src": "https://comp-plan-simulator.vercel.app/images/comp-plan-sim-01.png",
+          "altEn": "Compensation Plan Simulator — model the financial impact of comp plan changes before going live",
+          "altEs": "Simulador de Plan de Compensacion — modela el impacto financiero de cambios al plan antes de lanzarlos"
+        },
+        {
+          "src": "https://comp-plan-simulator.vercel.app/images/comp-plan-sim-02.png",
+          "altEn": "The Problem — spreadsheets and gut instinct drive decisions that affect margins and distributor retention",
+          "altEs": "El Problema — hojas de calculo e instinto impulsan decisiones que afectan margenes y retencion de distribuidores"
+        },
+        {
+          "src": "https://comp-plan-simulator.vercel.app/images/comp-plan-sim-03.png",
+          "altEn": "Configure Tab — adjust personal discounts, override rates, depth, and qualification rules across 3 tiers",
+          "altEs": "Pestana de Configuracion — ajusta descuentos, tasas de sobreescritura, profundidad y reglas por 3 niveles"
+        },
+        {
+          "src": "https://comp-plan-simulator.vercel.app/images/comp-plan-sim-04.png",
+          "altEn": "Financial Dashboard — 6 real-time KPIs with delta indicators against the alternate plan",
+          "altEs": "Dashboard Financiero — 6 KPIs en tiempo real con indicadores delta contra el plan alternativo"
+        },
+        {
+          "src": "https://comp-plan-simulator.vercel.app/images/comp-plan-sim-05.png",
+          "altEn": "Revenue Waterfall — stacked chart showing gross revenue through discounts, overrides, down to net margin",
+          "altEs": "Cascada de Ingresos — grafico apilado desde ingresos brutos, descuentos, sobreescrituras, hasta margen neto"
+        },
+        {
+          "src": "https://comp-plan-simulator.vercel.app/images/comp-plan-sim-06.png",
+          "altEn": "Break-Even Analysis — current vs proposed cost curves at up to 3x volume with crossover detection",
+          "altEs": "Analisis de Punto de Equilibrio — curvas de costo actual vs propuesto hasta 3x volumen con deteccion de cruce"
+        },
+        {
+          "src": "https://comp-plan-simulator.vercel.app/images/comp-plan-sim-07.png",
+          "altEn": "Comparison Table — side-by-side metrics with dollar deltas and color-coded good/bad indicators",
+          "altEs": "Tabla Comparativa — metricas lado a lado con deltas en dolares e indicadores de color bueno/malo"
+        },
+        {
+          "src": "https://comp-plan-simulator.vercel.app/images/comp-plan-sim-08.png",
+          "altEn": "4 Scenario Presets — Default, Aggressive Overrides, Flat Structure, High Growth for rapid what-if analysis",
+          "altEs": "4 Presets de Escenarios — Predeterminado, Sobreescrituras Agresivas, Estructura Plana, Alto Crecimiento"
+        },
+        {
+          "src": "https://comp-plan-simulator.vercel.app/images/comp-plan-sim-09.png",
+          "altEn": "Technical Architecture — Zustand state, pure calculation functions, URL-encoded sharing, zero backend",
+          "altEs": "Arquitectura Tecnica — estado Zustand, funciones de calculo puras, compartir por URL, sin backend"
+        }
+      ],
+      "videoUrl": "https://comp-plan-simulator.vercel.app/video/comp-plan-sim-brief.mp4",
+      "videoPoster": "https://comp-plan-simulator.vercel.app/video/comp-plan-sim-brief-poster.jpg"
+    },
+    {
       "id": 1108213747,
       "name": "ai-chatbot-saas",
       "title": "AI Chatbot SaaS Platform",
       "description": "Multi-tenant AI chatbot SaaS platform - Ragbot by CushLabs.AI",
-      "summary": "<h1 align=\"center\">Bilingual AI Front Desk & Sales Assistant (SaaS)</h1>",
+      "summary": "> Multi-tenant SaaS platform for service businesses to deploy a bilingual (EN/ES), on-brand AI assistant that answers questions, qualifies leads, captures booking intent, and escalates high-intent pro",
       "url": "https://github.com/RCushmaniii/ai-chatbot-saas",
       "demoUrl": "https://ai-chatbot-saas-delta.vercel.app",
       "liveUrl": "",
@@ -2383,7 +1521,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-02-22T19:56:51Z",
+      "lastPushed": "2026-02-22T23:10:31Z",
       "createdAt": "2025-12-02T07:09:31Z",
       "isFeatured": false,
       "isArchived": false,
@@ -2399,6 +1537,775 @@
       "slides": [],
       "videoUrl": null,
       "videoPoster": null
+    },
+    {
+      "id": 1127520844,
+      "name": "marble-does-not-yield",
+      "title": "The Marble Does Not Yield",
+      "description": "A cinematic, single-page storytelling experience built with Next.js 14—combining markdown-driven prose, bilingual content, scroll-triggered imagery, and accessibility-first design.",
+      "summary": "> A cinematic, single-page narrative experience that combines long-form bilingual storytelling with restrained animation, audio narration, and accessibility-first design.",
+      "url": "https://github.com/RCushmaniii/marble-does-not-yield",
+      "demoUrl": "https://marble-does-not-yield.vercel.app/",
+      "liveUrl": "https://marble-does-not-yield.vercel.app/",
+      "homepage": "https://marble-does-not-yield.vercel.app",
+      "topics": [
+        "cdn",
+        "cdn-distribution",
+        "html5-audio",
+        "longform",
+        "markdown",
+        "narrative-design",
+        "nextjs",
+        "reactjs",
+        "static-site",
+        "storytelling",
+        "tailwindcss",
+        "typescript",
+        "vercel"
+      ],
+      "categories": [
+        "Creative"
+      ],
+      "tags": [
+        "cdn",
+        "cdn-distribution",
+        "html5-audio",
+        "longform",
+        "markdown",
+        "narrative-design",
+        "nextjs",
+        "reactjs",
+        "static-site",
+        "storytelling",
+        "tailwindcss",
+        "typescript",
+        "vercel",
+        "next-js",
+        "ai-assisted-development",
+        "bilingual",
+        "accessibility",
+        "audio-narration"
+      ],
+      "stack": [
+        "Next.js 14",
+        "TypeScript",
+        "React Server Components",
+        "Tailwind CSS",
+        "Vercel"
+      ],
+      "status": "Production",
+      "language": "TypeScript",
+      "languages": {
+        "TypeScript": 52724,
+        "CSS": 2913,
+        "JavaScript": 215
+      },
+      "stars": 0,
+      "forks": 0,
+      "lastPushed": "2026-02-23T00:24:09Z",
+      "createdAt": "2026-01-04T03:47:35Z",
+      "isFeatured": false,
+      "isArchived": false,
+      "isPrivate": false,
+      "tagline": "Bilingual literary web app with scroll-driven storytelling and WCAG AAA compliance",
+      "thumbnail": "https://marble-does-not-yield.vercel.app/images/portfolio/marble-does-not-yield-thumb.jpg",
+      "problem": "Long-form bilingual literary content needs a web experience that serves the narrative, not the framework. Full i18n libraries add runtime overhead for a two-language site, streaming services complicate optional audio narration, and accessibility becomes critical when the content demands sustained attention.",
+      "solution": "A static-first Next.js app where every technical decision serves the reading experience. Custom i18n with JSON labels + Markdown prose, author-read audio via a single play/pause toggle, scroll-driven IntersectionObserver animations that respect prefers-reduced-motion, and 104 kB First Load JS through React Server Components.",
+      "keyFeatures": [
+        "Custom i18n architecture — JSON for labels + Markdown for prose, zero-overhead language switching without any i18n framework",
+        "Scroll-driven storytelling with multi-stage color fade animations (3.5s) via IntersectionObserver, all respecting prefers-reduced-motion",
+        "WCAG AAA compliance with proper contrast ratios, semantic HTML, and reduced-motion support for cognitively loaded content",
+        "104 kB First Load JS — static generation with React Server Components eliminates client-side hydration cost",
+        "Six-iteration UX refinement from complex audio player to minimal toggle, demonstrating taste and restraint"
+      ],
+      "metrics": [
+        "104 kB First Load JS — zero client-side hydration cost",
+        "WCAG AAA compliance across both language variants",
+        "Six-iteration UX refinement process documented end-to-end",
+        "Zero i18n framework dependencies for full bilingual support"
+      ],
+      "priority": 5,
+      "dateCompleted": "2025-10",
+      "slides": [
+        {
+          "src": "https://marble-does-not-yield.vercel.app/images/portfolio/marble-does-not-yield-01.png",
+          "altEn": "The Marble Does Not Yield slide 1",
+          "altEs": "The Marble Does Not Yield diapositiva 1"
+        },
+        {
+          "src": "https://marble-does-not-yield.vercel.app/images/portfolio/marble-does-not-yield-02.png",
+          "altEn": "The Marble Does Not Yield slide 2",
+          "altEs": "The Marble Does Not Yield diapositiva 2"
+        },
+        {
+          "src": "https://marble-does-not-yield.vercel.app/images/portfolio/marble-does-not-yield-03.png",
+          "altEn": "The Marble Does Not Yield slide 3",
+          "altEs": "The Marble Does Not Yield diapositiva 3"
+        },
+        {
+          "src": "https://marble-does-not-yield.vercel.app/images/portfolio/marble-does-not-yield-04.png",
+          "altEn": "The Marble Does Not Yield slide 4",
+          "altEs": "The Marble Does Not Yield diapositiva 4"
+        },
+        {
+          "src": "https://marble-does-not-yield.vercel.app/images/portfolio/marble-does-not-yield-05.png",
+          "altEn": "The Marble Does Not Yield slide 5",
+          "altEs": "The Marble Does Not Yield diapositiva 5"
+        },
+        {
+          "src": "https://marble-does-not-yield.vercel.app/images/portfolio/marble-does-not-yield-06.png",
+          "altEn": "The Marble Does Not Yield slide 6",
+          "altEs": "The Marble Does Not Yield diapositiva 6"
+        },
+        {
+          "src": "https://marble-does-not-yield.vercel.app/images/portfolio/marble-does-not-yield-07.png",
+          "altEn": "The Marble Does Not Yield slide 7",
+          "altEs": "The Marble Does Not Yield diapositiva 7"
+        },
+        {
+          "src": "https://marble-does-not-yield.vercel.app/images/portfolio/marble-does-not-yield-08.png",
+          "altEn": "The Marble Does Not Yield slide 8",
+          "altEs": "The Marble Does Not Yield diapositiva 8"
+        },
+        {
+          "src": "https://marble-does-not-yield.vercel.app/images/portfolio/marble-does-not-yield-09.png",
+          "altEn": "The Marble Does Not Yield slide 9",
+          "altEs": "The Marble Does Not Yield diapositiva 9"
+        },
+        {
+          "src": "https://marble-does-not-yield.vercel.app/images/portfolio/marble-does-not-yield-10.png",
+          "altEn": "The Marble Does Not Yield slide 10",
+          "altEs": "The Marble Does Not Yield diapositiva 10"
+        }
+      ],
+      "videoUrl": "https://marble-does-not-yield.vercel.app/video/marble-does-not-yield-brief.mp4",
+      "videoPoster": "https://marble-does-not-yield.vercel.app/video/marble-does-not-yield-brief-poster.jpg"
+    },
+    {
+      "id": 1157375639,
+      "name": "ai-build-vs-outsource",
+      "title": "Build vs. Outsource Decision Framework",
+      "description": "An interactive web-based decision tool that helps operations leaders evaluate whether to build logistics capacity in-house or outsource to a third-party logistics provider (3PL). ",
+      "summary": "> Interactive decision-support tools for operations leaders at growth-stage direct-selling companies. Structured analysis, real-time feedback, board-ready output — no spreadsheets, no guesswork.",
+      "url": "https://github.com/RCushmaniii/ai-build-vs-outsource",
+      "demoUrl": "https://ai-build-vs-outsource.vercel.app",
+      "liveUrl": "https://ai-build-vs-outsource.vercel.app",
+      "homepage": "https://ai-build-vs-outsource.vercel.app",
+      "topics": [
+        "3pl",
+        "build-vs-outsource",
+        "dark-mode",
+        "decision-framework",
+        "framer-motion",
+        "i18n",
+        "logistics",
+        "nextjs",
+        "react",
+        "recharts",
+        "supply-chain",
+        "tailwindcss",
+        "typescript",
+        "vercel",
+        "weighted-scoring"
+      ],
+      "categories": [
+        "Web Tools"
+      ],
+      "tags": [
+        "3pl",
+        "build-vs-outsource",
+        "dark-mode",
+        "decision-framework",
+        "framer-motion",
+        "i18n",
+        "logistics",
+        "nextjs",
+        "react",
+        "recharts",
+        "supply-chain",
+        "tailwindcss",
+        "typescript",
+        "vercel",
+        "weighted-scoring",
+        "tailwind",
+        "decision-tools",
+        "operations",
+        "bilingual",
+        "data-visualization"
+      ],
+      "stack": [
+        "Next.js 16",
+        "React 19",
+        "Tailwind CSS 4",
+        "Framer Motion",
+        "Recharts"
+      ],
+      "status": "Production",
+      "language": "TypeScript",
+      "languages": {
+        "TypeScript": 163582,
+        "CSS": 5459,
+        "JavaScript": 559
+      },
+      "stars": 0,
+      "forks": 1,
+      "lastPushed": "2026-02-23T00:24:08Z",
+      "createdAt": "2026-02-13T18:42:29Z",
+      "isFeatured": false,
+      "isArchived": false,
+      "isPrivate": false,
+      "tagline": "Interactive decision tools with weighted scoring, cost modeling, and board-ready output",
+      "thumbnail": "https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-thumb.jpg",
+      "problem": "Operations leaders at growth-stage companies face high-stakes build-or-outsource decisions armed with gut feel, incomplete spreadsheets, and circular boardroom arguments. No tool combines structured weighted scoring with real-time cost modeling and shareable, board-ready output.",
+      "solution": "A suite of interactive decision-support tools that replace guesswork with data-driven analysis. A 20-criterion weighted scoring framework evaluates build vs. outsource across five categories, while an operational cost simulator reveals hidden step-function costs — all shareable via URL-encoded state.",
+      "keyFeatures": [
+        "20-criterion weighted scoring across 5 categories (Financial, Operational, Strategic, Control, Risk) with real-time verdict",
+        "Operational Cost Simulator with three-layer cost model — fixed, variable, and step-function costs with break-even analysis",
+        "6 decision presets and 5 growth scenario presets for rapid what-if analysis",
+        "Shareable URL encoding — full tool state in query params for board presentations",
+        "Full EN/ES bilingual support with dark/light theme toggle and print-ready layouts"
+      ],
+      "metrics": [
+        "20 weighted criteria across 5 decision categories",
+        "6 decision presets + 5 growth scenario presets",
+        "Full state shareable via URL — no backend required"
+      ],
+      "priority": 5,
+      "dateCompleted": "2026-02",
+      "slides": [
+        {
+          "src": "https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-01.png",
+          "altEn": "Operations Decision Tools Suite — structured analysis replaces boardroom guesswork",
+          "altEs": "Suite de Herramientas de Decision Operativa — analisis estructurado reemplaza suposiciones en la sala de juntas"
+        },
+        {
+          "src": "https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-02.png",
+          "altEn": "The Problem — gut feel, incomplete spreadsheets, and circular arguments drive million-dollar decisions",
+          "altEs": "El Problema — instinto, hojas de calculo incompletas y argumentos circulares impulsan decisiones millonarias"
+        },
+        {
+          "src": "https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-03.png",
+          "altEn": "20-Criterion Weighted Scoring — five categories with real-time verdict and radar chart",
+          "altEs": "Puntuacion Ponderada de 20 Criterios — cinco categorias con veredicto en tiempo real y grafico radar"
+        },
+        {
+          "src": "https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-04.png",
+          "altEn": "Scenario Presets — Growth Emergency, Control First, Cost Optimizer shift the verdict instantly",
+          "altEs": "Presets de Escenarios — Emergencia de Crecimiento, Control Primero, Optimizador de Costos cambian el veredicto al instante"
+        },
+        {
+          "src": "https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-05.png",
+          "altEn": "Expandable Rationale — each criterion includes industry analysis and scoring guidance",
+          "altEs": "Justificacion Expandible — cada criterio incluye analisis de industria y guia de puntuacion"
+        },
+        {
+          "src": "https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-06.png",
+          "altEn": "Operational Cost Simulator — three-layer cost model with volume slider and cost-per-order curves",
+          "altEs": "Simulador de Costos Operativos — modelo de costos de tres capas con control de volumen y curvas de costo por orden"
+        },
+        {
+          "src": "https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-07.png",
+          "altEn": "Step-Function Costs Revealed — watch cost-per-order jump when new hires and warehouse expansions trigger",
+          "altEs": "Costos Escalonados Revelados — observa el salto del costo por orden cuando se activan nuevas contrataciones y expansiones"
+        },
+        {
+          "src": "https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-08.png",
+          "altEn": "Break-Even and Margin Analysis — utilization gauges and margin visualization with profitability threshold",
+          "altEs": "Analisis de Punto de Equilibrio y Margen — indicadores de utilizacion y visualizacion de margen con umbral de rentabilidad"
+        },
+        {
+          "src": "https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-09.png",
+          "altEn": "Shareable and Board-Ready — full state encoded in URL params, print-optimized layouts for PDFs",
+          "altEs": "Compartible y Listo para Presentar — estado completo codificado en URL, disenos optimizados para impresion PDF"
+        },
+        {
+          "src": "https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-10.png",
+          "altEn": "Technical Architecture — Next.js 16, React 19, Recharts, Framer Motion, bilingual, zero backend",
+          "altEs": "Arquitectura Tecnica — Next.js 16, React 19, Recharts, Framer Motion, bilingue, sin backend"
+        }
+      ],
+      "videoUrl": "https://ai-build-vs-outsource.vercel.app/video/ai-build-vs-outsource-brief.mp4",
+      "videoPoster": "https://ai-build-vs-outsource.vercel.app/video/ai-build-vs-outsource-brief-poster.jpg"
+    },
+    {
+      "id": 1068781109,
+      "name": "react-vite-tailwind-base",
+      "title": "React Vite Tailwind Base",
+      "description": "React 19 template with ShadCN UI, TypeScript, and Vite 7. Features a fully interactive appointment booking system with calendar integration, real-time data visualizations using Recharts, and 17+ accessible components. Mobile-first design, SEO optimized, and built with modern best practices. Perfect for SaaS apps, dashboards, and booking systems.",
+      "summary": "> A production-ready React template with ShadCN UI, data visualizations, and a complete interactive appointment booking showcase.",
+      "url": "https://github.com/RCushmaniii/react-vite-tailwind-base",
+      "demoUrl": "https://react-vite-tailwind-base.vercel.app/components",
+      "liveUrl": "https://react-vite-tailwind-base.vercel.app",
+      "homepage": "https://react-vite-tailwind-base.vercel.app",
+      "topics": [
+        "react",
+        "shadcn",
+        "shadcn-ui",
+        "tailwindcss",
+        "vite"
+      ],
+      "categories": [
+        "Templates"
+      ],
+      "tags": [
+        "react",
+        "shadcn",
+        "shadcn-ui",
+        "tailwindcss",
+        "vite",
+        "typescript",
+        "tailwind-css",
+        "recharts",
+        "template",
+        "data-visualization",
+        "radix-ui",
+        "msw"
+      ],
+      "stack": [
+        "React 19",
+        "TypeScript 5.8",
+        "Vite 7",
+        "Tailwind CSS 4",
+        "ShadCN UI (Radix)",
+        "Recharts 3",
+        "React Router 7",
+        "MSW"
+      ],
+      "status": "Production",
+      "language": "TypeScript",
+      "languages": {
+        "TypeScript": 121804,
+        "JavaScript": 13119,
+        "HTML": 3826,
+        "CSS": 3819
+      },
+      "stars": 2,
+      "forks": 0,
+      "lastPushed": "2026-02-23T00:24:06Z",
+      "createdAt": "2025-10-02T22:40:01Z",
+      "isFeatured": false,
+      "isArchived": false,
+      "isPrivate": false,
+      "tagline": "Production-ready React 19 starter with ShadCN UI, charts, and a working booking system",
+      "thumbnail": "https://react-vite-tailwind-base.vercel.app/images/react-vite-tailwind-base-thumb.jpg",
+      "problem": "Starting a new React project means 1-2 days of unbillable configuration — TypeScript, Tailwind, component libraries, routing, linting, formatting, path aliases — before writing a single feature. Most starter templates solve this with empty scaffolding that still leaves developers guessing at integration patterns.",
+      "solution": "A production-ready foundation that ships with working features instead of blank pages. Clone, install, dev — and you're looking at a working appointment booking system, data visualization dashboard, and 17+ pre-configured ShadCN components in under 5 minutes. Every dependency is pinned to stable February 2026 versions.",
+      "keyFeatures": [
+        "17+ pre-configured ShadCN UI components — buttons, cards, calendars, dialogs, sliders, tabs, all sharing the same design tokens",
+        "Complete appointment booking flow — service selection, calendar, time slots, pricing, and confirmation built from composable components",
+        "Data visualization dashboard — three Recharts visualizations (area, pie, bar) integrated with responsive containers and Tailwind theming",
+        "Invisible infrastructure — TypeScript strict mode, ESLint, Prettier, and pnpm verify pipeline that fails the build on type errors",
+        "MSW API mocking — full CRUD mock endpoints so frontend development doesn't depend on a backend"
+      ],
+      "metrics": [
+        "Zero-to-running in under 5 minutes with 3 commands",
+        "17+ accessible ShadCN UI components pre-configured",
+        "1-2 days of setup time eliminated per project",
+        "All dependencies pinned to stable Feb 2026 versions"
+      ],
+      "priority": 5,
+      "dateCompleted": "2026-02",
+      "slides": [
+        {
+          "src": "https://react-vite-tailwind-base.vercel.app/images/react-vite-tailwind-base-01.png",
+          "altEn": "Modern React Foundation — React 19 + Vite 7 + ShadCN, stable versions pinned February 2026",
+          "altEs": "Base Moderna de React — React 19 + Vite 7 + ShadCN, versiones estables fijadas en febrero 2026"
+        },
+        {
+          "src": "https://react-vite-tailwind-base.vercel.app/images/react-vite-tailwind-base-02.png",
+          "altEn": "The Startup Ritual — the endless manual setup loop of installing React, configuring Tailwind, fixing class conflicts, and wiring component libraries",
+          "altEs": "El Ritual de Inicio — el ciclo interminable de instalar React, configurar Tailwind, resolver conflictos de clases y conectar librerias de componentes"
+        },
+        {
+          "src": "https://react-vite-tailwind-base.vercel.app/images/react-vite-tailwind-base-03.png",
+          "altEn": "The Hidden Cost of Setup — 1 to 2 days of unbillable time lost per project before writing any business logic",
+          "altEs": "El Costo Oculto de la Configuracion — 1 a 2 dias de tiempo no facturable perdido por proyecto antes de escribir logica de negocio"
+        },
+        {
+          "src": "https://react-vite-tailwind-base.vercel.app/images/react-vite-tailwind-base-04.png",
+          "altEn": "Redefining Ready — the norm is a blank page with dependencies installed, this foundation is production-ready immediately",
+          "altEs": "Redefiniendo Listo — lo normal es una pagina en blanco con dependencias instaladas, esta base esta lista para produccion de inmediato"
+        },
+        {
+          "src": "https://react-vite-tailwind-base.vercel.app/images/react-vite-tailwind-base-05.png",
+          "altEn": "The Stack — React 19, TypeScript 5.8, Vite 7, Tailwind CSS 4, ShadCN UI, React Router 7, no experimental packages",
+          "altEs": "El Stack — React 19, TypeScript 5.8, Vite 7, Tailwind CSS 4, ShadCN UI, React Router 7, sin paquetes experimentales"
+        },
+        {
+          "src": "https://react-vite-tailwind-base.vercel.app/images/react-vite-tailwind-base-06.png",
+          "altEn": "17+ pre-configured components — buttons, cards, calendars, dialogs, sliders, tabs, avatars, badges, and switches, all accessible",
+          "altEs": "17+ componentes preconfigurados — botones, tarjetas, calendarios, dialogos, sliders, tabs, avatares, insignias e interruptores, todos accesibles"
+        },
+        {
+          "src": "https://react-vite-tailwind-base.vercel.app/images/react-vite-tailwind-base-07.png",
+          "altEn": "Reference implementation — a working appointment booking flow with service selection, calendar, time slots, pricing, and confirmation",
+          "altEs": "Implementacion de referencia — flujo de reserva de citas funcional con seleccion de servicio, calendario, horarios, precios y confirmacion"
+        },
+        {
+          "src": "https://react-vite-tailwind-base.vercel.app/images/react-vite-tailwind-base-08.png",
+          "altEn": "The invisible infrastructure — TypeScript strict mode, ESLint, Prettier, pnpm verify, and MSW API mocking in the build pipeline",
+          "altEs": "La infraestructura invisible — TypeScript modo estricto, ESLint, Prettier, pnpm verify y mocking de API con MSW en el pipeline de build"
+        },
+        {
+          "src": "https://react-vite-tailwind-base.vercel.app/images/react-vite-tailwind-base-09.png",
+          "altEn": "Who this is for — freelancers and solo devs, IT departments building internal tools, and agencies needing a consistent starting point",
+          "altEs": "Para quien es — freelancers y desarrolladores independientes, departamentos de TI construyendo herramientas internas y agencias que necesitan un punto de partida consistente"
+        },
+        {
+          "src": "https://react-vite-tailwind-base.vercel.app/images/react-vite-tailwind-base-10.png",
+          "altEn": "The first 5 minutes — git clone, pnpm install, pnpm dev, ready in 300 seconds with a working app and real interactions",
+          "altEs": "Los primeros 5 minutos — git clone, pnpm install, pnpm dev, listo en 300 segundos con una app funcional e interacciones reales"
+        }
+      ],
+      "videoUrl": "https://react-vite-tailwind-base.vercel.app/video/react-vite-tailwind-base-brief.mp4",
+      "videoPoster": "https://react-vite-tailwind-base.vercel.app/video/react-vite-tailwind-base-brief-poster.jpg"
+    },
+    {
+      "id": 1119144204,
+      "name": "nextjs-react-agency-starter",
+      "title": "Next.js Agency Starter",
+      "description": "The Next.js React Agency Starter provides a clean, scalable, and production-ready foundation for building modern agency and portfolio websites using Next.js, React, and TypeScript.",
+      "summary": "> A production-grade starter template for agency, marketing, and portfolio websites — built for real client work, not tutorials.",
+      "url": "https://github.com/RCushmaniii/nextjs-react-agency-starter",
+      "demoUrl": "https://nextjs-react-agency-starter.vercel.app/",
+      "liveUrl": "https://nextjs-react-agency-starter.vercel.app/",
+      "homepage": "https://nextjs-react-agency-starter.vercel.app/",
+      "topics": [
+        "nextjs",
+        "react",
+        "starter-kit",
+        "tailwindcss"
+      ],
+      "categories": [
+        "Templates"
+      ],
+      "tags": [
+        "nextjs",
+        "react",
+        "starter-kit",
+        "tailwindcss",
+        "typescript",
+        "tailwind-css",
+        "mdx",
+        "starter-template",
+        "agency",
+        "resend"
+      ],
+      "stack": [
+        "Next.js 14",
+        "TypeScript",
+        "Tailwind CSS",
+        "MDX",
+        "Resend"
+      ],
+      "status": "Production",
+      "language": "TypeScript",
+      "languages": {
+        "TypeScript": 172649,
+        "MDX": 27835,
+        "CSS": 1030,
+        "JavaScript": 260
+      },
+      "stars": 0,
+      "forks": 0,
+      "lastPushed": "2026-02-23T00:24:04Z",
+      "createdAt": "2025-12-18T20:18:05Z",
+      "isFeatured": false,
+      "isArchived": false,
+      "isPrivate": false,
+      "tagline": "Production-grade agency website template with MDX content and email pipeline",
+      "thumbnail": "https://nextjs-react-agency-starter.vercel.app/images/portfolio/nextjs-react-agency-starter-thumb.jpg",
+      "problem": "Most web starter templates are either over-engineered with opinionated abstractions or under-built with missing production essentials. Agency developers waste time rebuilding the same infrastructure — forms, content management, SEO, dark mode — for every client project.",
+      "solution": "A production-grade Next.js starter that ships with a unified UI system, MDX-powered blog and case study content, and a complete contact form pipeline with Zod validation and Resend email delivery. Clone it, customize the brand, and ship — no placeholders, no TODOs.",
+      "keyFeatures": [
+        "Cohesive UI system with layout primitives (Container, Section, Stack) and reusable components",
+        "MDX content workflow for blogs and case studies — drop in a file, no CMS or database needed",
+        "Production contact pipeline: React Hook Form + Zod validation + Server Actions + Resend email",
+        "SEO-first: auto-generated sitemap/robots.txt, structured data, Open Graph, Twitter Cards",
+        "Dark mode with localStorage persistence, WCAG AA accessibility, 90+ Lighthouse scores"
+      ],
+      "metrics": [
+        "90+ Lighthouse performance scores out of the box",
+        "Zero database dependencies — file-based MDX content",
+        "End-to-end contact form with validation and email delivery"
+      ],
+      "priority": 5,
+      "dateCompleted": "2025-12",
+      "slides": [
+        {
+          "src": "https://nextjs-react-agency-starter.vercel.app/images/portfolio/nextjs-react-agency-starter-01.png",
+          "altEn": "Next.js Agency Starter — production-grade foundation for agency and marketing websites",
+          "altEs": "Next.js Agency Starter — base de produccion para sitios web de agencias y marketing"
+        },
+        {
+          "src": "https://nextjs-react-agency-starter.vercel.app/images/portfolio/nextjs-react-agency-starter-02.png",
+          "altEn": "The Template Trap — over-engineered or under-built, neither saves agency developers time",
+          "altEs": "La Trampa de las Plantillas — sobre-ingeniadas o incompletas, ninguna ahorra tiempo"
+        },
+        {
+          "src": "https://nextjs-react-agency-starter.vercel.app/images/portfolio/nextjs-react-agency-starter-03.png",
+          "altEn": "Cohesive UI System — layout primitives and reusable components with unified design language",
+          "altEs": "Sistema UI Cohesivo — primitivas de layout y componentes reutilizables con lenguaje de diseno unificado"
+        },
+        {
+          "src": "https://nextjs-react-agency-starter.vercel.app/images/portfolio/nextjs-react-agency-starter-04.png",
+          "altEn": "MDX Content Workflow — blog posts and case studies as files, no CMS or database required",
+          "altEs": "Flujo de Contenido MDX — posts de blog y casos de estudio como archivos, sin CMS ni base de datos"
+        },
+        {
+          "src": "https://nextjs-react-agency-starter.vercel.app/images/portfolio/nextjs-react-agency-starter-05.png",
+          "altEn": "Production Contact Pipeline — validation, server actions, and Resend email delivery end-to-end",
+          "altEs": "Pipeline de Contacto en Produccion — validacion, server actions y entrega de email con Resend"
+        },
+        {
+          "src": "https://nextjs-react-agency-starter.vercel.app/images/portfolio/nextjs-react-agency-starter-06.png",
+          "altEn": "SEO Built In — auto-generated sitemap, robots.txt, structured data, Open Graph metadata",
+          "altEs": "SEO Integrado — sitemap automatico, robots.txt, datos estructurados, metadata Open Graph"
+        },
+        {
+          "src": "https://nextjs-react-agency-starter.vercel.app/images/portfolio/nextjs-react-agency-starter-07.png",
+          "altEn": "Dark Mode and Accessibility — WCAG AA compliance, keyboard navigation, focus states",
+          "altEs": "Modo Oscuro y Accesibilidad — cumplimiento WCAG AA, navegacion por teclado, estados de foco"
+        },
+        {
+          "src": "https://nextjs-react-agency-starter.vercel.app/images/portfolio/nextjs-react-agency-starter-08.png",
+          "altEn": "TypeScript Strict Mode — no implicit any, typed props and returns on every component",
+          "altEs": "TypeScript Strict Mode — sin any implicito, props y retornos tipados en cada componente"
+        },
+        {
+          "src": "https://nextjs-react-agency-starter.vercel.app/images/portfolio/nextjs-react-agency-starter-09.png",
+          "altEn": "Clone, Customize, Ship — CSS variables for brand colors, modular components for rapid delivery",
+          "altEs": "Clona, Personaliza, Entrega — variables CSS para colores de marca, componentes modulares"
+        }
+      ],
+      "videoUrl": "https://nextjs-react-agency-starter.vercel.app/video/nextjs-react-agency-starter-brief.mp4",
+      "videoPoster": "https://nextjs-react-agency-starter.vercel.app/video/nextjs-react-agency-starter-brief-poster.jpg"
+    },
+    {
+      "id": 1130115840,
+      "name": "cushlabs",
+      "title": "CushLabs.ai",
+      "description": "AI consulting and software development for SMBs — bilingual (EN/ES) site built with Astro + Tailwind CSS",
+      "summary": "> AI consulting and software development for SMBs. Bilingual (EN/ES) business site with automated GitHub portfolio sync and serverless booking.",
+      "url": "https://github.com/RCushmaniii/cushlabs",
+      "demoUrl": "https://cushlabs.ai",
+      "liveUrl": "https://cushlabs.ai",
+      "homepage": "https://cushlabs.ai",
+      "topics": [
+        "ai-consulting",
+        "astro",
+        "bilingual",
+        "cushlabs",
+        "static-site",
+        "tailwindcss"
+      ],
+      "categories": [
+        "Tools"
+      ],
+      "tags": [
+        "ai-consulting",
+        "astro",
+        "bilingual",
+        "cushlabs",
+        "static-site",
+        "tailwindcss",
+        "tailwind",
+        "typescript",
+        "i18n",
+        "cloudflare-workers",
+        "google-calendar",
+        "github-actions",
+        "seo",
+        "serverless"
+      ],
+      "stack": [
+        "Astro 4.16",
+        "TypeScript 5.9",
+        "Tailwind CSS 3.4",
+        "Cloudflare Workers",
+        "Google Calendar API",
+        "GitHub Actions",
+        "JSON-LD"
+      ],
+      "status": null,
+      "language": "Astro",
+      "languages": {
+        "Astro": 344187,
+        "TypeScript": 112284,
+        "HTML": 61067,
+        "JavaScript": 26662,
+        "CSS": 1697
+      },
+      "stars": 0,
+      "forks": 0,
+      "lastPushed": "2026-02-23T00:24:36Z",
+      "createdAt": "2026-01-08T03:52:43Z",
+      "isFeatured": false,
+      "isArchived": false,
+      "isPrivate": false,
+      "tagline": "Self-maintaining bilingual portfolio with serverless booking and build-time i18n enforcement",
+      "thumbnail": "/images/portfolio/cushlabs-01.png",
+      "problem": null,
+      "solution": null,
+      "keyFeatures": [],
+      "metrics": [],
+      "priority": 6,
+      "dateCompleted": null,
+      "slides": [
+        {
+          "src": null
+        },
+        {
+          "src": null
+        },
+        {
+          "src": null
+        },
+        {
+          "src": null
+        },
+        {
+          "src": null
+        },
+        {
+          "src": null
+        }
+      ],
+      "videoUrl": null,
+      "videoPoster": null
+    },
+    {
+      "id": 1062817398,
+      "name": "ai-scrabble-practice",
+      "title": "AI Scrabble Practice",
+      "description": "A practice tool for Scrabble players built with React, Vite, Tailwind, and pnpm. Features include word scoring, word validation via free dictionary APIs, and a rack solver to generate playable words.",
+      "summary": "> AI-powered Scrabble practice suite with word validation, anagram solving, and intelligent hints — backed by a 370,000+ word dictionary.",
+      "url": "https://github.com/RCushmaniii/ai-scrabble-practice",
+      "demoUrl": "https://scrabble-mini.netlify.app",
+      "liveUrl": "https://scrabble-mini.netlify.app",
+      "homepage": "https://scrabble-mini.netlify.app/",
+      "topics": [
+        "anagram-solver",
+        "free-game",
+        "openai-api",
+        "react",
+        "scrabble",
+        "scrabble-game",
+        "scrabble-word-finder",
+        "tailwindcss",
+        "typescipt",
+        "vite"
+      ],
+      "categories": [
+        "Games"
+      ],
+      "tags": [
+        "anagram-solver",
+        "free-game",
+        "openai-api",
+        "react",
+        "scrabble",
+        "scrabble-game",
+        "scrabble-word-finder",
+        "tailwindcss",
+        "typescipt",
+        "vite",
+        "typescript",
+        "ai",
+        "openai",
+        "tailwind-css",
+        "playwright",
+        "i18n"
+      ],
+      "stack": [
+        "React 19",
+        "TypeScript",
+        "Vite 7",
+        "OpenAI GPT-4o-mini",
+        "Playwright"
+      ],
+      "status": "Production",
+      "language": "TypeScript",
+      "languages": {
+        "TypeScript": 188238,
+        "JavaScript": 13705,
+        "CSS": 6947,
+        "HTML": 1011
+      },
+      "stars": 1,
+      "forks": 0,
+      "lastPushed": "2026-02-23T00:24:12Z",
+      "createdAt": "2025-09-23T19:15:28Z",
+      "isFeatured": false,
+      "isArchived": false,
+      "isPrivate": true,
+      "tagline": "Five AI-powered practice tools backed by a 370K-word dictionary",
+      "thumbnail": "https://scrabble-mini.netlify.app/images/ai-scrabble-practice-thumb.jpg",
+      "problem": "Scrabble practice tools are either too simple (word checkers) or too powerful (board solvers) — neither builds actual skill. Players bounce between fragmented sites for validation, anagram solving, and word discovery with no structured practice mode.",
+      "solution": "A unified five-tool practice suite that consolidates word validation, anagram solving, strategic word finding, AI-powered natural language search, and timed gameplay into a single bilingual app with sub-second response times.",
+      "keyFeatures": [
+        "370,105-word dictionary with O(1) Set-based validation — sub-millisecond lookups even on mobile",
+        "Magic Search translates plain English queries into validated words with scores via GPT-4o-mini",
+        "Timed Practice Game with realistic tile draws, 60-second rounds, progressive scoring, and AI hints",
+        "Anagram Solver processes 7-tile hands with wildcard support in under 500ms",
+        "Full EN/ES bilingual interface with locale-based routing and Playwright E2E test coverage"
+      ],
+      "metrics": [
+        "370,105-word dictionary with sub-millisecond validation",
+        "Anagram solving in under 500ms for 7-tile hands",
+        "5 practice tools in a single unified interface"
+      ],
+      "priority": 6,
+      "dateCompleted": "2025-09",
+      "slides": [
+        {
+          "src": "https://scrabble-mini.netlify.app/images/ai-scrabble-practice-01.png",
+          "altEn": "AI Scrabble Practice Suite — Five tools for serious Scrabble practice",
+          "altEs": "AI Scrabble Practice Suite — Cinco herramientas para practicar Scrabble en serio"
+        },
+        {
+          "src": "https://scrabble-mini.netlify.app/images/ai-scrabble-practice-02.png",
+          "altEn": "The Practice Gap — word checkers don't teach, board solvers don't let you learn",
+          "altEs": "La brecha de practica — los verificadores no ensenan, los solucionadores no te dejan aprender"
+        },
+        {
+          "src": "https://scrabble-mini.netlify.app/images/ai-scrabble-practice-03.png",
+          "altEn": "Word Validator — instant validation with letter-by-letter score breakdown",
+          "altEs": "Validador de Palabras — validacion instantanea con desglose de puntuacion letra por letra"
+        },
+        {
+          "src": "https://scrabble-mini.netlify.app/images/ai-scrabble-practice-04.png",
+          "altEn": "Anagram Solver — find every playable word from your tile rack with wildcard support",
+          "altEs": "Solucionador de Anagramas — encuentra cada palabra jugable desde tu atril con comodines"
+        },
+        {
+          "src": "https://scrabble-mini.netlify.app/images/ai-scrabble-practice-06.png",
+          "altEn": "Word Finder — search by letter, position, and length with scoring statistics",
+          "altEs": "Buscador de Palabras — busca por letra, posicion y longitud con estadisticas de puntuacion"
+        },
+        {
+          "src": "https://scrabble-mini.netlify.app/images/ai-scrabble-practice-07.png",
+          "altEn": "Magic Search — ask for words in plain English, powered by GPT-4o-mini",
+          "altEs": "Busqueda Magica — pide palabras en lenguaje natural, impulsado por GPT-4o-mini"
+        },
+        {
+          "src": "https://scrabble-mini.netlify.app/images/ai-scrabble-practice-08.png",
+          "altEn": "Practice Game — build words against the clock with AI hints and progressive scoring",
+          "altEs": "Juego de Practica — forma palabras contra reloj con pistas de IA y puntuacion progresiva"
+        },
+        {
+          "src": "https://scrabble-mini.netlify.app/images/ai-scrabble-practice-09.png",
+          "altEn": "Bilingual and Tested — full EN/ES support with Playwright E2E coverage",
+          "altEs": "Bilingue y Probado — soporte completo EN/ES con cobertura E2E de Playwright"
+        },
+        {
+          "src": "https://scrabble-mini.netlify.app/images/ai-scrabble-practice-10.png",
+          "altEn": "Technical Architecture — React 19, TypeScript, Vite 7, OpenAI, 370K-word dictionary",
+          "altEs": "Arquitectura Tecnica — React 19, TypeScript, Vite 7, OpenAI, diccionario de 370K palabras"
+        }
+      ],
+      "videoUrl": "https://scrabble-mini.netlify.app/video/ai-scrabble-practice-brief.mp4",
+      "videoPoster": "https://scrabble-mini.netlify.app/video/ai-scrabble-practice-brief-poster.jpg"
     },
     {
       "id": 1159724330,
@@ -2449,7 +2356,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-02-20T18:57:31Z",
+      "lastPushed": "2026-02-23T00:24:15Z",
       "createdAt": "2026-02-17T04:40:23Z",
       "isFeatured": false,
       "isArchived": false,
@@ -2460,7 +2367,7 @@
       "solution": null,
       "keyFeatures": [],
       "metrics": [],
-      "priority": 4,
+      "priority": 7,
       "dateCompleted": null,
       "slides": [
         {
@@ -2495,6 +2402,99 @@
         }
       ],
       "videoUrl": "https://mazebreak-trello.vercel.app/video/MazeBreak__Sprint_as_Code.mp4",
+      "videoPoster": null
+    },
+    {
+      "id": 1154149781,
+      "name": "mazebreak-wiki",
+      "title": "MazeBreak GDD Wiki",
+      "description": "Private documentation wiki for the MazeBreak Game Design Document. Built with React, Tailwind CSS, and Clerk auth.",
+      "summary": "Private, searchable documentation wiki for the MazeBreak Game Design Document. Provides instant access to all 24 GDD chapters with full-text search, chapter-based navigation, and Clerk-authenticated a",
+      "url": "https://github.com/RCushmaniii/mazebreak-wiki",
+      "demoUrl": "https://mazebreak-wiki.vercel.app/",
+      "liveUrl": "https://mazebreak-wiki.vercel.app/",
+      "homepage": "https://mazebreak-wiki.vercel.app",
+      "topics": [],
+      "categories": [
+        "Developer Tools"
+      ],
+      "tags": [
+        "developer-tools",
+        "documentation",
+        "react",
+        "game-development",
+        "search",
+        "authentication"
+      ],
+      "stack": [
+        "React 19",
+        "Vite 7",
+        "Tailwind CSS 3",
+        "Clerk Authentication",
+        "Fuse.js",
+        "React Router v6",
+        "Vercel"
+      ],
+      "status": null,
+      "language": "JavaScript",
+      "languages": {
+        "JavaScript": 44791,
+        "CSS": 13759,
+        "HTML": 1101
+      },
+      "stars": 0,
+      "forks": 0,
+      "lastPushed": "2026-02-23T00:24:14Z",
+      "createdAt": "2026-02-10T04:11:19Z",
+      "isFeatured": false,
+      "isArchived": false,
+      "isPrivate": false,
+      "tagline": "Private, searchable game design document wiki for a Roblox development team",
+      "thumbnail": "https://mazebreak-wiki.vercel.app/images/mazebreak-wiki-01.png",
+      "problem": null,
+      "solution": null,
+      "keyFeatures": [],
+      "metrics": [],
+      "priority": 7,
+      "dateCompleted": null,
+      "slides": [
+        {
+          "src": "https://mazebreak-wiki.vercel.app/images/mazebreak-wiki-01.png",
+          "altEn": "MazeBreak GDD Wiki slide 1",
+          "altEs": "MazeBreak GDD Wiki diapositiva 1"
+        },
+        {
+          "src": "https://mazebreak-wiki.vercel.app/images/mazebreak-wiki-02.png",
+          "altEn": "MazeBreak GDD Wiki slide 2",
+          "altEs": "MazeBreak GDD Wiki diapositiva 2"
+        },
+        {
+          "src": "https://mazebreak-wiki.vercel.app/images/mazebreak-wiki-03.png",
+          "altEn": "MazeBreak GDD Wiki slide 3",
+          "altEs": "MazeBreak GDD Wiki diapositiva 3"
+        },
+        {
+          "src": "https://mazebreak-wiki.vercel.app/images/mazebreak-wiki-04.png",
+          "altEn": "MazeBreak GDD Wiki slide 4",
+          "altEs": "MazeBreak GDD Wiki diapositiva 4"
+        },
+        {
+          "src": "https://mazebreak-wiki.vercel.app/images/mazebreak-wiki-05.png",
+          "altEn": "MazeBreak GDD Wiki slide 5",
+          "altEs": "MazeBreak GDD Wiki diapositiva 5"
+        },
+        {
+          "src": "https://mazebreak-wiki.vercel.app/images/mazebreak-wiki-06.png",
+          "altEn": "MazeBreak GDD Wiki slide 6",
+          "altEs": "MazeBreak GDD Wiki diapositiva 6"
+        },
+        {
+          "src": "https://mazebreak-wiki.vercel.app/images/mazebreak-wiki-07.png",
+          "altEn": "MazeBreak GDD Wiki slide 7",
+          "altEs": "MazeBreak GDD Wiki diapositiva 7"
+        }
+      ],
+      "videoUrl": "https://mazebreak-wiki.vercel.app/video/MazeBreak__Taming_the_GDD.mp4",
       "videoPoster": null
     }
   ]

@@ -44,6 +44,7 @@ const content = {
     filters: {
       all: "All",
       featured: "Featured",
+      search: "Search projects...",
     },
     card: {
       featured: "Featured",
@@ -70,6 +71,7 @@ const content = {
     filters: {
       all: "Todo",
       featured: "Destacados",
+      search: "Buscar proyectos...",
     },
     card: {
       featured: "Destacado",
@@ -153,7 +155,7 @@ const t = content[locale];
   <!-- Filters & Projects -->
   <Section id="projects" spacing="sm">
     <Container>
-      <div class="flex flex-wrap gap-2 justify-center mb-8" id="filters">
+      <div class="flex flex-wrap gap-2 justify-center mb-8 items-center" id="filters">
         <button
           class="filter-btn active px-4 py-2 rounded-lg border border-cush-orange bg-cush-orange/10 font-display text-sm font-semibold text-cush-orange transition-all"
           data-filter="all"
@@ -166,16 +168,29 @@ const t = content[locale];
         >
           {t.filters.featured}
         </button>
+        <div class="relative">
+          <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+          <input
+            type="text"
+            id="search-input"
+            placeholder={t.filters.search}
+            class="pl-9 pr-4 py-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 font-display text-sm text-gray-700 dark:text-gray-300 placeholder-gray-400 dark:placeholder-gray-500 focus:border-cush-orange focus:outline-none focus:ring-1 focus:ring-cush-orange transition-all w-48 md:w-64"
+          />
+        </div>
       </div>
 
       <!-- Projects Grid -->
-      <div id="projects" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {projects.map((project) => {
           const thumb = getThumbnail(project);
           const detailHref = locale === "es" ? `/es/projects/${project.name}` : `/projects/${project.name}`;
           const tagline = project.tagline || project.summary || project.description || "";
           const category = project.categories[0] || null;
           const techBadges = project.stack.slice(0, 4);
+
+          const searchText = [project.title, tagline, category, ...project.stack, ...project.tags].filter(Boolean).join(" ").toLowerCase();
 
           return (
             <article
@@ -185,6 +200,7 @@ const t = content[locale];
               ]}
               data-categories={project.categories.join(",")}
               data-featured={project.isFeatured}
+              data-search={searchText}
             >
               {/* Thumbnail */}
               <a href={detailHref} class="block">
@@ -319,6 +335,8 @@ const t = content[locale];
 
 <script>
   let currentFilter = "all";
+  let searchQuery = "";
+  let debounceTimer: ReturnType<typeof setTimeout>;
 
   function setFilter(filter: string) {
     currentFilter = filter;
@@ -342,25 +360,31 @@ const t = content[locale];
   function renderProjects() {
     const projects = document.querySelectorAll(".project-card");
     let visibleCount = 0;
+    const query = searchQuery.toLowerCase().trim();
 
     projects.forEach((card) => {
       if (!(card instanceof HTMLElement)) return;
       const isFeatured = card.getAttribute("data-featured") === "true";
+      const searchData = card.getAttribute("data-search") || "";
 
       let show = currentFilter === "all" || (currentFilter === "featured" && isFeatured);
 
-      card.style.display = show ? "block" : "none";
+      if (show && query) {
+        show = searchData.includes(query);
+      }
+
+      card.style.display = show ? "flex" : "none";
       if (show) visibleCount++;
     });
 
     const empty = document.getElementById("empty");
-    const projectsContainer = document.getElementById("projects");
+    const projectsGrid = document.getElementById("projects-grid") as HTMLElement | null;
     if (visibleCount === 0) {
       empty?.classList.remove("hidden");
-      projectsContainer?.classList.add("hidden");
+      if (projectsGrid) projectsGrid.classList.add("hidden");
     } else {
       empty?.classList.add("hidden");
-      projectsContainer?.classList.remove("hidden");
+      if (projectsGrid) projectsGrid.classList.remove("hidden");
     }
   }
 
@@ -370,6 +394,15 @@ const t = content[locale];
       const filter = btn.getAttribute("data-filter");
       if (filter) setFilter(filter);
     });
+  });
+
+  const searchInput = document.getElementById("search-input") as HTMLInputElement | null;
+  searchInput?.addEventListener("input", () => {
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(() => {
+      searchQuery = searchInput.value;
+      renderProjects();
+    }, 200);
   });
 </script>
 
