@@ -29,7 +29,7 @@ const content = {
 const t = content[locale];
 ---
 
-<section class="relative flex items-center overflow-hidden pt-12 pb-8">
+<section class="relative flex items-center overflow-hidden pt-12 pb-16">
   <!-- Background Image -->
   <div class="absolute inset-0 -z-20">
     <img
@@ -37,13 +37,16 @@ const t = content[locale];
       alt=""
       class="w-full h-full object-cover opacity-[0.35] dark:opacity-[0.25]"
     />
-    <div class="absolute inset-0 bg-gradient-to-b from-white/30 via-transparent to-white dark:from-gray-950/30 dark:via-transparent dark:to-gray-950"></div>
+    <!-- Multi-stop gradient overlay for smooth fade -->
+    <div class="absolute inset-0 bg-gradient-to-b from-white/80 via-white/60 to-white/30 dark:from-gray-950/70 dark:via-gray-950/55 dark:to-gray-950/20"></div>
   </div>
   <!-- Subtle Gradient Orbs -->
   <div class="absolute inset-0 -z-10">
     <div class="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-cush-orange/10 rounded-full blur-[120px] animate-pulse"></div>
     <div class="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-cush-orange/5 rounded-full blur-[100px] animate-pulse" style="animation-delay: 1s;"></div>
   </div>
+  <!-- Bottom fade strip — dissolves hero into next section -->
+  <div class="absolute bottom-0 left-0 right-0 h-24 md:h-32 bg-gradient-to-b from-transparent to-white dark:to-gray-950 -z-[5]"></div>
 
   <Container size="lg">
     <div class="text-center max-w-4xl mx-auto">
