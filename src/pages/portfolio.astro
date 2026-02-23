@@ -199,7 +199,7 @@ const t = content[locale];
                 project.isFeatured ? "border-cush-orange/50" : "border-gray-200 dark:border-gray-800 hover:border-cush-orange/30"
               ]}
               data-categories={project.categories.join(",")}
-              data-featured={project.isFeatured}
+              data-featured={String(project.isFeatured)}
               data-search={searchText}
             >
               {/* Thumbnail */}
