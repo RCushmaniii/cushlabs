@@ -133,15 +133,16 @@ const t = content[locale];
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
           </a>
-          <a
-            href="#projects"
+          <button
+            id="open-video-modal"
+            type="button"
             class="group inline-flex items-center gap-2 px-6 py-3 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 font-display font-semibold rounded-lg hover:border-cush-orange hover:text-cush-orange transition-all"
           >
             {t.ctaSecondary}
-            <svg class="w-5 h-5 group-hover:translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z" />
             </svg>
-          </a>
+          </button>
         </div>
 
         <!-- Reassurance -->
@@ -151,6 +152,46 @@ const t = content[locale];
       </div>
     </Container>
   </section>
+
+  <!-- Video Modal -->
+  <dialog id="video-modal" class="video-modal">
+    <div class="video-modal-backdrop" data-close-modal></div>
+    <div class="video-modal-content">
+      <button type="button" class="video-modal-close" data-close-modal aria-label="Close">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+      <div class="relative aspect-video bg-black rounded-xl overflow-hidden">
+        <!-- Poster overlay -->
+        <div id="modal-poster" class="absolute inset-0 cursor-pointer group z-10">
+          <img
+            src="/videos/CushLabs-AI-Portfolio-poster.jpg"
+            alt="CushLabs AI Portfolio video"
+            class="w-full h-full object-cover"
+          />
+          <div class="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/30 transition-colors">
+            <div class="w-20 h-20 rounded-full bg-cush-orange/90 flex items-center justify-center group-hover:bg-cush-orange group-hover:scale-110 transition-all duration-300 shadow-lg shadow-black/30">
+              <svg class="w-10 h-10 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <!-- Video element -->
+        <video
+          id="modal-video"
+          class="w-full h-full object-contain"
+          controls
+          preload="none"
+          playsinline
+        >
+          <source src="/videos/CushLabs_AI_Portfolio.mp4" type="video/mp4" />
+          <track kind="captions" />
+        </video>
+      </div>
+    </div>
+  </dialog>
 
   <!-- Filters & Projects -->
   <Section id="projects" spacing="sm">
@@ -334,6 +375,59 @@ const t = content[locale];
 </BaseLayout>
 
 <script>
+  // Video modal logic
+  const modal = document.getElementById('video-modal') as HTMLDialogElement;
+  const openBtn = document.getElementById('open-video-modal');
+  const modalVideo = document.getElementById('modal-video') as HTMLVideoElement;
+  const modalPoster = document.getElementById('modal-poster');
+
+  function closeModal() {
+    if (!modal || !modalVideo || !modalPoster) return;
+    modalVideo.pause();
+    modalVideo.currentTime = 0;
+    modalPoster.classList.remove('hidden');
+    modal.close();
+  }
+
+  if (modal && openBtn && modalVideo && modalPoster) {
+    // Preload video after page is idle
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(() => { modalVideo.preload = 'auto'; }, { timeout: 3000 });
+    } else {
+      window.addEventListener('load', () => {
+        setTimeout(() => { modalVideo.preload = 'auto'; }, 2000);
+      });
+    }
+
+    // Open modal
+    openBtn.addEventListener('click', () => {
+      modal.showModal();
+    });
+
+    // Click poster to play
+    modalPoster.addEventListener('click', () => {
+      modalPoster.classList.add('hidden');
+      modalVideo.play();
+    });
+
+    // Close button / backdrop clicks
+    modal.querySelectorAll('[data-close-modal]').forEach((el) => {
+      el.addEventListener('click', closeModal);
+    });
+
+    // ESC key (dialog handles this natively, but we need to reset video)
+    modal.addEventListener('close', () => {
+      modalVideo.pause();
+      modalVideo.currentTime = 0;
+      modalPoster.classList.remove('hidden');
+    });
+
+    // Auto-close when video ends
+    modalVideo.addEventListener('ended', closeModal);
+  }
+</script>
+
+<script>
   let currentFilter = "all";
   let searchQuery = "";
   let debounceTimer: ReturnType<typeof setTimeout>;
@@ -407,6 +501,88 @@ const t = content[locale];
 </script>
 
 <style>
+  /* Video modal */
+  .video-modal {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    max-width: 100vw;
+    max-height: 100vh;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: transparent;
+    overflow: hidden;
+  }
+
+  .video-modal::backdrop {
+    background: rgba(0, 0, 0, 0.9);
+  }
+
+  .video-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .video-modal-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+  }
+
+  .video-modal-content > .relative {
+    width: 100%;
+    max-width: 64rem;
+  }
+
+  .video-modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 9999px;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+
+  .video-modal-close:hover {
+    background: rgba(0, 0, 0, 0.8);
+  }
+
+  /* Fade in animation */
+  .video-modal[open] {
+    animation: modal-fade-in 0.2s ease-out;
+  }
+
+  .video-modal[open]::backdrop {
+    animation: backdrop-fade-in 0.2s ease-out;
+  }
+
+  @keyframes modal-fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes backdrop-fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
   .line-clamp-2 {
     display: -webkit-box;
     -webkit-line-clamp: 2;
