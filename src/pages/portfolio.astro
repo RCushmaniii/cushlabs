@@ -55,6 +55,11 @@ const content = {
       title: "No projects found",
       subtitle: "Try adjusting your filters",
     },
+    video: {
+      src: "/videos/CushLabs_AI_Portfolio.mp4",
+      poster: "/videos/CushLabs-AI-Portfolio-poster.jpg",
+      alt: "CushLabs AI Portfolio video",
+    },
     bottomCta: {
       headline: "See Something That Fits Your Business?",
       subtitle: "Book a free discovery call and I'll show you how a similar solution could work for you.",
@@ -81,6 +86,11 @@ const content = {
     empty: {
       title: "No se encontraron proyectos",
       subtitle: "Intenta ajustar los filtros",
+    },
+    video: {
+      src: "/videos/Analisis-de-Portafolio-CushLabs.mp4",
+      poster: "/videos/Anlisis-de-Portafolio-CushLabs-poster.jpg",
+      alt: "Video de Análisis de Portafolio CushLabs",
     },
     bottomCta: {
       headline: "¿Ves Algo Que Encaja Con Tu Negocio?",
@@ -166,8 +176,8 @@ const t = content[locale];
         <!-- Poster overlay -->
         <div id="modal-poster" class="absolute inset-0 cursor-pointer group z-10">
           <img
-            src="/videos/CushLabs-AI-Portfolio-poster.jpg"
-            alt="CushLabs AI Portfolio video"
+            src={t.video.poster}
+            alt={t.video.alt}
             class="w-full h-full object-cover"
           />
           <div class="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/30 transition-colors">
@@ -186,7 +196,7 @@ const t = content[locale];
           preload="none"
           playsinline
         >
-          <source src="/videos/CushLabs_AI_Portfolio.mp4" type="video/mp4" />
+          <source src={t.video.src} type="video/mp4" />
           <track kind="captions" />
         </video>
       </div>
