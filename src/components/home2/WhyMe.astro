@@ -1,0 +1,104 @@
+---
+import Container from '../layout/Container.astro';
+
+interface Props {
+  locale: 'en' | 'es';
+}
+
+const { locale } = Astro.props;
+
+const content = {
+  en: {
+    heading: 'What Makes CushLabs Different',
+    differentiators: [
+      {
+        title: "You Work Directly With Me",
+        desc: "No account managers. No handoffs. No agency layers. I do the discovery, architecture, development, and project management myself. You get direct communication with the person building your solution — and I'm personally accountable for results.",
+        icon: "M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+      },
+      {
+        title: "Discovery-First Methodology",
+        desc: "I don't start with tools or templates. I start by understanding your business problem, defining what success looks like, and scoping the smallest v1 that proves value. You get a clear, buildable plan before any code is written.",
+        icon: "M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+      },
+      {
+        title: "Production-Grade Engineering",
+        desc: "Secure-by-default systems with input validation, error handling, logging, and testing. 20+ years of enterprise IT discipline in every build — because \"it works in the demo\" isn't good enough for your business.",
+        icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+      },
+      {
+        title: "Outcomes, Not Widgets",
+        desc: "Every system is tied to business metrics: support deflection, lead capture, time-to-answer, hours reclaimed. I include analytics and iteration loops so you can see what's working — and improve what isn't.",
+        icon: "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+      },
+      {
+        title: "Cross-Border Ready",
+        desc: "Built for Mexico/LATAM teams serving U.S. and Canadian customers — or U.S. companies doing business in Mexico. Fully bilingual assistant outputs. English-first project execution for speed. Flexible hours for both time zones.",
+        icon: "M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+      }
+    ]
+  },
+  es: {
+    heading: 'Qué Hace Diferente a CushLabs',
+    differentiators: [
+      {
+        title: "Trabajas Directamente Conmigo",
+        desc: "Sin intermediarios ni gerentes de cuentas. Hago el descubrimiento, arquitectura, desarrollo y gestión yo mismo. Tienes comunicación directa con quien construye tu solución y asumo responsabilidad total por los resultados.",
+        icon: "M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+      },
+      {
+        title: "Creación Basada en el Descubrimiento",
+        desc: "No empiezo con herramientas o plantillas. Comienzo entendiendo el problema de negocio, definiendo el éxito de antemano y construyendo la versión más pequeña que demuestre valor en la empresa.",
+        icon: "M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+      },
+      {
+        title: "Ingeniería de Grado Producción",
+        desc: "Sistemas seguros por defecto con manejo de errores, pruebas exhaustivas y analíticas construidas. 20+ años de disciplina corporativa en cada producto porque 'funciona en el demo' no es suficiente.",
+        icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+      },
+      {
+        title: "Resultados, No Funcionalidades de Fantasía",
+        desc: "Cada sistema debe empatarse con las métricas de tu empresa: captura de leads, tiempos de respuesta y horas optimizadas en un esquema real de operación comercial y empresarial.",
+        icon: "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+      },
+      {
+        title: "Listo para Ambos Lados de la Frontera",
+        desc: "Desarrollado para equipos de LatAm atendiendo clientes en Estados Unidos o viceversa. Flujo bilingüe, respuestas inmediatas para el consumidor final sin problemas de traducción ni husos horarios.",
+        icon: "M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+      }
+    ]
+  }
+};
+
+const t = content[locale];
+---
+
+<section class="py-20 md:py-32 bg-gray-50 dark:bg-gray-900/30">
+  <Container size="lg">
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <h2 class="font-display font-bold text-3xl md:text-4xl text-gray-900 dark:text-white leading-tight">
+        {t.heading}
+      </h2>
+    </div>
+
+    <div class="space-y-6 max-w-4xl mx-auto">
+      {t.differentiators.map((diff) => (
+        <div class="group p-6 md:p-8 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 flex flex-col md:flex-row gap-6 hover:border-cush-orange/50 hover:shadow-lg hover:shadow-cush-orange/5 transition-all duration-300">
+          <div class="flex-shrink-0 w-14 h-14 rounded-xl bg-cush-orange/10 flex items-center justify-center group-hover:bg-cush-orange group-hover:text-white dark:text-white text-gray-900 transition-colors duration-300">
+            <svg class="w-7 h-7 text-cush-orange group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={diff.icon} />
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-display font-semibold text-xl text-gray-900 dark:text-white mb-3 tracking-tight">
+              {diff.title}
+            </h3>
+            <p class="text-base text-gray-600 dark:text-gray-400 leading-relaxed md:pr-4">
+              {diff.desc}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </Container>
+</section>
