@@ -99,7 +99,7 @@ const t = content[locale];
         <h4 class="font-display font-semibold text-lg text-gray-900 dark:text-white mb-2">
           {t.retainerTitle}
         </h4>
-        <div class="text-amber-800 dark:text-gray-300 leading-relaxed text-sm md:text-base" set:html={t.retainerDesc.replace(/\*\*(.*?)\*\*/g, '<span class="font-bold text-amber-900 dark:text-white">$1</span>')} />
+        <p class="text-gray-800 dark:text-gray-300 leading-relaxed text-sm md:text-base" set:html={t.retainerDesc.replace(/\*\*(.*?)\*\*/g, '<strong class="font-bold text-gray-900 dark:text-white">$1</strong>')} />
       </div>
     </div>
   </Container>
