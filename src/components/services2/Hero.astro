@@ -1,0 +1,70 @@
+---
+import Container from '../layout/Container.astro';
+
+interface Props {
+  locale: 'en' | 'es';
+}
+
+const { locale } = Astro.props;
+
+const content = {
+  en: {
+    headline: "AI Solutions That Fit Your Business",
+    subheadline1: "Every business has different pain points. I don't sell one-size-fits-all products — I build AI systems matched to your specific situation, with clear deliverables and measurable outcomes.",
+    subheadline2: "Not sure where to start? That's exactly what the discovery call is for.",
+    cta: "Book a Free Discovery Call",
+    ctaLink: "/consultation"
+  },
+  es: {
+    headline: "Soluciones de IA a la Medida de Tu Negocio",
+    subheadline1: "Cada negocio tiene problemas diferentes. No vendo productos genéricos — construyo sistemas de IA adaptados a tu situación específica, con entregables claros y resultados medibles.",
+    subheadline2: "¿No estás seguro por dónde empezar? Exactamente para eso es la llamada de descubrimiento.",
+    cta: "Agendar Llamada Gratis",
+    ctaLink: "/es/reservar"
+  }
+};
+
+const t = content[locale];
+---
+
+<section class="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden">
+  <!-- Background Image (subtle) -->
+  <div class="absolute inset-0 -z-20">
+    <img
+      src="/images/hero/services-hero2.jpg"
+      alt=""
+      class="w-full h-full object-cover opacity-[0.12] dark:opacity-[0.08]"
+    />
+    <div class="absolute inset-0 bg-gradient-to-b from-white/50 via-transparent to-white dark:from-gray-950/50 dark:via-transparent dark:to-gray-950"></div>
+  </div>
+  <!-- Gradient Orbs -->
+  <div class="absolute inset-0 -z-10">
+    <div class="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-cush-orange/15 rounded-full blur-[120px]"></div>
+    <div class="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-cush-orange/10 rounded-full blur-[100px]"></div>
+  </div>
+
+  <Container size="md">
+    <div class="text-center max-w-4xl mx-auto">
+      <h1 class="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white mb-6 leading-tight tracking-tight">
+        {t.headline}
+      </h1>
+
+      <div class="text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-10 max-w-3xl mx-auto">
+        <p class="mb-4 leading-relaxed">{t.subheadline1}</p>
+        <p class="font-medium text-gray-900 dark:text-white">{t.subheadline2}</p>
+      </div>
+
+      <div class="flex justify-center">
+        <a
+          href={t.ctaLink}
+          class="group inline-flex items-center gap-2 px-8 py-4 bg-cush-orange text-white font-display font-semibold rounded-lg hover:bg-cush-orange/90 transition-all duration-300 shadow-lg shadow-cush-orange/25 hover:shadow-xl hover:shadow-cush-orange/30 text-lg"
+        >
+          {t.cta}
+          <svg class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </Container>
+</section>
