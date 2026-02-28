@@ -1,0 +1,106 @@
+---
+import Container from '../layout/Container.astro';
+
+interface Props {
+  locale: 'en' | 'es';
+}
+
+const { locale } = Astro.props;
+
+const content = {
+  en: {
+    heading: "How I Work",
+    subheading: "Every project follows the same disciplined process — whether it's a 5-day Sprint or an 8-week custom build.",
+    steps: [
+      {
+        title: "Step 1: Discovery Call (Free)",
+        desc: "A 30-minute conversation to understand your business, identify the opportunity with the highest impact, and determine whether we're a good fit. No commitment. If AI isn't the right answer, I'll tell you."
+      },
+      {
+        title: "Step 2: Scope & Agreement",
+        desc: "I define exactly what I'll build, what you'll receive, the timeline, and the investment. You review and approve before any work begins. No vague proposals — you'll know precisely what you're getting."
+      },
+      {
+        title: "Step 3: Build With Weekly Checkpoints",
+        desc: "I design and build your solution with progress updates every week. You see what's happening and provide feedback in real time — not just at the end. Built with production-grade discipline: validation, testing, security, and documentation from day one."
+      },
+      {
+        title: "Step 4: Launch, Measure, Hand Off",
+        desc: "We deploy to real users, monitor performance against the KPIs we defined, and I optimize during the 30-day post-launch window. Everything is documented and handed over so your team can operate independently."
+      }
+    ],
+    retainerTitle: "Optional: Ongoing Retainer",
+    retainerDesc: "After the 30-day window, many clients choose a monthly retainer for continuous optimization — knowledge updates, performance tuning, and workflow enhancements as their business evolves. Retainers start at **$1,000/month**."
+  },
+  es: {
+    heading: "Cómo Trabajo",
+    subheading: "Cada proyecto sigue el mismo proceso disciplinado — ya sea un Sprint de 5 días o un desarrollo completo de 8 semanas.",
+    steps: [
+      {
+        title: "Paso 1: Llamada de Descubrimiento (Gratis)",
+        desc: "Una plática de 30 minutos para entender tu negocio, identificar la oportunidad de mayor impacto y determinar si somos un buen match. Sin compromisos. Si la IA no es para ti, te lo diré de frente."
+      },
+      {
+        title: "Paso 2: Alcance y Acuerdo",
+        desc: "Defino con exactitud qué construiré, qué recibirás, las fechas y la inversión total. Revisas y apruebas antes de que arranque nada. Cero propuestas ambiguas — sabes lo que estás comprando."
+      },
+      {
+        title: "Paso 3: Construcción con Puntos de Control Semanales",
+        desc: "Diseño y armo la solución enviando estatus de avances semanal. Ves lo que ocurre en tiempo real — no solo en la junta final. Diseñado con validación de modelo producción."
+      },
+      {
+        title: "Paso 4: Lanzamiento, Medición y Entrega",
+        desc: "Desplegamos tu sistema en vivo, medimos contra los KPIs definidos y yo sigo optimizando durante 30 días ventana crítica de cierre post-lanzamiento. Todo se documenta."
+      }
+    ],
+    retainerTitle: "Opcional: Retención Continua",
+    retainerDesc: "Al concluir los 30 días, la mayoría de los clientes escogen una póliza de retención mensual para optimización de por vida — actualizaciones de la base y afinación general. A partir de **$1,000 USD/mes**."
+  }
+};
+
+const t = content[locale];
+---
+
+<section class="py-20 md:py-32 bg-gray-50 dark:bg-gray-900/30">
+  <Container size="md">
+    <div class="text-center mb-16 max-w-2xl mx-auto">
+      <h2 class="font-display font-bold text-3xl md:text-5xl text-gray-900 dark:text-white mb-6 leading-tight tracking-tight">
+        {t.heading}
+      </h2>
+      <p class="text-lg md:text-xl text-gray-600 dark:text-gray-300">
+        {t.subheading}
+      </p>
+    </div>
+
+    <div class="space-y-6 max-w-4xl mx-auto mb-16">
+      {t.steps.map((step) => (
+        <div class="group p-6 md:p-8 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 flex flex-col md:flex-row gap-6 hover:border-cush-orange/50 hover:shadow-lg hover:shadow-cush-orange/5 transition-all duration-300 relative overflow-hidden">
+          <div class="absolute inset-y-0 left-0 w-1.5 bg-cush-orange opacity-0 group-hover:opacity-100 transition-opacity"></div>
+          <div>
+            <h3 class="font-display font-semibold text-xl text-gray-900 dark:text-white mb-3 tracking-tight">
+              {step.title}
+            </h3>
+            <p class="text-base text-gray-600 dark:text-gray-400 leading-relaxed md:pr-4">
+              {step.desc}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Optional Retainer Box -->
+    <div class="max-w-4xl mx-auto bg-gradient-to-br from-cush-orange/10 to-transparent border border-cush-orange/20 rounded-xl p-8 flex flex-col md:flex-row items-start md:items-center gap-6">
+      <div class="shrink-0 w-12 h-12 bg-cush-orange/20 rounded-full flex items-center justify-center">
+        <svg class="w-6 h-6 text-cush-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+        </svg>
+      </div>
+      <div>
+        <h4 class="font-display font-semibold text-lg text-gray-900 dark:text-white mb-2">
+          {t.retainerTitle}
+        </h4>
+        <div class="text-gray-900 dark:text-gray-300 leading-relaxed text-sm md:text-base" set:html={t.retainerDesc.replace(/\*\*(.*?)\*\*/g, '<span class="font-bold text-gray-900 dark:text-white">$1</span>')} />
+      </div>
+    </div>
+  </Container>
+</section>
