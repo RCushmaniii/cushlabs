@@ -32,7 +32,7 @@ jobs:
 
       - name: Generate projects
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PROJECT_SYNC_TOKEN }}
           GITHUB_OWNER: ${{ github.repository_owner }}
         run: npm run generate-projects
 
