@@ -1,0 +1,54 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/home2/Hero.astro";
+import VideoSection from "../components/home2/VideoSection.astro";
+import PainPoints from "../components/home2/PainPoints.astro";
+import SolutionOverview from "../components/home2/SolutionOverview.astro";
+import HowItWorks from "../components/home2/HowItWorks.astro";
+import WhyMe from "../components/home2/WhyMe.astro";
+import RecentWork from "../components/home2/RecentWork.astro";
+import FAQ from "../components/home2/FAQ.astro";
+import FinalCTA from "../components/home2/FinalCTA.astro";
+
+const locale = (Astro.currentLocale === "es" ? "es" : "en") as "en" | "es";
+
+const meta = {
+  en: {
+    title: "CushLabs.ai — I Help Businesses Put AI to Work",
+    description: "From intelligent chatbots to document automation and custom AI tools — I design, build, and launch AI solutions that deliver measurable results for growing businesses.",
+  },
+  es: {
+    title: "CushLabs.ai — Ayudo a Negocios a Poner la IA a Trabajar",
+    description: "Desde chatbots inteligentes hasta automatización de documentos y herramientas de IA personalizadas — diseño, construyo y lanzo soluciones que entregan resultados medibles.",
+  },
+};
+---
+
+<BaseLayout title={meta[locale].title} description={meta[locale].description}>
+  <!-- Section 1: Hero -->
+  <Hero locale={locale} />
+  
+  <!-- Section 2: Video Section -->
+  <VideoSection locale={locale} />
+  
+  <!-- Section 3: Pain Points -->
+  <PainPoints locale={locale} />
+  
+  <!-- Section 4: Solution Overview -->
+  <SolutionOverview locale={locale} />
+  
+  <!-- Section 5: How It Works -->
+  <HowItWorks locale={locale} />
+  
+  <!-- Section 6: Why Work With Me -->
+  <WhyMe locale={locale} />
+  
+  <!-- Section 7: Recent Work -->
+  <RecentWork locale={locale} />
+  
+  <!-- Section 8: FAQ -->
+  <FAQ locale={locale} />
+  
+  <!-- Section 9: Final CTA -->
+  <FinalCTA locale={locale} />
+</BaseLayout>
