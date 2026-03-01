@@ -83,7 +83,7 @@ interface PortfolioFrontmatter {
   date_completed?: string;
 }
 
-const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
+const GITHUB_TOKEN = process.env.PROJECT_SYNC_TOKEN || process.env.GITHUB_TOKEN;
 const GITHUB_OWNER = process.env.GITHUB_OWNER ?? 'RCushmaniii';
 const SELF_REPO = 'cushlabs'; // Assets in this repo are local — keep relative paths
 
