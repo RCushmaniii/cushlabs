@@ -1,0 +1,112 @@
+---
+import Container from '../layout/Container.astro';
+
+interface Props {
+  locale: 'en' | 'es';
+}
+
+const { locale } = Astro.props;
+
+const content = {
+  en: {
+    heading: 'Common Questions',
+    faqs: [
+      {
+        q: "How much does this cost? Is it SMB-affordable?",
+        a: "Engagements typically start at $3,500 for focused projects like a support chatbot, and scale based on complexity. I scope everything upfront so there are no surprises. The discovery call is free — I'll give you a clear picture of investment before you commit to anything."
+      },
+      {
+        q: "How long does implementation take?",
+        a: "Most projects launch in 2–6 weeks depending on scope. A focused chatbot can be live in 2–3 weeks. More complex systems (document processing, custom tools) typically take 4–6 weeks. I show you progress weekly."
+      },
+      {
+        q: "What if the AI gives wrong answers?",
+        a: "This is exactly why I build with validation and guardrails. Every system grounds answers in your approved content — not the open internet. When the AI isn't confident, it hands off to your team instead of guessing. I also include monitoring so you can see what's being asked and catch gaps early."
+      },
+      {
+        q: "How do you handle data security?",
+        a: "Secure by default. Your business data stays in controlled environments with proper access controls, encryption, and logging. I don't use your data to train models. I document all data handling practices and hand them over so your team knows exactly what's happening."
+      },
+      {
+        q: "Do you work with companies in Mexico?",
+        a: "Yes — I'm based in Guadalajara and work with businesses across Mexico, the U.S., and LATAM. All systems support bilingual (EN/ES) output. Project communication is English-first for speed, with Spanish available for any stakeholder conversations."
+      },
+      {
+        q: "What if I'm not sure AI is the right solution?",
+        a: "That's what the discovery call is for. I'll assess your situation honestly. If AI isn't the right move — or if the timing isn't right — I'll tell you directly and point you toward what would actually help. No hard sell."
+      }
+    ],
+    cta: "View All FAQs →",
+    ctaLink: "/faq"
+  },
+  es: {
+    heading: 'Preguntas Frecuentes',
+    faqs: [
+      {
+        q: "¿Cuánto cuesta esto? ¿Es asequible para PYMES?",
+        a: "Los proyectos típicamente comienzan en $3,500 USD para sistemas enfocados como un chatbot de soporte, y escalan según la complejidad. Defino todo el alcance por adelantado para que no haya sorpresas. La llamada de descubrimiento es gratuita — te daré una imagen clara de la inversión antes de que te comprometas a nada."
+      },
+      {
+        q: "¿Cuánto tiempo toma la implementación?",
+        a: "La mayoría de los proyectos se lanzan en 2–6 semanas dependiendo del alcance. Un chatbot enfocado puede estar en vivo en 2–3 semanas. Sistemas más complejos típicamente toman 4–6 semanas. Te muestro el progreso cada semana."
+      },
+      {
+        q: "¿Qué pasa si la IA da respuestas incorrectas?",
+        a: "Por eso construyo con validación y barreras de seguridad. Cada sistema basa sus respuestas en tu contenido aprobado — no en la internet abierta. Cuando la IA no está segura, transfiere a tu equipo en lugar de adivinar. También incluyo monitoreo para que veas qué se está preguntando y detectes vacíos temprano."
+      },
+      {
+        q: "¿Cómo manejas la seguridad de los datos?",
+        a: "Seguro por diseño. Los datos de negocio se mantienen en entornos controlados con los adecuados controles de acceso. No uso tus datos para entrenar modelos. Documento todo y entrego las políticas de manejo de datos a tu equipo."
+      },
+      {
+        q: "¿Trabajas con empresas en México?",
+        a: "Sí — estoy basado en Guadalajara y trabajo con empresas en México, EE.UU. y LATAM. Todos los sistemas soportan salidas bilingües. La comunicación del proyecto es en inglés para agilidad, con español disponible para conversaciones clave."
+      },
+      {
+        q: "¿Qué pasa si no estoy seguro de que la IA sea la solución?",
+        a: "Para eso es la llamada de descubrimiento. Evaluaré tu situación honestamente. Si la IA no es lo adecuado — o el momento no es el correcto — te lo diré directamente y te orientaré hacia lo que realmente te ayudaría. Sin ventas forzadas."
+      }
+    ],
+    cta: "Ver Todas las FAQs →",
+    ctaLink: "/es/faq"
+  }
+};
+
+const t = content[locale];
+---
+
+<section class="py-20 md:py-32 bg-gray-50 dark:bg-gray-900/30">
+  <Container size="md">
+    <div class="text-center mb-16">
+      <h2 class="font-display font-bold text-3xl md:text-4xl text-gray-900 dark:text-white leading-tight">
+        {t.heading}
+      </h2>
+    </div>
+
+    <div class="space-y-4 max-w-3xl mx-auto">
+      {t.faqs.map((faq) => (
+        <details class="group border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/50 rounded-xl overflow-hidden [&_summary::-webkit-details-marker]:hidden">
+          <summary class="flex items-center justify-between gap-4 p-6 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+            <h3 class="font-display font-semibold text-lg text-gray-900 dark:text-white group-open:text-cush-orange transition-colors">
+              {faq.q}
+            </h3>
+            <span class="flex-shrink-0 ml-1.5 w-6 h-6 rounded-full border border-gray-300 dark:border-gray-700 flex items-center justify-center text-gray-500 group-open:rotate-180 transition-transform duration-300">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </span>
+          </summary>
+          <div class="p-6 pt-0 text-gray-600 dark:text-gray-400 leading-relaxed border-t border-gray-100 dark:border-gray-800">
+            {faq.a}
+          </div>
+        </details>
+      ))}
+    </div>
+
+    <div class="mt-12 text-center">
+      <a href={t.ctaLink} class="inline-flex items-center gap-2 text-cush-orange font-medium hover:underline text-lg">
+        {t.cta}
+      </a>
+    </div>
+  </Container>
+</section>

@@ -1,0 +1,90 @@
+---
+import Container from '../layout/Container.astro';
+
+interface Props {
+  locale: 'en' | 'es';
+}
+
+const { locale } = Astro.props;
+
+const content = {
+  en: {
+    heading: 'A Simple Process — You\'re Live in 2–6 Weeks',
+    steps: [
+      {
+        title: 'Step 1: Discovery',
+        desc: 'A 30-minute call to understand your business, identify the highest-impact opportunity, and define clear success metrics. No commitment required. If AI isn\'t the right answer, I\'ll tell you.'
+      },
+      {
+        title: 'Step 2: Build',
+        desc: 'I design and implement your solution — chatbots, automations, document systems, or custom tools. You see progress weekly, not at the end. Built with validation, testing, and security from day one.'
+      },
+      {
+        title: 'Step 3: Launch & Measure',
+        desc: 'We deploy, test with real users, and I hand over everything documented. Then we measure what matters — deflection rate, time-to-answer, leads captured, hours saved — and iterate based on real data.'
+      }
+    ],
+    addon: 'Want ongoing optimization? I offer monthly retainers to keep your systems sharp as your business evolves.'
+  },
+  es: {
+    heading: 'Un Proceso Simple — En Vivo en 2–6 Semanas',
+    steps: [
+      {
+        title: 'Paso 1: Descubrimiento',
+        desc: 'Una llamada de 30 minutos para entender tu negocio, identificar la oportunidad de mayor impacto y definir métricas claras de éxito. Sin compromiso. Si la IA no es la respuesta, te lo diré directamente.'
+      },
+      {
+        title: 'Paso 2: Construcción',
+        desc: 'Diseño e implemento tu solución — chatbots, automatizaciones o herramientas de IA. Ves el progreso cada semana, no solo al final. Construido con validación, pruebas y seguridad desde el día uno.'
+      },
+      {
+        title: 'Paso 3: Lanzamiento y Medición',
+        desc: 'Desplegamos, probamos con usuarios reales, y te entrego todo documentado. Luego medimos lo importante — desviación de tickets, captura de leads, horas ahorradas — e iteramos basados en datos reales.'
+      }
+    ],
+    addon: '¿Quieres optimización continua? Ofrezco planes mensuales para mantener tus sistemas afinados mientras tu negocio evoluciona.'
+  }
+};
+
+const t = content[locale];
+---
+
+<section class="py-20 md:py-32 bg-white dark:bg-black relative">
+  <Container size="md">
+    <div class="text-center mb-16">
+      <h2 class="font-display font-bold text-3xl md:text-4xl text-gray-900 dark:text-white leading-tight">
+        {t.heading}
+      </h2>
+    </div>
+
+    <!-- Timeline/Steps Layout -->
+    <div class="relative space-y-12 before:absolute before:inset-0 before:ml-5 md:before:ml-[50%] before:-translate-x-px md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-gray-200 dark:before:via-gray-800 before:to-transparent">
+      {t.steps.map((step, index) => (
+        <div class={`relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group border md:border-none border-gray-100 dark:border-gray-800 rounded-xl p-6 md:p-0 ${index % 2 === 0 ? 'md:pr-[50%]' : 'md:pl-[50%]'}`}>
+          <!-- Marker -->
+          <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white dark:border-black bg-cush-orange/20 text-cush-orange font-bold font-display shadow-sm group-hover:bg-cush-orange group-hover:text-white transition-colors duration-300 z-10 
+            absolute left-0 top-6 md:static md:left-auto md:top-auto
+            md:absolute md:left-1/2 md:-translate-x-1/2">
+            {index + 1}
+          </div>
+          
+          <!-- Content Box -->
+          <div class={`w-full md:w-[calc(100%-3rem)] pl-12 md:pl-0 ${index % 2 === 0 ? 'md:pr-12 lg:pr-16 md:text-right' : 'md:pl-12 lg:pl-16 md:text-left'}`}>
+            <h3 class="font-display font-semibold text-xl text-gray-900 dark:text-white mb-2">{step.title}</h3>
+            <p class="text-gray-600 dark:text-gray-400 leading-relaxed text-base">{step.desc}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Optional Add-On Badge -->
+    <div class="mt-20 flex justify-center">
+      <div class="inline-flex items-center gap-3 px-6 py-4 bg-gray-50 dark:bg-gray-900/50 border border-gray-200 dark:border-gray-800 rounded-full text-sm font-medium text-gray-700 dark:text-gray-300">
+        <svg class="w-5 h-5 text-cush-orange animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+        </svg>
+        <span>{t.addon}</span>
+      </div>
+    </div>
+  </Container>
+</section>

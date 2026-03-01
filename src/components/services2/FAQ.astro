@@ -1,0 +1,116 @@
+---
+import Container from '../layout/Container.astro';
+
+interface Props {
+  locale: 'en' | 'es';
+}
+
+const { locale } = Astro.props;
+
+const content = {
+  en: {
+    heading: "Services FAQ",
+    faqs: [
+      {
+        q: "How do I know which service I need?",
+        a: "That's what the discovery call is for. In 30 minutes, I'll assess your situation and recommend the right starting point. If you're genuinely unsure, the Clarity Sprint ($1,500, credited toward a build) gives you a complete evaluation and action plan before you commit to anything larger."
+      },
+      {
+        q: "Can I start small and expand later?",
+        a: "Absolutely. Most clients start with one focused project — usually a support assistant or a Clarity Sprint — and expand once they see results. I design everything to be modular and extensible."
+      },
+      {
+        q: "Do you offer payment plans?",
+        a: "For engagements over $5,000, I can structure payments across milestones (typically 50% at kickoff, 50% at launch). We'll discuss what works during scoping."
+      },
+      {
+        q: "What happens after the 30-day optimization window?",
+        a: "The system is yours — fully documented and operational. You can run it independently, or we can set up a monthly retainer for ongoing optimization, content updates, and performance monitoring. No lock-in."
+      },
+      {
+        q: "I've worked with AI vendors before and it didn't go well. How is this different?",
+        a: "I hear this a lot. Most failed AI projects fail for one of three reasons: no clear success metrics, no validation/guardrails, or no iteration based on real usage. I address all three by design — metrics defined upfront, validation built into every system, and a 30-day optimization window where I tune based on actual data. Also: you work directly with me, not an account manager who disappears after the sale."
+      },
+      {
+        q: "Do you sign NDAs?",
+        a: "Yes. I'm happy to sign a mutual NDA before our first conversation. Your business information stays confidential."
+      },
+      {
+        q: "What if I need something that doesn't fit these categories?",
+        a: "Start with the discovery call. If your project is within my capabilities, I'll scope it. If it's not, I'll be honest and, where possible, point you toward someone who can help."
+      },
+      {
+        q: "Do you work with companies outside Mexico and the US?",
+        a: "My primary markets are Mexico/LATAM and the US, but I've worked with clients in other regions. If your project fits my expertise, geography isn't a barrier. Let's talk."
+      }
+    ]
+  },
+  es: {
+    heading: "Preguntas Frecuentes",
+    faqs: [
+      {
+        q: "¿Como sé qué servicio necesito?",
+        a: "Para eso es la llamada. En 30 minutos, evalúo tu situación y recomiendo el punto de partida preciso. Si aún dudas, el Sprint de Claridad ($1,500, transferibles a desarrollo) te da un plan de acción completo antes de que te comprometas a lo grande."
+      },
+      {
+        q: "¿Puedo empezar pequeño y crecer después?",
+        a: "Totalmente. La mayoría de los clientes inician con un solo dominio enfocado — a menudo un asistente básico — y lo expanden con el tiempo. Todo lo construyo de forma modular."
+      },
+      {
+        q: "¿Ofrecen métodos de pago y parcialidades?",
+        a: "Para proyectos por arriba de los $5,000, estructuramos pagos contra avances (usualmente 50% inicial, 50% lanzamiento). Todo está a discusión."
+      },
+      {
+        q: "¿Qué pasa con la ventana post-lanzamiento vital de 30 días?",
+        a: "El sistema final es tuyo y queda operativo con documentos propios. Puedes llevarlo por tus recursos internos, o abrir una cuota mensual de mantenimiento si prefieres soltar el volante — sin plazos forzados."
+      },
+      {
+        q: "Ya perdí dinero en la fiebre inicial generativa comercial y AI agency fluff... ¿Cuál es la diferencia?",
+        a: "Las tragedias de la IA caen en 3 bloques: cero métricas tangibles, cero control de contexto propio, y cero ajustes post-uso en la vida real. Todo proyecto mío ataca esto abriendo puertas a la métrica medible y un tuning fuerte a las 3 semanas del go-live."
+      },
+      {
+        q: "¿Firma Acuerdos de Confidencialidad (NDA)?",
+        a: "Sí. Feliz de firmar un NDA mutuo estándar previo al intercambio comercial sensible."
+      },
+      {
+        q: "¿Qué pasa si mi problema no cuadra con tus especialidades?",
+        a: "Agendemos la llamada igual, y si la dimensión sobrepasa mi experiencia franca... te lo diré directamente y buscaremos canalizarte donde hace sentido."
+      },
+      {
+        q: "¿Trabaja fuera de México y Estados Unidos?",
+        a: "Mi mercado es el TLCAN, pero tengo clientes de habla española o inglesa internacionales. Si la fibra del proyecto me va, la geografía no es factor, conversemos."
+      }
+    ]
+  }
+};
+
+const t = content[locale];
+---
+
+<section class="py-20 md:py-32 bg-white dark:bg-black">
+  <Container size="sm">
+    <div class="text-center mb-16">
+      <h2 class="font-display font-bold text-3xl md:text-5xl text-gray-900 dark:text-white leading-tight tracking-tight">
+        {t.heading}
+      </h2>
+    </div>
+
+    <div class="space-y-4">
+      {t.faqs.map((faq) => (
+        <details class="group bg-gray-50 dark:bg-gray-900/50 rounded-xl border border-gray-200 dark:border-gray-800 [&_summary::-webkit-details-marker]:hidden">
+          <summary class="flex items-center justify-between cursor-pointer p-6 md:p-8 font-display font-semibold text-lg text-gray-900 dark:text-white mb-0">
+            {faq.q}
+            <span class="ml-6 flex-shrink-0 bg-white dark:bg-black p-2 rounded-full shadow-sm text-cush-orange transition-transform duration-300 group-open:rotate-180">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </span>
+          </summary>
+          <div class="px-6 md:px-8 pb-8 text-gray-600 dark:text-gray-400 leading-relaxed text-base pt-2">
+            {faq.a}
+          </div>
+        </details>
+      ))}
+    </div>
+  </Container>
+</section>

@@ -1,0 +1,174 @@
+---
+import Container from '../layout/Container.astro';
+
+interface Props {
+  locale: 'en' | 'es';
+}
+
+const { locale } = Astro.props;
+
+const content = {
+  en: {
+    heading: "Investment Overview",
+    intro: "I believe in transparent pricing. Here's what engagements typically look like:",
+    headers: ["Service", "Starting At", "Typical Range", "Timeline"],
+    rows: [
+      {
+        service: "AI Clarity Sprint",
+        startingAt: "$1,500",
+        typicalRange: "$1,500 (flat)",
+        timeline: "5–10 days"
+      },
+      {
+        service: "AI Support Assistant",
+        startingAt: "$3,500",
+        typicalRange: "$3,500–$8,500",
+        timeline: "2–4 weeks"
+      },
+      {
+        service: "Document & Knowledge System",
+        startingAt: "$5,000",
+        typicalRange: "$5,000–$12,500",
+        timeline: "3–6 weeks"
+      },
+      {
+        service: "Custom AI Tool",
+        startingAt: "$5,000",
+        typicalRange: "$5,000–$15,000+",
+        timeline: "4–8 weeks"
+      },
+      {
+        service: "Ongoing Retainer",
+        startingAt: "$1,000/mo",
+        typicalRange: "$1,000–$2,500/mo",
+        timeline: "Monthly"
+      }
+    ],
+    note: "Every project is scoped during the free discovery call. The ranges above reflect typical engagements — your project may be simpler or more complex. I'll give you an exact quote before you commit to anything.",
+    credit: "**Clarity Sprint credit:** If you start with a Clarity Sprint and move forward with a build engagement, the full $1,500 is credited toward your project."
+  },
+  es: {
+    heading: "Resumen de Inversión",
+    intro: "Creo en precios transparentes. Así se ven los proyectos típicamente:",
+    headers: ["Servicio", "Desde", "Rango Típico", "Línea de Tiempo"],
+    rows: [
+      {
+        service: "Sprint de Claridad IA",
+        startingAt: "$1,500",
+        typicalRange: "$1,500 plenos",
+        timeline: "5–10 días"
+      },
+      {
+        service: "Asistente de Soporte IA",
+        startingAt: "$3,500",
+        typicalRange: "$3,500–$8,500",
+        timeline: "2–4 semanas"
+      },
+      {
+        service: "Sistema de Conocimiento",
+        startingAt: "$5,000",
+        typicalRange: "$5,000–$12,500",
+        timeline: "3–6 semanas"
+      },
+      {
+        service: "Herramienta IA a Medida",
+        startingAt: "$5,000",
+        typicalRange: "$5,000–$15,000+",
+        timeline: "4–8 semanas"
+      },
+      {
+        service: "Retención Continua",
+        startingAt: "$1,000/mes",
+        typicalRange: "$1,000–$2,500/mes",
+        timeline: "Mensual"
+      }
+    ],
+    note: "Todos los proyectos se miden en la llamada gratuita. Los rangos arriba reflejan montos promedios — el tuyo puede ser diferente. Siéntete libre para conseguir un presupuesto sin compromisos.",
+    credit: "**Crédito de Sprint de Claridad:** Si abres fuego con un Sprint y pasamos a desarrollo, los $1,500 USD aplican directo a tu cuenta de proyecto final."
+  }
+};
+
+const t = content[locale];
+
+function formatBold(text: string) {
+  return text.replace(/\*\*(.*?)\*\*/g, '<strong class="text-gray-900 dark:text-white font-semibold">$1</strong>');
+}
+---
+
+<section id="pricing" class="py-20 md:py-32 bg-gray-50 dark:bg-gray-900/40 border-y border-gray-200 dark:border-gray-800">
+  <Container size="lg">
+    <div class="text-center mb-12 max-w-3xl mx-auto">
+      <h2 class="font-display font-bold text-3xl md:text-5xl text-gray-900 dark:text-white mb-6 leading-tight tracking-tight">
+        {t.heading}
+      </h2>
+      <p class="text-xl text-gray-600 dark:text-gray-400">
+        {t.intro}
+      </p>
+    </div>
+
+    <!-- Desktop Table (Hidden on small screens) -->
+    <div class="hidden md:block overflow-hidden bg-white dark:bg-black rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm max-w-5xl mx-auto mb-8">
+      <table class="w-full text-left border-collapse">
+        <thead class="bg-gray-50 dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800">
+          <tr>
+            {t.headers.map(header => (
+              <th class="py-4 px-6 font-display font-bold text-gray-900 dark:text-white uppercase tracking-wider text-sm">
+                {header}
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-100 dark:divide-gray-800">
+          {t.rows.map((row, index) => (
+            <tr class="hover:bg-cush-orange/5 dark:hover:bg-cush-orange/10 transition-colors">
+              <td class="py-5 px-6 font-semibold text-gray-900 dark:text-white whitespace-nowrap">
+                {row.service}
+              </td>
+              <td class="py-5 px-6 font-mono text-gray-600 dark:text-gray-400 whitespace-nowrap">
+                {row.startingAt}
+              </td>
+              <td class="py-5 px-6 text-gray-600 dark:text-gray-400 whitespace-nowrap">
+                {row.typicalRange}
+              </td>
+              <td class="py-5 px-6 text-sm text-gray-600 dark:text-gray-400 whitespace-nowrap">
+                {row.timeline}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Mobile Cards (Visible only on small screens) -->
+    <div class="md:hidden space-y-4 max-w-lg mx-auto mb-8">
+      {t.rows.map(row => (
+        <div class="bg-white dark:bg-black border border-gray-200 dark:border-gray-800 rounded-xl p-5 shadow-sm">
+          <h3 class="font-display font-bold text-lg text-gray-900 dark:text-white mb-4 pb-2 border-b border-gray-100 dark:border-gray-800">
+            {row.service}
+          </h3>
+          <div class="grid grid-cols-2 gap-4 text-sm">
+            <div>
+              <span class="block text-gray-500 dark:text-gray-500 uppercase tracking-wider text-xs mb-1 mb-1">{t.headers[1]}</span>
+              <span class="font-mono text-gray-900 dark:text-gray-200 font-medium">{row.startingAt}</span>
+            </div>
+            <div>
+              <span class="block text-gray-500 dark:text-gray-500 uppercase tracking-wider text-xs mb-1">{t.headers[3]}</span>
+              <span class="text-gray-900 dark:text-gray-200">{row.timeline}</span>
+            </div>
+            <div class="col-span-2 pt-2">
+              <span class="block text-gray-500 dark:text-gray-500 uppercase tracking-wider text-xs mb-1">{t.headers[2]}</span>
+              <span class="text-gray-900 dark:text-gray-200">{row.typicalRange}</span>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div class="max-w-4xl mx-auto space-y-4">
+      <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed text-center">
+        {t.note}
+      </p>
+      <div class="bg-orange-50 dark:bg-orange-900/20 text-orange-800 dark:text-orange-200 p-4 rounded-lg text-sm text-center border border-orange-100 dark:border-orange-800/50" set:html={formatBold(t.credit)} />
+    </div>
+  </Container>
+</section>

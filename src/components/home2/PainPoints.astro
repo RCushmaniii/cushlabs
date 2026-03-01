@@ -1,0 +1,108 @@
+---
+import Container from '../layout/Container.astro';
+
+interface Props {
+  locale: 'en' | 'es';
+}
+
+const { locale } = Astro.props;
+
+const content = {
+  en: {
+    heading: "If you're a founder or ops leader at a growing business, this probably sounds familiar:",
+    closing: "Every missed message costs revenue. Every wrong answer costs trust. Every hour spent on repetitive work is an hour not spent growing.",
+    pains: [
+      {
+        title: "Same Questions, All Day",
+        desc: "Pricing, order status, policies, how-to — your team answers the same things over and over while response times slip and customers get frustrated."
+      },
+      {
+        title: "Knowledge Lives Everywhere",
+        desc: "Answers are scattered across WhatsApp, Google Docs, PDFs, and \"just ask Juan.\" Onboarding new hires is painful. Losing a key employee is terrifying."
+      },
+      {
+        title: "Leads Disappear After Hours",
+        desc: "Prospects visit your site, ask questions, then vanish because nobody responds fast enough — especially nights and weekends. Every missed message is lost revenue."
+      },
+      {
+        title: "Repetitive Work Is Eating Your Team's Time",
+        desc: "Data entry, document processing, report generation, manual follow-ups — your team spends hours on work that should take minutes. They were hired for judgment, not copy-paste."
+      },
+      {
+        title: "No Bandwidth for AI Projects",
+        desc: "Your lean team can't spare someone to own a big implementation. You need something that works without becoming a second job — and without a six-month timeline."
+      },
+      {
+        title: "You've Been Burned Before",
+        desc: "You've seen the demos. Maybe you've even paid for one. A chatbot that sounds dumb, hallucinates wrong answers, or creates more tickets than it solves. You're skeptical — and you should be."
+      }
+    ]
+  },
+  es: {
+    heading: "Si eres fundador o líder de operaciones en una empresa en crecimiento, esto probablemente te suene familiar:",
+    closing: "Cada mensaje sin responder cuesta ingresos. Cada respuesta incorrecta cuesta confianza. Cada hora dedicada al trabajo repetitivo es una hora que no se invierte en crecer.",
+    pains: [
+      {
+        title: "Las Mismas Preguntas, Todo el Día",
+        desc: "Precios, estados de pedidos, políticas, tutoriales — tu equipo responde lo mismo una y otra vez mientras los tiempos de respuesta caen y los clientes se frustran."
+      },
+      {
+        title: "El Conocimiento Vive en Todas Partes",
+        desc: "Las respuestas están dispersas en WhatsApp, Google Docs, PDFs y 'solo pregúntale a Juan'. Capacitar a nuevos empleados es doloroso. Perder a un empleado clave es aterrador."
+      },
+      {
+        title: "Los Prospectos Desaparecen Fuera de Horario",
+        desc: "Los prospectos visitan tu sitio, preguntan y luego desaparecen porque nadie responde a tiempo — especialmente de noche y fines de semana. Cada mensaje perdido es dinero perdido."
+      },
+      {
+        title: "El Trabajo Repetitivo Consume el Tiempo de tu Equipo",
+        desc: "Entrada de datos, procesamiento de documentos, informes — tu equipo pasa horas en tareas que deberían tomar minutos. Los contrataste por su criterio, no para copiar y pegar."
+      },
+      {
+        title: "Sin Capacidad para Proyectos de IA",
+        desc: "Tu equipo ajustado no puede dedicar a alguien para liderar una gran implementación. Necesitas algo que funcione sin convertirse en un segundo trabajo — y sin que tome seis meses."
+      },
+      {
+        title: "Te Han Decepcionado Antes",
+        desc: "Has visto las demostraciones. Quizás pagaste por una. Un chatbot que suena tonto, inventa respuestas o crea más problemas de los que resuelve. Eres escéptico — y deberías serlo."
+      }
+    ]
+  }
+};
+
+const t = content[locale];
+---
+
+<section class="py-20 md:py-28 bg-gray-50 dark:bg-gray-900/30">
+  <Container size="lg">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <h2 class="font-display text-3xl md:text-4xl font-bold text-gray-900 dark:text-white leading-tight">
+        {t.heading}
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-16">
+      {t.pains.map((pain, _i) => (
+        <div class="group p-6 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/50 hover:border-cush-orange/50 hover:shadow-lg hover:shadow-cush-orange/5 transition-all duration-300">
+          <div class="w-12 h-12 rounded-lg bg-cush-orange/10 flex items-center justify-center mb-5 group-hover:bg-cush-orange group-hover:text-white dark:text-white text-gray-900 transition-colors duration-300">
+            <svg class="w-6 h-6 text-cush-orange group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+            </svg>
+          </div>
+          <h3 class="font-display font-semibold text-xl text-gray-900 dark:text-white mb-3 tracking-tight">
+            {pain.title}
+          </h3>
+          <p class="text-base text-gray-600 dark:text-gray-400 leading-relaxed">
+            {pain.desc}
+          </p>
+        </div>
+      ))}
+    </div>
+
+    <div class="max-w-4xl mx-auto text-center p-8 rounded-xl bg-gradient-to-br from-cush-orange/5 to-transparent border border-cush-orange/20">
+      <p class="font-display font-semibold text-xl md:text-2xl text-gray-900 dark:text-white leading-relaxed">
+        {t.closing}
+      </p>
+    </div>
+  </Container>
+</section>

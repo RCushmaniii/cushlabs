@@ -1,0 +1,63 @@
+---
+import Container from '../layout/Container.astro';
+
+interface Props {
+  locale: 'en' | 'es';
+}
+
+const { locale } = Astro.props;
+
+const content = {
+  en: {
+    heading: 'Ready to See What AI Can Do for Your Business?',
+    body: "Book a free 30-minute discovery call. I'll assess your highest-impact opportunity, give you a clear picture of what's possible, and be honest about whether it makes sense.\n\nNo commitment. No jargon. Just a straight conversation about your business.",
+    cta: 'Book Free Discovery Call',
+    ctaLink: '/consultation',
+    footer: 'I respond within 24 hours · Flexible hours for US & Mexico'
+  },
+  es: {
+    heading: '¿Listo Para Ver Lo Que La IA Puede Hacer Por Tu Negocio?',
+    body: "Agenda una llamada de descubrimiento de 30 minutos sin costo. Evaluaré tu oportunidad de mayor impacto, te daré una idea clara de lo que es posible y seré honesto sobre si tiene sentido.\n\nSin compromisos. Sin jerga. Solo una conversación directa sobre tu negocio.",
+    cta: 'Agendar Llamada Gratis',
+    ctaLink: '/es/reservar',
+    footer: 'Respondo en menos de 24 horas · Horarios flexibles para EE.UU. y México'
+  }
+};
+
+const t = content[locale];
+---
+
+<section class="py-24 md:py-32 relative overflow-hidden">
+  <!-- Dynamic Background Matrix -->
+  <div class="absolute inset-0 bg-cush-gray-900 border-t border-gray-800 dark:border-gray-800">
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,106,61,0.1),transparent_50%)]"></div>
+  </div>
+
+  <Container size="md">
+    <div class="relative z-10 text-center max-w-3xl mx-auto">
+      <h2 class="font-display font-bold text-4xl md:text-5xl lg:text-6xl text-white mb-8 leading-tight tracking-tight">
+        {t.heading}
+      </h2>
+      
+      <div class="text-xl text-gray-300 mb-12 leading-relaxed space-y-6">
+        {t.body.split('\n\n').map(p => <p>{p}</p>)}
+      </div>
+      
+      <div class="flex flex-col items-center gap-6">
+        <a href={t.ctaLink} class="group inline-flex items-center justify-center gap-3 px-10 py-5 bg-cush-orange text-white font-display font-semibold text-xl rounded-xl hover:bg-cush-orange/90 transition-all duration-300 shadow-[0_0_40px_rgba(255,106,61,0.3)] hover:shadow-[0_0_60px_rgba(255,106,61,0.5)] w-full sm:w-auto">
+          {t.cta}
+          <svg class="w-6 h-6 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+
+        <div class="flex items-center gap-2 text-sm text-gray-400 tracking-wide font-medium">
+          <svg class="w-4 h-4 text-cush-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          {t.footer}
+        </div>
+      </div>
+    </div>
+  </Container>
+</section>

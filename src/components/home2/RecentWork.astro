@@ -1,0 +1,108 @@
+---
+import Container from '../layout/Container.astro';
+
+interface Props {
+  locale: 'en' | 'es';
+}
+
+const { locale } = Astro.props;
+
+const content = {
+  en: {
+    heading: "A Few Things I've Been Building",
+    projects: [
+      {
+        title: "AI Writing System",
+        tags: "HTML / CSS / JS · JSON Context Files",
+        desc: "Clone your voice. Crush content. Scale forever.",
+        image: "/images/portfolio/writing-system.jpg",
+        link: "/portfolio/ai-writing-system"
+      },
+      {
+        title: "AI Resume Tailor",
+        tags: "React 19 · Flask / Python",
+        desc: "Bilingual AI-powered ATS resume optimization — instant structured feedback, zero friction, privacy by design.",
+        image: "/images/portfolio/resume-tailor.jpg",
+        link: "/portfolio/ai-resume-tailor"
+      },
+      {
+        title: "NY AI Chatbot",
+        tags: "Next.js 15 · TypeScript",
+        desc: "Drop-in AI chatbot widget with RAG intelligence for small business websites.",
+        image: "/images/portfolio/ny-chatbot.jpg",
+        link: "/portfolio/ny-ai-chatbot"
+      }
+    ],
+    cta: "See All Projects →",
+    ctaLink: "/portfolio"
+  },
+  es: {
+    heading: "Algunas Cosas Que He Estado Construyendo",
+    projects: [
+      {
+        title: "Sistema de Escritura IA",
+        tags: "HTML / CSS / JS · Archivos de Contexto JSON",
+        desc: "Clona tu voz. Destroza el contenido. Escala para siempre.",
+        image: "/images/portfolio/writing-system.jpg",
+        link: "/es/portafolio/sistema-escritura-ia"
+      },
+      {
+        title: "Optimizador de Currículum IA",
+        tags: "React 19 · Flask / Python",
+        desc: "Optimización ATS bilingüe con IA — feedback estructurado instantáneo, sin fricción, privacidad por diseño.",
+        image: "/images/portfolio/resume-tailor.jpg",
+        link: "/es/portafolio/optimizador-curriculum-ia"
+      },
+      {
+        title: "Chatbot IA NY",
+        tags: "Next.js 15 · TypeScript",
+        desc: "Widget de chatbot IA integrable con inteligencia RAG para sitios web de pequeñas empresas.",
+        image: "/images/portfolio/ny-chatbot.jpg",
+        link: "/es/portafolio/chatbot-ia-ny"
+      }
+    ],
+    cta: "Ver Todos Los Proyectos →",
+    ctaLink: "/es/portafolio"
+  }
+};
+
+const t = content[locale];
+---
+
+<section id="work" class="py-20 md:py-32 relative">
+  <Container size="lg">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+      <h2 class="font-display font-bold text-3xl md:text-4xl text-gray-900 dark:text-white leading-tight">
+        {t.heading}
+      </h2>
+      <a href={t.ctaLink} class="inline-flex items-center gap-2 text-cush-orange font-medium hover:underline text-lg whitespace-nowrap">
+        {t.cta}
+      </a>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {t.projects.map((project) => (
+        <a href={project.link} class="group rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/50 hover:border-cush-orange/50 hover:shadow-lg hover:shadow-cush-orange/5 transition-all duration-300 flex flex-col h-full">
+          <div class="aspect-[4/3] bg-gray-100 dark:bg-gray-800 relative overflow-hidden">
+            <!-- Using placeholder images or gradient backgrounds until actual screen shots are available -->
+            <div class="absolute inset-0 bg-gradient-to-br from-gray-200 to-gray-300 dark:from-gray-800 dark:to-gray-900 group-hover:scale-105 transition-transform duration-500"></div>
+            <div class="absolute inset-0 flex items-center justify-center text-gray-400 dark:text-gray-600 font-display">
+              {project.title} Preview
+            </div>
+          </div>
+          <div class="p-6 flex flex-col flex-grow">
+            <div class="text-xs font-display font-semibold text-cush-orange uppercase tracking-wider mb-2">
+              {project.tags}
+            </div>
+            <h3 class="font-display font-semibold text-xl text-gray-900 dark:text-white mb-3 group-hover:text-cush-orange transition-colors">
+              {project.title}
+            </h3>
+            <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mt-auto">
+              {project.desc}
+            </p>
+          </div>
+        </a>
+      ))}
+    </div>
+  </Container>
+</section>

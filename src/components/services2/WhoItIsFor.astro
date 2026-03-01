@@ -1,0 +1,116 @@
+---
+import Container from '../layout/Container.astro';
+
+interface Props {
+  locale: 'en' | 'es';
+}
+
+const { locale } = Astro.props;
+
+const content = {
+  en: {
+    heading: "Is This a Good Fit?",
+    bestFor: {
+      title: "I work best with:",
+      items: [
+        "**Founders and ops leaders at growing SMBs** (typically 5–200 employees) who are personally invested in solving operational problems",
+        "**Businesses handling significant volume** — 500+ support inquiries/month, or teams spending 10+ hours/week on repetitive manual work",
+        "**Companies with existing business knowledge** — you have docs, SOPs, FAQs, or policies that can be structured and leveraged",
+        "**Teams serving bilingual customers** (English/Spanish) across US and Mexico/LATAM markets",
+        "**Decision-makers who can commit to a 30-minute discovery call** and a 2–8 week implementation timeline",
+        "**People who value transparency** — I show my work, document everything, and give you honest assessments, including when AI isn't the answer"
+      ]
+    },
+    notFor: {
+      title: "I'm probably not the right fit if:",
+      items: [
+        "You need a full development team or an agency with 20 people — I'm one person. I deliver focused, high-quality work, but I don't scale like an agency",
+        "You're looking for the cheapest possible option — I compete on quality and outcomes, not price",
+        "You want a science project — I build production systems tied to business results, not experimental AI that might work someday",
+        "Your project requires deep integration with proprietary enterprise systems (SAP, Oracle, etc.) — I can advise, but implementation at that scale needs a larger team",
+        "You need it live tomorrow — my fastest delivery is 2 weeks. If you need something by Friday, I'm not your person"
+      ]
+    }
+  },
+  es: {
+    heading: "¿Hacemos Buen Equipo?",
+    bestFor: {
+      title: "Funciono mejor con:",
+      items: [
+        "**Fundadores y líderes de operaciones en PYMES** que invierten personalmente en resolver cuello de botella.",
+        "**Negocios manejando un volumen grueso** — 500+ tickets de soporte/mes, o más de 10h semanales de copiado y pegado.",
+        "**Empresas que ya tienen conocimiento comercial creado** — posees reglas de operación, políticas o POEs listadas en línea o archivo.",
+        "**Equipos que sirven a clientes en mercados EE.UU. y LatAm** (Inglés/Español)",
+        "**Líderes de decisión que pueden darme 30 min en llamada de descubrimiento**",
+        "**Empresarios que valoran la honestidad frontal** — te lo diré incluso cuando la IA hoy por hoy no resolverá tu mal particular."
+      ]
+    },
+    notFor: {
+      title: "Probablemente no encajaremos si:",
+      items: [
+        "Buscas un ejército de 20 programadores de agencia que ataquen en bola — soy una sola persona con foco experto de alto impacto.",
+        "Aspiras a la solución más económica posible — mi modelo no compite por centavos, compito entregando rentabilidad real.",
+        "Buscas un 'proyecto de ciencias' para jugar — hago soluciones medidas atadas al flujo de dinero/tiempo de tu empresa, no un concepto experimental.",
+        "Tu proyecto exige anclaje con sistemas super legados bancarios a nivel Oracle/SAP — requieres licitaciones de equipo masivo en escala corporativa.",
+        "Si lo necesitas en vivo para entregarlo a cliente mañana — mi desarrollo más acelerado corre en rango de semana completa para asegurar robustez productiva."
+      ]
+    }
+  }
+};
+
+const t = content[locale];
+
+function formatBold(text: string) {
+  return text.replace(/\*\*(.*?)\*\*/g, '<strong class="text-gray-900 dark:text-white font-semibold">$1</strong>');
+}
+---
+
+<section class="py-20 md:py-32 bg-white dark:bg-black border-y border-gray-100 dark:border-gray-800">
+  <Container size="lg">
+    <div class="text-center mb-16">
+      <h2 class="font-display font-bold text-3xl md:text-5xl text-gray-900 dark:text-white leading-tight tracking-tight">
+        {t.heading}
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8 lg:gap-12">
+      <!-- Best For (Green/Positive) -->
+      <div class="p-8 md:p-10 rounded-2xl bg-gray-50 border border-gray-200 dark:bg-gray-900/50 dark:border-gray-800 relative">
+        <div class="absolute top-0 left-0 w-full h-1.5 bg-green-500 rounded-t-2xl"></div>
+        <h3 class="font-display font-semibold text-2xl text-gray-900 dark:text-white mb-8 flex items-center gap-3">
+          <svg class="w-8 h-8 text-green-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          {t.bestFor.title}
+        </h3>
+        <ul class="space-y-6">
+          {t.bestFor.items.map((item) => (
+            <li class="flex gap-4">
+              <div class="shrink-0 w-2 h-2 mt-2.5 bg-green-500 rounded-full" />
+              <div class="text-gray-600 dark:text-gray-400 leading-relaxed text-base" set:html={formatBold(item)} />
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Not For (Red/Caution) -->
+      <div class="p-8 md:p-10 rounded-2xl bg-gray-50 border border-gray-200 dark:bg-gray-900/50 dark:border-gray-800 relative">
+        <div class="absolute top-0 left-0 w-full h-1.5 bg-red-400 rounded-t-2xl opacity-70"></div>
+        <h3 class="font-display font-semibold text-2xl text-gray-900 dark:text-white mb-8 flex items-center gap-3">
+          <svg class="w-8 h-8 text-red-500 opacity-80 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          {t.notFor.title}
+        </h3>
+        <ul class="space-y-6">
+          {t.notFor.items.map((item) => (
+            <li class="flex gap-4">
+              <div class="shrink-0 w-2 h-2 mt-2.5 bg-red-400 opacity-80 rounded-full" />
+              <div class="text-gray-600 dark:text-gray-400 leading-relaxed text-base" set:html={formatBold(item)} />
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </Container>
+</section>

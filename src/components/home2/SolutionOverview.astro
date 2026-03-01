@@ -1,0 +1,117 @@
+---
+import Container from '../layout/Container.astro';
+
+interface Props {
+  locale: 'en' | 'es';
+}
+
+const { locale } = Astro.props;
+
+const content = {
+  en: {
+    heading: 'AI That Handles the Routine — So Your Team Can Focus on What Matters',
+    body: "I turn your scattered business knowledge — buried in Google Docs, WhatsApp threads, and someone's head — into AI systems that actually work in production.",
+    pillars: [
+      {
+        title: "An AI support assistant",
+        desc: "that answers customer questions 24/7 in English and Spanish, captures leads after hours, and hands off to your team when human judgment is needed",
+        icon: "M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"
+      },
+      {
+        title: "A document processing system",
+        desc: "that turns your SOPs, policies, and knowledge bases into searchable, actionable resources — so answers aren't trapped in one person's memory",
+        icon: "M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+      },
+      {
+        title: "A custom AI tool",
+        desc: "built for your specific workflow — automating the repetitive work that's eating your team's time and creating bottlenecks",
+        icon: "M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065zM12 15a3 3 0 100-6 3 3 0 000 6z"
+      }
+    ],
+    differentiator: "No fragile demos. No one-and-done widgets. I build systems tied to outcomes you can measure.",
+    cta: 'See My Services →',
+    ctaLink: '/services'
+  },
+  es: {
+    heading: 'IA Que Maneja la Rutina — Para Que Tu Equipo Se Enfoque en lo Que Importa',
+    body: "Convierto tu conocimiento comercial disperso — enterrado en Google Docs, WhatsApp y en la cabeza de alguien — en sistemas de IA que realmente funcionan en producción.",
+    pillars: [
+      {
+        title: "Un asistente de soporte de IA",
+        desc: "que responde preguntas de clientes 24/7 en inglés y español, captura leads fuera de horario y transfiere a tu equipo cuando se requiere criterio humano",
+        icon: "M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"
+      },
+      {
+        title: "Un sistema de procesamiento de documentos",
+        desc: "que convierte tus POEs, políticas y bases de conocimiento en recursos buscables y accionables — para que las respuestas no queden atrapadas en la memoria de una persona",
+        icon: "M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+      },
+      {
+        title: "Una herramienta de IA a la medida",
+        desc: "construida para tu flujo de trabajo específico — automatizando el trabajo repetitivo que consume el tiempo de tu equipo y crea cuellos de botella",
+        icon: "M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065zM12 15a3 3 0 100-6 3 3 0 000 6z"
+      }
+    ],
+    differentiator: "Sin demostraciones frágiles. Sin widgets de un solo uso. Construyo sistemas orientados a resultados que puedes medir.",
+    cta: 'Ver Mis Servicios →',
+    ctaLink: '/es/servicios'
+  }
+};
+
+const t = content[locale];
+---
+
+<section class="py-20 md:py-32 relative">
+  <Container size="lg">
+    <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+      <!-- Left text -->
+      <div>
+        <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+          {t.heading}
+        </h2>
+        <p class="text-xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
+          {t.body}
+        </p>
+
+        <p class="text-lg font-medium text-gray-800 dark:text-gray-200 border-l-4 border-cush-orange pl-5 py-2 mb-8 bg-gradient-to-r from-cush-orange/5 to-transparent">
+          {t.differentiator}
+        </p>
+        
+        <a href={t.ctaLink} class="inline-flex items-center gap-2 px-6 py-3 bg-cush-orange text-white font-display font-semibold rounded-lg hover:bg-cush-orange/90 transition-all duration-300 shadow-lg shadow-cush-orange/25 hover:shadow-xl hover:shadow-cush-orange/30 group">
+          {t.cta}
+        </a>
+      </div>
+
+      <!-- Right list -->
+      <div class="space-y-8">
+        <p class="text-sm font-display font-semibold uppercase tracking-wider text-cush-orange mb-6">
+          {locale === 'en' ? 'That could mean:' : 'Esto podría significar:'}
+        </p>
+        
+        {t.pillars.map((pillar, _i) => (
+          <div class="flex gap-5 group">
+            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-cush-orange/10 flex items-center justify-center group-hover:bg-cush-orange group-hover:text-white dark:text-white text-gray-900 transition-colors duration-300">
+              <svg class="w-6 h-6 text-cush-orange group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={pillar.icon} />
+              </svg>
+            </div>
+            <div>
+              <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                <strong class="font-semibold text-gray-900 dark:text-white block sm:inline">{pillar.title}</strong> {pillar.desc}
+              </p>
+            </div>
+          </div>
+        ))}
+
+        <div class="mt-8 p-5 bg-gray-50 dark:bg-gray-800/50 rounded-xl border border-gray-200 dark:border-gray-800 text-sm text-gray-600 dark:text-gray-400">
+          <svg class="w-5 h-5 text-green-500 inline-block mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          {locale === 'en' 
+            ? 'Every system includes validated answers, analytics, and clean documentation.'
+            : 'Cada sistema incluye respuestas validadas, analíticas y documentación clara.'}
+        </div>
+      </div>
+    </div>
+  </Container>
+</section>

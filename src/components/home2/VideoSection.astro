@@ -1,0 +1,67 @@
+---
+import Container from '../layout/Container.astro';
+
+interface Props {
+  locale: 'en' | 'es';
+}
+
+const { locale } = Astro.props;
+
+const content = {
+  en: {
+    heading: 'See How It Works',
+    body: "2 minutes. No jargon. I'll walk you through how I turn your scattered business knowledge into AI systems that actually work — and what the first 30 days look like.",
+    cta: 'Prefer to talk? → Book a Call',
+    ctaLink: '/consultation'
+  },
+  es: {
+    heading: 'Ver Cómo Funciona',
+    body: "2 minutos. Sin jerga técnica. Te mostraré cómo convierto tu conocimiento disperso en sistemas de IA que realmente funcionan — y cómo se ven los primeros 30 días.",
+    cta: '¿Prefieres hablar? → Agenda una Llamada',
+    ctaLink: '/es/reservar'
+  }
+};
+
+const t = content[locale];
+---
+
+<section id="video" class="py-16 md:py-24 relative overflow-hidden">
+  <Container size="lg">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <!-- Left: Video Embed / Poster -->
+      <div class="relative group rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900/50 aspect-video shadow-lg hover:shadow-xl hover:shadow-cush-orange/10 transition-all duration-300">
+        <!-- Placeholder for actual video embed. Using an image poster for the MVP launch -->
+        <img src="/images/hero/home-hero2.jpg" alt="Video thumbnail: How AI Actually Works for Your Business" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" />
+        
+        <!-- Play Button Overlay Mock -->
+        <div class="absolute inset-0 flex items-center justify-center">
+          <div class="w-16 h-16 rounded-full bg-cush-orange/90 text-white flex items-center justify-center shadow-lg transform group-hover:scale-110 group-hover:bg-cush-orange transition-all duration-300 cursor-pointer">
+            <svg class="w-8 h-8 ml-1" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z" />
+            </svg>
+          </div>
+        </div>
+        
+        <!-- Text Overlay on Thumbnail -->
+        <div class="absolute bottom-4 left-4 right-4 text-center">
+          <div class="inline-block px-4 py-2 bg-black/70 backdrop-blur-md rounded-lg text-white font-display font-medium shadow-sm">
+            How AI Actually Works for Your Business
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Supporting Text -->
+      <div class="max-w-xl">
+        <h2 class="font-display font-bold text-2xl md:text-3xl lg:text-4xl text-gray-900 dark:text-white mb-6">
+          {t.heading}
+        </h2>
+        <p class="text-lg text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
+          {t.body}
+        </p>
+        <a href={t.ctaLink} class="inline-flex items-center gap-2 text-cush-orange font-medium hover:underline text-lg">
+          {t.cta}
+        </a>
+      </div>
+    </div>
+  </Container>
+</section>

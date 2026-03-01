@@ -1,0 +1,371 @@
+---
+import Container from '../layout/Container.astro';
+
+interface Props {
+  locale: 'en' | 'es';
+  id: string;
+  isAlternate?: boolean;
+}
+
+const { locale, id, isAlternate = false } = Astro.props;
+
+// This component handles the rendering logic for all 4 services by selecting the right ID.
+const data = {
+  'support-assistants': {
+    en: {
+      heading: "AI Support Assistants",
+      subheading: "24/7 customer support that actually works — without hiring.",
+      problem: "Your team answers the same questions dozens of times a day. Customers wait. Leads ask a question at 9pm and never come back. You can't hire fast enough, and the people you do hire spend their first month learning answers that live in scattered documents.",
+      whatIBuild: "An AI assistant trained on YOUR business knowledge — your docs, your policies, your pricing, your product information — that answers customer questions accurately, in English and Spanish, around the clock.\n\nNot a generic chatbot. A system that knows your business, validates its answers against your approved sources, and hands off to your team when human judgment is needed.",
+      included: [
+        { title: "Knowledge ingestion and structuring", desc: "I audit your existing content (docs, FAQs, policies, WhatsApp threads) and organize it into a structured knowledge base your assistant can reference" },
+        { title: "AI assistant with validated responses", desc: "Answers grounded in your approved sources, not the open internet. Built-in guardrails to prevent hallucination and off-topic responses" },
+        { title: "Bilingual output (EN/ES)", desc: "Professional responses in both languages, matched to your brand voice and tone" },
+        { title: "Human handoff flow", desc: "When the assistant isn't confident or the question requires judgment, it routes to your team with full context — no frustrated customers repeating themselves" },
+        { title: "Lead capture and qualification", desc: "After-hours visitors get engaged immediately. The assistant captures contact info, qualifies intent, and routes to your sales process" },
+        { title: "Analytics dashboard", desc: "See what customers are asking, where they get stuck, what content is missing, and how the assistant is performing against your KPIs" },
+        { title: "Deployment and documentation", desc: "Installed on your website, WhatsApp, or both. Full operational documentation so your team can manage it" },
+        { title: "30-day optimization window", desc: "After launch, I monitor performance, fix gaps, and tune responses based on real usage data" }
+      ],
+      notIncluded: [
+        "Ongoing content updates beyond the 30-day window (available via retainer)",
+        "Integration with custom CRMs or ERPs (scoped separately if needed)",
+        "Generating new content — the assistant surfaces YOUR existing knowledge, it doesn't create marketing copy"
+      ],
+      timeline: "2–4 weeks from kickoff to launch, depending on the volume and complexity of your knowledge base.",
+      investment: "Engagements start at **$3,500** for a focused assistant with a single knowledge domain (e.g., customer support FAQ). More complex implementations with multiple domains, integrations, or bilingual requirements are typically **$5,000–$8,500**.",
+      investmentDisclaimer: "All projects are scoped and quoted during the free discovery call. No surprises.",
+      bestFor: [
+        "Customer support teams handling 500+ inquiries/month",
+        "Businesses losing leads after hours or on weekends",
+        "Companies with high-volume repetitive questions (pricing, policies, order status)",
+        "Teams serving bilingual (EN/ES) customer bases"
+      ]
+    },
+    es: {
+      heading: "Asistentes de Soporte IA",
+      subheading: "Soporte al cliente 24/7 que realmente funciona — sin tener que contratar.",
+      problem: "Tu equipo responde las mismas preguntas docenas de veces al día. Los clientes esperan. Los leads preguntan a las 9pm y nunca regresan. No puedes contratar lo suficientemente rápido.",
+      whatIBuild: "Un asistente de IA entrenado con EL conocimiento de TU negocio — tus documentos, políticas, precios — que responde con precisión en inglés y español todo el día.\n\nNo es un chatbot genérico. Es un sistema que conoce tu negocio, valida sus respuestas contra fuentes aprobadas y transfiere a tu equipo cuando se necesita criterio humano.",
+      included: [
+        { title: "Ingestión y estructuración de conocimiento", desc: "Audito tu contenido existente y lo organizo en una base de conocimientos estructurada." },
+        { title: "Asistente con respuestas validadas", desc: "Respuestas basadas en tus fuentes, no en el internet abierto. Barreras de seguridad incorporadas." },
+        { title: "Salida bilingüe (EN/ES)", desc: "Respuestas profesionales en ambos idiomas." },
+        { title: "Flujo de transferencia humana", desc: "Enruta a tu equipo con todo el contexto necesario, sin clientes frustrados." },
+        { title: "Captura y calificación de leads", desc: "Captura información de contacto y califica intención fuera del horario laboral." },
+        { title: "Panel de analíticas", desc: "Mira qué preguntan los clientes y cómo se desempeña el asistente contra tus KPIs." },
+        { title: "Despliegue y documentación", desc: "Instalado en tu sitio web, WhatsApp, o ambos." },
+        { title: "Ventana de optimización de 30 días", desc: "Monitoreo de desempeño y ajuste de respuestas basado en uso real." }
+      ],
+      notIncluded: [
+        "Actualizaciones continuas después de 30 días (disponible como retención)",
+        "Integración con CRMs/ERPs personalizados (se cotiza aparte)",
+        "Creación de contenido nuevo de marketing"
+      ],
+      timeline: "2–4 semanas de principio a fin.",
+      investment: "Proyectos a partir de **$3,500 USD** para un dominio de conocimiento enfocado. Sistemas complejos y multilingües típicamente rondan los **$5,000–$8,500 USD**.",
+      investmentDisclaimer: "Todo se define y cotiza en la llamada gratuita. Sin sorpresas.",
+      bestFor: [
+        "Equipos procesando 500+ consultas al mes",
+        "Empresas perdiendo leads fines de semana/noches",
+        "Preguntas repetitivas de alto volumen",
+        "Clientes de base bilingüe"
+      ]
+    }
+  },
+  'knowledge-systems': {
+    en: {
+      heading: "Document & Knowledge Systems",
+      subheading: "Turn scattered knowledge into a searchable, reliable system your whole team can use.",
+      problem: "Your most important business information is trapped — in Google Docs nobody can find, PDFs from three years ago, WhatsApp conversations, and one person's memory. When that person is out sick or leaves the company, the knowledge goes with them.",
+      whatIBuild: "A structured knowledge system powered by AI that lets your team search, retrieve, and reference your business information instantly. Think of it as giving your entire organization access to your best employee's brain — organized, searchable, and always available.",
+      included: [
+        { title: "Knowledge audit and mapping", desc: "I identify where your critical information lives, what's missing, and what's outdated." },
+        { title: "Document structuring and ingestion", desc: "Your docs, SOPs, policies, product info, and training materials organized into a searchable knowledge base" },
+        { title: "AI-powered search and retrieval", desc: "Your team asks questions in natural language, gets answers with source references." },
+        { title: "Role-based access", desc: "Control who sees what. Operations manuals for ops, product specs for sales." },
+        { title: "Source attribution", desc: "Every answer shows where it came from so your team can verify and go deeper" },
+        { title: "Onboarding acceleration", desc: "New hires can self-serve answers from day one instead of interrupting senior staff" },
+        { title: "Documentation and training", desc: "Full handoff materials so your team can manage and update the system" },
+        { title: "30-day optimization window", desc: "I monitor usage patterns, identify gaps, and refine retrieval based on what your team actually searches for" }
+      ],
+      notIncluded: [
+        "Writing or creating new documentation",
+        "Integration with proprietary internal tools or legacy systems",
+        "Ongoing content updates beyond the 30-day window"
+      ],
+      timeline: "3–6 weeks, depending on document volume and complexity.",
+      investment: "Engagements start at **$5,000** for a focused knowledge domain. Enterprise-scale implementations are typically **$8,000–$12,500**.",
+      investmentDisclaimer: "All projects are scoped and quoted during the free discovery call.",
+      bestFor: [
+        "Companies where 'just ask Juan' is the knowledge strategy",
+        "Teams with painful onboarding processes",
+        "Operations-heavy businesses with SOPs and policies",
+        "Organizations worried about losing institutional knowledge"
+      ]
+    },
+    es: {
+      heading: "Sistemas de Documentos y Conocimiento",
+      subheading: "Convierte conocimiento disperso en un sistema buscable y confiable para todo tu equipo.",
+      problem: "Tu información de negocio más importante está atrapada — en Google Docs, WhatsApp, o en la memoria de alguien. Cuando esa persona falta o se va, el conocimiento se va con ella.",
+      whatIBuild: "Un sistema estructurado con IA que permite a tu equipo buscar, recuperar y referenciar información de la empresa instantáneamente. Como dar acceso digital al cerebro de tu mejor empleado.",
+      included: [
+        { title: "Auditoría de conocimiento", desc: "Identifico dónde vive la información y qué falta." },
+        { title: "Estructuración de documentos", desc: "Tus POEs, políticas y manuales organizados en una base buscable." },
+        { title: "Búsqueda con IA", desc: "Preguntas en lenguaje natural, respuestas con referencias de origen." },
+        { title: "Acceso por roles", desc: "Controla quién ve qué." },
+        { title: "Atribución de fuentes", desc: "Cada respuesta muestra su origen de validación." },
+        { title: "Aceleración de inducciones", desc: "Auto-servicio de inducción para nuevos empleados." },
+        { title: "Documentación y capacitación", desc: "Entregables completos para operar el sistema internamente." },
+        { title: "30 días de optimización", desc: "Ajuste de búsquedas sobre el comportamiento real." }
+      ],
+      notIncluded: [
+        "Redacción de documentos nuevos",
+        "Integración con sistemas legacy internos",
+        "Actualizaciones de contenido fuera de 30 días"
+      ],
+      timeline: "3–6 semanas, dependiendo del volumen.",
+      investment: "Desde **$5,000 USD** para un dominio específico. Implementaciones empresariales van de **$8,000–$12,500 USD**.",
+      investmentDisclaimer: "Proyectos evaluados caso por caso sin sorpresa en la llamada gratuita.",
+      bestFor: [
+        "Empresas cuya retención de conocimiento es el líder de turno",
+        "Procesos de incorporación largos y dolorosos",
+        "Operaciones pesadas con abundantes manuales"
+      ]
+    }
+  },
+  'custom-tools': {
+    en: {
+      heading: "Custom AI Tools & Automation",
+      subheading: "Purpose-built AI applications that automate your most time-consuming workflows.",
+      problem: "Your team spends hours every week on repetitive, structured work — data entry, report generation, manual follow-ups, document processing, or copy-paste tasks between systems.",
+      whatIBuild: "Custom AI-powered tools designed for YOUR specific process. Not a generic automation platform you need to configure — a purpose-built application that handles the exact workflow that's eating your team's time.\n\nExamples: AI writing systems, Resume analysis tools, Web scraping systems.",
+      included: [
+        { title: "Workflow analysis", desc: "I map your current process end-to-end, identify the bottlenecks, and design the automation that delivers the highest time savings" },
+        { title: "Custom application development", desc: "Built with production-grade engineering: proper validation, error handling, logging, and security" },
+        { title: "Testing with real data", desc: "I test with your actual workflows, not synthetic examples" },
+        { title: "User interface (when needed)", desc: "Clean, simple interfaces your team can use without training" },
+        { title: "Integration with existing tools", desc: "Connected to the systems you already use (Google Workspace, WhatsApp, Slack, email, databases)" },
+        { title: "Documentation and handoff", desc: "Full technical and operational documentation" },
+        { title: "30-day optimization window", desc: "Post-launch tuning based on real-world usage" }
+      ],
+      notIncluded: [
+        "Ongoing feature development beyond the initial scope",
+        "Replacement of core business systems (ERP, CRM migrations, etc.)",
+        "AI solutions for problems that don't need AI"
+      ],
+      timeline: "4–8 weeks, depending on complexity and number of integrations.",
+      investment: "Engagements start at **$5,000** for focused single-workflow automation. Multi-system integrations or complex applications are typically **$8,000–$15,000+**.",
+      investmentDisclaimer: "All projects are scoped during the free discovery call.",
+      bestFor: [
+        "Teams spending 10+ hours/week on repetitive manual tasks",
+        "Businesses with custom workflows that off-the-shelf tools don't support",
+        "Companies ready to automate a specific, well-understood process",
+        "Operations leaders who know exactly what's eating their team's time"
+      ]
+    },
+    es: {
+      heading: "Herramientas IA y Automatización a la Medida",
+      subheading: "Aplicaciones diseñadas específicamente para automatizar tus flujos de trabajo más tardados.",
+      problem: "Tu equipo pasa horas en trabajo repetitivo y estructurado — copiado, reportes, seguimientos manuales.",
+      whatIBuild: "Herramientas impulsadas por IA creadas para TU proceso. No un servicio genérico: una aplicación a tu medida que resuelve cuello de botella específicos.\n\nEjemplos: Sistemas de escritura de marca, Optimización de RH, Automatización de hojas.",
+      included: [
+        { title: "Análisis de flujo de trabajo", desc: "Mapeo de final a final apuntando al mayor ahorro de horas." },
+        { title: "Desarrollo de aplicación custom", desc: "Ingeniería robusta, manejo de errores y seguridad." },
+        { title: "Pruebas con datos reales", desc: "No uso ejemplos sintéticos." },
+        { title: "Interfaz de usuario", desc: "Sencilla, limpia, sin gran curva de aprendizaje." },
+        { title: "Integraciones de herramientas", desc: "WhatsApp, Google, Slack, y correos electrónicos." },
+        { title: "Entrega y transferencia", desc: "Documentación clara." },
+        { title: "30 días de optimización", desc: "Ajustes posteriores al lanzamiento." }
+      ],
+      notIncluded: [
+        "Nuevas funcionalidades fuera del alcance acordado",
+        "Migraciones masivas de CRMs",
+        "IA si una simple hoja de cálculo es mejor opción"
+      ],
+      timeline: "4–8 semanas.",
+      investment: "Proyectos simples desde **$5,000 USD**. Integraciones multisistema comúnmente rondan **$8,000–$15,000+ USD**.",
+      investmentDisclaimer: "Dimensionado exacto de precios en la llamada.",
+      bestFor: [
+        "Equipos gastando >10h/sem en lo manual",
+        "Procesos donde las soluciones SaaS de la caja no sirven",
+        "Automatizaciones que ya son fáciles de mapear hoy en día"
+      ]
+    }
+  },
+  'clarity-sprint': {
+    en: {
+      heading: "AI Clarity Sprint",
+      subheading: "Not sure where to start? Get a clear, buildable plan before you commit to anything.",
+      problem: "You know AI could probably help your business, but you're not sure where to focus, what's realistic, or how much it should cost. You've seen impressive demos that turned into expensive disappointments.",
+      whatIBuild: "In 5–10 business days, I'll map your business operations, identify the highest-impact AI opportunity, and deliver a clear action plan you can execute — with me or on your own.",
+      included: [
+        { title: "Discovery session (60–90 minutes)", desc: "Deep dive into your business operations, pain points, existing tools, and goals" },
+        { title: "Opportunity assessment", desc: "I evaluate where AI can deliver measurable results vs. where it's not worth the investment" },
+        { title: "Recommended solution architecture", desc: "What to build, how it works, what tools it uses, and how it integrates with your current systems" },
+        { title: "Success metrics definition", desc: "Clear KPIs so you'll know if the solution is working" },
+        { title: "Implementation roadmap", desc: "Timeline, milestones, deliverables, and realistic investment range" },
+        { title: "Honest go/no-go recommendation", desc: "If AI isn't the right move for your situation, I'll tell you what would actually help instead" }
+      ],
+      notIncluded: [
+        "Building or implementing anything (that's a separate engagement)",
+        "Ongoing consulting beyond the Sprint deliverable"
+      ],
+      timeline: "5–10 business days from kickoff to delivered plan.",
+      investment: "**$1,500** flat fee. If you move forward with a build engagement, I credit the full Sprint fee toward your project.",
+      investmentDisclaimer: "This is the most popular starting point for businesses that want clarity before commitment.",
+      bestFor: [
+        "Founders and ops leaders who know AI could help but aren't sure where",
+        "Businesses that have been burned by AI vendors and want an honest assessment",
+        "Companies with multiple potential use cases who need help prioritizing",
+        "Anyone who wants a plan before writing a check"
+      ]
+    },
+    es: {
+      heading: "Sprint de Claridad IA",
+      subheading: "¿No estás seguro por dónde empezar? Obtén un plan claro antes de comprometerte.",
+      problem: "Sabes que la IA puede ayudarte, pero la neblina tecnológica te frena sobre cuánto gastar y por dónde darle.",
+      whatIBuild: "En 5–10 días hábiles, mapearé tus operaciones, identificaré la oportunidad de impacto más alto, y te daré un plan de acción para que lo desenvuelvas tú mismo o conmigo.",
+      included: [
+        { title: "Sesión de 90 minutos de buceo interno", desc: "Problemas comerciales, herramientas y dolor presente." },
+        { title: "Evaluación de la oportunidad", desc: "Donde la IA te dejará dividendos inmediatos." },
+        { title: "Arquitectura recomendada", desc: "Qué construir y cómo va a cuadrar esto en software actual." },
+        { title: "Métricas de éxito", desc: "KPIs garantizados." },
+        { title: "Ruta de Implementación", desc: "Calendario de días, entregables, rangos de inversión final." },
+        { title: "Señales Verdes/Rojas honestas", desc: "Te diré si la IA en realidad no es lo tuyo por el momento." }
+      ],
+      notIncluded: [
+        "El desarrollo del software tal cual (eso es después)",
+        "Consultorías adicionales a lo entregado en el reporte"
+      ],
+      timeline: "5–10 días desde el banderazo.",
+      investment: "**$1,500 USD** tarifa plana. Si hacemos el desarrollo juntos, credito la totalidad por el descuento en proyecto final.",
+      investmentDisclaimer: "El mejor punto para abrir fuego sin riesgo mayor.",
+      bestFor: [
+        "Fundadores dudosos del primer escalón de impacto IA.",
+        "Empresarios picados previamente con software costoso e ineficiente."
+      ]
+    }
+  }
+};
+
+const block = data[id as keyof typeof data][locale];
+if (!block) throw new Error(`Block ${id} not found for locale ${locale}`);
+
+const bgClass = isAlternate ? 'bg-gray-50 dark:bg-gray-900/30' : 'bg-white dark:bg-black';
+---
+
+<section id={id} class={`py-20 md:py-32 border-b border-gray-100 dark:border-gray-800 ${bgClass}`}>
+  <Container size="lg">
+    <!-- Header -->
+    <div class="mb-16 md:mb-20 max-w-4xl">
+      <h2 class="font-display font-bold text-3xl md:text-5xl text-gray-900 dark:text-white mb-4 leading-tight tracking-tight">
+        {block.heading}
+      </h2>
+      <p class="text-xl md:text-2xl text-cush-orange font-medium leading-relaxed">
+        {block.subheading}
+      </p>
+    </div>
+
+    <div class="grid lg:grid-cols-12 gap-12 lg:gap-16">
+      
+      <!-- Left Column: Narrative (Problem / Solution / Ideal For) -->
+      <div class="lg:col-span-7 space-y-12">
+        <!-- Problem / Solution -->
+        <div class="prose prose-lg dark:prose-invert prose-p:leading-relaxed max-w-none">
+          <h3 class="font-display font-semibold text-2xl text-gray-900 dark:text-white mb-4">
+            {locale === 'en' ? 'The Problem' : 'El Problema'}
+          </h3>
+          <p class="text-gray-600 dark:text-gray-400 mb-8">{block.problem}</p>
+
+          <h3 class="font-display font-semibold text-2xl text-gray-900 dark:text-white mb-4">
+            {locale === 'en' ? 'What I Build' : 'Lo Que Construyo'}
+          </h3>
+          <div class="text-gray-900 dark:text-gray-200 bg-cush-orange/5 border-l-4 border-cush-orange pl-6 py-4 rounded-r-lg mb-8">
+            {block.whatIBuild.split('\n\n').map(p => <p class="mb-2 last:mb-0">{p}</p>)}
+          </div>
+        </div>
+
+        <!-- Ideal For -->
+        <div>
+          <h3 class="font-display font-semibold text-xl text-gray-900 dark:text-white mb-6 uppercase tracking-wider text-sm">
+            {locale === 'en' ? 'Best For:' : 'Ideal Para:'}
+          </h3>
+          <div class="grid sm:grid-cols-2 gap-4">
+            {block.bestFor.map(item => (
+              <div class="flex gap-3">
+                <svg class="w-5 h-5 text-green-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span class="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">{item}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Specs (Included / Excluded / Price ) -->
+      <div class="lg:col-span-5 space-y-8">
+        
+        <!-- Pricing Card -->
+        <div class="bg-gray-900 dark:bg-gray-800 rounded-2xl p-8 shadow-xl text-gray-300">
+          <div class="mb-6 pb-6 border-b border-gray-700">
+            <h4 class="font-display font-semibold text-white mb-2 uppercase text-xs tracking-wider">
+              {locale === 'en' ? 'Timeline' : 'Línea de Tiempo'}
+            </h4>
+            <div class="text-lg text-white font-medium">{block.timeline}</div>
+          </div>
+          <div class="mb-4">
+            <h4 class="font-display font-semibold text-white mb-2 uppercase text-xs tracking-wider">
+              {locale === 'en' ? 'Investment' : 'Inversión'}
+            </h4>
+            <div class="text-base leading-relaxed" set:html={block.investment.replace(/\*\*(.*?)\*\*/g, '<span class="text-white font-bold">$1</span>')} />
+          </div>
+          <p class="text-xs text-cush-orange font-medium mt-4 italic">
+            {block.investmentDisclaimer}
+          </p>
+          <div class="mt-8">
+            <a href={locale === 'en' ? '/consultation' : '/es/reservar'} class="block w-full text-center px-6 py-3 bg-cush-orange text-white font-display font-semibold rounded-lg hover:bg-cush-orange/90 transition-colors duration-300">
+              {locale === 'en' ? 'Book a Discovery Call' : 'Agendar Llamada'}
+            </a>
+          </div>
+        </div>
+
+        <!-- What's Included -->
+        <div>
+          <h3 class="font-display font-semibold text-xl text-gray-900 dark:text-white mb-6">
+            {locale === 'en' ? "What's Included" : "Qué Incluye"}
+          </h3>
+          <ul class="space-y-4">
+            {block.included.map(item => (
+              <li class="flex gap-4">
+                <div class="w-1.5 h-1.5 bg-cush-orange rounded-full mt-2.5 shrink-0"></div>
+                <div>
+                  <strong class="text-gray-900 dark:text-white font-semibold">{item.title}</strong> — <span class="text-gray-600 dark:text-gray-400 text-sm">{item.desc}</span>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- What's Not Included -->
+        <div class="pt-6 border-t border-gray-200 dark:border-gray-800">
+          <h3 class="font-display font-semibold text-base text-gray-900 dark:text-white mb-4">
+            {locale === 'en' ? "What's NOT Included" : "Lo Que NO Incluye"}
+          </h3>
+          <ul class="space-y-2">
+            {block.notIncluded.map(item => (
+              <li class="flex gap-3 text-sm text-gray-500 dark:text-gray-500">
+                <svg class="w-4 h-4 text-gray-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </Container>
+</section>
