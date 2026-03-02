@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-02T09:28:21.588Z",
+  "generatedAt": "2026-03-02T16:26:49.360Z",
   "count": 36,
   "projects": [
     {
@@ -15,6 +15,7 @@
       "topics": [
         "ai",
         "appointment-booking",
+        "cartesia",
         "claude",
         "conversational-ai",
         "cushlabs",
@@ -31,6 +32,7 @@
       "tags": [
         "ai",
         "appointment-booking",
+        "cartesia",
         "claude",
         "conversational-ai",
         "cushlabs",
@@ -61,13 +63,13 @@
       "status": "Production",
       "language": "HTML",
       "languages": {
-        "HTML": 332181,
+        "HTML": 334266,
         "JavaScript": 69518,
         "CSS": 6849
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-03-02T08:39:57Z",
+      "lastPushed": "2026-03-02T15:43:07Z",
       "createdAt": "2026-02-23T01:31:09Z",
       "isFeatured": true,
       "isArchived": false,
@@ -393,12 +395,12 @@
     {
       "id": 953305892,
       "name": "ny-eng",
-      "title": "Ny Eng",
+      "title": "NY English Teacher",
       "description": "Professional bilingual (EN/ES) business English coaching platform built with Astro, featuring interactive assessments, lead generation, content management, and booking integration. Optimized for SEO, performance, and conversion.",
       "summary": "Professional bilingual (EN/ES) business English coaching platform built with Astro, featuring interactive assessments, lead generation, content management, and booking integration. Optimized for SEO, performance, and conversion.",
       "url": "https://github.com/RCushmaniii/ny-eng",
-      "demoUrl": "https://nyenglishteacher.com/",
-      "liveUrl": null,
+      "demoUrl": "https://www.nyenglishteacher.com",
+      "liveUrl": "https://www.nyenglishteacher.com",
       "homepage": "https://nyenglishteacher.com/",
       "topics": [
         "astro",
@@ -431,10 +433,21 @@
         "seo-optimization",
         "supabase",
         "tailwindcss",
-        "typescript"
+        "typescript",
+        "tailwind",
+        "cloudflare-workers",
+        "google-calendar",
+        "neon-postgresql",
+        "solopreneur"
       ],
-      "stack": [],
-      "status": null,
+      "stack": [
+        "Astro 5.5",
+        "React 19",
+        "TypeScript",
+        "Cloudflare Workers",
+        "Neon PostgreSQL"
+      ],
+      "status": "Production",
       "language": "Astro",
       "languages": {
         "Astro": 1177317,
@@ -453,17 +466,75 @@
       "isFeatured": true,
       "isArchived": false,
       "isPrivate": true,
-      "tagline": null,
-      "thumbnail": null,
-      "problem": null,
-      "solution": null,
-      "keyFeatures": [],
-      "metrics": [],
+      "tagline": "Lead generation platform replacing 4 roles on $0/month infrastructure",
+      "thumbnail": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-thumb.jpg",
+      "problem": "Solo professional service providers burn 10-15 hours per week on manual qualification, scheduling ping-pong, and follow-ups. Their websites look identical to commodity competitors, making it impossible to justify premium pricing while the Spanish-speaking professional market remains underserved.",
+      "solution": "A fully automated lead generation platform that functions as four digital employees — SDR, marketing department, executive assistant, and brand manager — on free-tier infrastructure. Every conversation steers toward booking, every page justifies premium pricing, and the full EN/ES bilingual system doubles the addressable market from a single codebase.",
+      "keyFeatures": [
+        "4 role-specific diagnostic quizzes pre-qualify leads with mapped communication gaps",
+        "3-step booking flow via Cloudflare Workers + Google Calendar OAuth — interest to confirmed Google Meet in under 60 seconds",
+        "Full EN/ES bilingual mirror with localized routing and bidirectional hreflang SEO",
+        "Premium positioning hard-coded into UX — named executive testimonials from multinational companies",
+        "$0/month infrastructure — Astro static, Cloudflare Workers free tier, Neon free tier"
+      ],
+      "metrics": [
+        "100 Lighthouse performance score",
+        "$0/month infrastructure cost across all services",
+        "< 60 seconds from interest to confirmed booking with Google Meet link",
+        "2x addressable market from a single codebase via bilingual system",
+        "10-15 hours/week of administrative and sales work automated away"
+      ],
       "priority": 4,
-      "dateCompleted": null,
-      "slides": [],
-      "videoUrl": null,
-      "videoPoster": null
+      "dateCompleted": "2026-02",
+      "slides": [
+        {
+          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-01.png",
+          "altEn": "The Architecture of Authority",
+          "altEs": "La Arquitectura de la Autoridad"
+        },
+        {
+          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-02.png",
+          "altEn": "An Automated Performance Engine",
+          "altEs": "Un Motor de Rendimiento Automatizado"
+        },
+        {
+          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-03.png",
+          "altEn": "Digital Employee 01: The SDR",
+          "altEs": "Empleado Digital 01: El SDR"
+        },
+        {
+          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-04.png",
+          "altEn": "Digital Employee 02: Marketing Dept",
+          "altEs": "Empleado Digital 02: Depto. de Marketing"
+        },
+        {
+          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-05.png",
+          "altEn": "Digital Employee 03: The Executive Assistant",
+          "altEs": "Empleado Digital 03: La Asistente Ejecutiva"
+        },
+        {
+          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-06.png",
+          "altEn": "Digital Employee 04: The Brand Manager",
+          "altEs": "Empleado Digital 04: El Brand Manager"
+        },
+        {
+          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-07.png",
+          "altEn": "The Speed of Trust",
+          "altEs": "La Velocidad de la Confianza"
+        },
+        {
+          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-08.png",
+          "altEn": "The Universal Model",
+          "altEs": "El Modelo Universal"
+        },
+        {
+          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-09.png",
+          "altEn": "The Zero-Cost Tech Stack",
+          "altEs": "El Tech Stack de Costo Cero"
+        }
+      ],
+      "videoUrl": "https://www.nyenglishteacher.com/video/ny-eng-brief.mp4",
+      "videoPoster": "https://www.nyenglishteacher.com/video/ny-eng-brief-poster.jpg"
     },
     {
       "id": 1090479901,
@@ -1050,14 +1121,14 @@
       "language": "Astro",
       "languages": {
         "Astro": 470737,
-        "TypeScript": 113367,
+        "TypeScript": 114234,
         "HTML": 61067,
         "JavaScript": 27043,
         "CSS": 2655
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-03-02T09:22:28Z",
+      "lastPushed": "2026-03-02T09:29:18Z",
       "createdAt": "2026-01-08T03:52:43Z",
       "isFeatured": false,
       "isArchived": false,
@@ -1408,12 +1479,12 @@
     {
       "id": 1062817398,
       "name": "ai-scrabble-practice",
-      "title": "Ai Scrabble Practice",
+      "title": "AI Scrabble Practice",
       "description": "A practice tool for Scrabble players built with React, Vite, Tailwind, and pnpm. Features include word scoring, word validation via free dictionary APIs, and a rack solver to generate playable words.",
       "summary": "A practice tool for Scrabble players built with React, Vite, Tailwind, and pnpm. Features include word scoring, word validation via free dictionary APIs, and a rack solver to generate playable words.",
       "url": "https://github.com/RCushmaniii/ai-scrabble-practice",
-      "demoUrl": "https://scrabble-mini.netlify.app/",
-      "liveUrl": null,
+      "demoUrl": "https://scrabble-mini.netlify.app",
+      "liveUrl": "https://scrabble-mini.netlify.app",
       "homepage": "https://scrabble-mini.netlify.app/",
       "topics": [
         "anagram-solver",
@@ -1440,10 +1511,22 @@
         "scrabble-word-finder",
         "tailwindcss",
         "typescipt",
-        "vite"
+        "vite",
+        "typescript",
+        "ai",
+        "openai",
+        "tailwind-css",
+        "playwright",
+        "i18n"
       ],
-      "stack": [],
-      "status": null,
+      "stack": [
+        "React 19",
+        "TypeScript",
+        "Vite 7",
+        "OpenAI GPT-4o-mini",
+        "Playwright"
+      ],
+      "status": "Production",
       "language": "TypeScript",
       "languages": {
         "TypeScript": 188238,
@@ -1458,17 +1541,73 @@
       "isFeatured": false,
       "isArchived": false,
       "isPrivate": true,
-      "tagline": null,
-      "thumbnail": null,
-      "problem": null,
-      "solution": null,
-      "keyFeatures": [],
-      "metrics": [],
+      "tagline": "Five AI-powered practice tools backed by a 370K-word dictionary",
+      "thumbnail": "https://scrabble-mini.netlify.app/images/ai-scrabble-practice-thumb.jpg",
+      "problem": "Scrabble practice tools are either too simple (word checkers) or too powerful (board solvers) — neither builds actual skill. Players bounce between fragmented sites for validation, anagram solving, and word discovery with no structured practice mode.",
+      "solution": "A unified five-tool practice suite that consolidates word validation, anagram solving, strategic word finding, AI-powered natural language search, and timed gameplay into a single bilingual app with sub-second response times.",
+      "keyFeatures": [
+        "370,105-word dictionary with O(1) Set-based validation — sub-millisecond lookups even on mobile",
+        "Magic Search translates plain English queries into validated words with scores via GPT-4o-mini",
+        "Timed Practice Game with realistic tile draws, 60-second rounds, progressive scoring, and AI hints",
+        "Anagram Solver processes 7-tile hands with wildcard support in under 500ms",
+        "Full EN/ES bilingual interface with locale-based routing and Playwright E2E test coverage"
+      ],
+      "metrics": [
+        "370,105-word dictionary with sub-millisecond validation",
+        "Anagram solving in under 500ms for 7-tile hands",
+        "5 practice tools in a single unified interface"
+      ],
       "priority": 12,
-      "dateCompleted": null,
-      "slides": [],
-      "videoUrl": null,
-      "videoPoster": null
+      "dateCompleted": "2025-09",
+      "slides": [
+        {
+          "src": "https://scrabble-mini.netlify.app/images/ai-scrabble-practice-01.png",
+          "altEn": "AI Scrabble Practice Suite",
+          "altEs": "AI Scrabble Practice Suite"
+        },
+        {
+          "src": "https://scrabble-mini.netlify.app/images/ai-scrabble-practice-02.png",
+          "altEn": "The Practice Gap",
+          "altEs": "La brecha de practica"
+        },
+        {
+          "src": "https://scrabble-mini.netlify.app/images/ai-scrabble-practice-03.png",
+          "altEn": "Word Validator",
+          "altEs": "Validador de Palabras"
+        },
+        {
+          "src": "https://scrabble-mini.netlify.app/images/ai-scrabble-practice-04.png",
+          "altEn": "Anagram Solver",
+          "altEs": "Solucionador de Anagramas"
+        },
+        {
+          "src": "https://scrabble-mini.netlify.app/images/ai-scrabble-practice-06.png",
+          "altEn": "Word Finder",
+          "altEs": "Buscador de Palabras"
+        },
+        {
+          "src": "https://scrabble-mini.netlify.app/images/ai-scrabble-practice-07.png",
+          "altEn": "Magic Search",
+          "altEs": "Busqueda Magica"
+        },
+        {
+          "src": "https://scrabble-mini.netlify.app/images/ai-scrabble-practice-08.png",
+          "altEn": "Practice Game",
+          "altEs": "Juego de Practica"
+        },
+        {
+          "src": "https://scrabble-mini.netlify.app/images/ai-scrabble-practice-09.png",
+          "altEn": "Bilingual and Tested",
+          "altEs": "Bilingue y Probado"
+        },
+        {
+          "src": "https://scrabble-mini.netlify.app/images/ai-scrabble-practice-10.png",
+          "altEn": "Technical Architecture",
+          "altEs": "Arquitectura Tecnica"
+        }
+      ],
+      "videoUrl": "https://scrabble-mini.netlify.app/video/ai-scrabble-practice-brief.mp4",
+      "videoPoster": "https://scrabble-mini.netlify.app/video/ai-scrabble-practice-brief-poster.jpg"
     },
     {
       "id": 1132479691,

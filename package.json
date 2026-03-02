@@ -5,7 +5,7 @@
   "license": "SEE LICENSE IN LICENSE",
   "scripts": {
     "dev": "astro dev",
-    "build": "npm run generate-projects && astro build",
+    "build": "npm run generate-projects && node scripts/patch-missing-projects.cjs && astro build",
     "start": "astro preview",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",

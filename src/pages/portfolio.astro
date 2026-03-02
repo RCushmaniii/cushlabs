@@ -9,18 +9,17 @@ import { getProjectDetailOverride } from "../data/projectDetails";
 const projects = projectsData.projects.filter(p => p.priority < 99);
 const allCategories = [...new Set(projects.flatMap(p => p.categories).filter(Boolean))].sort();
 
-function getThumbnail(project: typeof projects[number]): string | null {
+function getThumbnail(project: typeof projects[number]): string {
   // 1. Portfolio.md thumbnail — only trust absolute URLs or /images/portfolio/ paths
   if ('thumbnail' in project && project.thumbnail) {
     const thumb = project.thumbnail as string;
-    if (thumb.startsWith('https://') || thumb.startsWith('/images/portfolio/')) return thumb;
+    if (thumb.startsWith('https://') || thumb.startsWith('/images/')) return thumb;
   }
   // 2. projectDetails.ts override
   const override = getProjectDetailOverride(project.name);
   if (override?.thumbnail) return override.thumbnail;
-  // 3. GitHub OpenGraph fallback
-  const match = project.url.match(/github\.com\/([^/]+)\/([^/]+)(?:\/|$)/i);
-  return match ? `https://opengraph.githubassets.com/1/${match[1]}/${match[2]}` : null;
+  // 3. Branded default fallback
+  return '/images/portfolio/default-card.svg';
 }
 const locale = (Astro.currentLocale === "es" ? "es" : "en") as "en" | "es";
 
