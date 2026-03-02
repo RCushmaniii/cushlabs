@@ -1,7 +1,7 @@
 export const es = {
   nav: {
     home: 'Inicio',
-    about: 'Acerca',
+    about: 'Acerca de',
     work: 'Trabajo',
     solutions: 'Portafolio',
     blog: 'Blog',
@@ -26,7 +26,7 @@ export const es = {
     subtitle: 'Soluciones reales para problemas reales — sin relleno, sin sobre-ingeniería',
     ai: {
       title: 'Integración de IA',
-      description: 'Chatbots personalizados, bases de conocimiento y asistentes inteligentes que se integran a cómo ya trabajas.',
+      description: 'Chatbots personalizados, bases de conocimiento y asistentes inteligentes que se adaptan a tu forma de trabajar.',
     },
     automation: {
       title: 'Automatización de Procesos',
@@ -39,7 +39,7 @@ export const es = {
   },
   process: {
     title: 'Cómo Trabajo',
-    subtitle: 'Proceso simple, sin sorpresas. Siempre sabrás dónde estamos.',
+    subtitle: 'Proceso simple, sin sorpresas. Siempre vas a saber dónde vamos.',
     step1: {
       number: '01',
       title: 'Descubrimiento',
@@ -58,7 +58,7 @@ export const es = {
     step4: {
       number: '04',
       title: 'Lanzamiento',
-      description: 'Lo lanzamos, me aseguro de que esté sólido, y recibes documentación completa y handoff.',
+      description: 'Lo lanzamos juntos, me aseguro de que esté sólido, y recibes documentación completa y un handoff claro.',
     },
   },
   featuredWork: {
@@ -202,12 +202,12 @@ export const es = {
     subheadline: 'Ayudo a pequeños negocios a poner la IA a trabajar — soluciones prácticas que se entregan rápido y realmente se usan.',
     mission: {
       title: 'Por Qué Hago Esto',
-      description: 'Creo que la IA debería ser accesible para todos, no solo para grandes empresas con grandes presupuestos. Mi meta es simple: ayudarte a obtener valor real de la IA sin la complejidad empresarial ni el overhead de consultores.',
+      description: 'Creo que la IA debería ser accesible para todos, no solo para grandes empresas con grandes presupuestos. Mi meta es simple: ayudarte a obtener valor real de la IA sin la complejidad empresarial ni los costos de consultores.',
     },
     story: {
       title: 'Mi Historia',
       intro: 'Empecé CushLabs después de notar algo:',
-      highlight: 'La mayoría de los negocios no necesitan investigación de IA de vanguardia — necesitan soluciones funcionales que encajen en cómo ya operan.',
+      highlight: 'La mayoría de los negocios no necesitan investigación de IA de vanguardia — necesitan soluciones funcionales que encajen con sus operaciones actuales.',
       body: 'Después de 20 años en TI — de desarrollador a gerente senior a gerente de proyectos — he visto qué funciona y qué no. Ahora trabajo directamente con fundadores y equipos pequeños desde mi base en Guadalajara, México. Sin capas, sin handoffs. Solo yo, construyendo cosas que importan.',
     },
     values: {
@@ -215,7 +215,7 @@ export const es = {
       items: [
         {
           title: 'Entregar Primero',
-          description: 'El software funcionando supera a los planes perfectos. Prefiero ponerte algo real enfrente rápido que pasar semanas en especificaciones.',
+          description: 'El software funcionando supera a los planes perfectos. Prefiero darte algo real y funcional rápido que pasar semanas en especificaciones.',
         },
         {
           title: 'Mantenerlo Simple',
