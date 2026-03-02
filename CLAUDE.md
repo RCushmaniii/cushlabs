@@ -212,21 +212,23 @@ Proper sitemap must:
 
 ### Critical
 
-1. **Sitemap broken** - Uses `?lang=es` instead of `/es/` paths, only has 2 URLs
-2. **Missing @astrojs/sitemap** - Need to install and configure
-3. **No og-image.jpg** - Referenced in BaseLayout but doesn't exist
-4. **Blog needs migration** - Move from TypeScript translations to markdown files
+1. **Blog needs migration** - Move from TypeScript translations to markdown files
 
 ### Medium Priority
 
-5. Content collections (blog, case-studies) are defined but empty
-6. Some placeholder content in testimonials
-7. Pre-deploy audit script incomplete
+2. Content collections (blog, case-studies) are defined but empty
+3. Some placeholder content in testimonials
+4. Pre-deploy audit script incomplete
 
 ### Low Priority
 
-8. Additional structured data (FAQPage, HowTo schemas)
-9. Image optimization (lazy loading, WebP)
+5. Additional structured data (FAQPage, HowTo schemas)
+
+### Resolved
+
+- ~~Sitemap broken~~ — @astrojs/sitemap 3.2.1 installed and configured with i18n locales
+- ~~No og-image~~ — OG image exists at `public/images/og/cushlabs_logo_lt.jpg`
+- ~~Image optimization~~ — All portfolio/logo/client images converted to WebP, lazy loading added
 
 ---
 
