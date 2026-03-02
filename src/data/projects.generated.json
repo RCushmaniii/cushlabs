@@ -3,124 +3,6 @@
   "count": 36,
   "projects": [
     {
-      "id": 1108213747,
-      "name": "ai-chatbot-saas",
-      "title": "Converso AI — Bilingual AI Front Desk & Sales Assistant",
-      "description": "Multi-tenant AI chatbot SaaS platform - Ragbot by CushLabs.AI",
-      "summary": "> Multi-tenant SaaS platform for service businesses to deploy a bilingual (EN/ES), on-brand AI assistant that answers questions, qualifies leads, captures booking intent, and escalates high-intent pro",
-      "url": "https://github.com/RCushmaniii/ai-chatbot-saas",
-      "demoUrl": "https://ai-chatbot-saas-delta.vercel.app",
-      "liveUrl": "",
-      "homepage": "https://ai-chatbot-saas-delta.vercel.app",
-      "topics": [],
-      "categories": [
-        "AI Automation"
-      ],
-      "tags": [
-        "ai-chatbot",
-        "saas",
-        "rag",
-        "multi-tenant",
-        "bilingual",
-        "nextjs",
-        "stripe",
-        "pgvector",
-        "clerk-auth",
-        "lead-generation"
-      ],
-      "stack": [
-        "Next.js 16",
-        "TypeScript",
-        "PostgreSQL + pgvector",
-        "Vercel AI SDK",
-        "OpenAI GPT-4o",
-        "Clerk Authentication",
-        "Stripe Billing",
-        "Drizzle ORM",
-        "Tailwind CSS",
-        "React Flow",
-        "Vercel"
-      ],
-      "status": null,
-      "language": "TypeScript",
-      "languages": {
-        "TypeScript": 1155036,
-        "JavaScript": 12530,
-        "CSS": 10253
-      },
-      "stars": 0,
-      "forks": 0,
-      "lastPushed": "2026-03-02T08:51:47Z",
-      "createdAt": "2025-12-02T07:09:31Z",
-      "isFeatured": true,
-      "isArchived": false,
-      "isPrivate": false,
-      "tagline": "White-label AI chatbot SaaS for service businesses in bilingual markets",
-      "thumbnail": "https://raw.githubusercontent.com/RCushmaniii/ai-chatbot-saas/main/public/images/portfolio/ai-chatbot-saas-thumb.webp",
-      "problem": "Service businesses in bilingual markets lose leads outside business hours\nand can't afford round-the-clock bilingual staff. Generic chatbots hallucinate\nanswers because they don't know the business. This platform gives each tenant\na knowledge-grounded AI assistant that answers accurately in English or Spanish,\nqualifies leads, and hands off to humans when needed.\n",
-      "solution": null,
-      "keyFeatures": [
-        "Multi-tenant SaaS with full data isolation per business",
-        "RAG-powered answers grounded in verified business content",
-        "Native bilingual support with automatic language detection",
-        "Visual playbook builder for non-technical conversation design",
-        "Stripe billing with subscription management and usage tracking",
-        "One-tag embeddable widget for any website"
-      ],
-      "metrics": [],
-      "priority": 1,
-      "dateCompleted": null,
-      "slides": [
-        {
-          "src": "https://raw.githubusercontent.com/RCushmaniii/ai-chatbot-saas/main/public/images/portfolio/converso-01.webp",
-          "altEn": "Converso AI — Bilingual AI Front Desk & Sales Assistant",
-          "altEs": "Converso AI — Bilingual AI Front Desk & Sales Assistant"
-        },
-        {
-          "src": "https://raw.githubusercontent.com/RCushmaniii/ai-chatbot-saas/main/public/images/portfolio/converso-02.webp",
-          "altEn": "Converso AI — Bilingual AI Front Desk & Sales Assistant",
-          "altEs": "Converso AI — Bilingual AI Front Desk & Sales Assistant"
-        },
-        {
-          "src": "https://raw.githubusercontent.com/RCushmaniii/ai-chatbot-saas/main/public/images/portfolio/converso-03.webp",
-          "altEn": "Converso AI — Bilingual AI Front Desk & Sales Assistant",
-          "altEs": "Converso AI — Bilingual AI Front Desk & Sales Assistant"
-        },
-        {
-          "src": "https://raw.githubusercontent.com/RCushmaniii/ai-chatbot-saas/main/public/images/portfolio/converso-04.webp",
-          "altEn": "Converso AI — Bilingual AI Front Desk & Sales Assistant",
-          "altEs": "Converso AI — Bilingual AI Front Desk & Sales Assistant"
-        },
-        {
-          "src": "https://raw.githubusercontent.com/RCushmaniii/ai-chatbot-saas/main/public/images/portfolio/converso-05.webp",
-          "altEn": "Converso AI — Bilingual AI Front Desk & Sales Assistant",
-          "altEs": "Converso AI — Bilingual AI Front Desk & Sales Assistant"
-        },
-        {
-          "src": "https://raw.githubusercontent.com/RCushmaniii/ai-chatbot-saas/main/public/images/portfolio/converso-06.webp",
-          "altEn": "Converso AI — Bilingual AI Front Desk & Sales Assistant",
-          "altEs": "Converso AI — Bilingual AI Front Desk & Sales Assistant"
-        },
-        {
-          "src": "https://raw.githubusercontent.com/RCushmaniii/ai-chatbot-saas/main/public/images/portfolio/converso-07.webp",
-          "altEn": "Converso AI — Bilingual AI Front Desk & Sales Assistant",
-          "altEs": "Converso AI — Bilingual AI Front Desk & Sales Assistant"
-        },
-        {
-          "src": "https://raw.githubusercontent.com/RCushmaniii/ai-chatbot-saas/main/public/images/portfolio/converso-08.webp",
-          "altEn": "Converso AI — Bilingual AI Front Desk & Sales Assistant",
-          "altEs": "Converso AI — Bilingual AI Front Desk & Sales Assistant"
-        },
-        {
-          "src": "https://raw.githubusercontent.com/RCushmaniii/ai-chatbot-saas/main/public/images/portfolio/converso-09.webp",
-          "altEn": "Converso AI — Bilingual AI Front Desk & Sales Assistant",
-          "altEs": "Converso AI — Bilingual AI Front Desk & Sales Assistant"
-        }
-      ],
-      "videoUrl": "https://raw.githubusercontent.com/RCushmaniii/ai-chatbot-saas/main/public/video/converso-brief.mp4",
-      "videoPoster": "https://raw.githubusercontent.com/RCushmaniii/ai-chatbot-saas/main/public/video/converso-brief-poster.jpg"
-    },
-    {
       "id": 1164355422,
       "name": "cushlabs-ai-voice-agent",
       "title": "AI Voice Agent Platform",
@@ -266,132 +148,122 @@
       "videoPoster": "https://voice.cushlabs.ai/video/voice-cushlabs-brief-poster.webp"
     },
     {
-      "id": 1090479901,
-      "name": "ai-resume-tailor",
-      "title": "AI Resume Tailor",
-      "description": "Helps candidates create a tailored resume for a specific job. ",
-      "summary": "> Bilingual AI-powered ATS resume optimization — instant structured feedback, zero friction, privacy by design.",
-      "url": "https://github.com/RCushmaniii/ai-resume-tailor",
-      "demoUrl": "https://ai-resume-tailor-client.vercel.app",
-      "liveUrl": "https://ai-resume-tailor-client.vercel.app",
-      "homepage": "https://ai-resume-tailor-client.vercel.app",
+      "id": 1108213747,
+      "name": "ai-chatbot-saas",
+      "title": "Converso AI — Bilingual AI Front Desk & Sales Assistant",
+      "description": "Multi-tenant AI chatbot SaaS platform - Ragbot by CushLabs.AI",
+      "summary": "> Multi-tenant SaaS platform for service businesses to deploy a bilingual (EN/ES), on-brand AI assistant that answers questions, qualifies leads, captures booking intent, and escalates high-intent pro",
+      "url": "https://github.com/RCushmaniii/ai-chatbot-saas",
+      "demoUrl": "https://ai-chatbot-saas-delta.vercel.app",
+      "liveUrl": "",
+      "homepage": "https://ai-chatbot-saas-delta.vercel.app",
       "topics": [],
       "categories": [
         "AI Automation"
       ],
       "tags": [
-        "ai",
+        "ai-chatbot",
         "saas",
-        "resume",
-        "ats",
-        "job-search",
+        "rag",
+        "multi-tenant",
         "bilingual",
-        "openai",
+        "nextjs",
         "stripe",
-        "clerk",
-        "flask"
+        "pgvector",
+        "clerk-auth",
+        "lead-generation"
       ],
       "stack": [
-        "React 19",
-        "Flask / Python",
-        "OpenAI GPT-4",
-        "Stripe",
-        "Neon PostgreSQL"
+        "Next.js 16",
+        "TypeScript",
+        "PostgreSQL + pgvector",
+        "Vercel AI SDK",
+        "OpenAI GPT-4o",
+        "Clerk Authentication",
+        "Stripe Billing",
+        "Drizzle ORM",
+        "Tailwind CSS",
+        "React Flow",
+        "Vercel"
       ],
-      "status": "Production",
+      "status": null,
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 534402,
-        "Python": 305806,
-        "JavaScript": 19451,
-        "HTML": 3968,
-        "Batchfile": 2499,
-        "CSS": 1995
+        "TypeScript": 1155036,
+        "JavaScript": 12530,
+        "CSS": 10253
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-03-01T20:43:46Z",
-      "createdAt": "2025-11-05T18:11:38Z",
+      "lastPushed": "2026-03-02T08:51:47Z",
+      "createdAt": "2025-12-02T07:09:31Z",
       "isFeatured": true,
       "isArchived": false,
       "isPrivate": false,
-      "tagline": "AI-powered ATS resume optimization with bilingual support and instant feedback",
-      "thumbnail": "https://ai-resume-tailor-client.vercel.app/images/ai-resume-tailor-thumb.jpg",
-      "problem": "Over 75% of resumes are rejected by Applicant Tracking Systems before a human ever sees them. Most job seekers have no visibility into why they're filtered out, and existing tools either charge upfront, require accounts, or provide generic advice that isn't tied to the specific job posting.",
-      "solution": "A bilingual SaaS application that returns structured ATS analysis — match score, missing keywords with severity coding, and actionable suggestions — in under 10 seconds. Guests get 5 free analyses with no signup, and no resume data is ever stored.",
+      "tagline": "White-label AI chatbot SaaS for service businesses in bilingual markets",
+      "thumbnail": "https://raw.githubusercontent.com/RCushmaniii/ai-chatbot-saas/main/public/images/portfolio/ai-chatbot-saas-thumb.webp",
+      "problem": "Service businesses in bilingual markets lose leads outside business hours\nand can't afford round-the-clock bilingual staff. Generic chatbots hallucinate\nanswers because they don't know the business. This platform gives each tenant\na knowledge-grounded AI assistant that answers accurately in English or Spanish,\nqualifies leads, and hands off to humans when needed.\n",
+      "solution": null,
       "keyFeatures": [
-        "Structured ATS analysis with 0-100 match score, keyword gaps, and severity-coded suggestions via GPT-4",
-        "Zero-friction guest access — 5 free analyses before any signup prompt, value delivered first",
-        "Full EN/ES bilingual support across all UI, error messages, and AI-generated analysis output",
-        "Privacy-first architecture — no resume data stored, processing happens in a single request/response cycle",
-        "Stripe embedded checkout with guest-to-paid conversion and Clerk auth (Google, LinkedIn, email)"
+        "Multi-tenant SaaS with full data isolation per business",
+        "RAG-powered answers grounded in verified business content",
+        "Native bilingual support with automatic language detection",
+        "Visual playbook builder for non-technical conversation design",
+        "Stripe billing with subscription management and usage tracking",
+        "One-tag embeddable widget for any website"
       ],
-      "metrics": [
-        "Structured ATS feedback in under 10 seconds",
-        "5 free analyses before any signup prompt",
-        "Zero resume data stored — privacy by architecture"
-      ],
-      "priority": 1,
-      "dateCompleted": "2026-02",
+      "metrics": [],
+      "priority": 2,
+      "dateCompleted": null,
       "slides": [
         {
-          "src": "https://ai-resume-tailor-client.vercel.app/images/ai-resume-tailor-01.png",
-          "altEn": "AI Resume Tailor — Bilingual ATS optimization that shows you exactly why resumes get rejected",
-          "altEs": "AI Resume Tailor — Optimizacion ATS bilingue que te muestra exactamente por que rechazan tu CV"
+          "src": "https://raw.githubusercontent.com/RCushmaniii/ai-chatbot-saas/main/public/images/portfolio/converso-01.webp",
+          "altEn": "Converso AI — Bilingual AI Front Desk & Sales Assistant",
+          "altEs": "Converso AI — Bilingual AI Front Desk & Sales Assistant"
         },
         {
-          "src": "https://ai-resume-tailor-client.vercel.app/images/ai-resume-tailor-02.png",
-          "altEn": "The ATS Black Box — 75% of resumes rejected before a human sees them, zero visibility into why",
-          "altEs": "La Caja Negra del ATS — 75% de CVs rechazados antes de que un humano los vea, sin visibilidad del por que"
+          "src": "https://raw.githubusercontent.com/RCushmaniii/ai-chatbot-saas/main/public/images/portfolio/converso-02.webp",
+          "altEn": "Converso AI — Bilingual AI Front Desk & Sales Assistant",
+          "altEs": "Converso AI — Bilingual AI Front Desk & Sales Assistant"
         },
         {
-          "src": "https://ai-resume-tailor-client.vercel.app/images/ai-resume-tailor-03.png",
-          "altEn": "Structured Analysis — 0-100 match score with keyword gaps and severity-coded suggestions",
-          "altEs": "Analisis Estructurado — puntuacion de coincidencia 0-100 con brechas de palabras clave y sugerencias codificadas"
+          "src": "https://raw.githubusercontent.com/RCushmaniii/ai-chatbot-saas/main/public/images/portfolio/converso-03.webp",
+          "altEn": "Converso AI — Bilingual AI Front Desk & Sales Assistant",
+          "altEs": "Converso AI — Bilingual AI Front Desk & Sales Assistant"
         },
         {
-          "src": "https://ai-resume-tailor-client.vercel.app/images/ai-resume-tailor-04.png",
-          "altEn": "Missing Keywords Detected — severity-coded priority indicators showing exactly what to fix first",
-          "altEs": "Palabras Clave Faltantes Detectadas — indicadores de prioridad codificados mostrando que corregir primero"
+          "src": "https://raw.githubusercontent.com/RCushmaniii/ai-chatbot-saas/main/public/images/portfolio/converso-04.webp",
+          "altEn": "Converso AI — Bilingual AI Front Desk & Sales Assistant",
+          "altEs": "Converso AI — Bilingual AI Front Desk & Sales Assistant"
         },
         {
-          "src": "https://ai-resume-tailor-client.vercel.app/images/ai-resume-tailor-05.png",
-          "altEn": "Zero Friction — 5 free analyses with no signup, no email, no commitment required",
-          "altEs": "Cero Friccion — 5 analisis gratis sin registro, sin email, sin compromiso requerido"
+          "src": "https://raw.githubusercontent.com/RCushmaniii/ai-chatbot-saas/main/public/images/portfolio/converso-05.webp",
+          "altEn": "Converso AI — Bilingual AI Front Desk & Sales Assistant",
+          "altEs": "Converso AI — Bilingual AI Front Desk & Sales Assistant"
         },
         {
-          "src": "https://ai-resume-tailor-client.vercel.app/images/ai-resume-tailor-06.png",
-          "altEn": "Full Bilingual Support — native English and Spanish across UI, analysis, and AI-generated feedback",
-          "altEs": "Soporte Bilingue Completo — ingles y espanol nativo en UI, analisis y retroalimentacion generada por IA"
+          "src": "https://raw.githubusercontent.com/RCushmaniii/ai-chatbot-saas/main/public/images/portfolio/converso-06.webp",
+          "altEn": "Converso AI — Bilingual AI Front Desk & Sales Assistant",
+          "altEs": "Converso AI — Bilingual AI Front Desk & Sales Assistant"
         },
         {
-          "src": "https://ai-resume-tailor-client.vercel.app/images/ai-resume-tailor-07.png",
-          "altEn": "Privacy by Architecture — no resume data stored, analysis happens in a single request/response cycle",
-          "altEs": "Privacidad por Arquitectura — ningun dato de CV almacenado, analisis en un solo ciclo solicitud/respuesta"
+          "src": "https://raw.githubusercontent.com/RCushmaniii/ai-chatbot-saas/main/public/images/portfolio/converso-07.webp",
+          "altEn": "Converso AI — Bilingual AI Front Desk & Sales Assistant",
+          "altEs": "Converso AI — Bilingual AI Front Desk & Sales Assistant"
         },
         {
-          "src": "https://ai-resume-tailor-client.vercel.app/images/ai-resume-tailor-08.png",
-          "altEn": "Stripe Embedded Checkout — guest-to-paid conversion with no signup wall before purchase",
-          "altEs": "Checkout Integrado de Stripe — conversion de invitado a pago sin muro de registro antes de la compra"
+          "src": "https://raw.githubusercontent.com/RCushmaniii/ai-chatbot-saas/main/public/images/portfolio/converso-08.webp",
+          "altEn": "Converso AI — Bilingual AI Front Desk & Sales Assistant",
+          "altEs": "Converso AI — Bilingual AI Front Desk & Sales Assistant"
         },
         {
-          "src": "https://ai-resume-tailor-client.vercel.app/images/ai-resume-tailor-09.png",
-          "altEn": "Clerk Authentication — Google, LinkedIn, and email/password with automatic Neon profile provisioning",
-          "altEs": "Autenticacion Clerk — Google, LinkedIn y email/contrasena con aprovisionamiento automatico de perfil en Neon"
-        },
-        {
-          "src": "https://ai-resume-tailor-client.vercel.app/images/ai-resume-tailor-10.png",
-          "altEn": "Full-Stack Architecture — React 19 on Vercel, Flask on Render, Neon Postgres, Stripe, Clerk",
-          "altEs": "Arquitectura Full-Stack — React 19 en Vercel, Flask en Render, Neon Postgres, Stripe, Clerk"
-        },
-        {
-          "src": "https://ai-resume-tailor-client.vercel.app/images/ai-resume-tailor-11.png",
-          "altEn": "Results — structured feedback in under 10 seconds, zero data retention, full bilingual coverage",
-          "altEs": "Resultados — retroalimentacion estructurada en menos de 10 segundos, cero retencion de datos, cobertura bilingue"
+          "src": "https://raw.githubusercontent.com/RCushmaniii/ai-chatbot-saas/main/public/images/portfolio/converso-09.webp",
+          "altEn": "Converso AI — Bilingual AI Front Desk & Sales Assistant",
+          "altEs": "Converso AI — Bilingual AI Front Desk & Sales Assistant"
         }
       ],
-      "videoUrl": "https://ai-resume-tailor-client.vercel.app/video/ai-resume-tailor-brief.mp4",
-      "videoPoster": "https://ai-resume-tailor-client.vercel.app/video/ai-resume-tailor-brief-poster.jpg"
+      "videoUrl": "https://raw.githubusercontent.com/RCushmaniii/ai-chatbot-saas/main/public/video/converso-brief.mp4",
+      "videoPoster": "https://raw.githubusercontent.com/RCushmaniii/ai-chatbot-saas/main/public/video/converso-brief-poster.jpg"
     },
     {
       "id": 1102173157,
@@ -476,7 +348,7 @@
         "Sub-second streaming responses via Vercel AI SDK with OpenAI GPT-4o",
         "Zero-auth guest experience via sessionId cookies — no signup friction before conversion"
       ],
-      "priority": 1,
+      "priority": 3,
       "dateCompleted": "2025-12",
       "slides": [
         {
@@ -517,6 +389,355 @@
       ],
       "videoUrl": "https://ny-ai-chatbot.vercel.app/video/ny-eng-chatbot-brief.mp4",
       "videoPoster": "https://ny-ai-chatbot.vercel.app/video/ny-eng-chatbot-brief-poster.jpg"
+    },
+    {
+      "id": 953305892,
+      "name": "ny-eng",
+      "title": "Ny Eng",
+      "description": "Professional bilingual (EN/ES) business English coaching platform built with Astro, featuring interactive assessments, lead generation, content management, and booking integration. Optimized for SEO, performance, and conversion.",
+      "summary": "Professional bilingual (EN/ES) business English coaching platform built with Astro, featuring interactive assessments, lead generation, content management, and booking integration. Optimized for SEO, performance, and conversion.",
+      "url": "https://github.com/RCushmaniii/ny-eng",
+      "demoUrl": "https://nyenglishteacher.com/",
+      "liveUrl": null,
+      "homepage": "https://nyenglishteacher.com/",
+      "topics": [
+        "astro",
+        "bilingual",
+        "business-english",
+        "content-management-system",
+        "conversion-optimization",
+        "i18n",
+        "lead-generation",
+        "quiz-system",
+        "react",
+        "seo-optimization",
+        "supabase",
+        "tailwindcss",
+        "typescript"
+      ],
+      "categories": [
+        "Client Work"
+      ],
+      "tags": [
+        "astro",
+        "bilingual",
+        "business-english",
+        "content-management-system",
+        "conversion-optimization",
+        "i18n",
+        "lead-generation",
+        "quiz-system",
+        "react",
+        "seo-optimization",
+        "supabase",
+        "tailwindcss",
+        "typescript"
+      ],
+      "stack": [],
+      "status": null,
+      "language": "Astro",
+      "languages": {
+        "Astro": 1177317,
+        "HTML": 837214,
+        "TypeScript": 648826,
+        "JavaScript": 351713,
+        "CSS": 40569,
+        "Python": 29891,
+        "MDX": 23164,
+        "PLpgSQL": 4239
+      },
+      "stars": 0,
+      "forks": 0,
+      "lastPushed": "2026-03-02T02:03:40Z",
+      "createdAt": "2025-03-23T03:27:14Z",
+      "isFeatured": true,
+      "isArchived": false,
+      "isPrivate": true,
+      "tagline": null,
+      "thumbnail": null,
+      "problem": null,
+      "solution": null,
+      "keyFeatures": [],
+      "metrics": [],
+      "priority": 4,
+      "dateCompleted": null,
+      "slides": [],
+      "videoUrl": null,
+      "videoPoster": null
+    },
+    {
+      "id": 1090479901,
+      "name": "ai-resume-tailor",
+      "title": "AI Resume Tailor",
+      "description": "Helps candidates create a tailored resume for a specific job. ",
+      "summary": "> Bilingual AI-powered ATS resume optimization — instant structured feedback, zero friction, privacy by design.",
+      "url": "https://github.com/RCushmaniii/ai-resume-tailor",
+      "demoUrl": "https://ai-resume-tailor-client.vercel.app",
+      "liveUrl": "https://ai-resume-tailor-client.vercel.app",
+      "homepage": "https://ai-resume-tailor-client.vercel.app",
+      "topics": [],
+      "categories": [
+        "AI Automation"
+      ],
+      "tags": [
+        "ai",
+        "saas",
+        "resume",
+        "ats",
+        "job-search",
+        "bilingual",
+        "openai",
+        "stripe",
+        "clerk",
+        "flask"
+      ],
+      "stack": [
+        "React 19",
+        "Flask / Python",
+        "OpenAI GPT-4",
+        "Stripe",
+        "Neon PostgreSQL"
+      ],
+      "status": "Production",
+      "language": "TypeScript",
+      "languages": {
+        "TypeScript": 534402,
+        "Python": 305806,
+        "JavaScript": 19451,
+        "HTML": 3968,
+        "Batchfile": 2499,
+        "CSS": 1995
+      },
+      "stars": 0,
+      "forks": 0,
+      "lastPushed": "2026-03-01T20:43:46Z",
+      "createdAt": "2025-11-05T18:11:38Z",
+      "isFeatured": true,
+      "isArchived": false,
+      "isPrivate": false,
+      "tagline": "AI-powered ATS resume optimization with bilingual support and instant feedback",
+      "thumbnail": "https://ai-resume-tailor-client.vercel.app/images/ai-resume-tailor-thumb.jpg",
+      "problem": "Over 75% of resumes are rejected by Applicant Tracking Systems before a human ever sees them. Most job seekers have no visibility into why they're filtered out, and existing tools either charge upfront, require accounts, or provide generic advice that isn't tied to the specific job posting.",
+      "solution": "A bilingual SaaS application that returns structured ATS analysis — match score, missing keywords with severity coding, and actionable suggestions — in under 10 seconds. Guests get 5 free analyses with no signup, and no resume data is ever stored.",
+      "keyFeatures": [
+        "Structured ATS analysis with 0-100 match score, keyword gaps, and severity-coded suggestions via GPT-4",
+        "Zero-friction guest access — 5 free analyses before any signup prompt, value delivered first",
+        "Full EN/ES bilingual support across all UI, error messages, and AI-generated analysis output",
+        "Privacy-first architecture — no resume data stored, processing happens in a single request/response cycle",
+        "Stripe embedded checkout with guest-to-paid conversion and Clerk auth (Google, LinkedIn, email)"
+      ],
+      "metrics": [
+        "Structured ATS feedback in under 10 seconds",
+        "5 free analyses before any signup prompt",
+        "Zero resume data stored — privacy by architecture"
+      ],
+      "priority": 5,
+      "dateCompleted": "2026-02",
+      "slides": [
+        {
+          "src": "https://ai-resume-tailor-client.vercel.app/images/ai-resume-tailor-01.png",
+          "altEn": "AI Resume Tailor — Bilingual ATS optimization that shows you exactly why resumes get rejected",
+          "altEs": "AI Resume Tailor — Optimizacion ATS bilingue que te muestra exactamente por que rechazan tu CV"
+        },
+        {
+          "src": "https://ai-resume-tailor-client.vercel.app/images/ai-resume-tailor-02.png",
+          "altEn": "The ATS Black Box — 75% of resumes rejected before a human sees them, zero visibility into why",
+          "altEs": "La Caja Negra del ATS — 75% de CVs rechazados antes de que un humano los vea, sin visibilidad del por que"
+        },
+        {
+          "src": "https://ai-resume-tailor-client.vercel.app/images/ai-resume-tailor-03.png",
+          "altEn": "Structured Analysis — 0-100 match score with keyword gaps and severity-coded suggestions",
+          "altEs": "Analisis Estructurado — puntuacion de coincidencia 0-100 con brechas de palabras clave y sugerencias codificadas"
+        },
+        {
+          "src": "https://ai-resume-tailor-client.vercel.app/images/ai-resume-tailor-04.png",
+          "altEn": "Missing Keywords Detected — severity-coded priority indicators showing exactly what to fix first",
+          "altEs": "Palabras Clave Faltantes Detectadas — indicadores de prioridad codificados mostrando que corregir primero"
+        },
+        {
+          "src": "https://ai-resume-tailor-client.vercel.app/images/ai-resume-tailor-05.png",
+          "altEn": "Zero Friction — 5 free analyses with no signup, no email, no commitment required",
+          "altEs": "Cero Friccion — 5 analisis gratis sin registro, sin email, sin compromiso requerido"
+        },
+        {
+          "src": "https://ai-resume-tailor-client.vercel.app/images/ai-resume-tailor-06.png",
+          "altEn": "Full Bilingual Support — native English and Spanish across UI, analysis, and AI-generated feedback",
+          "altEs": "Soporte Bilingue Completo — ingles y espanol nativo en UI, analisis y retroalimentacion generada por IA"
+        },
+        {
+          "src": "https://ai-resume-tailor-client.vercel.app/images/ai-resume-tailor-07.png",
+          "altEn": "Privacy by Architecture — no resume data stored, analysis happens in a single request/response cycle",
+          "altEs": "Privacidad por Arquitectura — ningun dato de CV almacenado, analisis en un solo ciclo solicitud/respuesta"
+        },
+        {
+          "src": "https://ai-resume-tailor-client.vercel.app/images/ai-resume-tailor-08.png",
+          "altEn": "Stripe Embedded Checkout — guest-to-paid conversion with no signup wall before purchase",
+          "altEs": "Checkout Integrado de Stripe — conversion de invitado a pago sin muro de registro antes de la compra"
+        },
+        {
+          "src": "https://ai-resume-tailor-client.vercel.app/images/ai-resume-tailor-09.png",
+          "altEn": "Clerk Authentication — Google, LinkedIn, and email/password with automatic Neon profile provisioning",
+          "altEs": "Autenticacion Clerk — Google, LinkedIn y email/contrasena con aprovisionamiento automatico de perfil en Neon"
+        },
+        {
+          "src": "https://ai-resume-tailor-client.vercel.app/images/ai-resume-tailor-10.png",
+          "altEn": "Full-Stack Architecture — React 19 on Vercel, Flask on Render, Neon Postgres, Stripe, Clerk",
+          "altEs": "Arquitectura Full-Stack — React 19 en Vercel, Flask en Render, Neon Postgres, Stripe, Clerk"
+        },
+        {
+          "src": "https://ai-resume-tailor-client.vercel.app/images/ai-resume-tailor-11.png",
+          "altEn": "Results — structured feedback in under 10 seconds, zero data retention, full bilingual coverage",
+          "altEs": "Resultados — retroalimentacion estructurada en menos de 10 segundos, cero retencion de datos, cobertura bilingue"
+        }
+      ],
+      "videoUrl": "https://ai-resume-tailor-client.vercel.app/video/ai-resume-tailor-brief.mp4",
+      "videoPoster": "https://ai-resume-tailor-client.vercel.app/video/ai-resume-tailor-brief-poster.jpg"
+    },
+    {
+      "id": 1157375639,
+      "name": "ai-build-vs-outsource",
+      "title": "Build vs. Outsource Decision Framework",
+      "description": "An interactive web-based decision tool that helps operations leaders evaluate whether to build logistics capacity in-house or outsource to a third-party logistics provider (3PL). ",
+      "summary": "> Interactive decision-support tools for operations leaders at growth-stage direct-selling companies. Structured analysis, real-time feedback, board-ready output — no spreadsheets, no guesswork.",
+      "url": "https://github.com/RCushmaniii/ai-build-vs-outsource",
+      "demoUrl": "https://ai-build-vs-outsource.vercel.app",
+      "liveUrl": "https://ai-build-vs-outsource.vercel.app",
+      "homepage": "https://ai-build-vs-outsource.vercel.app",
+      "topics": [
+        "3pl",
+        "build-vs-outsource",
+        "dark-mode",
+        "decision-framework",
+        "framer-motion",
+        "i18n",
+        "logistics",
+        "nextjs",
+        "react",
+        "recharts",
+        "supply-chain",
+        "tailwindcss",
+        "typescript",
+        "vercel",
+        "weighted-scoring"
+      ],
+      "categories": [
+        "Tools"
+      ],
+      "tags": [
+        "3pl",
+        "build-vs-outsource",
+        "dark-mode",
+        "decision-framework",
+        "framer-motion",
+        "i18n",
+        "logistics",
+        "nextjs",
+        "react",
+        "recharts",
+        "supply-chain",
+        "tailwindcss",
+        "typescript",
+        "vercel",
+        "weighted-scoring",
+        "tailwind",
+        "decision-tools",
+        "operations",
+        "bilingual",
+        "data-visualization"
+      ],
+      "stack": [
+        "Next.js 16",
+        "React 19",
+        "Tailwind CSS 4",
+        "Framer Motion",
+        "Recharts"
+      ],
+      "status": "Production",
+      "language": "TypeScript",
+      "languages": {
+        "TypeScript": 163582,
+        "CSS": 5459,
+        "JavaScript": 559
+      },
+      "stars": 0,
+      "forks": 1,
+      "lastPushed": "2026-03-01T20:43:42Z",
+      "createdAt": "2026-02-13T18:42:29Z",
+      "isFeatured": true,
+      "isArchived": false,
+      "isPrivate": false,
+      "tagline": "Interactive decision tools with weighted scoring, cost modeling, and board-ready output",
+      "thumbnail": "https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-thumb.jpg",
+      "problem": "Operations leaders at growth-stage companies face high-stakes build-or-outsource decisions armed with gut feel, incomplete spreadsheets, and circular boardroom arguments. No tool combines structured weighted scoring with real-time cost modeling and shareable, board-ready output.",
+      "solution": "A suite of interactive decision-support tools that replace guesswork with data-driven analysis. A 20-criterion weighted scoring framework evaluates build vs. outsource across five categories, while an operational cost simulator reveals hidden step-function costs — all shareable via URL-encoded state.",
+      "keyFeatures": [
+        "20-criterion weighted scoring across 5 categories (Financial, Operational, Strategic, Control, Risk) with real-time verdict",
+        "Operational Cost Simulator with three-layer cost model — fixed, variable, and step-function costs with break-even analysis",
+        "6 decision presets and 5 growth scenario presets for rapid what-if analysis",
+        "Shareable URL encoding — full tool state in query params for board presentations",
+        "Full EN/ES bilingual support with dark/light theme toggle and print-ready layouts"
+      ],
+      "metrics": [
+        "20 weighted criteria across 5 decision categories",
+        "6 decision presets + 5 growth scenario presets",
+        "Full state shareable via URL — no backend required"
+      ],
+      "priority": 6,
+      "dateCompleted": "2026-02",
+      "slides": [
+        {
+          "src": "https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-01.png",
+          "altEn": "Operations Decision Tools Suite — structured analysis replaces boardroom guesswork",
+          "altEs": "Suite de Herramientas de Decision Operativa — analisis estructurado reemplaza suposiciones en la sala de juntas"
+        },
+        {
+          "src": "https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-02.png",
+          "altEn": "The Problem — gut feel, incomplete spreadsheets, and circular arguments drive million-dollar decisions",
+          "altEs": "El Problema — instinto, hojas de calculo incompletas y argumentos circulares impulsan decisiones millonarias"
+        },
+        {
+          "src": "https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-03.png",
+          "altEn": "20-Criterion Weighted Scoring — five categories with real-time verdict and radar chart",
+          "altEs": "Puntuacion Ponderada de 20 Criterios — cinco categorias con veredicto en tiempo real y grafico radar"
+        },
+        {
+          "src": "https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-04.png",
+          "altEn": "Scenario Presets — Growth Emergency, Control First, Cost Optimizer shift the verdict instantly",
+          "altEs": "Presets de Escenarios — Emergencia de Crecimiento, Control Primero, Optimizador de Costos cambian el veredicto al instante"
+        },
+        {
+          "src": "https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-05.png",
+          "altEn": "Expandable Rationale — each criterion includes industry analysis and scoring guidance",
+          "altEs": "Justificacion Expandible — cada criterio incluye analisis de industria y guia de puntuacion"
+        },
+        {
+          "src": "https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-06.png",
+          "altEn": "Operational Cost Simulator — three-layer cost model with volume slider and cost-per-order curves",
+          "altEs": "Simulador de Costos Operativos — modelo de costos de tres capas con control de volumen y curvas de costo por orden"
+        },
+        {
+          "src": "https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-07.png",
+          "altEn": "Step-Function Costs Revealed — watch cost-per-order jump when new hires and warehouse expansions trigger",
+          "altEs": "Costos Escalonados Revelados — observa el salto del costo por orden cuando se activan nuevas contrataciones y expansiones"
+        },
+        {
+          "src": "https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-08.png",
+          "altEn": "Break-Even and Margin Analysis — utilization gauges and margin visualization with profitability threshold",
+          "altEs": "Analisis de Punto de Equilibrio y Margen — indicadores de utilizacion y visualizacion de margen con umbral de rentabilidad"
+        },
+        {
+          "src": "https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-09.png",
+          "altEn": "Shareable and Board-Ready — full state encoded in URL params, print-optimized layouts for PDFs",
+          "altEs": "Compartible y Listo para Presentar — estado completo codificado en URL, disenos optimizados para impresion PDF"
+        },
+        {
+          "src": "https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-10.png",
+          "altEn": "Technical Architecture — Next.js 16, React 19, Recharts, Framer Motion, bilingual, zero backend",
+          "altEs": "Arquitectura Tecnica — Next.js 16, React 19, Recharts, Framer Motion, bilingue, sin backend"
+        }
+      ],
+      "videoUrl": "https://ai-build-vs-outsource.vercel.app/video/ai-build-vs-outsource-brief.mp4",
+      "videoPoster": "https://ai-build-vs-outsource.vercel.app/video/ai-build-vs-outsource-brief-poster.jpg"
     },
     {
       "id": 1120026584,
@@ -574,7 +795,7 @@
       "forks": 0,
       "lastPushed": "2026-02-23T00:23:50Z",
       "createdAt": "2025-12-20T10:31:00Z",
-      "isFeatured": true,
+      "isFeatured": false,
       "isArchived": false,
       "isPrivate": false,
       "tagline": "Clone your brand voice once — AI writes like you across every channel, no drift",
@@ -594,7 +815,7 @@
         "Zero hallucinated claims — credibility enforced by policy",
         "One voice system powers every content channel"
       ],
-      "priority": 1,
+      "priority": 7,
       "dateCompleted": "2025-12",
       "slides": [
         {
@@ -718,7 +939,7 @@
       "forks": 0,
       "lastPushed": "2026-02-23T00:23:54Z",
       "createdAt": "2026-01-25T01:59:32Z",
-      "isFeatured": true,
+      "isFeatured": false,
       "isArchived": false,
       "isPrivate": false,
       "tagline": "Brutal startup defensibility assessment with AI contradiction detection",
@@ -737,7 +958,7 @@
         "23 questions across 4 defensibility sections",
         "4 verdicts with confidence scores and specific rationale"
       ],
-      "priority": 2,
+      "priority": 8,
       "dateCompleted": "2026-02",
       "slides": [
         {
@@ -778,6 +999,270 @@
       ],
       "videoUrl": "https://ai-idea-validator.netlify.app/video/aI-Idea-validator-brief.mp4",
       "videoPoster": "https://ai-idea-validator.netlify.app/video/aI-Idea-validator-brief-poster.jpg"
+    },
+    {
+      "id": 1130115840,
+      "name": "cushlabs",
+      "title": "CushLabs.ai",
+      "description": "AI consulting and software development for SMBs — bilingual (EN/ES) site built with Astro + Tailwind CSS",
+      "summary": "> AI consulting and software development for SMBs. Bilingual (EN/ES) business site with automated GitHub portfolio sync and serverless booking.",
+      "url": "https://github.com/RCushmaniii/cushlabs",
+      "demoUrl": "https://cushlabs.ai",
+      "liveUrl": "https://cushlabs.ai",
+      "homepage": "https://cushlabs.ai",
+      "topics": [
+        "ai-consulting",
+        "astro",
+        "bilingual",
+        "cushlabs",
+        "static-site",
+        "tailwindcss"
+      ],
+      "categories": [
+        "Tools"
+      ],
+      "tags": [
+        "ai-consulting",
+        "astro",
+        "bilingual",
+        "cushlabs",
+        "static-site",
+        "tailwindcss",
+        "tailwind",
+        "typescript",
+        "i18n",
+        "cloudflare-workers",
+        "google-calendar",
+        "github-actions",
+        "seo",
+        "serverless"
+      ],
+      "stack": [
+        "Astro 4.16",
+        "TypeScript 5.9",
+        "Tailwind CSS 3.4",
+        "Cloudflare Workers",
+        "Google Calendar API",
+        "GitHub Actions",
+        "JSON-LD"
+      ],
+      "status": null,
+      "language": "Astro",
+      "languages": {
+        "Astro": 469083,
+        "TypeScript": 113257,
+        "HTML": 61067,
+        "JavaScript": 27043,
+        "CSS": 2655
+      },
+      "stars": 0,
+      "forks": 0,
+      "lastPushed": "2026-03-02T08:56:52Z",
+      "createdAt": "2026-01-08T03:52:43Z",
+      "isFeatured": false,
+      "isArchived": false,
+      "isPrivate": false,
+      "tagline": "Self-maintaining bilingual portfolio with serverless booking and build-time i18n enforcement",
+      "thumbnail": "/images/portfolio/cushlabs-thumb.webp",
+      "problem": "Bilingual marketing sites go stale the moment you stop manually updating them. Portfolio pages die after 3-4 projects because maintenance costs multiply across languages. Third-party booking widgets break design consistency and add monthly fees. And static sites — while fast and cheap — traditionally can't handle dynamic features like scheduling without a full backend.\n",
+      "solution": null,
+      "keyFeatures": [
+        "27+ portfolio projects synced automatically from GitHub with zero manual data entry",
+        "0 KB i18n runtime overhead — 24-line custom system replaces 40KB+ i18next",
+        "6 automated pre-deploy checks enforcing bilingual parity, secret scanning, and build validation",
+        "Sub-second page loads with static HTML edge-cached globally",
+        "$0/month booking system via Cloudflare Workers replacing $8-16/month Calendly",
+        "100% EN/ES content parity enforced at build time — no language drift"
+      ],
+      "metrics": [],
+      "priority": 9,
+      "dateCompleted": null,
+      "slides": [
+        {
+          "src": "/images/portfolio/cushlabs-01.webp",
+          "altEn": "CushLabs.ai",
+          "altEs": "CushLabs.ai"
+        },
+        {
+          "src": "/images/portfolio/cushlabs-02.webp",
+          "altEn": "CushLabs.ai",
+          "altEs": "CushLabs.ai"
+        },
+        {
+          "src": "/images/portfolio/cushlabs-03.webp",
+          "altEn": "CushLabs.ai",
+          "altEs": "CushLabs.ai"
+        },
+        {
+          "src": "/images/portfolio/cushlabs-04.webp",
+          "altEn": "CushLabs.ai",
+          "altEs": "CushLabs.ai"
+        },
+        {
+          "src": "/images/portfolio/cushlabs-05.webp",
+          "altEn": "CushLabs.ai",
+          "altEs": "CushLabs.ai"
+        },
+        {
+          "src": "/images/portfolio/cushlabs-06.webp",
+          "altEn": "CushLabs.ai",
+          "altEs": "CushLabs.ai"
+        },
+        {
+          "src": "/images/portfolio/cushlabs-07.webp",
+          "altEn": "CushLabs.ai",
+          "altEs": "CushLabs.ai"
+        },
+        {
+          "src": "/images/portfolio/cushlabs-08.webp",
+          "altEn": "CushLabs.ai",
+          "altEs": "CushLabs.ai"
+        },
+        {
+          "src": "/images/portfolio/cushlabs-09.webp",
+          "altEn": "CushLabs.ai",
+          "altEs": "CushLabs.ai"
+        },
+        {
+          "src": "/images/portfolio/cushlabs-10.webp",
+          "altEn": "CushLabs.ai",
+          "altEs": "CushLabs.ai"
+        }
+      ],
+      "videoUrl": "/images/portfolio/cushlabs-brief.mp4",
+      "videoPoster": "/images/portfolio/cushlabs-brief-poster.webp"
+    },
+    {
+      "id": 1128388603,
+      "name": "ai-portfolio",
+      "title": "AI Portfolio",
+      "description": "Static portfolio system that syncs project data from GitHub repos into a filterable showcase — Next.js 15, React 19, TypeScript, Tailwind CSS",
+      "summary": "> A bilingual (EN/ES) static portfolio system that aggregates project data from GitHub repositories and renders a professional, filterable showcase with SEO optimization and WebP images.",
+      "url": "https://github.com/RCushmaniii/ai-portfolio",
+      "demoUrl": "https://ai-portfolio-cushlabs.vercel.app/",
+      "liveUrl": "https://ai-portfolio-cushlabs.vercel.app",
+      "homepage": "https://ai-portfolio-cushlabs.vercel.app/",
+      "topics": [
+        "github-api",
+        "nextjs",
+        "portfolio",
+        "react",
+        "shadcn-ui",
+        "static-site",
+        "tailwindcss",
+        "typescript",
+        "vercel"
+      ],
+      "categories": [
+        "Developer Tools"
+      ],
+      "tags": [
+        "github-api",
+        "nextjs",
+        "portfolio",
+        "react",
+        "shadcn-ui",
+        "static-site",
+        "tailwindcss",
+        "typescript",
+        "vercel",
+        "next-js",
+        "tailwind"
+      ],
+      "stack": [
+        "Next.js 15",
+        "React 19",
+        "TypeScript",
+        "Tailwind CSS",
+        "shadcn/ui",
+        "Zod",
+        "GitHub API",
+        "Vercel"
+      ],
+      "status": null,
+      "language": "TypeScript",
+      "languages": {
+        "TypeScript": 150081,
+        "PowerShell": 3372,
+        "CSS": 1413,
+        "JavaScript": 83
+      },
+      "stars": 0,
+      "forks": 0,
+      "lastPushed": "2026-03-02T09:04:56Z",
+      "createdAt": "2026-01-05T15:06:48Z",
+      "isFeatured": false,
+      "isArchived": false,
+      "isPrivate": false,
+      "tagline": "A static portfolio system that syncs project data from GitHub repos into a filterable showcase",
+      "thumbnail": "https://ai-portfolio-cushlabs.vercel.app/images/portfolio-card.webp",
+      "problem": "Maintaining a portfolio across dozens of GitHub repositories creates a content\nmanagement problem. Project descriptions, tech stacks, and status information\nscatter across READMEs and repo settings with no unified display layer. A\nseparate portfolio site inevitably falls out of sync with the actual work.\n",
+      "solution": null,
+      "keyFeatures": [
+        "21 projects aggregated from GitHub repos into a single filterable interface",
+        "Client-side search, category filtering, and sort — all via shareable URL params",
+        "Zero runtime API calls — fully static, sub-second page loads",
+        "Content managed through PORTFOLIO.md files co-located with source code",
+        "Featured project showcase with curated top-6 selection",
+        "Dark mode with system preference detection"
+      ],
+      "metrics": [],
+      "priority": 10,
+      "dateCompleted": null,
+      "slides": [
+        {
+          "src": "https://ai-portfolio-cushlabs.vercel.app/images/portfolio-01.webp",
+          "altEn": "Portfolio homepage with featured projects section",
+          "altEs": "Pagina principal del portafolio con seccion de proyectos destacados"
+        },
+        {
+          "src": "https://ai-portfolio-cushlabs.vercel.app/images/portfolio-02.webp",
+          "altEn": "Portfolio grid with category filtering",
+          "altEs": "Cuadricula del portafolio con filtrado por categoria"
+        },
+        {
+          "src": "https://ai-portfolio-cushlabs.vercel.app/images/portfolio-03.webp",
+          "altEn": "Portfolio grid in dark mode",
+          "altEs": "Cuadricula del portafolio en modo oscuro"
+        },
+        {
+          "src": "https://ai-portfolio-cushlabs.vercel.app/images/portfolio-04.webp",
+          "altEn": "Project detail page with image carousel",
+          "altEs": "Pagina de detalle del proyecto con carrusel de imagenes"
+        },
+        {
+          "src": "https://ai-portfolio-cushlabs.vercel.app/images/portfolio-05.webp",
+          "altEn": "Project detail page — problem and solution sections",
+          "altEs": "Pagina de detalle — secciones de problema y solucion"
+        },
+        {
+          "src": "https://ai-portfolio-cushlabs.vercel.app/images/portfolio-06.webp",
+          "altEn": "Project detail page — key features and metrics",
+          "altEs": "Pagina de detalle — caracteristicas principales y metricas"
+        },
+        {
+          "src": "https://ai-portfolio-cushlabs.vercel.app/images/portfolio-07.webp",
+          "altEn": "Project detail page with tech stack sidebar",
+          "altEs": "Pagina de detalle con barra lateral de tecnologias"
+        },
+        {
+          "src": "https://ai-portfolio-cushlabs.vercel.app/images/portfolio-08.webp",
+          "altEn": "Featured projects showcase page",
+          "altEs": "Pagina de vitrina de proyectos destacados"
+        },
+        {
+          "src": "https://ai-portfolio-cushlabs.vercel.app/images/portfolio-09.webp",
+          "altEn": "Mobile responsive portfolio grid",
+          "altEs": "Cuadricula responsiva del portafolio en movil"
+        },
+        {
+          "src": "https://ai-portfolio-cushlabs.vercel.app/images/portfolio-10.webp",
+          "altEn": "Spanish language version of the portfolio",
+          "altEs": "Version en espanol del portafolio"
+        }
+      ],
+      "videoUrl": "https://ai-portfolio-cushlabs.vercel.app/video/portfolio-brief.mp4",
+      "videoPoster": "https://ai-portfolio-cushlabs.vercel.app/images/portfolio-brief-poster.webp"
     },
     {
       "id": 1114660708,
@@ -838,7 +1323,7 @@
       "forks": 0,
       "lastPushed": "2026-02-22T22:55:45Z",
       "createdAt": "2025-12-11T17:38:35Z",
-      "isFeatured": true,
+      "isFeatured": false,
       "isArchived": false,
       "isPrivate": false,
       "tagline": "Privacy-first income simulator — see how rates, taxes, and currencies impact take-home pay",
@@ -858,7 +1343,7 @@
         "9 currency pair combinations (USD/MXN/EUR)",
         "Zero data transmitted — 100% client-side computation"
       ],
-      "priority": 2,
+      "priority": 11,
       "dateCompleted": "2026-02",
       "slides": [
         {
@@ -921,73 +1406,347 @@
       "videoPoster": "https://freelance-income-planner.vercel.app/video/freelance-income-planner-brief-poster.jpg"
     },
     {
-      "id": 1170472302,
-      "name": "ai-personal-data-eraser",
-      "title": "ai-eraser — AI-Powered Data Removal Engine",
-      "description": "AI-powered personal data removal engine — find, erase, and monitor your PII across 200+ data brokers with autonomous agents and legal compliance workflows.",
-      "summary": "> AI-powered personal data removal engine — automatically discovers and removes your information from data broker websites.",
-      "url": "https://github.com/RCushmaniii/ai-personal-data-eraser",
-      "demoUrl": null,
-      "liveUrl": "",
-      "homepage": null,
-      "topics": [],
+      "id": 1062817398,
+      "name": "ai-scrabble-practice",
+      "title": "Ai Scrabble Practice",
+      "description": "A practice tool for Scrabble players built with React, Vite, Tailwind, and pnpm. Features include word scoring, word validation via free dictionary APIs, and a rack solver to generate playable words.",
+      "summary": "A practice tool for Scrabble players built with React, Vite, Tailwind, and pnpm. Features include word scoring, word validation via free dictionary APIs, and a rack solver to generate playable words.",
+      "url": "https://github.com/RCushmaniii/ai-scrabble-practice",
+      "demoUrl": "https://scrabble-mini.netlify.app/",
+      "liveUrl": null,
+      "homepage": "https://scrabble-mini.netlify.app/",
+      "topics": [
+        "anagram-solver",
+        "free-game",
+        "openai-api",
+        "react",
+        "scrabble",
+        "scrabble-game",
+        "scrabble-word-finder",
+        "tailwindcss",
+        "typescipt",
+        "vite"
+      ],
       "categories": [
-        "AI Automation"
+        "Games"
       ],
       "tags": [
-        "ai-automation",
-        "privacy",
-        "data-brokers",
-        "ccpa",
-        "gdpr",
-        "encryption",
-        "typescript",
-        "bun"
+        "anagram-solver",
+        "free-game",
+        "openai-api",
+        "react",
+        "scrabble",
+        "scrabble-game",
+        "scrabble-word-finder",
+        "tailwindcss",
+        "typescipt",
+        "vite"
       ],
-      "stack": [
-        "Bun",
-        "TypeScript",
-        "Anthropic Claude API",
-        "SQLite (WAL mode)",
-        "XState v5",
-        "libsodium (XSalsa20-Poly1305 + Argon2id)",
-        "React",
-        "Tailwind CSS v4",
-        "Nodemailer + MJML",
-        "Zod",
-        "Commander + Clack"
-      ],
+      "stack": [],
       "status": null,
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 139128,
-        "HTML": 375,
-        "CSS": 23
+        "TypeScript": 188238,
+        "JavaScript": 13705,
+        "CSS": 6947,
+        "HTML": 1011
       },
-      "stars": 0,
+      "stars": 1,
       "forks": 0,
-      "lastPushed": "2026-03-02T07:52:42Z",
-      "createdAt": "2026-03-02T06:48:04Z",
-      "isFeatured": true,
+      "lastPushed": "2026-02-23T00:24:12Z",
+      "createdAt": "2025-09-23T19:15:28Z",
+      "isFeatured": false,
       "isArchived": false,
-      "isPrivate": false,
-      "tagline": "Automated personal data removal from data brokers using Claude AI and encrypted PII vault",
+      "isPrivate": true,
+      "tagline": null,
       "thumbnail": null,
-      "problem": "Data brokers collect and sell personal information across 100+ sites, each with different\nopt-out procedures. Manual removal is a recurring, error-prone burden that takes hours per\nbroker and requires tracking follow-ups across legal frameworks. Commercial services charge\n$100-200/year and still miss brokers or fail to monitor for re-appearances.\n",
+      "problem": null,
       "solution": null,
-      "keyFeatures": [
-        "Agent-based architecture automates the full removal lifecycle end-to-end",
-        "6 broker playbooks defined with extensible YAML schema for rapid expansion",
-        "CCPA/GDPR legal request generation with proper statutory references",
-        "XSalsa20-Poly1305 + Argon2id encryption protects PII at rest",
-        "27 passing tests covering encryption, state machine, registry, and schemas"
-      ],
+      "keyFeatures": [],
       "metrics": [],
-      "priority": 3,
+      "priority": 12,
       "dateCompleted": null,
       "slides": [],
       "videoUrl": null,
       "videoPoster": null
+    },
+    {
+      "id": 1132479691,
+      "name": "ai-filesense",
+      "title": "AI FileSense",
+      "description": " AI-powered local file organizer for Windows. Scans your documents, uses Claude AI to intelligently classify files, and organizes them into a clean folder structure with full undo support. ",
+      "summary": "AI FileSense uses artificial intelligence to understand and organize your files based on their actual content—not just filenames. Clean up your Desktop in minutes with AI-powered categorization.",
+      "url": "https://github.com/RCushmaniii/ai-filesense",
+      "demoUrl": "https://ai-filesense-website.vercel.app/",
+      "liveUrl": "",
+      "homepage": "https://ai-filesense-website.vercel.app/",
+      "topics": [
+        "ai",
+        "desktop-app",
+        "document-management",
+        "file-manager",
+        "file-organizer",
+        "local-first",
+        "privacy-protection",
+        "rust",
+        "tauri",
+        "typescript",
+        "windows-app"
+      ],
+      "categories": [
+        "AI Automation"
+      ],
+      "tags": [
+        "ai",
+        "desktop-app",
+        "document-management",
+        "file-manager",
+        "file-organizer",
+        "local-first",
+        "privacy-protection",
+        "rust",
+        "tauri",
+        "typescript",
+        "windows-app",
+        "file-organization",
+        "privacy-first",
+        "bilingual",
+        "windows"
+      ],
+      "stack": [
+        "Tauri 2",
+        "Rust",
+        "React",
+        "TypeScript",
+        "Claude Haiku"
+      ],
+      "status": "Demo",
+      "language": "TypeScript",
+      "languages": {
+        "TypeScript": 298302,
+        "Rust": 239279,
+        "JavaScript": 8353,
+        "CSS": 1968,
+        "HTML": 362
+      },
+      "stars": 0,
+      "forks": 0,
+      "lastPushed": "2026-02-23T00:23:56Z",
+      "createdAt": "2026-01-12T02:37:39Z",
+      "isFeatured": false,
+      "isArchived": false,
+      "isPrivate": false,
+      "tagline": "Local AI file organizer — private, safe, zero config",
+      "thumbnail": "https://raw.githubusercontent.com/RCushmaniii/ai-filesense/main/public/images/ai-filesense-thumb.jpg",
+      "problem": "Most people have thousands of documents scattered across Desktop, Documents, and Downloads with no system — manual sorting takes hours and most quit in minutes. Cloud-based solutions require uploading sensitive files to third-party servers, and existing AI tools demand API keys and terminal commands that lock out non-technical users.",
+      "solution": "A lightweight Windows desktop app (~5 MB) that uses Claude Haiku to read document content and classify files into a consistent 12-folder system without files ever leaving the device. Zero configuration required — the developer provides the API key so users never touch a terminal or API console.",
+      "keyFeatures": [
+        "Content-based AI classification — reads PDFs, DOCX, PPTX, TXT, not just filenames",
+        "Full undo support — rollback a single file or entire session, even after app restart",
+        "Confidence-based routing — uncertain files go to Review for human decision, never mis-filed",
+        "Privacy-first — files stay local, only 300-char snippets sent to AI, prompt injection prevention",
+        "Zero config freemium — developer-provided API key, no accounts, no setup, 10 free scans"
+      ],
+      "metrics": [
+        "$0.0015 per file classified",
+        "~5 minutes from install to organized",
+        "12 universal folder categories",
+        "10 free scans per user (backend-enforced)"
+      ],
+      "priority": 13,
+      "dateCompleted": "2026-02",
+      "slides": [
+        {
+          "src": "https://raw.githubusercontent.com/RCushmaniii/ai-filesense/main/public/images/ai-filesense-02.png",
+          "altEn": "Turn Chaos into Clarity — AI FileSense hero slide",
+          "altEs": "Convierte el Caos en Claridad — diapositiva principal de AI FileSense"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/RCushmaniii/ai-filesense/main/public/images/ai-filesense-03.png",
+          "altEn": "We are drowning in data but starving for order",
+          "altEs": "Nos ahogamos en datos pero nos falta orden"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/RCushmaniii/ai-filesense/main/public/images/ai-filesense-04.png",
+          "altEn": "The Barriers to Organization — manual sorting, inconsistent systems, technical complexity",
+          "altEs": "Las Barreras para la Organizacion — clasificacion manual, sistemas inconsistentes, complejidad tecnica"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/RCushmaniii/ai-filesense/main/public/images/ai-filesense-05.png",
+          "altEn": "Hours of low-value decision making, ad-hoc folders that fail, AI tools requiring complex APIs",
+          "altEs": "Horas de decisiones de bajo valor, carpetas improvisadas que fallan, herramientas IA que requieren APIs complejas"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/RCushmaniii/ai-filesense/main/public/images/ai-filesense-06.png",
+          "altEn": "AI FileSense — Just click and go. Zero configuration. Powered by Claude Haiku.",
+          "altEs": "AI FileSense — Solo haz clic. Cero configuracion. Impulsado por Claude Haiku."
+        },
+        {
+          "src": "https://raw.githubusercontent.com/RCushmaniii/ai-filesense/main/public/images/ai-filesense-07.png",
+          "altEn": "Classification based on content, not just filenames — deep parsing of PDFs, DOCX, PPTX, TXT",
+          "altEs": "Clasificacion basada en contenido, no solo nombres de archivo — analisis de PDFs, DOCX, PPTX, TXT"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/RCushmaniii/ai-filesense/main/public/images/ai-filesense-09.png",
+          "altEn": "Confidence and Human Control — smart routing for uncertain files",
+          "altEs": "Confianza y Control Humano — enrutamiento inteligente para archivos inciertos"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/RCushmaniii/ai-filesense/main/public/images/ai-filesense-10.png",
+          "altEn": "AI for the Non-Technical 99% — no terminal, no API keys, no config",
+          "altEs": "IA para el 99% No Tecnico — sin terminal, sin API keys, sin configuracion"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/RCushmaniii/ai-filesense/main/public/images/ai-filesense-11.png",
+          "altEn": "Uncompromising Safety — privacy by design, injection prevention, no files ever deleted",
+          "altEs": "Seguridad Sin Compromiso — privacidad por diseno, prevencion de inyeccion, ningun archivo eliminado"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/RCushmaniii/ai-filesense/main/public/images/ai-filesense-12.png",
+          "altEn": "The Safety Net — full undo, test mode, crash recovery with atomic writes",
+          "altEs": "La Red de Seguridad — deshacer completo, modo prueba, recuperacion de fallos con escrituras atomicas"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/RCushmaniii/ai-filesense/main/public/images/ai-filesense-13.png",
+          "altEn": "From Digital Chaos to Automated Order — full system architecture",
+          "altEs": "Del Caos Digital al Orden Automatizado — arquitectura completa del sistema"
+        }
+      ],
+      "videoUrl": "https://raw.githubusercontent.com/RCushmaniii/ai-filesense/main/public/video/AI_FileSense-brief.mp4",
+      "videoPoster": "https://raw.githubusercontent.com/RCushmaniii/ai-filesense/main/public/video/AI-FileSense-brief-poster.jpg"
+    },
+    {
+      "id": 1082205398,
+      "name": "stock-alert",
+      "title": "AI StockAlert",
+      "description": "Professional Windows desktop application for real-time multi-stock price monitoring with intelligent alerting and visual configuration management.",
+      "summary": "> AI StockAlert: Stock price monitoring with multi-channel alerts for Windows.",
+      "url": "https://github.com/RCushmaniii/stock-alert",
+      "demoUrl": "https://aistockalert.app/",
+      "liveUrl": null,
+      "homepage": "https://aistockalert.app/",
+      "topics": [
+        "desktop-app",
+        "python",
+        "stock-alerts",
+        "stock-market",
+        "stock-price",
+        "system-tray",
+        "windows",
+        "windows-notifications"
+      ],
+      "categories": [
+        "Tools"
+      ],
+      "tags": [
+        "desktop-app",
+        "python",
+        "stock-alerts",
+        "stock-market",
+        "stock-price",
+        "system-tray",
+        "windows",
+        "windows-notifications",
+        "fintech",
+        "pyqt",
+        "real-time",
+        "notifications",
+        "whatsapp"
+      ],
+      "stack": [
+        "Python",
+        "PyQt6",
+        "Finnhub API",
+        "Twilio/WhatsApp",
+        "Vercel Serverless"
+      ],
+      "status": "Production",
+      "language": "Python",
+      "languages": {
+        "Python": 533555,
+        "PowerShell": 4838,
+        "Inno Setup": 3850,
+        "Batchfile": 240
+      },
+      "stars": 1,
+      "forks": 0,
+      "lastPushed": "2026-02-23T00:23:57Z",
+      "createdAt": "2025-10-23T22:24:30Z",
+      "isFeatured": false,
+      "isArchived": false,
+      "isPrivate": false,
+      "tagline": "Windows desktop app for real-time stock alerts via WhatsApp and Windows notifications",
+      "thumbnail": "https://raw.githubusercontent.com/RCushmaniii/stock-alert/main/public/images/stockalert-thumb.jpg",
+      "problem": "Active traders need to monitor multiple stock positions simultaneously but can't watch screens all day. Existing solutions are too complex, require expensive subscriptions, or lack reliable mobile notifications that actually get seen.",
+      "solution": "A professional Windows desktop application that monitors stock prices in real-time and sends instant alerts via both Windows toast notifications and WhatsApp messages when prices cross user-defined thresholds. It runs silently in the system tray with zero subscription fees.",
+      "keyFeatures": [
+        "Real-time price monitoring for up to 15 stocks with configurable intervals and automatic market hours detection",
+        "Multi-channel alerts: Windows toast notifications with audio plus WhatsApp mobile messages via Twilio",
+        "Smart consolidated notifications — multiple alerts combined into a single notification per check cycle",
+        "Bilingual interface (EN/ES) with multi-currency display toggling between USD and MXN with live exchange rates",
+        "Background service runs silently in system tray — alerts work even when UI is closed, auto-starts with Windows"
+      ],
+      "metrics": [
+        "Sub-2-second alert delivery from price change detection to notification",
+        "15 stocks monitored simultaneously on free tier",
+        "60 API calls/minute rate-limited token bucket for optimal Finnhub usage"
+      ],
+      "priority": 14,
+      "dateCompleted": "2026-02",
+      "slides": [
+        {
+          "src": "https://raw.githubusercontent.com/RCushmaniii/stock-alert/main/public/images/stockalert-01.png",
+          "altEn": "Moving From Market Noise to Actionable Signal — hero slide with laptop and WhatsApp phone",
+          "altEs": "Del ruido del mercado a la senal accionable — diapositiva principal con laptop y WhatsApp"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/RCushmaniii/stock-alert/main/public/images/stockalert-02.png",
+          "altEn": "The Trap of Manual Monitoring — the gap between wanting to know and finding out in time",
+          "altEs": "La trampa del monitoreo manual — la brecha entre querer saber y enterarse a tiempo"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/RCushmaniii/stock-alert/main/public/images/stockalert-03.png",
+          "altEn": "Why Traditional Tools Fail — email alerts buried, push notifications swiped away, terminals cost $20-$200/month",
+          "altEs": "Por que fallan las herramientas tradicionales — emails enterrados, notificaciones ignoradas, terminales de $20-$200/mes"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/RCushmaniii/stock-alert/main/public/images/stockalert-04.png",
+          "altEn": "The Message You Actually Check — WhatsApp alert on phone, the app you check 50+ times a day",
+          "altEs": "El mensaje que realmente revisas — alerta de WhatsApp en tu telefono, la app que revisas mas de 50 veces al dia"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/RCushmaniii/stock-alert/main/public/images/stockalert-05.png",
+          "altEn": "Intelligent Background Monitoring — auto-starts with Windows, filters for market hours, instant delivery",
+          "altEs": "Monitoreo inteligente en segundo plano — inicio automatico con Windows, filtrado por horario de mercado, entrega instantanea"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/RCushmaniii/stock-alert/main/public/images/stockalert-06.png",
+          "altEn": "A Business Model That Respects the User — one-time purchase, bring your own key, no subscription fatigue",
+          "altEs": "Un modelo de negocio que respeta al usuario — compra unica, trae tu propia clave, sin fatiga de suscripcion"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/RCushmaniii/stock-alert/main/public/images/stockalert-07.png",
+          "altEn": "Your Data Stays on Your Device — local first, no cloud accounts, API keys never leave your machine",
+          "altEs": "Tus datos se quedan en tu dispositivo — local primero, sin cuentas en la nube, las claves API nunca salen de tu maquina"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/RCushmaniii/stock-alert/main/public/images/stockalert-08.png",
+          "altEn": "Beyond Code: A Case Study in Product Strategy — pain points mapped to real solutions",
+          "altEs": "Mas alla del codigo: un caso de estudio en estrategia de producto — problemas reales mapeados a soluciones reales"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/RCushmaniii/stock-alert/main/public/images/stockalert-09.png",
+          "altEn": "Trust-Building Commerce — the anti-SaaS model with no forced retention, no account creation, no hidden fees",
+          "altEs": "Comercio basado en confianza — el modelo anti-SaaS sin retencion forzada, sin creacion de cuentas, sin tarifas ocultas"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/RCushmaniii/stock-alert/main/public/images/stockalert-10.png",
+          "altEn": "The Bottom Line — solves a manual problem, leverages WhatsApp, respects the user's wallet and privacy",
+          "altEs": "En resumen — resuelve un problema manual, aprovecha WhatsApp, respeta la billetera y la privacidad del usuario"
+        }
+      ],
+      "videoUrl": "https://raw.githubusercontent.com/RCushmaniii/stock-alert/main/public/video/AI-StockAlert-brief.mp4",
+      "videoPoster": "https://raw.githubusercontent.com/RCushmaniii/stock-alert/main/public/video/AI-StockAlert-brief-poster.jpg"
     },
     {
       "id": 1133839610,
@@ -1073,7 +1832,7 @@
         "0.3s FCP, 0.4s LCP, 0ms TBT — zero layout shift",
         "Auto-generated sitemap with hreflang alternates for 30+ locale-specific URLs"
       ],
-      "priority": 3,
+      "priority": 15,
       "dateCompleted": "2026-02",
       "slides": [
         {
@@ -1121,414 +1880,138 @@
       "videoPoster": "https://ai-filesense-website.vercel.app/images/portfolio/AI-FileSense-Website-brief-poster.jpg"
     },
     {
-      "id": 1082205398,
-      "name": "stock-alert",
-      "title": "AI StockAlert",
-      "description": "Professional Windows desktop application for real-time multi-stock price monitoring with intelligent alerting and visual configuration management.",
-      "summary": "> AI StockAlert: Stock price monitoring with multi-channel alerts for Windows.",
-      "url": "https://github.com/RCushmaniii/stock-alert",
+      "id": 1140204033,
+      "name": "ai-stock-alert-website",
+      "title": "AI StockAlert Website",
+      "description": " Bilingual (EN/ES) Windows app for WhatsApp stock price alerts. Privacy-focused, no subscriptions, bring your own Finnhub API key.",
+      "summary": "> **Portfolio Demo**: This is a production-quality SaaS marketing website built to demonstrate modern web development practices. AI StockAlert is a fictional product—no software is available for downl",
+      "url": "https://github.com/RCushmaniii/ai-stock-alert-website",
       "demoUrl": "https://aistockalert.app/",
-      "liveUrl": null,
-      "homepage": "https://aistockalert.app/",
+      "liveUrl": "https://aistockalert.app/",
+      "homepage": "https://ai-stock-alert-website.netlify.app/",
       "topics": [
-        "desktop-app",
-        "python",
+        "price-alerts",
         "stock-alerts",
-        "stock-market",
-        "stock-price",
-        "system-tray",
-        "windows",
-        "windows-notifications"
-      ],
-      "categories": [
-        "Tools"
-      ],
-      "tags": [
-        "desktop-app",
-        "python",
-        "stock-alerts",
-        "stock-market",
-        "stock-price",
-        "system-tray",
-        "windows",
-        "windows-notifications",
-        "fintech",
-        "pyqt",
-        "real-time",
-        "notifications",
-        "whatsapp"
-      ],
-      "stack": [
-        "Python",
-        "PyQt6",
-        "Finnhub API",
-        "Twilio/WhatsApp",
-        "Vercel Serverless"
-      ],
-      "status": "Production",
-      "language": "Python",
-      "languages": {
-        "Python": 533555,
-        "PowerShell": 4838,
-        "Inno Setup": 3850,
-        "Batchfile": 240
-      },
-      "stars": 1,
-      "forks": 0,
-      "lastPushed": "2026-02-23T00:23:57Z",
-      "createdAt": "2025-10-23T22:24:30Z",
-      "isFeatured": false,
-      "isArchived": false,
-      "isPrivate": false,
-      "tagline": "Windows desktop app for real-time stock alerts via WhatsApp and Windows notifications",
-      "thumbnail": "https://raw.githubusercontent.com/RCushmaniii/stock-alert/main/public/images/stockalert-thumb.jpg",
-      "problem": "Active traders need to monitor multiple stock positions simultaneously but can't watch screens all day. Existing solutions are too complex, require expensive subscriptions, or lack reliable mobile notifications that actually get seen.",
-      "solution": "A professional Windows desktop application that monitors stock prices in real-time and sends instant alerts via both Windows toast notifications and WhatsApp messages when prices cross user-defined thresholds. It runs silently in the system tray with zero subscription fees.",
-      "keyFeatures": [
-        "Real-time price monitoring for up to 15 stocks with configurable intervals and automatic market hours detection",
-        "Multi-channel alerts: Windows toast notifications with audio plus WhatsApp mobile messages via Twilio",
-        "Smart consolidated notifications — multiple alerts combined into a single notification per check cycle",
-        "Bilingual interface (EN/ES) with multi-currency display toggling between USD and MXN with live exchange rates",
-        "Background service runs silently in system tray — alerts work even when UI is closed, auto-starts with Windows"
-      ],
-      "metrics": [
-        "Sub-2-second alert delivery from price change detection to notification",
-        "15 stocks monitored simultaneously on free tier",
-        "60 API calls/minute rate-limited token bucket for optimal Finnhub usage"
-      ],
-      "priority": 3,
-      "dateCompleted": "2026-02",
-      "slides": [
-        {
-          "src": "https://raw.githubusercontent.com/RCushmaniii/stock-alert/main/public/images/stockalert-01.png",
-          "altEn": "Moving From Market Noise to Actionable Signal — hero slide with laptop and WhatsApp phone",
-          "altEs": "Del ruido del mercado a la senal accionable — diapositiva principal con laptop y WhatsApp"
-        },
-        {
-          "src": "https://raw.githubusercontent.com/RCushmaniii/stock-alert/main/public/images/stockalert-02.png",
-          "altEn": "The Trap of Manual Monitoring — the gap between wanting to know and finding out in time",
-          "altEs": "La trampa del monitoreo manual — la brecha entre querer saber y enterarse a tiempo"
-        },
-        {
-          "src": "https://raw.githubusercontent.com/RCushmaniii/stock-alert/main/public/images/stockalert-03.png",
-          "altEn": "Why Traditional Tools Fail — email alerts buried, push notifications swiped away, terminals cost $20-$200/month",
-          "altEs": "Por que fallan las herramientas tradicionales — emails enterrados, notificaciones ignoradas, terminales de $20-$200/mes"
-        },
-        {
-          "src": "https://raw.githubusercontent.com/RCushmaniii/stock-alert/main/public/images/stockalert-04.png",
-          "altEn": "The Message You Actually Check — WhatsApp alert on phone, the app you check 50+ times a day",
-          "altEs": "El mensaje que realmente revisas — alerta de WhatsApp en tu telefono, la app que revisas mas de 50 veces al dia"
-        },
-        {
-          "src": "https://raw.githubusercontent.com/RCushmaniii/stock-alert/main/public/images/stockalert-05.png",
-          "altEn": "Intelligent Background Monitoring — auto-starts with Windows, filters for market hours, instant delivery",
-          "altEs": "Monitoreo inteligente en segundo plano — inicio automatico con Windows, filtrado por horario de mercado, entrega instantanea"
-        },
-        {
-          "src": "https://raw.githubusercontent.com/RCushmaniii/stock-alert/main/public/images/stockalert-06.png",
-          "altEn": "A Business Model That Respects the User — one-time purchase, bring your own key, no subscription fatigue",
-          "altEs": "Un modelo de negocio que respeta al usuario — compra unica, trae tu propia clave, sin fatiga de suscripcion"
-        },
-        {
-          "src": "https://raw.githubusercontent.com/RCushmaniii/stock-alert/main/public/images/stockalert-07.png",
-          "altEn": "Your Data Stays on Your Device — local first, no cloud accounts, API keys never leave your machine",
-          "altEs": "Tus datos se quedan en tu dispositivo — local primero, sin cuentas en la nube, las claves API nunca salen de tu maquina"
-        },
-        {
-          "src": "https://raw.githubusercontent.com/RCushmaniii/stock-alert/main/public/images/stockalert-08.png",
-          "altEn": "Beyond Code: A Case Study in Product Strategy — pain points mapped to real solutions",
-          "altEs": "Mas alla del codigo: un caso de estudio en estrategia de producto — problemas reales mapeados a soluciones reales"
-        },
-        {
-          "src": "https://raw.githubusercontent.com/RCushmaniii/stock-alert/main/public/images/stockalert-09.png",
-          "altEn": "Trust-Building Commerce — the anti-SaaS model with no forced retention, no account creation, no hidden fees",
-          "altEs": "Comercio basado en confianza — el modelo anti-SaaS sin retencion forzada, sin creacion de cuentas, sin tarifas ocultas"
-        },
-        {
-          "src": "https://raw.githubusercontent.com/RCushmaniii/stock-alert/main/public/images/stockalert-10.png",
-          "altEn": "The Bottom Line — solves a manual problem, leverages WhatsApp, respects the user's wallet and privacy",
-          "altEs": "En resumen — resuelve un problema manual, aprovecha WhatsApp, respeta la billetera y la privacidad del usuario"
-        }
-      ],
-      "videoUrl": "https://raw.githubusercontent.com/RCushmaniii/stock-alert/main/public/video/AI-StockAlert-brief.mp4",
-      "videoPoster": "https://raw.githubusercontent.com/RCushmaniii/stock-alert/main/public/video/AI-StockAlert-brief-poster.jpg"
-    },
-    {
-      "id": 1132479691,
-      "name": "ai-filesense",
-      "title": "AI FileSense",
-      "description": " AI-powered local file organizer for Windows. Scans your documents, uses Claude AI to intelligently classify files, and organizes them into a clean folder structure with full undo support. ",
-      "summary": "AI FileSense uses artificial intelligence to understand and organize your files based on their actual content—not just filenames. Clean up your Desktop in minutes with AI-powered categorization.",
-      "url": "https://github.com/RCushmaniii/ai-filesense",
-      "demoUrl": "https://ai-filesense-website.vercel.app/",
-      "liveUrl": "",
-      "homepage": "https://ai-filesense-website.vercel.app/",
-      "topics": [
-        "ai",
-        "desktop-app",
-        "document-management",
-        "file-manager",
-        "file-organizer",
-        "local-first",
-        "privacy-protection",
-        "rust",
-        "tauri",
-        "typescript",
+        "stock-data",
+        "whatsapp",
+        "windows-alert",
         "windows-app"
       ],
       "categories": [
-        "AI Automation"
+        "Templates"
       ],
       "tags": [
-        "ai",
-        "desktop-app",
-        "document-management",
-        "file-manager",
-        "file-organizer",
-        "local-first",
-        "privacy-protection",
-        "rust",
-        "tauri",
-        "typescript",
+        "price-alerts",
+        "stock-alerts",
+        "stock-data",
+        "whatsapp",
+        "windows-alert",
         "windows-app",
-        "file-organization",
-        "privacy-first",
+        "nextjs",
+        "marketing-website",
         "bilingual",
-        "windows"
+        "i18n",
+        "saas",
+        "static-site",
+        "seo",
+        "tailwind",
+        "playwright",
+        "netlify"
       ],
       "stack": [
-        "Tauri 2",
-        "Rust",
-        "React",
+        "Next.js 16",
         "TypeScript",
-        "Claude Haiku"
+        "Tailwind CSS 4",
+        "next-intl",
+        "Playwright"
       ],
-      "status": "Demo",
+      "status": "Production",
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 298302,
-        "Rust": 239279,
-        "JavaScript": 8353,
-        "CSS": 1968,
-        "HTML": 362
+        "TypeScript": 162097,
+        "CSS": 5636,
+        "JavaScript": 559
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-02-23T00:23:56Z",
-      "createdAt": "2026-01-12T02:37:39Z",
+      "lastPushed": "2026-02-23T00:24:02Z",
+      "createdAt": "2026-01-23T00:50:02Z",
       "isFeatured": false,
       "isArchived": false,
       "isPrivate": false,
-      "tagline": "Local AI file organizer — private, safe, zero config",
-      "thumbnail": "https://raw.githubusercontent.com/RCushmaniii/ai-filesense/main/public/images/ai-filesense-thumb.jpg",
-      "problem": "Most people have thousands of documents scattered across Desktop, Documents, and Downloads with no system — manual sorting takes hours and most quit in minutes. Cloud-based solutions require uploading sensitive files to third-party servers, and existing AI tools demand API keys and terminal commands that lock out non-technical users.",
-      "solution": "A lightweight Windows desktop app (~5 MB) that uses Claude Haiku to read document content and classify files into a consistent 12-folder system without files ever leaving the device. Zero configuration required — the developer provides the API key so users never touch a terminal or API console.",
+      "tagline": "Bilingual SaaS marketing site — 18 routes, e2e tested, zero server cost",
+      "thumbnail": "https://aistockalert.app/images/ai-stockalert-website-thumb.jpg",
+      "problem": "Businesses launching software products hit the same bottleneck: the marketing website. Agency builds cost $10K-50K+ and take weeks. Templates look generic. Bilingual support is always an afterthought — and SEO, structured data, and accessibility get skipped entirely.",
+      "solution": "A production-ready bilingual (EN/ES) marketing website covering the complete surface area of a real SaaS launch — 9 pages across 18 localized routes, with SEO, structured data, animations, dark/light themes, e2e tests, and static deployment to Netlify CDN.",
       "keyFeatures": [
-        "Content-based AI classification — reads PDFs, DOCX, PPTX, TXT, not just filenames",
-        "Full undo support — rollback a single file or entire session, even after app restart",
-        "Confidence-based routing — uncertain files go to Review for human decision, never mis-filed",
-        "Privacy-first — files stay local, only 300-char snippets sent to AI, prompt injection prevention",
-        "Zero config freemium — developer-provided API key, no accounts, no setup, 10 free scans"
+        "9 pages x 2 languages = 18 localized routes with native URL routing via next-intl",
+        "SEO from day one — dynamic sitemap with hreflang alternates, JSON-LD structured data, page-level metadata",
+        "23 Playwright e2e tests covering navigation, language switching, theme toggling, and responsive behavior",
+        "Static site generation — zero server cost, sub-second loads, deployed to Netlify global CDN",
+        "Working contact form (Formspree + react-hook-form + Zod), dark/light themes, scroll-triggered animations"
       ],
       "metrics": [
-        "$0.0015 per file classified",
-        "~5 minutes from install to organized",
-        "12 universal folder categories",
-        "10 free scans per user (backend-enforced)"
+        "9 pages x 2 languages = 18 localized routes",
+        "23 end-to-end Playwright tests",
+        "100% static — $0 server cost",
+        "Sub-second page loads via CDN"
       ],
-      "priority": 3,
+      "priority": 16,
       "dateCompleted": "2026-02",
       "slides": [
         {
-          "src": "https://raw.githubusercontent.com/RCushmaniii/ai-filesense/main/public/images/ai-filesense-02.png",
-          "altEn": "Turn Chaos into Clarity — AI FileSense hero slide",
-          "altEs": "Convierte el Caos en Claridad — diapositiva principal de AI FileSense"
+          "src": "https://aistockalert.app/images/ai-stockalert-website-01.png",
+          "altEn": "AI StockAlert — The Blueprint for High-Performance Bilingual SaaS Marketing",
+          "altEs": "AI StockAlert — El Plan para Marketing SaaS Bilingue de Alto Rendimiento"
         },
         {
-          "src": "https://raw.githubusercontent.com/RCushmaniii/ai-filesense/main/public/images/ai-filesense-03.png",
-          "altEn": "We are drowning in data but starving for order",
-          "altEs": "Nos ahogamos en datos pero nos falta orden"
+          "src": "https://aistockalert.app/images/ai-stockalert-website-02.png",
+          "altEn": "The Launch Bottleneck — agency costs, template trap, skill gap, zero visibility",
+          "altEs": "El Cuello de Botella del Lanzamiento — costos de agencia, trampa de plantillas, brecha de habilidades"
         },
         {
-          "src": "https://raw.githubusercontent.com/RCushmaniii/ai-filesense/main/public/images/ai-filesense-04.png",
-          "altEn": "The Barriers to Organization — manual sorting, inconsistent systems, technical complexity",
-          "altEs": "Las Barreras para la Organizacion — clasificacion manual, sistemas inconsistentes, complejidad tecnica"
+          "src": "https://aistockalert.app/images/ai-stockalert-website-03.png",
+          "altEn": "Not a Wireframe, A Production Reality — live at aistockalert.app",
+          "altEs": "No es un Wireframe, Es Produccion Real — en vivo en aistockalert.app"
         },
         {
-          "src": "https://raw.githubusercontent.com/RCushmaniii/ai-filesense/main/public/images/ai-filesense-05.png",
-          "altEn": "Hours of low-value decision making, ad-hoc folders that fail, AI tools requiring complex APIs",
-          "altEs": "Horas de decisiones de bajo valor, carpetas improvisadas que fallan, herramientas IA que requieren APIs complejas"
+          "src": "https://aistockalert.app/images/ai-stockalert-website-04.png",
+          "altEn": "Internationalization Done Right — native routing, localized pathnames for SEO",
+          "altEs": "Internacionalizacion Bien Hecha — rutas nativas, nombres de ruta localizados para SEO"
         },
         {
-          "src": "https://raw.githubusercontent.com/RCushmaniii/ai-filesense/main/public/images/ai-filesense-06.png",
-          "altEn": "AI FileSense — Just click and go. Zero configuration. Powered by Claude Haiku.",
-          "altEs": "AI FileSense — Solo haz clic. Cero configuracion. Impulsado por Claude Haiku."
+          "src": "https://aistockalert.app/images/ai-stockalert-website-05.png",
+          "altEn": "Built for Speed and Scale — 0 server costs, sub-1s load time, Lighthouse 100",
+          "altEs": "Construido para Velocidad y Escala — 0 costos de servidor, carga sub-1s, Lighthouse 100"
         },
         {
-          "src": "https://raw.githubusercontent.com/RCushmaniii/ai-filesense/main/public/images/ai-filesense-07.png",
-          "altEn": "Classification based on content, not just filenames — deep parsing of PDFs, DOCX, PPTX, TXT",
-          "altEs": "Clasificacion basada en contenido, no solo nombres de archivo — analisis de PDFs, DOCX, PPTX, TXT"
+          "src": "https://aistockalert.app/images/ai-stockalert-website-06.png",
+          "altEn": "Invisible Tech, Visible Results — dynamic metadata, hreflang, JSON-LD structured data",
+          "altEs": "Tecnologia Invisible, Resultados Visibles — metadata dinamica, hreflang, datos estructurados JSON-LD"
         },
         {
-          "src": "https://raw.githubusercontent.com/RCushmaniii/ai-filesense/main/public/images/ai-filesense-09.png",
-          "altEn": "Confidence and Human Control — smart routing for uncertain files",
-          "altEs": "Confianza y Control Humano — enrutamiento inteligente para archivos inciertos"
+          "src": "https://aistockalert.app/images/ai-stockalert-website-07.png",
+          "altEn": "Polished to Perfection — themes, typography, validated forms, responsive and accessible",
+          "altEs": "Pulido a la Perfeccion — temas, tipografia, formularios validados, responsivo y accesible"
         },
         {
-          "src": "https://raw.githubusercontent.com/RCushmaniii/ai-filesense/main/public/images/ai-filesense-10.png",
-          "altEn": "AI for the Non-Technical 99% — no terminal, no API keys, no config",
-          "altEs": "IA para el 99% No Tecnico — sin terminal, sin API keys, sin configuracion"
+          "src": "https://aistockalert.app/images/ai-stockalert-website-08.png",
+          "altEn": "Trust, Verified — 23 Playwright e2e tests before every deploy",
+          "altEs": "Confianza Verificada — 23 pruebas e2e de Playwright antes de cada despliegue"
         },
         {
-          "src": "https://raw.githubusercontent.com/RCushmaniii/ai-filesense/main/public/images/ai-filesense-11.png",
-          "altEn": "Uncompromising Safety — privacy by design, injection prevention, no files ever deleted",
-          "altEs": "Seguridad Sin Compromiso — privacidad por diseno, prevencion de inyeccion, ningun archivo eliminado"
+          "src": "https://aistockalert.app/images/ai-stockalert-website-09.png",
+          "altEn": "Tech Spec to Business Value — bilingual = 2x market, static = 100% uptime",
+          "altEs": "De Especificacion Tecnica a Valor de Negocio — bilingue = 2x mercado, estatico = 100% uptime"
         },
         {
-          "src": "https://raw.githubusercontent.com/RCushmaniii/ai-filesense/main/public/images/ai-filesense-12.png",
-          "altEn": "The Safety Net — full undo, test mode, crash recovery with atomic writes",
-          "altEs": "La Red de Seguridad — deshacer completo, modo prueba, recuperacion de fallos con escrituras atomicas"
-        },
-        {
-          "src": "https://raw.githubusercontent.com/RCushmaniii/ai-filesense/main/public/images/ai-filesense-13.png",
-          "altEn": "From Digital Chaos to Automated Order — full system architecture",
-          "altEs": "Del Caos Digital al Orden Automatizado — arquitectura completa del sistema"
+          "src": "https://aistockalert.app/images/ai-stockalert-website-10.png",
+          "altEn": "Why Owners Love This Blueprint — cost efficiency, speed, future-proof, verified",
+          "altEs": "Por Que los Duenos Aman Este Plan — eficiencia de costos, velocidad, a prueba de futuro, verificado"
         }
       ],
-      "videoUrl": "https://raw.githubusercontent.com/RCushmaniii/ai-filesense/main/public/video/AI_FileSense-brief.mp4",
-      "videoPoster": "https://raw.githubusercontent.com/RCushmaniii/ai-filesense/main/public/video/AI-FileSense-brief-poster.jpg"
-    },
-    {
-      "id": 1128388603,
-      "name": "ai-portfolio",
-      "title": "AI Portfolio",
-      "description": "Static portfolio system that syncs project data from GitHub repos into a filterable showcase — Next.js 15, React 19, TypeScript, Tailwind CSS",
-      "summary": "> A bilingual (EN/ES) static portfolio system that aggregates project data from GitHub repositories and renders a professional, filterable showcase with SEO optimization and WebP images.",
-      "url": "https://github.com/RCushmaniii/ai-portfolio",
-      "demoUrl": "https://ai-portfolio-cushlabs.vercel.app/",
-      "liveUrl": "https://ai-portfolio-cushlabs.vercel.app",
-      "homepage": "https://ai-portfolio-cushlabs.vercel.app/",
-      "topics": [
-        "github-api",
-        "nextjs",
-        "portfolio",
-        "react",
-        "shadcn-ui",
-        "static-site",
-        "tailwindcss",
-        "typescript",
-        "vercel"
-      ],
-      "categories": [
-        "Developer Tools"
-      ],
-      "tags": [
-        "github-api",
-        "nextjs",
-        "portfolio",
-        "react",
-        "shadcn-ui",
-        "static-site",
-        "tailwindcss",
-        "typescript",
-        "vercel",
-        "next-js",
-        "tailwind"
-      ],
-      "stack": [
-        "Next.js 15",
-        "React 19",
-        "TypeScript",
-        "Tailwind CSS",
-        "shadcn/ui",
-        "Zod",
-        "GitHub API",
-        "Vercel"
-      ],
-      "status": null,
-      "language": "TypeScript",
-      "languages": {
-        "TypeScript": 150081,
-        "PowerShell": 3372,
-        "CSS": 1413,
-        "JavaScript": 83
-      },
-      "stars": 0,
-      "forks": 0,
-      "lastPushed": "2026-03-02T09:04:56Z",
-      "createdAt": "2026-01-05T15:06:48Z",
-      "isFeatured": false,
-      "isArchived": false,
-      "isPrivate": false,
-      "tagline": "A static portfolio system that syncs project data from GitHub repos into a filterable showcase",
-      "thumbnail": "https://ai-portfolio-cushlabs.vercel.app/images/portfolio-card.webp",
-      "problem": "Maintaining a portfolio across dozens of GitHub repositories creates a content\nmanagement problem. Project descriptions, tech stacks, and status information\nscatter across READMEs and repo settings with no unified display layer. A\nseparate portfolio site inevitably falls out of sync with the actual work.\n",
-      "solution": null,
-      "keyFeatures": [
-        "21 projects aggregated from GitHub repos into a single filterable interface",
-        "Client-side search, category filtering, and sort — all via shareable URL params",
-        "Zero runtime API calls — fully static, sub-second page loads",
-        "Content managed through PORTFOLIO.md files co-located with source code",
-        "Featured project showcase with curated top-6 selection",
-        "Dark mode with system preference detection"
-      ],
-      "metrics": [],
-      "priority": 4,
-      "dateCompleted": null,
-      "slides": [
-        {
-          "src": "https://ai-portfolio-cushlabs.vercel.app/images/portfolio-01.webp",
-          "altEn": "Portfolio homepage with featured projects section",
-          "altEs": "Pagina principal del portafolio con seccion de proyectos destacados"
-        },
-        {
-          "src": "https://ai-portfolio-cushlabs.vercel.app/images/portfolio-02.webp",
-          "altEn": "Portfolio grid with category filtering",
-          "altEs": "Cuadricula del portafolio con filtrado por categoria"
-        },
-        {
-          "src": "https://ai-portfolio-cushlabs.vercel.app/images/portfolio-03.webp",
-          "altEn": "Portfolio grid in dark mode",
-          "altEs": "Cuadricula del portafolio en modo oscuro"
-        },
-        {
-          "src": "https://ai-portfolio-cushlabs.vercel.app/images/portfolio-04.webp",
-          "altEn": "Project detail page with image carousel",
-          "altEs": "Pagina de detalle del proyecto con carrusel de imagenes"
-        },
-        {
-          "src": "https://ai-portfolio-cushlabs.vercel.app/images/portfolio-05.webp",
-          "altEn": "Project detail page — problem and solution sections",
-          "altEs": "Pagina de detalle — secciones de problema y solucion"
-        },
-        {
-          "src": "https://ai-portfolio-cushlabs.vercel.app/images/portfolio-06.webp",
-          "altEn": "Project detail page — key features and metrics",
-          "altEs": "Pagina de detalle — caracteristicas principales y metricas"
-        },
-        {
-          "src": "https://ai-portfolio-cushlabs.vercel.app/images/portfolio-07.webp",
-          "altEn": "Project detail page with tech stack sidebar",
-          "altEs": "Pagina de detalle con barra lateral de tecnologias"
-        },
-        {
-          "src": "https://ai-portfolio-cushlabs.vercel.app/images/portfolio-08.webp",
-          "altEn": "Featured projects showcase page",
-          "altEs": "Pagina de vitrina de proyectos destacados"
-        },
-        {
-          "src": "https://ai-portfolio-cushlabs.vercel.app/images/portfolio-09.webp",
-          "altEn": "Mobile responsive portfolio grid",
-          "altEs": "Cuadricula responsiva del portafolio en movil"
-        },
-        {
-          "src": "https://ai-portfolio-cushlabs.vercel.app/images/portfolio-10.webp",
-          "altEn": "Spanish language version of the portfolio",
-          "altEs": "Version en espanol del portafolio"
-        }
-      ],
-      "videoUrl": "https://ai-portfolio-cushlabs.vercel.app/video/portfolio-brief.mp4",
-      "videoPoster": "https://ai-portfolio-cushlabs.vercel.app/images/portfolio-brief-poster.webp"
+      "videoUrl": "https://aistockalert.app/videos/AI-StockAlert-brief.mp4",
+      "videoPoster": "https://aistockalert.app/videos/AI-StockAlert-brief-poster.jpg"
     },
     {
       "id": 1157421817,
@@ -1611,7 +2094,7 @@
         "4 chart types: waterfall, stacked bar, line with crossover, comparison table",
         "Full state shareable via URL — zero backend, zero data exposure"
       ],
-      "priority": 4,
+      "priority": 17,
       "dateCompleted": "2026-02",
       "slides": [
         {
@@ -1662,286 +2145,6 @@
       ],
       "videoUrl": "https://comp-plan-simulator.vercel.app/video/comp-plan-sim-brief.mp4",
       "videoPoster": "https://comp-plan-simulator.vercel.app/video/comp-plan-sim-brief-poster.jpg"
-    },
-    {
-      "id": 1140204033,
-      "name": "ai-stock-alert-website",
-      "title": "AI StockAlert Website",
-      "description": " Bilingual (EN/ES) Windows app for WhatsApp stock price alerts. Privacy-focused, no subscriptions, bring your own Finnhub API key.",
-      "summary": "> **Portfolio Demo**: This is a production-quality SaaS marketing website built to demonstrate modern web development practices. AI StockAlert is a fictional product—no software is available for downl",
-      "url": "https://github.com/RCushmaniii/ai-stock-alert-website",
-      "demoUrl": "https://aistockalert.app/",
-      "liveUrl": "https://aistockalert.app/",
-      "homepage": "https://ai-stock-alert-website.netlify.app/",
-      "topics": [
-        "price-alerts",
-        "stock-alerts",
-        "stock-data",
-        "whatsapp",
-        "windows-alert",
-        "windows-app"
-      ],
-      "categories": [
-        "Templates"
-      ],
-      "tags": [
-        "price-alerts",
-        "stock-alerts",
-        "stock-data",
-        "whatsapp",
-        "windows-alert",
-        "windows-app",
-        "nextjs",
-        "marketing-website",
-        "bilingual",
-        "i18n",
-        "saas",
-        "static-site",
-        "seo",
-        "tailwind",
-        "playwright",
-        "netlify"
-      ],
-      "stack": [
-        "Next.js 16",
-        "TypeScript",
-        "Tailwind CSS 4",
-        "next-intl",
-        "Playwright"
-      ],
-      "status": "Production",
-      "language": "TypeScript",
-      "languages": {
-        "TypeScript": 162097,
-        "CSS": 5636,
-        "JavaScript": 559
-      },
-      "stars": 0,
-      "forks": 0,
-      "lastPushed": "2026-02-23T00:24:02Z",
-      "createdAt": "2026-01-23T00:50:02Z",
-      "isFeatured": false,
-      "isArchived": false,
-      "isPrivate": false,
-      "tagline": "Bilingual SaaS marketing site — 18 routes, e2e tested, zero server cost",
-      "thumbnail": "https://aistockalert.app/images/ai-stockalert-website-thumb.jpg",
-      "problem": "Businesses launching software products hit the same bottleneck: the marketing website. Agency builds cost $10K-50K+ and take weeks. Templates look generic. Bilingual support is always an afterthought — and SEO, structured data, and accessibility get skipped entirely.",
-      "solution": "A production-ready bilingual (EN/ES) marketing website covering the complete surface area of a real SaaS launch — 9 pages across 18 localized routes, with SEO, structured data, animations, dark/light themes, e2e tests, and static deployment to Netlify CDN.",
-      "keyFeatures": [
-        "9 pages x 2 languages = 18 localized routes with native URL routing via next-intl",
-        "SEO from day one — dynamic sitemap with hreflang alternates, JSON-LD structured data, page-level metadata",
-        "23 Playwright e2e tests covering navigation, language switching, theme toggling, and responsive behavior",
-        "Static site generation — zero server cost, sub-second loads, deployed to Netlify global CDN",
-        "Working contact form (Formspree + react-hook-form + Zod), dark/light themes, scroll-triggered animations"
-      ],
-      "metrics": [
-        "9 pages x 2 languages = 18 localized routes",
-        "23 end-to-end Playwright tests",
-        "100% static — $0 server cost",
-        "Sub-second page loads via CDN"
-      ],
-      "priority": 4,
-      "dateCompleted": "2026-02",
-      "slides": [
-        {
-          "src": "https://aistockalert.app/images/ai-stockalert-website-01.png",
-          "altEn": "AI StockAlert — The Blueprint for High-Performance Bilingual SaaS Marketing",
-          "altEs": "AI StockAlert — El Plan para Marketing SaaS Bilingue de Alto Rendimiento"
-        },
-        {
-          "src": "https://aistockalert.app/images/ai-stockalert-website-02.png",
-          "altEn": "The Launch Bottleneck — agency costs, template trap, skill gap, zero visibility",
-          "altEs": "El Cuello de Botella del Lanzamiento — costos de agencia, trampa de plantillas, brecha de habilidades"
-        },
-        {
-          "src": "https://aistockalert.app/images/ai-stockalert-website-03.png",
-          "altEn": "Not a Wireframe, A Production Reality — live at aistockalert.app",
-          "altEs": "No es un Wireframe, Es Produccion Real — en vivo en aistockalert.app"
-        },
-        {
-          "src": "https://aistockalert.app/images/ai-stockalert-website-04.png",
-          "altEn": "Internationalization Done Right — native routing, localized pathnames for SEO",
-          "altEs": "Internacionalizacion Bien Hecha — rutas nativas, nombres de ruta localizados para SEO"
-        },
-        {
-          "src": "https://aistockalert.app/images/ai-stockalert-website-05.png",
-          "altEn": "Built for Speed and Scale — 0 server costs, sub-1s load time, Lighthouse 100",
-          "altEs": "Construido para Velocidad y Escala — 0 costos de servidor, carga sub-1s, Lighthouse 100"
-        },
-        {
-          "src": "https://aistockalert.app/images/ai-stockalert-website-06.png",
-          "altEn": "Invisible Tech, Visible Results — dynamic metadata, hreflang, JSON-LD structured data",
-          "altEs": "Tecnologia Invisible, Resultados Visibles — metadata dinamica, hreflang, datos estructurados JSON-LD"
-        },
-        {
-          "src": "https://aistockalert.app/images/ai-stockalert-website-07.png",
-          "altEn": "Polished to Perfection — themes, typography, validated forms, responsive and accessible",
-          "altEs": "Pulido a la Perfeccion — temas, tipografia, formularios validados, responsivo y accesible"
-        },
-        {
-          "src": "https://aistockalert.app/images/ai-stockalert-website-08.png",
-          "altEn": "Trust, Verified — 23 Playwright e2e tests before every deploy",
-          "altEs": "Confianza Verificada — 23 pruebas e2e de Playwright antes de cada despliegue"
-        },
-        {
-          "src": "https://aistockalert.app/images/ai-stockalert-website-09.png",
-          "altEn": "Tech Spec to Business Value — bilingual = 2x market, static = 100% uptime",
-          "altEs": "De Especificacion Tecnica a Valor de Negocio — bilingue = 2x mercado, estatico = 100% uptime"
-        },
-        {
-          "src": "https://aistockalert.app/images/ai-stockalert-website-10.png",
-          "altEn": "Why Owners Love This Blueprint — cost efficiency, speed, future-proof, verified",
-          "altEs": "Por Que los Duenos Aman Este Plan — eficiencia de costos, velocidad, a prueba de futuro, verificado"
-        }
-      ],
-      "videoUrl": "https://aistockalert.app/videos/AI-StockAlert-brief.mp4",
-      "videoPoster": "https://aistockalert.app/videos/AI-StockAlert-brief-poster.jpg"
-    },
-    {
-      "id": 1157375639,
-      "name": "ai-build-vs-outsource",
-      "title": "Build vs. Outsource Decision Framework",
-      "description": "An interactive web-based decision tool that helps operations leaders evaluate whether to build logistics capacity in-house or outsource to a third-party logistics provider (3PL). ",
-      "summary": "> Interactive decision-support tools for operations leaders at growth-stage direct-selling companies. Structured analysis, real-time feedback, board-ready output — no spreadsheets, no guesswork.",
-      "url": "https://github.com/RCushmaniii/ai-build-vs-outsource",
-      "demoUrl": "https://ai-build-vs-outsource.vercel.app",
-      "liveUrl": "https://ai-build-vs-outsource.vercel.app",
-      "homepage": "https://ai-build-vs-outsource.vercel.app",
-      "topics": [
-        "3pl",
-        "build-vs-outsource",
-        "dark-mode",
-        "decision-framework",
-        "framer-motion",
-        "i18n",
-        "logistics",
-        "nextjs",
-        "react",
-        "recharts",
-        "supply-chain",
-        "tailwindcss",
-        "typescript",
-        "vercel",
-        "weighted-scoring"
-      ],
-      "categories": [
-        "Tools"
-      ],
-      "tags": [
-        "3pl",
-        "build-vs-outsource",
-        "dark-mode",
-        "decision-framework",
-        "framer-motion",
-        "i18n",
-        "logistics",
-        "nextjs",
-        "react",
-        "recharts",
-        "supply-chain",
-        "tailwindcss",
-        "typescript",
-        "vercel",
-        "weighted-scoring",
-        "tailwind",
-        "decision-tools",
-        "operations",
-        "bilingual",
-        "data-visualization"
-      ],
-      "stack": [
-        "Next.js 16",
-        "React 19",
-        "Tailwind CSS 4",
-        "Framer Motion",
-        "Recharts"
-      ],
-      "status": "Production",
-      "language": "TypeScript",
-      "languages": {
-        "TypeScript": 163582,
-        "CSS": 5459,
-        "JavaScript": 559
-      },
-      "stars": 0,
-      "forks": 1,
-      "lastPushed": "2026-03-01T20:43:42Z",
-      "createdAt": "2026-02-13T18:42:29Z",
-      "isFeatured": false,
-      "isArchived": false,
-      "isPrivate": false,
-      "tagline": "Interactive decision tools with weighted scoring, cost modeling, and board-ready output",
-      "thumbnail": "https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-thumb.jpg",
-      "problem": "Operations leaders at growth-stage companies face high-stakes build-or-outsource decisions armed with gut feel, incomplete spreadsheets, and circular boardroom arguments. No tool combines structured weighted scoring with real-time cost modeling and shareable, board-ready output.",
-      "solution": "A suite of interactive decision-support tools that replace guesswork with data-driven analysis. A 20-criterion weighted scoring framework evaluates build vs. outsource across five categories, while an operational cost simulator reveals hidden step-function costs — all shareable via URL-encoded state.",
-      "keyFeatures": [
-        "20-criterion weighted scoring across 5 categories (Financial, Operational, Strategic, Control, Risk) with real-time verdict",
-        "Operational Cost Simulator with three-layer cost model — fixed, variable, and step-function costs with break-even analysis",
-        "6 decision presets and 5 growth scenario presets for rapid what-if analysis",
-        "Shareable URL encoding — full tool state in query params for board presentations",
-        "Full EN/ES bilingual support with dark/light theme toggle and print-ready layouts"
-      ],
-      "metrics": [
-        "20 weighted criteria across 5 decision categories",
-        "6 decision presets + 5 growth scenario presets",
-        "Full state shareable via URL — no backend required"
-      ],
-      "priority": 5,
-      "dateCompleted": "2026-02",
-      "slides": [
-        {
-          "src": "https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-01.png",
-          "altEn": "Operations Decision Tools Suite — structured analysis replaces boardroom guesswork",
-          "altEs": "Suite de Herramientas de Decision Operativa — analisis estructurado reemplaza suposiciones en la sala de juntas"
-        },
-        {
-          "src": "https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-02.png",
-          "altEn": "The Problem — gut feel, incomplete spreadsheets, and circular arguments drive million-dollar decisions",
-          "altEs": "El Problema — instinto, hojas de calculo incompletas y argumentos circulares impulsan decisiones millonarias"
-        },
-        {
-          "src": "https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-03.png",
-          "altEn": "20-Criterion Weighted Scoring — five categories with real-time verdict and radar chart",
-          "altEs": "Puntuacion Ponderada de 20 Criterios — cinco categorias con veredicto en tiempo real y grafico radar"
-        },
-        {
-          "src": "https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-04.png",
-          "altEn": "Scenario Presets — Growth Emergency, Control First, Cost Optimizer shift the verdict instantly",
-          "altEs": "Presets de Escenarios — Emergencia de Crecimiento, Control Primero, Optimizador de Costos cambian el veredicto al instante"
-        },
-        {
-          "src": "https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-05.png",
-          "altEn": "Expandable Rationale — each criterion includes industry analysis and scoring guidance",
-          "altEs": "Justificacion Expandible — cada criterio incluye analisis de industria y guia de puntuacion"
-        },
-        {
-          "src": "https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-06.png",
-          "altEn": "Operational Cost Simulator — three-layer cost model with volume slider and cost-per-order curves",
-          "altEs": "Simulador de Costos Operativos — modelo de costos de tres capas con control de volumen y curvas de costo por orden"
-        },
-        {
-          "src": "https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-07.png",
-          "altEn": "Step-Function Costs Revealed — watch cost-per-order jump when new hires and warehouse expansions trigger",
-          "altEs": "Costos Escalonados Revelados — observa el salto del costo por orden cuando se activan nuevas contrataciones y expansiones"
-        },
-        {
-          "src": "https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-08.png",
-          "altEn": "Break-Even and Margin Analysis — utilization gauges and margin visualization with profitability threshold",
-          "altEs": "Analisis de Punto de Equilibrio y Margen — indicadores de utilizacion y visualizacion de margen con umbral de rentabilidad"
-        },
-        {
-          "src": "https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-09.png",
-          "altEn": "Shareable and Board-Ready — full state encoded in URL params, print-optimized layouts for PDFs",
-          "altEs": "Compartible y Listo para Presentar — estado completo codificado en URL, disenos optimizados para impresion PDF"
-        },
-        {
-          "src": "https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-10.png",
-          "altEn": "Technical Architecture — Next.js 16, React 19, Recharts, Framer Motion, bilingual, zero backend",
-          "altEs": "Arquitectura Tecnica — Next.js 16, React 19, Recharts, Framer Motion, bilingue, sin backend"
-        }
-      ],
-      "videoUrl": "https://ai-build-vs-outsource.vercel.app/video/ai-build-vs-outsource-brief.mp4",
-      "videoPoster": "https://ai-build-vs-outsource.vercel.app/video/ai-build-vs-outsource-brief-poster.jpg"
     },
     {
       "id": 1127520844,
@@ -2029,7 +2232,7 @@
         "Six-iteration UX refinement process documented end-to-end",
         "Zero i18n framework dependencies for full bilingual support"
       ],
-      "priority": 5,
+      "priority": 18,
       "dateCompleted": "2025-10",
       "slides": [
         {
@@ -2085,392 +2288,6 @@
       ],
       "videoUrl": "https://marble-does-not-yield.vercel.app/video/marble-does-not-yield-brief.mp4",
       "videoPoster": "https://marble-does-not-yield.vercel.app/video/marble-does-not-yield-brief-poster.jpg"
-    },
-    {
-      "id": 1068781109,
-      "name": "react-vite-tailwind-base",
-      "title": "React Vite Tailwind Base",
-      "description": "React 19 template with ShadCN UI, TypeScript, and Vite 7. Features a fully interactive appointment booking system with calendar integration, real-time data visualizations using Recharts, and 17+ accessible components. Mobile-first design, SEO optimized, and built with modern best practices. Perfect for SaaS apps, dashboards, and booking systems.",
-      "summary": "> A production-ready React template with ShadCN UI, data visualizations, and a complete interactive appointment booking showcase.",
-      "url": "https://github.com/RCushmaniii/react-vite-tailwind-base",
-      "demoUrl": "https://react-vite-tailwind-base.vercel.app/components",
-      "liveUrl": "https://react-vite-tailwind-base.vercel.app",
-      "homepage": "https://react-vite-tailwind-base.vercel.app",
-      "topics": [
-        "react",
-        "shadcn",
-        "shadcn-ui",
-        "tailwindcss",
-        "vite"
-      ],
-      "categories": [
-        "Templates"
-      ],
-      "tags": [
-        "react",
-        "shadcn",
-        "shadcn-ui",
-        "tailwindcss",
-        "vite",
-        "typescript",
-        "tailwind-css",
-        "recharts",
-        "template",
-        "data-visualization",
-        "radix-ui",
-        "msw"
-      ],
-      "stack": [
-        "React 19",
-        "TypeScript 5.8",
-        "Vite 7",
-        "Tailwind CSS 4",
-        "ShadCN UI (Radix)",
-        "Recharts 3",
-        "React Router 7",
-        "MSW"
-      ],
-      "status": "Production",
-      "language": "TypeScript",
-      "languages": {
-        "TypeScript": 121804,
-        "JavaScript": 13119,
-        "HTML": 3826,
-        "CSS": 3819
-      },
-      "stars": 2,
-      "forks": 0,
-      "lastPushed": "2026-02-23T00:24:06Z",
-      "createdAt": "2025-10-02T22:40:01Z",
-      "isFeatured": false,
-      "isArchived": false,
-      "isPrivate": false,
-      "tagline": "Production-ready React 19 starter with ShadCN UI, charts, and a working booking system",
-      "thumbnail": "https://react-vite-tailwind-base.vercel.app/images/react-vite-tailwind-base-thumb.jpg",
-      "problem": "Starting a new React project means 1-2 days of unbillable configuration — TypeScript, Tailwind, component libraries, routing, linting, formatting, path aliases — before writing a single feature. Most starter templates solve this with empty scaffolding that still leaves developers guessing at integration patterns.",
-      "solution": "A production-ready foundation that ships with working features instead of blank pages. Clone, install, dev — and you're looking at a working appointment booking system, data visualization dashboard, and 17+ pre-configured ShadCN components in under 5 minutes. Every dependency is pinned to stable February 2026 versions.",
-      "keyFeatures": [
-        "17+ pre-configured ShadCN UI components — buttons, cards, calendars, dialogs, sliders, tabs, all sharing the same design tokens",
-        "Complete appointment booking flow — service selection, calendar, time slots, pricing, and confirmation built from composable components",
-        "Data visualization dashboard — three Recharts visualizations (area, pie, bar) integrated with responsive containers and Tailwind theming",
-        "Invisible infrastructure — TypeScript strict mode, ESLint, Prettier, and pnpm verify pipeline that fails the build on type errors",
-        "MSW API mocking — full CRUD mock endpoints so frontend development doesn't depend on a backend"
-      ],
-      "metrics": [
-        "Zero-to-running in under 5 minutes with 3 commands",
-        "17+ accessible ShadCN UI components pre-configured",
-        "1-2 days of setup time eliminated per project",
-        "All dependencies pinned to stable Feb 2026 versions"
-      ],
-      "priority": 5,
-      "dateCompleted": "2026-02",
-      "slides": [
-        {
-          "src": "https://react-vite-tailwind-base.vercel.app/images/react-vite-tailwind-base-01.png",
-          "altEn": "Modern React Foundation — React 19 + Vite 7 + ShadCN, stable versions pinned February 2026",
-          "altEs": "Base Moderna de React — React 19 + Vite 7 + ShadCN, versiones estables fijadas en febrero 2026"
-        },
-        {
-          "src": "https://react-vite-tailwind-base.vercel.app/images/react-vite-tailwind-base-02.png",
-          "altEn": "The Startup Ritual — the endless manual setup loop of installing React, configuring Tailwind, fixing class conflicts, and wiring component libraries",
-          "altEs": "El Ritual de Inicio — el ciclo interminable de instalar React, configurar Tailwind, resolver conflictos de clases y conectar librerias de componentes"
-        },
-        {
-          "src": "https://react-vite-tailwind-base.vercel.app/images/react-vite-tailwind-base-03.png",
-          "altEn": "The Hidden Cost of Setup — 1 to 2 days of unbillable time lost per project before writing any business logic",
-          "altEs": "El Costo Oculto de la Configuracion — 1 a 2 dias de tiempo no facturable perdido por proyecto antes de escribir logica de negocio"
-        },
-        {
-          "src": "https://react-vite-tailwind-base.vercel.app/images/react-vite-tailwind-base-04.png",
-          "altEn": "Redefining Ready — the norm is a blank page with dependencies installed, this foundation is production-ready immediately",
-          "altEs": "Redefiniendo Listo — lo normal es una pagina en blanco con dependencias instaladas, esta base esta lista para produccion de inmediato"
-        },
-        {
-          "src": "https://react-vite-tailwind-base.vercel.app/images/react-vite-tailwind-base-05.png",
-          "altEn": "The Stack — React 19, TypeScript 5.8, Vite 7, Tailwind CSS 4, ShadCN UI, React Router 7, no experimental packages",
-          "altEs": "El Stack — React 19, TypeScript 5.8, Vite 7, Tailwind CSS 4, ShadCN UI, React Router 7, sin paquetes experimentales"
-        },
-        {
-          "src": "https://react-vite-tailwind-base.vercel.app/images/react-vite-tailwind-base-06.png",
-          "altEn": "17+ pre-configured components — buttons, cards, calendars, dialogs, sliders, tabs, avatars, badges, and switches, all accessible",
-          "altEs": "17+ componentes preconfigurados — botones, tarjetas, calendarios, dialogos, sliders, tabs, avatares, insignias e interruptores, todos accesibles"
-        },
-        {
-          "src": "https://react-vite-tailwind-base.vercel.app/images/react-vite-tailwind-base-07.png",
-          "altEn": "Reference implementation — a working appointment booking flow with service selection, calendar, time slots, pricing, and confirmation",
-          "altEs": "Implementacion de referencia — flujo de reserva de citas funcional con seleccion de servicio, calendario, horarios, precios y confirmacion"
-        },
-        {
-          "src": "https://react-vite-tailwind-base.vercel.app/images/react-vite-tailwind-base-08.png",
-          "altEn": "The invisible infrastructure — TypeScript strict mode, ESLint, Prettier, pnpm verify, and MSW API mocking in the build pipeline",
-          "altEs": "La infraestructura invisible — TypeScript modo estricto, ESLint, Prettier, pnpm verify y mocking de API con MSW en el pipeline de build"
-        },
-        {
-          "src": "https://react-vite-tailwind-base.vercel.app/images/react-vite-tailwind-base-09.png",
-          "altEn": "Who this is for — freelancers and solo devs, IT departments building internal tools, and agencies needing a consistent starting point",
-          "altEs": "Para quien es — freelancers y desarrolladores independientes, departamentos de TI construyendo herramientas internas y agencias que necesitan un punto de partida consistente"
-        },
-        {
-          "src": "https://react-vite-tailwind-base.vercel.app/images/react-vite-tailwind-base-10.png",
-          "altEn": "The first 5 minutes — git clone, pnpm install, pnpm dev, ready in 300 seconds with a working app and real interactions",
-          "altEs": "Los primeros 5 minutos — git clone, pnpm install, pnpm dev, listo en 300 segundos con una app funcional e interacciones reales"
-        }
-      ],
-      "videoUrl": "https://react-vite-tailwind-base.vercel.app/video/react-vite-tailwind-base-brief.mp4",
-      "videoPoster": "https://react-vite-tailwind-base.vercel.app/video/react-vite-tailwind-base-brief-poster.jpg"
-    },
-    {
-      "id": 1119144204,
-      "name": "nextjs-react-agency-starter",
-      "title": "Next.js Agency Starter",
-      "description": "The Next.js React Agency Starter provides a clean, scalable, and production-ready foundation for building modern agency and portfolio websites using Next.js, React, and TypeScript.",
-      "summary": "> A production-grade starter template for agency, marketing, and portfolio websites — built for real client work, not tutorials.",
-      "url": "https://github.com/RCushmaniii/nextjs-react-agency-starter",
-      "demoUrl": "https://nextjs-react-agency-starter.vercel.app/",
-      "liveUrl": "https://nextjs-react-agency-starter.vercel.app/",
-      "homepage": "https://nextjs-react-agency-starter.vercel.app/",
-      "topics": [
-        "nextjs",
-        "react",
-        "starter-kit",
-        "tailwindcss"
-      ],
-      "categories": [
-        "Templates"
-      ],
-      "tags": [
-        "nextjs",
-        "react",
-        "starter-kit",
-        "tailwindcss",
-        "typescript",
-        "tailwind-css",
-        "mdx",
-        "starter-template",
-        "agency",
-        "resend"
-      ],
-      "stack": [
-        "Next.js 14",
-        "TypeScript",
-        "Tailwind CSS",
-        "MDX",
-        "Resend"
-      ],
-      "status": "Production",
-      "language": "TypeScript",
-      "languages": {
-        "TypeScript": 172649,
-        "MDX": 27835,
-        "CSS": 1030,
-        "JavaScript": 260
-      },
-      "stars": 0,
-      "forks": 0,
-      "lastPushed": "2026-02-23T00:24:04Z",
-      "createdAt": "2025-12-18T20:18:05Z",
-      "isFeatured": false,
-      "isArchived": false,
-      "isPrivate": false,
-      "tagline": "Production-grade agency website template with MDX content and email pipeline",
-      "thumbnail": "https://nextjs-react-agency-starter.vercel.app/images/portfolio/nextjs-react-agency-starter-thumb.jpg",
-      "problem": "Most web starter templates are either over-engineered with opinionated abstractions or under-built with missing production essentials. Agency developers waste time rebuilding the same infrastructure — forms, content management, SEO, dark mode — for every client project.",
-      "solution": "A production-grade Next.js starter that ships with a unified UI system, MDX-powered blog and case study content, and a complete contact form pipeline with Zod validation and Resend email delivery. Clone it, customize the brand, and ship — no placeholders, no TODOs.",
-      "keyFeatures": [
-        "Cohesive UI system with layout primitives (Container, Section, Stack) and reusable components",
-        "MDX content workflow for blogs and case studies — drop in a file, no CMS or database needed",
-        "Production contact pipeline: React Hook Form + Zod validation + Server Actions + Resend email",
-        "SEO-first: auto-generated sitemap/robots.txt, structured data, Open Graph, Twitter Cards",
-        "Dark mode with localStorage persistence, WCAG AA accessibility, 90+ Lighthouse scores"
-      ],
-      "metrics": [
-        "90+ Lighthouse performance scores out of the box",
-        "Zero database dependencies — file-based MDX content",
-        "End-to-end contact form with validation and email delivery"
-      ],
-      "priority": 5,
-      "dateCompleted": "2025-12",
-      "slides": [
-        {
-          "src": "https://nextjs-react-agency-starter.vercel.app/images/portfolio/nextjs-react-agency-starter-01.png",
-          "altEn": "Next.js Agency Starter — production-grade foundation for agency and marketing websites",
-          "altEs": "Next.js Agency Starter — base de produccion para sitios web de agencias y marketing"
-        },
-        {
-          "src": "https://nextjs-react-agency-starter.vercel.app/images/portfolio/nextjs-react-agency-starter-02.png",
-          "altEn": "The Template Trap — over-engineered or under-built, neither saves agency developers time",
-          "altEs": "La Trampa de las Plantillas — sobre-ingeniadas o incompletas, ninguna ahorra tiempo"
-        },
-        {
-          "src": "https://nextjs-react-agency-starter.vercel.app/images/portfolio/nextjs-react-agency-starter-03.png",
-          "altEn": "Cohesive UI System — layout primitives and reusable components with unified design language",
-          "altEs": "Sistema UI Cohesivo — primitivas de layout y componentes reutilizables con lenguaje de diseno unificado"
-        },
-        {
-          "src": "https://nextjs-react-agency-starter.vercel.app/images/portfolio/nextjs-react-agency-starter-04.png",
-          "altEn": "MDX Content Workflow — blog posts and case studies as files, no CMS or database required",
-          "altEs": "Flujo de Contenido MDX — posts de blog y casos de estudio como archivos, sin CMS ni base de datos"
-        },
-        {
-          "src": "https://nextjs-react-agency-starter.vercel.app/images/portfolio/nextjs-react-agency-starter-05.png",
-          "altEn": "Production Contact Pipeline — validation, server actions, and Resend email delivery end-to-end",
-          "altEs": "Pipeline de Contacto en Produccion — validacion, server actions y entrega de email con Resend"
-        },
-        {
-          "src": "https://nextjs-react-agency-starter.vercel.app/images/portfolio/nextjs-react-agency-starter-06.png",
-          "altEn": "SEO Built In — auto-generated sitemap, robots.txt, structured data, Open Graph metadata",
-          "altEs": "SEO Integrado — sitemap automatico, robots.txt, datos estructurados, metadata Open Graph"
-        },
-        {
-          "src": "https://nextjs-react-agency-starter.vercel.app/images/portfolio/nextjs-react-agency-starter-07.png",
-          "altEn": "Dark Mode and Accessibility — WCAG AA compliance, keyboard navigation, focus states",
-          "altEs": "Modo Oscuro y Accesibilidad — cumplimiento WCAG AA, navegacion por teclado, estados de foco"
-        },
-        {
-          "src": "https://nextjs-react-agency-starter.vercel.app/images/portfolio/nextjs-react-agency-starter-08.png",
-          "altEn": "TypeScript Strict Mode — no implicit any, typed props and returns on every component",
-          "altEs": "TypeScript Strict Mode — sin any implicito, props y retornos tipados en cada componente"
-        },
-        {
-          "src": "https://nextjs-react-agency-starter.vercel.app/images/portfolio/nextjs-react-agency-starter-09.png",
-          "altEn": "Clone, Customize, Ship — CSS variables for brand colors, modular components for rapid delivery",
-          "altEs": "Clona, Personaliza, Entrega — variables CSS para colores de marca, componentes modulares"
-        }
-      ],
-      "videoUrl": "https://nextjs-react-agency-starter.vercel.app/video/nextjs-react-agency-starter-brief.mp4",
-      "videoPoster": "https://nextjs-react-agency-starter.vercel.app/video/nextjs-react-agency-starter-brief-poster.jpg"
-    },
-    {
-      "id": 1130115840,
-      "name": "cushlabs",
-      "title": "CushLabs.ai",
-      "description": "AI consulting and software development for SMBs — bilingual (EN/ES) site built with Astro + Tailwind CSS",
-      "summary": "> AI consulting and software development for SMBs. Bilingual (EN/ES) business site with automated GitHub portfolio sync and serverless booking.",
-      "url": "https://github.com/RCushmaniii/cushlabs",
-      "demoUrl": "https://cushlabs.ai",
-      "liveUrl": "https://cushlabs.ai",
-      "homepage": "https://cushlabs.ai",
-      "topics": [
-        "ai-consulting",
-        "astro",
-        "bilingual",
-        "cushlabs",
-        "static-site",
-        "tailwindcss"
-      ],
-      "categories": [
-        "Tools"
-      ],
-      "tags": [
-        "ai-consulting",
-        "astro",
-        "bilingual",
-        "cushlabs",
-        "static-site",
-        "tailwindcss",
-        "tailwind",
-        "typescript",
-        "i18n",
-        "cloudflare-workers",
-        "google-calendar",
-        "github-actions",
-        "seo",
-        "serverless"
-      ],
-      "stack": [
-        "Astro 4.16",
-        "TypeScript 5.9",
-        "Tailwind CSS 3.4",
-        "Cloudflare Workers",
-        "Google Calendar API",
-        "GitHub Actions",
-        "JSON-LD"
-      ],
-      "status": null,
-      "language": "Astro",
-      "languages": {
-        "Astro": 469083,
-        "TypeScript": 113257,
-        "HTML": 61067,
-        "JavaScript": 27043,
-        "CSS": 2655
-      },
-      "stars": 0,
-      "forks": 0,
-      "lastPushed": "2026-03-02T08:56:52Z",
-      "createdAt": "2026-01-08T03:52:43Z",
-      "isFeatured": false,
-      "isArchived": false,
-      "isPrivate": false,
-      "tagline": "Self-maintaining bilingual portfolio with serverless booking and build-time i18n enforcement",
-      "thumbnail": "/images/portfolio/cushlabs-thumb.webp",
-      "problem": "Bilingual marketing sites go stale the moment you stop manually updating them. Portfolio pages die after 3-4 projects because maintenance costs multiply across languages. Third-party booking widgets break design consistency and add monthly fees. And static sites — while fast and cheap — traditionally can't handle dynamic features like scheduling without a full backend.\n",
-      "solution": null,
-      "keyFeatures": [
-        "27+ portfolio projects synced automatically from GitHub with zero manual data entry",
-        "0 KB i18n runtime overhead — 24-line custom system replaces 40KB+ i18next",
-        "6 automated pre-deploy checks enforcing bilingual parity, secret scanning, and build validation",
-        "Sub-second page loads with static HTML edge-cached globally",
-        "$0/month booking system via Cloudflare Workers replacing $8-16/month Calendly",
-        "100% EN/ES content parity enforced at build time — no language drift"
-      ],
-      "metrics": [],
-      "priority": 6,
-      "dateCompleted": null,
-      "slides": [
-        {
-          "src": "/images/portfolio/cushlabs-01.webp",
-          "altEn": "CushLabs.ai",
-          "altEs": "CushLabs.ai"
-        },
-        {
-          "src": "/images/portfolio/cushlabs-02.webp",
-          "altEn": "CushLabs.ai",
-          "altEs": "CushLabs.ai"
-        },
-        {
-          "src": "/images/portfolio/cushlabs-03.webp",
-          "altEn": "CushLabs.ai",
-          "altEs": "CushLabs.ai"
-        },
-        {
-          "src": "/images/portfolio/cushlabs-04.webp",
-          "altEn": "CushLabs.ai",
-          "altEs": "CushLabs.ai"
-        },
-        {
-          "src": "/images/portfolio/cushlabs-05.webp",
-          "altEn": "CushLabs.ai",
-          "altEs": "CushLabs.ai"
-        },
-        {
-          "src": "/images/portfolio/cushlabs-06.webp",
-          "altEn": "CushLabs.ai",
-          "altEs": "CushLabs.ai"
-        },
-        {
-          "src": "/images/portfolio/cushlabs-07.webp",
-          "altEn": "CushLabs.ai",
-          "altEs": "CushLabs.ai"
-        },
-        {
-          "src": "/images/portfolio/cushlabs-08.webp",
-          "altEn": "CushLabs.ai",
-          "altEs": "CushLabs.ai"
-        },
-        {
-          "src": "/images/portfolio/cushlabs-09.webp",
-          "altEn": "CushLabs.ai",
-          "altEs": "CushLabs.ai"
-        },
-        {
-          "src": "/images/portfolio/cushlabs-10.webp",
-          "altEn": "CushLabs.ai",
-          "altEs": "CushLabs.ai"
-        }
-      ],
-      "videoUrl": "/images/portfolio/cushlabs-brief.mp4",
-      "videoPoster": "/images/portfolio/cushlabs-brief-poster.webp"
     },
     {
       "id": 1159724330,
@@ -2532,7 +2349,7 @@
       "solution": null,
       "keyFeatures": [],
       "metrics": [],
-      "priority": 7,
+      "priority": 19,
       "dateCompleted": null,
       "slides": [
         {
@@ -2620,7 +2437,7 @@
       "solution": null,
       "keyFeatures": [],
       "metrics": [],
-      "priority": 7,
+      "priority": 20,
       "dateCompleted": null,
       "slides": [
         {
@@ -2663,140 +2480,327 @@
       "videoPoster": null
     },
     {
-      "id": 953305892,
-      "name": "ny-eng",
-      "title": "Ny Eng",
-      "description": "Professional bilingual (EN/ES) business English coaching platform built with Astro, featuring interactive assessments, lead generation, content management, and booking integration. Optimized for SEO, performance, and conversion.",
-      "summary": "Professional bilingual (EN/ES) business English coaching platform built with Astro, featuring interactive assessments, lead generation, content management, and booking integration. Optimized for SEO, performance, and conversion.",
-      "url": "https://github.com/RCushmaniii/ny-eng",
-      "demoUrl": "https://nyenglishteacher.com/",
-      "liveUrl": null,
-      "homepage": "https://nyenglishteacher.com/",
+      "id": 1119144204,
+      "name": "nextjs-react-agency-starter",
+      "title": "Next.js Agency Starter",
+      "description": "The Next.js React Agency Starter provides a clean, scalable, and production-ready foundation for building modern agency and portfolio websites using Next.js, React, and TypeScript.",
+      "summary": "> A production-grade starter template for agency, marketing, and portfolio websites — built for real client work, not tutorials.",
+      "url": "https://github.com/RCushmaniii/nextjs-react-agency-starter",
+      "demoUrl": "https://nextjs-react-agency-starter.vercel.app/",
+      "liveUrl": "https://nextjs-react-agency-starter.vercel.app/",
+      "homepage": "https://nextjs-react-agency-starter.vercel.app/",
       "topics": [
-        "astro",
-        "bilingual",
-        "business-english",
-        "content-management-system",
-        "conversion-optimization",
-        "i18n",
-        "lead-generation",
-        "quiz-system",
+        "nextjs",
         "react",
-        "seo-optimization",
-        "supabase",
-        "tailwindcss",
-        "typescript"
+        "starter-kit",
+        "tailwindcss"
       ],
-      "categories": [],
+      "categories": [
+        "Templates"
+      ],
       "tags": [
-        "astro",
-        "bilingual",
-        "business-english",
-        "content-management-system",
-        "conversion-optimization",
-        "i18n",
-        "lead-generation",
-        "quiz-system",
+        "nextjs",
         "react",
-        "seo-optimization",
-        "supabase",
+        "starter-kit",
         "tailwindcss",
-        "typescript"
+        "typescript",
+        "tailwind-css",
+        "mdx",
+        "starter-template",
+        "agency",
+        "resend"
       ],
-      "stack": [],
-      "status": null,
-      "language": "Astro",
+      "stack": [
+        "Next.js 14",
+        "TypeScript",
+        "Tailwind CSS",
+        "MDX",
+        "Resend"
+      ],
+      "status": "Production",
+      "language": "TypeScript",
       "languages": {
-        "Astro": 1177317,
-        "HTML": 837214,
-        "TypeScript": 648826,
-        "JavaScript": 351713,
-        "CSS": 40569,
-        "Python": 29891,
-        "MDX": 23164,
-        "PLpgSQL": 4239
+        "TypeScript": 172649,
+        "MDX": 27835,
+        "CSS": 1030,
+        "JavaScript": 260
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-03-02T02:03:40Z",
-      "createdAt": "2025-03-23T03:27:14Z",
+      "lastPushed": "2026-02-23T00:24:04Z",
+      "createdAt": "2025-12-18T20:18:05Z",
       "isFeatured": false,
       "isArchived": false,
-      "isPrivate": true,
-      "tagline": null,
+      "isPrivate": false,
+      "tagline": "Production-grade agency website template with MDX content and email pipeline",
+      "thumbnail": "https://nextjs-react-agency-starter.vercel.app/images/portfolio/nextjs-react-agency-starter-thumb.jpg",
+      "problem": "Most web starter templates are either over-engineered with opinionated abstractions or under-built with missing production essentials. Agency developers waste time rebuilding the same infrastructure — forms, content management, SEO, dark mode — for every client project.",
+      "solution": "A production-grade Next.js starter that ships with a unified UI system, MDX-powered blog and case study content, and a complete contact form pipeline with Zod validation and Resend email delivery. Clone it, customize the brand, and ship — no placeholders, no TODOs.",
+      "keyFeatures": [
+        "Cohesive UI system with layout primitives (Container, Section, Stack) and reusable components",
+        "MDX content workflow for blogs and case studies — drop in a file, no CMS or database needed",
+        "Production contact pipeline: React Hook Form + Zod validation + Server Actions + Resend email",
+        "SEO-first: auto-generated sitemap/robots.txt, structured data, Open Graph, Twitter Cards",
+        "Dark mode with localStorage persistence, WCAG AA accessibility, 90+ Lighthouse scores"
+      ],
+      "metrics": [
+        "90+ Lighthouse performance scores out of the box",
+        "Zero database dependencies — file-based MDX content",
+        "End-to-end contact form with validation and email delivery"
+      ],
+      "priority": 21,
+      "dateCompleted": "2025-12",
+      "slides": [
+        {
+          "src": "https://nextjs-react-agency-starter.vercel.app/images/portfolio/nextjs-react-agency-starter-01.png",
+          "altEn": "Next.js Agency Starter — production-grade foundation for agency and marketing websites",
+          "altEs": "Next.js Agency Starter — base de produccion para sitios web de agencias y marketing"
+        },
+        {
+          "src": "https://nextjs-react-agency-starter.vercel.app/images/portfolio/nextjs-react-agency-starter-02.png",
+          "altEn": "The Template Trap — over-engineered or under-built, neither saves agency developers time",
+          "altEs": "La Trampa de las Plantillas — sobre-ingeniadas o incompletas, ninguna ahorra tiempo"
+        },
+        {
+          "src": "https://nextjs-react-agency-starter.vercel.app/images/portfolio/nextjs-react-agency-starter-03.png",
+          "altEn": "Cohesive UI System — layout primitives and reusable components with unified design language",
+          "altEs": "Sistema UI Cohesivo — primitivas de layout y componentes reutilizables con lenguaje de diseno unificado"
+        },
+        {
+          "src": "https://nextjs-react-agency-starter.vercel.app/images/portfolio/nextjs-react-agency-starter-04.png",
+          "altEn": "MDX Content Workflow — blog posts and case studies as files, no CMS or database required",
+          "altEs": "Flujo de Contenido MDX — posts de blog y casos de estudio como archivos, sin CMS ni base de datos"
+        },
+        {
+          "src": "https://nextjs-react-agency-starter.vercel.app/images/portfolio/nextjs-react-agency-starter-05.png",
+          "altEn": "Production Contact Pipeline — validation, server actions, and Resend email delivery end-to-end",
+          "altEs": "Pipeline de Contacto en Produccion — validacion, server actions y entrega de email con Resend"
+        },
+        {
+          "src": "https://nextjs-react-agency-starter.vercel.app/images/portfolio/nextjs-react-agency-starter-06.png",
+          "altEn": "SEO Built In — auto-generated sitemap, robots.txt, structured data, Open Graph metadata",
+          "altEs": "SEO Integrado — sitemap automatico, robots.txt, datos estructurados, metadata Open Graph"
+        },
+        {
+          "src": "https://nextjs-react-agency-starter.vercel.app/images/portfolio/nextjs-react-agency-starter-07.png",
+          "altEn": "Dark Mode and Accessibility — WCAG AA compliance, keyboard navigation, focus states",
+          "altEs": "Modo Oscuro y Accesibilidad — cumplimiento WCAG AA, navegacion por teclado, estados de foco"
+        },
+        {
+          "src": "https://nextjs-react-agency-starter.vercel.app/images/portfolio/nextjs-react-agency-starter-08.png",
+          "altEn": "TypeScript Strict Mode — no implicit any, typed props and returns on every component",
+          "altEs": "TypeScript Strict Mode — sin any implicito, props y retornos tipados en cada componente"
+        },
+        {
+          "src": "https://nextjs-react-agency-starter.vercel.app/images/portfolio/nextjs-react-agency-starter-09.png",
+          "altEn": "Clone, Customize, Ship — CSS variables for brand colors, modular components for rapid delivery",
+          "altEs": "Clona, Personaliza, Entrega — variables CSS para colores de marca, componentes modulares"
+        }
+      ],
+      "videoUrl": "https://nextjs-react-agency-starter.vercel.app/video/nextjs-react-agency-starter-brief.mp4",
+      "videoPoster": "https://nextjs-react-agency-starter.vercel.app/video/nextjs-react-agency-starter-brief-poster.jpg"
+    },
+    {
+      "id": 1170472302,
+      "name": "ai-personal-data-eraser",
+      "title": "ai-eraser — AI-Powered Data Removal Engine",
+      "description": "AI-powered personal data removal engine — find, erase, and monitor your PII across 200+ data brokers with autonomous agents and legal compliance workflows.",
+      "summary": "> AI-powered personal data removal engine — automatically discovers and removes your information from data broker websites.",
+      "url": "https://github.com/RCushmaniii/ai-personal-data-eraser",
+      "demoUrl": null,
+      "liveUrl": "",
+      "homepage": null,
+      "topics": [],
+      "categories": [
+        "AI Automation"
+      ],
+      "tags": [
+        "ai-automation",
+        "privacy",
+        "data-brokers",
+        "ccpa",
+        "gdpr",
+        "encryption",
+        "typescript",
+        "bun"
+      ],
+      "stack": [
+        "Bun",
+        "TypeScript",
+        "Anthropic Claude API",
+        "SQLite (WAL mode)",
+        "XState v5",
+        "libsodium (XSalsa20-Poly1305 + Argon2id)",
+        "React",
+        "Tailwind CSS v4",
+        "Nodemailer + MJML",
+        "Zod",
+        "Commander + Clack"
+      ],
+      "status": null,
+      "language": "TypeScript",
+      "languages": {
+        "TypeScript": 139128,
+        "HTML": 375,
+        "CSS": 23
+      },
+      "stars": 0,
+      "forks": 0,
+      "lastPushed": "2026-03-02T07:52:42Z",
+      "createdAt": "2026-03-02T06:48:04Z",
+      "isFeatured": false,
+      "isArchived": false,
+      "isPrivate": false,
+      "tagline": "Automated personal data removal from data brokers using Claude AI and encrypted PII vault",
       "thumbnail": null,
-      "problem": null,
+      "problem": "Data brokers collect and sell personal information across 100+ sites, each with different\nopt-out procedures. Manual removal is a recurring, error-prone burden that takes hours per\nbroker and requires tracking follow-ups across legal frameworks. Commercial services charge\n$100-200/year and still miss brokers or fail to monitor for re-appearances.\n",
       "solution": null,
-      "keyFeatures": [],
+      "keyFeatures": [
+        "Agent-based architecture automates the full removal lifecycle end-to-end",
+        "6 broker playbooks defined with extensible YAML schema for rapid expansion",
+        "CCPA/GDPR legal request generation with proper statutory references",
+        "XSalsa20-Poly1305 + Argon2id encryption protects PII at rest",
+        "27 passing tests covering encryption, state machine, registry, and schemas"
+      ],
       "metrics": [],
-      "priority": 99,
+      "priority": 22,
       "dateCompleted": null,
       "slides": [],
       "videoUrl": null,
       "videoPoster": null
     },
     {
-      "id": 1062817398,
-      "name": "ai-scrabble-practice",
-      "title": "Ai Scrabble Practice",
-      "description": "A practice tool for Scrabble players built with React, Vite, Tailwind, and pnpm. Features include word scoring, word validation via free dictionary APIs, and a rack solver to generate playable words.",
-      "summary": "A practice tool for Scrabble players built with React, Vite, Tailwind, and pnpm. Features include word scoring, word validation via free dictionary APIs, and a rack solver to generate playable words.",
-      "url": "https://github.com/RCushmaniii/ai-scrabble-practice",
-      "demoUrl": "https://scrabble-mini.netlify.app/",
-      "liveUrl": null,
-      "homepage": "https://scrabble-mini.netlify.app/",
+      "id": 1068781109,
+      "name": "react-vite-tailwind-base",
+      "title": "React Vite Tailwind Base",
+      "description": "React 19 template with ShadCN UI, TypeScript, and Vite 7. Features a fully interactive appointment booking system with calendar integration, real-time data visualizations using Recharts, and 17+ accessible components. Mobile-first design, SEO optimized, and built with modern best practices. Perfect for SaaS apps, dashboards, and booking systems.",
+      "summary": "> A production-ready React template with ShadCN UI, data visualizations, and a complete interactive appointment booking showcase.",
+      "url": "https://github.com/RCushmaniii/react-vite-tailwind-base",
+      "demoUrl": "https://react-vite-tailwind-base.vercel.app/components",
+      "liveUrl": "https://react-vite-tailwind-base.vercel.app",
+      "homepage": "https://react-vite-tailwind-base.vercel.app",
       "topics": [
-        "anagram-solver",
-        "free-game",
-        "openai-api",
         "react",
-        "scrabble",
-        "scrabble-game",
-        "scrabble-word-finder",
+        "shadcn",
+        "shadcn-ui",
         "tailwindcss",
-        "typescipt",
         "vite"
       ],
-      "categories": [],
+      "categories": [
+        "Templates"
+      ],
       "tags": [
-        "anagram-solver",
-        "free-game",
-        "openai-api",
         "react",
-        "scrabble",
-        "scrabble-game",
-        "scrabble-word-finder",
+        "shadcn",
+        "shadcn-ui",
         "tailwindcss",
-        "typescipt",
-        "vite"
+        "vite",
+        "typescript",
+        "tailwind-css",
+        "recharts",
+        "template",
+        "data-visualization",
+        "radix-ui",
+        "msw"
       ],
-      "stack": [],
-      "status": null,
+      "stack": [
+        "React 19",
+        "TypeScript 5.8",
+        "Vite 7",
+        "Tailwind CSS 4",
+        "ShadCN UI (Radix)",
+        "Recharts 3",
+        "React Router 7",
+        "MSW"
+      ],
+      "status": "Production",
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 188238,
-        "JavaScript": 13705,
-        "CSS": 6947,
-        "HTML": 1011
+        "TypeScript": 121804,
+        "JavaScript": 13119,
+        "HTML": 3826,
+        "CSS": 3819
       },
-      "stars": 1,
+      "stars": 2,
       "forks": 0,
-      "lastPushed": "2026-02-23T00:24:12Z",
-      "createdAt": "2025-09-23T19:15:28Z",
+      "lastPushed": "2026-02-23T00:24:06Z",
+      "createdAt": "2025-10-02T22:40:01Z",
       "isFeatured": false,
       "isArchived": false,
-      "isPrivate": true,
-      "tagline": null,
-      "thumbnail": null,
-      "problem": null,
-      "solution": null,
-      "keyFeatures": [],
-      "metrics": [],
-      "priority": 99,
-      "dateCompleted": null,
-      "slides": [],
-      "videoUrl": null,
-      "videoPoster": null
+      "isPrivate": false,
+      "tagline": "Production-ready React 19 starter with ShadCN UI, charts, and a working booking system",
+      "thumbnail": "https://react-vite-tailwind-base.vercel.app/images/react-vite-tailwind-base-thumb.jpg",
+      "problem": "Starting a new React project means 1-2 days of unbillable configuration — TypeScript, Tailwind, component libraries, routing, linting, formatting, path aliases — before writing a single feature. Most starter templates solve this with empty scaffolding that still leaves developers guessing at integration patterns.",
+      "solution": "A production-ready foundation that ships with working features instead of blank pages. Clone, install, dev — and you're looking at a working appointment booking system, data visualization dashboard, and 17+ pre-configured ShadCN components in under 5 minutes. Every dependency is pinned to stable February 2026 versions.",
+      "keyFeatures": [
+        "17+ pre-configured ShadCN UI components — buttons, cards, calendars, dialogs, sliders, tabs, all sharing the same design tokens",
+        "Complete appointment booking flow — service selection, calendar, time slots, pricing, and confirmation built from composable components",
+        "Data visualization dashboard — three Recharts visualizations (area, pie, bar) integrated with responsive containers and Tailwind theming",
+        "Invisible infrastructure — TypeScript strict mode, ESLint, Prettier, and pnpm verify pipeline that fails the build on type errors",
+        "MSW API mocking — full CRUD mock endpoints so frontend development doesn't depend on a backend"
+      ],
+      "metrics": [
+        "Zero-to-running in under 5 minutes with 3 commands",
+        "17+ accessible ShadCN UI components pre-configured",
+        "1-2 days of setup time eliminated per project",
+        "All dependencies pinned to stable Feb 2026 versions"
+      ],
+      "priority": 23,
+      "dateCompleted": "2026-02",
+      "slides": [
+        {
+          "src": "https://react-vite-tailwind-base.vercel.app/images/react-vite-tailwind-base-01.png",
+          "altEn": "Modern React Foundation — React 19 + Vite 7 + ShadCN, stable versions pinned February 2026",
+          "altEs": "Base Moderna de React — React 19 + Vite 7 + ShadCN, versiones estables fijadas en febrero 2026"
+        },
+        {
+          "src": "https://react-vite-tailwind-base.vercel.app/images/react-vite-tailwind-base-02.png",
+          "altEn": "The Startup Ritual — the endless manual setup loop of installing React, configuring Tailwind, fixing class conflicts, and wiring component libraries",
+          "altEs": "El Ritual de Inicio — el ciclo interminable de instalar React, configurar Tailwind, resolver conflictos de clases y conectar librerias de componentes"
+        },
+        {
+          "src": "https://react-vite-tailwind-base.vercel.app/images/react-vite-tailwind-base-03.png",
+          "altEn": "The Hidden Cost of Setup — 1 to 2 days of unbillable time lost per project before writing any business logic",
+          "altEs": "El Costo Oculto de la Configuracion — 1 a 2 dias de tiempo no facturable perdido por proyecto antes de escribir logica de negocio"
+        },
+        {
+          "src": "https://react-vite-tailwind-base.vercel.app/images/react-vite-tailwind-base-04.png",
+          "altEn": "Redefining Ready — the norm is a blank page with dependencies installed, this foundation is production-ready immediately",
+          "altEs": "Redefiniendo Listo — lo normal es una pagina en blanco con dependencias instaladas, esta base esta lista para produccion de inmediato"
+        },
+        {
+          "src": "https://react-vite-tailwind-base.vercel.app/images/react-vite-tailwind-base-05.png",
+          "altEn": "The Stack — React 19, TypeScript 5.8, Vite 7, Tailwind CSS 4, ShadCN UI, React Router 7, no experimental packages",
+          "altEs": "El Stack — React 19, TypeScript 5.8, Vite 7, Tailwind CSS 4, ShadCN UI, React Router 7, sin paquetes experimentales"
+        },
+        {
+          "src": "https://react-vite-tailwind-base.vercel.app/images/react-vite-tailwind-base-06.png",
+          "altEn": "17+ pre-configured components — buttons, cards, calendars, dialogs, sliders, tabs, avatars, badges, and switches, all accessible",
+          "altEs": "17+ componentes preconfigurados — botones, tarjetas, calendarios, dialogos, sliders, tabs, avatares, insignias e interruptores, todos accesibles"
+        },
+        {
+          "src": "https://react-vite-tailwind-base.vercel.app/images/react-vite-tailwind-base-07.png",
+          "altEn": "Reference implementation — a working appointment booking flow with service selection, calendar, time slots, pricing, and confirmation",
+          "altEs": "Implementacion de referencia — flujo de reserva de citas funcional con seleccion de servicio, calendario, horarios, precios y confirmacion"
+        },
+        {
+          "src": "https://react-vite-tailwind-base.vercel.app/images/react-vite-tailwind-base-08.png",
+          "altEn": "The invisible infrastructure — TypeScript strict mode, ESLint, Prettier, pnpm verify, and MSW API mocking in the build pipeline",
+          "altEs": "La infraestructura invisible — TypeScript modo estricto, ESLint, Prettier, pnpm verify y mocking de API con MSW en el pipeline de build"
+        },
+        {
+          "src": "https://react-vite-tailwind-base.vercel.app/images/react-vite-tailwind-base-09.png",
+          "altEn": "Who this is for — freelancers and solo devs, IT departments building internal tools, and agencies needing a consistent starting point",
+          "altEs": "Para quien es — freelancers y desarrolladores independientes, departamentos de TI construyendo herramientas internas y agencias que necesitan un punto de partida consistente"
+        },
+        {
+          "src": "https://react-vite-tailwind-base.vercel.app/images/react-vite-tailwind-base-10.png",
+          "altEn": "The first 5 minutes — git clone, pnpm install, pnpm dev, ready in 300 seconds with a working app and real interactions",
+          "altEs": "Los primeros 5 minutos — git clone, pnpm install, pnpm dev, listo en 300 segundos con una app funcional e interacciones reales"
+        }
+      ],
+      "videoUrl": "https://react-vite-tailwind-base.vercel.app/video/react-vite-tailwind-base-brief.mp4",
+      "videoPoster": "https://react-vite-tailwind-base.vercel.app/video/react-vite-tailwind-base-brief-poster.jpg"
     },
     {
       "id": 1027259786,
