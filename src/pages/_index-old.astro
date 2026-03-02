@@ -1,0 +1,65 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/home/Hero.astro";
+import VideoSection from "../components/home/VideoSection.astro";
+import ProblemSolution from "../components/home/ProblemSolution.astro";
+import ServicesOverview from "../components/home/ServicesOverview.astro";
+import HowItWorks from "../components/home/HowItWorks.astro";
+import Results from "../components/home/Results.astro";
+import WhyCushLabs from "../components/home/WhyCushLabs.astro";
+import FeaturedWorkSection from "../components/FeaturedWorkSection.astro";
+import TestimonialsSection from "../components/TestimonialsSection.astro";
+import FAQ from "../components/home/FAQ.astro";
+import CTASection from "../components/home/CTASection.astro";
+
+const locale = (Astro.currentLocale === "es" ? "es" : "en") as "en" | "es";
+
+const meta = {
+  en: {
+    title: "CushLabs.ai — AI Automation for Small Business",
+    description: "I help small businesses automate support, streamline operations, and reclaim 20+ hours a week with practical AI solutions. Bilingual service for US & Mexico.",
+  },
+  es: {
+    title: "CushLabs.ai — Automatización con IA para Pequeños Negocios",
+    description: "Ayudo a pequeños negocios a automatizar soporte, optimizar operaciones y recuperar 20+ horas a la semana con soluciones de IA prácticas. Servicio bilingüe para EE.UU. y México.",
+  },
+};
+---
+
+<BaseLayout title={meta[locale].title} description={meta[locale].description}>
+  <!-- Section 1: Hero -->
+  <Hero locale={locale} />
+
+  <!-- Gradient fade: Hero → Video -->
+  <div class="h-16 md:h-24 bg-gradient-to-b from-white to-gray-50/80 dark:from-black dark:to-black"></div>
+
+  <!-- Section 2: Video Explainer -->
+  <VideoSection locale={locale} />
+
+  <!-- Section 3: Problem → Solution Bridge -->
+  <ProblemSolution locale={locale} />
+
+  <!-- Section 4: Services Overview (hidden until content is finalized) -->
+  <!-- <ServicesOverview locale={locale} /> -->
+
+  <!-- Section 5: How It Works -->
+  <HowItWorks locale={locale} />
+
+  <!-- Section 6: Results (hidden until real metrics available) -->
+  <!-- <Results locale={locale} /> -->
+
+  <!-- Section 7: Why CushLabs -->
+  <WhyCushLabs locale={locale} />
+
+  <!-- Section 8: Recent Work -->
+  <FeaturedWorkSection locale={locale} />
+
+  <!-- Section 9: Testimonials (hidden until real testimonials available) -->
+  <!-- <TestimonialsSection locale={locale} /> -->
+
+  <!-- Section 10: FAQ -->
+  <FAQ locale={locale} />
+
+  <!-- Section 11: Final CTA -->
+  <CTASection locale={locale} />
+</BaseLayout>
