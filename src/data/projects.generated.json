@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-02T08:05:44.709Z",
+  "generatedAt": "2026-03-02T08:42:11.586Z",
   "count": 36,
   "projects": [
     {
@@ -2225,14 +2225,14 @@
       "language": "Astro",
       "languages": {
         "Astro": 468508,
-        "TypeScript": 112917,
+        "TypeScript": 113257,
         "HTML": 61067,
         "JavaScript": 27043,
         "CSS": 2655
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-03-02T07:00:05Z",
+      "lastPushed": "2026-03-02T08:06:37Z",
       "createdAt": "2026-01-08T03:52:43Z",
       "isFeatured": false,
       "isArchived": false,
@@ -2493,12 +2493,12 @@
     {
       "id": 1164355422,
       "name": "cushlabs-ai-voice-agent",
-      "title": "Cushlabs Ai Voice Agent",
+      "title": "AI Voice Agent Platform",
       "description": "Production-ready AI voice agents for lead qualification, appointment booking, and customer conversations — powered by Vapi, Claude, and Google Calendar",
       "summary": "Production-ready AI voice agents for lead qualification, appointment booking, and customer conversations — powered by Vapi, Claude, and Google Calendar",
       "url": "https://github.com/RCushmaniii/cushlabs-ai-voice-agent",
       "demoUrl": "https://voice.cushlabs.ai",
-      "liveUrl": null,
+      "liveUrl": "https://voice.cushlabs.ai",
       "homepage": "https://voice.cushlabs.ai",
       "topics": [
         "ai",
@@ -2513,45 +2513,79 @@
         "vapi",
         "voice-agent"
       ],
-      "categories": [],
-      "tags": [
-        "ai",
-        "appointment-booking",
-        "claude",
-        "conversational-ai",
-        "cushlabs",
-        "express",
-        "google-calendar",
-        "lead-qualification",
-        "nodejs",
-        "vapi",
-        "voice-agent"
+      "categories": [
+        "AI Automation"
       ],
-      "stack": [],
-      "status": null,
+      "tags": [
+        "voice-ai",
+        "vapi",
+        "llm",
+        "real-time",
+        "lead-qualification",
+        "appointment-booking",
+        "customer-support",
+        "webhooks"
+      ],
+      "stack": [
+        "Vapi",
+        "Claude Sonnet",
+        "Groq Llama 3.1",
+        "Deepgram Nova-2",
+        "Cartesia",
+        "Express.js",
+        "Neon PostgreSQL",
+        "Redis",
+        "Google Calendar API",
+        "Render"
+      ],
+      "status": "Production",
       "language": "HTML",
       "languages": {
-        "HTML": 307700,
-        "JavaScript": 62381
+        "HTML": 332181,
+        "JavaScript": 69518,
+        "CSS": 6849
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-03-02T08:04:10Z",
+      "lastPushed": "2026-03-02T08:39:57Z",
       "createdAt": "2026-02-23T01:31:09Z",
-      "isFeatured": false,
+      "isFeatured": true,
       "isArchived": false,
       "isPrivate": true,
-      "tagline": null,
-      "thumbnail": null,
-      "problem": null,
-      "solution": null,
-      "keyFeatures": [],
-      "metrics": [],
-      "priority": 99,
-      "dateCompleted": null,
-      "slides": [],
-      "videoUrl": null,
-      "videoPoster": null
+      "tagline": "Production voice AI agents that qualify leads, book appointments, and handle support calls 24/7",
+      "thumbnail": "https://raw.githubusercontent.com/RCushmaniii/cushlabs-ai-voice-agent/main/public/portfolio/voice-cushlabs-thumb.webp",
+      "problem": "Businesses lose leads to unanswered calls, voicemail black holes, and hold-time abandonment. Hiring receptionists is expensive and still leaves gaps outside business hours. Existing IVR systems frustrate callers with rigid menu trees that never actually solve the problem.",
+      "solution": "Production AI voice agents that handle inbound calls with natural conversation, qualify leads in real time, book appointments directly into Google Calendar, and answer FAQs — 24/7 with sub-500ms response times and zero hold times.",
+      "keyFeatures": [
+        "3 production demo agents: Clara (lead qualification), James (appointment booking), Sophia (med spa front desk)",
+        "Real-time Google Calendar integration — checks availability and books confirmed appointments mid-call",
+        "Sub-500ms voice response via Vapi WebRTC with Deepgram STT and Cartesia TTS",
+        "Webhook-driven function calling for calendar, database, and CRM operations during live calls",
+        "Session state via Redis for multi-turn conversation context across function calls",
+        "Lead data persisted to Neon PostgreSQL with full call metadata"
+      ],
+      "metrics": [
+        "Sub-500ms voice response time",
+        "3 live production demo agents",
+        "24/7 availability with zero hold times",
+        "Real-time calendar booking mid-conversation"
+      ],
+      "priority": 1,
+      "dateCompleted": "2026-03",
+      "slides": [
+        { "src": "https://raw.githubusercontent.com/RCushmaniii/cushlabs-ai-voice-agent/main/public/portfolio/voice-cushlabs-01.webp", "altEn": "AI Voice Agent Platform", "altEs": "AI Voice Agent Platform" },
+        { "src": "https://raw.githubusercontent.com/RCushmaniii/cushlabs-ai-voice-agent/main/public/portfolio/voice-cushlabs-02.webp", "altEn": "AI Voice Agent Platform", "altEs": "AI Voice Agent Platform" },
+        { "src": "https://raw.githubusercontent.com/RCushmaniii/cushlabs-ai-voice-agent/main/public/portfolio/voice-cushlabs-03.webp", "altEn": "AI Voice Agent Platform", "altEs": "AI Voice Agent Platform" },
+        { "src": "https://raw.githubusercontent.com/RCushmaniii/cushlabs-ai-voice-agent/main/public/portfolio/voice-cushlabs-04.webp", "altEn": "AI Voice Agent Platform", "altEs": "AI Voice Agent Platform" },
+        { "src": "https://raw.githubusercontent.com/RCushmaniii/cushlabs-ai-voice-agent/main/public/portfolio/voice-cushlabs-05.webp", "altEn": "AI Voice Agent Platform", "altEs": "AI Voice Agent Platform" },
+        { "src": "https://raw.githubusercontent.com/RCushmaniii/cushlabs-ai-voice-agent/main/public/portfolio/voice-cushlabs-06.webp", "altEn": "AI Voice Agent Platform", "altEs": "AI Voice Agent Platform" },
+        { "src": "https://raw.githubusercontent.com/RCushmaniii/cushlabs-ai-voice-agent/main/public/portfolio/voice-cushlabs-07.webp", "altEn": "AI Voice Agent Platform", "altEs": "AI Voice Agent Platform" },
+        { "src": "https://raw.githubusercontent.com/RCushmaniii/cushlabs-ai-voice-agent/main/public/portfolio/voice-cushlabs-08.webp", "altEn": "AI Voice Agent Platform", "altEs": "AI Voice Agent Platform" },
+        { "src": "https://raw.githubusercontent.com/RCushmaniii/cushlabs-ai-voice-agent/main/public/portfolio/voice-cushlabs-09.webp", "altEn": "AI Voice Agent Platform", "altEs": "AI Voice Agent Platform" },
+        { "src": "https://raw.githubusercontent.com/RCushmaniii/cushlabs-ai-voice-agent/main/public/portfolio/voice-cushlabs-10.webp", "altEn": "AI Voice Agent Platform", "altEs": "AI Voice Agent Platform" }
+      ],
+      "videoUrl": "https://raw.githubusercontent.com/RCushmaniii/cushlabs-ai-voice-agent/main/public/video/voice-cushlabs-brief.mp4",
+      "videoPoster": "https://raw.githubusercontent.com/RCushmaniii/cushlabs-ai-voice-agent/main/public/video/voice-cushlabs-brief-poster.webp"
     },
     {
       "id": 953305892,
