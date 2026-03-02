@@ -9,10 +9,10 @@ const { locale } = Astro.props;
 const dict = t(locale);
 
 const clients = [
-  { name: 'Northwind Systems', logo: '/images/clients/client-logo-1.png' },
-  { name: 'Acme Industries', logo: '/images/clients/client-logo-2.png' },
-  { name: 'Summit Digital', logo: '/images/clients/client-logo-3.png' },
-  { name: 'BlueSky Commerce', logo: '/images/clients/client-logo-4.png' },
+  { name: 'Northwind Systems', logo: '/images/clients/client-logo-1.webp' },
+  { name: 'Acme Industries', logo: '/images/clients/client-logo-2.webp' },
+  { name: 'Summit Digital', logo: '/images/clients/client-logo-3.webp' },
+  { name: 'BlueSky Commerce', logo: '/images/clients/client-logo-4.webp' },
 ];
 ---
 
@@ -34,6 +34,7 @@ const clients = [
             <img
               src={client.logo}
               alt={`${client.name} logo`}
+              loading="lazy"
               class="h-full w-full object-contain"
             />
           </div>
