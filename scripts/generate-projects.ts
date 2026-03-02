@@ -75,10 +75,12 @@ interface PortfolioFrontmatter {
   metrics?: string[];
   demo_url?: string;
   live_url?: string;
-  slides?: { src: string; src_es?: string; alt_en: string; alt_es: string }[];
-  hero_images?: { src: string; src_es?: string; alt_en: string; alt_es: string }[];
+  slides?: (string | { src: string; src_es?: string; alt_en: string; alt_es: string })[];
+  hero_images?: (string | { src: string; src_es?: string; alt_en: string; alt_es: string })[];
   video_url?: string;
   video_poster?: string;
+  demo_video_url?: string;
+  demo_video_poster?: string;
   tags?: string[];
   date_completed?: string;
 }
@@ -360,14 +362,19 @@ async function generateProjects() {
       metrics: portfolio?.metrics ?? [],
       priority: portfolio?.portfolio_priority ?? 99,
       dateCompleted: portfolio?.date_completed ?? null,
-      slides: (portfolio?.slides ?? portfolio?.hero_images ?? []).map(img => ({
-        src: resolve(img.src)!,
-        ...(img.src_es ? { srcEs: resolve(img.src_es)! } : {}),
-        altEn: img.alt_en,
-        altEs: img.alt_es
-      })),
-      videoUrl: resolve(portfolio?.video_url),
-      videoPoster: resolve(portfolio?.video_poster)
+      slides: (portfolio?.slides ?? portfolio?.hero_images ?? []).map(img => {
+        if (typeof img === 'string') {
+          return { src: resolve(img)!, altEn: portfolio?.title ?? repo.name, altEs: portfolio?.title ?? repo.name };
+        }
+        return {
+          src: resolve(img.src)!,
+          ...(img.src_es ? { srcEs: resolve(img.src_es)! } : {}),
+          altEn: img.alt_en,
+          altEs: img.alt_es
+        };
+      }),
+      videoUrl: resolve(portfolio?.video_url ?? portfolio?.demo_video_url),
+      videoPoster: resolve(portfolio?.video_poster ?? portfolio?.demo_video_poster)
     };
 
     projects.push(project);

@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-03-02T06:12:04.187Z",
-  "count": 35,
+  "generatedAt": "2026-03-02T08:05:44.709Z",
+  "count": 36,
   "projects": [
     {
       "id": 1108213747,
@@ -50,7 +50,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-03-02T05:54:42Z",
+      "lastPushed": "2026-03-02T08:03:52Z",
       "createdAt": "2025-12-02T07:09:31Z",
       "isFeatured": true,
       "isArchived": false,
@@ -63,9 +63,55 @@
       "metrics": [],
       "priority": 1,
       "dateCompleted": null,
-      "slides": [],
-      "videoUrl": null,
-      "videoPoster": null
+      "slides": [
+        {
+          "src": "https://raw.githubusercontent.com/RCushmaniii/ai-chatbot-saas/main/public/images/portfolio/converso-01.webp",
+          "altEn": "Converso AI — Bilingual AI Front Desk & Sales Assistant",
+          "altEs": "Converso AI — Bilingual AI Front Desk & Sales Assistant"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/RCushmaniii/ai-chatbot-saas/main/public/images/portfolio/converso-02.webp",
+          "altEn": "Converso AI — Bilingual AI Front Desk & Sales Assistant",
+          "altEs": "Converso AI — Bilingual AI Front Desk & Sales Assistant"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/RCushmaniii/ai-chatbot-saas/main/public/images/portfolio/converso-03.webp",
+          "altEn": "Converso AI — Bilingual AI Front Desk & Sales Assistant",
+          "altEs": "Converso AI — Bilingual AI Front Desk & Sales Assistant"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/RCushmaniii/ai-chatbot-saas/main/public/images/portfolio/converso-04.webp",
+          "altEn": "Converso AI — Bilingual AI Front Desk & Sales Assistant",
+          "altEs": "Converso AI — Bilingual AI Front Desk & Sales Assistant"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/RCushmaniii/ai-chatbot-saas/main/public/images/portfolio/converso-05.webp",
+          "altEn": "Converso AI — Bilingual AI Front Desk & Sales Assistant",
+          "altEs": "Converso AI — Bilingual AI Front Desk & Sales Assistant"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/RCushmaniii/ai-chatbot-saas/main/public/images/portfolio/converso-06.webp",
+          "altEn": "Converso AI — Bilingual AI Front Desk & Sales Assistant",
+          "altEs": "Converso AI — Bilingual AI Front Desk & Sales Assistant"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/RCushmaniii/ai-chatbot-saas/main/public/images/portfolio/converso-07.webp",
+          "altEn": "Converso AI — Bilingual AI Front Desk & Sales Assistant",
+          "altEs": "Converso AI — Bilingual AI Front Desk & Sales Assistant"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/RCushmaniii/ai-chatbot-saas/main/public/images/portfolio/converso-08.webp",
+          "altEn": "Converso AI — Bilingual AI Front Desk & Sales Assistant",
+          "altEs": "Converso AI — Bilingual AI Front Desk & Sales Assistant"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/RCushmaniii/ai-chatbot-saas/main/public/images/portfolio/converso-09.webp",
+          "altEn": "Converso AI — Bilingual AI Front Desk & Sales Assistant",
+          "altEs": "Converso AI — Bilingual AI Front Desk & Sales Assistant"
+        }
+      ],
+      "videoUrl": "https://raw.githubusercontent.com/RCushmaniii/ai-chatbot-saas/main/public/video/converso-brief.mp4",
+      "videoPoster": "https://raw.githubusercontent.com/RCushmaniii/ai-chatbot-saas/main/public/video/converso-brief-poster.jpg"
     },
     {
       "id": 1090479901,
@@ -723,6 +769,69 @@
       "videoPoster": "https://freelance-income-planner.vercel.app/video/freelance-income-planner-brief-poster.jpg"
     },
     {
+      "id": 1170472302,
+      "name": "ai-personal-data-eraser",
+      "title": "ai-eraser — AI-Powered Data Removal Engine",
+      "description": "AI-powered personal data removal engine — find, erase, and monitor your PII across 200+ data brokers with autonomous agents and legal compliance workflows.",
+      "summary": "> AI-powered personal data removal engine — automatically discovers and removes your information from data broker websites.",
+      "url": "https://github.com/RCushmaniii/ai-personal-data-eraser",
+      "demoUrl": null,
+      "liveUrl": "",
+      "homepage": null,
+      "topics": [],
+      "categories": [
+        "AI Automation"
+      ],
+      "tags": [
+        "ai-automation",
+        "privacy",
+        "data-brokers",
+        "ccpa",
+        "gdpr",
+        "encryption",
+        "typescript",
+        "bun"
+      ],
+      "stack": [
+        "Bun",
+        "TypeScript",
+        "Anthropic Claude API",
+        "SQLite (WAL mode)",
+        "XState v5",
+        "libsodium (XSalsa20-Poly1305 + Argon2id)",
+        "React",
+        "Tailwind CSS v4",
+        "Nodemailer + MJML",
+        "Zod",
+        "Commander + Clack"
+      ],
+      "status": null,
+      "language": "TypeScript",
+      "languages": {
+        "TypeScript": 139128,
+        "HTML": 375,
+        "CSS": 23
+      },
+      "stars": 0,
+      "forks": 0,
+      "lastPushed": "2026-03-02T07:52:42Z",
+      "createdAt": "2026-03-02T06:48:04Z",
+      "isFeatured": true,
+      "isArchived": false,
+      "isPrivate": false,
+      "tagline": "Automated personal data removal from data brokers using Claude AI and encrypted PII vault",
+      "thumbnail": null,
+      "problem": null,
+      "solution": null,
+      "keyFeatures": [],
+      "metrics": [],
+      "priority": 3,
+      "dateCompleted": null,
+      "slides": [],
+      "videoUrl": null,
+      "videoPoster": null
+    },
+    {
       "id": 1133839610,
       "name": "ai-filesense-website",
       "title": "AI FileSense Website",
@@ -1136,11 +1245,11 @@
       "name": "ai-portfolio",
       "title": "AI Portfolio",
       "description": "Static portfolio system that syncs project data from GitHub repos into a filterable showcase — Next.js 15, React 19, TypeScript, Tailwind CSS",
-      "summary": "> A static portfolio system that aggregates project data from GitHub repositories and renders a professional, filterable showcase.",
+      "summary": "> A bilingual (EN/ES) static portfolio system that aggregates project data from GitHub repositories and renders a professional, filterable showcase with SEO optimization and WebP images.",
       "url": "https://github.com/RCushmaniii/ai-portfolio",
-      "demoUrl": "https://cushlabs.ai/portfolio",
-      "liveUrl": "https://cushlabs.ai",
-      "homepage": "https://cushlabs.ai",
+      "demoUrl": "https://ai-portfolio-cushlabs.vercel.app/",
+      "liveUrl": "https://ai-portfolio-cushlabs.vercel.app",
+      "homepage": "https://ai-portfolio-cushlabs.vercel.app/",
       "topics": [
         "github-api",
         "nextjs",
@@ -1181,20 +1290,20 @@
       "status": null,
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 141796,
+        "TypeScript": 150081,
         "PowerShell": 3372,
         "CSS": 1413,
         "JavaScript": 83
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-03-02T06:06:16Z",
+      "lastPushed": "2026-03-02T08:04:24Z",
       "createdAt": "2026-01-05T15:06:48Z",
       "isFeatured": false,
       "isArchived": false,
       "isPrivate": false,
       "tagline": "A static portfolio system that syncs project data from GitHub repos into a filterable showcase",
-      "thumbnail": "https://cushlabs.ai/images/portfolio-card.jpg",
+      "thumbnail": "https://ai-portfolio-cushlabs.vercel.app/images/portfolio-card.webp",
       "problem": null,
       "solution": null,
       "keyFeatures": [],
@@ -1203,38 +1312,58 @@
       "dateCompleted": null,
       "slides": [
         {
-          "src": null
+          "src": "https://ai-portfolio-cushlabs.vercel.app/images/portfolio-01.webp",
+          "altEn": "Portfolio homepage with featured projects section",
+          "altEs": "Pagina principal del portafolio con seccion de proyectos destacados"
         },
         {
-          "src": null
+          "src": "https://ai-portfolio-cushlabs.vercel.app/images/portfolio-02.webp",
+          "altEn": "Portfolio grid with category filtering",
+          "altEs": "Cuadricula del portafolio con filtrado por categoria"
         },
         {
-          "src": null
+          "src": "https://ai-portfolio-cushlabs.vercel.app/images/portfolio-03.webp",
+          "altEn": "Portfolio grid in dark mode",
+          "altEs": "Cuadricula del portafolio en modo oscuro"
         },
         {
-          "src": null
+          "src": "https://ai-portfolio-cushlabs.vercel.app/images/portfolio-04.webp",
+          "altEn": "Project detail page with image carousel",
+          "altEs": "Pagina de detalle del proyecto con carrusel de imagenes"
         },
         {
-          "src": null
+          "src": "https://ai-portfolio-cushlabs.vercel.app/images/portfolio-05.webp",
+          "altEn": "Project detail page — problem and solution sections",
+          "altEs": "Pagina de detalle — secciones de problema y solucion"
         },
         {
-          "src": null
+          "src": "https://ai-portfolio-cushlabs.vercel.app/images/portfolio-06.webp",
+          "altEn": "Project detail page — key features and metrics",
+          "altEs": "Pagina de detalle — caracteristicas principales y metricas"
         },
         {
-          "src": null
+          "src": "https://ai-portfolio-cushlabs.vercel.app/images/portfolio-07.webp",
+          "altEn": "Project detail page with tech stack sidebar",
+          "altEs": "Pagina de detalle con barra lateral de tecnologias"
         },
         {
-          "src": null
+          "src": "https://ai-portfolio-cushlabs.vercel.app/images/portfolio-08.webp",
+          "altEn": "Featured projects showcase page",
+          "altEs": "Pagina de vitrina de proyectos destacados"
         },
         {
-          "src": null
+          "src": "https://ai-portfolio-cushlabs.vercel.app/images/portfolio-09.webp",
+          "altEn": "Mobile responsive portfolio grid",
+          "altEs": "Cuadricula responsiva del portafolio en movil"
         },
         {
-          "src": null
+          "src": "https://ai-portfolio-cushlabs.vercel.app/images/portfolio-10.webp",
+          "altEn": "Spanish language version of the portfolio",
+          "altEs": "Version en espanol del portafolio"
         }
       ],
-      "videoUrl": null,
-      "videoPoster": null
+      "videoUrl": "https://ai-portfolio-cushlabs.vercel.app/video/portfolio-brief.mp4",
+      "videoPoster": "https://ai-portfolio-cushlabs.vercel.app/images/portfolio-brief-poster.webp"
     },
     {
       "id": 1157421817,
@@ -2095,21 +2224,21 @@
       "status": null,
       "language": "Astro",
       "languages": {
-        "Astro": 468852,
-        "TypeScript": 112368,
+        "Astro": 468508,
+        "TypeScript": 112917,
         "HTML": 61067,
         "JavaScript": 27043,
         "CSS": 2655
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-03-02T05:23:52Z",
+      "lastPushed": "2026-03-02T07:00:05Z",
       "createdAt": "2026-01-08T03:52:43Z",
       "isFeatured": false,
       "isArchived": false,
       "isPrivate": false,
       "tagline": "Self-maintaining bilingual portfolio with serverless booking and build-time i18n enforcement",
-      "thumbnail": "/images/portfolio/cushlabs-01.png",
+      "thumbnail": "/images/portfolio/cushlabs-thumb.webp",
       "problem": null,
       "solution": null,
       "keyFeatures": [],
@@ -2118,26 +2247,58 @@
       "dateCompleted": null,
       "slides": [
         {
-          "src": null
+          "src": "/images/portfolio/cushlabs-01.webp",
+          "altEn": "CushLabs.ai",
+          "altEs": "CushLabs.ai"
         },
         {
-          "src": null
+          "src": "/images/portfolio/cushlabs-02.webp",
+          "altEn": "CushLabs.ai",
+          "altEs": "CushLabs.ai"
         },
         {
-          "src": null
+          "src": "/images/portfolio/cushlabs-03.webp",
+          "altEn": "CushLabs.ai",
+          "altEs": "CushLabs.ai"
         },
         {
-          "src": null
+          "src": "/images/portfolio/cushlabs-04.webp",
+          "altEn": "CushLabs.ai",
+          "altEs": "CushLabs.ai"
         },
         {
-          "src": null
+          "src": "/images/portfolio/cushlabs-05.webp",
+          "altEn": "CushLabs.ai",
+          "altEs": "CushLabs.ai"
         },
         {
-          "src": null
+          "src": "/images/portfolio/cushlabs-06.webp",
+          "altEn": "CushLabs.ai",
+          "altEs": "CushLabs.ai"
+        },
+        {
+          "src": "/images/portfolio/cushlabs-07.webp",
+          "altEn": "CushLabs.ai",
+          "altEs": "CushLabs.ai"
+        },
+        {
+          "src": "/images/portfolio/cushlabs-08.webp",
+          "altEn": "CushLabs.ai",
+          "altEs": "CushLabs.ai"
+        },
+        {
+          "src": "/images/portfolio/cushlabs-09.webp",
+          "altEn": "CushLabs.ai",
+          "altEs": "CushLabs.ai"
+        },
+        {
+          "src": "/images/portfolio/cushlabs-10.webp",
+          "altEn": "CushLabs.ai",
+          "altEs": "CushLabs.ai"
         }
       ],
-      "videoUrl": null,
-      "videoPoster": null
+      "videoUrl": "/images/portfolio/cushlabs-brief.mp4",
+      "videoPoster": "/images/portfolio/cushlabs-brief-poster.webp"
     },
     {
       "id": 1159724330,
@@ -2370,12 +2531,12 @@
       "status": null,
       "language": "HTML",
       "languages": {
-        "HTML": 257530,
+        "HTML": 307700,
         "JavaScript": 62381
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-03-02T04:50:30Z",
+      "lastPushed": "2026-03-02T08:04:10Z",
       "createdAt": "2026-02-23T01:31:09Z",
       "isFeatured": false,
       "isArchived": false,
