@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-02T09:20:10.629Z",
+  "generatedAt": "2026-03-02T09:21:09.265Z",
   "count": 36,
   "projects": [
     {
@@ -2389,15 +2389,15 @@
       "status": null,
       "language": "Astro",
       "languages": {
-        "Astro": 469083,
-        "TypeScript": 113257,
+        "Astro": 470737,
+        "TypeScript": 113367,
         "HTML": 61067,
         "JavaScript": 27043,
         "CSS": 2655
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-03-02T08:56:52Z",
+      "lastPushed": "2026-03-02T09:20:33Z",
       "createdAt": "2026-01-08T03:52:43Z",
       "isFeatured": false,
       "isArchived": false,
@@ -3251,9 +3251,7 @@
       "stack": [],
       "status": null,
       "language": "Lua",
-      "languages": {
-        "Lua": 4627
-      },
+      "languages": {},
       "stars": 0,
       "forks": 0,
       "lastPushed": "2026-01-22T18:08:15Z",
