@@ -1,71 +1,134 @@
 {
-  "generatedAt": "2026-03-01T05:07:14.861Z",
-  "count": 34,
+  "generatedAt": "2026-03-02T04:36:51.535Z",
+  "count": 35,
   "projects": [
     {
-      "id": 1108213747,
-      "name": "ai-chatbot-saas",
-      "title": "Converso AI — Bilingual AI Front Desk & Sales Assistant",
-      "description": "Multi-tenant AI chatbot SaaS platform - Ragbot by CushLabs.AI",
-      "summary": "> Multi-tenant SaaS platform for service businesses to deploy a bilingual (EN/ES), on-brand AI assistant that answers questions, qualifies leads, captures booking intent, and escalates high-intent pro",
-      "url": "https://github.com/RCushmaniii/ai-chatbot-saas",
-      "demoUrl": "https://ai-chatbot-saas-delta.vercel.app",
-      "liveUrl": "",
-      "homepage": "https://ai-chatbot-saas-delta.vercel.app",
+      "id": 1090479901,
+      "name": "ai-resume-tailor",
+      "title": "AI Resume Tailor",
+      "description": "Helps candidates create a tailored resume for a specific job. ",
+      "summary": "> Bilingual AI-powered ATS resume optimization — instant structured feedback, zero friction, privacy by design.",
+      "url": "https://github.com/RCushmaniii/ai-resume-tailor",
+      "demoUrl": "https://ai-resume-tailor-client.vercel.app",
+      "liveUrl": "https://ai-resume-tailor-client.vercel.app",
+      "homepage": "https://ai-resume-tailor-client.vercel.app",
       "topics": [],
       "categories": [
         "AI Automation"
       ],
       "tags": [
-        "ai-chatbot",
+        "ai",
         "saas",
-        "rag",
-        "multi-tenant",
+        "resume",
+        "ats",
+        "job-search",
         "bilingual",
-        "nextjs",
+        "openai",
         "stripe",
-        "pgvector",
-        "clerk-auth",
-        "lead-generation"
+        "clerk",
+        "flask"
       ],
       "stack": [
-        "Next.js 16",
-        "TypeScript",
-        "PostgreSQL + pgvector",
-        "Vercel AI SDK",
-        "OpenAI GPT-4o",
-        "Clerk Authentication",
-        "Stripe Billing",
-        "Drizzle ORM",
-        "Tailwind CSS",
-        "React Flow",
-        "Vercel"
+        "React 19",
+        "Flask / Python",
+        "OpenAI GPT-4",
+        "Stripe",
+        "Neon PostgreSQL"
       ],
-      "status": null,
+      "status": "Production",
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 1128593,
-        "JavaScript": 12530,
-        "CSS": 10253
+        "TypeScript": 534402,
+        "Python": 305806,
+        "JavaScript": 19451,
+        "HTML": 3968,
+        "Batchfile": 2499,
+        "CSS": 1995
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-03-01T03:20:39Z",
-      "createdAt": "2025-12-02T07:09:31Z",
+      "lastPushed": "2026-03-01T20:43:46Z",
+      "createdAt": "2025-11-05T18:11:38Z",
       "isFeatured": true,
       "isArchived": false,
       "isPrivate": false,
-      "tagline": "White-label AI chatbot SaaS for service businesses in bilingual markets",
-      "thumbnail": null,
-      "problem": null,
-      "solution": null,
-      "keyFeatures": [],
-      "metrics": [],
+      "tagline": "AI-powered ATS resume optimization with bilingual support and instant feedback",
+      "thumbnail": "https://ai-resume-tailor-client.vercel.app/images/ai-resume-tailor-thumb.jpg",
+      "problem": "Over 75% of resumes are rejected by Applicant Tracking Systems before a human ever sees them. Most job seekers have no visibility into why they're filtered out, and existing tools either charge upfront, require accounts, or provide generic advice that isn't tied to the specific job posting.",
+      "solution": "A bilingual SaaS application that returns structured ATS analysis — match score, missing keywords with severity coding, and actionable suggestions — in under 10 seconds. Guests get 5 free analyses with no signup, and no resume data is ever stored.",
+      "keyFeatures": [
+        "Structured ATS analysis with 0-100 match score, keyword gaps, and severity-coded suggestions via GPT-4",
+        "Zero-friction guest access — 5 free analyses before any signup prompt, value delivered first",
+        "Full EN/ES bilingual support across all UI, error messages, and AI-generated analysis output",
+        "Privacy-first architecture — no resume data stored, processing happens in a single request/response cycle",
+        "Stripe embedded checkout with guest-to-paid conversion and Clerk auth (Google, LinkedIn, email)"
+      ],
+      "metrics": [
+        "Structured ATS feedback in under 10 seconds",
+        "5 free analyses before any signup prompt",
+        "Zero resume data stored — privacy by architecture"
+      ],
       "priority": 1,
-      "dateCompleted": null,
-      "slides": [],
-      "videoUrl": null,
-      "videoPoster": null
+      "dateCompleted": "2026-02",
+      "slides": [
+        {
+          "src": "https://ai-resume-tailor-client.vercel.app/images/ai-resume-tailor-01.png",
+          "altEn": "AI Resume Tailor — Bilingual ATS optimization that shows you exactly why resumes get rejected",
+          "altEs": "AI Resume Tailor — Optimizacion ATS bilingue que te muestra exactamente por que rechazan tu CV"
+        },
+        {
+          "src": "https://ai-resume-tailor-client.vercel.app/images/ai-resume-tailor-02.png",
+          "altEn": "The ATS Black Box — 75% of resumes rejected before a human sees them, zero visibility into why",
+          "altEs": "La Caja Negra del ATS — 75% de CVs rechazados antes de que un humano los vea, sin visibilidad del por que"
+        },
+        {
+          "src": "https://ai-resume-tailor-client.vercel.app/images/ai-resume-tailor-03.png",
+          "altEn": "Structured Analysis — 0-100 match score with keyword gaps and severity-coded suggestions",
+          "altEs": "Analisis Estructurado — puntuacion de coincidencia 0-100 con brechas de palabras clave y sugerencias codificadas"
+        },
+        {
+          "src": "https://ai-resume-tailor-client.vercel.app/images/ai-resume-tailor-04.png",
+          "altEn": "Missing Keywords Detected — severity-coded priority indicators showing exactly what to fix first",
+          "altEs": "Palabras Clave Faltantes Detectadas — indicadores de prioridad codificados mostrando que corregir primero"
+        },
+        {
+          "src": "https://ai-resume-tailor-client.vercel.app/images/ai-resume-tailor-05.png",
+          "altEn": "Zero Friction — 5 free analyses with no signup, no email, no commitment required",
+          "altEs": "Cero Friccion — 5 analisis gratis sin registro, sin email, sin compromiso requerido"
+        },
+        {
+          "src": "https://ai-resume-tailor-client.vercel.app/images/ai-resume-tailor-06.png",
+          "altEn": "Full Bilingual Support — native English and Spanish across UI, analysis, and AI-generated feedback",
+          "altEs": "Soporte Bilingue Completo — ingles y espanol nativo en UI, analisis y retroalimentacion generada por IA"
+        },
+        {
+          "src": "https://ai-resume-tailor-client.vercel.app/images/ai-resume-tailor-07.png",
+          "altEn": "Privacy by Architecture — no resume data stored, analysis happens in a single request/response cycle",
+          "altEs": "Privacidad por Arquitectura — ningun dato de CV almacenado, analisis en un solo ciclo solicitud/respuesta"
+        },
+        {
+          "src": "https://ai-resume-tailor-client.vercel.app/images/ai-resume-tailor-08.png",
+          "altEn": "Stripe Embedded Checkout — guest-to-paid conversion with no signup wall before purchase",
+          "altEs": "Checkout Integrado de Stripe — conversion de invitado a pago sin muro de registro antes de la compra"
+        },
+        {
+          "src": "https://ai-resume-tailor-client.vercel.app/images/ai-resume-tailor-09.png",
+          "altEn": "Clerk Authentication — Google, LinkedIn, and email/password with automatic Neon profile provisioning",
+          "altEs": "Autenticacion Clerk — Google, LinkedIn y email/contrasena con aprovisionamiento automatico de perfil en Neon"
+        },
+        {
+          "src": "https://ai-resume-tailor-client.vercel.app/images/ai-resume-tailor-10.png",
+          "altEn": "Full-Stack Architecture — React 19 on Vercel, Flask on Render, Neon Postgres, Stripe, Clerk",
+          "altEs": "Arquitectura Full-Stack — React 19 en Vercel, Flask en Render, Neon Postgres, Stripe, Clerk"
+        },
+        {
+          "src": "https://ai-resume-tailor-client.vercel.app/images/ai-resume-tailor-11.png",
+          "altEn": "Results — structured feedback in under 10 seconds, zero data retention, full bilingual coverage",
+          "altEs": "Resultados — retroalimentacion estructurada en menos de 10 segundos, cero retencion de datos, cobertura bilingue"
+        }
+      ],
+      "videoUrl": "https://ai-resume-tailor-client.vercel.app/video/ai-resume-tailor-brief.mp4",
+      "videoPoster": "https://ai-resume-tailor-client.vercel.app/video/ai-resume-tailor-brief-poster.jpg"
     },
     {
       "id": 1102173157,
@@ -101,9 +164,7 @@
         "clerk",
         "tailwind",
         "bilingual",
-        "chatbot",
-        "ai",
-        "vercel"
+        "chatbot"
       ],
       "stack": [
         "Next.js 15",
@@ -120,7 +181,7 @@
       "status": "Production",
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 944622,
+        "TypeScript": 944503,
         "JavaScript": 13855,
         "PLpgSQL": 10195,
         "CSS": 8090,
@@ -128,7 +189,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-03-01T03:00:11Z",
+      "lastPushed": "2026-03-01T20:43:39Z",
       "createdAt": "2025-11-23T00:24:28Z",
       "isFeatured": true,
       "isArchived": false,
@@ -193,6 +254,71 @@
       ],
       "videoUrl": "https://ny-ai-chatbot.vercel.app/video/ny-eng-chatbot-brief.mp4",
       "videoPoster": "https://ny-ai-chatbot.vercel.app/video/ny-eng-chatbot-brief-poster.jpg"
+    },
+    {
+      "id": 1108213747,
+      "name": "ai-chatbot-saas",
+      "title": "Converso AI — Bilingual AI Front Desk & Sales Assistant",
+      "description": "Multi-tenant AI chatbot SaaS platform - Ragbot by CushLabs.AI",
+      "summary": "> Multi-tenant SaaS platform for service businesses to deploy a bilingual (EN/ES), on-brand AI assistant that answers questions, qualifies leads, captures booking intent, and escalates high-intent pro",
+      "url": "https://github.com/RCushmaniii/ai-chatbot-saas",
+      "demoUrl": "https://ai-chatbot-saas-delta.vercel.app",
+      "liveUrl": "",
+      "homepage": "https://ai-chatbot-saas-delta.vercel.app",
+      "topics": [],
+      "categories": [
+        "AI Automation"
+      ],
+      "tags": [
+        "ai-chatbot",
+        "saas",
+        "rag",
+        "multi-tenant",
+        "bilingual",
+        "nextjs",
+        "stripe",
+        "pgvector",
+        "clerk-auth",
+        "lead-generation"
+      ],
+      "stack": [
+        "Next.js 16",
+        "TypeScript",
+        "PostgreSQL + pgvector",
+        "Vercel AI SDK",
+        "OpenAI GPT-4o",
+        "Clerk Authentication",
+        "Stripe Billing",
+        "Drizzle ORM",
+        "Tailwind CSS",
+        "React Flow",
+        "Vercel"
+      ],
+      "status": null,
+      "language": "TypeScript",
+      "languages": {
+        "TypeScript": 1149737,
+        "JavaScript": 12530,
+        "CSS": 10253
+      },
+      "stars": 0,
+      "forks": 0,
+      "lastPushed": "2026-03-01T19:30:13Z",
+      "createdAt": "2025-12-02T07:09:31Z",
+      "isFeatured": true,
+      "isArchived": false,
+      "isPrivate": false,
+      "tagline": "White-label AI chatbot SaaS for service businesses in bilingual markets",
+      "thumbnail": null,
+      "problem": null,
+      "solution": null,
+      "keyFeatures": [],
+      "metrics": [],
+      "priority": 1,
+      "dateCompleted": null,
+      "slides": [],
+      "videoUrl": null,
+      "videoPoster": null
     },
     {
       "id": 1120026584,
@@ -331,134 +457,6 @@
       ],
       "videoUrl": "https://cushlabs-writing-system.vercel.app/public/videos/context-writing-system-brief.mp4",
       "videoPoster": "https://cushlabs-writing-system.vercel.app/public/videos/context-writing-system-brief-poster.jpg"
-    },
-    {
-      "id": 1090479901,
-      "name": "ai-resume-tailor",
-      "title": "AI Resume Tailor",
-      "description": "Helps candidates create a tailored resume for a specific job. ",
-      "summary": "> Bilingual AI-powered ATS resume optimization — instant structured feedback, zero friction, privacy by design.",
-      "url": "https://github.com/RCushmaniii/ai-resume-tailor",
-      "demoUrl": "https://ai-resume-tailor-client.vercel.app",
-      "liveUrl": "https://ai-resume-tailor-client.vercel.app",
-      "homepage": "https://ai-resume-tailor-client.vercel.app",
-      "topics": [],
-      "categories": [
-        "AI SaaS"
-      ],
-      "tags": [
-        "ai",
-        "saas",
-        "resume",
-        "ats",
-        "job-search",
-        "bilingual",
-        "openai",
-        "stripe",
-        "clerk",
-        "flask"
-      ],
-      "stack": [
-        "React 19",
-        "Flask / Python",
-        "OpenAI GPT-4",
-        "Stripe",
-        "Neon PostgreSQL"
-      ],
-      "status": "Production",
-      "language": "TypeScript",
-      "languages": {
-        "TypeScript": 534402,
-        "Python": 305806,
-        "JavaScript": 19451,
-        "HTML": 3968,
-        "Batchfile": 2499,
-        "CSS": 1995
-      },
-      "stars": 0,
-      "forks": 0,
-      "lastPushed": "2026-02-23T00:23:48Z",
-      "createdAt": "2025-11-05T18:11:38Z",
-      "isFeatured": true,
-      "isArchived": false,
-      "isPrivate": false,
-      "tagline": "AI-powered ATS resume optimization with bilingual support and instant feedback",
-      "thumbnail": "https://ai-resume-tailor-client.vercel.app/images/ai-resume-tailor-thumb.jpg",
-      "problem": "Over 75% of resumes are rejected by Applicant Tracking Systems before a human ever sees them. Most job seekers have no visibility into why they're filtered out, and existing tools either charge upfront, require accounts, or provide generic advice that isn't tied to the specific job posting.",
-      "solution": "A bilingual SaaS application that returns structured ATS analysis — match score, missing keywords with severity coding, and actionable suggestions — in under 10 seconds. Guests get 5 free analyses with no signup, and no resume data is ever stored.",
-      "keyFeatures": [
-        "Structured ATS analysis with 0-100 match score, keyword gaps, and severity-coded suggestions via GPT-4",
-        "Zero-friction guest access — 5 free analyses before any signup prompt, value delivered first",
-        "Full EN/ES bilingual support across all UI, error messages, and AI-generated analysis output",
-        "Privacy-first architecture — no resume data stored, processing happens in a single request/response cycle",
-        "Stripe embedded checkout with guest-to-paid conversion and Clerk auth (Google, LinkedIn, email)"
-      ],
-      "metrics": [
-        "Structured ATS feedback in under 10 seconds",
-        "5 free analyses before any signup prompt",
-        "Zero resume data stored — privacy by architecture"
-      ],
-      "priority": 1,
-      "dateCompleted": "2026-02",
-      "slides": [
-        {
-          "src": "https://ai-resume-tailor-client.vercel.app/images/ai-resume-tailor-01.png",
-          "altEn": "AI Resume Tailor — Bilingual ATS optimization that shows you exactly why resumes get rejected",
-          "altEs": "AI Resume Tailor — Optimizacion ATS bilingue que te muestra exactamente por que rechazan tu CV"
-        },
-        {
-          "src": "https://ai-resume-tailor-client.vercel.app/images/ai-resume-tailor-02.png",
-          "altEn": "The ATS Black Box — 75% of resumes rejected before a human sees them, zero visibility into why",
-          "altEs": "La Caja Negra del ATS — 75% de CVs rechazados antes de que un humano los vea, sin visibilidad del por que"
-        },
-        {
-          "src": "https://ai-resume-tailor-client.vercel.app/images/ai-resume-tailor-03.png",
-          "altEn": "Structured Analysis — 0-100 match score with keyword gaps and severity-coded suggestions",
-          "altEs": "Analisis Estructurado — puntuacion de coincidencia 0-100 con brechas de palabras clave y sugerencias codificadas"
-        },
-        {
-          "src": "https://ai-resume-tailor-client.vercel.app/images/ai-resume-tailor-04.png",
-          "altEn": "Missing Keywords Detected — severity-coded priority indicators showing exactly what to fix first",
-          "altEs": "Palabras Clave Faltantes Detectadas — indicadores de prioridad codificados mostrando que corregir primero"
-        },
-        {
-          "src": "https://ai-resume-tailor-client.vercel.app/images/ai-resume-tailor-05.png",
-          "altEn": "Zero Friction — 5 free analyses with no signup, no email, no commitment required",
-          "altEs": "Cero Friccion — 5 analisis gratis sin registro, sin email, sin compromiso requerido"
-        },
-        {
-          "src": "https://ai-resume-tailor-client.vercel.app/images/ai-resume-tailor-06.png",
-          "altEn": "Full Bilingual Support — native English and Spanish across UI, analysis, and AI-generated feedback",
-          "altEs": "Soporte Bilingue Completo — ingles y espanol nativo en UI, analisis y retroalimentacion generada por IA"
-        },
-        {
-          "src": "https://ai-resume-tailor-client.vercel.app/images/ai-resume-tailor-07.png",
-          "altEn": "Privacy by Architecture — no resume data stored, analysis happens in a single request/response cycle",
-          "altEs": "Privacidad por Arquitectura — ningun dato de CV almacenado, analisis en un solo ciclo solicitud/respuesta"
-        },
-        {
-          "src": "https://ai-resume-tailor-client.vercel.app/images/ai-resume-tailor-08.png",
-          "altEn": "Stripe Embedded Checkout — guest-to-paid conversion with no signup wall before purchase",
-          "altEs": "Checkout Integrado de Stripe — conversion de invitado a pago sin muro de registro antes de la compra"
-        },
-        {
-          "src": "https://ai-resume-tailor-client.vercel.app/images/ai-resume-tailor-09.png",
-          "altEn": "Clerk Authentication — Google, LinkedIn, and email/password with automatic Neon profile provisioning",
-          "altEs": "Autenticacion Clerk — Google, LinkedIn y email/contrasena con aprovisionamiento automatico de perfil en Neon"
-        },
-        {
-          "src": "https://ai-resume-tailor-client.vercel.app/images/ai-resume-tailor-10.png",
-          "altEn": "Full-Stack Architecture — React 19 on Vercel, Flask on Render, Neon Postgres, Stripe, Clerk",
-          "altEs": "Arquitectura Full-Stack — React 19 en Vercel, Flask en Render, Neon Postgres, Stripe, Clerk"
-        },
-        {
-          "src": "https://ai-resume-tailor-client.vercel.app/images/ai-resume-tailor-11.png",
-          "altEn": "Results — structured feedback in under 10 seconds, zero data retention, full bilingual coverage",
-          "altEs": "Resultados — retroalimentacion estructurada en menos de 10 segundos, cero retencion de datos, cobertura bilingue"
-        }
-      ],
-      "videoUrl": "https://ai-resume-tailor-client.vercel.app/video/ai-resume-tailor-brief.mp4",
-      "videoPoster": "https://ai-resume-tailor-client.vercel.app/video/ai-resume-tailor-brief-poster.jpg"
     },
     {
       "id": 1141547356,
@@ -1134,6 +1132,199 @@
       "videoPoster": "https://raw.githubusercontent.com/RCushmaniii/ai-filesense/main/public/video/AI-FileSense-brief-poster.jpg"
     },
     {
+      "id": 1128388603,
+      "name": "ai-portfolio",
+      "title": "AI Portfolio",
+      "description": "",
+      "summary": "> A static portfolio system that aggregates project data from GitHub repositories and renders a professional, filterable showcase.",
+      "url": "https://github.com/RCushmaniii/ai-portfolio",
+      "demoUrl": "https://cushlabs.ai/portfolio",
+      "liveUrl": "https://cushlabs.ai",
+      "homepage": "https://ai-portfolio-sigma-rouge.vercel.app",
+      "topics": [],
+      "categories": [
+        "Developer Tools"
+      ],
+      "tags": [
+        "portfolio",
+        "next-js",
+        "typescript",
+        "github-api",
+        "static-site",
+        "tailwind",
+        "shadcn-ui"
+      ],
+      "stack": [
+        "Next.js 15",
+        "React 19",
+        "TypeScript",
+        "Tailwind CSS",
+        "shadcn/ui",
+        "Zod",
+        "GitHub API",
+        "Vercel"
+      ],
+      "status": null,
+      "language": "TypeScript",
+      "languages": {
+        "TypeScript": 109357,
+        "PowerShell": 3372,
+        "CSS": 1381,
+        "JavaScript": 83
+      },
+      "stars": 0,
+      "forks": 0,
+      "lastPushed": "2026-03-02T04:35:01Z",
+      "createdAt": "2026-01-05T15:06:48Z",
+      "isFeatured": false,
+      "isArchived": false,
+      "isPrivate": false,
+      "tagline": "A static portfolio system that syncs project data from GitHub repos into a filterable showcase",
+      "thumbnail": null,
+      "problem": null,
+      "solution": null,
+      "keyFeatures": [],
+      "metrics": [],
+      "priority": 4,
+      "dateCompleted": null,
+      "slides": [],
+      "videoUrl": null,
+      "videoPoster": null
+    },
+    {
+      "id": 1157421817,
+      "name": "comp-plan-simulator",
+      "title": "Compensation Plan Simulator",
+      "description": "Interactive compensation plan simulator for direct-selling companies",
+      "summary": "Interactive compensation plan simulator for direct-selling companies. Model commission structures, override percentages, and network parameters — then see real-time financial impact before making plan",
+      "url": "https://github.com/RCushmaniii/comp-plan-simulator",
+      "demoUrl": "https://comp-plan-simulator.vercel.app",
+      "liveUrl": "https://comp-plan-simulator.vercel.app",
+      "homepage": "https://comp-plan-simulator.vercel.app",
+      "topics": [
+        "compensation-plan",
+        "cushlabs",
+        "direct-selling",
+        "framer-motion",
+        "nextjs",
+        "recharts",
+        "shadcn-ui",
+        "simulator",
+        "tailwindcss",
+        "typescript",
+        "zustand"
+      ],
+      "categories": [
+        "Tools"
+      ],
+      "tags": [
+        "compensation-plan",
+        "cushlabs",
+        "direct-selling",
+        "framer-motion",
+        "nextjs",
+        "recharts",
+        "shadcn-ui",
+        "simulator",
+        "tailwindcss",
+        "typescript",
+        "zustand",
+        "compensation",
+        "financial-modeling",
+        "interactive",
+        "bilingual",
+        "data-visualization"
+      ],
+      "stack": [
+        "Next.js 16",
+        "TypeScript",
+        "Zustand",
+        "Recharts",
+        "Tailwind CSS 4"
+      ],
+      "status": "Production",
+      "language": "TypeScript",
+      "languages": {
+        "TypeScript": 92910,
+        "CSS": 5485,
+        "JavaScript": 559
+      },
+      "stars": 0,
+      "forks": 0,
+      "lastPushed": "2026-03-01T20:43:44Z",
+      "createdAt": "2026-02-13T19:55:19Z",
+      "isFeatured": false,
+      "isArchived": false,
+      "isPrivate": false,
+      "tagline": "Model direct-selling comp plan changes in real time before rolling them out",
+      "thumbnail": "https://comp-plan-simulator.vercel.app/images/comp-plan-sim-thumb.jpg",
+      "problem": "Direct-selling companies live and die by their compensation plan, yet most design changes with spreadsheets and gut instinct. A 2-point override increase at the leader tier might sound harmless until it erodes $200K in annual margin — and nobody sees the ripple effects until it's too late.",
+      "solution": "A fully interactive client-side simulator that lets operations leaders configure two compensation plans side-by-side across 45 inputs and see instant financial impact via KPI dashboards, revenue waterfalls, payout distributions, and break-even curves — all shareable via URL with zero backend.",
+      "keyFeatures": [
+        "45 interactive inputs (18 per plan x 2 + 9 network params) with real-time financial recalculation",
+        "Side-by-side Current vs Proposed comparison with 6 KPIs, dollar deltas, and percentage deltas",
+        "Revenue waterfall, payout distribution, and break-even crossover charts via Recharts",
+        "Shareable URL state encoding — full scenario compressed into a link for team review",
+        "Full EN/ES bilingual support with dark/light themes and 4 built-in scenario presets"
+      ],
+      "metrics": [
+        "45 interactive inputs with sub-second recalculation",
+        "4 chart types: waterfall, stacked bar, line with crossover, comparison table",
+        "Full state shareable via URL — zero backend, zero data exposure"
+      ],
+      "priority": 4,
+      "dateCompleted": "2026-02",
+      "slides": [
+        {
+          "src": "https://comp-plan-simulator.vercel.app/images/comp-plan-sim-01.png",
+          "altEn": "Compensation Plan Simulator — model the financial impact of comp plan changes before going live",
+          "altEs": "Simulador de Plan de Compensacion — modela el impacto financiero de cambios al plan antes de lanzarlos"
+        },
+        {
+          "src": "https://comp-plan-simulator.vercel.app/images/comp-plan-sim-02.png",
+          "altEn": "The Problem — spreadsheets and gut instinct drive decisions that affect margins and distributor retention",
+          "altEs": "El Problema — hojas de calculo e instinto impulsan decisiones que afectan margenes y retencion de distribuidores"
+        },
+        {
+          "src": "https://comp-plan-simulator.vercel.app/images/comp-plan-sim-03.png",
+          "altEn": "Configure Tab — adjust personal discounts, override rates, depth, and qualification rules across 3 tiers",
+          "altEs": "Pestana de Configuracion — ajusta descuentos, tasas de sobreescritura, profundidad y reglas por 3 niveles"
+        },
+        {
+          "src": "https://comp-plan-simulator.vercel.app/images/comp-plan-sim-04.png",
+          "altEn": "Financial Dashboard — 6 real-time KPIs with delta indicators against the alternate plan",
+          "altEs": "Dashboard Financiero — 6 KPIs en tiempo real con indicadores delta contra el plan alternativo"
+        },
+        {
+          "src": "https://comp-plan-simulator.vercel.app/images/comp-plan-sim-05.png",
+          "altEn": "Revenue Waterfall — stacked chart showing gross revenue through discounts, overrides, down to net margin",
+          "altEs": "Cascada de Ingresos — grafico apilado desde ingresos brutos, descuentos, sobreescrituras, hasta margen neto"
+        },
+        {
+          "src": "https://comp-plan-simulator.vercel.app/images/comp-plan-sim-06.png",
+          "altEn": "Break-Even Analysis — current vs proposed cost curves at up to 3x volume with crossover detection",
+          "altEs": "Analisis de Punto de Equilibrio — curvas de costo actual vs propuesto hasta 3x volumen con deteccion de cruce"
+        },
+        {
+          "src": "https://comp-plan-simulator.vercel.app/images/comp-plan-sim-07.png",
+          "altEn": "Comparison Table — side-by-side metrics with dollar deltas and color-coded good/bad indicators",
+          "altEs": "Tabla Comparativa — metricas lado a lado con deltas en dolares e indicadores de color bueno/malo"
+        },
+        {
+          "src": "https://comp-plan-simulator.vercel.app/images/comp-plan-sim-08.png",
+          "altEn": "4 Scenario Presets — Default, Aggressive Overrides, Flat Structure, High Growth for rapid what-if analysis",
+          "altEs": "4 Presets de Escenarios — Predeterminado, Sobreescrituras Agresivas, Estructura Plana, Alto Crecimiento"
+        },
+        {
+          "src": "https://comp-plan-simulator.vercel.app/images/comp-plan-sim-09.png",
+          "altEn": "Technical Architecture — Zustand state, pure calculation functions, URL-encoded sharing, zero backend",
+          "altEs": "Arquitectura Tecnica — estado Zustand, funciones de calculo puras, compartir por URL, sin backend"
+        }
+      ],
+      "videoUrl": "https://comp-plan-simulator.vercel.app/video/comp-plan-sim-brief.mp4",
+      "videoPoster": "https://comp-plan-simulator.vercel.app/video/comp-plan-sim-brief-poster.jpg"
+    },
+    {
       "id": 1140204033,
       "name": "ai-stock-alert-website",
       "title": "AI StockAlert Website",
@@ -1268,137 +1459,150 @@
       "videoPoster": "https://aistockalert.app/videos/AI-StockAlert-brief-poster.jpg"
     },
     {
-      "id": 1157421817,
-      "name": "comp-plan-simulator",
-      "title": "Compensation Plan Simulator",
-      "description": "Interactive compensation plan simulator for direct-selling companies",
-      "summary": "Interactive compensation plan simulator for direct-selling companies. Model commission structures, override percentages, and network parameters — then see real-time financial impact before making plan",
-      "url": "https://github.com/RCushmaniii/comp-plan-simulator",
-      "demoUrl": "https://comp-plan-simulator.vercel.app",
-      "liveUrl": "https://comp-plan-simulator.vercel.app",
-      "homepage": "https://comp-plan-simulator.vercel.app",
+      "id": 1157375639,
+      "name": "ai-build-vs-outsource",
+      "title": "Build vs. Outsource Decision Framework",
+      "description": "An interactive web-based decision tool that helps operations leaders evaluate whether to build logistics capacity in-house or outsource to a third-party logistics provider (3PL). ",
+      "summary": "> Interactive decision-support tools for operations leaders at growth-stage direct-selling companies. Structured analysis, real-time feedback, board-ready output — no spreadsheets, no guesswork.",
+      "url": "https://github.com/RCushmaniii/ai-build-vs-outsource",
+      "demoUrl": "https://ai-build-vs-outsource.vercel.app",
+      "liveUrl": "https://ai-build-vs-outsource.vercel.app",
+      "homepage": "https://ai-build-vs-outsource.vercel.app",
       "topics": [
-        "compensation-plan",
-        "cushlabs",
-        "direct-selling",
+        "3pl",
+        "build-vs-outsource",
+        "dark-mode",
+        "decision-framework",
         "framer-motion",
+        "i18n",
+        "logistics",
         "nextjs",
+        "react",
         "recharts",
-        "shadcn-ui",
-        "simulator",
+        "supply-chain",
         "tailwindcss",
         "typescript",
-        "zustand"
+        "vercel",
+        "weighted-scoring"
       ],
       "categories": [
-        "Web Tools"
+        "Tools"
       ],
       "tags": [
-        "compensation-plan",
-        "cushlabs",
-        "direct-selling",
+        "3pl",
+        "build-vs-outsource",
+        "dark-mode",
+        "decision-framework",
         "framer-motion",
+        "i18n",
+        "logistics",
         "nextjs",
+        "react",
         "recharts",
-        "shadcn-ui",
-        "simulator",
+        "supply-chain",
         "tailwindcss",
         "typescript",
-        "zustand",
-        "compensation",
-        "financial-modeling",
-        "interactive",
+        "vercel",
+        "weighted-scoring",
+        "tailwind",
+        "decision-tools",
+        "operations",
         "bilingual",
         "data-visualization"
       ],
       "stack": [
         "Next.js 16",
-        "TypeScript",
-        "Zustand",
-        "Recharts",
-        "Tailwind CSS 4"
+        "React 19",
+        "Tailwind CSS 4",
+        "Framer Motion",
+        "Recharts"
       ],
       "status": "Production",
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 92910,
-        "CSS": 5485,
+        "TypeScript": 163582,
+        "CSS": 5459,
         "JavaScript": 559
       },
       "stars": 0,
-      "forks": 0,
-      "lastPushed": "2026-02-23T00:24:00Z",
-      "createdAt": "2026-02-13T19:55:19Z",
+      "forks": 1,
+      "lastPushed": "2026-03-01T20:43:42Z",
+      "createdAt": "2026-02-13T18:42:29Z",
       "isFeatured": false,
       "isArchived": false,
       "isPrivate": false,
-      "tagline": "Model direct-selling comp plan changes in real time before rolling them out",
-      "thumbnail": "https://comp-plan-simulator.vercel.app/images/comp-plan-sim-thumb.jpg",
-      "problem": "Direct-selling companies live and die by their compensation plan, yet most design changes with spreadsheets and gut instinct. A 2-point override increase at the leader tier might sound harmless until it erodes $200K in annual margin — and nobody sees the ripple effects until it's too late.",
-      "solution": "A fully interactive client-side simulator that lets operations leaders configure two compensation plans side-by-side across 45 inputs and see instant financial impact via KPI dashboards, revenue waterfalls, payout distributions, and break-even curves — all shareable via URL with zero backend.",
+      "tagline": "Interactive decision tools with weighted scoring, cost modeling, and board-ready output",
+      "thumbnail": "https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-thumb.jpg",
+      "problem": "Operations leaders at growth-stage companies face high-stakes build-or-outsource decisions armed with gut feel, incomplete spreadsheets, and circular boardroom arguments. No tool combines structured weighted scoring with real-time cost modeling and shareable, board-ready output.",
+      "solution": "A suite of interactive decision-support tools that replace guesswork with data-driven analysis. A 20-criterion weighted scoring framework evaluates build vs. outsource across five categories, while an operational cost simulator reveals hidden step-function costs — all shareable via URL-encoded state.",
       "keyFeatures": [
-        "45 interactive inputs (18 per plan x 2 + 9 network params) with real-time financial recalculation",
-        "Side-by-side Current vs Proposed comparison with 6 KPIs, dollar deltas, and percentage deltas",
-        "Revenue waterfall, payout distribution, and break-even crossover charts via Recharts",
-        "Shareable URL state encoding — full scenario compressed into a link for team review",
-        "Full EN/ES bilingual support with dark/light themes and 4 built-in scenario presets"
+        "20-criterion weighted scoring across 5 categories (Financial, Operational, Strategic, Control, Risk) with real-time verdict",
+        "Operational Cost Simulator with three-layer cost model — fixed, variable, and step-function costs with break-even analysis",
+        "6 decision presets and 5 growth scenario presets for rapid what-if analysis",
+        "Shareable URL encoding — full tool state in query params for board presentations",
+        "Full EN/ES bilingual support with dark/light theme toggle and print-ready layouts"
       ],
       "metrics": [
-        "45 interactive inputs with sub-second recalculation",
-        "4 chart types: waterfall, stacked bar, line with crossover, comparison table",
-        "Full state shareable via URL — zero backend, zero data exposure"
+        "20 weighted criteria across 5 decision categories",
+        "6 decision presets + 5 growth scenario presets",
+        "Full state shareable via URL — no backend required"
       ],
-      "priority": 4,
+      "priority": 5,
       "dateCompleted": "2026-02",
       "slides": [
         {
-          "src": "https://comp-plan-simulator.vercel.app/images/comp-plan-sim-01.png",
-          "altEn": "Compensation Plan Simulator — model the financial impact of comp plan changes before going live",
-          "altEs": "Simulador de Plan de Compensacion — modela el impacto financiero de cambios al plan antes de lanzarlos"
+          "src": "https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-01.png",
+          "altEn": "Operations Decision Tools Suite — structured analysis replaces boardroom guesswork",
+          "altEs": "Suite de Herramientas de Decision Operativa — analisis estructurado reemplaza suposiciones en la sala de juntas"
         },
         {
-          "src": "https://comp-plan-simulator.vercel.app/images/comp-plan-sim-02.png",
-          "altEn": "The Problem — spreadsheets and gut instinct drive decisions that affect margins and distributor retention",
-          "altEs": "El Problema — hojas de calculo e instinto impulsan decisiones que afectan margenes y retencion de distribuidores"
+          "src": "https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-02.png",
+          "altEn": "The Problem — gut feel, incomplete spreadsheets, and circular arguments drive million-dollar decisions",
+          "altEs": "El Problema — instinto, hojas de calculo incompletas y argumentos circulares impulsan decisiones millonarias"
         },
         {
-          "src": "https://comp-plan-simulator.vercel.app/images/comp-plan-sim-03.png",
-          "altEn": "Configure Tab — adjust personal discounts, override rates, depth, and qualification rules across 3 tiers",
-          "altEs": "Pestana de Configuracion — ajusta descuentos, tasas de sobreescritura, profundidad y reglas por 3 niveles"
+          "src": "https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-03.png",
+          "altEn": "20-Criterion Weighted Scoring — five categories with real-time verdict and radar chart",
+          "altEs": "Puntuacion Ponderada de 20 Criterios — cinco categorias con veredicto en tiempo real y grafico radar"
         },
         {
-          "src": "https://comp-plan-simulator.vercel.app/images/comp-plan-sim-04.png",
-          "altEn": "Financial Dashboard — 6 real-time KPIs with delta indicators against the alternate plan",
-          "altEs": "Dashboard Financiero — 6 KPIs en tiempo real con indicadores delta contra el plan alternativo"
+          "src": "https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-04.png",
+          "altEn": "Scenario Presets — Growth Emergency, Control First, Cost Optimizer shift the verdict instantly",
+          "altEs": "Presets de Escenarios — Emergencia de Crecimiento, Control Primero, Optimizador de Costos cambian el veredicto al instante"
         },
         {
-          "src": "https://comp-plan-simulator.vercel.app/images/comp-plan-sim-05.png",
-          "altEn": "Revenue Waterfall — stacked chart showing gross revenue through discounts, overrides, down to net margin",
-          "altEs": "Cascada de Ingresos — grafico apilado desde ingresos brutos, descuentos, sobreescrituras, hasta margen neto"
+          "src": "https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-05.png",
+          "altEn": "Expandable Rationale — each criterion includes industry analysis and scoring guidance",
+          "altEs": "Justificacion Expandible — cada criterio incluye analisis de industria y guia de puntuacion"
         },
         {
-          "src": "https://comp-plan-simulator.vercel.app/images/comp-plan-sim-06.png",
-          "altEn": "Break-Even Analysis — current vs proposed cost curves at up to 3x volume with crossover detection",
-          "altEs": "Analisis de Punto de Equilibrio — curvas de costo actual vs propuesto hasta 3x volumen con deteccion de cruce"
+          "src": "https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-06.png",
+          "altEn": "Operational Cost Simulator — three-layer cost model with volume slider and cost-per-order curves",
+          "altEs": "Simulador de Costos Operativos — modelo de costos de tres capas con control de volumen y curvas de costo por orden"
         },
         {
-          "src": "https://comp-plan-simulator.vercel.app/images/comp-plan-sim-07.png",
-          "altEn": "Comparison Table — side-by-side metrics with dollar deltas and color-coded good/bad indicators",
-          "altEs": "Tabla Comparativa — metricas lado a lado con deltas en dolares e indicadores de color bueno/malo"
+          "src": "https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-07.png",
+          "altEn": "Step-Function Costs Revealed — watch cost-per-order jump when new hires and warehouse expansions trigger",
+          "altEs": "Costos Escalonados Revelados — observa el salto del costo por orden cuando se activan nuevas contrataciones y expansiones"
         },
         {
-          "src": "https://comp-plan-simulator.vercel.app/images/comp-plan-sim-08.png",
-          "altEn": "4 Scenario Presets — Default, Aggressive Overrides, Flat Structure, High Growth for rapid what-if analysis",
-          "altEs": "4 Presets de Escenarios — Predeterminado, Sobreescrituras Agresivas, Estructura Plana, Alto Crecimiento"
+          "src": "https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-08.png",
+          "altEn": "Break-Even and Margin Analysis — utilization gauges and margin visualization with profitability threshold",
+          "altEs": "Analisis de Punto de Equilibrio y Margen — indicadores de utilizacion y visualizacion de margen con umbral de rentabilidad"
         },
         {
-          "src": "https://comp-plan-simulator.vercel.app/images/comp-plan-sim-09.png",
-          "altEn": "Technical Architecture — Zustand state, pure calculation functions, URL-encoded sharing, zero backend",
-          "altEs": "Arquitectura Tecnica — estado Zustand, funciones de calculo puras, compartir por URL, sin backend"
+          "src": "https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-09.png",
+          "altEn": "Shareable and Board-Ready — full state encoded in URL params, print-optimized layouts for PDFs",
+          "altEs": "Compartible y Listo para Presentar — estado completo codificado en URL, disenos optimizados para impresion PDF"
+        },
+        {
+          "src": "https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-10.png",
+          "altEn": "Technical Architecture — Next.js 16, React 19, Recharts, Framer Motion, bilingual, zero backend",
+          "altEs": "Arquitectura Tecnica — Next.js 16, React 19, Recharts, Framer Motion, bilingue, sin backend"
         }
       ],
-      "videoUrl": "https://comp-plan-simulator.vercel.app/video/comp-plan-sim-brief.mp4",
-      "videoPoster": "https://comp-plan-simulator.vercel.app/video/comp-plan-sim-brief-poster.jpg"
+      "videoUrl": "https://ai-build-vs-outsource.vercel.app/video/ai-build-vs-outsource-brief.mp4",
+      "videoPoster": "https://ai-build-vs-outsource.vercel.app/video/ai-build-vs-outsource-brief-poster.jpg"
     },
     {
       "id": 1127520844,
@@ -1542,152 +1746,6 @@
       ],
       "videoUrl": "https://marble-does-not-yield.vercel.app/video/marble-does-not-yield-brief.mp4",
       "videoPoster": "https://marble-does-not-yield.vercel.app/video/marble-does-not-yield-brief-poster.jpg"
-    },
-    {
-      "id": 1157375639,
-      "name": "ai-build-vs-outsource",
-      "title": "Build vs. Outsource Decision Framework",
-      "description": "An interactive web-based decision tool that helps operations leaders evaluate whether to build logistics capacity in-house or outsource to a third-party logistics provider (3PL). ",
-      "summary": "> Interactive decision-support tools for operations leaders at growth-stage direct-selling companies. Structured analysis, real-time feedback, board-ready output — no spreadsheets, no guesswork.",
-      "url": "https://github.com/RCushmaniii/ai-build-vs-outsource",
-      "demoUrl": "https://ai-build-vs-outsource.vercel.app",
-      "liveUrl": "https://ai-build-vs-outsource.vercel.app",
-      "homepage": "https://ai-build-vs-outsource.vercel.app",
-      "topics": [
-        "3pl",
-        "build-vs-outsource",
-        "dark-mode",
-        "decision-framework",
-        "framer-motion",
-        "i18n",
-        "logistics",
-        "nextjs",
-        "react",
-        "recharts",
-        "supply-chain",
-        "tailwindcss",
-        "typescript",
-        "vercel",
-        "weighted-scoring"
-      ],
-      "categories": [
-        "Web Tools"
-      ],
-      "tags": [
-        "3pl",
-        "build-vs-outsource",
-        "dark-mode",
-        "decision-framework",
-        "framer-motion",
-        "i18n",
-        "logistics",
-        "nextjs",
-        "react",
-        "recharts",
-        "supply-chain",
-        "tailwindcss",
-        "typescript",
-        "vercel",
-        "weighted-scoring",
-        "tailwind",
-        "decision-tools",
-        "operations",
-        "bilingual",
-        "data-visualization"
-      ],
-      "stack": [
-        "Next.js 16",
-        "React 19",
-        "Tailwind CSS 4",
-        "Framer Motion",
-        "Recharts"
-      ],
-      "status": "Production",
-      "language": "TypeScript",
-      "languages": {
-        "TypeScript": 163582,
-        "CSS": 5459,
-        "JavaScript": 559
-      },
-      "stars": 0,
-      "forks": 1,
-      "lastPushed": "2026-02-23T00:24:08Z",
-      "createdAt": "2026-02-13T18:42:29Z",
-      "isFeatured": false,
-      "isArchived": false,
-      "isPrivate": false,
-      "tagline": "Interactive decision tools with weighted scoring, cost modeling, and board-ready output",
-      "thumbnail": "https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-thumb.jpg",
-      "problem": "Operations leaders at growth-stage companies face high-stakes build-or-outsource decisions armed with gut feel, incomplete spreadsheets, and circular boardroom arguments. No tool combines structured weighted scoring with real-time cost modeling and shareable, board-ready output.",
-      "solution": "A suite of interactive decision-support tools that replace guesswork with data-driven analysis. A 20-criterion weighted scoring framework evaluates build vs. outsource across five categories, while an operational cost simulator reveals hidden step-function costs — all shareable via URL-encoded state.",
-      "keyFeatures": [
-        "20-criterion weighted scoring across 5 categories (Financial, Operational, Strategic, Control, Risk) with real-time verdict",
-        "Operational Cost Simulator with three-layer cost model — fixed, variable, and step-function costs with break-even analysis",
-        "6 decision presets and 5 growth scenario presets for rapid what-if analysis",
-        "Shareable URL encoding — full tool state in query params for board presentations",
-        "Full EN/ES bilingual support with dark/light theme toggle and print-ready layouts"
-      ],
-      "metrics": [
-        "20 weighted criteria across 5 decision categories",
-        "6 decision presets + 5 growth scenario presets",
-        "Full state shareable via URL — no backend required"
-      ],
-      "priority": 5,
-      "dateCompleted": "2026-02",
-      "slides": [
-        {
-          "src": "https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-01.png",
-          "altEn": "Operations Decision Tools Suite — structured analysis replaces boardroom guesswork",
-          "altEs": "Suite de Herramientas de Decision Operativa — analisis estructurado reemplaza suposiciones en la sala de juntas"
-        },
-        {
-          "src": "https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-02.png",
-          "altEn": "The Problem — gut feel, incomplete spreadsheets, and circular arguments drive million-dollar decisions",
-          "altEs": "El Problema — instinto, hojas de calculo incompletas y argumentos circulares impulsan decisiones millonarias"
-        },
-        {
-          "src": "https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-03.png",
-          "altEn": "20-Criterion Weighted Scoring — five categories with real-time verdict and radar chart",
-          "altEs": "Puntuacion Ponderada de 20 Criterios — cinco categorias con veredicto en tiempo real y grafico radar"
-        },
-        {
-          "src": "https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-04.png",
-          "altEn": "Scenario Presets — Growth Emergency, Control First, Cost Optimizer shift the verdict instantly",
-          "altEs": "Presets de Escenarios — Emergencia de Crecimiento, Control Primero, Optimizador de Costos cambian el veredicto al instante"
-        },
-        {
-          "src": "https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-05.png",
-          "altEn": "Expandable Rationale — each criterion includes industry analysis and scoring guidance",
-          "altEs": "Justificacion Expandible — cada criterio incluye analisis de industria y guia de puntuacion"
-        },
-        {
-          "src": "https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-06.png",
-          "altEn": "Operational Cost Simulator — three-layer cost model with volume slider and cost-per-order curves",
-          "altEs": "Simulador de Costos Operativos — modelo de costos de tres capas con control de volumen y curvas de costo por orden"
-        },
-        {
-          "src": "https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-07.png",
-          "altEn": "Step-Function Costs Revealed — watch cost-per-order jump when new hires and warehouse expansions trigger",
-          "altEs": "Costos Escalonados Revelados — observa el salto del costo por orden cuando se activan nuevas contrataciones y expansiones"
-        },
-        {
-          "src": "https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-08.png",
-          "altEn": "Break-Even and Margin Analysis — utilization gauges and margin visualization with profitability threshold",
-          "altEs": "Analisis de Punto de Equilibrio y Margen — indicadores de utilizacion y visualizacion de margen con umbral de rentabilidad"
-        },
-        {
-          "src": "https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-09.png",
-          "altEn": "Shareable and Board-Ready — full state encoded in URL params, print-optimized layouts for PDFs",
-          "altEs": "Compartible y Listo para Presentar — estado completo codificado en URL, disenos optimizados para impresion PDF"
-        },
-        {
-          "src": "https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-10.png",
-          "altEn": "Technical Architecture — Next.js 16, React 19, Recharts, Framer Motion, bilingual, zero backend",
-          "altEs": "Arquitectura Tecnica — Next.js 16, React 19, Recharts, Framer Motion, bilingue, sin backend"
-        }
-      ],
-      "videoUrl": "https://ai-build-vs-outsource.vercel.app/video/ai-build-vs-outsource-brief.mp4",
-      "videoPoster": "https://ai-build-vs-outsource.vercel.app/video/ai-build-vs-outsource-brief-poster.jpg"
     },
     {
       "id": 1068781109,
@@ -1992,7 +2050,7 @@
       "status": null,
       "language": "Astro",
       "languages": {
-        "Astro": 465076,
+        "Astro": 467187,
         "TypeScript": 112318,
         "HTML": 61067,
         "JavaScript": 26662,
@@ -2000,7 +2058,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-03-01T05:06:40Z",
+      "lastPushed": "2026-03-01T20:31:39Z",
       "createdAt": "2026-01-08T03:52:43Z",
       "isFeatured": false,
       "isArchived": false,
@@ -2230,25 +2288,49 @@
       "id": 1164355422,
       "name": "cushlabs-ai-voice-agent",
       "title": "Cushlabs Ai Voice Agent",
-      "description": "Low-latency AI voice qualification agent for CushLabs.ai",
-      "summary": "Low-latency AI voice qualification agent for CushLabs.ai",
+      "description": "Production-ready AI voice agents for lead qualification, appointment booking, and customer conversations — powered by Vapi, Claude, and Google Calendar",
+      "summary": "Production-ready AI voice agents for lead qualification, appointment booking, and customer conversations — powered by Vapi, Claude, and Google Calendar",
       "url": "https://github.com/RCushmaniii/cushlabs-ai-voice-agent",
-      "demoUrl": "https://cushlabs-voice-agent.onrender.com/portfolio",
+      "demoUrl": "https://voice.cushlabs.ai",
       "liveUrl": null,
-      "homepage": "https://cushlabs-voice-agent.onrender.com/portfolio",
-      "topics": [],
+      "homepage": "https://voice.cushlabs.ai",
+      "topics": [
+        "ai",
+        "appointment-booking",
+        "claude",
+        "conversational-ai",
+        "cushlabs",
+        "express",
+        "google-calendar",
+        "lead-qualification",
+        "nodejs",
+        "vapi",
+        "voice-agent"
+      ],
       "categories": [],
-      "tags": [],
+      "tags": [
+        "ai",
+        "appointment-booking",
+        "claude",
+        "conversational-ai",
+        "cushlabs",
+        "express",
+        "google-calendar",
+        "lead-qualification",
+        "nodejs",
+        "vapi",
+        "voice-agent"
+      ],
       "stack": [],
       "status": null,
       "language": "HTML",
       "languages": {
-        "HTML": 81833,
-        "JavaScript": 34880
+        "HTML": 245329,
+        "JavaScript": 61068
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-02-28T22:35:47Z",
+      "lastPushed": "2026-03-02T03:07:21Z",
       "createdAt": "2026-02-23T01:31:09Z",
       "isFeatured": false,
       "isArchived": false,
@@ -2310,9 +2392,9 @@
       "status": null,
       "language": "Astro",
       "languages": {
-        "Astro": 1177488,
+        "Astro": 1177317,
         "HTML": 837214,
-        "TypeScript": 647981,
+        "TypeScript": 648826,
         "JavaScript": 351713,
         "CSS": 40569,
         "Python": 29891,
@@ -2321,7 +2403,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-02-28T03:12:03Z",
+      "lastPushed": "2026-03-02T02:03:40Z",
       "createdAt": "2025-03-23T03:27:14Z",
       "isFeatured": false,
       "isArchived": false,
