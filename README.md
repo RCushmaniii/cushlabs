@@ -7,6 +7,22 @@
 
 > AI consulting and software development for SMBs. Bilingual (EN/ES) business site with automated GitHub portfolio sync and serverless booking.
 
+<p align="center">
+  <img src="public/images/portfolio/cushlabs-01.webp" width="30%" alt="CushLabs Homepage" />
+  <img src="public/images/portfolio/cushlabs-02.webp" width="30%" alt="Services Page" />
+  <img src="public/images/portfolio/cushlabs-03.webp" width="30%" alt="Portfolio Section" />
+</p>
+<p align="center">
+  <img src="public/images/portfolio/cushlabs-04.webp" width="30%" alt="Booking Wizard" />
+  <img src="public/images/portfolio/cushlabs-05.webp" width="30%" alt="Bilingual Architecture" />
+  <img src="public/images/portfolio/cushlabs-06.webp" width="30%" alt="Dark Mode" />
+</p>
+<p align="center">
+  <img src="public/images/portfolio/cushlabs-07.webp" width="30%" alt="Contact Integration" />
+  <img src="public/images/portfolio/cushlabs-08.webp" width="30%" alt="SEO Infrastructure" />
+  <img src="public/images/portfolio/cushlabs-09.webp" width="30%" alt="Responsive Design" />
+</p>
+
 ## Overview
 
 CushLabs.ai is the production website for CushLabs AI Services — an AI integration and software development consultancy serving small and mid-sized businesses in the US and Mexico. The site is fully bilingual (English/Spanish), statically generated with Astro, and designed to run itself: portfolio projects sync automatically from GitHub repos, consultations book directly through a custom serverless wizard, and a pre-deploy audit enforces bilingual parity before every build.
@@ -208,4 +224,4 @@ Guadalajara, Mexico
 
 ---
 
-*Last Updated: 2026-02-20*
+*Last Updated: 2026-03-02*

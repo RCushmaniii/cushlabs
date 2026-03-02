@@ -5,7 +5,7 @@
 portfolio_enabled: true
 portfolio_priority: 6
 portfolio_featured: false
-portfolio_last_reviewed: "2026-02-20"
+portfolio_last_reviewed: "2026-03-02"
 
 title: "CushLabs.ai"
 tagline: "Self-maintaining bilingual portfolio with serverless booking and build-time i18n enforcement"
@@ -25,15 +25,20 @@ tags:
   - "bilingual"
   - "serverless"
 
-thumbnail: "/images/portfolio/cushlabs-01.png"
+thumbnail: "/images/portfolio/cushlabs-thumb.webp"
 hero_images:
-  - "/images/portfolio/cushlabs-01.png"
-  - "/images/portfolio/cushlabs-02.png"
-  - "/images/portfolio/cushlabs-03.png"
-  - "/images/portfolio/cushlabs-04.png"
-  - "/images/portfolio/cushlabs-05.png"
-  - "/images/portfolio/cushlabs-06.png"
-demo_video_url: ""
+  - "/images/portfolio/cushlabs-01.webp"
+  - "/images/portfolio/cushlabs-02.webp"
+  - "/images/portfolio/cushlabs-03.webp"
+  - "/images/portfolio/cushlabs-04.webp"
+  - "/images/portfolio/cushlabs-05.webp"
+  - "/images/portfolio/cushlabs-06.webp"
+  - "/images/portfolio/cushlabs-07.webp"
+  - "/images/portfolio/cushlabs-08.webp"
+  - "/images/portfolio/cushlabs-09.webp"
+  - "/images/portfolio/cushlabs-10.webp"
+demo_video_url: "/images/portfolio/cushlabs-brief.mp4"
+demo_video_poster: "/images/portfolio/cushlabs-brief-poster.webp"
 
 live_url: "https://cushlabs.ai"
 demo_url: "https://cushlabs.ai"

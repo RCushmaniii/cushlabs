@@ -1,7 +1,72 @@
 {
-  "generatedAt": "2026-03-02T04:36:51.535Z",
+  "generatedAt": "2026-03-02T06:12:04.187Z",
   "count": 35,
   "projects": [
+    {
+      "id": 1108213747,
+      "name": "ai-chatbot-saas",
+      "title": "Converso AI — Bilingual AI Front Desk & Sales Assistant",
+      "description": "Multi-tenant AI chatbot SaaS platform - Ragbot by CushLabs.AI",
+      "summary": "> Multi-tenant SaaS platform for service businesses to deploy a bilingual (EN/ES), on-brand AI assistant that answers questions, qualifies leads, captures booking intent, and escalates high-intent pro",
+      "url": "https://github.com/RCushmaniii/ai-chatbot-saas",
+      "demoUrl": "https://ai-chatbot-saas-delta.vercel.app",
+      "liveUrl": "",
+      "homepage": "https://ai-chatbot-saas-delta.vercel.app",
+      "topics": [],
+      "categories": [
+        "AI Automation"
+      ],
+      "tags": [
+        "ai-chatbot",
+        "saas",
+        "rag",
+        "multi-tenant",
+        "bilingual",
+        "nextjs",
+        "stripe",
+        "pgvector",
+        "clerk-auth",
+        "lead-generation"
+      ],
+      "stack": [
+        "Next.js 16",
+        "TypeScript",
+        "PostgreSQL + pgvector",
+        "Vercel AI SDK",
+        "OpenAI GPT-4o",
+        "Clerk Authentication",
+        "Stripe Billing",
+        "Drizzle ORM",
+        "Tailwind CSS",
+        "React Flow",
+        "Vercel"
+      ],
+      "status": null,
+      "language": "TypeScript",
+      "languages": {
+        "TypeScript": 1154314,
+        "JavaScript": 12530,
+        "CSS": 10253
+      },
+      "stars": 0,
+      "forks": 0,
+      "lastPushed": "2026-03-02T05:54:42Z",
+      "createdAt": "2025-12-02T07:09:31Z",
+      "isFeatured": true,
+      "isArchived": false,
+      "isPrivate": false,
+      "tagline": "White-label AI chatbot SaaS for service businesses in bilingual markets",
+      "thumbnail": "https://raw.githubusercontent.com/RCushmaniii/ai-chatbot-saas/main/public/images/portfolio/ai-chatbot-saas-thumb.jpg",
+      "problem": null,
+      "solution": null,
+      "keyFeatures": [],
+      "metrics": [],
+      "priority": 1,
+      "dateCompleted": null,
+      "slides": [],
+      "videoUrl": null,
+      "videoPoster": null
+    },
     {
       "id": 1090479901,
       "name": "ai-resume-tailor",
@@ -254,71 +319,6 @@
       ],
       "videoUrl": "https://ny-ai-chatbot.vercel.app/video/ny-eng-chatbot-brief.mp4",
       "videoPoster": "https://ny-ai-chatbot.vercel.app/video/ny-eng-chatbot-brief-poster.jpg"
-    },
-    {
-      "id": 1108213747,
-      "name": "ai-chatbot-saas",
-      "title": "Converso AI — Bilingual AI Front Desk & Sales Assistant",
-      "description": "Multi-tenant AI chatbot SaaS platform - Ragbot by CushLabs.AI",
-      "summary": "> Multi-tenant SaaS platform for service businesses to deploy a bilingual (EN/ES), on-brand AI assistant that answers questions, qualifies leads, captures booking intent, and escalates high-intent pro",
-      "url": "https://github.com/RCushmaniii/ai-chatbot-saas",
-      "demoUrl": "https://ai-chatbot-saas-delta.vercel.app",
-      "liveUrl": "",
-      "homepage": "https://ai-chatbot-saas-delta.vercel.app",
-      "topics": [],
-      "categories": [
-        "AI Automation"
-      ],
-      "tags": [
-        "ai-chatbot",
-        "saas",
-        "rag",
-        "multi-tenant",
-        "bilingual",
-        "nextjs",
-        "stripe",
-        "pgvector",
-        "clerk-auth",
-        "lead-generation"
-      ],
-      "stack": [
-        "Next.js 16",
-        "TypeScript",
-        "PostgreSQL + pgvector",
-        "Vercel AI SDK",
-        "OpenAI GPT-4o",
-        "Clerk Authentication",
-        "Stripe Billing",
-        "Drizzle ORM",
-        "Tailwind CSS",
-        "React Flow",
-        "Vercel"
-      ],
-      "status": null,
-      "language": "TypeScript",
-      "languages": {
-        "TypeScript": 1149737,
-        "JavaScript": 12530,
-        "CSS": 10253
-      },
-      "stars": 0,
-      "forks": 0,
-      "lastPushed": "2026-03-01T19:30:13Z",
-      "createdAt": "2025-12-02T07:09:31Z",
-      "isFeatured": true,
-      "isArchived": false,
-      "isPrivate": false,
-      "tagline": "White-label AI chatbot SaaS for service businesses in bilingual markets",
-      "thumbnail": null,
-      "problem": null,
-      "solution": null,
-      "keyFeatures": [],
-      "metrics": [],
-      "priority": 1,
-      "dateCompleted": null,
-      "slides": [],
-      "videoUrl": null,
-      "videoPoster": null
     },
     {
       "id": 1120026584,
@@ -1135,24 +1135,38 @@
       "id": 1128388603,
       "name": "ai-portfolio",
       "title": "AI Portfolio",
-      "description": "",
+      "description": "Static portfolio system that syncs project data from GitHub repos into a filterable showcase — Next.js 15, React 19, TypeScript, Tailwind CSS",
       "summary": "> A static portfolio system that aggregates project data from GitHub repositories and renders a professional, filterable showcase.",
       "url": "https://github.com/RCushmaniii/ai-portfolio",
       "demoUrl": "https://cushlabs.ai/portfolio",
       "liveUrl": "https://cushlabs.ai",
-      "homepage": "https://ai-portfolio-sigma-rouge.vercel.app",
-      "topics": [],
+      "homepage": "https://cushlabs.ai",
+      "topics": [
+        "github-api",
+        "nextjs",
+        "portfolio",
+        "react",
+        "shadcn-ui",
+        "static-site",
+        "tailwindcss",
+        "typescript",
+        "vercel"
+      ],
       "categories": [
         "Developer Tools"
       ],
       "tags": [
-        "portfolio",
-        "next-js",
-        "typescript",
         "github-api",
+        "nextjs",
+        "portfolio",
+        "react",
+        "shadcn-ui",
         "static-site",
-        "tailwind",
-        "shadcn-ui"
+        "tailwindcss",
+        "typescript",
+        "vercel",
+        "next-js",
+        "tailwind"
       ],
       "stack": [
         "Next.js 15",
@@ -1167,27 +1181,58 @@
       "status": null,
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 109357,
+        "TypeScript": 141796,
         "PowerShell": 3372,
-        "CSS": 1381,
+        "CSS": 1413,
         "JavaScript": 83
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-03-02T04:35:01Z",
+      "lastPushed": "2026-03-02T06:06:16Z",
       "createdAt": "2026-01-05T15:06:48Z",
       "isFeatured": false,
       "isArchived": false,
       "isPrivate": false,
       "tagline": "A static portfolio system that syncs project data from GitHub repos into a filterable showcase",
-      "thumbnail": null,
+      "thumbnail": "https://cushlabs.ai/images/portfolio-card.jpg",
       "problem": null,
       "solution": null,
       "keyFeatures": [],
       "metrics": [],
       "priority": 4,
       "dateCompleted": null,
-      "slides": [],
+      "slides": [
+        {
+          "src": null
+        },
+        {
+          "src": null
+        },
+        {
+          "src": null
+        },
+        {
+          "src": null
+        },
+        {
+          "src": null
+        },
+        {
+          "src": null
+        },
+        {
+          "src": null
+        },
+        {
+          "src": null
+        },
+        {
+          "src": null
+        },
+        {
+          "src": null
+        }
+      ],
       "videoUrl": null,
       "videoPoster": null
     },
@@ -2050,15 +2095,15 @@
       "status": null,
       "language": "Astro",
       "languages": {
-        "Astro": 467187,
-        "TypeScript": 112318,
+        "Astro": 468852,
+        "TypeScript": 112368,
         "HTML": 61067,
-        "JavaScript": 26662,
-        "CSS": 1697
+        "JavaScript": 27043,
+        "CSS": 2655
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-03-01T20:31:39Z",
+      "lastPushed": "2026-03-02T05:23:52Z",
       "createdAt": "2026-01-08T03:52:43Z",
       "isFeatured": false,
       "isArchived": false,
@@ -2325,12 +2370,12 @@
       "status": null,
       "language": "HTML",
       "languages": {
-        "HTML": 245329,
-        "JavaScript": 61068
+        "HTML": 257530,
+        "JavaScript": 62381
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-03-02T03:07:21Z",
+      "lastPushed": "2026-03-02T04:50:30Z",
       "createdAt": "2026-02-23T01:31:09Z",
       "isFeatured": false,
       "isArchived": false,
