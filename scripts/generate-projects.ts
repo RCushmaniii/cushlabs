@@ -91,6 +91,14 @@ const GITHUB_TOKEN = process.env.PROJECT_SYNC_TOKEN || process.env.GITHUB_TOKEN;
 const GITHUB_OWNER = process.env.GITHUB_OWNER ?? 'RCushmaniii';
 const SELF_REPO = 'cushlabs'; // Assets in this repo are local — keep relative paths
 
+// ── Sync issue tracking ──────────────────────────────────────────────
+interface SyncIssue {
+  level: 'error' | 'warning';
+  repo: string;
+  message: string;
+}
+const syncIssues: SyncIssue[] = [];
+
 /**
  * Resolve a relative asset path to an absolute URL.
  * - Paths in the cushlabs repo itself stay relative (served from public/)
@@ -142,6 +150,7 @@ function tryLocalPortfolioMd(repo: string): PortfolioFrontmatter | null {
 
 async function fetchPortfolioMd(owner: string, repo: string): Promise<PortfolioFrontmatter | null> {
   // Try GitHub API first (PORTFOLIO.md, then portfolio.md)
+  let got403 = false;
   for (const filename of ['PORTFOLIO.md', 'portfolio.md']) {
     try {
       const { data } = await octokit.repos.getContent({
@@ -154,7 +163,9 @@ async function fetchPortfolioMd(owner: string, repo: string): Promise<PortfolioF
       const content = typeof data === 'string' ? data : String(data);
       const { data: frontmatter } = matter(content);
       return frontmatter as PortfolioFrontmatter;
-    } catch {
+    } catch (err: unknown) {
+      const status = (err as { status?: number }).status;
+      if (status === 403) got403 = true;
       // File not found or access denied, try next filename
     }
   }
@@ -162,6 +173,12 @@ async function fetchPortfolioMd(owner: string, repo: string): Promise<PortfolioF
   // Fallback: read from local clone if the repo is checked out alongside this project
   const local = tryLocalPortfolioMd(repo);
   if (local) return local;
+
+  // Track the 403 only if local fallback also failed
+  if (got403) {
+    syncIssues.push({ level: 'error', repo, message: '403 Forbidden — token lacks access to this repo' });
+    console.warn(`  ❌ 403 Forbidden — token cannot access PORTFOLIO.md`);
+  }
 
   return null;
 }
@@ -429,6 +446,26 @@ async function generateProjects() {
     console.warn(`\n📋 Applied portfolio-order.json overrides (${orderConfig.order.length} entries)`);
   }
 
+  // ── Post-sync data quality checks on portfolio-listed projects ──
+  const portfolioProjects = projects.filter(p => p.priority < 99);
+  for (const p of portfolioProjects) {
+    if (!p.tagline) {
+      syncIssues.push({ level: 'warning', repo: p.name, message: 'Missing tagline' });
+    }
+    if (!p.thumbnail) {
+      syncIssues.push({ level: 'warning', repo: p.name, message: 'Missing thumbnail' });
+    }
+    if (p.stack.length === 0) {
+      syncIssues.push({ level: 'warning', repo: p.name, message: 'Empty tech stack' });
+    }
+    if (!p.problem) {
+      syncIssues.push({ level: 'warning', repo: p.name, message: 'Missing problem/challenge description' });
+    }
+    if (p.slides.length === 0) {
+      syncIssues.push({ level: 'warning', repo: p.name, message: 'No portfolio slides/screenshots' });
+    }
+  }
+
   // Sort: priority ascending (lower = higher), then featured first, then lastPushed descending
   const sorted = projects.sort((a, b) => {
     if (a.priority !== b.priority) return a.priority - b.priority;
@@ -449,6 +486,174 @@ async function generateProjects() {
   console.warn(`   With PORTFOLIO.md: ${sorted.filter(p => p.tagline !== null).length}`);
   console.warn(`   Skipped (portfolio_enabled: false): ${skippedByPortfolio}`);
   console.warn(`   Categories: ${new Set(sorted.flatMap(p => p.categories)).size}`);
+
+  // ── Report sync issues via GitHub Issue ──
+  if (syncIssues.length > 0) {
+    await reportSyncIssues(syncIssues);
+  } else {
+    console.warn(`\n✅ No sync issues detected`);
+    // Close any stale open issue from a previous run
+    await closeResolvedIssue();
+  }
+}
+
+const SYNC_LABEL = 'portfolio-sync';
+
+async function closeResolvedIssue(): Promise<void> {
+  try {
+    let { data: openIssues } = await octokit.issues.listForRepo({
+      owner: GITHUB_OWNER,
+      repo: SELF_REPO,
+      labels: SYNC_LABEL,
+      state: 'open',
+      per_page: 1,
+    });
+    if (openIssues.length === 0) {
+      const { data: titleSearch } = await octokit.issues.listForRepo({
+        owner: GITHUB_OWNER,
+        repo: SELF_REPO,
+        state: 'open',
+        per_page: 10,
+      });
+      openIssues = titleSearch.filter(i => i.title.startsWith('Portfolio Sync:'));
+    }
+    if (openIssues.length > 0) {
+      const issue = openIssues[0];
+      await octokit.issues.createComment({
+        owner: GITHUB_OWNER,
+        repo: SELF_REPO,
+        issue_number: issue.number,
+        body: `✅ **All issues resolved** — sync completed cleanly on ${new Date().toISOString().split('T')[0]}.\n\nAuto-closing.`,
+      });
+      await octokit.issues.update({
+        owner: GITHUB_OWNER,
+        repo: SELF_REPO,
+        issue_number: issue.number,
+        state: 'closed',
+      });
+      console.warn(`\n🎉 Closed resolved sync issue #${issue.number}`);
+    }
+  } catch {
+    // Non-critical — don't fail the build over issue management
+  }
+}
+
+async function reportSyncIssues(issues: SyncIssue[]): Promise<void> {
+  const errors = issues.filter(i => i.level === 'error');
+  const warnings = issues.filter(i => i.level === 'warning');
+
+  console.warn(`\n⚠️  Sync completed with ${errors.length} error(s) and ${warnings.length} warning(s)`);
+
+  // Group issues by repo for the report
+  const byRepo = new Map<string, SyncIssue[]>();
+  for (const issue of issues) {
+    const list = byRepo.get(issue.repo) || [];
+    list.push(issue);
+    byRepo.set(issue.repo, list);
+  }
+
+  // Build the issue body
+  const date = new Date().toISOString().split('T')[0];
+  const lines: string[] = [
+    `The portfolio sync script detected **${errors.length} error(s)** and **${warnings.length} warning(s)** on ${date}.`,
+    '',
+  ];
+
+  if (errors.length > 0) {
+    lines.push('## Errors');
+    lines.push('');
+    for (const [repo, repoIssues] of byRepo) {
+      const repoErrors = repoIssues.filter(i => i.level === 'error');
+      if (repoErrors.length > 0) {
+        lines.push(`### \`${repo}\``);
+        for (const e of repoErrors) {
+          lines.push(`- ❌ ${e.message}`);
+        }
+        lines.push('');
+      }
+    }
+  }
+
+  if (warnings.length > 0) {
+    lines.push('## Warnings');
+    lines.push('');
+    for (const [repo, repoIssues] of byRepo) {
+      const repoWarnings = repoIssues.filter(i => i.level === 'warning');
+      if (repoWarnings.length > 0) {
+        lines.push(`### \`${repo}\``);
+        for (const w of repoWarnings) {
+          lines.push(`- ⚠️ ${w.message}`);
+        }
+        lines.push('');
+      }
+    }
+  }
+
+  lines.push('---');
+  lines.push('');
+  lines.push('**How to fix:**');
+  lines.push('- **403 errors**: Update the fine-grained PAT (`PROJECT_SYNC_TOKEN`) to include the repo in its scope');
+  lines.push('- **Missing thumbnail/slides**: Add media assets to the repo\'s `PORTFOLIO.md`');
+  lines.push('- **Missing tagline/problem/stack**: Fill in the field in the repo\'s `PORTFOLIO.md` frontmatter');
+  lines.push('');
+  lines.push('*This issue was auto-generated by `scripts/generate-projects.ts`*');
+
+  const body = lines.join('\n');
+  const title = `Portfolio Sync: ${errors.length} error(s), ${warnings.length} warning(s) — ${date}`;
+
+  try {
+    // Check for existing open issue to avoid duplicates
+    // Try label-based search first, fall back to title-based search
+    let { data: openIssues } = await octokit.issues.listForRepo({
+      owner: GITHUB_OWNER,
+      repo: SELF_REPO,
+      labels: SYNC_LABEL,
+      state: 'open',
+      per_page: 1,
+    });
+    if (openIssues.length === 0) {
+      // Label may not have applied (token permissions) — search by title prefix
+      const { data: titleSearch } = await octokit.issues.listForRepo({
+        owner: GITHUB_OWNER,
+        repo: SELF_REPO,
+        state: 'open',
+        per_page: 10,
+      });
+      openIssues = titleSearch.filter(i => i.title.startsWith('Portfolio Sync:'));
+    }
+
+    if (openIssues.length > 0) {
+      // Update existing issue with a new comment
+      const issue = openIssues[0];
+      await octokit.issues.createComment({
+        owner: GITHUB_OWNER,
+        repo: SELF_REPO,
+        issue_number: issue.number,
+        body: `## Updated Report — ${date}\n\n${body}`,
+      });
+      // Update the title to reflect latest counts
+      await octokit.issues.update({
+        owner: GITHUB_OWNER,
+        repo: SELF_REPO,
+        issue_number: issue.number,
+        title,
+      });
+      console.warn(`📬 Updated existing sync issue #${issue.number}`);
+    } else {
+      // Create new issue
+      const { data: created } = await octokit.issues.create({
+        owner: GITHUB_OWNER,
+        repo: SELF_REPO,
+        title,
+        body,
+        labels: [SYNC_LABEL],
+      });
+      console.warn(`📬 Created sync issue #${created.number}: ${created.html_url}`);
+    }
+  } catch (err: unknown) {
+    const msg = err instanceof Error ? err.message : String(err);
+    console.warn(`⚠️  Could not create GitHub issue (non-fatal): ${msg}`);
+  }
 }
 
 generateProjects().catch(error => {
