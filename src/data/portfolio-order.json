@@ -1,0 +1,28 @@
+{
+  "_comment": "Curated display order for the portfolio page. Overrides PORTFOLIO.md priorities after sync.",
+  "order": [
+    { "name": "cushlabs-ai-voice-agent",     "priority": 1,  "featured": true },
+    { "name": "ai-chatbot-saas",             "priority": 2,  "featured": true },
+    { "name": "ny-ai-chatbot",               "priority": 3,  "featured": true },
+    { "name": "ny-eng",                      "priority": 4,  "featured": true,  "categories": ["Client Work"] },
+    { "name": "ai-resume-tailor",            "priority": 5,  "featured": true },
+    { "name": "ai-build-vs-outsource",       "priority": 6,  "featured": true },
+    { "name": "context-writing-system",      "priority": 7,  "featured": false },
+    { "name": "ai-idea-validator",           "priority": 8,  "featured": false },
+    { "name": "cushlabs",                    "priority": 9,  "featured": false },
+    { "name": "ai-portfolio",               "priority": 10, "featured": false },
+    { "name": "freelance-income-planner",    "priority": 11, "featured": false },
+    { "name": "ai-scrabble-practice",        "priority": 12, "featured": false, "categories": ["Games"] },
+    { "name": "ai-filesense",               "priority": 13, "featured": false },
+    { "name": "stock-alert",                "priority": 14, "featured": false },
+    { "name": "ai-filesense-website",        "priority": 15, "featured": false },
+    { "name": "ai-stock-alert-website",      "priority": 16, "featured": false },
+    { "name": "comp-plan-simulator",         "priority": 17, "featured": false },
+    { "name": "marble-does-not-yield",       "priority": 18, "featured": false },
+    { "name": "mazebreak-trello",            "priority": 19, "featured": false },
+    { "name": "mazebreak-wiki",              "priority": 20, "featured": false },
+    { "name": "nextjs-react-agency-starter", "priority": 21, "featured": false },
+    { "name": "ai-personal-data-eraser",     "priority": 22, "featured": false },
+    { "name": "react-vite-tailwind-base",    "priority": 23, "featured": false }
+  ]
+}

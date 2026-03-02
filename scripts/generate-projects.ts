@@ -1,6 +1,6 @@
 import { config } from 'dotenv';
 import { Octokit } from '@octokit/rest';
-import { writeFileSync, existsSync } from 'fs';
+import { writeFileSync, readFileSync, existsSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import matter from 'gray-matter';
@@ -381,6 +381,27 @@ async function generateProjects() {
 
     projects.push(project);
     console.warn(`  ✅ ${project.title} (${categories.join(', ') || 'uncategorized'}) [priority: ${project.priority}]`);
+  }
+
+  // Apply curated display order from portfolio-order.json
+  const orderPath = join(__dirname, '../src/data/portfolio-order.json');
+  if (existsSync(orderPath)) {
+    const orderConfig = JSON.parse(readFileSync(orderPath, 'utf-8'));
+    const orderMap = new Map<string, { priority: number; featured: boolean; categories?: string[] }>();
+    for (const entry of orderConfig.order) {
+      orderMap.set(entry.name, entry);
+    }
+    for (const project of projects) {
+      const override = orderMap.get(project.name);
+      if (override) {
+        project.priority = override.priority;
+        project.isFeatured = override.featured;
+        if (override.categories) {
+          project.categories = override.categories;
+        }
+      }
+    }
+    console.warn(`\n📋 Applied portfolio-order.json overrides (${orderConfig.order.length} entries)`);
   }
 
   // Sort: priority ascending (lower = higher), then featured first, then lastPushed descending
