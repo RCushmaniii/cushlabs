@@ -5,7 +5,9 @@ import Section from "../components/layout/Section.astro";
 import projectsData from "../data/projects.generated.json";
 import { getProjectDetailOverride } from "../data/projectDetails";
 
-const { projects } = projectsData;
+// Only show curated projects (priority < 99)
+const projects = projectsData.projects.filter(p => p.priority < 99);
+const allCategories = [...new Set(projects.flatMap(p => p.categories).filter(Boolean))].sort();
 
 function getThumbnail(project: typeof projects[number]): string | null {
   // 1. Portfolio.md thumbnail — only trust absolute URLs or /images/portfolio/ paths
@@ -206,7 +208,23 @@ const t = content[locale];
   <!-- Filters & Projects -->
   <Section id="projects" spacing="sm">
     <Container>
-      <div class="flex flex-wrap gap-2 justify-center mb-8 items-center" id="filters">
+      <!-- Search -->
+      <div class="flex justify-center mb-6">
+        <div class="relative w-full max-w-md">
+          <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+          <input
+            type="text"
+            id="search-input"
+            placeholder={t.filters.search}
+            class="w-full pl-9 pr-4 py-2.5 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 font-display text-sm text-gray-700 dark:text-gray-300 placeholder-gray-400 dark:placeholder-gray-500 focus:border-cush-orange focus:outline-none focus:ring-1 focus:ring-cush-orange transition-all"
+          />
+        </div>
+      </div>
+
+      <!-- Category Filters -->
+      <div class="flex flex-wrap gap-2 justify-center mb-4" id="filters">
         <button
           class="filter-btn active px-4 py-2 rounded-lg border border-cush-orange bg-cush-orange/10 font-display text-sm font-semibold text-cush-orange transition-all"
           data-filter="all"
@@ -219,18 +237,20 @@ const t = content[locale];
         >
           {t.filters.featured}
         </button>
-        <div class="relative">
-          <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-          </svg>
-          <input
-            type="text"
-            id="search-input"
-            placeholder={t.filters.search}
-            class="pl-9 pr-4 py-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 font-display text-sm text-gray-700 dark:text-gray-300 placeholder-gray-400 dark:placeholder-gray-500 focus:border-cush-orange focus:outline-none focus:ring-1 focus:ring-cush-orange transition-all w-48 md:w-64"
-          />
-        </div>
+        {allCategories.map(cat => (
+          <button
+            class="filter-btn px-4 py-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-transparent font-display text-sm font-semibold text-gray-600 dark:text-gray-400 hover:border-cush-orange hover:text-cush-orange transition-all"
+            data-filter={`cat:${cat}`}
+          >
+            {cat}
+          </button>
+        ))}
       </div>
+
+      <!-- Showing count -->
+      <p id="showing-count" class="text-center text-sm text-gray-500 dark:text-gray-400 mb-8 font-display">
+        {locale === "es" ? `Mostrando ${projects.length} de ${projects.length} proyectos` : `Showing ${projects.length} of ${projects.length} projects`}
+      </p>
 
       <!-- Projects Grid -->
       <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -439,6 +459,9 @@ const t = content[locale];
   let currentFilter = "all";
   let searchQuery = "";
   let debounceTimer: ReturnType<typeof setTimeout>;
+  const totalProjects = document.querySelectorAll(".project-card").length;
+  const showingCountEl = document.getElementById("showing-count");
+  const isEs = document.documentElement.lang === "es";
 
   function setFilter(filter: string) {
     currentFilter = filter;
@@ -467,9 +490,16 @@ const t = content[locale];
     projects.forEach((card) => {
       if (!(card instanceof HTMLElement)) return;
       const isFeatured = card.getAttribute("data-featured") === "true";
+      const categories = (card.getAttribute("data-categories") || "").split(",");
       const searchData = card.getAttribute("data-search") || "";
 
-      let show = currentFilter === "all" || (currentFilter === "featured" && isFeatured);
+      let show = true;
+      if (currentFilter === "featured") {
+        show = isFeatured;
+      } else if (currentFilter.startsWith("cat:")) {
+        const cat = currentFilter.replace("cat:", "");
+        show = categories.includes(cat);
+      }
 
       if (show && query) {
         show = searchData.includes(query);
@@ -478,6 +508,13 @@ const t = content[locale];
       card.style.display = show ? "flex" : "none";
       if (show) visibleCount++;
     });
+
+    // Update counter
+    if (showingCountEl) {
+      showingCountEl.textContent = isEs
+        ? `Mostrando ${visibleCount} de ${totalProjects} proyectos`
+        : `Showing ${visibleCount} of ${totalProjects} projects`;
+    }
 
     const empty = document.getElementById("empty");
     const projectsGrid = document.getElementById("projects-grid") as HTMLElement | null;

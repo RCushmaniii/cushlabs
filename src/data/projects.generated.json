@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-02T08:06:37.166Z",
+  "generatedAt": "2026-03-02T09:20:10.629Z",
   "count": 36,
   "projects": [
     {
@@ -44,22 +44,29 @@
       "status": null,
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 1154314,
+        "TypeScript": 1155036,
         "JavaScript": 12530,
         "CSS": 10253
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-03-02T08:03:52Z",
+      "lastPushed": "2026-03-02T08:51:47Z",
       "createdAt": "2025-12-02T07:09:31Z",
       "isFeatured": true,
       "isArchived": false,
       "isPrivate": false,
       "tagline": "White-label AI chatbot SaaS for service businesses in bilingual markets",
       "thumbnail": "https://raw.githubusercontent.com/RCushmaniii/ai-chatbot-saas/main/public/images/portfolio/ai-chatbot-saas-thumb.webp",
-      "problem": null,
+      "problem": "Service businesses in bilingual markets lose leads outside business hours\nand can't afford round-the-clock bilingual staff. Generic chatbots hallucinate\nanswers because they don't know the business. This platform gives each tenant\na knowledge-grounded AI assistant that answers accurately in English or Spanish,\nqualifies leads, and hands off to humans when needed.\n",
       "solution": null,
-      "keyFeatures": [],
+      "keyFeatures": [
+        "Multi-tenant SaaS with full data isolation per business",
+        "RAG-powered answers grounded in verified business content",
+        "Native bilingual support with automatic language detection",
+        "Visual playbook builder for non-technical conversation design",
+        "Stripe billing with subscription management and usage tracking",
+        "One-tag embeddable widget for any website"
+      ],
       "metrics": [],
       "priority": 1,
       "dateCompleted": null,
@@ -112,6 +119,151 @@
       ],
       "videoUrl": "https://raw.githubusercontent.com/RCushmaniii/ai-chatbot-saas/main/public/video/converso-brief.mp4",
       "videoPoster": "https://raw.githubusercontent.com/RCushmaniii/ai-chatbot-saas/main/public/video/converso-brief-poster.jpg"
+    },
+    {
+      "id": 1164355422,
+      "name": "cushlabs-ai-voice-agent",
+      "title": "AI Voice Agent Platform",
+      "description": "Production-ready AI voice agents for lead qualification, appointment booking, and customer conversations — powered by Vapi, Claude, and Google Calendar",
+      "summary": "Production-ready AI voice agents that qualify leads, book appointments, and handle customer conversations — 24/7, with sub-500ms response times.",
+      "url": "https://github.com/RCushmaniii/cushlabs-ai-voice-agent",
+      "demoUrl": "https://voice.cushlabs.ai",
+      "liveUrl": "https://voice.cushlabs.ai",
+      "homepage": "https://voice.cushlabs.ai",
+      "topics": [
+        "ai",
+        "appointment-booking",
+        "claude",
+        "conversational-ai",
+        "cushlabs",
+        "express",
+        "google-calendar",
+        "lead-qualification",
+        "nodejs",
+        "vapi",
+        "voice-agent"
+      ],
+      "categories": [
+        "AI Automation"
+      ],
+      "tags": [
+        "ai",
+        "appointment-booking",
+        "claude",
+        "conversational-ai",
+        "cushlabs",
+        "express",
+        "google-calendar",
+        "lead-qualification",
+        "nodejs",
+        "vapi",
+        "voice-agent",
+        "voice-ai",
+        "llm",
+        "real-time",
+        "customer-support",
+        "webhooks"
+      ],
+      "stack": [
+        "Vapi",
+        "Claude Sonnet",
+        "Groq Llama 3.1",
+        "Deepgram Nova-2",
+        "Cartesia",
+        "Express.js",
+        "Neon PostgreSQL",
+        "Redis",
+        "Google Calendar API",
+        "Render"
+      ],
+      "status": "Production",
+      "language": "HTML",
+      "languages": {
+        "HTML": 332181,
+        "JavaScript": 69518,
+        "CSS": 6849
+      },
+      "stars": 0,
+      "forks": 0,
+      "lastPushed": "2026-03-02T08:39:57Z",
+      "createdAt": "2026-02-23T01:31:09Z",
+      "isFeatured": true,
+      "isArchived": false,
+      "isPrivate": false,
+      "tagline": "Production voice AI agents that qualify leads, book appointments, and handle support calls 24/7",
+      "thumbnail": "https://voice.cushlabs.ai/portfolio/voice-cushlabs-thumb.webp",
+      "problem": "Businesses lose leads to unanswered calls, voicemail black holes, and hold-time abandonment. Hiring receptionists is expensive and still leaves gaps outside business hours. Existing IVR systems frustrate callers with rigid menu trees that never actually solve the problem.",
+      "solution": "Production AI voice agents that handle inbound calls with natural conversation, qualify leads in real time, book appointments directly into Google Calendar, and answer FAQs — 24/7 with sub-500ms response times and zero hold times.",
+      "keyFeatures": [
+        "3 production demo agents: Clara (lead qualification), James (appointment booking), Sophia (med spa front desk)",
+        "Real-time Google Calendar integration — checks availability and books confirmed appointments mid-call",
+        "Sub-500ms voice response via Vapi WebRTC with Deepgram STT and Cartesia TTS",
+        "Webhook-driven function calling for calendar, database, and CRM operations during live calls",
+        "Session state via Redis for multi-turn conversation context across function calls",
+        "Lead data persisted to Neon PostgreSQL with full call metadata"
+      ],
+      "metrics": [
+        "Sub-500ms voice response time",
+        "3 live production demo agents",
+        "24/7 availability with zero hold times",
+        "Real-time calendar booking mid-conversation"
+      ],
+      "priority": 1,
+      "dateCompleted": "2026-03",
+      "slides": [
+        {
+          "src": "https://voice.cushlabs.ai/portfolio/voice-cushlabs-01.webp",
+          "altEn": "AI Voice Agent Platform",
+          "altEs": "AI Voice Agent Platform"
+        },
+        {
+          "src": "https://voice.cushlabs.ai/portfolio/voice-cushlabs-02.webp",
+          "altEn": "AI Voice Agent Platform",
+          "altEs": "AI Voice Agent Platform"
+        },
+        {
+          "src": "https://voice.cushlabs.ai/portfolio/voice-cushlabs-03.webp",
+          "altEn": "AI Voice Agent Platform",
+          "altEs": "AI Voice Agent Platform"
+        },
+        {
+          "src": "https://voice.cushlabs.ai/portfolio/voice-cushlabs-04.webp",
+          "altEn": "AI Voice Agent Platform",
+          "altEs": "AI Voice Agent Platform"
+        },
+        {
+          "src": "https://voice.cushlabs.ai/portfolio/voice-cushlabs-05.webp",
+          "altEn": "AI Voice Agent Platform",
+          "altEs": "AI Voice Agent Platform"
+        },
+        {
+          "src": "https://voice.cushlabs.ai/portfolio/voice-cushlabs-06.webp",
+          "altEn": "AI Voice Agent Platform",
+          "altEs": "AI Voice Agent Platform"
+        },
+        {
+          "src": "https://voice.cushlabs.ai/portfolio/voice-cushlabs-07.webp",
+          "altEn": "AI Voice Agent Platform",
+          "altEs": "AI Voice Agent Platform"
+        },
+        {
+          "src": "https://voice.cushlabs.ai/portfolio/voice-cushlabs-08.webp",
+          "altEn": "AI Voice Agent Platform",
+          "altEs": "AI Voice Agent Platform"
+        },
+        {
+          "src": "https://voice.cushlabs.ai/portfolio/voice-cushlabs-09.webp",
+          "altEn": "AI Voice Agent Platform",
+          "altEs": "AI Voice Agent Platform"
+        },
+        {
+          "src": "https://voice.cushlabs.ai/portfolio/voice-cushlabs-10.webp",
+          "altEn": "AI Voice Agent Platform",
+          "altEs": "AI Voice Agent Platform"
+        }
+      ],
+      "videoUrl": "https://voice.cushlabs.ai/video/voice-cushlabs-brief.mp4",
+      "videoPoster": "https://voice.cushlabs.ai/video/voice-cushlabs-brief-poster.webp"
     },
     {
       "id": 1090479901,
@@ -821,9 +973,15 @@
       "isPrivate": false,
       "tagline": "Automated personal data removal from data brokers using Claude AI and encrypted PII vault",
       "thumbnail": null,
-      "problem": null,
+      "problem": "Data brokers collect and sell personal information across 100+ sites, each with different\nopt-out procedures. Manual removal is a recurring, error-prone burden that takes hours per\nbroker and requires tracking follow-ups across legal frameworks. Commercial services charge\n$100-200/year and still miss brokers or fail to monitor for re-appearances.\n",
       "solution": null,
-      "keyFeatures": [],
+      "keyFeatures": [
+        "Agent-based architecture automates the full removal lifecycle end-to-end",
+        "6 broker playbooks defined with extensible YAML schema for rapid expansion",
+        "CCPA/GDPR legal request generation with proper statutory references",
+        "XSalsa20-Poly1305 + Argon2id encryption protects PII at rest",
+        "27 passing tests covering encryption, state machine, registry, and schemas"
+      ],
       "metrics": [],
       "priority": 3,
       "dateCompleted": null,
@@ -1297,16 +1455,23 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-03-02T08:04:24Z",
+      "lastPushed": "2026-03-02T09:04:56Z",
       "createdAt": "2026-01-05T15:06:48Z",
       "isFeatured": false,
       "isArchived": false,
       "isPrivate": false,
       "tagline": "A static portfolio system that syncs project data from GitHub repos into a filterable showcase",
       "thumbnail": "https://ai-portfolio-cushlabs.vercel.app/images/portfolio-card.webp",
-      "problem": null,
+      "problem": "Maintaining a portfolio across dozens of GitHub repositories creates a content\nmanagement problem. Project descriptions, tech stacks, and status information\nscatter across READMEs and repo settings with no unified display layer. A\nseparate portfolio site inevitably falls out of sync with the actual work.\n",
       "solution": null,
-      "keyFeatures": [],
+      "keyFeatures": [
+        "21 projects aggregated from GitHub repos into a single filterable interface",
+        "Client-side search, category filtering, and sort — all via shareable URL params",
+        "Zero runtime API calls — fully static, sub-second page loads",
+        "Content managed through PORTFOLIO.md files co-located with source code",
+        "Featured project showcase with curated top-6 selection",
+        "Dark mode with system preference detection"
+      ],
       "metrics": [],
       "priority": 4,
       "dateCompleted": null,
@@ -2224,7 +2389,7 @@
       "status": null,
       "language": "Astro",
       "languages": {
-        "Astro": 468508,
+        "Astro": 469083,
         "TypeScript": 113257,
         "HTML": 61067,
         "JavaScript": 27043,
@@ -2232,16 +2397,23 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-03-02T08:05:58Z",
+      "lastPushed": "2026-03-02T08:56:52Z",
       "createdAt": "2026-01-08T03:52:43Z",
       "isFeatured": false,
       "isArchived": false,
       "isPrivate": false,
       "tagline": "Self-maintaining bilingual portfolio with serverless booking and build-time i18n enforcement",
       "thumbnail": "/images/portfolio/cushlabs-thumb.webp",
-      "problem": null,
+      "problem": "Bilingual marketing sites go stale the moment you stop manually updating them. Portfolio pages die after 3-4 projects because maintenance costs multiply across languages. Third-party booking widgets break design consistency and add monthly fees. And static sites — while fast and cheap — traditionally can't handle dynamic features like scheduling without a full backend.\n",
       "solution": null,
-      "keyFeatures": [],
+      "keyFeatures": [
+        "27+ portfolio projects synced automatically from GitHub with zero manual data entry",
+        "0 KB i18n runtime overhead — 24-line custom system replaces 40KB+ i18next",
+        "6 automated pre-deploy checks enforcing bilingual parity, secret scanning, and build validation",
+        "Sub-second page loads with static HTML edge-cached globally",
+        "$0/month booking system via Cloudflare Workers replacing $8-16/month Calendly",
+        "100% EN/ES content parity enforced at build time — no language drift"
+      ],
       "metrics": [],
       "priority": 6,
       "dateCompleted": null,
@@ -2489,103 +2661,6 @@
       ],
       "videoUrl": "https://mazebreak-wiki.vercel.app/video/MazeBreak__Taming_the_GDD.mp4",
       "videoPoster": null
-    },
-    {
-      "id": 1164355422,
-      "name": "cushlabs-ai-voice-agent",
-      "title": "AI Voice Agent Platform",
-      "description": "Production-ready AI voice agents for lead qualification, appointment booking, and customer conversations — powered by Vapi, Claude, and Google Calendar",
-      "summary": "Production-ready AI voice agents for lead qualification, appointment booking, and customer conversations — powered by Vapi, Claude, and Google Calendar",
-      "url": "https://github.com/RCushmaniii/cushlabs-ai-voice-agent",
-      "demoUrl": "https://voice.cushlabs.ai",
-      "liveUrl": "https://voice.cushlabs.ai",
-      "homepage": "https://voice.cushlabs.ai",
-      "topics": [
-        "ai",
-        "appointment-booking",
-        "claude",
-        "conversational-ai",
-        "cushlabs",
-        "express",
-        "google-calendar",
-        "lead-qualification",
-        "nodejs",
-        "vapi",
-        "voice-agent"
-      ],
-      "categories": [
-        "AI Automation"
-      ],
-      "tags": [
-        "voice-ai",
-        "vapi",
-        "llm",
-        "real-time",
-        "lead-qualification",
-        "appointment-booking",
-        "customer-support",
-        "webhooks"
-      ],
-      "stack": [
-        "Vapi",
-        "Claude Sonnet",
-        "Groq Llama 3.1",
-        "Deepgram Nova-2",
-        "Cartesia",
-        "Express.js",
-        "Neon PostgreSQL",
-        "Redis",
-        "Google Calendar API",
-        "Render"
-      ],
-      "status": "Production",
-      "language": "HTML",
-      "languages": {
-        "HTML": 332181,
-        "JavaScript": 69518,
-        "CSS": 6849
-      },
-      "stars": 0,
-      "forks": 0,
-      "lastPushed": "2026-03-02T08:39:57Z",
-      "createdAt": "2026-02-23T01:31:09Z",
-      "isFeatured": true,
-      "isArchived": false,
-      "isPrivate": true,
-      "tagline": "Production voice AI agents that qualify leads, book appointments, and handle support calls 24/7",
-      "thumbnail": "https://raw.githubusercontent.com/RCushmaniii/cushlabs-ai-voice-agent/main/public/portfolio/voice-cushlabs-thumb.webp",
-      "problem": "Businesses lose leads to unanswered calls, voicemail black holes, and hold-time abandonment. Hiring receptionists is expensive and still leaves gaps outside business hours. Existing IVR systems frustrate callers with rigid menu trees that never actually solve the problem.",
-      "solution": "Production AI voice agents that handle inbound calls with natural conversation, qualify leads in real time, book appointments directly into Google Calendar, and answer FAQs — 24/7 with sub-500ms response times and zero hold times.",
-      "keyFeatures": [
-        "3 production demo agents: Clara (lead qualification), James (appointment booking), Sophia (med spa front desk)",
-        "Real-time Google Calendar integration — checks availability and books confirmed appointments mid-call",
-        "Sub-500ms voice response via Vapi WebRTC with Deepgram STT and Cartesia TTS",
-        "Webhook-driven function calling for calendar, database, and CRM operations during live calls",
-        "Session state via Redis for multi-turn conversation context across function calls",
-        "Lead data persisted to Neon PostgreSQL with full call metadata"
-      ],
-      "metrics": [
-        "Sub-500ms voice response time",
-        "3 live production demo agents",
-        "24/7 availability with zero hold times",
-        "Real-time calendar booking mid-conversation"
-      ],
-      "priority": 1,
-      "dateCompleted": "2026-03",
-      "slides": [
-        { "src": "https://raw.githubusercontent.com/RCushmaniii/cushlabs-ai-voice-agent/main/public/portfolio/voice-cushlabs-01.webp", "altEn": "AI Voice Agent Platform", "altEs": "AI Voice Agent Platform" },
-        { "src": "https://raw.githubusercontent.com/RCushmaniii/cushlabs-ai-voice-agent/main/public/portfolio/voice-cushlabs-02.webp", "altEn": "AI Voice Agent Platform", "altEs": "AI Voice Agent Platform" },
-        { "src": "https://raw.githubusercontent.com/RCushmaniii/cushlabs-ai-voice-agent/main/public/portfolio/voice-cushlabs-03.webp", "altEn": "AI Voice Agent Platform", "altEs": "AI Voice Agent Platform" },
-        { "src": "https://raw.githubusercontent.com/RCushmaniii/cushlabs-ai-voice-agent/main/public/portfolio/voice-cushlabs-04.webp", "altEn": "AI Voice Agent Platform", "altEs": "AI Voice Agent Platform" },
-        { "src": "https://raw.githubusercontent.com/RCushmaniii/cushlabs-ai-voice-agent/main/public/portfolio/voice-cushlabs-05.webp", "altEn": "AI Voice Agent Platform", "altEs": "AI Voice Agent Platform" },
-        { "src": "https://raw.githubusercontent.com/RCushmaniii/cushlabs-ai-voice-agent/main/public/portfolio/voice-cushlabs-06.webp", "altEn": "AI Voice Agent Platform", "altEs": "AI Voice Agent Platform" },
-        { "src": "https://raw.githubusercontent.com/RCushmaniii/cushlabs-ai-voice-agent/main/public/portfolio/voice-cushlabs-07.webp", "altEn": "AI Voice Agent Platform", "altEs": "AI Voice Agent Platform" },
-        { "src": "https://raw.githubusercontent.com/RCushmaniii/cushlabs-ai-voice-agent/main/public/portfolio/voice-cushlabs-08.webp", "altEn": "AI Voice Agent Platform", "altEs": "AI Voice Agent Platform" },
-        { "src": "https://raw.githubusercontent.com/RCushmaniii/cushlabs-ai-voice-agent/main/public/portfolio/voice-cushlabs-09.webp", "altEn": "AI Voice Agent Platform", "altEs": "AI Voice Agent Platform" },
-        { "src": "https://raw.githubusercontent.com/RCushmaniii/cushlabs-ai-voice-agent/main/public/portfolio/voice-cushlabs-10.webp", "altEn": "AI Voice Agent Platform", "altEs": "AI Voice Agent Platform" }
-      ],
-      "videoUrl": "https://raw.githubusercontent.com/RCushmaniii/cushlabs-ai-voice-agent/main/public/video/voice-cushlabs-brief.mp4",
-      "videoPoster": "https://raw.githubusercontent.com/RCushmaniii/cushlabs-ai-voice-agent/main/public/video/voice-cushlabs-brief-poster.webp"
     },
     {
       "id": 953305892,

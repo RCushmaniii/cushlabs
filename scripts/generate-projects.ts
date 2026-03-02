@@ -70,8 +70,10 @@ interface PortfolioFrontmatter {
   thumbnail?: string;
   status?: string;
   problem?: string;
+  problem_solved?: string;
   solution?: string;
   key_features?: string[];
+  key_outcomes?: string[];
   metrics?: string[];
   demo_url?: string;
   live_url?: string;
@@ -356,9 +358,9 @@ async function generateProjects() {
       // Portfolio.md fields
       tagline: portfolio?.tagline ?? null,
       thumbnail: resolve(portfolio?.thumbnail),
-      problem: portfolio?.problem ?? null,
+      problem: portfolio?.problem ?? portfolio?.problem_solved ?? null,
       solution: portfolio?.solution ?? null,
-      keyFeatures: portfolio?.key_features ?? [],
+      keyFeatures: portfolio?.key_features ?? portfolio?.key_outcomes ?? [],
       metrics: portfolio?.metrics ?? [],
       priority: portfolio?.portfolio_priority ?? 99,
       dateCompleted: portfolio?.date_completed ?? null,
