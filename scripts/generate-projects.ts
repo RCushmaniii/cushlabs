@@ -120,8 +120,28 @@ if (!GITHUB_TOKEN) {
 
 const octokit = new Octokit({ auth: GITHUB_TOKEN });
 
+// Local projects directory — fallback when GitHub API can't read private repo contents
+const LOCAL_PROJECTS_DIR = join(__dirname, '../../');
+
+function tryLocalPortfolioMd(repo: string): PortfolioFrontmatter | null {
+  for (const filename of ['PORTFOLIO.md', 'portfolio.md']) {
+    const localPath = join(LOCAL_PROJECTS_DIR, repo, filename);
+    if (existsSync(localPath)) {
+      try {
+        const content = readFileSync(localPath, 'utf-8');
+        const { data: frontmatter } = matter(content);
+        console.warn(`  📂 Read ${filename} from local clone`);
+        return frontmatter as PortfolioFrontmatter;
+      } catch {
+        // Parse error, skip
+      }
+    }
+  }
+  return null;
+}
+
 async function fetchPortfolioMd(owner: string, repo: string): Promise<PortfolioFrontmatter | null> {
-  // Try PORTFOLIO.md first, then portfolio.md
+  // Try GitHub API first (PORTFOLIO.md, then portfolio.md)
   for (const filename of ['PORTFOLIO.md', 'portfolio.md']) {
     try {
       const { data } = await octokit.repos.getContent({
@@ -135,9 +155,14 @@ async function fetchPortfolioMd(owner: string, repo: string): Promise<PortfolioF
       const { data: frontmatter } = matter(content);
       return frontmatter as PortfolioFrontmatter;
     } catch {
-      // File not found, try next filename
+      // File not found or access denied, try next filename
     }
   }
+
+  // Fallback: read from local clone if the repo is checked out alongside this project
+  const local = tryLocalPortfolioMd(repo);
+  if (local) return local;
+
   return null;
 }
 
