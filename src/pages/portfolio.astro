@@ -388,7 +388,7 @@ const t = content[locale];
   // Video modal logic
   const modal = document.getElementById('video-modal') as HTMLDialogElement;
   const openBtn = document.getElementById('open-video-modal');
-  const modalVideo = document.getElementById('modal-video') as HTMLVideoElement;
+  const modalVideo = document.getElementById('modal-video') as HTMLVideoElement | null;
   const modalPoster = document.getElementById('modal-poster');
 
   function closeModal() {
@@ -404,9 +404,7 @@ const t = content[locale];
     if ('requestIdleCallback' in window) {
       requestIdleCallback(() => { modalVideo.preload = 'auto'; }, { timeout: 3000 });
     } else {
-      window.addEventListener('load', () => {
-        setTimeout(() => { modalVideo.preload = 'auto'; }, 2000);
-      });
+      setTimeout(() => { modalVideo.preload = 'auto'; }, 2000);
     }
 
     // Open modal

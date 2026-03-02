@@ -38,10 +38,10 @@ const ogImageUrl = githubMatch
   : null;
 const images = override?.images?.length
   ? override.images
-  : project.slides?.length
-    ? project.slides.map((img: { src: string; srcEs?: string; altEn: string; altEs: string }) => ({
-        src: img.srcEs || img.src,
-        alt: { en: img.altEn, es: img.altEs },
+  : project.slides?.filter((img: any) => img.src).length
+    ? project.slides.filter((img: any) => img.src).map((img: any) => ({
+        src: (img.srcEs || img.src) as string,
+        alt: { en: img.altEn || project.title, es: img.altEs || project.title },
       }))
     : ogImageUrl
       ? [{ src: ogImageUrl, alt: { en: project.title, es: project.title } }]

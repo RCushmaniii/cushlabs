@@ -352,8 +352,9 @@ const b = dict.booking;
     }
 
     // Listen for date selection from DatePicker
-    document.addEventListener('dateSelected', (async (e: CustomEvent) => {
-      selectedDate = e.detail.date;
+    document.addEventListener('dateSelected', (async (e: Event) => {
+      const detail = (e as CustomEvent).detail;
+      selectedDate = detail.date;
       selectedTime = null;
       updateDateDisplay(selectedDate);
       await fetchAvailableSlots(selectedDate!);

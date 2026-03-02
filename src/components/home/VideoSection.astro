@@ -67,7 +67,7 @@ const t = content[locale];
 <script>
   const container = document.getElementById('video-container');
   const poster = document.getElementById('video-poster');
-  const video = document.getElementById('hero-video') as HTMLVideoElement;
+  const video = document.getElementById('hero-video') as HTMLVideoElement | null;
 
   if (container && poster && video) {
     // Preload video after page finishes loading (low priority)
@@ -77,11 +77,9 @@ const t = content[locale];
       }, { timeout: 3000 });
     } else {
       // Fallback for Safari
-      window.addEventListener('load', () => {
-        setTimeout(() => {
-          video.preload = 'auto';
-        }, 2000);
-      });
+      setTimeout(() => {
+        video.preload = 'auto';
+      }, 2000);
     }
 
     poster.addEventListener('click', () => {
