@@ -89,6 +89,17 @@ const content = {
 ---
 
 <BaseLayout title={content.title} description={content.description}>
+  <!-- FAQPage structured data for rich results -->
+  <script type="application/ld+json" is:inline set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": content.categories.flatMap(cat => cat.faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": { "@type": "Answer", "text": faq.answer }
+    })))
+  })} />
+
   <main class="min-h-screen bg-white dark:bg-gray-950">
     <!-- Hero -->
     <section class="relative pt-24 pb-12">

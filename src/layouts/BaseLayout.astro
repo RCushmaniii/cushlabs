@@ -42,6 +42,14 @@ const ogLocaleAlternate = locale === "es" ? "en_US" : "es_MX";
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- Preconnect to external origins for faster resource loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://raw.githubusercontent.com" />
+
+    <!-- Google Fonts — loaded as <link> instead of CSS @import to avoid render-blocking -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;1,8..60,400&display=swap" />
+
     <title>{title}</title>
     <meta name="description" content={description} />
 
@@ -82,7 +90,7 @@ const ogLocaleAlternate = locale === "es" ? "en_US" : "es_MX";
 
     <!-- Favicon -->
     <link rel="icon" type="image/webp" href="/images/logo/cushlabs-logo.webp" />
-    <link rel="apple-touch-icon" href="/images/logo/cushlabs-logo.webp" />
+    <link rel="apple-touch-icon" href="/images/logo/cushlabs-logo.png" />
 
     <script
       type="application/ld+json"
@@ -112,8 +120,18 @@ const ogLocaleAlternate = locale === "es" ? "en_US" : "es_MX";
     >
     </div>
 
+    <!-- Skip navigation for keyboard/screen reader users (WCAG 2.4.1) -->
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:bg-cush-orange focus:text-black focus:px-4 focus:py-2 focus:rounded-lg focus:font-display focus:font-semibold focus:shadow-lg"
+    >
+      {locale === "es" ? "Ir al contenido principal" : "Skip to main content"}
+    </a>
+
     <Header locale={locale} pathname={pathname} />
-    <slot />
+    <main id="main-content">
+      <slot />
+    </main>
     <Footer locale={locale} />
   </body>
 </html>
