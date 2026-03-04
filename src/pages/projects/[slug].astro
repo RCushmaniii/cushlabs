@@ -180,7 +180,7 @@ const lastPushed = new Date(project.lastPushed).toLocaleDateString();
       <section class="mt-10 grid grid-cols-1 gap-8 lg:grid-cols-3">
         <div class="lg:col-span-2 space-y-8">
 
-          {/* Video Section */}
+          {/* Video Section — click-to-play: zero video bytes until user clicks */}
           {videoUrl && (
             <div class="rounded-2xl border border-border bg-surface overflow-hidden">
               <div class="p-4 md:p-6 border-b border-border">
@@ -189,21 +189,43 @@ const lastPushed = new Date(project.lastPushed).toLocaleDateString();
                 </h2>
               </div>
               <div class="p-4 md:p-6">
-                <video
-                  controls
-                  preload="metadata"
-                  class="w-full rounded-xl"
-                  poster={videoPoster}
+                <div
+                  id="video-container"
+                  class="relative w-full rounded-xl overflow-hidden cursor-pointer group"
+                  data-video-src={videoUrl}
+                  role="button"
+                  tabindex="0"
+                  aria-label={dict.project.videoWalkthrough}
                 >
-                  <source src={videoUrl} type="video/mp4" />
-                  <track kind="captions" />
-                  Your browser does not support the video tag.
-                </video>
+                  {/* Poster image — the only thing that loads initially */}
+                  {videoPoster && (
+                    <img
+                      src={videoPoster}
+                      alt={dict.project.videoWalkthrough}
+                      loading="eager"
+                      fetchpriority="high"
+                      class="w-full h-auto aspect-video object-cover"
+                    />
+                  )}
+                  {!videoPoster && (
+                    <div class="w-full aspect-video bg-gray-900 flex items-center justify-center">
+                      <span class="text-gray-500 font-display text-lg">{dict.project.videoWalkthrough}</span>
+                    </div>
+                  )}
+                  {/* Play button overlay */}
+                  <div class="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/40 transition-colors">
+                    <div class="w-16 h-16 md:w-20 md:h-20 rounded-full bg-cush-orange/90 group-hover:bg-cush-orange flex items-center justify-center transition-all group-hover:scale-110 shadow-2xl">
+                      <svg class="w-7 h-7 md:w-9 md:h-9 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M8 5v14l11-7z"/>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           )}
 
-          {/* Image Slider */}
+          {/* Image Slider — only first image loads eagerly, rest load on demand */}
           {images.length > 0 && (
             <div class="rounded-2xl border border-border bg-surface overflow-hidden">
               <div class="p-4 md:p-6 border-b border-border flex items-center justify-between">
@@ -217,13 +239,14 @@ const lastPushed = new Date(project.lastPushed).toLocaleDateString();
               <div class="relative group">
                 <div id="slider" class="overflow-hidden">
                   <div id="slider-track" class="flex transition-transform duration-300 ease-in-out">
-                    {images.map((img) => (
+                    {images.map((img, i) => (
                       <div class="w-full flex-shrink-0 p-4 md:p-6">
                         <figure class="rounded-xl border border-border bg-base/40 overflow-hidden">
                           <img
-                            src={img.src}
+                            src={i === 0 ? img.src : undefined}
+                            data-src={img.src}
                             alt={img.alt.en}
-                            loading="lazy"
+                            loading={i === 0 ? "eager" : "lazy"}
                             class="w-full h-auto"
                           />
                         </figure>
@@ -436,19 +459,52 @@ const lastPushed = new Date(project.lastPushed).toLocaleDateString();
     </div>
   </main>
 
-  {/* Slider script */}
   <script>
     document.addEventListener('DOMContentLoaded', () => {
+      // --- Click-to-play video ---
+      const videoContainer = document.getElementById('video-container');
+      if (videoContainer) {
+        function activateVideo() {
+          const src = videoContainer!.dataset.videoSrc;
+          if (!src) return;
+          const video = document.createElement('video');
+          video.controls = true;
+          video.autoplay = true;
+          video.playsInline = true;
+          video.preload = 'auto';
+          video.className = 'w-full rounded-xl';
+          const source = document.createElement('source');
+          source.src = src;
+          source.type = 'video/mp4';
+          video.appendChild(source);
+          videoContainer!.replaceWith(video);
+        }
+        videoContainer.addEventListener('click', activateVideo);
+        videoContainer.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activateVideo(); }
+        });
+      }
+
+      // --- Slider with lazy image loading ---
       const track = document.getElementById('slider-track') as HTMLElement | null;
       const prevBtn = document.getElementById('prev-btn');
       const nextBtn = document.getElementById('next-btn');
       const counter = document.getElementById('slide-counter');
       const dots = document.querySelectorAll('.slider-dot');
+      const sliderImages = track?.querySelectorAll('img[data-src]') ?? [];
 
       if (!track || dots.length === 0) return;
 
       const total = dots.length;
       let current = 0;
+
+      // Load an image by index if not yet loaded
+      function ensureLoaded(index: number) {
+        const img = sliderImages[index] as HTMLImageElement | undefined;
+        if (img && !img.src && img.dataset.src) {
+          img.src = img.dataset.src;
+        }
+      }
 
       function goTo(index: number) {
         current = ((index % total) + total) % total;
@@ -459,6 +515,9 @@ const lastPushed = new Date(project.lastPushed).toLocaleDateString();
           dot.classList.toggle('bg-gray-300', i !== current);
           dot.classList.toggle('dark:bg-gray-600', i !== current);
         });
+        // Load current + next image (preload one ahead for smooth UX)
+        ensureLoaded(current);
+        ensureLoaded((current + 1) % total);
       }
 
       prevBtn?.addEventListener('click', () => goTo(current - 1));
@@ -469,6 +528,9 @@ const lastPushed = new Date(project.lastPushed).toLocaleDateString();
           goTo(idx);
         });
       });
+
+      // First image is already loaded via src attribute; preload the second
+      ensureLoaded(1);
     });
   </script>
 </BaseLayout>
