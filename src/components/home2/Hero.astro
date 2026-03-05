@@ -31,12 +31,16 @@ const content = {
 const t = content[locale];
 ---
 
-<section class="relative flex items-center overflow-hidden pt-12 pb-16 min-h-[90vh]">
-  <!-- Background Image - Use same or update if needed -->
+<section id="hero-section" class="relative flex items-center overflow-hidden pt-12 pb-16 min-h-[90vh]">
+  <!-- Geometric Mosaic Overlay -->
+  <div id="hero-mosaic" class="hero-mosaic" aria-hidden="true"></div>
+
+  <!-- Background Image -->
   <div class="absolute inset-0 -z-20">
     <img
       src="/images/hero/home-hero3.webp"
       alt=""
+      fetchpriority="high"
       class="w-full h-full object-cover opacity-[0.35] dark:opacity-[0.25]"
     />
     <!-- Multi-stop gradient overlay for smooth fade -->
@@ -53,7 +57,7 @@ const t = content[locale];
   <Container size="lg">
     <div class="text-center max-w-4xl mx-auto">
       <!-- Trust Badge -->
-      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cush-orange/10 border border-cush-orange/20 mb-5 animate-fade-in">
+      <div class="hero-content inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cush-orange/10 border border-cush-orange/20 mb-5 animate-fade-in" style="animation-delay: 1.8s;">
         <svg class="w-4 h-4 text-cush-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
         </svg>
@@ -61,18 +65,18 @@ const t = content[locale];
       </div>
 
       <!-- Headline -->
-      <h1 class="font-display text-fluid-4xl font-bold text-gray-900 dark:text-white mb-6 leading-tight tracking-tight animate-fade-in-up">
+      <h1 class="hero-content font-display text-fluid-4xl font-bold text-gray-900 dark:text-white mb-6 leading-tight tracking-tight animate-fade-in-up" style="animation-delay: 1.9s;">
         {t.headline}
       </h1>
 
       <!-- Subheadline -->
-      <div class="text-fluid-lg text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto animate-fade-in-up" style="animation-delay: 0.1s;">
+      <div class="hero-content text-fluid-lg text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto animate-fade-in-up" style="animation-delay: 2.0s;">
         <p class="mb-4">{t.subheadline1}</p>
         <p class="font-medium text-gray-800 dark:text-gray-200">{t.subheadline2}</p>
       </div>
 
       <!-- Quick Stats / Micro-Proof Bar -->
-      <div class="flex flex-wrap justify-center gap-x-6 gap-y-3 mb-10 animate-fade-in-up" style="animation-delay: 0.2s;">
+      <div class="hero-content flex flex-wrap justify-center gap-x-6 gap-y-3 mb-10 animate-fade-in-up" style="animation-delay: 2.1s;">
         {t.stats.map((stat) => (
           <div class="flex items-center gap-2 text-sm font-medium text-gray-700 dark:text-gray-400">
             <svg class="w-4 h-4 text-cush-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -84,7 +88,7 @@ const t = content[locale];
       </div>
 
       <!-- CTA Buttons -->
-      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up" style="animation-delay: 0.3s;">
+      <div class="hero-content flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up" style="animation-delay: 2.2s;">
         <a
           href={locale === 'es' ? '/es/reservar' : '/consultation'}
           class="group inline-flex items-center gap-2 px-8 py-4 bg-cush-orange text-white font-display font-semibold rounded-lg hover:bg-cush-orange/90 transition-all duration-300 shadow-lg shadow-cush-orange/25 hover:shadow-xl hover:shadow-cush-orange/30 text-lg"
@@ -109,6 +113,34 @@ const t = content[locale];
 </section>
 
 <style>
+  /* Mosaic overlay */
+  .hero-mosaic {
+    position: absolute;
+    inset: 0;
+    z-index: 30;
+    pointer-events: none;
+    overflow: hidden;
+  }
+
+  .hero-mosaic .fragment {
+    position: absolute;
+    will-change: transform, opacity;
+    transition: transform 0.9s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.6s ease-out;
+  }
+
+  .hero-mosaic.assembled {
+    transition: opacity 0.5s ease-out;
+  }
+
+  .hero-mosaic.done {
+    opacity: 0;
+  }
+
+  /* Hero content starts invisible, fades in after mosaic */
+  .hero-content {
+    opacity: 0;
+  }
+
   @keyframes fade-in {
     from { opacity: 0; }
     to { opacity: 1; }
@@ -132,4 +164,113 @@ const t = content[locale];
   .animate-fade-in-up {
     animation: fade-in-up 0.6s ease-out forwards;
   }
+
+  /* Reduced motion: skip animation entirely, show content immediately */
+  @media (prefers-reduced-motion: reduce) {
+    .hero-mosaic {
+      display: none !important;
+    }
+
+    .hero-content {
+      opacity: 1 !important;
+      animation-delay: 0s !important;
+    }
+
+    .animate-fade-in,
+    .animate-fade-in-up {
+      animation: none !important;
+      opacity: 1 !important;
+      transform: none !important;
+    }
+  }
 </style>
+
+<script>
+  (function () {
+    // Skip animation for reduced-motion users
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const mosaic = document.getElementById('hero-mosaic');
+    if (!mosaic) return;
+
+    const COLS = 6;
+    const ROWS = 5;
+    const TOTAL = COLS * ROWS;
+    const isDark = document.documentElement.classList.contains('dark');
+
+    // Generate fragment colors — dark tones with subtle orange tint
+    function fragColor(i: number): string {
+      const base = isDark ? [15, 15, 18] : [235, 232, 228];
+      const orangeTint = (i % 7 === 0) ? (isDark ? 0.15 : 0.08) : 0;
+      const r = Math.round(base[0] + (255 * orangeTint * 0.4));
+      const g = Math.round(base[1] + (106 * orangeTint * 0.3));
+      const b = Math.round(base[2] + (61 * orangeTint * 0.2));
+      // Slight random variation
+      const v = Math.round((Math.random() - 0.5) * (isDark ? 10 : 8));
+      return `rgb(${r + v}, ${g + v}, ${b + v})`;
+    }
+
+    // Center of grid for stagger calculation
+    const cx = (COLS - 1) / 2;
+    const cy = (ROWS - 1) / 2;
+
+    const fragment = document.createDocumentFragment();
+
+    for (let i = 0; i < TOTAL; i++) {
+      const col = i % COLS;
+      const row = Math.floor(i / COLS);
+
+      const el = document.createElement('div');
+      el.className = 'fragment';
+
+      // Size and position (percentage-based for responsiveness)
+      const w = 100 / COLS;
+      const h = 100 / ROWS;
+      el.style.width = w + '%';
+      el.style.height = h + '%';
+      el.style.left = (col * w) + '%';
+      el.style.top = (row * h) + '%';
+      el.style.backgroundColor = fragColor(i);
+
+      // Random scattered starting position
+      const tx = (Math.random() - 0.5) * 200;
+      const ty = (Math.random() - 0.5) * 200;
+      const rot = (Math.random() - 0.5) * 45;
+      const scale = 0.6 + Math.random() * 0.5;
+      el.style.transform = `translate(${tx}px, ${ty}px) rotate(${rot}deg) scale(${scale})`;
+      el.style.opacity = '0';
+
+      // Stagger delay: center-out pattern
+      const dist = Math.sqrt(Math.pow(col - cx, 2) + Math.pow(row - cy, 2));
+      const maxDist = Math.sqrt(cx * cx + cy * cy);
+      const delay = (dist / maxDist) * 0.6; // 0 to 0.6s stagger
+      el.style.transitionDelay = delay + 's';
+
+      fragment.appendChild(el);
+    }
+
+    mosaic.appendChild(fragment);
+
+    // Trigger assembly on next frame (allows initial scattered state to paint)
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        const fragments = mosaic.querySelectorAll('.fragment');
+        fragments.forEach((f) => {
+          const el = f as HTMLElement;
+          el.style.transform = 'translate(0, 0) rotate(0deg) scale(1)';
+          el.style.opacity = '1';
+        });
+
+        // After assembly completes (~1.5s), fade out the mosaic overlay
+        setTimeout(() => {
+          mosaic.classList.add('assembled', 'done');
+
+          // Remove from DOM after fade-out completes
+          setTimeout(() => {
+            mosaic.remove();
+          }, 500);
+        }, 1500);
+      });
+    });
+  })();
+</script>

@@ -276,13 +276,14 @@ const t = content[locale];
             >
               {/* Thumbnail */}
               <a href={detailHref} class="block">
-                <div class="aspect-[16/9] overflow-hidden bg-gray-100 dark:bg-gray-800">
+                <div class="aspect-[16/9] overflow-hidden bg-gray-100 dark:bg-gray-800 shimmer">
                   {thumb ? (
                     <img
                       src={thumb}
                       alt={project.title}
                       loading="lazy"
-                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 img-fade"
+                      onload="this.classList.add('loaded');this.parentElement.classList.remove('shimmer')"
                     />
                   ) : (
                     <div class="w-full h-full flex items-center justify-center">

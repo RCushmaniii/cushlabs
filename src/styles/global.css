@@ -72,3 +72,30 @@
     box-shadow: 0 0 20px var(--color-orange-glow);
   }
 }
+
+/* Shimmer placeholder for lazy-loaded images */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    rgb(var(--surface)) 25%,
+    rgb(var(--border)) 50%,
+    rgb(var(--surface)) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+/* Fade-in for lazy images once loaded */
+.img-fade {
+  opacity: 0;
+  transition: opacity 0.4s ease-in;
+}
+
+.img-fade.loaded {
+  opacity: 1;
+}

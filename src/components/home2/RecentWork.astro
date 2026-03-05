@@ -83,12 +83,13 @@ const t = content[locale];
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
       {t.projects.map((project) => (
         <a href={project.link} class="group rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/50 hover:border-cush-orange/50 hover:shadow-lg hover:shadow-cush-orange/5 transition-all duration-300 flex flex-col h-full">
-          <div class="aspect-[4/3] bg-gray-100 dark:bg-gray-800 relative overflow-hidden">
+          <div class="aspect-[4/3] bg-gray-100 dark:bg-gray-800 relative overflow-hidden shimmer">
             <img
               src={project.image}
               alt={project.title}
               loading="lazy"
-              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 img-fade"
+              onload="this.classList.add('loaded');this.parentElement.classList.remove('shimmer')"
             />
           </div>
           <div class="p-6 flex flex-col flex-grow">
