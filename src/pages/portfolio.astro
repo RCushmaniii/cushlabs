@@ -449,15 +449,9 @@ const t = content[locale];
   }
 
   if (modal && openBtn && modalVideo && modalPoster) {
-    // Preload video after page is idle
-    if ('requestIdleCallback' in window) {
-      requestIdleCallback(() => { modalVideo.preload = 'auto'; }, { timeout: 3000 });
-    } else {
-      setTimeout(() => { modalVideo.preload = 'auto'; }, 2000);
-    }
-
-    // Open modal
+    // Only start loading video when user opens the modal (saves ~9MB on page load)
     openBtn.addEventListener('click', () => {
+      modalVideo.preload = 'auto';
       modal.showModal();
     });
 
