@@ -107,14 +107,18 @@ const syncIssues: SyncIssue[] = [];
  */
 function resolveAssetUrl(path: string | undefined | null, repoName: string, deployUrl: string | null): string | null {
   if (!path) return null;
-  if (!path.startsWith('/')) return path; // already absolute URL
+  // Already a full URL — return as-is
+  if (/^https?:\/\//i.test(path)) return path;
   if (repoName === SELF_REPO) return path; // local asset
+
+  // Normalize: ensure path starts with /
+  const normalizedPath = path.startsWith('/') ? path : `/${path}`;
 
   if (deployUrl) {
     const base = deployUrl.replace(/\/+$/, '');
-    return `${base}${path}`;
+    return `${base}${normalizedPath}`;
   }
-  return `https://raw.githubusercontent.com/${GITHUB_OWNER}/${repoName}/main/public${path}`;
+  return `https://raw.githubusercontent.com/${GITHUB_OWNER}/${repoName}/main/public${normalizedPath}`;
 }
 
 if (!GITHUB_TOKEN) {

@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-03-04T03:51:33.342Z",
-  "count": 24,
+  "generatedAt": "2026-03-06T17:49:36.751Z",
+  "count": 25,
   "projects": [
     {
       "id": 1164355422,
@@ -68,12 +68,12 @@
       "language": "HTML",
       "languages": {
         "HTML": 410670,
-        "JavaScript": 90646,
+        "JavaScript": 93181,
         "CSS": 6849
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-03-02T21:52:33Z",
+      "lastPushed": "2026-03-04T23:48:14Z",
       "createdAt": "2026-02-23T01:31:09Z",
       "isFeatured": true,
       "isArchived": false,
@@ -400,6 +400,151 @@
       "videoPoster": "https://ny-ai-chatbot.vercel.app/video/ny-eng-chatbot-brief-poster.jpg"
     },
     {
+      "id": 1172972613,
+      "name": "atlas-biodiversidad-pitch",
+      "title": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier",
+      "description": "BioJalisco — bilingual scrollytelling pitch site for a citizen-science biodiversity platform in western Mexico",
+      "summary": "> Cinematic scrollytelling site pitching BioJalisco — a citizen-science biodiversity platform for western Mexico — plus an AI-powered Species Identifier tool.",
+      "url": "https://github.com/RCushmaniii/atlas-biodiversidad-pitch",
+      "demoUrl": "https://atlas-biodiversidad-pitch.vercel.app",
+      "liveUrl": "https://atlas-biodiversidad-pitch.vercel.app",
+      "homepage": "https://atlas-biodiversidad-pitch.vercel.app",
+      "topics": [
+        "bilingual",
+        "biodiversity",
+        "biojalisco",
+        "citizen-science",
+        "conservation",
+        "elevenlabs",
+        "jalisco",
+        "landing-page",
+        "mexico",
+        "pitch-deck",
+        "scrollytelling",
+        "text-to-voice-application",
+        "vercel"
+      ],
+      "categories": [
+        "Client Work"
+      ],
+      "tags": [
+        "bilingual",
+        "biodiversity",
+        "biojalisco",
+        "citizen-science",
+        "conservation",
+        "elevenlabs",
+        "jalisco",
+        "landing-page",
+        "mexico",
+        "pitch-deck",
+        "scrollytelling",
+        "text-to-voice-application",
+        "vercel",
+        "ai-vision",
+        "species-identification",
+        "openai",
+        "serverless"
+      ],
+      "stack": [
+        "HTML5",
+        "CSS3 (custom properties, grid, flexbox, scroll-snap)",
+        "Vanilla JavaScript",
+        "Python (Flask + Vercel serverless)",
+        "OpenAI GPT-4o Vision API",
+        "Intersection Observer API",
+        "Web Audio API (procedural ambient + MP3 narration)",
+        "Google Fonts",
+        "Vercel (static + serverless)",
+        "Base64 image embedding"
+      ],
+      "status": null,
+      "language": "HTML",
+      "languages": {
+        "HTML": 1979830,
+        "Python": 15421
+      },
+      "stars": 0,
+      "forks": 0,
+      "lastPushed": "2026-03-06T17:44:42Z",
+      "createdAt": "2026-03-04T22:07:57Z",
+      "isFeatured": true,
+      "isArchived": false,
+      "isPrivate": false,
+      "tagline": "Cinematic scrollytelling pitch site with AI-powered species identification for western Mexico's biodiversity platform",
+      "thumbnail": "https://atlas-biodiversidad-pitch.vercel.app/assets/images/portfolio/scrollytelling_pitch_thumb.png",
+      "problem": "Conservation researchers in western Mexico face an asymmetry: deep scientific\nexpertise but limited reach. Their work covers a fraction of Jalisco's 80,000+ km²\nterritory. BioJalisco proposes closing that gap through citizen science and technology,\nbut the vision needed a compelling presentation to win stakeholders and partners.\n",
+      "solution": null,
+      "keyFeatures": [
+        "Self-contained single-file HTML site with 9 embedded images (~1.8MB total)",
+        "Bilingual ES/EN with instant language switching",
+        "Cinematic 5-act narrative arc designed for stakeholder persuasion",
+        "Full auto-play presentation mode with segmented MP3 narration, rain-intro crossfades, and auto-scroll",
+        "Mobile-first species carousel with scroll-snap, dot indicators, and audio-synced auto-cycle",
+        "AI Species Identifier with GPT-4o vision — confidence %, full taxonomy, ecology, geography, conservation status, similar species",
+        "Tabbed results UI with scan history persisted in localStorage",
+        "Vercel serverless Python function for production API",
+        "Deployed on Vercel with zero build step"
+      ],
+      "metrics": [],
+      "priority": 4,
+      "dateCompleted": null,
+      "slides": [
+        {
+          "src": "https://atlas-biodiversidad-pitch.vercel.app/assets/images/portfolio/scrollytelling_pitch_01.png",
+          "altEn": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier",
+          "altEs": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier"
+        },
+        {
+          "src": "https://atlas-biodiversidad-pitch.vercel.app/assets/images/portfolio/scrollytelling_pitch_02.png",
+          "altEn": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier",
+          "altEs": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier"
+        },
+        {
+          "src": "https://atlas-biodiversidad-pitch.vercel.app/assets/images/portfolio/scrollytelling_pitch_03.png",
+          "altEn": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier",
+          "altEs": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier"
+        },
+        {
+          "src": "https://atlas-biodiversidad-pitch.vercel.app/assets/images/portfolio/scrollytelling_pitch_04.png",
+          "altEn": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier",
+          "altEs": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier"
+        },
+        {
+          "src": "https://atlas-biodiversidad-pitch.vercel.app/assets/images/portfolio/scrollytelling_pitch_05.png",
+          "altEn": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier",
+          "altEs": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier"
+        },
+        {
+          "src": "https://atlas-biodiversidad-pitch.vercel.app/assets/images/portfolio/scrollytelling_pitch_06.png",
+          "altEn": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier",
+          "altEs": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier"
+        },
+        {
+          "src": "https://atlas-biodiversidad-pitch.vercel.app/assets/images/portfolio/scrollytelling_pitch_07.png",
+          "altEn": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier",
+          "altEs": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier"
+        },
+        {
+          "src": "https://atlas-biodiversidad-pitch.vercel.app/assets/images/portfolio/scrollytelling_pitch_08.png",
+          "altEn": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier",
+          "altEs": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier"
+        },
+        {
+          "src": "https://atlas-biodiversidad-pitch.vercel.app/assets/images/portfolio/scrollytelling_pitch_09.png",
+          "altEn": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier",
+          "altEs": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier"
+        },
+        {
+          "src": "https://atlas-biodiversidad-pitch.vercel.app/assets/images/portfolio/scrollytelling_pitch_10.png",
+          "altEn": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier",
+          "altEs": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier"
+        }
+      ],
+      "videoUrl": "https://atlas-biodiversidad-pitch.vercel.app/assets/video/scrollytelling-pitch.mp4",
+      "videoPoster": "https://atlas-biodiversidad-pitch.vercel.app/assets/images/portfolio/scrollytelling-pitch-poster.jpg"
+    },
+    {
       "id": 953305892,
       "name": "ny-eng",
       "title": "NY English Teacher",
@@ -457,10 +602,10 @@
       "status": "Production",
       "language": "Astro",
       "languages": {
-        "Astro": 1205218,
+        "Astro": 1208808,
         "HTML": 837214,
-        "TypeScript": 689590,
-        "JavaScript": 352099,
+        "TypeScript": 689534,
+        "JavaScript": 374941,
         "CSS": 40569,
         "Python": 29891,
         "MDX": 23077,
@@ -468,7 +613,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-03-04T00:05:13Z",
+      "lastPushed": "2026-03-05T06:46:52Z",
       "createdAt": "2025-03-23T03:27:14Z",
       "isFeatured": true,
       "isArchived": false,
@@ -595,14 +740,14 @@
       "status": null,
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 120925,
-        "Astro": 64191,
-        "JavaScript": 3442,
-        "CSS": 3430
+        "TypeScript": 128884,
+        "Astro": 68530,
+        "JavaScript": 19798,
+        "CSS": 3756
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-03-04T00:00:12Z",
+      "lastPushed": "2026-03-05T06:00:50Z",
       "createdAt": "2026-03-03T07:21:12Z",
       "isFeatured": false,
       "isArchived": false,
@@ -1209,15 +1354,15 @@
       "status": null,
       "language": "Astro",
       "languages": {
-        "Astro": 473600,
+        "Astro": 481722,
         "TypeScript": 135192,
         "HTML": 61067,
-        "JavaScript": 37667,
-        "CSS": 2550
+        "JavaScript": 42381,
+        "CSS": 3069
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-03-04T02:12:19Z",
+      "lastPushed": "2026-03-05T05:49:50Z",
       "createdAt": "2026-01-08T03:52:43Z",
       "isFeatured": false,
       "isArchived": false,
