@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-03-09T18:19:54.089Z",
-  "count": 28,
+  "generatedAt": "2026-03-09T21:37:14.433Z",
+  "count": 29,
   "projects": [
     {
       "id": 1164355422,
@@ -275,6 +275,70 @@
       "videoPoster": "https://raw.githubusercontent.com/RCushmaniii/ai-chatbot-saas/main/public/video/converso-brief-poster.jpg"
     },
     {
+      "id": 1176224548,
+      "name": "cushlabs-ai-marketing",
+      "title": "AI Marketing Suite for Claude Code",
+      "description": "AI Marketing Suite for Claude Code — 15 slash commands for marketing analysis, audits, and client deliverables",
+      "summary": "> A production-ready marketing analysis and automation skill system for Claude Code. Audit websites, generate copy, build email sequences, create content calendars, analyze competitors, and produce cl",
+      "url": "https://github.com/RCushmaniii/cushlabs-ai-marketing",
+      "demoUrl": null,
+      "liveUrl": "",
+      "homepage": null,
+      "topics": [],
+      "categories": [
+        "AI Automation"
+      ],
+      "tags": [
+        "claude-code",
+        "marketing-automation",
+        "ai-agents",
+        "seo-audit",
+        "competitive-analysis",
+        "copywriting",
+        "email-marketing",
+        "content-calendar",
+        "pdf-reports",
+        "parallel-agents"
+      ],
+      "stack": [
+        "Claude Code Skills System",
+        "Python 3",
+        "Bash",
+        "ReportLab",
+        "HTML Parser (stdlib)"
+      ],
+      "status": null,
+      "language": "Python",
+      "languages": {
+        "Python": 57110,
+        "Shell": 8952
+      },
+      "stars": 0,
+      "forks": 0,
+      "lastPushed": "2026-03-09T21:25:58Z",
+      "createdAt": "2026-03-08T19:31:57Z",
+      "isFeatured": true,
+      "isArchived": false,
+      "isPrivate": false,
+      "tagline": "15 slash commands that turn Claude Code into a full-service marketing analysis platform",
+      "thumbnail": "https://raw.githubusercontent.com/RCushmaniii/cushlabs-ai-marketing/main/public/public/images/CUSHLABS-AI-MARKETING-THUMB.webp",
+      "problem": "Marketing audits are expensive ($2K–$10K) and slow (1–3 weeks). Small agencies and solopreneurs\ncan't compete at that price point. The frameworks exist — CRO checklists, SEO rubrics, competitive\nanalysis templates — but executing them manually across six marketing dimensions takes dozens of\nhours per client. This suite encodes those frameworks into repeatable, scored Claude Code skills.\n",
+      "solution": null,
+      "keyFeatures": [
+        "15 marketing commands available as Claude Code slash commands",
+        "Full website audit with 5 parallel subagents running simultaneously",
+        "Weighted scoring across 6 dimensions with revenue impact estimates",
+        "Client-ready PDF reports with score gauges, charts, and branded styling",
+        "Complete email sequences, ad campaigns, and 30-day content calendars generated in minutes"
+      ],
+      "metrics": [],
+      "priority": 3,
+      "dateCompleted": null,
+      "slides": [],
+      "videoUrl": null,
+      "videoPoster": null
+    },
+    {
       "id": 1174690198,
       "name": "biojalisco-species-id",
       "title": "BioJalisco Species Identifier",
@@ -319,6 +383,8 @@
         "iNaturalist API",
         "GBIF API",
         "EncicloVida/CONABIO API",
+        "OpenStreetMap Nominatim (reverse geocoding)",
+        "exifr (EXIF GPS/metadata extraction)",
         "Clerk Authentication",
         "Neon Postgres",
         "Drizzle ORM",
@@ -329,35 +395,88 @@
       "status": null,
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 221185,
+        "TypeScript": 222929,
         "CSS": 67878,
         "JavaScript": 388
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-03-09T18:18:02Z",
+      "lastPushed": "2026-03-09T21:20:05Z",
       "createdAt": "2026-03-06T18:20:23Z",
       "isFeatured": true,
       "isArchived": false,
       "isPrivate": false,
-      "tagline": "Four-API species identification pipeline with verified biodiversity data and Mexico-specific conservation status",
-      "thumbnail": null,
+      "tagline": "Five-API species identification pipeline with EXIF GPS extraction, reverse geocoding, and Mexico-specific conservation data",
+      "thumbnail": "https://biojalisco-species-id.vercel.app/images/portfolio/biojalisco-thumb.webp",
       "problem": "Conservation biologists in Jalisco encounter thousands of species during fieldwork\nbut lack rapid identification tools with verified data. GPT-4o Vision alone\nfrequently misidentifies species without geographic context. No existing tool\ncombines AI vision, regional species data, global taxonomy verification, and\nMexico-specific conservation status (NOM-059, endemic classification) in one flow.\n",
       "solution": null,
       "keyFeatures": [
-        "Four-API pipeline: iNaturalist context + GPT-4o identification + GBIF verification + EncicloVida/CONABIO enrichment",
+        "Five-API pipeline: iNaturalist context + GPT-4o Vision + GBIF verification + EncicloVida/CONABIO enrichment + Nominatim reverse geocoding",
+        "EXIF GPS extraction from photo metadata for precise location-aware identification (proven: corrected Broad-billed Hummingbird to Cinnamon Hummingbird with accurate coordinates)",
+        "Reverse geocoding via OpenStreetMap Nominatim: country, state, region, municipality, city displayed in Data Sources",
         "Verified IUCN Red List status and taxonomy from GBIF backbone (not AI-generated)",
         "Mexico-specific data from CONABIO: endemic/native/exotic classification, NOM-059 protection status, indigenous language names",
-        "Regional species awareness via iNaturalist observations within 50km of GPS coordinates",
-        "Bilingual output (EN/ES) with confidence scoring across 6 data categories",
+        "Explore/Research dual-mode tab system: casual users see About + Habitat + Similar Species; scientists see Taxonomy + Conservation + Data Sources",
+        "Bilingual (EN/ES) with dark/light theme, community observation gallery, and EXIF privacy stripping",
         "Graceful degradation: works with just an OpenAI key, enriched with optional services"
       ],
       "metrics": [],
       "priority": 3,
       "dateCompleted": null,
-      "slides": [],
-      "videoUrl": null,
-      "videoPoster": null
+      "slides": [
+        {
+          "src": "https://biojalisco-species-id.vercel.app/images/portfolio/biojalisco-slide-01.webp",
+          "altEn": "BioJalisco Species Identifier",
+          "altEs": "BioJalisco Species Identifier"
+        },
+        {
+          "src": "https://biojalisco-species-id.vercel.app/images/portfolio/biojalisco-slide-02.webp",
+          "altEn": "BioJalisco Species Identifier",
+          "altEs": "BioJalisco Species Identifier"
+        },
+        {
+          "src": "https://biojalisco-species-id.vercel.app/images/portfolio/biojalisco-slide-03.webp",
+          "altEn": "BioJalisco Species Identifier",
+          "altEs": "BioJalisco Species Identifier"
+        },
+        {
+          "src": "https://biojalisco-species-id.vercel.app/images/portfolio/biojalisco-slide-04.webp",
+          "altEn": "BioJalisco Species Identifier",
+          "altEs": "BioJalisco Species Identifier"
+        },
+        {
+          "src": "https://biojalisco-species-id.vercel.app/images/portfolio/biojalisco-slide-05.webp",
+          "altEn": "BioJalisco Species Identifier",
+          "altEs": "BioJalisco Species Identifier"
+        },
+        {
+          "src": "https://biojalisco-species-id.vercel.app/images/portfolio/biojalisco-slide-06.webp",
+          "altEn": "BioJalisco Species Identifier",
+          "altEs": "BioJalisco Species Identifier"
+        },
+        {
+          "src": "https://biojalisco-species-id.vercel.app/images/portfolio/biojalisco-slide-07.webp",
+          "altEn": "BioJalisco Species Identifier",
+          "altEs": "BioJalisco Species Identifier"
+        },
+        {
+          "src": "https://biojalisco-species-id.vercel.app/images/portfolio/biojalisco-slide-08.webp",
+          "altEn": "BioJalisco Species Identifier",
+          "altEs": "BioJalisco Species Identifier"
+        },
+        {
+          "src": "https://biojalisco-species-id.vercel.app/images/portfolio/biojalisco-slide-09.webp",
+          "altEn": "BioJalisco Species Identifier",
+          "altEs": "BioJalisco Species Identifier"
+        },
+        {
+          "src": "https://biojalisco-species-id.vercel.app/images/portfolio/biojalisco-slide-10.webp",
+          "altEn": "BioJalisco Species Identifier",
+          "altEs": "BioJalisco Species Identifier"
+        }
+      ],
+      "videoUrl": "https://biojalisco-species-id.vercel.app/video/biojalisco-brief.mp4",
+      "videoPoster": "https://biojalisco-species-id.vercel.app/images/portfolio/biojalisco-brief-poster.webp"
     },
     {
       "id": 1174674268,
@@ -421,7 +540,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-03-09T18:11:00Z",
+      "lastPushed": "2026-03-09T19:40:38Z",
       "createdAt": "2026-03-06T17:57:40Z",
       "isFeatured": true,
       "isArchived": false,
@@ -458,70 +577,6 @@
           "altEs": "CushLabs Scrollytelling Template"
         }
       ],
-      "videoUrl": null,
-      "videoPoster": null
-    },
-    {
-      "id": 1176224548,
-      "name": "cushlabs-ai-marketing",
-      "title": "AI Marketing Suite for Claude Code",
-      "description": "AI Marketing Suite for Claude Code — 15 slash commands for marketing analysis, audits, and client deliverables",
-      "summary": "> A production-ready marketing analysis and automation skill system for Claude Code. Audit websites, generate copy, build email sequences, create content calendars, analyze competitors, and produce cl",
-      "url": "https://github.com/RCushmaniii/cushlabs-ai-marketing",
-      "demoUrl": null,
-      "liveUrl": "",
-      "homepage": null,
-      "topics": [],
-      "categories": [
-        "AI Automation"
-      ],
-      "tags": [
-        "claude-code",
-        "marketing-automation",
-        "ai-agents",
-        "seo-audit",
-        "competitive-analysis",
-        "copywriting",
-        "email-marketing",
-        "content-calendar",
-        "pdf-reports",
-        "parallel-agents"
-      ],
-      "stack": [
-        "Claude Code Skills System",
-        "Python 3",
-        "Bash",
-        "ReportLab",
-        "HTML Parser (stdlib)"
-      ],
-      "status": null,
-      "language": "Python",
-      "languages": {
-        "Python": 57110,
-        "Shell": 8952
-      },
-      "stars": 0,
-      "forks": 0,
-      "lastPushed": "2026-03-08T21:10:09Z",
-      "createdAt": "2026-03-08T19:31:57Z",
-      "isFeatured": true,
-      "isArchived": false,
-      "isPrivate": false,
-      "tagline": "15 slash commands that turn Claude Code into a full-service marketing analysis platform",
-      "thumbnail": null,
-      "problem": "Marketing audits are expensive ($2K–$10K) and slow (1–3 weeks). Small agencies and solopreneurs\ncan't compete at that price point. The frameworks exist — CRO checklists, SEO rubrics, competitive\nanalysis templates — but executing them manually across six marketing dimensions takes dozens of\nhours per client. This suite encodes those frameworks into repeatable, scored Claude Code skills.\n",
-      "solution": null,
-      "keyFeatures": [
-        "15 marketing commands available as Claude Code slash commands",
-        "Full website audit with 5 parallel subagents running simultaneously",
-        "Weighted scoring across 6 dimensions with revenue impact estimates",
-        "Client-ready PDF reports with score gauges, charts, and branded styling",
-        "Complete email sequences, ad campaigns, and 30-day content calendars generated in minutes"
-      ],
-      "metrics": [],
-      "priority": 3,
-      "dateCompleted": null,
-      "slides": [],
       "videoUrl": null,
       "videoPoster": null
     },
@@ -649,6 +704,151 @@
       ],
       "videoUrl": "https://ny-ai-chatbot.vercel.app/video/ny-eng-chatbot-brief.mp4",
       "videoPoster": "https://ny-ai-chatbot.vercel.app/video/ny-eng-chatbot-brief-poster.jpg"
+    },
+    {
+      "id": 1172972613,
+      "name": "biojalisco-pitch",
+      "title": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier",
+      "description": "BioJalisco — bilingual scrollytelling pitch site for a citizen-science biodiversity platform in western Mexico",
+      "summary": "> Cinematic scrollytelling site pitching BioJalisco — a citizen-science biodiversity platform for western Mexico — plus an AI-powered Species Identifier tool.",
+      "url": "https://github.com/RCushmaniii/biojalisco-pitch",
+      "demoUrl": "https://biojalisco-pitch.vercel.app",
+      "liveUrl": "https://biojalisco-pitch.vercel.app",
+      "homepage": "https://atlas-biodiversidad-pitch.vercel.app",
+      "topics": [
+        "bilingual",
+        "biodiversity",
+        "biojalisco",
+        "citizen-science",
+        "conservation",
+        "elevenlabs",
+        "jalisco",
+        "landing-page",
+        "mexico",
+        "pitch-deck",
+        "scrollytelling",
+        "text-to-voice-application",
+        "vercel"
+      ],
+      "categories": [
+        "Client Work"
+      ],
+      "tags": [
+        "bilingual",
+        "biodiversity",
+        "biojalisco",
+        "citizen-science",
+        "conservation",
+        "elevenlabs",
+        "jalisco",
+        "landing-page",
+        "mexico",
+        "pitch-deck",
+        "scrollytelling",
+        "text-to-voice-application",
+        "vercel",
+        "ai-vision",
+        "species-identification",
+        "openai",
+        "serverless"
+      ],
+      "stack": [
+        "HTML5",
+        "CSS3 (custom properties, grid, flexbox, scroll-snap)",
+        "Vanilla JavaScript",
+        "Python (Flask + Vercel serverless)",
+        "OpenAI GPT-4o Vision API",
+        "Intersection Observer API",
+        "Web Audio API (procedural ambient + MP3 narration)",
+        "Google Fonts",
+        "Vercel (static + serverless)",
+        "Base64 image embedding"
+      ],
+      "status": null,
+      "language": "HTML",
+      "languages": {
+        "HTML": 1986902,
+        "Python": 15421
+      },
+      "stars": 0,
+      "forks": 0,
+      "lastPushed": "2026-03-09T21:12:10Z",
+      "createdAt": "2026-03-04T22:07:57Z",
+      "isFeatured": true,
+      "isArchived": false,
+      "isPrivate": false,
+      "tagline": "Cinematic scrollytelling pitch site with AI-powered species identification for western Mexico's biodiversity platform",
+      "thumbnail": "https://biojalisco-pitch.vercel.app/assets/images/portfolio/scrollytelling_pitch_thumb.png",
+      "problem": "Conservation researchers in western Mexico face an asymmetry: deep scientific\nexpertise but limited reach. Their work covers a fraction of Jalisco's 80,000+ km²\nterritory. BioJalisco proposes closing that gap through citizen science and technology,\nbut the vision needed a compelling presentation to win stakeholders and partners.\n",
+      "solution": null,
+      "keyFeatures": [
+        "Self-contained single-file HTML site with 9 embedded images (~1.8MB total)",
+        "Bilingual ES/EN with instant language switching",
+        "Cinematic 5-act narrative arc designed for stakeholder persuasion",
+        "Full auto-play presentation mode with segmented MP3 narration, rain-intro crossfades, and auto-scroll",
+        "Mobile-first species carousel with scroll-snap, dot indicators, and audio-synced auto-cycle",
+        "AI Species Identifier with GPT-4o vision — confidence %, full taxonomy, ecology, geography, conservation status, similar species",
+        "Tabbed results UI with scan history persisted in localStorage",
+        "Vercel serverless Python function for production API",
+        "Deployed on Vercel with zero build step"
+      ],
+      "metrics": [],
+      "priority": 4,
+      "dateCompleted": null,
+      "slides": [
+        {
+          "src": "https://biojalisco-pitch.vercel.app/assets/images/portfolio/scrollytelling_pitch_01.png",
+          "altEn": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier",
+          "altEs": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier"
+        },
+        {
+          "src": "https://biojalisco-pitch.vercel.app/assets/images/portfolio/scrollytelling_pitch_02.png",
+          "altEn": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier",
+          "altEs": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier"
+        },
+        {
+          "src": "https://biojalisco-pitch.vercel.app/assets/images/portfolio/scrollytelling_pitch_03.png",
+          "altEn": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier",
+          "altEs": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier"
+        },
+        {
+          "src": "https://biojalisco-pitch.vercel.app/assets/images/portfolio/scrollytelling_pitch_04.png",
+          "altEn": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier",
+          "altEs": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier"
+        },
+        {
+          "src": "https://biojalisco-pitch.vercel.app/assets/images/portfolio/scrollytelling_pitch_05.png",
+          "altEn": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier",
+          "altEs": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier"
+        },
+        {
+          "src": "https://biojalisco-pitch.vercel.app/assets/images/portfolio/scrollytelling_pitch_06.png",
+          "altEn": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier",
+          "altEs": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier"
+        },
+        {
+          "src": "https://biojalisco-pitch.vercel.app/assets/images/portfolio/scrollytelling_pitch_07.png",
+          "altEn": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier",
+          "altEs": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier"
+        },
+        {
+          "src": "https://biojalisco-pitch.vercel.app/assets/images/portfolio/scrollytelling_pitch_08.png",
+          "altEn": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier",
+          "altEs": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier"
+        },
+        {
+          "src": "https://biojalisco-pitch.vercel.app/assets/images/portfolio/scrollytelling_pitch_09.png",
+          "altEn": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier",
+          "altEs": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier"
+        },
+        {
+          "src": "https://biojalisco-pitch.vercel.app/assets/images/portfolio/scrollytelling_pitch_10.png",
+          "altEn": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier",
+          "altEs": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier"
+        }
+      ],
+      "videoUrl": "https://biojalisco-pitch.vercel.app/assets/video/scrollytelling-pitch.mp4",
+      "videoPoster": "https://biojalisco-pitch.vercel.app/assets/images/portfolio/scrollytelling-pitch-poster.jpg"
     },
     {
       "id": 953305892,
@@ -793,151 +993,6 @@
       ],
       "videoUrl": "https://www.nyenglishteacher.com/video/ny-eng-brief.mp4",
       "videoPoster": "https://www.nyenglishteacher.com/video/ny-eng-brief-poster.jpg"
-    },
-    {
-      "id": 1172972613,
-      "name": "biojalisco-pitch",
-      "title": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier",
-      "description": "BioJalisco — bilingual scrollytelling pitch site for a citizen-science biodiversity platform in western Mexico",
-      "summary": "> Cinematic scrollytelling site pitching BioJalisco — a citizen-science biodiversity platform for western Mexico — plus an AI-powered Species Identifier tool.",
-      "url": "https://github.com/RCushmaniii/biojalisco-pitch",
-      "demoUrl": "https://biojalisco-pitch.vercel.app",
-      "liveUrl": "https://biojalisco-pitch.vercel.app",
-      "homepage": "https://atlas-biodiversidad-pitch.vercel.app",
-      "topics": [
-        "bilingual",
-        "biodiversity",
-        "biojalisco",
-        "citizen-science",
-        "conservation",
-        "elevenlabs",
-        "jalisco",
-        "landing-page",
-        "mexico",
-        "pitch-deck",
-        "scrollytelling",
-        "text-to-voice-application",
-        "vercel"
-      ],
-      "categories": [
-        "Client Work"
-      ],
-      "tags": [
-        "bilingual",
-        "biodiversity",
-        "biojalisco",
-        "citizen-science",
-        "conservation",
-        "elevenlabs",
-        "jalisco",
-        "landing-page",
-        "mexico",
-        "pitch-deck",
-        "scrollytelling",
-        "text-to-voice-application",
-        "vercel",
-        "ai-vision",
-        "species-identification",
-        "openai",
-        "serverless"
-      ],
-      "stack": [
-        "HTML5",
-        "CSS3 (custom properties, grid, flexbox, scroll-snap)",
-        "Vanilla JavaScript",
-        "Python (Flask + Vercel serverless)",
-        "OpenAI GPT-4o Vision API",
-        "Intersection Observer API",
-        "Web Audio API (procedural ambient + MP3 narration)",
-        "Google Fonts",
-        "Vercel (static + serverless)",
-        "Base64 image embedding"
-      ],
-      "status": null,
-      "language": "HTML",
-      "languages": {
-        "HTML": 1982666,
-        "Python": 15421
-      },
-      "stars": 0,
-      "forks": 0,
-      "lastPushed": "2026-03-08T01:34:51Z",
-      "createdAt": "2026-03-04T22:07:57Z",
-      "isFeatured": true,
-      "isArchived": false,
-      "isPrivate": false,
-      "tagline": "Cinematic scrollytelling pitch site with AI-powered species identification for western Mexico's biodiversity platform",
-      "thumbnail": "https://biojalisco-pitch.vercel.app/assets/images/portfolio/scrollytelling_pitch_thumb.png",
-      "problem": "Conservation researchers in western Mexico face an asymmetry: deep scientific\nexpertise but limited reach. Their work covers a fraction of Jalisco's 80,000+ km²\nterritory. BioJalisco proposes closing that gap through citizen science and technology,\nbut the vision needed a compelling presentation to win stakeholders and partners.\n",
-      "solution": null,
-      "keyFeatures": [
-        "Self-contained single-file HTML site with 9 embedded images (~1.8MB total)",
-        "Bilingual ES/EN with instant language switching",
-        "Cinematic 5-act narrative arc designed for stakeholder persuasion",
-        "Full auto-play presentation mode with segmented MP3 narration, rain-intro crossfades, and auto-scroll",
-        "Mobile-first species carousel with scroll-snap, dot indicators, and audio-synced auto-cycle",
-        "AI Species Identifier with GPT-4o vision — confidence %, full taxonomy, ecology, geography, conservation status, similar species",
-        "Tabbed results UI with scan history persisted in localStorage",
-        "Vercel serverless Python function for production API",
-        "Deployed on Vercel with zero build step"
-      ],
-      "metrics": [],
-      "priority": 4,
-      "dateCompleted": null,
-      "slides": [
-        {
-          "src": "https://biojalisco-pitch.vercel.app/assets/images/portfolio/scrollytelling_pitch_01.png",
-          "altEn": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier",
-          "altEs": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier"
-        },
-        {
-          "src": "https://biojalisco-pitch.vercel.app/assets/images/portfolio/scrollytelling_pitch_02.png",
-          "altEn": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier",
-          "altEs": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier"
-        },
-        {
-          "src": "https://biojalisco-pitch.vercel.app/assets/images/portfolio/scrollytelling_pitch_03.png",
-          "altEn": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier",
-          "altEs": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier"
-        },
-        {
-          "src": "https://biojalisco-pitch.vercel.app/assets/images/portfolio/scrollytelling_pitch_04.png",
-          "altEn": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier",
-          "altEs": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier"
-        },
-        {
-          "src": "https://biojalisco-pitch.vercel.app/assets/images/portfolio/scrollytelling_pitch_05.png",
-          "altEn": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier",
-          "altEs": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier"
-        },
-        {
-          "src": "https://biojalisco-pitch.vercel.app/assets/images/portfolio/scrollytelling_pitch_06.png",
-          "altEn": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier",
-          "altEs": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier"
-        },
-        {
-          "src": "https://biojalisco-pitch.vercel.app/assets/images/portfolio/scrollytelling_pitch_07.png",
-          "altEn": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier",
-          "altEs": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier"
-        },
-        {
-          "src": "https://biojalisco-pitch.vercel.app/assets/images/portfolio/scrollytelling_pitch_08.png",
-          "altEn": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier",
-          "altEs": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier"
-        },
-        {
-          "src": "https://biojalisco-pitch.vercel.app/assets/images/portfolio/scrollytelling_pitch_09.png",
-          "altEn": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier",
-          "altEs": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier"
-        },
-        {
-          "src": "https://biojalisco-pitch.vercel.app/assets/images/portfolio/scrollytelling_pitch_10.png",
-          "altEn": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier",
-          "altEs": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier"
-        }
-      ],
-      "videoUrl": "https://biojalisco-pitch.vercel.app/assets/video/scrollytelling-pitch.mp4",
-      "videoPoster": "https://biojalisco-pitch.vercel.app/assets/images/portfolio/scrollytelling-pitch-poster.jpg"
     },
     {
       "id": 1171395937,
@@ -1328,6 +1383,95 @@
       "videoPoster": "https://ai-build-vs-outsource.vercel.app/video/ai-build-vs-outsource-brief-poster.jpg"
     },
     {
+      "id": 1177175159,
+      "name": "cushlabs-ai-unwatermark",
+      "title": "Unwatermark",
+      "description": "AI-powered watermark removal tool for images, PDFs, and PPTX files. Drop a file, get a clean version.",
+      "summary": "> AI-powered watermark removal tool for images, PDFs, and PPTX files. Drop a file, get a clean version.",
+      "url": "https://github.com/RCushmaniii/cushlabs-ai-unwatermark",
+      "demoUrl": null,
+      "liveUrl": "",
+      "homepage": null,
+      "topics": [
+        "automation",
+        "cli-tool",
+        "fastapi",
+        "image-processing",
+        "pdf",
+        "pillow",
+        "pptx",
+        "python",
+        "watermark-removal"
+      ],
+      "categories": [
+        "AI Automation"
+      ],
+      "tags": [
+        "automation",
+        "cli-tool",
+        "fastapi",
+        "image-processing",
+        "pdf",
+        "pillow",
+        "pptx",
+        "python",
+        "watermark-removal"
+      ],
+      "stack": [
+        "Python 3.10+",
+        "Pillow",
+        "NumPy",
+        "python-pptx",
+        "PyMuPDF",
+        "FastAPI",
+        "Click"
+      ],
+      "status": null,
+      "language": "Python",
+      "languages": {
+        "Python": 97611
+      },
+      "stars": 0,
+      "forks": 0,
+      "lastPushed": "2026-03-09T20:12:00Z",
+      "createdAt": "2026-03-09T19:14:08Z",
+      "isFeatured": false,
+      "isArchived": false,
+      "isPrivate": false,
+      "tagline": "AI-powered watermark removal for images, PDFs, and PPTX files",
+      "thumbnail": "https://raw.githubusercontent.com/RCushmaniii/cushlabs-ai-unwatermark/main/public/public/images/unwatermark-thumbnail.jpg",
+      "problem": "Exported slide decks and documents often embed watermarks directly into raster images,\nmaking them impossible to remove through normal editing. Manual Photoshop cleanup doesn't\nscale when you have dozens of slides that all need the same treatment. Unwatermark automates\nthe clone-stamp technique to produce clean files in seconds.\n",
+      "solution": null,
+      "keyFeatures": [
+        "Processes 14-slide PPTX exports in under 30 seconds",
+        "Seamless gradient blending with no visible artifacts",
+        "Supports 7+ file formats across images, PDFs, and presentations",
+        "Dual CLI and web interface for automation and ad-hoc use"
+      ],
+      "metrics": [],
+      "priority": 6,
+      "dateCompleted": null,
+      "slides": [
+        {
+          "src": "https://raw.githubusercontent.com/RCushmaniii/cushlabs-ai-unwatermark/main/public/public/images/unwatermark-before-after.jpg",
+          "altEn": "Unwatermark",
+          "altEs": "Unwatermark"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/RCushmaniii/cushlabs-ai-unwatermark/main/public/public/images/unwatermark-web-ui.jpg",
+          "altEn": "Unwatermark",
+          "altEs": "Unwatermark"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/RCushmaniii/cushlabs-ai-unwatermark/main/public/public/images/unwatermark-cli.jpg",
+          "altEn": "Unwatermark",
+          "altEs": "Unwatermark"
+        }
+      ],
+      "videoUrl": null,
+      "videoPoster": null
+    },
+    {
       "id": 1120026584,
       "name": "context-writing-system",
       "title": "AI Writing System",
@@ -1383,13 +1527,13 @@
       },
       "stars": 1,
       "forks": 0,
-      "lastPushed": "2026-03-08T22:08:57Z",
+      "lastPushed": "2026-03-09T21:24:37Z",
       "createdAt": "2025-12-20T10:31:00Z",
       "isFeatured": false,
       "isArchived": false,
       "isPrivate": false,
       "tagline": "Clone your brand voice once — AI writes like you across every channel, no drift",
-      "thumbnail": "https://cushlabs-writing-system.vercel.app/public/images/context-writing-system-thumb.jpg",
+      "thumbnail": "https://cushlabs-writing-system.vercel.app/public/images/context-writing-system-thumb.webp",
       "problem": "AI-generated content starts strong but drifts into generic corporate filler within minutes. Teams spend more time editing AI output than they saved generating it — killing hype, restoring voice, and fact-checking hallucinated claims. Every new chat session starts from zero because there's no persistent memory of who you are, what you sell, or what you're allowed to say.\n",
       "solution": null,
       "keyFeatures": [
@@ -1404,38 +1548,63 @@
       "dateCompleted": null,
       "slides": [
         {
-          "src": "https://cushlabs-writing-system.vercel.app/public/images/context-writing-system-01.png",
+          "src": "https://cushlabs-writing-system.vercel.app/public/images/context-writing-system-01.webp",
           "altEn": "AI Writing System",
           "altEs": "AI Writing System"
         },
         {
-          "src": "https://cushlabs-writing-system.vercel.app/public/images/context-writing-system-02.png",
+          "src": "https://cushlabs-writing-system.vercel.app/public/images/context-writing-system-02.webp",
           "altEn": "AI Writing System",
           "altEs": "AI Writing System"
         },
         {
-          "src": "https://cushlabs-writing-system.vercel.app/public/images/context-writing-system-03.png",
+          "src": "https://cushlabs-writing-system.vercel.app/public/images/context-writing-system-03.webp",
           "altEn": "AI Writing System",
           "altEs": "AI Writing System"
         },
         {
-          "src": "https://cushlabs-writing-system.vercel.app/public/images/context-writing-system-04.png",
+          "src": "https://cushlabs-writing-system.vercel.app/public/images/context-writing-system-04.webp",
           "altEn": "AI Writing System",
           "altEs": "AI Writing System"
         },
         {
-          "src": "https://cushlabs-writing-system.vercel.app/public/images/context-writing-system-05.png",
+          "src": "https://cushlabs-writing-system.vercel.app/public/images/context-writing-system-05.webp",
           "altEn": "AI Writing System",
           "altEs": "AI Writing System"
         },
         {
-          "src": "https://cushlabs-writing-system.vercel.app/public/images/context-writing-system-06.png",
+          "src": "https://cushlabs-writing-system.vercel.app/public/images/context-writing-system-06.webp",
+          "altEn": "AI Writing System",
+          "altEs": "AI Writing System"
+        },
+        {
+          "src": "https://cushlabs-writing-system.vercel.app/public/images/context-writing-system-07.webp",
+          "altEn": "AI Writing System",
+          "altEs": "AI Writing System"
+        },
+        {
+          "src": "https://cushlabs-writing-system.vercel.app/public/images/context-writing-system-08.webp",
+          "altEn": "AI Writing System",
+          "altEs": "AI Writing System"
+        },
+        {
+          "src": "https://cushlabs-writing-system.vercel.app/public/images/context-writing-system-09.webp",
+          "altEn": "AI Writing System",
+          "altEs": "AI Writing System"
+        },
+        {
+          "src": "https://cushlabs-writing-system.vercel.app/public/images/context-writing-system-10.webp",
+          "altEn": "AI Writing System",
+          "altEs": "AI Writing System"
+        },
+        {
+          "src": "https://cushlabs-writing-system.vercel.app/public/images/context-writing-system-11.webp",
           "altEn": "AI Writing System",
           "altEs": "AI Writing System"
         }
       ],
       "videoUrl": null,
-      "videoPoster": null
+      "videoPoster": "https://cushlabs-writing-system.vercel.app/public/images/context-writing-system-brief-poster.webp"
     },
     {
       "id": 1141547356,
@@ -1617,7 +1786,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-03-09T18:19:12Z",
+      "lastPushed": "2026-03-09T18:19:57Z",
       "createdAt": "2026-01-08T03:52:43Z",
       "isFeatured": false,
       "isArchived": false,
