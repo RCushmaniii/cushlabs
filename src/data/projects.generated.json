@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-03-08T04:11:30.503Z",
-  "count": 27,
+  "generatedAt": "2026-03-09T03:58:28.087Z",
+  "count": 28,
   "projects": [
     {
       "id": 1164355422,
@@ -275,6 +275,70 @@
       "videoPoster": "https://raw.githubusercontent.com/RCushmaniii/ai-chatbot-saas/main/public/video/converso-brief-poster.jpg"
     },
     {
+      "id": 1176224548,
+      "name": "cushlabs-ai-marketing",
+      "title": "AI Marketing Suite for Claude Code",
+      "description": "AI Marketing Suite for Claude Code — 15 slash commands for marketing analysis, audits, and client deliverables",
+      "summary": "> A production-ready marketing analysis and automation skill system for Claude Code. Audit websites, generate copy, build email sequences, create content calendars, analyze competitors, and produce cl",
+      "url": "https://github.com/RCushmaniii/cushlabs-ai-marketing",
+      "demoUrl": null,
+      "liveUrl": "",
+      "homepage": null,
+      "topics": [],
+      "categories": [
+        "AI Automation"
+      ],
+      "tags": [
+        "claude-code",
+        "marketing-automation",
+        "ai-agents",
+        "seo-audit",
+        "competitive-analysis",
+        "copywriting",
+        "email-marketing",
+        "content-calendar",
+        "pdf-reports",
+        "parallel-agents"
+      ],
+      "stack": [
+        "Claude Code Skills System",
+        "Python 3",
+        "Bash",
+        "ReportLab",
+        "HTML Parser (stdlib)"
+      ],
+      "status": null,
+      "language": "Python",
+      "languages": {
+        "Python": 57110,
+        "Shell": 8952
+      },
+      "stars": 0,
+      "forks": 0,
+      "lastPushed": "2026-03-08T21:10:09Z",
+      "createdAt": "2026-03-08T19:31:57Z",
+      "isFeatured": true,
+      "isArchived": false,
+      "isPrivate": false,
+      "tagline": "15 slash commands that turn Claude Code into a full-service marketing analysis platform",
+      "thumbnail": null,
+      "problem": "Marketing audits are expensive ($2K–$10K) and slow (1–3 weeks). Small agencies and solopreneurs\ncan't compete at that price point. The frameworks exist — CRO checklists, SEO rubrics, competitive\nanalysis templates — but executing them manually across six marketing dimensions takes dozens of\nhours per client. This suite encodes those frameworks into repeatable, scored Claude Code skills.\n",
+      "solution": null,
+      "keyFeatures": [
+        "15 marketing commands available as Claude Code slash commands",
+        "Full website audit with 5 parallel subagents running simultaneously",
+        "Weighted scoring across 6 dimensions with revenue impact estimates",
+        "Client-ready PDF reports with score gauges, charts, and branded styling",
+        "Complete email sequences, ad campaigns, and 30-day content calendars generated in minutes"
+      ],
+      "metrics": [],
+      "priority": 3,
+      "dateCompleted": null,
+      "slides": [],
+      "videoUrl": null,
+      "videoPoster": null
+    },
+    {
       "id": 1174690198,
       "name": "biojalisco-species-id",
       "title": "BioJalisco Species Identifier",
@@ -329,13 +393,13 @@
       "status": null,
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 116919,
-        "CSS": 36996,
+        "TypeScript": 191990,
+        "CSS": 62477,
         "JavaScript": 388
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-03-08T03:55:19Z",
+      "lastPushed": "2026-03-08T20:59:17Z",
       "createdAt": "2026-03-06T18:20:23Z",
       "isFeatured": true,
       "isArchived": false,
@@ -587,6 +651,150 @@
       "videoPoster": "https://ny-ai-chatbot.vercel.app/video/ny-eng-chatbot-brief-poster.jpg"
     },
     {
+      "id": 953305892,
+      "name": "ny-eng",
+      "title": "NY English Teacher",
+      "description": "Professional bilingual (EN/ES) business English coaching platform built with Astro, featuring interactive assessments, lead generation, content management, and booking integration. Optimized for SEO, performance, and conversion.",
+      "summary": "**Executive English coaching platform for professionals who need to command the room.**",
+      "url": "https://github.com/RCushmaniii/ny-eng",
+      "demoUrl": "https://www.nyenglishteacher.com",
+      "liveUrl": "https://www.nyenglishteacher.com",
+      "homepage": "https://nyenglishteacher.com/",
+      "topics": [
+        "astro",
+        "bilingual",
+        "business-english",
+        "content-management-system",
+        "conversion-optimization",
+        "i18n",
+        "lead-generation",
+        "quiz-system",
+        "react",
+        "seo-optimization",
+        "supabase",
+        "tailwindcss",
+        "typescript"
+      ],
+      "categories": [
+        "Client Work"
+      ],
+      "tags": [
+        "astro",
+        "bilingual",
+        "business-english",
+        "content-management-system",
+        "conversion-optimization",
+        "i18n",
+        "lead-generation",
+        "quiz-system",
+        "react",
+        "seo-optimization",
+        "supabase",
+        "tailwindcss",
+        "typescript",
+        "tailwind",
+        "cloudflare-workers",
+        "google-calendar",
+        "neon-postgresql",
+        "solopreneur"
+      ],
+      "stack": [
+        "Astro 5.5",
+        "React 19",
+        "TypeScript",
+        "Cloudflare Workers",
+        "Neon PostgreSQL"
+      ],
+      "status": "Production",
+      "language": "Astro",
+      "languages": {
+        "Astro": 1208430,
+        "HTML": 837214,
+        "TypeScript": 689534,
+        "JavaScript": 378438,
+        "CSS": 40569,
+        "Python": 29891,
+        "MDX": 23077,
+        "PLpgSQL": 4239
+      },
+      "stars": 0,
+      "forks": 0,
+      "lastPushed": "2026-03-09T03:57:22Z",
+      "createdAt": "2025-03-23T03:27:14Z",
+      "isFeatured": true,
+      "isArchived": false,
+      "isPrivate": true,
+      "tagline": "Lead generation platform replacing 4 roles on $0/month infrastructure",
+      "thumbnail": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-thumb.jpg",
+      "problem": "Solo professional service providers burn 10-15 hours per week on manual qualification, scheduling ping-pong, and follow-ups. Their websites look identical to commodity competitors, making it impossible to justify premium pricing while the Spanish-speaking professional market remains underserved.",
+      "solution": "A fully automated lead generation platform that functions as four digital employees — SDR, marketing department, executive assistant, and brand manager — on free-tier infrastructure. Every conversation steers toward booking, every page justifies premium pricing, and the full EN/ES bilingual system doubles the addressable market from a single codebase.",
+      "keyFeatures": [
+        "4 role-specific diagnostic quizzes pre-qualify leads with mapped communication gaps",
+        "3-step booking flow via Cloudflare Workers + Google Calendar OAuth — interest to confirmed Google Meet in under 60 seconds",
+        "Full EN/ES bilingual mirror with localized routing and bidirectional hreflang SEO",
+        "Premium positioning hard-coded into UX — named executive testimonials from multinational companies",
+        "$0/month infrastructure — Astro static, Cloudflare Workers free tier, Neon free tier"
+      ],
+      "metrics": [
+        "100 Lighthouse performance score",
+        "$0/month infrastructure cost across all services",
+        "< 60 seconds from interest to confirmed booking with Google Meet link",
+        "2x addressable market from a single codebase via bilingual system",
+        "10-15 hours/week of administrative and sales work automated away"
+      ],
+      "priority": 4,
+      "dateCompleted": "2026-02",
+      "slides": [
+        {
+          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-01.png",
+          "altEn": "The Architecture of Authority",
+          "altEs": "La Arquitectura de la Autoridad"
+        },
+        {
+          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-02.png",
+          "altEn": "An Automated Performance Engine",
+          "altEs": "Un Motor de Rendimiento Automatizado"
+        },
+        {
+          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-03.png",
+          "altEn": "Digital Employee 01: The SDR",
+          "altEs": "Empleado Digital 01: El SDR"
+        },
+        {
+          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-04.png",
+          "altEn": "Digital Employee 02: Marketing Dept",
+          "altEs": "Empleado Digital 02: Depto. de Marketing"
+        },
+        {
+          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-05.png",
+          "altEn": "Digital Employee 03: The Executive Assistant",
+          "altEs": "Empleado Digital 03: La Asistente Ejecutiva"
+        },
+        {
+          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-06.png",
+          "altEn": "Digital Employee 04: The Brand Manager",
+          "altEs": "Empleado Digital 04: El Brand Manager"
+        },
+        {
+          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-07.png",
+          "altEn": "The Speed of Trust",
+          "altEs": "La Velocidad de la Confianza"
+        },
+        {
+          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-08.png",
+          "altEn": "The Universal Model",
+          "altEs": "El Modelo Universal"
+        },
+        {
+          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-09.png",
+          "altEn": "The Zero-Cost Tech Stack",
+          "altEs": "El Tech Stack de Costo Cero"
+        }
+      ],
+      "videoUrl": "https://www.nyenglishteacher.com/video/ny-eng-brief.mp4",
+      "videoPoster": "https://www.nyenglishteacher.com/video/ny-eng-brief-poster.jpg"
+    },
+    {
       "id": 1172972613,
       "name": "biojalisco-pitch",
       "title": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier",
@@ -732,150 +940,6 @@
       "videoPoster": "https://biojalisco-pitch.vercel.app/assets/images/portfolio/scrollytelling-pitch-poster.jpg"
     },
     {
-      "id": 953305892,
-      "name": "ny-eng",
-      "title": "NY English Teacher",
-      "description": "Professional bilingual (EN/ES) business English coaching platform built with Astro, featuring interactive assessments, lead generation, content management, and booking integration. Optimized for SEO, performance, and conversion.",
-      "summary": "**Executive English coaching platform for professionals who need to command the room.**",
-      "url": "https://github.com/RCushmaniii/ny-eng",
-      "demoUrl": "https://www.nyenglishteacher.com",
-      "liveUrl": "https://www.nyenglishteacher.com",
-      "homepage": "https://nyenglishteacher.com/",
-      "topics": [
-        "astro",
-        "bilingual",
-        "business-english",
-        "content-management-system",
-        "conversion-optimization",
-        "i18n",
-        "lead-generation",
-        "quiz-system",
-        "react",
-        "seo-optimization",
-        "supabase",
-        "tailwindcss",
-        "typescript"
-      ],
-      "categories": [
-        "Client Work"
-      ],
-      "tags": [
-        "astro",
-        "bilingual",
-        "business-english",
-        "content-management-system",
-        "conversion-optimization",
-        "i18n",
-        "lead-generation",
-        "quiz-system",
-        "react",
-        "seo-optimization",
-        "supabase",
-        "tailwindcss",
-        "typescript",
-        "tailwind",
-        "cloudflare-workers",
-        "google-calendar",
-        "neon-postgresql",
-        "solopreneur"
-      ],
-      "stack": [
-        "Astro 5.5",
-        "React 19",
-        "TypeScript",
-        "Cloudflare Workers",
-        "Neon PostgreSQL"
-      ],
-      "status": "Production",
-      "language": "Astro",
-      "languages": {
-        "Astro": 1208430,
-        "HTML": 837214,
-        "TypeScript": 689534,
-        "JavaScript": 378438,
-        "CSS": 40569,
-        "Python": 29891,
-        "MDX": 23077,
-        "PLpgSQL": 4239
-      },
-      "stars": 0,
-      "forks": 0,
-      "lastPushed": "2026-03-07T10:30:42Z",
-      "createdAt": "2025-03-23T03:27:14Z",
-      "isFeatured": true,
-      "isArchived": false,
-      "isPrivate": true,
-      "tagline": "Lead generation platform replacing 4 roles on $0/month infrastructure",
-      "thumbnail": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-thumb.jpg",
-      "problem": "Solo professional service providers burn 10-15 hours per week on manual qualification, scheduling ping-pong, and follow-ups. Their websites look identical to commodity competitors, making it impossible to justify premium pricing while the Spanish-speaking professional market remains underserved.",
-      "solution": "A fully automated lead generation platform that functions as four digital employees — SDR, marketing department, executive assistant, and brand manager — on free-tier infrastructure. Every conversation steers toward booking, every page justifies premium pricing, and the full EN/ES bilingual system doubles the addressable market from a single codebase.",
-      "keyFeatures": [
-        "4 role-specific diagnostic quizzes pre-qualify leads with mapped communication gaps — no discovery calls needed",
-        "3-step booking flow via Cloudflare Workers + Google Calendar OAuth — interest to confirmed Google Meet in under 60 seconds",
-        "Full EN/ES bilingual mirror with localized routing (/es/servicios/, /es/reservar/) and bidirectional hreflang SEO",
-        "Premium positioning hard-coded into UX — named executive testimonials from Driscoll's, CEVA Logistics, no discount codes",
-        "$0/month infrastructure — Astro static, Cloudflare Workers free tier, Neon free tier, Vercel serverless free tier"
-      ],
-      "metrics": [
-        "100 Lighthouse performance score — zero database queries on page load",
-        "$0/month infrastructure cost across all services",
-        "< 60 seconds from interest to confirmed booking with Google Meet link",
-        "2x addressable market from a single codebase via bilingual system",
-        "10-15 hours/week of administrative and sales work automated away"
-      ],
-      "priority": 4,
-      "dateCompleted": "2026-02",
-      "slides": [
-        {
-          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-01.webp",
-          "altEn": "The Architecture of Authority — Constructing a multinational agency presence with a team of one",
-          "altEs": "La Arquitectura de la Autoridad — Construyendo presencia de agencia multinacional con un equipo de uno"
-        },
-        {
-          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-02.webp",
-          "altEn": "An Automated Performance Engine — Zero manual qualification, 60-second booking flow, 100% gross margin",
-          "altEs": "Un Motor de Rendimiento Automatizado — Cero calificacion manual, reserva en 60 segundos, 100% margen bruto"
-        },
-        {
-          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-03.webp",
-          "altEn": "Digital Employee 01: The SDR — Diagnostic intelligence replaces discovery calls with pre-qualified leads",
-          "altEs": "Empleado Digital 01: El SDR — Inteligencia diagnostica reemplaza llamadas de descubrimiento con leads precalificados"
-        },
-        {
-          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-04.webp",
-          "altEn": "Digital Employee 02: Marketing Dept — The bilingual mirror doubles addressable market from a single codebase",
-          "altEs": "Empleado Digital 02: Depto. de Marketing — El espejo bilingue duplica el mercado alcanzable desde una sola base de codigo"
-        },
-        {
-          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-05.webp",
-          "altEn": "Digital Employee 03: The Executive Assistant — Interest to confirmed Google Meet booking in under 60 seconds",
-          "altEs": "Empleado Digital 03: La Asistente Ejecutiva — De interes a reserva confirmada en Google Meet en menos de 60 segundos"
-        },
-        {
-          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-06.webp",
-          "altEn": "Digital Employee 04: The Brand Manager — Premium positioning hard-coded into the UX with named executive testimonials",
-          "altEs": "Empleado Digital 04: El Brand Manager — Posicionamiento premium integrado en la UX con testimonios ejecutivos reales"
-        },
-        {
-          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-07.webp",
-          "altEn": "The Speed of Trust — Lighthouse 100 performance score, instant loads signal competence to premium buyers",
-          "altEs": "La Velocidad de la Confianza — Puntuacion Lighthouse 100, cargas instantaneas que senalan competencia a compradores premium"
-        },
-        {
-          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-08.webp",
-          "altEn": "The Universal Model — Blueprint for any high-touch expertise business: diagnostic lead magnet + automated booking + premium signals = authority",
-          "altEs": "El Modelo Universal — Plano para cualquier negocio de expertise: lead magnet diagnostico + reserva automatizada + senales premium = autoridad"
-        },
-        {
-          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-09.webp",
-          "altEn": "The Zero-Cost Tech Stack — Enterprise-grade performance on a solopreneur budget with $0 monthly infrastructure",
-          "altEs": "El Tech Stack de Costo Cero — Rendimiento empresarial con presupuesto de solopreneur y $0 de infraestructura mensual"
-        }
-      ],
-      "videoUrl": "https://www.nyenglishteacher.com/video/ny-eng-brief.mp4",
-      "videoPoster": "https://www.nyenglishteacher.com/video/ny-eng-brief-poster.jpg"
-    },
-    {
       "id": 1171395937,
       "name": "expat-driver-license-prep",
       "title": "ExpatDrive — Bilingual Driver's License Exam Prep",
@@ -927,7 +991,7 @@
       "status": null,
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 129727,
+        "TypeScript": 130104,
         "Astro": 68530,
         "JavaScript": 19798,
         "Python": 14928,
@@ -935,7 +999,7 @@
       },
       "stars": 1,
       "forks": 0,
-      "lastPushed": "2026-03-08T03:23:36Z",
+      "lastPushed": "2026-03-08T18:48:12Z",
       "createdAt": "2026-03-03T07:21:12Z",
       "isFeatured": false,
       "isArchived": false,
@@ -1237,7 +1301,7 @@
       "name": "context-writing-system",
       "title": "AI Writing System",
       "description": "Context-engineering system to lock brand voice, enforce truth, and generate consistent AI-written content at scale.",
-      "summary": "**Clone your voice. Crush content. Scale forever.**",
+      "summary": "> A context engineering framework that makes AI write like you, not like AI.",
       "url": "https://github.com/RCushmaniii/context-writing-system",
       "demoUrl": "https://cushlabs-writing-system.vercel.app",
       "liveUrl": "https://cushlabs-writing-system.vercel.app",
@@ -1274,9 +1338,11 @@
         "HTML / CSS / JS",
         "JSON Context Files",
         "Markdown Skills",
-        "Vercel"
+        "Vercel",
+        "Context Engineering",
+        "Claims Policy Engine"
       ],
-      "status": "Production",
+      "status": null,
       "language": "HTML",
       "languages": {
         "HTML": 249878,
@@ -1286,89 +1352,59 @@
       },
       "stars": 1,
       "forks": 0,
-      "lastPushed": "2026-02-23T00:23:50Z",
+      "lastPushed": "2026-03-08T22:08:57Z",
       "createdAt": "2025-12-20T10:31:00Z",
       "isFeatured": false,
       "isArchived": false,
       "isPrivate": false,
       "tagline": "Clone your brand voice once — AI writes like you across every channel, no drift",
       "thumbnail": "https://cushlabs-writing-system.vercel.app/public/images/context-writing-system-thumb.jpg",
-      "problem": "AI-generated content starts strong but drifts into generic corporate filler within minutes. Teams spend more time editing AI output than they saved generating it — killing hype, restoring voice, and fact-checking hallucinated claims. Every new chat session starts from zero because there's no persistent memory of who you are, what you sell, or what you're allowed to say.",
-      "solution": "A structured context-engineering framework that stores your voice, audience profile, business facts, and claim rules in persistent JSON truth files. When you request any content type — landing page, email, LinkedIn post — the AI loads these truth files plus format-specific skills to produce consistent, on-brand output without hallucinated claims or generic phrasing. First drafts arrive 90% ready. You review instead of rewrite.",
+      "problem": "AI-generated content starts strong but drifts into generic corporate filler within minutes. Teams spend more time editing AI output than they saved generating it — killing hype, restoring voice, and fact-checking hallucinated claims. Every new chat session starts from zero because there's no persistent memory of who you are, what you sell, or what you're allowed to say.\n",
+      "solution": null,
       "keyFeatures": [
-        "Four Pillars of Truth — Voice DNA, Business Profile, Ideal Client Profile, and Claims Policy lock your reality in structured JSON",
-        "Format-Specific Skills — dedicated content blueprints for landing pages, cold emails, LinkedIn posts, sales decks, and READMEs",
-        "Automated Credibility Protection — claims policy enforces what can and cannot be stated, blocking hallucinations before they ship",
-        "Hierarchical Control Stack — truth and claims always override voice, audience, and format rules, eliminating ambiguity",
-        "Static Explorer UI — branded dashboard to browse your entire writing system, deployed on Vercel with zero build step"
-      ],
-      "metrics": [
-        "First drafts arrive 90% ready — review instead of rewrite",
+        "First drafts arrive ready for review, not rewriting",
         "Editing time reduced from 45 minutes to 5 minutes per asset",
         "Zero hallucinated claims — credibility enforced by policy",
-        "One voice system powers every content channel"
+        "One voice system powers every content channel",
+        "Tool-agnostic — works with Claude, ChatGPT, Cursor, or any RAG system"
       ],
+      "metrics": [],
       "priority": 7,
-      "dateCompleted": "2025-12",
+      "dateCompleted": null,
       "slides": [
         {
           "src": "https://cushlabs-writing-system.vercel.app/public/images/context-writing-system-01.png",
-          "altEn": "AI Writing System — Structure beats prompts, truth beats cleverness",
-          "altEs": "Sistema de Escritura IA — La estructura supera a los prompts, la verdad supera a la astucia"
+          "altEn": "AI Writing System",
+          "altEs": "AI Writing System"
         },
         {
           "src": "https://cushlabs-writing-system.vercel.app/public/images/context-writing-system-02.png",
-          "altEn": "You are using AI but it sounds like AI — content quality degrades over time as tone flattens into generic corporate filler",
-          "altEs": "Usas IA pero suena a IA — la calidad del contenido se degrada con el tiempo hasta convertirse en relleno corporativo generico"
+          "altEn": "AI Writing System",
+          "altEs": "AI Writing System"
         },
         {
           "src": "https://cushlabs-writing-system.vercel.app/public/images/context-writing-system-03.png",
-          "altEn": "It's not a prompt problem, it's a memory problem — you rebuild context from scratch every time",
-          "altEs": "No es un problema de prompts, es un problema de memoria — reconstruyes el contexto desde cero cada vez"
+          "altEn": "AI Writing System",
+          "altEs": "AI Writing System"
         },
         {
           "src": "https://cushlabs-writing-system.vercel.app/public/images/context-writing-system-04.png",
-          "altEn": "Locking your reality with the four pillars of truth — Voice DNA, Business Profile, Ideal Client, and Claims Policy",
-          "altEs": "Bloqueando tu realidad con los cuatro pilares de verdad — ADN de Voz, Perfil de Negocio, Cliente Ideal y Politica de Afirmaciones"
+          "altEn": "AI Writing System",
+          "altEs": "AI Writing System"
         },
         {
           "src": "https://cushlabs-writing-system.vercel.app/public/images/context-writing-system-05.png",
-          "altEn": "Clone your voice once, use it everywhere — teaches AI your rhythm, tone, and boundaries instantly",
-          "altEs": "Clona tu voz una vez, usala en todas partes — ensena a la IA tu ritmo, tono y limites al instante"
+          "altEn": "AI Writing System",
+          "altEs": "AI Writing System"
         },
         {
           "src": "https://cushlabs-writing-system.vercel.app/public/images/context-writing-system-06.png",
-          "altEn": "Automated credibility protection — no hallucinations, no fake metrics, if it violates the policy it doesn't ship",
-          "altEs": "Proteccion de credibilidad automatizada — sin alucinaciones, sin metricas falsas, si viola la politica no se publica"
-        },
-        {
-          "src": "https://cushlabs-writing-system.vercel.app/public/images/context-writing-system-07.png",
-          "altEn": "Format-specific skills — dedicated content blueprints for LinkedIn, sales decks, cold emails, landing pages, and tech READMEs",
-          "altEs": "Habilidades especificas por formato — plantillas dedicadas para LinkedIn, presentaciones, emails frios, landing pages y READMEs tecnicos"
-        },
-        {
-          "src": "https://cushlabs-writing-system.vercel.app/public/images/context-writing-system-08.png",
-          "altEn": "No ambiguity — a strict hierarchy of control where truth and claims policy always override voice, audience, and format rules",
-          "altEs": "Sin ambiguedad — una jerarquia estricta de control donde la verdad y la politica de afirmaciones siempre prevalecen sobre voz, audiencia y formato"
-        },
-        {
-          "src": "https://cushlabs-writing-system.vercel.app/public/images/context-writing-system-09.png",
-          "altEn": "Reviewing not rewriting — first drafts arrive 90% ready, reducing 45 minutes of editing to 5 minutes of review",
-          "altEs": "Revisar en vez de reescribir — los primeros borradores llegan 90% listos, reduciendo 45 minutos de edicion a 5 minutos de revision"
-        },
-        {
-          "src": "https://cushlabs-writing-system.vercel.app/public/images/context-writing-system-10.png",
-          "altEn": "One identity, many channels — consistent brand voice across every platform powered by the same truth files",
-          "altEs": "Una identidad, muchos canales — voz de marca consistente en cada plataforma impulsada por los mismos archivos de verdad"
-        },
-        {
-          "src": "https://cushlabs-writing-system.vercel.app/public/images/context-writing-system-11.png",
-          "altEn": "Build your infrastructure — systems beat inspiration, ready to engineer your context",
-          "altEs": "Construye tu infraestructura — los sistemas superan la inspiracion, listo para disenar tu contexto"
+          "altEn": "AI Writing System",
+          "altEs": "AI Writing System"
         }
       ],
-      "videoUrl": "https://cushlabs-writing-system.vercel.app/public/videos/context-writing-system-brief.mp4",
-      "videoPoster": "https://cushlabs-writing-system.vercel.app/public/videos/context-writing-system-brief-poster.jpg"
+      "videoUrl": null,
+      "videoPoster": null
     },
     {
       "id": 1141547356,
@@ -1550,7 +1586,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-03-06T17:51:48Z",
+      "lastPushed": "2026-03-08T04:11:32Z",
       "createdAt": "2026-01-08T03:52:43Z",
       "isFeatured": false,
       "isArchived": false,
@@ -1985,48 +2021,48 @@
       "slides": [
         {
           "src": "https://scrabble-mini.netlify.app/images/ai-scrabble-practice-01.png",
-          "altEn": "AI Scrabble Practice Suite — Five tools for serious Scrabble practice",
-          "altEs": "AI Scrabble Practice Suite — Cinco herramientas para practicar Scrabble en serio"
+          "altEn": "AI Scrabble Practice Suite",
+          "altEs": "AI Scrabble Practice Suite"
         },
         {
           "src": "https://scrabble-mini.netlify.app/images/ai-scrabble-practice-02.png",
-          "altEn": "The Practice Gap — word checkers don't teach, board solvers don't let you learn",
-          "altEs": "La brecha de practica — los verificadores no ensenan, los solucionadores no te dejan aprender"
+          "altEn": "The Practice Gap",
+          "altEs": "La brecha de practica"
         },
         {
           "src": "https://scrabble-mini.netlify.app/images/ai-scrabble-practice-03.png",
-          "altEn": "Word Validator — instant validation with letter-by-letter score breakdown",
-          "altEs": "Validador de Palabras — validacion instantanea con desglose de puntuacion letra por letra"
+          "altEn": "Word Validator",
+          "altEs": "Validador de Palabras"
         },
         {
           "src": "https://scrabble-mini.netlify.app/images/ai-scrabble-practice-04.png",
-          "altEn": "Anagram Solver — find every playable word from your tile rack with wildcard support",
-          "altEs": "Solucionador de Anagramas — encuentra cada palabra jugable desde tu atril con comodines"
+          "altEn": "Anagram Solver",
+          "altEs": "Solucionador de Anagramas"
         },
         {
           "src": "https://scrabble-mini.netlify.app/images/ai-scrabble-practice-06.png",
-          "altEn": "Word Finder — search by letter, position, and length with scoring statistics",
-          "altEs": "Buscador de Palabras — busca por letra, posicion y longitud con estadisticas de puntuacion"
+          "altEn": "Word Finder",
+          "altEs": "Buscador de Palabras"
         },
         {
           "src": "https://scrabble-mini.netlify.app/images/ai-scrabble-practice-07.png",
-          "altEn": "Magic Search — ask for words in plain English, powered by GPT-4o-mini",
-          "altEs": "Busqueda Magica — pide palabras en lenguaje natural, impulsado por GPT-4o-mini"
+          "altEn": "Magic Search",
+          "altEs": "Busqueda Magica"
         },
         {
           "src": "https://scrabble-mini.netlify.app/images/ai-scrabble-practice-08.png",
-          "altEn": "Practice Game — build words against the clock with AI hints and progressive scoring",
-          "altEs": "Juego de Practica — forma palabras contra reloj con pistas de IA y puntuacion progresiva"
+          "altEn": "Practice Game",
+          "altEs": "Juego de Practica"
         },
         {
           "src": "https://scrabble-mini.netlify.app/images/ai-scrabble-practice-09.png",
-          "altEn": "Bilingual and Tested — full EN/ES support with Playwright E2E coverage",
-          "altEs": "Bilingue y Probado — soporte completo EN/ES con cobertura E2E de Playwright"
+          "altEn": "Bilingual and Tested",
+          "altEs": "Bilingue y Probado"
         },
         {
           "src": "https://scrabble-mini.netlify.app/images/ai-scrabble-practice-10.png",
-          "altEn": "Technical Architecture — React 19, TypeScript, Vite 7, OpenAI, 370K-word dictionary",
-          "altEs": "Arquitectura Tecnica — React 19, TypeScript, Vite 7, OpenAI, diccionario de 370K palabras"
+          "altEn": "Technical Architecture",
+          "altEs": "Arquitectura Tecnica"
         }
       ],
       "videoUrl": "https://scrabble-mini.netlify.app/video/ai-scrabble-practice-brief.mp4",

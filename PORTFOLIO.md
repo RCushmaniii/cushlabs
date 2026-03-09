@@ -73,7 +73,7 @@ Your website is saying things about your business that you never approved.
 
 When your portfolio hasn't been updated in six months, it says "I'm not busy." When your Spanish pages are two versions behind the English ones, it says "Bilingual is just a checkbox on my marketing." When a prospect clicks your booking link and lands on a Calendly page with different fonts and colors, it says "I outsource the details."
 
-CushLabs.ai was built to stop the leaks. It's the production website for CushLabs AI Services — an AI consulting firm operating across the US and Mexico — and every system in it was designed to answer one question: *What if your website maintained itself to the same standard you'd demand from a junior employee?*
+CushLabs.ai was built to stop the leaks. It's the production website for CushLabs AI Services — an AI consulting firm operating across the US and Mexico — and every system in it was designed to answer one question: _What if your website maintained itself to the same standard you'd demand from a junior employee?_
 
 The portfolio syncs from your actual project repositories — automatically, weekly, without touching the site. The bilingual engine blocks deployment if a single translation key is missing in either language. The booking system runs on your own infrastructure, matches your brand pixel-for-pixel, and costs nothing per month. The pre-deploy audit scans for leaked secrets, broken pages, and content drift before anything reaches production.
 
@@ -90,6 +90,7 @@ The prospect doesn't email you to say "your portfolio looks thin." They just lea
 The root cause isn't laziness. It's friction. Adding a project to a traditional portfolio requires: writing a description, capturing screenshots, formatting content for the site, deploying the update, and — for a bilingual site — doing all of that twice. That's 45-90 minutes per project, competing against every other task on your list. It never gets prioritized because it doesn't feel urgent. The cost is invisible until you calculate how many prospects saw an outdated portfolio and made a decision based on it.
 
 **What consultants typically try:**
+
 - WordPress portfolio plugins (add CMS maintenance, plugin updates, and security vulnerabilities)
 - Notion or Airtable embeds (look out of place, break mobile, create third-party dependency)
 - "I'll update it when I have time" (you won't — this has never worked for anyone)
@@ -146,6 +147,7 @@ For enterprise companies, there are security teams and automated scanning tools.
 **What it does:** A weekly automated pipeline scans your GitHub repositories, extracts project metadata from `portfolio.md` files, and publishes updated portfolio entries to your site. A curated override system lets you layer marketing copy on top of the automated data.
 
 **What it means for you:**
+
 - Add a project to your portfolio by pushing a single file to your project repo. No CMS, no manual site update, no deployment.
 - Your portfolio is always current. The 28th project is exactly as effortless as the 1st.
 - Curated descriptions layer on top of automated data, so the site stays polished without requiring constant attention.
@@ -159,6 +161,7 @@ For enterprise companies, there are security teams and automated scanning tools.
 **What it does:** A lightweight translation system resolves languages at compile time with zero runtime cost. Before every deployment, an automated audit compares every translation key between English and Spanish and blocks the deploy if any key is missing from either language.
 
 **What it means for you:**
+
 - Your Spanish-speaking prospects see exactly the same depth of content as your English-speaking ones. Not "most of it." All of it.
 - Search engines get consistent hreflang signals, clean canonical URLs, and matching content across language versions — rewarding both versions with higher rankings.
 - You can never accidentally deploy a version where one language is behind the other. The system catches the gap before it reaches production.
@@ -171,6 +174,7 @@ For enterprise companies, there are security teams and automated scanning tools.
 **What it does:** A 3-step booking wizard (select time, enter details, confirm) queries Google Calendar in real time, shows available 30-minute slots, and creates calendar events with auto-generated Google Meet links. Built with your own design system. Rate-limited and input-sanitized.
 
 **What it means for you:**
+
 - Your booking flow looks and feels like part of your site — same fonts, same colors, same spacing, same dark mode behavior. No iframe, no third-party branding.
 - Availability is always accurate because it reads directly from your Google Calendar. Block time on your calendar, and those slots disappear from the booking widget instantly.
 - Confirmed bookings appear on your calendar with Meet links attached. Both you and the prospect receive calendar invitations. Zero manual coordination.
@@ -184,6 +188,7 @@ For enterprise companies, there are security teams and automated scanning tools.
 **What it does:** Before every deployment, six automated checks run in sequence: repository hygiene (required files exist), environment variable validation, secret leak scanning (GitHub tokens, OpenAI keys), bilingual translation parity, TypeScript type validation, and build artifact verification (confirming all 13 expected HTML pages exist in both languages). Any failure blocks deployment.
 
 **What it means for you:**
+
 - Leaked API keys are caught before they reach production — not after a security incident.
 - Missing pages or broken builds are caught at deploy time, not by a prospect reporting a 404.
 - Translation gaps are flagged with the specific missing key and which language it's missing from.
@@ -196,6 +201,7 @@ For enterprise companies, there are security teams and automated scanning tools.
 **What it does:** Every content page is pre-rendered as pure HTML at build time, deployed to a global CDN, and served from the edge node closest to your visitor. The homepage video loads zero bytes initially and preloads during browser idle time.
 
 **What it means for you:**
+
 - Pages load in under one second globally. Sub-second first-paint regardless of whether your visitor is in Dallas, Guadalajara, or Tokyo.
 - No server to crash, scale, or pay for. The static files are distributed across hundreds of edge nodes with built-in redundancy.
 - Google's Core Web Vitals scores improve because there's no server-side processing delay, no JavaScript framework initialization, and no render-blocking resources.
@@ -208,6 +214,7 @@ For enterprise companies, there are security teams and automated scanning tools.
 **What it does:** Email obfuscation splits addresses across HTML attributes (assembled via JavaScript, invisible to scrapers). Secret scanning checks every source file for exposed API keys. Booking endpoints enforce per-IP rate limiting. All form inputs are sanitized to prevent injection.
 
 **What it means for you:**
+
 - Your email addresses stop appearing in spam databases harvested by bots crawling your HTML.
 - API keys can't accidentally leak into production — the build catches them before deployment.
 - Your booking endpoint can't be abused by bots submitting hundreds of fake bookings.
@@ -228,6 +235,7 @@ For a business owner, this means the website stops being a to-do item and starts
 ### It Eliminates an Entire Category of Recurring Costs
 
 Traditional approach for a bilingual consulting site with booking:
+
 - Hosting: $20-50/month (Vercel Pro, Netlify Pro, or similar)
 - Scheduling tool: $12-16/month (Calendly, Cal.com, Acuity)
 - CMS: $0-29/month (WordPress hosting, Contentful, Sanity)
@@ -236,6 +244,7 @@ Traditional approach for a bilingual consulting site with booking:
 - **Total: $384-1,968/year** in SaaS subscriptions and hosting
 
 This site's operating cost:
+
 - Hosting: $0/month (CDN free tier)
 - Scheduling: $0/month (Cloudflare Worker free tier)
 - CMS: $0/month (GitHub is the CMS)
@@ -291,17 +300,17 @@ The underlying principle is universal: **automate what humans forget, enforce wh
 
 ## Results
 
-| Metric | Before | After |
-|--------|--------|-------|
-| Portfolio maintenance | 45-90 min per project, per language | 0 min (automated sync) |
-| Bilingual content drift | Caught by prospects or Google penalties | Caught at build time, before deploy |
-| Scheduling tool cost | $144-192/year (Calendly/Cal.com/Acuity) | $0/year (Cloudflare Worker free tier) |
-| Total infrastructure cost | $384-1,968/year | ~$12/year (domain only) |
-| Page load time | 1.5-4s (typical full-stack app) | <1s (static CDN, global edge) |
-| Security scanning | Manual / never | Automated on every deploy |
-| Translation parity verification | Manual spot-check | Mechanical enforcement, 100% coverage |
-| Portfolio projects displayed | 3-5 (manual maintenance ceiling) | 27+ (automated, growing) |
-| Headcount for website ops | 0.25-0.5 FTE equivalent | 0 FTE |
+| Metric                          | Before                                  | After                                 |
+| ------------------------------- | --------------------------------------- | ------------------------------------- |
+| Portfolio maintenance           | 45-90 min per project, per language     | 0 min (automated sync)                |
+| Bilingual content drift         | Caught by prospects or Google penalties | Caught at build time, before deploy   |
+| Scheduling tool cost            | $144-192/year (Calendly/Cal.com/Acuity) | $0/year (Cloudflare Worker free tier) |
+| Total infrastructure cost       | $384-1,968/year                         | ~$12/year (domain only)               |
+| Page load time                  | 1.5-4s (typical full-stack app)         | <1s (static CDN, global edge)         |
+| Security scanning               | Manual / never                          | Automated on every deploy             |
+| Translation parity verification | Manual spot-check                       | Mechanical enforcement, 100% coverage |
+| Portfolio projects displayed    | 3-5 (manual maintenance ceiling)        | 27+ (automated, growing)              |
+| Headcount for website ops       | 0.25-0.5 FTE equivalent                 | 0 FTE                                 |
 
 ### The Bottom Line
 
