@@ -18,7 +18,7 @@
  *     WEEKDAY_MORNING_HOURS     (default: 09:00-14:00)
  *     WEEKDAY_AFTERNOON_HOURS   (default: 16:00-20:00)
  *     SATURDAY_HOURS            (default: 09:00-13:00)
- *     ALLOWED_ORIGINS           (comma-separated, e.g. "https://cushlabs.ai,https://www.cushlabs.ai")
+ *     ALLOWED_ORIGINS           (comma-separated, supports *.suffix patterns, e.g. "https://cushlabs.ai,https://www.cushlabs.ai,*.vercel.app")
  *     TIMEZONE                  (default: America/Mexico_City)
  *     DEBUG_ENABLED             (set to "true" to enable /debug endpoint)
  *     DEBUG_KEY                 (optional auth key for /debug)
@@ -491,11 +491,23 @@ function corsHeaders(request, env) {
     .map((s) => s.trim())
     .filter(Boolean);
 
-  const allowOrigin = allowed.includes("*")
-    ? "*"
-    : allowed.includes(origin)
-      ? origin
-      : "";
+  let allowOrigin = "";
+  if (allowed.includes("*")) {
+    allowOrigin = "*";
+  } else if (allowed.includes(origin)) {
+    allowOrigin = origin;
+  } else {
+    // Support suffix patterns like *.vercel.app for preview deploys
+    for (const pattern of allowed) {
+      if (pattern.startsWith("*.")) {
+        const suffix = pattern.slice(1); // e.g. ".vercel.app"
+        if (origin.endsWith(suffix) && origin.startsWith("https://")) {
+          allowOrigin = origin;
+          break;
+        }
+      }
+    }
+  }
 
   const base = {
     "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
