@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-09T03:58:28.087Z",
+  "generatedAt": "2026-03-09T17:33:07.199Z",
   "count": 28,
   "projects": [
     {
@@ -275,155 +275,6 @@
       "videoPoster": "https://raw.githubusercontent.com/RCushmaniii/ai-chatbot-saas/main/public/video/converso-brief-poster.jpg"
     },
     {
-      "id": 1176224548,
-      "name": "cushlabs-ai-marketing",
-      "title": "AI Marketing Suite for Claude Code",
-      "description": "AI Marketing Suite for Claude Code — 15 slash commands for marketing analysis, audits, and client deliverables",
-      "summary": "> A production-ready marketing analysis and automation skill system for Claude Code. Audit websites, generate copy, build email sequences, create content calendars, analyze competitors, and produce cl",
-      "url": "https://github.com/RCushmaniii/cushlabs-ai-marketing",
-      "demoUrl": null,
-      "liveUrl": "",
-      "homepage": null,
-      "topics": [],
-      "categories": [
-        "AI Automation"
-      ],
-      "tags": [
-        "claude-code",
-        "marketing-automation",
-        "ai-agents",
-        "seo-audit",
-        "competitive-analysis",
-        "copywriting",
-        "email-marketing",
-        "content-calendar",
-        "pdf-reports",
-        "parallel-agents"
-      ],
-      "stack": [
-        "Claude Code Skills System",
-        "Python 3",
-        "Bash",
-        "ReportLab",
-        "HTML Parser (stdlib)"
-      ],
-      "status": null,
-      "language": "Python",
-      "languages": {
-        "Python": 57110,
-        "Shell": 8952
-      },
-      "stars": 0,
-      "forks": 0,
-      "lastPushed": "2026-03-08T21:10:09Z",
-      "createdAt": "2026-03-08T19:31:57Z",
-      "isFeatured": true,
-      "isArchived": false,
-      "isPrivate": false,
-      "tagline": "15 slash commands that turn Claude Code into a full-service marketing analysis platform",
-      "thumbnail": null,
-      "problem": "Marketing audits are expensive ($2K–$10K) and slow (1–3 weeks). Small agencies and solopreneurs\ncan't compete at that price point. The frameworks exist — CRO checklists, SEO rubrics, competitive\nanalysis templates — but executing them manually across six marketing dimensions takes dozens of\nhours per client. This suite encodes those frameworks into repeatable, scored Claude Code skills.\n",
-      "solution": null,
-      "keyFeatures": [
-        "15 marketing commands available as Claude Code slash commands",
-        "Full website audit with 5 parallel subagents running simultaneously",
-        "Weighted scoring across 6 dimensions with revenue impact estimates",
-        "Client-ready PDF reports with score gauges, charts, and branded styling",
-        "Complete email sequences, ad campaigns, and 30-day content calendars generated in minutes"
-      ],
-      "metrics": [],
-      "priority": 3,
-      "dateCompleted": null,
-      "slides": [],
-      "videoUrl": null,
-      "videoPoster": null
-    },
-    {
-      "id": 1174690198,
-      "name": "biojalisco-species-id",
-      "title": "BioJalisco Species Identifier",
-      "description": "AI-powered vertebrate species identification for Jalisco field research. Next.js 15, GPT-4o Vision, Clerk, Neon Postgres.",
-      "summary": "> AI-powered species identification for Jalisco biodiversity research. Four-API pipeline delivers verified taxonomy, IUCN status, Mexico-specific conservation data (NOM-059), and endemic classificatio",
-      "url": "https://github.com/RCushmaniii/biojalisco-species-id",
-      "demoUrl": "https://biojalisco-species-id.vercel.app",
-      "liveUrl": "https://biojalisco-species-id.vercel.app",
-      "homepage": "https://biojalisco-species-id.vercel.app",
-      "topics": [
-        "ai",
-        "biodiversity",
-        "computer-vision",
-        "conservation",
-        "gpt-4o",
-        "jalisco",
-        "nextjs",
-        "species-identification"
-      ],
-      "categories": [
-        "AI Automation"
-      ],
-      "tags": [
-        "ai",
-        "biodiversity",
-        "computer-vision",
-        "conservation",
-        "gpt-4o",
-        "jalisco",
-        "nextjs",
-        "species-identification",
-        "ai-vision",
-        "inaturalist",
-        "gbif",
-        "conabio",
-        "bilingual"
-      ],
-      "stack": [
-        "Next.js 15 (App Router)",
-        "TypeScript",
-        "GPT-4o Vision",
-        "iNaturalist API",
-        "GBIF API",
-        "EncicloVida/CONABIO API",
-        "Clerk Authentication",
-        "Neon Postgres",
-        "Drizzle ORM",
-        "Vercel Blob Storage",
-        "sharp (image processing)",
-        "Vercel"
-      ],
-      "status": null,
-      "language": "TypeScript",
-      "languages": {
-        "TypeScript": 191990,
-        "CSS": 62477,
-        "JavaScript": 388
-      },
-      "stars": 0,
-      "forks": 0,
-      "lastPushed": "2026-03-08T20:59:17Z",
-      "createdAt": "2026-03-06T18:20:23Z",
-      "isFeatured": true,
-      "isArchived": false,
-      "isPrivate": false,
-      "tagline": "Four-API species identification pipeline with verified biodiversity data and Mexico-specific conservation status",
-      "thumbnail": null,
-      "problem": "Conservation biologists in Jalisco encounter thousands of species during fieldwork\nbut lack rapid identification tools with verified data. GPT-4o Vision alone\nfrequently misidentifies species without geographic context. No existing tool\ncombines AI vision, regional species data, global taxonomy verification, and\nMexico-specific conservation status (NOM-059, endemic classification) in one flow.\n",
-      "solution": null,
-      "keyFeatures": [
-        "Four-API pipeline: iNaturalist context + GPT-4o identification + GBIF verification + EncicloVida/CONABIO enrichment",
-        "Verified IUCN Red List status and taxonomy from GBIF backbone (not AI-generated)",
-        "Mexico-specific data from CONABIO: endemic/native/exotic classification, NOM-059 protection status, indigenous language names",
-        "Regional species awareness via iNaturalist observations within 50km of GPS coordinates",
-        "Bilingual output (EN/ES) with confidence scoring across 6 data categories",
-        "Graceful degradation: works with just an OpenAI key, enriched with optional services"
-      ],
-      "metrics": [],
-      "priority": 3,
-      "dateCompleted": null,
-      "slides": [],
-      "videoUrl": null,
-      "videoPoster": null
-    },
-    {
       "id": 1174674268,
       "name": "cushlabs-scrollytelling",
       "title": "CushLabs Scrollytelling Template",
@@ -485,7 +336,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-03-08T01:53:26Z",
+      "lastPushed": "2026-03-09T17:31:29Z",
       "createdAt": "2026-03-06T17:57:40Z",
       "isFeatured": true,
       "isArchived": false,
@@ -522,6 +373,155 @@
           "altEs": "CushLabs Scrollytelling Template"
         }
       ],
+      "videoUrl": null,
+      "videoPoster": null
+    },
+    {
+      "id": 1174690198,
+      "name": "biojalisco-species-id",
+      "title": "BioJalisco Species Identifier",
+      "description": "AI-powered vertebrate species identification for Jalisco field research. Next.js 15, GPT-4o Vision, Clerk, Neon Postgres.",
+      "summary": "> AI-powered species identification for Jalisco biodiversity research. Four-API pipeline delivers verified taxonomy, IUCN status, Mexico-specific conservation data (NOM-059), and endemic classificatio",
+      "url": "https://github.com/RCushmaniii/biojalisco-species-id",
+      "demoUrl": "https://biojalisco-species-id.vercel.app",
+      "liveUrl": "https://biojalisco-species-id.vercel.app",
+      "homepage": "https://biojalisco-species-id.vercel.app",
+      "topics": [
+        "ai",
+        "biodiversity",
+        "computer-vision",
+        "conservation",
+        "gpt-4o",
+        "jalisco",
+        "nextjs",
+        "species-identification"
+      ],
+      "categories": [
+        "AI Automation"
+      ],
+      "tags": [
+        "ai",
+        "biodiversity",
+        "computer-vision",
+        "conservation",
+        "gpt-4o",
+        "jalisco",
+        "nextjs",
+        "species-identification",
+        "ai-vision",
+        "inaturalist",
+        "gbif",
+        "conabio",
+        "bilingual"
+      ],
+      "stack": [
+        "Next.js 15 (App Router)",
+        "TypeScript",
+        "GPT-4o Vision",
+        "iNaturalist API",
+        "GBIF API",
+        "EncicloVida/CONABIO API",
+        "Clerk Authentication",
+        "Neon Postgres",
+        "Drizzle ORM",
+        "Vercel Blob Storage",
+        "sharp (image processing)",
+        "Vercel"
+      ],
+      "status": null,
+      "language": "TypeScript",
+      "languages": {
+        "TypeScript": 198092,
+        "CSS": 64072,
+        "JavaScript": 388
+      },
+      "stars": 0,
+      "forks": 0,
+      "lastPushed": "2026-03-09T16:49:05Z",
+      "createdAt": "2026-03-06T18:20:23Z",
+      "isFeatured": true,
+      "isArchived": false,
+      "isPrivate": false,
+      "tagline": "Four-API species identification pipeline with verified biodiversity data and Mexico-specific conservation status",
+      "thumbnail": null,
+      "problem": "Conservation biologists in Jalisco encounter thousands of species during fieldwork\nbut lack rapid identification tools with verified data. GPT-4o Vision alone\nfrequently misidentifies species without geographic context. No existing tool\ncombines AI vision, regional species data, global taxonomy verification, and\nMexico-specific conservation status (NOM-059, endemic classification) in one flow.\n",
+      "solution": null,
+      "keyFeatures": [
+        "Four-API pipeline: iNaturalist context + GPT-4o identification + GBIF verification + EncicloVida/CONABIO enrichment",
+        "Verified IUCN Red List status and taxonomy from GBIF backbone (not AI-generated)",
+        "Mexico-specific data from CONABIO: endemic/native/exotic classification, NOM-059 protection status, indigenous language names",
+        "Regional species awareness via iNaturalist observations within 50km of GPS coordinates",
+        "Bilingual output (EN/ES) with confidence scoring across 6 data categories",
+        "Graceful degradation: works with just an OpenAI key, enriched with optional services"
+      ],
+      "metrics": [],
+      "priority": 3,
+      "dateCompleted": null,
+      "slides": [],
+      "videoUrl": null,
+      "videoPoster": null
+    },
+    {
+      "id": 1176224548,
+      "name": "cushlabs-ai-marketing",
+      "title": "AI Marketing Suite for Claude Code",
+      "description": "AI Marketing Suite for Claude Code — 15 slash commands for marketing analysis, audits, and client deliverables",
+      "summary": "> A production-ready marketing analysis and automation skill system for Claude Code. Audit websites, generate copy, build email sequences, create content calendars, analyze competitors, and produce cl",
+      "url": "https://github.com/RCushmaniii/cushlabs-ai-marketing",
+      "demoUrl": null,
+      "liveUrl": "",
+      "homepage": null,
+      "topics": [],
+      "categories": [
+        "AI Automation"
+      ],
+      "tags": [
+        "claude-code",
+        "marketing-automation",
+        "ai-agents",
+        "seo-audit",
+        "competitive-analysis",
+        "copywriting",
+        "email-marketing",
+        "content-calendar",
+        "pdf-reports",
+        "parallel-agents"
+      ],
+      "stack": [
+        "Claude Code Skills System",
+        "Python 3",
+        "Bash",
+        "ReportLab",
+        "HTML Parser (stdlib)"
+      ],
+      "status": null,
+      "language": "Python",
+      "languages": {
+        "Python": 57110,
+        "Shell": 8952
+      },
+      "stars": 0,
+      "forks": 0,
+      "lastPushed": "2026-03-08T21:10:09Z",
+      "createdAt": "2026-03-08T19:31:57Z",
+      "isFeatured": true,
+      "isArchived": false,
+      "isPrivate": false,
+      "tagline": "15 slash commands that turn Claude Code into a full-service marketing analysis platform",
+      "thumbnail": null,
+      "problem": "Marketing audits are expensive ($2K–$10K) and slow (1–3 weeks). Small agencies and solopreneurs\ncan't compete at that price point. The frameworks exist — CRO checklists, SEO rubrics, competitive\nanalysis templates — but executing them manually across six marketing dimensions takes dozens of\nhours per client. This suite encodes those frameworks into repeatable, scored Claude Code skills.\n",
+      "solution": null,
+      "keyFeatures": [
+        "15 marketing commands available as Claude Code slash commands",
+        "Full website audit with 5 parallel subagents running simultaneously",
+        "Weighted scoring across 6 dimensions with revenue impact estimates",
+        "Client-ready PDF reports with score gauges, charts, and branded styling",
+        "Complete email sequences, ad campaigns, and 30-day content calendars generated in minutes"
+      ],
+      "metrics": [],
+      "priority": 3,
+      "dateCompleted": null,
+      "slides": [],
       "videoUrl": null,
       "videoPoster": null
     },
@@ -729,14 +729,14 @@
       "problem": "Solo professional service providers burn 10-15 hours per week on manual qualification, scheduling ping-pong, and follow-ups. Their websites look identical to commodity competitors, making it impossible to justify premium pricing while the Spanish-speaking professional market remains underserved.",
       "solution": "A fully automated lead generation platform that functions as four digital employees — SDR, marketing department, executive assistant, and brand manager — on free-tier infrastructure. Every conversation steers toward booking, every page justifies premium pricing, and the full EN/ES bilingual system doubles the addressable market from a single codebase.",
       "keyFeatures": [
-        "4 role-specific diagnostic quizzes pre-qualify leads with mapped communication gaps",
+        "4 role-specific diagnostic quizzes pre-qualify leads with mapped communication gaps — no discovery calls needed",
         "3-step booking flow via Cloudflare Workers + Google Calendar OAuth — interest to confirmed Google Meet in under 60 seconds",
-        "Full EN/ES bilingual mirror with localized routing and bidirectional hreflang SEO",
-        "Premium positioning hard-coded into UX — named executive testimonials from multinational companies",
-        "$0/month infrastructure — Astro static, Cloudflare Workers free tier, Neon free tier"
+        "Full EN/ES bilingual mirror with localized routing (/es/servicios/, /es/reservar/) and bidirectional hreflang SEO",
+        "Premium positioning hard-coded into UX — named executive testimonials from Driscoll's, CEVA Logistics, no discount codes",
+        "$0/month infrastructure — Astro static, Cloudflare Workers free tier, Neon free tier, Vercel serverless free tier"
       ],
       "metrics": [
-        "100 Lighthouse performance score",
+        "100 Lighthouse performance score — zero database queries on page load",
         "$0/month infrastructure cost across all services",
         "< 60 seconds from interest to confirmed booking with Google Meet link",
         "2x addressable market from a single codebase via bilingual system",
@@ -746,49 +746,49 @@
       "dateCompleted": "2026-02",
       "slides": [
         {
-          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-01.png",
-          "altEn": "The Architecture of Authority",
-          "altEs": "La Arquitectura de la Autoridad"
+          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-01.webp",
+          "altEn": "The Architecture of Authority — Constructing a multinational agency presence with a team of one",
+          "altEs": "La Arquitectura de la Autoridad — Construyendo presencia de agencia multinacional con un equipo de uno"
         },
         {
-          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-02.png",
-          "altEn": "An Automated Performance Engine",
-          "altEs": "Un Motor de Rendimiento Automatizado"
+          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-02.webp",
+          "altEn": "An Automated Performance Engine — Zero manual qualification, 60-second booking flow, 100% gross margin",
+          "altEs": "Un Motor de Rendimiento Automatizado — Cero calificacion manual, reserva en 60 segundos, 100% margen bruto"
         },
         {
-          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-03.png",
-          "altEn": "Digital Employee 01: The SDR",
-          "altEs": "Empleado Digital 01: El SDR"
+          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-03.webp",
+          "altEn": "Digital Employee 01: The SDR — Diagnostic intelligence replaces discovery calls with pre-qualified leads",
+          "altEs": "Empleado Digital 01: El SDR — Inteligencia diagnostica reemplaza llamadas de descubrimiento con leads precalificados"
         },
         {
-          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-04.png",
-          "altEn": "Digital Employee 02: Marketing Dept",
-          "altEs": "Empleado Digital 02: Depto. de Marketing"
+          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-04.webp",
+          "altEn": "Digital Employee 02: Marketing Dept — The bilingual mirror doubles addressable market from a single codebase",
+          "altEs": "Empleado Digital 02: Depto. de Marketing — El espejo bilingue duplica el mercado alcanzable desde una sola base de codigo"
         },
         {
-          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-05.png",
-          "altEn": "Digital Employee 03: The Executive Assistant",
-          "altEs": "Empleado Digital 03: La Asistente Ejecutiva"
+          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-05.webp",
+          "altEn": "Digital Employee 03: The Executive Assistant — Interest to confirmed Google Meet booking in under 60 seconds",
+          "altEs": "Empleado Digital 03: La Asistente Ejecutiva — De interes a reserva confirmada en Google Meet en menos de 60 segundos"
         },
         {
-          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-06.png",
-          "altEn": "Digital Employee 04: The Brand Manager",
-          "altEs": "Empleado Digital 04: El Brand Manager"
+          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-06.webp",
+          "altEn": "Digital Employee 04: The Brand Manager — Premium positioning hard-coded into the UX with named executive testimonials",
+          "altEs": "Empleado Digital 04: El Brand Manager — Posicionamiento premium integrado en la UX con testimonios ejecutivos reales"
         },
         {
-          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-07.png",
-          "altEn": "The Speed of Trust",
-          "altEs": "La Velocidad de la Confianza"
+          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-07.webp",
+          "altEn": "The Speed of Trust — Lighthouse 100 performance score, instant loads signal competence to premium buyers",
+          "altEs": "La Velocidad de la Confianza — Puntuacion Lighthouse 100, cargas instantaneas que senalan competencia a compradores premium"
         },
         {
-          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-08.png",
-          "altEn": "The Universal Model",
-          "altEs": "El Modelo Universal"
+          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-08.webp",
+          "altEn": "The Universal Model — Blueprint for any high-touch expertise business: diagnostic lead magnet + automated booking + premium signals = authority",
+          "altEs": "El Modelo Universal — Plano para cualquier negocio de expertise: lead magnet diagnostico + reserva automatizada + senales premium = autoridad"
         },
         {
-          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-09.png",
-          "altEn": "The Zero-Cost Tech Stack",
-          "altEs": "El Tech Stack de Costo Cero"
+          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-09.webp",
+          "altEn": "The Zero-Cost Tech Stack — Enterprise-grade performance on a solopreneur budget with $0 monthly infrastructure",
+          "altEs": "El Tech Stack de Costo Cero — Rendimiento empresarial con presupuesto de solopreneur y $0 de infraestructura mensual"
         }
       ],
       "videoUrl": "https://www.nyenglishteacher.com/video/ny-eng-brief.mp4",
@@ -999,13 +999,13 @@
       },
       "stars": 1,
       "forks": 0,
-      "lastPushed": "2026-03-08T18:48:12Z",
+      "lastPushed": "2026-03-09T17:26:44Z",
       "createdAt": "2026-03-03T07:21:12Z",
       "isFeatured": false,
       "isArchived": false,
       "isPrivate": true,
       "tagline": "Pass your driver's license exam in any country — even if you don't speak the language yet.",
-      "thumbnail": null,
+      "thumbnail": "https://getexpatdrive.com/images/expatdrive__thumb.webp",
       "problem": "English-speaking expats struggle to pass foreign driver's license exams due to\nlegal and technical terminology in unfamiliar languages. Existing resources are\nfragmented, outdated, and rarely bilingual. ExpatDrive provides verified,\nstate-specific question banks with quality translations, spaced repetition\nstudy tools, and step-by-step process guides.\n",
       "solution": null,
       "keyFeatures": [
@@ -1018,9 +1018,40 @@
       "metrics": [],
       "priority": 4,
       "dateCompleted": null,
-      "slides": [],
-      "videoUrl": null,
-      "videoPoster": null
+      "slides": [
+        {
+          "src": "https://getexpatdrive.com/images/expat_driving_01.webp",
+          "altEn": "Product overview — mobile study session with road sign quiz and bilingual interface",
+          "altEs": "Vista general del producto — sesion de estudio movil con quiz de senales viales e interfaz bilingue"
+        },
+        {
+          "src": "https://getexpatdrive.com/images/expat_driving_02.webp",
+          "altEn": "Three-layer architecture diagram — UX, product logic, and infrastructure with skills demonstrated",
+          "altEs": "Diagrama de arquitectura en tres capas — UX, logica de producto e infraestructura con habilidades demostradas"
+        },
+        {
+          "src": "https://getexpatdrive.com/images/expat_driving_03.webp",
+          "altEn": "Before and after comparison — legacy PDFs and hostile sites vs clean bilingual ExpatDrive dashboard",
+          "altEs": "Comparacion antes y despues — PDFs obsoletos y sitios hostiles vs panel limpio y bilingue de ExpatDrive"
+        },
+        {
+          "src": "https://getexpatdrive.com/images/expat_driving_04.webp",
+          "altEn": "SM-2 spaced repetition cycle diagram — review, score, update interval, schedule next review",
+          "altEs": "Diagrama del ciclo de repeticion espaciada SM-2 — revisar, calificar, actualizar intervalo, programar siguiente repaso"
+        },
+        {
+          "src": "https://getexpatdrive.com/images/expat_driving_05.webp",
+          "altEn": "Readiness scoring dashboard showing 72% pass probability with category-level knowledge breakdown",
+          "altEs": "Panel de puntuacion de preparacion mostrando 72% de probabilidad de aprobar con desglose por categoria"
+        },
+        {
+          "src": "https://getexpatdrive.com/images/expat_driving_06.webp",
+          "altEn": "Edge case handling — general exam and Jalisco simulator mode with attention to state-specific requirements",
+          "altEs": "Manejo de casos especiales — examen general y modo simulador de Jalisco con atencion a requisitos estatales"
+        }
+      ],
+      "videoUrl": "https://getexpatdrive.com/video/expatDrive-brief.mp4",
+      "videoPoster": "https://getexpatdrive.com/images/expatDrive-pitch-poster.webp"
     },
     {
       "id": 1090479901,
@@ -1578,15 +1609,15 @@
       "status": null,
       "language": "Astro",
       "languages": {
-        "Astro": 481722,
-        "TypeScript": 135344,
+        "Astro": 487004,
+        "TypeScript": 142908,
         "HTML": 61067,
-        "JavaScript": 42381,
+        "JavaScript": 45812,
         "CSS": 3069
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-03-08T04:11:32Z",
+      "lastPushed": "2026-03-09T03:59:20Z",
       "createdAt": "2026-01-08T03:52:43Z",
       "isFeatured": false,
       "isArchived": false,
@@ -2021,48 +2052,48 @@
       "slides": [
         {
           "src": "https://scrabble-mini.netlify.app/images/ai-scrabble-practice-01.png",
-          "altEn": "AI Scrabble Practice Suite",
-          "altEs": "AI Scrabble Practice Suite"
+          "altEn": "AI Scrabble Practice Suite — Five tools for serious Scrabble practice",
+          "altEs": "AI Scrabble Practice Suite — Cinco herramientas para practicar Scrabble en serio"
         },
         {
           "src": "https://scrabble-mini.netlify.app/images/ai-scrabble-practice-02.png",
-          "altEn": "The Practice Gap",
-          "altEs": "La brecha de practica"
+          "altEn": "The Practice Gap — word checkers don't teach, board solvers don't let you learn",
+          "altEs": "La brecha de practica — los verificadores no ensenan, los solucionadores no te dejan aprender"
         },
         {
           "src": "https://scrabble-mini.netlify.app/images/ai-scrabble-practice-03.png",
-          "altEn": "Word Validator",
-          "altEs": "Validador de Palabras"
+          "altEn": "Word Validator — instant validation with letter-by-letter score breakdown",
+          "altEs": "Validador de Palabras — validacion instantanea con desglose de puntuacion letra por letra"
         },
         {
           "src": "https://scrabble-mini.netlify.app/images/ai-scrabble-practice-04.png",
-          "altEn": "Anagram Solver",
-          "altEs": "Solucionador de Anagramas"
+          "altEn": "Anagram Solver — find every playable word from your tile rack with wildcard support",
+          "altEs": "Solucionador de Anagramas — encuentra cada palabra jugable desde tu atril con comodines"
         },
         {
           "src": "https://scrabble-mini.netlify.app/images/ai-scrabble-practice-06.png",
-          "altEn": "Word Finder",
-          "altEs": "Buscador de Palabras"
+          "altEn": "Word Finder — search by letter, position, and length with scoring statistics",
+          "altEs": "Buscador de Palabras — busca por letra, posicion y longitud con estadisticas de puntuacion"
         },
         {
           "src": "https://scrabble-mini.netlify.app/images/ai-scrabble-practice-07.png",
-          "altEn": "Magic Search",
-          "altEs": "Busqueda Magica"
+          "altEn": "Magic Search — ask for words in plain English, powered by GPT-4o-mini",
+          "altEs": "Busqueda Magica — pide palabras en lenguaje natural, impulsado por GPT-4o-mini"
         },
         {
           "src": "https://scrabble-mini.netlify.app/images/ai-scrabble-practice-08.png",
-          "altEn": "Practice Game",
-          "altEs": "Juego de Practica"
+          "altEn": "Practice Game — build words against the clock with AI hints and progressive scoring",
+          "altEs": "Juego de Practica — forma palabras contra reloj con pistas de IA y puntuacion progresiva"
         },
         {
           "src": "https://scrabble-mini.netlify.app/images/ai-scrabble-practice-09.png",
-          "altEn": "Bilingual and Tested",
-          "altEs": "Bilingue y Probado"
+          "altEn": "Bilingual and Tested — full EN/ES support with Playwright E2E coverage",
+          "altEs": "Bilingue y Probado — soporte completo EN/ES con cobertura E2E de Playwright"
         },
         {
           "src": "https://scrabble-mini.netlify.app/images/ai-scrabble-practice-10.png",
-          "altEn": "Technical Architecture",
-          "altEs": "Arquitectura Tecnica"
+          "altEn": "Technical Architecture — React 19, TypeScript, Vite 7, OpenAI, 370K-word dictionary",
+          "altEs": "Arquitectura Tecnica — React 19, TypeScript, Vite 7, OpenAI, diccionario de 370K palabras"
         }
       ],
       "videoUrl": "https://scrabble-mini.netlify.app/video/ai-scrabble-practice-brief.mp4",
