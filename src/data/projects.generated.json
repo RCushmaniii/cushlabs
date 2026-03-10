@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-09T21:37:14.433Z",
+  "generatedAt": "2026-03-10T17:58:42.504Z",
   "count": 29,
   "projects": [
     {
@@ -48,8 +48,7 @@
         "customer-support",
         "outbound-calling",
         "real-estate",
-        "home-services",
-        "webhooks"
+        "home-services"
       ],
       "stack": [
         "Vapi",
@@ -73,7 +72,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-03-04T23:48:14Z",
+      "lastPushed": "2026-03-10T15:59:32Z",
       "createdAt": "2026-02-23T01:31:09Z",
       "isFeatured": true,
       "isArchived": false,
@@ -275,66 +274,104 @@
       "videoPoster": "https://raw.githubusercontent.com/RCushmaniii/ai-chatbot-saas/main/public/video/converso-brief-poster.jpg"
     },
     {
-      "id": 1176224548,
-      "name": "cushlabs-ai-marketing",
-      "title": "AI Marketing Suite for Claude Code",
-      "description": "AI Marketing Suite for Claude Code — 15 slash commands for marketing analysis, audits, and client deliverables",
-      "summary": "> A production-ready marketing analysis and automation skill system for Claude Code. Audit websites, generate copy, build email sequences, create content calendars, analyze competitors, and produce cl",
-      "url": "https://github.com/RCushmaniii/cushlabs-ai-marketing",
-      "demoUrl": null,
-      "liveUrl": "",
-      "homepage": null,
-      "topics": [],
+      "id": 1174674268,
+      "name": "cushlabs-scrollytelling",
+      "title": "CushLabs Scrollytelling Template",
+      "description": "Cinematic scrollytelling presentations by CushLabs — bilingual, narrated, scroll-driven marketing sites that make audiences lean in.",
+      "summary": "> Cinematic, bilingual scrollytelling pitch decks that feel like cinema — not slides.",
+      "url": "https://github.com/RCushmaniii/cushlabs-scrollytelling",
+      "demoUrl": "https://cushlabs-scrollytelling.vercel.app",
+      "liveUrl": "https://cushlabs-scrollytelling.vercel.app",
+      "homepage": "https://cushlabs-scrollytelling.vercel.app",
+      "topics": [
+        "astro",
+        "bilingual",
+        "cinematic",
+        "cushlabs",
+        "marketing",
+        "presentation",
+        "scrollytelling",
+        "scrollytelling-template",
+        "svelte",
+        "tailwindcss"
+      ],
       "categories": [
-        "AI Automation"
+        "Templates"
       ],
       "tags": [
-        "claude-code",
-        "marketing-automation",
-        "ai-agents",
-        "seo-audit",
-        "competitive-analysis",
-        "copywriting",
-        "email-marketing",
-        "content-calendar",
-        "pdf-reports",
-        "parallel-agents"
+        "astro",
+        "bilingual",
+        "cinematic",
+        "cushlabs",
+        "marketing",
+        "presentation",
+        "scrollytelling",
+        "scrollytelling-template",
+        "svelte",
+        "tailwindcss",
+        "pitch-deck",
+        "presentation-mode",
+        "tailwind-css"
       ],
       "stack": [
-        "Claude Code Skills System",
-        "Python 3",
-        "Bash",
-        "ReportLab",
-        "HTML Parser (stdlib)"
+        "Astro 5",
+        "Svelte 5",
+        "Tailwind CSS 3",
+        "MDX",
+        "TypeScript",
+        "Vercel",
+        "IntersectionObserver API",
+        "Web Audio API"
       ],
       "status": null,
-      "language": "Python",
+      "language": "Svelte",
       "languages": {
-        "Python": 57110,
-        "Shell": 8952
+        "Svelte": 30157,
+        "MDX": 17140,
+        "TypeScript": 15455,
+        "Astro": 10589,
+        "CSS": 3788,
+        "JavaScript": 1572
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-03-09T21:25:58Z",
-      "createdAt": "2026-03-08T19:31:57Z",
+      "lastPushed": "2026-03-10T17:02:33Z",
+      "createdAt": "2026-03-06T17:57:40Z",
       "isFeatured": true,
       "isArchived": false,
       "isPrivate": false,
-      "tagline": "15 slash commands that turn Claude Code into a full-service marketing analysis platform",
-      "thumbnail": "https://raw.githubusercontent.com/RCushmaniii/cushlabs-ai-marketing/main/public/public/images/CUSHLABS-AI-MARKETING-THUMB.webp",
-      "problem": "Marketing audits are expensive ($2K–$10K) and slow (1–3 weeks). Small agencies and solopreneurs\ncan't compete at that price point. The frameworks exist — CRO checklists, SEO rubrics, competitive\nanalysis templates — but executing them manually across six marketing dimensions takes dozens of\nhours per client. This suite encodes those frameworks into repeatable, scored Claude Code skills.\n",
+      "tagline": "Cinematic, bilingual scrollytelling pitch decks that feel like cinema — not slides",
+      "thumbnail": "https://cushlabs-scrollytelling.vercel.app/images/scrollytelling-thumbnail.jpg",
+      "problem": "Traditional pitch decks are forgettable — investors see hundreds of slide-based\npresentations every month. Scrollytelling pitch decks combine the narrative power\nof cinema with the interactivity of the web, creating presentations that leave a\nlasting impression. This template makes that accessible without writing 3,000 lines\nof HTML from scratch every time.\n",
       "solution": null,
       "keyFeatures": [
-        "15 marketing commands available as Claude Code slash commands",
-        "Full website audit with 5 parallel subagents running simultaneously",
-        "Weighted scoring across 6 dimensions with revenue impact estimates",
-        "Client-ready PDF reports with score gauges, charts, and branded styling",
-        "Complete email sequences, ad campaigns, and 30-day content calendars generated in minutes"
+        "Full presentation mode with auto-narration and scroll-lock — no manual clicking",
+        "Instant EN/ES language switching in both browse and presentation modes",
+        "Config-driven customization — new pitch deck in hours, not days",
+        "98 Lighthouse performance score with Astro islands architecture",
+        "Mobile-responsive with scroll-snap carousels and touch support",
+        "Accessible: reduced-motion, ARIA labels, keyboard navigation"
       ],
       "metrics": [],
       "priority": 3,
       "dateCompleted": null,
-      "slides": [],
+      "slides": [
+        {
+          "src": "https://cushlabs-scrollytelling.vercel.app/images/scrollytelling-hero.jpg",
+          "altEn": "CushLabs Scrollytelling Template",
+          "altEs": "CushLabs Scrollytelling Template"
+        },
+        {
+          "src": "https://cushlabs-scrollytelling.vercel.app/images/scrollytelling-presentation-mode.jpg",
+          "altEn": "CushLabs Scrollytelling Template",
+          "altEs": "CushLabs Scrollytelling Template"
+        },
+        {
+          "src": "https://cushlabs-scrollytelling.vercel.app/images/scrollytelling-mobile.jpg",
+          "altEn": "CushLabs Scrollytelling Template",
+          "altEs": "CushLabs Scrollytelling Template"
+        }
+      ],
       "videoUrl": null,
       "videoPoster": null
     },
@@ -395,13 +432,13 @@
       "status": null,
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 222929,
-        "CSS": 67878,
+        "TypeScript": 232661,
+        "CSS": 72331,
         "JavaScript": 388
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-03-09T21:20:05Z",
+      "lastPushed": "2026-03-10T15:50:14Z",
       "createdAt": "2026-03-06T18:20:23Z",
       "isFeatured": true,
       "isArchived": false,
@@ -479,106 +516,124 @@
       "videoPoster": "https://biojalisco-species-id.vercel.app/images/portfolio/biojalisco-brief-poster.webp"
     },
     {
-      "id": 1174674268,
-      "name": "cushlabs-scrollytelling",
-      "title": "CushLabs Scrollytelling Template",
-      "description": "Cinematic scrollytelling presentations by CushLabs — bilingual, narrated, scroll-driven marketing sites that make audiences lean in.",
-      "summary": "> Cinematic, bilingual scrollytelling pitch decks that feel like cinema — not slides.",
-      "url": "https://github.com/RCushmaniii/cushlabs-scrollytelling",
-      "demoUrl": "https://cushlabs-scrollytelling.vercel.app",
-      "liveUrl": "https://cushlabs-scrollytelling.vercel.app",
-      "homepage": "https://cushlabs-scrollytelling.vercel.app",
-      "topics": [
-        "astro",
-        "bilingual",
-        "cinematic",
-        "cushlabs",
-        "marketing",
-        "presentation",
-        "scrollytelling",
-        "scrollytelling-template",
-        "svelte",
-        "tailwindcss"
-      ],
+      "id": 1176224548,
+      "name": "cushlabs-ai-marketing",
+      "title": "AI Marketing Suite for Claude Code",
+      "description": "AI Marketing Suite for Claude Code — 15 slash commands for marketing analysis, audits, and client deliverables",
+      "summary": "> A production-ready marketing analysis and automation skill system for Claude Code. Audit websites, generate copy, build email sequences, create content calendars, analyze competitors, and produce cl",
+      "url": "https://github.com/RCushmaniii/cushlabs-ai-marketing",
+      "demoUrl": null,
+      "liveUrl": "",
+      "homepage": null,
+      "topics": [],
       "categories": [
-        "Templates"
+        "AI Automation"
       ],
       "tags": [
-        "astro",
-        "bilingual",
-        "cinematic",
-        "cushlabs",
-        "marketing",
-        "presentation",
-        "scrollytelling",
-        "scrollytelling-template",
-        "svelte",
-        "tailwindcss",
-        "pitch-deck",
-        "presentation-mode",
-        "tailwind-css"
+        "claude-code",
+        "marketing-automation",
+        "ai-agents",
+        "seo-audit",
+        "competitive-analysis",
+        "copywriting",
+        "email-marketing",
+        "content-calendar",
+        "pdf-reports",
+        "parallel-agents"
       ],
       "stack": [
-        "Astro 5",
-        "Svelte 5",
-        "Tailwind CSS 3",
-        "MDX",
-        "TypeScript",
-        "Vercel",
-        "IntersectionObserver API",
-        "Web Audio API"
+        "Claude Code Skills System",
+        "Python 3",
+        "Bash",
+        "ReportLab",
+        "HTML Parser (stdlib)"
       ],
       "status": null,
-      "language": "Svelte",
+      "language": "Python",
       "languages": {
-        "Svelte": 30157,
-        "MDX": 17140,
-        "TypeScript": 15455,
-        "Astro": 10589,
-        "CSS": 3788,
-        "JavaScript": 1572
+        "Python": 57110,
+        "Shell": 8952
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-03-09T19:40:38Z",
-      "createdAt": "2026-03-06T17:57:40Z",
+      "lastPushed": "2026-03-10T15:39:19Z",
+      "createdAt": "2026-03-08T19:31:57Z",
       "isFeatured": true,
       "isArchived": false,
       "isPrivate": false,
-      "tagline": "Cinematic, bilingual scrollytelling pitch decks that feel like cinema — not slides",
-      "thumbnail": "https://cushlabs-scrollytelling.vercel.app/images/scrollytelling-thumbnail.jpg",
-      "problem": "Traditional pitch decks are forgettable — investors see hundreds of slide-based\npresentations every month. Scrollytelling pitch decks combine the narrative power\nof cinema with the interactivity of the web, creating presentations that leave a\nlasting impression. This template makes that accessible without writing 3,000 lines\nof HTML from scratch every time.\n",
+      "tagline": "15 slash commands that turn Claude Code into a full-service marketing analysis platform",
+      "thumbnail": "https://raw.githubusercontent.com/RCushmaniii/cushlabs-ai-marketing/main/public/images/portfolio/cushlabs-ai-marketing-thumb.webp",
+      "problem": "Marketing audits are expensive ($2K–$10K) and slow (1–3 weeks). Small agencies and solopreneurs\ncan't compete at that price point. The frameworks exist — CRO checklists, SEO rubrics, competitive\nanalysis templates — but executing them manually across six marketing dimensions takes dozens of\nhours per client. This suite encodes those frameworks into repeatable, scored Claude Code skills.\n",
       "solution": null,
       "keyFeatures": [
-        "Full presentation mode with auto-narration and scroll-lock — no manual clicking",
-        "Instant EN/ES language switching in both browse and presentation modes",
-        "Config-driven customization — new pitch deck in hours, not days",
-        "98 Lighthouse performance score with Astro islands architecture",
-        "Mobile-responsive with scroll-snap carousels and touch support",
-        "Accessible: reduced-motion, ARIA labels, keyboard navigation"
+        "15 marketing commands available as Claude Code slash commands",
+        "Full website audit with 5 parallel subagents running simultaneously",
+        "Weighted scoring across 6 dimensions with revenue impact estimates",
+        "Client-ready PDF reports with score gauges, charts, and branded styling",
+        "Complete email sequences, ad campaigns, and 30-day content calendars generated in minutes"
       ],
       "metrics": [],
       "priority": 3,
       "dateCompleted": null,
       "slides": [
         {
-          "src": "https://cushlabs-scrollytelling.vercel.app/images/scrollytelling-hero.jpg",
-          "altEn": "CushLabs Scrollytelling Template",
-          "altEs": "CushLabs Scrollytelling Template"
+          "src": "https://raw.githubusercontent.com/RCushmaniii/cushlabs-ai-marketing/main/public/images/portfolio/cushlabs-ai-marketing-01.webp",
+          "altEn": "AI Marketing Suite for Claude Code",
+          "altEs": "AI Marketing Suite for Claude Code"
         },
         {
-          "src": "https://cushlabs-scrollytelling.vercel.app/images/scrollytelling-presentation-mode.jpg",
-          "altEn": "CushLabs Scrollytelling Template",
-          "altEs": "CushLabs Scrollytelling Template"
+          "src": "https://raw.githubusercontent.com/RCushmaniii/cushlabs-ai-marketing/main/public/images/portfolio/cushlabs-ai-marketing-02.webp",
+          "altEn": "AI Marketing Suite for Claude Code",
+          "altEs": "AI Marketing Suite for Claude Code"
         },
         {
-          "src": "https://cushlabs-scrollytelling.vercel.app/images/scrollytelling-mobile.jpg",
-          "altEn": "CushLabs Scrollytelling Template",
-          "altEs": "CushLabs Scrollytelling Template"
+          "src": "https://raw.githubusercontent.com/RCushmaniii/cushlabs-ai-marketing/main/public/images/portfolio/cushlabs-ai-marketing-03.webp",
+          "altEn": "AI Marketing Suite for Claude Code",
+          "altEs": "AI Marketing Suite for Claude Code"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/RCushmaniii/cushlabs-ai-marketing/main/public/images/portfolio/cushlabs-ai-marketing-04.webp",
+          "altEn": "AI Marketing Suite for Claude Code",
+          "altEs": "AI Marketing Suite for Claude Code"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/RCushmaniii/cushlabs-ai-marketing/main/public/images/portfolio/cushlabs-ai-marketing-05.webp",
+          "altEn": "AI Marketing Suite for Claude Code",
+          "altEs": "AI Marketing Suite for Claude Code"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/RCushmaniii/cushlabs-ai-marketing/main/public/images/portfolio/cushlabs-ai-marketing-06.webp",
+          "altEn": "AI Marketing Suite for Claude Code",
+          "altEs": "AI Marketing Suite for Claude Code"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/RCushmaniii/cushlabs-ai-marketing/main/public/images/portfolio/cushlabs-ai-marketing-07.webp",
+          "altEn": "AI Marketing Suite for Claude Code",
+          "altEs": "AI Marketing Suite for Claude Code"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/RCushmaniii/cushlabs-ai-marketing/main/public/images/portfolio/cushlabs-ai-marketing-08.webp",
+          "altEn": "AI Marketing Suite for Claude Code",
+          "altEs": "AI Marketing Suite for Claude Code"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/RCushmaniii/cushlabs-ai-marketing/main/public/images/portfolio/cushlabs-ai-marketing-09.webp",
+          "altEn": "AI Marketing Suite for Claude Code",
+          "altEs": "AI Marketing Suite for Claude Code"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/RCushmaniii/cushlabs-ai-marketing/main/public/images/portfolio/cushlabs-ai-marketing-10.webp",
+          "altEn": "AI Marketing Suite for Claude Code",
+          "altEs": "AI Marketing Suite for Claude Code"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/RCushmaniii/cushlabs-ai-marketing/main/public/images/portfolio/cushlabs-ai-marketing-11.webp",
+          "altEn": "AI Marketing Suite for Claude Code",
+          "altEs": "AI Marketing Suite for Claude Code"
         }
       ],
-      "videoUrl": null,
-      "videoPoster": null
+      "videoUrl": "https://raw.githubusercontent.com/RCushmaniii/cushlabs-ai-marketing/main/public/video/cushlabs-ai-marketing-brief.mp4",
+      "videoPoster": "https://raw.githubusercontent.com/RCushmaniii/cushlabs-ai-marketing/main/public/video/cushlabs-ai-marketing-brief-poster.webp"
     },
     {
       "id": 1102173157,
@@ -748,9 +803,7 @@
         "text-to-voice-application",
         "vercel",
         "ai-vision",
-        "species-identification",
-        "openai",
-        "serverless"
+        "species-identification"
       ],
       "stack": [
         "HTML5",
@@ -772,7 +825,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-03-09T21:12:10Z",
+      "lastPushed": "2026-03-10T16:09:18Z",
       "createdAt": "2026-03-04T22:07:57Z",
       "isFeatured": true,
       "isArchived": false,
@@ -929,14 +982,14 @@
       "problem": "Solo professional service providers burn 10-15 hours per week on manual qualification, scheduling ping-pong, and follow-ups. Their websites look identical to commodity competitors, making it impossible to justify premium pricing while the Spanish-speaking professional market remains underserved.",
       "solution": "A fully automated lead generation platform that functions as four digital employees — SDR, marketing department, executive assistant, and brand manager — on free-tier infrastructure. Every conversation steers toward booking, every page justifies premium pricing, and the full EN/ES bilingual system doubles the addressable market from a single codebase.",
       "keyFeatures": [
-        "4 role-specific diagnostic quizzes pre-qualify leads with mapped communication gaps — no discovery calls needed",
+        "4 role-specific diagnostic quizzes pre-qualify leads with mapped communication gaps",
         "3-step booking flow via Cloudflare Workers + Google Calendar OAuth — interest to confirmed Google Meet in under 60 seconds",
-        "Full EN/ES bilingual mirror with localized routing (/es/servicios/, /es/reservar/) and bidirectional hreflang SEO",
-        "Premium positioning hard-coded into UX — named executive testimonials from Driscoll's, CEVA Logistics, no discount codes",
-        "$0/month infrastructure — Astro static, Cloudflare Workers free tier, Neon free tier, Vercel serverless free tier"
+        "Full EN/ES bilingual mirror with localized routing and bidirectional hreflang SEO",
+        "Premium positioning hard-coded into UX — named executive testimonials from multinational companies",
+        "$0/month infrastructure — Astro static, Cloudflare Workers free tier, Neon free tier"
       ],
       "metrics": [
-        "100 Lighthouse performance score — zero database queries on page load",
+        "100 Lighthouse performance score",
         "$0/month infrastructure cost across all services",
         "< 60 seconds from interest to confirmed booking with Google Meet link",
         "2x addressable market from a single codebase via bilingual system",
@@ -946,49 +999,49 @@
       "dateCompleted": "2026-02",
       "slides": [
         {
-          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-01.webp",
-          "altEn": "The Architecture of Authority — Constructing a multinational agency presence with a team of one",
-          "altEs": "La Arquitectura de la Autoridad — Construyendo presencia de agencia multinacional con un equipo de uno"
+          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-01.png",
+          "altEn": "The Architecture of Authority",
+          "altEs": "La Arquitectura de la Autoridad"
         },
         {
-          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-02.webp",
-          "altEn": "An Automated Performance Engine — Zero manual qualification, 60-second booking flow, 100% gross margin",
-          "altEs": "Un Motor de Rendimiento Automatizado — Cero calificacion manual, reserva en 60 segundos, 100% margen bruto"
+          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-02.png",
+          "altEn": "An Automated Performance Engine",
+          "altEs": "Un Motor de Rendimiento Automatizado"
         },
         {
-          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-03.webp",
-          "altEn": "Digital Employee 01: The SDR — Diagnostic intelligence replaces discovery calls with pre-qualified leads",
-          "altEs": "Empleado Digital 01: El SDR — Inteligencia diagnostica reemplaza llamadas de descubrimiento con leads precalificados"
+          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-03.png",
+          "altEn": "Digital Employee 01: The SDR",
+          "altEs": "Empleado Digital 01: El SDR"
         },
         {
-          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-04.webp",
-          "altEn": "Digital Employee 02: Marketing Dept — The bilingual mirror doubles addressable market from a single codebase",
-          "altEs": "Empleado Digital 02: Depto. de Marketing — El espejo bilingue duplica el mercado alcanzable desde una sola base de codigo"
+          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-04.png",
+          "altEn": "Digital Employee 02: Marketing Dept",
+          "altEs": "Empleado Digital 02: Depto. de Marketing"
         },
         {
-          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-05.webp",
-          "altEn": "Digital Employee 03: The Executive Assistant — Interest to confirmed Google Meet booking in under 60 seconds",
-          "altEs": "Empleado Digital 03: La Asistente Ejecutiva — De interes a reserva confirmada en Google Meet en menos de 60 segundos"
+          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-05.png",
+          "altEn": "Digital Employee 03: The Executive Assistant",
+          "altEs": "Empleado Digital 03: La Asistente Ejecutiva"
         },
         {
-          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-06.webp",
-          "altEn": "Digital Employee 04: The Brand Manager — Premium positioning hard-coded into the UX with named executive testimonials",
-          "altEs": "Empleado Digital 04: El Brand Manager — Posicionamiento premium integrado en la UX con testimonios ejecutivos reales"
+          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-06.png",
+          "altEn": "Digital Employee 04: The Brand Manager",
+          "altEs": "Empleado Digital 04: El Brand Manager"
         },
         {
-          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-07.webp",
-          "altEn": "The Speed of Trust — Lighthouse 100 performance score, instant loads signal competence to premium buyers",
-          "altEs": "La Velocidad de la Confianza — Puntuacion Lighthouse 100, cargas instantaneas que senalan competencia a compradores premium"
+          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-07.png",
+          "altEn": "The Speed of Trust",
+          "altEs": "La Velocidad de la Confianza"
         },
         {
-          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-08.webp",
-          "altEn": "The Universal Model — Blueprint for any high-touch expertise business: diagnostic lead magnet + automated booking + premium signals = authority",
-          "altEs": "El Modelo Universal — Plano para cualquier negocio de expertise: lead magnet diagnostico + reserva automatizada + senales premium = autoridad"
+          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-08.png",
+          "altEn": "The Universal Model",
+          "altEs": "El Modelo Universal"
         },
         {
-          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-09.webp",
-          "altEn": "The Zero-Cost Tech Stack — Enterprise-grade performance on a solopreneur budget with $0 monthly infrastructure",
-          "altEs": "El Tech Stack de Costo Cero — Rendimiento empresarial con presupuesto de solopreneur y $0 de infraestructura mensual"
+          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-09.png",
+          "altEn": "The Zero-Cost Tech Stack",
+          "altEs": "El Tech Stack de Costo Cero"
         }
       ],
       "videoUrl": "https://www.nyenglishteacher.com/video/ny-eng-brief.mp4",
@@ -1054,7 +1107,7 @@
       },
       "stars": 1,
       "forks": 0,
-      "lastPushed": "2026-03-09T17:26:44Z",
+      "lastPushed": "2026-03-10T15:50:20Z",
       "createdAt": "2026-03-03T07:21:12Z",
       "isFeatured": false,
       "isArchived": false,
@@ -1429,11 +1482,11 @@
       "status": null,
       "language": "Python",
       "languages": {
-        "Python": 97611
+        "Python": 150375
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-03-09T20:12:00Z",
+      "lastPushed": "2026-03-10T17:48:46Z",
       "createdAt": "2026-03-09T19:14:08Z",
       "isFeatured": false,
       "isArchived": false,
@@ -1527,7 +1580,7 @@
       },
       "stars": 1,
       "forks": 0,
-      "lastPushed": "2026-03-09T21:24:37Z",
+      "lastPushed": "2026-03-10T15:24:14Z",
       "createdAt": "2025-12-20T10:31:00Z",
       "isFeatured": false,
       "isArchived": false,
@@ -1603,7 +1656,7 @@
           "altEs": "AI Writing System"
         }
       ],
-      "videoUrl": null,
+      "videoUrl": "https://cushlabs-writing-system.vercel.app/public/videos/context-writing-system-brief.mp4",
       "videoPoster": "https://cushlabs-writing-system.vercel.app/public/images/context-writing-system-brief-poster.webp"
     },
     {
@@ -1778,7 +1831,7 @@
       "status": null,
       "language": "Astro",
       "languages": {
-        "Astro": 487004,
+        "Astro": 487446,
         "TypeScript": 142908,
         "HTML": 61067,
         "JavaScript": 46253,
@@ -1786,7 +1839,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-03-09T18:19:57Z",
+      "lastPushed": "2026-03-10T17:52:27Z",
       "createdAt": "2026-01-08T03:52:43Z",
       "isFeatured": false,
       "isArchived": false,
@@ -1911,14 +1964,14 @@
       "status": null,
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 172047,
+        "TypeScript": 172305,
         "PowerShell": 3372,
         "CSS": 1413,
         "JavaScript": 83
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-03-02T19:54:50Z",
+      "lastPushed": "2026-03-10T16:47:31Z",
       "createdAt": "2026-01-05T15:06:48Z",
       "isFeatured": false,
       "isArchived": false,
@@ -2221,48 +2274,48 @@
       "slides": [
         {
           "src": "https://scrabble-mini.netlify.app/images/ai-scrabble-practice-01.png",
-          "altEn": "AI Scrabble Practice Suite — Five tools for serious Scrabble practice",
-          "altEs": "AI Scrabble Practice Suite — Cinco herramientas para practicar Scrabble en serio"
+          "altEn": "AI Scrabble Practice Suite",
+          "altEs": "AI Scrabble Practice Suite"
         },
         {
           "src": "https://scrabble-mini.netlify.app/images/ai-scrabble-practice-02.png",
-          "altEn": "The Practice Gap — word checkers don't teach, board solvers don't let you learn",
-          "altEs": "La brecha de practica — los verificadores no ensenan, los solucionadores no te dejan aprender"
+          "altEn": "The Practice Gap",
+          "altEs": "La brecha de practica"
         },
         {
           "src": "https://scrabble-mini.netlify.app/images/ai-scrabble-practice-03.png",
-          "altEn": "Word Validator — instant validation with letter-by-letter score breakdown",
-          "altEs": "Validador de Palabras — validacion instantanea con desglose de puntuacion letra por letra"
+          "altEn": "Word Validator",
+          "altEs": "Validador de Palabras"
         },
         {
           "src": "https://scrabble-mini.netlify.app/images/ai-scrabble-practice-04.png",
-          "altEn": "Anagram Solver — find every playable word from your tile rack with wildcard support",
-          "altEs": "Solucionador de Anagramas — encuentra cada palabra jugable desde tu atril con comodines"
+          "altEn": "Anagram Solver",
+          "altEs": "Solucionador de Anagramas"
         },
         {
           "src": "https://scrabble-mini.netlify.app/images/ai-scrabble-practice-06.png",
-          "altEn": "Word Finder — search by letter, position, and length with scoring statistics",
-          "altEs": "Buscador de Palabras — busca por letra, posicion y longitud con estadisticas de puntuacion"
+          "altEn": "Word Finder",
+          "altEs": "Buscador de Palabras"
         },
         {
           "src": "https://scrabble-mini.netlify.app/images/ai-scrabble-practice-07.png",
-          "altEn": "Magic Search — ask for words in plain English, powered by GPT-4o-mini",
-          "altEs": "Busqueda Magica — pide palabras en lenguaje natural, impulsado por GPT-4o-mini"
+          "altEn": "Magic Search",
+          "altEs": "Busqueda Magica"
         },
         {
           "src": "https://scrabble-mini.netlify.app/images/ai-scrabble-practice-08.png",
-          "altEn": "Practice Game — build words against the clock with AI hints and progressive scoring",
-          "altEs": "Juego de Practica — forma palabras contra reloj con pistas de IA y puntuacion progresiva"
+          "altEn": "Practice Game",
+          "altEs": "Juego de Practica"
         },
         {
           "src": "https://scrabble-mini.netlify.app/images/ai-scrabble-practice-09.png",
-          "altEn": "Bilingual and Tested — full EN/ES support with Playwright E2E coverage",
-          "altEs": "Bilingue y Probado — soporte completo EN/ES con cobertura E2E de Playwright"
+          "altEn": "Bilingual and Tested",
+          "altEs": "Bilingue y Probado"
         },
         {
           "src": "https://scrabble-mini.netlify.app/images/ai-scrabble-practice-10.png",
-          "altEn": "Technical Architecture — React 19, TypeScript, Vite 7, OpenAI, 370K-word dictionary",
-          "altEs": "Arquitectura Tecnica — React 19, TypeScript, Vite 7, OpenAI, diccionario de 370K palabras"
+          "altEn": "Technical Architecture",
+          "altEs": "Arquitectura Tecnica"
         }
       ],
       "videoUrl": "https://scrabble-mini.netlify.app/video/ai-scrabble-practice-brief.mp4",
@@ -3136,14 +3189,14 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-02-23T00:24:15Z",
+      "lastPushed": "2026-03-10T16:24:36Z",
       "createdAt": "2026-02-17T04:40:23Z",
       "isFeatured": false,
       "isArchived": false,
       "isPrivate": false,
       "tagline": "Idempotent sprint board provisioning via Trello REST API for Roblox game development",
       "thumbnail": "https://mazebreak-trello.vercel.app/images/mazebreak-trello.jpg",
-      "problem": null,
+      "problem": "Game development teams lose days of productivity to manual sprint board setup — and the boards they build by hand are inconsistent, fragile, and impossible to replicate. Cards get created without checklists, acceptance criteria, or quality gates, so \"done\" becomes subjective and bugs leak into later sprints. Dependency chains between tasks exist only as tribal knowledge, leaving new team members guessing at execution order. When a board needs to be rebuilt for the next sprint or a new project, all of that structure has to be painstakingly recreated from memory.\n",
       "solution": null,
       "keyFeatures": [],
       "metrics": [],
@@ -3224,14 +3277,14 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-02-23T00:24:14Z",
+      "lastPushed": "2026-03-10T16:24:51Z",
       "createdAt": "2026-02-10T04:11:19Z",
       "isFeatured": false,
       "isArchived": false,
       "isPrivate": false,
       "tagline": "Private, searchable game design document wiki for a Roblox development team",
       "thumbnail": "https://mazebreak-wiki.vercel.app/images/mazebreak-wiki-01.png",
-      "problem": null,
+      "problem": "Game design documents start as shared Word files or Google Docs that no one\nactually consults once development begins — they're too slow to search, too\npainful to navigate, and too disconnected from the development workflow.\nA 2-person Roblox team was losing momentum every time they needed to look up\nan enemy stat, verify a damage formula, or cross-reference loot tables across\na 200+ page GDD, turning a 10-second lookup into a 2-minute context switch\nthat broke creative flow in Roblox Studio.\n",
       "solution": null,
       "keyFeatures": [],
       "metrics": [],
@@ -3522,7 +3575,7 @@
       },
       "stars": 2,
       "forks": 0,
-      "lastPushed": "2026-02-23T00:24:06Z",
+      "lastPushed": "2026-03-10T15:50:23Z",
       "createdAt": "2025-10-02T22:40:01Z",
       "isFeatured": false,
       "isArchived": false,
