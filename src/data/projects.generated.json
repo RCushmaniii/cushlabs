@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-10T17:58:42.504Z",
+  "generatedAt": "2026-03-10T22:29:03.078Z",
   "count": 29,
   "projects": [
     {
@@ -982,14 +982,14 @@
       "problem": "Solo professional service providers burn 10-15 hours per week on manual qualification, scheduling ping-pong, and follow-ups. Their websites look identical to commodity competitors, making it impossible to justify premium pricing while the Spanish-speaking professional market remains underserved.",
       "solution": "A fully automated lead generation platform that functions as four digital employees — SDR, marketing department, executive assistant, and brand manager — on free-tier infrastructure. Every conversation steers toward booking, every page justifies premium pricing, and the full EN/ES bilingual system doubles the addressable market from a single codebase.",
       "keyFeatures": [
-        "4 role-specific diagnostic quizzes pre-qualify leads with mapped communication gaps",
+        "4 role-specific diagnostic quizzes pre-qualify leads with mapped communication gaps — no discovery calls needed",
         "3-step booking flow via Cloudflare Workers + Google Calendar OAuth — interest to confirmed Google Meet in under 60 seconds",
-        "Full EN/ES bilingual mirror with localized routing and bidirectional hreflang SEO",
-        "Premium positioning hard-coded into UX — named executive testimonials from multinational companies",
-        "$0/month infrastructure — Astro static, Cloudflare Workers free tier, Neon free tier"
+        "Full EN/ES bilingual mirror with localized routing (/es/servicios/, /es/reservar/) and bidirectional hreflang SEO",
+        "Premium positioning hard-coded into UX — named executive testimonials from Driscoll's, CEVA Logistics, no discount codes",
+        "$0/month infrastructure — Astro static, Cloudflare Workers free tier, Neon free tier, Vercel serverless free tier"
       ],
       "metrics": [
-        "100 Lighthouse performance score",
+        "100 Lighthouse performance score — zero database queries on page load",
         "$0/month infrastructure cost across all services",
         "< 60 seconds from interest to confirmed booking with Google Meet link",
         "2x addressable market from a single codebase via bilingual system",
@@ -999,49 +999,49 @@
       "dateCompleted": "2026-02",
       "slides": [
         {
-          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-01.png",
-          "altEn": "The Architecture of Authority",
-          "altEs": "La Arquitectura de la Autoridad"
+          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-01.webp",
+          "altEn": "The Architecture of Authority — Constructing a multinational agency presence with a team of one",
+          "altEs": "La Arquitectura de la Autoridad — Construyendo presencia de agencia multinacional con un equipo de uno"
         },
         {
-          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-02.png",
-          "altEn": "An Automated Performance Engine",
-          "altEs": "Un Motor de Rendimiento Automatizado"
+          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-02.webp",
+          "altEn": "An Automated Performance Engine — Zero manual qualification, 60-second booking flow, 100% gross margin",
+          "altEs": "Un Motor de Rendimiento Automatizado — Cero calificacion manual, reserva en 60 segundos, 100% margen bruto"
         },
         {
-          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-03.png",
-          "altEn": "Digital Employee 01: The SDR",
-          "altEs": "Empleado Digital 01: El SDR"
+          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-03.webp",
+          "altEn": "Digital Employee 01: The SDR — Diagnostic intelligence replaces discovery calls with pre-qualified leads",
+          "altEs": "Empleado Digital 01: El SDR — Inteligencia diagnostica reemplaza llamadas de descubrimiento con leads precalificados"
         },
         {
-          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-04.png",
-          "altEn": "Digital Employee 02: Marketing Dept",
-          "altEs": "Empleado Digital 02: Depto. de Marketing"
+          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-04.webp",
+          "altEn": "Digital Employee 02: Marketing Dept — The bilingual mirror doubles addressable market from a single codebase",
+          "altEs": "Empleado Digital 02: Depto. de Marketing — El espejo bilingue duplica el mercado alcanzable desde una sola base de codigo"
         },
         {
-          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-05.png",
-          "altEn": "Digital Employee 03: The Executive Assistant",
-          "altEs": "Empleado Digital 03: La Asistente Ejecutiva"
+          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-05.webp",
+          "altEn": "Digital Employee 03: The Executive Assistant — Interest to confirmed Google Meet booking in under 60 seconds",
+          "altEs": "Empleado Digital 03: La Asistente Ejecutiva — De interes a reserva confirmada en Google Meet en menos de 60 segundos"
         },
         {
-          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-06.png",
-          "altEn": "Digital Employee 04: The Brand Manager",
-          "altEs": "Empleado Digital 04: El Brand Manager"
+          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-06.webp",
+          "altEn": "Digital Employee 04: The Brand Manager — Premium positioning hard-coded into the UX with named executive testimonials",
+          "altEs": "Empleado Digital 04: El Brand Manager — Posicionamiento premium integrado en la UX con testimonios ejecutivos reales"
         },
         {
-          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-07.png",
-          "altEn": "The Speed of Trust",
-          "altEs": "La Velocidad de la Confianza"
+          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-07.webp",
+          "altEn": "The Speed of Trust — Lighthouse 100 performance score, instant loads signal competence to premium buyers",
+          "altEs": "La Velocidad de la Confianza — Puntuacion Lighthouse 100, cargas instantaneas que senalan competencia a compradores premium"
         },
         {
-          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-08.png",
-          "altEn": "The Universal Model",
-          "altEs": "El Modelo Universal"
+          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-08.webp",
+          "altEn": "The Universal Model — Blueprint for any high-touch expertise business: diagnostic lead magnet + automated booking + premium signals = authority",
+          "altEs": "El Modelo Universal — Plano para cualquier negocio de expertise: lead magnet diagnostico + reserva automatizada + senales premium = autoridad"
         },
         {
-          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-09.png",
-          "altEn": "The Zero-Cost Tech Stack",
-          "altEs": "El Tech Stack de Costo Cero"
+          "src": "https://www.nyenglishteacher.com/images/portfolio/ny-eng-09.webp",
+          "altEn": "The Zero-Cost Tech Stack — Enterprise-grade performance on a solopreneur budget with $0 monthly infrastructure",
+          "altEs": "El Tech Stack de Costo Cero — Rendimiento empresarial con presupuesto de solopreneur y $0 de infraestructura mensual"
         }
       ],
       "videoUrl": "https://www.nyenglishteacher.com/video/ny-eng-brief.mp4",
@@ -1482,11 +1482,11 @@
       "status": null,
       "language": "Python",
       "languages": {
-        "Python": 150375
+        "Python": 151622
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-03-10T17:48:46Z",
+      "lastPushed": "2026-03-10T22:15:26Z",
       "createdAt": "2026-03-09T19:14:08Z",
       "isFeatured": false,
       "isArchived": false,
@@ -1831,7 +1831,7 @@
       "status": null,
       "language": "Astro",
       "languages": {
-        "Astro": 487446,
+        "Astro": 490015,
         "TypeScript": 142908,
         "HTML": 61067,
         "JavaScript": 46253,
@@ -1839,7 +1839,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-03-10T17:52:27Z",
+      "lastPushed": "2026-03-10T22:25:11Z",
       "createdAt": "2026-01-08T03:52:43Z",
       "isFeatured": false,
       "isArchived": false,
@@ -2274,48 +2274,48 @@
       "slides": [
         {
           "src": "https://scrabble-mini.netlify.app/images/ai-scrabble-practice-01.png",
-          "altEn": "AI Scrabble Practice Suite",
-          "altEs": "AI Scrabble Practice Suite"
+          "altEn": "AI Scrabble Practice Suite — Five tools for serious Scrabble practice",
+          "altEs": "AI Scrabble Practice Suite — Cinco herramientas para practicar Scrabble en serio"
         },
         {
           "src": "https://scrabble-mini.netlify.app/images/ai-scrabble-practice-02.png",
-          "altEn": "The Practice Gap",
-          "altEs": "La brecha de practica"
+          "altEn": "The Practice Gap — word checkers don't teach, board solvers don't let you learn",
+          "altEs": "La brecha de practica — los verificadores no ensenan, los solucionadores no te dejan aprender"
         },
         {
           "src": "https://scrabble-mini.netlify.app/images/ai-scrabble-practice-03.png",
-          "altEn": "Word Validator",
-          "altEs": "Validador de Palabras"
+          "altEn": "Word Validator — instant validation with letter-by-letter score breakdown",
+          "altEs": "Validador de Palabras — validacion instantanea con desglose de puntuacion letra por letra"
         },
         {
           "src": "https://scrabble-mini.netlify.app/images/ai-scrabble-practice-04.png",
-          "altEn": "Anagram Solver",
-          "altEs": "Solucionador de Anagramas"
+          "altEn": "Anagram Solver — find every playable word from your tile rack with wildcard support",
+          "altEs": "Solucionador de Anagramas — encuentra cada palabra jugable desde tu atril con comodines"
         },
         {
           "src": "https://scrabble-mini.netlify.app/images/ai-scrabble-practice-06.png",
-          "altEn": "Word Finder",
-          "altEs": "Buscador de Palabras"
+          "altEn": "Word Finder — search by letter, position, and length with scoring statistics",
+          "altEs": "Buscador de Palabras — busca por letra, posicion y longitud con estadisticas de puntuacion"
         },
         {
           "src": "https://scrabble-mini.netlify.app/images/ai-scrabble-practice-07.png",
-          "altEn": "Magic Search",
-          "altEs": "Busqueda Magica"
+          "altEn": "Magic Search — ask for words in plain English, powered by GPT-4o-mini",
+          "altEs": "Busqueda Magica — pide palabras en lenguaje natural, impulsado por GPT-4o-mini"
         },
         {
           "src": "https://scrabble-mini.netlify.app/images/ai-scrabble-practice-08.png",
-          "altEn": "Practice Game",
-          "altEs": "Juego de Practica"
+          "altEn": "Practice Game — build words against the clock with AI hints and progressive scoring",
+          "altEs": "Juego de Practica — forma palabras contra reloj con pistas de IA y puntuacion progresiva"
         },
         {
           "src": "https://scrabble-mini.netlify.app/images/ai-scrabble-practice-09.png",
-          "altEn": "Bilingual and Tested",
-          "altEs": "Bilingue y Probado"
+          "altEn": "Bilingual and Tested — full EN/ES support with Playwright E2E coverage",
+          "altEs": "Bilingue y Probado — soporte completo EN/ES con cobertura E2E de Playwright"
         },
         {
           "src": "https://scrabble-mini.netlify.app/images/ai-scrabble-practice-10.png",
-          "altEn": "Technical Architecture",
-          "altEs": "Arquitectura Tecnica"
+          "altEn": "Technical Architecture — React 19, TypeScript, Vite 7, OpenAI, 370K-word dictionary",
+          "altEs": "Arquitectura Tecnica — React 19, TypeScript, Vite 7, OpenAI, diccionario de 370K palabras"
         }
       ],
       "videoUrl": "https://scrabble-mini.netlify.app/video/ai-scrabble-practice-brief.mp4",
