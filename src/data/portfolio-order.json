@@ -1,9 +1,9 @@
 {
   "_comment": "Curated display order for the portfolio page. Overrides PORTFOLIO.md priorities after sync.",
   "order": [
-    { "name": "cushlabs-ai-voice-agent",     "priority": 1,  "featured": true },
+    { "name": "ny-ai-chatbot",               "priority": 1,  "featured": true },
     { "name": "ai-chatbot-saas",             "priority": 2,  "featured": true },
-    { "name": "ny-ai-chatbot",               "priority": 3,  "featured": true },
+    { "name": "cushlabs-ai-voice-agent",     "priority": 3,  "featured": true },
     { "name": "ny-eng",                      "priority": 4,  "featured": true,  "categories": ["Client Work"] },
     { "name": "ai-resume-tailor",            "priority": 5,  "featured": true },
     { "name": "ai-build-vs-outsource",       "priority": 6,  "featured": true },
@@ -22,7 +22,6 @@
     { "name": "mazebreak-trello",            "priority": 19, "featured": false },
     { "name": "mazebreak-wiki",              "priority": 20, "featured": false },
     { "name": "nextjs-react-agency-starter", "priority": 21, "featured": false },
-    { "name": "ai-personal-data-eraser",     "priority": 22, "featured": false },
-    { "name": "react-vite-tailwind-base",    "priority": 23, "featured": false }
+    { "name": "react-vite-tailwind-base",    "priority": 22, "featured": false }
   ]
 }
