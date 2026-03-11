@@ -1,159 +1,131 @@
 {
-  "generatedAt": "2026-03-10T23:22:27.927Z",
+  "generatedAt": "2026-03-11T03:29:10.434Z",
   "count": 28,
   "projects": [
     {
-      "id": 1164355422,
-      "name": "cushlabs-ai-voice-agent",
-      "title": "AI Voice Agent Platform",
-      "description": "Production-ready AI voice agents for lead qualification, appointment booking, and customer conversations — powered by Vapi, Claude, and Google Calendar",
-      "summary": "Production-ready AI voice agents that qualify leads, book appointments, and handle customer conversations — 24/7, with sub-500ms response times.",
-      "url": "https://github.com/RCushmaniii/cushlabs-ai-voice-agent",
-      "demoUrl": "https://voice.cushlabs.ai",
-      "liveUrl": "https://voice.cushlabs.ai",
-      "homepage": "https://voice.cushlabs.ai",
+      "id": 1102173157,
+      "name": "ny-ai-chatbot",
+      "title": "NY AI Chatbot",
+      "description": "Production-ready AI chatbot with embeddable widget for websites. Features include knowledge base integration, multi-language support, and customizable admin dashboard.",
+      "summary": "**Drop-in AI chatbot widget with RAG intelligence for small business websites.**",
+      "url": "https://github.com/RCushmaniii/ny-ai-chatbot",
+      "demoUrl": "https://ny-ai-chatbot.vercel.app",
+      "liveUrl": "https://ny-ai-chatbot.vercel.app",
+      "homepage": "https://www.nyenglishteacher.com",
       "topics": [
-        "ai",
-        "appointment-booking",
-        "cartesia",
-        "claude",
-        "conversational-ai",
-        "cushlabs",
-        "express",
-        "google-calendar",
-        "lead-qualification",
-        "nodejs",
-        "vapi",
-        "voice-agent"
+        "ai-chatbot",
+        "nextjs",
+        "rag-chatbot",
+        "tailwindcss",
+        "vercel-deployment"
       ],
       "categories": [
         "AI Automation"
       ],
       "tags": [
-        "ai",
-        "appointment-booking",
-        "cartesia",
-        "claude",
-        "conversational-ai",
-        "cushlabs",
-        "express",
-        "google-calendar",
-        "lead-qualification",
-        "nodejs",
-        "vapi",
-        "voice-agent",
-        "voice-ai",
-        "llm",
-        "real-time",
-        "customer-support",
-        "outbound-calling",
-        "real-estate",
-        "home-services"
+        "ai-chatbot",
+        "nextjs",
+        "rag-chatbot",
+        "tailwindcss",
+        "vercel-deployment",
+        "typescript",
+        "openai",
+        "rag",
+        "pgvector",
+        "drizzle",
+        "clerk",
+        "tailwind",
+        "bilingual",
+        "chatbot"
       ],
       "stack": [
-        "Vapi",
-        "Claude Sonnet",
-        "Groq Llama 3.1",
-        "Deepgram Nova-2/3",
-        "Cartesia",
-        "Twilio",
-        "Express.js",
-        "Neon PostgreSQL",
-        "Redis",
-        "Google Calendar API",
-        "Render"
+        "Next.js 15",
+        "TypeScript",
+        "OpenAI GPT-4o",
+        "pgvector",
+        "Drizzle ORM",
+        "Clerk",
+        "React 19",
+        "Tailwind CSS 4",
+        "shadcn/ui",
+        "Vercel AI SDK"
       ],
       "status": "Production",
-      "language": "HTML",
+      "language": "TypeScript",
       "languages": {
-        "HTML": 410670,
-        "JavaScript": 93181,
-        "CSS": 6849
+        "TypeScript": 944503,
+        "JavaScript": 13855,
+        "PLpgSQL": 10195,
+        "CSS": 8090,
+        "PowerShell": 5924
       },
-      "stars": 0,
+      "stars": 1,
       "forks": 0,
-      "lastPushed": "2026-03-10T15:59:32Z",
-      "createdAt": "2026-02-23T01:31:09Z",
+      "lastPushed": "2026-03-01T20:43:39Z",
+      "createdAt": "2025-11-23T00:24:28Z",
       "isFeatured": true,
       "isArchived": false,
-      "isPrivate": false,
-      "tagline": "Production voice AI agents that qualify leads, book appointments, and handle support calls 24/7",
-      "thumbnail": "https://voice.cushlabs.ai/portfolio/voice-cushlabs-thumb.webp",
-      "problem": "Businesses lose leads to unanswered calls, voicemail black holes, and hold-time abandonment. Hiring receptionists is expensive and still leaves gaps outside business hours. Existing IVR systems frustrate callers with rigid menu trees that never actually solve the problem.",
-      "solution": "Production AI voice agents that handle inbound and outbound calls with natural conversation, qualify leads in real time, book appointments directly into Google Calendar, and answer FAQs — 24/7 with sub-500ms response times and zero hold times.",
+      "isPrivate": true,
+      "tagline": "Revenue-first RAG chatbot that converts visitors into booked strategy sessions",
+      "thumbnail": "https://ny-ai-chatbot.vercel.app/images/portfolio/ny-eng-chatbot-thumbnail.jpg",
+      "problem": "Language schools treat chatbots as deflection tools — reduce ticket volume, speed up FAQ answers, dead-end the conversation. The result is a cost center that never generates revenue. Meanwhile, anonymous website visitors leave without converting because there's no sales-aware system guiding them toward high-value actions like booking a strategy session.",
+      "solution": "An AI chatbot explicitly engineered as an automated sales agent. Every architectural layer — system prompts, RAG citations, error handling, rate limits — is designed to drive conversational conversion. The bot uses benefit-driven language with real client social proof, links RAG source citations to high-value service pages, and hard-codes CTAs for free strategy sessions directly into the system prompt.",
       "keyFeatures": [
-        "5 production demo agents: Clara (lead qualification), James (appointment booking), Sophia (med spa front desk), Mike (home services dispatch), David (real estate outbound setter)",
-        "First outbound AI calling agent — David proactively calls prospects, qualifies buyers, and books property tours via Twilio PSTN",
-        "Real-time Google Calendar integration — checks availability and books confirmed appointments mid-call",
-        "Mock MLS property lookup for real estate demos with 6 NJ listings",
-        "Sub-500ms voice response via Vapi WebRTC with Deepgram STT and Cartesia TTS",
-        "Webhook-driven function calling for calendar, database, MLS lookup, and CRM operations during live calls",
-        "Session state via Redis for multi-turn conversation context across function calls",
-        "Lead data persisted to Neon PostgreSQL with full call metadata",
-        "Full bilingual EN/ES support across all pages"
+        "Revenue-first RAG architecture merging website content and manual knowledge sources (top 5 by cosine similarity)",
+        "System prompts hard-coded with sales CTAs — every conversation steers toward booking a strategy session",
+        "Dual-source knowledge base: scraped website content (0.5 threshold) + curated documents (0.6 threshold)",
+        "Source citations that drive traffic to high-value service pages, increasing time-on-site and eliminating hallucination",
+        "Full EN/ES bilingual support with locale-aware personality and benefit-driven language",
+        "Embeddable widget (iframe + script tag) deployable on any client domain with CORS configuration",
+        "Admin dashboard with chat analytics, knowledge management, and bot settings"
       ],
       "metrics": [
-        "Sub-500ms voice response time",
-        "5 live production demo agents (4 inbound + 1 outbound)",
-        "24/7 availability with zero hold times",
-        "Real-time calendar booking mid-conversation"
+        "5-layer revenue engine: System Prompts, Error CTAs, Localization, Rate Limits as Strategy, Source Citations",
+        "2 RAG knowledge sources merged by cosine similarity with configurable thresholds",
+        "Sub-second streaming responses via Vercel AI SDK with OpenAI GPT-4o",
+        "Zero-auth guest experience via sessionId cookies — no signup friction before conversion"
       ],
       "priority": 1,
-      "dateCompleted": "2026-03",
+      "dateCompleted": "2025-12",
       "slides": [
         {
-          "src": "https://voice.cushlabs.ai/portfolio/voice-cushlabs-01.webp",
-          "altEn": "AI Voice Agent Platform",
-          "altEs": "AI Voice Agent Platform"
+          "src": "https://ny-ai-chatbot.vercel.app/images/portfolio/ny-eng-chatbot-01.png",
+          "altEn": "Conversational Conversion — The Architecture of a Revenue-First Chatbot",
+          "altEs": "Conversion Conversacional — La Arquitectura de un Chatbot Orientado a Ingresos"
         },
         {
-          "src": "https://voice.cushlabs.ai/portfolio/voice-cushlabs-02.webp",
-          "altEn": "AI Voice Agent Platform",
-          "altEs": "AI Voice Agent Platform"
+          "src": "https://ny-ai-chatbot.vercel.app/images/portfolio/ny-eng-chatbot-02.png",
+          "altEn": "Moving Beyond the Support Cost Center — from Deflector to Converter",
+          "altEs": "Mas Alla del Centro de Costos de Soporte — de Deflector a Convertidor"
         },
         {
-          "src": "https://voice.cushlabs.ai/portfolio/voice-cushlabs-03.webp",
-          "altEn": "AI Voice Agent Platform",
-          "altEs": "AI Voice Agent Platform"
+          "src": "https://ny-ai-chatbot.vercel.app/images/portfolio/ny-eng-chatbot-03.png",
+          "altEn": "The Five Gears of the Revenue Engine — Brain, Trigger, Chameleon, Soft Wall, Bridge",
+          "altEs": "Los Cinco Engranajes del Motor de Ingresos — Cerebro, Disparador, Camaleon, Muro Suave, Puente"
         },
         {
-          "src": "https://voice.cushlabs.ai/portfolio/voice-cushlabs-04.webp",
-          "altEn": "AI Voice Agent Platform",
-          "altEs": "AI Voice Agent Platform"
+          "src": "https://ny-ai-chatbot.vercel.app/images/portfolio/ny-eng-chatbot-04.png",
+          "altEn": "System Prompts Are Hard-Coded to Sell — CTAs baked into the bot's DNA",
+          "altEs": "Los Prompts del Sistema Estan Programados para Vender — CTAs integrados en el ADN del bot"
         },
         {
-          "src": "https://voice.cushlabs.ai/portfolio/voice-cushlabs-05.webp",
-          "altEn": "AI Voice Agent Platform",
-          "altEs": "AI Voice Agent Platform"
+          "src": "https://ny-ai-chatbot.vercel.app/images/portfolio/ny-eng-chatbot-05.png",
+          "altEn": "Benefit-Driven Language Builds Authority — Pivot to Value technique with client social proof",
+          "altEs": "El Lenguaje Orientado a Beneficios Construye Autoridad — tecnica Pivot to Value con prueba social de clientes"
         },
         {
-          "src": "https://voice.cushlabs.ai/portfolio/voice-cushlabs-06.webp",
-          "altEn": "AI Voice Agent Platform",
-          "altEs": "AI Voice Agent Platform"
+          "src": "https://ny-ai-chatbot.vercel.app/images/portfolio/ny-eng-chatbot-06.png",
+          "altEn": "Source Citations Drive Traffic to High-Value Pages — RAG grounding that doubles as SEO",
+          "altEs": "Las Citas de Fuentes Dirigen Trafico a Paginas de Alto Valor — grounding RAG que funciona como SEO"
         },
         {
-          "src": "https://voice.cushlabs.ai/portfolio/voice-cushlabs-07.webp",
-          "altEn": "AI Voice Agent Platform",
-          "altEs": "AI Voice Agent Platform"
-        },
-        {
-          "src": "https://voice.cushlabs.ai/portfolio/voice-cushlabs-08.webp",
-          "altEn": "AI Voice Agent Platform",
-          "altEs": "AI Voice Agent Platform"
-        },
-        {
-          "src": "https://voice.cushlabs.ai/portfolio/voice-cushlabs-09.webp",
-          "altEn": "AI Voice Agent Platform",
-          "altEs": "AI Voice Agent Platform"
-        },
-        {
-          "src": "https://voice.cushlabs.ai/portfolio/voice-cushlabs-10.webp",
-          "altEn": "AI Voice Agent Platform",
-          "altEs": "AI Voice Agent Platform"
+          "src": "https://ny-ai-chatbot.vercel.app/images/portfolio/ny-eng-chatbot-07.png",
+          "altEn": "Not a Support Tool — An Automated Sales Agent that books strategy sessions",
+          "altEs": "No es una Herramienta de Soporte — Un Agente de Ventas Automatizado que agenda sesiones de estrategia"
         }
       ],
-      "videoUrl": "https://voice.cushlabs.ai/video/voice-cushlabs-brief.mp4",
-      "videoPoster": "https://voice.cushlabs.ai/video/voice-cushlabs-brief-poster.webp"
+      "videoUrl": "https://ny-ai-chatbot.vercel.app/video/ny-eng-chatbot-brief.mp4",
+      "videoPoster": "https://ny-ai-chatbot.vercel.app/video/ny-eng-chatbot-brief-poster.jpg"
     },
     {
       "id": 1108213747,
@@ -272,6 +244,146 @@
       ],
       "videoUrl": "https://raw.githubusercontent.com/RCushmaniii/ai-chatbot-saas/main/public/video/converso-brief.mp4",
       "videoPoster": "https://raw.githubusercontent.com/RCushmaniii/ai-chatbot-saas/main/public/video/converso-brief-poster.jpg"
+    },
+    {
+      "id": 1174690198,
+      "name": "biojalisco-species-id",
+      "title": "BioJalisco Species Identifier",
+      "description": "AI-powered vertebrate species identification for Jalisco field research. Next.js 15, GPT-4o Vision, Clerk, Neon Postgres.",
+      "summary": "> AI-powered species identification for Jalisco biodiversity research. Four-API pipeline delivers verified taxonomy, IUCN status, Mexico-specific conservation data (NOM-059), and endemic classificatio",
+      "url": "https://github.com/RCushmaniii/biojalisco-species-id",
+      "demoUrl": "https://biojalisco-species-id.vercel.app",
+      "liveUrl": "https://biojalisco-species-id.vercel.app",
+      "homepage": "https://biojalisco-species-id.vercel.app",
+      "topics": [
+        "ai",
+        "biodiversity",
+        "computer-vision",
+        "conservation",
+        "gpt-4o",
+        "jalisco",
+        "nextjs",
+        "species-identification"
+      ],
+      "categories": [
+        "AI Automation"
+      ],
+      "tags": [
+        "ai",
+        "biodiversity",
+        "computer-vision",
+        "conservation",
+        "gpt-4o",
+        "jalisco",
+        "nextjs",
+        "species-identification",
+        "ai-vision",
+        "inaturalist",
+        "gbif",
+        "conabio",
+        "bilingual"
+      ],
+      "stack": [
+        "Next.js 15 (App Router)",
+        "TypeScript",
+        "GPT-4o Vision",
+        "iNaturalist API",
+        "GBIF API",
+        "EncicloVida/CONABIO API",
+        "OpenStreetMap Nominatim (reverse geocoding)",
+        "exifr (EXIF GPS/metadata extraction)",
+        "Clerk Authentication",
+        "Neon Postgres",
+        "Drizzle ORM",
+        "Vercel Blob Storage",
+        "sharp (image processing)",
+        "Vercel"
+      ],
+      "status": null,
+      "language": "TypeScript",
+      "languages": {
+        "TypeScript": 237859,
+        "CSS": 73099,
+        "JavaScript": 388
+      },
+      "stars": 0,
+      "forks": 0,
+      "lastPushed": "2026-03-10T23:38:30Z",
+      "createdAt": "2026-03-06T18:20:23Z",
+      "isFeatured": true,
+      "isArchived": false,
+      "isPrivate": false,
+      "tagline": "Five-API species identification pipeline with EXIF GPS extraction, reverse geocoding, and Mexico-specific conservation data",
+      "thumbnail": "https://biojalisco-species-id.vercel.app/images/portfolio/biojalisco-thumb.webp",
+      "problem": "Conservation biologists in Jalisco encounter thousands of species during fieldwork\nbut lack rapid identification tools with verified data. GPT-4o Vision alone\nfrequently misidentifies species without geographic context. No existing tool\ncombines AI vision, regional species data, global taxonomy verification, and\nMexico-specific conservation status (NOM-059, endemic classification) in one flow.\n",
+      "solution": null,
+      "keyFeatures": [
+        "Five-API pipeline: iNaturalist context + GPT-4o Vision + GBIF verification + EncicloVida/CONABIO enrichment + Nominatim reverse geocoding",
+        "EXIF GPS extraction from photo metadata for precise location-aware identification (proven: corrected Broad-billed Hummingbird to Cinnamon Hummingbird with accurate coordinates)",
+        "Reverse geocoding via OpenStreetMap Nominatim: country, state, region, municipality, city displayed in Data Sources",
+        "Verified IUCN Red List status and taxonomy from GBIF backbone (not AI-generated)",
+        "Mexico-specific data from CONABIO: endemic/native/exotic classification, NOM-059 protection status, indigenous language names",
+        "Explore/Research dual-mode tab system: casual users see About + Habitat + Similar Species; scientists see Taxonomy + Conservation + Data Sources",
+        "Bilingual (EN/ES) with dark/light theme, community observation gallery, and EXIF privacy stripping",
+        "Graceful degradation: works with just an OpenAI key, enriched with optional services"
+      ],
+      "metrics": [],
+      "priority": 3,
+      "dateCompleted": null,
+      "slides": [
+        {
+          "src": "https://biojalisco-species-id.vercel.app/images/portfolio/biojalisco-slide-01.webp",
+          "altEn": "BioJalisco Species Identifier",
+          "altEs": "BioJalisco Species Identifier"
+        },
+        {
+          "src": "https://biojalisco-species-id.vercel.app/images/portfolio/biojalisco-slide-02.webp",
+          "altEn": "BioJalisco Species Identifier",
+          "altEs": "BioJalisco Species Identifier"
+        },
+        {
+          "src": "https://biojalisco-species-id.vercel.app/images/portfolio/biojalisco-slide-03.webp",
+          "altEn": "BioJalisco Species Identifier",
+          "altEs": "BioJalisco Species Identifier"
+        },
+        {
+          "src": "https://biojalisco-species-id.vercel.app/images/portfolio/biojalisco-slide-04.webp",
+          "altEn": "BioJalisco Species Identifier",
+          "altEs": "BioJalisco Species Identifier"
+        },
+        {
+          "src": "https://biojalisco-species-id.vercel.app/images/portfolio/biojalisco-slide-05.webp",
+          "altEn": "BioJalisco Species Identifier",
+          "altEs": "BioJalisco Species Identifier"
+        },
+        {
+          "src": "https://biojalisco-species-id.vercel.app/images/portfolio/biojalisco-slide-06.webp",
+          "altEn": "BioJalisco Species Identifier",
+          "altEs": "BioJalisco Species Identifier"
+        },
+        {
+          "src": "https://biojalisco-species-id.vercel.app/images/portfolio/biojalisco-slide-07.webp",
+          "altEn": "BioJalisco Species Identifier",
+          "altEs": "BioJalisco Species Identifier"
+        },
+        {
+          "src": "https://biojalisco-species-id.vercel.app/images/portfolio/biojalisco-slide-08.webp",
+          "altEn": "BioJalisco Species Identifier",
+          "altEs": "BioJalisco Species Identifier"
+        },
+        {
+          "src": "https://biojalisco-species-id.vercel.app/images/portfolio/biojalisco-slide-09.webp",
+          "altEn": "BioJalisco Species Identifier",
+          "altEs": "BioJalisco Species Identifier"
+        },
+        {
+          "src": "https://biojalisco-species-id.vercel.app/images/portfolio/biojalisco-slide-10.webp",
+          "altEn": "BioJalisco Species Identifier",
+          "altEs": "BioJalisco Species Identifier"
+        }
+      ],
+      "videoUrl": "https://biojalisco-species-id.vercel.app/video/biojalisco-brief.mp4",
+      "videoPoster": "https://biojalisco-species-id.vercel.app/images/portfolio/biojalisco-brief-poster.webp"
     },
     {
       "id": 1174674268,
@@ -496,269 +608,157 @@
       "videoPoster": "https://raw.githubusercontent.com/RCushmaniii/cushlabs-ai-marketing/main/public/video/cushlabs-ai-marketing-brief-poster.webp"
     },
     {
-      "id": 1174690198,
-      "name": "biojalisco-species-id",
-      "title": "BioJalisco Species Identifier",
-      "description": "AI-powered vertebrate species identification for Jalisco field research. Next.js 15, GPT-4o Vision, Clerk, Neon Postgres.",
-      "summary": "> AI-powered species identification for Jalisco biodiversity research. Four-API pipeline delivers verified taxonomy, IUCN status, Mexico-specific conservation data (NOM-059), and endemic classificatio",
-      "url": "https://github.com/RCushmaniii/biojalisco-species-id",
-      "demoUrl": "https://biojalisco-species-id.vercel.app",
-      "liveUrl": "https://biojalisco-species-id.vercel.app",
-      "homepage": "https://biojalisco-species-id.vercel.app",
+      "id": 1164355422,
+      "name": "cushlabs-ai-voice-agent",
+      "title": "AI Voice Agent Platform",
+      "description": "Production-ready AI voice agents for lead qualification, appointment booking, and customer conversations — powered by Vapi, Claude, and Google Calendar",
+      "summary": "Production-ready AI voice agents that qualify leads, book appointments, and handle customer conversations — 24/7, with sub-500ms response times.",
+      "url": "https://github.com/RCushmaniii/cushlabs-ai-voice-agent",
+      "demoUrl": "https://voice.cushlabs.ai",
+      "liveUrl": "https://voice.cushlabs.ai",
+      "homepage": "https://voice.cushlabs.ai",
       "topics": [
         "ai",
-        "biodiversity",
-        "computer-vision",
-        "conservation",
-        "gpt-4o",
-        "jalisco",
-        "nextjs",
-        "species-identification"
+        "appointment-booking",
+        "cartesia",
+        "claude",
+        "conversational-ai",
+        "cushlabs",
+        "express",
+        "google-calendar",
+        "lead-qualification",
+        "nodejs",
+        "vapi",
+        "voice-agent"
       ],
       "categories": [
         "AI Automation"
       ],
       "tags": [
         "ai",
-        "biodiversity",
-        "computer-vision",
-        "conservation",
-        "gpt-4o",
-        "jalisco",
-        "nextjs",
-        "species-identification",
-        "ai-vision",
-        "inaturalist",
-        "gbif",
-        "conabio",
-        "bilingual"
+        "appointment-booking",
+        "cartesia",
+        "claude",
+        "conversational-ai",
+        "cushlabs",
+        "express",
+        "google-calendar",
+        "lead-qualification",
+        "nodejs",
+        "vapi",
+        "voice-agent",
+        "voice-ai",
+        "llm",
+        "real-time",
+        "customer-support",
+        "outbound-calling",
+        "real-estate",
+        "home-services"
       ],
       "stack": [
-        "Next.js 15 (App Router)",
-        "TypeScript",
-        "GPT-4o Vision",
-        "iNaturalist API",
-        "GBIF API",
-        "EncicloVida/CONABIO API",
-        "OpenStreetMap Nominatim (reverse geocoding)",
-        "exifr (EXIF GPS/metadata extraction)",
-        "Clerk Authentication",
-        "Neon Postgres",
-        "Drizzle ORM",
-        "Vercel Blob Storage",
-        "sharp (image processing)",
-        "Vercel"
+        "Vapi",
+        "Claude Sonnet",
+        "Groq Llama 3.1",
+        "Deepgram Nova-2/3",
+        "Cartesia",
+        "Twilio",
+        "Express.js",
+        "Neon PostgreSQL",
+        "Redis",
+        "Google Calendar API",
+        "Render"
       ],
-      "status": null,
-      "language": "TypeScript",
+      "status": "Production",
+      "language": "HTML",
       "languages": {
-        "TypeScript": 232661,
-        "CSS": 72331,
-        "JavaScript": 388
+        "HTML": 410670,
+        "JavaScript": 93181,
+        "CSS": 6849
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-03-10T15:50:14Z",
-      "createdAt": "2026-03-06T18:20:23Z",
+      "lastPushed": "2026-03-10T15:59:32Z",
+      "createdAt": "2026-02-23T01:31:09Z",
       "isFeatured": true,
       "isArchived": false,
       "isPrivate": false,
-      "tagline": "Five-API species identification pipeline with EXIF GPS extraction, reverse geocoding, and Mexico-specific conservation data",
-      "thumbnail": "https://biojalisco-species-id.vercel.app/images/portfolio/biojalisco-thumb.webp",
-      "problem": "Conservation biologists in Jalisco encounter thousands of species during fieldwork\nbut lack rapid identification tools with verified data. GPT-4o Vision alone\nfrequently misidentifies species without geographic context. No existing tool\ncombines AI vision, regional species data, global taxonomy verification, and\nMexico-specific conservation status (NOM-059, endemic classification) in one flow.\n",
-      "solution": null,
+      "tagline": "Production voice AI agents that qualify leads, book appointments, and handle support calls 24/7",
+      "thumbnail": "https://voice.cushlabs.ai/portfolio/voice-cushlabs-thumb.webp",
+      "problem": "Businesses lose leads to unanswered calls, voicemail black holes, and hold-time abandonment. Hiring receptionists is expensive and still leaves gaps outside business hours. Existing IVR systems frustrate callers with rigid menu trees that never actually solve the problem.",
+      "solution": "Production AI voice agents that handle inbound and outbound calls with natural conversation, qualify leads in real time, book appointments directly into Google Calendar, and answer FAQs — 24/7 with sub-500ms response times and zero hold times.",
       "keyFeatures": [
-        "Five-API pipeline: iNaturalist context + GPT-4o Vision + GBIF verification + EncicloVida/CONABIO enrichment + Nominatim reverse geocoding",
-        "EXIF GPS extraction from photo metadata for precise location-aware identification (proven: corrected Broad-billed Hummingbird to Cinnamon Hummingbird with accurate coordinates)",
-        "Reverse geocoding via OpenStreetMap Nominatim: country, state, region, municipality, city displayed in Data Sources",
-        "Verified IUCN Red List status and taxonomy from GBIF backbone (not AI-generated)",
-        "Mexico-specific data from CONABIO: endemic/native/exotic classification, NOM-059 protection status, indigenous language names",
-        "Explore/Research dual-mode tab system: casual users see About + Habitat + Similar Species; scientists see Taxonomy + Conservation + Data Sources",
-        "Bilingual (EN/ES) with dark/light theme, community observation gallery, and EXIF privacy stripping",
-        "Graceful degradation: works with just an OpenAI key, enriched with optional services"
-      ],
-      "metrics": [],
-      "priority": 3,
-      "dateCompleted": null,
-      "slides": [
-        {
-          "src": "https://biojalisco-species-id.vercel.app/images/portfolio/biojalisco-slide-01.webp",
-          "altEn": "BioJalisco Species Identifier",
-          "altEs": "BioJalisco Species Identifier"
-        },
-        {
-          "src": "https://biojalisco-species-id.vercel.app/images/portfolio/biojalisco-slide-02.webp",
-          "altEn": "BioJalisco Species Identifier",
-          "altEs": "BioJalisco Species Identifier"
-        },
-        {
-          "src": "https://biojalisco-species-id.vercel.app/images/portfolio/biojalisco-slide-03.webp",
-          "altEn": "BioJalisco Species Identifier",
-          "altEs": "BioJalisco Species Identifier"
-        },
-        {
-          "src": "https://biojalisco-species-id.vercel.app/images/portfolio/biojalisco-slide-04.webp",
-          "altEn": "BioJalisco Species Identifier",
-          "altEs": "BioJalisco Species Identifier"
-        },
-        {
-          "src": "https://biojalisco-species-id.vercel.app/images/portfolio/biojalisco-slide-05.webp",
-          "altEn": "BioJalisco Species Identifier",
-          "altEs": "BioJalisco Species Identifier"
-        },
-        {
-          "src": "https://biojalisco-species-id.vercel.app/images/portfolio/biojalisco-slide-06.webp",
-          "altEn": "BioJalisco Species Identifier",
-          "altEs": "BioJalisco Species Identifier"
-        },
-        {
-          "src": "https://biojalisco-species-id.vercel.app/images/portfolio/biojalisco-slide-07.webp",
-          "altEn": "BioJalisco Species Identifier",
-          "altEs": "BioJalisco Species Identifier"
-        },
-        {
-          "src": "https://biojalisco-species-id.vercel.app/images/portfolio/biojalisco-slide-08.webp",
-          "altEn": "BioJalisco Species Identifier",
-          "altEs": "BioJalisco Species Identifier"
-        },
-        {
-          "src": "https://biojalisco-species-id.vercel.app/images/portfolio/biojalisco-slide-09.webp",
-          "altEn": "BioJalisco Species Identifier",
-          "altEs": "BioJalisco Species Identifier"
-        },
-        {
-          "src": "https://biojalisco-species-id.vercel.app/images/portfolio/biojalisco-slide-10.webp",
-          "altEn": "BioJalisco Species Identifier",
-          "altEs": "BioJalisco Species Identifier"
-        }
-      ],
-      "videoUrl": "https://biojalisco-species-id.vercel.app/video/biojalisco-brief.mp4",
-      "videoPoster": "https://biojalisco-species-id.vercel.app/images/portfolio/biojalisco-brief-poster.webp"
-    },
-    {
-      "id": 1102173157,
-      "name": "ny-ai-chatbot",
-      "title": "NY AI Chatbot",
-      "description": "Production-ready AI chatbot with embeddable widget for websites. Features include knowledge base integration, multi-language support, and customizable admin dashboard.",
-      "summary": "**Drop-in AI chatbot widget with RAG intelligence for small business websites.**",
-      "url": "https://github.com/RCushmaniii/ny-ai-chatbot",
-      "demoUrl": "https://ny-ai-chatbot.vercel.app",
-      "liveUrl": "https://ny-ai-chatbot.vercel.app",
-      "homepage": "https://www.nyenglishteacher.com",
-      "topics": [
-        "ai-chatbot",
-        "nextjs",
-        "rag-chatbot",
-        "tailwindcss",
-        "vercel-deployment"
-      ],
-      "categories": [
-        "AI Automation"
-      ],
-      "tags": [
-        "ai-chatbot",
-        "nextjs",
-        "rag-chatbot",
-        "tailwindcss",
-        "vercel-deployment",
-        "typescript",
-        "openai",
-        "rag",
-        "pgvector",
-        "drizzle",
-        "clerk",
-        "tailwind",
-        "bilingual",
-        "chatbot"
-      ],
-      "stack": [
-        "Next.js 15",
-        "TypeScript",
-        "OpenAI GPT-4o",
-        "pgvector",
-        "Drizzle ORM",
-        "Clerk",
-        "React 19",
-        "Tailwind CSS 4",
-        "shadcn/ui",
-        "Vercel AI SDK"
-      ],
-      "status": "Production",
-      "language": "TypeScript",
-      "languages": {
-        "TypeScript": 944503,
-        "JavaScript": 13855,
-        "PLpgSQL": 10195,
-        "CSS": 8090,
-        "PowerShell": 5924
-      },
-      "stars": 1,
-      "forks": 0,
-      "lastPushed": "2026-03-01T20:43:39Z",
-      "createdAt": "2025-11-23T00:24:28Z",
-      "isFeatured": true,
-      "isArchived": false,
-      "isPrivate": true,
-      "tagline": "Revenue-first RAG chatbot that converts visitors into booked strategy sessions",
-      "thumbnail": "https://ny-ai-chatbot.vercel.app/images/portfolio/ny-eng-chatbot-thumbnail.jpg",
-      "problem": "Language schools treat chatbots as deflection tools — reduce ticket volume, speed up FAQ answers, dead-end the conversation. The result is a cost center that never generates revenue. Meanwhile, anonymous website visitors leave without converting because there's no sales-aware system guiding them toward high-value actions like booking a strategy session.",
-      "solution": "An AI chatbot explicitly engineered as an automated sales agent. Every architectural layer — system prompts, RAG citations, error handling, rate limits — is designed to drive conversational conversion. The bot uses benefit-driven language with real client social proof, links RAG source citations to high-value service pages, and hard-codes CTAs for free strategy sessions directly into the system prompt.",
-      "keyFeatures": [
-        "Revenue-first RAG architecture merging website content and manual knowledge sources (top 5 by cosine similarity)",
-        "System prompts hard-coded with sales CTAs — every conversation steers toward booking a strategy session",
-        "Dual-source knowledge base: scraped website content (0.5 threshold) + curated documents (0.6 threshold)",
-        "Source citations that drive traffic to high-value service pages, increasing time-on-site and eliminating hallucination",
-        "Full EN/ES bilingual support with locale-aware personality and benefit-driven language",
-        "Embeddable widget (iframe + script tag) deployable on any client domain with CORS configuration",
-        "Admin dashboard with chat analytics, knowledge management, and bot settings"
+        "5 production demo agents: Clara (lead qualification), James (appointment booking), Sophia (med spa front desk), Mike (home services dispatch), David (real estate outbound setter)",
+        "First outbound AI calling agent — David proactively calls prospects, qualifies buyers, and books property tours via Twilio PSTN",
+        "Real-time Google Calendar integration — checks availability and books confirmed appointments mid-call",
+        "Mock MLS property lookup for real estate demos with 6 NJ listings",
+        "Sub-500ms voice response via Vapi WebRTC with Deepgram STT and Cartesia TTS",
+        "Webhook-driven function calling for calendar, database, MLS lookup, and CRM operations during live calls",
+        "Session state via Redis for multi-turn conversation context across function calls",
+        "Lead data persisted to Neon PostgreSQL with full call metadata",
+        "Full bilingual EN/ES support across all pages"
       ],
       "metrics": [
-        "5-layer revenue engine: System Prompts, Error CTAs, Localization, Rate Limits as Strategy, Source Citations",
-        "2 RAG knowledge sources merged by cosine similarity with configurable thresholds",
-        "Sub-second streaming responses via Vercel AI SDK with OpenAI GPT-4o",
-        "Zero-auth guest experience via sessionId cookies — no signup friction before conversion"
+        "Sub-500ms voice response time",
+        "5 live production demo agents (4 inbound + 1 outbound)",
+        "24/7 availability with zero hold times",
+        "Real-time calendar booking mid-conversation"
       ],
       "priority": 3,
-      "dateCompleted": "2025-12",
+      "dateCompleted": "2026-03",
       "slides": [
         {
-          "src": "https://ny-ai-chatbot.vercel.app/images/portfolio/ny-eng-chatbot-01.png",
-          "altEn": "Conversational Conversion — The Architecture of a Revenue-First Chatbot",
-          "altEs": "Conversion Conversacional — La Arquitectura de un Chatbot Orientado a Ingresos"
+          "src": "https://voice.cushlabs.ai/portfolio/voice-cushlabs-01.webp",
+          "altEn": "AI Voice Agent Platform",
+          "altEs": "AI Voice Agent Platform"
         },
         {
-          "src": "https://ny-ai-chatbot.vercel.app/images/portfolio/ny-eng-chatbot-02.png",
-          "altEn": "Moving Beyond the Support Cost Center — from Deflector to Converter",
-          "altEs": "Mas Alla del Centro de Costos de Soporte — de Deflector a Convertidor"
+          "src": "https://voice.cushlabs.ai/portfolio/voice-cushlabs-02.webp",
+          "altEn": "AI Voice Agent Platform",
+          "altEs": "AI Voice Agent Platform"
         },
         {
-          "src": "https://ny-ai-chatbot.vercel.app/images/portfolio/ny-eng-chatbot-03.png",
-          "altEn": "The Five Gears of the Revenue Engine — Brain, Trigger, Chameleon, Soft Wall, Bridge",
-          "altEs": "Los Cinco Engranajes del Motor de Ingresos — Cerebro, Disparador, Camaleon, Muro Suave, Puente"
+          "src": "https://voice.cushlabs.ai/portfolio/voice-cushlabs-03.webp",
+          "altEn": "AI Voice Agent Platform",
+          "altEs": "AI Voice Agent Platform"
         },
         {
-          "src": "https://ny-ai-chatbot.vercel.app/images/portfolio/ny-eng-chatbot-04.png",
-          "altEn": "System Prompts Are Hard-Coded to Sell — CTAs baked into the bot's DNA",
-          "altEs": "Los Prompts del Sistema Estan Programados para Vender — CTAs integrados en el ADN del bot"
+          "src": "https://voice.cushlabs.ai/portfolio/voice-cushlabs-04.webp",
+          "altEn": "AI Voice Agent Platform",
+          "altEs": "AI Voice Agent Platform"
         },
         {
-          "src": "https://ny-ai-chatbot.vercel.app/images/portfolio/ny-eng-chatbot-05.png",
-          "altEn": "Benefit-Driven Language Builds Authority — Pivot to Value technique with client social proof",
-          "altEs": "El Lenguaje Orientado a Beneficios Construye Autoridad — tecnica Pivot to Value con prueba social de clientes"
+          "src": "https://voice.cushlabs.ai/portfolio/voice-cushlabs-05.webp",
+          "altEn": "AI Voice Agent Platform",
+          "altEs": "AI Voice Agent Platform"
         },
         {
-          "src": "https://ny-ai-chatbot.vercel.app/images/portfolio/ny-eng-chatbot-06.png",
-          "altEn": "Source Citations Drive Traffic to High-Value Pages — RAG grounding that doubles as SEO",
-          "altEs": "Las Citas de Fuentes Dirigen Trafico a Paginas de Alto Valor — grounding RAG que funciona como SEO"
+          "src": "https://voice.cushlabs.ai/portfolio/voice-cushlabs-06.webp",
+          "altEn": "AI Voice Agent Platform",
+          "altEs": "AI Voice Agent Platform"
         },
         {
-          "src": "https://ny-ai-chatbot.vercel.app/images/portfolio/ny-eng-chatbot-07.png",
-          "altEn": "Not a Support Tool — An Automated Sales Agent that books strategy sessions",
-          "altEs": "No es una Herramienta de Soporte — Un Agente de Ventas Automatizado que agenda sesiones de estrategia"
+          "src": "https://voice.cushlabs.ai/portfolio/voice-cushlabs-07.webp",
+          "altEn": "AI Voice Agent Platform",
+          "altEs": "AI Voice Agent Platform"
+        },
+        {
+          "src": "https://voice.cushlabs.ai/portfolio/voice-cushlabs-08.webp",
+          "altEn": "AI Voice Agent Platform",
+          "altEs": "AI Voice Agent Platform"
+        },
+        {
+          "src": "https://voice.cushlabs.ai/portfolio/voice-cushlabs-09.webp",
+          "altEn": "AI Voice Agent Platform",
+          "altEs": "AI Voice Agent Platform"
+        },
+        {
+          "src": "https://voice.cushlabs.ai/portfolio/voice-cushlabs-10.webp",
+          "altEn": "AI Voice Agent Platform",
+          "altEs": "AI Voice Agent Platform"
         }
       ],
-      "videoUrl": "https://ny-ai-chatbot.vercel.app/video/ny-eng-chatbot-brief.mp4",
-      "videoPoster": "https://ny-ai-chatbot.vercel.app/video/ny-eng-chatbot-brief-poster.jpg"
+      "videoUrl": "https://voice.cushlabs.ai/video/voice-cushlabs-brief.mp4",
+      "videoPoster": "https://voice.cushlabs.ai/video/voice-cushlabs-brief-poster.webp"
     },
     {
       "id": 1172972613,
@@ -1482,11 +1482,11 @@
       "status": null,
       "language": "Python",
       "languages": {
-        "Python": 160946
+        "Python": 166954
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-03-10T22:52:47Z",
+      "lastPushed": "2026-03-11T02:32:18Z",
       "createdAt": "2026-03-09T19:14:08Z",
       "isFeatured": false,
       "isArchived": false,
@@ -1831,7 +1831,7 @@
       "status": null,
       "language": "Astro",
       "languages": {
-        "Astro": 490015,
+        "Astro": 489999,
         "TypeScript": 146259,
         "HTML": 61067,
         "JavaScript": 46253,
@@ -1839,7 +1839,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-03-10T22:29:30Z",
+      "lastPushed": "2026-03-11T03:25:00Z",
       "createdAt": "2026-01-08T03:52:43Z",
       "isFeatured": false,
       "isArchived": false,
@@ -1971,7 +1971,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-03-10T23:15:58Z",
+      "lastPushed": "2026-03-10T23:22:44Z",
       "createdAt": "2026-01-05T15:06:48Z",
       "isFeatured": false,
       "isArchived": false,
@@ -3527,7 +3527,7 @@
         "1-2 days of setup time eliminated per project",
         "All dependencies pinned to stable Feb 2026 versions"
       ],
-      "priority": 23,
+      "priority": 22,
       "dateCompleted": "2026-02",
       "slides": [
         {
