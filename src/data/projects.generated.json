@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-11T03:29:10.434Z",
+  "generatedAt": "2026-03-11T21:26:12.182Z",
   "count": 28,
   "projects": [
     {
@@ -246,6 +246,126 @@
       "videoPoster": "https://raw.githubusercontent.com/RCushmaniii/ai-chatbot-saas/main/public/video/converso-brief-poster.jpg"
     },
     {
+      "id": 1176224548,
+      "name": "cushlabs-ai-marketing",
+      "title": "AI Marketing Suite for Claude Code",
+      "description": "AI Marketing Suite for Claude Code — 15 slash commands for marketing analysis, audits, and client deliverables",
+      "summary": "> A production-ready marketing analysis and automation skill system for Claude Code. Audit websites, generate copy, build email sequences, create content calendars, analyze competitors, and produce cl",
+      "url": "https://github.com/RCushmaniii/cushlabs-ai-marketing",
+      "demoUrl": null,
+      "liveUrl": "",
+      "homepage": null,
+      "topics": [],
+      "categories": [
+        "AI Automation"
+      ],
+      "tags": [
+        "claude-code",
+        "marketing-automation",
+        "ai-agents",
+        "seo-audit",
+        "competitive-analysis",
+        "copywriting",
+        "email-marketing",
+        "content-calendar",
+        "pdf-reports",
+        "parallel-agents"
+      ],
+      "stack": [
+        "Claude Code Skills System",
+        "Python 3",
+        "Bash",
+        "ReportLab",
+        "HTML Parser (stdlib)"
+      ],
+      "status": null,
+      "language": "Python",
+      "languages": {
+        "Python": 57110,
+        "Shell": 8952
+      },
+      "stars": 0,
+      "forks": 0,
+      "lastPushed": "2026-03-11T21:25:37Z",
+      "createdAt": "2026-03-08T19:31:57Z",
+      "isFeatured": true,
+      "isArchived": false,
+      "isPrivate": false,
+      "tagline": "15 slash commands that turn Claude Code into a full-service marketing analysis platform",
+      "thumbnail": "https://raw.githubusercontent.com/RCushmaniii/cushlabs-ai-marketing/main/public/images/CUSHLABS-AI-MARKETING-THUMB.webp",
+      "problem": "Marketing audits are expensive ($2K–$10K) and slow (1–3 weeks). Small agencies and solopreneurs\ncan't compete at that price point. The frameworks exist — CRO checklists, SEO rubrics, competitive\nanalysis templates — but executing them manually across six marketing dimensions takes dozens of\nhours per client. This suite encodes those frameworks into repeatable, scored Claude Code skills.\n",
+      "solution": null,
+      "keyFeatures": [
+        "15 marketing commands available as Claude Code slash commands",
+        "Full website audit with 5 parallel subagents running simultaneously",
+        "Weighted scoring across 6 dimensions with revenue impact estimates",
+        "Client-ready PDF reports with score gauges, charts, and branded styling",
+        "Complete email sequences, ad campaigns, and 30-day content calendars generated in minutes"
+      ],
+      "metrics": [],
+      "priority": 3,
+      "dateCompleted": null,
+      "slides": [
+        {
+          "src": "https://raw.githubusercontent.com/RCushmaniii/cushlabs-ai-marketing/main/public/images/cushlabs-ai-marketing-01.webp",
+          "altEn": "AI Marketing Suite for Claude Code",
+          "altEs": "AI Marketing Suite for Claude Code"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/RCushmaniii/cushlabs-ai-marketing/main/public/images/cushlabs-ai-marketing-02.webp",
+          "altEn": "AI Marketing Suite for Claude Code",
+          "altEs": "AI Marketing Suite for Claude Code"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/RCushmaniii/cushlabs-ai-marketing/main/public/images/cushlabs-ai-marketing-03.webp",
+          "altEn": "AI Marketing Suite for Claude Code",
+          "altEs": "AI Marketing Suite for Claude Code"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/RCushmaniii/cushlabs-ai-marketing/main/public/images/cushlabs-ai-marketing-04.webp",
+          "altEn": "AI Marketing Suite for Claude Code",
+          "altEs": "AI Marketing Suite for Claude Code"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/RCushmaniii/cushlabs-ai-marketing/main/public/images/cushlabs-ai-marketing-05.webp",
+          "altEn": "AI Marketing Suite for Claude Code",
+          "altEs": "AI Marketing Suite for Claude Code"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/RCushmaniii/cushlabs-ai-marketing/main/public/images/cushlabs-ai-marketing-06.webp",
+          "altEn": "AI Marketing Suite for Claude Code",
+          "altEs": "AI Marketing Suite for Claude Code"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/RCushmaniii/cushlabs-ai-marketing/main/public/images/cushlabs-ai-marketing-07.webp",
+          "altEn": "AI Marketing Suite for Claude Code",
+          "altEs": "AI Marketing Suite for Claude Code"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/RCushmaniii/cushlabs-ai-marketing/main/public/images/cushlabs-ai-marketing-08.webp",
+          "altEn": "AI Marketing Suite for Claude Code",
+          "altEs": "AI Marketing Suite for Claude Code"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/RCushmaniii/cushlabs-ai-marketing/main/public/images/cushlabs-ai-marketing-09.webp",
+          "altEn": "AI Marketing Suite for Claude Code",
+          "altEs": "AI Marketing Suite for Claude Code"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/RCushmaniii/cushlabs-ai-marketing/main/public/images/cushlabs-ai-marketing-10.webp",
+          "altEn": "AI Marketing Suite for Claude Code",
+          "altEs": "AI Marketing Suite for Claude Code"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/RCushmaniii/cushlabs-ai-marketing/main/public/images/cushlabs-ai-marketing-11.webp",
+          "altEn": "AI Marketing Suite for Claude Code",
+          "altEs": "AI Marketing Suite for Claude Code"
+        }
+      ],
+      "videoUrl": "https://raw.githubusercontent.com/RCushmaniii/cushlabs-ai-marketing/main/public/video/cushlabs_ai_marketing_brief.mp4",
+      "videoPoster": "https://raw.githubusercontent.com/RCushmaniii/cushlabs-ai-marketing/main/public/images/cushlabs-ai-marketing-brief-poster.webp"
+    },
+    {
       "id": 1174690198,
       "name": "biojalisco-species-id",
       "title": "BioJalisco Species Identifier",
@@ -486,126 +606,6 @@
       ],
       "videoUrl": null,
       "videoPoster": null
-    },
-    {
-      "id": 1176224548,
-      "name": "cushlabs-ai-marketing",
-      "title": "AI Marketing Suite for Claude Code",
-      "description": "AI Marketing Suite for Claude Code — 15 slash commands for marketing analysis, audits, and client deliverables",
-      "summary": "> A production-ready marketing analysis and automation skill system for Claude Code. Audit websites, generate copy, build email sequences, create content calendars, analyze competitors, and produce cl",
-      "url": "https://github.com/RCushmaniii/cushlabs-ai-marketing",
-      "demoUrl": null,
-      "liveUrl": "",
-      "homepage": null,
-      "topics": [],
-      "categories": [
-        "AI Automation"
-      ],
-      "tags": [
-        "claude-code",
-        "marketing-automation",
-        "ai-agents",
-        "seo-audit",
-        "competitive-analysis",
-        "copywriting",
-        "email-marketing",
-        "content-calendar",
-        "pdf-reports",
-        "parallel-agents"
-      ],
-      "stack": [
-        "Claude Code Skills System",
-        "Python 3",
-        "Bash",
-        "ReportLab",
-        "HTML Parser (stdlib)"
-      ],
-      "status": null,
-      "language": "Python",
-      "languages": {
-        "Python": 57110,
-        "Shell": 8952
-      },
-      "stars": 0,
-      "forks": 0,
-      "lastPushed": "2026-03-10T22:38:53Z",
-      "createdAt": "2026-03-08T19:31:57Z",
-      "isFeatured": true,
-      "isArchived": false,
-      "isPrivate": false,
-      "tagline": "15 slash commands that turn Claude Code into a full-service marketing analysis platform",
-      "thumbnail": "https://raw.githubusercontent.com/RCushmaniii/cushlabs-ai-marketing/main/public/images/portfolio/cushlabs-ai-marketing-thumb.webp",
-      "problem": "Marketing audits are expensive ($2K–$10K) and slow (1–3 weeks). Small agencies and solopreneurs\ncan't compete at that price point. The frameworks exist — CRO checklists, SEO rubrics, competitive\nanalysis templates — but executing them manually across six marketing dimensions takes dozens of\nhours per client. This suite encodes those frameworks into repeatable, scored Claude Code skills.\n",
-      "solution": null,
-      "keyFeatures": [
-        "15 marketing commands available as Claude Code slash commands",
-        "Full website audit with 5 parallel subagents running simultaneously",
-        "Weighted scoring across 6 dimensions with revenue impact estimates",
-        "Client-ready PDF reports with score gauges, charts, and branded styling",
-        "Complete email sequences, ad campaigns, and 30-day content calendars generated in minutes"
-      ],
-      "metrics": [],
-      "priority": 3,
-      "dateCompleted": null,
-      "slides": [
-        {
-          "src": "https://raw.githubusercontent.com/RCushmaniii/cushlabs-ai-marketing/main/public/images/portfolio/cushlabs-ai-marketing-01.webp",
-          "altEn": "AI Marketing Suite for Claude Code",
-          "altEs": "AI Marketing Suite for Claude Code"
-        },
-        {
-          "src": "https://raw.githubusercontent.com/RCushmaniii/cushlabs-ai-marketing/main/public/images/portfolio/cushlabs-ai-marketing-02.webp",
-          "altEn": "AI Marketing Suite for Claude Code",
-          "altEs": "AI Marketing Suite for Claude Code"
-        },
-        {
-          "src": "https://raw.githubusercontent.com/RCushmaniii/cushlabs-ai-marketing/main/public/images/portfolio/cushlabs-ai-marketing-03.webp",
-          "altEn": "AI Marketing Suite for Claude Code",
-          "altEs": "AI Marketing Suite for Claude Code"
-        },
-        {
-          "src": "https://raw.githubusercontent.com/RCushmaniii/cushlabs-ai-marketing/main/public/images/portfolio/cushlabs-ai-marketing-04.webp",
-          "altEn": "AI Marketing Suite for Claude Code",
-          "altEs": "AI Marketing Suite for Claude Code"
-        },
-        {
-          "src": "https://raw.githubusercontent.com/RCushmaniii/cushlabs-ai-marketing/main/public/images/portfolio/cushlabs-ai-marketing-05.webp",
-          "altEn": "AI Marketing Suite for Claude Code",
-          "altEs": "AI Marketing Suite for Claude Code"
-        },
-        {
-          "src": "https://raw.githubusercontent.com/RCushmaniii/cushlabs-ai-marketing/main/public/images/portfolio/cushlabs-ai-marketing-06.webp",
-          "altEn": "AI Marketing Suite for Claude Code",
-          "altEs": "AI Marketing Suite for Claude Code"
-        },
-        {
-          "src": "https://raw.githubusercontent.com/RCushmaniii/cushlabs-ai-marketing/main/public/images/portfolio/cushlabs-ai-marketing-07.webp",
-          "altEn": "AI Marketing Suite for Claude Code",
-          "altEs": "AI Marketing Suite for Claude Code"
-        },
-        {
-          "src": "https://raw.githubusercontent.com/RCushmaniii/cushlabs-ai-marketing/main/public/images/portfolio/cushlabs-ai-marketing-08.webp",
-          "altEn": "AI Marketing Suite for Claude Code",
-          "altEs": "AI Marketing Suite for Claude Code"
-        },
-        {
-          "src": "https://raw.githubusercontent.com/RCushmaniii/cushlabs-ai-marketing/main/public/images/portfolio/cushlabs-ai-marketing-09.webp",
-          "altEn": "AI Marketing Suite for Claude Code",
-          "altEs": "AI Marketing Suite for Claude Code"
-        },
-        {
-          "src": "https://raw.githubusercontent.com/RCushmaniii/cushlabs-ai-marketing/main/public/images/portfolio/cushlabs-ai-marketing-10.webp",
-          "altEn": "AI Marketing Suite for Claude Code",
-          "altEs": "AI Marketing Suite for Claude Code"
-        },
-        {
-          "src": "https://raw.githubusercontent.com/RCushmaniii/cushlabs-ai-marketing/main/public/images/portfolio/cushlabs-ai-marketing-11.webp",
-          "altEn": "AI Marketing Suite for Claude Code",
-          "altEs": "AI Marketing Suite for Claude Code"
-        }
-      ],
-      "videoUrl": "https://raw.githubusercontent.com/RCushmaniii/cushlabs-ai-marketing/main/public/video/cushlabs-ai-marketing-brief.mp4",
-      "videoPoster": "https://raw.githubusercontent.com/RCushmaniii/cushlabs-ai-marketing/main/public/video/cushlabs-ai-marketing-brief-poster.webp"
     },
     {
       "id": 1164355422,
@@ -1839,7 +1839,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-03-11T03:25:00Z",
+      "lastPushed": "2026-03-11T03:29:37Z",
       "createdAt": "2026-01-08T03:52:43Z",
       "isFeatured": false,
       "isArchived": false,
@@ -1969,9 +1969,9 @@
         "CSS": 1578,
         "JavaScript": 83
       },
-      "stars": 0,
+      "stars": 1,
       "forks": 0,
-      "lastPushed": "2026-03-10T23:22:44Z",
+      "lastPushed": "2026-03-11T03:29:44Z",
       "createdAt": "2026-01-05T15:06:48Z",
       "isFeatured": false,
       "isArchived": false,
