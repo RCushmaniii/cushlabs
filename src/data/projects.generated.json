@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-12T04:24:44.465Z",
+  "generatedAt": "2026-03-12T04:25:36.171Z",
   "count": 28,
   "projects": [
     {
@@ -36,9 +36,7 @@
         "clerk",
         "tailwind",
         "bilingual",
-        "chatbot",
-        "ai",
-        "vercel"
+        "chatbot"
       ],
       "stack": [
         "Next.js 15",
@@ -250,7 +248,7 @@
     {
       "id": 1174674268,
       "name": "cushlabs-scrollytelling",
-      "title": "CushLabs Scrollytelling",
+      "title": "CushLabs Scrollytelling Template",
       "description": "Cinematic scrollytelling presentations by CushLabs — bilingual, narrated, scroll-driven marketing sites that make audiences lean in.",
       "summary": "> Cinematic, bilingual scrollytelling pitch decks that feel like cinema — not slides.",
       "url": "https://github.com/RCushmaniii/cushlabs-scrollytelling",
@@ -291,10 +289,13 @@
         "Astro 5",
         "Svelte 5",
         "Tailwind CSS 3",
+        "MDX",
         "TypeScript",
-        "Vercel"
+        "Vercel",
+        "IntersectionObserver API",
+        "Web Audio API"
       ],
-      "status": "Production",
+      "status": null,
       "language": "Svelte",
       "languages": {
         "Svelte": 30157,
@@ -311,74 +312,40 @@
       "isFeatured": true,
       "isArchived": false,
       "isPrivate": false,
-      "tagline": "Cinematic bilingual pitch decks that win attention",
-      "thumbnail": "https://cushlabs-scrollytelling.vercel.app/images/portfolio/cushlabs-scrollytelling-thumb.webp",
-      "problem": "Traditional pitch decks are forgettable — investors see hundreds of static slide presentations every month. Custom scrollytelling experiences take weeks to build and produce one-off code that can't be reused.",
-      "solution": "A config-driven Astro template with dual-mode interaction: auto-narrated presentation mode for board meetings and free-browse mode for due diligence. New pitch decks ship in hours, not weeks.",
+      "tagline": "Cinematic, bilingual scrollytelling pitch decks that feel like cinema — not slides",
+      "thumbnail": "https://cushlabs-scrollytelling.vercel.app/images/scrollytelling-thumbnail.jpg",
+      "problem": "Traditional pitch decks are forgettable — investors see hundreds of slide-based\npresentations every month. Scrollytelling pitch decks combine the narrative power\nof cinema with the interactivity of the web, creating presentations that leave a\nlasting impression. This template makes that accessible without writing 3,000 lines\nof HTML from scratch every time.\n",
+      "solution": null,
       "keyFeatures": [
-        "Presentation mode with scroll-lock, auto-advance, and synchronized narration",
-        "Instant EN/ES language switching without page reloads",
-        "Config-driven theming — colors, fonts, and content from a single TypeScript file",
+        "Full presentation mode with auto-narration and scroll-lock — no manual clicking",
+        "Instant EN/ES language switching in both browse and presentation modes",
+        "Config-driven customization — new pitch deck in hours, not days",
         "98 Lighthouse performance score with Astro islands architecture",
-        "Mobile-responsive with scroll-snap carousels and touch support"
+        "Mobile-responsive with scroll-snap carousels and touch support",
+        "Accessible: reduced-motion, ARIA labels, keyboard navigation"
       ],
       "metrics": [],
       "priority": 3,
-      "dateCompleted": "2026-03",
+      "dateCompleted": null,
       "slides": [
         {
-          "src": "https://cushlabs-scrollytelling.vercel.app/images/portfolio/cushlabs-scrollytelling-01.webp",
-          "altEn": "Opening overlay with presentation mode and browse freely options",
-          "altEs": "Pantalla de inicio con opciones de modo presentacion y navegacion libre"
+          "src": "https://cushlabs-scrollytelling.vercel.app/images/scrollytelling-hero.jpg",
+          "altEn": "CushLabs Scrollytelling Template",
+          "altEs": "CushLabs Scrollytelling Template"
         },
         {
-          "src": "https://cushlabs-scrollytelling.vercel.app/images/portfolio/cushlabs-scrollytelling-02.webp",
-          "altEn": "Hero section with animated headline and cinematic typography",
-          "altEs": "Seccion principal con titulo animado y tipografia cinematica"
+          "src": "https://cushlabs-scrollytelling.vercel.app/images/scrollytelling-presentation-mode.jpg",
+          "altEn": "CushLabs Scrollytelling Template",
+          "altEs": "CushLabs Scrollytelling Template"
         },
         {
-          "src": "https://cushlabs-scrollytelling.vercel.app/images/portfolio/cushlabs-scrollytelling-03.webp",
-          "altEn": "Problem statement section with typewriter text animation",
-          "altEs": "Seccion del problema con animacion de texto tipo maquina de escribir"
-        },
-        {
-          "src": "https://cushlabs-scrollytelling.vercel.app/images/portfolio/cushlabs-scrollytelling-04.webp",
-          "altEn": "Solution section with Matrix rain effect and feature cards",
-          "altEs": "Seccion de solucion con efecto Matrix y tarjetas de caracteristicas"
-        },
-        {
-          "src": "https://cushlabs-scrollytelling.vercel.app/images/portfolio/cushlabs-scrollytelling-05.webp",
-          "altEn": "Feature cards showcasing presentation mode and bilingual support",
-          "altEs": "Tarjetas de caracteristicas mostrando modo presentacion y soporte bilingue"
-        },
-        {
-          "src": "https://cushlabs-scrollytelling.vercel.app/images/portfolio/cushlabs-scrollytelling-06.webp",
-          "altEn": "Proof section with testimonial quote and evidence",
-          "altEs": "Seccion de prueba con cita testimonial y evidencia"
-        },
-        {
-          "src": "https://cushlabs-scrollytelling.vercel.app/images/portfolio/cushlabs-scrollytelling-07.webp",
-          "altEn": "Call-to-action section with consultation booking prompt",
-          "altEs": "Seccion de llamada a la accion con invitacion a agendar consulta"
-        },
-        {
-          "src": "https://cushlabs-scrollytelling.vercel.app/images/portfolio/cushlabs-scrollytelling-08.webp",
-          "altEn": "Consultation page step 1 — calendar date and time selection",
-          "altEs": "Pagina de consulta paso 1 — seleccion de fecha y hora en calendario"
-        },
-        {
-          "src": "https://cushlabs-scrollytelling.vercel.app/images/portfolio/cushlabs-scrollytelling-09.webp",
-          "altEn": "Consultation page step 2 — contact information form",
-          "altEs": "Pagina de consulta paso 2 — formulario de informacion de contacto"
-        },
-        {
-          "src": "https://cushlabs-scrollytelling.vercel.app/images/portfolio/cushlabs-scrollytelling-10.webp",
-          "altEn": "Consultation page step 3 — booking confirmation summary",
-          "altEs": "Pagina de consulta paso 3 — resumen de confirmacion de reserva"
+          "src": "https://cushlabs-scrollytelling.vercel.app/images/scrollytelling-mobile.jpg",
+          "altEn": "CushLabs Scrollytelling Template",
+          "altEs": "CushLabs Scrollytelling Template"
         }
       ],
-      "videoUrl": "https://cushlabs-scrollytelling.vercel.app/video/cushlabs-scrollytelling-brief.mp4",
-      "videoPoster": "https://cushlabs-scrollytelling.vercel.app/images/portfolio/cushlabs-scrollytelling-brief-poster.webp"
+      "videoUrl": null,
+      "videoPoster": null
     },
     {
       "id": 1176224548,
@@ -1206,7 +1173,7 @@
       "homepage": "https://ai-resume-tailor-client.vercel.app",
       "topics": [],
       "categories": [
-        "AI SaaS"
+        "AI Automation"
       ],
       "tags": [
         "ai",
@@ -1325,7 +1292,7 @@
     {
       "id": 1157375639,
       "name": "ai-build-vs-outsource",
-      "title": "Operations Decision Tools Suite",
+      "title": "Build vs. Outsource Decision Framework",
       "description": "An interactive web-based decision tool that helps operations leaders evaluate whether to build logistics capacity in-house or outsource to a third-party logistics provider (3PL). ",
       "summary": "> Interactive decision-support tools for operations leaders at growth-stage direct-selling companies. Structured analysis, real-time feedback, board-ready output — no spreadsheets, no guesswork.",
       "url": "https://github.com/RCushmaniii/ai-build-vs-outsource",
@@ -1350,7 +1317,7 @@
         "weighted-scoring"
       ],
       "categories": [
-        "Web Tools"
+        "Tools"
       ],
       "tags": [
         "3pl",
@@ -1367,12 +1334,17 @@
         "tailwindcss",
         "typescript",
         "vercel",
-        "weighted-scoring"
+        "weighted-scoring",
+        "tailwind",
+        "decision-tools",
+        "operations",
+        "bilingual",
+        "data-visualization"
       ],
       "stack": [
-        "Next.js",
-        "React",
-        "Tailwind CSS",
+        "Next.js 16",
+        "React 19",
+        "Tailwind CSS 4",
         "Framer Motion",
         "Recharts"
       ],
@@ -1390,26 +1362,78 @@
       "isFeatured": true,
       "isArchived": false,
       "isPrivate": false,
-      "tagline": "Interactive decision-support tools for operations leaders — weighted scoring, cost modeling, board-ready output",
-      "thumbnail": "https://ai-build-vs-outsource.vercel.app/public/images/ai-build-vs-outsource-thumb.jpg",
-      "problem": "Growth-stage companies face high-stakes operational decisions — build or outsource fulfillment, model costs at scale, plan for step-function cost jumps — armed with nothing but gut feel, incomplete spreadsheets, and circular boardroom arguments.",
-      "solution": "A suite of interactive decision-support tools that replace guesswork with structured, data-driven, shareable analysis. Weighted scoring across categorized criteria, real-time cost modeling with step-function visualization, and board-ready output via shareable URLs and print layouts.",
+      "tagline": "Interactive decision tools with weighted scoring, cost modeling, and board-ready output",
+      "thumbnail": "https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-thumb.jpg",
+      "problem": "Operations leaders at growth-stage companies face high-stakes build-or-outsource decisions armed with gut feel, incomplete spreadsheets, and circular boardroom arguments. No tool combines structured weighted scoring with real-time cost modeling and shareable, board-ready output.",
+      "solution": "A suite of interactive decision-support tools that replace guesswork with data-driven analysis. A 20-criterion weighted scoring framework evaluates build vs. outsource across five categories, while an operational cost simulator reveals hidden step-function costs — all shareable via URL-encoded state.",
       "keyFeatures": [
-        "20-criterion weighted scoring across 5 categories with real-time verdict",
-        "Operational Cost Simulator with three-layer cost model (fixed, variable, step-function)",
-        "5-axis radar chart, animated verdict panel, and cost-per-order curves",
+        "20-criterion weighted scoring across 5 categories (Financial, Operational, Strategic, Control, Risk) with real-time verdict",
+        "Operational Cost Simulator with three-layer cost model — fixed, variable, and step-function costs with break-even analysis",
         "6 decision presets and 5 growth scenario presets for rapid what-if analysis",
-        "Shareable URL encoding — full tool state in query params",
-        "Full EN/ES bilingual support with dark/light theme toggle",
-        "Break-even analysis, margin visualization, and utilization gauges",
-        "Print-ready layouts for board-presentation PDFs"
+        "Shareable URL encoding — full tool state in query params for board presentations",
+        "Full EN/ES bilingual support with dark/light theme toggle and print-ready layouts"
       ],
-      "metrics": [],
+      "metrics": [
+        "20 weighted criteria across 5 decision categories",
+        "6 decision presets + 5 growth scenario presets",
+        "Full state shareable via URL — no backend required"
+      ],
       "priority": 6,
       "dateCompleted": "2026-02",
-      "slides": [],
-      "videoUrl": null,
-      "videoPoster": "https://ai-build-vs-outsource.vercel.app/public/video/ai-build-vs-outsource-brief-poster.jpg"
+      "slides": [
+        {
+          "src": "https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-01.png",
+          "altEn": "Operations Decision Tools Suite — structured analysis replaces boardroom guesswork",
+          "altEs": "Suite de Herramientas de Decision Operativa — analisis estructurado reemplaza suposiciones en la sala de juntas"
+        },
+        {
+          "src": "https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-02.png",
+          "altEn": "The Problem — gut feel, incomplete spreadsheets, and circular arguments drive million-dollar decisions",
+          "altEs": "El Problema — instinto, hojas de calculo incompletas y argumentos circulares impulsan decisiones millonarias"
+        },
+        {
+          "src": "https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-03.png",
+          "altEn": "20-Criterion Weighted Scoring — five categories with real-time verdict and radar chart",
+          "altEs": "Puntuacion Ponderada de 20 Criterios — cinco categorias con veredicto en tiempo real y grafico radar"
+        },
+        {
+          "src": "https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-04.png",
+          "altEn": "Scenario Presets — Growth Emergency, Control First, Cost Optimizer shift the verdict instantly",
+          "altEs": "Presets de Escenarios — Emergencia de Crecimiento, Control Primero, Optimizador de Costos cambian el veredicto al instante"
+        },
+        {
+          "src": "https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-05.png",
+          "altEn": "Expandable Rationale — each criterion includes industry analysis and scoring guidance",
+          "altEs": "Justificacion Expandible — cada criterio incluye analisis de industria y guia de puntuacion"
+        },
+        {
+          "src": "https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-06.png",
+          "altEn": "Operational Cost Simulator — three-layer cost model with volume slider and cost-per-order curves",
+          "altEs": "Simulador de Costos Operativos — modelo de costos de tres capas con control de volumen y curvas de costo por orden"
+        },
+        {
+          "src": "https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-07.png",
+          "altEn": "Step-Function Costs Revealed — watch cost-per-order jump when new hires and warehouse expansions trigger",
+          "altEs": "Costos Escalonados Revelados — observa el salto del costo por orden cuando se activan nuevas contrataciones y expansiones"
+        },
+        {
+          "src": "https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-08.png",
+          "altEn": "Break-Even and Margin Analysis — utilization gauges and margin visualization with profitability threshold",
+          "altEs": "Analisis de Punto de Equilibrio y Margen — indicadores de utilizacion y visualizacion de margen con umbral de rentabilidad"
+        },
+        {
+          "src": "https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-09.png",
+          "altEn": "Shareable and Board-Ready — full state encoded in URL params, print-optimized layouts for PDFs",
+          "altEs": "Compartible y Listo para Presentar — estado completo codificado en URL, disenos optimizados para impresion PDF"
+        },
+        {
+          "src": "https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-10.png",
+          "altEn": "Technical Architecture — Next.js 16, React 19, Recharts, Framer Motion, bilingual, zero backend",
+          "altEs": "Arquitectura Tecnica — Next.js 16, React 19, Recharts, Framer Motion, bilingue, sin backend"
+        }
+      ],
+      "videoUrl": "https://ai-build-vs-outsource.vercel.app/video/ai-build-vs-outsource-brief.mp4",
+      "videoPoster": "https://ai-build-vs-outsource.vercel.app/video/ai-build-vs-outsource-brief-poster.jpg"
     },
     {
       "id": 1177175159,
@@ -1694,11 +1718,9 @@
         "React 19",
         "TypeScript",
         "OpenAI GPT-4o-mini",
-        "Tailwind CSS 4",
-        "Netlify",
-        "Formspree"
+        "Tailwind CSS 4"
       ],
-      "status": null,
+      "status": "Production",
       "language": "TypeScript",
       "languages": {
         "TypeScript": 303557,
@@ -1712,56 +1734,59 @@
       "isFeatured": false,
       "isArchived": false,
       "isPrivate": false,
-      "tagline": "Brutal startup defensibility assessment powered by AI contradiction detection",
+      "tagline": "Brutal startup defensibility assessment with AI contradiction detection",
       "thumbnail": "https://ai-idea-validator.netlify.app/images/portfolio/aI-Idea-validator-thumb.jpg",
-      "problem": "Founders waste months or years building ideas that are structurally replaceable — not because the ideas are bad, but because they lack defensibility. Traditional validation tools focus on execution and market fit while ignoring whether an idea can survive competition, platform changes, and solo-founder realities. Self-assessment alone can't catch optimism bias.\n",
-      "solution": null,
+      "problem": "Founders waste months building ideas that are structurally replaceable because traditional validation tools ignore defensibility. Self-assessment alone can't catch optimism bias — founders consistently rate their moats high while describing products with no switching costs.",
+      "solution": "A 23-question structured assessment that probes defensibility across moats, platform risk, lock-in, and failure modes. GPT-4o-mini cross-references numeric scores against written responses, detects contradictions, and delivers one of four verdicts — KILL, FLIP, BUILD, or BET — with specific reasoning in under 3 seconds.",
       "keyFeatures": [
-        "23-question structured assessment covering moats, platform risk, lock-in, and failure modes",
-        "AI-powered contradiction detection comparing numeric scores vs written responses",
+        "23-question defensibility assessment across 4 sections with AI-powered contradiction detection",
         "4 honest verdicts (KILL/FLIP/BUILD/BET) with confidence scores and detailed rationale",
-        "Sub-3-second AI analysis via GPT-4o-mini",
-        "Full bilingual support (EN/ES) including AI-generated content",
-        "Offline heuristic fallback when API is unavailable"
+        "AI cross-references numeric self-assessment vs written responses to surface optimism bias",
+        "Full EN/ES bilingual support including AI-generated verdicts and analysis",
+        "Offline heuristic fallback — always returns a verdict, even without API access"
       ],
-      "metrics": [],
+      "metrics": [
+        "Sub-3-second AI analysis via GPT-4o-mini",
+        "23 questions across 4 defensibility sections",
+        "4 verdicts with confidence scores and specific rationale"
+      ],
       "priority": 8,
-      "dateCompleted": null,
+      "dateCompleted": "2026-02",
       "slides": [
         {
           "src": "https://ai-idea-validator.netlify.app/images/portfolio/aI-Idea-validator-01.png",
-          "altEn": "AI Idea Validator",
-          "altEs": "AI Idea Validator"
+          "altEn": "AI Idea Validator — Brutal honesty for founders who want the truth before they build",
+          "altEs": "AI Idea Validator — Honestidad brutal para fundadores que quieren la verdad antes de construir"
         },
         {
           "src": "https://ai-idea-validator.netlify.app/images/portfolio/aI-Idea-validator-02.png",
-          "altEn": "AI Idea Validator",
-          "altEs": "AI Idea Validator"
+          "altEn": "The $50,000 Problem — building something structurally replaceable because nobody asked about defensibility",
+          "altEs": "El Problema de $50,000 — construir algo estructuralmente reemplazable porque nadie pregunto sobre defensibilidad"
         },
         {
           "src": "https://ai-idea-validator.netlify.app/images/portfolio/aI-Idea-validator-03.png",
-          "altEn": "AI Idea Validator",
-          "altEs": "AI Idea Validator"
+          "altEn": "23 Questions That Matter — moats, platform risk, switching costs, and failure modes",
+          "altEs": "23 Preguntas Que Importan — fosos, riesgo de plataforma, costos de cambio y modos de fallo"
         },
         {
           "src": "https://ai-idea-validator.netlify.app/images/portfolio/aI-Idea-validator-04.png",
-          "altEn": "AI Idea Validator",
-          "altEs": "AI Idea Validator"
+          "altEn": "Contradiction Detection — AI reads your scores AND your words, then flags where they diverge",
+          "altEs": "Deteccion de Contradicciones — la IA lee tus puntuaciones Y tus palabras, luego senala donde divergen"
         },
         {
           "src": "https://ai-idea-validator.netlify.app/images/portfolio/aI-Idea-validator-05.png",
-          "altEn": "AI Idea Validator",
-          "altEs": "AI Idea Validator"
+          "altEn": "Four Verdicts, Zero Diplomacy — KILL, FLIP, BUILD, or BET with confidence scores",
+          "altEs": "Cuatro Veredictos, Cero Diplomacia — KILL, FLIP, BUILD o BET con puntuaciones de confianza"
         },
         {
           "src": "https://ai-idea-validator.netlify.app/images/portfolio/aI-Idea-validator-06.png",
-          "altEn": "AI Idea Validator",
-          "altEs": "AI Idea Validator"
+          "altEn": "The Advisor Who Doesn't Need to Be Polite — AI delivers what mentors won't say",
+          "altEs": "El Asesor Que No Necesita Ser Amable — la IA entrega lo que los mentores no dicen"
         },
         {
           "src": "https://ai-idea-validator.netlify.app/images/portfolio/aI-Idea-validator-07.png",
-          "altEn": "AI Idea Validator",
-          "altEs": "AI Idea Validator"
+          "altEn": "Privacy-First, Zero Storage — no accounts, no tracking, your idea stays yours",
+          "altEs": "Privacidad Primero, Cero Almacenamiento — sin cuentas, sin rastreo, tu idea sigue siendo tuya"
         }
       ],
       "videoUrl": "https://ai-idea-validator.netlify.app/video/aI-Idea-validator-brief.mp4",
@@ -1817,14 +1842,14 @@
       "language": "Astro",
       "languages": {
         "Astro": 489999,
-        "TypeScript": 146259,
+        "TypeScript": 146244,
         "HTML": 61067,
         "JavaScript": 46253,
         "CSS": 3069
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-03-11T21:26:43Z",
+      "lastPushed": "2026-03-12T04:25:03Z",
       "createdAt": "2026-01-08T03:52:43Z",
       "isFeatured": false,
       "isArchived": false,
@@ -2718,7 +2743,7 @@
     {
       "id": 1140204033,
       "name": "ai-stock-alert-website",
-      "title": "AI StockAlert",
+      "title": "AI StockAlert Website",
       "description": " Bilingual (EN/ES) Windows app for WhatsApp stock price alerts. Privacy-focused, no subscriptions, bring your own Finnhub API key.",
       "summary": "> **Portfolio Demo**: This is a production-quality SaaS marketing website built to demonstrate modern web development practices. AI StockAlert is a fictional product—no software is available for downl",
       "url": "https://github.com/RCushmaniii/ai-stock-alert-website",
@@ -2873,7 +2898,7 @@
         "zustand"
       ],
       "categories": [
-        "Web Tools"
+        "Tools"
       ],
       "tags": [
         "compensation-plan",
@@ -3008,7 +3033,7 @@
         "vercel"
       ],
       "categories": [
-        "AI Automation"
+        "Creative"
       ],
       "tags": [
         "cdn",
@@ -3031,18 +3056,13 @@
         "audio-narration"
       ],
       "stack": [
-        "Next.js 14 (App Router)",
+        "Next.js 14",
         "TypeScript",
         "React Server Components",
         "Tailwind CSS",
-        "@tailwindcss/typography",
-        "react-markdown",
-        "remark-gfm",
-        "rehype-raw",
-        "Vercel (deployment)",
-        "Markdown (content pipeline)"
+        "Vercel"
       ],
-      "status": null,
+      "status": "Production",
       "language": "TypeScript",
       "languages": {
         "TypeScript": 52724,
@@ -3056,14 +3076,25 @@
       "isFeatured": false,
       "isArchived": false,
       "isPrivate": false,
-      "tagline": "Bilingual narrative web app demonstrating AI-augmented development and human-centered design.",
+      "tagline": "Bilingual literary web app with scroll-driven storytelling and WCAG AAA compliance",
       "thumbnail": "https://marble-does-not-yield.vercel.app/images/portfolio/marble-does-not-yield-thumb.jpg",
-      "problem": null,
-      "solution": null,
-      "keyFeatures": [],
-      "metrics": [],
+      "problem": "Long-form bilingual literary content needs a web experience that serves the narrative, not the framework. Full i18n libraries add runtime overhead for a two-language site, streaming services complicate optional audio narration, and accessibility becomes critical when the content demands sustained attention.",
+      "solution": "A static-first Next.js app where every technical decision serves the reading experience. Custom i18n with JSON labels + Markdown prose, author-read audio via a single play/pause toggle, scroll-driven IntersectionObserver animations that respect prefers-reduced-motion, and 104 kB First Load JS through React Server Components.",
+      "keyFeatures": [
+        "Custom i18n architecture — JSON for labels + Markdown for prose, zero-overhead language switching without any i18n framework",
+        "Scroll-driven storytelling with multi-stage color fade animations (3.5s) via IntersectionObserver, all respecting prefers-reduced-motion",
+        "WCAG AAA compliance with proper contrast ratios, semantic HTML, and reduced-motion support for cognitively loaded content",
+        "104 kB First Load JS — static generation with React Server Components eliminates client-side hydration cost",
+        "Six-iteration UX refinement from complex audio player to minimal toggle, demonstrating taste and restraint"
+      ],
+      "metrics": [
+        "104 kB First Load JS — zero client-side hydration cost",
+        "WCAG AAA compliance across both language variants",
+        "Six-iteration UX refinement process documented end-to-end",
+        "Zero i18n framework dependencies for full bilingual support"
+      ],
       "priority": 18,
-      "dateCompleted": null,
+      "dateCompleted": "2025-10",
       "slides": [
         {
           "src": "https://marble-does-not-yield.vercel.app/images/portfolio/marble-does-not-yield-01.png",
@@ -3117,7 +3148,7 @@
         }
       ],
       "videoUrl": "https://marble-does-not-yield.vercel.app/video/marble-does-not-yield-brief.mp4",
-      "videoPoster": "https://marble-does-not-yield.vercel.app/images/portfolio/cushlabs-brief-poster.jpg"
+      "videoPoster": "https://marble-does-not-yield.vercel.app/video/marble-does-not-yield-brief-poster.jpg"
     },
     {
       "id": 1159724330,
