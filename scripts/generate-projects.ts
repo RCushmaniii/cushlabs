@@ -153,7 +153,11 @@ function tryLocalPortfolioMd(repo: string): PortfolioFrontmatter | null {
 }
 
 async function fetchPortfolioMd(owner: string, repo: string): Promise<PortfolioFrontmatter | null> {
-  // Try GitHub API first (PORTFOLIO.md, then portfolio.md)
+  // Prefer local clone — always fresher than GitHub's contents API cache
+  const local = tryLocalPortfolioMd(repo);
+  if (local) return local;
+
+  // Fallback: try GitHub API (PORTFOLIO.md, then portfolio.md)
   let got403 = false;
   for (const filename of ['PORTFOLIO.md', 'portfolio.md']) {
     try {
@@ -174,11 +178,7 @@ async function fetchPortfolioMd(owner: string, repo: string): Promise<PortfolioF
     }
   }
 
-  // Fallback: read from local clone if the repo is checked out alongside this project
-  const local = tryLocalPortfolioMd(repo);
-  if (local) return local;
-
-  // Track the 403 only if local fallback also failed
+  // Track the 403 only if all sources failed
   if (got403) {
     syncIssues.push({ level: 'error', repo, message: '403 Forbidden — token lacks access to this repo' });
     console.warn(`  ❌ 403 Forbidden — token cannot access PORTFOLIO.md`);
