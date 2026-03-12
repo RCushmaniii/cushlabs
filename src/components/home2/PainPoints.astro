@@ -100,9 +100,18 @@ const t = content[locale];
     </div>
 
     <div class="max-w-4xl mx-auto text-center p-8 rounded-xl bg-gradient-to-br from-cush-orange/5 to-transparent border border-cush-orange/20">
-      <p class="font-display font-semibold text-xl md:text-2xl text-gray-900 dark:text-white leading-relaxed">
+      <p class="font-display font-semibold text-xl md:text-2xl text-gray-900 dark:text-white leading-relaxed mb-6">
         {t.closing}
       </p>
+      <a
+        href={locale === 'es' ? '/es/reservar' : '/consultation'}
+        class="inline-flex items-center gap-2 px-6 py-3 bg-cush-orange text-white font-display font-semibold rounded-lg hover:bg-cush-orange/90 transition-all duration-300 shadow-lg shadow-cush-orange/25 group"
+      >
+        {locale === 'es' ? 'Hablemos de Tu Negocio' : "Let's Talk About Your Business"}
+        <svg class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+      </a>
     </div>
   </Container>
 </section>
