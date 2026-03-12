@@ -82,13 +82,13 @@ const t = content[locale];
 
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
       {t.projects.map((project) => (
-        <a href={project.link} class="group rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/50 hover:border-cush-orange/50 hover:shadow-lg hover:shadow-cush-orange/5 transition-all duration-300 flex flex-col h-full">
+        <a href={project.link} class="group rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/50 hover:border-cush-orange/40 hover:shadow-xl hover:shadow-cush-orange/10 hover:-translate-y-1 transition-all duration-500 ease-out flex flex-col h-full">
           <div class="aspect-[4/3] bg-gray-100 dark:bg-gray-800 relative overflow-hidden shimmer">
             <img
               src={project.image}
               alt={project.title}
               loading="lazy"
-              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 img-fade"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out img-fade"
               onload="this.classList.add('loaded');this.parentElement.classList.remove('shimmer')"
             />
           </div>
@@ -96,7 +96,7 @@ const t = content[locale];
             <div class="text-xs font-display font-semibold text-cush-orange uppercase tracking-wider mb-2">
               {project.tags}
             </div>
-            <h3 class="font-display font-semibold text-xl text-gray-900 dark:text-white mb-3 group-hover:text-cush-orange transition-colors">
+            <h3 class="font-display font-semibold text-xl text-gray-900 dark:text-white mb-3 group-hover:text-cush-orange transition-colors duration-500 ease-out">
               {project.title}
             </h3>
             <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mt-auto">
