@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-12T14:50:35.096Z",
+  "generatedAt": "2026-03-12T20:58:01.537Z",
   "count": 28,
   "projects": [
     {
@@ -306,13 +306,13 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-03-12T09:57:31Z",
+      "lastPushed": "2026-03-12T17:44:32Z",
       "createdAt": "2026-03-06T17:57:40Z",
       "isFeatured": true,
       "isArchived": false,
       "isPrivate": false,
       "tagline": "Cinematic bilingual pitch decks that win attention",
-      "thumbnail": "https://cushlabs-scrollytelling.vercel.app/images/portfolio/cushlabs-scrollytelling-thumb.webp",
+      "thumbnail": "/images/portfolio/cushlabs-scrollytelling-thumb.webp",
       "problem": "Traditional pitch decks are forgettable — investors see hundreds of static slide presentations every month. Custom scrollytelling experiences take weeks to build and produce one-off code that can't be reused.",
       "solution": "A config-driven Astro template with dual-mode interaction: auto-narrated presentation mode for board meetings and free-browse mode for due diligence. New pitch decks ship in hours, not weeks.",
       "keyFeatures": [
@@ -327,58 +327,58 @@
       "dateCompleted": "2026-03",
       "slides": [
         {
-          "src": "https://cushlabs-scrollytelling.vercel.app/images/portfolio/cushlabs-scrollytelling-01.webp",
+          "src": "/images/portfolio/cushlabs-scrollytelling-01.webp",
           "altEn": "Opening overlay with presentation mode and browse freely options",
           "altEs": "Pantalla de inicio con opciones de modo presentacion y navegacion libre"
         },
         {
-          "src": "https://cushlabs-scrollytelling.vercel.app/images/portfolio/cushlabs-scrollytelling-02.webp",
+          "src": "/images/portfolio/cushlabs-scrollytelling-02.webp",
           "altEn": "Hero section with animated headline and cinematic typography",
           "altEs": "Seccion principal con titulo animado y tipografia cinematica"
         },
         {
-          "src": "https://cushlabs-scrollytelling.vercel.app/images/portfolio/cushlabs-scrollytelling-03.webp",
+          "src": "/images/portfolio/cushlabs-scrollytelling-03.webp",
           "altEn": "Problem statement section with typewriter text animation",
           "altEs": "Seccion del problema con animacion de texto tipo maquina de escribir"
         },
         {
-          "src": "https://cushlabs-scrollytelling.vercel.app/images/portfolio/cushlabs-scrollytelling-04.webp",
+          "src": "/images/portfolio/cushlabs-scrollytelling-04.webp",
           "altEn": "Solution section with Matrix rain effect and feature cards",
           "altEs": "Seccion de solucion con efecto Matrix y tarjetas de caracteristicas"
         },
         {
-          "src": "https://cushlabs-scrollytelling.vercel.app/images/portfolio/cushlabs-scrollytelling-05.webp",
+          "src": "/images/portfolio/cushlabs-scrollytelling-05.webp",
           "altEn": "Feature cards showcasing presentation mode and bilingual support",
           "altEs": "Tarjetas de caracteristicas mostrando modo presentacion y soporte bilingue"
         },
         {
-          "src": "https://cushlabs-scrollytelling.vercel.app/images/portfolio/cushlabs-scrollytelling-06.webp",
+          "src": "/images/portfolio/cushlabs-scrollytelling-06.webp",
           "altEn": "Proof section with testimonial quote and evidence",
           "altEs": "Seccion de prueba con cita testimonial y evidencia"
         },
         {
-          "src": "https://cushlabs-scrollytelling.vercel.app/images/portfolio/cushlabs-scrollytelling-07.webp",
+          "src": "/images/portfolio/cushlabs-scrollytelling-07.webp",
           "altEn": "Call-to-action section with consultation booking prompt",
           "altEs": "Seccion de llamada a la accion con invitacion a agendar consulta"
         },
         {
-          "src": "https://cushlabs-scrollytelling.vercel.app/images/portfolio/cushlabs-scrollytelling-08.webp",
+          "src": "/images/portfolio/cushlabs-scrollytelling-08.webp",
           "altEn": "Consultation page step 1 — calendar date and time selection",
           "altEs": "Pagina de consulta paso 1 — seleccion de fecha y hora en calendario"
         },
         {
-          "src": "https://cushlabs-scrollytelling.vercel.app/images/portfolio/cushlabs-scrollytelling-09.webp",
+          "src": "/images/portfolio/cushlabs-scrollytelling-09.webp",
           "altEn": "Consultation page step 2 — contact information form",
           "altEs": "Pagina de consulta paso 2 — formulario de informacion de contacto"
         },
         {
-          "src": "https://cushlabs-scrollytelling.vercel.app/images/portfolio/cushlabs-scrollytelling-10.webp",
+          "src": "/images/portfolio/cushlabs-scrollytelling-10.webp",
           "altEn": "Consultation page step 3 — booking confirmation summary",
           "altEs": "Pagina de consulta paso 3 — resumen de confirmacion de reserva"
         }
       ],
-      "videoUrl": "https://cushlabs-scrollytelling.vercel.app/video/cushlabs-scrollytelling-brief.mp4",
-      "videoPoster": "https://cushlabs-scrollytelling.vercel.app/images/portfolio/cushlabs-scrollytelling-brief-poster.webp"
+      "videoUrl": "/video/cushlabs-scrollytelling-brief.mp4",
+      "videoPoster": "/images/portfolio/cushlabs-scrollytelling-brief-poster.webp"
     },
     {
       "id": 1176224548,
@@ -1816,15 +1816,15 @@
       "status": null,
       "language": "Astro",
       "languages": {
-        "Astro": 491245,
+        "Astro": 493597,
         "TypeScript": 146244,
         "HTML": 61067,
         "JavaScript": 46253,
         "CSS": 3069
       },
-      "stars": 0,
+      "stars": 1,
       "forks": 0,
-      "lastPushed": "2026-03-12T14:37:59Z",
+      "lastPushed": "2026-03-12T14:51:02Z",
       "createdAt": "2026-01-08T03:52:43Z",
       "isFeatured": false,
       "isArchived": false,
@@ -3117,7 +3117,7 @@
         }
       ],
       "videoUrl": "https://marble-does-not-yield.vercel.app/video/marble-does-not-yield-brief.mp4",
-      "videoPoster": "https://marble-does-not-yield.vercel.app/images/portfolio/cushlabs-brief-poster.jpg"
+      "videoPoster": "/images/portfolio/cushlabs-brief-poster.jpg"
     },
     {
       "id": 1159724330,

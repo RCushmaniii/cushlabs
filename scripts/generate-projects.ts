@@ -114,6 +114,12 @@ function resolveAssetUrl(path: string | undefined | null, repoName: string, depl
   // Normalize: ensure path starts with /
   const normalizedPath = path.startsWith('/') ? path : `/${path}`;
 
+  // If the asset has been copied into our own public/ folder, use a local path
+  // This avoids depending on external Vercel deployments that may go down
+  // outputPath is src/data/projects.generated.json — go up two levels to reach project root
+  const localPublicPath = join(dirname(outputPath), '..', '..', 'public', normalizedPath);
+  if (existsSync(localPublicPath)) return normalizedPath;
+
   if (deployUrl) {
     const base = deployUrl.replace(/\/+$/, '');
     return `${base}${normalizedPath}`;
