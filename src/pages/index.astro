@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Hero from "../components/home2/Hero.astro";
-import VideoSection from "../components/home2/VideoSection.astro";
+// import VideoSection from "../components/home2/VideoSection.astro"; // Hidden until personal intro video is ready
 import PainPoints from "../components/home2/PainPoints.astro";
 import SolutionOverview from "../components/home2/SolutionOverview.astro";
 import HowItWorks from "../components/home2/HowItWorks.astro";
@@ -27,11 +27,12 @@ const meta = {
 <BaseLayout title={meta[locale].title} description={meta[locale].description}>
   <!-- Section 1: Hero -->
   <Hero locale={locale} />
-  
-  <!-- Section 2: Video Section -->
+
+  <!-- Section 2: Video Section — hidden until personal intro video is ready
   <VideoSection locale={locale} />
-  
-  <!-- Section 3: Pain Points -->
+  -->
+
+  <!-- Section 2: Pain Points -->
   <PainPoints locale={locale} />
   
   <!-- Section 4: Solution Overview -->

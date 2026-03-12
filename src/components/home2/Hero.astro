@@ -16,6 +16,7 @@ const content = {
     stats: ['20+ Years IT Experience', 'Fortune 500 Engineering Discipline', 'Fully Bilingual EN/ES', 'Serving US & Mexico'],
     ctaPrimary: 'Book a Free Discovery Call',
     ctaSecondary: 'See My Work',
+    scrollHint: 'Scroll to explore',
   },
   es: {
     badge: 'Consultoría de IA de Confianza',
@@ -25,6 +26,7 @@ const content = {
     stats: ['20+ Años de Experiencia TI', 'Disciplina de Ingeniería Fortune 500', 'Bilingüe EN/ES', 'Sirviendo a EE.UU. y México'],
     ctaPrimary: 'Agendar Llamada de Descubrimiento',
     ctaSecondary: 'Ver Mi Trabajo',
+    scrollHint: 'Explorar',
   },
 };
 
@@ -96,17 +98,30 @@ const t = content[locale];
           </svg>
         </a>
         <a
-          href="#work"
+          href={locale === 'es' ? '/es/portafolio' : '/portfolio'}
           class="inline-flex items-center gap-2 px-8 py-4 border-2 border-gray-500 dark:border-gray-600 text-gray-900 dark:text-white font-display font-semibold rounded-lg hover:border-cush-orange hover:text-cush-orange dark:hover:border-cush-orange dark:hover:text-cush-orange transition-all duration-300 text-lg"
         >
           {t.ctaSecondary}
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
           </svg>
         </a>
       </div>
     </div>
   </Container>
+
+  <!-- Scroll chevron — guides visitors into the funnel -->
+  <a
+    href="#pain-points"
+    class="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-1.5 text-gray-400 dark:text-gray-500 hover:text-cush-orange dark:hover:text-cush-orange transition-colors group animate-fade-in"
+    style="animation-delay: 0.6s;"
+    aria-label={t.scrollHint}
+  >
+    <span class="text-xs font-display font-medium tracking-wider uppercase opacity-60 group-hover:opacity-100 transition-opacity">{t.scrollHint}</span>
+    <svg class="w-6 h-6 animate-bounce-subtle" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </a>
 </section>
 
 <style>
@@ -132,5 +147,14 @@ const t = content[locale];
 
   .animate-fade-in-up {
     animation: fade-in-up 0.6s ease-out forwards;
+  }
+
+  @keyframes bounce-subtle {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(6px); }
+  }
+
+  .animate-bounce-subtle {
+    animation: bounce-subtle 2s ease-in-out infinite;
   }
 </style>
