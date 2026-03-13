@@ -21,7 +21,7 @@ const THUMBNAILS = [
   { name: 'ny-eng', url: 'https://www.nyenglishteacher.com/images/portfolio/ny-eng-thumb.jpg' },
   { name: 'ai-resume-tailor', url: 'https://ai-resume-tailor-client.vercel.app/images/ai-resume-tailor-thumb.jpg' },
   { name: 'ai-build-vs-outsource', url: 'https://ai-build-vs-outsource.vercel.app/images/ai-build-vs-outsource-thumb.jpg' },
-  { name: 'context-writing-system', url: 'https://cushlabs-writing-system.vercel.app/public/images/context-writing-system-thumb.jpg' },
+  { name: 'context-writing-system', url: 'https://context-writing-system.vercel.app/public/images/context-writing-system-thumb.jpg' },
   { name: 'ai-idea-validator', url: 'https://ai-idea-validator.netlify.app/images/portfolio/aI-Idea-validator-thumb.jpg' },
   { name: 'ai-portfolio', url: 'https://ai-portfolio-cushlabs.vercel.app/images/portfolio-card.webp' },
   { name: 'freelance-income-planner', url: 'https://freelance-income-planner.vercel.app/images/freelance-income-planner-thumb.jpg' },

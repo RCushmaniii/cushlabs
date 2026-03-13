@@ -1572,9 +1572,9 @@
       "description": "Context-engineering system to lock brand voice, enforce truth, and generate consistent AI-written content at scale.",
       "summary": "> A context engineering framework that makes AI write like you, not like AI.",
       "url": "https://github.com/RCushmaniii/context-writing-system",
-      "demoUrl": "https://cushlabs-writing-system.vercel.app",
-      "liveUrl": "https://cushlabs-writing-system.vercel.app",
-      "homepage": "https://cushlabs-writing-system.vercel.app",
+      "demoUrl": "https://context-writing-system.vercel.app",
+      "liveUrl": "https://context-writing-system.vercel.app",
+      "homepage": "https://context-writing-system.vercel.app",
       "topics": [
         "ai-assistant",
         "ai-content-generation",
