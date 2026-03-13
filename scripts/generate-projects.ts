@@ -90,6 +90,7 @@ interface PortfolioFrontmatter {
 const GITHUB_TOKEN = process.env.PROJECT_SYNC_TOKEN || process.env.GITHUB_TOKEN;
 const GITHUB_OWNER = process.env.GITHUB_OWNER ?? 'RCushmaniii';
 const SELF_REPO = 'cushlabs'; // Assets in this repo are local — keep relative paths
+const CDN_BASE = 'https://cdn.cushlabs.ai'; // Cloudflare R2 CDN for portfolio assets
 
 // ── Sync issue tracking ──────────────────────────────────────────────
 interface SyncIssue {
@@ -105,26 +106,20 @@ const syncIssues: SyncIssue[] = [];
  * - Other repos: use their deployment URL (Vercel CDN) if available
  * - Fallback: raw.githubusercontent.com
  */
-function resolveAssetUrl(path: string | undefined | null, repoName: string, deployUrl: string | null): string | null {
+function resolveAssetUrl(path: string | undefined | null, repoName: string, _deployUrl: string | null): string | null {
   if (!path) return null;
   // Already a full URL — return as-is
   if (/^https?:\/\//i.test(path)) return path;
   if (repoName === SELF_REPO) return path; // local asset
 
+  // Strip /public/ prefix (common PORTFOLIO.md mistake)
+  const cleaned = path.replace(/^\/public\//, '/');
   // Normalize: ensure path starts with /
-  const normalizedPath = path.startsWith('/') ? path : `/${path}`;
+  const normalizedPath = cleaned.startsWith('/') ? cleaned : `/${cleaned}`;
 
-  // If the asset has been copied into our own public/ folder, use a local path
-  // This avoids depending on external Vercel deployments that may go down
-  // outputPath is src/data/projects.generated.json — go up two levels to reach project root
-  const localPublicPath = join(dirname(outputPath), '..', '..', 'public', normalizedPath);
-  if (existsSync(localPublicPath)) return normalizedPath;
-
-  if (deployUrl) {
-    const base = deployUrl.replace(/\/+$/, '');
-    return `${base}${normalizedPath}`;
-  }
-  return `https://raw.githubusercontent.com/${GITHUB_OWNER}/${repoName}/main/public${normalizedPath}`;
+  // All external repo assets are served from Cloudflare R2 CDN
+  // Assets are stored as: {cdn}/{repoName}/{path}
+  return `${CDN_BASE}/${repoName}${normalizedPath}`;
 }
 
 // On CI/Vercel builds, use the committed projects.generated.json as source of truth.
