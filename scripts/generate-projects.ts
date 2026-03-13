@@ -127,6 +127,17 @@ function resolveAssetUrl(path: string | undefined | null, repoName: string, depl
   return `https://raw.githubusercontent.com/${GITHUB_OWNER}/${repoName}/main/public${normalizedPath}`;
 }
 
+// On CI/Vercel builds, use the committed projects.generated.json as source of truth.
+// The GitHub API can serve stale cached PORTFOLIO.md data, and CI has no local clones.
+// Run generate-projects locally to refresh, then commit the result.
+if (process.env.VERCEL || process.env.CI) {
+  if (existsSync(outputPath)) {
+    console.log('✅ CI/Vercel detected — using committed projects.generated.json');
+    process.exit(0);
+  }
+  console.warn('⚠️  CI/Vercel detected but no projects.generated.json found — will generate from API');
+}
+
 if (!GITHUB_TOKEN) {
   if (existsSync(outputPath)) {
     console.warn('⚠️  GITHUB_TOKEN not set, using existing projects.generated.json');
