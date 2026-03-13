@@ -6,15 +6,18 @@
  * and uploads them to the R2 bucket under /{repo-name}/{path}.
  *
  * Usage:
- *   npx tsx scripts/upload-to-r2.ts              # upload all projects
+ *   npx tsx scripts/upload-to-r2.ts              # upload all (skip unchanged)
  *   npx tsx scripts/upload-to-r2.ts ny-eng        # upload one project
  *   npx tsx scripts/upload-to-r2.ts --dry-run     # preview without uploading
+ *   npx tsx scripts/upload-to-r2.ts --force        # re-upload all (ignore cache)
+ *   npx tsx scripts/upload-to-r2.ts ny-eng --force # re-upload one project
  *
  * Required .env vars:
  *   R2_ACCESS_KEY_ID, R2_SECRET_ACCESS_KEY, S3_API (R2 endpoint)
  */
 
 import { config } from 'dotenv';
+import { createHash } from 'crypto';
 import { S3Client, PutObjectCommand, HeadObjectCommand } from '@aws-sdk/client-s3';
 import { readFileSync, existsSync, readdirSync, statSync } from 'fs';
 import { join, dirname, extname, basename } from 'path';
@@ -195,33 +198,59 @@ function parsePortfolioMd(repo: string): string[] {
   return paths;
 }
 
-async function objectExists(key: string): Promise<boolean> {
+function localMd5(filePath: string): string {
+  const data = readFileSync(filePath);
+  return createHash('md5').update(data).digest('hex');
+}
+
+async function getRemoteEtag(key: string): Promise<string | null> {
   try {
-    await s3.send(new HeadObjectCommand({ Bucket: BUCKET, Key: key }));
-    return true;
+    const head = await s3.send(new HeadObjectCommand({ Bucket: BUCKET, Key: key }));
+    // R2 ETag is MD5 wrapped in quotes for single-part uploads
+    return head.ETag?.replace(/"/g, '') || null;
   } catch {
-    return false;
+    return null; // Object doesn't exist
   }
 }
 
-async function uploadFile(task: UploadTask, dryRun: boolean): Promise<boolean> {
+type UploadResult = 'uploaded' | 'updated' | 'skipped';
+
+async function uploadFile(task: UploadTask, dryRun: boolean, force: boolean): Promise<UploadResult> {
   const { r2Key, localPath } = task;
+  const body = readFileSync(localPath);
+  const localHash = createHash('md5').update(body).digest('hex');
+
+  if (!force) {
+    const remoteEtag = await getRemoteEtag(r2Key);
+    if (remoteEtag) {
+      if (remoteEtag === localHash) {
+        console.log(`  [SKIP] Unchanged: ${r2Key}`);
+        return 'skipped';
+      }
+      // File exists but content differs
+      if (dryRun) {
+        console.log(`  [DRY RUN] Would UPDATE (content changed): ${r2Key} (${(task.size / 1024).toFixed(0)}KB)`);
+        return 'updated';
+      }
+      const contentType = getMimeType(localPath);
+      await s3.send(new PutObjectCommand({
+        Bucket: BUCKET,
+        Key: r2Key,
+        Body: body,
+        ContentType: contentType,
+        CacheControl: 'public, max-age=31536000, immutable',
+      }));
+      console.log(`  [UPDATED] ${r2Key} (${(task.size / 1024).toFixed(0)}KB, content changed)`);
+      return 'updated';
+    }
+  }
 
   if (dryRun) {
     console.log(`  [DRY RUN] Would upload: ${r2Key} (${(task.size / 1024).toFixed(0)}KB)`);
-    return true;
+    return 'uploaded';
   }
 
-  // Check if already uploaded
-  const exists = await objectExists(r2Key);
-  if (exists) {
-    console.log(`  [SKIP] Already exists: ${r2Key}`);
-    return true;
-  }
-
-  const body = readFileSync(localPath);
   const contentType = getMimeType(localPath);
-
   await s3.send(new PutObjectCommand({
     Bucket: BUCKET,
     Key: r2Key,
@@ -231,13 +260,14 @@ async function uploadFile(task: UploadTask, dryRun: boolean): Promise<boolean> {
   }));
 
   console.log(`  [UPLOADED] ${r2Key} (${(task.size / 1024).toFixed(0)}KB, ${contentType})`);
-  return true;
+  return 'uploaded';
 }
 
 // ── Main ────────────────────────────────────────────────────────────
 async function main() {
   const args = process.argv.slice(2);
   const dryRun = args.includes('--dry-run');
+  const force = args.includes('--force');
   const targetRepo = args.find(a => !a.startsWith('--'));
 
   // Load project list from generated JSON
@@ -256,10 +286,12 @@ async function main() {
   console.log(`\n📦 Uploading portfolio assets to R2 (${CDN_BASE})`);
   console.log(`   Bucket: ${BUCKET}`);
   console.log(`   Projects: ${projects.length}`);
+  if (force) console.log('   FORCE MODE — re-uploading all files');
   if (dryRun) console.log('   ⚠️  DRY RUN — no files will be uploaded\n');
   else console.log('');
 
   let totalUploaded = 0;
+  let totalUpdated = 0;
   let totalSkipped = 0;
   let totalFailed = 0;
   let totalBytes = 0;
@@ -308,10 +340,15 @@ async function main() {
       };
 
       try {
-        const uploaded = await uploadFile(task, dryRun);
-        if (uploaded) {
+        const result = await uploadFile(task, dryRun, force);
+        if (result === 'uploaded') {
           totalUploaded++;
           totalBytes += stat.size;
+        } else if (result === 'updated') {
+          totalUpdated++;
+          totalBytes += stat.size;
+        } else {
+          totalSkipped++;
         }
       } catch (err: any) {
         console.log(`  [ERROR] ${r2Key}: ${err.message}`);
@@ -323,7 +360,9 @@ async function main() {
   console.log(`\n${'='.repeat(60)}`);
   console.log('UPLOAD SUMMARY');
   console.log('='.repeat(60));
-  console.log(`  Uploaded/Exists: ${totalUploaded}`);
+  console.log(`  New uploads:     ${totalUploaded}`);
+  console.log(`  Updated (diff):  ${totalUpdated}`);
+  console.log(`  Unchanged:       ${totalSkipped}`);
   console.log(`  Failed/Missing:  ${totalFailed}`);
   console.log(`  Total size:      ${(totalBytes / 1048576).toFixed(1)}MB`);
   if (failedRepos.length > 0) {
