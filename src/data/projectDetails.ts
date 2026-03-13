@@ -155,17 +155,6 @@ const details: Record<string, ProjectDetailOverride> = {
   "mazebreak-wiki": {
     slug: "mazebreak-wiki",
     demoUrl: "https://mazebreak-wiki.vercel.app",
-    thumbnail: "https://mazebreak-wiki.vercel.app/images/mazebreak-wiki-01.webp",
-    videoUrl: "https://mazebreak-wiki.vercel.app/video/MazeBreak__Taming_the_GDD.mp4",
-    images: [
-      { src: "https://mazebreak-wiki.vercel.app/images/mazebreak-wiki-01.webp", alt: { en: "The Documentation Engine for Game Design", es: "El Motor de Documentación para Diseño de Juegos" } },
-      { src: "https://mazebreak-wiki.vercel.app/images/mazebreak-wiki-02.webp", alt: { en: "The 200-Page Monster — the problem with traditional GDDs", es: "El Monstruo de 200 Páginas — el problema con GDDs tradicionales" } },
-      { src: "https://mazebreak-wiki.vercel.app/images/mazebreak-wiki-03.webp", alt: { en: "Order from Chaos — markdown, Git push, instant deploy", es: "Orden del Caos — markdown, Git push, deploy instantáneo" } },
-      { src: "https://mazebreak-wiki.vercel.app/images/mazebreak-wiki-04.webp", alt: { en: "MazeBreak GDD Wiki documentation engine cover", es: "Portada del motor de documentación MazeBreak GDD Wiki" } },
-      { src: "https://mazebreak-wiki.vercel.app/images/mazebreak-wiki-05.webp", alt: { en: "Smart Engineering Decisions — architecture overview", es: "Decisiones Inteligentes de Ingeniería — vista de arquitectura" } },
-      { src: "https://mazebreak-wiki.vercel.app/images/mazebreak-wiki-06.webp", alt: { en: "Stop Managing Documents — value proposition", es: "Deja de Gestionar Documentos — propuesta de valor" } },
-      { src: "https://mazebreak-wiki.vercel.app/images/mazebreak-wiki-07.webp", alt: { en: "Full infographic — problem, solution, architecture at a glance", es: "Infografía completa — problema, solución, arquitectura de un vistazo" } },
-    ],
     en: {
       headline: "MazeBreak GDD Wiki",
       subheadline:
@@ -272,15 +261,6 @@ const details: Record<string, ProjectDetailOverride> = {
   "mazebreak-trello": {
     slug: "mazebreak-trello",
     demoUrl: "https://mazebreak-trello.vercel.app",
-    thumbnail: "https://mazebreak-trello.vercel.app/images/mazebreak-trello.jpg",
-    videoUrl: "https://mazebreak-trello.vercel.app/video/MazeBreak__Sprint_as_Code.mp4",
-    images: [
-      { src: "https://mazebreak-trello.vercel.app/images/mazebreak-trello.jpg", alt: { en: "MazeBreak Trello — Sprint board provisioning landing page", es: "MazeBreak Trello — Landing page de aprovisionamiento de tableros sprint" } },
-      { src: "https://mazebreak-trello.vercel.app/images/mazebreak-trello01.jpg", alt: { en: "Animated terminal demo showing board creation", es: "Demo animada de terminal mostrando creación de tablero" } },
-      { src: "https://mazebreak-trello.vercel.app/images/mazebreak-trello02.jpg", alt: { en: "Interactive board hotspots and workflow lists", es: "Hotspots interactivos del tablero y listas de flujo" } },
-      { src: "https://mazebreak-trello.vercel.app/images/mazebreak-trello03.jpg", alt: { en: "Card structure with checklists and dependencies", es: "Estructura de tarjetas con checklists y dependencias" } },
-      { src: "https://mazebreak-trello.vercel.app/images/mazebreak-trello04.jpg", alt: { en: "Documentation site and setup instructions", es: "Sitio de documentación e instrucciones de configuración" } },
-    ],
     en: {
       headline: "MazeBreak Trello Board Automation",
       subheadline:
@@ -383,20 +363,6 @@ const details: Record<string, ProjectDetailOverride> = {
   "ny-eng": {
     slug: "ny-eng",
     demoUrl: "https://www.nyenglishteacher.com",
-    thumbnail: "https://www.nyenglishteacher.com/images/portfolio/ny-eng-thumb.jpg",
-    videoUrl: "https://www.nyenglishteacher.com/video/ny-eng-brief.mp4",
-    videoPoster: "https://www.nyenglishteacher.com/video/ny-eng-brief-poster.jpg",
-    images: [
-      { src: "https://www.nyenglishteacher.com/images/portfolio/ny-eng-01.png", alt: { en: "The Architecture of Authority — Constructing a multinational agency presence with a team of one", es: "La Arquitectura de la Autoridad — Construyendo presencia de agencia multinacional con un equipo de uno" } },
-      { src: "https://www.nyenglishteacher.com/images/portfolio/ny-eng-02.png", alt: { en: "An Automated Performance Engine — Zero manual qualification, 60-second booking flow, 100% gross margin", es: "Un Motor de Rendimiento Automatizado — Cero calificacion manual, reserva en 60 segundos, 100% margen bruto" } },
-      { src: "https://www.nyenglishteacher.com/images/portfolio/ny-eng-03.png", alt: { en: "Digital Employee 01: The SDR — Diagnostic intelligence replaces discovery calls with pre-qualified leads", es: "Empleado Digital 01: El SDR — Inteligencia diagnostica reemplaza llamadas de descubrimiento con leads precalificados" } },
-      { src: "https://www.nyenglishteacher.com/images/portfolio/ny-eng-04.png", alt: { en: "Digital Employee 02: Marketing Dept — The bilingual mirror doubles addressable market from a single codebase", es: "Empleado Digital 02: Depto. de Marketing — El espejo bilingue duplica el mercado alcanzable desde una sola base de codigo" } },
-      { src: "https://www.nyenglishteacher.com/images/portfolio/ny-eng-05.png", alt: { en: "Digital Employee 03: The Executive Assistant — Interest to confirmed Google Meet booking in under 60 seconds", es: "Empleado Digital 03: La Asistente Ejecutiva — De interes a reserva confirmada en Google Meet en menos de 60 segundos" } },
-      { src: "https://www.nyenglishteacher.com/images/portfolio/ny-eng-06.png", alt: { en: "Digital Employee 04: The Brand Manager — Premium positioning hard-coded into the UX with named executive testimonials", es: "Empleado Digital 04: El Brand Manager — Posicionamiento premium integrado en la UX con testimonios ejecutivos reales" } },
-      { src: "https://www.nyenglishteacher.com/images/portfolio/ny-eng-07.png", alt: { en: "The Speed of Trust — Lighthouse 100 performance score, instant loads signal competence to premium buyers", es: "La Velocidad de la Confianza — Puntuacion Lighthouse 100, cargas instantaneas que senalan competencia a compradores premium" } },
-      { src: "https://www.nyenglishteacher.com/images/portfolio/ny-eng-08.png", alt: { en: "The Universal Model — Blueprint for any high-touch expertise business", es: "El Modelo Universal — Plano para cualquier negocio de expertise" } },
-      { src: "https://www.nyenglishteacher.com/images/portfolio/ny-eng-09.png", alt: { en: "The Zero-Cost Tech Stack — Enterprise-grade performance on a solopreneur budget", es: "El Tech Stack de Costo Cero — Rendimiento empresarial con presupuesto de solopreneur" } },
-    ],
     en: {
       headline: "NY English Teacher",
       subheadline:
@@ -575,15 +541,9 @@ const details: Record<string, ProjectDetailOverride> = {
       ],
     },
   },
-  "atlas-biodiversidad-pitch": {
-    slug: "atlas-biodiversidad-pitch",
+  "biojalisco-pitch": {
+    slug: "biojalisco-pitch",
     demoUrl: "https://atlas-biodiversidad-pitch.vercel.app",
-    thumbnail: "https://atlas-biodiversidad-pitch.vercel.app/assets/images/ChatGPT_Image_Mar_4_2026_03_56_16_PM.webp",
-    images: [
-      { src: "https://atlas-biodiversidad-pitch.vercel.app/assets/images/ChatGPT_Image_Mar_4_2026_03_56_16_PM.webp", alt: { en: "BioJalisco hero section with forest imagery", es: "Sección hero de BioJalisco con imágenes del bosque" } },
-      { src: "https://atlas-biodiversidad-pitch.vercel.app/assets/images/ChatGPT_Image_Mar_4_2026_03_54_58_PM.webp", alt: { en: "BioJalisco problem statement and data visualization", es: "Declaración del problema y visualización de datos de BioJalisco" } },
-      { src: "https://atlas-biodiversidad-pitch.vercel.app/assets/images/dra-vero-rosas-lizard.webp", alt: { en: "Dr. Verónica Rosas-Espinoza fieldwork", es: "Trabajo de campo de la Dra. Verónica Rosas-Espinoza" } },
-    ],
     en: {
       headline: "BioJalisco Pitch Site",
       subheadline: "Cinematic scrollytelling site pitching a citizen-science biodiversity platform for western Mexico",

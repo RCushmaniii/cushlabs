@@ -16,7 +16,7 @@
 
 import { config } from 'dotenv';
 import { S3Client, PutObjectCommand, HeadObjectCommand } from '@aws-sdk/client-s3';
-import { readFileSync, existsSync, readdirSync } from 'fs';
+import { readFileSync, existsSync, readdirSync, statSync } from 'fs';
 import { join, dirname, extname, basename } from 'path';
 import { fileURLToPath } from 'url';
 import matter from 'gray-matter';
@@ -66,6 +66,11 @@ function getMimeType(filepath: string): string {
   return MIME_MAP[extname(filepath).toLowerCase()] || 'application/octet-stream';
 }
 
+// ── Repo name aliases (local clone name differs from GitHub repo name) ──
+const REPO_ALIASES: Record<string, string> = {
+  'stock-alert': 'ai-stock-alert',
+};
+
 // ── Helpers ─────────────────────────────────────────────────────────
 interface UploadTask {
   repo: string;
@@ -74,25 +79,92 @@ interface UploadTask {
   size: number;
 }
 
+function getLocalDir(repo: string): string {
+  const alias = REPO_ALIASES[repo] || repo;
+  return join(PROJECTS_ROOT, alias);
+}
+
 function findLocalFile(repo: string, assetPath: string): string | null {
   // assetPath comes from PORTFOLIO.md, e.g. "/images/portfolio/foo-01.webp"
-  // Strip leading /public/ if present (common PORTFOLIO.md mistake)
   const cleaned = assetPath.replace(/^\/public\//, '/');
   const normalizedPath = cleaned.startsWith('/') ? cleaned : `/${cleaned}`;
+  const localDir = getLocalDir(repo);
 
-  // Try: {projects_root}/{repo}/public{normalizedPath}
-  const candidate = join(PROJECTS_ROOT, repo, 'public', normalizedPath);
-  if (existsSync(candidate)) return candidate;
+  // Try: {localDir}/public{normalizedPath}
+  const candidate1 = join(localDir, 'public', normalizedPath);
+  if (existsSync(candidate1)) return candidate1;
 
-  // Try without /portfolio/ subdirectory (some repos use /images/ directly)
-  // Already handled by the path as-is
+  // Try: {localDir}{normalizedPath} (assets at repo root, e.g. /assets/images/...)
+  const candidate2 = join(localDir, normalizedPath);
+  if (existsSync(candidate2)) return candidate2;
+
+  // Try: {localDir}/client/public{normalizedPath} (e.g. ai-resume-tailor)
+  const candidate3 = join(localDir, 'client', 'public', normalizedPath);
+  if (existsSync(candidate3)) return candidate3;
+
+  // Try: {localDir}/client/dist{normalizedPath}
+  const candidate4 = join(localDir, 'client', 'dist', normalizedPath);
+  if (existsSync(candidate4)) return candidate4;
+
+  // Try: {localDir}/dist{normalizedPath}
+  const candidate5 = join(localDir, 'dist', normalizedPath);
+  if (existsSync(candidate5)) return candidate5;
+
+  // Try: swap /images/ for /videos/ and vice versa (some repos use /videos/ not /video/)
+  const swapped = normalizedPath.replace('/images/', '/videos/').replace('/public/images/', '/public/videos/');
+  if (swapped !== normalizedPath) {
+    const candidate6 = join(localDir, 'public', swapped);
+    if (existsSync(candidate6)) return candidate6;
+  }
 
   return null;
 }
 
+/** Scan local directories for portfolio image/video files not listed in PORTFOLIO.md */
+function scanLocalPortfolioAssets(repo: string): string[] {
+  const localDir = getLocalDir(repo);
+  const found: string[] = [];
+  const extensions = new Set(['.webp', '.jpg', '.jpeg', '.png', '.gif', '.mp4', '.webm']);
+
+  // Directories to scan for portfolio assets
+  const scanDirs = [
+    join(localDir, 'public', 'images', 'portfolio'),
+    join(localDir, 'public', 'video'),
+    join(localDir, 'public', 'videos'),
+    join(localDir, 'public', 'images'),
+    join(localDir, 'assets', 'images', 'portfolio'),
+    join(localDir, 'assets', 'video'),
+    join(localDir, 'assets', 'images'),
+    join(localDir, 'client', 'public', 'images'),
+    join(localDir, 'client', 'public', 'images', 'portfolio'),
+  ];
+
+  for (const dir of scanDirs) {
+    if (!existsSync(dir)) continue;
+    try {
+      const files = readdirSync(dir);
+      for (const file of files) {
+        const ext = extname(file).toLowerCase();
+        if (!extensions.has(ext)) continue;
+        // Convert absolute path back to repo-relative path
+        const fullPath = join(dir, file);
+        const relativePath = fullPath.replace(localDir, '').replace(/\\/g, '/');
+        // Strip /public/ prefix for the R2 key
+        const cleanedPath = relativePath.replace(/^\/public\//, '/');
+        found.push(cleanedPath);
+      }
+    } catch {
+      // Skip unreadable directories
+    }
+  }
+
+  return found;
+}
+
 function parsePortfolioMd(repo: string): string[] {
   const paths: string[] = [];
-  const mdPath = join(PROJECTS_ROOT, repo, 'PORTFOLIO.md');
+  const localDir = getLocalDir(repo);
+  const mdPath = join(localDir, 'PORTFOLIO.md');
   if (!existsSync(mdPath)) return paths;
 
   const raw = readFileSync(mdPath, 'utf-8');
@@ -108,6 +180,15 @@ function parsePortfolioMd(repo: string): string[] {
   if (Array.isArray(data.slides)) {
     for (const slide of data.slides) {
       if (slide.src) paths.push(slide.src);
+    }
+  }
+
+  // Also scan local directories for any portfolio assets not in frontmatter
+  const scanned = scanLocalPortfolioAssets(repo);
+  const pathSet = new Set(paths);
+  for (const p of scanned) {
+    if (!pathSet.has(p)) {
+      paths.push(p);
     }
   }
 
@@ -191,7 +272,7 @@ async function main() {
       continue;
     }
 
-    const repoDir = join(PROJECTS_ROOT, repo);
+    const repoDir = getLocalDir(repo);
     if (!existsSync(repoDir)) {
       console.log(`[${repo}] ⚠️  No local clone found at ${repoDir}`);
       failedRepos.push(repo);
@@ -214,7 +295,6 @@ async function main() {
         continue;
       }
 
-      const { statSync } = await import('fs');
       const stat = statSync(localPath);
       // R2 key: {repo}/{normalized-path} (no leading slash)
       const cleaned = assetPath.replace(/^\/public\//, '/').replace(/^\//, '');
