@@ -131,6 +131,7 @@ function scanLocalPortfolioAssets(repo: string): string[] {
 
   // Directories to scan for portfolio assets
   const scanDirs = [
+    join(localDir, 'public', 'portfolio'),
     join(localDir, 'public', 'images', 'portfolio'),
     join(localDir, 'public', 'video'),
     join(localDir, 'public', 'videos'),
