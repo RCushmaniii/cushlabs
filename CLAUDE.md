@@ -120,7 +120,8 @@ cushlabs/
 ├── api/
 │   └── consultation-intake.ts # Edge function for forms
 ├── scripts/
-│   ├── generate-projects.ts  # GitHub API sync
+│   ├── generate-projects.ts  # GitHub API sync → projects.generated.json
+│   ├── upload-to-r2.ts       # Sync local assets → Cloudflare R2 CDN
 │   └── audit-predeploy.ts    # Pre-deployment checks
 ├── public/
 │   ├── images/
@@ -229,6 +230,65 @@ Proper sitemap must:
 - ~~Sitemap broken~~ — @astrojs/sitemap 3.2.1 installed and configured with i18n locales
 - ~~No og-image~~ — OG image exists at `public/images/og/cushlabs_logo_lt.jpg`
 - ~~Image optimization~~ — All portfolio/logo/client images converted to WebP, lazy loading added
+- ~~Broken portfolio images~~ — All 28 project pages migrated to Cloudflare R2 CDN (`cdn.cushlabs.ai`), 399 assets, 28/28 pages verified clean
+
+---
+
+## Cloudflare R2 CDN — Portfolio Asset Management
+
+All 28 portfolio project pages serve images and videos from **Cloudflare R2** (`cdn.cushlabs.ai`), not from individual project deployments. This eliminates broken images when Vercel/Netlify deployments go down.
+
+### How It Works
+
+- Each project repo keeps its own assets in `public/` (for its own demo site)
+- R2 is a **CDN mirror** — assets are uploaded under `/{repo-name}/{path}`
+- `scripts/generate-projects.ts` converts relative PORTFOLIO.md paths to `https://cdn.cushlabs.ai/{repo}/{path}` via `resolveAssetUrl()`
+- `scripts/upload-to-r2.ts` syncs local clones to R2 with **MD5 hash-based diff detection**
+
+### When You Update a Project's Assets
+
+If you add or change an image/video in any project repo:
+
+```bash
+# 1. Upload changed assets to R2 (auto-detects diffs via MD5 hash)
+npx tsx scripts/upload-to-r2.ts <repo-name>
+
+# 2. Regenerate the portfolio JSON (picks up any PORTFOLIO.md changes)
+npx tsx scripts/generate-projects.ts
+
+# 3. Build, commit, and push
+npm run build
+git add -A && git commit -m "chore: refresh projects data" && git push
+```
+
+For a full sync of all 28 projects: `npx tsx scripts/upload-to-r2.ts` (no args).
+
+### Upload Script Flags
+
+```bash
+npx tsx scripts/upload-to-r2.ts                # upload all (skip unchanged via hash)
+npx tsx scripts/upload-to-r2.ts ny-eng         # upload one project only
+npx tsx scripts/upload-to-r2.ts --dry-run      # preview without uploading
+npx tsx scripts/upload-to-r2.ts --force         # re-upload all (ignore hash cache)
+npx tsx scripts/upload-to-r2.ts ny-eng --force  # force re-upload one project
+```
+
+### Key Architecture Details
+
+- **R2 bucket:** `cushlabs-assets` with custom domain `cdn.cushlabs.ai`
+- **Hash detection:** Compares local MD5 against R2 ETag — only re-uploads changed files
+- **Repo aliases:** Some local clones differ from GitHub names (e.g., `stock-alert` clone is `ai-stock-alert`) — mapped in `REPO_ALIASES` in the upload script
+- **Path resolution:** Searches `public/`, `assets/`, `client/public/`, `dist/` and scans `public/portfolio/`, `public/images/portfolio/`, `public/video/`, etc.
+- **CI/Vercel skip:** `generate-projects.ts` detects `VERCEL`/`CI` env vars and uses committed JSON instead of regenerating (avoids stale GitHub API data)
+- **projectDetails.ts overrides:** Only use for rich text content (headlines, descriptions, goodFor, etc.) and `demoUrl`. Do NOT put image/video URLs here — they come from the generated JSON via PORTFOLIO.md
+
+### Required .env Vars for R2
+
+```
+R2_ACCESS_KEY_ID=         # Cloudflare R2 API token (Object Read & Write)
+R2_SECRET_ACCESS_KEY=     # Cloudflare R2 API secret
+S3_API=                   # R2 S3-compatible endpoint URL
+```
 
 ---
 
@@ -254,6 +314,9 @@ GITHUB_TOKEN=             # For project sync
 GITHUB_OWNER=RCushmaniii
 PUBLIC_WHATSAPP_NUMBER=   # WhatsApp contact
 PUBLIC_CONSULTATION_URL=  # Calendly/Cal.com booking links
+R2_ACCESS_KEY_ID=         # Cloudflare R2 access key
+R2_SECRET_ACCESS_KEY=     # Cloudflare R2 secret key
+S3_API=                   # R2 S3-compatible endpoint
 ```
 
 ---
