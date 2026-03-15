@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-03-13T04:53:39.229Z",
-  "count": 28,
+  "generatedAt": "2026-03-15T05:58:01.095Z",
+  "count": 29,
   "projects": [
     {
       "id": 1102173157,
@@ -169,13 +169,13 @@
       "status": null,
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 1157464,
+        "TypeScript": 1157780,
         "JavaScript": 12530,
         "CSS": 10362
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-03-13T01:27:27Z",
+      "lastPushed": "2026-03-13T22:32:27Z",
       "createdAt": "2025-12-02T07:09:31Z",
       "isFeatured": true,
       "isArchived": false,
@@ -244,6 +244,358 @@
       ],
       "videoUrl": "https://cdn.cushlabs.ai/ai-chatbot-saas/video/converso-brief.mp4",
       "videoPoster": "https://cdn.cushlabs.ai/ai-chatbot-saas/video/converso-brief-poster.jpg"
+    },
+    {
+      "id": 1182112411,
+      "name": "cushlabs-cws-scrollytelling",
+      "title": "CWS Scrollytelling — Conversion Narrative",
+      "description": "CushLabs Context Writing System — scrollytelling conversion narrative",
+      "summary": "> Cinematic scrollytelling conversion narrative for the CushLabs Context Writing System (CWS).",
+      "url": "https://github.com/RCushmaniii/cushlabs-cws-scrollytelling",
+      "demoUrl": "https://cws.cushlabs.ai",
+      "liveUrl": "https://cws.cushlabs.ai",
+      "homepage": null,
+      "topics": [
+        "astro",
+        "conversion",
+        "narrative-design",
+        "scrollytelling",
+        "svelte",
+        "tailwindcss",
+        "typescript",
+        "vercel"
+      ],
+      "categories": [
+        "AI Automation"
+      ],
+      "tags": [
+        "astro",
+        "conversion",
+        "narrative-design",
+        "scrollytelling",
+        "svelte",
+        "tailwindcss",
+        "typescript",
+        "vercel",
+        "content-strategy",
+        "ai-writing"
+      ],
+      "stack": [
+        "Astro 5",
+        "Svelte 5",
+        "Tailwind CSS 3",
+        "TypeScript",
+        "MDX",
+        "Vercel",
+        "IntersectionObserver"
+      ],
+      "status": null,
+      "language": "Svelte",
+      "languages": {
+        "Svelte": 126584,
+        "TypeScript": 26701,
+        "Astro": 13151,
+        "CSS": 4232,
+        "JavaScript": 1731,
+        "MDX": 1633
+      },
+      "stars": 0,
+      "forks": 0,
+      "lastPushed": "2026-03-15T04:57:07Z",
+      "createdAt": "2026-03-15T03:48:46Z",
+      "isFeatured": true,
+      "isArchived": false,
+      "isPrivate": true,
+      "tagline": "Cinematic scroll-driven story that sells the Context Writing System through emotion, not features",
+      "thumbnail": null,
+      "problem": "AI content tools produce generic output that erodes brand voice. Explaining why CWS\nis different requires more than a features page — prospects need to feel the problem\nbefore they believe in the solution. This scrollytelling narrative takes readers through\na nine-section emotional arc that builds recognition, trust, and desire before the CTA.\n",
+      "solution": null,
+      "keyFeatures": [
+        "Nine-section cinematic narrative arc from recognition to conversion",
+        "98+ Lighthouse performance with ~25 KB total JS via Astro islands",
+        "Scroll-triggered animations in Svelte 5 with full reduced-motion support",
+        "Single config file controls all theming, fonts, and site metadata",
+        "Static deploy to Vercel — no runtime, no database, no env vars"
+      ],
+      "metrics": [],
+      "priority": 3,
+      "dateCompleted": null,
+      "slides": [],
+      "videoUrl": null,
+      "videoPoster": null
+    },
+    {
+      "id": 1174690198,
+      "name": "biojalisco-species-id",
+      "title": "BioJalisco Species Identifier",
+      "description": "AI-powered vertebrate species identification for Jalisco field research. Next.js 15, GPT-4o Vision, Clerk, Neon Postgres.",
+      "summary": "> AI-powered species identification for Jalisco biodiversity research. Four-API pipeline delivers verified taxonomy, IUCN status, Mexico-specific conservation data (NOM-059), and endemic classificatio",
+      "url": "https://github.com/RCushmaniii/biojalisco-species-id",
+      "demoUrl": "https://biojalisco-species-id.vercel.app",
+      "liveUrl": "https://biojalisco-species-id.vercel.app",
+      "homepage": "https://biojalisco-species-id.vercel.app",
+      "topics": [
+        "ai",
+        "biodiversity",
+        "computer-vision",
+        "conservation",
+        "gpt-4o",
+        "jalisco",
+        "nextjs",
+        "species-identification"
+      ],
+      "categories": [
+        "AI Automation"
+      ],
+      "tags": [
+        "ai",
+        "biodiversity",
+        "computer-vision",
+        "conservation",
+        "gpt-4o",
+        "jalisco",
+        "nextjs",
+        "species-identification",
+        "ai-vision",
+        "inaturalist",
+        "gbif",
+        "conabio",
+        "bilingual"
+      ],
+      "stack": [
+        "Next.js 15 (App Router)",
+        "TypeScript",
+        "GPT-4o Vision",
+        "iNaturalist API",
+        "GBIF API",
+        "EncicloVida/CONABIO API",
+        "OpenStreetMap Nominatim (reverse geocoding)",
+        "exifr (EXIF GPS/metadata extraction)",
+        "Clerk Authentication",
+        "Neon Postgres",
+        "Drizzle ORM",
+        "Vercel Blob Storage",
+        "sharp (image processing)",
+        "Vercel"
+      ],
+      "status": null,
+      "language": "TypeScript",
+      "languages": {
+        "TypeScript": 238716,
+        "CSS": 73099,
+        "JavaScript": 2646
+      },
+      "stars": 0,
+      "forks": 0,
+      "lastPushed": "2026-03-15T04:53:51Z",
+      "createdAt": "2026-03-06T18:20:23Z",
+      "isFeatured": true,
+      "isArchived": false,
+      "isPrivate": false,
+      "tagline": "Five-API species identification pipeline with EXIF GPS extraction, reverse geocoding, and Mexico-specific conservation data",
+      "thumbnail": "https://cdn.cushlabs.ai/biojalisco-species-id/images/portfolio/biojalisco-thumb.webp",
+      "problem": "Conservation biologists in Jalisco encounter thousands of species during fieldwork\nbut lack rapid identification tools with verified data. GPT-4o Vision alone\nfrequently misidentifies species without geographic context. No existing tool\ncombines AI vision, regional species data, global taxonomy verification, and\nMexico-specific conservation status (NOM-059, endemic classification) in one flow.\n",
+      "solution": null,
+      "keyFeatures": [
+        "Five-API pipeline: iNaturalist context + GPT-4o Vision + GBIF verification + EncicloVida/CONABIO enrichment + Nominatim reverse geocoding",
+        "EXIF GPS extraction from photo metadata for precise location-aware identification (proven: corrected Broad-billed Hummingbird to Cinnamon Hummingbird with accurate coordinates)",
+        "Reverse geocoding via OpenStreetMap Nominatim: country, state, region, municipality, city displayed in Data Sources",
+        "Verified IUCN Red List status and taxonomy from GBIF backbone (not AI-generated)",
+        "Mexico-specific data from CONABIO: endemic/native/exotic classification, NOM-059 protection status, indigenous language names",
+        "Explore/Research dual-mode tab system: casual users see About + Habitat + Similar Species; scientists see Taxonomy + Conservation + Data Sources",
+        "Bilingual (EN/ES) with dark/light theme, community observation gallery, and EXIF privacy stripping",
+        "Graceful degradation: works with just an OpenAI key, enriched with optional services"
+      ],
+      "metrics": [],
+      "priority": 3,
+      "dateCompleted": null,
+      "slides": [
+        {
+          "src": "https://cdn.cushlabs.ai/biojalisco-species-id/images/portfolio/biojalisco-slide-01.webp",
+          "altEn": "BioJalisco Species Identifier",
+          "altEs": "BioJalisco Species Identifier"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/biojalisco-species-id/images/portfolio/biojalisco-slide-02.webp",
+          "altEn": "BioJalisco Species Identifier",
+          "altEs": "BioJalisco Species Identifier"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/biojalisco-species-id/images/portfolio/biojalisco-slide-03.webp",
+          "altEn": "BioJalisco Species Identifier",
+          "altEs": "BioJalisco Species Identifier"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/biojalisco-species-id/images/portfolio/biojalisco-slide-04.webp",
+          "altEn": "BioJalisco Species Identifier",
+          "altEs": "BioJalisco Species Identifier"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/biojalisco-species-id/images/portfolio/biojalisco-slide-05.webp",
+          "altEn": "BioJalisco Species Identifier",
+          "altEs": "BioJalisco Species Identifier"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/biojalisco-species-id/images/portfolio/biojalisco-slide-06.webp",
+          "altEn": "BioJalisco Species Identifier",
+          "altEs": "BioJalisco Species Identifier"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/biojalisco-species-id/images/portfolio/biojalisco-slide-07.webp",
+          "altEn": "BioJalisco Species Identifier",
+          "altEs": "BioJalisco Species Identifier"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/biojalisco-species-id/images/portfolio/biojalisco-slide-08.webp",
+          "altEn": "BioJalisco Species Identifier",
+          "altEs": "BioJalisco Species Identifier"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/biojalisco-species-id/images/portfolio/biojalisco-slide-09.webp",
+          "altEn": "BioJalisco Species Identifier",
+          "altEs": "BioJalisco Species Identifier"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/biojalisco-species-id/images/portfolio/biojalisco-slide-10.webp",
+          "altEn": "BioJalisco Species Identifier",
+          "altEs": "BioJalisco Species Identifier"
+        }
+      ],
+      "videoUrl": "https://cdn.cushlabs.ai/biojalisco-species-id/video/biojalisco-brief.mp4",
+      "videoPoster": "https://cdn.cushlabs.ai/biojalisco-species-id/images/portfolio/biojalisco-brief-poster.webp"
+    },
+    {
+      "id": 1174674268,
+      "name": "cushlabs-scrollytelling",
+      "title": "CushLabs Scrollytelling",
+      "description": "Cinematic scrollytelling presentations by CushLabs — bilingual, narrated, scroll-driven marketing sites that make audiences lean in.",
+      "summary": "> Cinematic, bilingual scrollytelling pitch decks that feel like cinema — not slides.",
+      "url": "https://github.com/RCushmaniii/cushlabs-scrollytelling",
+      "demoUrl": "https://cushlabs-scrollytelling.vercel.app",
+      "liveUrl": "https://cushlabs-scrollytelling.vercel.app",
+      "homepage": "https://cushlabs-scrollytelling.vercel.app",
+      "topics": [
+        "astro",
+        "bilingual",
+        "cinematic",
+        "cushlabs",
+        "marketing",
+        "presentation",
+        "scrollytelling",
+        "scrollytelling-template",
+        "svelte",
+        "tailwindcss"
+      ],
+      "categories": [
+        "Templates"
+      ],
+      "tags": [
+        "astro",
+        "bilingual",
+        "cinematic",
+        "cushlabs",
+        "marketing",
+        "presentation",
+        "scrollytelling",
+        "scrollytelling-template",
+        "svelte",
+        "tailwindcss",
+        "pitch-deck",
+        "presentation-mode",
+        "tailwind-css"
+      ],
+      "stack": [
+        "Astro 5",
+        "Svelte 5",
+        "Tailwind CSS 3",
+        "TypeScript",
+        "Vercel"
+      ],
+      "status": "Production",
+      "language": "Svelte",
+      "languages": {
+        "Svelte": 30157,
+        "MDX": 17140,
+        "TypeScript": 15455,
+        "Astro": 10589,
+        "CSS": 3788,
+        "JavaScript": 1572
+      },
+      "stars": 0,
+      "forks": 0,
+      "lastPushed": "2026-03-15T04:53:44Z",
+      "createdAt": "2026-03-06T17:57:40Z",
+      "isFeatured": true,
+      "isArchived": false,
+      "isPrivate": false,
+      "tagline": "Cinematic bilingual pitch decks that win attention",
+      "thumbnail": "https://cdn.cushlabs.ai/cushlabs-scrollytelling/images/portfolio/cushlabs-scrollytelling-thumb.webp",
+      "problem": "Traditional pitch decks are forgettable — investors see hundreds of static slide presentations every month. Custom scrollytelling experiences take weeks to build and produce one-off code that can't be reused.",
+      "solution": "A config-driven Astro template with dual-mode interaction: auto-narrated presentation mode for board meetings and free-browse mode for due diligence. New pitch decks ship in hours, not weeks.",
+      "keyFeatures": [
+        "Presentation mode with scroll-lock, auto-advance, and synchronized narration",
+        "Instant EN/ES language switching without page reloads",
+        "Config-driven theming — colors, fonts, and content from a single TypeScript file",
+        "98 Lighthouse performance score with Astro islands architecture",
+        "Mobile-responsive with scroll-snap carousels and touch support"
+      ],
+      "metrics": [],
+      "priority": 3,
+      "dateCompleted": "2026-03",
+      "slides": [
+        {
+          "src": "https://cdn.cushlabs.ai/cushlabs-scrollytelling/images/portfolio/cushlabs-scrollytelling-01.webp",
+          "altEn": "Opening overlay with presentation mode and browse freely options",
+          "altEs": "Pantalla de inicio con opciones de modo presentacion y navegacion libre"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/cushlabs-scrollytelling/images/portfolio/cushlabs-scrollytelling-02.webp",
+          "altEn": "Hero section with animated headline and cinematic typography",
+          "altEs": "Seccion principal con titulo animado y tipografia cinematica"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/cushlabs-scrollytelling/images/portfolio/cushlabs-scrollytelling-03.webp",
+          "altEn": "Problem statement section with typewriter text animation",
+          "altEs": "Seccion del problema con animacion de texto tipo maquina de escribir"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/cushlabs-scrollytelling/images/portfolio/cushlabs-scrollytelling-04.webp",
+          "altEn": "Solution section with Matrix rain effect and feature cards",
+          "altEs": "Seccion de solucion con efecto Matrix y tarjetas de caracteristicas"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/cushlabs-scrollytelling/images/portfolio/cushlabs-scrollytelling-05.webp",
+          "altEn": "Feature cards showcasing presentation mode and bilingual support",
+          "altEs": "Tarjetas de caracteristicas mostrando modo presentacion y soporte bilingue"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/cushlabs-scrollytelling/images/portfolio/cushlabs-scrollytelling-06.webp",
+          "altEn": "Proof section with testimonial quote and evidence",
+          "altEs": "Seccion de prueba con cita testimonial y evidencia"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/cushlabs-scrollytelling/images/portfolio/cushlabs-scrollytelling-07.webp",
+          "altEn": "Call-to-action section with consultation booking prompt",
+          "altEs": "Seccion de llamada a la accion con invitacion a agendar consulta"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/cushlabs-scrollytelling/images/portfolio/cushlabs-scrollytelling-08.webp",
+          "altEn": "Consultation page step 1 — calendar date and time selection",
+          "altEs": "Pagina de consulta paso 1 — seleccion de fecha y hora en calendario"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/cushlabs-scrollytelling/images/portfolio/cushlabs-scrollytelling-09.webp",
+          "altEn": "Consultation page step 2 — contact information form",
+          "altEs": "Pagina de consulta paso 2 — formulario de informacion de contacto"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/cushlabs-scrollytelling/images/portfolio/cushlabs-scrollytelling-10.webp",
+          "altEn": "Consultation page step 3 — booking confirmation summary",
+          "altEs": "Pagina de consulta paso 3 — resumen de confirmacion de reserva"
+        }
+      ],
+      "videoUrl": "https://cdn.cushlabs.ai/cushlabs-scrollytelling/video/cushlabs-scrollytelling-brief.mp4",
+      "videoPoster": "https://cdn.cushlabs.ai/cushlabs-scrollytelling/images/portfolio/cushlabs-scrollytelling-brief-poster.webp"
     },
     {
       "id": 1164355422,
@@ -399,139 +751,6 @@
       "videoPoster": "https://cdn.cushlabs.ai/cushlabs-ai-voice-agent/video/voice-cushlabs-brief-poster.webp"
     },
     {
-      "id": 1174674268,
-      "name": "cushlabs-scrollytelling",
-      "title": "CushLabs Scrollytelling",
-      "description": "Cinematic scrollytelling presentations by CushLabs — bilingual, narrated, scroll-driven marketing sites that make audiences lean in.",
-      "summary": "> Cinematic, bilingual scrollytelling pitch decks that feel like cinema — not slides.",
-      "url": "https://github.com/RCushmaniii/cushlabs-scrollytelling",
-      "demoUrl": "https://cushlabs-scrollytelling.vercel.app",
-      "liveUrl": "https://cushlabs-scrollytelling.vercel.app",
-      "homepage": "https://cushlabs-scrollytelling.vercel.app",
-      "topics": [
-        "astro",
-        "bilingual",
-        "cinematic",
-        "cushlabs",
-        "marketing",
-        "presentation",
-        "scrollytelling",
-        "scrollytelling-template",
-        "svelte",
-        "tailwindcss"
-      ],
-      "categories": [
-        "Templates"
-      ],
-      "tags": [
-        "astro",
-        "bilingual",
-        "cinematic",
-        "cushlabs",
-        "marketing",
-        "presentation",
-        "scrollytelling",
-        "scrollytelling-template",
-        "svelte",
-        "tailwindcss",
-        "pitch-deck",
-        "presentation-mode",
-        "tailwind-css"
-      ],
-      "stack": [
-        "Astro 5",
-        "Svelte 5",
-        "Tailwind CSS 3",
-        "TypeScript",
-        "Vercel"
-      ],
-      "status": "Production",
-      "language": "Svelte",
-      "languages": {
-        "Svelte": 30157,
-        "MDX": 17140,
-        "TypeScript": 15455,
-        "Astro": 10589,
-        "CSS": 3788,
-        "JavaScript": 1572
-      },
-      "stars": 0,
-      "forks": 0,
-      "lastPushed": "2026-03-13T04:40:45Z",
-      "createdAt": "2026-03-06T17:57:40Z",
-      "isFeatured": true,
-      "isArchived": false,
-      "isPrivate": false,
-      "tagline": "Cinematic bilingual pitch decks that win attention",
-      "thumbnail": "https://cdn.cushlabs.ai/cushlabs-scrollytelling/images/portfolio/cushlabs-scrollytelling-thumb.webp",
-      "problem": "Traditional pitch decks are forgettable — investors see hundreds of static slide presentations every month. Custom scrollytelling experiences take weeks to build and produce one-off code that can't be reused.",
-      "solution": "A config-driven Astro template with dual-mode interaction: auto-narrated presentation mode for board meetings and free-browse mode for due diligence. New pitch decks ship in hours, not weeks.",
-      "keyFeatures": [
-        "Presentation mode with scroll-lock, auto-advance, and synchronized narration",
-        "Instant EN/ES language switching without page reloads",
-        "Config-driven theming — colors, fonts, and content from a single TypeScript file",
-        "98 Lighthouse performance score with Astro islands architecture",
-        "Mobile-responsive with scroll-snap carousels and touch support"
-      ],
-      "metrics": [],
-      "priority": 3,
-      "dateCompleted": "2026-03",
-      "slides": [
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-scrollytelling/images/portfolio/cushlabs-scrollytelling-01.webp",
-          "altEn": "Opening overlay with presentation mode and browse freely options",
-          "altEs": "Pantalla de inicio con opciones de modo presentacion y navegacion libre"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-scrollytelling/images/portfolio/cushlabs-scrollytelling-02.webp",
-          "altEn": "Hero section with animated headline and cinematic typography",
-          "altEs": "Seccion principal con titulo animado y tipografia cinematica"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-scrollytelling/images/portfolio/cushlabs-scrollytelling-03.webp",
-          "altEn": "Problem statement section with typewriter text animation",
-          "altEs": "Seccion del problema con animacion de texto tipo maquina de escribir"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-scrollytelling/images/portfolio/cushlabs-scrollytelling-04.webp",
-          "altEn": "Solution section with Matrix rain effect and feature cards",
-          "altEs": "Seccion de solucion con efecto Matrix y tarjetas de caracteristicas"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-scrollytelling/images/portfolio/cushlabs-scrollytelling-05.webp",
-          "altEn": "Feature cards showcasing presentation mode and bilingual support",
-          "altEs": "Tarjetas de caracteristicas mostrando modo presentacion y soporte bilingue"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-scrollytelling/images/portfolio/cushlabs-scrollytelling-06.webp",
-          "altEn": "Proof section with testimonial quote and evidence",
-          "altEs": "Seccion de prueba con cita testimonial y evidencia"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-scrollytelling/images/portfolio/cushlabs-scrollytelling-07.webp",
-          "altEn": "Call-to-action section with consultation booking prompt",
-          "altEs": "Seccion de llamada a la accion con invitacion a agendar consulta"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-scrollytelling/images/portfolio/cushlabs-scrollytelling-08.webp",
-          "altEn": "Consultation page step 1 — calendar date and time selection",
-          "altEs": "Pagina de consulta paso 1 — seleccion de fecha y hora en calendario"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-scrollytelling/images/portfolio/cushlabs-scrollytelling-09.webp",
-          "altEn": "Consultation page step 2 — contact information form",
-          "altEs": "Pagina de consulta paso 2 — formulario de informacion de contacto"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-scrollytelling/images/portfolio/cushlabs-scrollytelling-10.webp",
-          "altEn": "Consultation page step 3 — booking confirmation summary",
-          "altEs": "Pagina de consulta paso 3 — resumen de confirmacion de reserva"
-        }
-      ],
-      "videoUrl": "https://cdn.cushlabs.ai/cushlabs-scrollytelling/video/cushlabs-scrollytelling-brief.mp4",
-      "videoPoster": "https://cdn.cushlabs.ai/cushlabs-scrollytelling/images/portfolio/cushlabs-scrollytelling-brief-poster.webp"
-    },
-    {
       "id": 1176224548,
       "name": "cushlabs-ai-marketing",
       "title": "AI Marketing Suite for Claude Code",
@@ -652,146 +871,6 @@
       "videoPoster": "https://cdn.cushlabs.ai/cushlabs-ai-marketing/images/cushlabs-ai-marketing-brief-poster.webp"
     },
     {
-      "id": 1174690198,
-      "name": "biojalisco-species-id",
-      "title": "BioJalisco Species Identifier",
-      "description": "AI-powered vertebrate species identification for Jalisco field research. Next.js 15, GPT-4o Vision, Clerk, Neon Postgres.",
-      "summary": "> AI-powered species identification for Jalisco biodiversity research. Four-API pipeline delivers verified taxonomy, IUCN status, Mexico-specific conservation data (NOM-059), and endemic classificatio",
-      "url": "https://github.com/RCushmaniii/biojalisco-species-id",
-      "demoUrl": "https://biojalisco-species-id.vercel.app",
-      "liveUrl": "https://biojalisco-species-id.vercel.app",
-      "homepage": "https://biojalisco-species-id.vercel.app",
-      "topics": [
-        "ai",
-        "biodiversity",
-        "computer-vision",
-        "conservation",
-        "gpt-4o",
-        "jalisco",
-        "nextjs",
-        "species-identification"
-      ],
-      "categories": [
-        "AI Automation"
-      ],
-      "tags": [
-        "ai",
-        "biodiversity",
-        "computer-vision",
-        "conservation",
-        "gpt-4o",
-        "jalisco",
-        "nextjs",
-        "species-identification",
-        "ai-vision",
-        "inaturalist",
-        "gbif",
-        "conabio",
-        "bilingual"
-      ],
-      "stack": [
-        "Next.js 15 (App Router)",
-        "TypeScript",
-        "GPT-4o Vision",
-        "iNaturalist API",
-        "GBIF API",
-        "EncicloVida/CONABIO API",
-        "OpenStreetMap Nominatim (reverse geocoding)",
-        "exifr (EXIF GPS/metadata extraction)",
-        "Clerk Authentication",
-        "Neon Postgres",
-        "Drizzle ORM",
-        "Vercel Blob Storage",
-        "sharp (image processing)",
-        "Vercel"
-      ],
-      "status": null,
-      "language": "TypeScript",
-      "languages": {
-        "TypeScript": 237859,
-        "CSS": 73099,
-        "JavaScript": 388
-      },
-      "stars": 0,
-      "forks": 0,
-      "lastPushed": "2026-03-13T01:27:49Z",
-      "createdAt": "2026-03-06T18:20:23Z",
-      "isFeatured": true,
-      "isArchived": false,
-      "isPrivate": false,
-      "tagline": "Five-API species identification pipeline with EXIF GPS extraction, reverse geocoding, and Mexico-specific conservation data",
-      "thumbnail": "https://cdn.cushlabs.ai/biojalisco-species-id/images/portfolio/biojalisco-thumb.webp",
-      "problem": "Conservation biologists in Jalisco encounter thousands of species during fieldwork\nbut lack rapid identification tools with verified data. GPT-4o Vision alone\nfrequently misidentifies species without geographic context. No existing tool\ncombines AI vision, regional species data, global taxonomy verification, and\nMexico-specific conservation status (NOM-059, endemic classification) in one flow.\n",
-      "solution": null,
-      "keyFeatures": [
-        "Five-API pipeline: iNaturalist context + GPT-4o Vision + GBIF verification + EncicloVida/CONABIO enrichment + Nominatim reverse geocoding",
-        "EXIF GPS extraction from photo metadata for precise location-aware identification (proven: corrected Broad-billed Hummingbird to Cinnamon Hummingbird with accurate coordinates)",
-        "Reverse geocoding via OpenStreetMap Nominatim: country, state, region, municipality, city displayed in Data Sources",
-        "Verified IUCN Red List status and taxonomy from GBIF backbone (not AI-generated)",
-        "Mexico-specific data from CONABIO: endemic/native/exotic classification, NOM-059 protection status, indigenous language names",
-        "Explore/Research dual-mode tab system: casual users see About + Habitat + Similar Species; scientists see Taxonomy + Conservation + Data Sources",
-        "Bilingual (EN/ES) with dark/light theme, community observation gallery, and EXIF privacy stripping",
-        "Graceful degradation: works with just an OpenAI key, enriched with optional services"
-      ],
-      "metrics": [],
-      "priority": 3,
-      "dateCompleted": null,
-      "slides": [
-        {
-          "src": "https://cdn.cushlabs.ai/biojalisco-species-id/images/portfolio/biojalisco-slide-01.webp",
-          "altEn": "BioJalisco Species Identifier",
-          "altEs": "BioJalisco Species Identifier"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/biojalisco-species-id/images/portfolio/biojalisco-slide-02.webp",
-          "altEn": "BioJalisco Species Identifier",
-          "altEs": "BioJalisco Species Identifier"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/biojalisco-species-id/images/portfolio/biojalisco-slide-03.webp",
-          "altEn": "BioJalisco Species Identifier",
-          "altEs": "BioJalisco Species Identifier"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/biojalisco-species-id/images/portfolio/biojalisco-slide-04.webp",
-          "altEn": "BioJalisco Species Identifier",
-          "altEs": "BioJalisco Species Identifier"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/biojalisco-species-id/images/portfolio/biojalisco-slide-05.webp",
-          "altEn": "BioJalisco Species Identifier",
-          "altEs": "BioJalisco Species Identifier"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/biojalisco-species-id/images/portfolio/biojalisco-slide-06.webp",
-          "altEn": "BioJalisco Species Identifier",
-          "altEs": "BioJalisco Species Identifier"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/biojalisco-species-id/images/portfolio/biojalisco-slide-07.webp",
-          "altEn": "BioJalisco Species Identifier",
-          "altEs": "BioJalisco Species Identifier"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/biojalisco-species-id/images/portfolio/biojalisco-slide-08.webp",
-          "altEn": "BioJalisco Species Identifier",
-          "altEs": "BioJalisco Species Identifier"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/biojalisco-species-id/images/portfolio/biojalisco-slide-09.webp",
-          "altEn": "BioJalisco Species Identifier",
-          "altEs": "BioJalisco Species Identifier"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/biojalisco-species-id/images/portfolio/biojalisco-slide-10.webp",
-          "altEn": "BioJalisco Species Identifier",
-          "altEs": "BioJalisco Species Identifier"
-        }
-      ],
-      "videoUrl": "https://cdn.cushlabs.ai/biojalisco-species-id/video/biojalisco-brief.mp4",
-      "videoPoster": "https://cdn.cushlabs.ai/biojalisco-species-id/images/portfolio/biojalisco-brief-poster.webp"
-    },
-    {
       "id": 953305892,
       "name": "ny-eng",
       "title": "NY English Teacher",
@@ -849,18 +928,18 @@
       "status": "Production",
       "language": "Astro",
       "languages": {
-        "Astro": 1208430,
+        "Astro": 1185967,
         "HTML": 837214,
-        "TypeScript": 689534,
+        "TypeScript": 688568,
         "JavaScript": 378438,
         "CSS": 40569,
         "Python": 29891,
-        "MDX": 23077,
+        "MDX": 23172,
         "PLpgSQL": 4239
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-03-13T01:28:33Z",
+      "lastPushed": "2026-03-15T02:54:06Z",
       "createdAt": "2025-03-23T03:27:14Z",
       "isFeatured": true,
       "isArchived": false,
@@ -1513,11 +1592,11 @@
       "status": null,
       "language": "Python",
       "languages": {
-        "Python": 234140
+        "Python": 224899
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-03-12T04:21:39Z",
+      "lastPushed": "2026-03-13T06:13:51Z",
       "createdAt": "2026-03-09T19:14:08Z",
       "isFeatured": false,
       "isArchived": false,
@@ -1572,9 +1651,9 @@
       "description": "Context-engineering system to lock brand voice, enforce truth, and generate consistent AI-written content at scale.",
       "summary": "> A context engineering framework that makes AI write like you, not like AI.",
       "url": "https://github.com/RCushmaniii/context-writing-system",
-      "demoUrl": "https://context-writing-system.vercel.app",
+      "demoUrl": "https://cushlabs-writing-system.vercel.app",
       "liveUrl": "https://context-writing-system.vercel.app",
-      "homepage": "https://context-writing-system.vercel.app",
+      "homepage": "https://cushlabs-writing-system.vercel.app",
       "topics": [
         "ai-assistant",
         "ai-content-generation",
@@ -1621,7 +1700,7 @@
       },
       "stars": 1,
       "forks": 0,
-      "lastPushed": "2026-03-13T01:27:54Z",
+      "lastPushed": "2026-03-15T05:44:25Z",
       "createdAt": "2025-12-20T10:31:00Z",
       "isFeatured": false,
       "isArchived": false,
@@ -1872,15 +1951,15 @@
       "status": null,
       "language": "Astro",
       "languages": {
-        "Astro": 493597,
+        "Astro": 493897,
         "TypeScript": 153220,
         "HTML": 61067,
-        "JavaScript": 46253,
+        "JavaScript": 46252,
         "CSS": 3069
       },
       "stars": 1,
       "forks": 0,
-      "lastPushed": "2026-03-13T04:47:34Z",
+      "lastPushed": "2026-03-14T03:11:12Z",
       "createdAt": "2026-01-08T03:52:43Z",
       "isFeatured": false,
       "isArchived": false,
