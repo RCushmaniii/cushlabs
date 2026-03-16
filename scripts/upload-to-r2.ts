@@ -181,9 +181,16 @@ function parsePortfolioMd(repo: string): string[] {
   if (data.demo_video_url) paths.push(data.demo_video_url);
   if (data.demo_video_poster) paths.push(data.demo_video_poster);
 
-  if (Array.isArray(data.slides)) {
-    for (const slide of data.slides) {
-      if (slide.src) paths.push(slide.src);
+  // Check both slides and hero_images (PORTFOLIO.md uses either key)
+  const slideArray = data.slides ?? data.hero_images ?? [];
+  if (Array.isArray(slideArray)) {
+    for (const slide of slideArray) {
+      if (typeof slide === 'string') {
+        paths.push(slide);
+      } else if (slide.src) {
+        paths.push(slide.src);
+        if (slide.src_es) paths.push(slide.src_es);
+      }
     }
   }
 
