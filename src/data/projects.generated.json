@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-03-15T05:58:01.095Z",
-  "count": 29,
+  "generatedAt": "2026-03-16T21:03:53.888Z",
+  "count": 28,
   "projects": [
     {
       "id": 1102173157,
@@ -246,85 +246,6 @@
       "videoPoster": "https://cdn.cushlabs.ai/ai-chatbot-saas/video/converso-brief-poster.jpg"
     },
     {
-      "id": 1182112411,
-      "name": "cushlabs-cws-scrollytelling",
-      "title": "CWS Scrollytelling — Conversion Narrative",
-      "description": "CushLabs Context Writing System — scrollytelling conversion narrative",
-      "summary": "> Cinematic scrollytelling conversion narrative for the CushLabs Context Writing System (CWS).",
-      "url": "https://github.com/RCushmaniii/cushlabs-cws-scrollytelling",
-      "demoUrl": "https://cws.cushlabs.ai",
-      "liveUrl": "https://cws.cushlabs.ai",
-      "homepage": null,
-      "topics": [
-        "astro",
-        "conversion",
-        "narrative-design",
-        "scrollytelling",
-        "svelte",
-        "tailwindcss",
-        "typescript",
-        "vercel"
-      ],
-      "categories": [
-        "AI Automation"
-      ],
-      "tags": [
-        "astro",
-        "conversion",
-        "narrative-design",
-        "scrollytelling",
-        "svelte",
-        "tailwindcss",
-        "typescript",
-        "vercel",
-        "content-strategy",
-        "ai-writing"
-      ],
-      "stack": [
-        "Astro 5",
-        "Svelte 5",
-        "Tailwind CSS 3",
-        "TypeScript",
-        "MDX",
-        "Vercel",
-        "IntersectionObserver"
-      ],
-      "status": null,
-      "language": "Svelte",
-      "languages": {
-        "Svelte": 126584,
-        "TypeScript": 26701,
-        "Astro": 13151,
-        "CSS": 4232,
-        "JavaScript": 1731,
-        "MDX": 1633
-      },
-      "stars": 0,
-      "forks": 0,
-      "lastPushed": "2026-03-15T04:57:07Z",
-      "createdAt": "2026-03-15T03:48:46Z",
-      "isFeatured": true,
-      "isArchived": false,
-      "isPrivate": true,
-      "tagline": "Cinematic scroll-driven story that sells the Context Writing System through emotion, not features",
-      "thumbnail": null,
-      "problem": "AI content tools produce generic output that erodes brand voice. Explaining why CWS\nis different requires more than a features page — prospects need to feel the problem\nbefore they believe in the solution. This scrollytelling narrative takes readers through\na nine-section emotional arc that builds recognition, trust, and desire before the CTA.\n",
-      "solution": null,
-      "keyFeatures": [
-        "Nine-section cinematic narrative arc from recognition to conversion",
-        "98+ Lighthouse performance with ~25 KB total JS via Astro islands",
-        "Scroll-triggered animations in Svelte 5 with full reduced-motion support",
-        "Single config file controls all theming, fonts, and site metadata",
-        "Static deploy to Vercel — no runtime, no database, no env vars"
-      ],
-      "metrics": [],
-      "priority": 3,
-      "dateCompleted": null,
-      "slides": [],
-      "videoUrl": null,
-      "videoPoster": null
-    },
-    {
       "id": 1174690198,
       "name": "biojalisco-species-id",
       "title": "BioJalisco Species Identifier",
@@ -381,13 +302,13 @@
       "status": null,
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 238716,
-        "CSS": 73099,
+        "TypeScript": 261426,
+        "CSS": 77774,
         "JavaScript": 2646
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-03-15T04:53:51Z",
+      "lastPushed": "2026-03-16T01:17:53Z",
       "createdAt": "2026-03-06T18:20:23Z",
       "isFeatured": true,
       "isArchived": false,
@@ -1592,11 +1513,12 @@
       "status": null,
       "language": "Python",
       "languages": {
-        "Python": 224899
+        "Python": 244291,
+        "Shell": 1351
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-03-13T06:13:51Z",
+      "lastPushed": "2026-03-16T05:42:07Z",
       "createdAt": "2026-03-09T19:14:08Z",
       "isFeatured": false,
       "isArchived": false,
@@ -1700,7 +1622,7 @@
       },
       "stars": 1,
       "forks": 0,
-      "lastPushed": "2026-03-15T05:44:25Z",
+      "lastPushed": "2026-03-15T18:40:12Z",
       "createdAt": "2025-12-20T10:31:00Z",
       "isFeatured": false,
       "isArchived": false,
@@ -1828,73 +1750,72 @@
         "React 19",
         "TypeScript",
         "OpenAI GPT-4o-mini",
-        "Tailwind CSS 4"
+        "Tailwind CSS 4",
+        "Netlify",
+        "Formspree"
       ],
-      "status": "Production",
+      "status": null,
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 303557,
-        "CSS": 4877,
-        "JavaScript": 618
+        "TypeScript": 308757,
+        "JavaScript": 6802,
+        "CSS": 5180
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-03-13T01:29:10Z",
+      "lastPushed": "2026-03-16T21:02:07Z",
       "createdAt": "2026-01-25T01:59:32Z",
       "isFeatured": false,
       "isArchived": false,
       "isPrivate": false,
       "tagline": "Brutal startup defensibility assessment with AI contradiction detection",
       "thumbnail": "https://cdn.cushlabs.ai/ai-idea-validator/images/portfolio/aI-Idea-validator-thumb.jpg",
-      "problem": "Founders waste months building ideas that are structurally replaceable because traditional validation tools ignore defensibility. Self-assessment alone can't catch optimism bias — founders consistently rate their moats high while describing products with no switching costs.",
-      "solution": "A 23-question structured assessment that probes defensibility across moats, platform risk, lock-in, and failure modes. GPT-4o-mini cross-references numeric scores against written responses, detects contradictions, and delivers one of four verdicts — KILL, FLIP, BUILD, or BET — with specific reasoning in under 3 seconds.",
+      "problem": "Founders waste months building ideas that are structurally replaceable because traditional validation tools ignore defensibility. Self-assessment alone can't catch optimism bias — founders consistently rate their moats high while describing products with no switching costs.\n",
+      "solution": null,
       "keyFeatures": [
         "23-question defensibility assessment across 4 sections with AI-powered contradiction detection",
         "4 honest verdicts (KILL/FLIP/BUILD/BET) with confidence scores and detailed rationale",
         "AI cross-references numeric self-assessment vs written responses to surface optimism bias",
         "Full EN/ES bilingual support including AI-generated verdicts and analysis",
-        "Offline heuristic fallback — always returns a verdict, even without API access"
+        "Offline heuristic fallback — always returns a verdict, even without API access",
+        "Sub-3-second AI analysis via GPT-4o-mini"
       ],
-      "metrics": [
-        "Sub-3-second AI analysis via GPT-4o-mini",
-        "23 questions across 4 defensibility sections",
-        "4 verdicts with confidence scores and specific rationale"
-      ],
+      "metrics": [],
       "priority": 8,
       "dateCompleted": "2026-02",
       "slides": [
         {
-          "src": "https://cdn.cushlabs.ai/ai-idea-validator/images/portfolio/aI-Idea-validator-01.png",
+          "src": "https://cdn.cushlabs.ai/ai-idea-validator/images/portfolio/aI-Idea-validator-01.webp",
           "altEn": "AI Idea Validator — Brutal honesty for founders who want the truth before they build",
           "altEs": "AI Idea Validator — Honestidad brutal para fundadores que quieren la verdad antes de construir"
         },
         {
-          "src": "https://cdn.cushlabs.ai/ai-idea-validator/images/portfolio/aI-Idea-validator-02.png",
+          "src": "https://cdn.cushlabs.ai/ai-idea-validator/images/portfolio/aI-Idea-validator-02.webp",
           "altEn": "The $50,000 Problem — building something structurally replaceable because nobody asked about defensibility",
           "altEs": "El Problema de $50,000 — construir algo estructuralmente reemplazable porque nadie pregunto sobre defensibilidad"
         },
         {
-          "src": "https://cdn.cushlabs.ai/ai-idea-validator/images/portfolio/aI-Idea-validator-03.png",
+          "src": "https://cdn.cushlabs.ai/ai-idea-validator/images/portfolio/aI-Idea-validator-03.webp",
           "altEn": "23 Questions That Matter — moats, platform risk, switching costs, and failure modes",
           "altEs": "23 Preguntas Que Importan — fosos, riesgo de plataforma, costos de cambio y modos de fallo"
         },
         {
-          "src": "https://cdn.cushlabs.ai/ai-idea-validator/images/portfolio/aI-Idea-validator-04.png",
+          "src": "https://cdn.cushlabs.ai/ai-idea-validator/images/portfolio/aI-Idea-validator-04.webp",
           "altEn": "Contradiction Detection — AI reads your scores AND your words, then flags where they diverge",
           "altEs": "Deteccion de Contradicciones — la IA lee tus puntuaciones Y tus palabras, luego senala donde divergen"
         },
         {
-          "src": "https://cdn.cushlabs.ai/ai-idea-validator/images/portfolio/aI-Idea-validator-05.png",
+          "src": "https://cdn.cushlabs.ai/ai-idea-validator/images/portfolio/aI-Idea-validator-05.webp",
           "altEn": "Four Verdicts, Zero Diplomacy — KILL, FLIP, BUILD, or BET with confidence scores",
           "altEs": "Cuatro Veredictos, Cero Diplomacia — KILL, FLIP, BUILD o BET con puntuaciones de confianza"
         },
         {
-          "src": "https://cdn.cushlabs.ai/ai-idea-validator/images/portfolio/aI-Idea-validator-06.png",
+          "src": "https://cdn.cushlabs.ai/ai-idea-validator/images/portfolio/aI-Idea-validator-06.webp",
           "altEn": "The Advisor Who Doesn't Need to Be Polite — AI delivers what mentors won't say",
           "altEs": "El Asesor Que No Necesita Ser Amable — la IA entrega lo que los mentores no dicen"
         },
         {
-          "src": "https://cdn.cushlabs.ai/ai-idea-validator/images/portfolio/aI-Idea-validator-07.png",
+          "src": "https://cdn.cushlabs.ai/ai-idea-validator/images/portfolio/aI-Idea-validator-07.webp",
           "altEn": "Privacy-First, Zero Storage — no accounts, no tracking, your idea stays yours",
           "altEs": "Privacidad Primero, Cero Almacenamiento — sin cuentas, sin rastreo, tu idea sigue siendo tuya"
         }
@@ -1951,15 +1872,15 @@
       "status": null,
       "language": "Astro",
       "languages": {
-        "Astro": 493897,
+        "Astro": 493531,
         "TypeScript": 153220,
         "HTML": 61067,
         "JavaScript": 46252,
         "CSS": 3069
       },
-      "stars": 1,
+      "stars": 2,
       "forks": 0,
-      "lastPushed": "2026-03-14T03:11:12Z",
+      "lastPushed": "2026-03-15T07:24:37Z",
       "createdAt": "2026-01-08T03:52:43Z",
       "isFeatured": false,
       "isArchived": false,
