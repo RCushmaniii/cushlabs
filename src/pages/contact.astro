@@ -40,8 +40,10 @@ const hero = content[locale];
 ---
 
 <BaseLayout
-  title={`${dict.contact.title} | CushLabs.ai`}
-  description={hero.subheadline}
+  title={locale === 'es' ? 'Contáctanos — Hablemos de IA | CushLabs.ai' : 'Contact Us — Let\'s Talk AI | CushLabs.ai'}
+  description={locale === 'es'
+    ? 'Cuéntame sobre tu proyecto. Respondo en 24 horas con ideas honestas y un camino claro — sin presión, sin pitch. Servicio bilingüe EN/ES.'
+    : 'Tell me about your project. I respond within 24 hours with honest feedback and a clear path forward — no pressure, no pitch. Bilingual EN/ES.'}
 >
   <!-- Hero Section -->
   <section class="relative pt-24 pb-16 overflow-hidden">

@@ -255,9 +255,9 @@ export const en = {
     },
   },
   consultation: {
-    title: 'Free Call',
+    title: 'Free AI Consultation',
     description:
-      'Let\'s hop on a quick call to talk through your project and figure out the best path forward.',
+      'Book a free 15-minute call to discuss your project. No pitch, no pressure — just honest advice on how AI can help your business.',
     kicker: 'Free call',
     headline: 'Book a free call',
     subheadline:

@@ -255,9 +255,9 @@ export const es = {
     },
   },
   consultation: {
-    title: 'Llamada Gratis',
+    title: 'Consulta Gratis de IA',
     description:
-      'Hagamos una llamada rápida para platicar sobre tu proyecto y encontrar el mejor camino.',
+      'Agenda una llamada gratuita de 15 minutos para hablar de tu proyecto. Sin pitch, sin presión — solo consejos honestos sobre cómo la IA puede ayudar.',
     kicker: 'Llamada gratis',
     headline: 'Agenda una llamada gratis',
     subheadline:

@@ -20,8 +20,16 @@ const { project } = Astro.props as { project: Project };
 const override = getProjectDetailOverride(project.name);
 const detail = override?.es ?? null;
 
-const title = `${project.title} | ${dict.work.title} | CushLabs.ai`;
+const title = `${project.title} | CushLabs.ai`;
+
+// SEO meta descriptions (ES) for projects where GitHub description is too short/long
+const metaDescriptions: Record<string, string> = {
+  'ai-chatbot-saas': 'Chatbot SaaS multi-tenant con soporte bilingüe, base de conocimiento e widget embebible. Automatiza atención al cliente y ventas.',
+  'ny-ai-chatbot': 'Widget de chatbot con IA listo para producción, inteligencia RAG, soporte multi-idioma y panel de administración. Solución plug-and-play para sitios web de PYMES.',
+};
+
 const description = (
+  metaDescriptions[project.name] ||
   detail?.subheadline ||
   project.description ||
   project.summary ||
