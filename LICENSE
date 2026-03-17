@@ -1,19 +1,26 @@
-Copyright (c) 2026 Robert Cushman. All Rights Reserved.
+Copyright (c) 2024-2026 CushLabs AI Services (Robert Cushman III). All Rights Reserved.
 
-PROPRIETARY AND CONFIDENTIAL
+PROPRIETARY — PORTFOLIO DEMONSTRATION ONLY
 
-This software, CushLabs.ai, and all associated documentation files (the "Software")
-are the exclusive property of Robert Cushman.
+This software and all associated documentation files (the "Software") are the
+exclusive intellectual property of CushLabs AI Services.
 
-UNAUTHORIZED COPYING, MODIFICATION, DISTRIBUTION, OR USE OF THIS SOFTWARE,
-VIA ANY MEDIUM, IS STRICTLY PROHIBITED.
+PERMITTED:
+  - Viewing and reading this code for professional evaluation of the author's work
+  - Referencing this repository in the context of hiring, partnership, or due diligence
+  - Linking to this repository
 
-This Software is provided for authorized use only. No license, right, or
-interest in any trademark, service mark, logo, or trade name of Robert Cushman
-is granted under this agreement.
+NOT PERMITTED:
+  - Copying, cloning, forking, or reproducing this code for any purpose other than
+    personal review
+  - Using any portion of this code in your own projects, products, or services,
+    whether commercial or non-commercial
+  - Distributing, sublicensing, or publishing derivative works based on this code
+  - Using this code as a template, boilerplate, or starting point for any project
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY CLAIM, DAMAGES, OR
 OTHER LIABILITY ARISING FROM THE USE OF THIS SOFTWARE.
 
 For licensing inquiries: info@cushlabs.ai
+https://cushlabs.ai
