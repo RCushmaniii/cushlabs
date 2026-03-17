@@ -20,12 +20,19 @@ const { project } = Astro.props as { project: Project };
 const override = getProjectDetailOverride(project.name);
 const detail = override?.es ?? null;
 
-const title = `${project.title} | CushLabs.ai`;
+// SEO-optimized title overrides (30-60 chars) for projects where
+// the GitHub title is too long or too short for search snippets
+const metaTitles: Record<string, string> = {
+  'ai-chatbot-saas': 'Converso AI — Chatbot Bilingüe SaaS',
+  'ny-ai-chatbot': 'Chatbot IA para Sitios Web de PYMES',
+};
+
+const title = `${metaTitles[project.name] || project.title} | CushLabs.ai`;
 
 // SEO meta descriptions (ES) for projects where GitHub description is too short/long
 const metaDescriptions: Record<string, string> = {
   'ai-chatbot-saas': 'Chatbot SaaS multi-tenant con soporte bilingüe, base de conocimiento e widget embebible. Automatiza atención al cliente y ventas.',
-  'ny-ai-chatbot': 'Widget de chatbot con IA listo para producción, inteligencia RAG, soporte multi-idioma y panel de administración. Solución plug-and-play para sitios web de PYMES.',
+  'ny-ai-chatbot': 'Widget de chatbot con IA, inteligencia RAG, soporte multi-idioma y panel de administración. Solución plug-and-play para sitios web de PYMES.',
 };
 
 const description = (

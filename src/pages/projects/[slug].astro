@@ -20,7 +20,14 @@ const { project } = Astro.props as { project: Project };
 const override = getProjectDetailOverride(project.name);
 const detail = override?.en ?? null;
 
-const title = `${project.title} | CushLabs.ai`;
+// SEO-optimized title overrides (30-60 chars) for projects where
+// the GitHub title is too long or too short for search snippets
+const metaTitles: Record<string, string> = {
+  'ai-chatbot-saas': 'Converso AI — Bilingual AI Chatbot SaaS',
+  'ny-ai-chatbot': 'AI Chatbot Widget for Small Business Websites',
+};
+
+const title = `${metaTitles[project.name] || project.title} | CushLabs.ai`;
 
 // SEO-optimized meta descriptions (120-160 chars) for projects where
 // the GitHub description is too short or too long
