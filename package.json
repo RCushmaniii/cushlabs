@@ -15,7 +15,9 @@
     "astro": "astro",
     "generate-projects": "tsx scripts/generate-projects.ts",
     "sync:all": "tsx scripts/sync-all.ts",
-    "audit:predeploy": "tsx scripts/audit-predeploy.ts"
+    "audit:predeploy": "tsx scripts/audit-predeploy.ts",
+    "audit:portfolio": "tsx scripts/audit-portfolio.ts",
+    "generate:skills": "tsx scripts/generate-skills.ts"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.6",

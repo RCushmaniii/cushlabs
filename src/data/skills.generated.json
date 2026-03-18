@@ -1,0 +1,1996 @@
+{
+  "generatedAt": "2026-03-18T23:31:56.493Z",
+  "owner": "Robert Cushman",
+  "projectsScanned": 27,
+  "summary": {
+    "totalSkills": 106,
+    "topLanguages": [
+      "JavaScript",
+      "TypeScript",
+      "HTML/CSS",
+      "Python",
+      "PowerShell",
+      "Rust"
+    ],
+    "topFrameworks": [
+      "Tailwind CSS 4",
+      "React 19",
+      "Next.js 15",
+      "Astro 5",
+      "Svelte",
+      "Express.js"
+    ],
+    "topDatabases": [
+      "PostgreSQL",
+      "Drizzle ORM",
+      "Redis",
+      "pgvector"
+    ],
+    "topAPIs": [
+      "OpenAI GPT-4o",
+      "Anthropic Claude API",
+      "Resend",
+      "Stripe",
+      "Twilio"
+    ]
+  },
+  "skills": {
+    "languages": [
+      {
+        "name": "JavaScript",
+        "projectCount": 24,
+        "projects": [
+          "ai-build-vs-outsource",
+          "ai-chatbot-saas",
+          "ai-filesense",
+          "ai-filesense-website",
+          "ai-idea-validator",
+          "ai-portfolio",
+          "ai-resume-tailor",
+          "ai-scrabble-practice",
+          "ai-stock-alert-website",
+          "biojalisco-pitch",
+          "biojalisco-species-id",
+          "comp-plan-simulator",
+          "context-writing-system",
+          "cushlabs-ai-voice-agent",
+          "cushlabs-scrollytelling",
+          "expat-driver-license-prep",
+          "freelance-income-planner",
+          "marble-does-not-yield",
+          "mazebreak-trello",
+          "mazebreak-wiki",
+          "nextjs-react-agency-starter",
+          "ny-ai-chatbot",
+          "ny-eng",
+          "react-vite-tailwind-base"
+        ],
+        "firstUsed": "2025-03-23T03:27:14Z",
+        "lastUsed": "2026-03-17T16:58:18Z"
+      },
+      {
+        "name": "TypeScript",
+        "projectCount": 19,
+        "projects": [
+          "ai-build-vs-outsource",
+          "ai-chatbot-saas",
+          "ai-filesense",
+          "ai-filesense-website",
+          "ai-idea-validator",
+          "ai-portfolio",
+          "ai-resume-tailor",
+          "ai-scrabble-practice",
+          "ai-stock-alert-website",
+          "biojalisco-species-id",
+          "comp-plan-simulator",
+          "cushlabs-scrollytelling",
+          "expat-driver-license-prep",
+          "freelance-income-planner",
+          "marble-does-not-yield",
+          "nextjs-react-agency-starter",
+          "ny-ai-chatbot",
+          "ny-eng",
+          "react-vite-tailwind-base"
+        ],
+        "firstUsed": "2025-03-23T03:27:14Z",
+        "lastUsed": "2026-03-17T16:58:18Z"
+      },
+      {
+        "name": "HTML/CSS",
+        "projectCount": 13,
+        "projects": [
+          "ai-chatbot-saas",
+          "ai-filesense",
+          "ai-resume-tailor",
+          "ai-scrabble-practice",
+          "ai-stock-alert-website",
+          "biojalisco-pitch",
+          "context-writing-system",
+          "cushlabs-ai-voice-agent",
+          "mazebreak-trello",
+          "mazebreak-wiki",
+          "ny-ai-chatbot",
+          "ny-eng",
+          "react-vite-tailwind-base"
+        ],
+        "firstUsed": "2025-03-23T03:27:14Z",
+        "lastUsed": "2026-03-17T04:23:07Z"
+      },
+      {
+        "name": "Python",
+        "projectCount": 9,
+        "projects": [
+          "ai-filesense",
+          "ai-resume-tailor",
+          "biojalisco-pitch",
+          "cushlabs-ai-marketing",
+          "cushlabs-ai-unwatermark",
+          "expat-driver-license-prep",
+          "mazebreak-wiki",
+          "ny-eng",
+          "stock-alert"
+        ],
+        "firstUsed": "2025-03-23T03:27:14Z",
+        "lastUsed": "2026-03-17T01:41:55Z"
+      },
+      {
+        "name": "PowerShell",
+        "projectCount": 6,
+        "projects": [
+          "ai-portfolio",
+          "context-writing-system",
+          "cushlabs-ai-marketing",
+          "cushlabs-ai-unwatermark",
+          "ny-ai-chatbot",
+          "stock-alert"
+        ],
+        "firstUsed": "2025-10-23T22:24:30Z",
+        "lastUsed": "2026-03-17T04:23:07Z"
+      },
+      {
+        "name": "Rust",
+        "projectCount": 1,
+        "projects": [
+          "ai-filesense"
+        ],
+        "firstUsed": "2026-01-12T02:37:39Z",
+        "lastUsed": "2026-03-13T01:28:59Z"
+      }
+    ],
+    "frameworks": [
+      {
+        "name": "Tailwind CSS 4",
+        "projectCount": 22,
+        "projects": [
+          "ai-build-vs-outsource",
+          "ai-chatbot-saas",
+          "ai-filesense",
+          "ai-filesense-website",
+          "ai-idea-validator",
+          "ai-portfolio",
+          "ai-resume-tailor",
+          "ai-scrabble-practice",
+          "ai-stock-alert-website",
+          "biojalisco-species-id",
+          "comp-plan-simulator",
+          "context-writing-system",
+          "cushlabs-ai-voice-agent",
+          "cushlabs-scrollytelling",
+          "expat-driver-license-prep",
+          "freelance-income-planner",
+          "marble-does-not-yield",
+          "mazebreak-wiki",
+          "nextjs-react-agency-starter",
+          "ny-ai-chatbot",
+          "ny-eng",
+          "react-vite-tailwind-base"
+        ],
+        "firstUsed": "2025-03-23T03:27:14Z",
+        "lastUsed": "2026-03-17T16:58:18Z"
+      },
+      {
+        "name": "React 19",
+        "projectCount": 19,
+        "projects": [
+          "ai-build-vs-outsource",
+          "ai-chatbot-saas",
+          "ai-filesense",
+          "ai-filesense-website",
+          "ai-idea-validator",
+          "ai-portfolio",
+          "ai-resume-tailor",
+          "ai-scrabble-practice",
+          "ai-stock-alert-website",
+          "biojalisco-species-id",
+          "comp-plan-simulator",
+          "expat-driver-license-prep",
+          "freelance-income-planner",
+          "marble-does-not-yield",
+          "mazebreak-wiki",
+          "nextjs-react-agency-starter",
+          "ny-ai-chatbot",
+          "ny-eng",
+          "react-vite-tailwind-base"
+        ],
+        "firstUsed": "2025-03-23T03:27:14Z",
+        "lastUsed": "2026-03-17T16:58:18Z"
+      },
+      {
+        "name": "Next.js 15",
+        "projectCount": 12,
+        "projects": [
+          "ai-build-vs-outsource",
+          "ai-chatbot-saas",
+          "ai-filesense-website",
+          "ai-idea-validator",
+          "ai-portfolio",
+          "ai-stock-alert-website",
+          "biojalisco-species-id",
+          "comp-plan-simulator",
+          "freelance-income-planner",
+          "marble-does-not-yield",
+          "nextjs-react-agency-starter",
+          "ny-ai-chatbot"
+        ],
+        "firstUsed": "2025-11-23T00:24:28Z",
+        "lastUsed": "2026-03-17T16:58:18Z"
+      },
+      {
+        "name": "Astro 5",
+        "projectCount": 3,
+        "projects": [
+          "cushlabs-scrollytelling",
+          "expat-driver-license-prep",
+          "ny-eng"
+        ],
+        "firstUsed": "2025-03-23T03:27:14Z",
+        "lastUsed": "2026-03-15T04:53:44Z"
+      },
+      {
+        "name": "Svelte",
+        "projectCount": 1,
+        "projects": [
+          "cushlabs-scrollytelling"
+        ],
+        "firstUsed": "2026-03-06T17:57:40Z",
+        "lastUsed": "2026-03-15T04:53:44Z"
+      },
+      {
+        "name": "Express.js",
+        "projectCount": 1,
+        "projects": [
+          "cushlabs-ai-voice-agent"
+        ],
+        "firstUsed": "2026-02-23T01:31:09Z",
+        "lastUsed": "2026-03-13T04:47:10Z"
+      },
+      {
+        "name": "Flask",
+        "projectCount": 1,
+        "projects": [
+          "ai-resume-tailor"
+        ],
+        "firstUsed": "2025-11-05T18:11:38Z",
+        "lastUsed": "2026-03-13T01:29:15Z"
+      },
+      {
+        "name": "FastAPI",
+        "projectCount": 1,
+        "projects": [
+          "cushlabs-ai-unwatermark"
+        ],
+        "firstUsed": "2026-03-09T19:14:08Z",
+        "lastUsed": "2026-03-17T01:41:55Z"
+      },
+      {
+        "name": "Tauri",
+        "projectCount": 1,
+        "projects": [
+          "ai-filesense"
+        ],
+        "firstUsed": "2026-01-12T02:37:39Z",
+        "lastUsed": "2026-03-13T01:28:59Z"
+      }
+    ],
+    "databases": [
+      {
+        "name": "PostgreSQL",
+        "projectCount": 6,
+        "projects": [
+          "ai-chatbot-saas",
+          "ai-resume-tailor",
+          "biojalisco-species-id",
+          "cushlabs-ai-voice-agent",
+          "ny-ai-chatbot",
+          "ny-eng"
+        ],
+        "firstUsed": "2025-03-23T03:27:14Z",
+        "lastUsed": "2026-03-16T01:17:53Z"
+      },
+      {
+        "name": "Drizzle ORM",
+        "projectCount": 3,
+        "projects": [
+          "ai-chatbot-saas",
+          "biojalisco-species-id",
+          "ny-ai-chatbot"
+        ],
+        "firstUsed": "2025-11-23T00:24:28Z",
+        "lastUsed": "2026-03-16T01:17:53Z"
+      },
+      {
+        "name": "Redis",
+        "projectCount": 3,
+        "projects": [
+          "ai-chatbot-saas",
+          "cushlabs-ai-voice-agent",
+          "ny-ai-chatbot"
+        ],
+        "firstUsed": "2025-11-23T00:24:28Z",
+        "lastUsed": "2026-03-13T22:32:27Z"
+      },
+      {
+        "name": "pgvector",
+        "projectCount": 2,
+        "projects": [
+          "ai-chatbot-saas",
+          "ny-ai-chatbot"
+        ],
+        "firstUsed": "2025-11-23T00:24:28Z",
+        "lastUsed": "2026-03-13T22:32:27Z"
+      }
+    ],
+    "apis": [
+      {
+        "name": "OpenAI GPT-4o",
+        "projectCount": 8,
+        "projects": [
+          "ai-chatbot-saas",
+          "ai-idea-validator",
+          "ai-resume-tailor",
+          "ai-scrabble-practice",
+          "biojalisco-pitch",
+          "biojalisco-species-id",
+          "cushlabs-ai-unwatermark",
+          "ny-ai-chatbot"
+        ],
+        "firstUsed": "2025-09-23T19:15:28Z",
+        "lastUsed": "2026-03-17T16:58:18Z"
+      },
+      {
+        "name": "Anthropic Claude API",
+        "projectCount": 3,
+        "projects": [
+          "cushlabs-ai-unwatermark",
+          "expat-driver-license-prep",
+          "ny-eng"
+        ],
+        "firstUsed": "2025-03-23T03:27:14Z",
+        "lastUsed": "2026-03-17T01:41:55Z"
+      },
+      {
+        "name": "Resend",
+        "projectCount": 3,
+        "projects": [
+          "ai-filesense-website",
+          "nextjs-react-agency-starter",
+          "ny-eng"
+        ],
+        "firstUsed": "2025-03-23T03:27:14Z",
+        "lastUsed": "2026-03-15T02:54:06Z"
+      },
+      {
+        "name": "Stripe",
+        "projectCount": 2,
+        "projects": [
+          "ai-chatbot-saas",
+          "ai-resume-tailor"
+        ],
+        "firstUsed": "2025-11-05T18:11:38Z",
+        "lastUsed": "2026-03-13T22:32:27Z"
+      },
+      {
+        "name": "Twilio",
+        "projectCount": 2,
+        "projects": [
+          "cushlabs-ai-voice-agent",
+          "stock-alert"
+        ],
+        "firstUsed": "2025-10-23T22:24:30Z",
+        "lastUsed": "2026-03-13T04:47:10Z"
+      },
+      {
+        "name": "iNaturalist API",
+        "projectCount": 1,
+        "projects": [
+          "biojalisco-species-id"
+        ],
+        "firstUsed": "2026-03-06T18:20:23Z",
+        "lastUsed": "2026-03-16T01:17:53Z"
+      },
+      {
+        "name": "GBIF API",
+        "projectCount": 1,
+        "projects": [
+          "biojalisco-species-id"
+        ],
+        "firstUsed": "2026-03-06T18:20:23Z",
+        "lastUsed": "2026-03-16T01:17:53Z"
+      },
+      {
+        "name": "EncicloVida/CONABIO API",
+        "projectCount": 1,
+        "projects": [
+          "biojalisco-species-id"
+        ],
+        "firstUsed": "2026-03-06T18:20:23Z",
+        "lastUsed": "2026-03-16T01:17:53Z"
+      },
+      {
+        "name": "Google Calendar API",
+        "projectCount": 1,
+        "projects": [
+          "cushlabs-ai-voice-agent"
+        ],
+        "firstUsed": "2026-02-23T01:31:09Z",
+        "lastUsed": "2026-03-13T04:47:10Z"
+      },
+      {
+        "name": "Cloudflare Workers",
+        "projectCount": 1,
+        "projects": [
+          "ny-eng"
+        ],
+        "firstUsed": "2025-03-23T03:27:14Z",
+        "lastUsed": "2026-03-15T02:54:06Z"
+      },
+      {
+        "name": "Google Fonts",
+        "projectCount": 1,
+        "projects": [
+          "biojalisco-pitch"
+        ],
+        "firstUsed": "2026-03-04T22:07:57Z",
+        "lastUsed": "2026-03-13T01:27:45Z"
+      }
+    ],
+    "platforms": [
+      {
+        "name": "Vercel Blob Storage",
+        "projectCount": 3,
+        "projects": [
+          "ai-chatbot-saas",
+          "biojalisco-species-id",
+          "ny-ai-chatbot"
+        ],
+        "firstUsed": "2025-11-23T00:24:28Z",
+        "lastUsed": "2026-03-16T01:17:53Z"
+      },
+      {
+        "name": "GitHub Actions",
+        "projectCount": 3,
+        "projects": [
+          "ai-chatbot-saas",
+          "cushlabs-ai-voice-agent",
+          "ny-ai-chatbot"
+        ],
+        "firstUsed": "2025-11-23T00:24:28Z",
+        "lastUsed": "2026-03-13T22:32:27Z"
+      },
+      {
+        "name": "Render",
+        "projectCount": 3,
+        "projects": [
+          "ai-resume-tailor",
+          "cushlabs-ai-unwatermark",
+          "cushlabs-ai-voice-agent"
+        ],
+        "firstUsed": "2025-11-05T18:11:38Z",
+        "lastUsed": "2026-03-17T01:41:55Z"
+      },
+      {
+        "name": "Netlify",
+        "projectCount": 1,
+        "projects": [
+          "ai-idea-validator"
+        ],
+        "firstUsed": "2026-01-25T01:59:32Z",
+        "lastUsed": "2026-03-17T16:58:18Z"
+      },
+      {
+        "name": "Vercel Serverless",
+        "projectCount": 1,
+        "projects": [
+          "stock-alert"
+        ],
+        "firstUsed": "2025-10-23T22:24:30Z",
+        "lastUsed": "2026-03-13T01:29:20Z"
+      }
+    ],
+    "patterns": [
+      {
+        "name": "Monorepo",
+        "projectCount": 7,
+        "projects": [
+          "ai-build-vs-outsource",
+          "ai-resume-tailor",
+          "ai-scrabble-practice",
+          "comp-plan-simulator",
+          "cushlabs-scrollytelling",
+          "expat-driver-license-prep",
+          "react-vite-tailwind-base"
+        ],
+        "firstUsed": "2025-09-23T19:15:28Z",
+        "lastUsed": "2026-03-15T04:53:44Z"
+      },
+      {
+        "name": "Internationalization (i18n)",
+        "projectCount": 7,
+        "projects": [
+          "ai-filesense",
+          "ai-filesense-website",
+          "ai-portfolio",
+          "ai-scrabble-practice",
+          "ai-stock-alert-website",
+          "marble-does-not-yield",
+          "ny-eng"
+        ],
+        "firstUsed": "2025-03-23T03:27:14Z",
+        "lastUsed": "2026-03-16T21:04:13Z"
+      },
+      {
+        "name": "PWA",
+        "projectCount": 4,
+        "projects": [
+          "ai-idea-validator",
+          "biojalisco-species-id",
+          "cushlabs-ai-voice-agent",
+          "react-vite-tailwind-base"
+        ],
+        "firstUsed": "2025-10-02T22:40:01Z",
+        "lastUsed": "2026-03-17T16:58:18Z"
+      },
+      {
+        "name": "REST API",
+        "projectCount": 4,
+        "projects": [
+          "ai-idea-validator",
+          "biojalisco-pitch",
+          "mazebreak-trello",
+          "ny-eng"
+        ],
+        "firstUsed": "2025-03-23T03:27:14Z",
+        "lastUsed": "2026-03-17T16:58:18Z"
+      },
+      {
+        "name": "Cron Jobs",
+        "projectCount": 1,
+        "projects": [
+          "ny-ai-chatbot"
+        ],
+        "firstUsed": "2025-11-23T00:24:28Z",
+        "lastUsed": "2026-03-13T01:29:52Z"
+      },
+      {
+        "name": "localStorage (Phase 1)",
+        "projectCount": 1,
+        "projects": [
+          "expat-driver-license-prep"
+        ],
+        "firstUsed": "2026-03-03T07:21:12Z",
+        "lastUsed": "2026-03-13T01:29:37Z"
+      }
+    ],
+    "tools": [
+      {
+        "name": "Uvicorn",
+        "projectCount": 1,
+        "projects": [
+          "cushlabs-ai-unwatermark"
+        ],
+        "firstUsed": "2026-03-09T19:14:08Z",
+        "lastUsed": "2026-03-17T01:41:55Z"
+      }
+    ],
+    "libraries": [
+      {
+        "name": "Vercel AI SDK (OpenAI)",
+        "projectCount": 18,
+        "projects": [
+          "ai-build-vs-outsource",
+          "ai-chatbot-saas",
+          "ai-filesense-website",
+          "ai-portfolio",
+          "ai-resume-tailor",
+          "biojalisco-pitch",
+          "biojalisco-species-id",
+          "comp-plan-simulator",
+          "context-writing-system",
+          "cushlabs-scrollytelling",
+          "expat-driver-license-prep",
+          "freelance-income-planner",
+          "marble-does-not-yield",
+          "mazebreak-trello",
+          "mazebreak-wiki",
+          "ny-ai-chatbot",
+          "ny-eng",
+          "react-vite-tailwind-base"
+        ],
+        "firstUsed": "2025-03-23T03:27:14Z",
+        "lastUsed": "2026-03-17T04:23:07Z"
+      },
+      {
+        "name": "shadcn/ui",
+        "projectCount": 8,
+        "projects": [
+          "ai-build-vs-outsource",
+          "ai-chatbot-saas",
+          "ai-portfolio",
+          "ai-resume-tailor",
+          "ai-stock-alert-website",
+          "comp-plan-simulator",
+          "ny-ai-chatbot",
+          "react-vite-tailwind-base"
+        ],
+        "firstUsed": "2025-10-02T22:40:01Z",
+        "lastUsed": "2026-03-16T21:04:13Z"
+      },
+      {
+        "name": "Framer Motion",
+        "projectCount": 7,
+        "projects": [
+          "ai-build-vs-outsource",
+          "ai-chatbot-saas",
+          "ai-filesense-website",
+          "ai-stock-alert-website",
+          "comp-plan-simulator",
+          "nextjs-react-agency-starter",
+          "ny-ai-chatbot"
+        ],
+        "firstUsed": "2025-11-23T00:24:28Z",
+        "lastUsed": "2026-03-13T22:32:27Z"
+      },
+      {
+        "name": "Zod",
+        "projectCount": 6,
+        "projects": [
+          "ai-chatbot-saas",
+          "ai-filesense-website",
+          "ai-portfolio",
+          "ai-stock-alert-website",
+          "nextjs-react-agency-starter",
+          "ny-ai-chatbot"
+        ],
+        "firstUsed": "2025-11-23T00:24:28Z",
+        "lastUsed": "2026-03-16T21:04:13Z"
+      },
+      {
+        "name": "Clerk",
+        "projectCount": 5,
+        "projects": [
+          "ai-chatbot-saas",
+          "ai-resume-tailor",
+          "biojalisco-species-id",
+          "mazebreak-wiki",
+          "ny-ai-chatbot"
+        ],
+        "firstUsed": "2025-11-05T18:11:38Z",
+        "lastUsed": "2026-03-16T23:00:46Z"
+      },
+      {
+        "name": "gray-matter",
+        "projectCount": 5,
+        "projects": [
+          "ai-filesense-website",
+          "ai-portfolio",
+          "freelance-income-planner",
+          "nextjs-react-agency-starter",
+          "ny-eng"
+        ],
+        "firstUsed": "2025-03-23T03:27:14Z",
+        "lastUsed": "2026-03-16T21:04:13Z"
+      },
+      {
+        "name": "Marked",
+        "projectCount": 5,
+        "projects": [
+          "ai-resume-tailor",
+          "ai-scrabble-practice",
+          "expat-driver-license-prep",
+          "ny-eng",
+          "react-vite-tailwind-base"
+        ],
+        "firstUsed": "2025-03-23T03:27:14Z",
+        "lastUsed": "2026-03-15T02:54:06Z"
+      },
+      {
+        "name": "Recharts",
+        "projectCount": 5,
+        "projects": [
+          "ai-build-vs-outsource",
+          "ai-resume-tailor",
+          "comp-plan-simulator",
+          "freelance-income-planner",
+          "react-vite-tailwind-base"
+        ],
+        "firstUsed": "2025-10-02T22:40:01Z",
+        "lastUsed": "2026-03-13T01:29:57Z"
+      },
+      {
+        "name": "date-fns",
+        "projectCount": 4,
+        "projects": [
+          "ai-chatbot-saas",
+          "ai-resume-tailor",
+          "ny-ai-chatbot",
+          "react-vite-tailwind-base"
+        ],
+        "firstUsed": "2025-10-02T22:40:01Z",
+        "lastUsed": "2026-03-13T22:32:27Z"
+      },
+      {
+        "name": "sharp",
+        "projectCount": 4,
+        "projects": [
+          "ai-portfolio",
+          "biojalisco-species-id",
+          "expat-driver-license-prep",
+          "ny-eng"
+        ],
+        "firstUsed": "2025-03-23T03:27:14Z",
+        "lastUsed": "2026-03-16T21:04:13Z"
+      },
+      {
+        "name": "Vite 7",
+        "projectCount": 3,
+        "projects": [
+          "ai-scrabble-practice",
+          "mazebreak-wiki",
+          "react-vite-tailwind-base"
+        ],
+        "firstUsed": "2025-09-23T19:15:28Z",
+        "lastUsed": "2026-03-16T23:00:46Z"
+      },
+      {
+        "name": "LangChain (OpenAI)",
+        "projectCount": 2,
+        "projects": [
+          "ai-chatbot-saas",
+          "ny-ai-chatbot"
+        ],
+        "firstUsed": "2025-11-23T00:24:28Z",
+        "lastUsed": "2026-03-13T22:32:27Z"
+      },
+      {
+        "name": "Cheerio",
+        "projectCount": 2,
+        "projects": [
+          "ai-chatbot-saas",
+          "ny-ai-chatbot"
+        ],
+        "firstUsed": "2025-11-23T00:24:28Z",
+        "lastUsed": "2026-03-13T22:32:27Z"
+      },
+      {
+        "name": "nanoid",
+        "projectCount": 2,
+        "projects": [
+          "ai-chatbot-saas",
+          "ny-ai-chatbot"
+        ],
+        "firstUsed": "2025-11-23T00:24:28Z",
+        "lastUsed": "2026-03-13T22:32:27Z"
+      },
+      {
+        "name": "Requests",
+        "projectCount": 2,
+        "projects": [
+          "ai-resume-tailor",
+          "stock-alert"
+        ],
+        "firstUsed": "2025-10-23T22:24:30Z",
+        "lastUsed": "2026-03-13T01:29:20Z"
+      },
+      {
+        "name": "Pillow",
+        "projectCount": 2,
+        "projects": [
+          "cushlabs-ai-unwatermark",
+          "stock-alert"
+        ],
+        "firstUsed": "2025-10-23T22:24:30Z",
+        "lastUsed": "2026-03-17T01:41:55Z"
+      },
+      {
+        "name": "Zustand 4.4",
+        "projectCount": 2,
+        "projects": [
+          "comp-plan-simulator",
+          "freelance-income-planner"
+        ],
+        "firstUsed": "2025-12-11T17:38:35Z",
+        "lastUsed": "2026-03-13T01:29:32Z"
+      },
+      {
+        "name": "next-intl",
+        "projectCount": 2,
+        "projects": [
+          "ai-filesense-website",
+          "ai-stock-alert-website"
+        ],
+        "firstUsed": "2026-01-13T22:16:37Z",
+        "lastUsed": "2026-03-13T01:29:27Z"
+      },
+      {
+        "name": "EXIF Extraction (exifr)",
+        "projectCount": 1,
+        "projects": [
+          "biojalisco-species-id"
+        ],
+        "firstUsed": "2026-03-06T18:20:23Z",
+        "lastUsed": "2026-03-16T01:17:53Z"
+      },
+      {
+        "name": "OpenStreetMap Nominatim (reverse geocoding)",
+        "projectCount": 1,
+        "projects": [
+          "biojalisco-species-id"
+        ],
+        "firstUsed": "2026-03-06T18:20:23Z",
+        "lastUsed": "2026-03-16T01:17:53Z"
+      },
+      {
+        "name": "Three.js",
+        "projectCount": 1,
+        "projects": [
+          "cushlabs-scrollytelling"
+        ],
+        "firstUsed": "2026-03-06T17:57:40Z",
+        "lastUsed": "2026-03-15T04:53:44Z"
+      },
+      {
+        "name": "Vapi",
+        "projectCount": 1,
+        "projects": [
+          "cushlabs-ai-voice-agent"
+        ],
+        "firstUsed": "2026-02-23T01:31:09Z",
+        "lastUsed": "2026-03-13T04:47:10Z"
+      },
+      {
+        "name": "Claude Sonnet",
+        "projectCount": 1,
+        "projects": [
+          "cushlabs-ai-voice-agent"
+        ],
+        "firstUsed": "2026-02-23T01:31:09Z",
+        "lastUsed": "2026-03-13T04:47:10Z"
+      },
+      {
+        "name": "Groq Llama 3.1",
+        "projectCount": 1,
+        "projects": [
+          "cushlabs-ai-voice-agent"
+        ],
+        "firstUsed": "2026-02-23T01:31:09Z",
+        "lastUsed": "2026-03-13T04:47:10Z"
+      },
+      {
+        "name": "Deepgram Nova-2/3",
+        "projectCount": 1,
+        "projects": [
+          "cushlabs-ai-voice-agent"
+        ],
+        "firstUsed": "2026-02-23T01:31:09Z",
+        "lastUsed": "2026-03-13T04:47:10Z"
+      },
+      {
+        "name": "Cartesia",
+        "projectCount": 1,
+        "projects": [
+          "cushlabs-ai-voice-agent"
+        ],
+        "firstUsed": "2026-02-23T01:31:09Z",
+        "lastUsed": "2026-03-13T04:47:10Z"
+      },
+      {
+        "name": "ReportLab",
+        "projectCount": 1,
+        "projects": [
+          "cushlabs-ai-marketing"
+        ],
+        "firstUsed": "2026-03-08T19:31:57Z",
+        "lastUsed": "2026-03-13T01:28:05Z"
+      },
+      {
+        "name": "Claude Code Skills System",
+        "projectCount": 1,
+        "projects": [
+          "cushlabs-ai-marketing"
+        ],
+        "firstUsed": "2026-03-08T19:31:57Z",
+        "lastUsed": "2026-03-13T01:28:05Z"
+      },
+      {
+        "name": "Bash",
+        "projectCount": 1,
+        "projects": [
+          "cushlabs-ai-marketing"
+        ],
+        "firstUsed": "2026-03-08T19:31:57Z",
+        "lastUsed": "2026-03-13T01:28:05Z"
+      },
+      {
+        "name": "HTML Parser (stdlib)",
+        "projectCount": 1,
+        "projects": [
+          "cushlabs-ai-marketing"
+        ],
+        "firstUsed": "2026-03-08T19:31:57Z",
+        "lastUsed": "2026-03-13T01:28:05Z"
+      },
+      {
+        "name": "pdf-lib",
+        "projectCount": 1,
+        "projects": [
+          "ny-eng"
+        ],
+        "firstUsed": "2025-03-23T03:27:14Z",
+        "lastUsed": "2026-03-15T02:54:06Z"
+      },
+      {
+        "name": "HTML5",
+        "projectCount": 1,
+        "projects": [
+          "biojalisco-pitch"
+        ],
+        "firstUsed": "2026-03-04T22:07:57Z",
+        "lastUsed": "2026-03-13T01:27:45Z"
+      },
+      {
+        "name": "CSS3 (custom properties, grid, flexbox, scroll-snap)",
+        "projectCount": 1,
+        "projects": [
+          "biojalisco-pitch"
+        ],
+        "firstUsed": "2026-03-04T22:07:57Z",
+        "lastUsed": "2026-03-13T01:27:45Z"
+      },
+      {
+        "name": "Intersection Observer API",
+        "projectCount": 1,
+        "projects": [
+          "biojalisco-pitch"
+        ],
+        "firstUsed": "2026-03-04T22:07:57Z",
+        "lastUsed": "2026-03-13T01:27:45Z"
+      },
+      {
+        "name": "Web Audio API (procedural ambient + MP3 narration)",
+        "projectCount": 1,
+        "projects": [
+          "biojalisco-pitch"
+        ],
+        "firstUsed": "2026-03-04T22:07:57Z",
+        "lastUsed": "2026-03-13T01:27:45Z"
+      },
+      {
+        "name": "Base64 image embedding",
+        "projectCount": 1,
+        "projects": [
+          "biojalisco-pitch"
+        ],
+        "firstUsed": "2026-03-04T22:07:57Z",
+        "lastUsed": "2026-03-13T01:27:45Z"
+      },
+      {
+        "name": "SM-2 Spaced Repetition",
+        "projectCount": 1,
+        "projects": [
+          "expat-driver-license-prep"
+        ],
+        "firstUsed": "2026-03-03T07:21:12Z",
+        "lastUsed": "2026-03-13T01:29:37Z"
+      },
+      {
+        "name": "JSON Content Collections",
+        "projectCount": 1,
+        "projects": [
+          "expat-driver-license-prep"
+        ],
+        "firstUsed": "2026-03-03T07:21:12Z",
+        "lastUsed": "2026-03-13T01:29:37Z"
+      },
+      {
+        "name": "i18next",
+        "projectCount": 1,
+        "projects": [
+          "ai-resume-tailor"
+        ],
+        "firstUsed": "2025-11-05T18:11:38Z",
+        "lastUsed": "2026-03-13T01:29:15Z"
+      },
+      {
+        "name": "Beautiful Soup",
+        "projectCount": 1,
+        "projects": [
+          "ai-resume-tailor"
+        ],
+        "firstUsed": "2025-11-05T18:11:38Z",
+        "lastUsed": "2026-03-13T01:29:15Z"
+      },
+      {
+        "name": "JWT",
+        "projectCount": 1,
+        "projects": [
+          "ai-resume-tailor"
+        ],
+        "firstUsed": "2025-11-05T18:11:38Z",
+        "lastUsed": "2026-03-13T01:29:15Z"
+      },
+      {
+        "name": "PyMuPDF",
+        "projectCount": 1,
+        "projects": [
+          "cushlabs-ai-unwatermark"
+        ],
+        "firstUsed": "2026-03-09T19:14:08Z",
+        "lastUsed": "2026-03-17T01:41:55Z"
+      },
+      {
+        "name": "Click",
+        "projectCount": 1,
+        "projects": [
+          "cushlabs-ai-unwatermark"
+        ],
+        "firstUsed": "2026-03-09T19:14:08Z",
+        "lastUsed": "2026-03-17T01:41:55Z"
+      },
+      {
+        "name": "NumPy",
+        "projectCount": 1,
+        "projects": [
+          "cushlabs-ai-unwatermark"
+        ],
+        "firstUsed": "2026-03-09T19:14:08Z",
+        "lastUsed": "2026-03-17T01:41:55Z"
+      },
+      {
+        "name": "SciPy",
+        "projectCount": 1,
+        "projects": [
+          "cushlabs-ai-unwatermark"
+        ],
+        "firstUsed": "2026-03-09T19:14:08Z",
+        "lastUsed": "2026-03-17T01:41:55Z"
+      },
+      {
+        "name": "Multipart Form Handling",
+        "projectCount": 1,
+        "projects": [
+          "cushlabs-ai-unwatermark"
+        ],
+        "firstUsed": "2026-03-09T19:14:08Z",
+        "lastUsed": "2026-03-17T01:41:55Z"
+      },
+      {
+        "name": "HTML / CSS / JS",
+        "projectCount": 1,
+        "projects": [
+          "context-writing-system"
+        ],
+        "firstUsed": "2025-12-20T10:31:00Z",
+        "lastUsed": "2026-03-17T04:23:07Z"
+      },
+      {
+        "name": "JSON Context Files",
+        "projectCount": 1,
+        "projects": [
+          "context-writing-system"
+        ],
+        "firstUsed": "2025-12-20T10:31:00Z",
+        "lastUsed": "2026-03-17T04:23:07Z"
+      },
+      {
+        "name": "Markdown Skills",
+        "projectCount": 1,
+        "projects": [
+          "context-writing-system"
+        ],
+        "firstUsed": "2025-12-20T10:31:00Z",
+        "lastUsed": "2026-03-17T04:23:07Z"
+      },
+      {
+        "name": "Context Engineering",
+        "projectCount": 1,
+        "projects": [
+          "context-writing-system"
+        ],
+        "firstUsed": "2025-12-20T10:31:00Z",
+        "lastUsed": "2026-03-17T04:23:07Z"
+      },
+      {
+        "name": "Claims Policy Engine",
+        "projectCount": 1,
+        "projects": [
+          "context-writing-system"
+        ],
+        "firstUsed": "2025-12-20T10:31:00Z",
+        "lastUsed": "2026-03-17T04:23:07Z"
+      },
+      {
+        "name": "Formspree",
+        "projectCount": 1,
+        "projects": [
+          "ai-idea-validator"
+        ],
+        "firstUsed": "2026-01-25T01:59:32Z",
+        "lastUsed": "2026-03-17T16:58:18Z"
+      },
+      {
+        "name": "GitHub API",
+        "projectCount": 1,
+        "projects": [
+          "ai-portfolio"
+        ],
+        "firstUsed": "2026-01-05T15:06:48Z",
+        "lastUsed": "2026-03-16T21:04:13Z"
+      },
+      {
+        "name": "Claude Haiku",
+        "projectCount": 1,
+        "projects": [
+          "ai-filesense"
+        ],
+        "firstUsed": "2026-01-12T02:37:39Z",
+        "lastUsed": "2026-03-13T01:28:59Z"
+      },
+      {
+        "name": "PyQt6",
+        "projectCount": 1,
+        "projects": [
+          "stock-alert"
+        ],
+        "firstUsed": "2025-10-23T22:24:30Z",
+        "lastUsed": "2026-03-13T01:29:20Z"
+      },
+      {
+        "name": "Finnhub API",
+        "projectCount": 1,
+        "projects": [
+          "stock-alert"
+        ],
+        "firstUsed": "2025-10-23T22:24:30Z",
+        "lastUsed": "2026-03-13T01:29:20Z"
+      },
+      {
+        "name": "Remark",
+        "projectCount": 1,
+        "projects": [
+          "marble-does-not-yield"
+        ],
+        "firstUsed": "2026-01-04T03:47:35Z",
+        "lastUsed": "2026-03-13T01:29:42Z"
+      },
+      {
+        "name": "Axios",
+        "projectCount": 1,
+        "projects": [
+          "mazebreak-trello"
+        ],
+        "firstUsed": "2026-02-17T04:40:23Z",
+        "lastUsed": "2026-03-13T01:28:23Z"
+      },
+      {
+        "name": "Node.js",
+        "projectCount": 1,
+        "projects": [
+          "mazebreak-trello"
+        ],
+        "firstUsed": "2026-02-17T04:40:23Z",
+        "lastUsed": "2026-03-13T01:28:23Z"
+      },
+      {
+        "name": "dotenv",
+        "projectCount": 1,
+        "projects": [
+          "mazebreak-trello"
+        ],
+        "firstUsed": "2026-02-17T04:40:23Z",
+        "lastUsed": "2026-03-13T01:28:23Z"
+      },
+      {
+        "name": "Fuse.js",
+        "projectCount": 1,
+        "projects": [
+          "mazebreak-wiki"
+        ],
+        "firstUsed": "2026-02-10T04:11:19Z",
+        "lastUsed": "2026-03-16T23:00:46Z"
+      },
+      {
+        "name": "MDX",
+        "projectCount": 1,
+        "projects": [
+          "nextjs-react-agency-starter"
+        ],
+        "firstUsed": "2025-12-18T20:18:05Z",
+        "lastUsed": "2026-03-13T01:29:47Z"
+      },
+      {
+        "name": "ShadCN UI (Radix)",
+        "projectCount": 1,
+        "projects": [
+          "react-vite-tailwind-base"
+        ],
+        "firstUsed": "2025-10-02T22:40:01Z",
+        "lastUsed": "2026-03-13T01:29:57Z"
+      },
+      {
+        "name": "MSW",
+        "projectCount": 1,
+        "projects": [
+          "react-vite-tailwind-base"
+        ],
+        "firstUsed": "2025-10-02T22:40:01Z",
+        "lastUsed": "2026-03-13T01:29:57Z"
+      }
+    ]
+  },
+  "projects": [
+    {
+      "name": "ai-idea-validator",
+      "title": "AI Idea Validator",
+      "category": "AI Automation",
+      "status": null,
+      "techStack": [
+        "Next.js 15",
+        "React 19",
+        "Tailwind CSS 4",
+        "OpenAI GPT-4o-mini",
+        "Netlify",
+        "Formspree"
+      ],
+      "patterns": [
+        "PWA",
+        "REST API"
+      ],
+      "languages": [
+        "TypeScript",
+        "JavaScript",
+        "CSS"
+      ],
+      "createdAt": "2026-01-25T01:59:32Z",
+      "lastPushed": "2026-03-17T16:58:18Z"
+    },
+    {
+      "name": "context-writing-system",
+      "title": "AI Writing System",
+      "category": "AI Automation",
+      "status": null,
+      "techStack": [
+        "Vercel",
+        "HTML / CSS / JS",
+        "JSON Context Files",
+        "Markdown Skills",
+        "Context Engineering",
+        "Claims Policy Engine"
+      ],
+      "patterns": [],
+      "languages": [
+        "JavaScript",
+        "HTML/CSS",
+        "HTML",
+        "CSS",
+        "PowerShell"
+      ],
+      "createdAt": "2025-12-20T10:31:00Z",
+      "lastPushed": "2026-03-17T04:23:07Z"
+    },
+    {
+      "name": "cushlabs-ai-unwatermark",
+      "title": "Unwatermark",
+      "category": "AI Automation",
+      "status": null,
+      "techStack": [
+        "Pillow",
+        "python-pptx",
+        "PyMuPDF",
+        "Click",
+        "NumPy",
+        "SciPy",
+        "Anthropic Claude API",
+        "FastAPI",
+        "Uvicorn",
+        "Multipart Form Handling",
+        "OpenAI API",
+        "Render"
+      ],
+      "patterns": [],
+      "languages": [
+        "Python",
+        "Shell"
+      ],
+      "createdAt": "2026-03-09T19:14:08Z",
+      "lastPushed": "2026-03-17T01:41:55Z"
+    },
+    {
+      "name": "mazebreak-wiki",
+      "title": "MazeBreak GDD Wiki",
+      "category": "Developer Tools",
+      "status": null,
+      "techStack": [
+        "React 19",
+        "Clerk",
+        "react-markdown",
+        "Tailwind CSS 3",
+        "Vercel",
+        "Vite 7",
+        "Fuse.js"
+      ],
+      "patterns": [],
+      "languages": [
+        "JavaScript",
+        "HTML/CSS",
+        "Python",
+        "CSS",
+        "HTML"
+      ],
+      "createdAt": "2026-02-10T04:11:19Z",
+      "lastPushed": "2026-03-16T23:00:46Z"
+    },
+    {
+      "name": "ai-portfolio",
+      "title": "AI Portfolio",
+      "category": "Developer Tools",
+      "status": null,
+      "techStack": [
+        "Next.js 15",
+        "React 19",
+        "react-markdown",
+        "gray-matter",
+        "sharp",
+        "Tailwind CSS 3",
+        "Zod",
+        "shadcn/ui",
+        "Vercel",
+        "GitHub API"
+      ],
+      "patterns": [
+        "Internationalization (i18n)"
+      ],
+      "languages": [
+        "TypeScript",
+        "JavaScript",
+        "PowerShell",
+        "CSS"
+      ],
+      "createdAt": "2026-01-05T15:06:48Z",
+      "lastPushed": "2026-03-16T21:04:13Z"
+    },
+    {
+      "name": "biojalisco-species-id",
+      "title": "BioJalisco Species Identifier",
+      "category": "AI Automation",
+      "status": null,
+      "techStack": [
+        "Clerk",
+        "Neon Postgres",
+        "Vercel Blob Storage",
+        "Drizzle ORM",
+        "EXIF Extraction (exifr)",
+        "Next.js 15",
+        "OpenAI API",
+        "React 19",
+        "sharp",
+        "Vercel",
+        "iNaturalist API",
+        "GBIF API",
+        "EncicloVida/CONABIO API",
+        "OpenStreetMap Nominatim (reverse geocoding)"
+      ],
+      "patterns": [
+        "PWA"
+      ],
+      "languages": [
+        "TypeScript",
+        "JavaScript",
+        "CSS"
+      ],
+      "createdAt": "2026-03-06T18:20:23Z",
+      "lastPushed": "2026-03-16T01:17:53Z"
+    },
+    {
+      "name": "cushlabs-scrollytelling",
+      "title": "CushLabs Scrollytelling",
+      "category": "Templates",
+      "status": "Production",
+      "techStack": [
+        "Astro 5",
+        "Svelte",
+        "Tailwind CSS 3",
+        "Three.js",
+        "Vercel"
+      ],
+      "patterns": [
+        "Monorepo"
+      ],
+      "languages": [
+        "JavaScript",
+        "TypeScript",
+        "CSS"
+      ],
+      "createdAt": "2026-03-06T17:57:40Z",
+      "lastPushed": "2026-03-15T04:53:44Z"
+    },
+    {
+      "name": "ny-eng",
+      "title": "NY English Teacher",
+      "category": "Client Work",
+      "status": "Production",
+      "techStack": [
+        "Anthropic Claude API",
+        "Neon Postgres",
+        "Astro 5",
+        "gray-matter",
+        "Marked",
+        "pdf-lib",
+        "React 19",
+        "Resend",
+        "sharp",
+        "Tailwind CSS 3",
+        "Vercel",
+        "Cloudflare Workers"
+      ],
+      "patterns": [
+        "Internationalization (i18n)",
+        "REST API"
+      ],
+      "languages": [
+        "TypeScript",
+        "JavaScript",
+        "SQL",
+        "HTML/CSS",
+        "Python",
+        "HTML",
+        "CSS"
+      ],
+      "createdAt": "2025-03-23T03:27:14Z",
+      "lastPushed": "2026-03-15T02:54:06Z"
+    },
+    {
+      "name": "ai-chatbot-saas",
+      "title": "Converso AI — Bilingual AI Front Desk & Sales Assistant",
+      "category": "AI Automation",
+      "status": null,
+      "techStack": [
+        "Vercel AI SDK (OpenAI)",
+        "Clerk",
+        "LangChain (OpenAI)",
+        "Vercel Blob Storage",
+        "Cheerio",
+        "date-fns",
+        "Drizzle ORM",
+        "Framer Motion",
+        "nanoid",
+        "Next.js 16",
+        "PostgreSQL",
+        "pgvector",
+        "React 19",
+        "react-markdown",
+        "Redis",
+        "Stripe",
+        "Zod",
+        "Tailwind CSS 4",
+        "shadcn/ui",
+        "Vercel",
+        "GitHub Actions",
+        "OpenAI GPT-4o"
+      ],
+      "patterns": [],
+      "languages": [
+        "TypeScript",
+        "JavaScript",
+        "SQL",
+        "HTML/CSS",
+        "CSS"
+      ],
+      "createdAt": "2025-12-02T07:09:31Z",
+      "lastPushed": "2026-03-13T22:32:27Z"
+    },
+    {
+      "name": "cushlabs-ai-voice-agent",
+      "title": "AI Voice Agent Platform",
+      "category": "AI Automation",
+      "status": "Production",
+      "techStack": [
+        "Neon Postgres",
+        "Express.js",
+        "Redis",
+        "Render",
+        "GitHub Actions",
+        "Vapi",
+        "Claude Sonnet",
+        "Groq Llama 3.1",
+        "Deepgram Nova-2/3",
+        "Cartesia",
+        "Twilio",
+        "Google Calendar API"
+      ],
+      "patterns": [
+        "PWA"
+      ],
+      "languages": [
+        "JavaScript",
+        "HTML/CSS",
+        "HTML",
+        "CSS"
+      ],
+      "createdAt": "2026-02-23T01:31:09Z",
+      "lastPushed": "2026-03-13T04:47:10Z"
+    },
+    {
+      "name": "react-vite-tailwind-base",
+      "title": "React Vite Tailwind Base",
+      "category": "Templates",
+      "status": "Production",
+      "techStack": [
+        "date-fns",
+        "Marked",
+        "React 19",
+        "Recharts",
+        "Tailwind CSS 4",
+        "shadcn/ui",
+        "Vercel",
+        "Vite 7",
+        "ShadCN UI (Radix)",
+        "MSW"
+      ],
+      "patterns": [
+        "PWA",
+        "Monorepo"
+      ],
+      "languages": [
+        "TypeScript",
+        "JavaScript",
+        "HTML/CSS",
+        "HTML",
+        "CSS"
+      ],
+      "createdAt": "2025-10-02T22:40:01Z",
+      "lastPushed": "2026-03-13T01:29:57Z"
+    },
+    {
+      "name": "ny-ai-chatbot",
+      "title": "NY AI Chatbot",
+      "category": "AI Automation",
+      "status": "Production",
+      "techStack": [
+        "Vercel AI SDK (OpenAI)",
+        "Clerk",
+        "LangChain (OpenAI)",
+        "Vercel Blob Storage",
+        "Cheerio",
+        "date-fns",
+        "Drizzle ORM",
+        "Framer Motion",
+        "nanoid",
+        "Next.js 15",
+        "PostgreSQL",
+        "pgvector",
+        "React 19",
+        "react-markdown",
+        "Redis",
+        "Zod",
+        "Tailwind CSS 4",
+        "shadcn/ui",
+        "Vercel",
+        "GitHub Actions",
+        "OpenAI GPT-4o"
+      ],
+      "patterns": [
+        "Cron Jobs"
+      ],
+      "languages": [
+        "TypeScript",
+        "JavaScript",
+        "SQL",
+        "HTML/CSS",
+        "CSS",
+        "PowerShell"
+      ],
+      "createdAt": "2025-11-23T00:24:28Z",
+      "lastPushed": "2026-03-13T01:29:52Z"
+    },
+    {
+      "name": "nextjs-react-agency-starter",
+      "title": "Next.js Agency Starter",
+      "category": "Templates",
+      "status": "Production",
+      "techStack": [
+        "React Hook Form",
+        "Framer Motion",
+        "gray-matter",
+        "Next.js 14",
+        "React 18",
+        "Resend",
+        "Zod",
+        "Tailwind CSS 3",
+        "MDX"
+      ],
+      "patterns": [],
+      "languages": [
+        "TypeScript",
+        "JavaScript",
+        "CSS"
+      ],
+      "createdAt": "2025-12-18T20:18:05Z",
+      "lastPushed": "2026-03-13T01:29:47Z"
+    },
+    {
+      "name": "marble-does-not-yield",
+      "title": "The Marble Does Not Yield",
+      "category": "Creative",
+      "status": "Production",
+      "techStack": [
+        "Next.js 14",
+        "React 18",
+        "react-markdown",
+        "Remark",
+        "Tailwind CSS 3",
+        "Vercel"
+      ],
+      "patterns": [
+        "Internationalization (i18n)"
+      ],
+      "languages": [
+        "TypeScript",
+        "JavaScript",
+        "CSS"
+      ],
+      "createdAt": "2026-01-04T03:47:35Z",
+      "lastPushed": "2026-03-13T01:29:42Z"
+    },
+    {
+      "name": "expat-driver-license-prep",
+      "title": "ExpatDrive — Bilingual Driver's License Exam Prep",
+      "category": "Tools",
+      "status": null,
+      "techStack": [
+        "Anthropic Claude API",
+        "Astro 5",
+        "Marked",
+        "React 19",
+        "sharp",
+        "Tailwind CSS 4",
+        "Vercel",
+        "SM-2 Spaced Repetition",
+        "JSON Content Collections"
+      ],
+      "patterns": [
+        "Monorepo",
+        "localStorage (Phase 1)"
+      ],
+      "languages": [
+        "TypeScript",
+        "JavaScript",
+        "Python",
+        "CSS"
+      ],
+      "createdAt": "2026-03-03T07:21:12Z",
+      "lastPushed": "2026-03-13T01:29:37Z"
+    },
+    {
+      "name": "comp-plan-simulator",
+      "title": "Compensation Plan Simulator",
+      "category": "Tools",
+      "status": "Production",
+      "techStack": [
+        "Framer Motion",
+        "Next.js 16",
+        "React 19",
+        "Recharts",
+        "Tailwind CSS 4",
+        "shadcn/ui",
+        "Vercel",
+        "Zustand"
+      ],
+      "patterns": [
+        "Monorepo"
+      ],
+      "languages": [
+        "TypeScript",
+        "JavaScript",
+        "CSS"
+      ],
+      "createdAt": "2026-02-13T19:55:19Z",
+      "lastPushed": "2026-03-13T01:29:32Z"
+    },
+    {
+      "name": "ai-stock-alert-website",
+      "title": "AI StockAlert Website",
+      "category": "Templates",
+      "status": "Production",
+      "techStack": [
+        "React Hook Form",
+        "Framer Motion",
+        "Next.js 16",
+        "next-intl",
+        "React 19",
+        "Zod",
+        "Tailwind CSS 4",
+        "shadcn/ui"
+      ],
+      "patterns": [
+        "Internationalization (i18n)"
+      ],
+      "languages": [
+        "TypeScript",
+        "JavaScript",
+        "HTML/CSS",
+        "CSS"
+      ],
+      "createdAt": "2026-01-23T00:50:02Z",
+      "lastPushed": "2026-03-13T01:29:27Z"
+    },
+    {
+      "name": "stock-alert",
+      "title": "AI StockAlert",
+      "category": "Tools",
+      "status": "Production",
+      "techStack": [
+        "Pillow",
+        "Requests",
+        "Twilio",
+        "PyQt6",
+        "Finnhub API",
+        "Vercel Serverless"
+      ],
+      "patterns": [],
+      "languages": [
+        "Python",
+        "PowerShell"
+      ],
+      "createdAt": "2025-10-23T22:24:30Z",
+      "lastPushed": "2026-03-13T01:29:20Z"
+    },
+    {
+      "name": "ai-resume-tailor",
+      "title": "AI Resume Tailor",
+      "category": "AI Automation",
+      "status": "Production",
+      "techStack": [
+        "Clerk",
+        "Stripe",
+        "date-fns",
+        "i18next",
+        "Marked",
+        "React 19",
+        "react-i18next",
+        "Recharts",
+        "Tailwind CSS 3",
+        "shadcn/ui",
+        "Flask",
+        "OpenAI API",
+        "Beautiful Soup",
+        "Requests",
+        "JWT",
+        "PostgreSQL",
+        "Vercel",
+        "Render"
+      ],
+      "patterns": [
+        "Monorepo"
+      ],
+      "languages": [
+        "JavaScript",
+        "TypeScript",
+        "Python",
+        "SQL",
+        "HTML/CSS",
+        "HTML",
+        "CSS"
+      ],
+      "createdAt": "2025-11-05T18:11:38Z",
+      "lastPushed": "2026-03-13T01:29:15Z"
+    },
+    {
+      "name": "ai-filesense-website",
+      "title": "AI FileSense Website",
+      "category": "Marketing",
+      "status": "Production",
+      "techStack": [
+        "React Hook Form",
+        "Framer Motion",
+        "gray-matter",
+        "Next.js 14",
+        "next-intl",
+        "React 18",
+        "Zod",
+        "Tailwind CSS 3",
+        "Vercel",
+        "Resend"
+      ],
+      "patterns": [
+        "Internationalization (i18n)"
+      ],
+      "languages": [
+        "TypeScript",
+        "JavaScript",
+        "CSS"
+      ],
+      "createdAt": "2026-01-13T22:16:37Z",
+      "lastPushed": "2026-03-13T01:29:05Z"
+    },
+    {
+      "name": "ai-filesense",
+      "title": "AI FileSense",
+      "category": "AI Automation",
+      "status": "Demo",
+      "techStack": [
+        "Tauri",
+        "React 18",
+        "Tailwind CSS 3",
+        "Claude Haiku"
+      ],
+      "patterns": [
+        "Internationalization (i18n)"
+      ],
+      "languages": [
+        "TypeScript",
+        "JavaScript",
+        "HTML/CSS",
+        "Python",
+        "Rust",
+        "CSS",
+        "HTML"
+      ],
+      "createdAt": "2026-01-12T02:37:39Z",
+      "lastPushed": "2026-03-13T01:28:59Z"
+    },
+    {
+      "name": "ai-build-vs-outsource",
+      "title": "Build vs. Outsource Decision Framework",
+      "category": "Tools",
+      "status": "Production",
+      "techStack": [
+        "Framer Motion",
+        "Next.js 16",
+        "React 19",
+        "Recharts",
+        "Tailwind CSS 4",
+        "shadcn/ui",
+        "Vercel"
+      ],
+      "patterns": [
+        "Monorepo"
+      ],
+      "languages": [
+        "TypeScript",
+        "JavaScript",
+        "CSS"
+      ],
+      "createdAt": "2026-02-13T18:42:29Z",
+      "lastPushed": "2026-03-13T01:28:54Z"
+    },
+    {
+      "name": "mazebreak-trello",
+      "title": "MazeBreak Trello Board Automation",
+      "category": "Developer Tools",
+      "status": null,
+      "techStack": [
+        "Axios",
+        "Vercel",
+        "Node.js",
+        "dotenv"
+      ],
+      "patterns": [
+        "Trello REST API"
+      ],
+      "languages": [
+        "JavaScript",
+        "HTML/CSS",
+        "HTML"
+      ],
+      "createdAt": "2026-02-17T04:40:23Z",
+      "lastPushed": "2026-03-13T01:28:23Z"
+    },
+    {
+      "name": "freelance-income-planner",
+      "title": "Freelance Income Planner",
+      "category": "Tools",
+      "status": "Production",
+      "techStack": [
+        "gray-matter",
+        "Next.js 14",
+        "React 18",
+        "react-markdown",
+        "Recharts",
+        "Tailwind CSS 3",
+        "Vercel",
+        "Zustand 4.4"
+      ],
+      "patterns": [],
+      "languages": [
+        "TypeScript",
+        "JavaScript",
+        "CSS"
+      ],
+      "createdAt": "2025-12-11T17:38:35Z",
+      "lastPushed": "2026-03-13T01:28:18Z"
+    },
+    {
+      "name": "cushlabs-ai-marketing",
+      "title": "AI Marketing Suite for Claude Code",
+      "category": "AI Automation",
+      "status": null,
+      "techStack": [
+        "ReportLab",
+        "Claude Code Skills System",
+        "Bash",
+        "HTML Parser (stdlib)"
+      ],
+      "patterns": [],
+      "languages": [
+        "Python",
+        "Shell"
+      ],
+      "createdAt": "2026-03-08T19:31:57Z",
+      "lastPushed": "2026-03-13T01:28:05Z"
+    },
+    {
+      "name": "biojalisco-pitch",
+      "title": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier",
+      "category": "Client Work",
+      "status": null,
+      "techStack": [
+        "OpenAI API",
+        "Vercel",
+        "HTML5",
+        "CSS3 (custom properties, grid, flexbox, scroll-snap)",
+        "Vanilla JavaScript",
+        "OpenAI GPT-4o Vision API",
+        "Intersection Observer API",
+        "Web Audio API (procedural ambient + MP3 narration)",
+        "Google Fonts",
+        "Base64 image embedding"
+      ],
+      "patterns": [
+        "REST API"
+      ],
+      "languages": [
+        "Python",
+        "HTML/CSS",
+        "HTML"
+      ],
+      "createdAt": "2026-03-04T22:07:57Z",
+      "lastPushed": "2026-03-13T01:27:45Z"
+    },
+    {
+      "name": "ai-scrabble-practice",
+      "title": "AI Scrabble Practice",
+      "category": "Games",
+      "status": "Production",
+      "techStack": [
+        "Marked",
+        "React 19",
+        "Tailwind CSS 3",
+        "Vite 7",
+        "OpenAI GPT-4o-mini"
+      ],
+      "patterns": [
+        "Internationalization (i18n)",
+        "Monorepo"
+      ],
+      "languages": [
+        "TypeScript",
+        "JavaScript",
+        "HTML/CSS",
+        "CSS",
+        "HTML"
+      ],
+      "createdAt": "2025-09-23T19:15:28Z",
+      "lastPushed": "2026-03-13T01:27:40Z"
+    }
+  ]
+}
