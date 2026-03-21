@@ -35,7 +35,7 @@ const b = dict.booking;
         <svg class="w-6 h-6 text-cush-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
         </svg>
-        <p class="text-muted">{b.sessionTimezone}</p>
+        <p class="text-muted" id="timezone-info-text">{b.sessionTimezone}</p>
       </div>
     </div>
   </div>
@@ -207,7 +207,7 @@ const b = dict.booking;
             <div class="flex-1">
               <p class="text-sm font-display font-semibold text-muted">{b.summaryDateTime}</p>
               <p class="text-lg font-display font-bold text-foreground" id="summary-datetime"></p>
-              <p class="text-sm text-muted mt-1">{b.summaryTimezone}</p>
+              <p class="text-sm text-muted mt-1" id="summary-timezone">{b.summaryTimezone}</p>
             </div>
           </div>
 
@@ -313,6 +313,75 @@ const b = dict.booking;
     let formData: { name: string; email: string; phone: string; notes: string } = { name: '', email: '', phone: '', notes: '' };
     let isBooking = false;
 
+    // --- Timezone utilities ---
+    function getVisitorTimezone(): string | null {
+      try {
+        return Intl.DateTimeFormat().resolvedOptions().timeZone;
+      } catch {
+        return null;
+      }
+    }
+
+    function getTimezoneOffsetMinutes(date: Date, tz: string): number {
+      const utcStr = date.toLocaleString('en-US', { timeZone: 'UTC' });
+      const tzStr = date.toLocaleString('en-US', { timeZone: tz });
+      return (new Date(utcStr).getTime() - new Date(tzStr).getTime()) / 60000;
+    }
+
+    function isSameTimezone(visitorTz: string | null): boolean {
+      if (!visitorTz) return true;
+      try {
+        const testDate = new Date();
+        const mxOffset = getTimezoneOffsetMinutes(testDate, 'America/Mexico_City');
+        const visitorOffset = getTimezoneOffsetMinutes(testDate, visitorTz);
+        return mxOffset === visitorOffset;
+      } catch {
+        return true;
+      }
+    }
+
+    function convertMexicoCityToLocal(dateStr: string, timeHHMM: string, visitorTz: string): string {
+      // Mexico City is permanently UTC-6 (no DST since 2022)
+      const mxDate = new Date(`${dateStr}T${timeHHMM}:00-06:00`);
+      return mxDate.toLocaleTimeString(lang === 'es' ? 'es-MX' : 'en-US', {
+        hour: 'numeric',
+        minute: '2-digit',
+        hour12: true,
+        timeZone: visitorTz,
+      });
+    }
+
+    function getShortTzName(tz: string): string {
+      try {
+        const parts = new Intl.DateTimeFormat('en-US', {
+          timeZone: tz,
+          timeZoneName: 'short',
+        }).formatToParts(new Date());
+        return parts.find(p => p.type === 'timeZoneName')?.value || tz;
+      } catch {
+        return tz;
+      }
+    }
+
+    const visitorTz = getVisitorTimezone();
+    const showDualTime = !isSameTimezone(visitorTz);
+
+    // Update timezone info text dynamically
+    const tzInfoEl = document.getElementById('timezone-info-text');
+    if (tzInfoEl) {
+      const mxTzShort = getShortTzName('America/Mexico_City');
+      if (showDualTime && visitorTz) {
+        const visitorTzShort = getShortTzName(visitorTz);
+        tzInfoEl.textContent = lang === 'es'
+          ? `Horarios en tu hora local (${visitorTzShort}) — originalmente hora de Ciudad de México (${mxTzShort})`
+          : `Times shown in your local time (${visitorTzShort}) — originally Mexico City time (${mxTzShort})`;
+      } else {
+        tzInfoEl.textContent = lang === 'es'
+          ? `Horarios en hora de Ciudad de México (${mxTzShort})`
+          : `Times are in Mexico City time (${mxTzShort})`;
+      }
+    }
+
     // Auto-select today or tomorrow
     const now = new Date();
     const currentHour = now.getHours();
@@ -388,17 +457,35 @@ const b = dict.booking;
 
     function renderTimeSlots(slots: string[]) {
       const container = document.getElementById('time-slots-container');
-      if (!container) return;
+      if (!container || !selectedDate) return;
 
-      container.innerHTML = slots.map((time) => `
-        <button
-          type="button"
-          class="time-slot-btn px-4 py-3 border-2 border-border rounded-xl hover:border-cush-orange transition-all font-display font-semibold text-foreground"
-          data-time="${time}"
-        >
-          ${time}
-        </button>
-      `).join('');
+      const dateStr = selectedDate.toISOString().split('T')[0];
+
+      container.innerHTML = slots.map((time) => {
+        if (showDualTime && visitorTz) {
+          const localTime = convertMexicoCityToLocal(dateStr, time, visitorTz);
+          return `
+            <button
+              type="button"
+              class="time-slot-btn px-4 py-3 border-2 border-border rounded-xl hover:border-cush-orange transition-all font-display font-semibold text-foreground"
+              data-time="${time}"
+              data-local-time="${localTime}"
+            >
+              <span class="block text-base">${localTime}</span>
+              <span class="block text-xs opacity-60">${time} CDMX</span>
+            </button>
+          `;
+        }
+        return `
+          <button
+            type="button"
+            class="time-slot-btn px-4 py-3 border-2 border-border rounded-xl hover:border-cush-orange transition-all font-display font-semibold text-foreground"
+            data-time="${time}"
+          >
+            ${time}
+          </button>
+        `;
+      }).join('');
 
       container.querySelectorAll('.time-slot-btn').forEach((btn) => {
         btn.addEventListener('click', (e) => {
@@ -489,14 +576,28 @@ const b = dict.booking;
 
         if (data.ok) {
           const dateOptions: Intl.DateTimeFormatOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-          const dateStrFormatted = selectedDate.toLocaleDateString(lang === 'es' ? 'es-ES' : 'en-US', dateOptions);
+          const dateStrFormatted = selectedDate.toLocaleDateString(lang === 'es' ? 'es-MX' : 'en-US', dateOptions);
 
           const summaryDatetime = document.getElementById('summary-datetime');
           const summaryName = document.getElementById('summary-name');
           const summaryEmail = document.getElementById('summary-email');
           const summaryPhone = document.getElementById('summary-phone');
 
-          if (summaryDatetime) summaryDatetime.textContent = `${dateStrFormatted} - ${selectedTime}`;
+          if (summaryDatetime) {
+            if (showDualTime && visitorTz) {
+              const localTime = convertMexicoCityToLocal(dateStr, selectedTime!, visitorTz);
+              const visitorTzShort = getShortTzName(visitorTz);
+              summaryDatetime.textContent = `${dateStrFormatted} - ${localTime} (${visitorTzShort})`;
+              const tzNote = document.getElementById('summary-timezone');
+              if (tzNote) {
+                tzNote.textContent = lang === 'es'
+                  ? `${selectedTime} hora de Ciudad de México`
+                  : `${selectedTime} Mexico City time`;
+              }
+            } else {
+              summaryDatetime.textContent = `${dateStrFormatted} - ${selectedTime}`;
+            }
+          }
           if (summaryName) summaryName.textContent = formData.name;
           if (summaryEmail) summaryEmail.textContent = formData.email;
           if (summaryPhone) summaryPhone.textContent = formData.phone || str('notProvided');

@@ -12,7 +12,8 @@
  *     GOOGLE_CLIENT_ID
  *     GOOGLE_CLIENT_SECRET
  *     GOOGLE_REFRESH_TOKEN
- *     CALENDAR_ID
+ *     CALENDAR_ID                  (work calendar — bookings are created here)
+ *     PERSONAL_CALENDAR_ID         (personal calendar — checked for busy times to prevent conflicts)
  *
  *   Optional:
  *     WEEKDAY_MORNING_HOURS     (default: 09:00-14:00)
@@ -133,6 +134,7 @@ export default {
               has_google_client_secret: !!env.GOOGLE_CLIENT_SECRET,
               has_google_refresh_token: !!env.GOOGLE_REFRESH_TOKEN,
               has_calendar_id: !!(env.CALENDAR_ID || env.GOOGLE_CALENDAR_ID),
+              has_personal_calendar_id: !!env.PERSONAL_CALENDAR_ID,
               timezone: env.TIMEZONE || "America/Mexico_City (default)",
               weekday_morning: env.WEEKDAY_MORNING_HOURS || "09:00-14:00 (default)",
               weekday_afternoon: env.WEEKDAY_AFTERNOON_HOURS || "16:00-20:00 (default)",
@@ -158,9 +160,12 @@ export default {
           }
         }
 
+        const showDebug = url.searchParams.get("debug") === "1";
         const result = await getAvailableSlots(dateStr, env, tz);
         setCachedSlots(dateStr, result);
-        return json({ ok: true, slots: result.slots, cached: false }, 200, request, env);
+        const response = { ok: true, slots: result.slots, cached: false };
+        if (showDebug) response.debug = result.debug;
+        return json(response, 200, request, env);
       }
 
       // Book: POST /book
@@ -235,7 +240,11 @@ async function getAvailableSlots(dateStr, env, timeZone) {
   const timeMin = toISO(dateStr, earliestStart, timeZone);
   const timeMax = toISO(dateStr, latestEnd, timeZone);
 
-  const calendarId = env.GOOGLE_CALENDAR_ID || env.CALENDAR_ID;
+  // Fetch busy times from BOTH calendars to avoid double-bookings:
+  //   GOOGLE_CALENDAR_ID = rcushmaniii@gmail.com (bookings created here)
+  //   PERSONAL_CALENDAR_ID = shared work calendar (checked for conflicts only)
+  const personalCalendar = env.PERSONAL_CALENDAR_ID || env.GOOGLE_CALENDAR_ID || env.CALENDAR_ID;
+  const workCalendar = env.GOOGLE_CALENDAR_ID || env.CALENDAR_ID;
 
   const freeBusy = await fetchJSON(
     "https://www.googleapis.com/calendar/v3/freeBusy",
@@ -248,12 +257,15 @@ async function getAvailableSlots(dateStr, env, timeZone) {
       body: JSON.stringify({
         timeMin,
         timeMax,
-        items: [{ id: calendarId }],
+        items: [{ id: personalCalendar }, { id: workCalendar }],
       }),
     },
   );
 
-  const allBusy = freeBusy?.calendars?.[calendarId]?.busy || [];
+  // Combine busy times from both calendars
+  const personalBusy = freeBusy?.calendars?.[personalCalendar]?.busy || [];
+  const workBusy = freeBusy?.calendars?.[workCalendar]?.busy || [];
+  const allBusy = [...personalBusy, ...workBusy];
 
   const busy = allBusy.map((b) => ({
     start: new Date(b.start),
@@ -280,7 +292,18 @@ async function getAvailableSlots(dateStr, env, timeZone) {
     return !busy.some((b) => overlaps(slotStart, slotEnd, b.start, b.end));
   });
 
-  return { slots: availableSlots };
+  return {
+    slots: availableSlots,
+    debug: {
+      personalBusy,
+      workBusy,
+      allBusy,
+      busyParsed: busy.map((b) => ({
+        start: b.start.toISOString(),
+        end: b.end.toISOString(),
+      })),
+    },
+  };
 }
 
 function sanitizeInput(str) {

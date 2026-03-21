@@ -1,0 +1,19 @@
+name = "cushlabs-booking"
+main = "workers/booking-worker.js"
+compatibility_date = "2025-10-11"
+
+[observability]
+enabled = true
+
+[observability.logs]
+enabled = true
+
+[vars]
+ALLOWED_ORIGINS = "https://cushlabs.ai,https://www.cushlabs.ai,http://localhost:4321,http://localhost:4322,*.vercel.app"
+GOOGLE_CALENDAR_ID = "rcushmaniii@gmail.com"
+GOOGLE_CLIENT_ID = "169028283355-vev32b3a1fnaiqb63uus2fbrupa7hj0j.apps.googleusercontent.com"
+PERSONAL_CALENDAR_ID = "9lg6pj8ht2blt3ob4v1rtddsts@group.calendar.google.com"
+SATURDAY_HOURS = "09:00-13:00"
+TIMEZONE = "America/Mexico_City"
+WEEKDAY_AFTERNOON_HOURS = "16:00-20:00"
+WEEKDAY_MORNING_HOURS = "09:00-14:00"
