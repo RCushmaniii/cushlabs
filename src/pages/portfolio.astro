@@ -38,6 +38,7 @@ const localThumbs: Record<string, string> = {
   'cushlabs-scrollytelling': '/images/portfolio/thumbs/cushlabs-scrollytelling-thumb.webp',
   'cushlabs-ai-marketing': '/images/portfolio/thumbs/cushlabs-ai-marketing-thumb.webp',
   'cushlabs-ai-unwatermark': '/images/portfolio/thumbs/cushlabs-ai-unwatermark-thumb.webp',
+  'cushlabs-OS-dashboard': '/images/portfolio/thumbs/cushlabs-OS-dashboard-thumb.webp',
 };
 
 function getThumbnail(project: typeof projects[number]): string {
@@ -46,10 +47,10 @@ function getThumbnail(project: typeof projects[number]): string {
   // 2. projectDetails.ts override
   const override = getProjectDetailOverride(project.name);
   if (override?.thumbnail) return override.thumbnail;
-  // 3. Portfolio.md thumbnail — only trust /images/ paths
+  // 3. Portfolio.md thumbnail — trust /images/ paths and CDN URLs
   if ('thumbnail' in project && project.thumbnail) {
     const thumb = project.thumbnail as string;
-    if (thumb.startsWith('/images/')) return thumb;
+    if (thumb.startsWith('/images/') || thumb.startsWith('https://cdn.cushlabs.ai/')) return thumb;
   }
   // 4. Branded default fallback
   return '/images/portfolio/default-card.svg';
