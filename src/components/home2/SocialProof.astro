@@ -1,0 +1,180 @@
+---
+import Container from '../layout/Container.astro';
+
+interface Props {
+  locale: 'en' | 'es';
+}
+
+const { locale } = Astro.props;
+
+const content = {
+  en: {
+    heading: 'Proof, Not Promises',
+    testimonial: {
+      quote: "Robert doesn't \"sell AI.\" He operationalizes it. He has a rare ability to translate technological ambition into concrete business decisions. While many focus on models, tools, or trends, Robert focuses on impact — processes that disappear, teams that scale more effectively, and decisions that become measurably better.",
+      highlights: [
+        "He cuts through complexity and identifies the core problem quickly.",
+        "He doesn't get attached to technology — he uses it with judgment.",
+        "He owns outcomes end-to-end, not just the idea or the build.",
+      ],
+      closer: "Robert is one of the few people who can truly bridge the gap between \"this sounds promising\" and \"this is already creating value.\"",
+      name: "Julio Cesar Aldana Gomez",
+      title: "Finance & Operations Executive | AI Transformation Consultant",
+      relationship: "Client",
+      source: "LinkedIn Recommendation",
+    },
+    caseStudy: {
+      label: "Case Study",
+      title: "NY English Teacher",
+      subtitle: "Lead generation platform for a premium coaching business",
+      metrics: [
+        { value: "4", label: "Roles Replaced", desc: "SDR, marketing, EA, brand manager" },
+        { value: "$0/mo", label: "Infrastructure", desc: "Runs on free-tier services" },
+        { value: "3–5x", label: "Above Market Rate", desc: "Premium pricing sustained" },
+        { value: "15 hrs", label: "Saved Weekly", desc: "Automated qualification" },
+      ],
+    },
+    credibility: {
+      label: "Professional Network",
+      stats: [
+        { value: "500+", label: "Connections" },
+        { value: "900+", label: "Followers" },
+        { value: "20+", label: "Years in IT" },
+        { value: "50+", label: "Projects Shipped" },
+      ],
+    },
+  },
+  es: {
+    heading: 'Pruebas, No Promesas',
+    testimonial: {
+      quote: "Robert no \"vende IA.\" La operacionaliza. Tiene una rara habilidad para traducir ambición tecnológica en decisiones de negocio concretas. Mientras muchos se enfocan en modelos, herramientas o tendencias, Robert se enfoca en impacto — procesos que desaparecen, equipos que escalan más eficientemente, y decisiones que mejoran mediblemente.",
+      highlights: [
+        "Corta la complejidad e identifica el problema central rápidamente.",
+        "No se apega a la tecnología — la usa con criterio.",
+        "Se adueña de los resultados de principio a fin, no solo la idea o el desarrollo.",
+      ],
+      closer: "Robert es una de las pocas personas que puede cerrar la brecha entre \"esto suena prometedor\" y \"esto ya está generando valor.\"",
+      name: "Julio Cesar Aldana Gomez",
+      title: "Ejecutivo de Finanzas y Operaciones | Consultor de Transformación con IA",
+      relationship: "Cliente",
+      source: "Recomendación en LinkedIn",
+    },
+    caseStudy: {
+      label: "Caso de Estudio",
+      title: "NY English Teacher",
+      subtitle: "Plataforma de generación de leads para un negocio de coaching premium",
+      metrics: [
+        { value: "4", label: "Roles Reemplazados", desc: "SDR, marketing, asistente, brand manager" },
+        { value: "$0/mes", label: "Infraestructura", desc: "Funciona en servicios gratuitos" },
+        { value: "3–5x", label: "Sobre Precio de Mercado", desc: "Precio premium sostenido" },
+        { value: "15 hrs", label: "Ahorradas/Semana", desc: "Calificación automatizada" },
+      ],
+    },
+    credibility: {
+      label: "Red Profesional",
+      stats: [
+        { value: "500+", label: "Conexiones" },
+        { value: "900+", label: "Seguidores" },
+        { value: "20+", label: "Años en TI" },
+        { value: "50+", label: "Proyectos Entregados" },
+      ],
+    },
+  },
+};
+
+const t = content[locale];
+---
+
+<section class="py-20 md:py-32">
+  <Container size="lg">
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <h2 class="font-display font-bold text-3xl md:text-4xl text-gray-900 dark:text-white leading-tight">
+        {t.heading}
+      </h2>
+    </div>
+
+    <div class="grid lg:grid-cols-5 gap-8 max-w-6xl mx-auto">
+
+      <!-- Testimonial — spans 3 cols -->
+      <div class="lg:col-span-3 p-8 rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 relative">
+        <!-- Quote mark -->
+        <div class="absolute -top-4 left-8 text-6xl font-serif text-cush-orange/20 leading-none select-none">&ldquo;</div>
+
+        <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-5 text-base">
+          {t.testimonial.quote}
+        </p>
+
+        <ul class="space-y-2 mb-5">
+          {t.testimonial.highlights.map((h) => (
+            <li class="flex items-start gap-2 text-sm text-gray-600 dark:text-gray-400">
+              <svg class="w-4 h-4 text-cush-orange mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>{h}</span>
+            </li>
+          ))}
+        </ul>
+
+        <p class="text-gray-800 dark:text-gray-200 font-medium text-sm italic mb-6">
+          {t.testimonial.closer}
+        </p>
+
+        <div class="flex items-center gap-3 pt-5 border-t border-gray-100 dark:border-gray-800">
+          <!-- LinkedIn icon as avatar placeholder -->
+          <div class="w-10 h-10 rounded-full bg-[#0A66C2] flex items-center justify-center flex-shrink-0">
+            <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+          </div>
+          <div>
+            <div class="font-display font-semibold text-sm text-gray-900 dark:text-white">{t.testimonial.name}</div>
+            <div class="text-xs text-gray-500 dark:text-gray-400">{t.testimonial.title}</div>
+            <div class="text-xs text-cush-orange">{t.testimonial.source}</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right column — Case Study + Credibility -->
+      <div class="lg:col-span-2 flex flex-col gap-6">
+
+        <!-- Case Study card -->
+        <div class="p-6 rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 flex-1">
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cush-orange/10 border border-cush-orange/20 mb-4">
+            <span class="text-xs font-display font-semibold text-cush-orange uppercase tracking-wider">{t.caseStudy.label}</span>
+          </div>
+          <h3 class="font-display font-bold text-lg text-gray-900 dark:text-white mb-1">{t.caseStudy.title}</h3>
+          <p class="text-sm text-gray-500 dark:text-gray-400 mb-5">{t.caseStudy.subtitle}</p>
+
+          <div class="grid grid-cols-2 gap-4">
+            {t.caseStudy.metrics.map((m) => (
+              <div>
+                <div class="font-display font-bold text-2xl text-cush-orange">{m.value}</div>
+                <div class="text-xs font-semibold text-gray-800 dark:text-gray-200">{m.label}</div>
+                <div class="text-xs text-gray-500 dark:text-gray-400">{m.desc}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Credibility strip -->
+        <div class="p-6 rounded-2xl border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900/50">
+          <div class="flex items-center gap-2 mb-4">
+            <svg class="w-4 h-4 text-[#0A66C2]" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+            <span class="text-xs font-display font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wider">{t.credibility.label}</span>
+          </div>
+          <div class="grid grid-cols-4 gap-3">
+            {t.credibility.stats.map((s) => (
+              <div class="text-center">
+                <div class="font-display font-bold text-lg text-gray-900 dark:text-white">{s.value}</div>
+                <div class="text-xs text-gray-500 dark:text-gray-400 leading-tight">{s.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </Container>
+</section>
