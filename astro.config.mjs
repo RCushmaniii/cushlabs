@@ -16,7 +16,7 @@ const blogPairs = {
 };
 
 // Build full bidirectional URL map: absolute EN URL ↔ absolute ES URL
-const SITE = 'https://cushlabs.ai';
+const SITE = 'https://www.cushlabs.ai';
 const hreflangMap = new Map();
 
 // Static route pairs
@@ -107,7 +107,7 @@ export default defineConfig({
     }),
   ],
   output: 'static',
-  site: 'https://cushlabs.ai',
+  site: 'https://www.cushlabs.ai',
   i18n: {
     defaultLocale: 'en',
     locales: ['en', 'es'],

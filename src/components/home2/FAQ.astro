@@ -73,7 +73,23 @@ const content = {
 };
 
 const t = content[locale];
+
+// Build FAQPage structured data for rich snippets
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": t.faqs.map((faq) => ({
+    "@type": "Question",
+    "name": faq.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.a,
+    },
+  })),
+};
 ---
+
+<script type="application/ld+json" is:inline set:html={JSON.stringify(faqSchema)} />
 
 <section class="py-20 md:py-32 bg-gray-50 dark:bg-gray-900/30">
   <Container size="md">

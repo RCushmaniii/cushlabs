@@ -96,8 +96,8 @@ const lastPushed = new Date(project.lastPushed).toLocaleDateString();
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://cushlabs.ai/" },
-      { "@type": "ListItem", "position": 2, "name": "Portfolio", "item": "https://cushlabs.ai/portfolio" },
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.cushlabs.ai/" },
+      { "@type": "ListItem", "position": 2, "name": "Portfolio", "item": "https://www.cushlabs.ai/portfolio" },
       { "@type": "ListItem", "position": 3, "name": project.title }
     ]
   })} />
@@ -220,6 +220,8 @@ const lastPushed = new Date(project.lastPushed).toLocaleDateString();
                       alt={dict.project.videoWalkthrough}
                       loading="eager"
                       fetchpriority="high"
+                      width="1280"
+                      height="720"
                       class="w-full h-auto aspect-video object-cover"
                     />
                   )}
@@ -263,6 +265,8 @@ const lastPushed = new Date(project.lastPushed).toLocaleDateString();
                             data-src={img.src}
                             alt={img.alt.en}
                             loading={i === 0 ? "eager" : "lazy"}
+                            width="1280"
+                            height="720"
                             class="w-full h-auto"
                           />
                         </figure>

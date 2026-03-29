@@ -109,12 +109,41 @@ const ogLocaleAlternate = locale === "es" ? "en_US" : "es_MX";
         "@context": "https://schema.org",
         "@type": "Organization",
         name: "CushLabs.ai",
-        url: "https://cushlabs.ai",
+        url: "https://www.cushlabs.ai",
         description:
           "AI consulting and modern software development for SMBs. Production-ready chatbots, automation, and custom applications.",
         email: "info@cushlabs.ai",
         foundingDate: "2025",
         areaServed: ["US", "MX"],
+        knowsLanguage: ["en", "es"],
+      })}
+    />
+
+    <script
+      type="application/ld+json"
+      is:inline
+      set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Person",
+        name: "Robert Cushman",
+        jobTitle: "AI Consultant & Full-Stack Developer",
+        url: "https://www.cushlabs.ai",
+        sameAs: [
+          "https://www.linkedin.com/in/robert-cushman3/",
+          "https://github.com/RCushmaniii",
+        ],
+        worksFor: {
+          "@type": "Organization",
+          name: "CushLabs.ai",
+          url: "https://www.cushlabs.ai",
+        },
+        knowsAbout: [
+          "Artificial Intelligence",
+          "AI Chatbots",
+          "Business Automation",
+          "Full-Stack Development",
+          "RAG Systems",
+        ],
         knowsLanguage: ["en", "es"],
       })}
     />
