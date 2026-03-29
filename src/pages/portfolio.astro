@@ -9,48 +9,18 @@ import { getProjectDetailOverride } from "../data/projectDetails";
 const projects = projectsData.projects.filter(p => p.priority < 99);
 const allCategories = [...new Set(projects.flatMap(p => p.categories).filter(Boolean))].sort();
 
-// Optimized local thumbnails (760x428 WebP) — replaces external URLs
-const localThumbs: Record<string, string> = {
-  'cushlabs-ai-voice-agent': '/images/portfolio/thumbs/voice-cushlabs-thumb.webp',
-  'ai-chatbot-saas': '/images/portfolio/thumbs/ai-chatbot-saas-thumb.webp',
-  'ny-ai-chatbot': '/images/portfolio/thumbs/ny-ai-chatbot-thumb.webp',
-  'ny-eng': '/images/portfolio/thumbs/ny-eng-thumb.webp',
-  'ai-resume-tailor': '/images/portfolio/thumbs/ai-resume-tailor-thumb.webp',
-  'ai-build-vs-outsource': '/images/portfolio/thumbs/ai-build-vs-outsource-thumb.webp',
-  'context-writing-system': '/images/portfolio/thumbs/context-writing-system-thumb.webp',
-  'ai-idea-validator': '/images/portfolio/thumbs/ai-idea-validator-thumb.webp',
-  'ai-portfolio': '/images/portfolio/thumbs/ai-portfolio-thumb.webp',
-  'freelance-income-planner': '/images/portfolio/thumbs/freelance-income-planner-thumb.webp',
-  'ai-scrabble-practice': '/images/portfolio/thumbs/ai-scrabble-practice-thumb.webp',
-  'ai-filesense': '/images/portfolio/thumbs/ai-filesense-thumb.webp',
-  'stock-alert': '/images/portfolio/thumbs/stock-alert-thumb.webp',
-  'ai-filesense-website': '/images/portfolio/thumbs/ai-filesense-website-thumb.webp',
-  'ai-stock-alert-website': '/images/portfolio/thumbs/ai-stock-alert-website-thumb.webp',
-  'comp-plan-simulator': '/images/portfolio/thumbs/comp-plan-simulator-thumb.webp',
-  'marble-does-not-yield': '/images/portfolio/thumbs/marble-does-not-yield-thumb.webp',
-  'mazebreak-trello': '/images/portfolio/thumbs/mazebreak-trello-thumb.webp',
-  'mazebreak-wiki': '/images/portfolio/thumbs/mazebreak-wiki-thumb.webp',
-  'nextjs-react-agency-starter': '/images/portfolio/thumbs/nextjs-react-agency-starter-thumb.webp',
-  'react-vite-tailwind-base': '/images/portfolio/thumbs/react-vite-tailwind-base-thumb.webp',
-  'biojalisco-species-id': '/images/portfolio/thumbs/biojalisco-species-id-thumb.webp',
-  'biojalisco-pitch': '/images/portfolio/thumbs/biojalisco-pitch-thumb.webp',
-  'expat-driver-license-prep': '/images/portfolio/thumbs/expat-driver-license-prep-thumb.webp',
-  'cushlabs-scrollytelling': '/images/portfolio/thumbs/cushlabs-scrollytelling-thumb.webp',
-  'cushlabs-ai-marketing': '/images/portfolio/thumbs/cushlabs-ai-marketing-thumb.webp',
-  'cushlabs-ai-unwatermark': '/images/portfolio/thumbs/cushlabs-ai-unwatermark-thumb.webp',
-  'cushlabs-OS-dashboard': '/images/portfolio/thumbs/cushlabs-OS-dashboard-thumb.webp',
-};
-
 function getThumbnail(project: typeof projects[number]): string {
-  // 1. Local optimized thumbnail (preferred — fast, right-sized, no external requests)
-  if (localThumbs[project.name]) return localThumbs[project.name];
-  // 2. projectDetails.ts override
+  // 1. projectDetails.ts override
   const override = getProjectDetailOverride(project.name);
   if (override?.thumbnail) return override.thumbnail;
-  // 3. Portfolio.md thumbnail — trust /images/ paths and CDN URLs
+  // 2. Portfolio.md thumbnail (via generated JSON) — local paths or R2 CDN
   if ('thumbnail' in project && project.thumbnail) {
     const thumb = project.thumbnail as string;
     if (thumb.startsWith('/images/') || thumb.startsWith('https://cdn.cushlabs.ai/')) return thumb;
+  }
+  // 3. First slide as fallback
+  if (project.slides?.length > 0 && project.slides[0].src) {
+    return project.slides[0].src;
   }
   // 4. Branded default fallback
   return '/images/portfolio/default-card.svg';
