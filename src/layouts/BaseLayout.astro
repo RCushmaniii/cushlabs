@@ -101,6 +101,7 @@ const ogLocaleAlternate = locale === "es" ? "en_US" : "es_MX";
     <!-- Favicon -->
     <link rel="icon" type="image/webp" href="/images/logo/cushlabs-logo.webp" />
     <link rel="apple-touch-icon" href="/images/logo/cushlabs-logo.png" />
+    <link rel="manifest" href="/site.webmanifest" />
 
     <script
       type="application/ld+json"
@@ -116,6 +117,11 @@ const ogLocaleAlternate = locale === "es" ? "en_US" : "es_MX";
         foundingDate: "2025",
         areaServed: ["US", "MX"],
         knowsLanguage: ["en", "es"],
+        logo: "https://www.cushlabs.ai/images/logo/cushlabs-logo.webp",
+        sameAs: [
+          "https://www.linkedin.com/in/robert-cushman3/",
+          "https://github.com/RCushmaniii",
+        ],
       })}
     />
 
@@ -144,6 +150,37 @@ const ogLocaleAlternate = locale === "es" ? "en_US" : "es_MX";
           "Full-Stack Development",
           "RAG Systems",
         ],
+        knowsLanguage: ["en", "es"],
+      })}
+    />
+
+    <script
+      type="application/ld+json"
+      is:inline
+      set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        name: "CushLabs.ai",
+        url: "https://www.cushlabs.ai",
+        description: "AI consulting and custom software development for small and medium businesses. Chatbots, automation, and full-stack applications.",
+        priceRange: "$$",
+        areaServed: [
+          { "@type": "Country", name: "United States" },
+          { "@type": "Country", name: "Mexico" },
+        ],
+        hasOfferCatalog: {
+          "@type": "OfferCatalog",
+          name: "AI Services",
+          itemListElement: [
+            { "@type": "Offer", itemOffered: { "@type": "Service", name: "AI Chatbot Development" } },
+            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Business Process Automation" } },
+            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Custom Software Development" } },
+          ],
+        },
+        founder: {
+          "@type": "Person",
+          name: "Robert Cushman",
+        },
         knowsLanguage: ["en", "es"],
       })}
     />

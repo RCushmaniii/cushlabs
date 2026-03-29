@@ -91,10 +91,10 @@ const faqSchema = {
 
 <script type="application/ld+json" is:inline set:html={JSON.stringify(faqSchema)} />
 
-<section class="py-20 md:py-32 bg-gray-50 dark:bg-gray-900/30">
+<section aria-labelledby="faq-heading" class="py-20 md:py-32 bg-gray-50 dark:bg-gray-900/30">
   <Container size="md">
     <div class="text-center mb-16">
-      <h2 class="font-display font-bold text-3xl md:text-4xl text-gray-900 dark:text-white leading-tight">
+      <h2 id="faq-heading" class="font-display font-bold text-3xl md:text-4xl text-gray-900 dark:text-white leading-tight">
         {t.heading}
       </h2>
     </div>
@@ -106,7 +106,7 @@ const faqSchema = {
             <h3 class="font-display font-semibold text-lg text-gray-900 dark:text-white group-open:text-cush-orange transition-colors">
               {faq.q}
             </h3>
-            <span class="flex-shrink-0 ml-1.5 w-6 h-6 rounded-full border border-gray-300 dark:border-gray-700 flex items-center justify-center text-gray-500 group-open:rotate-180 transition-transform duration-300">
+            <span aria-hidden="true" class="flex-shrink-0 ml-1.5 w-6 h-6 rounded-full border border-gray-300 dark:border-gray-700 flex items-center justify-center text-gray-500 group-open:rotate-180 transition-transform duration-300">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
               </svg>

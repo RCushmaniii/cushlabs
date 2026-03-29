@@ -69,10 +69,10 @@ const content = {
 const t = content[locale];
 ---
 
-<section id="work" class="py-20 md:py-32 relative">
+<section id="work" aria-labelledby="recent-work-heading" class="py-20 md:py-32 relative">
   <Container size="lg">
     <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
-      <h2 class="font-display font-bold text-3xl md:text-4xl text-gray-900 dark:text-white leading-tight">
+      <h2 id="recent-work-heading" class="font-display font-bold text-3xl md:text-4xl text-gray-900 dark:text-white leading-tight">
         {t.heading}
       </h2>
       <a href={t.ctaLink} class="inline-flex items-center gap-2 text-cush-orange font-medium hover:underline text-lg whitespace-nowrap transition-colors duration-300 hover:text-cush-orange/80">

@@ -1,0 +1,16 @@
+{
+  "name": "CushLabs.ai",
+  "short_name": "CushLabs",
+  "description": "AI consulting and custom software for growing businesses",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#ffffff",
+  "theme_color": "#FF6A3D",
+  "icons": [
+    {
+      "src": "/images/logo/cushlabs-logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}

@@ -61,21 +61,29 @@ const content = {
 const t = content[locale];
 ---
 
-<section class="py-20 md:py-32 relative">
+<section aria-labelledby="solutions-heading" class="py-20 md:py-32 relative">
   <Container size="lg">
     <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
       <!-- Left text -->
       <div>
-        <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+        <h2 id="solutions-heading" class="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
           {t.heading}
         </h2>
         <p class="text-xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
           {t.body}
         </p>
 
-        <a href={t.ctaLink} class="inline-flex items-center gap-2 px-6 py-3 bg-cush-orange text-white font-display font-semibold rounded-lg hover:bg-cush-orange/90 transition-all duration-300 shadow-lg shadow-cush-orange/25 hover:shadow-xl hover:shadow-cush-orange/30 group">
-          {t.cta}
-        </a>
+        <div class="flex flex-wrap gap-4">
+          <a href={locale === 'es' ? '/es/reservar' : '/consultation'} class="inline-flex items-center gap-2 px-6 py-3 bg-cush-orange text-white font-display font-semibold rounded-lg hover:bg-cush-orange/90 transition-all duration-300 shadow-lg shadow-cush-orange/25 hover:shadow-xl hover:shadow-cush-orange/30 group">
+            {locale === 'es' ? 'Agendar Llamada Gratis' : 'Book a Free Call'}
+            <svg class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+          <a href={t.ctaLink} class="inline-flex items-center gap-2 px-6 py-3 border-2 border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 font-display font-semibold rounded-lg hover:border-cush-orange hover:text-cush-orange transition-all duration-300">
+            {t.cta}
+          </a>
+        </div>
       </div>
 
       <!-- Right list -->

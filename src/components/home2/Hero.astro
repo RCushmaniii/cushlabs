@@ -33,7 +33,7 @@ const content = {
 const t = content[locale];
 ---
 
-<section class="relative flex items-center overflow-hidden pt-24 pb-16 min-h-[90vh]">
+<section aria-labelledby="hero-heading" class="relative flex items-center overflow-hidden pt-24 pb-16 min-h-[90vh]">
   <!-- Background Image -->
   <div class="absolute inset-0 -z-20">
     <img
@@ -66,7 +66,7 @@ const t = content[locale];
       </div>
 
       <!-- Headline -->
-      <h1 class="font-display text-fluid-4xl font-bold text-gray-900 dark:text-white mb-6 leading-tight tracking-tight animate-fade-in-up">
+      <h1 id="hero-heading" class="font-display text-fluid-4xl font-bold text-gray-900 dark:text-white mb-6 leading-tight tracking-tight animate-fade-in-up">
         {t.headline}
       </h1>
 
