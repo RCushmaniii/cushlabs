@@ -234,26 +234,52 @@ Proper sitemap must:
 
 ---
 
-## Cloudflare R2 CDN — Portfolio Asset Management
+## Portfolio Pipeline — Adding or Updating a Project
 
-All 28 portfolio project pages serve images and videos from **Cloudflare R2** (`cdn.cushlabs.ai`), not from individual project deployments. This eliminates broken images when Vercel/Netlify deployments go down.
+The portfolio system has **three layers** that must all be in sync for a project to render correctly on the site (card on `/portfolio` + detail page at `/projects/[slug]`).
 
-### How It Works
+### PORTFOLIO.md — Required Fields
 
-- Each project repo keeps its own assets in `public/` (for its own demo site)
-- R2 is a **CDN mirror** — assets are uploaded under `/{repo-name}/{path}`
-- `scripts/generate-projects.ts` converts relative PORTFOLIO.md paths to `https://cdn.cushlabs.ai/{repo}/{path}` via `resolveAssetUrl()`
-- `scripts/upload-to-r2.ts` syncs local clones to R2 with **MD5 hash-based diff detection**
+Every project repo needs a `PORTFOLIO.md` in its root. These frontmatter fields control what appears on the site:
 
-### When You Update a Project's Assets
+| Field | Required for | What it controls |
+|-------|-------------|-----------------|
+| `portfolio_enabled: true` | Visibility | Project appears in portfolio at all |
+| `portfolio_priority` | Card ordering | Lower number = higher position (99 = hidden from cards) |
+| `portfolio_featured` | Badge | "Featured" badge on card |
+| `title` | Card + detail | Display name |
+| `tagline` | Card | Description text under the title |
+| `thumbnail` | **Card image** | Path to card thumbnail (e.g. `/images/portfolio/thumb.webp`) |
+| `slides` | Detail page slider | Array of `{src, alt_en, alt_es}` objects |
+| `demo_video_url` | Detail page video | Path to walkthrough video |
+| `video_poster` | Detail page | Poster image for video player |
+| `category` | Card badge | Category label (e.g. "Tools", "AI Automation") |
+| `tech_stack` | Card + detail | Technology badges |
+| `problem` | Detail page | "The Challenge" section |
+| `key_features` | Detail page | Feature bullet list |
+| `metrics` | Detail page | Results section |
+| `status` | Card badge | e.g. "Production" |
 
-If you add or change an image/video in any project repo:
+**If `thumbnail` is missing, the card falls back to first slide → default SVG placeholder.**
+
+### Thumbnail Resolution Chain
+
+`portfolio.astro` → `getThumbnail()` resolves card images in this order:
+
+1. **`projectDetails.ts` override** (`override.thumbnail`) — for cushlabs self-repo
+2. **Generated JSON `thumbnail`** — from PORTFOLIO.md, resolved to CDN URL (`https://cdn.cushlabs.ai/...`) or local `/images/` path
+3. **First slide** (`project.slides[0].src`) — fallback if no thumbnail
+4. **Default SVG** (`/images/portfolio/default-card.svg`)
+
+### Three-Step Sync Process
+
+When adding a new project or updating assets:
 
 ```bash
-# 1. Upload changed assets to R2 (auto-detects diffs via MD5 hash)
+# 1. Upload assets to R2 CDN (auto-detects diffs via MD5 hash)
 npx tsx scripts/upload-to-r2.ts <repo-name>
 
-# 2. Regenerate the portfolio JSON (picks up any PORTFOLIO.md changes)
+# 2. Regenerate the portfolio JSON (pulls PORTFOLIO.md → projects.generated.json)
 npx tsx scripts/generate-projects.ts
 
 # 3. Build, commit, and push
@@ -261,7 +287,28 @@ npm run build
 git add -A && git commit -m "chore: refresh projects data" && git push
 ```
 
-For a full sync of all 28 projects: `npx tsx scripts/upload-to-r2.ts` (no args).
+**All three steps are required.** Skipping step 1 = broken images. Skipping step 2 = stale data. The JSON was last regenerated at the `generatedAt` timestamp in `projects.generated.json`.
+
+For a full sync of all projects: `npx tsx scripts/upload-to-r2.ts` (no args).
+
+### Optional: Rich Detail Page Copy (projectDetails.ts)
+
+For projects that deserve better copy than the raw PORTFOLIO.md text, add a bilingual entry to `src/data/projectDetails.ts`. This controls:
+- Headline, subheadline, challenge/solution narrative
+- "Good For" / "Not For" / "What You Get" sections
+- Results with checkmark styling
+
+**Only use for rich text content and `demoUrl`.** Do NOT put image/video URLs here — they come from the generated JSON via PORTFOLIO.md.
+
+### Cloudflare R2 CDN Details
+
+All portfolio assets are served from **Cloudflare R2** (`cdn.cushlabs.ai`), not from individual project deployments.
+
+- **R2 bucket:** `cushlabs-assets` with custom domain `cdn.cushlabs.ai`
+- **Hash detection:** Compares local MD5 against R2 ETag — only re-uploads changed files
+- **Repo aliases:** Some local clones differ from GitHub names (e.g., `stock-alert` clone is `ai-stock-alert`) — mapped in `REPO_ALIASES` in the upload script
+- **Path resolution:** Searches `public/`, `assets/`, `client/public/`, `dist/` and scans `public/portfolio/`, `public/images/portfolio/`, `public/video/`, etc.
+- **CI/Vercel skip:** `generate-projects.ts` detects `VERCEL`/`CI` env vars and uses committed JSON instead of regenerating (avoids stale GitHub API data)
 
 ### Upload Script Flags
 
@@ -272,15 +319,6 @@ npx tsx scripts/upload-to-r2.ts --dry-run      # preview without uploading
 npx tsx scripts/upload-to-r2.ts --force         # re-upload all (ignore hash cache)
 npx tsx scripts/upload-to-r2.ts ny-eng --force  # force re-upload one project
 ```
-
-### Key Architecture Details
-
-- **R2 bucket:** `cushlabs-assets` with custom domain `cdn.cushlabs.ai`
-- **Hash detection:** Compares local MD5 against R2 ETag — only re-uploads changed files
-- **Repo aliases:** Some local clones differ from GitHub names (e.g., `stock-alert` clone is `ai-stock-alert`) — mapped in `REPO_ALIASES` in the upload script
-- **Path resolution:** Searches `public/`, `assets/`, `client/public/`, `dist/` and scans `public/portfolio/`, `public/images/portfolio/`, `public/video/`, etc.
-- **CI/Vercel skip:** `generate-projects.ts` detects `VERCEL`/`CI` env vars and uses committed JSON instead of regenerating (avoids stale GitHub API data)
-- **projectDetails.ts overrides:** Only use for rich text content (headlines, descriptions, goodFor, etc.) and `demoUrl`. Do NOT put image/video URLs here — they come from the generated JSON via PORTFOLIO.md
 
 ### Required .env Vars for R2
 
