@@ -107,21 +107,21 @@ export const es = {
     posts: [
       {
         title: 'Empezando con RAG: Una Guía Práctica',
-        description: 'Cómo construir un sistema de generación aumentada por recuperación que funcione en producción.',
+        description: 'Cómo construir un sistema RAG que funcione en producción. Guía paso a paso sobre embeddings, bases vectoriales y diseño de prompts para respuestas precisas.',
         date: '2026-01-08',
         tags: ['IA', 'RAG'],
         image: '/images/blog/blog-1.webp',
       },
       {
         title: 'Automatizando los Flujos de tu Negocio',
-        description: 'Estrategias prácticas para identificar y automatizar tareas repetitivas y ahorrar horas cada semana.',
+        description: 'Estrategias prácticas para identificar y automatizar tareas repetitivas en tu negocio. Aprende qué flujos atacar primero y cómo medir el ahorro en tiempo y costos.',
         date: '2026-01-05',
         tags: ['Automatización', 'Productividad'],
         image: '/images/blog/blog-2.webp',
       },
       {
         title: 'Chatbots de IA Personalizados para PYMEs',
-        description: 'Por qué las soluciones genéricas a menudo fallan, y cómo los chatbots personalizados entregan mejor ROI.',
+        description: 'Por qué las soluciones genéricas de chatbot fallan para PYMES, y cómo los chatbots personalizados con IA entregan mejor ROI con menores costos a largo plazo.',
         date: '2026-01-02',
         tags: ['IA', 'Chatbots'],
         image: '/images/blog/blog-3.webp',

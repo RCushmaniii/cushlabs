@@ -35,13 +35,18 @@ const metaDescriptions: Record<string, string> = {
   'ny-ai-chatbot': 'Widget de chatbot con IA, inteligencia RAG, soporte multi-idioma y panel de administración. Solución plug-and-play para sitios web de PYMES.',
 };
 
-const description = (
+const rawDescription = (
   metaDescriptions[project.name] ||
   detail?.subheadline ||
   project.description ||
   project.summary ||
   ""
 ).replace(/<[^>]*>/g, "");
+
+// Truncate to 160 chars for SEO (cut at last word boundary, add ellipsis)
+const description = rawDescription.length > 160
+  ? rawDescription.slice(0, 157).replace(/\s+\S*$/, "") + "..."
+  : rawDescription;
 
 const demoUrl =
   override?.demoUrl || project.demoUrl || project.homepage || null;
