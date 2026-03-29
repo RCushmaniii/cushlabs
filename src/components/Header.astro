@@ -34,26 +34,20 @@ const toEs = getLocalizedPath(pathname, "es");
     </a>
 
     <nav class="hidden items-center gap-6 md:flex">
-      <a
-        href={locale === "es" ? "/es/about" : "/about"}
-        class="text-base text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
-        >{dict.nav.about}</a
-      >
-      <a
-        href={locale === "es" ? "/es/services" : "/services"}
-        class="text-base text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
-        >{locale === "es" ? "Servicios" : "Services"}</a
-      >
-      <a
-        href={locale === "es" ? "/es/portfolio" : "/portfolio"}
-        class="text-base text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
-        >{locale === "es" ? "Portafolio" : "Portfolio"}</a
-      >
-      <a
-        href={locale === "es" ? "/es/contact" : "/contact"}
-        class="text-base text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
-        >{dict.nav.contact}</a
-      >
+      {[
+        { href: locale === "es" ? "/es/about" : "/about", label: dict.nav.about },
+        { href: locale === "es" ? "/es/services" : "/services", label: locale === "es" ? "Servicios" : "Services" },
+        { href: locale === "es" ? "/es/portfolio" : "/portfolio", label: locale === "es" ? "Portafolio" : "Portfolio" },
+        { href: locale === "es" ? "/es/contact" : "/contact", label: dict.nav.contact },
+      ].map(({ href, label }) => {
+        const isActive = pathname === href || pathname === href + "/";
+        return (
+          <a
+            href={href}
+            class={`text-base transition-colors ${isActive ? "text-cush-orange font-semibold" : "text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"}`}
+          >{label}</a>
+        );
+      })}
     </nav>
 
     <div class="flex items-center gap-3">

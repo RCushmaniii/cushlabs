@@ -63,7 +63,7 @@ export const es = {
   },
   featuredWork: {
     title: 'Trabajo Reciente',
-    subtitle: 'Algunas cosas que he estado construyendo',
+    subtitle: 'Trabajo reciente en producción',
     viewAll: 'Ver Todos los Proyectos',
   },
   testimonials: {

@@ -63,7 +63,7 @@ export const en = {
   },
   featuredWork: {
     title: 'Recent Work',
-    subtitle: 'A few things I\'ve been building lately',
+    subtitle: 'Recent client and production work',
     viewAll: 'See All Projects',
   },
   testimonials: {
