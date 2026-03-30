@@ -20,6 +20,9 @@ Thumbs.db
 *.swp
 *.swo
 
+# credentials
+scripts/seo/gsc-credentials.json
+
 # misc
 *.log
 *.pem
