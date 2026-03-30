@@ -45,7 +45,7 @@ const projects = projectsRaw.map((p: any, i: number) => ({
   displayTags: p.stack?.length > 0 ? p.stack : (p.tags?.length > 0 ? p.tags : p.topics || []),
 }));
 
-const solutionsUrl = locale === "es" ? "/es/portfolio" : "/portfolio";
+const solutionsUrl = locale === "es" ? "/es/portfolio/" : "/portfolio/";
 ---
 
 <section class="py-20 lg:py-28">
@@ -62,7 +62,7 @@ const solutionsUrl = locale === "es" ? "/es/portfolio" : "/portfolio";
     <div class="grid md:grid-cols-3 gap-8">
       {projects.map((project: any) => (
         <a
-          href={locale === "es" ? `/es/projects/${project.name}` : `/projects/${project.name}`}
+          href={locale === "es" ? `/es/projects/${project.name}/` : `/projects/${project.name}/`}
           class="group block"
         >
           <div class="p-0 overflow-hidden bg-surface border border-border rounded-xl hover:border-cush-orange/50 hover:shadow-lg transition-all duration-300">

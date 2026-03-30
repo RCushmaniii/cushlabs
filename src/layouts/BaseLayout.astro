@@ -20,14 +20,14 @@ const locale =
   (Astro.currentLocale as Locale | undefined) ??
   getLocaleFromPathname(pathname);
 
-// Ensure trailing slash for consistency between canonical and hreflang
+// Ensure trailing slash for canonical URL consistency
 const ensureTrailingSlash = (p: string) => p === '/' || p.endsWith('/') ? p : `${p}/`;
-
 const canonicalPath = ensureTrailingSlash(canonical || pathname);
 const canonicalURL = new URL(canonicalPath, Astro.site);
 
-const enURL = new URL(ensureTrailingSlash(getLocalizedPath(pathname, "en")), Astro.site);
-const esURL = new URL(ensureTrailingSlash(getLocalizedPath(pathname, "es")), Astro.site);
+// getLocalizedPath already returns trailing slashes
+const enURL = new URL(getLocalizedPath(pathname, "en"), Astro.site);
+const esURL = new URL(getLocalizedPath(pathname, "es"), Astro.site);
 
 // OG Image - use custom if provided, otherwise default
 const defaultOgImage = `${Astro.site}images/og/cushlabs-og.png`;

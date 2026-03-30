@@ -14,32 +14,32 @@ const content = {
     services: {
       title: "Services",
       links: [
-        { label: "AI Support Automation", href: "/services#support-assistants" },
-        { label: "Document Processing", href: "/services#knowledge-systems" },
-        { label: "SOP Systems", href: "/services#custom-tools" },
-        { label: "Pricing", href: "/services#pricing" },
+        { label: "AI Support Automation", href: "/services/#support-assistants" },
+        { label: "Document Processing", href: "/services/#knowledge-systems" },
+        { label: "SOP Systems", href: "/services/#custom-tools" },
+        { label: "Pricing", href: "/services/#pricing" },
       ],
     },
     company: {
       title: "Company",
       links: [
-        { label: "About", href: "/about" },
-        { label: "Portfolio", href: "/portfolio" },
-        { label: "Contact", href: "/contact" },
+        { label: "About", href: "/about/" },
+        { label: "Portfolio", href: "/portfolio/" },
+        { label: "Contact", href: "/contact/" },
       ],
     },
     support: {
       title: "Support",
       links: [
-        { label: "Book Consultation", href: "/consultation" },
+        { label: "Book Consultation", href: "/consultation/" },
         { label: "Email Us", href: "#", isEmail: true },
       ],
     },
     legal: {
       title: "Legal",
       links: [
-        { label: "Privacy Policy", href: "/privacy" },
-        { label: "Terms of Service", href: "/terms" },
+        { label: "Privacy Policy", href: "/privacy/" },
+        { label: "Terms of Service", href: "/terms/" },
       ],
     },
     copyrightPrefix: `© ${new Date().getFullYear()}`,
@@ -51,32 +51,32 @@ const content = {
     services: {
       title: "Servicios",
       links: [
-        { label: "Automatización de Soporte", href: "/es/services#support-assistants" },
-        { label: "Procesamiento de Documentos", href: "/es/services#knowledge-systems" },
-        { label: "Sistemas de SOPs", href: "/es/services#custom-tools" },
-        { label: "Precios", href: "/es/services#pricing" },
+        { label: "Automatización de Soporte", href: "/es/services/#support-assistants" },
+        { label: "Procesamiento de Documentos", href: "/es/services/#knowledge-systems" },
+        { label: "Sistemas de SOPs", href: "/es/services/#custom-tools" },
+        { label: "Precios", href: "/es/services/#pricing" },
       ],
     },
     company: {
       title: "Empresa",
       links: [
-        { label: "Acerca", href: "/es/about" },
-        { label: "Portafolio", href: "/es/portfolio" },
-        { label: "Contacto", href: "/es/contact" },
+        { label: "Acerca", href: "/es/about/" },
+        { label: "Portafolio", href: "/es/portfolio/" },
+        { label: "Contacto", href: "/es/contact/" },
       ],
     },
     support: {
       title: "Soporte",
       links: [
-        { label: "Agendar Consulta", href: "/es/reservar" },
+        { label: "Agendar Consulta", href: "/es/reservar/" },
         { label: "Escríbenos", href: "#", isEmail: true },
       ],
     },
     legal: {
       title: "Legal",
       links: [
-        { label: "Política de Privacidad", href: "/es/privacy" },
-        { label: "Términos de Servicio", href: "/es/terms" },
+        { label: "Política de Privacidad", href: "/es/privacy/" },
+        { label: "Términos de Servicio", href: "/es/terms/" },
       ],
     },
     copyrightPrefix: `© ${new Date().getFullYear()}`,
@@ -92,7 +92,7 @@ const t = content[locale];
     <div class="grid grid-cols-1 gap-8 lg:grid-cols-12">
       <!-- Brand Section -->
       <div class="lg:col-span-4">
-        <a href={locale === "es" ? "/es" : "/"} class="flex items-center gap-2 mb-4">
+        <a href={locale === "es" ? "/es/" : "/"} class="flex items-center gap-2 mb-4">
           <img
             src="/images/logo/cushlabs-logo.webp"
             alt="CushLabs logo"

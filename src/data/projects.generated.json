@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-03-30T07:18:27.433Z",
-  "count": 31,
+  "generatedAt": "2026-03-30T08:46:40.392Z",
+  "count": 30,
   "projects": [
     {
       "id": 1102173157,
@@ -128,6 +128,140 @@
       "videoPoster": "https://cdn.cushlabs.ai/ny-ai-chatbot/video/ny-eng-chatbot-brief-poster.jpg"
     },
     {
+      "id": 1184574225,
+      "name": "cushlabs-OS-dashboard",
+      "title": "CushLabs OS Dashboard",
+      "description": "Internal ops dashboard — live GitHub portfolio analytics for CushLabs",
+      "summary": "**Live:** [dashboard.cushlabs.ai](https://dashboard.cushlabs.ai)",
+      "url": "https://github.com/RCushmaniii/cushlabs-OS-dashboard",
+      "demoUrl": "https://cushlabs-os-dashboard.vercel.app",
+      "liveUrl": "https://dashboard.cushlabs.ai",
+      "homepage": "https://cushlabs-os-dashboard.vercel.app",
+      "topics": [
+        "analytics",
+        "dashboard",
+        "full-stack",
+        "github-api",
+        "internal-tools",
+        "nextauth",
+        "nextjs",
+        "oauth",
+        "octokit",
+        "react",
+        "rest-api",
+        "tailwindcss",
+        "typescript",
+        "vercel"
+      ],
+      "categories": [
+        "Tools"
+      ],
+      "tags": [
+        "analytics",
+        "dashboard",
+        "full-stack",
+        "github-api",
+        "internal-tools",
+        "nextauth",
+        "nextjs",
+        "oauth",
+        "octokit",
+        "react",
+        "rest-api",
+        "tailwindcss",
+        "typescript",
+        "vercel",
+        "project-management",
+        "operations"
+      ],
+      "stack": [
+        "Next.js 15",
+        "TypeScript",
+        "React 19",
+        "Tailwind CSS v4",
+        "NextAuth.js",
+        "Octokit (GitHub API)",
+        "Recharts",
+        "Vercel"
+      ],
+      "status": "Production",
+      "language": "TypeScript",
+      "languages": {
+        "TypeScript": 217725,
+        "CSS": 1268,
+        "JavaScript": 486
+      },
+      "stars": 0,
+      "forks": 0,
+      "lastPushed": "2026-03-30T07:49:24Z",
+      "createdAt": "2026-03-17T18:08:51Z",
+      "isFeatured": true,
+      "isArchived": false,
+      "isPrivate": true,
+      "tagline": "Full-stack operational command center with 7 API routes, 7 dashboard views, and live GitHub integration for portfolio health, goals, tasks, and business development",
+      "thumbnail": "https://cdn.cushlabs.ai/cushlabs-OS-dashboard/images/portfolio/cushlabs-dashboard-thumb.webp",
+      "problem": "Running a consultancy across 15+ GitHub repositories creates operational blind spots\nthat no single tool solves. Portfolio health, task execution, goal progress, business\ndevelopment pipeline, accomplishment tracking, and infrastructure status all live in\nseparate systems or structured JSON files with no unified view. Project managers and\nbusiness owners need a single command center to see everything at a glance — not\nrepo-by-repo GitHub audits or spreadsheet juggling.\n",
+      "solution": null,
+      "keyFeatures": [
+        "7 server-side API routes handling authentication, data aggregation, caching, and health checks",
+        "7 dashboard views — portfolio, business dev, goals, tasks, accomplishments, infrastructure, guide",
+        "Real-time portfolio analytics with revenue stream breakdown, language distribution, and staleness alerts",
+        "Business development pipeline with conversion funnel, win rates, and activity trends",
+        "Goal monitoring across 4 time horizons (daily/weekly/quarterly/annual) with visual progress review",
+        "Full accomplishment tracking with search, category/week filters, and timeline + grid views",
+        "Infrastructure health monitoring with response time charts and SSL certificate tracking",
+        "Enrichment overlay architecture — live GitHub metrics merged with business context at request time"
+      ],
+      "metrics": [
+        "7 specialized dashboard views from a single authenticated interface",
+        "7 server-side API routes with 2-hour caching and manual refresh bypass",
+        "15+ repositories monitored with real-time commit, star, and staleness metrics",
+        "4 goal time horizons tracked with automated staleness warnings",
+        "Sub-second client-side filtering across all interactive views"
+      ],
+      "priority": 2,
+      "dateCompleted": "2026-03",
+      "slides": [
+        {
+          "src": "https://cdn.cushlabs.ai/cushlabs-OS-dashboard/images/portfolio/cushlabs-dashboard-01.webp",
+          "altEn": "Title slide — CushLabs OS: The Full-Stack Operational Command Center, aggregating GitHub, strategy, and infrastructure into a single pane of glass",
+          "altEs": "Diapositiva de titulo — CushLabs OS: El Centro de Comando Operacional Full-Stack, agregando GitHub, estrategia e infraestructura en un solo panel"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/cushlabs-OS-dashboard/images/portfolio/cushlabs-dashboard-02.webp",
+          "altEn": "Problem slide — Operational awareness drowning in fragmentation: context switching fatigue, stale data, hidden risks, and accumulated decision debt",
+          "altEs": "Diapositiva del problema — La conciencia operacional se ahoga en la fragmentacion: fatiga por cambio de contexto, datos obsoletos, riesgos ocultos y deuda de decisiones acumulada"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/cushlabs-OS-dashboard/images/portfolio/cushlabs-dashboard-03.webp",
+          "altEn": "Solution slide — Bring order to chaos through a single pane of glass: one login secured by GitHub OAuth, one URL entirely aggregated, seven views merging code, business, and infrastructure",
+          "altEs": "Diapositiva de solucion — Ordenar el caos a traves de un solo panel: un inicio de sesion con GitHub OAuth, una URL completamente agregada, siete vistas que fusionan codigo, negocio e infraestructura"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/cushlabs-OS-dashboard/images/portfolio/cushlabs-dashboard-04.webp",
+          "altEn": "Portfolio view — Audit repository health and business impact simultaneously: staleness risk flags, tier classification, revenue metrics, and language distribution alongside commit history",
+          "altEs": "Vista de portafolio — Auditar simultaneamente la salud del repositorio y el impacto comercial: alertas de obsolescencia, clasificacion por nivel, metricas de ingresos y distribucion de lenguajes junto al historial de commits"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/cushlabs-OS-dashboard/images/portfolio/cushlabs-dashboard-05.webp",
+          "altEn": "Business dev view — Map pipeline trajectories without a separate CRM: conversion funnels from applications through proposals to outreach, with win rates and platform breakdowns",
+          "altEs": "Vista de desarrollo de negocios — Mapear trayectorias del pipeline sin un CRM separado: embudos de conversion desde aplicaciones hasta propuestas y alcance, con tasas de exito y desgloses por plataforma"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/cushlabs-OS-dashboard/images/portfolio/cushlabs-dashboard-06.webp",
+          "altEn": "Comparison slide — Transforming reactive managers into proactive commanders: automated staleness alerts, unified pipeline visibility, live infrastructure pulses, and goal tracking across four horizons",
+          "altEs": "Diapositiva comparativa — Transformando gerentes reactivos en comandantes proactivos: alertas automaticas de obsolescencia, visibilidad unificada del pipeline, pulsos de infraestructura en vivo y seguimiento de metas en cuatro horizontes"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/cushlabs-OS-dashboard/images/portfolio/cushlabs-dashboard-07.webp",
+          "altEn": "Closing slide — Your operational command center is ready: stop juggling tabs and start commanding your portfolio from a single pane of glass",
+          "altEs": "Diapositiva de cierre — Su centro de comando operacional esta listo: deje de alternar pestanas y comience a comandar su portafolio desde un solo panel"
+        }
+      ],
+      "videoUrl": "https://cdn.cushlabs.ai/cushlabs-OS-dashboard/images/portfolio/CushLabs_OS_Command_Center.mp4",
+      "videoPoster": "https://cdn.cushlabs.ai/cushlabs-OS-dashboard/images/portfolio/cushlabs-os-command-center-poster.webp"
+    },
+    {
       "id": 1108213747,
       "name": "ai-chatbot-saas",
       "title": "Converso AI — Bilingual AI Front Desk & Sales Assistant",
@@ -244,140 +378,6 @@
       ],
       "videoUrl": "https://cdn.cushlabs.ai/ai-chatbot-saas/video/converso-brief.mp4",
       "videoPoster": "https://cdn.cushlabs.ai/ai-chatbot-saas/video/converso-brief-poster.jpg"
-    },
-    {
-      "id": 1184574225,
-      "name": "cushlabs-OS-dashboard",
-      "title": "CushLabs OS Dashboard",
-      "description": "Internal ops dashboard — live GitHub portfolio analytics for CushLabs",
-      "summary": "**Live:** [dashboard.cushlabs.ai](https://dashboard.cushlabs.ai)",
-      "url": "https://github.com/RCushmaniii/cushlabs-OS-dashboard",
-      "demoUrl": "https://cushlabs-os-dashboard.vercel.app",
-      "liveUrl": "https://dashboard.cushlabs.ai",
-      "homepage": "https://cushlabs-os-dashboard.vercel.app",
-      "topics": [
-        "analytics",
-        "dashboard",
-        "full-stack",
-        "github-api",
-        "internal-tools",
-        "nextauth",
-        "nextjs",
-        "oauth",
-        "octokit",
-        "react",
-        "rest-api",
-        "tailwindcss",
-        "typescript",
-        "vercel"
-      ],
-      "categories": [
-        "Tools"
-      ],
-      "tags": [
-        "analytics",
-        "dashboard",
-        "full-stack",
-        "github-api",
-        "internal-tools",
-        "nextauth",
-        "nextjs",
-        "oauth",
-        "octokit",
-        "react",
-        "rest-api",
-        "tailwindcss",
-        "typescript",
-        "vercel",
-        "project-management",
-        "operations"
-      ],
-      "stack": [
-        "Next.js 15",
-        "TypeScript",
-        "React 19",
-        "Tailwind CSS v4",
-        "NextAuth.js",
-        "Octokit (GitHub API)",
-        "Recharts",
-        "Vercel"
-      ],
-      "status": "Production",
-      "language": "TypeScript",
-      "languages": {
-        "TypeScript": 216717,
-        "CSS": 1268,
-        "JavaScript": 486
-      },
-      "stars": 0,
-      "forks": 0,
-      "lastPushed": "2026-03-29T20:06:13Z",
-      "createdAt": "2026-03-17T18:08:51Z",
-      "isFeatured": true,
-      "isArchived": false,
-      "isPrivate": true,
-      "tagline": "Full-stack operational command center with 7 API routes, 7 dashboard views, and live GitHub integration for portfolio health, goals, tasks, and business development",
-      "thumbnail": "https://cdn.cushlabs.ai/cushlabs-OS-dashboard/images/portfolio/cushlabs-dashboard-thumb.webp",
-      "problem": "Running a consultancy across 15+ GitHub repositories creates operational blind spots\nthat no single tool solves. Portfolio health, task execution, goal progress, business\ndevelopment pipeline, accomplishment tracking, and infrastructure status all live in\nseparate systems or structured JSON files with no unified view. Project managers and\nbusiness owners need a single command center to see everything at a glance — not\nrepo-by-repo GitHub audits or spreadsheet juggling.\n",
-      "solution": null,
-      "keyFeatures": [
-        "7 server-side API routes handling authentication, data aggregation, caching, and health checks",
-        "7 dashboard views — portfolio, business dev, goals, tasks, accomplishments, infrastructure, guide",
-        "Real-time portfolio analytics with revenue stream breakdown, language distribution, and staleness alerts",
-        "Business development pipeline with conversion funnel, win rates, and activity trends",
-        "Goal monitoring across 4 time horizons (daily/weekly/quarterly/annual) with visual progress review",
-        "Full accomplishment tracking with search, category/week filters, and timeline + grid views",
-        "Infrastructure health monitoring with response time charts and SSL certificate tracking",
-        "Enrichment overlay architecture — live GitHub metrics merged with business context at request time"
-      ],
-      "metrics": [
-        "7 specialized dashboard views from a single authenticated interface",
-        "7 server-side API routes with 2-hour caching and manual refresh bypass",
-        "15+ repositories monitored with real-time commit, star, and staleness metrics",
-        "4 goal time horizons tracked with automated staleness warnings",
-        "Sub-second client-side filtering across all interactive views"
-      ],
-      "priority": 2,
-      "dateCompleted": "2026-03",
-      "slides": [
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-OS-dashboard/images/portfolio/cushlabs-dashboard-01.webp",
-          "altEn": "Title slide — CushLabs OS: The Full-Stack Operational Command Center, aggregating GitHub, strategy, and infrastructure into a single pane of glass",
-          "altEs": "Diapositiva de titulo — CushLabs OS: El Centro de Comando Operacional Full-Stack, agregando GitHub, estrategia e infraestructura en un solo panel"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-OS-dashboard/images/portfolio/cushlabs-dashboard-02.webp",
-          "altEn": "Problem slide — Operational awareness drowning in fragmentation: context switching fatigue, stale data, hidden risks, and accumulated decision debt",
-          "altEs": "Diapositiva del problema — La conciencia operacional se ahoga en la fragmentacion: fatiga por cambio de contexto, datos obsoletos, riesgos ocultos y deuda de decisiones acumulada"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-OS-dashboard/images/portfolio/cushlabs-dashboard-03.webp",
-          "altEn": "Solution slide — Bring order to chaos through a single pane of glass: one login secured by GitHub OAuth, one URL entirely aggregated, seven views merging code, business, and infrastructure",
-          "altEs": "Diapositiva de solucion — Ordenar el caos a traves de un solo panel: un inicio de sesion con GitHub OAuth, una URL completamente agregada, siete vistas que fusionan codigo, negocio e infraestructura"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-OS-dashboard/images/portfolio/cushlabs-dashboard-04.webp",
-          "altEn": "Portfolio view — Audit repository health and business impact simultaneously: staleness risk flags, tier classification, revenue metrics, and language distribution alongside commit history",
-          "altEs": "Vista de portafolio — Auditar simultaneamente la salud del repositorio y el impacto comercial: alertas de obsolescencia, clasificacion por nivel, metricas de ingresos y distribucion de lenguajes junto al historial de commits"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-OS-dashboard/images/portfolio/cushlabs-dashboard-05.webp",
-          "altEn": "Business dev view — Map pipeline trajectories without a separate CRM: conversion funnels from applications through proposals to outreach, with win rates and platform breakdowns",
-          "altEs": "Vista de desarrollo de negocios — Mapear trayectorias del pipeline sin un CRM separado: embudos de conversion desde aplicaciones hasta propuestas y alcance, con tasas de exito y desgloses por plataforma"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-OS-dashboard/images/portfolio/cushlabs-dashboard-06.webp",
-          "altEn": "Comparison slide — Transforming reactive managers into proactive commanders: automated staleness alerts, unified pipeline visibility, live infrastructure pulses, and goal tracking across four horizons",
-          "altEs": "Diapositiva comparativa — Transformando gerentes reactivos en comandantes proactivos: alertas automaticas de obsolescencia, visibilidad unificada del pipeline, pulsos de infraestructura en vivo y seguimiento de metas en cuatro horizontes"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-OS-dashboard/images/portfolio/cushlabs-dashboard-07.webp",
-          "altEn": "Closing slide — Your operational command center is ready: stop juggling tabs and start commanding your portfolio from a single pane of glass",
-          "altEs": "Diapositiva de cierre — Su centro de comando operacional esta listo: deje de alternar pestanas y comience a comandar su portafolio desde un solo panel"
-        }
-      ],
-      "videoUrl": "https://cdn.cushlabs.ai/cushlabs-OS-dashboard/images/portfolio/CushLabs_OS_Command_Center.mp4",
-      "videoPoster": "https://cdn.cushlabs.ai/cushlabs-OS-dashboard/images/portfolio/cushlabs-os-command-center-poster.webp"
     },
     {
       "id": 1174690198,
@@ -1627,13 +1627,13 @@
       "status": null,
       "language": "Python",
       "languages": {
-        "Python": 279131,
+        "Python": 280170,
         "Shell": 1351,
         "Dockerfile": 366
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-03-29T18:38:05Z",
+      "lastPushed": "2026-03-30T08:44:44Z",
       "createdAt": "2026-03-09T19:14:08Z",
       "isFeatured": false,
       "isArchived": false,
@@ -1678,95 +1678,6 @@
           "altEs": "Unwatermark"
         }
       ],
-      "videoUrl": null,
-      "videoPoster": null
-    },
-    {
-      "id": 1194025266,
-      "name": "cushlabs-prod-server",
-      "title": "CushLabs Production Server",
-      "description": "Self-hosted Docker infrastructure for CushLabs — 6 services on a single Hetzner VPS with Caddy auto-HTTPS, Web Vitals RUM, and phase-documented hardening",
-      "summary": "> DevOps management and orchestration for CushLabs production infrastructure — 6 Dockerized services behind Caddy reverse proxy on a single Hetzner VPS.",
-      "url": "https://github.com/RCushmaniii/cushlabs-prod-server",
-      "demoUrl": null,
-      "liveUrl": "",
-      "homepage": null,
-      "topics": [
-        "caddy",
-        "devops",
-        "docker",
-        "docker-compose",
-        "hetzner",
-        "infrastructure",
-        "self-hosted",
-        "ubuntu",
-        "vps",
-        "web-vitals"
-      ],
-      "categories": [
-        "Tools"
-      ],
-      "tags": [
-        "caddy",
-        "devops",
-        "docker",
-        "docker-compose",
-        "hetzner",
-        "infrastructure",
-        "self-hosted",
-        "ubuntu",
-        "vps",
-        "web-vitals",
-        "linux",
-        "server-management",
-        "monitoring",
-        "automation",
-        "cloudflare"
-      ],
-      "stack": [
-        "Ubuntu 24.04 LTS",
-        "Docker",
-        "Docker Compose",
-        "Caddy",
-        "Redis",
-        "Python / FastAPI",
-        "Node.js / Express",
-        "Cloudflare DNS",
-        "Let's Encrypt",
-        "Netdata",
-        "Hetzner Cloud",
-        "Bash"
-      ],
-      "status": null,
-      "language": "Python",
-      "languages": {
-        "Python": 10675,
-        "JavaScript": 3179,
-        "Dockerfile": 389
-      },
-      "stars": 0,
-      "forks": 0,
-      "lastPushed": "2026-03-29T07:55:14Z",
-      "createdAt": "2026-03-27T20:49:22Z",
-      "isFeatured": false,
-      "isArchived": false,
-      "isPrivate": true,
-      "tagline": "Self-hosted Docker infrastructure running 6 services on a single VPS for $10.59/mo",
-      "thumbnail": null,
-      "problem": "Running multiple production services across PaaS free tiers creates cold start\nlatency, per-service cost scaling, and zero infrastructure visibility. This\nproject consolidates all CushLabs services onto a single hardened VPS with\nDocker orchestration, automatic HTTPS, and real user monitoring — eliminating\ncold starts and reducing hosting to a flat $10.59/mo.\n",
-      "solution": null,
-      "keyFeatures": [
-        "6 Dockerized services running on a single VPS using ~386 MB of 3.7 GB RAM",
-        "Zero cold start latency — always-on containers replace PaaS sleep cycles",
-        "$10.59/mo flat vs. per-service PaaS pricing that scales with each new project",
-        "Bare metal to full production in 1 day with complete documentation",
-        "Automatic HTTPS via Caddy + Let's Encrypt across 5 subdomains",
-        "Self-hosted Web Vitals RUM collector tracking Core Web Vitals across all frontends"
-      ],
-      "metrics": [],
-      "priority": 6,
-      "dateCompleted": null,
-      "slides": [],
       "videoUrl": null,
       "videoPoster": null
     },
@@ -2076,7 +1987,7 @@
       "status": null,
       "language": "Astro",
       "languages": {
-        "Astro": 459622,
+        "Astro": 463223,
         "TypeScript": 236855,
         "HTML": 61067,
         "JavaScript": 47370,
@@ -2084,7 +1995,7 @@
       },
       "stars": 2,
       "forks": 0,
-      "lastPushed": "2026-03-29T21:12:14Z",
+      "lastPushed": "2026-03-30T08:08:40Z",
       "createdAt": "2026-01-08T03:52:43Z",
       "isFeatured": false,
       "isArchived": false,

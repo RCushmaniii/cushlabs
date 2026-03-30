@@ -97,6 +97,16 @@ const topics = Array.from(
 const stars = project.stars;
 const forks = project.forks;
 const lastPushed = new Date(project.lastPushed).toLocaleDateString();
+
+// Related projects: share tech stack or categories, exclude self, limit to 3
+const allVisible = projectsData.projects.filter(p => p.priority < 99 && p.name !== project.name);
+const projectTech = new Set([...(project.stack || []), ...(project.categories || [])].map(s => s.toLowerCase()));
+const scored = allVisible.map(p => {
+  const pTech = [...(p.stack || []), ...(p.categories || [])].map(s => s.toLowerCase());
+  const overlap = pTech.filter(t => projectTech.has(t)).length;
+  return { project: p, score: overlap };
+}).sort((a, b) => b.score - a.score || a.project.priority - b.project.priority);
+const relatedProjects = scored.slice(0, 3).map(s => s.project);
 ---
 
 <BaseLayout title={title} description={description}>
@@ -106,7 +116,7 @@ const lastPushed = new Date(project.lastPushed).toLocaleDateString();
     "@type": "BreadcrumbList",
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.cushlabs.ai/" },
-      { "@type": "ListItem", "position": 2, "name": "Portfolio", "item": "https://www.cushlabs.ai/portfolio" },
+      { "@type": "ListItem", "position": 2, "name": "Portfolio", "item": "https://www.cushlabs.ai/portfolio/" },
       { "@type": "ListItem", "position": 3, "name": project.title }
     ]
   })} />
@@ -114,7 +124,7 @@ const lastPushed = new Date(project.lastPushed).toLocaleDateString();
   <main class="pb-24">
     <div class="mx-auto max-w-7xl px-4 pt-10">
       <a
-        href="/portfolio"
+        href="/portfolio/"
         class="inline-flex items-center gap-2 text-sm font-display font-semibold text-muted hover:text-cush-orange transition-colors"
       >
         <span>←</span>
@@ -464,6 +474,39 @@ const lastPushed = new Date(project.lastPushed).toLocaleDateString();
         </aside>
       </section>
 
+      {/* Related Projects */}
+      {relatedProjects.length > 0 && (
+        <section class="mt-16">
+          <h2 class="font-display text-2xl font-bold text-gray-900 dark:text-white mb-8">
+            Related Projects
+          </h2>
+          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {relatedProjects.map((rp: any) => (
+              <a href={`/projects/${rp.name}/`} class="group block rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/50 overflow-hidden hover:border-cush-orange/40 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                <div class="aspect-[16/10] bg-gray-100 dark:bg-gray-800 overflow-hidden">
+                  <img
+                    src={rp.thumbnail || rp.slides?.[0]?.src || '/images/portfolio/default-card.svg'}
+                    alt={rp.title}
+                    loading="lazy"
+                    width="400"
+                    height="250"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <div class="p-5">
+                  <h3 class="font-display font-semibold text-gray-900 dark:text-white group-hover:text-cush-orange transition-colors">
+                    {rp.title}
+                  </h3>
+                  <p class="text-sm text-gray-500 dark:text-gray-400 mt-1 line-clamp-2">
+                    {rp.tagline || rp.description || ''}
+                  </p>
+                </div>
+              </a>
+            ))}
+          </div>
+        </section>
+      )}
+
       {/* Bottom CTA */}
       <section class="mt-16 rounded-2xl bg-gray-900 dark:bg-black p-8 md:p-12 text-center relative overflow-hidden">
         <div class="absolute inset-0 -z-10">
@@ -476,7 +519,7 @@ const lastPushed = new Date(project.lastPushed).toLocaleDateString();
           {dict.project.ctaBody}
         </p>
         <a
-          href="/consultation"
+          href="/consultation/"
           class="group inline-flex items-center gap-2 px-6 py-3 bg-cush-orange text-white font-display font-semibold rounded-lg hover:bg-cush-orange/90 transition-all shadow-lg shadow-cush-orange/25"
         >
           {dict.project.ctaButton}

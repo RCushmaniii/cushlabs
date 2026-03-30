@@ -79,7 +79,7 @@ const hero = content[locale];
         <!-- CTAs -->
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-4">
           <a
-            href={locale === "es" ? "/es/reservar" : "/consultation"}
+            href={locale === "es" ? "/es/reservar/" : "/consultation/"}
             class="group inline-flex items-center gap-2 px-6 py-3 bg-cush-orange text-white font-display font-semibold rounded-lg hover:bg-cush-orange/90 transition-all shadow-lg shadow-cush-orange/25"
           >
             {hero.ctaPrimary}
@@ -297,7 +297,7 @@ const hero = content[locale];
               {locale === "es" ? "¿Prefieres hablar en vivo?" : "Prefer to talk live?"}
             </p>
             <a
-              href={locale === "es" ? "/es/reservar" : "/consultation"}
+              href={locale === "es" ? "/es/reservar/" : "/consultation/"}
               class="inline-flex items-center gap-2 text-sm font-display font-semibold text-cush-orange hover:opacity-80 transition-opacity"
             >
               {dict.contact.consultation}

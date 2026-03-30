@@ -20,7 +20,7 @@ const toEs = getLocalizedPath(pathname, "es");
 >
   <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4">
     <a
-      href={locale === "es" ? "/es" : "/"}
+      href={locale === "es" ? "/es/" : "/"}
       class="flex items-center gap-2 font-display text-base font-semibold tracking-wider uppercase text-gray-900 dark:text-white hover:opacity-80 transition-opacity duration-300"
     >
       <img
@@ -36,12 +36,12 @@ const toEs = getLocalizedPath(pathname, "es");
 
     <nav class="hidden items-center gap-6 md:flex">
       {[
-        { href: locale === "es" ? "/es/about" : "/about", label: dict.nav.about },
-        { href: locale === "es" ? "/es/services" : "/services", label: locale === "es" ? "Servicios" : "Services" },
-        { href: locale === "es" ? "/es/portfolio" : "/portfolio", label: locale === "es" ? "Portafolio" : "Portfolio" },
-        { href: locale === "es" ? "/es/contact" : "/contact", label: dict.nav.contact },
+        { href: locale === "es" ? "/es/about/" : "/about/", label: dict.nav.about },
+        { href: locale === "es" ? "/es/services/" : "/services/", label: locale === "es" ? "Servicios" : "Services" },
+        { href: locale === "es" ? "/es/portfolio/" : "/portfolio/", label: locale === "es" ? "Portafolio" : "Portfolio" },
+        { href: locale === "es" ? "/es/contact/" : "/contact/", label: dict.nav.contact },
       ].map(({ href, label }) => {
-        const isActive = pathname === href || pathname === href + "/";
+        const isActive = pathname === href || pathname === href.replace(/\/$/, '');
         return (
           <a
             href={href}

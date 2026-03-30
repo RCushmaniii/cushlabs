@@ -144,7 +144,7 @@ const t = content[locale];
         <!-- CTAs -->
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-4">
           <a
-            href={locale === "es" ? "/es/reservar" : "/consultation"}
+            href={locale === "es" ? "/es/reservar/" : "/consultation/"}
             class="group inline-flex items-center gap-2 px-6 py-3 bg-cush-orange text-white font-display font-semibold rounded-lg hover:bg-cush-orange/90 transition-all shadow-lg shadow-cush-orange/25"
           >
             {t.ctaPrimary}
@@ -265,7 +265,7 @@ const t = content[locale];
       <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {projects.map((project) => {
           const thumb = getThumbnail(project);
-          const detailHref = locale === "es" ? `/es/projects/${project.name}` : `/projects/${project.name}`;
+          const detailHref = locale === "es" ? `/es/projects/${project.name}/` : `/projects/${project.name}/`;
           const tagline = project.tagline || project.summary || project.description || "";
           const category = project.categories[0] || null;
           const techBadges = project.stack.slice(0, 4);
@@ -403,7 +403,7 @@ const t = content[locale];
           {t.bottomCta.subtitle}
         </p>
         <a
-          href={locale === "es" ? "/es/reservar" : "/consultation"}
+          href={locale === "es" ? "/es/reservar/" : "/consultation/"}
           class="group inline-flex items-center gap-2 px-8 py-4 bg-cush-orange text-white font-display font-semibold rounded-lg hover:bg-cush-orange/90 transition-all shadow-lg shadow-cush-orange/25"
         >
           {t.bottomCta.button}

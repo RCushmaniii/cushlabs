@@ -8,7 +8,7 @@ interface Props {
 const { locale } = Astro.props;
 const dict = t(locale);
 
-const consultationUrl = locale === "es" ? "/es/reservar" : "/consultation";
+const consultationUrl = locale === "es" ? "/es/reservar/" : "/consultation/";
 ---
 
 <section class="py-20 lg:py-28">

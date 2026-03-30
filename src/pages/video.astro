@@ -106,7 +106,7 @@ const defaultPoster = `/videos/${DEFAULT_VIDEO}${esSuffix}-poster.jpg`;
         <div class="mt-[5vh] text-center">
           <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-4">
             <a
-              href={locale === "es" ? "/es/reservar" : "/consultation"}
+              href={locale === "es" ? "/es/reservar/" : "/consultation/"}
               class="group inline-flex items-center gap-2 px-6 py-3 bg-cush-orange text-white font-display font-semibold rounded-lg hover:bg-cush-orange/90 transition-all shadow-lg shadow-cush-orange/25"
             >
               {t.ctaPrimary}
@@ -115,7 +115,7 @@ const defaultPoster = `/videos/${DEFAULT_VIDEO}${esSuffix}-poster.jpg`;
               </svg>
             </a>
             <a
-              href={locale === "es" ? "/es/portfolio" : "/portfolio"}
+              href={locale === "es" ? "/es/portfolio/" : "/portfolio/"}
               class="group inline-flex items-center gap-2 px-6 py-3 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 font-display font-semibold rounded-lg hover:border-cush-orange hover:text-cush-orange transition-all"
             >
               {t.ctaSecondary}

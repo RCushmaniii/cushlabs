@@ -26,7 +26,7 @@ function slugify(title: string): string {
     .replace(/(^-|-$)/g, '');
 }
 
-const blogUrl = locale === "es" ? "/es/blog" : "/blog";
+const blogUrl = locale === "es" ? "/es/blog/" : "/blog/";
 ---
 
 <section class="py-20 lg:py-28">
@@ -42,7 +42,7 @@ const blogUrl = locale === "es" ? "/es/blog" : "/blog";
 
     <div class="grid md:grid-cols-3 gap-8">
       {dict.blog.posts.map((post) => (
-        <a href={`${blogUrl}/${slugify(post.title)}`} class="group block">
+        <a href={`${blogUrl}${slugify(post.title)}/`} class="group block">
           <div class="p-0 overflow-hidden bg-surface border border-border rounded-xl hover:border-cush-orange/50 hover:shadow-lg transition-all duration-300">
             <div class="relative aspect-[16/9] bg-cush-gray-900/50 overflow-hidden">
               <img

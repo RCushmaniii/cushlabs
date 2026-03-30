@@ -107,6 +107,7 @@ export default defineConfig({
     }),
   ],
   output: 'static',
+  trailingSlash: 'always',
   site: 'https://www.cushlabs.ai',
   i18n: {
     defaultLocale: 'en',

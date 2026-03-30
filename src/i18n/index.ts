@@ -49,26 +49,35 @@ export function getLocalizedPath(pathname: string, to: Locale): string {
   // Get the locale-less path
   const bare = isEs ? (clean.replace(/^\/es(\/|$)/, '/') || '/') : clean;
 
+  let result: string;
+
   // Check explicit route pairs
   if (to === 'es') {
-    if (routePairs[bare]) return `/es${routePairs[bare]}`;
+    if (routePairs[bare]) { result = `/es${routePairs[bare]}`; }
   } else {
     // Going to EN — check if bare path is an ES-specific slug
     const esPath = isEs ? bare : clean;
-    if (reverseRoutePairs[esPath]) return reverseRoutePairs[esPath];
+    if (reverseRoutePairs[esPath]) { result = reverseRoutePairs[esPath]; }
   }
 
   // Check blog slug pairs
-  const blogMatch = bare.match(/^\/blog\/(.+)$/);
-  if (blogMatch) {
-    const slug = blogMatch[1];
-    if (to === 'es' && blogPairs[slug]) return `/es/blog/${blogPairs[slug]}`;
-    if (to === 'en' && reverseBlogPairs[slug]) return `/blog/${reverseBlogPairs[slug]}`;
+  if (!result!) {
+    const blogMatch = bare.match(/^\/blog\/(.+)$/);
+    if (blogMatch) {
+      const slug = blogMatch[1];
+      if (to === 'es' && blogPairs[slug]) result = `/es/blog/${blogPairs[slug]}`;
+      if (to === 'en' && reverseBlogPairs[slug]) result = `/blog/${reverseBlogPairs[slug]}`;
+    }
   }
 
   // Default: just swap the /es prefix
-  if (to === 'en') return bare === '' ? '/' : bare;
-  return bare === '/' ? '/es' : `/es${bare}`;
+  if (!result!) {
+    if (to === 'en') result = bare === '' ? '/' : bare;
+    else result = bare === '/' ? '/es' : `/es${bare}`;
+  }
+
+  // Ensure trailing slash for canonical URL consistency
+  return result === '/' ? '/' : result.endsWith('/') ? result : `${result}/`;
 }
 
 /** All route pairs exported for sitemap serialization */
