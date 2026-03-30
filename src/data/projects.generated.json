@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-29T20:15:48.509Z",
+  "generatedAt": "2026-03-30T07:18:27.433Z",
   "count": 31,
   "projects": [
     {
@@ -126,6 +126,124 @@
       ],
       "videoUrl": "https://cdn.cushlabs.ai/ny-ai-chatbot/video/ny-eng-chatbot-brief.mp4",
       "videoPoster": "https://cdn.cushlabs.ai/ny-ai-chatbot/video/ny-eng-chatbot-brief-poster.jpg"
+    },
+    {
+      "id": 1108213747,
+      "name": "ai-chatbot-saas",
+      "title": "Converso AI — Bilingual AI Front Desk & Sales Assistant",
+      "description": "Multi-tenant AI chatbot SaaS platform - Ragbot by CushLabs.AI",
+      "summary": "> Multi-tenant SaaS platform for service businesses to deploy a bilingual (EN/ES), on-brand AI assistant that answers questions, qualifies leads, captures booking intent, and escalates high-intent pro",
+      "url": "https://github.com/RCushmaniii/ai-chatbot-saas",
+      "demoUrl": "https://ai-chatbot-saas-delta.vercel.app",
+      "liveUrl": "",
+      "homepage": "https://ai-chatbot-saas-delta.vercel.app",
+      "topics": [],
+      "categories": [
+        "AI Automation"
+      ],
+      "tags": [
+        "ai-chatbot",
+        "saas",
+        "rag",
+        "multi-tenant",
+        "bilingual",
+        "nextjs",
+        "stripe",
+        "pgvector",
+        "clerk-auth",
+        "lead-generation"
+      ],
+      "stack": [
+        "Next.js 16",
+        "TypeScript",
+        "PostgreSQL + pgvector",
+        "Vercel AI SDK",
+        "OpenAI GPT-4o",
+        "Clerk Authentication",
+        "Stripe Billing",
+        "Drizzle ORM",
+        "Tailwind CSS",
+        "React Flow",
+        "Vercel"
+      ],
+      "status": null,
+      "language": "TypeScript",
+      "languages": {
+        "TypeScript": 1165313,
+        "JavaScript": 12530,
+        "CSS": 10362
+      },
+      "stars": 0,
+      "forks": 0,
+      "lastPushed": "2026-03-29T23:57:44Z",
+      "createdAt": "2025-12-02T07:09:31Z",
+      "isFeatured": true,
+      "isArchived": false,
+      "isPrivate": false,
+      "tagline": "White-label AI chatbot SaaS for service businesses in bilingual markets",
+      "thumbnail": "https://cdn.cushlabs.ai/ai-chatbot-saas/images/portfolio/ai-chatbot-saas-thumb.webp",
+      "problem": "Service businesses in bilingual markets lose leads outside business hours\nand can't afford round-the-clock bilingual staff. Generic chatbots hallucinate\nanswers because they don't know the business. This platform gives each tenant\na knowledge-grounded AI assistant that answers accurately in English or Spanish,\nqualifies leads, and hands off to humans when needed.\n",
+      "solution": null,
+      "keyFeatures": [
+        "Multi-tenant SaaS with full data isolation per business",
+        "RAG-powered answers grounded in verified business content",
+        "Native bilingual support with automatic language detection",
+        "Visual playbook builder for non-technical conversation design",
+        "Stripe billing with subscription management and usage tracking",
+        "One-tag embeddable widget for any website"
+      ],
+      "metrics": [],
+      "priority": 2,
+      "dateCompleted": null,
+      "slides": [
+        {
+          "src": "https://cdn.cushlabs.ai/ai-chatbot-saas/images/portfolio/converso-01.webp",
+          "altEn": "Converso AI — Bilingual AI Front Desk & Sales Assistant",
+          "altEs": "Converso AI — Bilingual AI Front Desk & Sales Assistant"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/ai-chatbot-saas/images/portfolio/converso-02.webp",
+          "altEn": "Converso AI — Bilingual AI Front Desk & Sales Assistant",
+          "altEs": "Converso AI — Bilingual AI Front Desk & Sales Assistant"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/ai-chatbot-saas/images/portfolio/converso-03.webp",
+          "altEn": "Converso AI — Bilingual AI Front Desk & Sales Assistant",
+          "altEs": "Converso AI — Bilingual AI Front Desk & Sales Assistant"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/ai-chatbot-saas/images/portfolio/converso-04.webp",
+          "altEn": "Converso AI — Bilingual AI Front Desk & Sales Assistant",
+          "altEs": "Converso AI — Bilingual AI Front Desk & Sales Assistant"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/ai-chatbot-saas/images/portfolio/converso-05.webp",
+          "altEn": "Converso AI — Bilingual AI Front Desk & Sales Assistant",
+          "altEs": "Converso AI — Bilingual AI Front Desk & Sales Assistant"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/ai-chatbot-saas/images/portfolio/converso-06.webp",
+          "altEn": "Converso AI — Bilingual AI Front Desk & Sales Assistant",
+          "altEs": "Converso AI — Bilingual AI Front Desk & Sales Assistant"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/ai-chatbot-saas/images/portfolio/converso-07.webp",
+          "altEn": "Converso AI — Bilingual AI Front Desk & Sales Assistant",
+          "altEs": "Converso AI — Bilingual AI Front Desk & Sales Assistant"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/ai-chatbot-saas/images/portfolio/converso-08.webp",
+          "altEn": "Converso AI — Bilingual AI Front Desk & Sales Assistant",
+          "altEs": "Converso AI — Bilingual AI Front Desk & Sales Assistant"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/ai-chatbot-saas/images/portfolio/converso-09.webp",
+          "altEn": "Converso AI — Bilingual AI Front Desk & Sales Assistant",
+          "altEs": "Converso AI — Bilingual AI Front Desk & Sales Assistant"
+        }
+      ],
+      "videoUrl": "https://cdn.cushlabs.ai/ai-chatbot-saas/video/converso-brief.mp4",
+      "videoPoster": "https://cdn.cushlabs.ai/ai-chatbot-saas/video/converso-brief-poster.jpg"
     },
     {
       "id": 1184574225,
@@ -260,124 +378,6 @@
       ],
       "videoUrl": "https://cdn.cushlabs.ai/cushlabs-OS-dashboard/images/portfolio/CushLabs_OS_Command_Center.mp4",
       "videoPoster": "https://cdn.cushlabs.ai/cushlabs-OS-dashboard/images/portfolio/cushlabs-os-command-center-poster.webp"
-    },
-    {
-      "id": 1108213747,
-      "name": "ai-chatbot-saas",
-      "title": "Converso AI — Bilingual AI Front Desk & Sales Assistant",
-      "description": "Multi-tenant AI chatbot SaaS platform - Ragbot by CushLabs.AI",
-      "summary": "> Multi-tenant SaaS platform for service businesses to deploy a bilingual (EN/ES), on-brand AI assistant that answers questions, qualifies leads, captures booking intent, and escalates high-intent pro",
-      "url": "https://github.com/RCushmaniii/ai-chatbot-saas",
-      "demoUrl": "https://ai-chatbot-saas-delta.vercel.app",
-      "liveUrl": "",
-      "homepage": "https://ai-chatbot-saas-delta.vercel.app",
-      "topics": [],
-      "categories": [
-        "AI Automation"
-      ],
-      "tags": [
-        "ai-chatbot",
-        "saas",
-        "rag",
-        "multi-tenant",
-        "bilingual",
-        "nextjs",
-        "stripe",
-        "pgvector",
-        "clerk-auth",
-        "lead-generation"
-      ],
-      "stack": [
-        "Next.js 16",
-        "TypeScript",
-        "PostgreSQL + pgvector",
-        "Vercel AI SDK",
-        "OpenAI GPT-4o",
-        "Clerk Authentication",
-        "Stripe Billing",
-        "Drizzle ORM",
-        "Tailwind CSS",
-        "React Flow",
-        "Vercel"
-      ],
-      "status": null,
-      "language": "TypeScript",
-      "languages": {
-        "TypeScript": 1165401,
-        "JavaScript": 12530,
-        "CSS": 10362
-      },
-      "stars": 0,
-      "forks": 0,
-      "lastPushed": "2026-03-29T18:36:32Z",
-      "createdAt": "2025-12-02T07:09:31Z",
-      "isFeatured": true,
-      "isArchived": false,
-      "isPrivate": false,
-      "tagline": "White-label AI chatbot SaaS for service businesses in bilingual markets",
-      "thumbnail": "https://cdn.cushlabs.ai/ai-chatbot-saas/images/portfolio/ai-chatbot-saas-thumb.webp",
-      "problem": "Service businesses in bilingual markets lose leads outside business hours\nand can't afford round-the-clock bilingual staff. Generic chatbots hallucinate\nanswers because they don't know the business. This platform gives each tenant\na knowledge-grounded AI assistant that answers accurately in English or Spanish,\nqualifies leads, and hands off to humans when needed.\n",
-      "solution": null,
-      "keyFeatures": [
-        "Multi-tenant SaaS with full data isolation per business",
-        "RAG-powered answers grounded in verified business content",
-        "Native bilingual support with automatic language detection",
-        "Visual playbook builder for non-technical conversation design",
-        "Stripe billing with subscription management and usage tracking",
-        "One-tag embeddable widget for any website"
-      ],
-      "metrics": [],
-      "priority": 2,
-      "dateCompleted": null,
-      "slides": [
-        {
-          "src": "https://cdn.cushlabs.ai/ai-chatbot-saas/images/portfolio/converso-01.webp",
-          "altEn": "Converso AI — Bilingual AI Front Desk & Sales Assistant",
-          "altEs": "Converso AI — Bilingual AI Front Desk & Sales Assistant"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/ai-chatbot-saas/images/portfolio/converso-02.webp",
-          "altEn": "Converso AI — Bilingual AI Front Desk & Sales Assistant",
-          "altEs": "Converso AI — Bilingual AI Front Desk & Sales Assistant"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/ai-chatbot-saas/images/portfolio/converso-03.webp",
-          "altEn": "Converso AI — Bilingual AI Front Desk & Sales Assistant",
-          "altEs": "Converso AI — Bilingual AI Front Desk & Sales Assistant"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/ai-chatbot-saas/images/portfolio/converso-04.webp",
-          "altEn": "Converso AI — Bilingual AI Front Desk & Sales Assistant",
-          "altEs": "Converso AI — Bilingual AI Front Desk & Sales Assistant"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/ai-chatbot-saas/images/portfolio/converso-05.webp",
-          "altEn": "Converso AI — Bilingual AI Front Desk & Sales Assistant",
-          "altEs": "Converso AI — Bilingual AI Front Desk & Sales Assistant"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/ai-chatbot-saas/images/portfolio/converso-06.webp",
-          "altEn": "Converso AI — Bilingual AI Front Desk & Sales Assistant",
-          "altEs": "Converso AI — Bilingual AI Front Desk & Sales Assistant"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/ai-chatbot-saas/images/portfolio/converso-07.webp",
-          "altEn": "Converso AI — Bilingual AI Front Desk & Sales Assistant",
-          "altEs": "Converso AI — Bilingual AI Front Desk & Sales Assistant"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/ai-chatbot-saas/images/portfolio/converso-08.webp",
-          "altEn": "Converso AI — Bilingual AI Front Desk & Sales Assistant",
-          "altEs": "Converso AI — Bilingual AI Front Desk & Sales Assistant"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/ai-chatbot-saas/images/portfolio/converso-09.webp",
-          "altEn": "Converso AI — Bilingual AI Front Desk & Sales Assistant",
-          "altEs": "Converso AI — Bilingual AI Front Desk & Sales Assistant"
-        }
-      ],
-      "videoUrl": "https://cdn.cushlabs.ai/ai-chatbot-saas/video/converso-brief.mp4",
-      "videoPoster": "https://cdn.cushlabs.ai/ai-chatbot-saas/video/converso-brief-poster.jpg"
     },
     {
       "id": 1174690198,
@@ -1380,7 +1380,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-03-29T08:41:58Z",
+      "lastPushed": "2026-03-29T21:31:44Z",
       "createdAt": "2025-11-05T18:11:38Z",
       "isFeatured": true,
       "isArchived": false,
@@ -2076,15 +2076,15 @@
       "status": null,
       "language": "Astro",
       "languages": {
-        "Astro": 514237,
-        "TypeScript": 225135,
+        "Astro": 459622,
+        "TypeScript": 236855,
         "HTML": 61067,
         "JavaScript": 47370,
-        "CSS": 3069
+        "CSS": 3319
       },
       "stars": 2,
       "forks": 0,
-      "lastPushed": "2026-03-29T17:17:51Z",
+      "lastPushed": "2026-03-29T21:12:14Z",
       "createdAt": "2026-01-08T03:52:43Z",
       "isFeatured": false,
       "isArchived": false,
@@ -3520,13 +3520,13 @@
       "status": null,
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 85109,
+        "TypeScript": 97532,
         "CSS": 4743,
         "JavaScript": 559
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-03-29T04:20:49Z",
+      "lastPushed": "2026-03-29T21:48:25Z",
       "createdAt": "2026-03-22T07:49:29Z",
       "isFeatured": false,
       "isArchived": false,
