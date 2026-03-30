@@ -14,11 +14,11 @@ const locale = (Astro.currentLocale === "es" ? "es" : "en") as "en" | "es";
 const meta = {
   en: {
     title: "AI Solutions for Growing Businesses — CushLabs.ai",
-    description: "AI support assistants, document automation, and custom tools for SMBs. Clear pricing, measurable outcomes, bilingual EN/ES. Free discovery call.",
+    description: "AI assistants, local competitive intelligence, and custom automation for SMBs. Clear pricing, measurable outcomes, bilingual EN/ES. Free discovery call.",
   },
   es: {
     title: "Soluciones de IA para Negocios en Crecimiento — CushLabs.ai",
-    description: "Asistentes de soporte con IA, automatización de documentos y herramientas a medida para PYMES. Precios claros, resultados medibles. Llamada gratis.",
+    description: "Asistentes de IA, inteligencia competitiva local y automatización a medida para PYMES. Precios claros, resultados medibles. Llamada gratis.",
   },
 };
 ---
@@ -30,7 +30,7 @@ const meta = {
   <ScenarioQualifier locale={locale} />
   
   <ServiceBlock locale={locale} id="support-assistants" />
-  <ServiceBlock locale={locale} id="knowledge-systems" isAlternate={true} />
+  <ServiceBlock locale={locale} id="competitive-intelligence" isAlternate={true} />
   <ServiceBlock locale={locale} id="custom-tools" />
   <ServiceBlock locale={locale} id="clarity-sprint" isAlternate={true} />
 
