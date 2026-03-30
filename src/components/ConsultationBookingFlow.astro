@@ -24,7 +24,8 @@ const whatsappRaw = (
 const whatsappDigits = whatsappRaw.replace(/\D/g, "");
 const whatsappLink = whatsappDigits ? `https://wa.me/${whatsappDigits}` : null;
 
-const email = "info@cushlabs.ai";
+const emailUser = "info";
+const emailDomain = "cushlabs.ai";
 const intakeEndpoint = "/api/consultation-intake";
 
 const contactPath = locale === "es" ? "/es/contact" : "/contact";
@@ -357,7 +358,11 @@ const bookingStrings = {
                   }
 
                   <a
-                    href={`mailto:${email}?subject=${encodeURIComponent(dict.consultation.emailSubject)}`}
+                    href="#"
+                    id="consultation-email-link"
+                    data-u={emailUser}
+                    data-d={emailDomain}
+                    data-s={encodeURIComponent(dict.consultation.emailSubject)}
                     class="inline-flex items-center justify-center rounded-xl border border-border bg-base/40 px-5 py-3 text-sm font-display font-semibold text-foreground hover:opacity-90 transition-opacity"
                   >
                     {dict.consultation.email}
@@ -468,4 +473,12 @@ const bookingStrings = {
 <script>
   import { initBookingFlow } from "../scripts/bookingFlow";
   initBookingFlow();
+
+  // Assemble obfuscated email link at runtime
+  const el = document.getElementById('consultation-email-link');
+  if (el) {
+    const addr = el.getAttribute('data-u') + '@' + el.getAttribute('data-d');
+    const subj = el.getAttribute('data-s') || '';
+    el.setAttribute('href', 'mailto:' + addr + (subj ? '?subject=' + subj : ''));
+  }
 </script>

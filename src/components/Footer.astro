@@ -14,9 +14,9 @@ const content = {
     services: {
       title: "Services",
       links: [
-        { label: "AI Support Automation", href: "/services#support" },
-        { label: "Document Processing", href: "/services#document" },
-        { label: "SOP Systems", href: "/services#sop" },
+        { label: "AI Support Automation", href: "/services#support-assistants" },
+        { label: "Document Processing", href: "/services#knowledge-systems" },
+        { label: "SOP Systems", href: "/services#custom-tools" },
         { label: "Pricing", href: "/services#pricing" },
       ],
     },
@@ -32,7 +32,7 @@ const content = {
       title: "Support",
       links: [
         { label: "Book Consultation", href: "/consultation" },
-        { label: "Email Us", href: "mailto:info@cushlabs.ai" },
+        { label: "Email Us", href: "#", isEmail: true },
       ],
     },
     legal: {
@@ -51,9 +51,9 @@ const content = {
     services: {
       title: "Servicios",
       links: [
-        { label: "Automatización de Soporte", href: "/es/services#support" },
-        { label: "Procesamiento de Documentos", href: "/es/services#document" },
-        { label: "Sistemas de SOPs", href: "/es/services#sop" },
+        { label: "Automatización de Soporte", href: "/es/services#support-assistants" },
+        { label: "Procesamiento de Documentos", href: "/es/services#knowledge-systems" },
+        { label: "Sistemas de SOPs", href: "/es/services#custom-tools" },
         { label: "Precios", href: "/es/services#pricing" },
       ],
     },
@@ -69,7 +69,7 @@ const content = {
       title: "Soporte",
       links: [
         { label: "Agendar Consulta", href: "/es/reservar" },
-        { label: "Escríbenos", href: "mailto:info@cushlabs.ai" },
+        { label: "Escríbenos", href: "#", isEmail: true },
       ],
     },
     legal: {
@@ -162,12 +162,24 @@ const t = content[locale];
             <ul class="space-y-3">
               {t.support.links.map((link) => (
                 <li>
-                  <a
-                    href={link.href}
-                    class="text-sm text-gray-600 dark:text-gray-400 hover:text-cush-orange dark:hover:text-cush-orange transition-colors"
-                  >
-                    {link.label}
-                  </a>
+                  {'isEmail' in link && link.isEmail ? (
+                    <a
+                      href="#"
+                      id="footer-email-link"
+                      data-u="info"
+                      data-d="cushlabs.ai"
+                      class="text-sm text-gray-600 dark:text-gray-400 hover:text-cush-orange dark:hover:text-cush-orange transition-colors"
+                    >
+                      {link.label}
+                    </a>
+                  ) : (
+                    <a
+                      href={link.href}
+                      class="text-sm text-gray-600 dark:text-gray-400 hover:text-cush-orange dark:hover:text-cush-orange transition-colors"
+                    >
+                      {link.label}
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>
@@ -228,4 +240,15 @@ const t = content[locale];
       </div>
     </div>
   </div>
+
+  <script is:inline>
+    // Assemble obfuscated email link at runtime to prevent scraper/CDN rewriting
+    (function() {
+      var el = document.getElementById('footer-email-link');
+      if (el) {
+        var addr = el.getAttribute('data-u') + '@' + el.getAttribute('data-d');
+        el.href = 'mailto:' + addr;
+      }
+    })();
+  </script>
 </footer>
