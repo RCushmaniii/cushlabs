@@ -107,14 +107,14 @@ export const en = {
     posts: [
       {
         title: 'Getting Started with RAG: A Practical Guide',
-        description: 'How to build a retrieval-augmented generation system that actually works in production. A step-by-step guide covering embeddings, vector stores, and prompt design.',
+        description: 'How to build a RAG system that works in production. A step-by-step guide covering embeddings, vector stores, and prompt design.',
         date: '2026-01-08',
         tags: ['AI', 'RAG'],
         image: '/images/blog/blog-1.webp',
       },
       {
         title: 'Automating Your Business Workflows',
-        description: 'Practical strategies for identifying and automating repetitive business tasks. Learn which workflows to target first and how to measure the time and cost savings.',
+        description: 'Practical strategies for identifying and automating repetitive business tasks. Learn which workflows to target first and how to measure time and cost savings.',
         date: '2026-01-05',
         tags: ['Automation', 'Productivity'],
         image: '/images/blog/blog-2.webp',

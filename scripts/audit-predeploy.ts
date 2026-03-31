@@ -350,6 +350,186 @@ async function exists(p: string) {
   }
 }
 
+// ─── SEO Audit (runs against built dist/) ──────────────────────
+
+const SEO_LIMITS = {
+  titleMax: 60,
+  descMax: 160,
+  titleMin: 20,
+  descMin: 50,
+};
+
+async function collectHtmlFiles(dir: string): Promise<string[]> {
+  const htmlFiles: string[] = [];
+  const entries = await readdir(dir, { withFileTypes: true });
+  for (const entry of entries) {
+    const full = path.join(dir, entry.name);
+    if (entry.isDirectory()) {
+      htmlFiles.push(...(await collectHtmlFiles(full)));
+    } else if (entry.name.endsWith(".html")) {
+      htmlFiles.push(full);
+    }
+  }
+  return htmlFiles;
+}
+
+function extractTag(html: string, tag: string): string | null {
+  // <title>...</title>
+  if (tag === "title") {
+    const m = html.match(/<title[^>]*>(.*?)<\/title>/is);
+    return m ? m[1].trim() : null;
+  }
+  // <meta name="description" content="...">
+  if (tag === "description") {
+    const m = html.match(/<meta\s[^>]*name=["']description["'][^>]*content=["'](.*?)["'][^>]*\/?>/is)
+           || html.match(/<meta\s[^>]*content=["'](.*?)["'][^>]*name=["']description["'][^>]*\/?>/is);
+    return m ? m[1].trim() : null;
+  }
+  return null;
+}
+
+function extractInternalHrefs(html: string): string[] {
+  const staticExts = /\.(css|js|mjs|ico|png|jpg|jpeg|webp|avif|svg|gif|woff2?|ttf|eot|xml|json|txt|webmanifest|pdf)$/i;
+  const matches = [...html.matchAll(/href=["'](\/[^"'#]*?)["']/g)];
+  return matches.map(m => m[1]).filter(h => !h.startsWith("//") && !h.startsWith("/_astro/") && !staticExts.test(h));
+}
+
+function extractCanonical(html: string): string | null {
+  const m = html.match(/<link\s[^>]*rel=["']canonical["'][^>]*href=["'](.*?)["']/i);
+  return m ? m[1] : null;
+}
+
+function extractHreflang(html: string): string[] {
+  const matches = [...html.matchAll(/<link\s[^>]*rel=["']alternate["'][^>]*href=["'](.*?)["']/gi)];
+  return matches.map(m => m[1]);
+}
+
+async function checkSeoOnBuild() {
+  const dist = path.join(cwd, "dist");
+  let htmlFiles: string[];
+  try {
+    htmlFiles = await collectHtmlFiles(dist);
+  } catch {
+    log("WARN", "Cannot run SEO audit — dist/ not found");
+    return true;
+  }
+
+  if (!htmlFiles.length) {
+    log("WARN", "No HTML files found in dist/");
+    return true;
+  }
+
+  const titleIssues: string[] = [];
+  const descIssues: string[] = [];
+  const trailingSlashIssues: string[] = [];
+  const orphanCandidates = new Set<string>();
+  const linkedPaths = new Set<string>();
+  const allPages = new Set<string>();
+
+  for (const file of htmlFiles) {
+    const rel = path.relative(dist, file).replace(/\\/g, "/").replace(/index\.html$/, "");
+    const pagePath = `/${rel}`;
+    allPages.add(pagePath);
+
+    let html: string;
+    try {
+      html = await readFile(file, "utf8");
+    } catch {
+      continue;
+    }
+
+    // ── Title length check ──
+    const title = extractTag(html, "title");
+    if (title) {
+      if (title.length > SEO_LIMITS.titleMax) {
+        titleIssues.push(`- ${pagePath} → ${title.length} chars: "${title.slice(0, 70)}..."`);
+      } else if (title.length < SEO_LIMITS.titleMin) {
+        titleIssues.push(`- ${pagePath} → ${title.length} chars (too short): "${title}"`);
+      }
+    }
+
+    // ── Description length check (skip 404) ──
+    const desc = extractTag(html, "description");
+    if (desc && !pagePath.includes("404")) {
+      if (desc.length > SEO_LIMITS.descMax) {
+        descIssues.push(`- ${pagePath} → ${desc.length} chars: "${desc.slice(0, 80)}..."`);
+      } else if (desc.length < SEO_LIMITS.descMin) {
+        descIssues.push(`- ${pagePath} → ${desc.length} chars (too short)`);
+      }
+    }
+
+    // ── Internal links trailing slash check ──
+    const hrefs = extractInternalHrefs(html);
+    for (const href of hrefs) {
+      if (href !== "/" && !href.endsWith("/")) {
+        trailingSlashIssues.push(`- ${pagePath} → href="${href}" (missing trailing slash)`);
+      }
+      // Track linked paths for orphan detection
+      const normalized = href.endsWith("/") ? href : `${href}/`;
+      linkedPaths.add(normalized);
+    }
+
+    // ── Canonical vs hreflang consistency ──
+    const canonical = extractCanonical(html);
+    const hreflangs = extractHreflang(html);
+    if (canonical && hreflangs.length) {
+      const canonicalPath = new URL(canonical).pathname;
+      for (const hl of hreflangs) {
+        try {
+          const hlPath = new URL(hl).pathname;
+          if (hlPath !== "/" && !hlPath.endsWith("/")) {
+            trailingSlashIssues.push(`- ${pagePath} → hreflang "${hlPath}" missing trailing slash`);
+          }
+        } catch { /* skip malformed URLs */ }
+      }
+    }
+  }
+
+  // ── Orphan page detection (pages with no incoming internal links) ──
+  for (const page of allPages) {
+    if (page === "/" || page === "/es/" || page === "/404/" || page === "/404.html") continue;
+    if (!linkedPaths.has(page)) {
+      orphanCandidates.add(page);
+    }
+  }
+
+  let ok = true;
+
+  // Report results
+  if (titleIssues.length) {
+    log("FAIL", `Title length issues (${titleIssues.length} pages, limit: ${SEO_LIMITS.titleMax} chars)`, titleIssues.join("\n"));
+    ok = false;
+  } else {
+    log("OK", `All page titles within ${SEO_LIMITS.titleMin}-${SEO_LIMITS.titleMax} chars`);
+  }
+
+  if (descIssues.length) {
+    log("FAIL", `Meta description length issues (${descIssues.length} pages, limit: ${SEO_LIMITS.descMax} chars)`, descIssues.join("\n"));
+    ok = false;
+  } else {
+    log("OK", `All meta descriptions within ${SEO_LIMITS.descMin}-${SEO_LIMITS.descMax} chars`);
+  }
+
+  if (trailingSlashIssues.length) {
+    const dedupedIssues = [...new Set(trailingSlashIssues)].slice(0, 20);
+    log("FAIL", `Trailing slash issues (${trailingSlashIssues.length} links)`, dedupedIssues.join("\n") + (trailingSlashIssues.length > 20 ? `\n  ... and ${trailingSlashIssues.length - 20} more` : ""));
+    ok = false;
+  } else {
+    log("OK", "All internal links have trailing slashes");
+  }
+
+  if (orphanCandidates.size > 0) {
+    const orphanList = [...orphanCandidates].slice(0, 15);
+    log("WARN", `${orphanCandidates.size} pages with no incoming internal links`, orphanList.map(p => `- ${p}`).join("\n") + (orphanCandidates.size > 15 ? `\n  ... and ${orphanCandidates.size - 15} more` : ""));
+  } else {
+    log("OK", "All pages have incoming internal links");
+  }
+
+  return ok;
+}
+
+// ─── Main ───────────────────────────────────────────────────────
+
 async function main() {
   process.stdout.write(`Pre-deploy audit (Astro)\n`);
   process.stdout.write(`Node ${process.version}\n\n`);
@@ -376,6 +556,10 @@ async function main() {
   }
 
   ok = (await checkStaticArtifacts()) && ok;
+
+  // SEO checks run on built output
+  process.stdout.write("\n--- SEO Audit ---\n\n");
+  ok = (await checkSeoOnBuild()) && ok;
 
   if (!ok) {
     process.stdout.write("\nAudit result: FAILED\n");

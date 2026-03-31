@@ -114,7 +114,7 @@ export const es = {
       },
       {
         title: 'Automatizando los Flujos de tu Negocio',
-        description: 'Estrategias prácticas para identificar y automatizar tareas repetitivas en tu negocio. Aprende qué flujos atacar primero y cómo medir el ahorro en tiempo y costos.',
+        description: 'Estrategias prácticas para identificar y automatizar tareas repetitivas en tu negocio. Aprende qué flujos atacar primero y cómo medir el ahorro.',
         date: '2026-01-05',
         tags: ['Automatización', 'Productividad'],
         image: '/images/blog/blog-2.webp',

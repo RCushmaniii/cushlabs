@@ -49,7 +49,7 @@ if (!post) {
   return Astro.redirect(locale === 'es' ? '/es/blog' : '/blog');
 }
 
-const blogUrl = locale === "es" ? "/es/blog" : "/blog";
+const blogUrl = locale === "es" ? "/es/blog/" : "/blog/";
 ---
 
 <BaseLayout
