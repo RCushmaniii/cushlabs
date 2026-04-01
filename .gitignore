@@ -23,6 +23,9 @@ Thumbs.db
 # credentials
 scripts/seo/gsc-credentials.json
 
+# SEO submission logs
+scripts/seo/.submissions/
+
 # misc
 *.log
 *.pem
