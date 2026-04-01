@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-01T03:31:07.962Z",
+  "generatedAt": "2026-04-01T16:00:30.400Z",
   "count": 32,
   "projects": [
     {
@@ -441,15 +441,15 @@
       "status": null,
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 147283,
+        "TypeScript": 166165,
         "HTML": 29745,
+        "CSS": 1550,
         "Dockerfile": 1126,
-        "JavaScript": 559,
-        "CSS": 379
+        "JavaScript": 559
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-04-01T03:30:29Z",
+      "lastPushed": "2026-04-01T15:58:30Z",
       "createdAt": "2026-03-30T19:46:00Z",
       "isFeatured": true,
       "isArchived": false,
@@ -547,19 +547,19 @@
       "status": null,
       "language": "Python",
       "languages": {
-        "Python": 302871,
+        "Python": 305118,
         "Shell": 1351,
         "Dockerfile": 519
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-04-01T03:28:04Z",
+      "lastPushed": "2026-04-01T04:02:16Z",
       "createdAt": "2026-03-09T19:14:08Z",
       "isFeatured": true,
       "isArchived": false,
       "isPrivate": false,
       "tagline": "Remove baked-in watermarks from images, PDFs, and presentations with a layered AI detection pipeline and neural inpainting",
-      "thumbnail": "https://cdn.cushlabs.ai/cushlabs-ai-unwatermark/public/images/portfolio/unwatermark-thumb.webp",
+      "thumbnail": "https://cdn.cushlabs.ai/cushlabs-ai-unwatermark/images/portfolio/unwatermark-thumb.webp",
       "problem": "Exported slide decks and documents embed watermarks directly into raster images — there's no\nlayer to delete. NotebookLM, stock photo sites, and draft PDFs all produce files where the\nwatermark pixels replace original content. Manual Photoshop cleanup doesn't scale across\ndozens of slides. Unwatermark automates detection and removal using AI vision models and\nneural inpainting to produce clean, professional files in seconds.\n",
       "solution": null,
       "keyFeatures": [
@@ -576,38 +576,38 @@
       "dateCompleted": null,
       "slides": [
         {
-          "src": "https://cdn.cushlabs.ai/cushlabs-ai-unwatermark/public/images/portfolio/unwatermark-01.webp",
+          "src": "https://cdn.cushlabs.ai/cushlabs-ai-unwatermark/images/portfolio/unwatermark-01.webp",
           "altEn": "Unwatermark",
           "altEs": "Unwatermark"
         },
         {
-          "src": "https://cdn.cushlabs.ai/cushlabs-ai-unwatermark/public/images/portfolio/unwatermark-02.webp",
+          "src": "https://cdn.cushlabs.ai/cushlabs-ai-unwatermark/images/portfolio/unwatermark-02.webp",
           "altEn": "Unwatermark",
           "altEs": "Unwatermark"
         },
         {
-          "src": "https://cdn.cushlabs.ai/cushlabs-ai-unwatermark/public/images/portfolio/unwatermark-03.webp",
+          "src": "https://cdn.cushlabs.ai/cushlabs-ai-unwatermark/images/portfolio/unwatermark-03.webp",
           "altEn": "Unwatermark",
           "altEs": "Unwatermark"
         },
         {
-          "src": "https://cdn.cushlabs.ai/cushlabs-ai-unwatermark/public/images/portfolio/unwatermark-04.webp",
+          "src": "https://cdn.cushlabs.ai/cushlabs-ai-unwatermark/images/portfolio/unwatermark-04.webp",
           "altEn": "Unwatermark",
           "altEs": "Unwatermark"
         },
         {
-          "src": "https://cdn.cushlabs.ai/cushlabs-ai-unwatermark/public/images/portfolio/unwatermark-05.webp",
+          "src": "https://cdn.cushlabs.ai/cushlabs-ai-unwatermark/images/portfolio/unwatermark-05.webp",
           "altEn": "Unwatermark",
           "altEs": "Unwatermark"
         },
         {
-          "src": "https://cdn.cushlabs.ai/cushlabs-ai-unwatermark/public/images/portfolio/unwatermark-06.webp",
+          "src": "https://cdn.cushlabs.ai/cushlabs-ai-unwatermark/images/portfolio/unwatermark-06.webp",
           "altEn": "Unwatermark",
           "altEs": "Unwatermark"
         }
       ],
-      "videoUrl": "https://cdn.cushlabs.ai/cushlabs-ai-unwatermark/public/images/portfolio/Unwatermark__The_Limits_of_AI.mp4",
-      "videoPoster": "https://cdn.cushlabs.ai/cushlabs-ai-unwatermark/public/images/portfolio/Unwatermark-The-Limits-of-AI-poster.webp"
+      "videoUrl": "https://cdn.cushlabs.ai/cushlabs-ai-unwatermark/images/portfolio/Unwatermark__The_Limits_of_AI.mp4",
+      "videoPoster": "https://cdn.cushlabs.ai/cushlabs-ai-unwatermark/images/portfolio/Unwatermark-The-Limits-of-AI-poster.webp"
     },
     {
       "id": 1174690198,
@@ -2124,7 +2124,7 @@
       },
       "stars": 2,
       "forks": 0,
-      "lastPushed": "2026-03-31T07:45:50Z",
+      "lastPushed": "2026-04-01T15:09:15Z",
       "createdAt": "2026-01-08T03:52:43Z",
       "isFeatured": false,
       "isArchived": false,
@@ -2256,7 +2256,7 @@
       },
       "stars": 1,
       "forks": 0,
-      "lastPushed": "2026-03-29T20:08:25Z",
+      "lastPushed": "2026-04-01T03:32:25Z",
       "createdAt": "2026-01-05T15:06:48Z",
       "isFeatured": false,
       "isArchived": false,
