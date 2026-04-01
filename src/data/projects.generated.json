@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-03-31T02:16:22.707Z",
-  "count": 31,
+  "generatedAt": "2026-04-01T03:31:07.962Z",
+  "count": 32,
   "projects": [
     {
       "id": 1102173157,
@@ -169,13 +169,13 @@
       "status": null,
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 1165337,
+        "TypeScript": 1165341,
         "JavaScript": 12530,
         "CSS": 10362
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-03-30T19:38:26Z",
+      "lastPushed": "2026-04-01T00:17:56Z",
       "createdAt": "2025-12-02T07:09:31Z",
       "isFeatured": true,
       "isArchived": false,
@@ -378,6 +378,236 @@
       ],
       "videoUrl": "https://cdn.cushlabs.ai/cushlabs-OS-dashboard/images/portfolio/CushLabs_OS_Command_Center.mp4",
       "videoPoster": "https://cdn.cushlabs.ai/cushlabs-OS-dashboard/images/portfolio/cushlabs-os-command-center-poster.webp"
+    },
+    {
+      "id": 1196535593,
+      "name": "cushlabs-marketsignal",
+      "title": "MarketSignal — AI-Powered Local Competitive Intelligence",
+      "description": "AI-powered local competitive intelligence platform. Monitors Google Maps rankings, reviews, and competitor activity for multi-location businesses — delivering weekly insights via WhatsApp.",
+      "summary": "> AI-powered local competitive intelligence for multi-location businesses.",
+      "url": "https://github.com/RCushmaniii/cushlabs-marketsignal",
+      "demoUrl": null,
+      "liveUrl": "",
+      "homepage": null,
+      "topics": [
+        "ai-analytics",
+        "business-intelligence",
+        "competitive-intelligence",
+        "google-business-profile",
+        "google-maps",
+        "local-seo",
+        "mexico",
+        "neon-postgres",
+        "nextjs",
+        "playwright",
+        "review-monitoring",
+        "saas",
+        "whatsapp-api"
+      ],
+      "categories": [
+        "AI Automation"
+      ],
+      "tags": [
+        "ai-analytics",
+        "business-intelligence",
+        "competitive-intelligence",
+        "google-business-profile",
+        "google-maps",
+        "local-seo",
+        "mexico",
+        "neon-postgres",
+        "nextjs",
+        "playwright",
+        "review-monitoring",
+        "saas",
+        "whatsapp-api",
+        "ai-analysis",
+        "whatsapp",
+        "multi-location",
+        "next-js",
+        "drizzle-orm"
+      ],
+      "stack": [
+        "Next.js 15 (App Router)",
+        "React 19",
+        "Tailwind CSS 4",
+        "Neon (serverless PostgreSQL)",
+        "Drizzle ORM",
+        "Claude API (Sonnet)",
+        "WhatsApp Business API",
+        "Playwright",
+        "TypeScript"
+      ],
+      "status": null,
+      "language": "TypeScript",
+      "languages": {
+        "TypeScript": 147283,
+        "HTML": 29745,
+        "Dockerfile": 1126,
+        "JavaScript": 559,
+        "CSS": 379
+      },
+      "stars": 0,
+      "forks": 0,
+      "lastPushed": "2026-04-01T03:30:29Z",
+      "createdAt": "2026-03-30T19:46:00Z",
+      "isFeatured": true,
+      "isArchived": false,
+      "isPrivate": true,
+      "tagline": "Monitor Google Maps rankings, reviews, and competitor activity — delivered weekly via WhatsApp",
+      "thumbnail": null,
+      "problem": "Local businesses in Mexico have no affordable way to systematically track their\nGoogle Maps rankings, monitor competitor activity, or receive actionable insights.\nThey rely on gut instinct or expensive enterprise tools that don't support the\nMexican market. MarketSignal fills that gap with AI-powered weekly reports\ndelivered directly to WhatsApp.\n",
+      "solution": null,
+      "keyFeatures": [
+        "Weekly competitive intelligence reports for 3-5 pilot clients",
+        "Week-over-week ranking and review delta tracking per location",
+        "AI-generated action items with specific, high-impact recommendations",
+        "WhatsApp delivery — reports land where clients already communicate"
+      ],
+      "metrics": [],
+      "priority": 3,
+      "dateCompleted": null,
+      "slides": [],
+      "videoUrl": null,
+      "videoPoster": null
+    },
+    {
+      "id": 1177175159,
+      "name": "cushlabs-ai-unwatermark",
+      "title": "Unwatermark",
+      "description": "AI-powered watermark removal tool for images, PDFs, and PPTX files. Drop a file, get a clean version.",
+      "summary": "> AI-powered watermark removal for images, PDFs, and PPTX files. Layered detection pipeline with neural inpainting — drop a file, get a clean version.",
+      "url": "https://github.com/RCushmaniii/cushlabs-ai-unwatermark",
+      "demoUrl": null,
+      "liveUrl": "https://unwatermark.cushlabs.ai",
+      "homepage": null,
+      "topics": [
+        "ai",
+        "automation",
+        "caddy",
+        "claude-vision",
+        "cli-tool",
+        "docker",
+        "easyocr",
+        "fastapi",
+        "florence-2",
+        "hetzner",
+        "image-processing",
+        "lama",
+        "neural-inpainting",
+        "pdf",
+        "pillow",
+        "pptx",
+        "python",
+        "replicate",
+        "sam",
+        "watermark-removal"
+      ],
+      "categories": [
+        "AI Automation"
+      ],
+      "tags": [
+        "ai",
+        "automation",
+        "caddy",
+        "claude-vision",
+        "cli-tool",
+        "docker",
+        "easyocr",
+        "fastapi",
+        "florence-2",
+        "hetzner",
+        "image-processing",
+        "lama",
+        "neural-inpainting",
+        "pdf",
+        "pillow",
+        "pptx",
+        "python",
+        "replicate",
+        "sam",
+        "watermark-removal",
+        "ai-detection"
+      ],
+      "stack": [
+        "Python 3.10+",
+        "EasyOCR",
+        "Anthropic SDK (Claude Vision)",
+        "LaMa Inpainting (Replicate)",
+        "Florence-2 (Replicate)",
+        "Grounded SAM (Replicate)",
+        "FastAPI + Uvicorn",
+        "Pillow + NumPy",
+        "PyMuPDF (fitz)",
+        "python-pptx",
+        "Click",
+        "Docker",
+        "Caddy"
+      ],
+      "status": null,
+      "language": "Python",
+      "languages": {
+        "Python": 302871,
+        "Shell": 1351,
+        "Dockerfile": 519
+      },
+      "stars": 0,
+      "forks": 0,
+      "lastPushed": "2026-04-01T03:28:04Z",
+      "createdAt": "2026-03-09T19:14:08Z",
+      "isFeatured": true,
+      "isArchived": false,
+      "isPrivate": false,
+      "tagline": "Remove baked-in watermarks from images, PDFs, and presentations with a layered AI detection pipeline and neural inpainting",
+      "thumbnail": "https://cdn.cushlabs.ai/cushlabs-ai-unwatermark/public/images/portfolio/unwatermark-thumb.webp",
+      "problem": "Exported slide decks and documents embed watermarks directly into raster images — there's no\nlayer to delete. NotebookLM, stock photo sites, and draft PDFs all produce files where the\nwatermark pixels replace original content. Manual Photoshop cleanup doesn't scale across\ndozens of slides. Unwatermark automates detection and removal using AI vision models and\nneural inpainting to produce clean, professional files in seconds.\n",
+      "solution": null,
+      "keyFeatures": [
+        "Layered detection pipeline: EasyOCR → Florence-2 → Grounded SAM → Claude Vision → heuristic",
+        "LaMa neural inpainting produces artifact-free results that preserve surrounding content",
+        "Multi-pass removal catches residual watermarks across up to 3 detect-remove cycles",
+        "SAM pixel-perfect masking limits removal to actual watermark pixels — no collateral damage",
+        "Processes 14-slide PPTX exports in under 60 seconds via Replicate API",
+        "Supports images, PDFs, and PPTX with format-specific handlers",
+        "Drag-and-drop web UI with real-time NDJSON streaming progress"
+      ],
+      "metrics": [],
+      "priority": 3,
+      "dateCompleted": null,
+      "slides": [
+        {
+          "src": "https://cdn.cushlabs.ai/cushlabs-ai-unwatermark/public/images/portfolio/unwatermark-01.webp",
+          "altEn": "Unwatermark",
+          "altEs": "Unwatermark"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/cushlabs-ai-unwatermark/public/images/portfolio/unwatermark-02.webp",
+          "altEn": "Unwatermark",
+          "altEs": "Unwatermark"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/cushlabs-ai-unwatermark/public/images/portfolio/unwatermark-03.webp",
+          "altEn": "Unwatermark",
+          "altEs": "Unwatermark"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/cushlabs-ai-unwatermark/public/images/portfolio/unwatermark-04.webp",
+          "altEn": "Unwatermark",
+          "altEs": "Unwatermark"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/cushlabs-ai-unwatermark/public/images/portfolio/unwatermark-05.webp",
+          "altEn": "Unwatermark",
+          "altEs": "Unwatermark"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/cushlabs-ai-unwatermark/public/images/portfolio/unwatermark-06.webp",
+          "altEn": "Unwatermark",
+          "altEs": "Unwatermark"
+        }
+      ],
+      "videoUrl": "https://cdn.cushlabs.ai/cushlabs-ai-unwatermark/public/images/portfolio/Unwatermark__The_Limits_of_AI.mp4",
+      "videoPoster": "https://cdn.cushlabs.ai/cushlabs-ai-unwatermark/public/images/portfolio/Unwatermark-The-Limits-of-AI-poster.webp"
     },
     {
       "id": 1174690198,
@@ -985,10 +1215,10 @@
       "status": "Production",
       "language": "Astro",
       "languages": {
-        "Astro": 1195651,
+        "Astro": 1313523,
         "HTML": 836066,
-        "TypeScript": 693147,
-        "JavaScript": 399613,
+        "TypeScript": 815463,
+        "JavaScript": 399742,
         "CSS": 40875,
         "Python": 30138,
         "MDX": 23172,
@@ -996,7 +1226,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-03-31T02:00:42Z",
+      "lastPushed": "2026-04-01T00:51:21Z",
       "createdAt": "2025-03-23T03:27:14Z",
       "isFeatured": true,
       "isArchived": false,
@@ -1581,107 +1811,6 @@
       "videoPoster": "https://cdn.cushlabs.ai/ai-build-vs-outsource/video/ai-build-vs-outsource-brief-poster.jpg"
     },
     {
-      "id": 1177175159,
-      "name": "cushlabs-ai-unwatermark",
-      "title": "Unwatermark",
-      "description": "AI-powered watermark removal tool for images, PDFs, and PPTX files. Drop a file, get a clean version.",
-      "summary": "> AI-powered watermark removal tool for images, PDFs, and PPTX files. Drop a file, get a clean version.",
-      "url": "https://github.com/RCushmaniii/cushlabs-ai-unwatermark",
-      "demoUrl": null,
-      "liveUrl": "",
-      "homepage": null,
-      "topics": [
-        "automation",
-        "cli-tool",
-        "fastapi",
-        "image-processing",
-        "pdf",
-        "pillow",
-        "pptx",
-        "python",
-        "watermark-removal"
-      ],
-      "categories": [
-        "AI Automation"
-      ],
-      "tags": [
-        "automation",
-        "cli-tool",
-        "fastapi",
-        "image-processing",
-        "pdf",
-        "pillow",
-        "pptx",
-        "python",
-        "watermark-removal"
-      ],
-      "stack": [
-        "Python 3.10+",
-        "Pillow",
-        "NumPy",
-        "python-pptx",
-        "PyMuPDF",
-        "FastAPI",
-        "Click"
-      ],
-      "status": null,
-      "language": "Python",
-      "languages": {
-        "Python": 291419,
-        "Shell": 1351,
-        "Dockerfile": 519
-      },
-      "stars": 0,
-      "forks": 0,
-      "lastPushed": "2026-03-30T18:50:54Z",
-      "createdAt": "2026-03-09T19:14:08Z",
-      "isFeatured": false,
-      "isArchived": false,
-      "isPrivate": false,
-      "tagline": "AI-powered watermark removal for images, PDFs, and PPTX files",
-      "thumbnail": "https://cdn.cushlabs.ai/cushlabs-ai-unwatermark/images/unwatermark-thumb.png",
-      "problem": "Exported slide decks and documents often embed watermarks directly into raster images,\nmaking them impossible to remove through normal editing. Manual Photoshop cleanup doesn't\nscale when you have dozens of slides that all need the same treatment. Unwatermark automates\nthe clone-stamp technique to produce clean files in seconds.\n",
-      "solution": null,
-      "keyFeatures": [
-        "Processes 14-slide PPTX exports in under 30 seconds",
-        "Seamless gradient blending with no visible artifacts",
-        "Supports 7+ file formats across images, PDFs, and presentations",
-        "Dual CLI and web interface for automation and ad-hoc use"
-      ],
-      "metrics": [],
-      "priority": 6,
-      "dateCompleted": null,
-      "slides": [
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-ai-unwatermark/images/unwatermark-01.png",
-          "altEn": "Unwatermark",
-          "altEs": "Unwatermark"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-ai-unwatermark/images/unwatermark-02.png",
-          "altEn": "Unwatermark",
-          "altEs": "Unwatermark"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-ai-unwatermark/images/unwatermark-03.png",
-          "altEn": "Unwatermark",
-          "altEs": "Unwatermark"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-ai-unwatermark/images/unwatermark-04.png",
-          "altEn": "Unwatermark",
-          "altEs": "Unwatermark"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-ai-unwatermark/images/unwatermark-05.png",
-          "altEn": "Unwatermark",
-          "altEs": "Unwatermark"
-        }
-      ],
-      "videoUrl": null,
-      "videoPoster": null
-    },
-    {
       "id": 1120026584,
       "name": "context-writing-system",
       "title": "AI Writing System",
@@ -1987,15 +2116,15 @@
       "status": null,
       "language": "Astro",
       "languages": {
-        "Astro": 468100,
-        "TypeScript": 237099,
+        "Astro": 468404,
+        "TypeScript": 243728,
         "HTML": 61067,
         "JavaScript": 58176,
         "CSS": 3319
       },
       "stars": 2,
       "forks": 0,
-      "lastPushed": "2026-03-31T02:13:21Z",
+      "lastPushed": "2026-03-31T07:45:50Z",
       "createdAt": "2026-01-08T03:52:43Z",
       "isFeatured": false,
       "isArchived": false,
@@ -3810,58 +3939,26 @@
       "videoPoster": "https://cdn.cushlabs.ai/react-vite-tailwind-base/video/react-vite-tailwind-base-brief-poster.jpg"
     },
     {
-      "id": 1196535593,
-      "name": "marketsignal",
-      "title": "Marketsignal",
-      "description": "AI-powered local competitive intelligence platform. Monitors Google Maps rankings, reviews, and competitor activity for multi-location businesses — delivering weekly insights via WhatsApp.",
-      "summary": "AI-powered local competitive intelligence platform. Monitors Google Maps rankings, reviews, and competitor activity for multi-location businesses — delivering weekly insights via WhatsApp.",
-      "url": "https://github.com/RCushmaniii/marketsignal",
+      "id": 1197866981,
+      "name": "cushlabs-ai-dispatch",
+      "title": "Cushlabs Ai Dispatch",
+      "description": "Claude Dispatch research and mobile ops integration (ON HOLD)",
+      "summary": "Claude Dispatch research and mobile ops integration (ON HOLD)",
+      "url": "https://github.com/RCushmaniii/cushlabs-ai-dispatch",
       "demoUrl": null,
       "liveUrl": null,
       "homepage": null,
-      "topics": [
-        "ai-analytics",
-        "business-intelligence",
-        "competitive-intelligence",
-        "google-business-profile",
-        "google-maps",
-        "local-seo",
-        "mexico",
-        "neon-postgres",
-        "nextjs",
-        "playwright",
-        "review-monitoring",
-        "saas",
-        "whatsapp-api"
-      ],
+      "topics": [],
       "categories": [],
-      "tags": [
-        "ai-analytics",
-        "business-intelligence",
-        "competitive-intelligence",
-        "google-business-profile",
-        "google-maps",
-        "local-seo",
-        "mexico",
-        "neon-postgres",
-        "nextjs",
-        "playwright",
-        "review-monitoring",
-        "saas",
-        "whatsapp-api"
-      ],
+      "tags": [],
       "stack": [],
       "status": null,
-      "language": "TypeScript",
-      "languages": {
-        "TypeScript": 75525,
-        "JavaScript": 559,
-        "CSS": 488
-      },
+      "language": null,
+      "languages": {},
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-03-30T19:46:02Z",
-      "createdAt": "2026-03-30T19:46:00Z",
+      "lastPushed": "2026-04-01T00:35:33Z",
+      "createdAt": "2026-04-01T00:35:31Z",
       "isFeatured": false,
       "isArchived": false,
       "isPrivate": true,
