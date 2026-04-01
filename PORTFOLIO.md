@@ -3,7 +3,7 @@
 # PORTFOLIO.md — CushLabs.ai
 # =============================================================================
 portfolio_enabled: true
-portfolio_priority: 6
+portfolio_priority: 21
 portfolio_featured: false
 portfolio_last_reviewed: "2026-03-02"
 
