@@ -23,18 +23,23 @@ export const es = {
   },
   services: {
     title: 'Cómo Puedo Ayudarte',
-    subtitle: 'Soluciones reales para problemas reales — sin relleno, sin sobre-ingeniería',
-    ai: {
-      title: 'Integración de IA',
-      description: 'Chatbots personalizados, bases de conocimiento y asistentes inteligentes que se adaptan a tu forma de trabajar.',
+    subtitle: 'Cuatro servicios, resultados claros — elige el que encaje o empieza con una llamada gratis',
+    learnMore: 'Ver todos los servicios',
+    assistants: {
+      title: 'Asistentes de Soporte IA',
+      description: 'IA entrenada con TU conocimiento — responde clientes en inglés y español, captura leads fuera de horario y transfiere a humanos cuando se necesita.',
     },
-    automation: {
-      title: 'Automatización de Procesos',
-      description: '¿Esas tareas repetitivas que te comen la semana? Vamos a automatizarlas para que te enfoques en lo importante.',
+    intelligence: {
+      title: 'Inteligencia Competitiva',
+      description: 'Rastrea competidores en Google Maps — rankings, reseñas y movimientos — con reportes semanales por WhatsApp y una acción clara.',
     },
-    apps: {
-      title: 'Aplicaciones a Medida',
-      description: 'Apps web, dashboards y herramientas internas — código limpio, entrega rápida, fácil de mantener.',
+    tools: {
+      title: 'Herramientas IA a Medida',
+      description: 'Aplicaciones construidas para automatizar tus flujos más tardados. No una plataforma genérica — hecha para tu proceso exacto.',
+    },
+    clarity: {
+      title: 'Sprint de Claridad IA',
+      description: '¿No sabes por dónde empezar? Obtén un plan claro con arquitectura, timeline e inversión en 5-10 días. $1,500 USD — acreditado al proyecto.',
     },
   },
   process: {

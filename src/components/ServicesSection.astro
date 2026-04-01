@@ -7,6 +7,30 @@ interface Props {
 
 const { locale } = Astro.props;
 const dict = t(locale);
+const servicesUrl = locale === "en" ? "/services/" : "/es/services/";
+
+const services = [
+  {
+    key: "assistants" as const,
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />`,
+    anchor: "support-assistants",
+  },
+  {
+    key: "intelligence" as const,
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />`,
+    anchor: "competitive-intelligence",
+  },
+  {
+    key: "tools" as const,
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />`,
+    anchor: "custom-tools",
+  },
+  {
+    key: "clarity" as const,
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />`,
+    anchor: "clarity-sprint",
+  },
+];
 ---
 
 <section class="py-20 lg:py-28">
@@ -20,51 +44,37 @@ const dict = t(locale);
       </p>
     </div>
 
-    <div class="grid md:grid-cols-3 gap-8">
-      <!-- AI Integration -->
-      <div class="group p-6 bg-surface border border-border rounded-xl hover:border-cush-orange/50 transition-all duration-300">
-        <div class="w-12 h-12 rounded-lg bg-cush-orange/10 flex items-center justify-center mb-4 group-hover:bg-cush-orange/20 transition-colors">
-          <svg class="w-6 h-6 text-cush-orange" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-          </svg>
-        </div>
-        <h3 class="font-display text-xl font-semibold text-foreground mb-2">
-          {dict.services.ai.title}
-        </h3>
-        <p class="text-muted">
-          {dict.services.ai.description}
-        </p>
-      </div>
+    <div class="grid md:grid-cols-2 gap-6 lg:gap-8">
+      {services.map(({ key, icon, anchor }) => (
+        <a
+          href={`${servicesUrl}#${anchor}`}
+          class="group p-6 lg:p-8 bg-surface border border-border rounded-xl hover:border-cush-orange/50 transition-all duration-300 block"
+        >
+          <div class="w-12 h-12 rounded-lg bg-cush-orange/10 flex items-center justify-center mb-4 group-hover:bg-cush-orange/20 transition-colors">
+            <svg class="w-6 h-6 text-cush-orange" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <Fragment set:html={icon} />
+            </svg>
+          </div>
+          <h3 class="font-display text-xl font-semibold text-foreground mb-2">
+            {dict.services[key].title}
+          </h3>
+          <p class="text-muted leading-relaxed">
+            {dict.services[key].description}
+          </p>
+        </a>
+      ))}
+    </div>
 
-      <!-- Process Automation -->
-      <div class="group p-6 bg-surface border border-border rounded-xl hover:border-cush-orange/50 transition-all duration-300">
-        <div class="w-12 h-12 rounded-lg bg-cush-orange/10 flex items-center justify-center mb-4 group-hover:bg-cush-orange/20 transition-colors">
-          <svg class="w-6 h-6 text-cush-orange" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-          </svg>
-        </div>
-        <h3 class="font-display text-xl font-semibold text-foreground mb-2">
-          {dict.services.automation.title}
-        </h3>
-        <p class="text-muted">
-          {dict.services.automation.description}
-        </p>
-      </div>
-
-      <!-- Custom Applications -->
-      <div class="group p-6 bg-surface border border-border rounded-xl hover:border-cush-orange/50 transition-all duration-300">
-        <div class="w-12 h-12 rounded-lg bg-cush-orange/10 flex items-center justify-center mb-4 group-hover:bg-cush-orange/20 transition-colors">
-          <svg class="w-6 h-6 text-cush-orange" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-          </svg>
-        </div>
-        <h3 class="font-display text-xl font-semibold text-foreground mb-2">
-          {dict.services.apps.title}
-        </h3>
-        <p class="text-muted">
-          {dict.services.apps.description}
-        </p>
-      </div>
+    <div class="text-center mt-12">
+      <a
+        href={servicesUrl}
+        class="inline-flex items-center gap-2 font-display font-medium text-cush-orange hover:text-cush-orange/80 transition-colors"
+      >
+        {dict.services.learnMore}
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </a>
     </div>
   </div>
 </section>

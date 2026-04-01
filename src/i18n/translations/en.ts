@@ -23,18 +23,23 @@ export const en = {
   },
   services: {
     title: 'How I Can Help',
-    subtitle: 'Real solutions for real business problems — no fluff, no over-engineering',
-    ai: {
-      title: 'AI Integration',
-      description: 'Custom chatbots, knowledge bases, and smart assistants that plug right into how you already work.',
+    subtitle: 'Four services, clear outcomes — pick the one that fits or start with a free call',
+    learnMore: 'See all services',
+    assistants: {
+      title: 'AI Support Assistants',
+      description: 'AI trained on YOUR knowledge — answers customers in English and Spanish, captures leads after hours, hands off to humans when needed.',
     },
-    automation: {
-      title: 'Process Automation',
-      description: 'Those repetitive tasks eating up your week? Let\'s automate them so you can focus on what matters.',
+    intelligence: {
+      title: 'Competitive Intelligence',
+      description: 'Track competitors on Google Maps — rankings, reviews, and moves — with weekly WhatsApp reports and one clear action item.',
     },
-    apps: {
-      title: 'Custom Applications',
-      description: 'Web apps, dashboards, and internal tools — built clean, delivered fast, easy to maintain.',
+    tools: {
+      title: 'Custom AI Tools',
+      description: 'Purpose-built applications that automate your most time-consuming workflows. Not a generic platform — built for your exact process.',
+    },
+    clarity: {
+      title: 'AI Clarity Sprint',
+      description: 'Not sure where to start? Get a clear plan with architecture, timeline, and investment range in 5-10 days. $1,500 — credited toward a build.',
     },
   },
   process: {
