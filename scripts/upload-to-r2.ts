@@ -143,23 +143,29 @@ function scanLocalPortfolioAssets(repo: string): string[] {
     join(localDir, 'client', 'public', 'images', 'portfolio'),
   ];
 
-  for (const dir of scanDirs) {
-    if (!existsSync(dir)) continue;
+  function scanRecursive(dir: string) {
+    if (!existsSync(dir)) return;
     try {
-      const files = readdirSync(dir);
-      for (const file of files) {
-        const ext = extname(file).toLowerCase();
-        if (!extensions.has(ext)) continue;
-        // Convert absolute path back to repo-relative path
-        const fullPath = join(dir, file);
-        const relativePath = fullPath.replace(localDir, '').replace(/\\/g, '/');
-        // Strip /public/ prefix for the R2 key
-        const cleanedPath = relativePath.replace(/^\/public\//, '/');
-        found.push(cleanedPath);
+      const entries = readdirSync(dir, { withFileTypes: true });
+      for (const entry of entries) {
+        const fullPath = join(dir, entry.name);
+        if (entry.isDirectory()) {
+          scanRecursive(fullPath);
+        } else {
+          const ext = extname(entry.name).toLowerCase();
+          if (!extensions.has(ext)) continue;
+          const relativePath = fullPath.replace(localDir, '').replace(/\\/g, '/');
+          const cleanedPath = relativePath.replace(/^\/public\//, '/');
+          found.push(cleanedPath);
+        }
       }
     } catch {
       // Skip unreadable directories
     }
+  }
+
+  for (const dir of scanDirs) {
+    scanRecursive(dir);
   }
 
   return found;
@@ -196,9 +202,12 @@ function parsePortfolioMd(repo: string): string[] {
 
   // Also scan local directories for any portfolio assets not in frontmatter
   const scanned = scanLocalPortfolioAssets(repo);
-  const pathSet = new Set(paths);
+  // Normalize all paths for dedup: strip /public/ prefix to match scanned format
+  const normalizedSet = new Set(paths.map(p => p.replace(/^\/public\//, '/')));
   for (const p of scanned) {
-    if (!pathSet.has(p)) {
+    const normalized = p.replace(/^\/public\//, '/');
+    if (!normalizedSet.has(normalized)) {
+      normalizedSet.add(normalized);
       paths.push(p);
     }
   }
