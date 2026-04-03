@@ -1,4 +1,16 @@
 {
+  "redirects": [
+    { "source": "/work", "destination": "/portfolio/", "permanent": true },
+    { "source": "/work/", "destination": "/portfolio/", "permanent": true },
+    { "source": "/solutions", "destination": "/portfolio/", "permanent": true },
+    { "source": "/solutions/", "destination": "/portfolio/", "permanent": true },
+    { "source": "/es/work", "destination": "/es/portfolio/", "permanent": true },
+    { "source": "/es/work/", "destination": "/es/portfolio/", "permanent": true },
+    { "source": "/es/solutions", "destination": "/es/portfolio/", "permanent": true },
+    { "source": "/es/solutions/", "destination": "/es/portfolio/", "permanent": true },
+    { "source": "/es/servicios", "destination": "/es/services/", "permanent": true },
+    { "source": "/es/servicios/", "destination": "/es/services/", "permanent": true }
+  ],
   "headers": [
     {
       "source": "/images/(.*)",
