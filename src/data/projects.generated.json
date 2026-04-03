@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-03T01:04:29.212Z",
+  "generatedAt": "2026-04-03T15:49:52.522Z",
   "count": 32,
   "projects": [
     {
@@ -461,7 +461,7 @@
       "status": null,
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 321716,
+        "TypeScript": 341134,
         "HTML": 29745,
         "CSS": 3586,
         "Dockerfile": 1126,
@@ -469,13 +469,13 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-04-03T00:08:51Z",
+      "lastPushed": "2026-04-03T15:49:00Z",
       "createdAt": "2026-03-30T19:46:00Z",
       "isFeatured": true,
       "isArchived": false,
       "isPrivate": true,
       "tagline": "Monitor Google Maps rankings, reviews, and competitor activity — delivered weekly via WhatsApp",
-      "thumbnail": null,
+      "thumbnail": "https://cdn.cushlabs.ai/cushlabs-marketsignal/portfolio/marketsignal/thumb-en.webp",
       "problem": "Local businesses in Mexico have no affordable way to systematically track their\nGoogle Maps rankings, monitor competitor activity, or receive actionable insights.\nThey rely on gut instinct or expensive enterprise tools that don't support the\nMexican market. MarketSignal fills that gap with AI-powered weekly reports\ndelivered directly to WhatsApp.\n",
       "solution": null,
       "keyFeatures": [
@@ -487,9 +487,55 @@
       "metrics": [],
       "priority": 4,
       "dateCompleted": null,
-      "slides": [],
-      "videoUrl": null,
-      "videoPoster": null
+      "slides": [
+        {
+          "src": "https://cdn.cushlabs.ai/cushlabs-marketsignal/portfolio/marketsignal/marketsignal-01.webp",
+          "altEn": "MarketSignal dashboard — competitive intelligence overview",
+          "altEs": "Dashboard MarketSignal — resumen de inteligencia competitiva"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/cushlabs-marketsignal/portfolio/marketsignal/marketsignal-02.webp",
+          "altEn": "Google Maps ranking tracker with week-over-week deltas",
+          "altEs": "Rastreador de rankings en Google Maps con deltas semana a semana"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/cushlabs-marketsignal/portfolio/marketsignal/marketsignal-03.webp",
+          "altEn": "AI-generated weekly intelligence report",
+          "altEs": "Reporte semanal de inteligencia generado por IA"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/cushlabs-marketsignal/portfolio/marketsignal/marketsignal-04.webp",
+          "altEn": "Competitor review velocity monitoring",
+          "altEs": "Monitoreo de velocidad de resenas de competidores"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/cushlabs-marketsignal/portfolio/marketsignal/marketsignal-05.webp",
+          "altEn": "WhatsApp report delivery with actionable recommendations",
+          "altEs": "Entrega de reportes por WhatsApp con recomendaciones accionables"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/cushlabs-marketsignal/portfolio/marketsignal/marketsignal-06.webp",
+          "altEn": "Multi-location competitive landscape view",
+          "altEs": "Vista del panorama competitivo multi-ubicacion"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/cushlabs-marketsignal/portfolio/marketsignal/marketsignal-07.webp",
+          "altEn": "Organization management and data isolation",
+          "altEs": "Gestion de organizaciones y aislamiento de datos"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/cushlabs-marketsignal/portfolio/marketsignal/marketsignal-08.webp",
+          "altEn": "Report status flow — Draft to Delivered tracking",
+          "altEs": "Flujo de estado de reportes — seguimiento de Borrador a Entregado"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/cushlabs-marketsignal/portfolio/marketsignal/marketsignal-09.webp",
+          "altEn": "AI analysis configuration and Claude API integration",
+          "altEs": "Configuracion de analisis IA e integracion con API de Claude"
+        }
+      ],
+      "videoUrl": "https://cdn.cushlabs.ai/cushlabs-marketsignal/portfolio/marketsignal/brief.mp4",
+      "videoPoster": "https://cdn.cushlabs.ai/cushlabs-marketsignal/portfolio/marketsignal/brief-poster.webp"
     },
     {
       "id": 1184574225,
@@ -2676,7 +2722,7 @@
       },
       "stars": 2,
       "forks": 0,
-      "lastPushed": "2026-04-01T23:08:24Z",
+      "lastPushed": "2026-04-03T01:04:41Z",
       "createdAt": "2026-01-08T03:52:43Z",
       "isFeatured": false,
       "isArchived": false,
