@@ -22,20 +22,6 @@ for (const [enPath, esSlug] of Object.entries(routePairs)) {
   reverseRoutePairs[esSlug] = enPath;
 }
 
-/**
- * Blog slug pairs — EN slug ↔ ES slug.
- * Add new entries here when publishing bilingual blog posts.
- */
-const blogPairs: Record<string, string> = {
-  'automating-your-business-workflows': 'automatizando-los-flujos-de-tu-negocio',
-  'building-custom-ai-chatbots-for-smbs': 'chatbots-de-ia-personalizados-para-pymes',
-  'getting-started-with-rag-a-practical-guide': 'empezando-con-rag-una-gu-a-pr-ctica',
-};
-
-const reverseBlogPairs: Record<string, string> = {};
-for (const [enSlug, esSlug] of Object.entries(blogPairs)) {
-  reverseBlogPairs[esSlug] = enSlug;
-}
 
 export function getLocaleFromPathname(pathname: string): Locale {
   return pathname.startsWith('/es') ? 'es' : 'en';
@@ -60,16 +46,6 @@ export function getLocalizedPath(pathname: string, to: Locale): string {
     if (reverseRoutePairs[esPath]) { result = reverseRoutePairs[esPath]; }
   }
 
-  // Check blog slug pairs
-  if (!result!) {
-    const blogMatch = bare.match(/^\/blog\/(.+)$/);
-    if (blogMatch) {
-      const slug = blogMatch[1];
-      if (to === 'es' && blogPairs[slug]) result = `/es/blog/${blogPairs[slug]}`;
-      if (to === 'en' && reverseBlogPairs[slug]) result = `/blog/${reverseBlogPairs[slug]}`;
-    }
-  }
-
   // Default: just swap the /es prefix
   if (!result!) {
     if (to === 'en') result = bare === '' ? '/' : bare;
@@ -81,7 +57,7 @@ export function getLocalizedPath(pathname: string, to: Locale): string {
 }
 
 /** All route pairs exported for sitemap serialization */
-export { routePairs, blogPairs };
+export { routePairs };
 
 export function t<L extends Locale>(locale: L) {
   return dictionaries[locale];

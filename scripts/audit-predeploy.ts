@@ -293,7 +293,6 @@ async function checkStaticArtifacts() {
     "consultation/index.html",
     "contact/index.html",
     "about/index.html",
-    "blog/index.html",
     "es/index.html",
     "es/portfolio/index.html",
     "es/reservar/index.html",

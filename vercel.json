@@ -9,7 +9,13 @@
     { "source": "/es/solutions", "destination": "/es/portfolio/", "permanent": true },
     { "source": "/es/solutions/", "destination": "/es/portfolio/", "permanent": true },
     { "source": "/es/servicios", "destination": "/es/services/", "permanent": true },
-    { "source": "/es/servicios/", "destination": "/es/services/", "permanent": true }
+    { "source": "/es/servicios/", "destination": "/es/services/", "permanent": true },
+    { "source": "/blog", "destination": "/portfolio/", "permanent": true },
+    { "source": "/blog/", "destination": "/portfolio/", "permanent": true },
+    { "source": "/blog/:path*", "destination": "/portfolio/", "permanent": true },
+    { "source": "/es/blog", "destination": "/es/portfolio/", "permanent": true },
+    { "source": "/es/blog/", "destination": "/es/portfolio/", "permanent": true },
+    { "source": "/es/blog/:path*", "destination": "/es/portfolio/", "permanent": true }
   ],
   "headers": [
     {

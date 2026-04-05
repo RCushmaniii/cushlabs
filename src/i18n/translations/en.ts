@@ -4,7 +4,6 @@ export const en = {
     about: 'About',
     work: 'Work',
     solutions: 'Portfolio',
-    blog: 'Blog',
     contact: 'Contact',
   },
   home: {
@@ -104,34 +103,6 @@ export const en = {
     title: 'Let\'s Build Something',
     subtitle: 'Book a free call and tell me what you\'re working on. No pitch, no pressure — just a real conversation about what\'s possible.',
     button: 'Book a Free Call',
-  },
-  blog: {
-    title: 'From the Blog',
-    subtitle: 'Thoughts on AI, automation, and building things that work',
-    viewAll: 'Read More',
-    posts: [
-      {
-        title: 'Getting Started with RAG: A Practical Guide',
-        description: 'How to build a RAG system that works in production. A step-by-step guide covering embeddings, vector stores, and prompt design.',
-        date: '2026-01-08',
-        tags: ['AI', 'RAG'],
-        image: '/images/blog/blog-1.webp',
-      },
-      {
-        title: 'Automating Your Business Workflows',
-        description: 'Practical strategies for identifying and automating repetitive business tasks. Learn which workflows to target first and how to measure time and cost savings.',
-        date: '2026-01-05',
-        tags: ['Automation', 'Productivity'],
-        image: '/images/blog/blog-2.webp',
-      },
-      {
-        title: 'Building Custom AI Chatbots for SMBs',
-        description: 'Why off-the-shelf chatbot solutions often fall short for small businesses, and how custom-built AI chatbots deliver better ROI with lower long-term costs.',
-        date: '2026-01-02',
-        tags: ['AI', 'Chatbots'],
-        image: '/images/blog/blog-3.webp',
-      },
-    ],
   },
   work: {
     title: 'My Work',
