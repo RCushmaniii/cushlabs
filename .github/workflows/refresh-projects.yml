@@ -35,7 +35,24 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Sentry cron — start
+        env:
+          SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
+        run: |
+          SENTRY_CHECK_IN_ID=$(uuidgen)
+          echo "SENTRY_CHECK_IN_ID=$SENTRY_CHECK_IN_ID" >> $GITHUB_ENV
+          # Extract DSN components
+          DSN_KEY=$(echo "$SENTRY_DSN" | sed -n 's|https://\([^@]*\)@.*|\1|p')
+          DSN_HOST=$(echo "$SENTRY_DSN" | sed -n 's|https://[^@]*@\([^/]*\)/.*|\1|p')
+          DSN_PROJECT=$(echo "$SENTRY_DSN" | sed -n 's|.*/\([0-9]*\)$|\1|p')
+          curl -sS "https://${DSN_HOST}/api/${DSN_PROJECT}/cron/weekly-portfolio-refresh/${SENTRY_CHECK_IN_ID}/" \
+            -X POST \
+            -H "Authorization: DSN $SENTRY_DSN" \
+            -H "Content-Type: application/json" \
+            -d '{"status":"in_progress","monitor_config":{"schedule":{"type":"crontab","value":"0 2 * * 0"},"checkin_margin":15,"max_runtime":10,"failure_issue_threshold":1,"recovery_threshold":1}}'
+
       - name: Generate projects
+        id: generate
         env:
           GITHUB_TOKEN: ${{ secrets.PROJECT_SYNC_TOKEN }}
           GITHUB_OWNER: ${{ github.repository_owner }}
@@ -55,3 +72,29 @@ jobs:
           git commit -m "chore: refresh projects data [skip ci]"
           git pull --rebase
           git push
+
+      - name: Sentry cron — success
+        if: success()
+        env:
+          SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
+        run: |
+          DSN_HOST=$(echo "$SENTRY_DSN" | sed -n 's|https://[^@]*@\([^/]*\)/.*|\1|p')
+          DSN_PROJECT=$(echo "$SENTRY_DSN" | sed -n 's|.*/\([0-9]*\)$|\1|p')
+          curl -sS "https://${DSN_HOST}/api/${DSN_PROJECT}/cron/weekly-portfolio-refresh/${SENTRY_CHECK_IN_ID}/" \
+            -X PUT \
+            -H "Authorization: DSN $SENTRY_DSN" \
+            -H "Content-Type: application/json" \
+            -d '{"status":"ok"}'
+
+      - name: Sentry cron — failure
+        if: failure()
+        env:
+          SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
+        run: |
+          DSN_HOST=$(echo "$SENTRY_DSN" | sed -n 's|https://[^@]*@\([^/]*\)/.*|\1|p')
+          DSN_PROJECT=$(echo "$SENTRY_DSN" | sed -n 's|.*/\([0-9]*\)$|\1|p')
+          curl -sS "https://${DSN_HOST}/api/${DSN_PROJECT}/cron/weekly-portfolio-refresh/${SENTRY_CHECK_IN_ID}/" \
+            -X PUT \
+            -H "Authorization: DSN $SENTRY_DSN" \
+            -H "Content-Type: application/json" \
+            -d '{"status":"error"}'
