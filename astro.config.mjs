@@ -1,6 +1,7 @@
 import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
+import sentry from '@sentry/astro';
 
 // ── Slug-mismatched route pairs for sitemap hreflang ────────────────
 // EN path (no prefix) → ES slug (no /es prefix)
@@ -63,6 +64,13 @@ function getChangefreq(url) {
 export default defineConfig({
   integrations: [
     tailwind(),
+    sentry({
+      dsn: process.env.SENTRY_DSN,
+      sourceMapsUploadOptions: {
+        project: process.env.SENTRY_PROJECT,
+        authToken: process.env.SENTRY_AUTH_TOKEN,
+      },
+    }),
     sitemap({
       filter: (page) => {
         // Exclude 404, old/backup pages, and internal routes

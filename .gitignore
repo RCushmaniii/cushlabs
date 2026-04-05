@@ -32,3 +32,6 @@ scripts/seo/.submissions/
 nul
 .vercel
 .windsurf
+
+.vercel
+.env*.local

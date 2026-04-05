@@ -202,6 +202,10 @@ const ogLocaleAlternate = locale === "es" ? "en_US" : "es_MX";
       <slot />
     </main>
     <Footer locale={locale} />
+    <script>
+      import { inject } from '@vercel/analytics';
+      inject();
+    </script>
   </body>
 </html>
 
