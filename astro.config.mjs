@@ -65,10 +65,10 @@ export default defineConfig({
   integrations: [
     tailwind(),
     sentry({
-      dsn: process.env.SENTRY_DSN,
       sourceMapsUploadOptions: {
         project: process.env.SENTRY_PROJECT,
         authToken: process.env.SENTRY_AUTH_TOKEN,
+        telemetry: false,
       },
     }),
     sitemap({
