@@ -39,17 +39,13 @@ jobs:
         env:
           SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
         run: |
-          SENTRY_CHECK_IN_ID=$(uuidgen)
+          SENTRY_CHECK_IN_ID=$(node -e "
+            const Sentry = require('@sentry/node');
+            Sentry.init({ dsn: process.env.SENTRY_DSN });
+            const id = Sentry.captureCheckIn({ monitorSlug: 'weekly-portfolio-refresh', status: 'in_progress' });
+            Sentry.close(5000).then(() => console.log(id));
+          ")
           echo "SENTRY_CHECK_IN_ID=$SENTRY_CHECK_IN_ID" >> $GITHUB_ENV
-          # Extract DSN components
-          DSN_KEY=$(echo "$SENTRY_DSN" | sed -n 's|https://\([^@]*\)@.*|\1|p')
-          DSN_HOST=$(echo "$SENTRY_DSN" | sed -n 's|https://[^@]*@\([^/]*\)/.*|\1|p')
-          DSN_PROJECT=$(echo "$SENTRY_DSN" | sed -n 's|.*/\([0-9]*\)$|\1|p')
-          curl -sS "https://${DSN_HOST}/api/${DSN_PROJECT}/cron/weekly-portfolio-refresh/${SENTRY_CHECK_IN_ID}/" \
-            -X POST \
-            -H "Authorization: DSN $SENTRY_DSN" \
-            -H "Content-Type: application/json" \
-            -d '{"status":"in_progress","monitor_config":{"schedule":{"type":"crontab","value":"0 2 * * 0"},"checkin_margin":15,"max_runtime":10,"failure_issue_threshold":1,"recovery_threshold":1}}'
 
       - name: Generate projects
         id: generate
@@ -78,23 +74,21 @@ jobs:
         env:
           SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
         run: |
-          DSN_HOST=$(echo "$SENTRY_DSN" | sed -n 's|https://[^@]*@\([^/]*\)/.*|\1|p')
-          DSN_PROJECT=$(echo "$SENTRY_DSN" | sed -n 's|.*/\([0-9]*\)$|\1|p')
-          curl -sS "https://${DSN_HOST}/api/${DSN_PROJECT}/cron/weekly-portfolio-refresh/${SENTRY_CHECK_IN_ID}/" \
-            -X PUT \
-            -H "Authorization: DSN $SENTRY_DSN" \
-            -H "Content-Type: application/json" \
-            -d '{"status":"ok"}'
+          node -e "
+            const Sentry = require('@sentry/node');
+            Sentry.init({ dsn: process.env.SENTRY_DSN });
+            Sentry.captureCheckIn({ checkInId: process.env.SENTRY_CHECK_IN_ID, monitorSlug: 'weekly-portfolio-refresh', status: 'ok' });
+            Sentry.close(5000).then(() => console.log('Sentry cron: ok'));
+          "
 
       - name: Sentry cron — failure
         if: failure()
         env:
           SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
         run: |
-          DSN_HOST=$(echo "$SENTRY_DSN" | sed -n 's|https://[^@]*@\([^/]*\)/.*|\1|p')
-          DSN_PROJECT=$(echo "$SENTRY_DSN" | sed -n 's|.*/\([0-9]*\)$|\1|p')
-          curl -sS "https://${DSN_HOST}/api/${DSN_PROJECT}/cron/weekly-portfolio-refresh/${SENTRY_CHECK_IN_ID}/" \
-            -X PUT \
-            -H "Authorization: DSN $SENTRY_DSN" \
-            -H "Content-Type: application/json" \
-            -d '{"status":"error"}'
+          node -e "
+            const Sentry = require('@sentry/node');
+            Sentry.init({ dsn: process.env.SENTRY_DSN });
+            Sentry.captureCheckIn({ checkInId: process.env.SENTRY_CHECK_IN_ID, monitorSlug: 'weekly-portfolio-refresh', status: 'error' });
+            Sentry.close(5000).then(() => console.log('Sentry cron: error'));
+          "
