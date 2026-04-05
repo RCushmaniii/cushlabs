@@ -73,8 +73,6 @@
 | `/` | `/es` |
 | `/about` | `/es/about` |
 | `/work` | `/es/work` |
-| `/blog` | `/es/blog` |
-| `/blog/[slug]` | `/es/blog/[slug]` |
 | `/contact` | `/es/contact` |
 | `/consultation` | `/es/reservar` |
 
@@ -91,7 +89,6 @@ cushlabs/
 │   │   ├── PageHero.astro    # Hero sections with parallax
 │   │   ├── ServicesSection.astro
 │   │   ├── ProcessSection.astro
-│   │   ├── BlogSection.astro
 │   │   └── ...
 │   ├── layouts/
 │   │   └── BaseLayout.astro  # Master layout (SEO, hreflang, schema)
@@ -99,9 +96,6 @@ cushlabs/
 │   │   ├── index.astro       # Home (EN)
 │   │   ├── work.astro
 │   │   ├── contact.astro
-│   │   ├── blog/
-│   │   │   ├── index.astro
-│   │   │   └── [slug].astro
 │   │   └── es/               # Spanish versions
 │   │       ├── index.astro
 │   │       └── ...
@@ -161,7 +155,7 @@ Both `en.ts` and `es.ts` follow the same structure:
 - `home` - Homepage content
 - `services` - Service descriptions
 - `process` - Process steps
-- `blog` - Blog section
+
 - `work` - Portfolio section
 - `project` - Project detail pages
 - `contact` - Contact form
@@ -211,22 +205,22 @@ Proper sitemap must:
 
 ## Known Issues & TODOs
 
-### Critical
-
-1. **Blog needs migration** - Move from TypeScript translations to markdown files
-
 ### Medium Priority
 
-2. Content collections (blog, case-studies) are defined but empty
-3. Some placeholder content in testimonials
-4. Pre-deploy audit script incomplete
+1. Some placeholder content in testimonials
+2. Pre-deploy audit script incomplete
 
 ### Low Priority
 
-5. Additional structured data (FAQPage, HowTo schemas)
+3. Additional structured data (FAQPage, HowTo schemas)
 
 ### Resolved
 
+- ~~Blog needs migration~~ — Blog removed entirely (pre-launch, no traffic, no content strategy). 301 redirects in place.
+- ~~No error monitoring~~ — Sentry integrated with client-side tracking, source maps, and Crons monitoring for weekly sync
+- ~~No analytics~~ — Vercel Web Analytics installed and configured
+- ~~No tests~~ — 20 smoke tests (vitest) running in CI after every build
+- ~~Dependabot vulnerabilities~~ — yaml CVE fixed via override, Astro/esbuild CVEs dismissed (static site, SSR-only vulnerabilities)
 - ~~Sitemap broken~~ — @astrojs/sitemap 3.2.1 installed and configured with i18n locales
 - ~~No og-image~~ — OG image exists at `public/images/og/cushlabs_logo_lt.jpg`
 - ~~Image optimization~~ — All portfolio/logo/client images converted to WebP, lazy loading added
