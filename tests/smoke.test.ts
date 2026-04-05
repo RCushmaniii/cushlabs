@@ -11,7 +11,7 @@ const bilingualPages = [
   ['contact/index.html', 'es/contact/index.html'],
   ['services/index.html', 'es/services/index.html'],
   ['portfolio/index.html', 'es/portfolio/index.html'],
-  ['blog/index.html', 'es/blog/index.html'],
+
   ['faq/index.html', 'es/faq/index.html'],
   ['consultation/index.html', 'es/reservar/index.html'],
 ];

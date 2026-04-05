@@ -9,13 +9,6 @@ const routePairs = {
   '/consultation': '/reservar',
 };
 
-// EN blog slug → ES blog slug
-const blogPairs = {
-  'automating-your-business-workflows': 'automatizando-los-flujos-de-tu-negocio',
-  'building-custom-ai-chatbots-for-smbs': 'chatbots-de-ia-personalizados-para-pymes',
-  'getting-started-with-rag-a-practical-guide': 'empezando-con-rag-una-gu-a-pr-ctica',
-};
-
 // Build full bidirectional URL map: absolute EN URL ↔ absolute ES URL
 const SITE = 'https://www.cushlabs.ai';
 const hreflangMap = new Map();
@@ -28,14 +21,6 @@ for (const [enPath, esSlug] of Object.entries(routePairs)) {
   hreflangMap.set(esUrl, enUrl);
 }
 
-// Blog slug pairs
-for (const [enSlug, esSlug] of Object.entries(blogPairs)) {
-  const enUrl = `${SITE}/blog/${enSlug}/`;
-  const esUrl = `${SITE}/es/blog/${esSlug}/`;
-  hreflangMap.set(enUrl, esUrl);
-  hreflangMap.set(esUrl, enUrl);
-}
-
 // ── Priority rules by URL pattern ───────────────────────────────────
 function getPriority(url) {
   const path = url.replace(SITE, '');
@@ -43,12 +28,10 @@ function getPriority(url) {
   if (/^\/(es\/)?services/.test(path)) return 0.9;
   if (/^\/(es\/)?portfolio/.test(path)) return 0.8;
   if (/^\/(es\/)?projects\//.test(path)) return 0.7;
-  if (/^\/(es\/)?blog\/[^/]/.test(path)) return 0.7;
   if (/^\/(es\/)?about/.test(path)) return 0.7;
   if (/^\/(es\/)?consultation/.test(path) || /^\/(es\/)?reservar/.test(path)) return 0.8;
   if (/^\/(es\/)?contact/.test(path)) return 0.7;
   if (/^\/(es\/)?faq/.test(path)) return 0.6;
-  if (/^\/(es\/)?blog\/?$/.test(path)) return 0.6;
   if (/^\/(es\/)?(terms|privacy)/.test(path)) return 0.3;
   return 0.5;
 }
@@ -56,7 +39,6 @@ function getPriority(url) {
 function getChangefreq(url) {
   const path = url.replace(SITE, '');
   if (path === '/' || path === '/es/' || path === '/es') return 'weekly';
-  if (/^\/(es\/)?blog/.test(path)) return 'monthly';
   if (/^\/(es\/)?(terms|privacy)/.test(path)) return 'yearly';
   return 'monthly';
 }
