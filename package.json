@@ -21,7 +21,7 @@
     "generate:skills": "tsx scripts/generate-skills.ts"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.6",
+    "@astrojs/check": "^0.9.8",
     "@astrojs/sitemap": "^3.2.1",
     "@astrojs/tailwind": "^5.1.2",
     "@sentry/astro": "^10.47.0",
