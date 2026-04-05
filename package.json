@@ -28,7 +28,7 @@
     "tailwindcss": "^3.4.17"
   },
   "devDependencies": {
-    "@aws-sdk/client-s3": "^3.1008.0",
+    "@aws-sdk/client-s3": "^3.1024.0",
     "@octokit/rest": "^20.0.2",
     "@types/node": "^20.10.6",
     "@typescript-eslint/eslint-plugin": "^8.50.0",
