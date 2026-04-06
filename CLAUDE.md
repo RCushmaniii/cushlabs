@@ -185,15 +185,9 @@ BaseLayout.astro automatically generates hreflang tags:
 <link rel="alternate" hreflang="x-default" href="..." />
 ```
 
-### Sitemap Requirements
+### Sitemap
 
-**TODO: Install @astrojs/sitemap** - Current sitemap is manual and incomplete.
-
-Proper sitemap must:
-- Include ALL pages in both languages
-- Use correct `/es/` paths (not `?lang=es` query params)
-- Include proper hreflang alternates
-- Set appropriate priority/changefreq
+@astrojs/sitemap 3.2.1 is installed and configured with i18n locales. Generates `sitemap-index.xml` automatically at build time.
 
 ### Meta Tags (Ahrefs Standards)
 
@@ -208,14 +202,14 @@ Proper sitemap must:
 ### Medium Priority
 
 1. Some placeholder content in testimonials
-2. Pre-deploy audit script incomplete
 
 ### Low Priority
 
-3. Additional structured data (FAQPage, HowTo schemas)
+2. Additional structured data (FAQPage, HowTo schemas)
 
 ### Resolved
 
+- ~~Pre-deploy audit script incomplete~~ — Fully working: env checks, i18n parity, typecheck, build, SEO audit (titles, descriptions, trailing slashes, orphan detection)
 - ~~Blog needs migration~~ — Blog removed entirely (pre-launch, no traffic, no content strategy). 301 redirects in place.
 - ~~No error monitoring~~ — Sentry integrated with client-side tracking, source maps, and Crons monitoring for weekly sync
 - ~~No analytics~~ — Vercel Web Analytics installed and configured
