@@ -5,7 +5,7 @@
 portfolio_enabled: true
 portfolio_priority: 21
 portfolio_featured: false
-portfolio_last_reviewed: "2026-03-02"
+portfolio_last_reviewed: "2026-04-06"
 
 title: "CushLabs.ai"
 tagline: "Self-maintaining bilingual portfolio with serverless booking and build-time i18n enforcement"
@@ -56,9 +56,9 @@ key_outcomes:
   - "100% EN/ES content parity enforced at build time — no language drift"
 
 tech_stack:
-  - "Astro 4.16"
+  - "Astro 6.1"
   - "TypeScript 5.9"
-  - "Tailwind CSS 3.4"
+  - "Tailwind CSS 4.2"
   - "Cloudflare Workers"
   - "Google Calendar API"
   - "GitHub Actions"
@@ -67,21 +67,8 @@ tech_stack:
 complexity: "Production"
 
 # === REPO HEALTH STATUS ===
-# Last audited: 2026-04-05
+# Last audited: 2026-04-06
 # Standards defined in: operating-system/delivery/repo-health-baseline.md
-health_status:
-  sentry: "Y"
-  testing: "Y"
-  ci_cd: "Y"
-  health_endpoint: "n/a"
-  security_headers: "Y"
-  rate_limiting: "n/a"
-  env_validation: "-"
-  analytics: "DEFERRED"
-  structured_logging: "-"
-  dependabot: "Y"
-  secret_scanning: "Y"
-  db_backup: "-"
 health_status:
   sentry: "Y"
   testing: "Y"
