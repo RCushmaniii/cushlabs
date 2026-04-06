@@ -1,134 +1,56 @@
 {
-  "generatedAt": "2026-04-03T21:51:43.035Z",
-  "count": 32,
+  "generatedAt": "2026-04-06T18:44:59.350Z",
+  "count": 36,
   "projects": [
     {
       "id": 1108213747,
       "name": "ai-chatbot-saas",
-      "title": "Converso AI — Bilingual AI Front Desk & Sales Assistant",
+      "title": "Ai Chatbot Saas",
       "description": "Multi-tenant AI chatbot SaaS platform - Ragbot by CushLabs.AI",
       "summary": "> Multi-tenant SaaS platform for service businesses to deploy a bilingual (EN/ES), on-brand AI assistant that answers questions, qualifies leads, captures booking intent, and escalates high-intent pro",
       "url": "https://github.com/RCushmaniii/ai-chatbot-saas",
       "demoUrl": "https://ai-chatbot-saas-delta.vercel.app",
-      "liveUrl": "",
+      "liveUrl": null,
       "homepage": "https://ai-chatbot-saas-delta.vercel.app",
       "topics": [],
-      "categories": [
-        "AI Automation"
-      ],
-      "tags": [
-        "ai-chatbot",
-        "saas",
-        "rag",
-        "multi-tenant",
-        "bilingual",
-        "nextjs",
-        "stripe",
-        "pgvector",
-        "clerk-auth",
-        "lead-generation"
-      ],
-      "stack": [
-        "Next.js 16",
-        "TypeScript",
-        "PostgreSQL + pgvector",
-        "Vercel AI SDK",
-        "OpenAI GPT-4o",
-        "Clerk Authentication",
-        "Stripe Billing",
-        "Drizzle ORM",
-        "Tailwind CSS",
-        "React Flow",
-        "Vercel"
-      ],
+      "categories": [],
+      "tags": [],
+      "stack": [],
       "status": null,
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 1165341,
+        "TypeScript": 1215270,
         "JavaScript": 12530,
         "CSS": 10362
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-04-02T04:06:35Z",
+      "lastPushed": "2026-04-06T00:38:14Z",
       "createdAt": "2025-12-02T07:09:31Z",
       "isFeatured": true,
       "isArchived": false,
       "isPrivate": false,
-      "tagline": "White-label AI chatbot SaaS for service businesses in bilingual markets",
-      "thumbnail": "https://cdn.cushlabs.ai/ai-chatbot-saas/images/portfolio/ai-chatbot-saas-thumb.webp",
-      "problem": "Service businesses in bilingual markets lose leads outside business hours\nand can't afford round-the-clock bilingual staff. Generic chatbots hallucinate\nanswers because they don't know the business. This platform gives each tenant\na knowledge-grounded AI assistant that answers accurately in English or Spanish,\nqualifies leads, and hands off to humans when needed.\n",
+      "tagline": null,
+      "thumbnail": null,
+      "problem": null,
       "solution": null,
-      "keyFeatures": [
-        "Multi-tenant SaaS with full data isolation per business",
-        "RAG-powered answers grounded in verified business content",
-        "Native bilingual support with automatic language detection",
-        "Visual playbook builder for non-technical conversation design",
-        "Stripe billing with subscription management and usage tracking",
-        "One-tag embeddable widget for any website"
-      ],
+      "keyFeatures": [],
       "metrics": [],
       "priority": 1,
       "dateCompleted": null,
-      "slides": [
-        {
-          "src": "https://cdn.cushlabs.ai/ai-chatbot-saas/images/portfolio/converso-01.webp",
-          "altEn": "Converso AI — Bilingual AI Front Desk & Sales Assistant",
-          "altEs": "Converso AI — Bilingual AI Front Desk & Sales Assistant"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/ai-chatbot-saas/images/portfolio/converso-02.webp",
-          "altEn": "Converso AI — Bilingual AI Front Desk & Sales Assistant",
-          "altEs": "Converso AI — Bilingual AI Front Desk & Sales Assistant"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/ai-chatbot-saas/images/portfolio/converso-03.webp",
-          "altEn": "Converso AI — Bilingual AI Front Desk & Sales Assistant",
-          "altEs": "Converso AI — Bilingual AI Front Desk & Sales Assistant"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/ai-chatbot-saas/images/portfolio/converso-04.webp",
-          "altEn": "Converso AI — Bilingual AI Front Desk & Sales Assistant",
-          "altEs": "Converso AI — Bilingual AI Front Desk & Sales Assistant"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/ai-chatbot-saas/images/portfolio/converso-05.webp",
-          "altEn": "Converso AI — Bilingual AI Front Desk & Sales Assistant",
-          "altEs": "Converso AI — Bilingual AI Front Desk & Sales Assistant"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/ai-chatbot-saas/images/portfolio/converso-06.webp",
-          "altEn": "Converso AI — Bilingual AI Front Desk & Sales Assistant",
-          "altEs": "Converso AI — Bilingual AI Front Desk & Sales Assistant"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/ai-chatbot-saas/images/portfolio/converso-07.webp",
-          "altEn": "Converso AI — Bilingual AI Front Desk & Sales Assistant",
-          "altEs": "Converso AI — Bilingual AI Front Desk & Sales Assistant"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/ai-chatbot-saas/images/portfolio/converso-08.webp",
-          "altEn": "Converso AI — Bilingual AI Front Desk & Sales Assistant",
-          "altEs": "Converso AI — Bilingual AI Front Desk & Sales Assistant"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/ai-chatbot-saas/images/portfolio/converso-09.webp",
-          "altEn": "Converso AI — Bilingual AI Front Desk & Sales Assistant",
-          "altEs": "Converso AI — Bilingual AI Front Desk & Sales Assistant"
-        }
-      ],
-      "videoUrl": "https://cdn.cushlabs.ai/ai-chatbot-saas/video/converso-brief.mp4",
-      "videoPoster": "https://cdn.cushlabs.ai/ai-chatbot-saas/video/converso-brief-poster.jpg"
+      "slides": [],
+      "videoUrl": null,
+      "videoPoster": null
     },
     {
       "id": 1102173157,
       "name": "ny-ai-chatbot",
-      "title": "NY AI Chatbot",
+      "title": "Ny Ai Chatbot",
       "description": "Production-ready AI chatbot with embeddable widget for websites. Features include knowledge base integration, multi-language support, and customizable admin dashboard.",
       "summary": "**Drop-in AI chatbot widget with RAG intelligence for small business websites.**",
       "url": "https://github.com/RCushmaniii/ny-ai-chatbot",
-      "demoUrl": "https://ny-ai-chatbot.vercel.app",
-      "liveUrl": "https://ny-ai-chatbot.vercel.app",
+      "demoUrl": "https://www.nyenglishteacher.com",
+      "liveUrl": null,
       "homepage": "https://www.nyenglishteacher.com",
       "topics": [
         "ai-chatbot",
@@ -137,41 +59,19 @@
         "tailwindcss",
         "vercel-deployment"
       ],
-      "categories": [
-        "AI Automation"
-      ],
+      "categories": [],
       "tags": [
         "ai-chatbot",
         "nextjs",
         "rag-chatbot",
         "tailwindcss",
-        "vercel-deployment",
-        "typescript",
-        "openai",
-        "rag",
-        "pgvector",
-        "drizzle",
-        "clerk",
-        "tailwind",
-        "bilingual",
-        "chatbot"
+        "vercel-deployment"
       ],
-      "stack": [
-        "Next.js 15",
-        "TypeScript",
-        "OpenAI GPT-4o",
-        "pgvector",
-        "Drizzle ORM",
-        "Clerk",
-        "React 19",
-        "Tailwind CSS 4",
-        "shadcn/ui",
-        "Vercel AI SDK"
-      ],
-      "status": "Production",
+      "stack": [],
+      "status": null,
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 942953,
+        "TypeScript": 953359,
         "JavaScript": 13855,
         "PLpgSQL": 10195,
         "CSS": 8090,
@@ -179,81 +79,32 @@
       },
       "stars": 1,
       "forks": 0,
-      "lastPushed": "2026-04-03T21:11:39Z",
+      "lastPushed": "2026-04-06T06:45:26Z",
       "createdAt": "2025-11-23T00:24:28Z",
       "isFeatured": true,
       "isArchived": false,
       "isPrivate": true,
-      "tagline": "Revenue-first RAG chatbot that converts visitors into booked strategy sessions",
-      "thumbnail": "https://cdn.cushlabs.ai/ny-ai-chatbot/images/portfolio/ny-eng-chatbot-thumbnail.jpg",
-      "problem": "Language schools treat chatbots as deflection tools — reduce ticket volume, speed up FAQ answers, dead-end the conversation. The result is a cost center that never generates revenue. Meanwhile, anonymous website visitors leave without converting because there's no sales-aware system guiding them toward high-value actions like booking a strategy session.",
-      "solution": "An AI chatbot explicitly engineered as an automated sales agent. Every architectural layer — system prompts, RAG citations, error handling, rate limits — is designed to drive conversational conversion. The bot uses benefit-driven language with real client social proof, links RAG source citations to high-value service pages, and hard-codes CTAs for free strategy sessions directly into the system prompt.",
-      "keyFeatures": [
-        "Revenue-first RAG architecture merging website content and manual knowledge sources (top 5 by cosine similarity)",
-        "System prompts hard-coded with sales CTAs — every conversation steers toward booking a strategy session",
-        "Dual-source knowledge base: scraped website content (0.5 threshold) + curated documents (0.6 threshold)",
-        "Source citations that drive traffic to high-value service pages, increasing time-on-site and eliminating hallucination",
-        "Full EN/ES bilingual support with locale-aware personality and benefit-driven language",
-        "Embeddable widget (iframe + script tag) deployable on any client domain with CORS configuration",
-        "Admin dashboard with chat analytics, knowledge management, and bot settings"
-      ],
-      "metrics": [
-        "5-layer revenue engine: System Prompts, Error CTAs, Localization, Rate Limits as Strategy, Source Citations",
-        "2 RAG knowledge sources merged by cosine similarity with configurable thresholds",
-        "Sub-second streaming responses via Vercel AI SDK with OpenAI GPT-4o",
-        "Zero-auth guest experience via sessionId cookies — no signup friction before conversion"
-      ],
+      "tagline": null,
+      "thumbnail": null,
+      "problem": null,
+      "solution": null,
+      "keyFeatures": [],
+      "metrics": [],
       "priority": 2,
-      "dateCompleted": "2025-12",
-      "slides": [
-        {
-          "src": "https://cdn.cushlabs.ai/ny-ai-chatbot/images/portfolio/ny-eng-chatbot-01.png",
-          "altEn": "Conversational Conversion — The Architecture of a Revenue-First Chatbot",
-          "altEs": "Conversion Conversacional — La Arquitectura de un Chatbot Orientado a Ingresos"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/ny-ai-chatbot/images/portfolio/ny-eng-chatbot-02.png",
-          "altEn": "Moving Beyond the Support Cost Center — from Deflector to Converter",
-          "altEs": "Mas Alla del Centro de Costos de Soporte — de Deflector a Convertidor"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/ny-ai-chatbot/images/portfolio/ny-eng-chatbot-03.png",
-          "altEn": "The Five Gears of the Revenue Engine — Brain, Trigger, Chameleon, Soft Wall, Bridge",
-          "altEs": "Los Cinco Engranajes del Motor de Ingresos — Cerebro, Disparador, Camaleon, Muro Suave, Puente"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/ny-ai-chatbot/images/portfolio/ny-eng-chatbot-04.png",
-          "altEn": "System Prompts Are Hard-Coded to Sell — CTAs baked into the bot's DNA",
-          "altEs": "Los Prompts del Sistema Estan Programados para Vender — CTAs integrados en el ADN del bot"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/ny-ai-chatbot/images/portfolio/ny-eng-chatbot-05.png",
-          "altEn": "Benefit-Driven Language Builds Authority — Pivot to Value technique with client social proof",
-          "altEs": "El Lenguaje Orientado a Beneficios Construye Autoridad — tecnica Pivot to Value con prueba social de clientes"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/ny-ai-chatbot/images/portfolio/ny-eng-chatbot-06.png",
-          "altEn": "Source Citations Drive Traffic to High-Value Pages — RAG grounding that doubles as SEO",
-          "altEs": "Las Citas de Fuentes Dirigen Trafico a Paginas de Alto Valor — grounding RAG que funciona como SEO"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/ny-ai-chatbot/images/portfolio/ny-eng-chatbot-07.png",
-          "altEn": "Not a Support Tool — An Automated Sales Agent that books strategy sessions",
-          "altEs": "No es una Herramienta de Soporte — Un Agente de Ventas Automatizado que agenda sesiones de estrategia"
-        }
-      ],
-      "videoUrl": "https://cdn.cushlabs.ai/ny-ai-chatbot/video/ny-eng-chatbot-brief.mp4",
-      "videoPoster": "https://cdn.cushlabs.ai/ny-ai-chatbot/video/ny-eng-chatbot-brief-poster.jpg"
+      "dateCompleted": null,
+      "slides": [],
+      "videoUrl": null,
+      "videoPoster": null
     },
     {
       "id": 1164355422,
       "name": "cushlabs-ai-voice-agent",
-      "title": "AI Voice Agent Platform",
+      "title": "Cushlabs Ai Voice Agent",
       "description": "Production-ready AI voice agents for lead qualification, appointment booking, and customer conversations — powered by Vapi, Claude, and Google Calendar",
       "summary": "Production-ready AI voice agents that qualify leads, book appointments, and handle customer conversations — 24/7, with sub-500ms response times.",
       "url": "https://github.com/RCushmaniii/cushlabs-ai-voice-agent",
       "demoUrl": "https://voice.cushlabs.ai",
-      "liveUrl": "https://voice.cushlabs.ai",
+      "liveUrl": null,
       "homepage": "https://voice.cushlabs.ai",
       "topics": [
         "ai",
@@ -269,9 +120,7 @@
         "vapi",
         "voice-agent"
       ],
-      "categories": [
-        "AI Automation"
-      ],
+      "categories": [],
       "tags": [
         "ai",
         "appointment-booking",
@@ -284,130 +133,45 @@
         "lead-qualification",
         "nodejs",
         "vapi",
-        "voice-agent",
-        "voice-ai",
-        "llm",
-        "real-time",
-        "customer-support",
-        "outbound-calling",
-        "real-estate",
-        "home-services"
+        "voice-agent"
       ],
-      "stack": [
-        "Vapi",
-        "Claude Sonnet",
-        "Groq Llama 3.1",
-        "Deepgram Nova-2/3",
-        "Cartesia",
-        "Twilio",
-        "Express.js",
-        "Neon PostgreSQL",
-        "Redis",
-        "Google Calendar API",
-        "Render"
-      ],
-      "status": "Production",
+      "stack": [],
+      "status": null,
       "language": "HTML",
       "languages": {
-        "HTML": 434248,
-        "JavaScript": 95737,
+        "HTML": 434936,
+        "JavaScript": 117322,
         "CSS": 7015,
         "Dockerfile": 358
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-04-01T21:47:08Z",
+      "lastPushed": "2026-04-06T00:54:57Z",
       "createdAt": "2026-02-23T01:31:09Z",
       "isFeatured": true,
       "isArchived": false,
       "isPrivate": false,
-      "tagline": "Production voice AI agents that qualify leads, book appointments, and handle support calls 24/7",
-      "thumbnail": "https://cdn.cushlabs.ai/cushlabs-ai-voice-agent/portfolio/voice-cushlabs-thumb.webp",
-      "problem": "Businesses lose leads to unanswered calls, voicemail black holes, and hold-time abandonment. Hiring receptionists is expensive and still leaves gaps outside business hours. Existing IVR systems frustrate callers with rigid menu trees that never actually solve the problem.",
-      "solution": "Production AI voice agents that handle inbound and outbound calls with natural conversation, qualify leads in real time, book appointments directly into Google Calendar, and answer FAQs — 24/7 with sub-500ms response times and zero hold times.",
-      "keyFeatures": [
-        "5 production demo agents: Clara (lead qualification), James (appointment booking), Sophia (med spa front desk), Mike (home services dispatch), David (real estate outbound setter)",
-        "First outbound AI calling agent — David proactively calls prospects, qualifies buyers, and books property tours via Twilio PSTN",
-        "Real-time Google Calendar integration — checks availability and books confirmed appointments mid-call",
-        "Mock MLS property lookup for real estate demos with 6 NJ listings",
-        "Sub-500ms voice response via Vapi WebRTC with Deepgram STT and Cartesia TTS",
-        "Webhook-driven function calling for calendar, database, MLS lookup, and CRM operations during live calls",
-        "Session state via Redis for multi-turn conversation context across function calls",
-        "Lead data persisted to Neon PostgreSQL with full call metadata",
-        "Full bilingual EN/ES support across all pages"
-      ],
-      "metrics": [
-        "Sub-500ms voice response time",
-        "5 live production demo agents (4 inbound + 1 outbound)",
-        "24/7 availability with zero hold times",
-        "Real-time calendar booking mid-conversation"
-      ],
+      "tagline": null,
+      "thumbnail": null,
+      "problem": null,
+      "solution": null,
+      "keyFeatures": [],
+      "metrics": [],
       "priority": 3,
-      "dateCompleted": "2026-03",
-      "slides": [
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-ai-voice-agent/portfolio/voice-cushlabs-01.webp",
-          "altEn": "AI Voice Agent Platform",
-          "altEs": "AI Voice Agent Platform"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-ai-voice-agent/portfolio/voice-cushlabs-02.webp",
-          "altEn": "AI Voice Agent Platform",
-          "altEs": "AI Voice Agent Platform"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-ai-voice-agent/portfolio/voice-cushlabs-03.webp",
-          "altEn": "AI Voice Agent Platform",
-          "altEs": "AI Voice Agent Platform"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-ai-voice-agent/portfolio/voice-cushlabs-04.webp",
-          "altEn": "AI Voice Agent Platform",
-          "altEs": "AI Voice Agent Platform"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-ai-voice-agent/portfolio/voice-cushlabs-05.webp",
-          "altEn": "AI Voice Agent Platform",
-          "altEs": "AI Voice Agent Platform"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-ai-voice-agent/portfolio/voice-cushlabs-06.webp",
-          "altEn": "AI Voice Agent Platform",
-          "altEs": "AI Voice Agent Platform"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-ai-voice-agent/portfolio/voice-cushlabs-07.webp",
-          "altEn": "AI Voice Agent Platform",
-          "altEs": "AI Voice Agent Platform"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-ai-voice-agent/portfolio/voice-cushlabs-08.webp",
-          "altEn": "AI Voice Agent Platform",
-          "altEs": "AI Voice Agent Platform"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-ai-voice-agent/portfolio/voice-cushlabs-09.webp",
-          "altEn": "AI Voice Agent Platform",
-          "altEs": "AI Voice Agent Platform"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-ai-voice-agent/portfolio/voice-cushlabs-10.webp",
-          "altEn": "AI Voice Agent Platform",
-          "altEs": "AI Voice Agent Platform"
-        }
-      ],
-      "videoUrl": "https://cdn.cushlabs.ai/cushlabs-ai-voice-agent/video/voice-cushlabs-brief.mp4",
-      "videoPoster": "https://cdn.cushlabs.ai/cushlabs-ai-voice-agent/video/voice-cushlabs-brief-poster.webp"
+      "dateCompleted": null,
+      "slides": [],
+      "videoUrl": null,
+      "videoPoster": null
     },
     {
       "id": 1196535593,
       "name": "cushlabs-marketsignal",
-      "title": "MarketSignal — AI-Powered Local Competitive Intelligence",
+      "title": "Cushlabs Marketsignal",
       "description": "AI-powered local competitive intelligence platform. Monitors Google Maps rankings, reviews, and competitor activity for multi-location businesses — delivering weekly insights via WhatsApp.",
       "summary": "> AI-powered local competitive intelligence for multi-location businesses.",
       "url": "https://github.com/RCushmaniii/cushlabs-marketsignal",
       "demoUrl": null,
-      "liveUrl": "",
+      "liveUrl": null,
       "homepage": null,
       "topics": [
         "ai-analytics",
@@ -424,9 +188,7 @@
         "saas",
         "whatsapp-api"
       ],
-      "categories": [
-        "AI Automation"
-      ],
+      "categories": [],
       "tags": [
         "ai-analytics",
         "business-intelligence",
@@ -440,28 +202,13 @@
         "playwright",
         "review-monitoring",
         "saas",
-        "whatsapp-api",
-        "ai-analysis",
-        "whatsapp",
-        "multi-location",
-        "next-js",
-        "drizzle-orm"
+        "whatsapp-api"
       ],
-      "stack": [
-        "Next.js 15 (App Router)",
-        "React 19",
-        "Tailwind CSS 4",
-        "Neon (serverless PostgreSQL)",
-        "Drizzle ORM",
-        "Claude API (Sonnet)",
-        "WhatsApp Business API",
-        "Playwright",
-        "TypeScript"
-      ],
+      "stack": [],
       "status": null,
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 341134,
+        "TypeScript": 450509,
         "HTML": 29745,
         "CSS": 3586,
         "Dockerfile": 1126,
@@ -469,73 +216,92 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-04-03T15:49:00Z",
+      "lastPushed": "2026-04-06T03:07:21Z",
       "createdAt": "2026-03-30T19:46:00Z",
       "isFeatured": true,
       "isArchived": false,
       "isPrivate": true,
-      "tagline": "Monitor Google Maps rankings, reviews, and competitor activity — delivered weekly via WhatsApp",
-      "thumbnail": "https://cdn.cushlabs.ai/cushlabs-marketsignal/portfolio/marketsignal/thumb-en.webp",
-      "problem": "Local businesses in Mexico have no affordable way to systematically track their\nGoogle Maps rankings, monitor competitor activity, or receive actionable insights.\nThey rely on gut instinct or expensive enterprise tools that don't support the\nMexican market. MarketSignal fills that gap with AI-powered weekly reports\ndelivered directly to WhatsApp.\n",
+      "tagline": null,
+      "thumbnail": null,
+      "problem": null,
+      "solution": null,
+      "keyFeatures": [],
+      "metrics": [],
+      "priority": 4,
+      "dateCompleted": null,
+      "slides": [],
+      "videoUrl": null,
+      "videoPoster": null
+    },
+    {
+      "id": 1200918707,
+      "name": "cushlabs-opportunity-engine",
+      "title": "Opportunity Engine",
+      "description": "Broken link building opportunity finder for SEO — CushLabs AI Services",
+      "summary": "> Automated broken link discovery and AI-scored replacement opportunities for SEO outreach.",
+      "url": "https://github.com/RCushmaniii/cushlabs-opportunity-engine",
+      "demoUrl": "https://cushlabs-opportunity-engine.vercel.app",
+      "liveUrl": "",
+      "homepage": "https://cushlabs-opportunity-engine.vercel.app",
+      "topics": [],
+      "categories": [
+        "AI Automation"
+      ],
+      "tags": [
+        "seo",
+        "broken-link-building",
+        "ai-scoring",
+        "web-crawling",
+        "claude-ai",
+        "next-js",
+        "python-pipeline",
+        "drizzle-orm"
+      ],
+      "stack": [
+        "Next.js 16",
+        "TypeScript",
+        "Python 3.12",
+        "Tailwind CSS v4",
+        "PostgreSQL (Neon)",
+        "Drizzle ORM",
+        "Claude AI (Anthropic SDK)",
+        "httpx (async)",
+        "BeautifulSoup4",
+        "SerpAPI",
+        "Sentry"
+      ],
+      "status": null,
+      "language": "TypeScript",
+      "languages": {
+        "TypeScript": 127186,
+        "Python": 70414,
+        "JavaScript": 559,
+        "CSS": 334
+      },
+      "stars": 0,
+      "forks": 0,
+      "lastPushed": "2026-04-06T02:31:43Z",
+      "createdAt": "2026-04-04T01:35:22Z",
+      "isFeatured": false,
+      "isArchived": false,
+      "isPrivate": true,
+      "tagline": "AI-powered broken link discovery and scoring for SEO outreach automation",
+      "thumbnail": null,
+      "problem": "Broken link building is one of the most effective white-hat SEO strategies, but the\nmanual process is brutal — searching for resource pages, clicking every outbound link\nto find 404s, evaluating whether each broken link is worth pursuing, and tracking it\nall across multiple niches and businesses. Opportunity Engine automates the entire\npipeline from SERP discovery through AI-scored opportunity ranking.\n",
       "solution": null,
       "keyFeatures": [
-        "Weekly competitive intelligence reports for 3-5 pilot clients",
-        "Week-over-week ranking and review delta tracking per location",
-        "AI-generated action items with specific, high-impact recommendations",
-        "WhatsApp delivery — reports land where clients already communicate"
+        "Full pipeline from SERP discovery to scored opportunities in a single CLI command",
+        "Claude AI evaluates replacement feasibility against actual business services",
+        "Async link checking with per-domain rate limiting and retry with exponential backoff",
+        "Context-preserving pipeline carries anchor text and DOM context through every step",
+        "Supports multiple business niches with distinct search patterns and scoring criteria"
       ],
       "metrics": [],
       "priority": 4,
       "dateCompleted": null,
-      "slides": [
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-marketsignal/portfolio/marketsignal/marketsignal-01.webp",
-          "altEn": "MarketSignal dashboard — competitive intelligence overview",
-          "altEs": "Dashboard MarketSignal — resumen de inteligencia competitiva"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-marketsignal/portfolio/marketsignal/marketsignal-02.webp",
-          "altEn": "Google Maps ranking tracker with week-over-week deltas",
-          "altEs": "Rastreador de rankings en Google Maps con deltas semana a semana"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-marketsignal/portfolio/marketsignal/marketsignal-03.webp",
-          "altEn": "AI-generated weekly intelligence report",
-          "altEs": "Reporte semanal de inteligencia generado por IA"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-marketsignal/portfolio/marketsignal/marketsignal-04.webp",
-          "altEn": "Competitor review velocity monitoring",
-          "altEs": "Monitoreo de velocidad de resenas de competidores"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-marketsignal/portfolio/marketsignal/marketsignal-05.webp",
-          "altEn": "WhatsApp report delivery with actionable recommendations",
-          "altEs": "Entrega de reportes por WhatsApp con recomendaciones accionables"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-marketsignal/portfolio/marketsignal/marketsignal-06.webp",
-          "altEn": "Multi-location competitive landscape view",
-          "altEs": "Vista del panorama competitivo multi-ubicacion"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-marketsignal/portfolio/marketsignal/marketsignal-07.webp",
-          "altEn": "Organization management and data isolation",
-          "altEs": "Gestion de organizaciones y aislamiento de datos"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-marketsignal/portfolio/marketsignal/marketsignal-08.webp",
-          "altEn": "Report status flow — Draft to Delivered tracking",
-          "altEs": "Flujo de estado de reportes — seguimiento de Borrador a Entregado"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-marketsignal/portfolio/marketsignal/marketsignal-09.webp",
-          "altEn": "AI analysis configuration and Claude API integration",
-          "altEs": "Configuracion de analisis IA e integracion con API de Claude"
-        }
-      ],
-      "videoUrl": "https://cdn.cushlabs.ai/cushlabs-marketsignal/portfolio/marketsignal/brief.mp4",
-      "videoPoster": "https://cdn.cushlabs.ai/cushlabs-marketsignal/portfolio/marketsignal/brief-poster.webp"
+      "slides": [],
+      "videoUrl": null,
+      "videoPoster": null
     },
     {
       "id": 1184574225,
@@ -597,13 +363,13 @@
       "status": "Production",
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 217725,
+        "TypeScript": 219392,
         "CSS": 1268,
         "JavaScript": 486
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-04-01T21:36:47Z",
+      "lastPushed": "2026-04-06T02:28:56Z",
       "createdAt": "2026-03-17T18:08:51Z",
       "isFeatured": true,
       "isArchived": false,
@@ -729,8 +495,8 @@
       "status": "Production",
       "language": "Astro",
       "languages": {
-        "Astro": 1354880,
-        "TypeScript": 854639,
+        "Astro": 1460697,
+        "TypeScript": 983790,
         "HTML": 836066,
         "JavaScript": 399742,
         "CSS": 40875,
@@ -740,7 +506,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-04-03T01:02:43Z",
+      "lastPushed": "2026-04-06T17:47:53Z",
       "createdAt": "2025-03-23T03:27:14Z",
       "isFeatured": true,
       "isArchived": false,
@@ -864,14 +630,14 @@
       "status": null,
       "language": "HTML",
       "languages": {
-        "HTML": 249878,
+        "HTML": 257402,
+        "JavaScript": 75583,
         "CSS": 41745,
-        "JavaScript": 39010,
         "PowerShell": 1981
       },
       "stars": 2,
       "forks": 0,
-      "lastPushed": "2026-04-01T18:21:16Z",
+      "lastPushed": "2026-04-06T18:14:12Z",
       "createdAt": "2025-12-20T10:31:00Z",
       "isFeatured": true,
       "isArchived": false,
@@ -953,12 +719,12 @@
     {
       "id": 1174674268,
       "name": "cushlabs-scrollytelling",
-      "title": "CushLabs Scrollytelling",
+      "title": "Cushlabs Scrollytelling",
       "description": "Cinematic scrollytelling presentations by CushLabs — bilingual, narrated, scroll-driven marketing sites that make audiences lean in.",
       "summary": "> Cinematic, bilingual scrollytelling pitch decks that feel like cinema — not slides.",
       "url": "https://github.com/RCushmaniii/cushlabs-scrollytelling",
       "demoUrl": "https://cushlabs-scrollytelling.vercel.app",
-      "liveUrl": "https://cushlabs-scrollytelling.vercel.app",
+      "liveUrl": null,
       "homepage": "https://cushlabs-scrollytelling.vercel.app",
       "topics": [
         "astro",
@@ -972,9 +738,7 @@
         "svelte",
         "tailwindcss"
       ],
-      "categories": [
-        "Templates"
-      ],
+      "categories": [],
       "tags": [
         "astro",
         "bilingual",
@@ -985,19 +749,10 @@
         "scrollytelling",
         "scrollytelling-template",
         "svelte",
-        "tailwindcss",
-        "pitch-deck",
-        "presentation-mode",
-        "tailwind-css"
+        "tailwindcss"
       ],
-      "stack": [
-        "Astro 5",
-        "Svelte 5",
-        "Tailwind CSS 3",
-        "TypeScript",
-        "Vercel"
-      ],
-      "status": "Production",
+      "stack": [],
+      "status": null,
       "language": "Svelte",
       "languages": {
         "Svelte": 185668,
@@ -1009,89 +764,32 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-04-01T21:24:24Z",
+      "lastPushed": "2026-04-06T00:39:03Z",
       "createdAt": "2026-03-06T17:57:40Z",
       "isFeatured": true,
       "isArchived": false,
       "isPrivate": false,
-      "tagline": "Cinematic bilingual pitch decks that win attention",
-      "thumbnail": "https://cdn.cushlabs.ai/cushlabs-scrollytelling/images/portfolio/cushlabs-scrollytelling-thumb.webp",
-      "problem": "Traditional pitch decks are forgettable — investors see hundreds of static slide presentations every month. Custom scrollytelling experiences take weeks to build and produce one-off code that can't be reused.",
-      "solution": "A config-driven Astro template with dual-mode interaction: auto-narrated presentation mode for board meetings and free-browse mode for due diligence. New pitch decks ship in hours, not weeks.",
-      "keyFeatures": [
-        "Presentation mode with scroll-lock, auto-advance, and synchronized narration",
-        "Instant EN/ES language switching without page reloads",
-        "Config-driven theming — colors, fonts, and content from a single TypeScript file",
-        "98 Lighthouse performance score with Astro islands architecture",
-        "Mobile-responsive with scroll-snap carousels and touch support"
-      ],
+      "tagline": null,
+      "thumbnail": null,
+      "problem": null,
+      "solution": null,
+      "keyFeatures": [],
       "metrics": [],
       "priority": 8,
-      "dateCompleted": "2026-03",
-      "slides": [
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-scrollytelling/images/portfolio/cushlabs-scrollytelling-01.webp",
-          "altEn": "Opening overlay with presentation mode and browse freely options",
-          "altEs": "Pantalla de inicio con opciones de modo presentacion y navegacion libre"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-scrollytelling/images/portfolio/cushlabs-scrollytelling-02.webp",
-          "altEn": "Hero section with animated headline and cinematic typography",
-          "altEs": "Seccion principal con titulo animado y tipografia cinematica"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-scrollytelling/images/portfolio/cushlabs-scrollytelling-03.webp",
-          "altEn": "Problem statement section with typewriter text animation",
-          "altEs": "Seccion del problema con animacion de texto tipo maquina de escribir"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-scrollytelling/images/portfolio/cushlabs-scrollytelling-04.webp",
-          "altEn": "Solution section with Matrix rain effect and feature cards",
-          "altEs": "Seccion de solucion con efecto Matrix y tarjetas de caracteristicas"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-scrollytelling/images/portfolio/cushlabs-scrollytelling-05.webp",
-          "altEn": "Feature cards showcasing presentation mode and bilingual support",
-          "altEs": "Tarjetas de caracteristicas mostrando modo presentacion y soporte bilingue"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-scrollytelling/images/portfolio/cushlabs-scrollytelling-06.webp",
-          "altEn": "Proof section with testimonial quote and evidence",
-          "altEs": "Seccion de prueba con cita testimonial y evidencia"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-scrollytelling/images/portfolio/cushlabs-scrollytelling-07.webp",
-          "altEn": "Call-to-action section with consultation booking prompt",
-          "altEs": "Seccion de llamada a la accion con invitacion a agendar consulta"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-scrollytelling/images/portfolio/cushlabs-scrollytelling-08.webp",
-          "altEn": "Consultation page step 1 — calendar date and time selection",
-          "altEs": "Pagina de consulta paso 1 — seleccion de fecha y hora en calendario"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-scrollytelling/images/portfolio/cushlabs-scrollytelling-09.webp",
-          "altEn": "Consultation page step 2 — contact information form",
-          "altEs": "Pagina de consulta paso 2 — formulario de informacion de contacto"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-scrollytelling/images/portfolio/cushlabs-scrollytelling-10.webp",
-          "altEn": "Consultation page step 3 — booking confirmation summary",
-          "altEs": "Pagina de consulta paso 3 — resumen de confirmacion de reserva"
-        }
-      ],
-      "videoUrl": "https://cdn.cushlabs.ai/cushlabs-scrollytelling/video/cushlabs-scrollytelling-brief.mp4",
-      "videoPoster": "https://cdn.cushlabs.ai/cushlabs-scrollytelling/images/portfolio/cushlabs-scrollytelling-brief-poster.webp"
+      "dateCompleted": null,
+      "slides": [],
+      "videoUrl": null,
+      "videoPoster": null
     },
     {
       "id": 1177175159,
       "name": "cushlabs-ai-unwatermark",
-      "title": "Unwatermark",
+      "title": "Cushlabs Ai Unwatermark",
       "description": "AI-powered watermark removal tool for images, PDFs, and PPTX files. Drop a file, get a clean version.",
       "summary": "> AI-powered watermark removal for images, PDFs, and PPTX files. Layered detection pipeline with neural inpainting — drop a file, get a clean version.",
       "url": "https://github.com/RCushmaniii/cushlabs-ai-unwatermark",
       "demoUrl": null,
-      "liveUrl": "https://unwatermark.cushlabs.ai",
+      "liveUrl": null,
       "homepage": null,
       "topics": [
         "ai",
@@ -1115,9 +813,7 @@
         "sam",
         "watermark-removal"
       ],
-      "categories": [
-        "AI Automation"
-      ],
+      "categories": [],
       "tags": [
         "ai",
         "automation",
@@ -1138,88 +834,34 @@
         "python",
         "replicate",
         "sam",
-        "watermark-removal",
-        "ai-detection"
+        "watermark-removal"
       ],
-      "stack": [
-        "Python 3.10+",
-        "EasyOCR",
-        "Anthropic SDK (Claude Vision)",
-        "LaMa Inpainting (Replicate)",
-        "Florence-2 (Replicate)",
-        "Grounded SAM (Replicate)",
-        "FastAPI + Uvicorn",
-        "Pillow + NumPy",
-        "PyMuPDF (fitz)",
-        "python-pptx",
-        "Click",
-        "Docker",
-        "Caddy"
-      ],
+      "stack": [],
       "status": null,
       "language": "Python",
       "languages": {
-        "Python": 305118,
+        "Python": 313426,
         "Shell": 1351,
         "Dockerfile": 519
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-04-01T18:21:19Z",
+      "lastPushed": "2026-04-06T00:38:43Z",
       "createdAt": "2026-03-09T19:14:08Z",
       "isFeatured": true,
       "isArchived": false,
       "isPrivate": false,
-      "tagline": "Remove baked-in watermarks from images, PDFs, and presentations with a layered AI detection pipeline and neural inpainting",
-      "thumbnail": "https://cdn.cushlabs.ai/cushlabs-ai-unwatermark/images/portfolio/unwatermark-thumb.webp",
-      "problem": "Exported slide decks and documents embed watermarks directly into raster images — there's no\nlayer to delete. NotebookLM, stock photo sites, and draft PDFs all produce files where the\nwatermark pixels replace original content. Manual Photoshop cleanup doesn't scale across\ndozens of slides. Unwatermark automates detection and removal using AI vision models and\nneural inpainting to produce clean, professional files in seconds.\n",
+      "tagline": null,
+      "thumbnail": null,
+      "problem": null,
       "solution": null,
-      "keyFeatures": [
-        "Layered detection pipeline: EasyOCR → Florence-2 → Grounded SAM → Claude Vision → heuristic",
-        "LaMa neural inpainting produces artifact-free results that preserve surrounding content",
-        "Multi-pass removal catches residual watermarks across up to 3 detect-remove cycles",
-        "SAM pixel-perfect masking limits removal to actual watermark pixels — no collateral damage",
-        "Processes 14-slide PPTX exports in under 60 seconds via Replicate API",
-        "Supports images, PDFs, and PPTX with format-specific handlers",
-        "Drag-and-drop web UI with real-time NDJSON streaming progress"
-      ],
+      "keyFeatures": [],
       "metrics": [],
       "priority": 9,
       "dateCompleted": null,
-      "slides": [
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-ai-unwatermark/images/portfolio/unwatermark-01.webp",
-          "altEn": "Unwatermark",
-          "altEs": "Unwatermark"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-ai-unwatermark/images/portfolio/unwatermark-02.webp",
-          "altEn": "Unwatermark",
-          "altEs": "Unwatermark"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-ai-unwatermark/images/portfolio/unwatermark-03.webp",
-          "altEn": "Unwatermark",
-          "altEs": "Unwatermark"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-ai-unwatermark/images/portfolio/unwatermark-04.webp",
-          "altEn": "Unwatermark",
-          "altEs": "Unwatermark"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-ai-unwatermark/images/portfolio/unwatermark-05.webp",
-          "altEn": "Unwatermark",
-          "altEs": "Unwatermark"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-ai-unwatermark/images/portfolio/unwatermark-06.webp",
-          "altEn": "Unwatermark",
-          "altEs": "Unwatermark"
-        }
-      ],
-      "videoUrl": "https://cdn.cushlabs.ai/cushlabs-ai-unwatermark/images/portfolio/Unwatermark__The_Limits_of_AI.mp4",
-      "videoPoster": "https://cdn.cushlabs.ai/cushlabs-ai-unwatermark/images/portfolio/Unwatermark-The-Limits-of-AI-poster.webp"
+      "slides": [],
+      "videoUrl": null,
+      "videoPoster": null
     },
     {
       "id": 1090479901,
@@ -1263,17 +905,17 @@
       "status": null,
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 531485,
-        "Python": 305806,
+        "TypeScript": 541826,
+        "Python": 322484,
         "JavaScript": 19451,
-        "HTML": 3955,
+        "HTML": 4077,
         "Batchfile": 2499,
         "CSS": 2294,
         "Dockerfile": 553
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-04-01T18:21:21Z",
+      "lastPushed": "2026-04-06T05:52:33Z",
       "createdAt": "2025-11-05T18:11:38Z",
       "isFeatured": true,
       "isArchived": false,
@@ -1330,12 +972,12 @@
     {
       "id": 1174690198,
       "name": "biojalisco-species-id",
-      "title": "BioJalisco Species Identifier",
+      "title": "Biojalisco Species Id",
       "description": "AI-powered vertebrate species identification for Jalisco field research. Next.js 15, GPT-4o Vision, Clerk, Neon Postgres.",
       "summary": "> AI-powered species identification for Jalisco biodiversity research. Four-API pipeline delivers verified taxonomy, IUCN status, Mexico-specific conservation data (NOM-059), and endemic classificatio",
       "url": "https://github.com/RCushmaniii/biojalisco-species-id",
       "demoUrl": "https://biojalisco-species-id.vercel.app",
-      "liveUrl": "https://biojalisco-species-id.vercel.app",
+      "liveUrl": null,
       "homepage": "https://biojalisco-species-id.vercel.app",
       "topics": [
         "ai",
@@ -1347,9 +989,7 @@
         "nextjs",
         "species-identification"
       ],
-      "categories": [
-        "AI Automation"
-      ],
+      "categories": [],
       "tags": [
         "ai",
         "biodiversity",
@@ -1358,125 +998,45 @@
         "gpt-4o",
         "jalisco",
         "nextjs",
-        "species-identification",
-        "ai-vision",
-        "inaturalist",
-        "gbif",
-        "conabio",
-        "bilingual"
+        "species-identification"
       ],
-      "stack": [
-        "Next.js 15 (App Router)",
-        "TypeScript",
-        "GPT-4o Vision",
-        "iNaturalist API",
-        "GBIF API",
-        "EncicloVida/CONABIO API",
-        "OpenStreetMap Nominatim (reverse geocoding)",
-        "exifr (EXIF GPS/metadata extraction)",
-        "Clerk Authentication",
-        "Neon Postgres",
-        "Drizzle ORM",
-        "Vercel Blob Storage",
-        "sharp (image processing)",
-        "Vercel"
-      ],
+      "stack": [],
       "status": null,
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 273547,
+        "TypeScript": 273753,
         "CSS": 80360,
         "Python": 27828,
         "JavaScript": 2805
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-04-01T18:21:23Z",
+      "lastPushed": "2026-04-06T00:38:18Z",
       "createdAt": "2026-03-06T18:20:23Z",
       "isFeatured": false,
       "isArchived": false,
       "isPrivate": false,
-      "tagline": "Five-API species identification pipeline with EXIF GPS extraction, reverse geocoding, and Mexico-specific conservation data",
-      "thumbnail": "https://cdn.cushlabs.ai/biojalisco-species-id/images/portfolio/biojalisco-thumb.webp",
-      "problem": "Conservation biologists in Jalisco encounter thousands of species during fieldwork\nbut lack rapid identification tools with verified data. GPT-4o Vision alone\nfrequently misidentifies species without geographic context. No existing tool\ncombines AI vision, regional species data, global taxonomy verification, and\nMexico-specific conservation status (NOM-059, endemic classification) in one flow.\n",
+      "tagline": null,
+      "thumbnail": null,
+      "problem": null,
       "solution": null,
-      "keyFeatures": [
-        "Five-API pipeline: iNaturalist context + GPT-4o Vision + GBIF verification + EncicloVida/CONABIO enrichment + Nominatim reverse geocoding",
-        "EXIF GPS extraction from photo metadata for precise location-aware identification (proven: corrected Broad-billed Hummingbird to Cinnamon Hummingbird with accurate coordinates)",
-        "Reverse geocoding via OpenStreetMap Nominatim: country, state, region, municipality, city displayed in Data Sources",
-        "Verified IUCN Red List status and taxonomy from GBIF backbone (not AI-generated)",
-        "Mexico-specific data from CONABIO: endemic/native/exotic classification, NOM-059 protection status, indigenous language names",
-        "Explore/Research dual-mode tab system: casual users see About + Habitat + Similar Species; scientists see Taxonomy + Conservation + Data Sources",
-        "Bilingual (EN/ES) with dark/light theme, community observation gallery, and EXIF privacy stripping",
-        "Graceful degradation: works with just an OpenAI key, enriched with optional services"
-      ],
+      "keyFeatures": [],
       "metrics": [],
       "priority": 11,
       "dateCompleted": null,
-      "slides": [
-        {
-          "src": "https://cdn.cushlabs.ai/biojalisco-species-id/images/portfolio/biojalisco-slide-01.webp",
-          "altEn": "BioJalisco Species Identifier",
-          "altEs": "BioJalisco Species Identifier"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/biojalisco-species-id/images/portfolio/biojalisco-slide-02.webp",
-          "altEn": "BioJalisco Species Identifier",
-          "altEs": "BioJalisco Species Identifier"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/biojalisco-species-id/images/portfolio/biojalisco-slide-03.webp",
-          "altEn": "BioJalisco Species Identifier",
-          "altEs": "BioJalisco Species Identifier"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/biojalisco-species-id/images/portfolio/biojalisco-slide-04.webp",
-          "altEn": "BioJalisco Species Identifier",
-          "altEs": "BioJalisco Species Identifier"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/biojalisco-species-id/images/portfolio/biojalisco-slide-05.webp",
-          "altEn": "BioJalisco Species Identifier",
-          "altEs": "BioJalisco Species Identifier"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/biojalisco-species-id/images/portfolio/biojalisco-slide-06.webp",
-          "altEn": "BioJalisco Species Identifier",
-          "altEs": "BioJalisco Species Identifier"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/biojalisco-species-id/images/portfolio/biojalisco-slide-07.webp",
-          "altEn": "BioJalisco Species Identifier",
-          "altEs": "BioJalisco Species Identifier"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/biojalisco-species-id/images/portfolio/biojalisco-slide-08.webp",
-          "altEn": "BioJalisco Species Identifier",
-          "altEs": "BioJalisco Species Identifier"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/biojalisco-species-id/images/portfolio/biojalisco-slide-09.webp",
-          "altEn": "BioJalisco Species Identifier",
-          "altEs": "BioJalisco Species Identifier"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/biojalisco-species-id/images/portfolio/biojalisco-slide-10.webp",
-          "altEn": "BioJalisco Species Identifier",
-          "altEs": "BioJalisco Species Identifier"
-        }
-      ],
-      "videoUrl": "https://cdn.cushlabs.ai/biojalisco-species-id/video/biojalisco-brief.mp4",
-      "videoPoster": "https://cdn.cushlabs.ai/biojalisco-species-id/images/portfolio/biojalisco-brief-poster.webp"
+      "slides": [],
+      "videoUrl": null,
+      "videoPoster": null
     },
     {
       "id": 1172972613,
       "name": "biojalisco-pitch",
-      "title": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier",
+      "title": "Biojalisco Pitch",
       "description": "BioJalisco — bilingual scrollytelling pitch site for a citizen-science biodiversity platform in western Mexico",
       "summary": "> Cinematic scrollytelling site pitching BioJalisco — a citizen-science biodiversity platform for western Mexico — plus an AI-powered Species Identifier tool.",
       "url": "https://github.com/RCushmaniii/biojalisco-pitch",
-      "demoUrl": "https://biojalisco-pitch.vercel.app",
-      "liveUrl": "https://biojalisco-pitch.vercel.app",
+      "demoUrl": "https://atlas-biodiversidad-pitch.vercel.app",
+      "liveUrl": null,
       "homepage": "https://atlas-biodiversidad-pitch.vercel.app",
       "topics": [
         "bilingual",
@@ -1493,9 +1053,7 @@
         "text-to-voice-application",
         "vercel"
       ],
-      "categories": [
-        "Client Work"
-      ],
+      "categories": [],
       "tags": [
         "bilingual",
         "biodiversity",
@@ -1509,22 +1067,9 @@
         "pitch-deck",
         "scrollytelling",
         "text-to-voice-application",
-        "vercel",
-        "ai-vision",
-        "species-identification"
+        "vercel"
       ],
-      "stack": [
-        "HTML5",
-        "CSS3 (custom properties, grid, flexbox, scroll-snap)",
-        "Vanilla JavaScript",
-        "Python (Flask + Vercel serverless)",
-        "OpenAI GPT-4o Vision API",
-        "Intersection Observer API",
-        "Web Audio API (procedural ambient + MP3 narration)",
-        "Google Fonts",
-        "Vercel (static + serverless)",
-        "Base64 image embedding"
-      ],
+      "stack": [],
       "status": null,
       "language": "HTML",
       "languages": {
@@ -1533,93 +1078,32 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-04-01T18:21:24Z",
+      "lastPushed": "2026-04-06T02:12:16Z",
       "createdAt": "2026-03-04T22:07:57Z",
       "isFeatured": false,
       "isArchived": false,
       "isPrivate": false,
-      "tagline": "Cinematic scrollytelling pitch site with AI-powered species identification for western Mexico's biodiversity platform",
-      "thumbnail": "https://cdn.cushlabs.ai/biojalisco-pitch/assets/images/portfolio/scrollytelling_pitch_thumb.png",
-      "problem": "Conservation researchers in western Mexico face an asymmetry: deep scientific\nexpertise but limited reach. Their work covers a fraction of Jalisco's 80,000+ km²\nterritory. BioJalisco proposes closing that gap through citizen science and technology,\nbut the vision needed a compelling presentation to win stakeholders and partners.\n",
+      "tagline": null,
+      "thumbnail": null,
+      "problem": null,
       "solution": null,
-      "keyFeatures": [
-        "Self-contained single-file HTML site with 9 embedded images (~1.8MB total)",
-        "Bilingual ES/EN with instant language switching",
-        "Cinematic 5-act narrative arc designed for stakeholder persuasion",
-        "Full auto-play presentation mode with segmented MP3 narration, rain-intro crossfades, and auto-scroll",
-        "Mobile-first species carousel with scroll-snap, dot indicators, and audio-synced auto-cycle",
-        "AI Species Identifier with GPT-4o vision — confidence %, full taxonomy, ecology, geography, conservation status, similar species",
-        "Tabbed results UI with scan history persisted in localStorage",
-        "Vercel serverless Python function for production API",
-        "Deployed on Vercel with zero build step"
-      ],
+      "keyFeatures": [],
       "metrics": [],
       "priority": 12,
       "dateCompleted": null,
-      "slides": [
-        {
-          "src": "https://cdn.cushlabs.ai/biojalisco-pitch/assets/images/portfolio/scrollytelling_pitch_01.png",
-          "altEn": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier",
-          "altEs": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/biojalisco-pitch/assets/images/portfolio/scrollytelling_pitch_02.png",
-          "altEn": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier",
-          "altEs": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/biojalisco-pitch/assets/images/portfolio/scrollytelling_pitch_03.png",
-          "altEn": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier",
-          "altEs": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/biojalisco-pitch/assets/images/portfolio/scrollytelling_pitch_04.png",
-          "altEn": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier",
-          "altEs": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/biojalisco-pitch/assets/images/portfolio/scrollytelling_pitch_05.png",
-          "altEn": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier",
-          "altEs": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/biojalisco-pitch/assets/images/portfolio/scrollytelling_pitch_06.png",
-          "altEn": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier",
-          "altEs": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/biojalisco-pitch/assets/images/portfolio/scrollytelling_pitch_07.png",
-          "altEn": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier",
-          "altEs": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/biojalisco-pitch/assets/images/portfolio/scrollytelling_pitch_08.png",
-          "altEn": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier",
-          "altEs": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/biojalisco-pitch/assets/images/portfolio/scrollytelling_pitch_09.png",
-          "altEn": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier",
-          "altEs": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/biojalisco-pitch/assets/images/portfolio/scrollytelling_pitch_10.png",
-          "altEn": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier",
-          "altEs": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier"
-        }
-      ],
-      "videoUrl": "https://cdn.cushlabs.ai/biojalisco-pitch/assets/video/scrollytelling-pitch.mp4",
-      "videoPoster": "https://cdn.cushlabs.ai/biojalisco-pitch/assets/images/portfolio/scrollytelling-pitch-poster.jpg"
+      "slides": [],
+      "videoUrl": null,
+      "videoPoster": null
     },
     {
       "id": 1141547356,
       "name": "ai-idea-validator",
-      "title": "AI Idea Validator",
+      "title": "Ai Idea Validator",
       "description": "A brutally honest defensibility assessment for founders. Find out if your business idea can survive competition, platform changes, and solo-founder realities before you build.",
       "summary": "> A brutally honest defensibility assessment for founders. Find out if your business idea can survive competition, platform changes, and solo-founder realities before you build.",
       "url": "https://github.com/RCushmaniii/ai-idea-validator",
-      "demoUrl": "https://ai-idea-validator.netlify.app/",
-      "liveUrl": "https://ai-idea-validator.netlify.app/",
+      "demoUrl": "",
+      "liveUrl": null,
       "homepage": "",
       "topics": [
         "framer-motion",
@@ -1633,9 +1117,7 @@
         "tailwindcss",
         "typescript"
       ],
-      "categories": [
-        "AI Automation"
-      ],
+      "categories": [],
       "tags": [
         "framer-motion",
         "i18n",
@@ -1646,126 +1128,49 @@
         "shadcn-ui",
         "stock-market",
         "tailwindcss",
-        "typescript",
-        "ai",
-        "startup-validation",
-        "openai",
-        "defensibility",
-        "founder-tools",
-        "contradiction-detection",
-        "bilingual"
+        "typescript"
       ],
-      "stack": [
-        "Next.js 15",
-        "React 19",
-        "TypeScript",
-        "OpenAI GPT-4o-mini",
-        "Tailwind CSS 4",
-        "Netlify",
-        "Formspree"
-      ],
+      "stack": [],
       "status": null,
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 309361,
+        "TypeScript": 312002,
         "JavaScript": 11295,
         "CSS": 5180
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-03-17T20:03:47Z",
+      "lastPushed": "2026-04-06T00:38:45Z",
       "createdAt": "2026-01-25T01:59:32Z",
       "isFeatured": false,
       "isArchived": false,
       "isPrivate": false,
-      "tagline": "Brutal startup defensibility assessment with AI contradiction detection",
-      "thumbnail": "https://cdn.cushlabs.ai/ai-idea-validator/images/portfolio/aI-Idea-validator-thumb.jpg",
-      "problem": "Founders waste months building ideas that are structurally replaceable because traditional validation tools ignore defensibility. Self-assessment alone can't catch optimism bias — founders consistently rate their moats high while describing products with no switching costs.\n",
+      "tagline": null,
+      "thumbnail": null,
+      "problem": null,
       "solution": null,
-      "keyFeatures": [
-        "23-question defensibility assessment across 4 sections with AI-powered contradiction detection",
-        "4 honest verdicts (KILL/FLIP/BUILD/BET) with confidence scores and detailed rationale",
-        "AI cross-references numeric self-assessment vs written responses to surface optimism bias",
-        "Full EN/ES bilingual support including AI-generated verdicts and analysis",
-        "Offline heuristic fallback — always returns a verdict, even without API access",
-        "Sub-3-second AI analysis via GPT-4o-mini"
-      ],
+      "keyFeatures": [],
       "metrics": [],
       "priority": 13,
-      "dateCompleted": "2026-02",
-      "slides": [
-        {
-          "src": "https://cdn.cushlabs.ai/ai-idea-validator/images/portfolio/aI-Idea-validator-01.webp",
-          "altEn": "AI Idea Validator — Brutal honesty for founders who want the truth before they build",
-          "altEs": "AI Idea Validator — Honestidad brutal para fundadores que quieren la verdad antes de construir"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/ai-idea-validator/images/portfolio/aI-Idea-validator-02.webp",
-          "altEn": "The $50,000 Problem — building something structurally replaceable because nobody asked about defensibility",
-          "altEs": "El Problema de $50,000 — construir algo estructuralmente reemplazable porque nadie pregunto sobre defensibilidad"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/ai-idea-validator/images/portfolio/aI-Idea-validator-03.webp",
-          "altEn": "23 Questions That Matter — moats, platform risk, switching costs, and failure modes",
-          "altEs": "23 Preguntas Que Importan — fosos, riesgo de plataforma, costos de cambio y modos de fallo"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/ai-idea-validator/images/portfolio/aI-Idea-validator-04.webp",
-          "altEn": "Contradiction Detection — AI reads your scores AND your words, then flags where they diverge",
-          "altEs": "Deteccion de Contradicciones — la IA lee tus puntuaciones Y tus palabras, luego senala donde divergen"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/ai-idea-validator/images/portfolio/aI-Idea-validator-05.webp",
-          "altEn": "Four Verdicts, Zero Diplomacy — KILL, FLIP, BUILD, or BET with confidence scores",
-          "altEs": "Cuatro Veredictos, Cero Diplomacia — KILL, FLIP, BUILD o BET con puntuaciones de confianza"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/ai-idea-validator/images/portfolio/aI-Idea-validator-06.webp",
-          "altEn": "The Advisor Who Doesn't Need to Be Polite — AI delivers what mentors won't say",
-          "altEs": "El Asesor Que No Necesita Ser Amable — la IA entrega lo que los mentores no dicen"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/ai-idea-validator/images/portfolio/aI-Idea-validator-07.webp",
-          "altEn": "Privacy-First, Zero Storage — no accounts, no tracking, your idea stays yours",
-          "altEs": "Privacidad Primero, Cero Almacenamiento — sin cuentas, sin rastreo, tu idea sigue siendo tuya"
-        }
-      ],
-      "videoUrl": "https://cdn.cushlabs.ai/ai-idea-validator/video/aI-Idea-validator-brief.mp4",
-      "videoPoster": "https://cdn.cushlabs.ai/ai-idea-validator/video/aI-Idea-validator-brief-poster.jpg"
+      "dateCompleted": null,
+      "slides": [],
+      "videoUrl": null,
+      "videoPoster": null
     },
     {
       "id": 1176224548,
       "name": "cushlabs-ai-marketing",
-      "title": "AI Marketing Suite for Claude Code",
+      "title": "Cushlabs Ai Marketing",
       "description": "AI Marketing Suite for Claude Code — 15 slash commands for marketing analysis, audits, and client deliverables",
       "summary": "> A production-ready marketing analysis and automation skill system for Claude Code. Audit websites, generate copy, build email sequences, create content calendars, analyze competitors, and produce cl",
       "url": "https://github.com/RCushmaniii/cushlabs-ai-marketing",
       "demoUrl": null,
-      "liveUrl": "",
+      "liveUrl": null,
       "homepage": null,
       "topics": [],
-      "categories": [
-        "AI Automation"
-      ],
-      "tags": [
-        "claude-code",
-        "marketing-automation",
-        "ai-agents",
-        "seo-audit",
-        "competitive-analysis",
-        "copywriting",
-        "email-marketing",
-        "content-calendar",
-        "pdf-reports",
-        "parallel-agents"
-      ],
-      "stack": [
-        "Claude Code Skills System",
-        "Python 3",
-        "Bash",
-        "ReportLab",
-        "HTML Parser (stdlib)"
-      ],
+      "categories": [],
+      "tags": [],
+      "stack": [],
       "status": null,
       "language": "Python",
       "languages": {
@@ -1774,94 +1179,32 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-04-01T18:21:26Z",
+      "lastPushed": "2026-04-06T02:12:11Z",
       "createdAt": "2026-03-08T19:31:57Z",
       "isFeatured": false,
       "isArchived": false,
       "isPrivate": true,
-      "tagline": "15 slash commands that turn Claude Code into a full-service marketing analysis platform",
-      "thumbnail": "https://cdn.cushlabs.ai/cushlabs-ai-marketing/images/CUSHLABS-AI-MARKETING-THUMB.webp",
-      "problem": "Marketing audits are expensive ($2K–$10K) and slow (1–3 weeks). Small agencies and solopreneurs\ncan't compete at that price point. The frameworks exist — CRO checklists, SEO rubrics, competitive\nanalysis templates — but executing them manually across six marketing dimensions takes dozens of\nhours per client. This suite encodes those frameworks into repeatable, scored Claude Code skills.\n",
+      "tagline": null,
+      "thumbnail": null,
+      "problem": null,
       "solution": null,
-      "keyFeatures": [
-        "15 marketing commands available as Claude Code slash commands",
-        "Full website audit with 5 parallel subagents running simultaneously",
-        "Weighted scoring across 6 dimensions with revenue impact estimates",
-        "Client-ready PDF reports with score gauges, charts, and branded styling",
-        "Complete email sequences, ad campaigns, and 30-day content calendars generated in minutes"
-      ],
+      "keyFeatures": [],
       "metrics": [],
       "priority": 14,
       "dateCompleted": null,
-      "slides": [
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-ai-marketing/images/cushlabs-ai-marketing-01.webp",
-          "altEn": "AI Marketing Suite for Claude Code",
-          "altEs": "AI Marketing Suite for Claude Code"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-ai-marketing/images/cushlabs-ai-marketing-02.webp",
-          "altEn": "AI Marketing Suite for Claude Code",
-          "altEs": "AI Marketing Suite for Claude Code"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-ai-marketing/images/cushlabs-ai-marketing-03.webp",
-          "altEn": "AI Marketing Suite for Claude Code",
-          "altEs": "AI Marketing Suite for Claude Code"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-ai-marketing/images/cushlabs-ai-marketing-04.webp",
-          "altEn": "AI Marketing Suite for Claude Code",
-          "altEs": "AI Marketing Suite for Claude Code"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-ai-marketing/images/cushlabs-ai-marketing-05.webp",
-          "altEn": "AI Marketing Suite for Claude Code",
-          "altEs": "AI Marketing Suite for Claude Code"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-ai-marketing/images/cushlabs-ai-marketing-06.webp",
-          "altEn": "AI Marketing Suite for Claude Code",
-          "altEs": "AI Marketing Suite for Claude Code"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-ai-marketing/images/cushlabs-ai-marketing-07.webp",
-          "altEn": "AI Marketing Suite for Claude Code",
-          "altEs": "AI Marketing Suite for Claude Code"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-ai-marketing/images/cushlabs-ai-marketing-08.webp",
-          "altEn": "AI Marketing Suite for Claude Code",
-          "altEs": "AI Marketing Suite for Claude Code"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-ai-marketing/images/cushlabs-ai-marketing-09.webp",
-          "altEn": "AI Marketing Suite for Claude Code",
-          "altEs": "AI Marketing Suite for Claude Code"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-ai-marketing/images/cushlabs-ai-marketing-10.webp",
-          "altEn": "AI Marketing Suite for Claude Code",
-          "altEs": "AI Marketing Suite for Claude Code"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-ai-marketing/images/cushlabs-ai-marketing-11.webp",
-          "altEn": "AI Marketing Suite for Claude Code",
-          "altEs": "AI Marketing Suite for Claude Code"
-        }
-      ],
-      "videoUrl": "https://cdn.cushlabs.ai/cushlabs-ai-marketing/video/cushlabs_ai_marketing_brief.mp4",
-      "videoPoster": "https://cdn.cushlabs.ai/cushlabs-ai-marketing/images/cushlabs-ai-marketing-brief-poster.webp"
+      "slides": [],
+      "videoUrl": null,
+      "videoPoster": null
     },
     {
       "id": 1157375639,
       "name": "ai-build-vs-outsource",
-      "title": "Build vs. Outsource Decision Framework",
+      "title": "Ai Build Vs Outsource",
       "description": "An interactive web-based decision tool that helps operations leaders evaluate whether to build logistics capacity in-house or outsource to a third-party logistics provider (3PL). ",
       "summary": "> Interactive decision-support tools for operations leaders at growth-stage direct-selling companies. Structured analysis, real-time feedback, board-ready output — no spreadsheets, no guesswork.",
       "url": "https://github.com/RCushmaniii/ai-build-vs-outsource",
       "demoUrl": "https://ai-build-vs-outsource.vercel.app",
-      "liveUrl": "https://ai-build-vs-outsource.vercel.app",
+      "liveUrl": null,
       "homepage": "https://ai-build-vs-outsource.vercel.app",
       "topics": [
         "3pl",
@@ -1880,9 +1223,7 @@
         "vercel",
         "weighted-scoring"
       ],
-      "categories": [
-        "Tools"
-      ],
+      "categories": [],
       "tags": [
         "3pl",
         "build-vs-outsource",
@@ -1898,116 +1239,44 @@
         "tailwindcss",
         "typescript",
         "vercel",
-        "weighted-scoring",
-        "tailwind",
-        "decision-tools",
-        "operations",
-        "bilingual",
-        "data-visualization"
+        "weighted-scoring"
       ],
-      "stack": [
-        "Next.js 16",
-        "React 19",
-        "Tailwind CSS 4",
-        "Framer Motion",
-        "Recharts"
-      ],
-      "status": "Production",
+      "stack": [],
+      "status": null,
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 163582,
+        "TypeScript": 164148,
         "CSS": 5459,
         "JavaScript": 559
       },
       "stars": 0,
       "forks": 1,
-      "lastPushed": "2026-04-01T18:21:27Z",
+      "lastPushed": "2026-04-06T00:38:47Z",
       "createdAt": "2026-02-13T18:42:29Z",
       "isFeatured": false,
       "isArchived": false,
       "isPrivate": false,
-      "tagline": "Interactive decision tools with weighted scoring, cost modeling, and board-ready output",
-      "thumbnail": "https://cdn.cushlabs.ai/ai-build-vs-outsource/images/ai-build-vs-outsource-thumb.jpg",
-      "problem": "Operations leaders at growth-stage companies face high-stakes build-or-outsource decisions armed with gut feel, incomplete spreadsheets, and circular boardroom arguments. No tool combines structured weighted scoring with real-time cost modeling and shareable, board-ready output.",
-      "solution": "A suite of interactive decision-support tools that replace guesswork with data-driven analysis. A 20-criterion weighted scoring framework evaluates build vs. outsource across five categories, while an operational cost simulator reveals hidden step-function costs — all shareable via URL-encoded state.",
-      "keyFeatures": [
-        "20-criterion weighted scoring across 5 categories (Financial, Operational, Strategic, Control, Risk) with real-time verdict",
-        "Operational Cost Simulator with three-layer cost model — fixed, variable, and step-function costs with break-even analysis",
-        "6 decision presets and 5 growth scenario presets for rapid what-if analysis",
-        "Shareable URL encoding — full tool state in query params for board presentations",
-        "Full EN/ES bilingual support with dark/light theme toggle and print-ready layouts"
-      ],
-      "metrics": [
-        "20 weighted criteria across 5 decision categories",
-        "6 decision presets + 5 growth scenario presets",
-        "Full state shareable via URL — no backend required"
-      ],
+      "tagline": null,
+      "thumbnail": null,
+      "problem": null,
+      "solution": null,
+      "keyFeatures": [],
+      "metrics": [],
       "priority": 15,
-      "dateCompleted": "2026-02",
-      "slides": [
-        {
-          "src": "https://cdn.cushlabs.ai/ai-build-vs-outsource/images/ai-build-vs-outsource-01.png",
-          "altEn": "Operations Decision Tools Suite — structured analysis replaces boardroom guesswork",
-          "altEs": "Suite de Herramientas de Decision Operativa — analisis estructurado reemplaza suposiciones en la sala de juntas"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/ai-build-vs-outsource/images/ai-build-vs-outsource-02.png",
-          "altEn": "The Problem — gut feel, incomplete spreadsheets, and circular arguments drive million-dollar decisions",
-          "altEs": "El Problema — instinto, hojas de calculo incompletas y argumentos circulares impulsan decisiones millonarias"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/ai-build-vs-outsource/images/ai-build-vs-outsource-03.png",
-          "altEn": "20-Criterion Weighted Scoring — five categories with real-time verdict and radar chart",
-          "altEs": "Puntuacion Ponderada de 20 Criterios — cinco categorias con veredicto en tiempo real y grafico radar"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/ai-build-vs-outsource/images/ai-build-vs-outsource-04.png",
-          "altEn": "Scenario Presets — Growth Emergency, Control First, Cost Optimizer shift the verdict instantly",
-          "altEs": "Presets de Escenarios — Emergencia de Crecimiento, Control Primero, Optimizador de Costos cambian el veredicto al instante"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/ai-build-vs-outsource/images/ai-build-vs-outsource-05.png",
-          "altEn": "Expandable Rationale — each criterion includes industry analysis and scoring guidance",
-          "altEs": "Justificacion Expandible — cada criterio incluye analisis de industria y guia de puntuacion"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/ai-build-vs-outsource/images/ai-build-vs-outsource-06.png",
-          "altEn": "Operational Cost Simulator — three-layer cost model with volume slider and cost-per-order curves",
-          "altEs": "Simulador de Costos Operativos — modelo de costos de tres capas con control de volumen y curvas de costo por orden"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/ai-build-vs-outsource/images/ai-build-vs-outsource-07.png",
-          "altEn": "Step-Function Costs Revealed — watch cost-per-order jump when new hires and warehouse expansions trigger",
-          "altEs": "Costos Escalonados Revelados — observa el salto del costo por orden cuando se activan nuevas contrataciones y expansiones"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/ai-build-vs-outsource/images/ai-build-vs-outsource-08.png",
-          "altEn": "Break-Even and Margin Analysis — utilization gauges and margin visualization with profitability threshold",
-          "altEs": "Analisis de Punto de Equilibrio y Margen — indicadores de utilizacion y visualizacion de margen con umbral de rentabilidad"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/ai-build-vs-outsource/images/ai-build-vs-outsource-09.png",
-          "altEn": "Shareable and Board-Ready — full state encoded in URL params, print-optimized layouts for PDFs",
-          "altEs": "Compartible y Listo para Presentar — estado completo codificado en URL, disenos optimizados para impresion PDF"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/ai-build-vs-outsource/images/ai-build-vs-outsource-10.png",
-          "altEn": "Technical Architecture — Next.js 16, React 19, Recharts, Framer Motion, bilingual, zero backend",
-          "altEs": "Arquitectura Tecnica — Next.js 16, React 19, Recharts, Framer Motion, bilingue, sin backend"
-        }
-      ],
-      "videoUrl": "https://cdn.cushlabs.ai/ai-build-vs-outsource/video/ai-build-vs-outsource-brief.mp4",
-      "videoPoster": "https://cdn.cushlabs.ai/ai-build-vs-outsource/video/ai-build-vs-outsource-brief-poster.jpg"
+      "dateCompleted": null,
+      "slides": [],
+      "videoUrl": null,
+      "videoPoster": null
     },
     {
       "id": 1132479691,
       "name": "ai-filesense",
-      "title": "AI FileSense",
+      "title": "Ai Filesense",
       "description": " AI-powered local file organizer for Windows. Scans your documents, uses Claude AI to intelligently classify files, and organizes them into a clean folder structure with full undo support. ",
       "summary": "AI FileSense uses artificial intelligence to understand and organize your files based on their actual content—not just filenames. Clean up your Desktop in minutes with AI-powered categorization.",
       "url": "https://github.com/RCushmaniii/ai-filesense",
       "demoUrl": "https://ai-filesense-website.vercel.app/",
-      "liveUrl": "",
+      "liveUrl": null,
       "homepage": "https://ai-filesense-website.vercel.app/",
       "topics": [
         "ai",
@@ -2022,9 +1291,7 @@
         "typescript",
         "windows-app"
       ],
-      "categories": [
-        "AI Automation"
-      ],
+      "categories": [],
       "tags": [
         "ai",
         "desktop-app",
@@ -2036,20 +1303,10 @@
         "rust",
         "tauri",
         "typescript",
-        "windows-app",
-        "file-organization",
-        "privacy-first",
-        "bilingual",
-        "windows"
+        "windows-app"
       ],
-      "stack": [
-        "Tauri 2",
-        "Rust",
-        "React",
-        "TypeScript",
-        "Claude Haiku"
-      ],
-      "status": "Demo",
+      "stack": [],
+      "status": null,
       "language": "TypeScript",
       "languages": {
         "TypeScript": 298302,
@@ -2060,89 +1317,22 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-04-01T18:21:29Z",
+      "lastPushed": "2026-04-06T00:38:50Z",
       "createdAt": "2026-01-12T02:37:39Z",
       "isFeatured": false,
       "isArchived": false,
       "isPrivate": false,
-      "tagline": "Local AI file organizer — private, safe, zero config",
-      "thumbnail": "https://cdn.cushlabs.ai/ai-filesense/images/ai-filesense-thumb.jpg",
-      "problem": "Most people have thousands of documents scattered across Desktop, Documents, and Downloads with no system — manual sorting takes hours and most quit in minutes. Cloud-based solutions require uploading sensitive files to third-party servers, and existing AI tools demand API keys and terminal commands that lock out non-technical users.",
-      "solution": "A lightweight Windows desktop app (~5 MB) that uses Claude Haiku to read document content and classify files into a consistent 12-folder system without files ever leaving the device. Zero configuration required — the developer provides the API key so users never touch a terminal or API console.",
-      "keyFeatures": [
-        "Content-based AI classification — reads PDFs, DOCX, PPTX, TXT, not just filenames",
-        "Full undo support — rollback a single file or entire session, even after app restart",
-        "Confidence-based routing — uncertain files go to Review for human decision, never mis-filed",
-        "Privacy-first — files stay local, only 300-char snippets sent to AI, prompt injection prevention",
-        "Zero config freemium — developer-provided API key, no accounts, no setup, 10 free scans"
-      ],
-      "metrics": [
-        "$0.0015 per file classified",
-        "~5 minutes from install to organized",
-        "12 universal folder categories",
-        "10 free scans per user (backend-enforced)"
-      ],
+      "tagline": null,
+      "thumbnail": null,
+      "problem": null,
+      "solution": null,
+      "keyFeatures": [],
+      "metrics": [],
       "priority": 16,
-      "dateCompleted": "2026-02",
-      "slides": [
-        {
-          "src": "https://cdn.cushlabs.ai/ai-filesense/images/ai-filesense-02.png",
-          "altEn": "Turn Chaos into Clarity — AI FileSense hero slide",
-          "altEs": "Convierte el Caos en Claridad — diapositiva principal de AI FileSense"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/ai-filesense/images/ai-filesense-03.png",
-          "altEn": "We are drowning in data but starving for order",
-          "altEs": "Nos ahogamos en datos pero nos falta orden"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/ai-filesense/images/ai-filesense-04.png",
-          "altEn": "The Barriers to Organization — manual sorting, inconsistent systems, technical complexity",
-          "altEs": "Las Barreras para la Organizacion — clasificacion manual, sistemas inconsistentes, complejidad tecnica"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/ai-filesense/images/ai-filesense-05.png",
-          "altEn": "Hours of low-value decision making, ad-hoc folders that fail, AI tools requiring complex APIs",
-          "altEs": "Horas de decisiones de bajo valor, carpetas improvisadas que fallan, herramientas IA que requieren APIs complejas"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/ai-filesense/images/ai-filesense-06.png",
-          "altEn": "AI FileSense — Just click and go. Zero configuration. Powered by Claude Haiku.",
-          "altEs": "AI FileSense — Solo haz clic. Cero configuracion. Impulsado por Claude Haiku."
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/ai-filesense/images/ai-filesense-07.png",
-          "altEn": "Classification based on content, not just filenames — deep parsing of PDFs, DOCX, PPTX, TXT",
-          "altEs": "Clasificacion basada en contenido, no solo nombres de archivo — analisis de PDFs, DOCX, PPTX, TXT"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/ai-filesense/images/ai-filesense-09.png",
-          "altEn": "Confidence and Human Control — smart routing for uncertain files",
-          "altEs": "Confianza y Control Humano — enrutamiento inteligente para archivos inciertos"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/ai-filesense/images/ai-filesense-10.png",
-          "altEn": "AI for the Non-Technical 99% — no terminal, no API keys, no config",
-          "altEs": "IA para el 99% No Tecnico — sin terminal, sin API keys, sin configuracion"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/ai-filesense/images/ai-filesense-11.png",
-          "altEn": "Uncompromising Safety — privacy by design, injection prevention, no files ever deleted",
-          "altEs": "Seguridad Sin Compromiso — privacidad por diseno, prevencion de inyeccion, ningun archivo eliminado"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/ai-filesense/images/ai-filesense-12.png",
-          "altEn": "The Safety Net — full undo, test mode, crash recovery with atomic writes",
-          "altEs": "La Red de Seguridad — deshacer completo, modo prueba, recuperacion de fallos con escrituras atomicas"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/ai-filesense/images/ai-filesense-13.png",
-          "altEn": "From Digital Chaos to Automated Order — full system architecture",
-          "altEs": "Del Caos Digital al Orden Automatizado — arquitectura completa del sistema"
-        }
-      ],
-      "videoUrl": "https://cdn.cushlabs.ai/ai-filesense/video/AI_FileSense-brief.mp4",
-      "videoPoster": "https://cdn.cushlabs.ai/ai-filesense/video/AI-FileSense-brief-poster.jpg"
+      "dateCompleted": null,
+      "slides": [],
+      "videoUrl": null,
+      "videoPoster": null
     },
     {
       "id": 1114660708,
@@ -2151,8 +1341,8 @@
       "description": "A privacy-first income simulator for freelancers. Instantly see how rate changes, sick days, and taxes impact your real take-home pay. Bill in USD, spend in MXN. Plan for feast or famine. All calculations happen in your browser—your data never leaves your device.",
       "summary": "description: A bilingual income planning tool for freelancers and consultants.",
       "url": "https://github.com/RCushmaniii/freelance-income-planner",
-      "demoUrl": "https://freelance-income-planner.vercel.app",
-      "liveUrl": "https://freelance-income-planner.vercel.app",
+      "demoUrl": "https://freelance-income-planner.vercel.app/",
+      "liveUrl": null,
       "homepage": "https://freelance-income-planner.vercel.app/",
       "topics": [
         "bilingual",
@@ -2165,9 +1355,7 @@
         "tailwindcss",
         "typescript"
       ],
-      "categories": [
-        "Tools"
-      ],
+      "categories": [],
       "tags": [
         "bilingual",
         "digital-nomad",
@@ -2177,113 +1365,34 @@
         "nextjs",
         "react",
         "tailwindcss",
-        "typescript",
-        "privacy-first",
-        "zustand",
-        "recharts",
-        "multi-currency"
+        "typescript"
       ],
-      "stack": [
-        "Next.js 14",
-        "TypeScript 5.5",
-        "React 18.3",
-        "Tailwind CSS 3.4",
-        "Zustand 4.4",
-        "Recharts 2.10",
-        "Vercel"
-      ],
-      "status": "Production",
+      "stack": [],
+      "status": null,
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 271536,
+        "TypeScript": 273611,
         "CSS": 4579,
-        "JavaScript": 997
+        "JavaScript": 1563
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-04-01T18:21:31Z",
+      "lastPushed": "2026-04-06T00:39:07Z",
       "createdAt": "2025-12-11T17:38:35Z",
       "isFeatured": false,
       "isArchived": false,
       "isPrivate": false,
-      "tagline": "Privacy-first income simulator — see how rates, taxes, and currencies impact take-home pay",
-      "thumbnail": "https://cdn.cushlabs.ai/freelance-income-planner/images/freelance-income-planner-thumb.jpg",
-      "problem": "Freelancers can't predict take-home pay reliably. Variable hours, shifting tax rates, business expenses, and cross-currency billing make it nearly impossible to answer 'can I afford this lifestyle?' without a spreadsheet. Existing tools either require account creation, send data to servers, or don't handle multi-currency scenarios.",
-      "solution": "A privacy-first bilingual income calculator that runs entirely in the browser. Enter your rate, hours, taxes, and expenses — get an instant breakdown of real take-home pay. Supports 9 currency pair combinations (USD/MXN/EUR), three-scenario forecasting with seasonal modeling, and honest deficit reporting. No login, no database, no cookies.",
-      "keyFeatures": [
-        "Real-time income projections with transparent calculation breakdowns — math updates as you type, no submit button",
-        "Dual-currency engine supporting 9 currency pair combinations (USD/MXN/EUR) with bidirectional conversion",
-        "Three-scenario forecasting — pessimistic, realistic, optimistic with monthly projection charts and runway analysis",
-        "Zero data leaves the browser — 100% client-side computation with localStorage persistence",
-        "Fully bilingual interface (EN/ES) with automatic number formatting per locale"
-      ],
-      "metrics": [
-        "Answers 'what's my real take-home?' in under 30 seconds",
-        "151 edge cases validated in the calculation engine",
-        "9 currency pair combinations (USD/MXN/EUR)",
-        "Zero data transmitted — 100% client-side computation"
-      ],
+      "tagline": null,
+      "thumbnail": null,
+      "problem": null,
+      "solution": null,
+      "keyFeatures": [],
+      "metrics": [],
       "priority": 17,
-      "dateCompleted": "2026-02",
-      "slides": [
-        {
-          "src": "https://cdn.cushlabs.ai/freelance-income-planner/images/freelance-income-planner-01.png",
-          "altEn": "Freelance Income Planner — financial clarity for independent workers, answering what do I actually take home",
-          "altEs": "Planificador de Ingresos Freelance — claridad financiera para trabajadores independientes, respondiendo cuanto realmente me llevo a casa"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/freelance-income-planner/images/freelance-income-planner-02.png",
-          "altEn": "$100/hr does not equal wealthy — taxes, admin time, expenses, and currency conversion create a fog that hides real earnings",
-          "altEs": "$100/hr no significa ser rico — impuestos, tiempo administrativo, gastos y conversion de moneda crean una niebla que oculta las ganancias reales"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/freelance-income-planner/images/freelance-income-planner-03.png",
-          "altEn": "The tool gap — spreadsheets are fragile, accounting software is backward-looking, online calculators are too simple",
-          "altEs": "La brecha de herramientas — las hojas de calculo son fragiles, el software contable mira al pasado, las calculadoras en linea son demasiado simples"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/freelance-income-planner/images/freelance-income-planner-04.png",
-          "altEn": "No login, no loading — no signup wall, no onboarding carousel, no database, no cookies, clarity without ceremony",
-          "altEs": "Sin login, sin carga — sin muro de registro, sin carrusel de onboarding, sin base de datos, sin cookies, claridad sin ceremonias"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/freelance-income-planner/images/freelance-income-planner-05.png",
-          "altEn": "The Snapshot — sensible defaults pre-filled, math updates as you type, proof the tool works in 30 seconds",
-          "altEs": "La Instantanea — valores predeterminados sensatos, las matematicas se actualizan al escribir, prueba de que la herramienta funciona en 30 segundos"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/freelance-income-planner/images/freelance-income-planner-06.png",
-          "altEn": "The Reality Check — pre-tax logic shows how business expenses reduce taxable income, revealing effective hourly rate of $68/hr on a $100/hr billed rate",
-          "altEs": "La Verificacion de Realidad — la logica pre-impuestos muestra como los gastos de negocio reducen el ingreso gravable, revelando una tarifa efectiva de $68/hr sobre una tarifa facturada de $100/hr"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/freelance-income-planner/images/freelance-income-planner-07.png",
-          "altEn": "Modeling the future — drag the slider to test rate increases from -20% to +50% and instantly see the impact on annual net",
-          "altEs": "Modelando el futuro — arrastra el slider para probar aumentos de tarifa de -20% a +50% y ver al instante el impacto en el neto anual"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/freelance-income-planner/images/freelance-income-planner-08.png",
-          "altEn": "Earn in one currency, live in another — dual-currency engine with 9 combinations showing real purchasing power in your local currency",
-          "altEs": "Gana en una moneda, vive en otra — motor de doble moneda con 9 combinaciones mostrando poder adquisitivo real en tu moneda local"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/freelance-income-planner/images/freelance-income-planner-09.png",
-          "altEn": "Freelancing is seasonal — three-scenario planning with monthly projection charts modeling feast and famine cycles and savings runway",
-          "altEs": "El freelance es estacional — planificacion de tres escenarios con graficos de proyeccion mensual modelando ciclos de abundancia y escasez y pista de ahorros"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/freelance-income-planner/images/freelance-income-planner-10.png",
-          "altEn": "Engineered for reliability — deterministic math validated against 151 edge cases, fully bilingual with automatic number formatting",
-          "altEs": "Disenado para confiabilidad — matematicas deterministas validadas contra 151 casos limite, completamente bilingue con formato numerico automatico"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/freelance-income-planner/images/freelance-income-planner-11.png",
-          "altEn": "Who is this for — hourly freelancers, cross-border workers earning in USD living in MXN/EUR, privacy advocates, and agency owners",
-          "altEs": "Para quien es — freelancers por hora, trabajadores transfronterizos que ganan en USD y viven en MXN/EUR, defensores de la privacidad y duenos de agencias"
-        }
-      ],
-      "videoUrl": "https://cdn.cushlabs.ai/freelance-income-planner/video/freelance-income-planner-brief.mp4",
-      "videoPoster": "https://cdn.cushlabs.ai/freelance-income-planner/video/freelance-income-planner-brief-poster.jpg"
+      "dateCompleted": null,
+      "slides": [],
+      "videoUrl": null,
+      "videoPoster": null
     },
     {
       "id": 1171395937,
@@ -2337,15 +1446,15 @@
       "status": null,
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 130104,
+        "TypeScript": 159099,
         "Astro": 68530,
-        "JavaScript": 19798,
+        "JavaScript": 20266,
         "Python": 14928,
         "CSS": 3756
       },
       "stars": 1,
       "forks": 0,
-      "lastPushed": "2026-04-01T18:21:32Z",
+      "lastPushed": "2026-04-06T18:06:28Z",
       "createdAt": "2026-03-03T07:21:12Z",
       "isFeatured": false,
       "isArchived": false,
@@ -2454,7 +1563,7 @@
       },
       "stars": 1,
       "forks": 0,
-      "lastPushed": "2026-04-01T21:17:43Z",
+      "lastPushed": "2026-04-05T07:28:46Z",
       "createdAt": "2025-10-23T22:24:30Z",
       "isFeatured": false,
       "isArchived": false,
@@ -2586,13 +1695,13 @@
       "status": "Production",
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 92910,
+        "TypeScript": 93476,
         "CSS": 5485,
         "JavaScript": 559
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-04-01T18:21:34Z",
+      "lastPushed": "2026-04-06T02:40:56Z",
       "createdAt": "2026-02-13T19:55:19Z",
       "isFeatured": false,
       "isArchived": false,
@@ -2668,12 +1777,12 @@
     {
       "id": 1130115840,
       "name": "cushlabs",
-      "title": "CushLabs.ai",
+      "title": "Cushlabs",
       "description": "AI consulting and software development for SMBs — bilingual (EN/ES) site built with Astro + Tailwind CSS",
       "summary": "> AI consulting and software development for SMBs. Bilingual (EN/ES) business site with automated GitHub portfolio sync and serverless booking.",
       "url": "https://github.com/RCushmaniii/cushlabs",
       "demoUrl": "https://cushlabs.ai",
-      "liveUrl": "https://cushlabs.ai",
+      "liveUrl": null,
       "homepage": "https://cushlabs.ai",
       "topics": [
         "ai-consulting",
@@ -2683,119 +1792,43 @@
         "static-site",
         "tailwindcss"
       ],
-      "categories": [
-        "Tools"
-      ],
+      "categories": [],
       "tags": [
         "ai-consulting",
         "astro",
         "bilingual",
         "cushlabs",
         "static-site",
-        "tailwindcss",
-        "tailwind",
-        "typescript",
-        "i18n",
-        "cloudflare-workers",
-        "google-calendar",
-        "github-actions",
-        "seo",
-        "serverless"
+        "tailwindcss"
       ],
-      "stack": [
-        "Astro 4.16",
-        "TypeScript 5.9",
-        "Tailwind CSS 3.4",
-        "Cloudflare Workers",
-        "Google Calendar API",
-        "GitHub Actions",
-        "JSON-LD"
-      ],
+      "stack": [],
       "status": null,
       "language": "Astro",
       "languages": {
-        "Astro": 470485,
-        "TypeScript": 321547,
+        "Astro": 454607,
+        "TypeScript": 322371,
         "HTML": 61067,
-        "JavaScript": 58176,
+        "JavaScript": 57690,
         "CSS": 3319
       },
       "stars": 2,
       "forks": 0,
-      "lastPushed": "2026-04-03T15:51:49Z",
+      "lastPushed": "2026-04-06T18:43:17Z",
       "createdAt": "2026-01-08T03:52:43Z",
       "isFeatured": false,
       "isArchived": false,
       "isPrivate": false,
-      "tagline": "Self-maintaining bilingual portfolio with serverless booking and build-time i18n enforcement",
-      "thumbnail": "/images/portfolio/cushlabs-thumb.webp",
-      "problem": "Bilingual marketing sites go stale the moment you stop manually updating them. Portfolio pages die after 3-4 projects because maintenance costs multiply across languages. Third-party booking widgets break design consistency and add monthly fees. And static sites — while fast and cheap — traditionally can't handle dynamic features like scheduling without a full backend.\n",
+      "tagline": null,
+      "thumbnail": null,
+      "problem": null,
       "solution": null,
-      "keyFeatures": [
-        "27+ portfolio projects synced automatically from GitHub with zero manual data entry",
-        "0 KB i18n runtime overhead — 24-line custom system replaces 40KB+ i18next",
-        "6 automated pre-deploy checks enforcing bilingual parity, secret scanning, and build validation",
-        "Sub-second page loads with static HTML edge-cached globally",
-        "$0/month booking system via Cloudflare Workers replacing $8-16/month Calendly",
-        "100% EN/ES content parity enforced at build time — no language drift"
-      ],
+      "keyFeatures": [],
       "metrics": [],
       "priority": 21,
       "dateCompleted": null,
-      "slides": [
-        {
-          "src": "/images/portfolio/cushlabs-01.webp",
-          "altEn": "CushLabs.ai",
-          "altEs": "CushLabs.ai"
-        },
-        {
-          "src": "/images/portfolio/cushlabs-02.webp",
-          "altEn": "CushLabs.ai",
-          "altEs": "CushLabs.ai"
-        },
-        {
-          "src": "/images/portfolio/cushlabs-03.webp",
-          "altEn": "CushLabs.ai",
-          "altEs": "CushLabs.ai"
-        },
-        {
-          "src": "/images/portfolio/cushlabs-04.webp",
-          "altEn": "CushLabs.ai",
-          "altEs": "CushLabs.ai"
-        },
-        {
-          "src": "/images/portfolio/cushlabs-05.webp",
-          "altEn": "CushLabs.ai",
-          "altEs": "CushLabs.ai"
-        },
-        {
-          "src": "/images/portfolio/cushlabs-06.webp",
-          "altEn": "CushLabs.ai",
-          "altEs": "CushLabs.ai"
-        },
-        {
-          "src": "/images/portfolio/cushlabs-07.webp",
-          "altEn": "CushLabs.ai",
-          "altEs": "CushLabs.ai"
-        },
-        {
-          "src": "/images/portfolio/cushlabs-08.webp",
-          "altEn": "CushLabs.ai",
-          "altEs": "CushLabs.ai"
-        },
-        {
-          "src": "/images/portfolio/cushlabs-09.webp",
-          "altEn": "CushLabs.ai",
-          "altEs": "CushLabs.ai"
-        },
-        {
-          "src": "/images/portfolio/cushlabs-10.webp",
-          "altEn": "CushLabs.ai",
-          "altEs": "CushLabs.ai"
-        }
-      ],
-      "videoUrl": "/images/portfolio/cushlabs-brief.mp4",
-      "videoPoster": "/images/portfolio/cushlabs-brief-poster.webp"
+      "slides": [],
+      "videoUrl": null,
+      "videoPoster": null
     },
     {
       "id": 1128388603,
@@ -2847,14 +1880,14 @@
       "status": null,
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 172985,
+        "TypeScript": 178674,
         "PowerShell": 3372,
         "CSS": 1578,
         "JavaScript": 83
       },
       "stars": 1,
       "forks": 0,
-      "lastPushed": "2026-04-01T18:21:35Z",
+      "lastPushed": "2026-04-06T18:12:35Z",
       "createdAt": "2026-01-05T15:06:48Z",
       "isFeatured": false,
       "isArchived": false,
@@ -2977,101 +2010,81 @@
         "React 19",
         "TypeScript",
         "Vite 7",
+        "Tailwind CSS",
         "OpenAI GPT-4o-mini",
-        "Playwright"
+        "Playwright",
+        "MSW",
+        "React Router",
+        "Netlify"
       ],
-      "status": "Production",
+      "status": null,
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 188238,
+        "TypeScript": 188878,
         "JavaScript": 13705,
         "CSS": 6947,
         "HTML": 1011
       },
       "stars": 1,
       "forks": 0,
-      "lastPushed": "2026-04-01T18:21:37Z",
+      "lastPushed": "2026-04-06T02:39:40Z",
       "createdAt": "2025-09-23T19:15:28Z",
       "isFeatured": false,
       "isArchived": false,
       "isPrivate": true,
       "tagline": "Five AI-powered practice tools backed by a 370K-word dictionary",
       "thumbnail": "https://cdn.cushlabs.ai/ai-scrabble-practice/images/ai-scrabble-practice-thumb.jpg",
-      "problem": "Scrabble practice tools are either too simple (word checkers) or too powerful (board solvers) — neither builds actual skill. Players bounce between fragmented sites for validation, anagram solving, and word discovery with no structured practice mode.",
-      "solution": "A unified five-tool practice suite that consolidates word validation, anagram solving, strategic word finding, AI-powered natural language search, and timed gameplay into a single bilingual app with sub-second response times.",
+      "problem": "Scrabble practice tools are either too simple (word checkers) or too powerful (board solvers) — neither builds actual skill. Players bounce between fragmented sites for validation, anagram solving, and word discovery with no structured practice mode.\n",
+      "solution": null,
       "keyFeatures": [
-        "370,105-word dictionary with O(1) Set-based validation — sub-millisecond lookups even on mobile",
-        "Magic Search translates plain English queries into validated words with scores via GPT-4o-mini",
-        "Timed Practice Game with realistic tile draws, 60-second rounds, progressive scoring, and AI hints",
-        "Anagram Solver processes 7-tile hands with wildcard support in under 500ms",
-        "Full EN/ES bilingual interface with locale-based routing and Playwright E2E test coverage"
+        "370,105-word dictionary with sub-millisecond validation via Set-based O(1) lookups",
+        "Anagram solving in under 500ms for 7-tile hands with wildcard support",
+        "5 practice tools unified in a single bilingual interface",
+        "AI-powered natural language word search and timed practice with hints",
+        "Full E2E test coverage with Playwright across all features and locales"
       ],
-      "metrics": [
-        "370,105-word dictionary with sub-millisecond validation",
-        "Anagram solving in under 500ms for 7-tile hands",
-        "5 practice tools in a single unified interface"
-      ],
+      "metrics": [],
       "priority": 23,
       "dateCompleted": "2025-09",
       "slides": [
         {
           "src": "https://cdn.cushlabs.ai/ai-scrabble-practice/images/ai-scrabble-practice-01.png",
-          "altEn": "AI Scrabble Practice Suite — Five tools for serious Scrabble practice",
-          "altEs": "AI Scrabble Practice Suite — Cinco herramientas para practicar Scrabble en serio"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/ai-scrabble-practice/images/ai-scrabble-practice-02.png",
-          "altEn": "The Practice Gap — word checkers don't teach, board solvers don't let you learn",
-          "altEs": "La brecha de practica — los verificadores no ensenan, los solucionadores no te dejan aprender"
+          "altEn": "AI Scrabble Practice",
+          "altEs": "AI Scrabble Practice"
         },
         {
           "src": "https://cdn.cushlabs.ai/ai-scrabble-practice/images/ai-scrabble-practice-03.png",
-          "altEn": "Word Validator — instant validation with letter-by-letter score breakdown",
-          "altEs": "Validador de Palabras — validacion instantanea con desglose de puntuacion letra por letra"
+          "altEn": "AI Scrabble Practice",
+          "altEs": "AI Scrabble Practice"
         },
         {
           "src": "https://cdn.cushlabs.ai/ai-scrabble-practice/images/ai-scrabble-practice-04.png",
-          "altEn": "Anagram Solver — find every playable word from your tile rack with wildcard support",
-          "altEs": "Solucionador de Anagramas — encuentra cada palabra jugable desde tu atril con comodines"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/ai-scrabble-practice/images/ai-scrabble-practice-06.png",
-          "altEn": "Word Finder — search by letter, position, and length with scoring statistics",
-          "altEs": "Buscador de Palabras — busca por letra, posicion y longitud con estadisticas de puntuacion"
+          "altEn": "AI Scrabble Practice",
+          "altEs": "AI Scrabble Practice"
         },
         {
           "src": "https://cdn.cushlabs.ai/ai-scrabble-practice/images/ai-scrabble-practice-07.png",
-          "altEn": "Magic Search — ask for words in plain English, powered by GPT-4o-mini",
-          "altEs": "Busqueda Magica — pide palabras en lenguaje natural, impulsado por GPT-4o-mini"
+          "altEn": "AI Scrabble Practice",
+          "altEs": "AI Scrabble Practice"
         },
         {
           "src": "https://cdn.cushlabs.ai/ai-scrabble-practice/images/ai-scrabble-practice-08.png",
-          "altEn": "Practice Game — build words against the clock with AI hints and progressive scoring",
-          "altEs": "Juego de Practica — forma palabras contra reloj con pistas de IA y puntuacion progresiva"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/ai-scrabble-practice/images/ai-scrabble-practice-09.png",
-          "altEn": "Bilingual and Tested — full EN/ES support with Playwright E2E coverage",
-          "altEs": "Bilingue y Probado — soporte completo EN/ES con cobertura E2E de Playwright"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/ai-scrabble-practice/images/ai-scrabble-practice-10.png",
-          "altEn": "Technical Architecture — React 19, TypeScript, Vite 7, OpenAI, 370K-word dictionary",
-          "altEs": "Arquitectura Tecnica — React 19, TypeScript, Vite 7, OpenAI, diccionario de 370K palabras"
+          "altEn": "AI Scrabble Practice",
+          "altEs": "AI Scrabble Practice"
         }
       ],
       "videoUrl": "https://cdn.cushlabs.ai/ai-scrabble-practice/video/ai-scrabble-practice-brief.mp4",
-      "videoPoster": "https://cdn.cushlabs.ai/ai-scrabble-practice/video/ai-scrabble-practice-brief-poster.jpg"
+      "videoPoster": null
     },
     {
       "id": 1127520844,
       "name": "marble-does-not-yield",
-      "title": "The Marble Does Not Yield",
+      "title": "Marble Does Not Yield",
       "description": "A cinematic, single-page storytelling experience built with Next.js 14—combining markdown-driven prose, bilingual content, scroll-triggered imagery, and accessibility-first design.",
       "summary": "> A cinematic, single-page narrative experience that combines long-form bilingual storytelling with restrained animation, audio narration, and accessibility-first design.",
       "url": "https://github.com/RCushmaniii/marble-does-not-yield",
-      "demoUrl": "https://marble-does-not-yield.vercel.app/",
-      "liveUrl": "https://marble-does-not-yield.vercel.app/",
+      "demoUrl": "https://marble-does-not-yield.vercel.app",
+      "liveUrl": null,
       "homepage": "https://marble-does-not-yield.vercel.app",
       "topics": [
         "cdn",
@@ -3088,9 +2101,7 @@
         "typescript",
         "vercel"
       ],
-      "categories": [
-        "Creative"
-      ],
+      "categories": [],
       "tags": [
         "cdn",
         "cdn-distribution",
@@ -3104,107 +2115,34 @@
         "storytelling",
         "tailwindcss",
         "typescript",
-        "vercel",
-        "next-js",
-        "ai-assisted-development",
-        "bilingual",
-        "accessibility",
-        "audio-narration"
+        "vercel"
       ],
-      "stack": [
-        "Next.js 14",
-        "TypeScript",
-        "React Server Components",
-        "Tailwind CSS",
-        "Vercel"
-      ],
-      "status": "Production",
+      "stack": [],
+      "status": null,
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 52724,
+        "TypeScript": 52859,
         "CSS": 2913,
-        "JavaScript": 215
+        "JavaScript": 781
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-04-01T18:21:39Z",
+      "lastPushed": "2026-04-06T00:39:14Z",
       "createdAt": "2026-01-04T03:47:35Z",
       "isFeatured": false,
       "isArchived": false,
       "isPrivate": false,
-      "tagline": "Bilingual literary web app with scroll-driven storytelling and WCAG AAA compliance",
-      "thumbnail": "https://cdn.cushlabs.ai/marble-does-not-yield/images/portfolio/marble-does-not-yield-thumb.jpg",
-      "problem": "Long-form bilingual literary content needs a web experience that serves the narrative, not the framework. Full i18n libraries add runtime overhead for a two-language site, streaming services complicate optional audio narration, and accessibility becomes critical when the content demands sustained attention.",
-      "solution": "A static-first Next.js app where every technical decision serves the reading experience. Custom i18n with JSON labels + Markdown prose, author-read audio via a single play/pause toggle, scroll-driven IntersectionObserver animations that respect prefers-reduced-motion, and 104 kB First Load JS through React Server Components.",
-      "keyFeatures": [
-        "Custom i18n architecture — JSON for labels + Markdown for prose, zero-overhead language switching without any i18n framework",
-        "Scroll-driven storytelling with multi-stage color fade animations (3.5s) via IntersectionObserver, all respecting prefers-reduced-motion",
-        "WCAG AAA compliance with proper contrast ratios, semantic HTML, and reduced-motion support for cognitively loaded content",
-        "104 kB First Load JS — static generation with React Server Components eliminates client-side hydration cost",
-        "Six-iteration UX refinement from complex audio player to minimal toggle, demonstrating taste and restraint"
-      ],
-      "metrics": [
-        "104 kB First Load JS — zero client-side hydration cost",
-        "WCAG AAA compliance across both language variants",
-        "Six-iteration UX refinement process documented end-to-end",
-        "Zero i18n framework dependencies for full bilingual support"
-      ],
+      "tagline": null,
+      "thumbnail": null,
+      "problem": null,
+      "solution": null,
+      "keyFeatures": [],
+      "metrics": [],
       "priority": 24,
-      "dateCompleted": "2025-10",
-      "slides": [
-        {
-          "src": "https://cdn.cushlabs.ai/marble-does-not-yield/images/portfolio/marble-does-not-yield-01.png",
-          "altEn": "The Marble Does Not Yield slide 1",
-          "altEs": "The Marble Does Not Yield diapositiva 1"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/marble-does-not-yield/images/portfolio/marble-does-not-yield-02.png",
-          "altEn": "The Marble Does Not Yield slide 2",
-          "altEs": "The Marble Does Not Yield diapositiva 2"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/marble-does-not-yield/images/portfolio/marble-does-not-yield-03.png",
-          "altEn": "The Marble Does Not Yield slide 3",
-          "altEs": "The Marble Does Not Yield diapositiva 3"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/marble-does-not-yield/images/portfolio/marble-does-not-yield-04.png",
-          "altEn": "The Marble Does Not Yield slide 4",
-          "altEs": "The Marble Does Not Yield diapositiva 4"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/marble-does-not-yield/images/portfolio/marble-does-not-yield-05.png",
-          "altEn": "The Marble Does Not Yield slide 5",
-          "altEs": "The Marble Does Not Yield diapositiva 5"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/marble-does-not-yield/images/portfolio/marble-does-not-yield-06.png",
-          "altEn": "The Marble Does Not Yield slide 6",
-          "altEs": "The Marble Does Not Yield diapositiva 6"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/marble-does-not-yield/images/portfolio/marble-does-not-yield-07.png",
-          "altEn": "The Marble Does Not Yield slide 7",
-          "altEs": "The Marble Does Not Yield diapositiva 7"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/marble-does-not-yield/images/portfolio/marble-does-not-yield-08.png",
-          "altEn": "The Marble Does Not Yield slide 8",
-          "altEs": "The Marble Does Not Yield diapositiva 8"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/marble-does-not-yield/images/portfolio/marble-does-not-yield-09.png",
-          "altEn": "The Marble Does Not Yield slide 9",
-          "altEs": "The Marble Does Not Yield diapositiva 9"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/marble-does-not-yield/images/portfolio/marble-does-not-yield-10.png",
-          "altEn": "The Marble Does Not Yield slide 10",
-          "altEs": "The Marble Does Not Yield diapositiva 10"
-        }
-      ],
-      "videoUrl": "https://cdn.cushlabs.ai/marble-does-not-yield/video/marble-does-not-yield-brief.mp4",
-      "videoPoster": "https://cdn.cushlabs.ai/marble-does-not-yield/video/marble-does-not-yield-brief-poster.jpg"
+      "dateCompleted": null,
+      "slides": [],
+      "videoUrl": null,
+      "videoPoster": null
     },
     {
       "id": 1188527753,
@@ -3213,8 +2151,8 @@
       "description": "Modern image portfolio with lightbox gallery, drag-and-drop upload, and PWA support. Built with Next.js 16, TypeScript, Tailwind CSS v4.",
       "summary": "> A modern, dark-themed image gallery with authentication, lightbox slider, WhatsApp sharing, and PWA support — built for showcasing photography with style.",
       "url": "https://github.com/RCushmaniii/cushlabs-image-portfolio",
-      "demoUrl": "https://cushlabs-image-portfolio.vercel.app",
-      "liveUrl": "",
+      "demoUrl": "https://cushlabs-image-portfolio.vercel.app/",
+      "liveUrl": "https://gallery.cushlabs.ai/",
       "homepage": "https://cushlabs-image-portfolio.vercel.app",
       "topics": [],
       "categories": [
@@ -3244,13 +2182,13 @@
       "status": null,
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 132827,
+        "TypeScript": 146335,
         "CSS": 4743,
         "JavaScript": 559
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-04-02T01:11:58Z",
+      "lastPushed": "2026-04-05T23:19:54Z",
       "createdAt": "2026-03-22T07:49:29Z",
       "isFeatured": false,
       "isArchived": false,
@@ -3277,12 +2215,12 @@
     {
       "id": 1133839610,
       "name": "ai-filesense-website",
-      "title": "AI FileSense Website",
+      "title": "Ai Filesense Website",
       "description": "Marketing website for AI FileSense - An ai-powered local file organization system for Windows. Landing page, downloads, privacy policy, terms of service, and changelog.",
       "summary": "**Marketing website for AI FileSense — the Windows desktop app that organizes your files locally using Claude AI.**",
       "url": "https://github.com/RCushmaniii/ai-filesense-website",
-      "demoUrl": "https://ai-filesense-website.vercel.app/",
-      "liveUrl": "https://ai-filesense-website.vercel.app",
+      "demoUrl": "https://ai-filesense-website.vercel.app",
+      "liveUrl": null,
       "homepage": "https://ai-filesense-website.vercel.app",
       "topics": [
         "ai",
@@ -3297,9 +2235,7 @@
         "typescript",
         "windows-app"
       ],
-      "categories": [
-        "Marketing"
-      ],
+      "categories": [],
       "tags": [
         "ai",
         "claude-ai",
@@ -3311,109 +2247,45 @@
         "resend-email",
         "tailwind-css",
         "typescript",
-        "windows-app",
-        "tailwind",
-        "bilingual",
-        "seo",
-        "resend",
-        "marketing",
-        "software-distribution"
+        "windows-app"
       ],
-      "stack": [
-        "Next.js 14",
-        "TypeScript",
-        "Tailwind CSS",
-        "next-intl",
-        "Resend"
-      ],
-      "status": "Production",
+      "stack": [],
+      "status": null,
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 199657,
-        "MDX": 33998,
-        "CSS": 1058,
-        "JavaScript": 396
+        "TypeScript": 202021,
+        "MDX": 34006,
+        "JavaScript": 1552,
+        "CSS": 1352
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-04-01T18:21:42Z",
+      "lastPushed": "2026-04-06T17:37:29Z",
       "createdAt": "2026-01-13T22:16:37Z",
       "isFeatured": false,
       "isArchived": false,
       "isPrivate": false,
-      "tagline": "Bilingual marketing site with Lighthouse 100 and lead capture",
-      "thumbnail": "https://cdn.cushlabs.ai/ai-filesense-website/images/portfolio/ai-filesense-website-thumb.jpg",
-      "problem": "Most indie software developers and small businesses ship a desktop app and then have nothing — no discoverability, no trust signals, no bilingual reach, no support system, and no conversion path. A download link with no context doesn't convert visitors into users.",
-      "solution": "A 17-page bilingual marketing and support website that handles everything between 'I built an app' and 'I have a business' — SEO-optimized, conversion-focused, with a working contact/lead system and a complete support hub.",
-      "keyFeatures": [
-        "17 pages across 7 sections — full marketing funnel from homepage to terms of service",
-        "Bilingual from day one (EN + ES-MX) — locale-based routing with hreflang sitemap alternates",
-        "Working contact/lead capture — Zod + React Hook Form + Server Actions + Resend + honeypot spam protection",
-        "Complete support hub — Getting Started guide, 11-question FAQ, validated contact form",
-        "Production SEO — dynamic metadata, auto-generated sitemap, Open Graph cards, canonical URLs"
-      ],
-      "metrics": [
-        "17 pages across 7 sections covering the full product lifecycle",
-        "Lighthouse 100 Performance, 100 Best Practices, 92 SEO, 92 Accessibility",
-        "0.3s FCP, 0.4s LCP, 0ms TBT — zero layout shift",
-        "Auto-generated sitemap with hreflang alternates for 30+ locale-specific URLs"
-      ],
+      "tagline": null,
+      "thumbnail": null,
+      "problem": null,
+      "solution": null,
+      "keyFeatures": [],
+      "metrics": [],
       "priority": 26,
-      "dateCompleted": "2026-02",
-      "slides": [
-        {
-          "src": "https://cdn.cushlabs.ai/ai-filesense-website/images/portfolio/ai-filesense-website-01.png",
-          "altEn": "Homepage hero with video explainer and download CTA",
-          "altEs": "Hero de la pagina principal con video explicativo y boton de descarga"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/ai-filesense-website/images/portfolio/ai-filesense-website-02.png",
-          "altEn": "How It Works — 3-step process breakdown",
-          "altEs": "Como Funciona — desglose del proceso en 3 pasos"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/ai-filesense-website/images/portfolio/ai-filesense-website-03.png",
-          "altEn": "Features section with trust signals",
-          "altEs": "Seccion de caracteristicas con senales de confianza"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/ai-filesense-website/images/portfolio/ai-filesense-website-04.png",
-          "altEn": "The 12-Folder Smart System overview",
-          "altEs": "Vista general del Sistema Inteligente de 12 Carpetas"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/ai-filesense-website/images/portfolio/ai-filesense-website-05.png",
-          "altEn": "Features page — differentiators and competitive advantages",
-          "altEs": "Pagina de caracteristicas — diferenciadores y ventajas competitivas"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/ai-filesense-website/images/portfolio/ai-filesense-website-06.png",
-          "altEn": "Support hub with Getting Started guide",
-          "altEs": "Centro de soporte con guia de inicio"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/ai-filesense-website/images/portfolio/ai-filesense-website-07.png",
-          "altEn": "Download page with system requirements and quick-start",
-          "altEs": "Pagina de descarga con requisitos del sistema e inicio rapido"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/ai-filesense-website/images/portfolio/ai-filesense-website-08.png",
-          "altEn": "Dark mode — full theme support across all pages",
-          "altEs": "Modo oscuro — soporte completo de temas en todas las paginas"
-        }
-      ],
-      "videoUrl": "https://cdn.cushlabs.ai/ai-filesense-website/videos/AI-FileSense-Website-brief.mp4",
-      "videoPoster": "https://cdn.cushlabs.ai/ai-filesense-website/images/portfolio/AI-FileSense-Website-brief-poster.jpg"
+      "dateCompleted": null,
+      "slides": [],
+      "videoUrl": null,
+      "videoPoster": null
     },
     {
       "id": 1140204033,
       "name": "ai-stock-alert-website",
-      "title": "AI StockAlert Website",
+      "title": "Ai Stock Alert Website",
       "description": " Bilingual (EN/ES) Windows app for WhatsApp stock price alerts. Privacy-focused, no subscriptions, bring your own Finnhub API key.",
       "summary": "> **Portfolio Demo**: This is a production-quality SaaS marketing website built to demonstrate modern web development practices. AI StockAlert is a fictional product—no software is available for downl",
       "url": "https://github.com/RCushmaniii/ai-stock-alert-website",
-      "demoUrl": "https://aistockalert.app/",
-      "liveUrl": "https://aistockalert.app/",
+      "demoUrl": "https://ai-stock-alert-website.netlify.app/",
+      "liveUrl": null,
       "homepage": "https://ai-stock-alert-website.netlify.app/",
       "topics": [
         "price-alerts",
@@ -3423,131 +2295,51 @@
         "windows-alert",
         "windows-app"
       ],
-      "categories": [
-        "Templates"
-      ],
+      "categories": [],
       "tags": [
         "price-alerts",
         "stock-alerts",
         "stock-data",
         "whatsapp",
         "windows-alert",
-        "windows-app",
-        "nextjs",
-        "marketing-website",
-        "bilingual",
-        "i18n",
-        "saas",
-        "static-site",
-        "seo",
-        "tailwind",
-        "playwright",
-        "netlify"
+        "windows-app"
       ],
-      "stack": [
-        "Next.js 16",
-        "TypeScript",
-        "Tailwind CSS 4",
-        "next-intl",
-        "Playwright"
-      ],
-      "status": "Production",
+      "stack": [],
+      "status": null,
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 162097,
+        "TypeScript": 162663,
         "CSS": 5636,
         "JavaScript": 559
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-04-01T18:21:44Z",
+      "lastPushed": "2026-04-06T00:39:12Z",
       "createdAt": "2026-01-23T00:50:02Z",
       "isFeatured": false,
       "isArchived": false,
       "isPrivate": false,
-      "tagline": "Bilingual SaaS marketing site — 18 routes, e2e tested, zero server cost",
-      "thumbnail": "https://cdn.cushlabs.ai/ai-stock-alert-website/images/ai-stockalert-website-thumb.jpg",
-      "problem": "Businesses launching software products hit the same bottleneck: the marketing website. Agency builds cost $10K-50K+ and take weeks. Templates look generic. Bilingual support is always an afterthought — and SEO, structured data, and accessibility get skipped entirely.",
-      "solution": "A production-ready bilingual (EN/ES) marketing website covering the complete surface area of a real SaaS launch — 9 pages across 18 localized routes, with SEO, structured data, animations, dark/light themes, e2e tests, and static deployment to Netlify CDN.",
-      "keyFeatures": [
-        "9 pages x 2 languages = 18 localized routes with native URL routing via next-intl",
-        "SEO from day one — dynamic sitemap with hreflang alternates, JSON-LD structured data, page-level metadata",
-        "23 Playwright e2e tests covering navigation, language switching, theme toggling, and responsive behavior",
-        "Static site generation — zero server cost, sub-second loads, deployed to Netlify global CDN",
-        "Working contact form (Formspree + react-hook-form + Zod), dark/light themes, scroll-triggered animations"
-      ],
-      "metrics": [
-        "9 pages x 2 languages = 18 localized routes",
-        "23 end-to-end Playwright tests",
-        "100% static — $0 server cost",
-        "Sub-second page loads via CDN"
-      ],
+      "tagline": null,
+      "thumbnail": null,
+      "problem": null,
+      "solution": null,
+      "keyFeatures": [],
+      "metrics": [],
       "priority": 27,
-      "dateCompleted": "2026-02",
-      "slides": [
-        {
-          "src": "https://cdn.cushlabs.ai/ai-stock-alert-website/images/ai-stockalert-website-01.png",
-          "altEn": "AI StockAlert — The Blueprint for High-Performance Bilingual SaaS Marketing",
-          "altEs": "AI StockAlert — El Plan para Marketing SaaS Bilingue de Alto Rendimiento"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/ai-stock-alert-website/images/ai-stockalert-website-02.png",
-          "altEn": "The Launch Bottleneck — agency costs, template trap, skill gap, zero visibility",
-          "altEs": "El Cuello de Botella del Lanzamiento — costos de agencia, trampa de plantillas, brecha de habilidades"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/ai-stock-alert-website/images/ai-stockalert-website-03.png",
-          "altEn": "Not a Wireframe, A Production Reality — live at aistockalert.app",
-          "altEs": "No es un Wireframe, Es Produccion Real — en vivo en aistockalert.app"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/ai-stock-alert-website/images/ai-stockalert-website-04.png",
-          "altEn": "Internationalization Done Right — native routing, localized pathnames for SEO",
-          "altEs": "Internacionalizacion Bien Hecha — rutas nativas, nombres de ruta localizados para SEO"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/ai-stock-alert-website/images/ai-stockalert-website-05.png",
-          "altEn": "Built for Speed and Scale — 0 server costs, sub-1s load time, Lighthouse 100",
-          "altEs": "Construido para Velocidad y Escala — 0 costos de servidor, carga sub-1s, Lighthouse 100"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/ai-stock-alert-website/images/ai-stockalert-website-06.png",
-          "altEn": "Invisible Tech, Visible Results — dynamic metadata, hreflang, JSON-LD structured data",
-          "altEs": "Tecnologia Invisible, Resultados Visibles — metadata dinamica, hreflang, datos estructurados JSON-LD"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/ai-stock-alert-website/images/ai-stockalert-website-07.png",
-          "altEn": "Polished to Perfection — themes, typography, validated forms, responsive and accessible",
-          "altEs": "Pulido a la Perfeccion — temas, tipografia, formularios validados, responsivo y accesible"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/ai-stock-alert-website/images/ai-stockalert-website-08.png",
-          "altEn": "Trust, Verified — 23 Playwright e2e tests before every deploy",
-          "altEs": "Confianza Verificada — 23 pruebas e2e de Playwright antes de cada despliegue"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/ai-stock-alert-website/images/ai-stockalert-website-09.png",
-          "altEn": "Tech Spec to Business Value — bilingual = 2x market, static = 100% uptime",
-          "altEs": "De Especificacion Tecnica a Valor de Negocio — bilingue = 2x mercado, estatico = 100% uptime"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/ai-stock-alert-website/images/ai-stockalert-website-10.png",
-          "altEn": "Why Owners Love This Blueprint — cost efficiency, speed, future-proof, verified",
-          "altEs": "Por Que los Duenos Aman Este Plan — eficiencia de costos, velocidad, a prueba de futuro, verificado"
-        }
-      ],
-      "videoUrl": "https://cdn.cushlabs.ai/ai-stock-alert-website/videos/AI-StockAlert-brief.mp4",
-      "videoPoster": "https://cdn.cushlabs.ai/ai-stock-alert-website/videos/AI-StockAlert-brief-poster.jpg"
+      "dateCompleted": null,
+      "slides": [],
+      "videoUrl": null,
+      "videoPoster": null
     },
     {
       "id": 1159724330,
       "name": "mazebreak-trello",
-      "title": "MazeBreak Trello Board Automation",
+      "title": "Mazebreak Trello",
       "description": "Trello Power-Up and project management automation for MazeBreak Roblox game development",
       "summary": "Trello Power-Up and project management automation for **MazeBreak** — a combat-driven Roblox maze game.",
       "url": "https://github.com/RCushmaniii/mazebreak-trello",
-      "demoUrl": "https://mazebreak-trello.vercel.app/#demo",
-      "liveUrl": "https://mazebreak-trello.vercel.app/",
+      "demoUrl": "https://mazebreak-trello.vercel.app/",
+      "liveUrl": null,
       "homepage": null,
       "topics": [
         "game-development",
@@ -3558,9 +2350,7 @@
         "trello-power-up",
         "vercel"
       ],
-      "categories": [
-        "Developer Tools"
-      ],
+      "categories": [],
       "tags": [
         "game-development",
         "nodejs",
@@ -3568,18 +2358,9 @@
         "roblox",
         "trello",
         "trello-power-up",
-        "vercel",
-        "developer-tools",
-        "automation",
-        "api-integration"
+        "vercel"
       ],
-      "stack": [
-        "Node.js",
-        "axios",
-        "dotenv",
-        "Trello REST API",
-        "Vercel"
-      ],
+      "stack": [],
       "status": null,
       "language": "HTML",
       "languages": {
@@ -3588,85 +2369,37 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-04-01T18:21:45Z",
+      "lastPushed": "2026-04-06T04:48:06Z",
       "createdAt": "2026-02-17T04:40:23Z",
       "isFeatured": false,
       "isArchived": false,
       "isPrivate": false,
-      "tagline": "Idempotent sprint board provisioning via Trello REST API for Roblox game development",
-      "thumbnail": "https://cdn.cushlabs.ai/mazebreak-trello/images/mazebreak-trello.jpg",
-      "problem": "Game development teams lose days of productivity to manual sprint board setup — and the boards they build by hand are inconsistent, fragile, and impossible to replicate. Cards get created without checklists, acceptance criteria, or quality gates, so \"done\" becomes subjective and bugs leak into later sprints. Dependency chains between tasks exist only as tribal knowledge, leaving new team members guessing at execution order. When a board needs to be rebuilt for the next sprint or a new project, all of that structure has to be painstakingly recreated from memory.\n",
+      "tagline": null,
+      "thumbnail": null,
+      "problem": null,
       "solution": null,
       "keyFeatures": [],
       "metrics": [],
       "priority": 28,
       "dateCompleted": null,
-      "slides": [
-        {
-          "src": "https://cdn.cushlabs.ai/mazebreak-trello/images/mazebreak-trello.jpg",
-          "altEn": "MazeBreak Trello Board Automation slide 1",
-          "altEs": "MazeBreak Trello Board Automation diapositiva 1"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/mazebreak-trello/images/mazebreak-trello01.jpg",
-          "altEn": "MazeBreak Trello Board Automation slide 2",
-          "altEs": "MazeBreak Trello Board Automation diapositiva 2"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/mazebreak-trello/images/mazebreak-trello02.jpg",
-          "altEn": "MazeBreak Trello Board Automation slide 3",
-          "altEs": "MazeBreak Trello Board Automation diapositiva 3"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/mazebreak-trello/images/mazebreak-trello03.jpg",
-          "altEn": "MazeBreak Trello Board Automation slide 4",
-          "altEs": "MazeBreak Trello Board Automation diapositiva 4"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/mazebreak-trello/images/mazebreak-trello04.jpg",
-          "altEn": "MazeBreak Trello Board Automation slide 5",
-          "altEs": "MazeBreak Trello Board Automation diapositiva 5"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/mazebreak-trello/images/mazebreak-trello05.png",
-          "altEn": "MazeBreak Trello Board Automation slide 6",
-          "altEs": "MazeBreak Trello Board Automation diapositiva 6"
-        }
-      ],
-      "videoUrl": "https://cdn.cushlabs.ai/mazebreak-trello/video/MazeBreak__Sprint_as_Code.mp4",
-      "videoPoster": "https://cdn.cushlabs.ai/mazebreak-trello/images/mazebreak-trello-poster.jpg"
+      "slides": [],
+      "videoUrl": null,
+      "videoPoster": null
     },
     {
       "id": 1154149781,
       "name": "mazebreak-wiki",
-      "title": "MazeBreak GDD Wiki",
+      "title": "Mazebreak Wiki",
       "description": "Private documentation wiki for the MazeBreak Game Design Document. Built with React, Tailwind CSS, and Clerk auth.",
       "summary": "Private, searchable documentation wiki for the MazeBreak Game Design Document. Provides instant access to all 24 GDD chapters with full-text search, chapter-based navigation, and Clerk-authenticated a",
       "url": "https://github.com/RCushmaniii/mazebreak-wiki",
-      "demoUrl": "https://mazebreak-wiki.vercel.app/",
-      "liveUrl": "https://mazebreak-wiki.vercel.app/",
+      "demoUrl": "https://mazebreak-wiki.vercel.app",
+      "liveUrl": null,
       "homepage": "https://mazebreak-wiki.vercel.app",
       "topics": [],
-      "categories": [
-        "Developer Tools"
-      ],
-      "tags": [
-        "developer-tools",
-        "documentation",
-        "react",
-        "game-development",
-        "search",
-        "authentication"
-      ],
-      "stack": [
-        "React 19",
-        "Vite 7",
-        "Tailwind CSS 3",
-        "Clerk Authentication",
-        "Fuse.js",
-        "React Router v6",
-        "Vercel"
-      ],
+      "categories": [],
+      "tags": [],
+      "stack": [],
       "status": null,
       "language": "JavaScript",
       "languages": {
@@ -3677,68 +2410,32 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-04-01T18:21:47Z",
+      "lastPushed": "2026-04-06T00:39:19Z",
       "createdAt": "2026-02-10T04:11:19Z",
       "isFeatured": false,
       "isArchived": false,
       "isPrivate": false,
-      "tagline": "Private, searchable game design document wiki for a Roblox development team",
-      "thumbnail": "https://cdn.cushlabs.ai/mazebreak-wiki/images/mazebreak-wiki-01.png",
-      "problem": "Game design documents start as shared Word files or Google Docs that no one\nactually consults once development begins — they're too slow to search, too\npainful to navigate, and too disconnected from the development workflow.\nA 2-person Roblox team was losing momentum every time they needed to look up\nan enemy stat, verify a damage formula, or cross-reference loot tables across\na 200+ page GDD, turning a 10-second lookup into a 2-minute context switch\nthat broke creative flow in Roblox Studio.\n",
+      "tagline": null,
+      "thumbnail": null,
+      "problem": null,
       "solution": null,
       "keyFeatures": [],
       "metrics": [],
       "priority": 29,
       "dateCompleted": null,
-      "slides": [
-        {
-          "src": "https://cdn.cushlabs.ai/mazebreak-wiki/images/mazebreak-wiki-01.png",
-          "altEn": "MazeBreak GDD Wiki slide 1",
-          "altEs": "MazeBreak GDD Wiki diapositiva 1"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/mazebreak-wiki/images/mazebreak-wiki-02.png",
-          "altEn": "MazeBreak GDD Wiki slide 2",
-          "altEs": "MazeBreak GDD Wiki diapositiva 2"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/mazebreak-wiki/images/mazebreak-wiki-03.png",
-          "altEn": "MazeBreak GDD Wiki slide 3",
-          "altEs": "MazeBreak GDD Wiki diapositiva 3"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/mazebreak-wiki/images/mazebreak-wiki-04.png",
-          "altEn": "MazeBreak GDD Wiki slide 4",
-          "altEs": "MazeBreak GDD Wiki diapositiva 4"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/mazebreak-wiki/images/mazebreak-wiki-05.png",
-          "altEn": "MazeBreak GDD Wiki slide 5",
-          "altEs": "MazeBreak GDD Wiki diapositiva 5"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/mazebreak-wiki/images/mazebreak-wiki-06.png",
-          "altEn": "MazeBreak GDD Wiki slide 6",
-          "altEs": "MazeBreak GDD Wiki diapositiva 6"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/mazebreak-wiki/images/mazebreak-wiki-07.png",
-          "altEn": "MazeBreak GDD Wiki slide 7",
-          "altEs": "MazeBreak GDD Wiki diapositiva 7"
-        }
-      ],
-      "videoUrl": "https://cdn.cushlabs.ai/mazebreak-wiki/video/MazeBreak__Taming_the_GDD.mp4",
+      "slides": [],
+      "videoUrl": null,
       "videoPoster": null
     },
     {
       "id": 1119144204,
       "name": "nextjs-react-agency-starter",
-      "title": "Next.js Agency Starter",
+      "title": "Nextjs React Agency Starter",
       "description": "The Next.js React Agency Starter provides a clean, scalable, and production-ready foundation for building modern agency and portfolio websites using Next.js, React, and TypeScript.",
       "summary": "> A production-grade starter template for agency, marketing, and portfolio websites — built for real client work, not tutorials.",
       "url": "https://github.com/RCushmaniii/nextjs-react-agency-starter",
       "demoUrl": "https://nextjs-react-agency-starter.vercel.app/",
-      "liveUrl": "https://nextjs-react-agency-starter.vercel.app/",
+      "liveUrl": null,
       "homepage": "https://nextjs-react-agency-starter.vercel.app/",
       "topics": [
         "nextjs",
@@ -3746,110 +2443,40 @@
         "starter-kit",
         "tailwindcss"
       ],
-      "categories": [
-        "Templates"
-      ],
+      "categories": [],
       "tags": [
         "nextjs",
         "react",
         "starter-kit",
-        "tailwindcss",
-        "typescript",
-        "tailwind-css",
-        "mdx",
-        "starter-template",
-        "agency",
-        "resend"
+        "tailwindcss"
       ],
-      "stack": [
-        "Next.js 14",
-        "TypeScript",
-        "Tailwind CSS",
-        "MDX",
-        "Resend"
-      ],
-      "status": "Production",
+      "stack": [],
+      "status": null,
       "language": "TypeScript",
       "languages": {
         "TypeScript": 172649,
         "MDX": 27835,
         "CSS": 1030,
-        "JavaScript": 260
+        "JavaScript": 826
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-04-01T18:21:48Z",
+      "lastPushed": "2026-04-06T00:39:26Z",
       "createdAt": "2025-12-18T20:18:05Z",
       "isFeatured": false,
       "isArchived": false,
       "isPrivate": false,
-      "tagline": "Production-grade agency website template with MDX content and email pipeline",
-      "thumbnail": "https://cdn.cushlabs.ai/nextjs-react-agency-starter/images/portfolio/nextjs-react-agency-starter-thumb.jpg",
-      "problem": "Most web starter templates are either over-engineered with opinionated abstractions or under-built with missing production essentials. Agency developers waste time rebuilding the same infrastructure — forms, content management, SEO, dark mode — for every client project.",
-      "solution": "A production-grade Next.js starter that ships with a unified UI system, MDX-powered blog and case study content, and a complete contact form pipeline with Zod validation and Resend email delivery. Clone it, customize the brand, and ship — no placeholders, no TODOs.",
-      "keyFeatures": [
-        "Cohesive UI system with layout primitives (Container, Section, Stack) and reusable components",
-        "MDX content workflow for blogs and case studies — drop in a file, no CMS or database needed",
-        "Production contact pipeline: React Hook Form + Zod validation + Server Actions + Resend email",
-        "SEO-first: auto-generated sitemap/robots.txt, structured data, Open Graph, Twitter Cards",
-        "Dark mode with localStorage persistence, WCAG AA accessibility, 90+ Lighthouse scores"
-      ],
-      "metrics": [
-        "90+ Lighthouse performance scores out of the box",
-        "Zero database dependencies — file-based MDX content",
-        "End-to-end contact form with validation and email delivery"
-      ],
+      "tagline": null,
+      "thumbnail": null,
+      "problem": null,
+      "solution": null,
+      "keyFeatures": [],
+      "metrics": [],
       "priority": 30,
-      "dateCompleted": "2025-12",
-      "slides": [
-        {
-          "src": "https://cdn.cushlabs.ai/nextjs-react-agency-starter/images/portfolio/nextjs-react-agency-starter-01.png",
-          "altEn": "Next.js Agency Starter — production-grade foundation for agency and marketing websites",
-          "altEs": "Next.js Agency Starter — base de produccion para sitios web de agencias y marketing"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/nextjs-react-agency-starter/images/portfolio/nextjs-react-agency-starter-02.png",
-          "altEn": "The Template Trap — over-engineered or under-built, neither saves agency developers time",
-          "altEs": "La Trampa de las Plantillas — sobre-ingeniadas o incompletas, ninguna ahorra tiempo"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/nextjs-react-agency-starter/images/portfolio/nextjs-react-agency-starter-03.png",
-          "altEn": "Cohesive UI System — layout primitives and reusable components with unified design language",
-          "altEs": "Sistema UI Cohesivo — primitivas de layout y componentes reutilizables con lenguaje de diseno unificado"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/nextjs-react-agency-starter/images/portfolio/nextjs-react-agency-starter-04.png",
-          "altEn": "MDX Content Workflow — blog posts and case studies as files, no CMS or database required",
-          "altEs": "Flujo de Contenido MDX — posts de blog y casos de estudio como archivos, sin CMS ni base de datos"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/nextjs-react-agency-starter/images/portfolio/nextjs-react-agency-starter-05.png",
-          "altEn": "Production Contact Pipeline — validation, server actions, and Resend email delivery end-to-end",
-          "altEs": "Pipeline de Contacto en Produccion — validacion, server actions y entrega de email con Resend"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/nextjs-react-agency-starter/images/portfolio/nextjs-react-agency-starter-06.png",
-          "altEn": "SEO Built In — auto-generated sitemap, robots.txt, structured data, Open Graph metadata",
-          "altEs": "SEO Integrado — sitemap automatico, robots.txt, datos estructurados, metadata Open Graph"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/nextjs-react-agency-starter/images/portfolio/nextjs-react-agency-starter-07.png",
-          "altEn": "Dark Mode and Accessibility — WCAG AA compliance, keyboard navigation, focus states",
-          "altEs": "Modo Oscuro y Accesibilidad — cumplimiento WCAG AA, navegacion por teclado, estados de foco"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/nextjs-react-agency-starter/images/portfolio/nextjs-react-agency-starter-08.png",
-          "altEn": "TypeScript Strict Mode — no implicit any, typed props and returns on every component",
-          "altEs": "TypeScript Strict Mode — sin any implicito, props y retornos tipados en cada componente"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/nextjs-react-agency-starter/images/portfolio/nextjs-react-agency-starter-09.png",
-          "altEn": "Clone, Customize, Ship — CSS variables for brand colors, modular components for rapid delivery",
-          "altEs": "Clona, Personaliza, Entrega — variables CSS para colores de marca, componentes modulares"
-        }
-      ],
-      "videoUrl": "https://cdn.cushlabs.ai/nextjs-react-agency-starter/video/nextjs-react-agency-starter-brief.mp4",
-      "videoPoster": "https://cdn.cushlabs.ai/nextjs-react-agency-starter/video/nextjs-react-agency-starter-brief-poster.jpg"
+      "dateCompleted": null,
+      "slides": [],
+      "videoUrl": null,
+      "videoPoster": null
     },
     {
       "id": 1068781109,
@@ -3858,8 +2485,8 @@
       "description": "React 19 template with ShadCN UI, TypeScript, and Vite 7. Features a fully interactive appointment booking system with calendar integration, real-time data visualizations using Recharts, and 17+ accessible components. Mobile-first design, SEO optimized, and built with modern best practices. Perfect for SaaS apps, dashboards, and booking systems.",
       "summary": "> A production-ready React template with ShadCN UI, data visualizations, and a complete interactive appointment booking showcase.",
       "url": "https://github.com/RCushmaniii/react-vite-tailwind-base",
-      "demoUrl": "https://react-vite-tailwind-base.vercel.app/components",
-      "liveUrl": "https://react-vite-tailwind-base.vercel.app",
+      "demoUrl": "https://react-vite-tailwind-base.vercel.app",
+      "liveUrl": null,
       "homepage": "https://react-vite-tailwind-base.vercel.app",
       "topics": [
         "react",
@@ -3868,34 +2495,16 @@
         "tailwindcss",
         "vite"
       ],
-      "categories": [
-        "Templates"
-      ],
+      "categories": [],
       "tags": [
         "react",
         "shadcn",
         "shadcn-ui",
         "tailwindcss",
-        "vite",
-        "typescript",
-        "tailwind-css",
-        "recharts",
-        "template",
-        "data-visualization",
-        "radix-ui",
-        "msw"
+        "vite"
       ],
-      "stack": [
-        "React 19",
-        "TypeScript 5.8",
-        "Vite 7",
-        "Tailwind CSS 4",
-        "ShadCN UI (Radix)",
-        "Recharts 3",
-        "React Router 7",
-        "MSW"
-      ],
-      "status": "Production",
+      "stack": [],
+      "status": null,
       "language": "TypeScript",
       "languages": {
         "TypeScript": 121804,
@@ -3905,84 +2514,181 @@
       },
       "stars": 2,
       "forks": 0,
-      "lastPushed": "2026-04-01T18:21:50Z",
+      "lastPushed": "2026-04-06T00:39:23Z",
       "createdAt": "2025-10-02T22:40:01Z",
       "isFeatured": false,
       "isArchived": false,
       "isPrivate": false,
-      "tagline": "Production-ready React 19 starter with ShadCN UI, charts, and a working booking system",
-      "thumbnail": "https://cdn.cushlabs.ai/react-vite-tailwind-base/images/react-vite-tailwind-base-thumb.jpg",
-      "problem": "Starting a new React project means 1-2 days of unbillable configuration — TypeScript, Tailwind, component libraries, routing, linting, formatting, path aliases — before writing a single feature. Most starter templates solve this with empty scaffolding that still leaves developers guessing at integration patterns.",
-      "solution": "A production-ready foundation that ships with working features instead of blank pages. Clone, install, dev — and you're looking at a working appointment booking system, data visualization dashboard, and 17+ pre-configured ShadCN components in under 5 minutes. Every dependency is pinned to stable February 2026 versions.",
-      "keyFeatures": [
-        "17+ pre-configured ShadCN UI components — buttons, cards, calendars, dialogs, sliders, tabs, all sharing the same design tokens",
-        "Complete appointment booking flow — service selection, calendar, time slots, pricing, and confirmation built from composable components",
-        "Data visualization dashboard — three Recharts visualizations (area, pie, bar) integrated with responsive containers and Tailwind theming",
-        "Invisible infrastructure — TypeScript strict mode, ESLint, Prettier, and pnpm verify pipeline that fails the build on type errors",
-        "MSW API mocking — full CRUD mock endpoints so frontend development doesn't depend on a backend"
-      ],
-      "metrics": [
-        "Zero-to-running in under 5 minutes with 3 commands",
-        "17+ accessible ShadCN UI components pre-configured",
-        "1-2 days of setup time eliminated per project",
-        "All dependencies pinned to stable Feb 2026 versions"
-      ],
+      "tagline": null,
+      "thumbnail": null,
+      "problem": null,
+      "solution": null,
+      "keyFeatures": [],
+      "metrics": [],
       "priority": 31,
-      "dateCompleted": "2026-02",
-      "slides": [
-        {
-          "src": "https://cdn.cushlabs.ai/react-vite-tailwind-base/images/react-vite-tailwind-base-01.png",
-          "altEn": "Modern React Foundation — React 19 + Vite 7 + ShadCN, stable versions pinned February 2026",
-          "altEs": "Base Moderna de React — React 19 + Vite 7 + ShadCN, versiones estables fijadas en febrero 2026"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/react-vite-tailwind-base/images/react-vite-tailwind-base-02.png",
-          "altEn": "The Startup Ritual — the endless manual setup loop of installing React, configuring Tailwind, fixing class conflicts, and wiring component libraries",
-          "altEs": "El Ritual de Inicio — el ciclo interminable de instalar React, configurar Tailwind, resolver conflictos de clases y conectar librerias de componentes"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/react-vite-tailwind-base/images/react-vite-tailwind-base-03.png",
-          "altEn": "The Hidden Cost of Setup — 1 to 2 days of unbillable time lost per project before writing any business logic",
-          "altEs": "El Costo Oculto de la Configuracion — 1 a 2 dias de tiempo no facturable perdido por proyecto antes de escribir logica de negocio"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/react-vite-tailwind-base/images/react-vite-tailwind-base-04.png",
-          "altEn": "Redefining Ready — the norm is a blank page with dependencies installed, this foundation is production-ready immediately",
-          "altEs": "Redefiniendo Listo — lo normal es una pagina en blanco con dependencias instaladas, esta base esta lista para produccion de inmediato"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/react-vite-tailwind-base/images/react-vite-tailwind-base-05.png",
-          "altEn": "The Stack — React 19, TypeScript 5.8, Vite 7, Tailwind CSS 4, ShadCN UI, React Router 7, no experimental packages",
-          "altEs": "El Stack — React 19, TypeScript 5.8, Vite 7, Tailwind CSS 4, ShadCN UI, React Router 7, sin paquetes experimentales"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/react-vite-tailwind-base/images/react-vite-tailwind-base-06.png",
-          "altEn": "17+ pre-configured components — buttons, cards, calendars, dialogs, sliders, tabs, avatars, badges, and switches, all accessible",
-          "altEs": "17+ componentes preconfigurados — botones, tarjetas, calendarios, dialogos, sliders, tabs, avatares, insignias e interruptores, todos accesibles"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/react-vite-tailwind-base/images/react-vite-tailwind-base-07.png",
-          "altEn": "Reference implementation — a working appointment booking flow with service selection, calendar, time slots, pricing, and confirmation",
-          "altEs": "Implementacion de referencia — flujo de reserva de citas funcional con seleccion de servicio, calendario, horarios, precios y confirmacion"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/react-vite-tailwind-base/images/react-vite-tailwind-base-08.png",
-          "altEn": "The invisible infrastructure — TypeScript strict mode, ESLint, Prettier, pnpm verify, and MSW API mocking in the build pipeline",
-          "altEs": "La infraestructura invisible — TypeScript modo estricto, ESLint, Prettier, pnpm verify y mocking de API con MSW en el pipeline de build"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/react-vite-tailwind-base/images/react-vite-tailwind-base-09.png",
-          "altEn": "Who this is for — freelancers and solo devs, IT departments building internal tools, and agencies needing a consistent starting point",
-          "altEs": "Para quien es — freelancers y desarrolladores independientes, departamentos de TI construyendo herramientas internas y agencias que necesitan un punto de partida consistente"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/react-vite-tailwind-base/images/react-vite-tailwind-base-10.png",
-          "altEn": "The first 5 minutes — git clone, pnpm install, pnpm dev, ready in 300 seconds with a working app and real interactions",
-          "altEs": "Los primeros 5 minutos — git clone, pnpm install, pnpm dev, listo en 300 segundos con una app funcional e interacciones reales"
-        }
+      "dateCompleted": null,
+      "slides": [],
+      "videoUrl": null,
+      "videoPoster": null
+    },
+    {
+      "id": 1117217007,
+      "name": "ai-webscraper",
+      "title": "Ai Webscraper",
+      "description": "A full-stack web application for scraping websites with a React frontend, Python FastAPI backend, and Supabase for data storage.",
+      "summary": "| ![Login](.github/assets/ai-ws-login.jpg) | ![Report](.github/assets/ai-ws-analysis-report.jpg) |",
+      "url": "https://github.com/RCushmaniii/ai-webscraper",
+      "demoUrl": "https://ai-webscraper-tan.vercel.app",
+      "liveUrl": null,
+      "homepage": "https://ai-webscraper-tan.vercel.app",
+      "topics": [],
+      "categories": [],
+      "tags": [],
+      "stack": [],
+      "status": null,
+      "language": "Python",
+      "languages": {
+        "Python": 708198,
+        "TypeScript": 582615,
+        "PLpgSQL": 54863,
+        "Batchfile": 4338,
+        "JavaScript": 4239,
+        "CSS": 2874,
+        "HTML": 2608,
+        "Dockerfile": 525
+      },
+      "stars": 1,
+      "forks": 0,
+      "lastPushed": "2026-04-06T17:43:49Z",
+      "createdAt": "2025-12-16T02:09:11Z",
+      "isFeatured": false,
+      "isArchived": false,
+      "isPrivate": false,
+      "tagline": null,
+      "thumbnail": null,
+      "problem": null,
+      "solution": null,
+      "keyFeatures": [],
+      "metrics": [],
+      "priority": 99,
+      "dateCompleted": null,
+      "slides": [],
+      "videoUrl": null,
+      "videoPoster": null
+    },
+    {
+      "id": 1115984732,
+      "name": "nextjs-supabase-auth-starter",
+      "title": "Nextjs Supabase Auth Starter",
+      "description": "A production-ready Next.js + Supabase SaaS base scaffold with sane defaults and clear v1 boundaries.",
+      "summary": "A minimal, production-minded Next.js App Router starter focused on **Supabase Auth**, **SSR session refresh**, and an **RLS-first database posture**.",
+      "url": "https://github.com/RCushmaniii/nextjs-supabase-auth-starter",
+      "demoUrl": "https://nextjs-supabase-auth-starter.vercel.app",
+      "liveUrl": null,
+      "homepage": "https://nextjs-supabase-auth-starter.vercel.app",
+      "topics": [
+        "bilingual",
+        "magiclink",
+        "nextjs",
+        "starter-kit",
+        "supabase-auth"
       ],
-      "videoUrl": "https://cdn.cushlabs.ai/react-vite-tailwind-base/video/react-vite-tailwind-base-brief.mp4",
-      "videoPoster": "https://cdn.cushlabs.ai/react-vite-tailwind-base/video/react-vite-tailwind-base-brief-poster.jpg"
+      "categories": [],
+      "tags": [
+        "bilingual",
+        "magiclink",
+        "nextjs",
+        "starter-kit",
+        "supabase-auth"
+      ],
+      "stack": [],
+      "status": null,
+      "language": "TypeScript",
+      "languages": {
+        "TypeScript": 63730,
+        "PLpgSQL": 1895,
+        "JavaScript": 762,
+        "CSS": 114
+      },
+      "stars": 0,
+      "forks": 0,
+      "lastPushed": "2026-04-06T00:39:28Z",
+      "createdAt": "2025-12-14T00:31:03Z",
+      "isFeatured": false,
+      "isArchived": false,
+      "isPrivate": false,
+      "tagline": null,
+      "thumbnail": null,
+      "problem": null,
+      "solution": null,
+      "keyFeatures": [],
+      "metrics": [],
+      "priority": 99,
+      "dateCompleted": null,
+      "slides": [],
+      "videoUrl": null,
+      "videoPoster": null
+    },
+    {
+      "id": 1182112411,
+      "name": "cushlabs-cws-scrollytelling",
+      "title": "Cushlabs Cws Scrollytelling",
+      "description": "CushLabs Context Writing System — scrollytelling conversion narrative",
+      "summary": "> Cinematic scrollytelling conversion narrative for the CushLabs Context Writing System (CWS).",
+      "url": "https://github.com/RCushmaniii/cushlabs-cws-scrollytelling",
+      "demoUrl": "https://cushlabs-cws-scrollytelling.vercel.app",
+      "liveUrl": null,
+      "homepage": "https://cushlabs-cws-scrollytelling.vercel.app",
+      "topics": [
+        "astro",
+        "conversion",
+        "narrative-design",
+        "scrollytelling",
+        "svelte",
+        "tailwindcss",
+        "typescript",
+        "vercel"
+      ],
+      "categories": [],
+      "tags": [
+        "astro",
+        "conversion",
+        "narrative-design",
+        "scrollytelling",
+        "svelte",
+        "tailwindcss",
+        "typescript",
+        "vercel"
+      ],
+      "stack": [],
+      "status": null,
+      "language": "Svelte",
+      "languages": {
+        "Svelte": 133948,
+        "TypeScript": 26701,
+        "Astro": 14265,
+        "CSS": 4232,
+        "JavaScript": 1731,
+        "MDX": 1633
+      },
+      "stars": 0,
+      "forks": 0,
+      "lastPushed": "2026-04-06T00:39:00Z",
+      "createdAt": "2026-03-15T03:48:46Z",
+      "isFeatured": false,
+      "isArchived": false,
+      "isPrivate": false,
+      "tagline": null,
+      "thumbnail": null,
+      "problem": null,
+      "solution": null,
+      "keyFeatures": [],
+      "metrics": [],
+      "priority": 99,
+      "dateCompleted": null,
+      "slides": [],
+      "videoUrl": null,
+      "videoPoster": null
     },
     {
       "id": 1197866981,
