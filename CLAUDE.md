@@ -205,7 +205,7 @@ BaseLayout.astro automatically generates hreflang tags:
 
 ### Low Priority
 
-2. Additional structured data (FAQPage, HowTo schemas)
+2. Additional structured data (HowTo schema — FAQPage already implemented on both EN/ES FAQ pages)
 
 ### Resolved
 
