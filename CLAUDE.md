@@ -199,13 +199,10 @@ BaseLayout.astro automatically generates hreflang tags:
 
 ## Known Issues & TODOs
 
-### Medium Priority
-
-1. Some placeholder content in testimonials
-
 ### Low Priority
 
-2. Additional structured data (HowTo schema — FAQPage already implemented on both EN/ES FAQ pages)
+1. Additional structured data (HowTo schema — FAQPage already implemented on both EN/ES FAQ pages)
+2. Astro 4→6 + Tailwind 3→4 migration (major framework upgrade, requires dedicated effort)
 
 ### Resolved
 
@@ -214,6 +211,7 @@ BaseLayout.astro automatically generates hreflang tags:
 - ~~No error monitoring~~ — Sentry integrated with client-side tracking, source maps, and Crons monitoring for weekly sync
 - ~~No analytics~~ — Vercel Web Analytics installed and configured
 - ~~No tests~~ — 20 smoke tests (vitest) running in CI after every build
+- ~~Placeholder testimonials~~ — Real LinkedIn recommendation from Julio Cesar Aldana Gomez, bilingual EN/ES
 - ~~Dependabot vulnerabilities~~ — yaml CVE fixed via override, Astro/esbuild CVEs dismissed (static site, SSR-only vulnerabilities)
 - ~~Sitemap broken~~ — @astrojs/sitemap 3.2.1 installed and configured with i18n locales
 - ~~No og-image~~ — OG image exists at `public/images/og/cushlabs_logo_lt.jpg`
