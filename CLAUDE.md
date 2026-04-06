@@ -46,8 +46,8 @@
 
 ## Technical Architecture
 
-**Framework:** Astro 4.16.18 (Static Site Generation)
-**Styling:** Tailwind CSS 3.4.17
+**Framework:** Astro 6.1.4 (Static Site Generation)
+**Styling:** Tailwind CSS 4.2.2 (CSS-first config via @tailwindcss/vite)
 **Deployment:** Vercel-ready (Edge Functions for forms)
 **Output:** Static HTML
 
@@ -205,10 +205,12 @@ BaseLayout.astro automatically generates hreflang tags:
 
 ### Low Priority
 
-2. Additional structured data (HowTo schema — FAQPage already implemented on both EN/ES FAQ pages)
+1. Additional structured data (HowTo schema — FAQPage already implemented on both EN/ES FAQ pages)
 
 ### Resolved
 
+- ~~Astro 4 + Tailwind 3~~ — Migrated to Astro 6.1.4 + Tailwind CSS 4.2.2 with @tailwindcss/vite plugin, CSS-first @theme config
+- ~~Booking "No available times"~~ — CSP connect-src was missing the Cloudflare Worker domain; also added Sentry US region wildcard
 - ~~Pre-deploy audit script incomplete~~ — Fully working: env checks, i18n parity, typecheck, build, SEO audit (titles, descriptions, trailing slashes, orphan detection)
 - ~~Blog needs migration~~ — Blog removed entirely (pre-launch, no traffic, no content strategy). 301 redirects in place.
 - ~~No error monitoring~~ — Sentry integrated with client-side tracking, source maps, and Crons monitoring for weekly sync

@@ -110,15 +110,20 @@ describe('Sentry integration', () => {
 });
 
 describe('Analytics integration', () => {
-  it('Vercel Analytics is included in bundled JS', () => {
+  it('Vercel Analytics is included in build output', () => {
+    // Astro 6 may inline scripts into HTML rather than bundling into _astro/*.js
+    const homeHtml = readFileSync(join(DIST, 'index.html'), 'utf-8');
+    const inHtml = homeHtml.includes('vercel') || homeHtml.includes('va.vercel');
+
     const { readdirSync } = require('fs');
     const astroDir = join(DIST, '_astro');
     const jsFiles = readdirSync(astroDir).filter((f: string) => f.endsWith('.js'));
-    const hasVercel = jsFiles.some((f: string) => {
+    const inJs = jsFiles.some((f: string) => {
       const content = readFileSync(join(astroDir, f), 'utf-8');
       return content.includes('vercel') || content.includes('va.vercel');
     });
-    expect(hasVercel).toBe(true);
+
+    expect(inHtml || inJs).toBe(true);
   });
 });
 
