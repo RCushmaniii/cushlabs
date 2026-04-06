@@ -2,11 +2,14 @@ import { spawn } from "node:child_process";
 import { readFile, readdir, stat } from "node:fs/promises";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
+import { config } from "dotenv";
+
+config();
 
 type AuditLevel = "OK" | "WARN" | "FAIL";
 
 const cwd = process.cwd();
-const npmCmd = process.platform === "win32" ? "npm.cmd" : "npm";
+const isWin = process.platform === "win32";
 
 function color(level: AuditLevel, text: string) {
   if (!process.stdout.isTTY) return text;
@@ -27,7 +30,7 @@ function log(level: AuditLevel, title: string, details?: string) {
 function run(command: string, args: string[], title: string) {
   return new Promise<void>((resolve, reject) => {
     log("OK", title);
-    const child = spawn(command, args, { cwd, stdio: "inherit" });
+    const child = spawn(command, args, { cwd, stdio: "inherit", shell: isWin });
     child.on("error", (err) => reject(err));
     child.on("exit", (code) => {
       if (code === 0) resolve();
@@ -122,14 +125,15 @@ function keyPaths(obj: unknown, prefix = ""): string[] {
 }
 
 async function checkEnv() {
-  const required: string[] = ["GITHUB_TOKEN", "GITHUB_OWNER"];
-  const missing = required.filter((k) => !getEnv(k));
+  // generate-projects.ts uses PROJECT_SYNC_TOKEN || GITHUB_TOKEN for auth
+  // and defaults GITHUB_OWNER to 'RCushmaniii' if unset
+  const hasGitHubToken = !!(getEnv("PROJECT_SYNC_TOKEN") || getEnv("GITHUB_TOKEN"));
 
-  if (missing.length) {
+  if (!hasGitHubToken) {
     log(
       "FAIL",
-      "Missing required environment variables",
-      missing.map((k) => `- ${k}`).join("\n")
+      "Missing GitHub token",
+      "Set PROJECT_SYNC_TOKEN or GITHUB_TOKEN for portfolio sync"
     );
     return false;
   }
@@ -541,14 +545,14 @@ async function main() {
   ok = (await checkI18nParity()) && ok;
 
   try {
-    await run(npmCmd, ["run", "astro", "--", "check"], "Typecheck (astro check)");
+    await run("npm", ["run", "astro", "--", "check"], "Typecheck (astro check)");
   } catch (e) {
     log("FAIL", "astro check failed", String(e));
     ok = false;
   }
 
   try {
-    await run(npmCmd, ["run", "build"], "Build (npm run build)");
+    await run("npm", ["run", "build"], "Build (npm run build)");
   } catch (e) {
     log("FAIL", "Build failed", String(e));
     ok = false;
