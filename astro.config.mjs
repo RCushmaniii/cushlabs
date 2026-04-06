@@ -1,5 +1,5 @@
 import { defineConfig } from 'astro/config';
-import tailwind from '@astrojs/tailwind';
+import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
 import sentry from '@sentry/astro';
 
@@ -44,8 +44,10 @@ function getChangefreq(url) {
 }
 
 export default defineConfig({
+  vite: {
+    plugins: [tailwindcss()],
+  },
   integrations: [
-    tailwind(),
     sentry({
       sourceMapsUploadOptions: {
         project: process.env.SENTRY_PROJECT,

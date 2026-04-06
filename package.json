@@ -21,15 +21,15 @@
     "generate:skills": "tsx scripts/generate-skills.ts"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.6",
-    "@astrojs/sitemap": "3.2.1",
-    "@astrojs/tailwind": "^5.1.2",
+    "@astrojs/check": "^0.9.8",
+    "@astrojs/sitemap": "^3.7.2",
     "@sentry/astro": "^10.47.0",
     "@sentry/node": "^10.47.0",
+    "@tailwindcss/vite": "^4.2.2",
     "@vercel/analytics": "^2.0.1",
-    "astro": "^4.16.18",
+    "astro": "^6.1.4",
     "googleapis": "^171.4.0",
-    "tailwindcss": "^3.4.17"
+    "tailwindcss": "^4.2.2"
   },
   "overrides": {
     "yaml": ">=2.8.3"
