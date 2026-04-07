@@ -47,7 +47,7 @@ const bookingStrings = {
             <p class="mt-2 text-muted">{dict.consultation.flowSubtitle}</p>
           </div>
           <div
-            class="hidden md:flex shrink-0 items-center gap-2 rounded-xl border border-border bg-base/40 px-3 py-2"
+            class="hidden md:flex shrink-0 items-center gap-2 rounded-xl border border-border bg-canvas/40 px-3 py-2"
             aria-live="polite"
           >
             <span
@@ -66,7 +66,7 @@ const bookingStrings = {
           aria-label={dict.consultation.flowStepsLabel}
         >
           <li
-            class="rounded-xl border border-border bg-base/40 p-4"
+            class="rounded-xl border border-border bg-canvas/40 p-4"
             data-flow-step-indicator
             data-step="1"
           >
@@ -80,7 +80,7 @@ const bookingStrings = {
             </p>
           </li>
           <li
-            class="rounded-xl border border-border bg-base/40 p-4 opacity-70"
+            class="rounded-xl border border-border bg-canvas/40 p-4 opacity-70"
             data-flow-step-indicator
             data-step="2"
           >
@@ -94,7 +94,7 @@ const bookingStrings = {
             </p>
           </li>
           <li
-            class="rounded-xl border border-border bg-base/40 p-4 opacity-70"
+            class="rounded-xl border border-border bg-canvas/40 p-4 opacity-70"
             data-flow-step-indicator
             data-step="3"
           >
@@ -108,7 +108,7 @@ const bookingStrings = {
             </p>
           </li>
           <li
-            class="rounded-xl border border-border bg-base/40 p-4 opacity-70"
+            class="rounded-xl border border-border bg-canvas/40 p-4 opacity-70"
             data-flow-step-indicator
             data-step="4"
           >
@@ -208,7 +208,7 @@ const bookingStrings = {
                   type="text"
                   autocomplete="name"
                   required
-                  class="mt-2 w-full rounded-xl border border-border bg-base/40 px-4 py-3 text-sm text-foreground placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-cush-orange/40"
+                  class="mt-2 w-full rounded-xl border border-border bg-canvas/40 px-4 py-3 text-sm text-foreground placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-cush-orange/40"
                 />
               </div>
               <div>
@@ -224,7 +224,7 @@ const bookingStrings = {
                   type="email"
                   autocomplete="email"
                   required
-                  class="mt-2 w-full rounded-xl border border-border bg-base/40 px-4 py-3 text-sm text-foreground placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-cush-orange/40"
+                  class="mt-2 w-full rounded-xl border border-border bg-canvas/40 px-4 py-3 text-sm text-foreground placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-cush-orange/40"
                 />
               </div>
             </div>
@@ -245,7 +245,7 @@ const bookingStrings = {
                 type="tel"
                 autocomplete="tel"
                 aria-describedby="phone-hint"
-                class="mt-2 w-full rounded-xl border border-border bg-base/40 px-4 py-3 text-sm text-foreground placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-cush-orange/40"
+                class="mt-2 w-full rounded-xl border border-border bg-canvas/40 px-4 py-3 text-sm text-foreground placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-cush-orange/40"
               />
             </div>
 
@@ -285,7 +285,7 @@ const bookingStrings = {
                 name="notes"
                 rows={6}
                 aria-describedby="notes-hint"
-                class="mt-2 w-full rounded-xl border border-border bg-base/40 px-4 py-3 text-sm text-foreground placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-cush-orange/40"
+                class="mt-2 w-full rounded-xl border border-border bg-canvas/40 px-4 py-3 text-sm text-foreground placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-cush-orange/40"
               ></textarea>
             </div>
 
@@ -322,7 +322,7 @@ const bookingStrings = {
 
               <div data-booking-container>
                 <div class="p-6 md:p-8">
-                  <div class="rounded-xl border border-border bg-base/40 p-5">
+                  <div class="rounded-xl border border-border bg-canvas/40 p-5">
                     <p class="text-muted">
                       {dict.consultation.bookingSelectDurationFirst}
                     </p>
@@ -339,7 +339,7 @@ const bookingStrings = {
                       (locale === "es" ? "/es/contact" : "/contact")}
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="inline-flex items-center justify-center rounded-xl border border-border bg-base/40 px-5 py-3 text-sm font-display font-semibold text-foreground hover:border-cush-orange hover:text-cush-orange transition-colors"
+                    class="inline-flex items-center justify-center rounded-xl border border-border bg-canvas/40 px-5 py-3 text-sm font-display font-semibold text-foreground hover:border-cush-orange hover:text-cush-orange transition-colors"
                   >
                     {dict.consultation.openInNewTab}
                   </a>
@@ -363,7 +363,7 @@ const bookingStrings = {
                     data-u={emailUser}
                     data-d={emailDomain}
                     data-s={encodeURIComponent(dict.consultation.emailSubject)}
-                    class="inline-flex items-center justify-center rounded-xl border border-border bg-base/40 px-5 py-3 text-sm font-display font-semibold text-foreground hover:opacity-90 transition-opacity"
+                    class="inline-flex items-center justify-center rounded-xl border border-border bg-canvas/40 px-5 py-3 text-sm font-display font-semibold text-foreground hover:opacity-90 transition-opacity"
                   >
                     {dict.consultation.email}
                   </a>
@@ -416,7 +416,7 @@ const bookingStrings = {
         <p class="mt-2 text-muted">{dict.consultation.sidebarSubtitle}</p>
 
         <dl class="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-3 lg:grid-cols-1">
-          <div class="rounded-xl border border-border bg-base/40 p-4">
+          <div class="rounded-xl border border-border bg-canvas/40 p-4">
             <dt
               class="text-xs font-display font-semibold uppercase tracking-wider text-muted"
             >
@@ -426,7 +426,7 @@ const bookingStrings = {
               {dict.consultation.detail1Value}
             </dd>
           </div>
-          <div class="rounded-xl border border-border bg-base/40 p-4">
+          <div class="rounded-xl border border-border bg-canvas/40 p-4">
             <dt
               class="text-xs font-display font-semibold uppercase tracking-wider text-muted"
             >
@@ -436,7 +436,7 @@ const bookingStrings = {
               {dict.consultation.detail2Value}
             </dd>
           </div>
-          <div class="rounded-xl border border-border bg-base/40 p-4">
+          <div class="rounded-xl border border-border bg-canvas/40 p-4">
             <dt
               class="text-xs font-display font-semibold uppercase tracking-wider text-muted"
             >
@@ -448,7 +448,7 @@ const bookingStrings = {
           </div>
         </dl>
 
-        <div class="mt-6 rounded-xl border border-border bg-base/40 p-5">
+        <div class="mt-6 rounded-xl border border-border bg-canvas/40 p-5">
           <p class="text-sm text-muted">{dict.consultation.flowPrivacyNote}</p>
         </div>
       </div>
