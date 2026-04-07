@@ -148,7 +148,7 @@ function initForm(form: HTMLFormElement) {
     if (!bookingUrl) {
       bookingContainer.innerHTML = `
         <div class="p-6 md:p-8">
-          <div class="rounded-xl border border-border bg-base/40 p-5">
+          <div class="rounded-xl border border-border bg-canvas/40 p-5">
             <p class="text-muted">${cfg.bookingStrings.noEmbed}</p>
           </div>
         </div>
@@ -157,7 +157,7 @@ function initForm(form: HTMLFormElement) {
     }
 
     bookingContainer.innerHTML = `
-      <div class="bg-base">
+      <div class="bg-canvas">
         <iframe
           src="${bookingUrl}"
           title="${cfg.bookingStrings.iframeTitle}"

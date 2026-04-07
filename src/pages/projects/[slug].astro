@@ -160,7 +160,7 @@ const relatedProjects = scored.slice(0, 3).map(s => s.project);
             }
             {
               project.status && (
-                <span class="px-2 py-1 text-xs font-display font-semibold rounded uppercase tracking-wide bg-base/40 border border-border text-muted">
+                <span class="px-2 py-1 text-xs font-display font-semibold rounded uppercase tracking-wide bg-canvas/40 border border-border text-muted">
                   {project.status}
                 </span>
               )
@@ -190,7 +190,7 @@ const relatedProjects = scored.slice(0, 3).map(s => s.project);
               href={codeUrl}
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center justify-center gap-2 rounded-lg border border-border bg-base/40 px-5 py-3 text-sm font-display font-semibold text-foreground hover:opacity-90 transition-opacity"
+              class="inline-flex items-center justify-center gap-2 rounded-lg border border-border bg-canvas/40 px-5 py-3 text-sm font-display font-semibold text-foreground hover:opacity-90 transition-opacity"
             >
               {dict.project.sourceCode}
               <span aria-hidden="true">↗</span>
@@ -280,7 +280,7 @@ const relatedProjects = scored.slice(0, 3).map(s => s.project);
                   <div id="slider-track" class="flex transition-transform duration-300 ease-in-out">
                     {images.map((img, i) => (
                       <div class="w-full flex-shrink-0 p-4 md:p-6">
-                        <figure class="rounded-xl border border-border bg-base/40 overflow-hidden">
+                        <figure class="rounded-xl border border-border bg-canvas/40 overflow-hidden">
                           <img
                             src={i === 0 ? img.src : undefined}
                             data-src={img.src}
@@ -396,7 +396,7 @@ const relatedProjects = scored.slice(0, 3).map(s => s.project);
                   {dict.project.highlights}
                 </h2>
                 <div class="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2">
-                  <div class="rounded-xl border border-border bg-base/40 p-5">
+                  <div class="rounded-xl border border-border bg-canvas/40 p-5">
                     <h3 class="font-display text-lg font-bold text-foreground">
                       {dict.project.goodFor}
                     </h3>
@@ -406,7 +406,7 @@ const relatedProjects = scored.slice(0, 3).map(s => s.project);
                       ))}
                     </ul>
                   </div>
-                  <div class="rounded-xl border border-border bg-base/40 p-5">
+                  <div class="rounded-xl border border-border bg-canvas/40 p-5">
                     <h3 class="font-display text-lg font-bold text-foreground">
                       {dict.project.notFor}
                     </h3>
@@ -418,7 +418,7 @@ const relatedProjects = scored.slice(0, 3).map(s => s.project);
                   </div>
                 </div>
 
-                <div class="mt-6 rounded-xl border border-border bg-base/40 p-5">
+                <div class="mt-6 rounded-xl border border-border bg-canvas/40 p-5">
                   <h3 class="font-display text-lg font-bold text-foreground">
                     {dict.project.whatYouGet}
                   </h3>
@@ -442,7 +442,7 @@ const relatedProjects = scored.slice(0, 3).map(s => s.project);
               {
                 tech.length ? (
                   tech.map((tag) => (
-                    <span class="px-2 py-1 bg-base/40 border border-border rounded text-xs text-muted font-display">
+                    <span class="px-2 py-1 bg-canvas/40 border border-border rounded text-xs text-muted font-display">
                       {tag}
                     </span>
                   ))
@@ -463,7 +463,7 @@ const relatedProjects = scored.slice(0, 3).map(s => s.project);
                   topics
                     .slice(0, 16)
                     .map((tag) => (
-                      <span class="px-2 py-1 bg-base/40 border border-border rounded text-xs text-muted font-display">
+                      <span class="px-2 py-1 bg-canvas/40 border border-border rounded text-xs text-muted font-display">
                         {tag}
                       </span>
                     ))

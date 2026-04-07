@@ -32,8 +32,10 @@
 }
 
 /* ── Semantic colors that change with theme ── */
+/* NOTE: avoid color names that collide with built-in Tailwind utilities.
+   `--color-base` would override `text-base` (font-size), so we use `--color-canvas`. */
 @theme inline {
-  --color-base: rgb(var(--bg));
+  --color-canvas: rgb(var(--bg));
   --color-foreground: rgb(var(--fg));
   --color-muted: rgb(var(--muted));
   --color-surface: rgb(var(--surface));
