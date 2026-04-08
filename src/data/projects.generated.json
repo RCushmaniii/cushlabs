@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-04-06T19:06:37.605Z",
-  "count": 36,
+  "generatedAt": "2026-04-08T02:23:07.891Z",
+  "count": 37,
   "projects": [
     {
       "id": 1108213747,
@@ -146,7 +146,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-04-06T00:54:57Z",
+      "lastPushed": "2026-04-06T19:50:05Z",
       "createdAt": "2026-02-23T01:31:09Z",
       "isFeatured": true,
       "isArchived": false,
@@ -166,12 +166,12 @@
     {
       "id": 1196535593,
       "name": "cushlabs-marketsignal",
-      "title": "Cushlabs Marketsignal",
+      "title": "MarketSignal — AI-Powered Local Competitive Intelligence",
       "description": "AI-powered local competitive intelligence platform. Monitors Google Maps rankings, reviews, and competitor activity for multi-location businesses — delivering weekly insights via WhatsApp.",
       "summary": "> AI-powered local competitive intelligence for multi-location businesses.",
       "url": "https://github.com/RCushmaniii/cushlabs-marketsignal",
       "demoUrl": null,
-      "liveUrl": null,
+      "liveUrl": "",
       "homepage": null,
       "topics": [
         "ai-analytics",
@@ -188,7 +188,9 @@
         "saas",
         "whatsapp-api"
       ],
-      "categories": [],
+      "categories": [
+        "AI Automation"
+      ],
       "tags": [
         "ai-analytics",
         "business-intelligence",
@@ -202,13 +204,28 @@
         "playwright",
         "review-monitoring",
         "saas",
-        "whatsapp-api"
+        "whatsapp-api",
+        "ai-analysis",
+        "whatsapp",
+        "multi-location",
+        "next-js",
+        "drizzle-orm"
       ],
-      "stack": [],
+      "stack": [
+        "Next.js 15 (App Router)",
+        "React 19",
+        "Tailwind CSS 4",
+        "Neon (serverless PostgreSQL)",
+        "Drizzle ORM",
+        "Claude API (Sonnet)",
+        "WhatsApp Business API",
+        "Playwright",
+        "TypeScript"
+      ],
       "status": null,
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 450509,
+        "TypeScript": 538216,
         "HTML": 29745,
         "CSS": 3586,
         "Dockerfile": 1126,
@@ -216,22 +233,73 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-04-06T19:02:06Z",
+      "lastPushed": "2026-04-06T21:53:02Z",
       "createdAt": "2026-03-30T19:46:00Z",
       "isFeatured": true,
       "isArchived": false,
       "isPrivate": true,
-      "tagline": null,
-      "thumbnail": null,
-      "problem": null,
+      "tagline": "Monitor Google Maps rankings, reviews, and competitor activity — delivered weekly via WhatsApp",
+      "thumbnail": "https://cdn.cushlabs.ai/cushlabs-marketsignal/portfolio/marketsignal/thumb-en.webp",
+      "problem": "Local businesses in Mexico have no affordable way to systematically track their\nGoogle Maps rankings, monitor competitor activity, or receive actionable insights.\nThey rely on gut instinct or expensive enterprise tools that don't support the\nMexican market. MarketSignal fills that gap with AI-powered weekly reports\ndelivered directly to WhatsApp.\n",
       "solution": null,
-      "keyFeatures": [],
+      "keyFeatures": [
+        "Weekly competitive intelligence reports for 3-5 pilot clients",
+        "Week-over-week ranking and review delta tracking per location",
+        "AI-generated action items with specific, high-impact recommendations",
+        "WhatsApp delivery — reports land where clients already communicate"
+      ],
       "metrics": [],
       "priority": 4,
       "dateCompleted": null,
-      "slides": [],
-      "videoUrl": null,
-      "videoPoster": null
+      "slides": [
+        {
+          "src": "https://cdn.cushlabs.ai/cushlabs-marketsignal/portfolio/marketsignal/marketsignal-01.webp",
+          "altEn": "MarketSignal dashboard — competitive intelligence overview",
+          "altEs": "Dashboard MarketSignal — resumen de inteligencia competitiva"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/cushlabs-marketsignal/portfolio/marketsignal/marketsignal-02.webp",
+          "altEn": "Google Maps ranking tracker with week-over-week deltas",
+          "altEs": "Rastreador de rankings en Google Maps con deltas semana a semana"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/cushlabs-marketsignal/portfolio/marketsignal/marketsignal-03.webp",
+          "altEn": "AI-generated weekly intelligence report",
+          "altEs": "Reporte semanal de inteligencia generado por IA"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/cushlabs-marketsignal/portfolio/marketsignal/marketsignal-04.webp",
+          "altEn": "Competitor review velocity monitoring",
+          "altEs": "Monitoreo de velocidad de resenas de competidores"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/cushlabs-marketsignal/portfolio/marketsignal/marketsignal-05.webp",
+          "altEn": "WhatsApp report delivery with actionable recommendations",
+          "altEs": "Entrega de reportes por WhatsApp con recomendaciones accionables"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/cushlabs-marketsignal/portfolio/marketsignal/marketsignal-06.webp",
+          "altEn": "Multi-location competitive landscape view",
+          "altEs": "Vista del panorama competitivo multi-ubicacion"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/cushlabs-marketsignal/portfolio/marketsignal/marketsignal-07.webp",
+          "altEn": "Organization management and data isolation",
+          "altEs": "Gestion de organizaciones y aislamiento de datos"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/cushlabs-marketsignal/portfolio/marketsignal/marketsignal-08.webp",
+          "altEn": "Report status flow — Draft to Delivered tracking",
+          "altEs": "Flujo de estado de reportes — seguimiento de Borrador a Entregado"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/cushlabs-marketsignal/portfolio/marketsignal/marketsignal-09.webp",
+          "altEn": "AI analysis configuration and Claude API integration",
+          "altEs": "Configuracion de analisis IA e integracion con API de Claude"
+        }
+      ],
+      "videoUrl": "https://cdn.cushlabs.ai/cushlabs-marketsignal/portfolio/marketsignal/brief.mp4",
+      "videoPoster": "https://cdn.cushlabs.ai/cushlabs-marketsignal/portfolio/marketsignal/brief-poster.webp"
     },
     {
       "id": 1200918707,
@@ -369,7 +437,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-04-06T02:28:56Z",
+      "lastPushed": "2026-04-07T19:10:19Z",
       "createdAt": "2026-03-17T18:08:51Z",
       "isFeatured": true,
       "isArchived": false,
@@ -495,8 +563,8 @@
       "status": "Production",
       "language": "Astro",
       "languages": {
-        "Astro": 1460697,
-        "TypeScript": 983790,
+        "Astro": 1528530,
+        "TypeScript": 1074452,
         "HTML": 836066,
         "JavaScript": 399742,
         "CSS": 40875,
@@ -506,7 +574,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-04-06T17:47:53Z",
+      "lastPushed": "2026-04-08T02:19:14Z",
       "createdAt": "2025-03-23T03:27:14Z",
       "isFeatured": true,
       "isArchived": false,
@@ -915,7 +983,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-04-06T05:52:33Z",
+      "lastPushed": "2026-04-07T00:05:43Z",
       "createdAt": "2025-11-05T18:11:38Z",
       "isFeatured": true,
       "isArchived": false,
@@ -1695,13 +1763,13 @@
       "status": "Production",
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 93476,
+        "TypeScript": 106414,
         "CSS": 5485,
         "JavaScript": 559
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-04-06T02:40:56Z",
+      "lastPushed": "2026-04-06T23:14:01Z",
       "createdAt": "2026-02-13T19:55:19Z",
       "isFeatured": false,
       "isArchived": false,
@@ -1777,12 +1845,12 @@
     {
       "id": 1130115840,
       "name": "cushlabs",
-      "title": "Cushlabs",
+      "title": "CushLabs.ai",
       "description": "AI consulting and software development for SMBs — bilingual (EN/ES) site built with Astro + Tailwind CSS",
       "summary": "> AI consulting and software development for SMBs. Bilingual (EN/ES) business site with automated GitHub portfolio sync and serverless booking.",
       "url": "https://github.com/RCushmaniii/cushlabs",
       "demoUrl": "https://cushlabs.ai",
-      "liveUrl": null,
+      "liveUrl": "https://cushlabs.ai",
       "homepage": "https://cushlabs.ai",
       "topics": [
         "ai-consulting",
@@ -1792,43 +1860,119 @@
         "static-site",
         "tailwindcss"
       ],
-      "categories": [],
+      "categories": [
+        "Tools"
+      ],
       "tags": [
         "ai-consulting",
         "astro",
         "bilingual",
         "cushlabs",
         "static-site",
-        "tailwindcss"
+        "tailwindcss",
+        "tailwind",
+        "typescript",
+        "i18n",
+        "cloudflare-workers",
+        "google-calendar",
+        "github-actions",
+        "seo",
+        "serverless"
       ],
-      "stack": [],
+      "stack": [
+        "Astro 6.1",
+        "TypeScript 5.9",
+        "Tailwind CSS 4.2",
+        "Cloudflare Workers",
+        "Google Calendar API",
+        "GitHub Actions",
+        "JSON-LD"
+      ],
       "status": null,
       "language": "Astro",
       "languages": {
-        "Astro": 454580,
-        "TypeScript": 322198,
+        "Astro": 454853,
+        "TypeScript": 322202,
         "HTML": 61067,
         "JavaScript": 56424,
-        "CSS": 4492
+        "CSS": 4657
       },
       "stars": 2,
       "forks": 0,
-      "lastPushed": "2026-04-06T18:55:43Z",
+      "lastPushed": "2026-04-07T17:07:14Z",
       "createdAt": "2026-01-08T03:52:43Z",
       "isFeatured": false,
       "isArchived": false,
       "isPrivate": false,
-      "tagline": null,
-      "thumbnail": null,
-      "problem": null,
+      "tagline": "Self-maintaining bilingual portfolio with serverless booking and build-time i18n enforcement",
+      "thumbnail": "/images/portfolio/cushlabs-thumb.webp",
+      "problem": "Bilingual marketing sites go stale the moment you stop manually updating them. Portfolio pages die after 3-4 projects because maintenance costs multiply across languages. Third-party booking widgets break design consistency and add monthly fees. And static sites — while fast and cheap — traditionally can't handle dynamic features like scheduling without a full backend.\n",
       "solution": null,
-      "keyFeatures": [],
+      "keyFeatures": [
+        "27+ portfolio projects synced automatically from GitHub with zero manual data entry",
+        "0 KB i18n runtime overhead — 24-line custom system replaces 40KB+ i18next",
+        "6 automated pre-deploy checks enforcing bilingual parity, secret scanning, and build validation",
+        "Sub-second page loads with static HTML edge-cached globally",
+        "$0/month booking system via Cloudflare Workers replacing $8-16/month Calendly",
+        "100% EN/ES content parity enforced at build time — no language drift"
+      ],
       "metrics": [],
       "priority": 21,
       "dateCompleted": null,
-      "slides": [],
-      "videoUrl": null,
-      "videoPoster": null
+      "slides": [
+        {
+          "src": "/images/portfolio/cushlabs-01.webp",
+          "altEn": "CushLabs.ai",
+          "altEs": "CushLabs.ai"
+        },
+        {
+          "src": "/images/portfolio/cushlabs-02.webp",
+          "altEn": "CushLabs.ai",
+          "altEs": "CushLabs.ai"
+        },
+        {
+          "src": "/images/portfolio/cushlabs-03.webp",
+          "altEn": "CushLabs.ai",
+          "altEs": "CushLabs.ai"
+        },
+        {
+          "src": "/images/portfolio/cushlabs-04.webp",
+          "altEn": "CushLabs.ai",
+          "altEs": "CushLabs.ai"
+        },
+        {
+          "src": "/images/portfolio/cushlabs-05.webp",
+          "altEn": "CushLabs.ai",
+          "altEs": "CushLabs.ai"
+        },
+        {
+          "src": "/images/portfolio/cushlabs-06.webp",
+          "altEn": "CushLabs.ai",
+          "altEs": "CushLabs.ai"
+        },
+        {
+          "src": "/images/portfolio/cushlabs-07.webp",
+          "altEn": "CushLabs.ai",
+          "altEs": "CushLabs.ai"
+        },
+        {
+          "src": "/images/portfolio/cushlabs-08.webp",
+          "altEn": "CushLabs.ai",
+          "altEs": "CushLabs.ai"
+        },
+        {
+          "src": "/images/portfolio/cushlabs-09.webp",
+          "altEn": "CushLabs.ai",
+          "altEs": "CushLabs.ai"
+        },
+        {
+          "src": "/images/portfolio/cushlabs-10.webp",
+          "altEn": "CushLabs.ai",
+          "altEs": "CushLabs.ai"
+        }
+      ],
+      "videoUrl": "/images/portfolio/cushlabs-brief.mp4",
+      "videoPoster": "/images/portfolio/cushlabs-brief-poster.webp"
     },
     {
       "id": 1128388603,
@@ -1887,7 +2031,7 @@
       },
       "stars": 1,
       "forks": 0,
-      "lastPushed": "2026-04-06T18:12:35Z",
+      "lastPushed": "2026-04-07T19:11:32Z",
       "createdAt": "2026-01-05T15:06:48Z",
       "isFeatured": false,
       "isArchived": false,
@@ -2027,7 +2171,7 @@
       },
       "stars": 1,
       "forks": 0,
-      "lastPushed": "2026-04-06T02:39:40Z",
+      "lastPushed": "2026-04-06T22:24:17Z",
       "createdAt": "2025-09-23T19:15:28Z",
       "isFeatured": false,
       "isArchived": false,
@@ -2215,12 +2359,12 @@
     {
       "id": 1133839610,
       "name": "ai-filesense-website",
-      "title": "Ai Filesense Website",
+      "title": "AI FileSense Website",
       "description": "Marketing website for AI FileSense - An ai-powered local file organization system for Windows. Landing page, downloads, privacy policy, terms of service, and changelog.",
       "summary": "**Marketing website for AI FileSense — the Windows desktop app that organizes your files locally using Claude AI.**",
       "url": "https://github.com/RCushmaniii/ai-filesense-website",
-      "demoUrl": "https://ai-filesense-website.vercel.app",
-      "liveUrl": null,
+      "demoUrl": "https://ai-filesense-website.vercel.app/",
+      "liveUrl": "https://ai-filesense-website.vercel.app",
       "homepage": "https://ai-filesense-website.vercel.app",
       "topics": [
         "ai",
@@ -2235,7 +2379,9 @@
         "typescript",
         "windows-app"
       ],
-      "categories": [],
+      "categories": [
+        "Marketing"
+      ],
       "tags": [
         "ai",
         "claude-ai",
@@ -2247,10 +2393,24 @@
         "resend-email",
         "tailwind-css",
         "typescript",
-        "windows-app"
+        "windows-app",
+        "tailwind",
+        "bilingual",
+        "seo",
+        "resend",
+        "marketing",
+        "software-distribution"
       ],
-      "stack": [],
-      "status": null,
+      "stack": [
+        "Next.js 16",
+        "React 19",
+        "TypeScript",
+        "Tailwind CSS",
+        "next-intl",
+        "Resend",
+        "Sentry"
+      ],
+      "status": "Production",
       "language": "TypeScript",
       "languages": {
         "TypeScript": 202021,
@@ -2260,22 +2420,74 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-04-06T17:37:29Z",
+      "lastPushed": "2026-04-06T20:17:50Z",
       "createdAt": "2026-01-13T22:16:37Z",
       "isFeatured": false,
       "isArchived": false,
       "isPrivate": false,
-      "tagline": null,
-      "thumbnail": null,
-      "problem": null,
-      "solution": null,
-      "keyFeatures": [],
-      "metrics": [],
+      "tagline": "Bilingual marketing site with Lighthouse 100 and lead capture",
+      "thumbnail": "https://cdn.cushlabs.ai/ai-filesense-website/images/portfolio/ai-filesense-website-thumb.jpg",
+      "problem": "Most indie software developers and small businesses ship a desktop app and then have nothing — no discoverability, no trust signals, no bilingual reach, no support system, and no conversion path. A download link with no context doesn't convert visitors into users.",
+      "solution": "A 17-page bilingual marketing and support website that handles everything between 'I built an app' and 'I have a business' — SEO-optimized, conversion-focused, with a working contact/lead system and a complete support hub.",
+      "keyFeatures": [
+        "17 pages across 7 sections — full marketing funnel from homepage to terms of service",
+        "Bilingual from day one (EN + ES-MX) — locale-based routing with hreflang sitemap alternates",
+        "Working contact/lead capture — Zod + React Hook Form + Server Actions + Resend + honeypot spam protection",
+        "Complete support hub — Getting Started guide, 11-question FAQ, validated contact form",
+        "Production SEO — dynamic metadata, auto-generated sitemap, Open Graph cards, canonical URLs"
+      ],
+      "metrics": [
+        "17 pages across 7 sections covering the full product lifecycle",
+        "Lighthouse 100 Performance, 100 Best Practices, 92 SEO, 92 Accessibility",
+        "0.3s FCP, 0.4s LCP, 0ms TBT — zero layout shift",
+        "Auto-generated sitemap with hreflang alternates for 30+ locale-specific URLs"
+      ],
       "priority": 26,
-      "dateCompleted": null,
-      "slides": [],
-      "videoUrl": null,
-      "videoPoster": null
+      "dateCompleted": "2026-02",
+      "slides": [
+        {
+          "src": "https://cdn.cushlabs.ai/ai-filesense-website/images/portfolio/ai-filesense-website-01.webp",
+          "altEn": "Homepage hero with video explainer and download CTA",
+          "altEs": "Hero de la pagina principal con video explicativo y boton de descarga"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/ai-filesense-website/images/portfolio/ai-filesense-website-02.webp",
+          "altEn": "How It Works — 3-step process breakdown",
+          "altEs": "Como Funciona — desglose del proceso en 3 pasos"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/ai-filesense-website/images/portfolio/ai-filesense-website-03.webp",
+          "altEn": "Features section with trust signals",
+          "altEs": "Seccion de caracteristicas con senales de confianza"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/ai-filesense-website/images/portfolio/ai-filesense-website-04.webp",
+          "altEn": "The 12-Folder Smart System overview",
+          "altEs": "Vista general del Sistema Inteligente de 12 Carpetas"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/ai-filesense-website/images/portfolio/ai-filesense-website-05.webp",
+          "altEn": "Features page — differentiators and competitive advantages",
+          "altEs": "Pagina de caracteristicas — diferenciadores y ventajas competitivas"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/ai-filesense-website/images/portfolio/ai-filesense-website-06.webp",
+          "altEn": "Support hub with Getting Started guide",
+          "altEs": "Centro de soporte con guia de inicio"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/ai-filesense-website/images/portfolio/ai-filesense-website-07.webp",
+          "altEn": "Download page with system requirements and quick-start",
+          "altEs": "Pagina de descarga con requisitos del sistema e inicio rapido"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/ai-filesense-website/images/portfolio/ai-filesense-website-08.webp",
+          "altEn": "Dark mode — full theme support across all pages",
+          "altEs": "Modo oscuro — soporte completo de temas en todas las paginas"
+        }
+      ],
+      "videoUrl": "https://cdn.cushlabs.ai/ai-filesense-website/videos/AI-FileSense-Website-brief.mp4",
+      "videoPoster": "https://cdn.cushlabs.ai/ai-filesense-website/images/portfolio/AI-FileSense-Website-brief-poster.jpg"
     },
     {
       "id": 1140204033,
@@ -2410,7 +2622,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-04-06T00:39:19Z",
+      "lastPushed": "2026-04-07T00:00:16Z",
       "createdAt": "2026-02-10T04:11:19Z",
       "isFeatured": false,
       "isArchived": false,
@@ -2514,7 +2726,7 @@
       },
       "stars": 2,
       "forks": 0,
-      "lastPushed": "2026-04-06T00:39:23Z",
+      "lastPushed": "2026-04-06T23:04:50Z",
       "createdAt": "2025-10-02T22:40:01Z",
       "isFeatured": false,
       "isArchived": false,
@@ -2526,6 +2738,44 @@
       "keyFeatures": [],
       "metrics": [],
       "priority": 31,
+      "dateCompleted": null,
+      "slides": [],
+      "videoUrl": null,
+      "videoPoster": null
+    },
+    {
+      "id": 1203303335,
+      "name": "ny-english-messenger-bot",
+      "title": "Ny English Messenger Bot",
+      "description": "Facebook Messenger AI assistant for CushLabs — Claude on Cloudflare Workers",
+      "summary": "Facebook Messenger AI assistant for the **New York English** Facebook page, powered by Claude on Cloudflare Workers.",
+      "url": "https://github.com/RCushmaniii/ny-english-messenger-bot",
+      "demoUrl": null,
+      "liveUrl": null,
+      "homepage": null,
+      "topics": [],
+      "categories": [],
+      "tags": [],
+      "stack": [],
+      "status": null,
+      "language": "TypeScript",
+      "languages": {
+        "TypeScript": 29590
+      },
+      "stars": 0,
+      "forks": 0,
+      "lastPushed": "2026-04-07T19:04:02Z",
+      "createdAt": "2026-04-06T23:20:56Z",
+      "isFeatured": false,
+      "isArchived": false,
+      "isPrivate": true,
+      "tagline": null,
+      "thumbnail": null,
+      "problem": null,
+      "solution": null,
+      "keyFeatures": [],
+      "metrics": [],
+      "priority": 99,
       "dateCompleted": null,
       "slides": [],
       "videoUrl": null,
