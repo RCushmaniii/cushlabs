@@ -237,7 +237,7 @@ export const en = {
     kicker: 'Free call',
     headline: 'Book a free call',
     subheadline:
-      'No pitch, no pressure — just a real conversation about what you\'re building and how I might help.',
+      'No pitch, no pressure — just a real conversation about what you\'re building and how I can help.',
     primaryCta: 'Book now',
     secondaryCta: 'See my work',
     detail1Label: 'Length',
