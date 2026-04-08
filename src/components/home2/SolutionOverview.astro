@@ -9,22 +9,22 @@ const { locale } = Astro.props;
 
 const content = {
   en: {
-    heading: 'I turn your scattered knowledge into AI systems that actually work.',
-    body: "Your business knowledge — buried in Google Docs, WhatsApp threads, and someone's head — becomes AI infrastructure that runs in production. No fragile demos. No one-and-done widgets. Systems tied to outcomes you can measure.",
+    heading: 'I Turn Your Business Knowledge Into AI That Works 24/7',
+    body: "Your FAQs, pricing, policies, and procedures — stuck in Google Docs, WhatsApp, and someone's head — become an AI assistant that answers customers, captures leads, and handles repetitive tasks. In English and Spanish.",
     pillars: [
       {
-        title: "AI support assistant",
-        desc: "Answers customer questions 24/7 in English and Spanish. Captures leads after hours. Hands off to your team when human judgment is needed.",
+        title: "AI Customer Support Chatbot",
+        desc: "Answers your customers' questions 24/7 in English and Spanish. Captures leads while you sleep. Hands off to your team when a human is needed.",
         icon: "M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"
       },
       {
-        title: "Document processing system",
-        desc: "Turns your SOPs, policies, and knowledge bases into searchable, actionable resources. Answers stop living in one person's head.",
+        title: "Searchable Knowledge Base",
+        desc: "Your SOPs, policies, and training docs — organized and searchable by your whole team. No more \"just ask Juan.\"",
         icon: "M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
       },
       {
-        title: "Custom AI tools",
-        desc: "Automates the repetitive work eating your team's time. Built for your specific workflow, not a generic template.",
+        title: "Custom Workflow Automation",
+        desc: "Automates data entry, follow-ups, reports, and other repetitive work your team wastes hours on every week.",
         icon: "M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065zM12 15a3 3 0 100-6 3 3 0 000 6z"
       }
     ],
@@ -33,22 +33,22 @@ const content = {
     ctaLink: '/services/'
   },
   es: {
-    heading: 'Convierto tu conocimiento disperso en sistemas de IA que realmente funcionan.',
-    body: "El conocimiento de tu negocio — enterrado en Google Docs, WhatsApp y en la cabeza de alguien — se convierte en infraestructura de IA que opera en producción. Sin demos frágiles. Sin widgets de un solo uso. Sistemas orientados a resultados que puedes medir.",
+    heading: 'Convierto el Conocimiento de Tu Negocio en IA Que Trabaja 24/7',
+    body: "Tus FAQs, precios, políticas y procedimientos — atorados en Google Docs, WhatsApp y la cabeza de alguien — se convierten en un asistente de IA que responde a clientes, captura leads y maneja tareas repetitivas. En inglés y español.",
     pillars: [
       {
-        title: "Asistente de soporte IA",
-        desc: "Responde preguntas de clientes 24/7 en inglés y español. Captura leads fuera de horario. Transfiere a tu equipo cuando se requiere criterio humano.",
+        title: "Chatbot de Atención al Cliente con IA",
+        desc: "Responde las preguntas de tus clientes 24/7 en inglés y español. Captura leads mientras duermes. Transfiere a tu equipo cuando se necesita un humano.",
         icon: "M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"
       },
       {
-        title: "Sistema de procesamiento de documentos",
-        desc: "Convierte tus POEs, políticas y bases de conocimiento en recursos buscables y accionables. Las respuestas dejan de vivir en la cabeza de una persona.",
+        title: "Base de Conocimiento Buscable",
+        desc: "Tus POEs, políticas y documentos de capacitación — organizados y buscables por todo tu equipo. Ya no más \"solo pregúntale a Juan.\"",
         icon: "M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
       },
       {
-        title: "Herramientas de IA a la medida",
-        desc: "Automatiza el trabajo repetitivo que consume el tiempo de tu equipo. Construida para tu flujo de trabajo específico, no una plantilla genérica.",
+        title: "Automatización de Procesos a la Medida",
+        desc: "Automatiza la entrada de datos, los seguimientos, los reportes y otros trabajos repetitivos en los que tu equipo desperdicia horas cada semana.",
         icon: "M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065zM12 15a3 3 0 100-6 3 3 0 000 6z"
       }
     ],

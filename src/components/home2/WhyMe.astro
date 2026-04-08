@@ -9,7 +9,7 @@ const { locale } = Astro.props;
 
 const content = {
   en: {
-    heading: 'What Makes CushLabs Different',
+    heading: 'Why Work With Me',
     differentiators: [
       {
         title: "You Work Directly With Me",
@@ -17,29 +17,29 @@ const content = {
         icon: "M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
       },
       {
-        title: "Discovery-First Methodology",
+        title: "I Start By Understanding Your Business",
         desc: "I don't start with tools or templates. I start by understanding your business problem, defining what success looks like, and scoping the smallest v1 that proves value. You get a clear, buildable plan before any code is written.",
         icon: "M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
       },
       {
-        title: "Production-Grade Engineering",
+        title: "Built to Last, Not Just to Demo",
         desc: "Secure-by-default systems with input validation, error handling, logging, and testing. Fortune 500 engineering discipline in every build — because \"it works in the demo\" isn't good enough for your business.",
         icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
       },
       {
-        title: "Outcomes, Not Widgets",
+        title: "You'll See Real Results, Not Just a Demo",
         desc: "Every system is tied to business metrics: support deflection, lead capture, time-to-answer, hours reclaimed. I include analytics and iteration loops so you can see what's working — and improve what isn't.",
         icon: "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
       },
       {
-        title: "Cross-Border Ready",
+        title: "Built for US & Mexico Teams — Fully Bilingual",
         desc: "Built for Mexico/LATAM teams serving U.S. and Canadian customers — or U.S. companies doing business in Mexico. Fully bilingual assistant outputs. English-first project execution for speed. Flexible hours for both time zones.",
         icon: "M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
       }
     ]
   },
   es: {
-    heading: 'Qué Hace Diferente a CushLabs',
+    heading: 'Por Qué Trabajar Conmigo',
     differentiators: [
       {
         title: "Trabajas Directamente Conmigo",
@@ -47,22 +47,22 @@ const content = {
         icon: "M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
       },
       {
-        title: "Creación Basada en el Descubrimiento",
+        title: "Empiezo Por Entender Tu Negocio",
         desc: "No empiezo con herramientas o plantillas. Comienzo entendiendo el problema de negocio, definiendo el éxito de antemano y construyendo la versión más pequeña que demuestre valor en la empresa.",
         icon: "M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
       },
       {
-        title: "Ingeniería de Grado Producción",
+        title: "Construido Para Durar, No Solo Para el Demo",
         desc: "Sistemas seguros por defecto con manejo de errores, pruebas exhaustivas y analíticas construidas. Disciplina de ingeniería Fortune 500 en cada producto porque 'funciona en el demo' no es suficiente.",
         icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
       },
       {
-        title: "Resultados, No Funcionalidades de Fantasía",
+        title: "Verás Resultados Reales, No Solo un Demo",
         desc: "Cada sistema debe empatarse con las métricas de tu empresa: captura de leads, tiempos de respuesta y horas optimizadas en un esquema real de operación comercial y empresarial.",
         icon: "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
       },
       {
-        title: "Listo para Ambos Lados de la Frontera",
+        title: "Hecho Para Equipos en EE.UU. y México — Totalmente Bilingüe",
         desc: "Desarrollado para equipos de LatAm atendiendo clientes en Estados Unidos o viceversa. Flujo bilingüe, respuestas inmediatas para el consumidor final sin problemas de traducción ni husos horarios.",
         icon: "M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
       }
