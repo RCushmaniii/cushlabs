@@ -263,18 +263,45 @@ Every project repo needs a `PORTFOLIO.md` in its root. These frontmatter fields 
 When adding a new project or updating assets:
 
 ```bash
+# 0. (Automatic) Validate every sibling PORTFOLIO.md before sync.
+#    Wired into `npm run generate-projects` — fails loudly on YAML errors,
+#    duplicate top-level keys, or missing thumbnails. Run standalone via:
+#    npm run validate:portfolio-md           # check
+#    npm run validate:portfolio-md -- --fix  # auto-fix duplicate keys
+
 # 1. Upload assets to R2 CDN (auto-detects diffs via MD5 hash)
 npx tsx scripts/upload-to-r2.ts <repo-name>
 
 # 2. Regenerate the portfolio JSON (pulls PORTFOLIO.md → projects.generated.json)
-npx tsx scripts/generate-projects.ts
+npm run generate-projects
 
-# 3. Build, commit, and push
+# 3. Build, commit, and push (stage files explicitly — DO NOT git add -A
+#    blindly because the build regenerates projects.generated.json and you
+#    will sweep it into unrelated PRs)
 npm run build
-git add -A && git commit -m "chore: refresh projects data" && git push
+git add src/path/to/intentional/changes src/data/projects.generated.json
+git commit -m "chore: refresh projects data" && git push
 ```
 
 **All three steps are required.** Skipping step 1 = broken images. Skipping step 2 = stale data. The JSON was last regenerated at the `generatedAt` timestamp in `projects.generated.json`.
+
+### Recurring Failure: Silent YAML Corruption (CRITICAL)
+
+**Symptom:** Portfolio cards render the default `CUSHLABS.AI` placeholder for projects that should have thumbnails. `projects.generated.json` shows `thumbnail: null` for affected projects.
+
+**Root cause:** PORTFOLIO.md files in sibling repos can accumulate duplicate top-level YAML keys (most commonly `health_status:`, added by separate audit passes that didn't dedupe). YAML rejects duplicate keys → gray-matter throws → the previous version of `tryLocalPortfolioMd()` in `scripts/generate-projects.ts` caught the throw silently and wrote the project with `thumbnail: null`. No log, no CI failure.
+
+**Permanent fix in place:**
+1. `scripts/validate-portfolio-md.ts` runs automatically before `generate-projects.ts` (wired in package.json). It scans every sibling PORTFOLIO.md, detects duplicate top-level keys, fails the build with clear errors. `--fix` flag auto-deletes the second duplicate block.
+2. The catch block in `tryLocalPortfolioMd()` now logs the error AND throws — silent failure is impossible.
+
+**If you see broken portfolio cards in production:**
+1. `npm run validate:portfolio-md` — locates the bad files
+2. `npm run validate:portfolio-md -- --fix` — auto-fixes duplicate keys
+3. `npm run generate-projects` — regen JSON
+4. Visual check, commit, ship
+
+**Never let this regress.** Any change to `generate-projects.ts` that touches the catch block must preserve loud-failure semantics.
 
 For a full sync of all projects: `npx tsx scripts/upload-to-r2.ts` (no args).
 
