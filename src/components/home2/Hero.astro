@@ -11,8 +11,8 @@ const content = {
   en: {
     badge: 'Trusted AI Consulting',
     headline: 'I Help Businesses Put AI to Work',
-    subheadline1: 'From intelligent chatbots to document automation and custom AI tools — I design, build, and launch AI solutions that deliver measurable results for growing businesses.',
-    subheadline2: 'No science projects. No hype. Just systems tied to outcomes you can track.',
+    subheadline1: 'No science projects. No hype. Just AI systems tied to outcomes you can measure —',
+    subheadline2: 'designed, built, and launched for growing businesses.',
     stats: ['20 Years IT', 'Fortune 500 Discipline', 'Bilingual Apps EN/ES'],
     ctaPrimary: 'Book a Free Discovery Call',
     ctaSecondary: 'See My Work',
@@ -21,8 +21,8 @@ const content = {
   es: {
     badge: 'Consultoría de IA de Confianza',
     headline: 'Ayudo a Negocios a Poner la IA a Trabajar',
-    subheadline1: 'Desde chatbots inteligentes hasta automatización de documentos y herramientas de IA personalizadas — diseño, construyo y lanzo soluciones que entregan resultados medibles.',
-    subheadline2: 'Sin proyectos de ciencia. Sin humo. Solo sistemas orientados a resultados reales.',
+    subheadline1: 'Sin proyectos de ciencia. Sin humo. Solo sistemas de IA orientados a resultados que puedes medir —',
+    subheadline2: 'diseñados, construidos y lanzados para negocios en crecimiento.',
     stats: ['20 Años TI', 'Disciplina Fortune 500', 'Apps Bilingües EN/ES'],
     ctaPrimary: 'Agendar Llamada de Descubrimiento',
     ctaSecondary: 'Ver Mi Trabajo',
@@ -72,8 +72,8 @@ const t = content[locale];
 
       <!-- Subheadline -->
       <div class="text-fluid-lg text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto animate-fade-in-up" style="animation-delay: 0.1s;">
-        <p class="mb-4">{t.subheadline1}</p>
-        <p class="font-medium text-gray-800 dark:text-gray-200">{t.subheadline2}</p>
+        <p class="mb-2 font-medium text-gray-800 dark:text-gray-200">{t.subheadline1}</p>
+        <p>{t.subheadline2}</p>
       </div>
 
       <!-- Quick Stats / Micro-Proof Bar -->
