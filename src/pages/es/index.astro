@@ -1,6 +1,29 @@
 ---
-// Spanish route - reuse the same page logic
-import IndexPage from "../index.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Hero from "../../components/home2/Hero.astro";
+import PainPoints from "../../components/home2/PainPoints.astro";
+import SolutionOverview from "../../components/home2/SolutionOverview.astro";
+import HowItWorks from "../../components/home2/HowItWorks.astro";
+import WhyMe from "../../components/home2/WhyMe.astro";
+import SocialProof from "../../components/home2/SocialProof.astro";
+import RecentWork from "../../components/home2/RecentWork.astro";
+import FAQ from "../../components/home2/FAQ.astro";
+import FinalCTA from "../../components/home2/FinalCTA.astro";
+
+const locale = "es" as const;
+
+const title = "CushLabs.ai — Chatbots de IA y Automatización para Pequeñas Empresas";
+const description = "Chatbots de IA, agentes de voz y automatización de procesos para pequeñas empresas en EE.UU. y México. Bilingüe EN/ES. En vivo en 2–6 semanas.";
 ---
 
-<IndexPage />
+<BaseLayout title={title} description={description}>
+  <Hero locale={locale} />
+  <PainPoints locale={locale} />
+  <SocialProof locale={locale} />
+  <SolutionOverview locale={locale} />
+  <HowItWorks locale={locale} />
+  <WhyMe locale={locale} />
+  <RecentWork locale={locale} />
+  <FAQ locale={locale} />
+  <FinalCTA locale={locale} />
+</BaseLayout>
