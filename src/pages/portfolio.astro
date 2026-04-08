@@ -549,6 +549,12 @@ const t = content[locale];
       renderProjects();
     }, 200);
   });
+
+  // Apply the default filter on first load. Without this call, the
+  // active filter button shows "Featured" but no filtering happens
+  // until the visitor clicks something — so they see all 32 cards
+  // instead of the curated 6.
+  renderProjects();
 </script>
 
 <style>
