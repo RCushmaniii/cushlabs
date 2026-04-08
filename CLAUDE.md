@@ -258,9 +258,32 @@ Every project repo needs a `PORTFOLIO.md` in its root. These frontmatter fields 
 3. **First slide** (`project.slides[0].src`) — fallback if no thumbnail
 4. **Default SVG** (`/images/portfolio/default-card.svg`)
 
-### Three-Step Sync Process
+### Preferred: One-Shot Sync Command
 
-When adding a new project or updating assets:
+**For any portfolio sync work, prefer this single command:**
+
+```bash
+npm run sync:portfolio
+```
+
+It runs the full pipeline in order, fails loudly at any step, and prints a structured diff showing exactly what changed (which thumbnails were restored, which projects gained taglines, etc.). Designed for AI-assistant invocation — no flags to remember, no step-skipping risk.
+
+Flags:
+- `npm run sync:portfolio -- --dry-run` — preview without writing
+- `npm run sync:portfolio -- --skip-r2` — skip R2 upload (use when only PORTFOLIO.md text changed, no asset changes)
+- `npm run sync:portfolio -- --repo <name>` — restrict R2 upload to one repo
+
+The pipeline:
+1. `validate-portfolio-md --fix` — auto-fixes duplicate top-level YAML keys
+2. `upload-to-r2` — hash-diffed asset upload
+3. `generate-projects` — regen `projects.generated.json`
+4. Diff old vs new and print structured summary
+
+After it finishes, stage `src/data/projects.generated.json` explicitly, commit, and push (or open a PR).
+
+### Manual Three-Step Sync (legacy / debugging)
+
+If you need to run individual steps for debugging:
 
 ```bash
 # 0. (Automatic) Validate every sibling PORTFOLIO.md before sync.

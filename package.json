@@ -15,6 +15,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "validate:portfolio-md": "tsx scripts/validate-portfolio-md.ts",
+    "sync:portfolio": "tsx scripts/sync-portfolio.ts",
     "generate-projects": "tsx scripts/validate-portfolio-md.ts && tsx scripts/generate-projects.ts",
     "sync:all": "tsx scripts/sync-all.ts",
     "audit:predeploy": "tsx scripts/audit-predeploy.ts",
