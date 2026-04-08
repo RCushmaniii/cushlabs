@@ -156,8 +156,21 @@ function tryLocalPortfolioMd(repo: string): PortfolioFrontmatter | null {
         const { data: frontmatter } = matter(content);
         console.warn(`  📂 Read ${filename} from local clone`);
         return frontmatter as PortfolioFrontmatter;
-      } catch {
-        // Parse error, skip
+      } catch (err) {
+        // LOUD failure — silent catch here previously corrupted the JSON
+        // (a duplicate `health_status` key in PORTFOLIO.md threw a YAML
+        // exception, which got swallowed, and the project was written
+        // with thumbnail: null. See LESSONS-LEARNED.md.)
+        const msg = (err as Error).message ?? String(err);
+        console.error(`  ❌ YAML PARSE ERROR in ${repo}/${filename}: ${msg}`);
+        syncIssues.push({
+          level: 'error',
+          repo,
+          message: `YAML parse error in ${filename}: ${msg}`
+        });
+        // Re-throw so the build fails loudly instead of silently
+        // shipping a JSON with missing thumbnails/taglines.
+        throw new Error(`PORTFOLIO.md parse failed for ${repo}: ${msg}`);
       }
     }
   }
