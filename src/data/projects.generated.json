@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-08T03:20:02.736Z",
+  "generatedAt": "2026-04-08T21:53:42.336Z",
   "count": 34,
   "projects": [
     {
@@ -50,7 +50,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-04-06T00:38:14Z",
+      "lastPushed": "2026-04-08T04:03:48Z",
       "createdAt": "2025-12-02T07:09:31Z",
       "isFeatured": true,
       "isArchived": false,
@@ -179,7 +179,7 @@
       },
       "stars": 1,
       "forks": 0,
-      "lastPushed": "2026-04-06T06:45:26Z",
+      "lastPushed": "2026-04-08T03:25:52Z",
       "createdAt": "2025-11-23T00:24:28Z",
       "isFeatured": true,
       "isArchived": false,
@@ -468,7 +468,7 @@
       "status": null,
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 538216,
+        "TypeScript": 546033,
         "HTML": 29745,
         "CSS": 3586,
         "Dockerfile": 1126,
@@ -476,7 +476,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-04-06T21:53:02Z",
+      "lastPushed": "2026-04-08T21:52:37Z",
       "createdAt": "2026-03-30T19:46:00Z",
       "isFeatured": true,
       "isArchived": false,
@@ -615,6 +615,291 @@
       "videoPoster": null
     },
     {
+      "id": 953305892,
+      "name": "ny-eng",
+      "title": "NY English Teacher",
+      "description": "Professional bilingual (EN/ES) business English coaching platform built with Astro, featuring interactive assessments, lead generation, content management, and booking integration. Optimized for SEO, performance, and conversion.",
+      "summary": "**Executive English coaching platform for professionals who need to command the room.**",
+      "url": "https://github.com/RCushmaniii/ny-eng",
+      "demoUrl": "https://www.nyenglishteacher.com",
+      "liveUrl": "https://www.nyenglishteacher.com",
+      "homepage": "https://nyenglishteacher.com/",
+      "topics": [
+        "astro",
+        "bilingual",
+        "business-english",
+        "content-management-system",
+        "conversion-optimization",
+        "i18n",
+        "lead-generation",
+        "quiz-system",
+        "react",
+        "seo-optimization",
+        "supabase",
+        "tailwindcss",
+        "typescript"
+      ],
+      "categories": [
+        "Client Work"
+      ],
+      "tags": [
+        "astro",
+        "bilingual",
+        "business-english",
+        "content-management-system",
+        "conversion-optimization",
+        "i18n",
+        "lead-generation",
+        "quiz-system",
+        "react",
+        "seo-optimization",
+        "supabase",
+        "tailwindcss",
+        "typescript",
+        "tailwind",
+        "cloudflare-workers",
+        "google-calendar",
+        "neon-postgresql",
+        "solopreneur"
+      ],
+      "stack": [
+        "Astro 5.5",
+        "React 19",
+        "TypeScript",
+        "Cloudflare Workers",
+        "Neon PostgreSQL"
+      ],
+      "status": "Production",
+      "language": "Astro",
+      "languages": {
+        "Astro": 1627411,
+        "TypeScript": 1284355,
+        "HTML": 836066,
+        "JavaScript": 399742,
+        "CSS": 40875,
+        "Python": 30138,
+        "MDX": 23172,
+        "PLpgSQL": 4239
+      },
+      "stars": 0,
+      "forks": 0,
+      "lastPushed": "2026-04-08T21:46:49Z",
+      "createdAt": "2025-03-23T03:27:14Z",
+      "isFeatured": true,
+      "isArchived": false,
+      "isPrivate": false,
+      "tagline": "Lead generation platform replacing 4 roles on $0/month infrastructure",
+      "thumbnail": "https://cdn.cushlabs.ai/ny-eng/images/portfolio/ny-eng-thumb.jpg",
+      "problem": "Solo professional service providers burn 10-15 hours per week on manual qualification, scheduling ping-pong, and follow-ups. Their websites look identical to commodity competitors, making it impossible to justify premium pricing while the Spanish-speaking professional market remains underserved.",
+      "solution": "A fully automated lead generation platform that functions as four digital employees — SDR, marketing department, executive assistant, and brand manager — on free-tier infrastructure. Every conversation steers toward booking, every page justifies premium pricing, and the full EN/ES bilingual system doubles the addressable market from a single codebase.",
+      "keyFeatures": [
+        "4 role-specific diagnostic quizzes pre-qualify leads with mapped communication gaps — no discovery calls needed",
+        "3-step booking flow via Cloudflare Workers + Google Calendar OAuth — interest to confirmed Google Meet in under 60 seconds",
+        "Full EN/ES bilingual mirror with localized routing (/es/servicios/, /es/reservar/) and bidirectional hreflang SEO",
+        "Premium positioning hard-coded into UX — named executive testimonials from Driscoll's, CEVA Logistics, no discount codes",
+        "$0/month infrastructure — Astro static, Cloudflare Workers free tier, Neon free tier, Vercel serverless free tier"
+      ],
+      "metrics": [
+        "100 Lighthouse performance score — zero database queries on page load",
+        "$0/month infrastructure cost across all services",
+        "< 60 seconds from interest to confirmed booking with Google Meet link",
+        "2x addressable market from a single codebase via bilingual system",
+        "10-15 hours/week of administrative and sales work automated away"
+      ],
+      "priority": 5,
+      "dateCompleted": "2026-02",
+      "slides": [
+        {
+          "src": "https://cdn.cushlabs.ai/ny-eng/images/portfolio/ny-eng-01.webp",
+          "altEn": "The Architecture of Authority — Constructing a multinational agency presence with a team of one",
+          "altEs": "La Arquitectura de la Autoridad — Construyendo presencia de agencia multinacional con un equipo de uno"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/ny-eng/images/portfolio/ny-eng-02.webp",
+          "altEn": "An Automated Performance Engine — Zero manual qualification, 60-second booking flow, 100% gross margin",
+          "altEs": "Un Motor de Rendimiento Automatizado — Cero calificacion manual, reserva en 60 segundos, 100% margen bruto"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/ny-eng/images/portfolio/ny-eng-03.webp",
+          "altEn": "Digital Employee 01: The SDR — Diagnostic intelligence replaces discovery calls with pre-qualified leads",
+          "altEs": "Empleado Digital 01: El SDR — Inteligencia diagnostica reemplaza llamadas de descubrimiento con leads precalificados"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/ny-eng/images/portfolio/ny-eng-04.webp",
+          "altEn": "Digital Employee 02: Marketing Dept — The bilingual mirror doubles addressable market from a single codebase",
+          "altEs": "Empleado Digital 02: Depto. de Marketing — El espejo bilingue duplica el mercado alcanzable desde una sola base de codigo"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/ny-eng/images/portfolio/ny-eng-05.webp",
+          "altEn": "Digital Employee 03: The Executive Assistant — Interest to confirmed Google Meet booking in under 60 seconds",
+          "altEs": "Empleado Digital 03: La Asistente Ejecutiva — De interes a reserva confirmada en Google Meet en menos de 60 segundos"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/ny-eng/images/portfolio/ny-eng-06.webp",
+          "altEn": "Digital Employee 04: The Brand Manager — Premium positioning hard-coded into the UX with named executive testimonials",
+          "altEs": "Empleado Digital 04: El Brand Manager — Posicionamiento premium integrado en la UX con testimonios ejecutivos reales"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/ny-eng/images/portfolio/ny-eng-07.webp",
+          "altEn": "The Speed of Trust — Lighthouse 100 performance score, instant loads signal competence to premium buyers",
+          "altEs": "La Velocidad de la Confianza — Puntuacion Lighthouse 100, cargas instantaneas que senalan competencia a compradores premium"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/ny-eng/images/portfolio/ny-eng-08.webp",
+          "altEn": "The Universal Model — Blueprint for any high-touch expertise business: diagnostic lead magnet + automated booking + premium signals = authority",
+          "altEs": "El Modelo Universal — Plano para cualquier negocio de expertise: lead magnet diagnostico + reserva automatizada + senales premium = autoridad"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/ny-eng/images/portfolio/ny-eng-09.webp",
+          "altEn": "The Zero-Cost Tech Stack — Enterprise-grade performance on a solopreneur budget with $0 monthly infrastructure",
+          "altEs": "El Tech Stack de Costo Cero — Rendimiento empresarial con presupuesto de solopreneur y $0 de infraestructura mensual"
+        }
+      ],
+      "videoUrl": "https://cdn.cushlabs.ai/ny-eng/video/ny-eng-brief.mp4",
+      "videoPoster": "https://cdn.cushlabs.ai/ny-eng/video/ny-eng-brief-poster.jpg"
+    },
+    {
+      "id": 1174690198,
+      "name": "biojalisco-species-id",
+      "title": "BioJalisco Species Identifier",
+      "description": "AI-powered vertebrate species identification for Jalisco field research. Next.js 15, GPT-4o Vision, Clerk, Neon Postgres.",
+      "summary": "> AI-powered species identification for Jalisco biodiversity research. Four-API pipeline delivers verified taxonomy, IUCN status, Mexico-specific conservation data (NOM-059), and endemic classificatio",
+      "url": "https://github.com/RCushmaniii/biojalisco-species-id",
+      "demoUrl": "https://biojalisco-species-id.vercel.app",
+      "liveUrl": "https://biojalisco-species-id.vercel.app",
+      "homepage": "https://biojalisco-species-id.vercel.app",
+      "topics": [
+        "ai",
+        "biodiversity",
+        "computer-vision",
+        "conservation",
+        "gpt-4o",
+        "jalisco",
+        "nextjs",
+        "species-identification"
+      ],
+      "categories": [
+        "AI Automation"
+      ],
+      "tags": [
+        "ai",
+        "biodiversity",
+        "computer-vision",
+        "conservation",
+        "gpt-4o",
+        "jalisco",
+        "nextjs",
+        "species-identification",
+        "ai-vision",
+        "inaturalist",
+        "gbif",
+        "conabio",
+        "bilingual"
+      ],
+      "stack": [
+        "Next.js 15 (App Router)",
+        "TypeScript",
+        "GPT-4o Vision",
+        "iNaturalist API",
+        "GBIF API",
+        "EncicloVida/CONABIO API",
+        "OpenStreetMap Nominatim (reverse geocoding)",
+        "exifr (EXIF GPS/metadata extraction)",
+        "Clerk Authentication",
+        "Neon Postgres",
+        "Drizzle ORM",
+        "Vercel Blob Storage",
+        "sharp (image processing)",
+        "Vercel"
+      ],
+      "status": null,
+      "language": "TypeScript",
+      "languages": {
+        "TypeScript": 273753,
+        "CSS": 80360,
+        "Python": 27828,
+        "JavaScript": 2805
+      },
+      "stars": 0,
+      "forks": 0,
+      "lastPushed": "2026-04-06T00:38:18Z",
+      "createdAt": "2026-03-06T18:20:23Z",
+      "isFeatured": true,
+      "isArchived": false,
+      "isPrivate": false,
+      "tagline": "Five-API species identification pipeline with EXIF GPS extraction, reverse geocoding, and Mexico-specific conservation data",
+      "thumbnail": "https://cdn.cushlabs.ai/biojalisco-species-id/images/portfolio/biojalisco-thumb.webp",
+      "problem": "Conservation biologists in Jalisco encounter thousands of species during fieldwork\nbut lack rapid identification tools with verified data. GPT-4o Vision alone\nfrequently misidentifies species without geographic context. No existing tool\ncombines AI vision, regional species data, global taxonomy verification, and\nMexico-specific conservation status (NOM-059, endemic classification) in one flow.\n",
+      "solution": null,
+      "keyFeatures": [
+        "Five-API pipeline: iNaturalist context + GPT-4o Vision + GBIF verification + EncicloVida/CONABIO enrichment + Nominatim reverse geocoding",
+        "EXIF GPS extraction from photo metadata for precise location-aware identification (proven: corrected Broad-billed Hummingbird to Cinnamon Hummingbird with accurate coordinates)",
+        "Reverse geocoding via OpenStreetMap Nominatim: country, state, region, municipality, city displayed in Data Sources",
+        "Verified IUCN Red List status and taxonomy from GBIF backbone (not AI-generated)",
+        "Mexico-specific data from CONABIO: endemic/native/exotic classification, NOM-059 protection status, indigenous language names",
+        "Explore/Research dual-mode tab system: casual users see About + Habitat + Similar Species; scientists see Taxonomy + Conservation + Data Sources",
+        "Bilingual (EN/ES) with dark/light theme, community observation gallery, and EXIF privacy stripping",
+        "Graceful degradation: works with just an OpenAI key, enriched with optional services"
+      ],
+      "metrics": [],
+      "priority": 6,
+      "dateCompleted": null,
+      "slides": [
+        {
+          "src": "https://cdn.cushlabs.ai/biojalisco-species-id/images/portfolio/biojalisco-slide-01.webp",
+          "altEn": "BioJalisco Species Identifier",
+          "altEs": "BioJalisco Species Identifier"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/biojalisco-species-id/images/portfolio/biojalisco-slide-02.webp",
+          "altEn": "BioJalisco Species Identifier",
+          "altEs": "BioJalisco Species Identifier"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/biojalisco-species-id/images/portfolio/biojalisco-slide-03.webp",
+          "altEn": "BioJalisco Species Identifier",
+          "altEs": "BioJalisco Species Identifier"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/biojalisco-species-id/images/portfolio/biojalisco-slide-04.webp",
+          "altEn": "BioJalisco Species Identifier",
+          "altEs": "BioJalisco Species Identifier"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/biojalisco-species-id/images/portfolio/biojalisco-slide-05.webp",
+          "altEn": "BioJalisco Species Identifier",
+          "altEs": "BioJalisco Species Identifier"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/biojalisco-species-id/images/portfolio/biojalisco-slide-06.webp",
+          "altEn": "BioJalisco Species Identifier",
+          "altEs": "BioJalisco Species Identifier"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/biojalisco-species-id/images/portfolio/biojalisco-slide-07.webp",
+          "altEn": "BioJalisco Species Identifier",
+          "altEs": "BioJalisco Species Identifier"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/biojalisco-species-id/images/portfolio/biojalisco-slide-08.webp",
+          "altEn": "BioJalisco Species Identifier",
+          "altEs": "BioJalisco Species Identifier"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/biojalisco-species-id/images/portfolio/biojalisco-slide-09.webp",
+          "altEn": "BioJalisco Species Identifier",
+          "altEs": "BioJalisco Species Identifier"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/biojalisco-species-id/images/portfolio/biojalisco-slide-10.webp",
+          "altEn": "BioJalisco Species Identifier",
+          "altEs": "BioJalisco Species Identifier"
+        }
+      ],
+      "videoUrl": "https://cdn.cushlabs.ai/biojalisco-species-id/video/biojalisco-brief.mp4",
+      "videoPoster": "https://cdn.cushlabs.ai/biojalisco-species-id/images/portfolio/biojalisco-brief-poster.webp"
+    },
+    {
       "id": 1184574225,
       "name": "cushlabs-OS-dashboard",
       "title": "CushLabs OS Dashboard",
@@ -682,7 +967,7 @@
       "forks": 0,
       "lastPushed": "2026-04-07T19:10:19Z",
       "createdAt": "2026-03-17T18:08:51Z",
-      "isFeatured": true,
+      "isFeatured": false,
       "isArchived": false,
       "isPrivate": true,
       "tagline": "Full-stack operational command center with 7 API routes, 7 dashboard views, and live GitHub integration for portfolio health, goals, tasks, and business development",
@@ -706,7 +991,7 @@
         "4 goal time horizons tracked with automated staleness warnings",
         "Sub-second client-side filtering across all interactive views"
       ],
-      "priority": 5,
+      "priority": 7,
       "dateCompleted": "2026-03",
       "slides": [
         {
@@ -747,150 +1032,6 @@
       ],
       "videoUrl": "https://cdn.cushlabs.ai/cushlabs-OS-dashboard/images/portfolio/CushLabs_OS_Command_Center.mp4",
       "videoPoster": "https://cdn.cushlabs.ai/cushlabs-OS-dashboard/images/portfolio/cushlabs-os-command-center-poster.webp"
-    },
-    {
-      "id": 953305892,
-      "name": "ny-eng",
-      "title": "NY English Teacher",
-      "description": "Professional bilingual (EN/ES) business English coaching platform built with Astro, featuring interactive assessments, lead generation, content management, and booking integration. Optimized for SEO, performance, and conversion.",
-      "summary": "**Executive English coaching platform for professionals who need to command the room.**",
-      "url": "https://github.com/RCushmaniii/ny-eng",
-      "demoUrl": "https://www.nyenglishteacher.com",
-      "liveUrl": "https://www.nyenglishteacher.com",
-      "homepage": "https://nyenglishteacher.com/",
-      "topics": [
-        "astro",
-        "bilingual",
-        "business-english",
-        "content-management-system",
-        "conversion-optimization",
-        "i18n",
-        "lead-generation",
-        "quiz-system",
-        "react",
-        "seo-optimization",
-        "supabase",
-        "tailwindcss",
-        "typescript"
-      ],
-      "categories": [
-        "Client Work"
-      ],
-      "tags": [
-        "astro",
-        "bilingual",
-        "business-english",
-        "content-management-system",
-        "conversion-optimization",
-        "i18n",
-        "lead-generation",
-        "quiz-system",
-        "react",
-        "seo-optimization",
-        "supabase",
-        "tailwindcss",
-        "typescript",
-        "tailwind",
-        "cloudflare-workers",
-        "google-calendar",
-        "neon-postgresql",
-        "solopreneur"
-      ],
-      "stack": [
-        "Astro 5.5",
-        "React 19",
-        "TypeScript",
-        "Cloudflare Workers",
-        "Neon PostgreSQL"
-      ],
-      "status": "Production",
-      "language": "Astro",
-      "languages": {
-        "Astro": 1544529,
-        "TypeScript": 1100914,
-        "HTML": 836066,
-        "JavaScript": 399742,
-        "CSS": 40875,
-        "Python": 30138,
-        "MDX": 23172,
-        "PLpgSQL": 4239
-      },
-      "stars": 0,
-      "forks": 0,
-      "lastPushed": "2026-04-08T03:12:41Z",
-      "createdAt": "2025-03-23T03:27:14Z",
-      "isFeatured": true,
-      "isArchived": false,
-      "isPrivate": false,
-      "tagline": "Lead generation platform replacing 4 roles on $0/month infrastructure",
-      "thumbnail": "https://cdn.cushlabs.ai/ny-eng/images/portfolio/ny-eng-thumb.jpg",
-      "problem": "Solo professional service providers burn 10-15 hours per week on manual qualification, scheduling ping-pong, and follow-ups. Their websites look identical to commodity competitors, making it impossible to justify premium pricing while the Spanish-speaking professional market remains underserved.",
-      "solution": "A fully automated lead generation platform that functions as four digital employees — SDR, marketing department, executive assistant, and brand manager — on free-tier infrastructure. Every conversation steers toward booking, every page justifies premium pricing, and the full EN/ES bilingual system doubles the addressable market from a single codebase.",
-      "keyFeatures": [
-        "4 role-specific diagnostic quizzes pre-qualify leads with mapped communication gaps — no discovery calls needed",
-        "3-step booking flow via Cloudflare Workers + Google Calendar OAuth — interest to confirmed Google Meet in under 60 seconds",
-        "Full EN/ES bilingual mirror with localized routing (/es/servicios/, /es/reservar/) and bidirectional hreflang SEO",
-        "Premium positioning hard-coded into UX — named executive testimonials from Driscoll's, CEVA Logistics, no discount codes",
-        "$0/month infrastructure — Astro static, Cloudflare Workers free tier, Neon free tier, Vercel serverless free tier"
-      ],
-      "metrics": [
-        "100 Lighthouse performance score — zero database queries on page load",
-        "$0/month infrastructure cost across all services",
-        "< 60 seconds from interest to confirmed booking with Google Meet link",
-        "2x addressable market from a single codebase via bilingual system",
-        "10-15 hours/week of administrative and sales work automated away"
-      ],
-      "priority": 6,
-      "dateCompleted": "2026-02",
-      "slides": [
-        {
-          "src": "https://cdn.cushlabs.ai/ny-eng/images/portfolio/ny-eng-01.webp",
-          "altEn": "The Architecture of Authority — Constructing a multinational agency presence with a team of one",
-          "altEs": "La Arquitectura de la Autoridad — Construyendo presencia de agencia multinacional con un equipo de uno"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/ny-eng/images/portfolio/ny-eng-02.webp",
-          "altEn": "An Automated Performance Engine — Zero manual qualification, 60-second booking flow, 100% gross margin",
-          "altEs": "Un Motor de Rendimiento Automatizado — Cero calificacion manual, reserva en 60 segundos, 100% margen bruto"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/ny-eng/images/portfolio/ny-eng-03.webp",
-          "altEn": "Digital Employee 01: The SDR — Diagnostic intelligence replaces discovery calls with pre-qualified leads",
-          "altEs": "Empleado Digital 01: El SDR — Inteligencia diagnostica reemplaza llamadas de descubrimiento con leads precalificados"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/ny-eng/images/portfolio/ny-eng-04.webp",
-          "altEn": "Digital Employee 02: Marketing Dept — The bilingual mirror doubles addressable market from a single codebase",
-          "altEs": "Empleado Digital 02: Depto. de Marketing — El espejo bilingue duplica el mercado alcanzable desde una sola base de codigo"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/ny-eng/images/portfolio/ny-eng-05.webp",
-          "altEn": "Digital Employee 03: The Executive Assistant — Interest to confirmed Google Meet booking in under 60 seconds",
-          "altEs": "Empleado Digital 03: La Asistente Ejecutiva — De interes a reserva confirmada en Google Meet en menos de 60 segundos"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/ny-eng/images/portfolio/ny-eng-06.webp",
-          "altEn": "Digital Employee 04: The Brand Manager — Premium positioning hard-coded into the UX with named executive testimonials",
-          "altEs": "Empleado Digital 04: El Brand Manager — Posicionamiento premium integrado en la UX con testimonios ejecutivos reales"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/ny-eng/images/portfolio/ny-eng-07.webp",
-          "altEn": "The Speed of Trust — Lighthouse 100 performance score, instant loads signal competence to premium buyers",
-          "altEs": "La Velocidad de la Confianza — Puntuacion Lighthouse 100, cargas instantaneas que senalan competencia a compradores premium"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/ny-eng/images/portfolio/ny-eng-08.webp",
-          "altEn": "The Universal Model — Blueprint for any high-touch expertise business: diagnostic lead magnet + automated booking + premium signals = authority",
-          "altEs": "El Modelo Universal — Plano para cualquier negocio de expertise: lead magnet diagnostico + reserva automatizada + senales premium = autoridad"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/ny-eng/images/portfolio/ny-eng-09.webp",
-          "altEn": "The Zero-Cost Tech Stack — Enterprise-grade performance on a solopreneur budget with $0 monthly infrastructure",
-          "altEs": "El Tech Stack de Costo Cero — Rendimiento empresarial con presupuesto de solopreneur y $0 de infraestructura mensual"
-        }
-      ],
-      "videoUrl": "https://cdn.cushlabs.ai/ny-eng/video/ny-eng-brief.mp4",
-      "videoPoster": "https://cdn.cushlabs.ai/ny-eng/video/ny-eng-brief-poster.jpg"
     },
     {
       "id": 1120026584,
@@ -950,7 +1091,7 @@
       "forks": 0,
       "lastPushed": "2026-04-06T19:01:56Z",
       "createdAt": "2025-12-20T10:31:00Z",
-      "isFeatured": true,
+      "isFeatured": false,
       "isArchived": false,
       "isPrivate": false,
       "tagline": "Clone your brand voice once — AI writes like you across every channel, no drift",
@@ -965,7 +1106,7 @@
         "Tool-agnostic — works with Claude, ChatGPT, Cursor, or any RAG system"
       ],
       "metrics": [],
-      "priority": 7,
+      "priority": 8,
       "dateCompleted": null,
       "slides": [
         {
@@ -1088,7 +1229,7 @@
       "forks": 0,
       "lastPushed": "2026-04-06T00:39:03Z",
       "createdAt": "2026-03-06T17:57:40Z",
-      "isFeatured": true,
+      "isFeatured": false,
       "isArchived": false,
       "isPrivate": false,
       "tagline": "Cinematic bilingual pitch decks that win attention",
@@ -1103,7 +1244,7 @@
         "Mobile-responsive with scroll-snap carousels and touch support"
       ],
       "metrics": [],
-      "priority": 8,
+      "priority": 9,
       "dateCompleted": "2026-03",
       "slides": [
         {
@@ -1244,7 +1385,7 @@
       "forks": 0,
       "lastPushed": "2026-04-06T00:38:43Z",
       "createdAt": "2026-03-09T19:14:08Z",
-      "isFeatured": true,
+      "isFeatured": false,
       "isArchived": false,
       "isPrivate": false,
       "tagline": "Remove baked-in watermarks from images, PDFs, and presentations with a layered AI detection pipeline and neural inpainting",
@@ -1261,7 +1402,7 @@
         "Drag-and-drop web UI with real-time NDJSON streaming progress"
       ],
       "metrics": [],
-      "priority": 9,
+      "priority": 10,
       "dateCompleted": null,
       "slides": [
         {
@@ -1352,7 +1493,7 @@
       "forks": 0,
       "lastPushed": "2026-04-07T00:05:43Z",
       "createdAt": "2025-11-05T18:11:38Z",
-      "isFeatured": true,
+      "isFeatured": false,
       "isArchived": false,
       "isPrivate": false,
       "tagline": "AI-powered ATS resume optimization with bilingual support and instant feedback",
@@ -1367,7 +1508,7 @@
         "Guest-to-paid conversion funnel with embedded Stripe checkout"
       ],
       "metrics": [],
-      "priority": 10,
+      "priority": 11,
       "dateCompleted": null,
       "slides": [
         {
@@ -1403,147 +1544,6 @@
       ],
       "videoUrl": "https://cdn.cushlabs.ai/ai-resume-tailor/video/ai-resume-tailor-brief.mp4",
       "videoPoster": null
-    },
-    {
-      "id": 1174690198,
-      "name": "biojalisco-species-id",
-      "title": "BioJalisco Species Identifier",
-      "description": "AI-powered vertebrate species identification for Jalisco field research. Next.js 15, GPT-4o Vision, Clerk, Neon Postgres.",
-      "summary": "> AI-powered species identification for Jalisco biodiversity research. Four-API pipeline delivers verified taxonomy, IUCN status, Mexico-specific conservation data (NOM-059), and endemic classificatio",
-      "url": "https://github.com/RCushmaniii/biojalisco-species-id",
-      "demoUrl": "https://biojalisco-species-id.vercel.app",
-      "liveUrl": "https://biojalisco-species-id.vercel.app",
-      "homepage": "https://biojalisco-species-id.vercel.app",
-      "topics": [
-        "ai",
-        "biodiversity",
-        "computer-vision",
-        "conservation",
-        "gpt-4o",
-        "jalisco",
-        "nextjs",
-        "species-identification"
-      ],
-      "categories": [
-        "AI Automation"
-      ],
-      "tags": [
-        "ai",
-        "biodiversity",
-        "computer-vision",
-        "conservation",
-        "gpt-4o",
-        "jalisco",
-        "nextjs",
-        "species-identification",
-        "ai-vision",
-        "inaturalist",
-        "gbif",
-        "conabio",
-        "bilingual"
-      ],
-      "stack": [
-        "Next.js 15 (App Router)",
-        "TypeScript",
-        "GPT-4o Vision",
-        "iNaturalist API",
-        "GBIF API",
-        "EncicloVida/CONABIO API",
-        "OpenStreetMap Nominatim (reverse geocoding)",
-        "exifr (EXIF GPS/metadata extraction)",
-        "Clerk Authentication",
-        "Neon Postgres",
-        "Drizzle ORM",
-        "Vercel Blob Storage",
-        "sharp (image processing)",
-        "Vercel"
-      ],
-      "status": null,
-      "language": "TypeScript",
-      "languages": {
-        "TypeScript": 273753,
-        "CSS": 80360,
-        "Python": 27828,
-        "JavaScript": 2805
-      },
-      "stars": 0,
-      "forks": 0,
-      "lastPushed": "2026-04-06T00:38:18Z",
-      "createdAt": "2026-03-06T18:20:23Z",
-      "isFeatured": false,
-      "isArchived": false,
-      "isPrivate": false,
-      "tagline": "Five-API species identification pipeline with EXIF GPS extraction, reverse geocoding, and Mexico-specific conservation data",
-      "thumbnail": "https://cdn.cushlabs.ai/biojalisco-species-id/images/portfolio/biojalisco-thumb.webp",
-      "problem": "Conservation biologists in Jalisco encounter thousands of species during fieldwork\nbut lack rapid identification tools with verified data. GPT-4o Vision alone\nfrequently misidentifies species without geographic context. No existing tool\ncombines AI vision, regional species data, global taxonomy verification, and\nMexico-specific conservation status (NOM-059, endemic classification) in one flow.\n",
-      "solution": null,
-      "keyFeatures": [
-        "Five-API pipeline: iNaturalist context + GPT-4o Vision + GBIF verification + EncicloVida/CONABIO enrichment + Nominatim reverse geocoding",
-        "EXIF GPS extraction from photo metadata for precise location-aware identification (proven: corrected Broad-billed Hummingbird to Cinnamon Hummingbird with accurate coordinates)",
-        "Reverse geocoding via OpenStreetMap Nominatim: country, state, region, municipality, city displayed in Data Sources",
-        "Verified IUCN Red List status and taxonomy from GBIF backbone (not AI-generated)",
-        "Mexico-specific data from CONABIO: endemic/native/exotic classification, NOM-059 protection status, indigenous language names",
-        "Explore/Research dual-mode tab system: casual users see About + Habitat + Similar Species; scientists see Taxonomy + Conservation + Data Sources",
-        "Bilingual (EN/ES) with dark/light theme, community observation gallery, and EXIF privacy stripping",
-        "Graceful degradation: works with just an OpenAI key, enriched with optional services"
-      ],
-      "metrics": [],
-      "priority": 11,
-      "dateCompleted": null,
-      "slides": [
-        {
-          "src": "https://cdn.cushlabs.ai/biojalisco-species-id/images/portfolio/biojalisco-slide-01.webp",
-          "altEn": "BioJalisco Species Identifier",
-          "altEs": "BioJalisco Species Identifier"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/biojalisco-species-id/images/portfolio/biojalisco-slide-02.webp",
-          "altEn": "BioJalisco Species Identifier",
-          "altEs": "BioJalisco Species Identifier"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/biojalisco-species-id/images/portfolio/biojalisco-slide-03.webp",
-          "altEn": "BioJalisco Species Identifier",
-          "altEs": "BioJalisco Species Identifier"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/biojalisco-species-id/images/portfolio/biojalisco-slide-04.webp",
-          "altEn": "BioJalisco Species Identifier",
-          "altEs": "BioJalisco Species Identifier"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/biojalisco-species-id/images/portfolio/biojalisco-slide-05.webp",
-          "altEn": "BioJalisco Species Identifier",
-          "altEs": "BioJalisco Species Identifier"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/biojalisco-species-id/images/portfolio/biojalisco-slide-06.webp",
-          "altEn": "BioJalisco Species Identifier",
-          "altEs": "BioJalisco Species Identifier"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/biojalisco-species-id/images/portfolio/biojalisco-slide-07.webp",
-          "altEn": "BioJalisco Species Identifier",
-          "altEs": "BioJalisco Species Identifier"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/biojalisco-species-id/images/portfolio/biojalisco-slide-08.webp",
-          "altEn": "BioJalisco Species Identifier",
-          "altEs": "BioJalisco Species Identifier"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/biojalisco-species-id/images/portfolio/biojalisco-slide-09.webp",
-          "altEn": "BioJalisco Species Identifier",
-          "altEs": "BioJalisco Species Identifier"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/biojalisco-species-id/images/portfolio/biojalisco-slide-10.webp",
-          "altEn": "BioJalisco Species Identifier",
-          "altEs": "BioJalisco Species Identifier"
-        }
-      ],
-      "videoUrl": "https://cdn.cushlabs.ai/biojalisco-species-id/video/biojalisco-brief.mp4",
-      "videoPoster": "https://cdn.cushlabs.ai/biojalisco-species-id/images/portfolio/biojalisco-brief-poster.webp"
     },
     {
       "id": 1172972613,
@@ -2791,15 +2791,15 @@
       "status": null,
       "language": "Astro",
       "languages": {
-        "Astro": 454321,
-        "TypeScript": 322196,
+        "Astro": 454617,
+        "TypeScript": 337308,
         "HTML": 61067,
         "JavaScript": 56424,
         "CSS": 4657
       },
       "stars": 2,
       "forks": 0,
-      "lastPushed": "2026-04-08T02:52:29Z",
+      "lastPushed": "2026-04-08T21:50:14Z",
       "createdAt": "2026-01-08T03:52:43Z",
       "isFeatured": false,
       "isArchived": false,
@@ -4047,24 +4047,51 @@
       "id": 1203303335,
       "name": "ny-english-messenger-bot",
       "title": "Ny English Messenger Bot",
-      "description": "Facebook Messenger AI assistant for CushLabs — Claude on Cloudflare Workers",
+      "description": "Bilingual AI assistant for the New York English Facebook page — Claude (Anthropic) on Cloudflare Workers, with RAG over a Qdrant knowledge base and Meta Messenger webhook integration. First deployment of a reusable CushLabs Messenger bot template.",
       "summary": "Facebook Messenger AI assistant for the **New York English** Facebook page, powered by Claude on Cloudflare Workers.",
       "url": "https://github.com/RCushmaniii/ny-english-messenger-bot",
       "demoUrl": null,
       "liveUrl": null,
       "homepage": null,
-      "topics": [],
+      "topics": [
+        "ai-assistant",
+        "anthropic",
+        "bilingual",
+        "chatbot",
+        "claude",
+        "cloudflare-workers",
+        "facebook-messenger",
+        "messenger-bot",
+        "qdrant",
+        "rag",
+        "typescript",
+        "workers-ai"
+      ],
       "categories": [],
-      "tags": [],
+      "tags": [
+        "ai-assistant",
+        "anthropic",
+        "bilingual",
+        "chatbot",
+        "claude",
+        "cloudflare-workers",
+        "facebook-messenger",
+        "messenger-bot",
+        "qdrant",
+        "rag",
+        "typescript",
+        "workers-ai"
+      ],
       "stack": [],
       "status": null,
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 29590
+        "TypeScript": 52334,
+        "PowerShell": 1415
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-04-07T19:04:02Z",
+      "lastPushed": "2026-04-08T21:48:09Z",
       "createdAt": "2026-04-06T23:20:56Z",
       "isFeatured": false,
       "isArchived": false,

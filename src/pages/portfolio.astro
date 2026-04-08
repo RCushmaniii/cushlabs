@@ -41,8 +41,8 @@ const meta = {
 const content = {
   en: {
     badge: "Portfolio",
-    headline: "Custom AI Systems That Save Your Team Time & Money",
-    subheadline: "Production-ready solutions for support, operations, and internal workflows — built for small teams who want AI without enterprise complexity.",
+    headline: "Real AI Projects — Built for Real Businesses",
+    subheadline: "Chatbots, voice agents, automation, and competitor tracking — built and deployed for small teams in the US and Mexico.",
     ctaPrimary: "Book Free Consultation",
     ctaSecondary: "Watch Portfolio Video",
     reassurance: "No sales pitch. No obligation. Just clarity.",
@@ -66,15 +66,15 @@ const content = {
       alt: "CushLabs AI Portfolio video",
     },
     bottomCta: {
-      headline: "See Something That Fits Your Business?",
+      headline: "Want Something Like This for Your Business?",
       subtitle: "Book a free discovery call and I'll show you how a similar solution could work for you.",
       button: "Book Discovery Call",
     },
   },
   es: {
     badge: "Portafolio",
-    headline: "Sistemas de IA a Medida Que Ahorran Tiempo y Dinero a Tu Equipo",
-    subheadline: "Soluciones listas para producción para soporte, operaciones y flujos internos — construidas para equipos pequeños que quieren IA sin complejidad empresarial.",
+    headline: "Proyectos Reales de IA — Construidos para Negocios Reales",
+    subheadline: "Chatbots, agentes de voz, automatización y monitoreo de competidores — construidos y desplegados para equipos pequeños en EE.UU. y México.",
     ctaPrimary: "Agendar Consulta Gratis",
     ctaSecondary: "Ver Video del Portafolio",
     reassurance: "Sin pitch de ventas. Sin compromiso. Solo claridad.",
@@ -98,7 +98,7 @@ const content = {
       alt: "Video de Análisis de Portafolio CushLabs",
     },
     bottomCta: {
-      headline: "¿Ves Algo Que Encaja Con Tu Negocio?",
+      headline: "¿Quieres Algo Como Esto Para Tu Negocio?",
       subtitle: "Agenda una llamada de descubrimiento gratuita y te mostraré cómo una solución similar podría funcionar para ti.",
       button: "Agendar Llamada",
     },
@@ -236,15 +236,15 @@ const t = content[locale];
       <div class="flex flex-wrap gap-2 justify-center mb-4" id="filters">
         <button
           class="filter-btn active px-4 py-2 rounded-lg border border-cush-orange bg-cush-orange/10 font-display text-sm font-semibold text-cush-orange transition-all"
-          data-filter="all"
-        >
-          {t.filters.all}
-        </button>
-        <button
-          class="filter-btn px-4 py-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-transparent font-display text-sm font-semibold text-gray-600 dark:text-gray-400 hover:border-cush-orange hover:text-cush-orange transition-all"
           data-filter="featured"
         >
           {t.filters.featured}
+        </button>
+        <button
+          class="filter-btn px-4 py-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-transparent font-display text-sm font-semibold text-gray-600 dark:text-gray-400 hover:border-cush-orange hover:text-cush-orange transition-all"
+          data-filter="all"
+        >
+          {t.filters.all}
         </button>
         {allCategories.map(cat => (
           <button
@@ -462,7 +462,7 @@ const t = content[locale];
 </script>
 
 <script>
-  let currentFilter = "all";
+  let currentFilter = "featured";
   let searchQuery = "";
   let debounceTimer: ReturnType<typeof setTimeout>;
   const totalProjects = document.querySelectorAll(".project-card").length;
