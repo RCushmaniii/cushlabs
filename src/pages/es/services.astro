@@ -1,6 +1,30 @@
 ---
-// Spanish route - reuse the same page logic
-import ServicesPage from "../services.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Hero from "../../components/services2/Hero.astro";
+import ScenarioQualifier from "../../components/services2/ScenarioQualifier.astro";
+import ServiceBlock from "../../components/services2/ServiceBlock.astro";
+import HowIWork from "../../components/services2/HowIWork.astro";
+import WhoItIsFor from "../../components/services2/WhoItIsFor.astro";
+import InvestmentOverview from "../../components/services2/InvestmentOverview.astro";
+import FAQ from "../../components/services2/FAQ.astro";
+import FinalCTA from "../../components/services2/FinalCTA.astro";
+
+const locale = "es" as const;
+
+const title = "Servicios y Precios — Chatbots de IA, Agentes de Voz y Automatización | CushLabs.ai";
+const description = "Chatbots de atención al cliente, monitoreo de competidores en Google Maps, automatización de procesos a la medida y sesiones de estrategia. Precios claros, bilingüe EN/ES.";
 ---
 
-<ServicesPage />
+<BaseLayout title={title} description={description}>
+  <Hero locale={locale} />
+  <ScenarioQualifier locale={locale} />
+  <ServiceBlock locale={locale} id="support-assistants" />
+  <ServiceBlock locale={locale} id="competitive-intelligence" isAlternate={true} />
+  <ServiceBlock locale={locale} id="custom-tools" />
+  <ServiceBlock locale={locale} id="clarity-sprint" isAlternate={true} />
+  <HowIWork locale={locale} />
+  <WhoItIsFor locale={locale} />
+  <InvestmentOverview locale={locale} />
+  <FAQ locale={locale} />
+  <FinalCTA locale={locale} />
+</BaseLayout>
