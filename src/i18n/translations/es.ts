@@ -237,7 +237,7 @@ export const es = {
     kicker: 'Llamada gratis',
     headline: 'Agenda una llamada gratis',
     subheadline:
-      'Sin pitch, sin presión — solo una conversación real sobre lo que estás construyendo y cómo puedo ayudar.',
+      'Sin pitch, sin presión — solo una conversación real sobre lo que estás construyendo y cómo te ayudo.',
     primaryCta: 'Agendar ahora',
     secondaryCta: 'Ver mi trabajo',
     detail1Label: 'Duración',
