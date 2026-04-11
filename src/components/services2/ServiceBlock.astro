@@ -9,32 +9,31 @@ interface Props {
 
 const { locale, id, isAlternate = false } = Astro.props;
 
-// This component handles the rendering logic for all 4 services by selecting the right ID.
+// This component handles the rendering logic for all 5 services by selecting the right ID.
 const data = {
   'support-assistants': {
     en: {
       heading: "AI Customer Support Chatbot",
-      subheading: "Your customers get instant answers, 24/7, in English and Spanish — without hiring anyone.",
-      problem: "Your team answers the same questions dozens of times a day. Customers wait. Leads ask a question at 9pm and never come back. You can't hire fast enough, and the people you do hire spend their first month learning answers that live in scattered documents.",
+      subheading: "A customer asks a question at 9 PM. By morning, they bought from your competitor. That stops today.",
+      problem: "Your team answers the same questions dozens of times a day. Customers wait. Leads ask a question at 9pm and never come back. You can't hire fast enough, and the people you do hire spend their first month learning answers that live in scattered documents.\n\nA community manager costs $4,000–$6,000/month — and only works 8 hours a day. Your AI assistant works 24/7 for a fraction of that.",
       whatIBuild: "An AI assistant trained on YOUR business knowledge — your docs, your policies, your pricing, your product information — that answers customer questions accurately, in English and Spanish, around the clock.\n\nNot a generic chatbot. A system that knows your business, validates its answers against your approved sources, and hands off to your team when human judgment is needed.",
       included: [
-        { title: "Knowledge ingestion and structuring", desc: "I audit your existing content (docs, FAQs, policies, WhatsApp threads) and organize it into a structured knowledge base your assistant can reference" },
-        { title: "AI assistant with validated responses", desc: "Answers grounded in your approved sources, not the open internet. Built-in guardrails to prevent hallucination and off-topic responses" },
+        { title: "Custom setup and training", desc: "I audit your existing content (docs, FAQs, policies, WhatsApp threads) and build a structured knowledge base your assistant references" },
+        { title: "AI assistant with validated responses", desc: "Answers grounded in your approved sources, not the open internet. Built-in guardrails to prevent hallucination" },
         { title: "Bilingual output (EN/ES)", desc: "Professional responses in both languages, matched to your brand voice and tone" },
-        { title: "Human handoff flow", desc: "When the assistant isn't confident or the question requires judgment, it routes to your team with full context — no frustrated customers repeating themselves" },
-        { title: "Lead capture and qualification", desc: "After-hours visitors get engaged immediately. The assistant captures contact info, qualifies intent, and routes to your sales process" },
-        { title: "Analytics dashboard", desc: "See what customers are asking, where they get stuck, what content is missing, and how the assistant is performing against your KPIs" },
-        { title: "Deployment and documentation", desc: "Installed on your website, WhatsApp, or both. Full operational documentation so your team can manage it" },
-        { title: "30-day optimization window", desc: "After launch, I monitor performance, fix gaps, and tune responses based on real usage data" }
+        { title: "Human handoff flow", desc: "Routes to your team with full context when human judgment is needed — no frustrated customers repeating themselves" },
+        { title: "Lead capture and qualification", desc: "After-hours visitors get engaged immediately. Contact info captured, intent qualified, routed to your sales process" },
+        { title: "Weekly performance report", desc: "What customers are asking, where they get stuck, what content is missing, and how the assistant is performing" },
+        { title: "Monthly tuning", desc: "I refine the assistant as your business evolves — new products, new pricing, new seasons" },
+        { title: "Deployment on your website, WhatsApp, or both", desc: "Full operational documentation so your team can manage it" }
       ],
       notIncluded: [
-        "Ongoing content updates beyond the 30-day window (available via retainer)",
         "Integration with custom CRMs or ERPs (scoped separately if needed)",
         "Generating new content — the assistant surfaces YOUR existing knowledge, it doesn't create marketing copy"
       ],
-      timeline: "2–4 weeks from kickoff to launch, depending on the volume and complexity of your knowledge base.",
-      investment: "Engagements start at **$3,500** for a focused assistant with a single knowledge domain (e.g., customer support FAQ). More complex implementations with multiple domains, integrations, or bilingual requirements are typically **$5,000–$8,500**.",
-      investmentDisclaimer: "All projects are scoped and quoted during the free discovery call. No surprises.",
+      timeline: "Live in 2–4 weeks. Discovery call → training → testing → launch.",
+      investment: "**$497/month** — unlimited conversations, fully managed. Includes setup, training, weekly reports, and monthly tuning. No setup fee. No long-term contract.",
+      investmentDisclaimer: "Free 2-week trial. Cancel anytime.",
       bestFor: [
         "Customer support teams handling 500+ inquiries/month",
         "Businesses losing leads after hours or on weekends",
@@ -44,27 +43,26 @@ const data = {
     },
     es: {
       heading: "Chatbot de Atención al Cliente con IA",
-      subheading: "Tus clientes reciben respuestas instantáneas, 24/7, en inglés y español — sin contratar a nadie.",
-      problem: "Tu equipo responde las mismas preguntas docenas de veces al día. Los clientes esperan. Los leads preguntan a las 9pm y nunca regresan. No puedes contratar lo suficientemente rápido.",
+      subheading: "Un cliente pregunta a las 9 de la noche. Para la mañana, ya compró con tu competidor. Eso se acaba hoy.",
+      problem: "Tu equipo responde las mismas preguntas docenas de veces al día. Los clientes esperan. Los leads preguntan a las 9pm y nunca regresan. No puedes contratar lo suficientemente rápido.\n\nUn community manager cuesta $8,000–$15,000 MXN/mes — y solo trabaja 8 horas al día. Tu asistente de IA trabaja 24/7 por una fracción de eso.",
       whatIBuild: "Un asistente de IA entrenado con EL conocimiento de TU negocio — tus documentos, políticas, precios — que responde con precisión en inglés y español todo el día.\n\nNo es un chatbot genérico. Es un sistema que conoce tu negocio, valida sus respuestas contra fuentes aprobadas y transfiere a tu equipo cuando se necesita criterio humano.",
       included: [
-        { title: "Ingestión y estructuración de conocimiento", desc: "Audito tu contenido existente y lo organizo en una base de conocimientos estructurada." },
+        { title: "Configuración y entrenamiento personalizado", desc: "Audito tu contenido existente y construyo una base de conocimientos estructurada." },
         { title: "Asistente con respuestas validadas", desc: "Respuestas basadas en tus fuentes, no en el internet abierto. Barreras de seguridad incorporadas." },
         { title: "Salida bilingüe (EN/ES)", desc: "Respuestas profesionales en ambos idiomas." },
         { title: "Flujo de transferencia humana", desc: "Enruta a tu equipo con todo el contexto necesario, sin clientes frustrados." },
         { title: "Captura y calificación de leads", desc: "Captura información de contacto y califica intención fuera del horario laboral." },
-        { title: "Panel de analíticas", desc: "Mira qué preguntan los clientes y cómo se desempeña el asistente contra tus KPIs." },
-        { title: "Despliegue y documentación", desc: "Instalado en tu sitio web, WhatsApp, o ambos." },
-        { title: "Ventana de optimización de 30 días", desc: "Monitoreo de desempeño y ajuste de respuestas basado en uso real." }
+        { title: "Reporte semanal de desempeño", desc: "Qué preguntan los clientes, dónde se atoran, qué mejorar." },
+        { title: "Ajuste mensual", desc: "Refino el asistente conforme tu negocio evoluciona — nuevos productos, precios, temporadas." },
+        { title: "Instalación en tu sitio web, WhatsApp, o ambos", desc: "Documentación operacional completa." }
       ],
       notIncluded: [
-        "Actualizaciones continuas después de 30 días (disponible como retención)",
         "Integración con CRMs/ERPs personalizados (se cotiza aparte)",
         "Creación de contenido nuevo de marketing"
       ],
-      timeline: "2–4 semanas de principio a fin.",
-      investment: "Proyectos a partir de **$3,500 USD** para un dominio de conocimiento enfocado. Sistemas complejos y multilingües típicamente rondan los **$5,000–$8,500 USD**.",
-      investmentDisclaimer: "Todo se define y cotiza en la llamada gratuita. Sin sorpresas.",
+      timeline: "En vivo en 2–4 semanas. Llamada → entrenamiento → pruebas → lanzamiento.",
+      investment: "**$4,999 MXN/mes** — conversaciones ilimitadas, totalmente gestionado. Incluye configuración, entrenamiento, reportes semanales y ajuste mensual. Sin cuota de instalación. Sin contrato.",
+      investmentDisclaimer: "Prueba gratis de 2 semanas. Cancela cuando quieras.",
       bestFor: [
         "Equipos procesando 500+ consultas al mes",
         "Empresas perdiendo leads fines de semana/noches",
@@ -75,9 +73,9 @@ const data = {
   },
   'competitive-intelligence': {
     en: {
-      heading: "An AI Assistant on Your Facebook Page That Sells While You Sleep",
+      heading: "AI Assistant on Your Facebook Page That Sells While You Sleep",
       subheading: "Every message answered in seconds. Every customer captured. Every question handled in their language — in your voice — 24 hours a day.",
-      problem: "A customer messages your Facebook page at 10pm asking if you have their size, their date, their flavor. You see it the next morning. By then, they've booked with the competitor who answered in two minutes.\n\nMeanwhile, you're answering the same five questions a hundred times a week — what are your hours, do you deliver, how much, do you have it in red — and it's eating the time you should be spending growing the business.\n\nYou don't need another inbox to check. You need someone answering it for you.",
+      problem: "A customer messages your Facebook page at 10pm asking if you have their size, their date, their flavor. You see it the next morning. By then, they've booked with the competitor who answered in two minutes.\n\nMeanwhile, you're answering the same five questions a hundred times a week — what are your hours, do you deliver, how much, do you have it in red — and it's eating the time you should be spending growing the business.\n\nFacebook removes your \"responds quickly\" badge if you take more than 15 minutes. With AI, your response time is under 5 seconds — always.",
       whatIBuild: "A custom AI assistant that lives on your Facebook Messenger and answers your customers the instant they reach out — in Spanish or English, in your brand's voice, trained on your products, your prices, your policies.\n\nIt recommends the right product. It books the appointment. It handles the FAQ a hundred times a day without complaining. And when a real human is needed, it hands the conversation off to you with the context already gathered.\n\nIt's not a generic chatbot. It's an assistant built around your business — the way a great employee would be, except it works every hour and never asks for a raise.",
       included: [
         { title: "Custom training on your business", desc: "Products, prices, hours, policies, tone, the works — trained on what you actually sell and how you actually talk" },
@@ -94,8 +92,8 @@ const data = {
         "Paid Facebook ad management or social posting"
       ],
       timeline: "Live in 2 weeks. Discovery call → training → testing → launch.",
-      investment: "From **$499/month** for single-page setup with unlimited conversations, fully managed by me. Multi-page or higher-volume setups quoted after discovery.",
-      investmentDisclaimer: "No long-term contracts. Cancel anytime.",
+      investment: "**$497/month** — single page, unlimited conversations, fully managed. Includes setup, training, weekly reports, and monthly tuning. No setup fee. No long-term contract.",
+      investmentDisclaimer: "Free 2-week trial. Cancel anytime.",
       bestFor: [
         "Local businesses losing leads to slow response times",
         "Owners drowning in repeat questions on Messenger and Instagram",
@@ -106,7 +104,7 @@ const data = {
     es: {
       heading: "Un Asistente de IA en tu Página de Facebook que Vende Mientras Duermes",
       subheading: "Cada mensaje contestado en segundos. Cada cliente capturado. Cada pregunta resuelta en su idioma — con tu voz — las 24 horas del día.",
-      problem: "Un cliente le escribe a tu página de Facebook a las 10 de la noche preguntando si tienes su talla, su fecha, su sabor. Lo ves a la mañana siguiente. Para entonces, ya reservó con el competidor que le contestó en dos minutos.\n\nMientras tanto, tú contestas las mismas cinco preguntas cien veces a la semana — cuál es tu horario, si entregas a domicilio, cuánto cuesta, si lo tienes en rojo — y eso te está comiendo el tiempo que deberías estar usando para hacer crecer el negocio.\n\nNo necesitas otra bandeja de entrada que revisar. Necesitas a alguien que la conteste por ti.",
+      problem: "Un cliente le escribe a tu página de Facebook a las 10 de la noche preguntando si tienes su talla, su fecha, su sabor. Lo ves a la mañana siguiente. Para entonces, ya reservó con el competidor que le contestó en dos minutos.\n\nMientras tanto, tú contestas las mismas cinco preguntas cien veces a la semana — cuál es tu horario, si entregas a domicilio, cuánto cuesta, si lo tienes en rojo — y eso te está comiendo el tiempo que deberías estar usando para hacer crecer el negocio.\n\nFacebook te quita la insignia de \"responde rápido\" si tardas más de 15 minutos. Con IA, tu tiempo de respuesta es menos de 5 segundos — siempre.",
       whatIBuild: "Un asistente de IA a la medida que vive en tu Facebook Messenger y le contesta a tus clientes en el instante en que escriben — en español o en inglés, con la voz de tu marca, entrenado con tus productos, tus precios y tus políticas.\n\nRecomienda el producto correcto. Agenda la cita. Contesta las preguntas frecuentes cien veces al día sin quejarse. Y cuando se necesita un humano de verdad, te pasa la conversación con todo el contexto ya levantado.\n\nNo es un chatbot genérico. Es un asistente construido alrededor de tu negocio — como sería un gran empleado, excepto que trabaja a toda hora y nunca pide aumento.",
       included: [
         { title: "Entrenamiento personalizado", desc: "Productos, precios, horarios, políticas, tono — entrenado con lo que realmente vendes y cómo realmente hablas" },
@@ -123,8 +121,8 @@ const data = {
         "Gestión de anuncios de Facebook o publicaciones en redes sociales"
       ],
       timeline: "En vivo en 2 semanas. Llamada de descubrimiento → entrenamiento → pruebas → lanzamiento.",
-      investment: "Desde **$499 USD/mes** para una sola página con conversaciones ilimitadas, totalmente gestionado por mí. Multi-página o volúmenes mayores se cotizan después del descubrimiento.",
-      investmentDisclaimer: "Sin contratos de largo plazo. Cancela cuando quieras.",
+      investment: "**$4,999 MXN/mes** — una sola página, conversaciones ilimitadas, totalmente gestionado. Incluye configuración, entrenamiento, reportes semanales y ajuste mensual. Sin cuota de instalación. Sin contrato.",
+      investmentDisclaimer: "Prueba gratis de 2 semanas. Cancela cuando quieras.",
       bestFor: [
         "Negocios locales perdiendo clientes por respuestas lentas",
         "Dueños ahogados en preguntas repetitivas en Messenger e Instagram",
@@ -133,12 +131,74 @@ const data = {
       ]
     }
   },
+  'voice-agent': {
+    en: {
+      heading: "AI Voice Agent That Answers Your Phone Like Your Best Employee",
+      subheading: "Every call answered on the first ring. Appointments booked. Questions handled. Leads captured — even at 2 AM on a Sunday.",
+      problem: "Your phone rings. You're with a client, driving, or eating dinner. It goes to voicemail. The caller hangs up and calls the next business on Google.\n\nYou miss 3–5 calls a day. Each one could be a $500 customer. That's $7,500–$12,500 in potential revenue walking away every month because nobody picked up the phone.\n\nHiring a receptionist costs $3,000–$5,000/month — and they only work 8 hours a day, 5 days a week. Your AI voice agent works 24/7 for a fraction of that.",
+      whatIBuild: "An AI voice agent that answers your business phone with a natural, conversational voice — trained on your services, your pricing, your hours, and your booking process.\n\nIt greets callers by understanding their intent. It answers common questions. It books appointments directly into your calendar. And when a call truly needs you, it transfers with full context so you never start cold.\n\nCallers don't know it's AI. They just know someone picked up on the first ring.",
+      included: [
+        { title: "Custom voice and personality", desc: "Natural-sounding voice matched to your brand — professional, warm, bilingual. Not a robotic IVR menu" },
+        { title: "Business knowledge training", desc: "Trained on your services, pricing, hours, locations, and FAQs — gives accurate answers, not generic scripts" },
+        { title: "Appointment booking", desc: "Books directly into your calendar (Google Calendar, Calendly, or your booking system)" },
+        { title: "Lead capture and routing", desc: "Captures caller name, number, intent, and urgency — texts you a summary instantly" },
+        { title: "Call transfer with context", desc: "When a call needs you, it transfers with a brief of what the caller wants — no cold handoffs" },
+        { title: "Bilingual (EN/ES)", desc: "Handles calls in English and Spanish, switching naturally based on the caller" },
+        { title: "Monthly call report", desc: "Volume, top questions, bookings made, missed-call recovery stats" },
+        { title: "Up to 500 minutes included", desc: "Overage at $0.50/minute. Most small businesses use 200–400 minutes/month" }
+      ],
+      notIncluded: [
+        "Outbound calling campaigns (available as a separate engagement)",
+        "Integration with enterprise phone systems (PBX, Cisco, etc. — scoped separately)",
+        "Call recording storage beyond 30 days"
+      ],
+      timeline: "Live in 1–2 weeks. Discovery call → voice setup → testing → launch.",
+      investment: "**$497/month** — includes up to 500 minutes, setup, training, and monthly reports. Overage at $0.50/min. No setup fee. No long-term contract.",
+      investmentDisclaimer: "Free 2-week trial. Cancel anytime.",
+      bestFor: [
+        "Service businesses missing calls during busy hours (salons, clinics, contractors)",
+        "Small teams with no dedicated receptionist",
+        "Businesses losing customers to competitors who answer faster",
+        "Anyone paying $3,000+/month for a receptionist who only works 40 hours/week"
+      ]
+    },
+    es: {
+      heading: "Agente de Voz con IA que Contesta tu Teléfono Como tu Mejor Empleado",
+      subheading: "Cada llamada contestada al primer timbrazo. Citas agendadas. Preguntas resueltas. Leads capturados — incluso a las 2 AM un domingo.",
+      problem: "Suena tu teléfono. Estás con un cliente, manejando, o cenando. Se va al buzón. La persona cuelga y llama al siguiente negocio en Google.\n\nPierdes 3–5 llamadas al día. Cada una puede ser un cliente de $5,000 MXN. Son $75,000–$125,000 MXN en ingresos potenciales que se van cada mes porque nadie contestó el teléfono.\n\nContratar una recepcionista cuesta $8,000–$15,000 MXN/mes — y solo trabaja 8 horas al día, 5 días a la semana. Tu agente de voz con IA trabaja 24/7 por una fracción de eso.",
+      whatIBuild: "Un agente de voz con IA que contesta el teléfono de tu negocio con una voz natural y conversacional — entrenado con tus servicios, tus precios, tus horarios y tu proceso de reservaciones.\n\nSaluda a los que llaman entendiendo su intención. Responde preguntas comunes. Agenda citas directamente en tu calendario. Y cuando una llamada realmente te necesita, transfiere con todo el contexto para que nunca empieces en frío.\n\nLos que llaman no saben que es IA. Solo saben que alguien contestó al primer timbrazo.",
+      included: [
+        { title: "Voz y personalidad personalizada", desc: "Voz natural que coincide con tu marca — profesional, cálida, bilingüe. No un menú robótico de IVR" },
+        { title: "Entrenamiento con conocimiento del negocio", desc: "Entrenado con tus servicios, precios, horarios, ubicaciones y FAQs" },
+        { title: "Agendado de citas", desc: "Agenda directamente en tu calendario (Google Calendar, Calendly, o tu sistema de reservas)" },
+        { title: "Captura y enrutamiento de leads", desc: "Captura nombre, número, intención y urgencia — te envía un resumen por texto al instante" },
+        { title: "Transferencia con contexto", desc: "Cuando la llamada te necesita, transfiere con un resumen de lo que quiere la persona" },
+        { title: "Bilingüe (EN/ES)", desc: "Maneja llamadas en inglés y español, cambiando naturalmente según el que llama" },
+        { title: "Reporte mensual de llamadas", desc: "Volumen, preguntas frecuentes, citas agendadas, estadísticas de recuperación" },
+        { title: "Hasta 500 minutos incluidos", desc: "Excedente a $8.50 MXN/minuto. La mayoría de negocios pequeños usan 200–400 minutos/mes" }
+      ],
+      notIncluded: [
+        "Campañas de llamadas salientes (disponible como proyecto separado)",
+        "Integración con sistemas telefónicos empresariales (PBX, Cisco — se cotiza aparte)",
+        "Almacenamiento de grabaciones más allá de 30 días"
+      ],
+      timeline: "En vivo en 1–2 semanas. Llamada → configuración de voz → pruebas → lanzamiento.",
+      investment: "**$4,999 MXN/mes** — incluye hasta 500 minutos, configuración, entrenamiento y reportes mensuales. Excedente a $8.50 MXN/min. Sin cuota de instalación. Sin contrato.",
+      investmentDisclaimer: "Prueba gratis de 2 semanas. Cancela cuando quieras.",
+      bestFor: [
+        "Negocios de servicio que pierden llamadas en horas pico (salones, clínicas, contratistas)",
+        "Equipos pequeños sin recepcionista dedicada",
+        "Negocios perdiendo clientes ante competidores que contestan más rápido",
+        "Cualquiera pagando $8,000+ MXN/mes por una recepcionista que solo trabaja 40 horas a la semana"
+      ]
+    }
+  },
   'custom-tools': {
     en: {
-      heading: "Custom Workflow Automation",
-      subheading: "I automate the data entry, follow-ups, reports, and copy-paste tasks eating your team's time.",
-      problem: "Your team spends hours every week on repetitive, structured work — data entry, report generation, manual follow-ups, document processing, or copy-paste tasks between systems.",
-      whatIBuild: "Custom AI-powered tools designed for YOUR specific process. Not a generic automation platform you need to configure — a purpose-built application that handles the exact workflow that's eating your team's time.\n\nExamples: AI writing systems, Resume analysis tools, Web scraping systems.",
+      heading: "Custom AI Automation",
+      subheading: "Your team spends 10+ hours a week on tasks a machine should handle. I build the machine.",
+      problem: "Your team spends hours every week on repetitive, structured work — data entry, report generation, manual follow-ups, document processing, or copy-paste tasks between systems.\n\nEvery hour your team spends on busywork is an hour they're not spending on customers, strategy, or growth. And the cost compounds — that's $25,000–$50,000/year in wasted salary for a single workflow.",
+      whatIBuild: "Custom AI-powered tools designed for YOUR specific process. Not a generic automation platform you need to configure — a purpose-built application that handles the exact workflow that's eating your team's time.\n\nExamples: AI writing systems, document processors, data extraction pipelines, web scraping systems, report generators.",
       included: [
         { title: "Workflow analysis", desc: "I map your current process end-to-end, identify the bottlenecks, and design the automation that delivers the highest time savings" },
         { title: "Custom application development", desc: "Built with production-grade engineering: proper validation, error handling, logging, and security" },
@@ -149,13 +209,13 @@ const data = {
         { title: "30-day optimization window", desc: "Post-launch tuning based on real-world usage" }
       ],
       notIncluded: [
-        "Ongoing feature development beyond the initial scope",
+        "Ongoing feature development beyond the initial scope (available via retainer)",
         "Replacement of core business systems (ERP, CRM migrations, etc.)",
-        "AI solutions for problems that don't need AI"
+        "AI solutions for problems that don't need AI — I'll tell you if that's the case"
       ],
       timeline: "4–8 weeks, depending on complexity and number of integrations.",
-      investment: "Engagements start at **$5,000** for focused single-workflow automation. Multi-system integrations or complex applications are typically **$8,000–$15,000+**.",
-      investmentDisclaimer: "All projects are scoped during the free discovery call.",
+      investment: "Project-based. Starts at **$5,000** for focused single-workflow automation. Multi-system integrations typically **$8,000–$15,000+**. Optional monthly retainer for ongoing optimization starts at **$1,000/month**.",
+      investmentDisclaimer: "All projects are scoped and quoted during the free discovery call. No surprises.",
       bestFor: [
         "Teams spending 10+ hours/week on repetitive manual tasks",
         "Businesses with custom workflows that off-the-shelf tools don't support",
@@ -164,10 +224,10 @@ const data = {
       ]
     },
     es: {
-      heading: "Automatización de Procesos a la Medida",
-      subheading: "Automatizo la entrada de datos, los seguimientos, los reportes y las tareas de copiar y pegar que consumen el tiempo de tu equipo.",
-      problem: "Tu equipo pasa horas cada semana en trabajo repetitivo y estructurado — captura de datos, generación de reportes, seguimientos manuales, procesamiento de documentos, o tareas de copiar y pegar entre sistemas.",
-      whatIBuild: "Herramientas impulsadas por IA diseñadas para TU proceso específico. No una plataforma de automatización genérica que necesitas configurar — una aplicación construida a propósito que maneja el flujo exacto que le está comiendo tiempo a tu equipo.\n\nEjemplos: Sistemas de escritura con IA, herramientas de análisis de CVs, sistemas de web scraping.",
+      heading: "Automatización Personalizada con IA",
+      subheading: "Tu equipo gasta 10+ horas a la semana en tareas que una máquina debería manejar. Yo construyo la máquina.",
+      problem: "Tu equipo pasa horas cada semana en trabajo repetitivo y estructurado — captura de datos, generación de reportes, seguimientos manuales, procesamiento de documentos, o tareas de copiar y pegar entre sistemas.\n\nCada hora que tu equipo gasta en trabajo manual es una hora que no gastan en clientes, estrategia o crecimiento. Y el costo se acumula — son $400,000–$800,000 MXN/año en salario desperdiciado por un solo flujo de trabajo.",
+      whatIBuild: "Herramientas impulsadas por IA diseñadas para TU proceso específico. No una plataforma de automatización genérica que necesitas configurar — una aplicación construida a propósito que maneja el flujo exacto que le está comiendo tiempo a tu equipo.\n\nEjemplos: Sistemas de escritura con IA, procesadores de documentos, pipelines de extracción de datos, sistemas de web scraping, generadores de reportes.",
       included: [
         { title: "Análisis de flujo de trabajo", desc: "Mapeo tu proceso actual de principio a fin, identifico los cuellos de botella, y diseño la automatización que entrega el mayor ahorro de tiempo" },
         { title: "Desarrollo de aplicación a medida", desc: "Construida con ingeniería de producción: validación adecuada, manejo de errores, logging y seguridad" },
@@ -178,13 +238,13 @@ const data = {
         { title: "Ventana de optimización de 30 días", desc: "Ajustes post-lanzamiento basados en uso real" }
       ],
       notIncluded: [
-        "Desarrollo continuo de funcionalidades fuera del alcance inicial",
+        "Desarrollo continuo fuera del alcance inicial (disponible como retención mensual)",
         "Reemplazo de sistemas centrales de negocio (migraciones de ERP, CRM, etc.)",
-        "Soluciones de IA para problemas que no necesitan IA"
+        "Soluciones de IA para problemas que no necesitan IA — te lo diré si es el caso"
       ],
       timeline: "4–8 semanas, dependiendo de la complejidad y número de integraciones.",
-      investment: "Proyectos desde **$5,000 USD** para automatización de un flujo específico. Integraciones multi-sistema o aplicaciones complejas típicamente **$8,000–$15,000+ USD**.",
-      investmentDisclaimer: "Todos los proyectos se dimensionan durante la llamada de descubrimiento gratuita.",
+      investment: "Por proyecto. Desde **$85,000 MXN** para automatización de un flujo específico. Integraciones multi-sistema típicamente **$136,000–$255,000+ MXN**. Retención mensual opcional para optimización continua desde **$17,000 MXN/mes**.",
+      investmentDisclaimer: "Todos los proyectos se dimensionan y cotizan durante la llamada gratuita. Sin sorpresas.",
       bestFor: [
         "Equipos que gastan 10+ horas/semana en tareas manuales repetitivas",
         "Negocios con flujos personalizados que las herramientas genéricas no soportan",
@@ -196,9 +256,9 @@ const data = {
   'clarity-sprint': {
     en: {
       heading: "AI Strategy Session",
-      subheading: "Not sure if AI can help your business? I'll find out in 5–10 days and give you a plan — or tell you it's not worth it. $1,500, credited if you move forward.",
-      problem: "You know AI could probably help your business, but you're not sure where to focus, what's realistic, or how much it should cost. You've seen impressive demos that turned into expensive disappointments.",
-      whatIBuild: "In 5–10 business days, I'll map your business operations, identify the highest-impact AI opportunity, and deliver a clear action plan you can execute — with me or on your own.",
+      subheading: "Not sure where AI fits in your business? I'll find out in 5–10 days and give you a plan — or tell you it's not worth it. $1,500, credited if you move forward.",
+      problem: "You know AI could probably help your business, but you're not sure where to focus, what's realistic, or how much it should cost. You've seen impressive demos that turned into expensive disappointments.\n\nMeanwhile, your competitors are already using AI to answer customers faster, rank higher on Google, and automate the busywork your team still does by hand.",
+      whatIBuild: "In 5–10 business days, I'll map your business operations, identify the highest-impact AI opportunity, and deliver a clear action plan you can execute — with me or on your own.\n\nThis isn't a sales pitch disguised as consulting. If AI isn't the right move for your business right now, I'll tell you exactly that — and what would actually help instead.",
       included: [
         { title: "Discovery session (60–90 minutes)", desc: "Deep dive into your business operations, pain points, existing tools, and goals" },
         { title: "Opportunity assessment", desc: "I evaluate where AI can deliver measurable results vs. where it's not worth the investment" },
@@ -212,7 +272,7 @@ const data = {
         "Ongoing consulting beyond the Sprint deliverable"
       ],
       timeline: "5–10 business days from kickoff to delivered plan.",
-      investment: "**$1,500** flat fee. If you move forward with a build engagement, I credit the full Sprint fee toward your project.",
+      investment: "**$1,500** flat fee. If you move forward with any monthly service or custom project, I credit the full $1,500 toward your first engagement.",
       investmentDisclaimer: "This is the most popular starting point for businesses that want clarity before commitment.",
       bestFor: [
         "Founders and ops leaders who know AI could help but aren't sure where",
@@ -223,9 +283,9 @@ const data = {
     },
     es: {
       heading: "Sesión de Estrategia de IA",
-      subheading: "¿No estás seguro si la IA puede ayudar a tu negocio? Lo descubro en 5–10 días y te doy un plan — o te digo que no vale la pena. $1,500 USD, acreditado si decides seguir adelante.",
-      problem: "Sabes que la IA podría ayudar a tu negocio, pero no estás seguro de dónde enfocarte, qué es realista, o cuánto debería costar. Has visto demos impresionantes que se convirtieron en decepciones costosas.",
-      whatIBuild: "En 5–10 días hábiles, mapearé tus operaciones de negocio, identificaré la oportunidad de mayor impacto con IA, y te entregaré un plan de acción claro que puedes ejecutar — conmigo o por tu cuenta.",
+      subheading: "¿No estás seguro dónde encaja la IA en tu negocio? Lo descubro en 5–10 días y te doy un plan — o te digo que no vale la pena. $25,500 MXN, acreditado si decides seguir adelante.",
+      problem: "Sabes que la IA podría ayudar a tu negocio, pero no estás seguro de dónde enfocarte, qué es realista, o cuánto debería costar. Has visto demos impresionantes que se convirtieron en decepciones costosas.\n\nMientras tanto, tus competidores ya están usando IA para contestar clientes más rápido, aparecer más alto en Google, y automatizar el trabajo manual que tu equipo todavía hace a mano.",
+      whatIBuild: "En 5–10 días hábiles, mapearé tus operaciones de negocio, identificaré la oportunidad de mayor impacto con IA, y te entregaré un plan de acción claro que puedes ejecutar — conmigo o por tu cuenta.\n\nEsto no es un pitch de ventas disfrazado de consultoría. Si la IA no es la jugada correcta para tu negocio ahora mismo, te lo diré exactamente — y te diré qué sí ayudaría.",
       included: [
         { title: "Sesión de descubrimiento (60–90 minutos)", desc: "Inmersión profunda en tus operaciones, puntos de dolor, herramientas existentes y objetivos" },
         { title: "Evaluación de oportunidades", desc: "Evalúo dónde la IA puede entregar resultados medibles vs. dónde no vale la inversión" },
@@ -239,7 +299,7 @@ const data = {
         "Consultoría continua más allá del entregable del Sprint"
       ],
       timeline: "5–10 días hábiles desde el inicio hasta el plan entregado.",
-      investment: "**$1,500 USD** tarifa plana. Si avanzas con un proyecto de desarrollo, acredito la totalidad del Sprint al costo del proyecto.",
+      investment: "**$25,500 MXN** tarifa plana. Si avanzas con cualquier servicio mensual o proyecto a medida, acredito los $25,500 MXN completos a tu primer proyecto.",
       investmentDisclaimer: "El punto de entrada más popular para negocios que quieren claridad antes de compromiso.",
       bestFor: [
         "Fundadores y líderes de operaciones que saben que la IA puede ayudar pero no están seguros dónde",
@@ -263,14 +323,14 @@ const alsoAvailable = id === 'competitive-intelligence' ? {
     heading: "Also Available",
     items: [
       {
-        title: "Local Competitor Intelligence — weekly WhatsApp report",
-        body: "See who's beating you on Google Maps — rankings, reviews, ratings, and competitor moves — delivered to your phone every Monday morning. For owners who want to make decisions on data, not gut feel.",
-        price: "From $299/month."
+        title: "Google Maps Monitoring & Weekly Action Plan",
+        body: "Every week I check where you rank on Google Maps, monitor up to 5 competitors, and send you one WhatsApp message with one clear action to take this week. No dashboards to learn. Just results.",
+        price: "From $297/month."
       },
       {
-        title: "AI Product Mockups & Visual Content",
-        body: "Professional product photography and lifestyle mockups generated for Instagram, Facebook ads, and your website. Built to stop the scroll and boost engagement.",
-        price: "Project pricing."
+        title: "AI Product Photos — No Photo Shoot Needed",
+        body: "Send me your product photos. I put them on AI-generated models with realistic settings — beaches, storefronts, studios. Fresh content every week for Instagram, Facebook, and Reels. No photographer. No studio.",
+        price: "From $297/month."
       }
     ]
   },
@@ -278,14 +338,14 @@ const alsoAvailable = id === 'competitive-intelligence' ? {
     heading: "También Disponible",
     items: [
       {
-        title: "Inteligencia de Competidores Locales — reporte semanal por WhatsApp",
-        body: "Mira quién te está ganando en Google Maps — rankings, reseñas, calificaciones y movimientos de competidores — entregado a tu teléfono cada lunes en la mañana. Para dueños que quieren decidir con datos, no con corazonadas.",
-        price: "Desde $299 USD/mes."
+        title: "Monitoreo de Google Maps y Plan de Acción Semanal",
+        body: "Cada semana reviso dónde apareces en Google Maps, monitoreo hasta 5 competidores, y te mando un WhatsApp con una acción clara para esta semana. Sin dashboards que aprender. Solo resultados.",
+        price: "Desde $2,499 MXN/mes."
       },
       {
-        title: "Mockups de Producto y Contenido Visual con IA",
-        body: "Fotografía de producto profesional y mockups de estilo de vida generados para Instagram, anuncios de Facebook y tu sitio web. Hechos para detener el scroll y aumentar el engagement.",
-        price: "Precio por proyecto."
+        title: "Fotos de Producto con IA — Sin Sesión Fotográfica",
+        body: "Mándame tus fotos de producto. Las pongo en modelos generados con IA en escenarios realistas — playas, aparadores, estudios. Contenido fresco cada semana para Instagram, Facebook y Reels. Sin fotógrafo. Sin estudio.",
+        price: "Desde $2,499 MXN/mes."
       }
     ]
   }

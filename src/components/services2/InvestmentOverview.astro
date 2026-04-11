@@ -9,82 +9,106 @@ const { locale } = Astro.props;
 
 const content = {
   en: {
-    heading: "Investment Overview",
-    intro: "I believe in transparent pricing. Here's what engagements typically look like:",
-    headers: ["Service", "Starting At", "Typical Range", "Timeline"],
+    heading: "Simple Monthly Pricing",
+    intro: "No setup fees. No long-term contracts. Free 2-week trial on every service. Cancel anytime.",
+    headers: ["Service", "Monthly", "What's Included", "Support"],
     rows: [
       {
-        service: "AI Strategy Session",
-        startingAt: "$1,500",
-        typicalRange: "$1,500 (flat)",
-        timeline: "5–10 days"
+        service: "AI Chatbot (Website/WhatsApp)",
+        startingAt: "$497/mo",
+        typicalRange: "Unlimited conversations, weekly reports, monthly tuning",
+        timeline: "Email (24hr)"
       },
       {
-        service: "AI Customer Support Chatbot",
-        startingAt: "$3,500",
-        typicalRange: "$3,500–$8,500",
-        timeline: "2–4 weeks"
+        service: "AI Messenger Assistant (Facebook)",
+        startingAt: "$497/mo",
+        typicalRange: "Unlimited conversations, weekly reports, monthly tuning",
+        timeline: "Email (24hr)"
       },
       {
-        service: "Google Maps Competitor Tracking",
-        startingAt: "$299/mo",
-        typicalRange: "$299–$1,500/mo",
-        timeline: "Ongoing"
+        service: "AI Voice Agent",
+        startingAt: "$497/mo",
+        typicalRange: "500 min included, appointment booking, lead capture",
+        timeline: "Email (24hr)"
       },
       {
-        service: "Custom Workflow Automation",
-        startingAt: "$5,000",
-        typicalRange: "$5,000–$15,000+",
+        service: "Google Maps Monitoring",
+        startingAt: "$297/mo",
+        typicalRange: "Weekly tracking, 5 competitors, WhatsApp action plan",
+        timeline: "Weekly WhatsApp"
+      },
+      {
+        service: "AI Product Photos",
+        startingAt: "$297/mo",
+        typicalRange: "Fresh images weekly for Instagram, Facebook, Reels",
+        timeline: "24hr turnaround"
+      },
+      {
+        service: "Custom AI Automation",
+        startingAt: "From $5,000",
+        typicalRange: "Project-based. Scoped during discovery call",
         timeline: "4–8 weeks"
       },
       {
-        service: "Ongoing Retainer",
-        startingAt: "$1,000/mo",
-        typicalRange: "$1,000–$2,500/mo",
-        timeline: "Monthly"
+        service: "AI Strategy Session",
+        startingAt: "$1,500",
+        typicalRange: "Flat fee — credited toward any service if you proceed",
+        timeline: "5–10 days"
       }
     ],
-    note: "Every project is scoped during the free discovery call. The ranges above reflect typical engagements — your project may be simpler or more complex. I'll give you an exact quote before you commit to anything.",
-    credit: "**Strategy Session credit:** If you start with an AI Strategy Session and move forward with a build engagement, the full $1,500 is credited toward your project."
+    note: "Every service starts with a free discovery call. I'll assess your situation and recommend the right starting point — no commitment required.",
+    credit: "**Save with bundles:** Combine 2+ services and I'll build you a custom package at a better rate. Most clients bundle the chatbot + Google Maps + product photos for a single monthly price."
   },
   es: {
-    heading: "Resumen de Inversión",
-    intro: "Creo en precios transparentes. Así se ven los proyectos típicamente:",
-    headers: ["Servicio", "Desde", "Rango Típico", "Línea de Tiempo"],
+    heading: "Precios Mensuales Simples",
+    intro: "Sin cuota de instalación. Sin contratos. Prueba gratis de 2 semanas en cada servicio. Cancela cuando quieras.",
+    headers: ["Servicio", "Mensual", "Qué Incluye", "Soporte"],
     rows: [
       {
-        service: "Sesión de Estrategia de IA",
-        startingAt: "$1,500",
-        typicalRange: "$1,500 (fijo)",
-        timeline: "5–10 días"
+        service: "Chatbot de IA (Sitio Web/WhatsApp)",
+        startingAt: "$4,999 MXN/mes",
+        typicalRange: "Conversaciones ilimitadas, reportes semanales, ajuste mensual",
+        timeline: "Email (24hr)"
       },
       {
-        service: "Chatbot de Atención al Cliente con IA",
-        startingAt: "$3,500",
-        typicalRange: "$3,500–$8,500",
-        timeline: "2–4 semanas"
+        service: "Asistente de IA en Facebook Messenger",
+        startingAt: "$4,999 MXN/mes",
+        typicalRange: "Conversaciones ilimitadas, reportes semanales, ajuste mensual",
+        timeline: "Email (24hr)"
       },
       {
-        service: "Monitoreo de Competidores en Google Maps",
-        startingAt: "$299/mes",
-        typicalRange: "$299–$1,500/mes",
-        timeline: "Continuo"
+        service: "Agente de Voz con IA",
+        startingAt: "$4,999 MXN/mes",
+        typicalRange: "500 min incluidos, agendado de citas, captura de leads",
+        timeline: "Email (24hr)"
       },
       {
-        service: "Automatización de Procesos a la Medida",
-        startingAt: "$5,000",
-        typicalRange: "$5,000–$15,000+",
+        service: "Monitoreo de Google Maps",
+        startingAt: "$2,499 MXN/mes",
+        typicalRange: "Rastreo semanal, 5 competidores, plan de acción por WhatsApp",
+        timeline: "WhatsApp semanal"
+      },
+      {
+        service: "Fotos de Producto con IA",
+        startingAt: "$2,499 MXN/mes",
+        typicalRange: "Imágenes frescas cada semana para Instagram, Facebook, Reels",
+        timeline: "24hr de entrega"
+      },
+      {
+        service: "Automatización Personalizada con IA",
+        startingAt: "Desde $85,000 MXN",
+        typicalRange: "Por proyecto. Se define en la llamada de descubrimiento",
         timeline: "4–8 semanas"
       },
       {
-        service: "Retención Continua",
-        startingAt: "$1,000/mes",
-        typicalRange: "$1,000–$2,500/mes",
-        timeline: "Mensual"
+        service: "Sesión de Estrategia de IA",
+        startingAt: "$25,500 MXN",
+        typicalRange: "Tarifa plana — acreditado a cualquier servicio si procedes",
+        timeline: "5–10 días"
       }
     ],
-    note: "Todos los proyectos se miden en la llamada gratuita. Los rangos arriba reflejan montos promedios — el tuyo puede ser diferente. Siéntete libre para conseguir un presupuesto sin compromisos.",
-    credit: "**Crédito de Sesión de Estrategia:** Si empiezas con una Sesión de Estrategia de IA y avanzas a un proyecto de construcción, los $1,500 USD se acreditan completos a tu proyecto."
+    note: "Cada servicio empieza con una llamada de descubrimiento gratuita. Evalúo tu situación y recomiendo el punto de partida correcto — sin compromiso.",
+    credit: "**Ahorra con paquetes:** Combina 2+ servicios y te armo un paquete personalizado a mejor precio. La mayoría de los clientes combinan el chatbot + Google Maps + fotos de producto en un solo precio mensual."
   }
 };
 
