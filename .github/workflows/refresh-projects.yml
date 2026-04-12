@@ -42,7 +42,15 @@ jobs:
           SENTRY_CHECK_IN_ID=$(node -e "
             const Sentry = require('@sentry/node');
             Sentry.init({ dsn: process.env.SENTRY_DSN });
-            const id = Sentry.captureCheckIn({ monitorSlug: 'weekly-portfolio-refresh', status: 'in_progress' });
+            const id = Sentry.captureCheckIn(
+              { monitorSlug: 'weekly-portfolio-refresh', status: 'in_progress' },
+              {
+                schedule: { type: 'crontab', value: '0 2 * * 0' },
+                checkinMargin: 30,
+                maxRuntime: 15,
+                timezone: 'Etc/UTC',
+              }
+            );
             Sentry.close(5000).then(() => console.log(id));
           ")
           echo "SENTRY_CHECK_IN_ID=$SENTRY_CHECK_IN_ID" >> $GITHUB_ENV
