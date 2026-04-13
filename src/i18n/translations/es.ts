@@ -22,23 +22,19 @@ export const es = {
   },
   services: {
     title: 'Cómo Puedo Ayudarte',
-    subtitle: 'Cuatro servicios, resultados claros — elige el que encaje o empieza con una llamada gratis',
+    subtitle: 'IA que trabaja 24/7 para que tu equipo no tenga que hacerlo — empieza con una prueba gratis',
     learnMore: 'Ver todos los servicios',
     assistants: {
-      title: 'Asistentes de Soporte IA',
+      title: 'Chatbot Inteligente de Atención al Cliente',
       description: 'IA entrenada con TU conocimiento — responde clientes en inglés y español, captura leads fuera de horario y transfiere a humanos cuando se necesita.',
     },
     intelligence: {
       title: 'Inteligencia Competitiva',
       description: 'Rastrea competidores en Google Maps — rankings, reseñas y movimientos — con reportes semanales por WhatsApp y una acción clara.',
     },
-    tools: {
-      title: 'Herramientas IA a Medida',
-      description: 'Aplicaciones construidas para automatizar tus flujos más tardados. No una plataforma genérica — hecha para tu proceso exacto.',
-    },
-    clarity: {
-      title: 'Sprint de Claridad IA',
-      description: '¿No sabes por dónde empezar? Obtén un plan claro con arquitectura, timeline e inversión en 5-10 días. $1,500 USD — acreditado al proyecto.',
+    voice: {
+      title: 'Agente de Voz IA',
+      description: 'Tu teléfono contestado al primer timbrazo, 24/7. Citas agendadas, leads capturados, llamadas transferidas — nunca saben que es IA.',
     },
   },
   process: {
