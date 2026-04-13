@@ -11,117 +11,95 @@ const content = {
   en: {
     heading: "Simple Monthly Pricing",
     intro: "No setup fees. No long-term contracts. Free 2-week trial on every service. Cancel anytime.",
-    headers: ["Service", "Monthly", "What's Included", "Support"],
-    rows: [
-      {
-        service: "AI Chatbot (Website/WhatsApp)",
-        startingAt: "$497/mo",
-        typicalRange: "Unlimited conversations, weekly reports, monthly tuning",
-        timeline: "Email (24hr)"
-      },
-      {
-        service: "AI Messenger Assistant (Facebook)",
-        startingAt: "$497/mo",
-        typicalRange: "Unlimited conversations, weekly reports, monthly tuning",
-        timeline: "Email (24hr)"
-      },
-      {
-        service: "AI Voice Agent",
-        startingAt: "$497/mo",
-        typicalRange: "500 min included, appointment booking, lead capture",
-        timeline: "Email (24hr)"
-      },
-      {
-        service: "Google Maps Monitoring",
-        startingAt: "$297/mo",
-        typicalRange: "Weekly tracking, 5 competitors, WhatsApp action plan",
-        timeline: "Weekly WhatsApp"
-      },
-      {
-        service: "AI Product Photos",
-        startingAt: "$297/mo",
-        typicalRange: "Fresh images weekly for Instagram, Facebook, Reels",
-        timeline: "24hr turnaround"
-      },
-      {
-        service: "Custom AI Automation",
-        startingAt: "From $5,000",
-        typicalRange: "Project-based. Scoped during discovery call",
-        timeline: "4–8 weeks"
-      },
-      {
-        service: "AI Strategy Session",
-        startingAt: "$1,500",
-        typicalRange: "Flat fee — credited toward any service if you proceed",
-        timeline: "5–10 days"
-      }
-    ],
-    note: "Every service starts with a free discovery call. I'll assess your situation and recommend the right starting point — no commitment required.",
-    credit: "**Save with bundles:** Combine 2+ services and I'll build you a custom package at a better rate. Most clients bundle the chatbot + Google Maps + product photos for a single monthly price."
+    bundleLabel: "Most Popular",
+    bundle: {
+      name: "AI Growth Bundle",
+      price: "$997",
+      period: "/mo",
+      description: "Everything your business needs to capture more leads, monitor competitors, and look great online — powered by AI, fully managed by me.",
+      features: [
+        "AI assistant on your website, WhatsApp, Facebook, Instagram, or Telegram",
+        "Google Maps competitive monitoring + weekly action plan",
+        "AI-generated product photos — fresh content weekly for social media",
+        "Bilingual (English & Spanish) — automatic language detection",
+        "Weekly performance reports delivered to your inbox",
+        "Monthly tuning as your business evolves",
+        "Human handoff when conversations need a real person"
+      ],
+      cta: "Start Free Trial",
+      ctaLink: "/consultation/"
+    },
+    voiceLabel: "Premium",
+    voice: {
+      name: "AI Voice Agent",
+      price: "$1,497",
+      period: "/mo",
+      description: "Your phone answered on the first ring, 24/7. Appointments booked. Leads captured. Callers never know it's AI.",
+      features: [
+        "Natural-sounding voice matched to your brand",
+        "500 minutes included (overage at $0.50/min)",
+        "Appointment booking directly into your calendar",
+        "Lead capture — name, number, intent texted to you instantly",
+        "Call transfer with context when a human is needed",
+        "Bilingual (English & Spanish)",
+        "Monthly call reports and ongoing optimization"
+      ],
+      cta: "Start Free Trial",
+      ctaLink: "/consultation/"
+    },
+    roi: "A part-time employee costs $3,000+/month and works 20 hours a week. Your AI works 24/7 for a fraction of that — and never calls in sick.",
+    note: "Every service starts with a free discovery call. I'll assess your situation and recommend the right starting point — no commitment required."
   },
   es: {
     heading: "Precios Mensuales Simples",
     intro: "Sin cuota de instalación. Sin contratos. Prueba gratis de 2 semanas en cada servicio. Cancela cuando quieras.",
-    headers: ["Servicio", "Mensual", "Qué Incluye", "Soporte"],
-    rows: [
-      {
-        service: "Chatbot de IA (Sitio Web/WhatsApp)",
-        startingAt: "$4,999 MXN/mes",
-        typicalRange: "Conversaciones ilimitadas, reportes semanales, ajuste mensual",
-        timeline: "Email (24hr)"
-      },
-      {
-        service: "Asistente de IA en Facebook Messenger",
-        startingAt: "$4,999 MXN/mes",
-        typicalRange: "Conversaciones ilimitadas, reportes semanales, ajuste mensual",
-        timeline: "Email (24hr)"
-      },
-      {
-        service: "Agente de Voz con IA",
-        startingAt: "$4,999 MXN/mes",
-        typicalRange: "500 min incluidos, agendado de citas, captura de leads",
-        timeline: "Email (24hr)"
-      },
-      {
-        service: "Monitoreo de Google Maps",
-        startingAt: "$2,499 MXN/mes",
-        typicalRange: "Rastreo semanal, 5 competidores, plan de acción por WhatsApp",
-        timeline: "WhatsApp semanal"
-      },
-      {
-        service: "Fotos de Producto con IA",
-        startingAt: "$2,499 MXN/mes",
-        typicalRange: "Imágenes frescas cada semana para Instagram, Facebook, Reels",
-        timeline: "24hr de entrega"
-      },
-      {
-        service: "Automatización Personalizada con IA",
-        startingAt: "Desde $85,000 MXN",
-        typicalRange: "Por proyecto. Se define en la llamada de descubrimiento",
-        timeline: "4–8 semanas"
-      },
-      {
-        service: "Sesión de Estrategia de IA",
-        startingAt: "$25,500 MXN",
-        typicalRange: "Tarifa plana — acreditado a cualquier servicio si procedes",
-        timeline: "5–10 días"
-      }
-    ],
-    note: "Cada servicio empieza con una llamada de descubrimiento gratuita. Evalúo tu situación y recomiendo el punto de partida correcto — sin compromiso.",
-    credit: "**Ahorra con paquetes:** Combina 2+ servicios y te armo un paquete personalizado a mejor precio. La mayoría de los clientes combinan el chatbot + Google Maps + fotos de producto en un solo precio mensual."
+    bundleLabel: "Más Popular",
+    bundle: {
+      name: "Paquete de Crecimiento con IA",
+      price: "$8,497",
+      period: " MXN/mes",
+      description: "Todo lo que tu negocio necesita para captar más clientes, monitorear competidores y verse increíble en línea — impulsado por IA, gestionado completamente por mí.",
+      features: [
+        "Asistente de IA en tu sitio web, WhatsApp, Facebook, Instagram o Telegram",
+        "Monitoreo competitivo en Google Maps + plan de acción semanal",
+        "Fotos de producto con IA — contenido fresco cada semana para redes sociales",
+        "Bilingüe (inglés y español) — detección automática de idioma",
+        "Reportes semanales de desempeño en tu bandeja de entrada",
+        "Ajuste mensual conforme tu negocio evoluciona",
+        "Transferencia a humano cuando la conversación lo requiere"
+      ],
+      cta: "Empezar Prueba Gratis",
+      ctaLink: "/es/reservar/"
+    },
+    voiceLabel: "Premium",
+    voice: {
+      name: "Agente de Voz con IA",
+      price: "$10,997",
+      period: " MXN/mes",
+      description: "Tu teléfono contestado al primer timbrazo, 24/7. Citas agendadas. Leads capturados. Los que llaman nunca saben que es IA.",
+      features: [
+        "Voz natural que coincide con tu marca",
+        "500 minutos incluidos (excedente a $8.50 MXN/min)",
+        "Agendado de citas directo en tu calendario",
+        "Captura de leads — nombre, número e intención enviados por texto al instante",
+        "Transferencia con contexto cuando se necesita una persona",
+        "Bilingüe (inglés y español)",
+        "Reportes mensuales de llamadas y optimización continua"
+      ],
+      cta: "Empezar Prueba Gratis",
+      ctaLink: "/es/reservar/"
+    },
+    roi: "Un empleado de medio tiempo cuesta $8,000+ MXN/mes y trabaja 20 horas a la semana. Tu IA trabaja 24/7 por una fracción de eso — y nunca falta.",
+    note: "Cada servicio empieza con una llamada de descubrimiento gratuita. Evalúo tu situación y recomiendo el punto de partida correcto — sin compromiso."
   }
 };
 
 const t = content[locale];
-
-function formatBold(text: string) {
-  return text.replace(/\*\*(.*?)\*\*/g, '<strong class="text-gray-900 dark:text-white font-semibold">$1</strong>');
-}
 ---
 
 <section id="pricing" class="py-20 md:py-32 bg-gray-50 dark:bg-gray-900/40 border-y border-gray-200 dark:border-gray-800">
   <Container size="lg">
-    <div class="text-center mb-12 max-w-3xl mx-auto">
+    <div class="text-center mb-16 max-w-3xl mx-auto">
       <h2 class="font-display font-bold text-3xl md:text-5xl text-gray-900 dark:text-white mb-6 leading-tight tracking-tight">
         {t.heading}
       </h2>
@@ -130,69 +108,98 @@ function formatBold(text: string) {
       </p>
     </div>
 
-    <!-- Desktop Table (Hidden on small screens) -->
-    <div class="hidden md:block overflow-hidden bg-white dark:bg-black rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm max-w-5xl mx-auto mb-8">
-      <table class="w-full text-left border-collapse">
-        <thead class="bg-gray-50 dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800">
-          <tr>
-            {t.headers.map(header => (
-              <th class="py-4 px-6 font-display font-bold text-gray-900 dark:text-white uppercase tracking-wider text-sm">
-                {header}
-              </th>
-            ))}
-          </tr>
-        </thead>
-        <tbody class="divide-y divide-gray-100 dark:divide-gray-800">
-          {t.rows.map((row) => (
-            <tr class="hover:bg-cush-orange/5 dark:hover:bg-cush-orange/10 transition-colors">
-              <td class="py-5 px-6 font-semibold text-gray-900 dark:text-white whitespace-nowrap">
-                {row.service}
-              </td>
-              <td class="py-5 px-6 font-mono text-gray-600 dark:text-gray-400 whitespace-nowrap">
-                {row.startingAt}
-              </td>
-              <td class="py-5 px-6 text-gray-600 dark:text-gray-400 whitespace-nowrap">
-                {row.typicalRange}
-              </td>
-              <td class="py-5 px-6 text-sm text-gray-600 dark:text-gray-400 whitespace-nowrap">
-                {row.timeline}
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+    <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-12">
 
-    <!-- Mobile Cards (Visible only on small screens) -->
-    <div class="md:hidden space-y-4 max-w-lg mx-auto mb-8">
-      {t.rows.map(row => (
-        <div class="bg-white dark:bg-black border border-gray-200 dark:border-gray-800 rounded-xl p-5 shadow-sm">
-          <h3 class="font-display font-bold text-lg text-gray-900 dark:text-white mb-4 pb-2 border-b border-gray-100 dark:border-gray-800">
-            {row.service}
-          </h3>
-          <div class="grid grid-cols-2 gap-4 text-sm">
-            <div>
-              <span class="block text-gray-500 dark:text-gray-500 uppercase tracking-wider text-xs mb-1 mb-1">{t.headers[1]}</span>
-              <span class="font-mono text-gray-900 dark:text-gray-200 font-medium">{row.startingAt}</span>
-            </div>
-            <div>
-              <span class="block text-gray-500 dark:text-gray-500 uppercase tracking-wider text-xs mb-1">{t.headers[3]}</span>
-              <span class="text-gray-900 dark:text-gray-200">{row.timeline}</span>
-            </div>
-            <div class="col-span-2 pt-2">
-              <span class="block text-gray-500 dark:text-gray-500 uppercase tracking-wider text-xs mb-1">{t.headers[2]}</span>
-              <span class="text-gray-900 dark:text-gray-200">{row.typicalRange}</span>
-            </div>
-          </div>
+      <!-- Growth Bundle Card -->
+      <div class="relative bg-white dark:bg-black rounded-2xl border-2 border-cush-orange shadow-xl shadow-cush-orange/10 p-8 md:p-10 flex flex-col">
+        <div class="absolute -top-4 left-8">
+          <span class="inline-block bg-cush-orange text-white text-xs font-display font-bold uppercase tracking-wider px-4 py-1.5 rounded-full">
+            {t.bundleLabel}
+          </span>
         </div>
-      ))}
+
+        <h3 class="font-display font-bold text-2xl text-gray-900 dark:text-white mt-2 mb-2">
+          {t.bundle.name}
+        </h3>
+
+        <div class="mb-4">
+          <span class="font-display font-bold text-5xl text-gray-900 dark:text-white">{t.bundle.price}</span>
+          <span class="text-gray-500 dark:text-gray-400 text-lg">{t.bundle.period}</span>
+        </div>
+
+        <p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-8">
+          {t.bundle.description}
+        </p>
+
+        <ul class="space-y-3 mb-8 flex-grow">
+          {t.bundle.features.map(feature => (
+            <li class="flex gap-3">
+              <svg class="w-5 h-5 text-green-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span class="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">{feature}</span>
+            </li>
+          ))}
+        </ul>
+
+        <a
+          href={t.bundle.ctaLink}
+          class="block w-full text-center px-6 py-4 bg-cush-orange text-white font-display font-semibold rounded-lg hover:bg-cush-orange/90 transition-colors duration-300 shadow-lg shadow-cush-orange/20"
+        >
+          {t.bundle.cta}
+        </a>
+      </div>
+
+      <!-- Voice Agent Card -->
+      <div class="relative bg-white dark:bg-black rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm p-8 md:p-10 flex flex-col">
+        <div class="absolute -top-4 left-8">
+          <span class="inline-block bg-gray-900 dark:bg-gray-700 text-white text-xs font-display font-bold uppercase tracking-wider px-4 py-1.5 rounded-full">
+            {t.voiceLabel}
+          </span>
+        </div>
+
+        <h3 class="font-display font-bold text-2xl text-gray-900 dark:text-white mt-2 mb-2">
+          {t.voice.name}
+        </h3>
+
+        <div class="mb-4">
+          <span class="font-display font-bold text-5xl text-gray-900 dark:text-white">{t.voice.price}</span>
+          <span class="text-gray-500 dark:text-gray-400 text-lg">{t.voice.period}</span>
+        </div>
+
+        <p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-8">
+          {t.voice.description}
+        </p>
+
+        <ul class="space-y-3 mb-8 flex-grow">
+          {t.voice.features.map(feature => (
+            <li class="flex gap-3">
+              <svg class="w-5 h-5 text-green-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span class="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">{feature}</span>
+            </li>
+          ))}
+        </ul>
+
+        <a
+          href={t.voice.ctaLink}
+          class="block w-full text-center px-6 py-4 bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-display font-semibold rounded-lg hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors duration-300"
+        >
+          {t.voice.cta}
+        </a>
+      </div>
+
     </div>
 
-    <div class="max-w-4xl mx-auto space-y-4">
-      <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed text-center">
+    <!-- ROI Message -->
+    <div class="max-w-3xl mx-auto text-center space-y-4">
+      <div class="bg-orange-50 dark:bg-orange-900/20 text-orange-800 dark:text-orange-200 p-5 rounded-xl text-base border border-orange-100 dark:border-orange-800/50 font-medium leading-relaxed">
+        {t.roi}
+      </div>
+      <p class="text-gray-500 dark:text-gray-500 text-sm">
         {t.note}
       </p>
-      <div class="bg-orange-50 dark:bg-orange-900/20 text-orange-800 dark:text-orange-200 p-4 rounded-lg text-sm text-center border border-orange-100 dark:border-orange-800/50" set:html={formatBold(t.credit)} />
     </div>
   </Container>
 </section>

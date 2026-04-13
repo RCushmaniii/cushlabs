@@ -22,23 +22,19 @@ export const en = {
   },
   services: {
     title: 'How I Can Help',
-    subtitle: 'Four services, clear outcomes — pick the one that fits or start with a free call',
+    subtitle: 'AI that works 24/7 so your team doesn\'t have to — start with a free trial',
     learnMore: 'See all services',
     assistants: {
-      title: 'AI Support Assistants',
+      title: 'Intelligent Customer Support AI Chatbot',
       description: 'AI trained on YOUR knowledge — answers customers in English and Spanish, captures leads after hours, hands off to humans when needed.',
     },
     intelligence: {
       title: 'Competitive Intelligence',
       description: 'Track competitors on Google Maps — rankings, reviews, and moves — with weekly WhatsApp reports and one clear action item.',
     },
-    tools: {
-      title: 'Custom AI Tools',
-      description: 'Purpose-built applications that automate your most time-consuming workflows. Not a generic platform — built for your exact process.',
-    },
-    clarity: {
-      title: 'AI Clarity Sprint',
-      description: 'Not sure where to start? Get a clear plan with architecture, timeline, and investment range in 5-10 days. $1,500 — credited toward a build.',
+    voice: {
+      title: 'AI Voice Agent',
+      description: 'Your phone answered on the first ring, 24/7. Appointments booked, leads captured, callers transferred — they never know it\'s AI.',
     },
   },
   process: {
