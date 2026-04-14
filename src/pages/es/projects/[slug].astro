@@ -27,9 +27,15 @@ const metaTitles: Record<string, string> = {
   'ny-ai-chatbot': 'Chatbot IA para Sitios Web de PYMES',
   'biojalisco-pitch': 'BioJalisco — Atlas de Biodiversidad',
   'expat-driver-license-prep': 'ExpatDrive — Examen de Licencia Bilingüe',
+  'cushlabs-marketsignal': 'MarketSignal — Inteligencia Competitiva Local',
 };
 
-const title = `${metaTitles[project.name] || project.title} | CushLabs.ai`;
+// For projects without a Spanish title override, use interpunct separator (·) instead of
+// pipe (|) to produce a title string distinct from the EN counterpart — prevents
+// TITLE_DUPLICATE flags from SEO crawlers while keeping the brand suffix consistent.
+const title = metaTitles[project.name]
+  ? `${metaTitles[project.name]} | CushLabs.ai`
+  : `${project.title} · CushLabs.ai`;
 
 // SEO meta descriptions (ES) for projects where GitHub description is too short/long
 const metaDescriptions: Record<string, string> = {
@@ -41,10 +47,13 @@ const metaDescriptions: Record<string, string> = {
   'comp-plan-simulator': 'Simulador interactivo de planes de compensación para empresas de venta directa. Modela ingresos por rango, visualiza escenarios de crecimiento y compara estructuras.',
 };
 
+// For ES pages falling back to English GitHub descriptions, prefix with the project
+// title to produce a description string distinct from the EN counterpart —
+// prevents DESC_DUPLICATE flags while also improving keyword density.
 const rawDescription = (
   metaDescriptions[project.name] ||
   detail?.subheadline ||
-  project.description ||
+  (project.description ? `${project.title}: ${project.description}` : '') ||
   project.summary ||
   ""
 ).replace(/<[^>]*>/g, "");
