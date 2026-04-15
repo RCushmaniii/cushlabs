@@ -4,6 +4,62 @@ A running log of bugs, near-misses, and decisions worth remembering. The goal is
 
 ---
 
+## 2026-04-15 — Bilingual site SEO: duplicate titles, duplicate descriptions, and hreflang locale mismatch
+
+### Symptom
+An automated SEO audit (88 pages crawled) returned 48 errors across 31 pages:
+- **TITLE_DUPLICATE** on every EN project page that lacked a `metaTitles` override
+- **DESC_DUPLICATE** on every EN project page that lacked a `metaDescriptions` override
+- **TITLE_TOO_LONG** on home, services, and MarketSignal pages (audit counts HTML-encoded chars — `&` = `&amp;` = +4 chars)
+- A separate audit found `<head>` hreflang used `en`/`es` while the sitemap used `en-US`/`es-MX` — inconsistent signals to Google
+
+### Root causes
+
+**1. ES project pages fell back to identical EN metadata.**
+Both `/projects/slug/` and `/es/projects/slug/` rendered `${project.title} | CushLabs.ai` — the same string. Any page pair with identical titles triggers TITLE_DUPLICATE. Same for descriptions: both fell back to `project.description`, which is English GitHub text.
+
+**2. Head hreflang codes weren't aligned with the sitemap.**
+`BaseLayout.astro` emitted `hreflang="en"` and `hreflang="es"`. The sitemap `astro.config.mjs` already correctly mapped `en → en-US` and `es → es-MX`. Google accepts both forms but expects consistency between the two signals.
+
+**3. Title length is counted in HTML-encoded bytes, not rendered characters.**
+A title with two `&` characters (`Services & Pricing — AI Chatbots, Voice Agents & Automation | CushLabs.ai`) measures 74 rendered chars but 82 HTML chars. The 60-char limit applies to the HTML-encoded form.
+
+### Fixes applied (PRs #67, #68)
+1. **ES project page title**: fallback changed from `${title} | CushLabs.ai` to `${title} · CushLabs.ai` (interpunct vs pipe = distinct string, covers all ~30 untranslated project pages in one line).
+2. **ES project page description**: fallback changed to prefix `${project.title}: ` before the English GitHub description — makes every ES description distinct and adds keyword value.
+3. **metaTitles overrides added for `cushlabs-marketsignal`** in both EN and ES pages (was 70 HTML chars; shortened to 59).
+4. **Home and services titles shortened** — replaced "Small Business" → "SMBs", "Pequeñas Empresas" → "Pymes", rewrote services titles to fit the 60-char HTML-encoded limit.
+5. **Services descriptions trimmed** by removing trailing sentences (from 169/171 chars to 148/155).
+6. **`BaseLayout.astro` hreflang updated** to `en-US` / `es-MX` to match the sitemap.
+
+### Rules to follow on every new bilingual page
+
+**Title:**
+- Always write a unique title for the ES version — never let it fall back to the EN string.
+- Verify HTML-encoded length: multiply each `&` by +4 chars. Budget ≤56 actual chars if you have one `&`, ≤52 if two.
+- Formula: `title.replace(/&/g, '&amp;').length ≤ 60`
+
+**Description:**
+- ES pages must have a Spanish description or a demonstrably different fallback. An English GitHub description copy-pasted to both locales will be flagged.
+- Max 160 chars. Same HTML-encoding rule applies (though `&` in descriptions is rare).
+
+**Hreflang:**
+- `<head>` locale codes must match the sitemap i18n locale map. For this site: `en-US` / `es-MX` in both places.
+- Every page must have a reciprocal pair — EN page points to ES, ES page points back to EN.
+- `x-default` in `<head>` should always point to the EN canonical URL.
+- Slug mismatches (e.g., `/consultation` ↔ `/es/reservar`) must be manually listed in `routePairs` in `astro.config.mjs`.
+
+**Pre-deploy verification:**
+```bash
+npm run audit:predeploy   # catches title/description issues
+# Then manually spot-check:
+# 1. View source on new EN page — check <title>, <meta name="description">, hreflang values
+# 2. View source on matching ES page — confirm title and description are DIFFERENT strings
+# 3. Paste both titles into: node -e "console.log('title'.replace(/&/g,'&amp;').length)"
+```
+
+---
+
 ## 2026-04-07 — Silent YAML corruption broke 19 portfolio cards
 
 ### Symptom
