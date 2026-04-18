@@ -549,8 +549,6 @@ const relatedProjects = scored.slice(0, 3).map(s => s.project);
           if (!src) return;
           const video = document.createElement('video');
           video.controls = true;
-          video.autoplay = true;
-          video.muted = true;
           video.playsInline = true;
           video.preload = 'auto';
           video.className = 'w-full rounded-xl';
