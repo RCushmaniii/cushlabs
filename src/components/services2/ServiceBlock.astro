@@ -72,6 +72,8 @@ const data = {
     }
   },
   'competitive-intelligence': {
+    liveUrl: 'https://marketsignal.cushlabs.ai',
+    liveLabel: { en: 'See the Live Platform →', es: 'Ver la Plataforma en Vivo →' },
     en: {
       heading: "AI Assistant on Your Facebook Page That Sells While You Sleep",
       subheading: "Every message answered in seconds. Every customer captured. Every question handled in their language — in your voice — 24 hours a day.",
@@ -132,6 +134,8 @@ const data = {
     }
   },
   'voice-agent': {
+    liveUrl: 'https://voice.cushlabs.ai',
+    liveLabel: { en: 'Hear the Demo Agents →', es: 'Escuchar los Agentes Demo →' },
     en: {
       heading: "AI Voice Agent That Answers Your Phone Like Your Best Employee",
       subheading: "Every call answered on the first ring. Appointments booked. Questions handled. Leads captured — even at 2 AM on a Sunday.",
@@ -197,6 +201,10 @@ const data = {
 
 const block = data[id as keyof typeof data][locale];
 if (!block) throw new Error(`Block ${id} not found for locale ${locale}`);
+// liveUrl / liveLabel are optional top-level fields on select service blocks
+type ServiceEntry = { liveUrl?: string; liveLabel?: Record<string, string> };
+const liveUrl = (data[id as keyof typeof data] as ServiceEntry).liveUrl;
+const liveLabel = (data[id as keyof typeof data] as ServiceEntry).liveLabel?.[locale];
 
 const bgClass = isAlternate ? 'bg-gray-50 dark:bg-gray-900/30' : 'bg-white dark:bg-black';
 
@@ -272,10 +280,15 @@ const bgClass = isAlternate ? 'bg-gray-50 dark:bg-gray-900/30' : 'bg-white dark:
           <p class="text-xs text-cush-orange font-medium mt-4 italic">
             {block.investmentDisclaimer}
           </p>
-          <div class="mt-8">
+          <div class="mt-8 flex flex-col gap-3">
             <a href={locale === 'en' ? '/consultation/' : '/es/reservar/'} class="block w-full text-center px-6 py-3 bg-cush-orange text-white font-display font-semibold rounded-lg hover:bg-cush-orange/90 transition-colors duration-300">
               {locale === 'en' ? 'Book a Discovery Call' : 'Agendar Llamada'}
             </a>
+            {liveUrl && liveLabel && (
+              <a href={liveUrl} target="_blank" rel="noopener noreferrer" class="block w-full text-center px-6 py-3 border border-gray-600 text-gray-300 font-display font-semibold rounded-lg hover:border-cush-orange hover:text-cush-orange transition-colors duration-300">
+                {liveLabel}
+              </a>
+            )}
           </div>
         </div>
 

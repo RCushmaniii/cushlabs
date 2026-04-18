@@ -1049,7 +1049,7 @@ const details: Record<string, ProjectDetailOverride> = {
   },
   "cushlabs-marketsignal": {
     slug: "cushlabs-marketsignal",
-    demoUrl: "",
+    demoUrl: "https://marketsignal.cushlabs.ai",
     en: {
       headline: "MarketSignal — AI-Powered Local Competitive Intelligence",
       subheadline:
