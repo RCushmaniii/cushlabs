@@ -1,0 +1,260 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Container from "../components/layout/Container.astro";
+import FinalCTA from "../components/services2/FinalCTA.astro";
+
+const locale = "en" as const;
+
+const included = [
+  { title: "Custom training on your business", desc: "Products, prices, hours, policies, tone — trained on what you actually sell and how you actually talk" },
+  { title: "Bilingual conversations (EN/ES)", desc: "Fluent Spanish and English, switches automatically based on what the customer writes" },
+  { title: "Smart product & service recommendations", desc: "Guides customers toward the right purchase instead of dumping a catalog on them" },
+  { title: "Appointment booking & lead capture", desc: "Collects the details you need — name, contact, intent — and routes them where they belong" },
+  { title: "Human handoff", desc: "Escalates to you with full context when the conversation actually needs a human" },
+  { title: "Weekly performance report", desc: "What your customers are asking, what's converting, what to improve — delivered every Monday" },
+  { title: "Monthly tuning", desc: "I refine the assistant as your business evolves — new products, new pricing, new seasons" },
+];
+
+const notIncluded = [
+  "Multi-page or franchise setups beyond a single Facebook page (scoped separately)",
+  "Generating new marketing content — the assistant uses your voice and your products",
+  "Paid Facebook ad management or social posting",
+];
+
+const bestFor = [
+  "Local businesses losing leads to slow response times",
+  "Owners drowning in repeat questions on Messenger",
+  "Businesses with bilingual customers (Spanish + English)",
+  "Anyone whose competitors are responding faster than they are",
+];
+---
+
+<BaseLayout
+  title="AI Messenger Assistant for Facebook | CushLabs.ai"
+  description="A 24/7 AI sales assistant in your Facebook Messenger — built from your content, trained on your business, live in weeks. Bilingual EN/ES. Fully managed."
+  canonical="https://cushlabs.ai/messenger-assistant/"
+>
+
+  <!-- Hero -->
+  <section class="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden">
+    <div class="absolute inset-0 -z-10">
+      <div class="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-cush-orange/15 rounded-full blur-[120px]"></div>
+      <div class="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-cush-orange/10 rounded-full blur-[100px]"></div>
+    </div>
+
+    <Container size="md">
+      <div class="text-center max-w-4xl mx-auto">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cush-orange/10 border border-cush-orange/20 text-cush-orange text-sm font-semibold mb-8">
+          <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+          Already live with a real client — in production now
+        </div>
+
+        <h1 class="font-display text-fluid-4xl font-bold text-gray-900 dark:text-white mb-6 leading-tight tracking-tight">
+          AI Messenger Assistant for Your Facebook Page
+        </h1>
+
+        <p class="text-fluid-lg text-gray-600 dark:text-gray-300 mb-4 max-w-3xl mx-auto leading-relaxed">
+          A 24/7 AI sales assistant in your Facebook Messenger — built from your content, trained on your business, live in weeks.
+        </p>
+        <p class="text-fluid-base text-gray-500 dark:text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed">
+          Every message answered in seconds. Every customer captured. Every question handled in their language — in your voice — 24 hours a day.
+        </p>
+
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a
+            href="/consultation/"
+            class="group inline-flex items-center gap-2 px-8 py-4 bg-cush-orange text-white font-display font-semibold rounded-lg hover:bg-cush-orange/90 transition-all duration-300 shadow-lg shadow-cush-orange/25 hover:shadow-xl hover:shadow-cush-orange/30 text-lg"
+          >
+            Book a Discovery Call
+            <svg class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+          <a href="/services/" class="font-display font-medium text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white underline underline-offset-4 decoration-gray-300 hover:decoration-cush-orange transition-all">
+            See all services →
+          </a>
+        </div>
+      </div>
+    </Container>
+  </section>
+
+  <!-- Problem -->
+  <section class="py-20 md:py-28 bg-gray-50 dark:bg-gray-900/30 border-y border-gray-100 dark:border-gray-800">
+    <Container size="lg">
+      <div class="max-w-3xl">
+        <h2 class="font-display font-bold text-3xl md:text-4xl text-gray-900 dark:text-white mb-8 leading-tight tracking-tight">
+          The problem every business owner knows
+        </h2>
+        <div class="space-y-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+          <p>
+            Your Facebook page gets messages. Some you catch. Most you don't — not fast enough, anyway. And in competitive markets, the business that responds first wins the conversation.
+          </p>
+          <p>
+            You've seen the generic autoresponders. <em>"Thanks for reaching out! We'll get back to you shortly."</em> That's not a solution. That's a polite way of losing a lead.
+          </p>
+          <p>
+            Facebook removes your "responds quickly" badge if you take more than 15 minutes to reply. With AI, your response time is under 5 seconds — always.
+          </p>
+        </div>
+      </div>
+    </Container>
+  </section>
+
+  <!-- Solution -->
+  <section class="py-20 md:py-32">
+    <Container size="lg">
+      <div class="grid lg:grid-cols-12 gap-12 lg:gap-16">
+
+        <!-- Left: Solution narrative -->
+        <div class="lg:col-span-7 space-y-12">
+          <div>
+            <h2 class="font-display font-bold text-3xl md:text-5xl text-gray-900 dark:text-white mb-4 leading-tight tracking-tight">
+              What CushLabs builds instead
+            </h2>
+            <p class="text-xl md:text-2xl text-cush-orange font-medium leading-relaxed mb-8">
+              Not a template. Not a chatbot that says "I didn't understand that."
+            </p>
+            <div class="prose prose-lg dark:prose-invert max-w-none">
+              <div class="text-gray-900 dark:text-gray-200 bg-cush-orange/5 border-l-4 border-cush-orange pl-6 py-4 rounded-r-lg space-y-3">
+                <p>A custom AI assistant that lives in your Facebook Messenger and actually knows your business. An assistant trained on your services, your pricing, your voice — that answers the way you would, at any hour, in any language your customers speak.</p>
+                <p>It recommends the right product. It books the appointment. It handles the FAQ a hundred times a day without complaining. And when a real human is needed, it hands the conversation off to you with the context already gathered.</p>
+                <p>We've already deployed this for a real client. It's live, it's in production, and it's handling inquiries right now while the business owner sleeps.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- What it means -->
+          <div>
+            <h3 class="font-display font-semibold text-2xl text-gray-900 dark:text-white mb-6">
+              What it means for your business
+            </h3>
+            <div class="space-y-5">
+              {[
+                { title: "You stop losing leads after hours.", body: "Prospects who message at 10pm get a real answer — not a form, not silence, not 'we'll get back to you.'" },
+                { title: "You stop answering the same questions.", body: "Pricing, availability, services, how it works — your assistant handles all of it. You only hear from customers when they're ready to buy." },
+                { title: "It speaks their language.", body: "Spanish-speaking customer? They get Spanish. English? English. Automatic, natural, seamless." },
+                { title: "It knows when to get you.", body: "When a conversation genuinely needs you, it steps aside and hands it over — with full context. When you're done, it picks back up." },
+                { title: "It sounds like you — not a robot.", body: "Because it's built from your content: your website, your service descriptions, your FAQs. Every answer comes from what you've already said about your business." },
+              ].map(item => (
+                <div class="flex gap-4">
+                  <svg class="w-5 h-5 text-green-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <div>
+                    <strong class="text-gray-900 dark:text-white font-semibold">{item.title}</strong>
+                    {" "}<span class="text-gray-600 dark:text-gray-400">{item.body}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- Best For -->
+          <div>
+            <h3 class="font-display font-semibold text-sm text-gray-900 dark:text-white mb-6 uppercase tracking-wider">
+              Best For:
+            </h3>
+            <div class="grid sm:grid-cols-2 gap-4">
+              {bestFor.map(item => (
+                <div class="flex gap-3">
+                  <svg class="w-5 h-5 text-green-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span class="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Specs card -->
+        <div class="lg:col-span-5 space-y-8">
+
+          <!-- Pricing card -->
+          <div class="bg-gray-900 dark:bg-gray-800 rounded-2xl p-8 shadow-xl text-gray-300">
+            <div class="mb-6 pb-6 border-b border-gray-700">
+              <h4 class="font-display font-semibold text-white mb-2 uppercase text-xs tracking-wider">Timeline</h4>
+              <div class="text-lg text-white font-medium">Live in 2 weeks. Discovery call → training → testing → launch.</div>
+            </div>
+            <div class="mb-4">
+              <h4 class="font-display font-semibold text-white mb-2 uppercase text-xs tracking-wider">Investment</h4>
+              <div class="text-base leading-relaxed">
+                Included in the <span class="text-white font-bold">AI Growth Bundle — $997/month</span>. Single page, unlimited conversations, fully managed. Includes setup, training, weekly reports, and monthly tuning. No setup fee. No long-term contract.
+              </div>
+            </div>
+            <p class="text-xs text-cush-orange font-medium mt-4 italic">Free 2-week trial. Cancel anytime.</p>
+            <div class="mt-8">
+              <a href="/consultation/" class="block w-full text-center px-6 py-3 bg-cush-orange text-white font-display font-semibold rounded-lg hover:bg-cush-orange/90 transition-colors duration-300">
+                Book a Discovery Call
+              </a>
+            </div>
+          </div>
+
+          <!-- Included -->
+          <div>
+            <h3 class="font-display font-semibold text-xl text-gray-900 dark:text-white mb-6">What's Included</h3>
+            <ul class="space-y-4">
+              {included.map(item => (
+                <li class="flex gap-4">
+                  <div class="w-1.5 h-1.5 bg-cush-orange rounded-full mt-2.5 shrink-0"></div>
+                  <div>
+                    <strong class="text-gray-900 dark:text-white font-semibold">{item.title}</strong> — <span class="text-gray-600 dark:text-gray-400 text-sm">{item.desc}</span>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <!-- Not included -->
+          <div class="pt-6 border-t border-gray-200 dark:border-gray-800">
+            <h3 class="font-display font-semibold text-base text-gray-900 dark:text-white mb-4">What's NOT Included</h3>
+            <ul class="space-y-2">
+              {notIncluded.map(item => (
+                <li class="flex gap-3 text-sm text-gray-500 dark:text-gray-500">
+                  <svg class="w-4 h-4 text-gray-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </Container>
+  </section>
+
+  <!-- Why CushLabs -->
+  <section class="py-20 md:py-28 bg-gray-50 dark:bg-gray-900/30 border-y border-gray-100 dark:border-gray-800">
+    <Container size="md">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="font-display font-bold text-3xl md:text-4xl text-gray-900 dark:text-white mb-8 leading-tight tracking-tight">
+          Why CushLabs over a generic chatbot platform
+        </h2>
+        <div class="space-y-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed text-left">
+          <p>
+            Generic platforms give you a builder. CushLabs gives you a deployed, production-ready assistant — built, configured, tested, and monitored. We handle the setup, the content ingestion, the Facebook integration, and the ongoing reliability. You get the results.
+          </p>
+          <p>
+            We've already solved the hard problems: bilingual support, accurate answers grounded in your actual business content, graceful handover to humans, 24/7 uptime with error monitoring. You don't pay for us to figure it out — we've already figured it out.
+          </p>
+        </div>
+        <div class="mt-10">
+          <a
+            href="/consultation/"
+            class="inline-flex items-center gap-2 px-8 py-4 bg-cush-orange text-white font-display font-semibold rounded-lg hover:bg-cush-orange/90 transition-all duration-300 shadow-lg shadow-cush-orange/25 hover:shadow-xl text-lg"
+          >
+            Start Your Free 2-Week Trial
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </Container>
+  </section>
+
+  <FinalCTA locale={locale} />
+
+</BaseLayout>
