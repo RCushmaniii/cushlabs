@@ -545,14 +545,13 @@ const relatedProjects = scored.slice(0, 3).map(s => s.project);
           const video = document.createElement('video');
           video.controls = true;
           video.autoplay = true;
+          video.muted = true;
           video.playsInline = true;
           video.preload = 'auto';
           video.className = 'w-full rounded-xl';
-          const source = document.createElement('source');
-          source.src = src;
-          source.type = 'video/mp4';
-          video.appendChild(source);
+          video.src = src;
           videoContainer!.replaceWith(video);
+          video.play().catch(() => {});
         }
         videoContainer.addEventListener('click', activateVideo);
         videoContainer.addEventListener('keydown', (e) => {
