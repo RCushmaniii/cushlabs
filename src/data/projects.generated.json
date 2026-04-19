@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-19T20:40:58.981Z",
+  "generatedAt": "2026-04-19T20:46:28.496Z",
   "count": 33,
   "projects": [
     {
@@ -609,7 +609,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-04-19T20:39:56Z",
+      "lastPushed": "2026-04-19T20:45:48Z",
       "createdAt": "2026-04-06T23:20:56Z",
       "isFeatured": true,
       "isArchived": false,
@@ -670,6 +670,12 @@
           "srcEs": "https://cdn.cushlabs.ai/ny-english-messenger-bot/public/images/hero-es-07.webp",
           "altEn": "Speaks their language perfectly and without interruption — native bilingual EN/ES with no manual switching.",
           "altEs": "Habla su idioma a la perfección y sin interrupciones — bilingüe nativo EN/ES sin cambios manuales."
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/ny-english-messenger-bot/public/images/hero-en-08.webp",
+          "srcEs": "https://cdn.cushlabs.ai/ny-english-messenger-bot/public/images/hero-es-08.webp",
+          "altEn": "Sells like you, because it's built from you — your website, your FAQs, your methodology, your prices.",
+          "altEs": "Vende como tú, porque está hecho de ti — tu sitio web, tus preguntas frecuentes, tu metodología, tus precios."
         },
         {
           "src": "https://cdn.cushlabs.ai/ny-english-messenger-bot/public/images/hero-en-09.webp",
@@ -2871,7 +2877,7 @@
       },
       "stars": 2,
       "forks": 0,
-      "lastPushed": "2026-04-19T03:31:30Z",
+      "lastPushed": "2026-04-19T20:41:19Z",
       "createdAt": "2026-01-08T03:52:43Z",
       "isFeatured": false,
       "isArchived": false,
