@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-19T03:20:06.509Z",
+  "generatedAt": "2026-04-19T03:27:38.934Z",
   "count": 33,
   "projects": [
     {
@@ -602,7 +602,7 @@
       "status": "Production",
       "language": "Astro",
       "languages": {
-        "Astro": 2065454,
+        "Astro": 2065667,
         "TypeScript": 1957148,
         "HTML": 838639,
         "JavaScript": 404739,
@@ -613,7 +613,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-04-19T03:15:47Z",
+      "lastPushed": "2026-04-19T03:23:37Z",
       "createdAt": "2025-03-23T03:27:14Z",
       "isFeatured": true,
       "isArchived": false,
@@ -757,7 +757,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-04-19T03:18:48Z",
+      "lastPushed": "2026-04-19T03:27:18Z",
       "createdAt": "2026-04-06T23:20:56Z",
       "isFeatured": false,
       "isArchived": false,
@@ -785,44 +785,51 @@
         },
         {
           "src": "https://cdn.cushlabs.ai/ny-english-messenger-bot/public/images/hero-en-02.webp",
-          "altEn": "NY English Messenger Bot — AI-Powered Bilingual Customer Assistant",
-          "altEs": "NY English Messenger Bot — AI-Powered Bilingual Customer Assistant"
+          "srcEs": "https://cdn.cushlabs.ai/ny-english-messenger-bot/public/images/hero-es-02.webp",
+          "altEn": "The problem every business owner knows — your Facebook page gets messages. You catch some. Most you don't.",
+          "altEs": "El problema que todo dueño de negocio conoce — tu página de Facebook recibe mensajes. Algunos los cachas. La mayoría no."
         },
         {
           "src": "https://cdn.cushlabs.ai/ny-english-messenger-bot/public/images/hero-en-03.webp",
-          "altEn": "NY English Messenger Bot — AI-Powered Bilingual Customer Assistant",
-          "altEs": "NY English Messenger Bot — AI-Powered Bilingual Customer Assistant"
+          "srcEs": "https://cdn.cushlabs.ai/ny-english-messenger-bot/public/images/hero-es-03.webp",
+          "altEn": "Generic auto-replies are a polite way to lose a potential client — the lead decay curve.",
+          "altEs": "Las respuestas automáticas son una forma amable de perder un cliente potencial — la curva de decaimiento de un cliente potencial."
         },
         {
           "src": "https://cdn.cushlabs.ai/ny-english-messenger-bot/public/images/hero-en-04.webp",
-          "altEn": "NY English Messenger Bot — AI-Powered Bilingual Customer Assistant",
-          "altEs": "NY English Messenger Bot — AI-Powered Bilingual Customer Assistant"
+          "srcEs": "https://cdn.cushlabs.ai/ny-english-messenger-bot/public/images/hero-es-04.webp",
+          "altEn": "What if your inbox answered itself? Introducing the CushLabs AI Messaging Assistant.",
+          "altEs": "¿Qué tal si tu bandeja de entrada se respondiera sola? Presentamos el Asistente de Mensajería AI CushLabs."
         },
         {
           "src": "https://cdn.cushlabs.ai/ny-english-messenger-bot/public/images/hero-en-05.webp",
-          "altEn": "NY English Messenger Bot — AI-Powered Bilingual Customer Assistant",
-          "altEs": "NY English Messenger Bot — AI-Powered Bilingual Customer Assistant"
+          "srcEs": "https://cdn.cushlabs.ai/ny-english-messenger-bot/public/images/hero-es-05.webp",
+          "altEn": "Never lose a prospect while you sleep — qualified conversations at 8:30 PM, 11:15 PM, 2:00 AM.",
+          "altEs": "Nunca pierdas un prospecto mientras duermes — conversaciones calificadas a las 8:30 PM, 11:15 PM, 2:00 AM."
         },
         {
           "src": "https://cdn.cushlabs.ai/ny-english-messenger-bot/public/images/hero-en-06.webp",
-          "altEn": "NY English Messenger Bot — AI-Powered Bilingual Customer Assistant",
-          "altEs": "NY English Messenger Bot — AI-Powered Bilingual Customer Assistant"
+          "srcEs": "https://cdn.cushlabs.ai/ny-english-messenger-bot/public/images/hero-es-06.webp",
+          "altEn": "Get your time back and stop repeating yourself — the bot handles FAQs so you only step in when a client is ready to buy.",
+          "altEs": "Recupera tu tiempo y deja de repetirte — el bot responde preguntas frecuentes para que solo intervengas cuando un cliente esté listo para comprar."
         },
         {
           "src": "https://cdn.cushlabs.ai/ny-english-messenger-bot/public/images/hero-en-07.webp",
-          "altEn": "NY English Messenger Bot — AI-Powered Bilingual Customer Assistant",
-          "altEs": "NY English Messenger Bot — AI-Powered Bilingual Customer Assistant"
+          "srcEs": "https://cdn.cushlabs.ai/ny-english-messenger-bot/public/images/hero-es-07.webp",
+          "altEn": "Speaks their language perfectly and without interruption — native bilingual EN/ES with no manual switching.",
+          "altEs": "Habla su idioma a la perfección y sin interrupciones — bilingüe nativo EN/ES sin cambios manuales."
         },
         {
           "src": "https://cdn.cushlabs.ai/ny-english-messenger-bot/public/images/hero-en-08.webp",
           "srcEs": "https://cdn.cushlabs.ai/ny-english-messenger-bot/public/images/hero-es-08.webp",
-          "altEn": "The math is simple: it pays for itself the first time it converts a client you would have otherwise lost.",
-          "altEs": "La matemática es simple: Se paga solo la primera vez que convierte a un cliente que de otro modo habrías perdido."
+          "altEn": "Sells like you, because it's built from you — your website, your FAQs, your methodology, your prices.",
+          "altEs": "Vende como tú, porque está hecho de ti — tu sitio web, tus preguntas frecuentes, tu metodología, tus precios."
         },
         {
           "src": "https://cdn.cushlabs.ai/ny-english-messenger-bot/public/images/hero-en-09.webp",
-          "altEn": "NY English Messenger Bot — AI-Powered Bilingual Customer Assistant",
-          "altEs": "NY English Messenger Bot — AI-Powered Bilingual Customer Assistant"
+          "srcEs": "https://cdn.cushlabs.ai/ny-english-messenger-bot/public/images/hero-es-09.webp",
+          "altEn": "The math is simple: it pays for itself the first time it converts a client you would have otherwise lost.",
+          "altEs": "La matemática es simple: Se paga solo la primera vez que convierte a un cliente que de otro modo habrías perdido."
         }
       ],
       "videoUrl": null,
