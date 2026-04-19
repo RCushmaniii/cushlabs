@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-18T21:50:09.908Z",
+  "generatedAt": "2026-04-19T03:20:06.509Z",
   "count": 33,
   "projects": [
     {
@@ -312,14 +312,14 @@
       "status": "Production",
       "language": "HTML",
       "languages": {
-        "HTML": 434936,
-        "JavaScript": 117322,
-        "CSS": 7015,
+        "HTML": 518122,
+        "JavaScript": 118063,
+        "CSS": 8475,
         "Dockerfile": 358
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-04-14T21:11:53Z",
+      "lastPushed": "2026-04-18T23:09:17Z",
       "createdAt": "2026-02-23T01:31:09Z",
       "isFeatured": true,
       "isArchived": false,
@@ -468,7 +468,7 @@
       "status": null,
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 681827,
+        "TypeScript": 716327,
         "HTML": 29745,
         "CSS": 3586,
         "Dockerfile": 1126,
@@ -476,7 +476,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-04-17T06:45:51Z",
+      "lastPushed": "2026-04-18T22:59:45Z",
       "createdAt": "2026-03-30T19:46:00Z",
       "isFeatured": true,
       "isArchived": false,
@@ -605,7 +605,7 @@
         "Astro": 2065454,
         "TypeScript": 1957148,
         "HTML": 838639,
-        "JavaScript": 404654,
+        "JavaScript": 404739,
         "CSS": 40875,
         "Python": 30138,
         "MDX": 23172,
@@ -613,7 +613,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-04-18T19:27:28Z",
+      "lastPushed": "2026-04-19T03:15:47Z",
       "createdAt": "2025-03-23T03:27:14Z",
       "isFeatured": true,
       "isArchived": false,
@@ -741,7 +741,7 @@
         "Cloudflare Workers",
         "TypeScript",
         "Claude API (Haiku + Sonnet)",
-        "Qdrant Cloud (vector search)",
+        "Cloudflare Vectorize (vector search)",
         "Cloudflare Workers AI (embeddings)",
         "Cloudflare KV (session state)",
         "Meta Messenger Platform",
@@ -750,20 +750,20 @@
       "status": null,
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 130956,
+        "TypeScript": 134597,
         "PowerShell": 1415,
-        "HTML": 622,
+        "HTML": 686,
         "CSS": 323
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-04-17T06:38:20Z",
+      "lastPushed": "2026-04-19T03:18:48Z",
       "createdAt": "2026-04-06T23:20:56Z",
       "isFeatured": false,
       "isArchived": false,
       "isPrivate": true,
       "tagline": "Facebook Messenger chatbot that handles student inquiries with Claude AI, RAG-powered answers, and bilingual EN/ES support",
-      "thumbnail": null,
+      "thumbnail": "https://cdn.cushlabs.ai/ny-english-messenger-bot/public/images/thumb.webp",
       "problem": "Small business owners on Facebook spend hours answering the same customer\nquestions in Messenger — pricing, availability, services, location. For\nbilingual markets like Mexico, they need to handle inquiries in both English\nand Spanish. A human can't be online 24/7, and generic chatbots sound robotic\nand can't answer business-specific questions accurately.\n",
       "solution": null,
       "keyFeatures": [
@@ -776,7 +776,55 @@
       "metrics": [],
       "priority": 5,
       "dateCompleted": null,
-      "slides": [],
+      "slides": [
+        {
+          "src": "https://cdn.cushlabs.ai/ny-english-messenger-bot/public/images/hero-en-01.webp",
+          "srcEs": "https://cdn.cushlabs.ai/ny-english-messenger-bot/public/images/hero-es-01.webp",
+          "altEn": "The 24/7 AI Sales Assistant for Facebook Messenger — Built from your content, trained on your business. Made by CushLabs.",
+          "altEs": "El asistente de ventas con IA 24/7 para Facebook Messenger — Creado a partir de tu contenido. Entrenado en tu negocio. Hecho por CushLabs."
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/ny-english-messenger-bot/public/images/hero-en-02.webp",
+          "altEn": "NY English Messenger Bot — AI-Powered Bilingual Customer Assistant",
+          "altEs": "NY English Messenger Bot — AI-Powered Bilingual Customer Assistant"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/ny-english-messenger-bot/public/images/hero-en-03.webp",
+          "altEn": "NY English Messenger Bot — AI-Powered Bilingual Customer Assistant",
+          "altEs": "NY English Messenger Bot — AI-Powered Bilingual Customer Assistant"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/ny-english-messenger-bot/public/images/hero-en-04.webp",
+          "altEn": "NY English Messenger Bot — AI-Powered Bilingual Customer Assistant",
+          "altEs": "NY English Messenger Bot — AI-Powered Bilingual Customer Assistant"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/ny-english-messenger-bot/public/images/hero-en-05.webp",
+          "altEn": "NY English Messenger Bot — AI-Powered Bilingual Customer Assistant",
+          "altEs": "NY English Messenger Bot — AI-Powered Bilingual Customer Assistant"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/ny-english-messenger-bot/public/images/hero-en-06.webp",
+          "altEn": "NY English Messenger Bot — AI-Powered Bilingual Customer Assistant",
+          "altEs": "NY English Messenger Bot — AI-Powered Bilingual Customer Assistant"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/ny-english-messenger-bot/public/images/hero-en-07.webp",
+          "altEn": "NY English Messenger Bot — AI-Powered Bilingual Customer Assistant",
+          "altEs": "NY English Messenger Bot — AI-Powered Bilingual Customer Assistant"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/ny-english-messenger-bot/public/images/hero-en-08.webp",
+          "srcEs": "https://cdn.cushlabs.ai/ny-english-messenger-bot/public/images/hero-es-08.webp",
+          "altEn": "The math is simple: it pays for itself the first time it converts a client you would have otherwise lost.",
+          "altEs": "La matemática es simple: Se paga solo la primera vez que convierte a un cliente que de otro modo habrías perdido."
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/ny-english-messenger-bot/public/images/hero-en-09.webp",
+          "altEn": "NY English Messenger Bot — AI-Powered Bilingual Customer Assistant",
+          "altEs": "NY English Messenger Bot — AI-Powered Bilingual Customer Assistant"
+        }
+      ],
       "videoUrl": null,
       "videoPoster": null
     },
@@ -1873,7 +1921,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-04-06T02:12:11Z",
+      "lastPushed": "2026-04-18T23:40:36Z",
       "createdAt": "2026-03-08T19:31:57Z",
       "isFeatured": false,
       "isArchived": false,
@@ -2822,7 +2870,7 @@
       },
       "stars": 2,
       "forks": 0,
-      "lastPushed": "2026-04-18T19:32:10Z",
+      "lastPushed": "2026-04-18T23:09:27Z",
       "createdAt": "2026-01-08T03:52:43Z",
       "isFeatured": false,
       "isArchived": false,
