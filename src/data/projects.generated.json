@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-19T03:31:25.071Z",
+  "generatedAt": "2026-04-19T20:40:58.981Z",
   "count": 33,
   "projects": [
     {
@@ -545,6 +545,143 @@
       "videoPoster": "https://cdn.cushlabs.ai/cushlabs-marketsignal/portfolio/marketsignal/brief-poster.webp"
     },
     {
+      "id": 1203303335,
+      "name": "ny-english-messenger-bot",
+      "title": "NY English Messenger Bot — AI-Powered Bilingual Customer Assistant",
+      "description": "Bilingual AI assistant for the New York English Facebook page — Claude (Anthropic) on Cloudflare Workers, with RAG over a Qdrant knowledge base and Meta Messenger webhook integration. First deployment of a reusable CushLabs Messenger bot template.",
+      "summary": "> Facebook Messenger AI assistant for the New York English page — bilingual EN/ES customer engagement powered by Claude, RAG, and Cloudflare Workers.",
+      "url": "https://github.com/RCushmaniii/ny-english-messenger-bot",
+      "demoUrl": null,
+      "liveUrl": "",
+      "homepage": null,
+      "topics": [
+        "ai-assistant",
+        "anthropic",
+        "bilingual",
+        "chatbot",
+        "claude",
+        "cloudflare-workers",
+        "facebook-messenger",
+        "messenger-bot",
+        "qdrant",
+        "rag",
+        "typescript",
+        "workers-ai"
+      ],
+      "categories": [
+        "AI Automation"
+      ],
+      "tags": [
+        "ai-assistant",
+        "anthropic",
+        "bilingual",
+        "chatbot",
+        "claude",
+        "cloudflare-workers",
+        "facebook-messenger",
+        "messenger-bot",
+        "qdrant",
+        "rag",
+        "typescript",
+        "workers-ai",
+        "claude-ai",
+        "facebook",
+        "vector-search",
+        "conversational-ai"
+      ],
+      "stack": [
+        "Cloudflare Workers",
+        "TypeScript",
+        "Claude API (Haiku + Sonnet)",
+        "Cloudflare Vectorize (vector search)",
+        "Cloudflare Workers AI (embeddings)",
+        "Cloudflare KV (session state)",
+        "Meta Messenger Platform",
+        "Sentry (error monitoring)"
+      ],
+      "status": "Production",
+      "language": "TypeScript",
+      "languages": {
+        "TypeScript": 134597,
+        "PowerShell": 1415,
+        "HTML": 686,
+        "CSS": 323
+      },
+      "stars": 0,
+      "forks": 0,
+      "lastPushed": "2026-04-19T20:39:56Z",
+      "createdAt": "2026-04-06T23:20:56Z",
+      "isFeatured": true,
+      "isArchived": false,
+      "isPrivate": true,
+      "tagline": "Facebook Messenger chatbot that handles student inquiries with Claude AI, RAG-powered answers, and bilingual EN/ES support",
+      "thumbnail": "https://cdn.cushlabs.ai/ny-english-messenger-bot/public/images/thumb.webp",
+      "problem": "Small business owners on Facebook spend hours answering the same customer\nquestions in Messenger — pricing, availability, services, location. For\nbilingual markets like Mexico, they need to handle inquiries in both English\nand Spanish. A human can't be online 24/7, and generic chatbots sound robotic\nand can't answer business-specific questions accurately.\n",
+      "solution": null,
+      "keyFeatures": [
+        "24/7 automated customer engagement on Facebook Messenger",
+        "Bilingual EN/ES support with automatic language detection",
+        "RAG-powered answers grounded in actual business content — not hallucinated",
+        "Seamless human handover when the bot can't help",
+        "Reusable template architecture for deploying to additional Facebook pages"
+      ],
+      "metrics": [],
+      "priority": 5,
+      "dateCompleted": null,
+      "slides": [
+        {
+          "src": "https://cdn.cushlabs.ai/ny-english-messenger-bot/public/images/hero-en-01.webp",
+          "srcEs": "https://cdn.cushlabs.ai/ny-english-messenger-bot/public/images/hero-es-01.webp",
+          "altEn": "The 24/7 AI Sales Assistant for Facebook Messenger — Built from your content, trained on your business. Made by CushLabs.",
+          "altEs": "El asistente de ventas con IA 24/7 para Facebook Messenger — Creado a partir de tu contenido. Entrenado en tu negocio. Hecho por CushLabs."
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/ny-english-messenger-bot/public/images/hero-en-02.webp",
+          "srcEs": "https://cdn.cushlabs.ai/ny-english-messenger-bot/public/images/hero-es-02.webp",
+          "altEn": "The problem every business owner knows — your Facebook page gets messages. You catch some. Most you don't.",
+          "altEs": "El problema que todo dueño de negocio conoce — tu página de Facebook recibe mensajes. Algunos los cachas. La mayoría no."
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/ny-english-messenger-bot/public/images/hero-en-03.webp",
+          "srcEs": "https://cdn.cushlabs.ai/ny-english-messenger-bot/public/images/hero-es-03.webp",
+          "altEn": "Generic auto-replies are a polite way to lose a potential client — the lead decay curve.",
+          "altEs": "Las respuestas automáticas son una forma amable de perder un cliente potencial — la curva de decaimiento de un cliente potencial."
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/ny-english-messenger-bot/public/images/hero-en-04.webp",
+          "srcEs": "https://cdn.cushlabs.ai/ny-english-messenger-bot/public/images/hero-es-04.webp",
+          "altEn": "What if your inbox answered itself? Introducing the CushLabs AI Messaging Assistant.",
+          "altEs": "¿Qué tal si tu bandeja de entrada se respondiera sola? Presentamos el Asistente de Mensajería AI CushLabs."
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/ny-english-messenger-bot/public/images/hero-en-05.webp",
+          "srcEs": "https://cdn.cushlabs.ai/ny-english-messenger-bot/public/images/hero-es-05.webp",
+          "altEn": "Never lose a prospect while you sleep — qualified conversations at 8:30 PM, 11:15 PM, 2:00 AM.",
+          "altEs": "Nunca pierdas un prospecto mientras duermes — conversaciones calificadas a las 8:30 PM, 11:15 PM, 2:00 AM."
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/ny-english-messenger-bot/public/images/hero-en-06.webp",
+          "srcEs": "https://cdn.cushlabs.ai/ny-english-messenger-bot/public/images/hero-es-06.webp",
+          "altEn": "Get your time back and stop repeating yourself — the bot handles FAQs so you only step in when a client is ready to buy.",
+          "altEs": "Recupera tu tiempo y deja de repetirte — el bot responde preguntas frecuentes para que solo intervengas cuando un cliente esté listo para comprar."
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/ny-english-messenger-bot/public/images/hero-en-07.webp",
+          "srcEs": "https://cdn.cushlabs.ai/ny-english-messenger-bot/public/images/hero-es-07.webp",
+          "altEn": "Speaks their language perfectly and without interruption — native bilingual EN/ES with no manual switching.",
+          "altEs": "Habla su idioma a la perfección y sin interrupciones — bilingüe nativo EN/ES sin cambios manuales."
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/ny-english-messenger-bot/public/images/hero-en-09.webp",
+          "srcEs": "https://cdn.cushlabs.ai/ny-english-messenger-bot/public/images/hero-es-09.webp",
+          "altEn": "The math is simple: it pays for itself the first time it converts a client you would have otherwise lost.",
+          "altEs": "La matemática es simple: Se paga solo la primera vez que convierte a un cliente que de otro modo habrías perdido."
+        }
+      ],
+      "videoUrl": null,
+      "videoPoster": null
+    },
+    {
       "id": 953305892,
       "name": "ny-eng",
       "title": "NY English Teacher",
@@ -691,149 +828,6 @@
       ],
       "videoUrl": "https://cdn.cushlabs.ai/ny-eng/video/ny-eng-brief.mp4",
       "videoPoster": "https://cdn.cushlabs.ai/ny-eng/video/ny-eng-brief-poster.jpg"
-    },
-    {
-      "id": 1203303335,
-      "name": "ny-english-messenger-bot",
-      "title": "NY English Messenger Bot — AI-Powered Bilingual Customer Assistant",
-      "description": "Bilingual AI assistant for the New York English Facebook page — Claude (Anthropic) on Cloudflare Workers, with RAG over a Qdrant knowledge base and Meta Messenger webhook integration. First deployment of a reusable CushLabs Messenger bot template.",
-      "summary": "> Facebook Messenger AI assistant for the New York English page — bilingual EN/ES customer engagement powered by Claude, RAG, and Cloudflare Workers.",
-      "url": "https://github.com/RCushmaniii/ny-english-messenger-bot",
-      "demoUrl": null,
-      "liveUrl": "",
-      "homepage": null,
-      "topics": [
-        "ai-assistant",
-        "anthropic",
-        "bilingual",
-        "chatbot",
-        "claude",
-        "cloudflare-workers",
-        "facebook-messenger",
-        "messenger-bot",
-        "qdrant",
-        "rag",
-        "typescript",
-        "workers-ai"
-      ],
-      "categories": [
-        "AI Automation"
-      ],
-      "tags": [
-        "ai-assistant",
-        "anthropic",
-        "bilingual",
-        "chatbot",
-        "claude",
-        "cloudflare-workers",
-        "facebook-messenger",
-        "messenger-bot",
-        "qdrant",
-        "rag",
-        "typescript",
-        "workers-ai",
-        "claude-ai",
-        "facebook",
-        "vector-search",
-        "conversational-ai"
-      ],
-      "stack": [
-        "Cloudflare Workers",
-        "TypeScript",
-        "Claude API (Haiku + Sonnet)",
-        "Cloudflare Vectorize (vector search)",
-        "Cloudflare Workers AI (embeddings)",
-        "Cloudflare KV (session state)",
-        "Meta Messenger Platform",
-        "Sentry (error monitoring)"
-      ],
-      "status": null,
-      "language": "TypeScript",
-      "languages": {
-        "TypeScript": 134597,
-        "PowerShell": 1415,
-        "HTML": 686,
-        "CSS": 323
-      },
-      "stars": 0,
-      "forks": 0,
-      "lastPushed": "2026-04-19T03:27:18Z",
-      "createdAt": "2026-04-06T23:20:56Z",
-      "isFeatured": false,
-      "isArchived": false,
-      "isPrivate": true,
-      "tagline": "Facebook Messenger chatbot that handles student inquiries with Claude AI, RAG-powered answers, and bilingual EN/ES support",
-      "thumbnail": "https://cdn.cushlabs.ai/ny-english-messenger-bot/public/images/thumb.webp",
-      "problem": "Small business owners on Facebook spend hours answering the same customer\nquestions in Messenger — pricing, availability, services, location. For\nbilingual markets like Mexico, they need to handle inquiries in both English\nand Spanish. A human can't be online 24/7, and generic chatbots sound robotic\nand can't answer business-specific questions accurately.\n",
-      "solution": null,
-      "keyFeatures": [
-        "24/7 automated customer engagement on Facebook Messenger",
-        "Bilingual EN/ES support with automatic language detection",
-        "RAG-powered answers grounded in actual business content — not hallucinated",
-        "Seamless human handover when the bot can't help",
-        "Reusable template architecture for deploying to additional Facebook pages"
-      ],
-      "metrics": [],
-      "priority": 5,
-      "dateCompleted": null,
-      "slides": [
-        {
-          "src": "https://cdn.cushlabs.ai/ny-english-messenger-bot/public/images/hero-en-01.webp",
-          "srcEs": "https://cdn.cushlabs.ai/ny-english-messenger-bot/public/images/hero-es-01.webp",
-          "altEn": "The 24/7 AI Sales Assistant for Facebook Messenger — Built from your content, trained on your business. Made by CushLabs.",
-          "altEs": "El asistente de ventas con IA 24/7 para Facebook Messenger — Creado a partir de tu contenido. Entrenado en tu negocio. Hecho por CushLabs."
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/ny-english-messenger-bot/public/images/hero-en-02.webp",
-          "srcEs": "https://cdn.cushlabs.ai/ny-english-messenger-bot/public/images/hero-es-02.webp",
-          "altEn": "The problem every business owner knows — your Facebook page gets messages. You catch some. Most you don't.",
-          "altEs": "El problema que todo dueño de negocio conoce — tu página de Facebook recibe mensajes. Algunos los cachas. La mayoría no."
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/ny-english-messenger-bot/public/images/hero-en-03.webp",
-          "srcEs": "https://cdn.cushlabs.ai/ny-english-messenger-bot/public/images/hero-es-03.webp",
-          "altEn": "Generic auto-replies are a polite way to lose a potential client — the lead decay curve.",
-          "altEs": "Las respuestas automáticas son una forma amable de perder un cliente potencial — la curva de decaimiento de un cliente potencial."
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/ny-english-messenger-bot/public/images/hero-en-04.webp",
-          "srcEs": "https://cdn.cushlabs.ai/ny-english-messenger-bot/public/images/hero-es-04.webp",
-          "altEn": "What if your inbox answered itself? Introducing the CushLabs AI Messaging Assistant.",
-          "altEs": "¿Qué tal si tu bandeja de entrada se respondiera sola? Presentamos el Asistente de Mensajería AI CushLabs."
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/ny-english-messenger-bot/public/images/hero-en-05.webp",
-          "srcEs": "https://cdn.cushlabs.ai/ny-english-messenger-bot/public/images/hero-es-05.webp",
-          "altEn": "Never lose a prospect while you sleep — qualified conversations at 8:30 PM, 11:15 PM, 2:00 AM.",
-          "altEs": "Nunca pierdas un prospecto mientras duermes — conversaciones calificadas a las 8:30 PM, 11:15 PM, 2:00 AM."
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/ny-english-messenger-bot/public/images/hero-en-06.webp",
-          "srcEs": "https://cdn.cushlabs.ai/ny-english-messenger-bot/public/images/hero-es-06.webp",
-          "altEn": "Get your time back and stop repeating yourself — the bot handles FAQs so you only step in when a client is ready to buy.",
-          "altEs": "Recupera tu tiempo y deja de repetirte — el bot responde preguntas frecuentes para que solo intervengas cuando un cliente esté listo para comprar."
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/ny-english-messenger-bot/public/images/hero-en-07.webp",
-          "srcEs": "https://cdn.cushlabs.ai/ny-english-messenger-bot/public/images/hero-es-07.webp",
-          "altEn": "Speaks their language perfectly and without interruption — native bilingual EN/ES with no manual switching.",
-          "altEs": "Habla su idioma a la perfección y sin interrupciones — bilingüe nativo EN/ES sin cambios manuales."
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/ny-english-messenger-bot/public/images/hero-en-08.webp",
-          "srcEs": "https://cdn.cushlabs.ai/ny-english-messenger-bot/public/images/hero-es-08.webp",
-          "altEn": "Sells like you, because it's built from you — your website, your FAQs, your methodology, your prices.",
-          "altEs": "Vende como tú, porque está hecho de ti — tu sitio web, tus preguntas frecuentes, tu metodología, tus precios."
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/ny-english-messenger-bot/public/images/hero-en-09.webp",
-          "srcEs": "https://cdn.cushlabs.ai/ny-english-messenger-bot/public/images/hero-es-09.webp",
-          "altEn": "The math is simple: it pays for itself the first time it converts a client you would have otherwise lost.",
-          "altEs": "La matemática es simple: Se paga solo la primera vez que convierte a un cliente que de otro modo habrías perdido."
-        }
-      ],
-      "videoUrl": null,
-      "videoPoster": null
     },
     {
       "id": 1174690198,
@@ -1166,7 +1160,7 @@
       },
       "stars": 2,
       "forks": 0,
-      "lastPushed": "2026-04-19T03:30:37Z",
+      "lastPushed": "2026-04-19T10:32:55Z",
       "createdAt": "2025-12-20T10:31:00Z",
       "isFeatured": false,
       "isArchived": false,
@@ -2877,7 +2871,7 @@
       },
       "stars": 2,
       "forks": 0,
-      "lastPushed": "2026-04-19T03:31:04Z",
+      "lastPushed": "2026-04-19T03:31:30Z",
       "createdAt": "2026-01-08T03:52:43Z",
       "isFeatured": false,
       "isArchived": false,
