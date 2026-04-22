@@ -1,0 +1,127 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Data Deletion Instructions | CushLabs.ai"
+  description="How to request deletion of personal data collected by CushLabs AI Messenger Assistants. We respond within 30 days."
+>
+  <main class="min-h-screen bg-white dark:bg-gray-950">
+    <!-- Hero -->
+    <section class="relative pt-24 pb-12">
+      <div class="absolute inset-0 -z-10">
+        <div class="absolute top-20 left-1/4 w-96 h-96 bg-cush-orange/10 rounded-full blur-3xl"></div>
+      </div>
+      <div class="mx-auto max-w-3xl px-4 text-center">
+        <h1 class="font-display text-4xl font-bold text-gray-900 dark:text-white md:text-5xl">
+          Data Deletion Instructions
+        </h1>
+        <p class="mt-4 text-gray-500 dark:text-gray-400">Last updated: April 2026</p>
+      </div>
+    </section>
+
+    <!-- Content -->
+    <section class="pb-24">
+      <div class="mx-auto max-w-3xl px-4 space-y-10">
+
+        <div>
+          <p class="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+            This page explains how to request deletion of any personal data held by CushLabs AI Services as a result of interacting with an AI Messenger Assistant powered by CushLabs.
+          </p>
+          <p class="mt-4 text-gray-600 dark:text-gray-400 leading-relaxed">
+            <strong class="text-gray-900 dark:text-white">Quick version:</strong> Email <a href="mailto:privacy@cushlabs.ai" class="text-cush-orange underline underline-offset-2">privacy@cushlabs.ai</a> with the subject line "Data Deletion Request", or send a WhatsApp message to +52 33 1559 0572 with the message "Please delete my data". We will confirm deletion within 30 days.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="font-display text-xl font-semibold text-gray-900 dark:text-white mb-4">What Data We Hold</h2>
+          <p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
+            When you interact with a CushLabs-powered Messenger Assistant on Facebook, we temporarily store:
+          </p>
+          <ul class="space-y-2 text-gray-600 dark:text-gray-400">
+            {[
+              "Your Facebook-Scoped User ID (PSID)",
+              "Your public first and last name as shown on your Facebook profile",
+              "The content of your recent messages",
+              "Your language preference (English or Spanish)",
+              "Message timestamps and short-term conversation state",
+            ].map(item => (
+              <li class="flex gap-3">
+                <span class="text-cush-orange mt-1">—</span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+          <p class="mt-4 text-gray-600 dark:text-gray-400 leading-relaxed">
+            All data is stored in Cloudflare Workers KV and automatically deleted: conversation history and language preferences after 1 hour, handoff state after 30 minutes. In most cases your data has already expired before a request arrives.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="font-display text-xl font-semibold text-gray-900 dark:text-white mb-6">How to Request Deletion</h2>
+
+          <div class="space-y-6">
+            <div class="bg-gray-50 dark:bg-gray-900 rounded-xl p-6">
+              <h3 class="font-display font-semibold text-gray-900 dark:text-white mb-2">Option A — Email</h3>
+              <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                Send to <a href="mailto:privacy@cushlabs.ai" class="text-cush-orange underline underline-offset-2">privacy@cushlabs.ai</a> with subject "Data Deletion Request". Include the name you use on Facebook so we can locate the correct records.
+              </p>
+            </div>
+
+            <div class="bg-gray-50 dark:bg-gray-900 rounded-xl p-6">
+              <h3 class="font-display font-semibold text-gray-900 dark:text-white mb-2">Option B — WhatsApp</h3>
+              <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                Message +52 33 1559 0572 with "Please delete my data". Include your Facebook display name.
+              </p>
+            </div>
+
+            <div class="bg-gray-50 dark:bg-gray-900 rounded-xl p-6">
+              <h3 class="font-display font-semibold text-gray-900 dark:text-white mb-2">Option C — Facebook Messenger</h3>
+              <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                Send "Please delete my data" directly to the Facebook Page whose Messenger Assistant you interacted with. A human operator will process the request.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="font-display text-xl font-semibold text-gray-900 dark:text-white mb-4">What We Will Do</h2>
+          <p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-4">Within 30 days of receiving your request, we will:</p>
+          <ol class="space-y-2 text-gray-600 dark:text-gray-400 list-decimal list-inside">
+            <li>Locate any data currently held about you</li>
+            <li>Permanently delete all conversation history, language preferences, PSID-linked records, and any other personal data associated with your account</li>
+            <li>Send you a confirmation via the same channel you used to make the request</li>
+          </ol>
+        </div>
+
+        <div>
+          <h2 class="font-display text-xl font-semibold text-gray-900 dark:text-white mb-4">What We Cannot Delete</h2>
+          <p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-3">We may retain the following because it cannot be tied back to your personal identity:</p>
+          <ul class="space-y-2 text-gray-600 dark:text-gray-400">
+            {[
+              "Aggregated, anonymized analytics — message counts with no personal identifiers",
+              "Anonymized error logs — technical reports with timestamps and stack traces, no message content or Facebook identity",
+              "Data held by Meta/Facebook — we cannot delete data Meta retains under its own policies. Use Facebook's data controls at facebook.com/settings.",
+            ].map(item => (
+              <li class="flex gap-3">
+                <span class="text-cush-orange mt-1">—</span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="pt-8 border-t border-gray-200 dark:border-gray-800">
+          <h2 class="font-display text-xl font-semibold text-gray-900 dark:text-white mb-4">Contact</h2>
+          <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+            For questions about this process, or to follow up on a request:<br />
+            Email: <a href="mailto:privacy@cushlabs.ai" class="text-cush-orange underline underline-offset-2">privacy@cushlabs.ai</a><br />
+            WhatsApp: +52 33 1559 0572<br />
+            Operator: Robert Cushman, CushLabs AI Services, Guadalajara, Mexico
+          </p>
+        </div>
+
+      </div>
+    </section>
+  </main>
+</BaseLayout>
