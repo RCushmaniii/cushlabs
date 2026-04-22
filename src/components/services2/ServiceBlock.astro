@@ -72,6 +72,8 @@ const data = {
     }
   },
   'competitive-intelligence': {
+    learnMoreUrl: { en: '/messenger-assistant/', es: '/es/messenger-assistant/' },
+    learnMoreLabel: { en: 'Full service details →', es: 'Ver detalles completos →' },
     en: {
       heading: "AI Assistant on Your Facebook Page That Sells While You Sleep",
       subheading: "Every message answered in seconds. Every customer captured. Every question handled in their language — in your voice — 24 hours a day.",
@@ -199,10 +201,13 @@ const data = {
 
 const block = data[id as keyof typeof data][locale];
 if (!block) throw new Error(`Block ${id} not found for locale ${locale}`);
-// liveUrl / liveLabel are optional top-level fields on select service blocks
-type ServiceEntry = { liveUrl?: string; liveLabel?: Record<string, string> };
-const liveUrl = (data[id as keyof typeof data] as ServiceEntry).liveUrl;
-const liveLabel = (data[id as keyof typeof data] as ServiceEntry).liveLabel?.[locale];
+// liveUrl / liveLabel / learnMoreUrl / learnMoreLabel are optional top-level fields on select service blocks
+type ServiceEntry = { liveUrl?: string; liveLabel?: Record<string, string>; learnMoreUrl?: Record<string, string>; learnMoreLabel?: Record<string, string> };
+const entry = data[id as keyof typeof data] as ServiceEntry;
+const liveUrl = entry.liveUrl;
+const liveLabel = entry.liveLabel?.[locale];
+const learnMoreUrl = entry.learnMoreUrl?.[locale];
+const learnMoreLabel = entry.learnMoreLabel?.[locale];
 
 const bgClass = isAlternate ? 'bg-gray-50 dark:bg-gray-900/30' : 'bg-white dark:bg-black';
 
@@ -285,6 +290,11 @@ const bgClass = isAlternate ? 'bg-gray-50 dark:bg-gray-900/30' : 'bg-white dark:
             {liveUrl && liveLabel && (
               <a href={liveUrl} target="_blank" rel="noopener noreferrer" class="block w-full text-center px-6 py-3 border border-gray-600 text-gray-300 font-display font-semibold rounded-lg hover:border-cush-orange hover:text-cush-orange transition-colors duration-300">
                 {liveLabel}
+              </a>
+            )}
+            {learnMoreUrl && learnMoreLabel && (
+              <a href={learnMoreUrl} class="block w-full text-center px-6 py-3 text-gray-400 font-display font-medium text-sm hover:text-cush-orange transition-colors duration-300 underline underline-offset-4 decoration-gray-600 hover:decoration-cush-orange">
+                {learnMoreLabel}
               </a>
             )}
           </div>

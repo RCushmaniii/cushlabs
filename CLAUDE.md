@@ -35,12 +35,41 @@
 - Custom Development (full-stack apps, dashboards)
 - AI Strategy & Consulting
 
-**Packaged Services (Productized Offerings):**
-- Onboarding Assistant Bot - RAG chatbot for new employee onboarding
-- Customer Service Voice Agent - Voicebots for tier-1 support
-- Internal Knowledge Base Bot - Company documentation Q&A
-- Sales Enablement Assistant - Product/competitive intel for reps
-- Document Q&A System - Upload docs and ask questions
+**Current Productized Offerings (what Robert actively sells and can deliver):**
+- **AI Messenger Assistant** — AI chatbot deployed to Facebook Messenger (or website). Live with real client in production. Standalone service page: `/messenger-assistant/`
+- **AI Voice Agent** — Inbound voice agent for missed calls. Live at `voice.cushlabs.ai`. No standalone service page yet (planned).
+- **AI Customer Support Chatbot** — Website chat widget. Same underlying tech as Messenger, different surface.
+
+**NOT offered yet (do not mention on site):**
+- Outbound auto-dialing / cold calling campaigns
+
+---
+
+## Messenger AI — Mexican Market Positioning (IMPORTANT)
+
+When working on copy or pages for the Facebook Messenger AI service, keep this framing in mind:
+
+**The key insight:** Many small Mexican businesses (family-owned, local) have NO website. Their entire business presence is their Facebook page. The Messenger AI is not "another channel" for them — it IS their storefront.
+
+**Strong pitch for this market:**
+> "Most of your competitors have no website. You don't need one either. We put your sales assistant where your customers already are — Facebook — and alert you on WhatsApp when someone's ready to talk."
+
+**Handover approach for non-tech clients:**
+- Business owner does NOT need Meta Business Suite or any new app
+- When the AI detects a human is needed, it captures the customer's phone number and sends the owner a **WhatsApp message**: "New lead from Facebook: [Name], [Number], wants [X]. Ready to book."
+- Owner calls or messages the customer directly — channel they already live in
+- This is a feature, not a workaround: faster than inbox monitoring, works on any phone
+
+**Robert's own preferred workflow (dog-fooding this):**
+- WhatsApp desktop (always open, taskbar notifications with blinking)
+- See the WhatsApp alert with conversation summary
+- Switch to Facebook Messenger desktop app (available in Microsoft Store) or browser tab
+- Handle the conversation directly
+
+**What the product lineup is NOT:**
+- Not a multi-channel inbox tool
+- Not a bot builder platform
+- Not anything that requires the client to learn new software
 
 ---
 
