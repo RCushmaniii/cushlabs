@@ -3,37 +3,57 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 const content = {
   title: "Privacy Policy | CushLabs.ai",
-  description: "Learn how CushLabs.ai collects, uses, and protects your personal information. We respect your privacy — no tracking cookies, no data sales, no surprises.",
+  description: "Learn how CushLabs.ai collects, uses, and protects your personal information, including data processed by our AI Messenger Assistant product.",
   heading: "Privacy Policy",
-  lastUpdated: "Last updated: February 2026",
+  lastUpdated: "Last updated: April 2026",
   sections: [
     {
+      title: "Overview",
+      content: "CushLabs AI Services is an AI consulting and software development company operated by Robert Cushman, based in Guadalajara, Mexico. This policy covers how we collect, use, and protect your personal information when you use our website (cushlabs.ai), contact us directly, or interact with AI Messenger Assistants deployed by CushLabs on behalf of our clients."
+    },
+    {
       title: "Information We Collect",
-      content: "We collect information you provide directly to us, such as when you fill out a contact form, book a consultation, or communicate with us via email. This may include your name, email address, phone number, company name, and any other information you choose to provide."
+      content: "Website: When you use cushlabs.ai, we may collect contact information you submit via forms (name, email, phone, company), technical information (IP address, browser type, device details), and usage information (pages visited, time on site). We do not collect payment information directly.\n\nAI Messenger Assistant (Facebook Messenger): When you message a Facebook Page that uses a CushLabs-powered Messenger Assistant, we receive and process: your Facebook-Scoped User ID (PSID) — an anonymous identifier unique to that Page; the content of your messages; your language preference (English or Spanish); and message timestamps. We do not collect your email address, phone number, friends list, or any other Facebook profile data beyond what is listed."
     },
     {
       title: "How We Use Your Information",
-      content: "We use the information we collect to respond to your inquiries, provide our consulting services, send you updates about our services (with your consent), and improve our website and services."
+      content: "We use your data to: provide and improve our services; respond to your inquiries; maintain short-term conversation context in Messenger Assistants; detect and respond in your preferred language; analyze site usage and performance; maintain security; and comply with legal obligations. We do not use Messenger data for advertising, profiling, or resale."
     },
     {
-      title: "Information Sharing",
-      content: "We do not sell, trade, or otherwise transfer your personal information to third parties without your consent, except as necessary to provide our services or as required by law."
+      title: "Data Retention",
+      content: "Website data: Retained as long as necessary to provide the services you requested, or as required by law.\n\nMessenger Assistant data: Stored temporarily in Cloudflare Workers KV and automatically deleted on a rolling schedule — conversation history: 1 hour; language preference: 1 hour; handoff state: 30 minutes. We do not maintain long-term storage of Messenger conversations."
     },
     {
-      title: "Data Security",
-      content: "We implement appropriate security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction."
-    },
-    {
-      title: "Cookies",
-      content: "Our website may use cookies to enhance your browsing experience. You can choose to disable cookies through your browser settings, though this may affect some website functionality."
+      title: "Third-Party Processors",
+      content: "We do not sell or rent your personal data. For the Messenger Assistant product, your messages are transmitted to the following processors: Meta Platforms, Inc. — delivers messages via the Messenger Platform; Anthropic, PBC — provides the Claude AI model that generates responses; Cloudflare, Inc. — hosts the Worker, provides KV storage, Vectorize vector database, and AI Gateway routing; Functional Software, Inc. (Sentry) — receives error reports for monitoring purposes. For general website operations, we may use analytics providers and email services."
     },
     {
       title: "Your Rights",
-      content: "You have the right to access, correct, or delete your personal information. To exercise these rights, please contact us at info@cushlabs.ai."
+      content: "Depending on your location, you may have the right to: access the personal data we hold about you; correct or update inaccurate information; request deletion of your personal data; object to or restrict how your data is processed; and withdraw previously given consent. To exercise any of these rights, contact us at privacy@cushlabs.ai."
+    },
+    {
+      title: "Data Deletion",
+      content: "You can request deletion of all data we hold about you at any time. Full instructions are at: https://www.cushlabs.ai/data-deletion/"
+    },
+    {
+      title: "Data Security",
+      content: "We use appropriate technical and organizational safeguards to protect your data, including encrypted transit (HTTPS/TLS) and encrypted secrets storage. No method of online transmission or storage is completely secure."
+    },
+    {
+      title: "Cookies",
+      content: "Our website may use cookies to enhance your browsing experience. You can manage cookie preferences in your browser settings. Messenger Assistants do not use cookies."
+    },
+    {
+      title: "Children's Privacy",
+      content: "Our services are intended for adults aged 18 and over. We do not knowingly collect data from anyone under 18. Contact us at privacy@cushlabs.ai if you believe this has occurred."
+    },
+    {
+      title: "Changes to This Policy",
+      content: "We may occasionally update this Privacy Policy. When changes occur, we will update the date at the top of this page."
     },
     {
       title: "Contact Us",
-      content: "If you have any questions about this Privacy Policy, please contact us at info@cushlabs.ai."
+      content: "For privacy-related questions, data access requests, or concerns: Email: privacy@cushlabs.ai | WhatsApp: +52 33 1559 0572 | Operator: Robert Cushman, CushLabs AI Services, Guadalajara, Mexico"
     }
   ]
 };
@@ -66,11 +86,14 @@ const content = {
               <h2 class="font-display text-xl font-semibold text-gray-900 dark:text-white mb-3">
                 {section.title}
               </h2>
-              <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+              <p class="text-gray-600 dark:text-gray-400 leading-relaxed whitespace-pre-line">
                 {section.content}
               </p>
             </div>
           ))}
+        </div>
+        <div class="mt-12 pt-8 border-t border-gray-200 dark:border-gray-800 text-sm text-gray-500 dark:text-gray-500">
+          <p>For data deletion requests, see our <a href="/data-deletion/" class="text-cush-orange underline underline-offset-2">Data Deletion Instructions</a>.</p>
         </div>
       </div>
     </section>
