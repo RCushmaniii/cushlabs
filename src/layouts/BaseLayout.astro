@@ -70,9 +70,9 @@ const ogLocaleAlternate = locale === "es" ? "en_US" : "es_MX";
     <meta name="robots" content={noindex ? "noindex, nofollow" : "index, follow"} />
     <link rel="canonical" href={canonicalURL} />
 
-    <!-- Hreflang for bilingual SEO -->
-    <link rel="alternate" hreflang="en" href={enURL} />
-    <link rel="alternate" hreflang="es" href={esURL} />
+    <!-- Hreflang for bilingual SEO — locale codes match sitemap i18n config (en-US / es-MX) -->
+    <link rel="alternate" hreflang="en-US" href={enURL} />
+    <link rel="alternate" hreflang="es-MX" href={esURL} />
     <link rel="alternate" hreflang="x-default" href={enURL} />
 
     <!-- Open Graph -->
