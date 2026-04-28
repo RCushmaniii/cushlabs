@@ -1,0 +1,127 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Instrucciones de Eliminación de Datos | CushLabs.ai"
+  description="Cómo solicitar la eliminación de los datos personales recopilados por los Asistentes de IA en Messenger de CushLabs. Respondemos en un plazo de 30 días."
+>
+  <main class="min-h-screen bg-white dark:bg-gray-950">
+    <!-- Hero -->
+    <section class="relative pt-24 pb-12">
+      <div class="absolute inset-0 -z-10">
+        <div class="absolute top-20 left-1/4 w-96 h-96 bg-cush-orange/10 rounded-full blur-3xl"></div>
+      </div>
+      <div class="mx-auto max-w-3xl px-4 text-center">
+        <h1 class="font-display text-4xl font-bold text-gray-900 dark:text-white md:text-5xl">
+          Instrucciones de Eliminación de Datos
+        </h1>
+        <p class="mt-4 text-gray-500 dark:text-gray-400">Última actualización: abril de 2026</p>
+      </div>
+    </section>
+
+    <!-- Content -->
+    <section class="pb-24">
+      <div class="mx-auto max-w-3xl px-4 space-y-10">
+
+        <div>
+          <p class="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+            Esta página explica cómo solicitar la eliminación de cualquier dato personal en posesión de CushLabs AI Services como resultado de interactuar con un Asistente de IA en Messenger creado por CushLabs.
+          </p>
+          <p class="mt-4 text-gray-600 dark:text-gray-400 leading-relaxed">
+            <strong class="text-gray-900 dark:text-white">Versión rápida:</strong> Envía un correo a <a href="mailto:privacy@cushlabs.ai" class="text-cush-orange underline underline-offset-2">privacy@cushlabs.ai</a> con el asunto "Solicitud de Eliminación de Datos", o un mensaje de WhatsApp al +52 33 1559 0572 con el texto "Por favor eliminen mis datos". Confirmaremos la eliminación en un plazo de 30 días.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="font-display text-xl font-semibold text-gray-900 dark:text-white mb-4">Qué Datos Conservamos</h2>
+          <p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
+            Cuando interactúas con un Asistente de Messenger en Facebook desarrollado por CushLabs, almacenamos temporalmente:
+          </p>
+          <ul class="space-y-2 text-gray-600 dark:text-gray-400">
+            {[
+              "Tu ID de Usuario de Facebook (PSID)",
+              "Tu nombre y apellido públicos tal como aparecen en tu perfil de Facebook",
+              "El contenido de tus mensajes recientes",
+              "Tu preferencia de idioma (inglés o español)",
+              "Marcas de tiempo de los mensajes y estado de conversación a corto plazo",
+            ].map(item => (
+              <li class="flex gap-3">
+                <span class="text-cush-orange mt-1">—</span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+          <p class="mt-4 text-gray-600 dark:text-gray-400 leading-relaxed">
+            Todos los datos se almacenan en Cloudflare Workers KV y se eliminan automáticamente: el historial de conversación y la preferencia de idioma después de 1 hora; el estado de transferencia después de 30 minutos. En la mayoría de los casos, tus datos ya han expirado antes de que llegue una solicitud.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="font-display text-xl font-semibold text-gray-900 dark:text-white mb-6">Cómo Solicitar la Eliminación</h2>
+
+          <div class="space-y-6">
+            <div class="bg-gray-50 dark:bg-gray-900 rounded-xl p-6">
+              <h3 class="font-display font-semibold text-gray-900 dark:text-white mb-2">Opción A — Correo Electrónico</h3>
+              <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                Envía un correo a <a href="mailto:privacy@cushlabs.ai" class="text-cush-orange underline underline-offset-2">privacy@cushlabs.ai</a> con el asunto "Solicitud de Eliminación de Datos". Incluye el nombre que usas en Facebook para que podamos localizar los registros correctos.
+              </p>
+            </div>
+
+            <div class="bg-gray-50 dark:bg-gray-900 rounded-xl p-6">
+              <h3 class="font-display font-semibold text-gray-900 dark:text-white mb-2">Opción B — WhatsApp</h3>
+              <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                Envía un mensaje al +52 33 1559 0572 con el texto "Por favor eliminen mis datos". Incluye el nombre con el que apareces en Facebook.
+              </p>
+            </div>
+
+            <div class="bg-gray-50 dark:bg-gray-900 rounded-xl p-6">
+              <h3 class="font-display font-semibold text-gray-900 dark:text-white mb-2">Opción C — Facebook Messenger</h3>
+              <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                Envía "Por favor eliminen mis datos" directamente a la Página de Facebook cuyo Asistente de Messenger usaste. Un operador humano procesará la solicitud.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="font-display text-xl font-semibold text-gray-900 dark:text-white mb-4">Qué Haremos</h2>
+          <p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-4">En un plazo de 30 días desde la recepción de tu solicitud, haremos lo siguiente:</p>
+          <ol class="space-y-2 text-gray-600 dark:text-gray-400 list-decimal list-inside">
+            <li>Localizaremos los datos que tengamos sobre ti</li>
+            <li>Eliminaremos permanentemente todo el historial de conversación, las preferencias de idioma, los registros vinculados a tu PSID y cualquier otro dato personal asociado con tu cuenta</li>
+            <li>Te enviaremos una confirmación por el mismo canal que usaste para hacer la solicitud</li>
+          </ol>
+        </div>
+
+        <div>
+          <h2 class="font-display text-xl font-semibold text-gray-900 dark:text-white mb-4">Qué No Podemos Eliminar</h2>
+          <p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-3">Es posible que conservemos lo siguiente porque no puede vincularse a tu identidad personal:</p>
+          <ul class="space-y-2 text-gray-600 dark:text-gray-400">
+            {[
+              "Analíticas agregadas y anónimas — conteos de mensajes sin identificadores personales",
+              "Registros de errores anónimos — informes técnicos con marcas de tiempo y trazas, sin contenido de mensajes ni identidad de Facebook",
+              "Datos en posesión de Meta/Facebook — no podemos eliminar los datos que Meta retiene bajo sus propias políticas. Usa los controles de datos de Facebook en facebook.com/settings.",
+            ].map(item => (
+              <li class="flex gap-3">
+                <span class="text-cush-orange mt-1">—</span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="pt-8 border-t border-gray-200 dark:border-gray-800">
+          <h2 class="font-display text-xl font-semibold text-gray-900 dark:text-white mb-4">Contacto</h2>
+          <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+            Para preguntas sobre este proceso o para dar seguimiento a una solicitud:<br />
+            Correo: <a href="mailto:privacy@cushlabs.ai" class="text-cush-orange underline underline-offset-2">privacy@cushlabs.ai</a><br />
+            WhatsApp: +52 33 1559 0572<br />
+            Operador: Robert Cushman, CushLabs AI Services, Guadalajara, México
+          </p>
+        </div>
+
+      </div>
+    </section>
+  </main>
+</BaseLayout>
