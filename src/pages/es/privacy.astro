@@ -6,37 +6,57 @@ const locale: Locale = "es";
 
 const content = {
   title: "Política de Privacidad | CushLabs.ai",
-  description: "Conozca cómo CushLabs.ai recopila, utiliza y protege su información personal. Respetamos su privacidad — sin cookies de rastreo, sin venta de datos.",
+  description: "Conoce cómo CushLabs.ai recopila, usa y protege tu información personal, incluyendo los datos procesados por nuestro Asistente de IA en Messenger.",
   heading: "Política de Privacidad",
-  lastUpdated: "Última actualización: Febrero 2026",
+  lastUpdated: "Última actualización: mayo de 2026",
   sections: [
     {
+      title: "Información General",
+      content: "CushLabs AI Services es una empresa de consultoría y desarrollo de software con IA, operada por Robert Cushman, con sede en Guadalajara, México. Esta política describe cómo recopilamos, usamos y protegemos tu información personal cuando utilizas nuestro sitio web (cushlabs.ai), nos contactas directamente, o interactúas con un Asistente de IA en Messenger desplegado por CushLabs en nombre de uno de nuestros clientes."
+    },
+    {
       title: "Información que Recopilamos",
-      content: "Recopilamos la información que usted nos proporciona directamente, como cuando completa un formulario de contacto, agenda una consulta o se comunica con nosotros por correo electrónico. Esto puede incluir su nombre, dirección de correo electrónico, número de teléfono, nombre de la empresa y cualquier otra información que decida proporcionar."
+      content: "Sitio web: Cuando usas cushlabs.ai, podemos recopilar la información de contacto que envíes mediante formularios (nombre, correo, teléfono, empresa), información técnica (dirección IP, tipo de navegador, detalles del dispositivo) e información de uso (páginas visitadas, tiempo en el sitio). No recopilamos información de pago directamente.\n\nAsistente de IA en Messenger (Facebook Messenger): Cuando envías un mensaje a una Página de Facebook que utiliza un Asistente de Messenger desarrollado por CushLabs, recibimos y procesamos: tu ID de Usuario con Alcance de Página (PSID) — un identificador anónimo único para esa Página; el contenido de tus mensajes; tu preferencia de idioma (inglés o español); y las marcas de tiempo de los mensajes. No recopilamos tu correo electrónico, número telefónico, lista de amigos ni cualquier otro dato de tu perfil de Facebook más allá de lo aquí enumerado."
     },
     {
-      title: "Cómo Usamos su Información",
-      content: "Utilizamos la información que recopilamos para responder a sus consultas, proporcionar nuestros servicios de consultoría, enviarle actualizaciones sobre nuestros servicios (con su consentimiento) y mejorar nuestro sitio web y servicios."
+      title: "Cómo Usamos Tu Información",
+      content: "Usamos tus datos para: prestar y mejorar nuestros servicios; responder a tus consultas; mantener el contexto de conversación a corto plazo en los Asistentes de Messenger; detectar y responder en tu idioma preferido; analizar el uso y desempeño del sitio; mantener la seguridad; y cumplir con obligaciones legales. No usamos los datos de Messenger para publicidad, perfilado ni reventa."
     },
     {
-      title: "Compartir Información",
-      content: "No vendemos, intercambiamos ni transferimos su información personal a terceros sin su consentimiento, excepto cuando sea necesario para proporcionar nuestros servicios o según lo requiera la ley."
+      title: "Retención de Datos",
+      content: "Datos del sitio web: Conservados durante el tiempo necesario para prestarte los servicios solicitados, o conforme lo requiera la ley.\n\nDatos del Asistente de Messenger: Almacenados temporalmente en Cloudflare Workers KV y eliminados automáticamente bajo un calendario rotativo — historial de conversación: 1 hora; preferencia de idioma: 1 hora; estado de transferencia: 30 minutos. No mantenemos almacenamiento a largo plazo de las conversaciones de Messenger."
+    },
+    {
+      title: "Procesadores Externos",
+      content: "No vendemos ni rentamos tus datos personales. Para el producto Asistente de Messenger, tus mensajes son transmitidos a los siguientes procesadores: Meta Platforms, Inc. — entrega los mensajes mediante la Plataforma de Messenger; Anthropic, PBC — provee el modelo de IA Claude que genera las respuestas; Cloudflare, Inc. — aloja el Worker, provee almacenamiento KV, base de datos vectorial Vectorize y enrutamiento mediante AI Gateway; Functional Software, Inc. (Sentry) — recibe reportes de errores con fines de monitoreo. Para las operaciones generales del sitio web podemos utilizar proveedores de analítica y de correo electrónico."
+    },
+    {
+      title: "Tus Derechos",
+      content: "Si te encuentras en México, conforme a la Ley Federal de Protección de Datos Personales en Posesión de los Particulares (LFPDPPP), tienes los derechos ARCO: Acceso a los datos personales que tenemos sobre ti, Rectificación de información incorrecta o desactualizada, Cancelación de tus datos personales, y Oposición al uso de tus datos para finalidades específicas. Si te encuentras fuera de México, podrías tener derechos equivalentes bajo la legislación local. Adicionalmente puedes retirar el consentimiento previamente otorgado en cualquier momento. Para ejercer cualquiera de estos derechos, contáctanos en privacy@cushlabs.ai."
+    },
+    {
+      title: "Eliminación de Datos",
+      content: "Puedes solicitar la eliminación de todos los datos que tengamos sobre ti en cualquier momento. Las instrucciones completas están en: https://www.cushlabs.ai/es/data-deletion/"
     },
     {
       title: "Seguridad de Datos",
-      content: "Implementamos medidas de seguridad apropiadas para proteger su información personal contra acceso no autorizado, alteración, divulgación o destrucción."
+      content: "Aplicamos medidas técnicas y organizativas adecuadas para proteger tus datos, incluyendo transmisión cifrada (HTTPS/TLS) y almacenamiento cifrado de credenciales. Ningún método de transmisión o almacenamiento en línea es completamente seguro."
     },
     {
       title: "Cookies",
-      content: "Nuestro sitio web puede utilizar cookies para mejorar su experiencia de navegación. Puede optar por desactivar las cookies a través de la configuración de su navegador, aunque esto puede afectar algunas funcionalidades del sitio web."
+      content: "Nuestro sitio web puede usar cookies para mejorar tu experiencia de navegación. Puedes administrar las preferencias de cookies en la configuración de tu navegador. Los Asistentes de Messenger no usan cookies."
     },
     {
-      title: "Sus Derechos",
-      content: "Usted tiene derecho a acceder, corregir o eliminar su información personal. Para ejercer estos derechos, contáctenos en info@cushlabs.ai."
+      title: "Privacidad de Menores",
+      content: "Nuestros servicios están dirigidos a personas mayores de 18 años. No recopilamos a sabiendas datos de personas menores de 18 años. Contáctanos en privacy@cushlabs.ai si crees que esto ha ocurrido."
     },
     {
-      title: "Contáctenos",
-      content: "Si tiene alguna pregunta sobre esta Política de Privacidad, contáctenos en info@cushlabs.ai."
+      title: "Cambios a Esta Política",
+      content: "Es posible que actualicemos esta Política de Privacidad ocasionalmente. Cuando ocurran cambios, actualizaremos la fecha en la parte superior de esta página."
+    },
+    {
+      title: "Contáctanos",
+      content: "Para preguntas sobre privacidad, solicitudes de acceso a datos o inquietudes: Correo: privacy@cushlabs.ai | WhatsApp: +52 33 1559 0572 | Operador: Robert Cushman, CushLabs AI Services, Guadalajara, México"
     }
   ]
 };
@@ -69,7 +89,7 @@ const content = {
               <h2 class="font-display text-xl font-semibold text-gray-900 dark:text-white mb-3">
                 {section.title}
               </h2>
-              <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+              <p class="text-gray-600 dark:text-gray-400 leading-relaxed whitespace-pre-line">
                 {section.content}
               </p>
             </div>
