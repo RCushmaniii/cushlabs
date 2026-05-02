@@ -12,11 +12,12 @@ Things that shipped but have a known gap. These should be cleaned up before they
 
 | # | Item | Severity | Notes |
 |---|------|----------|-------|
-| 1 | `src/pages/es/privacy.astro` is the old generic policy | **High (legal)** | PR #74 rewrote `src/pages/privacy.astro` with full Messenger Assistant disclosures (data collection, retention windows, third-party processors: Meta, Anthropic, Cloudflare, Sentry; GDPR-style rights). Spanish version was never updated — still reflects "Última actualización: Febrero 2026". Mexican LFPDPPP compliance hinges on the Spanish disclosure since CushLabs serves Mexican customers via Facebook Messenger. |
+| ~~1~~ | ~~`src/pages/es/privacy.astro` generic policy~~ | ~~High~~ | **Resolved by PR #86 (2026-05-02)** — Spanish privacy now mirrors EN with full Messenger disclosures, plus Mexican LFPDPPP / derechos ARCO framing. |
+| ~~3~~ | ~~No standalone Voice Agent service page~~ | ~~Medium~~ | **Resolved by PR #85 (2026-05-02)** — `/voice-agent/` and `/es/voice-agent/` shipped, linking to voice.cushlabs.ai for live demo and `/services` deep-linking via `learnMoreUrl`. |
 | 2 | `BaseLayout.astro` canonical prop has a footgun | Medium | When a page passes an absolute URL to the `canonical` prop, `new URL(absolute, Astro.site)` short-circuits and the explicit URL wins — silently bypassing `Astro.site` config. Caused PR #80's "Non-canonical page in sitemap" Ahrefs errors when `/messenger-assistant/` shipped with `canonical="https://cushlabs.ai/..."` while sitemap used `https://www.cushlabs.ai/...`. Fix: in `BaseLayout.astro` strip protocol+host from any incoming `canonical` before joining with `Astro.site`. |
-| 3 | No standalone Voice Agent service page on main site | Medium (revenue) | AI Voice Agent is a productized offering ($1,497 US / $10,997 MXN) with a live subdomain at voice.cushlabs.ai. cushlabs.ai has no `/voice-agent/` page to drive deep links, capture SEO, or convert prospects. |
 | 4 | No HowTo schema | Low | Only outstanding "Known Issue" in CLAUDE.md. FAQPage schema is already implemented EN+ES. |
 | 5 | SEO automation only wired for cushlabs.ai | Low | Per memory `project_seo_automation`: GSC/Bing/IndexNow scripts work for cushlabs.ai. voice.cushlabs.ai, soyconverso, and other CushLabs domains still need the same automation replicated. |
+| 6 | EN privacy "Your Rights" lacks Mexican-specific framing | Low | After PR #86, the ES privacy explicitly names LFPDPPP / derechos ARCO; EN still says generic "depending on your location." Probably fine — EN serves a global audience — but worth a lawyer review if any English-speaking Mexican residents are expected. |
 
 ---
 
@@ -26,8 +27,7 @@ Work that is planned but not yet started. Bundle related items into single PRs p
 
 ### High priority
 
-- **ES privacy.astro Messenger-specific rewrite** — addresses tech-debt #1. Port PR #74's structure to Spanish: same sections, same disclosures, Spanish-native phrasing (not Google-translated). Update `lastUpdated` to current date.
-- **Voice Agent service page** (`/voice-agent/` + `/es/voice-agent/`) — addresses tech-debt #3. Slim intro page covering: what it is, pricing ($1,497 / $10,997 MXN), 3 industries it fits, ROI vs receptionist, primary CTA → `voice.cushlabs.ai` for live demo, secondary CTA → `/consultation`. Source content: `docs/voice-cushlabs-ai-briefing.md`.
+_(no high-priority items currently open — both prior items shipped 2026-05-02 via PR #85 and PR #86)_
 
 ### Medium priority
 
@@ -68,6 +68,32 @@ Documented in CLAUDE.md ("Tailwind 4 Migration Gotchas") and memory `feedback_ta
 ---
 
 ## Session History
+
+### 2026-05-02 — Voice Agent page + ES privacy rewrite (PRs #84, #85, #86)
+
+**Trigger:** Synthesis session after PR #80 — captured what shipped, what's outstanding, then knocked out the two high-priority items in sequence.
+
+**Three PRs shipped to main:**
+
+1. **PR #84** (squash-merged 2026-05-02) — `docs/SESSION-LOG.md` introduced as living document for the cushlabs.ai marketing site. Tracks accomplishments, active tech debt, prioritized backlog, recurring failure modes. Also moved `docs/voice-cushlabs-ai-briefing.md` (Robert wrote 2026-04-13) from untracked into the repo as the source spec for the Voice Agent service page.
+
+2. **PR #85** (squash-merged 2026-05-02, commit `e815cbc`) — `/voice-agent/` and `/es/voice-agent/` standalone landing pages. Mirrors `/messenger-assistant/` pattern. Hero with live-demo badge → voice.cushlabs.ai; problem section ("cost of a missed call"); solution narrative; "Hear it for yourself" callout naming the 5 demo agents (Clara, James, Sophia, Mike, David); pricing card ($1,497 / $10,997 MXN, 500 min, dual CTAs); ROI table vs receptionist; FinalCTA. Adds `learnMoreUrl` to the voice-agent block in `ServiceBlock.astro` so `/services` deep-links to the new standalone page (matching messenger-assistant wiring). Sitemap pairs EN/ES with proper hreflang. Canonicals resolve to `www.cushlabs.ai` — no PR #74-style bare-domain regression.
+
+3. **PR #86** (squash-merged 2026-05-02, commit `eb02e3f`) — `src/pages/es/privacy.astro` rewritten with full Messenger Assistant disclosures matching PR #74's EN structure. Section parity (Información General, Información que Recopilamos, Cómo Usamos Tu Información, Retención de Datos, Procesadores Externos, Tus Derechos, Eliminación de Datos, Seguridad de Datos, Cookies, Privacidad de Menores, Cambios a Esta Política, Contáctanos). Cloudflare Workers KV retention windows (1h/1h/30min) named explicitly. Third-party processors (Meta, Anthropic, Cloudflare, Sentry) named with their roles. **Tus Derechos** surfaces Mexican LFPDPPP / derechos ARCO (Acceso, Rectificación, Cancelación, Oposición) — Spanish-native localization of the EN's generic "depending on your location" wording. lastUpdated bumped to mayo de 2026.
+
+**What this resolved:**
+- Tech-debt #1 (ES privacy parity / legal exposure) → done
+- Tech-debt #3 (no standalone Voice Agent page) → done
+
+**New tech-debt added:**
+- #6 — EN privacy "Your Rights" lacks Mexican-specific framing. Probably fine for a global EN audience but flagged for awareness.
+
+**Cross-references:**
+- PR #84: https://github.com/RCushmaniii/cushlabs/pull/84
+- PR #85: https://github.com/RCushmaniii/cushlabs/pull/85
+- PR #86: https://github.com/RCushmaniii/cushlabs/pull/86
+
+---
 
 ### 2026-04-27 — Ahrefs SEO recovery (PR #80)
 
