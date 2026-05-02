@@ -1,0 +1,323 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Container from "../../components/layout/Container.astro";
+import FinalCTA from "../../components/services2/FinalCTA.astro";
+
+const locale = "es" as const;
+
+const included = [
+  { title: "Voz y personalidad personalizada", desc: "Voz natural que coincide con tu marca — profesional, cálida, bilingüe. No un menú robótico de IVR" },
+  { title: "Entrenamiento con tu negocio", desc: "Entrenado con tus servicios, precios, horarios, ubicaciones y FAQs — da respuestas precisas, no scripts genéricos" },
+  { title: "Agendado de citas", desc: "Agenda directamente en tu calendario (Google Calendar, Calendly, o tu sistema de reservas)" },
+  { title: "Captura y enrutamiento de leads", desc: "Captura nombre, número, intención y urgencia — te envía un resumen por texto al instante" },
+  { title: "Transferencia con contexto", desc: "Cuando una llamada te necesita, transfiere con un resumen de lo que quiere la persona — sin entregas en frío" },
+  { title: "Bilingüe (EN/ES)", desc: "Maneja llamadas en inglés y español, cambiando naturalmente según el que llama" },
+  { title: "Reporte mensual de llamadas", desc: "Volumen, preguntas frecuentes, citas agendadas, estadísticas de recuperación de llamadas perdidas" },
+  { title: "Hasta 500 minutos incluidos", desc: "Excedente a $8.50 MXN/minuto. La mayoría de negocios pequeños usan 200–400 minutos al mes" },
+];
+
+const notIncluded = [
+  "Campañas de llamadas salientes (disponible como proyecto separado)",
+  "Integración con sistemas telefónicos empresariales (PBX, Cisco — se cotiza aparte)",
+  "Almacenamiento de grabaciones más allá de 30 días",
+];
+
+const bestFor = [
+  "Negocios de servicio que pierden llamadas en horas pico (salones, clínicas, contratistas)",
+  "Equipos pequeños sin recepcionista dedicada",
+  "Servicios a domicilio — cada llamada perdida es un trabajo de $20,000 MXN que se va con la competencia",
+  "Inmobiliarias, despachos legales y servicios profesionales con llamadas de alto valor",
+];
+---
+
+<BaseLayout
+  title="Agente de Voz con IA | CushLabs.ai"
+  description="Un agente de voz con IA disponible 24/7 que contesta el teléfono de tu negocio, agenda citas y captura leads — bilingüe EN/ES, totalmente gestionado. Demos en vivo en voice.cushlabs.ai."
+>
+
+  <!-- Hero -->
+  <section class="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden">
+    <div class="absolute inset-0 -z-10">
+      <div class="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-cush-orange/15 rounded-full blur-[120px]"></div>
+      <div class="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-cush-orange/10 rounded-full blur-[100px]"></div>
+    </div>
+
+    <Container size="md">
+      <div class="text-center max-w-4xl mx-auto">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cush-orange/10 border border-cush-orange/20 text-cush-orange text-sm font-semibold mb-8">
+          <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+          Agentes demo en vivo que puedes llamar ahora mismo en voice.cushlabs.ai
+        </div>
+
+        <h1 class="font-display text-fluid-4xl font-bold text-gray-900 dark:text-white mb-6 leading-tight tracking-tight">
+          Deja de Perder Leads en el Buzón de Voz
+        </h1>
+
+        <p class="text-fluid-lg text-gray-600 dark:text-gray-300 mb-4 max-w-3xl mx-auto leading-relaxed">
+          Un agente de voz con IA disponible 24/7 que contesta el teléfono de tu negocio con voz natural — agenda citas, captura leads y nunca manda a un cliente al buzón.
+        </p>
+        <p class="text-fluid-base text-gray-500 dark:text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed">
+          Bilingüe EN/ES. Totalmente gestionado. En vivo en 1–2 semanas. Prueba gratis de 2 semanas.
+        </p>
+
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a
+            href="https://voice.cushlabs.ai"
+            class="group inline-flex items-center gap-2 px-8 py-4 bg-cush-orange text-white font-display font-semibold rounded-lg hover:bg-cush-orange/90 transition-all duration-300 shadow-lg shadow-cush-orange/25 hover:shadow-xl hover:shadow-cush-orange/30 text-lg"
+          >
+            Escucha los Demos en Vivo
+            <svg class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+          <a href="/es/reservar/" class="font-display font-medium text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white underline underline-offset-4 decoration-gray-300 hover:decoration-cush-orange transition-all">
+            O agenda una llamada →
+          </a>
+        </div>
+      </div>
+    </Container>
+  </section>
+
+  <!-- Problem -->
+  <section class="py-20 md:py-28 bg-gray-50 dark:bg-gray-900/30 border-y border-gray-100 dark:border-gray-800">
+    <Container size="lg">
+      <div class="max-w-3xl">
+        <h2 class="font-display font-bold text-3xl md:text-4xl text-gray-900 dark:text-white mb-8 leading-tight tracking-tight">
+          El costo de una llamada perdida
+        </h2>
+        <div class="space-y-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+          <p>
+            Suena tu teléfono. Estás con un cliente, manejando o cenando. Se va al buzón. La persona cuelga y llama al siguiente negocio en Google.
+          </p>
+          <p>
+            Pierdes 3–5 llamadas al día. Cada una puede ser un cliente de $5,000–$15,000 MXN. Son $75,000–$375,000 MXN en ingresos potenciales que se van cada mes porque nadie contestó el teléfono.
+          </p>
+          <p>
+            Una recepcionista de tiempo completo cuesta $8,000–$15,000 MXN/mes y trabaja 8 horas al día, 5 días a la semana. Tu agente de voz con IA trabaja 24/7 por $10,997 MXN/mes y nunca se enferma.
+          </p>
+        </div>
+      </div>
+    </Container>
+  </section>
+
+  <!-- Solution -->
+  <section class="py-20 md:py-32">
+    <Container size="lg">
+      <div class="grid lg:grid-cols-12 gap-12 lg:gap-16">
+
+        <!-- Left: Solution narrative -->
+        <div class="lg:col-span-7 space-y-12">
+          <div>
+            <h2 class="font-display font-bold text-3xl md:text-5xl text-gray-900 dark:text-white mb-4 leading-tight tracking-tight">
+              Un empleado que contesta al primer timbrazo
+            </h2>
+            <p class="text-xl md:text-2xl text-cush-orange font-medium leading-relaxed mb-8">
+              No un menú de marcado por tonos. No una fila de devoluciones. Una conversación real.
+            </p>
+            <div class="prose prose-lg dark:prose-invert max-w-none">
+              <div class="text-gray-900 dark:text-gray-200 bg-cush-orange/5 border-l-4 border-cush-orange pl-6 py-4 rounded-r-lg space-y-3">
+                <p>Un agente de voz con IA que contesta el teléfono de tu negocio con voz natural y conversacional — entrenado con tus servicios, tus precios, tus horarios y tu proceso de reservaciones.</p>
+                <p>Saluda a quien llama entendiendo su intención. Responde preguntas comunes. Agenda citas directamente en tu calendario. Y cuando una llamada realmente te necesita, transfiere con todo el contexto para que nunca empieces en frío.</p>
+                <p>Quien llama no sabe que es IA. Solo sabe que alguien contestó al primer timbrazo — siempre, en el idioma que hable.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hear it for yourself -->
+          <div class="rounded-2xl border border-cush-orange/30 bg-cush-orange/5 p-8">
+            <h3 class="font-display font-semibold text-2xl text-gray-900 dark:text-white mb-3">
+              Escúchalo tú mismo
+            </h3>
+            <p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-5">
+              Tenemos cinco agentes demo en vivo con los que puedes hablar ahora mismo — Clara califica leads, James agenda coaching ejecutivo, Sophia maneja recepción de spa médico, Mike despacha servicios a domicilio, David agenda inmobiliaria. Toma tu teléfono, marca y escucha la diferencia.
+            </p>
+            <a
+              href="https://voice.cushlabs.ai"
+              class="inline-flex items-center gap-2 font-display font-semibold text-cush-orange hover:text-cush-orange/80 transition-colors"
+            >
+              Prueba los demos en voice.cushlabs.ai
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+          </div>
+
+          <!-- What it means -->
+          <div>
+            <h3 class="font-display font-semibold text-2xl text-gray-900 dark:text-white mb-6">
+              Lo que significa para tu negocio
+            </h3>
+            <div class="space-y-5">
+              {[
+                { title: "Dejas de perder leads fuera de horario.", body: "Quien llama a las 9 PM recibe una conversación real — respuestas, agendado, devolución de llamada — no tu mensaje de buzón." },
+                { title: "Dejas de contestar las mismas preguntas.", body: "Horarios, precios, servicios, direcciones — tu agente lo maneja todo. Solo escuchas de quien llama cuando está listo para reservar o comprar." },
+                { title: "Habla su idioma.", body: "¿Cliente en español? Español. ¿En inglés? Inglés. Detección automática, fluido en ambos, en cada llamada." },
+                { title: "Agenda citas mientras trabajas.", body: "Directo a tu Google Calendar, Calendly o sistema de reservas. El cliente cuelga con cita confirmada. Tú ves la entrada en tu teléfono." },
+                { title: "Sabe cuándo llamarte.", body: "Cuando una llamada te necesita realmente, transfiere con un resumen — qué quiere, qué se ha hablado, qué necesita escuchar. Sin entregas en frío." },
+              ].map(item => (
+                <div class="flex gap-4">
+                  <svg class="w-5 h-5 text-green-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <div>
+                    <strong class="text-gray-900 dark:text-white font-semibold">{item.title}</strong>
+                    {" "}<span class="text-gray-600 dark:text-gray-400">{item.body}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- Best For -->
+          <div>
+            <h3 class="font-display font-semibold text-sm text-gray-900 dark:text-white mb-6 uppercase tracking-wider">
+              Ideal Para:
+            </h3>
+            <div class="grid sm:grid-cols-2 gap-4">
+              {bestFor.map(item => (
+                <div class="flex gap-3">
+                  <svg class="w-5 h-5 text-green-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span class="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Specs card -->
+        <div class="lg:col-span-5 space-y-8">
+
+          <!-- Pricing card -->
+          <div class="bg-gray-900 dark:bg-gray-800 rounded-2xl p-8 shadow-xl text-gray-300">
+            <div class="mb-6 pb-6 border-b border-gray-700">
+              <h4 class="font-display font-semibold text-white mb-2 uppercase text-xs tracking-wider">Línea de Tiempo</h4>
+              <div class="text-lg text-white font-medium">En vivo en 1–2 semanas. Llamada → configuración de voz → pruebas → lanzamiento.</div>
+            </div>
+            <div class="mb-4">
+              <h4 class="font-display font-semibold text-white mb-2 uppercase text-xs tracking-wider">Inversión</h4>
+              <div class="text-base leading-relaxed">
+                <span class="text-white font-bold text-2xl">$10,997 MXN/mes</span> — incluye hasta 500 minutos, configuración, entrenamiento y reportes mensuales. Excedente a $8.50 MXN/min. Sin cuota de instalación. Sin contrato.
+              </div>
+            </div>
+            <p class="text-xs text-cush-orange font-medium mt-4 italic">Prueba gratis de 2 semanas. Cancela cuando quieras.</p>
+            <div class="mt-8 space-y-3">
+              <a href="/es/reservar/" class="block w-full text-center px-6 py-3 bg-cush-orange text-white font-display font-semibold rounded-lg hover:bg-cush-orange/90 transition-colors duration-300">
+                Agendar Llamada
+              </a>
+              <a href="https://voice.cushlabs.ai" class="block w-full text-center px-6 py-3 border border-gray-600 text-white font-display font-semibold rounded-lg hover:border-cush-orange transition-colors duration-300">
+                Escucha los Demos en Vivo
+              </a>
+            </div>
+          </div>
+
+          <!-- Included -->
+          <div>
+            <h3 class="font-display font-semibold text-xl text-gray-900 dark:text-white mb-6">Qué Incluye</h3>
+            <ul class="space-y-4">
+              {included.map(item => (
+                <li class="flex gap-4">
+                  <div class="w-1.5 h-1.5 bg-cush-orange rounded-full mt-2.5 shrink-0"></div>
+                  <div>
+                    <strong class="text-gray-900 dark:text-white font-semibold">{item.title}</strong> — <span class="text-gray-600 dark:text-gray-400 text-sm">{item.desc}</span>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <!-- Not included -->
+          <div class="pt-6 border-t border-gray-200 dark:border-gray-800">
+            <h3 class="font-display font-semibold text-base text-gray-900 dark:text-white mb-4">Lo Que NO Incluye</h3>
+            <ul class="space-y-2">
+              {notIncluded.map(item => (
+                <li class="flex gap-3 text-sm text-gray-500 dark:text-gray-500">
+                  <svg class="w-4 h-4 text-gray-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </Container>
+  </section>
+
+  <!-- ROI comparison -->
+  <section class="py-20 md:py-28 bg-gray-50 dark:bg-gray-900/30 border-y border-gray-100 dark:border-gray-800">
+    <Container size="md">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="font-display font-bold text-3xl md:text-4xl text-gray-900 dark:text-white mb-8 leading-tight tracking-tight text-center">
+          Recepcionista vs Agente de Voz con IA
+        </h2>
+        <div class="overflow-x-auto rounded-xl border border-gray-200 dark:border-gray-800">
+          <table class="w-full text-left">
+            <thead class="bg-gray-100 dark:bg-gray-800/60">
+              <tr>
+                <th class="px-6 py-4 font-display font-semibold text-sm uppercase tracking-wider text-gray-500 dark:text-gray-400"></th>
+                <th class="px-6 py-4 font-display font-semibold text-sm uppercase tracking-wider text-gray-500 dark:text-gray-400">Recepcionista de Tiempo Completo</th>
+                <th class="px-6 py-4 font-display font-semibold text-sm uppercase tracking-wider text-cush-orange">Agente de Voz con IA</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200 dark:divide-gray-800 bg-white dark:bg-gray-900/30">
+              {[
+                ["Costo mensual", "$8,000–$15,000 MXN", "$10,997 MXN"],
+                ["Horario", "8 horas/día, 5 días/semana", "24/7, 365 días/año"],
+                ["Faltas", "Sí", "Nunca"],
+                ["Bilingüe EN/ES", "Rara vez", "Siempre"],
+                ["Agenda citas", "Manual", "Automático"],
+                ["Tiempo para arrancar", "Semanas de contratación + entrenamiento", "1–2 semanas"],
+              ].map(([label, recep, ai]) => (
+                <tr>
+                  <td class="px-6 py-4 font-display font-semibold text-gray-900 dark:text-white">{label}</td>
+                  <td class="px-6 py-4 text-gray-600 dark:text-gray-400">{recep}</td>
+                  <td class="px-6 py-4 text-gray-900 dark:text-white font-medium">{ai}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </Container>
+  </section>
+
+  <!-- Why CushLabs -->
+  <section class="py-20 md:py-28">
+    <Container size="md">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="font-display font-bold text-3xl md:text-4xl text-gray-900 dark:text-white mb-8 leading-tight tracking-tight">
+          Por qué CushLabs y no un IVR genérico o call center
+        </h2>
+        <div class="space-y-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed text-left">
+          <p>
+            Los menús de marcado por tonos y los call centers en el extranjero resolvían un problema de hace veinte años. Los agentes de voz con IA modernos son conversacionales — escuchan, entienden la intención y responden como una persona, no como un árbol telefónico.
+          </p>
+          <p>
+            CushLabs construye, despliega y opera el agente por ti. Nosotros manejamos la afinación de voz, la integración telefónica, el cableado del calendario y la confiabilidad continua. Tú obtienes las llamadas contestadas. Ya resolvimos los problemas difíciles — cambio bilingüe, respuestas precisas basadas en tu negocio, transferencia elegante a humanos, uptime 24/7 con monitoreo.
+          </p>
+          <p>
+            Y antes de comprometerte, puedes escuchar el trabajo tú mismo en <a href="https://voice.cushlabs.ai" class="text-cush-orange underline underline-offset-4 hover:no-underline">voice.cushlabs.ai</a>.
+          </p>
+        </div>
+        <div class="mt-10">
+          <a
+            href="/es/reservar/"
+            class="inline-flex items-center gap-2 px-8 py-4 bg-cush-orange text-white font-display font-semibold rounded-lg hover:bg-cush-orange/90 transition-all duration-300 shadow-lg shadow-cush-orange/25 hover:shadow-xl text-lg"
+          >
+            Empieza Tu Prueba Gratis de 2 Semanas
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </Container>
+  </section>
+
+  <FinalCTA locale={locale} />
+
+</BaseLayout>
