@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-22T03:17:46.398Z",
+  "generatedAt": "2026-05-03T08:04:52.857Z",
   "count": 33,
   "projects": [
     {
@@ -50,7 +50,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-04-16T21:33:22Z",
+      "lastPushed": "2026-04-30T18:23:19Z",
       "createdAt": "2025-12-02T07:09:31Z",
       "isFeatured": true,
       "isArchived": false,
@@ -171,7 +171,7 @@
       "status": "Production",
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 972217,
+        "TypeScript": 987118,
         "JavaScript": 13855,
         "PLpgSQL": 10195,
         "CSS": 8090,
@@ -179,7 +179,7 @@
       },
       "stars": 1,
       "forks": 0,
-      "lastPushed": "2026-04-21T22:34:30Z",
+      "lastPushed": "2026-05-02T22:58:42Z",
       "createdAt": "2025-11-23T00:24:28Z",
       "isFeatured": true,
       "isArchived": false,
@@ -319,7 +319,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-04-20T21:52:57Z",
+      "lastPushed": "2026-04-27T23:22:08Z",
       "createdAt": "2026-02-23T01:31:09Z",
       "isFeatured": true,
       "isArchived": false,
@@ -468,7 +468,7 @@
       "status": null,
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 730779,
+        "TypeScript": 744100,
         "HTML": 29745,
         "CSS": 3586,
         "Dockerfile": 1126,
@@ -476,7 +476,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-04-21T16:29:03Z",
+      "lastPushed": "2026-05-03T07:55:17Z",
       "createdAt": "2026-03-30T19:46:00Z",
       "isFeatured": true,
       "isArchived": false,
@@ -602,7 +602,7 @@
       "status": "Production",
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 142604,
+        "TypeScript": 163747,
         "JavaScript": 4353,
         "PowerShell": 1415,
         "HTML": 686,
@@ -610,7 +610,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-04-22T01:32:32Z",
+      "lastPushed": "2026-05-03T00:51:09Z",
       "createdAt": "2026-04-06T23:20:56Z",
       "isFeatured": true,
       "isArchived": false,
@@ -746,18 +746,18 @@
       "status": "Production",
       "language": "Astro",
       "languages": {
-        "Astro": 2071220,
-        "TypeScript": 1963055,
+        "Astro": 2326054,
+        "TypeScript": 2136065,
         "HTML": 838639,
-        "JavaScript": 404739,
+        "JavaScript": 419056,
         "CSS": 40875,
         "Python": 30138,
-        "MDX": 23172,
-        "PLpgSQL": 4239
+        "MDX": 23889,
+        "PLpgSQL": 5879
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-04-21T15:40:05Z",
+      "lastPushed": "2026-05-02T21:31:05Z",
       "createdAt": "2025-03-23T03:27:14Z",
       "isFeatured": true,
       "isArchived": false,
@@ -769,6 +769,7 @@
       "keyFeatures": [
         "Complete 4-course A1→C2 English curriculum — Beginner, Intermediate, Advanced, Executive — entirely free, bilingual EN/ES",
         "Executive course alone: 10 units × 3 sections, 8 original React drill components, ~130+ drills, Azure Neural TTS, capstone recorded presentation with direct browser-to-CDN audio upload (Vercel Blob) and 48-hour personal feedback loop",
+        "Corporate lead-magnet funnel — bilingual PDF + video audit guide for HR managers, dual-format branded delivery email, Neon-tracked attribution, and a single-CTA path to a discovery call",
         "4 role-specific diagnostic quizzes pre-qualify leads with mapped communication gaps — no discovery calls needed",
         "3-step booking flow via Cloudflare Workers + Google Calendar OAuth — interest to confirmed Google Meet in under 60 seconds",
         "Full EN/ES bilingual mirror with localized routing (/es/servicios/, /es/reservar/) and bidirectional hreflang SEO",
@@ -778,6 +779,7 @@
       "metrics": [
         "4 complete courses (A1→C2) — more structured free content than most paid English platforms",
         "~130+ individual drills in the Executive course alone across 10 drill components",
+        "Two distinct lead-capture funnels — diagnostic quizzes for individual professionals, audit-guide download for corporate HR decision-makers",
         "100 Lighthouse performance score — zero database queries on page load",
         "$0/month infrastructure cost across all services",
         "< 60 seconds from interest to confirmed booking with Google Meet link",
@@ -785,7 +787,7 @@
         "10-15 hours/week of administrative and sales work automated away"
       ],
       "priority": 5,
-      "dateCompleted": "2026-04-17",
+      "dateCompleted": "2026-04-27",
       "slides": [
         {
           "src": "https://cdn.cushlabs.ai/ny-eng/images/portfolio/ny-eng-01.webp",
@@ -900,7 +902,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-04-16T22:00:28Z",
+      "lastPushed": "2026-04-30T18:41:04Z",
       "createdAt": "2026-03-06T18:20:23Z",
       "isFeatured": true,
       "isArchived": false,
@@ -1114,9 +1116,9 @@
     {
       "id": 1120026584,
       "name": "context-writing-system",
-      "title": "AI ContextWriting System",
+      "title": "AI Writing System",
       "description": "Context-engineering system to lock brand voice, enforce truth, and generate consistent AI-written content at scale.",
-      "summary": "> A context engineering framework that makes AI write like you, not like AI.",
+      "summary": "> A context-engineering framework that makes AI write like the founder, not like AI.",
       "url": "https://github.com/RCushmaniii/context-writing-system",
       "demoUrl": "https://cushlabs-writing-system.vercel.app",
       "liveUrl": "https://context-writing-system.vercel.app",
@@ -1167,7 +1169,7 @@
       },
       "stars": 2,
       "forks": 0,
-      "lastPushed": "2026-04-19T10:32:55Z",
+      "lastPushed": "2026-05-03T08:02:48Z",
       "createdAt": "2025-12-20T10:31:00Z",
       "isFeatured": false,
       "isArchived": false,
@@ -1189,58 +1191,58 @@
       "slides": [
         {
           "src": "https://cdn.cushlabs.ai/context-writing-system/images/context-writing-system-01.webp",
-          "altEn": "AI ContextWriting System",
-          "altEs": "AI ContextWriting System"
+          "altEn": "AI Writing System",
+          "altEs": "AI Writing System"
         },
         {
           "src": "https://cdn.cushlabs.ai/context-writing-system/images/context-writing-system-02.webp",
-          "altEn": "AI ContextWriting System",
-          "altEs": "AI ContextWriting System"
+          "altEn": "AI Writing System",
+          "altEs": "AI Writing System"
         },
         {
           "src": "https://cdn.cushlabs.ai/context-writing-system/images/context-writing-system-03.webp",
-          "altEn": "AI ContextWriting System",
-          "altEs": "AI ContextWriting System"
+          "altEn": "AI Writing System",
+          "altEs": "AI Writing System"
         },
         {
           "src": "https://cdn.cushlabs.ai/context-writing-system/images/context-writing-system-04.webp",
-          "altEn": "AI ContextWriting System",
-          "altEs": "AI ContextWriting System"
+          "altEn": "AI Writing System",
+          "altEs": "AI Writing System"
         },
         {
           "src": "https://cdn.cushlabs.ai/context-writing-system/images/context-writing-system-05.webp",
-          "altEn": "AI ContextWriting System",
-          "altEs": "AI ContextWriting System"
+          "altEn": "AI Writing System",
+          "altEs": "AI Writing System"
         },
         {
           "src": "https://cdn.cushlabs.ai/context-writing-system/images/context-writing-system-06.webp",
-          "altEn": "AI ContextWriting System",
-          "altEs": "AI ContextWriting System"
+          "altEn": "AI Writing System",
+          "altEs": "AI Writing System"
         },
         {
           "src": "https://cdn.cushlabs.ai/context-writing-system/images/context-writing-system-07.webp",
-          "altEn": "AI ContextWriting System",
-          "altEs": "AI ContextWriting System"
+          "altEn": "AI Writing System",
+          "altEs": "AI Writing System"
         },
         {
           "src": "https://cdn.cushlabs.ai/context-writing-system/images/context-writing-system-08.webp",
-          "altEn": "AI ContextWriting System",
-          "altEs": "AI ContextWriting System"
+          "altEn": "AI Writing System",
+          "altEs": "AI Writing System"
         },
         {
           "src": "https://cdn.cushlabs.ai/context-writing-system/images/context-writing-system-09.webp",
-          "altEn": "AI ContextWriting System",
-          "altEs": "AI ContextWriting System"
+          "altEn": "AI Writing System",
+          "altEs": "AI Writing System"
         },
         {
           "src": "https://cdn.cushlabs.ai/context-writing-system/images/context-writing-system-10.webp",
-          "altEn": "AI ContextWriting System",
-          "altEs": "AI ContextWriting System"
+          "altEn": "AI Writing System",
+          "altEs": "AI Writing System"
         },
         {
           "src": "https://cdn.cushlabs.ai/context-writing-system/images/context-writing-system-11.webp",
-          "altEn": "AI ContextWriting System",
-          "altEs": "AI ContextWriting System"
+          "altEn": "AI Writing System",
+          "altEs": "AI Writing System"
         }
       ],
       "videoUrl": "https://cdn.cushlabs.ai/context-writing-system/videos/context-writing-system-brief.mp4",
@@ -1305,7 +1307,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-04-21T21:47:42Z",
+      "lastPushed": "2026-04-30T02:11:42Z",
       "createdAt": "2026-03-06T17:57:40Z",
       "isFeatured": false,
       "isArchived": false,
@@ -1455,13 +1457,13 @@
       "status": null,
       "language": "Python",
       "languages": {
-        "Python": 313426,
-        "Shell": 1351,
+        "Python": 342899,
+        "Shell": 3136,
         "Dockerfile": 519
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-04-13T14:23:30Z",
+      "lastPushed": "2026-05-02T23:11:58Z",
       "createdAt": "2026-03-09T19:14:08Z",
       "isFeatured": false,
       "isArchived": false,
@@ -1688,7 +1690,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-04-06T02:12:16Z",
+      "lastPushed": "2026-04-26T15:03:23Z",
       "createdAt": "2026-03-04T22:07:57Z",
       "isFeatured": false,
       "isArchived": false,
@@ -1929,7 +1931,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-04-18T23:40:36Z",
+      "lastPushed": "2026-05-03T05:43:01Z",
       "createdAt": "2026-03-08T19:31:57Z",
       "isFeatured": false,
       "isArchived": false,
@@ -2214,8 +2216,8 @@
         "HTML": 362
       },
       "stars": 0,
-      "forks": 0,
-      "lastPushed": "2026-04-09T09:39:53Z",
+      "forks": 1,
+      "lastPushed": "2026-04-24T17:16:31Z",
       "createdAt": "2026-01-12T02:37:39Z",
       "isFeatured": false,
       "isArchived": false,
@@ -2500,7 +2502,7 @@
       },
       "stars": 1,
       "forks": 0,
-      "lastPushed": "2026-04-21T22:31:30Z",
+      "lastPushed": "2026-04-29T22:32:46Z",
       "createdAt": "2026-03-03T07:21:12Z",
       "isFeatured": false,
       "isArchived": false,
@@ -2869,16 +2871,16 @@
       "status": null,
       "language": "Astro",
       "languages": {
-        "Astro": 546460,
+        "Astro": 608673,
         "TypeScript": 336917,
         "HTML": 61067,
-        "JavaScript": 56424,
+        "JavaScript": 45645,
         "Python": 6606,
         "CSS": 4657
       },
       "stars": 2,
       "forks": 0,
-      "lastPushed": "2026-04-22T01:25:31Z",
+      "lastPushed": "2026-05-02T22:01:20Z",
       "createdAt": "2026-01-08T03:52:43Z",
       "isFeatured": false,
       "isArchived": false,
@@ -3248,7 +3250,7 @@
         "audio-narration"
       ],
       "stack": [
-        "Next.js 14",
+        "Next.js 16",
         "TypeScript",
         "React Server Components",
         "Tailwind CSS",
@@ -3257,13 +3259,13 @@
       "status": "Production",
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 52859,
+        "TypeScript": 53221,
         "CSS": 2913,
-        "JavaScript": 781
+        "JavaScript": 911
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-04-11T21:34:32Z",
+      "lastPushed": "2026-04-27T15:07:53Z",
       "createdAt": "2026-01-04T03:47:35Z",
       "isFeatured": false,
       "isArchived": false,
@@ -3505,7 +3507,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-04-13T00:23:06Z",
+      "lastPushed": "2026-05-03T05:52:36Z",
       "createdAt": "2026-01-13T22:16:37Z",
       "isFeatured": false,
       "isArchived": false,
@@ -3757,7 +3759,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-04-20T04:52:46Z",
+      "lastPushed": "2026-04-27T04:55:12Z",
       "createdAt": "2026-02-17T04:40:23Z",
       "isFeatured": false,
       "isArchived": false,
@@ -3846,7 +3848,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-04-07T00:00:16Z",
+      "lastPushed": "2026-04-30T18:42:59Z",
       "createdAt": "2026-02-10T04:11:19Z",
       "isFeatured": false,
       "isArchived": false,
