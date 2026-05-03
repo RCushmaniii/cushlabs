@@ -41,6 +41,34 @@ _(no high-priority items currently open — both prior items shipped 2026-05-02 
 
 ---
 
+## Roadmap
+
+Directional ideas with a longer horizon than the Backlog. Themes, not tickets — Backlog items are sized work; Roadmap items are "what could this become" before the spec exists. Promote a Roadmap entry to Backlog once the scope is concrete.
+
+### Product expansion
+
+- **WhatsApp Business as a third channel** — Messenger Assistant tech is reusable. Many Mexican SMBs live on WhatsApp first, Facebook second. Spec'ing a WhatsApp variant would broaden TAM without rebuilding the AI core. Validate demand via 2–3 prospects before committing.
+- **Outbound voice product** — currently disclaimed on the voice page ("Outbound calling campaigns — available as a separate engagement"). If a real prospect asks for it, productize it. Until then, keep it custom-quoted.
+- **Multi-page / franchise Messenger setups** — disclaimed on `/messenger-assistant/` ("scoped separately"). Same logic: productize once a real client justifies it.
+- **AI Customer Support Chatbot dedicated page** — already exists as a service block on `/services` (`support-assistants` ID) but no standalone landing like `/messenger-assistant/` or `/voice-agent/`. Could be the third standalone product page once content is ready.
+
+### Distribution & growth
+
+- **Bilingual SEO automation as a productized offering** — the GSC/Bing/IndexNow weekly cron + structured-data audit pattern that lives on cushlabs.ai is itself a consultable service. Sell to bilingual local businesses ("we'll set up the same SEO discipline that ranks our own site").
+- **Insurance-vertical landing page** — per memory `project_outreach_pipeline`, insurance is the active beachhead. A vertical-specific landing page with insurance copy + pricing + case studies would compound outbound efforts.
+
+### Internal tooling
+
+- **Pre-deploy SEO audit script: extend to FAQ schema and HowTo schema validation** — the script currently catches title/description/trailing-slash issues. Adding schema validation closes the loop on the structured-data side.
+- **Automated Ahrefs digest parser** — the verification routine that fires after big SEO PRs (e.g., trigger `trig_01P4s9QfqPVBPxrnVUJ4kdUZ`) is currently one-off. A general parser that extracts errors/warnings from any Ahrefs digest email and posts a structured summary would standardize SEO regression detection.
+
+### Compliance & legal
+
+- **EN privacy LFPDPPP framing review** — tracked as tech-debt #6. The ES privacy explicitly names LFPDPPP / derechos ARCO; EN says generic "depending on your location." A lawyer review could clarify whether the EN should mirror the Mexican-specific framing for English-speaking Mexican residents.
+- **Terms of Service freshness audit** — `src/pages/terms.astro` and `src/pages/es/terms.astro` exist but haven't been touched since the Messenger Assistant launched. Should be audited the same way privacy was: do the terms reflect actual product behavior?
+
+---
+
 ## Recurring Failure Modes
 
 Patterns that have bitten this project before. Re-read this section before shipping any change to the listed surfaces.

@@ -493,6 +493,55 @@ The `docs/` folder contains lessons learned from the New York English repo:
 - `docs/seo/HREFLANG-FIX-SUMMARY.md` - Hreflang implementation
 - `docs/seo/SITEMAP-SEO-ANALYSIS.md` - Sitemap best practices
 - `docs/seo/SEO-TECHNICAL-CHECKLIST.md` - SEO validation checklist
+- `docs/SESSION-LOG.md` - **Living session log + tech debt + roadmap. READ THIS FIRST when starting work; update at the end of every substantive session.**
+
+---
+
+## Session Log Maintenance (REQUIRED)
+
+`docs/SESSION-LOG.md` is the durable memory across AI sessions for this repo. It captures what shipped, what's broken, what's planned. Treat it like the project's source-of-truth changelog — not a dumping ground.
+
+### Read it FIRST when starting a session
+
+Before proposing or implementing anything, read `docs/SESSION-LOG.md`. It tells you:
+
+- **Active Technical Debt** — known gaps in already-shipped work. If you're touching one of these surfaces, address the debt or note why you didn't.
+- **Backlog (Prioritized)** — concrete next work, sized and scoped. Pull from here when Robert says "what's next?"
+- **Roadmap** — directional ideas with longer horizon. Reference these when an opportunity emerges that fits the existing direction.
+- **Recurring Failure Modes** — patterns that have bitten this project before. Re-read before shipping any change to a surface called out here. Failing to do this is how regressions ship.
+- **Session History** — what shipped recently, in chronological order, with PR numbers and commit hashes.
+
+### Update it at the END of every substantive session
+
+If the session shipped code, fixed a bug, identified new tech debt, or surfaced a strategic idea, update SESSION-LOG.md before declaring the session done. Specifically:
+
+1. **Add a Session History entry** — date-stamped header, PR numbers, commit hashes, what shipped, what got resolved, what got flagged. Newest at the top of "Session History" (entries are chronological, newest first).
+2. **Update the Active Technical Debt table** — mark resolved items with strikethrough + resolution note (don't delete — keep the trail). Add new tech-debt rows for anything that shipped with a known gap.
+3. **Update the Backlog** — remove items that shipped, add new items the session identified as concrete next work.
+4. **Update the Roadmap** — add directional ideas the session surfaced. These are themes, not tickets — promote to Backlog only when the spec is concrete.
+5. **Add to Recurring Failure Modes** — if the session ran into a repeatable footgun (silent failure, parity drift, regression pattern), document it. Future-you will thank present-you.
+
+### Section structure (don't drift from this)
+
+The doc has six top-level sections in this exact order:
+
+1. **Active Technical Debt** — table format: `# | Item | Severity | Notes`
+2. **Backlog (Prioritized)** — bulleted, grouped by High / Medium / Low priority
+3. **Roadmap** — directional ideas grouped by theme (Product expansion, Distribution & growth, Internal tooling, Compliance & legal, etc.). Themes can be added/removed as the project evolves.
+4. **Recurring Failure Modes** — numbered patterns with "What happened" + "Rule" sections
+5. **Session History** — newest first, date-stamped headers
+6. **Cross-references to existing audit docs** — pointers to deeper docs in `docs/`
+
+### What does NOT belong in SESSION-LOG.md
+
+- Routine session work that doesn't change the project's known state (linting passes, ad-hoc bug investigations that found nothing, etc.). Only log substantive shipping or substantive learning.
+- Code patterns or conventions — those belong in dedicated `docs/architecture/` files.
+- Secrets, tokens, environment variables — never. The Secrets & Sensitive Data rules in the global CLAUDE.md apply to this file too.
+- Long debugging narratives — link to the PR or commit where the work happened; don't recap the journey here.
+
+### Commit cadence
+
+SESSION-LOG.md updates can ride along with the session's main feature PR (one branch, one PR), OR ship as a separate `docs:` commit if the session also touches deployed code and you want a clean separation. CLAUDE.md and memory file updates do NOT need a feature branch (per the global CLAUDE.md exemption); SESSION-LOG.md follows the same spirit since it's pure internal docs that don't change deployed pages — but bundling it into a related feature PR is also fine.
 
 ---
 
@@ -504,3 +553,4 @@ Before ending any session, verify:
 - [ ] No TypeScript errors (`npm run check`)
 - [ ] Dev server runs without errors
 - [ ] Language switcher works on modified pages
+- [ ] **`docs/SESSION-LOG.md` updated** with this session's accomplishments, new tech debt, new backlog/roadmap items, and any new recurring failure modes
