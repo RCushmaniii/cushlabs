@@ -1,0 +1,138 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Container from "../../components/layout/Container.astro";
+
+// The OAuth flow is initiated server-side by the messenger bot Worker so
+// we can issue a CSRF state token tied to a short-lived KV key. The button
+// on this page is just a link; the Worker does the redirect dance.
+const OAUTH_START_URL = "https://ny-english-messenger-bot.rcushmaniii.workers.dev/oauth/start";
+
+const steps = [
+  { n: 1, title: "Connect your Facebook Page", desc: "Authorize CushLabs to receive and respond to messages on the Facebook Page you choose." },
+  { n: 2, title: "We onboard your business", desc: "We ingest your services, pricing, and FAQs and tune the assistant to your voice. Typical turnaround: 5 business days." },
+  { n: 3, title: "Free 2-week trial", desc: "Your assistant goes live on your Page. You watch it work. If it doesn't earn its keep, we part as friends." },
+  { n: 4, title: "We tune monthly", desc: "Weekly performance reports. Monthly tuning as your business evolves." },
+];
+
+const permissions = [
+  { name: "Send and receive Messenger messages on your Page", why: "So the assistant can reply to customers." },
+  { name: "See the list of Pages you manage", why: "So you can pick which Page to install the assistant on." },
+  { name: "Read your Page's name and basic info", why: "So we can show you which Page you're connecting." },
+  { name: "Subscribe to message webhooks on your Page", why: "So new messages reach the assistant in real time." },
+  { name: "Read each customer's preferred language", why: "So the assistant replies in English or Spanish automatically." },
+];
+---
+
+<BaseLayout
+  title="Connect your Facebook Page | CushLabs Messenger Assistant"
+  description="Connect your Facebook Page to your CushLabs AI Messenger Assistant. One click, secure Facebook Login, and you're set up."
+  noindex={true}
+>
+  <section class="relative pt-24 pb-16 md:pt-32 md:pb-20 overflow-hidden">
+    <div class="absolute inset-0 -z-10">
+      <div class="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-cush-orange/15 rounded-full blur-[120px]"></div>
+    </div>
+
+    <Container size="md">
+      <div class="text-center max-w-3xl mx-auto">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-green-500/10 border border-green-500/20 text-green-700 dark:text-green-400 text-sm font-semibold mb-8">
+          <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+          Welcome aboard — let's get you set up
+        </div>
+
+        <h1 class="font-display text-fluid-4xl font-bold text-gray-900 dark:text-white mb-6 leading-tight tracking-tight">
+          Connect your Facebook Page
+        </h1>
+
+        <p class="text-fluid-lg text-gray-600 dark:text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed">
+          One click. Secure Facebook Login. We'll handle the rest. You'll be back here in less than a minute.
+        </p>
+
+        <div class="flex flex-col items-center gap-4">
+          <a
+            href={OAUTH_START_URL}
+            class="group inline-flex items-center gap-3 px-8 py-4 bg-[#1877F2] hover:bg-[#166FE5] text-white font-display font-semibold rounded-lg transition-all duration-300 shadow-lg shadow-[#1877F2]/30 hover:shadow-xl text-lg"
+          >
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+            Connect with Facebook
+          </a>
+
+          <p class="text-sm text-gray-500 dark:text-gray-400 max-w-md">
+            You'll be redirected to Facebook to log in and authorize CushLabs Messenger Assistant on the Page you choose.
+          </p>
+        </div>
+      </div>
+    </Container>
+  </section>
+
+  <!-- The four steps -->
+  <section class="py-16 md:py-24 bg-gray-50 dark:bg-gray-900/30 border-y border-gray-100 dark:border-gray-800">
+    <Container size="lg">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="font-display font-bold text-3xl md:text-4xl text-gray-900 dark:text-white mb-3 leading-tight tracking-tight text-center">
+          What happens next
+        </h2>
+        <p class="text-center text-gray-600 dark:text-gray-400 mb-12 max-w-2xl mx-auto">
+          You're at step 1. From here it's about a week until your assistant is live on your Page.
+        </p>
+
+        <ol class="space-y-6">
+          {steps.map(s => (
+            <li class="flex gap-5 p-5 bg-white dark:bg-gray-800/50 rounded-xl border border-gray-100 dark:border-gray-800">
+              <div class="flex-shrink-0 w-10 h-10 rounded-full bg-cush-orange/10 text-cush-orange font-display font-bold flex items-center justify-center">
+                {s.n}
+              </div>
+              <div>
+                <h3 class="font-display font-semibold text-lg text-gray-900 dark:text-white mb-1">{s.title}</h3>
+                <p class="text-gray-600 dark:text-gray-400 leading-relaxed">{s.desc}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </Container>
+  </section>
+
+  <!-- What we'll request access to -->
+  <section class="py-16 md:py-24">
+    <Container size="lg">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="font-display font-bold text-2xl md:text-3xl text-gray-900 dark:text-white mb-3 leading-tight tracking-tight">
+          What you'll be authorizing
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
+          When you click <em>Connect with Facebook</em>, Facebook will ask whether you want to grant CushLabs Messenger Assistant the following access on the Page you select. You stay in control — you can revoke this at any time from your Facebook settings.
+        </p>
+
+        <ul class="space-y-4 mb-10">
+          {permissions.map(p => (
+            <li class="flex gap-4">
+              <svg class="w-5 h-5 text-green-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <div>
+                <strong class="text-gray-900 dark:text-white font-semibold">{p.name}.</strong>
+                {" "}<span class="text-gray-600 dark:text-gray-400">{p.why}</span>
+              </div>
+            </li>
+          ))}
+        </ul>
+
+        <div class="bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 rounded-xl p-6 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+          <p class="mb-3">
+            <strong class="text-gray-900 dark:text-white">Privacy:</strong> We never sell or share your data. Customer messages are sent to Anthropic Claude (our AI provider) solely to generate replies, then conversation history auto-expires from our short-term memory after one hour.
+          </p>
+          <p>
+            <a href="/privacy/" class="text-cush-orange hover:underline">Privacy policy</a>
+            <span class="mx-2 text-gray-400">·</span>
+            <a href="/data-deletion/" class="text-cush-orange hover:underline">Data deletion</a>
+            <span class="mx-2 text-gray-400">·</span>
+            <a href="/messenger-assistant/" class="text-cush-orange hover:underline">Back to overview</a>
+          </p>
+        </div>
+      </div>
+    </Container>
+  </section>
+</BaseLayout>
