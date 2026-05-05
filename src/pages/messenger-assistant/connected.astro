@@ -1,0 +1,147 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Container from "../../components/layout/Container.astro";
+
+// Static-rendered. Query params (page_name, page_id, error) are read
+// client-side because the site has no server adapter.
+---
+
+<BaseLayout
+  title="Connected | CushLabs Messenger Assistant"
+  description="Your Facebook Page is connected to CushLabs Messenger Assistant."
+  noindex={true}
+>
+  <section class="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden min-h-[60vh]">
+    <div class="absolute inset-0 -z-10">
+      <div id="bg-glow" class="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-green-500/10 rounded-full blur-[120px]"></div>
+    </div>
+
+    <Container size="md">
+      <!-- Loading placeholder (visible until JS runs) -->
+      <div id="loading-state" class="text-center max-w-2xl mx-auto">
+        <div class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gray-200 dark:bg-gray-700 mb-8 animate-pulse">
+        </div>
+        <div class="h-10 bg-gray-200 dark:bg-gray-700 rounded animate-pulse max-w-md mx-auto mb-4"></div>
+        <div class="h-6 bg-gray-200 dark:bg-gray-700 rounded animate-pulse max-w-lg mx-auto"></div>
+      </div>
+
+      <!-- Success state -->
+      <div id="success-state" class="text-center max-w-2xl mx-auto" hidden>
+        <div class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-green-500/15 border border-green-500/30 mb-8">
+          <svg class="w-10 h-10 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+          </svg>
+        </div>
+
+        <h1 class="font-display text-fluid-4xl font-bold text-gray-900 dark:text-white mb-4 leading-tight tracking-tight">
+          You're connected!
+        </h1>
+
+        <p class="text-fluid-lg text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
+          We've authorized CushLabs Messenger Assistant on
+          <strong id="page-name" class="text-gray-900 dark:text-white">your Facebook Page</strong>.
+        </p>
+
+        <div class="bg-white dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 rounded-xl p-6 mb-10 text-left">
+          <h2 class="font-display font-semibold text-lg text-gray-900 dark:text-white mb-4">
+            What happens next
+          </h2>
+          <ol class="space-y-3 text-gray-700 dark:text-gray-300">
+            <li class="flex gap-3">
+              <span class="text-cush-orange font-display font-bold">1.</span>
+              <span>You'll receive an onboarding email within 1 business day to schedule your content intake call.</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="text-cush-orange font-display font-bold">2.</span>
+              <span>We'll ingest your services, pricing, hours, and FAQs and tune the assistant to your voice.</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="text-cush-orange font-display font-bold">3.</span>
+              <span>Your assistant goes live on your Page within 5 business days. Free 2-week trial begins.</span>
+            </li>
+          </ol>
+        </div>
+
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a
+            href="/messenger-assistant/"
+            class="inline-flex items-center gap-2 px-6 py-3 bg-cush-orange text-white font-display font-semibold rounded-lg hover:bg-cush-orange/90 transition-all duration-300"
+          >
+            Back to overview
+          </a>
+          <a
+            href="/contact/"
+            class="font-display font-medium text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white underline underline-offset-4 decoration-gray-300 hover:decoration-cush-orange transition-all"
+          >
+            Questions? Contact us →
+          </a>
+        </div>
+      </div>
+
+      <!-- Error state -->
+      <div id="error-state" class="text-center max-w-2xl mx-auto" hidden>
+        <div class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-amber-500/15 border border-amber-500/30 mb-8">
+          <svg class="w-10 h-10 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+            </svg>
+        </div>
+
+        <h1 class="font-display text-fluid-3xl font-bold text-gray-900 dark:text-white mb-4 leading-tight tracking-tight">
+          Connection didn't complete
+        </h1>
+
+        <p class="text-fluid-lg text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
+          <span id="error-message">We didn't receive the authorization details from Facebook. This sometimes happens if you cancel the authorization or if the session times out.</span>
+        </p>
+
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a
+            href="/messenger-assistant/connect/"
+            class="inline-flex items-center gap-2 px-6 py-3 bg-cush-orange text-white font-display font-semibold rounded-lg hover:bg-cush-orange/90 transition-all duration-300"
+          >
+            Try again
+          </a>
+          <a
+            href="/contact/"
+            class="font-display font-medium text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white underline underline-offset-4 decoration-gray-300 hover:decoration-cush-orange transition-all"
+          >
+            Contact us for help →
+          </a>
+        </div>
+      </div>
+    </Container>
+  </section>
+
+  <script is:inline>
+    (function () {
+      const params = new URLSearchParams(window.location.search);
+      const pageName = params.get("page_name");
+      const pageId = params.get("page_id");
+      const error = params.get("error");
+
+      const loading = document.getElementById("loading-state");
+      const success = document.getElementById("success-state");
+      const errorEl = document.getElementById("error-state");
+      const bgGlow = document.getElementById("bg-glow");
+
+      loading.hidden = true;
+
+      if (!error && (pageName || pageId)) {
+        if (pageName) {
+          document.getElementById("page-name").textContent = pageName;
+        }
+        success.hidden = false;
+      } else {
+        if (error) {
+          document.getElementById("error-message").textContent =
+            'Facebook returned: "' + error + '". This sometimes happens if you cancel the authorization or if the session times out.';
+        }
+        if (bgGlow) {
+          bgGlow.classList.remove("bg-green-500/10");
+          bgGlow.classList.add("bg-amber-500/10");
+        }
+        errorEl.hidden = false;
+      }
+    })();
+  </script>
+</BaseLayout>
