@@ -101,7 +101,7 @@ body {
 
 /* ── Custom utilities ── */
 @utility text-gradient {
-  @apply bg-gradient-to-r from-foreground to-muted bg-clip-text text-transparent;
+  @apply bg-linear-to-r from-foreground to-muted bg-clip-text text-transparent;
 }
 
 @utility glow-orange {
