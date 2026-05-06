@@ -58,7 +58,7 @@ const t = content[locale];
     </div>
 
     <!-- Timeline/Steps Layout -->
-    <div class="relative space-y-12 before:absolute before:inset-0 before:ml-5 md:before:ml-[50%] before:-translate-x-px md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-gray-200 dark:before:via-gray-800 before:to-transparent">
+    <div class="relative space-y-12 before:absolute before:inset-0 before:ml-5 md:before:ml-[50%] before:-translate-x-px md:before:translate-x-0 before:h-full before:w-0.5 before:bg-linear-to-b before:from-transparent before:via-gray-200 dark:before:via-gray-800 before:to-transparent">
       {t.steps.map((step, index) => (
         <div class={`relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group border md:border-none border-gray-100 dark:border-gray-800 rounded-xl p-6 md:p-0 ${index % 2 === 0 ? 'md:pr-[50%]' : 'md:pl-[50%]'}`}>
           <!-- Marker -->

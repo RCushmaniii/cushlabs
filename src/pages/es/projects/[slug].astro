@@ -285,7 +285,7 @@ const relatedProjects = scored.slice(0, 3).map(s => s.project);
                 <div id="slider" class="overflow-hidden">
                   <div id="slider-track" class="flex transition-transform duration-300 ease-in-out">
                     {images.map((img, i) => (
-                      <div class="w-full flex-shrink-0 p-4 md:p-6">
+                      <div class="w-full shrink-0 p-4 md:p-6">
                         <figure class="rounded-xl border border-border bg-canvas/40 overflow-hidden">
                           <img
                             src={i === 0 ? img.src : undefined}
@@ -384,7 +384,7 @@ const relatedProjects = scored.slice(0, 3).map(s => s.project);
               <ul class="mt-4 space-y-3">
                 {results.map((item) => (
                   <li class="flex items-start gap-3 text-muted">
-                    <svg class="w-5 h-5 text-cush-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg class="w-5 h-5 text-cush-orange shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                     </svg>
                     <span>{item}</span>

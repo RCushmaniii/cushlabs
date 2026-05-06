@@ -182,7 +182,7 @@ const t = content[locale];
         height="1080"
         class="w-full h-full object-cover opacity-[0.05] dark:opacity-[0.03]"
       />
-      <div class="absolute inset-0 bg-gradient-to-b from-white/50 via-transparent to-white dark:from-gray-950/50 dark:via-transparent dark:to-gray-950"></div>
+      <div class="absolute inset-0 bg-linear-to-b from-white/50 via-transparent to-white dark:from-gray-950/50 dark:via-transparent dark:to-gray-950"></div>
     </div>
     <!-- Gradient Orbs -->
     <div class="absolute inset-0 -z-10">
@@ -258,7 +258,7 @@ const t = content[locale];
         <ul class="space-y-4 mb-8">
           {t.problem.items.map((item) => (
             <li class="flex items-start gap-3">
-              <svg class="w-6 h-6 text-red-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-6 h-6 text-red-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
               <span class="text-gray-700 dark:text-gray-300">{item}</span>
@@ -282,7 +282,7 @@ const t = content[locale];
         {t.approach.items.map((item, index) => (
           <div class="p-6 md:p-8 rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800/50">
             <div class="flex items-center gap-3 mb-4">
-              <div class="w-10 h-10 rounded-lg bg-cush-orange/10 flex items-center justify-center flex-shrink-0">
+              <div class="w-10 h-10 rounded-lg bg-cush-orange/10 flex items-center justify-center shrink-0">
                 <span class="font-display font-bold text-cush-orange">{String(index + 1).padStart(2, '0')}</span>
               </div>
               <h3 class="font-display text-xl font-bold text-gray-900 dark:text-white">
@@ -359,7 +359,7 @@ const t = content[locale];
         <ul class="space-y-4 mb-8">
           {t.clients.items.map((item) => (
             <li class="flex items-start gap-3">
-              <svg class="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-6 h-6 text-green-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
               </svg>
               <span class="text-gray-700 dark:text-gray-300">{item}</span>
