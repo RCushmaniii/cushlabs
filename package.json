@@ -34,7 +34,8 @@
     "tailwindcss": "^4.2.2"
   },
   "overrides": {
-    "yaml": ">=2.8.3"
+    "yaml": ">=2.8.3",
+    "fast-xml-parser": ">=5.7.0"
   },
   "devDependencies": {
     "@aws-sdk/client-s3": "^3.1008.0",

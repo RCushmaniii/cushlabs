@@ -383,10 +383,12 @@ function extractTag(html: string, tag: string): string | null {
     return m ? m[1].trim() : null;
   }
   // <meta name="description" content="...">
+  // Use a backreference for the closing quote so apostrophes inside the content
+  // (e.g. "Driver's License") don't truncate the match early.
   if (tag === "description") {
-    const m = html.match(/<meta\s[^>]*name=["']description["'][^>]*content=["'](.*?)["'][^>]*\/?>/is)
-           || html.match(/<meta\s[^>]*content=["'](.*?)["'][^>]*name=["']description["'][^>]*\/?>/is);
-    return m ? m[1].trim() : null;
+    const m = html.match(/<meta\s[^>]*name=["']description["'][^>]*content=(["'])(.*?)\1[^>]*\/?>/is)
+           || html.match(/<meta\s[^>]*content=(["'])(.*?)\1[^>]*name=["']description["'][^>]*\/?>/is);
+    return m ? m[2].trim() : null;
   }
   return null;
 }

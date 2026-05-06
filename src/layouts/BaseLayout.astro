@@ -21,9 +21,14 @@ const locale =
   (Astro.currentLocale as Locale | undefined) ??
   getLocaleFromPathname(pathname);
 
-// Ensure trailing slash for canonical URL consistency
+// Ensure trailing slash for canonical URL consistency.
+// Strip protocol+host from any incoming `canonical` so absolute URLs can't
+// bypass `Astro.site` (footgun: `new URL(absolute, base)` ignores `base`
+// when `absolute` is already absolute, which caused PR #80's "non-canonical
+// page in sitemap" Ahrefs errors).
+const stripOrigin = (p: string) => p.replace(/^https?:\/\/[^/]+/, '') || '/';
 const ensureTrailingSlash = (p: string) => p === '/' || p.endsWith('/') ? p : `${p}/`;
-const canonicalPath = ensureTrailingSlash(canonical || pathname);
+const canonicalPath = ensureTrailingSlash(stripOrigin(canonical || pathname));
 const canonicalURL = new URL(canonicalPath, Astro.site);
 
 // getLocalizedPath already returns trailing slashes
