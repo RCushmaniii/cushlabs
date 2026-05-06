@@ -1,0 +1,144 @@
+---
+import Container from '../layout/Container.astro';
+
+interface Props {
+  locale: 'en' | 'es';
+}
+
+const { locale } = Astro.props;
+
+const content = {
+  en: {
+    eyebrow: 'RISK-FREE',
+    heading: 'My Guarantee: If It Doesn\'t Work, You Don\'t Pay.',
+    subheadline: 'I\'m building my practice. You shouldn\'t carry the risk of that.',
+    points: [
+      {
+        number: '1',
+        title: 'The Discovery Call Is Free.',
+        body: '30 minutes. If AI isn\'t the right fit for your business or the timing isn\'t right, I\'ll tell you directly. No hard sell. Ever.',
+      },
+      {
+        number: '2',
+        title: 'Milestone Payments, Not Upfront.',
+        body: 'We split the project into 2–3 milestones. You pay the first, I build, you see it working, you pay the next. If at any point you\'re not satisfied with the progress, we stop and I return what wasn\'t delivered. No argument.',
+      },
+      {
+        number: '3',
+        title: '30-Day Post-Launch Guarantee.',
+        body: 'After launch, you have 30 days to report anything that doesn\'t work as agreed. I fix it at no cost. If you\'re still not satisfied after my adjustments, I refund the final milestone in full.',
+      },
+      {
+        number: '4',
+        title: 'Your Data Is Yours. Your System Is Yours.',
+        body: 'I deliver full documentation, access credentials, and code where applicable. If you ever decide to move to a different provider or bring it in-house, there\'s no way I can stop you. That keeps me accountable.',
+      },
+    ],
+    closing: 'Most consultants don\'t offer this because they\'re not confident in their work. I offer it because I\'m building my reputation one delivery at a time — and an unhappy client costs me more than any refund.',
+    ctaLabel: 'Book a Free 30-min Call',
+    ctaLink: '/consultation/',
+    ctaNote: 'No commitment. No credit card. Just 30 minutes.',
+  },
+  es: {
+    eyebrow: 'SIN RIESGO',
+    heading: 'Mi Garantía: Si No Funciona, No Pagas.',
+    subheadline: 'Estoy construyendo mi práctica. Tú no deberías cargar ese riesgo.',
+    points: [
+      {
+        number: '1',
+        title: 'La Llamada de Descubrimiento es Gratis.',
+        body: '30 minutos. Si la IA no es lo correcto para tu negocio o el momento no es el indicado, te lo digo directamente. No hay venta forzada. Nunca.',
+      },
+      {
+        number: '2',
+        title: 'Pagos por Hitos, No por Adelantado.',
+        body: 'Dividimos el proyecto en 2–3 hitos. Pagas el primero, construyo, lo ves funcionando, pagas el siguiente. Si en cualquier punto no estás convencido del progreso, paramos y te devuelvo lo no entregado. Sin discusión.',
+      },
+      {
+        number: '3',
+        title: 'Garantía de 30 Días Post-Lanzamiento.',
+        body: 'Después del lanzamiento, tienes 30 días para reportar cualquier cosa que no funcione como acordamos. Lo arreglo sin costo. Si después de mis ajustes sigues sin estar conforme, te devuelvo el último hito completo.',
+      },
+      {
+        number: '4',
+        title: 'Tu Data es Tuya. Tu Sistema es Tuyo.',
+        body: 'Entrego documentación completa, accesos y código si aplica. Si algún día decides irte con otro proveedor o llevarlo in-house, no tengo cómo retenerte. Eso me obliga a ser bueno.',
+      },
+    ],
+    closing: 'La mayoría de consultores no ofrecen esto porque no están seguros de su trabajo. Yo lo ofrezco porque estoy construyendo mi reputación una entrega a la vez — y un cliente molesto me cuesta más que cualquier reembolso.',
+    ctaLabel: 'Agendar Llamada Gratis — 30 min',
+    ctaLink: '/es/reservar/',
+    ctaNote: 'Sin compromiso. Sin tarjeta. Solo 30 minutos.',
+  },
+};
+
+const t = content[locale];
+---
+
+<section aria-labelledby="guarantee-heading" class="py-20 md:py-28 bg-orange-50/60 dark:bg-cush-orange/5 border-y border-cush-orange/15">
+  <Container size="md">
+
+    <!-- Header -->
+    <div class="text-center mb-12">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cush-orange/15 border border-cush-orange/25 mb-5">
+        <svg class="w-3.5 h-3.5 text-cush-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+        </svg>
+        <span class="font-display text-xs font-semibold tracking-widest text-cush-orange uppercase">{t.eyebrow}</span>
+      </div>
+
+      <h2 id="guarantee-heading" class="font-display text-fluid-3xl font-bold text-gray-900 dark:text-white mb-4 leading-tight">
+        {t.heading}
+      </h2>
+      <p class="font-body text-fluid-base text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+        {t.subheadline}
+      </p>
+    </div>
+
+    <!-- Guarantee card -->
+    <div class="bg-white dark:bg-cush-gray-800 rounded-2xl border border-cush-orange/20 shadow-lg shadow-cush-orange/5 overflow-hidden mb-8">
+
+      <!-- Points -->
+      <div class="divide-y divide-border">
+        {t.points.map((point) => (
+          <div class="flex gap-5 px-6 md:px-8 py-6 md:py-7">
+            <!-- Number badge -->
+            <div class="flex-shrink-0 w-9 h-9 rounded-full bg-cush-orange/10 border border-cush-orange/20 flex items-center justify-center mt-0.5">
+              <span class="font-display text-sm font-bold text-cush-orange">{point.number}</span>
+            </div>
+            <div>
+              <p class="font-display font-semibold text-gray-900 dark:text-white mb-1.5 text-fluid-base">
+                {point.title}
+              </p>
+              <p class="font-body text-gray-600 dark:text-gray-400 text-fluid-sm leading-relaxed">
+                {point.body}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Closing statement -->
+      <div class="px-6 md:px-8 py-5 bg-gray-50 dark:bg-cush-gray-700/50 border-t border-border">
+        <p class="font-body text-sm text-muted italic leading-relaxed text-center max-w-2xl mx-auto">
+          "{t.closing}"
+        </p>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="text-center">
+      <a
+        href={t.ctaLink}
+        class="group inline-flex items-center gap-2 px-8 py-4 bg-cush-orange text-white font-display font-semibold rounded-lg hover:bg-cush-orange/90 transition-all duration-300 shadow-lg shadow-cush-orange/20 hover:shadow-xl hover:shadow-cush-orange/30 text-lg mb-3"
+      >
+        {t.ctaLabel}
+        <svg class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+      </a>
+      <p class="font-body text-sm text-muted">{t.ctaNote}</p>
+    </div>
+
+  </Container>
+</section>

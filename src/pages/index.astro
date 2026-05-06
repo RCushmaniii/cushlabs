@@ -10,6 +10,7 @@ import WhyMe from "../components/home2/WhyMe.astro";
 import SocialProof from "../components/home2/SocialProof.astro";
 import RecentWork from "../components/home2/RecentWork.astro";
 import FAQ from "../components/home2/FAQ.astro";
+import Guarantee from "../components/home2/Guarantee.astro";
 import FinalCTA from "../components/home2/FinalCTA.astro";
 
 const locale = (Astro.currentLocale === "es" ? "es" : "en") as "en" | "es";
@@ -58,6 +59,9 @@ const meta = {
   <!-- Section 8: FAQ -->
   <FAQ locale={locale} />
 
-  <!-- Section 9: Final CTA -->
+  <!-- Section 9: Guarantee — objection-killer before the CTA -->
+  <Guarantee locale={locale} />
+
+  <!-- Section 10: Final CTA -->
   <FinalCTA locale={locale} />
 </BaseLayout>

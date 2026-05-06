@@ -207,5 +207,161 @@ const ogLocaleAlternate = locale === "es" ? "en_US" : "es_MX";
       import { inject } from '@vercel/analytics';
       inject();
     </script>
+
+    <!-- CushLabs Demo Chat Widget — floating bottom-right -->
+    <script is:inline define:vars={{ locale, pathname }}>
+    (function() {
+      // Only show on homepage (EN and ES)
+      const isHome = pathname === '/' || pathname === '/es/' || pathname === '/es';
+      if (!isHome) return;
+
+      const DEMO_URL = 'https://cushlabs-demo-chat.rcushmaniii.workers.dev';
+      const isMobile = () => window.matchMedia('(max-width: 768px)').matches;
+      const lang = document.documentElement.lang || 'en';
+
+      const labels = {
+        en: { btn: '💬 Try the Demo', close: '×' },
+        es: { btn: '💬 Probar el Demo', close: '×' },
+      };
+      const s = labels[lang] || labels.en;
+
+      // ── Inject styles ──
+      const style = document.createElement('style');
+      style.textContent = `
+        #cl-chat-btn {
+          position: fixed;
+          bottom: 24px;
+          right: 24px;
+          z-index: 9998;
+          background: #FF6A3D;
+          color: #fff;
+          border: none;
+          border-radius: 28px;
+          padding: 12px 20px;
+          font-family: 'Space Grotesk', sans-serif;
+          font-weight: 700;
+          font-size: 14px;
+          cursor: pointer;
+          box-shadow: 0 4px 20px rgba(255,106,61,0.35);
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          transition: transform 0.2s, box-shadow 0.2s;
+          animation: clPulse 2.5s ease-in-out infinite;
+        }
+        #cl-chat-btn:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 8px 28px rgba(255,106,61,0.45);
+          animation: none;
+        }
+        @keyframes clPulse {
+          0%, 100% { box-shadow: 0 4px 20px rgba(255,106,61,0.35); }
+          50% { box-shadow: 0 4px 28px rgba(255,106,61,0.6); }
+        }
+        #cl-chat-overlay {
+          position: fixed;
+          bottom: 24px;
+          right: 24px;
+          z-index: 9999;
+          width: 380px;
+          height: 560px;
+          border-radius: 16px;
+          overflow: hidden;
+          box-shadow: 0 8px 40px rgba(0,0,0,0.2);
+          display: none;
+          flex-direction: column;
+          border: 1px solid rgba(0,0,0,0.1);
+        }
+        #cl-chat-overlay.open { display: flex; }
+        #cl-chat-close {
+          position: absolute;
+          top: 8px;
+          right: 10px;
+          background: rgba(255,255,255,0.2);
+          border: none;
+          color: #fff;
+          font-size: 20px;
+          width: 28px;
+          height: 28px;
+          border-radius: 50%;
+          cursor: pointer;
+          z-index: 10000;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          line-height: 1;
+        }
+        #cl-chat-iframe {
+          width: 100%;
+          height: 100%;
+          border: none;
+        }
+        @media (max-width: 768px) {
+          #cl-chat-overlay {
+            width: 100vw;
+            height: 100dvh;
+            bottom: 0;
+            right: 0;
+            border-radius: 0;
+          }
+        }
+      `;
+      document.head.appendChild(style);
+
+      // ── Create button ──
+      const btn = document.createElement('button');
+      btn.id = 'cl-chat-btn';
+      btn.setAttribute('aria-label', s.btn);
+      btn.textContent = s.btn;
+      document.body.appendChild(btn);
+
+      // ── Create overlay ──
+      const overlay = document.createElement('div');
+      overlay.id = 'cl-chat-overlay';
+
+      const closeBtn = document.createElement('button');
+      closeBtn.id = 'cl-chat-close';
+      closeBtn.setAttribute('aria-label', 'Close chat');
+      closeBtn.textContent = s.close;
+      overlay.appendChild(closeBtn);
+
+      const iframe = document.createElement('iframe');
+      iframe.id = 'cl-chat-iframe';
+      iframe.title = lang === 'es' ? 'Demo del asistente de IA' : 'AI assistant demo';
+      iframe.allow = 'clipboard-write';
+      overlay.appendChild(iframe);
+
+      document.body.appendChild(overlay);
+
+      let iframeLoaded = false;
+
+      function openChat() {
+        if (!iframeLoaded) {
+          iframe.src = DEMO_URL + '?lang=' + lang;
+          iframeLoaded = true;
+        }
+        overlay.classList.add('open');
+        btn.style.display = 'none';
+      }
+
+      function closeChat() {
+        overlay.classList.remove('open');
+        btn.style.display = 'flex';
+      }
+
+      btn.addEventListener('click', openChat);
+      closeBtn.addEventListener('click', closeChat);
+
+      // Desktop auto-open after 9 seconds
+      if (!isMobile()) {
+        setTimeout(() => {
+          // Don't auto-open if user has already interacted
+          if (!document.querySelector('#cl-chat-overlay.open')) {
+            openChat();
+          }
+        }, 9000);
+      }
+    })();
+    </script>
   </body>
 </html>

@@ -1,0 +1,12 @@
+name = "cushlabs-demo-chat"
+main = "workers/demo-chat.js"
+compatibility_date = "2025-10-11"
+
+[observability]
+enabled = true
+
+[observability.logs]
+enabled = true
+
+[vars]
+ALLOWED_ORIGINS = "https://www.cushlabs.ai,https://cushlabs.ai,http://localhost:4321,http://localhost:4322"

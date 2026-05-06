@@ -7,50 +7,37 @@ interface Props {
 
 const { locale } = Astro.props;
 
+const DEMO_URL = 'https://cushlabs-demo-chat.rcushmaniii.workers.dev';
+
 const content = {
   en: {
-    eyebrow: 'LIVE EXAMPLE',
-    heading: 'See What Your Customers Would Experience',
-    body: "This is the kind of conversation happening right now for my clients — real inventory, real answers, real sales while the team is busy with in-store customers. Trained on your specific products, prices, and brand voice.",
-    businessName: 'Boutique Assistant',
-    messages: [
-      { from: 'customer', text: 'Hi! Do you have the red Catalina dress in size M?' },
-      { from: 'bot', text: '✓ Yes! We have the Catalina in Red, size M in stock. It\'s $890 MXN. Would you like to reserve it?' },
-      { from: 'customer', text: 'Yes please! Can I pick it up this afternoon?' },
-      { from: 'bot', text: 'We\'re open until 8pm today. What\'s your name? I\'ll have it ready at the counter for you 😊' },
-    ],
+    eyebrow: 'LIVE DEMO',
+    heading: 'Try It Right Now',
+    body: "This is a real AI assistant — the same type of system I build for clients. Ask it anything about services, pricing, or timelines. It handles both English and Spanish.",
     ctaLabel: 'Book a Free 30-min Call',
     ctaLink: '/consultation/',
-    messengerLabel: 'Or message us on Facebook →',
-    note: 'Every AI assistant is trained on your specific inventory, services, and voice — not a generic template.',
+    note: 'Every system is trained on your specific business — not a generic template.',
   },
   es: {
-    eyebrow: 'EJEMPLO REAL',
-    heading: 'Así Experimentan Tu Negocio Tus Clientes',
-    body: "Este es el tipo de conversación que pasa ahora mismo para mis clientes — inventario real, respuestas reales, ventas reales mientras el equipo atiende en el local. Entrenado con tus productos, precios y voz de marca específicos.",
-    businessName: 'Asistente de Boutique',
-    messages: [
-      { from: 'customer', text: '¡Hola! ¿Tienen el vestido Catalina en rojo, talla M?' },
-      { from: 'bot', text: '✓ ¡Sí lo tenemos! El Catalina en Rojo, talla M está disponible. Precio $890 MXN. ¿Lo apartamos para ti?' },
-      { from: 'customer', text: '¡Sí, por favor! ¿Puedo pasar a recogerlo esta tarde?' },
-      { from: 'bot', text: 'Hoy estamos abiertos hasta las 8pm. ¿Me dices tu nombre? Lo tengo listo en el mostrador para ti 😊' },
-    ],
+    eyebrow: 'DEMO EN VIVO',
+    heading: 'Pruébalo Ahora Mismo',
+    body: "Este es un asistente de IA real — el mismo tipo de sistema que construyo para mis clientes. Pregúntale sobre servicios, precios o tiempos. Maneja español e inglés.",
     ctaLabel: 'Agendar Llamada Gratis — 30 min',
     ctaLink: '/es/reservar/',
-    messengerLabel: 'O escríbenos por Facebook →',
-    note: 'Cada asistente se entrena con tu inventario, servicios y voz de marca específicos — no una plantilla genérica.',
+    note: 'Cada sistema se entrena con tu negocio específico — no una plantilla genérica.',
   },
 };
 
 const t = content[locale];
+const iframeSrc = `${DEMO_URL}?lang=${locale}`;
 ---
 
 <section id="demo" aria-label="Live chatbot demo" class="py-20 md:py-28 bg-surface/40">
   <Container size="lg">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
 
       <!-- Left: Context + CTA -->
-      <div class="order-2 lg:order-1">
+      <div class="order-2 lg:order-1 lg:sticky lg:top-24">
         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cush-orange/10 border border-cush-orange/20 mb-5">
           <div class="w-2 h-2 rounded-full bg-cush-orange animate-pulse"></div>
           <span class="font-display text-xs font-semibold tracking-widest text-cush-orange uppercase">{t.eyebrow}</span>
@@ -64,200 +51,34 @@ const t = content[locale];
           {t.body}
         </p>
 
-        <div class="flex flex-col sm:flex-row gap-4 mb-6">
-          <a
-            href={t.ctaLink}
-            class="group inline-flex items-center gap-2 px-7 py-3.5 bg-cush-orange text-white font-display font-semibold rounded-lg hover:bg-cush-orange/90 transition-all duration-300 shadow-lg shadow-cush-orange/20 text-base"
-          >
-            {t.ctaLabel}
-            <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </a>
-          <a
-            href="https://www.facebook.com/cushlabs"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 px-7 py-3.5 border border-border text-gray-700 dark:text-gray-300 font-display font-medium rounded-lg hover:border-cush-orange hover:text-cush-orange dark:hover:text-cush-orange transition-all duration-300 text-base"
-          >
-            <!-- Facebook icon -->
-            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-            </svg>
-            {t.messengerLabel}
-          </a>
-        </div>
+        <a
+          href={t.ctaLink}
+          class="group inline-flex items-center gap-2 px-7 py-3.5 bg-cush-orange text-white font-display font-semibold rounded-lg hover:bg-cush-orange/90 transition-all duration-300 shadow-lg shadow-cush-orange/20 text-base mb-4"
+        >
+          {t.ctaLabel}
+          <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
 
-        <p class="font-body text-sm text-muted italic">
+        <p class="font-body text-sm text-muted italic block">
           {t.note}
         </p>
       </div>
 
-      <!-- Right: Animated Chat UI -->
-      <div class="order-1 lg:order-2 flex justify-center lg:justify-end">
-        <div class="chat-demo-phone w-full max-w-sm">
-          <!-- Phone Frame -->
-          <div class="rounded-3xl overflow-hidden shadow-2xl shadow-black/20 dark:shadow-black/60 border border-border bg-white dark:bg-cush-gray-800">
-
-            <!-- Messenger-style header -->
-            <div class="bg-[#0084FF] px-4 py-3 flex items-center gap-3">
-              <div class="w-9 h-9 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0">
-                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
-                </svg>
-              </div>
-              <div>
-                <p class="font-display font-semibold text-white text-sm leading-none mb-0.5">{t.businessName}</p>
-                <div class="flex items-center gap-1.5">
-                  <div class="w-1.5 h-1.5 rounded-full bg-green-400"></div>
-                  <span class="text-white/80 text-xs font-display">Online</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Chat messages -->
-            <div class="bg-gray-50 dark:bg-cush-gray-700 px-4 py-4 space-y-3 min-h-[280px]">
-
-              <!-- Message 1: Customer -->
-              <div class="chat-msg flex justify-end" style="animation-delay: 0.4s;">
-                <div class="max-w-[78%] bg-[#0084FF] text-white rounded-2xl rounded-br-sm px-4 py-2.5 text-sm font-body leading-snug shadow-sm">
-                  {t.messages[0].text}
-                </div>
-              </div>
-
-              <!-- Typing indicator 1 -->
-              <div class="chat-msg flex items-end gap-2" style="animation-delay: 1.0s;">
-                <div class="w-7 h-7 rounded-full bg-[#0084FF]/15 flex items-center justify-center flex-shrink-0">
-                  <svg class="w-4 h-4 text-[#0084FF]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
-                  </svg>
-                </div>
-                <div class="bg-white dark:bg-cush-gray-600 rounded-2xl rounded-bl-sm px-4 py-3 shadow-sm">
-                  <div class="typing-dots flex gap-1.5">
-                    <span class="w-2 h-2 rounded-full bg-gray-400 dark:bg-gray-400"></span>
-                    <span class="w-2 h-2 rounded-full bg-gray-400 dark:bg-gray-400"></span>
-                    <span class="w-2 h-2 rounded-full bg-gray-400 dark:bg-gray-400"></span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Message 2: Bot -->
-              <div class="chat-msg flex items-end gap-2" style="animation-delay: 1.8s;">
-                <div class="w-7 h-7 rounded-full bg-[#0084FF]/15 flex items-center justify-center flex-shrink-0">
-                  <svg class="w-4 h-4 text-[#0084FF]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
-                  </svg>
-                </div>
-                <div class="max-w-[78%] bg-white dark:bg-cush-gray-600 text-gray-800 dark:text-white rounded-2xl rounded-bl-sm px-4 py-2.5 text-sm font-body leading-snug shadow-sm">
-                  {t.messages[1].text}
-                </div>
-              </div>
-
-              <!-- Message 3: Customer -->
-              <div class="chat-msg flex justify-end" style="animation-delay: 3.0s;">
-                <div class="max-w-[78%] bg-[#0084FF] text-white rounded-2xl rounded-br-sm px-4 py-2.5 text-sm font-body leading-snug shadow-sm">
-                  {t.messages[2].text}
-                </div>
-              </div>
-
-              <!-- Typing indicator 2 -->
-              <div class="chat-msg flex items-end gap-2" style="animation-delay: 3.8s;">
-                <div class="w-7 h-7 rounded-full bg-[#0084FF]/15 flex items-center justify-center flex-shrink-0">
-                  <svg class="w-4 h-4 text-[#0084FF]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
-                  </svg>
-                </div>
-                <div class="bg-white dark:bg-cush-gray-600 rounded-2xl rounded-bl-sm px-4 py-3 shadow-sm">
-                  <div class="typing-dots flex gap-1.5">
-                    <span class="w-2 h-2 rounded-full bg-gray-400 dark:bg-gray-400"></span>
-                    <span class="w-2 h-2 rounded-full bg-gray-400 dark:bg-gray-400"></span>
-                    <span class="w-2 h-2 rounded-full bg-gray-400 dark:bg-gray-400"></span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Message 4: Bot -->
-              <div class="chat-msg flex items-end gap-2" style="animation-delay: 4.6s;">
-                <div class="w-7 h-7 rounded-full bg-[#0084FF]/15 flex items-center justify-center flex-shrink-0">
-                  <svg class="w-4 h-4 text-[#0084FF]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
-                  </svg>
-                </div>
-                <div class="max-w-[78%] bg-white dark:bg-cush-gray-600 text-gray-800 dark:text-white rounded-2xl rounded-bl-sm px-4 py-2.5 text-sm font-body leading-snug shadow-sm">
-                  {t.messages[3].text}
-                </div>
-              </div>
-
-            </div>
-
-            <!-- Messenger input bar -->
-            <div class="bg-white dark:bg-cush-gray-800 border-t border-border px-3 py-3 flex items-center gap-2">
-              <div class="flex-1 bg-gray-100 dark:bg-cush-gray-700 rounded-full px-4 py-2 text-xs text-gray-400 dark:text-gray-500 font-body">
-                {locale === 'es' ? 'Escribe un mensaje...' : 'Type a message...'}
-              </div>
-              <div class="w-8 h-8 rounded-full bg-[#0084FF] flex items-center justify-center flex-shrink-0">
-                <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
-                </svg>
-              </div>
-            </div>
-
-          </div>
-
-          <!-- "Powered by Facebook Messenger" caption -->
-          <p class="text-center text-xs text-muted font-display mt-3">
-            {locale === 'es' ? 'Conversación de ejemplo — mismo formato en Facebook Messenger' : 'Example conversation — same experience on Facebook Messenger'}
-          </p>
+      <!-- Right: Real iframe chat -->
+      <div class="order-1 lg:order-2">
+        <div class="rounded-2xl overflow-hidden shadow-2xl shadow-black/10 dark:shadow-black/40 border border-border w-full" style="height: 520px;">
+          <iframe
+            src={iframeSrc}
+            title={locale === 'es' ? 'Demo del asistente de IA de CushLabs' : 'CushLabs AI assistant demo'}
+            class="w-full h-full border-0"
+            loading="lazy"
+            allow="clipboard-write"
+          ></iframe>
         </div>
       </div>
 
     </div>
   </Container>
 </section>
-
-<style>
-/* Message entrance animation — triggered by Intersection Observer */
-.chat-msg {
-  opacity: 0;
-  transform: translateY(8px);
-}
-
-.chat-demo-phone.in-view .chat-msg {
-  animation: msgIn 0.35s ease-out forwards;
-}
-
-@keyframes msgIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Typing dots bounce */
-.typing-dots span {
-  animation: dotBounce 1.2s ease-in-out infinite;
-}
-.typing-dots span:nth-child(2) { animation-delay: 0.2s; }
-.typing-dots span:nth-child(3) { animation-delay: 0.4s; }
-
-@keyframes dotBounce {
-  0%, 80%, 100% { transform: translateY(0); opacity: 0.4; }
-  40% { transform: translateY(-5px); opacity: 1; }
-}
-</style>
-
-<script>
-const phoneEl = document.querySelector('.chat-demo-phone') as HTMLElement | null;
-if (phoneEl) {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      if (entries[0].isIntersecting) {
-        phoneEl.classList.add('in-view');
-        observer.disconnect();
-      }
-    },
-    { threshold: 0.3 }
-  );
-  observer.observe(phoneEl);
-}
-</script>
