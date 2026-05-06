@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Hero from "../components/home2/Hero.astro";
+import ChatDemo from "../components/home2/ChatDemo.astro";
 // import VideoSection from "../components/home2/VideoSection.astro"; // Hidden until personal intro video is ready
 import PainPoints from "../components/home2/PainPoints.astro";
 import SolutionOverview from "../components/home2/SolutionOverview.astro";
@@ -33,7 +34,10 @@ const meta = {
   <VideoSection locale={locale} />
   -->
 
-  <!-- Section 2: Pain Points -->
+  <!-- Section 2: Live chat demo — anchors the hero "Try the Live Chatbot" CTA -->
+  <ChatDemo locale={locale} />
+
+  <!-- Section 3: Pain Points -->
   <PainPoints locale={locale} />
 
   <!-- Section 3: Social Proof (early trust) -->

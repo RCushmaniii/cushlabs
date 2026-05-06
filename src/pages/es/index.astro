@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Hero from "../../components/home2/Hero.astro";
+import ChatDemo from "../../components/home2/ChatDemo.astro";
 import PainPoints from "../../components/home2/PainPoints.astro";
 import SolutionOverview from "../../components/home2/SolutionOverview.astro";
 import HowItWorks from "../../components/home2/HowItWorks.astro";
@@ -18,6 +19,7 @@ const description = "Chatbots de IA, agentes de voz y automatización de proceso
 
 <BaseLayout title={title} description={description}>
   <Hero locale={locale} />
+  <ChatDemo locale={locale} />
   <PainPoints locale={locale} />
   <SocialProof locale={locale} />
   <SolutionOverview locale={locale} />
