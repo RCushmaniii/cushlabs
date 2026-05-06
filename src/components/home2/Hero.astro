@@ -9,23 +9,33 @@ const { locale } = Astro.props;
 
 const content = {
   en: {
-    badge: 'AI Services for Small Business — Bilingual EN/ES',
-    headline: 'I Put AI to Work on the Three Things Eating Your Business Alive',
-    subheadline1: 'Unanswered messages. Invisible on Google Maps. Missed calls.',
-    subheadline2: 'I build AI systems that handle all three — 24/7, in English and Spanish, live in weeks.',
-    stats: ['Messenger AI', 'Competitive Intelligence', 'AI Voice Agent', 'Bilingual EN/ES'],
-    ctaPrimary: 'Book a Free Discovery Call',
-    ctaSecondary: 'See My Work',
+    badge: 'AI Engineering for Small Business · Bilingual EN/ES · Guadalajara → U.S.',
+    headline: 'Your Business Keeps Selling at 2 AM on a Sunday.',
+    subheadline1: 'I build AI systems that answer messages, book appointments, and capture leads while your team sleeps — in English and Spanish, live in 2–6 weeks.',
+    subheadline2: '',
+    trustStrip: [
+      '50+ projects in production',
+      'Native bilingual EN/ES',
+      'Fixed price, fixed scope',
+      'Live demo below ↓',
+    ],
+    ctaPrimary: 'Book a Free 30-min Call',
+    ctaSecondary: 'Try the Live Chatbot →',
     scrollHint: 'Scroll to explore',
   },
   es: {
-    badge: 'Servicios de IA para Pequeñas Empresas — Bilingüe EN/ES',
-    headline: 'Pongo la IA a Trabajar en los Tres Problemas Que Más Le Cuestan a Tu Negocio',
-    subheadline1: 'Mensajes sin contestar. Invisible en Google Maps. Llamadas perdidas.',
-    subheadline2: 'Construyo sistemas de IA que resuelven los tres — 24/7, en español e inglés, en vivo en semanas.',
-    stats: ['Messenger con IA', 'Inteligencia Competitiva', 'Agente de Voz', 'Bilingüe EN/ES'],
-    ctaPrimary: 'Agendar Llamada de Descubrimiento',
-    ctaSecondary: 'Ver Mi Trabajo',
+    badge: 'Ingeniería de IA para Pymes · Bilingüe EN/ES · Guadalajara → EE.UU.',
+    headline: 'Tu Negocio Sigue Vendiendo a las 2 AM un Domingo.',
+    subheadline1: 'Construyo sistemas de IA que contestan mensajes, agendan citas y capturan leads mientras tu equipo duerme — en español e inglés, en vivo en 2 a 6 semanas.',
+    subheadline2: '',
+    trustStrip: [
+      '50+ proyectos en producción',
+      'Bilingüe EN/ES nativo',
+      'Precio fijo, alcance fijo',
+      'Demo en vivo aquí abajo ↓',
+    ],
+    ctaPrimary: 'Agendar Llamada Gratis — 30 min',
+    ctaSecondary: 'Probar el Chatbot en Vivo →',
     scrollHint: 'Explorar',
   },
 };
@@ -76,14 +86,14 @@ const t = content[locale];
         <p>{t.subheadline2}</p>
       </div>
 
-      <!-- Quick Stats / Micro-Proof Bar -->
+      <!-- Trust Strip -->
       <div class="flex flex-wrap justify-center gap-x-6 gap-y-3 mb-10 animate-fade-in-up" style="animation-delay: 0.2s;">
-        {t.stats.map((stat) => (
+        {t.trustStrip.map((item) => (
           <div class="flex items-center gap-2 font-display text-sm font-medium text-gray-700 dark:text-gray-400">
             <svg class="w-4 h-4 text-cush-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
             </svg>
-            <span>{stat}</span>
+            <span>{item}</span>
           </div>
         ))}
       </div>
@@ -100,7 +110,7 @@ const t = content[locale];
           </svg>
         </a>
         <a
-          href={locale === 'es' ? '/es/portfolio/' : '/portfolio/'}
+          href="#demo"
           class="inline-flex items-center gap-2 px-8 py-4 border-2 border-gray-500 dark:border-gray-600 text-gray-900 dark:text-white font-display font-semibold rounded-lg hover:border-cush-orange hover:text-cush-orange dark:hover:border-cush-orange dark:hover:text-cush-orange transition-all duration-300 text-lg"
         >
           {t.ctaSecondary}
