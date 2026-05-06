@@ -5,7 +5,7 @@ import Container from "../../components/layout/Container.astro";
 // The OAuth flow is initiated server-side by the messenger bot Worker so
 // we can issue a CSRF state token tied to a short-lived KV key. The button
 // on this page is just a link; the Worker does the redirect dance.
-const OAUTH_START_URL = "https://ny-english-messenger-bot.rcushmaniii.workers.dev/oauth/start";
+const OAUTH_START_URL = "https://messenger.cushlabs.ai/oauth/start";
 
 const steps = [
   { n: 1, title: "Connect your Facebook Page", desc: "Authorize CushLabs to receive and respond to messages on the Facebook Page you choose." },
