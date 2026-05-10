@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
+Disallow: /messenger-assistant/connect/
+Disallow: /messenger-assistant/connected/
+Disallow: /es/messenger-assistant/connect/
+Disallow: /es/messenger-assistant/connected/
 
 Sitemap: https://www.cushlabs.ai/sitemap-index.xml
