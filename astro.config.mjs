@@ -57,10 +57,13 @@ export default defineConfig({
     }),
     sitemap({
       filter: (page) => {
-        // Exclude 404, old/backup pages, and internal routes
         const path = page.replace(SITE, '');
         if (path.includes('404')) return false;
         if (path.includes('_')) return false;
+        // Internal flow pages with noindex meta — must NOT appear in sitemap
+        // (Ahrefs flags "noindex page in sitemap" as a hard error).
+        if (/\/messenger-assistant\/connect(ed)?\/?$/.test(path)) return false;
+        if (/\/es\/messenger-assistant\/connect(ed)?\/?$/.test(path)) return false;
         return true;
       },
       serialize: (item) => {
