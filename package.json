@@ -20,7 +20,8 @@
     "sync:all": "tsx scripts/sync-all.ts",
     "audit:predeploy": "tsx scripts/audit-predeploy.ts",
     "audit:portfolio": "tsx scripts/audit-portfolio.ts",
-    "generate:skills": "tsx scripts/generate-skills.ts"
+    "generate:skills": "tsx scripts/generate-skills.ts",
+    "seo:indexnow": "node scripts/seo/indexnow-submit.mjs"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.8",
