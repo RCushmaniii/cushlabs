@@ -15,11 +15,16 @@ Entries are newest-first. Each entry documents one Claude Code working session.
 - **Belt-and-suspenders robots.txt + sitemap filter:** even though sitemap exclusion alone would resolve the hard error, added explicit `Disallow:` so crawlers don't waste budget and the cascade notices clear faster.
 - **Demote H1 → H2 on connected error state:** simpler than refactoring to a single dynamic H1; both states render in static HTML even though only one is visible at runtime.
 - **Did not include `projects.generated.json`** in PR — it regenerates on every build and would sweep unrelated portfolio diff into an SEO-only PR.
+- **GSC service-account auth via base64 env var, not JSON file on disk:** existing project convention is dotenv for all secrets (Brevo, Cloudflare, etc.). Storing the service-account JSON as `GOOGLE_SA_KEY_BASE64` in `.env.local` mirrors that pattern and avoids credential files in the repo. Single-var base64 chosen over multiple separate fields to sidestep the `private_key` newline-escaping footgun.
+- **Decision on previous GSC tooling (deleted in d865f97):** the deletion rationale "IndexNow handles passive Bing notification" was incorrect — IndexNow requires active POST submission. Replaced with new `scripts/seo/indexnow-submit.mjs` (committed 0c4a433); GSC submitter to be restored once fresh service-account credentials are provisioned.
 
 ### Immediate Next Steps
-- [ ] Merge PR #95 and confirm Vercel preview/production deploy.
-- [ ] Run SEO indexing scripts (GSC + Bing + IndexNow) once production deploy completes.
-- [ ] Trigger fresh Ahrefs crawl after deploy and confirm error count drops to 0.
+- [x] Merge PR #95 and confirm Vercel production deploy. (merged adae75d, prod sitemap verified at 92 URLs, zero noindex paths)
+- [x] Submit URLs to IndexNow (Bing/Yandex/Seznam/Naver). (202 Accepted for 92 URLs)
+- [ ] Provision fresh GCP service account `seo-api-access@cushlabs-seo.iam.gserviceaccount.com`, add as Owner on GSC `sc-domain:cushlabs.ai`, base64-encode JSON key into `.env.local` as `GOOGLE_SA_KEY_BASE64`. (Steps documented in session transcript 2026-05-10.)
+- [ ] Restore `scripts/seo/gsc-client.mjs` + `gsc-submit-urls.mjs` from commit 65939dd, swap file-read for env-decode, wire `npm run seo:gsc` into package.json.
+- [ ] Trigger fresh Ahrefs crawl post-deploy and confirm error count drops from 4 to 0.
+- [ ] Triage 2 high-severity Dependabot alerts on default branch (surfaced during this session's pushes).
 
 ### Technical Debt
 - 2 new high-severity Dependabot alerts surfaced on push (default branch). Need triage — could be follow-up to the recent CVE sweep in PR #93.
