@@ -21,7 +21,10 @@
     "audit:predeploy": "tsx scripts/audit-predeploy.ts",
     "audit:portfolio": "tsx scripts/audit-portfolio.ts",
     "generate:skills": "tsx scripts/generate-skills.ts",
-    "seo:indexnow": "node scripts/seo/indexnow-submit.mjs"
+    "seo:indexnow": "node scripts/seo/indexnow-submit.mjs",
+    "seo:gsc": "node scripts/seo/gsc-submit-urls.mjs --sitemap",
+    "seo:gsc:url": "node scripts/seo/gsc-submit-urls.mjs --url",
+    "seo:submit": "npm run seo:indexnow && npm run seo:gsc"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.8",

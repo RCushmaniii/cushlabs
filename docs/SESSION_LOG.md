@@ -4,6 +4,35 @@ Entries are newest-first. Each entry documents one Claude Code working session.
 
 ---
 
+## Session: 2026-05-10
+
+### Accomplished
+- PR #92 merged: defaulted site theme to `light` (removed time-of-day logic in `ThemeScript.astro`); fixed 3 reported Tailwind v4 warnings (`bg-gradient-to-b` → `bg-linear-to-b`, `focus:z-[9999]` → `focus:z-9999`, `flex-shrink-0` → `shrink-0`); swept 35 files for the same legacy v3 patterns (17× `flex-shrink-*`, 17× `bg-gradient-*`, 2× arbitrary `-z-[5]`).
+- PR #93 merged: Dependabot fix via `package.json` overrides (`fast-xml-parser ≥5.7.0`, `yaml ≥2.8.3`); `npm audit fix` cleared incidental postcss XSS; canonical guardrail added to `BaseLayout.astro` (strips protocol+host before `new URL(p, Astro.site)`, closes recurring failure mode #2 from PR #80).
+- SEO: tightened 7 over-length titles/descriptions on `/services/` (EN+ES) and `/voice-agent/` (EN+ES); added `ny-english-messenger-bot` to `metaTitles` overrides on `[slug].astro` (EN+ES). Replaced `&` with comma in services title to avoid `&amp;` (5ch) pushing rendered length past 60.
+- Fixed regex bug in `scripts/audit-predeploy.ts`: alternation `["']` was truncating descriptions at apostrophes (e.g. "Driver's License"); switched to backreference `(["'])(.*?)\1`.
+
+### Decisions Made
+- Deferred `shadow-sm` → `shadow-xs` migration (83 occurrences, 43 files): semantic shift, every shadow gets one tier larger; needs side-by-side visual review before flipping.
+- Deferred `outline-none` migration (18 occurrences, 6 files): in v4 it actually removes outlines (was no-op in v3); accessibility risk for keyboard users, needs per-case decision (`outline-hidden` vs `focus-visible:ring-*`).
+- Discarded `projects.generated.json` from both PR commits per CLAUDE.md "stage explicitly" rule — it regenerates on every build with timestamp drift.
+
+### Immediate Next Steps
+- [ ] `shadow-sm` → `shadow-xs` migration with side-by-side visual review (83 sites).
+- [ ] `outline-none` accessibility audit per-case across 6 files.
+- [ ] HowTo schema on `/messenger-assistant/` or `/voice-agent/` ("How to add an AI assistant in 3 steps") — Low-priority tech debt #4.
+- [ ] Port GSC/IndexNow scripts to voice.cushlabs.ai repo.
+
+### Technical Debt
+- `shadow-sm` semantic drift not yet addressed (deferred from PR #92).
+- `outline-none` accessibility risk not yet addressed (deferred from PR #92).
+- HowTo schema still missing site-wide.
+
+### Open Questions / Blockers
+- None.
+
+---
+
 ## Session: 2026-05-09
 
 ### Accomplished
