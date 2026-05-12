@@ -4,6 +4,33 @@ Entries are newest-first. Each entry documents one Claude Code working session.
 
 ---
 
+## Session: 2026-05-11
+
+### Accomplished
+- Restored GSC submission pipeline end-to-end (PR #96 merged d6629d0). New `scripts/seo/gsc-client.mjs` reads service-account JSON via `GOOGLE_SA_KEY_BASE64` env var (base64) instead of file-on-disk. New `scripts/seo/gsc-submit-urls.mjs` (restored from 65939dd) wired to `npm run seo:gsc` / `seo:gsc:url` / `seo:submit`.
+- Resolved the "Add user — email not found" blocker by reusing the legacy `seo-api-access@seo-automation-489217.iam.gserviceaccount.com` (still in user's GCP, already Owner on 4 GSC properties). Generated fresh JSON key from that SA, encoded → `.env.local`, deleted JSON.
+- **First successful GSC sitemap submission since the d865f97 deletion**: `https://www.cushlabs.ai/sitemap-index.xml` submitted, 0 errors, last-submitted timestamp recorded in GSC.
+- Discovered the SA already has `siteOwner` permission on 3 additional sibling properties: `voice.cushlabs.ai`, `nyenglishteacher.com`, `marketsignal.cushlabs.ai` — replication to those domains is now a script copy + SITE_URL swap, no new GCP/GSC setup.
+
+### Decisions Made
+- **Reuse the legacy SA over the freshly-created one in `cushlabs-seo` project:** legacy SA already had Owner on `sc-domain:cushlabs.ai` (no propagation/GSC-bug risk); the new `cushlabs-seo` SA was failing the "Add user" lookup repeatedly (likely a real GSC frontend bug, not pure propagation per another assistant's diagnosis). The `cushlabs-seo` SA + GCP project can be deleted later as cleanup.
+- **PowerShell-side base64 encoding with no stdout echo:** `[Convert]::ToBase64String([IO.File]::ReadAllBytes(...))` reads bytes via .NET, pipes through `Add-Content` / `Set-Content` directly to `.env.local`. The base64 value never streams through chat or shell stdout. JSON file deleted immediately after.
+
+### Immediate Next Steps
+- [ ] Replicate `scripts/seo/gsc-client.mjs` + `gsc-submit-urls.mjs` into `voice.cushlabs.ai`, `nyenglishteacher.com`, `marketsignal.cushlabs.ai` repos (same SA, swap SITE_URL/SITE_PROPERTY).
+- [ ] Re-run Ahrefs crawl now that sitemap is freshly submitted to GSC + IndexNow; confirm error count dropped to 0 from yesterday's 4.
+- [ ] Triage the still-outstanding 2 high-severity Dependabot alerts on default branch.
+- [ ] Delete the unused `cushlabs-seo` GCP project + service account (cleanup; not blocking anything).
+
+### Technical Debt
+- 2 high-severity Dependabot alerts on default branch (still outstanding from yesterday).
+- Indexing API `--all` mode in `gsc-submit-urls.mjs` will return errors for non-JobPosting/BroadcastEvent URLs — that's a Google API restriction, not a bug. Sitemap submission (`--sitemap`, the default) is the correct primary path.
+
+### Open Questions / Blockers
+- None.
+
+---
+
 ## Session: 2026-05-10
 
 ### Accomplished
