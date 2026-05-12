@@ -4,6 +4,38 @@ Entries are newest-first. Each entry documents one Claude Code working session.
 
 ---
 
+## Session: 2026-05-12
+
+### Accomplished
+- Replicated SEO submission pattern across all 3 sibling repos in a single session (PRs merged: voice #28, ny-eng #170, marketsignal #174). All 4 CushLabs GSC properties now actively submit sitemaps via the shared `seo-automation-489217` service account.
+- **voice.cushlabs.ai**: Net-new `scripts/seo/` (gsc-client, gsc-submit-urls, indexnow-submit) + new IndexNow key `485cbb85cc48b5ade1af60d3d2227032`. Live GSC submission verified pre-merge (0 errors). IndexNow verification pending Render auto-deploy of key file.
+- **ny-eng (nyenglishteacher.com)**: Migrated existing `gsc-client.mjs` from file-on-disk (`gsc-credentials.json`) to env-decode (`GOOGLE_SA_KEY_BASE64`). One-file change; all 9 sibling scripts (gsc-submit-urls, gsc-page-queries, gsc-performance, gsc-index-status, bing-*, indexnow-submit, etc.) work transparently. Live submission verified (0 errors). Robert's `feat/past-tenses-bonus-1-cheat-sheet` WIP stashed/restored — non-destructive.
+- **marketsignal.cushlabs.ai**: Additive — left existing OAuth-based `submit-index.ts` (IndexNow + Bing + Indexing API) untouched, added parallel `gsc-client.ts` + `gsc-submit-sitemap.ts` for canonical sitemap submission. `pnpm seo:gsc` new; `pnpm seo:submit` updated to chain both. Live submission verified (0 errors).
+- Deleted `cushlabs-seo` GCP project (shut down, scheduled for deletion 2026-06-11) — was redundant after pivoting to legacy `seo-automation-489217`.
+
+### Decisions Made
+- **One repo at a time, separate PRs:** explicit safety constraint per Robert's "make sure you're not doing any damage" instinct. Each PR independently revertible; would have caught any single-repo regression without affecting the others.
+- **ny-eng: Path A (migrate) over Path B (leave alone):** single-file gsc-client change with transparent downstream effect on 9 sibling scripts. Removes credential file from working tree, matches cushlabs/voice convention.
+- **marketsignal: additive over replacement:** existing `submit-index.ts` does IndexNow + Bing well; the only gap was sitemap submission. Added that as parallel path without touching existing functionality.
+- **Reused shared SA across all 4 properties:** no new GCP projects, no new "Add User" attempts in GSC (which had triggered the "email not found" bug yesterday). Same `GOOGLE_SA_KEY_BASE64` value in all 4 repos' `.env.local` — single point of truth.
+- **TypeScript for marketsignal scripts, .mjs for voice/ny-eng/cushlabs:** matched each repo's existing convention (marketsignal is .ts-heavy via tsx; others are .mjs).
+
+### Immediate Next Steps
+- [ ] Verify voice.cushlabs.ai IndexNow submission once Render finishes the auto-deploy (key file at `/485cbb85cc48b5ade1af60d3d2227032.txt` must be reachable before Bing accepts submissions). Wakeup scheduled.
+- [ ] Wire `pnpm seo:submit` into a post-deploy hook on each repo's deployment platform (Vercel/Render) for hands-free ongoing submission.
+- [ ] Optional cleanup: remove the OAuth-based Google Indexing API path from marketsignal's `submit-index.ts` (it returns 403 for all non-JobPosting URLs; the new GSC sitemap path makes it redundant).
+- [ ] Run Ahrefs crawl across all 4 properties to baseline post-submission state.
+
+### Technical Debt
+- voice.cushlabs.ai IndexNow verification pending production deploy (key file 404 at last check).
+- marketsignal has 26 Dependabot alerts (14 high, 8 moderate, 4 low) flagged on push — separate from this work, needs triage.
+- cushlabs still has 2 high-severity Dependabot alerts (carried over from prior sessions).
+
+### Open Questions / Blockers
+- None.
+
+---
+
 ## Session: 2026-05-11
 
 ### Accomplished
