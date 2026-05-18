@@ -320,4 +320,32 @@ const bestFor = [
 
   <FinalCTA locale={locale} />
 
+  <script type="application/ld+json" is:inline set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "Cómo obtener un agente de voz con IA para tu negocio",
+    "description": "Despliega un agente de voz 24/7 con IA en 3 pasos — completamente administrado, sin configuración técnica.",
+    "estimatedCost": { "@type": "MonetaryAmount", "currency": "MXN", "value": "10997" },
+    "step": [
+      {
+        "@type": "HowToStep",
+        "position": 1,
+        "name": "Agenda una llamada de descubrimiento gratuita",
+        "text": "Dedicamos 20 minutos a entender tu negocio: las llamadas que recibes, tus preguntas frecuentes, tu sistema de citas y el tono de tu marca. Sin compromiso."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 2,
+        "name": "Configuramos y entrenamos tu agente",
+        "text": "Tu agente de voz con IA se configura con el conocimiento de tu negocio, se conecta a tu número telefónico y se prueba de principio a fin. Tiempo de entrega típico: 5–7 días hábiles."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 3,
+        "name": "Entra en operación — tu agente contesta cada llamada",
+        "text": "Tu agente de voz con IA contesta llamadas 24/7 en inglés y español, agenda citas, captura datos de leads y te envía un resumen de cada conversación por WhatsApp."
+      }
+    ]
+  })} />
+
 </BaseLayout>
