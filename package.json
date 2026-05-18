@@ -5,7 +5,7 @@
   "license": "SEE LICENSE IN LICENSE",
   "scripts": {
     "dev": "astro dev",
-    "build": "npm run generate-projects && astro build",
+    "build": "npm run generate-projects && astro build && node scripts/seo/meta-description-gate.mjs",
     "start": "astro preview",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
