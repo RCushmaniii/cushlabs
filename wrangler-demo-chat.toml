@@ -10,3 +10,6 @@ enabled = true
 
 [vars]
 ALLOWED_ORIGINS = "https://www.cushlabs.ai,https://cushlabs.ai,http://localhost:4321,http://localhost:4322"
+# Publishable Sentry DSN (cushlabsai/cushlabs project). Not a secret — ships to
+# browsers on the frontend too. Enables the worker's reportToSentry() capture.
+SENTRY_DSN = "https://5a52c85b3eed94813303a6aafb1febec@o4511162786185216.ingest.us.sentry.io/4511166268112896"
