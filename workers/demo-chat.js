@@ -16,7 +16,7 @@
 /* ─── Rate limiting (in-memory, per cold-start) ─── */
 
 const rateLimitStore = new Map();
-const RATE_MAX = 30;       // requests per window
+const RATE_MAX = 30; // requests per window
 const RATE_WINDOW = 3600000; // 1 hour in ms
 
 function checkRateLimit(ip) {
@@ -37,22 +37,23 @@ function checkRateLimit(ip) {
 /* ─── CORS ─── */
 
 function getAllowedOrigins(env) {
-  const raw = env.ALLOWED_ORIGINS || 'https://www.cushlabs.ai,https://cushlabs.ai';
-  return raw.split(',').map(o => o.trim());
+  const raw =
+    env.ALLOWED_ORIGINS || "https://www.cushlabs.ai,https://cushlabs.ai";
+  return raw.split(",").map((o) => o.trim());
 }
 
 function getCORSHeaders(request, env) {
-  const origin = request.headers.get('Origin') || '';
+  const origin = request.headers.get("Origin") || "";
   const allowed = getAllowedOrigins(env);
-  const isAllowed = allowed.some(o => {
-    if (o.startsWith('*.')) return origin.endsWith(o.slice(1));
+  const isAllowed = allowed.some((o) => {
+    if (o.startsWith("*.")) return origin.endsWith(o.slice(1));
     return o === origin;
   });
   return {
-    'Access-Control-Allow-Origin': isAllowed ? origin : allowed[0],
-    'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-    'Access-Control-Allow-Headers': 'Content-Type',
-    'Access-Control-Max-Age': '86400',
+    "Access-Control-Allow-Origin": isAllowed ? origin : allowed[0],
+    "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+    "Access-Control-Allow-Headers": "Content-Type",
+    "Access-Control-Max-Age": "86400",
   };
 }
 
@@ -691,17 +692,17 @@ const CHAT_HTML = `<!DOCTYPE html>
 /* ─── Anthropic API call ─── */
 
 async function callClaude(messages, lang, env) {
-  const system = lang === 'es' ? SYSTEM_ES : SYSTEM_EN;
+  const system = lang === "es" ? SYSTEM_ES : SYSTEM_EN;
 
-  const res = await fetch('https://api.anthropic.com/v1/messages', {
-    method: 'POST',
+  const res = await fetch("https://api.anthropic.com/v1/messages", {
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json',
-      'x-api-key': env.ANTHROPIC_API_KEY,
-      'anthropic-version': '2023-06-01',
+      "Content-Type": "application/json",
+      "x-api-key": env.ANTHROPIC_API_KEY,
+      "anthropic-version": "2023-06-01",
     },
     body: JSON.stringify({
-      model: 'claude-haiku-4-5-20251001',
+      model: "claude-haiku-4-5-20251001",
       max_tokens: 300,
       system,
       messages,
@@ -714,7 +715,46 @@ async function callClaude(messages, lang, env) {
   }
 
   const data = await res.json();
-  return data.content?.[0]?.text ?? '';
+  return data.content?.[0]?.text ?? "";
+}
+
+/* ─── Error reporting (dependency-free Sentry capture) ─── */
+
+/**
+ * Push an error to Sentry via its HTTP ingest endpoint — no SDK, no bundler,
+ * no compatibility flags. No-ops unless env.SENTRY_DSN is set, so the worker
+ * runs fine without it; set the var to turn alerting on with zero code change.
+ *
+ * DSN shape: https://<publicKey>@<host>/<projectId>  (DSNs are publishable.)
+ *
+ * The try/catch swallow here is intentional and correct: telemetry must never
+ * break the user-facing response. This is NOT a data pipeline — do not flag it.
+ */
+async function reportToSentry(env, err, context) {
+  const dsn = env.SENTRY_DSN;
+  if (!dsn) return;
+  try {
+    const m = dsn.match(/^https:\/\/([^@]+)@([^/]+)\/(.+)$/);
+    if (!m) return;
+    const [, publicKey, host, projectId] = m;
+    await fetch(
+      `https://${host}/api/${projectId}/store/?sentry_key=${publicKey}&sentry_version=7`,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          platform: "javascript",
+          level: "error",
+          logger: "cushlabs-demo-chat",
+          message: `demo-chat: ${err.message}`,
+          tags: { worker: "cushlabs-demo-chat" },
+          extra: context,
+        }),
+      },
+    );
+  } catch {
+    // Telemetry failure must not affect the response — intentionally ignored.
+  }
 }
 
 /* ─── Handler ─── */
@@ -724,29 +764,32 @@ export default {
     const url = new URL(request.url);
     const corsHeaders = getCORSHeaders(request, env);
 
-    if (request.method === 'OPTIONS') {
+    if (request.method === "OPTIONS") {
       return new Response(null, { status: 204, headers: corsHeaders });
     }
 
     // Serve chat UI
-    if (request.method === 'GET' && url.pathname === '/') {
+    if (request.method === "GET" && url.pathname === "/") {
       return new Response(CHAT_HTML, {
         headers: {
-          'Content-Type': 'text/html; charset=utf-8',
-          'X-Frame-Options': 'ALLOWALL',
-          'Cache-Control': 'no-store',
+          "Content-Type": "text/html; charset=utf-8",
+          "X-Frame-Options": "ALLOWALL",
+          "Cache-Control": "no-store",
         },
       });
     }
 
     // Chat API
-    if (request.method === 'POST' && url.pathname === '/chat') {
-      const ip = request.headers.get('CF-Connecting-IP') || 'unknown';
+    if (request.method === "POST" && url.pathname === "/chat") {
+      const ip = request.headers.get("CF-Connecting-IP") || "unknown";
 
       if (!checkRateLimit(ip)) {
         return new Response(
-          JSON.stringify({ error: 'Rate limit exceeded. Please slow down.' }),
-          { status: 429, headers: { 'Content-Type': 'application/json', ...corsHeaders } }
+          JSON.stringify({ error: "Rate limit exceeded. Please slow down." }),
+          {
+            status: 429,
+            headers: { "Content-Type": "application/json", ...corsHeaders },
+          },
         );
       }
 
@@ -754,18 +797,21 @@ export default {
       try {
         body = await request.json();
       } catch {
-        return new Response(
-          JSON.stringify({ error: 'Invalid JSON' }),
-          { status: 400, headers: { 'Content-Type': 'application/json', ...corsHeaders } }
-        );
+        return new Response(JSON.stringify({ error: "Invalid JSON" }), {
+          status: 400,
+          headers: { "Content-Type": "application/json", ...corsHeaders },
+        });
       }
 
-      const { messages = [], lang = 'en' } = body;
+      const { messages = [], lang = "en" } = body;
 
       if (!Array.isArray(messages) || messages.length === 0) {
         return new Response(
-          JSON.stringify({ error: 'messages array required' }),
-          { status: 400, headers: { 'Content-Type': 'application/json', ...corsHeaders } }
+          JSON.stringify({ error: "messages array required" }),
+          {
+            status: 400,
+            headers: { "Content-Type": "application/json", ...corsHeaders },
+          },
         );
       }
 
@@ -774,28 +820,34 @@ export default {
 
       let response;
       try {
-        response = await callClaude(trimmed, lang === 'es' ? 'es' : 'en', env);
+        response = await callClaude(trimmed, lang === "es" ? "es" : "en", env);
       } catch (err) {
-        console.error('Claude error:', err.message);
-        const errMsg = lang === 'es'
-          ? 'Error al conectar con el asistente. Por favor, intenta de nuevo.'
-          : 'Error connecting to the assistant. Please try again.';
-        return new Response(
-          JSON.stringify({ response: errMsg, showCTA: false }),
-          { status: 200, headers: { 'Content-Type': 'application/json', ...corsHeaders } }
-        );
+        // Loud, greppable log line — the worker has Cloudflare observability
+        // enabled, so this is alertable even without Sentry.
+        console.error("[ALERT] demo-chat Anthropic call failed:", err.message);
+        await reportToSentry(env, err, { lang, ip });
+        const errMsg =
+          lang === "es"
+            ? "Error al conectar con el asistente. Por favor, intenta de nuevo."
+            : "Error connecting to the assistant. Please try again.";
+        // Return 502 (not 200) so the failure is a real failure: uptime
+        // monitors and the widget's own `!res.ok` branch both detect it,
+        // instead of a dead bot masquerading as a healthy 200.
+        return new Response(JSON.stringify({ error: errMsg, showCTA: false }), {
+          status: 502,
+          headers: { "Content-Type": "application/json", ...corsHeaders },
+        });
       }
 
       // Show CTA after 4 user messages
-      const userMsgCount = messages.filter(m => m.role === 'user').length;
+      const userMsgCount = messages.filter((m) => m.role === "user").length;
       const showCTA = userMsgCount >= 4;
 
-      return new Response(
-        JSON.stringify({ response, showCTA }),
-        { headers: { 'Content-Type': 'application/json', ...corsHeaders } }
-      );
+      return new Response(JSON.stringify({ response, showCTA }), {
+        headers: { "Content-Type": "application/json", ...corsHeaders },
+      });
     }
 
-    return new Response('Not Found', { status: 404, headers: corsHeaders });
+    return new Response("Not Found", { status: 404, headers: corsHeaders });
   },
 };
