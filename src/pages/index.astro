@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Hero from "../components/home2/Hero.astro";
-import ChatDemo from "../components/home2/ChatDemo.astro";
+// import ChatDemo from "../components/home2/ChatDemo.astro"; // Hidden 2026-06-06 — old worker demo retired; pending replacement with ai-chatbot-saas instance
 // import VideoSection from "../components/home2/VideoSection.astro"; // Hidden until personal intro video is ready
 import PainPoints from "../components/home2/PainPoints.astro";
 import SolutionOverview from "../components/home2/SolutionOverview.astro";
@@ -35,8 +35,10 @@ const meta = {
   <VideoSection locale={locale} />
   -->
 
-  <!-- Section 2: Live chat demo — anchors the hero "Try the Live Chatbot" CTA -->
+  <!-- Section 2: Live chat demo — hidden 2026-06-06, pending replacement with ai-chatbot-saas instance
   <ChatDemo locale={locale} />
+  -->
+
 
   <!-- Section 3: Pain Points -->
   <PainPoints locale={locale} />

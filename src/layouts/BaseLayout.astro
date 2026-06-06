@@ -216,9 +216,14 @@ const ogLocaleAlternate = locale === "es" ? "en_US" : "es_MX";
     <!-- CushLabs Demo Chat Widget — floating bottom-right -->
     <script is:inline define:vars={{ locale, pathname }}>
     (function() {
+      // Demo chatbot hidden 2026-06-06 — old cushlabs-demo-chat worker retired,
+      // pending replacement with an ai-chatbot-saas instance. Flip DEMO_ENABLED
+      // back to true (and re-enable ChatDemo + the hero CTA) when wired.
+      const DEMO_ENABLED = false;
+
       // Only show on homepage (EN and ES)
       const isHome = pathname === '/' || pathname === '/es/' || pathname === '/es';
-      if (!isHome) return;
+      if (!DEMO_ENABLED || !isHome) return;
 
       const DEMO_URL = 'https://cushlabs-demo-chat.rcushmaniii.workers.dev';
       const isMobile = () => window.matchMedia('(max-width: 768px)').matches;
