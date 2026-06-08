@@ -216,16 +216,14 @@ const ogLocaleAlternate = locale === "es" ? "en_US" : "es_MX";
     <!-- CushLabs Demo Chat Widget — floating bottom-right -->
     <script is:inline define:vars={{ locale, pathname }}>
     (function() {
-      // Demo chatbot hidden 2026-06-06 — old cushlabs-demo-chat worker retired,
-      // pending replacement with an ai-chatbot-saas instance. Flip DEMO_ENABLED
-      // back to true (and re-enable ChatDemo + the hero CTA) when wired.
-      const DEMO_ENABLED = false;
+      const DEMO_ENABLED = true;
 
       // Only show on homepage (EN and ES)
       const isHome = pathname === '/' || pathname === '/es/' || pathname === '/es';
       if (!DEMO_ENABLED || !isHome) return;
 
-      const DEMO_URL = 'https://cushlabs-demo-chat.rcushmaniii.workers.dev';
+      // CushLabs bot served by the Converso SaaS (one tenant per deploy).
+      const DEMO_URL = 'https://www.soyconverso.com/embed/chat';
       const isMobile = () => window.matchMedia('(max-width: 768px)').matches;
       const lang = document.documentElement.lang || 'en';
 
@@ -326,14 +324,10 @@ const ogLocaleAlternate = locale === "es" ? "en_US" : "es_MX";
       document.body.appendChild(btn);
 
       // ── Create overlay ──
+      // No close button here: the embedded SaaS chat renders its own × (top-right)
+      // and posts 'close-chat' to us. A second button would overlap it.
       const overlay = document.createElement('div');
       overlay.id = 'cl-chat-overlay';
-
-      const closeBtn = document.createElement('button');
-      closeBtn.id = 'cl-chat-close';
-      closeBtn.setAttribute('aria-label', 'Close chat');
-      closeBtn.textContent = s.close;
-      overlay.appendChild(closeBtn);
 
       const iframe = document.createElement('iframe');
       iframe.id = 'cl-chat-iframe';
@@ -347,7 +341,7 @@ const ogLocaleAlternate = locale === "es" ? "en_US" : "es_MX";
 
       function openChat() {
         if (!iframeLoaded) {
-          iframe.src = DEMO_URL + '?lang=' + lang;
+          iframe.src = DEMO_URL + '?language=' + lang;
           iframeLoaded = true;
         }
         overlay.classList.add('open');
@@ -360,7 +354,12 @@ const ogLocaleAlternate = locale === "es" ? "en_US" : "es_MX";
       }
 
       btn.addEventListener('click', openChat);
-      closeBtn.addEventListener('click', closeChat);
+      // The embedded SaaS chat closes itself by posting 'close-chat' to the parent.
+      window.addEventListener('message', (event) => {
+        if (event.origin === 'https://www.soyconverso.com' && event.data === 'close-chat') {
+          closeChat();
+        }
+      });
 
       // Desktop auto-open after 9 seconds
       if (!isMobile()) {

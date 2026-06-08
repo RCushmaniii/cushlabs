@@ -1,53 +1,149 @@
 {
+  "$schema": "https://openapi.vercel.sh/vercel.json",
   "trailingSlash": true,
   "redirects": [
-    { "source": "/work", "destination": "/portfolio/", "permanent": true },
-    { "source": "/work/", "destination": "/portfolio/", "permanent": true },
-    { "source": "/solutions", "destination": "/portfolio/", "permanent": true },
-    { "source": "/solutions/", "destination": "/portfolio/", "permanent": true },
-    { "source": "/es/work", "destination": "/es/portfolio/", "permanent": true },
-    { "source": "/es/work/", "destination": "/es/portfolio/", "permanent": true },
-    { "source": "/es/solutions", "destination": "/es/portfolio/", "permanent": true },
-    { "source": "/es/solutions/", "destination": "/es/portfolio/", "permanent": true },
-    { "source": "/es/servicios", "destination": "/es/services/", "permanent": true },
-    { "source": "/es/servicios/", "destination": "/es/services/", "permanent": true },
-    { "source": "/blog", "destination": "/portfolio/", "permanent": true },
-    { "source": "/blog/", "destination": "/portfolio/", "permanent": true },
-    { "source": "/blog/:path*", "destination": "/portfolio/", "permanent": true },
-    { "source": "/es/blog", "destination": "/es/portfolio/", "permanent": true },
-    { "source": "/es/blog/", "destination": "/es/portfolio/", "permanent": true },
-    { "source": "/es/blog/:path*", "destination": "/es/portfolio/", "permanent": true }
+    {
+      "source": "/work",
+      "destination": "/portfolio/",
+      "permanent": true
+    },
+    {
+      "source": "/work/",
+      "destination": "/portfolio/",
+      "permanent": true
+    },
+    {
+      "source": "/solutions",
+      "destination": "/portfolio/",
+      "permanent": true
+    },
+    {
+      "source": "/solutions/",
+      "destination": "/portfolio/",
+      "permanent": true
+    },
+    {
+      "source": "/es/work",
+      "destination": "/es/portfolio/",
+      "permanent": true
+    },
+    {
+      "source": "/es/work/",
+      "destination": "/es/portfolio/",
+      "permanent": true
+    },
+    {
+      "source": "/es/solutions",
+      "destination": "/es/portfolio/",
+      "permanent": true
+    },
+    {
+      "source": "/es/solutions/",
+      "destination": "/es/portfolio/",
+      "permanent": true
+    },
+    {
+      "source": "/es/servicios",
+      "destination": "/es/services/",
+      "permanent": true
+    },
+    {
+      "source": "/es/servicios/",
+      "destination": "/es/services/",
+      "permanent": true
+    },
+    {
+      "source": "/blog",
+      "destination": "/portfolio/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/",
+      "destination": "/portfolio/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/:path*",
+      "destination": "/portfolio/",
+      "permanent": true
+    },
+    {
+      "source": "/es/blog",
+      "destination": "/es/portfolio/",
+      "permanent": true
+    },
+    {
+      "source": "/es/blog/",
+      "destination": "/es/portfolio/",
+      "permanent": true
+    },
+    {
+      "source": "/es/blog/:path*",
+      "destination": "/es/portfolio/",
+      "permanent": true
+    }
   ],
   "headers": [
     {
       "source": "/images/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     },
     {
       "source": "/videos/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     },
     {
       "source": "/_astro/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     },
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "X-Frame-Options", "value": "DENY" },
-        { "key": "X-XSS-Protection", "value": "1; mode=block" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
-        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" },
-        { "key": "Strict-Transport-Security", "value": "max-age=63072000; includeSubDomains; preload" },
-        { "key": "Content-Security-Policy", "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://analytics.ahrefs.com https://va.vercel-scripts.com https://browser.sentry-cdn.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' https://cdn.cushlabs.ai https://opengraph.githubassets.com data:; media-src 'self' https://cdn.cushlabs.ai; connect-src 'self' https://analytics.ahrefs.com https://va.vercel-scripts.com https://*.ingest.sentry.io https://*.ingest.us.sentry.io https://cushlabs-booking.rcushmaniii.workers.dev https://cushlabs-demo-chat.rcushmaniii.workers.dev https://demo.cushlabs.ai; frame-src https://cushlabs-demo-chat.rcushmaniii.workers.dev https://demo.cushlabs.ai" }
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=()"
+        },
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=63072000; includeSubDomains; preload"
+        },
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://analytics.ahrefs.com https://va.vercel-scripts.com https://browser.sentry-cdn.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' https://cdn.cushlabs.ai https://opengraph.githubassets.com data:; media-src 'self' https://cdn.cushlabs.ai; connect-src 'self' https://analytics.ahrefs.com https://va.vercel-scripts.com https://*.ingest.sentry.io https://*.ingest.us.sentry.io https://cushlabs-booking.rcushmaniii.workers.dev https://cushlabs-demo-chat.rcushmaniii.workers.dev https://demo.cushlabs.ai; frame-src https://www.soyconverso.com https://demo.cushlabs.ai"
+        }
       ]
     }
-  ]
+  ],
+  "ignoreCommand": "git rev-parse --verify HEAD^ > /dev/null 2>&1 && git diff --quiet HEAD^ HEAD -- . ':!docs/' ':!README.md' ':!CLAUDE.md' ':!LICENSE' ':!portfolio.md' ':!.gitignore'"
 }
