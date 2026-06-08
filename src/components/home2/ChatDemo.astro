@@ -7,7 +7,7 @@ interface Props {
 
 const { locale } = Astro.props;
 
-const DEMO_URL = 'https://cushlabs-demo-chat.rcushmaniii.workers.dev';
+const DEMO_URL = 'https://www.soyconverso.com/embed/chat';
 
 const content = {
   en: {
@@ -29,7 +29,7 @@ const content = {
 };
 
 const t = content[locale];
-const iframeSrc = `${DEMO_URL}?lang=${locale}`;
+const iframeSrc = `${DEMO_URL}?language=${locale}`;
 ---
 
 <section id="demo" aria-label="Live chatbot demo" class="py-20 md:py-28 bg-surface/40">
