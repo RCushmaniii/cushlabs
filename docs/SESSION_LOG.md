@@ -4,6 +4,34 @@ Entries are newest-first. Each entry documents one Claude Code working session.
 
 ---
 
+## Session: 2026-06-09
+
+### Accomplished
+
+- Replaced the retired standalone `cushlabs-demo-chat` worker with the **real product** as the homepage demo: a CushLabs-configured bot on the Converso SaaS (`soyconverso.com`) — grounded RAG, bilingual, CushLabs persona.
+- **PR #103** — temporarily hid the old worker demo (inline section, floating widget, hero CTA) while the SaaS instance was built.
+- **PR #104** — pointed the inline `ChatDemo` section + the floating widget at `https://www.soyconverso.com/embed/chat`; restored the hero "Try the Live Chatbot" CTA + "Live demo below" trust item; removed the widget's own close × (the SaaS chat renders its own — fixes the old overlap) in favor of a `close-chat` postMessage listener; CSP `frame-src` → soyconverso (dropped the retired worker domain).
+- Deleted the orphaned `cushlabs-demo-chat` Cloudflare worker (removed its live endpoint + `ANTHROPIC_API_KEY` secret).
+- Verified live (Playwright): widget renders + answers on `/` and `/es/`, UI language matches the page, zero Clerk/CSP console errors.
+
+### Decisions Made
+
+- Reused the existing homepage widget chrome (auto-open, position, mobile fullscreen) and just repointed the iframe URL, rather than swapping in the SaaS's own embed script.
+
+### Immediate Next Steps
+
+- [ ] Optional: give the SaaS `/embed` route its own minimal layout to silence benign font-preload console warnings (low ROI; only matters for a pristine screen-recorded demo).
+
+### Technical Debt
+
+- None new. The retired worker's source (`workers/demo-chat.js`, `wrangler-demo-chat.toml`) is left in the repo for history — harmless, no longer deployed.
+
+### Open Questions / Blockers
+
+- None.
+
+---
+
 ## Session: 2026-05-18
 
 ### Accomplished
