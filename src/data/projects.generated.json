@@ -1209,9 +1209,9 @@
       "description": "Context-engineering system to lock brand voice, enforce truth, and generate consistent AI-written content at scale.",
       "summary": "> A context-engineering framework that makes AI write like the founder, not like AI.",
       "url": "https://github.com/RCushmaniii/context-writing-system",
-      "demoUrl": "https://cushlabs-writing-system.vercel.app",
+      "demoUrl": "https://context-writing-system.vercel.app",
       "liveUrl": "https://context-writing-system.vercel.app",
-      "homepage": "https://cushlabs-writing-system.vercel.app",
+      "homepage": "https://context-writing-system.vercel.app",
       "topics": [
         "ai-assistant",
         "ai-content-generation",
@@ -1344,9 +1344,9 @@
       "description": "Cinematic scrollytelling presentations by CushLabs — bilingual, narrated, scroll-driven marketing sites that make audiences lean in.",
       "summary": "> Cinematic, bilingual scrollytelling pitch decks that feel like cinema — not slides.",
       "url": "https://github.com/RCushmaniii/cushlabs-scrollytelling",
-      "demoUrl": "https://cushlabs-scrollytelling.vercel.app",
-      "liveUrl": "https://cushlabs-scrollytelling.vercel.app",
-      "homepage": "https://cushlabs-scrollytelling.vercel.app",
+      "demoUrl": "https://scrollytelling.cushlabs.ai",
+      "liveUrl": "https://scrollytelling.cushlabs.ai",
+      "homepage": "https://scrollytelling.cushlabs.ai",
       "topics": [
         "astro",
         "bilingual",
@@ -1615,9 +1615,9 @@
       "description": "Helps candidates create a tailored resume for a specific job. ",
       "summary": "> Bilingual AI-powered ATS resume optimization — instant structured feedback, zero friction, privacy by design.",
       "url": "https://github.com/RCushmaniii/ai-resume-tailor",
-      "demoUrl": "https://ai-resume-tailor-client.vercel.app/analyze",
-      "liveUrl": "https://ai-resume-tailor-client.vercel.app",
-      "homepage": "https://ai-resume-tailor-client.vercel.app",
+      "demoUrl": "https://resume.cushlabs.ai/analyze",
+      "liveUrl": "https://resume.cushlabs.ai",
+      "homepage": "https://resume.cushlabs.ai",
       "topics": [],
       "categories": [
         "AI Automation"
