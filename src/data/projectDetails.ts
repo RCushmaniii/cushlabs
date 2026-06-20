@@ -653,7 +653,7 @@ const details: Record<string, ProjectDetailOverride> = {
   },
   "biojalisco-pitch": {
     slug: "biojalisco-pitch",
-    demoUrl: "https://atlas-biodiversidad-pitch.vercel.app",
+    demoUrl: "https://biojalisco-pitch.vercel.app",
     en: {
       headline: "BioJalisco Pitch Site",
       subheadline: "Cinematic scrollytelling site pitching a citizen-science biodiversity platform for western Mexico",
@@ -729,7 +729,7 @@ const details: Record<string, ProjectDetailOverride> = {
   },
   "ai-chatbot-saas": {
     slug: "ai-chatbot-saas",
-    demoUrl: "https://converso.cushlabs.ai",
+    demoUrl: "https://www.soyconverso.com",
     en: {
       headline: "Converso AI — Bilingual AI Front Desk & Sales Assistant",
       subheadline:
@@ -1263,7 +1263,7 @@ const details: Record<string, ProjectDetailOverride> = {
   },
   "cushlabs-scrollytelling": {
     slug: "cushlabs-scrollytelling",
-    demoUrl: "https://cushlabs-scrollytelling.vercel.app",
+    demoUrl: "https://scrollytelling.cushlabs.ai",
     en: {
       headline: "CushLabs Scrollytelling — Cinematic Pitch Decks That Win Attention",
       subheadline:
@@ -1481,7 +1481,7 @@ const details: Record<string, ProjectDetailOverride> = {
   },
   "ai-resume-tailor": {
     slug: "ai-resume-tailor",
-    demoUrl: "https://ai-resume-tailor-client.vercel.app",
+    demoUrl: "https://resume.cushlabs.ai",
     en: {
       headline: "AI Resume Tailor — Beat the ATS Black Box",
       subheadline:
