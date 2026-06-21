@@ -18,6 +18,9 @@ Thumbs.db
 portfolio-urls.csv
 portfolio-urls.json
 
+# internal URL inventory — contains stealth/admin URLs, never commit to public repo
+all-repos-urls.csv
+
 # IDE
 .vscode/
 .idea/

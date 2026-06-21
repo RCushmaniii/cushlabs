@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-21T02:19:07.490Z",
+  "generatedAt": "2026-06-21T14:16:31.819Z",
   "count": 36,
   "projects": [
     {
@@ -309,7 +309,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-06-21T01:42:37Z",
+      "lastPushed": "2026-06-21T02:22:22Z",
       "createdAt": "2026-05-07T18:38:22Z",
       "isFeatured": true,
       "isArchived": false,
@@ -552,7 +552,7 @@
       "summary": "> AI-powered local competitive intelligence for multi-location businesses.",
       "url": "https://github.com/RCushmaniii/cushlabs-marketsignal",
       "demoUrl": null,
-      "liveUrl": "",
+      "liveUrl": "https://marketsignal.cushlabs.ai",
       "homepage": null,
       "topics": [
         "ai-analytics",
@@ -606,7 +606,7 @@
       "status": null,
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 925671,
+        "TypeScript": 938957,
         "JavaScript": 47285,
         "HTML": 29745,
         "CSS": 7897,
@@ -614,7 +614,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-06-21T02:04:34Z",
+      "lastPushed": "2026-06-21T02:22:04Z",
       "createdAt": "2026-03-30T19:46:00Z",
       "isFeatured": true,
       "isArchived": false,
@@ -1225,13 +1225,13 @@
       "status": "Production",
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 219392,
+        "TypeScript": 234357,
         "CSS": 1268,
         "JavaScript": 486
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-04-07T19:10:19Z",
+      "lastPushed": "2026-06-21T02:30:33Z",
       "createdAt": "2026-03-17T18:08:51Z",
       "isFeatured": false,
       "isArchived": false,
@@ -2117,7 +2117,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-05-17T05:42:51Z",
+      "lastPushed": "2026-06-21T05:42:35Z",
       "createdAt": "2026-03-08T19:31:57Z",
       "isFeatured": false,
       "isArchived": false,
@@ -3066,7 +3066,7 @@
       },
       "stars": 2,
       "forks": 0,
-      "lastPushed": "2026-06-21T02:13:54Z",
+      "lastPushed": "2026-06-21T02:19:30Z",
       "createdAt": "2026-01-08T03:52:43Z",
       "isFeatured": false,
       "isArchived": false,
