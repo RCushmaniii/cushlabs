@@ -20,7 +20,7 @@ const content = {
       'Live demo below ↓',
     ],
     ctaPrimary: 'Book a Free 30-min Call',
-    ctaSecondary: 'Try the Live Chatbot →',
+    ctaSecondary: 'Try the Live Chatbot',
     scrollHint: 'Scroll to explore',
   },
   es: {
@@ -35,7 +35,7 @@ const content = {
       'Demo en vivo aquí abajo ↓',
     ],
     ctaPrimary: 'Agendar Llamada Gratis — 30 min',
-    ctaSecondary: 'Probar el Chatbot en Vivo →',
+    ctaSecondary: 'Probar el Chatbot en Vivo',
     scrollHint: 'Explorar',
   },
 };
@@ -111,10 +111,10 @@ const t = content[locale];
         </a>
         <a
           href="#demo"
-          class="inline-flex items-center gap-2 px-8 py-4 border-2 border-gray-500 dark:border-gray-600 text-gray-900 dark:text-white font-display font-semibold rounded-lg hover:border-cush-orange hover:text-cush-orange dark:hover:border-cush-orange dark:hover:text-cush-orange transition-all duration-300 text-lg"
+          class="group inline-flex items-center gap-2 px-8 py-4 border-2 border-gray-500 dark:border-gray-600 text-gray-900 dark:text-white font-display font-semibold rounded-lg hover:border-cush-orange hover:text-cush-orange dark:hover:border-cush-orange dark:hover:text-cush-orange transition-all duration-300 text-lg"
         >
           {t.ctaSecondary}
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
           </svg>
         </a>
