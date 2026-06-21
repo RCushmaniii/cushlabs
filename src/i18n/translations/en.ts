@@ -200,7 +200,7 @@ export const en = {
       intro: "I started CushLabs after noticing something:",
       highlight:
         "Most businesses don't need cutting-edge AI research — they need working solutions that fit into how they already operate.",
-      body: "After 20 years in IT — from developer to senior manager to project manager — I've seen what works and what doesn't. Now I work directly with founders and small teams from my home base in Guadalajara, Mexico. No layers, no handoffs. Just me, building things that matter.",
+      body: "From developer to senior IT manager to project manager — I've seen what works and what doesn't, and now I'm hands-on with AI every day. I work directly with founders and small teams from my home base in Guadalajara, Mexico. No layers, no handoffs. Just me, building things that matter.",
     },
     values: {
       title: "How I Work",

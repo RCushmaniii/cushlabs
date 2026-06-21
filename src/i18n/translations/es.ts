@@ -197,7 +197,7 @@ export const es = {
       intro: "Empecé CushLabs después de notar algo:",
       highlight:
         "La mayoría de los negocios no necesitan investigación de IA de vanguardia — necesitan soluciones funcionales que encajen con sus operaciones actuales.",
-      body: "Después de 20 años en TI — de desarrollador a gerente senior a gerente de proyectos — he visto qué funciona y qué no. Ahora trabajo directamente con fundadores y equipos pequeños desde mi base en Guadalajara, México. Sin capas, sin handoffs. Solo yo, construyendo cosas que importan.",
+      body: "De desarrollador a gerente senior de TI a gerente de proyectos — he visto qué funciona y qué no, y ahora trabajo con IA de forma práctica todos los días. Trabajo directamente con fundadores y equipos pequeños desde mi base en Guadalajara, México. Sin capas, sin handoffs. Solo yo, construyendo cosas que importan.",
     },
     values: {
       title: "Cómo Trabajo",
