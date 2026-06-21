@@ -4,6 +4,7 @@
 
 > **IMPORTANT: Be a PROACTIVE Product Advisor!**
 > Don't just implement what's asked - think like a product designer:
+>
 > - **Simplify UX**: If a feature adds complexity users don't need, suggest removing it
 > - **"It Just Works"**: Modern apps don't ask users to configure things that should be automatic
 > - **Fewer Choices = Better**: Don't expose settings users shouldn't need to think about
@@ -11,6 +12,7 @@
 > - **Think Like a User**: Would your mom understand this UI? If not, simplify it
 >
 > Examples of good advice:
+>
 > - "Do users really need a Start/Stop button, or should the service just always run?"
 > - "This setting adds complexity - can we just pick a sensible default?"
 > - "Instead of 3 options, what if we just did the right thing automatically?"
@@ -25,22 +27,26 @@
 **Location:** Serving US and Mexico (fully bilingual EN/ES)
 
 **Robert's Background:**
+
 - 20 years in IT: Developer → Senior IT Manager → IT Project Manager
 - 2.5 years intensive work with AI tools and premium LLMs
 - Current focus: Claude Code, AI agents, and automation
 
 **Business Model:** Help businesses transform through AI with:
+
 - AI Chatbots & Conversational Agents
 - Automation & Integration Services
 - Custom Development (full-stack apps, dashboards)
 - AI Strategy & Consulting
 
 **Current Productized Offerings (what Robert actively sells and can deliver):**
+
 - **AI Messenger Assistant** — AI chatbot deployed to Facebook Messenger (or website). Live with real client in production. Standalone service page: `/messenger-assistant/`
 - **AI Voice Agent** — Inbound voice agent for missed calls. Live at `voice.cushlabs.ai`. No standalone service page yet (planned).
 - **AI Customer Support Chatbot** — Website chat widget. Same underlying tech as Messenger, different surface.
 
 **NOT offered yet (do not mention on site):**
+
 - Outbound auto-dialing / cold calling campaigns
 
 ---
@@ -52,21 +58,25 @@ When working on copy or pages for the Facebook Messenger AI service, keep this f
 **The key insight:** Many small Mexican businesses (family-owned, local) have NO website. Their entire business presence is their Facebook page. The Messenger AI is not "another channel" for them — it IS their storefront.
 
 **Strong pitch for this market:**
+
 > "Most of your competitors have no website. You don't need one either. We put your sales assistant where your customers already are — Facebook — and alert you on WhatsApp when someone's ready to talk."
 
 **Handover approach for non-tech clients:**
+
 - Business owner does NOT need Meta Business Suite or any new app
 - When the AI detects a human is needed, it captures the customer's phone number and sends the owner a **WhatsApp message**: "New lead from Facebook: [Name], [Number], wants [X]. Ready to book."
 - Owner calls or messages the customer directly — channel they already live in
 - This is a feature, not a workaround: faster than inbox monitoring, works on any phone
 
 **Robert's own preferred workflow (dog-fooding this):**
+
 - WhatsApp desktop (always open, taskbar notifications with blinking)
 - See the WhatsApp alert with conversation summary
 - Switch to Facebook Messenger desktop app (available in Microsoft Store) or browser tab
 - Handle the conversation directly
 
 **What the product lineup is NOT:**
+
 - Not a multi-channel inbox tool
 - Not a bot builder platform
 - Not anything that requires the client to learn new software
@@ -97,13 +107,13 @@ When working on copy or pages for the Facebook Messenger AI service, keep this f
 
 ### URL Structure
 
-| English (default) | Spanish |
-|-------------------|---------|
-| `/` | `/es` |
-| `/about` | `/es/about` |
-| `/work` | `/es/work` |
-| `/contact` | `/es/contact` |
-| `/consultation` | `/es/reservar` |
+| English (default) | Spanish        |
+| ----------------- | -------------- |
+| `/`               | `/es`          |
+| `/about`          | `/es/about`    |
+| `/work`           | `/es/work`     |
+| `/contact`        | `/es/contact`  |
+| `/consultation`   | `/es/reservar` |
 
 ---
 
@@ -172,14 +182,15 @@ const dict = t(locale);
 
 ```typescript
 // src/i18n/index.ts
-getLocaleFromPathname(pathname)  // Returns 'en' or 'es'
-getLocalizedPath(pathname, to)   // Converts path to target locale
-t(locale)                        // Returns translation dictionary
+getLocaleFromPathname(pathname); // Returns 'en' or 'es'
+getLocalizedPath(pathname, to); // Converts path to target locale
+t(locale); // Returns translation dictionary
 ```
 
 ### Translation Structure
 
 Both `en.ts` and `es.ts` follow the same structure:
+
 - `nav` - Navigation labels
 - `home` - Homepage content
 - `services` - Service descriptions
@@ -200,6 +211,7 @@ Both `en.ts` and `es.ts` follow the same structure:
 **"There is no such thing as fixing just the English side. There is only fixing BOTH sides or fixing NOTHING."**
 
 When modifying ANY page:
+
 1. Make the change to the English version
 2. Make the equivalent change to the Spanish version
 3. Verify both work
@@ -208,6 +220,7 @@ When modifying ANY page:
 ### Hreflang Implementation
 
 BaseLayout.astro automatically generates hreflang tags:
+
 ```html
 <link rel="alternate" hreflang="en" href="..." />
 <link rel="alternate" hreflang="es" href="..." />
@@ -258,23 +271,23 @@ The portfolio system has **three layers** that must all be in sync for a project
 
 Every project repo needs a `PORTFOLIO.md` in its root. These frontmatter fields control what appears on the site:
 
-| Field | Required for | What it controls |
-|-------|-------------|-----------------|
-| `portfolio_enabled: true` | Visibility | Project appears in portfolio at all |
-| `portfolio_priority` | Card ordering | Lower number = higher position (99 = hidden from cards) |
-| `portfolio_featured` | Badge | "Featured" badge on card |
-| `title` | Card + detail | Display name |
-| `tagline` | Card | Description text under the title |
-| `thumbnail` | **Card image** | Path to card thumbnail (e.g. `/images/portfolio/thumb.webp`) |
-| `slides` | Detail page slider | Array of `{src, alt_en, alt_es}` objects |
-| `demo_video_url` | Detail page video | Path to walkthrough video |
-| `video_poster` | Detail page | Poster image for video player |
-| `category` | Card badge | Category label (e.g. "Tools", "AI Automation") |
-| `tech_stack` | Card + detail | Technology badges |
-| `problem` | Detail page | "The Challenge" section |
-| `key_features` | Detail page | Feature bullet list |
-| `metrics` | Detail page | Results section |
-| `status` | Card badge | e.g. "Production" |
+| Field                     | Required for       | What it controls                                             |
+| ------------------------- | ------------------ | ------------------------------------------------------------ |
+| `portfolio_enabled: true` | Visibility         | Project appears in portfolio at all                          |
+| `portfolio_priority`      | Card ordering      | Lower number = higher position (99 = hidden from cards)      |
+| `portfolio_featured`      | Badge              | "Featured" badge on card                                     |
+| `title`                   | Card + detail      | Display name                                                 |
+| `tagline`                 | Card               | Description text under the title                             |
+| `thumbnail`               | **Card image**     | Path to card thumbnail (e.g. `/images/portfolio/thumb.webp`) |
+| `slides`                  | Detail page slider | Array of `{src, alt_en, alt_es}` objects                     |
+| `demo_video_url`          | Detail page video  | Path to walkthrough video                                    |
+| `video_poster`            | Detail page        | Poster image for video player                                |
+| `category`                | Card badge         | Category label (e.g. "Tools", "AI Automation")               |
+| `tech_stack`              | Card + detail      | Technology badges                                            |
+| `problem`                 | Detail page        | "The Challenge" section                                      |
+| `key_features`            | Detail page        | Feature bullet list                                          |
+| `metrics`                 | Detail page        | Results section                                              |
+| `status`                  | Card badge         | e.g. "Production"                                            |
 
 **If `thumbnail` is missing, the card falls back to first slide → default SVG placeholder.**
 
@@ -298,17 +311,35 @@ npm run sync:portfolio
 It runs the full pipeline in order, fails loudly at any step, and prints a structured diff showing exactly what changed (which thumbnails were restored, which projects gained taglines, etc.). Designed for AI-assistant invocation — no flags to remember, no step-skipping risk.
 
 Flags:
+
 - `npm run sync:portfolio -- --dry-run` — preview without writing
 - `npm run sync:portfolio -- --skip-r2` — skip R2 upload (use when only PORTFOLIO.md text changed, no asset changes)
 - `npm run sync:portfolio -- --repo <name>` — restrict R2 upload to one repo
 
 The pipeline:
+
 1. `validate-portfolio-md --fix` — auto-fixes duplicate top-level YAML keys
 2. `upload-to-r2` — hash-diffed asset upload
 3. `generate-projects` — regen `projects.generated.json`
 4. Diff old vs new and print structured summary
 
 After it finishes, stage `src/data/projects.generated.json` explicitly, commit, and push (or open a PR).
+
+### Listing portfolio repos & their URLs (read-only)
+
+`scripts/list-portfolio.mjs` reads the committed `src/data/projects.generated.json` (no GitHub API calls) and lists every project with its URLs. Run from the repo root:
+
+```bash
+node scripts/list-portfolio.mjs          # grouped table: POSTED vs HIDDEN
+node scripts/list-portfolio.mjs --csv     # writes portfolio-urls.csv (gitignored)
+node scripts/list-portfolio.mjs --json    # machine-readable, pipe to jq
+```
+
+- **POSTED** = live on `/portfolio` (priority < 99).
+- **HIDDEN** = synced into the JSON but not surfaced (priority >= 99).
+- **Excluded** repos (`portfolio_enabled: false` in their PORTFOLIO.md) are dropped before the JSON is built, so they never appear here. Find them with: `Select-String -Path "..\*\PORTFOLIO.md" -Pattern "portfolio_enabled:\s*false"`.
+
+Per-repo URLs surfaced: portfolio page (`/projects/<name>/`), GitHub, demo, live, homepage. If the data looks stale, run `npm run generate-projects` first to refresh it.
 
 ### Manual Three-Step Sync (legacy / debugging)
 
@@ -344,10 +375,12 @@ git commit -m "chore: refresh projects data" && git push
 **Root cause:** PORTFOLIO.md files in sibling repos can accumulate duplicate top-level YAML keys (most commonly `health_status:`, added by separate audit passes that didn't dedupe). YAML rejects duplicate keys → gray-matter throws → the previous version of `tryLocalPortfolioMd()` in `scripts/generate-projects.ts` caught the throw silently and wrote the project with `thumbnail: null`. No log, no CI failure.
 
 **Permanent fix in place:**
+
 1. `scripts/validate-portfolio-md.ts` runs automatically before `generate-projects.ts` (wired in package.json). It scans every sibling PORTFOLIO.md, detects duplicate top-level keys, fails the build with clear errors. `--fix` flag auto-deletes the second duplicate block.
 2. The catch block in `tryLocalPortfolioMd()` now logs the error AND throws — silent failure is impossible.
 
 **If you see broken portfolio cards in production:**
+
 1. `npm run validate:portfolio-md` — locates the bad files
 2. `npm run validate:portfolio-md -- --fix` — auto-fixes duplicate keys
 3. `npm run generate-projects` — regen JSON
@@ -360,6 +393,7 @@ For a full sync of all projects: `npx tsx scripts/upload-to-r2.ts` (no args).
 ### Optional: Rich Detail Page Copy (projectDetails.ts)
 
 For projects that deserve better copy than the raw PORTFOLIO.md text, add a bilingual entry to `src/data/projectDetails.ts`. This controls:
+
 - Headline, subheadline, challenge/solution narrative
 - "Good For" / "Not For" / "What You Get" sections
 - Results with checkmark styling
@@ -455,9 +489,9 @@ const dict = t(locale);
 ## Brand Colors
 
 ```css
---cush-orange: #FF6A3D;    /* Primary accent */
---cush-black: #000000;     /* Primary text */
---cush-gray-900: #0A0A0A;  /* Dark backgrounds */
+--cush-orange: #ff6a3d; /* Primary accent */
+--cush-black: #000000; /* Primary text */
+--cush-gray-900: #0a0a0a; /* Dark backgrounds */
 ```
 
 ---
@@ -471,15 +505,15 @@ const dict = t(locale);
 
 ## Quick Reference
 
-| Task | Command/Location |
-|------|------------------|
-| Add translation | `src/i18n/translations/{en,es}.ts` |
-| Create component | `src/components/` |
-| Add page | `src/pages/` + `src/pages/es/` |
-| Edit layout | `src/layouts/BaseLayout.astro` |
-| Project data | `src/data/projectDetails.ts` |
-| Global styles | `src/styles/global.css` |
-| SEO settings | BaseLayout.astro head section |
+| Task             | Command/Location                   |
+| ---------------- | ---------------------------------- |
+| Add translation  | `src/i18n/translations/{en,es}.ts` |
+| Create component | `src/components/`                  |
+| Add page         | `src/pages/` + `src/pages/es/`     |
+| Edit layout      | `src/layouts/BaseLayout.astro`     |
+| Project data     | `src/data/projectDetails.ts`       |
+| Global styles    | `src/styles/global.css`            |
+| SEO settings     | BaseLayout.astro head section      |
 
 ---
 
@@ -548,6 +582,7 @@ SESSION-LOG.md updates can ride along with the session's main feature PR (one br
 ## Session Checklist
 
 Before ending any session, verify:
+
 - [ ] All changes applied to BOTH EN and ES versions
 - [ ] Translations updated in both language files
 - [ ] No TypeScript errors (`npm run check`)
