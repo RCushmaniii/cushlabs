@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-21T14:16:31.819Z",
+  "generatedAt": "2026-06-21T20:01:50.238Z",
   "count": 36,
   "projects": [
     {
@@ -614,7 +614,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-06-21T02:22:04Z",
+      "lastPushed": "2026-06-21T15:56:25Z",
       "createdAt": "2026-03-30T19:46:00Z",
       "isFeatured": true,
       "isArchived": false,
@@ -683,110 +683,6 @@
       "videoPoster": "https://cdn.cushlabs.ai/cushlabs-marketsignal/portfolio/marketsignal/brief-poster.webp"
     },
     {
-      "id": 1261510865,
-      "name": "cushlabs-sticker-gen",
-      "title": "CushLabs Sticker Gen",
-      "description": "AI sticker sheet in, signed WhatsApp sticker-pack APK out. Python/scipy segmentation pipeline with synthesized die-cut borders + Android packaging via Meta's official sticker app contract.",
-      "summary": "> AI sticker sheets in, an installable WhatsApp sticker app out — a complete pipeline from generated PNGs to a signed Android APK, fronted by a bilingual marketing site.",
-      "url": "https://github.com/RCushmaniii/cushlabs-sticker-gen",
-      "demoUrl": "https://stickers.cushlabs.ai",
-      "liveUrl": "https://stickers.cushlabs.ai",
-      "homepage": null,
-      "topics": [
-        "android",
-        "automation",
-        "image-processing",
-        "pillow",
-        "python",
-        "scipy",
-        "stickers",
-        "webp",
-        "whatsapp"
-      ],
-      "categories": [
-        "Developer Tools"
-      ],
-      "tags": [
-        "android",
-        "automation",
-        "image-processing",
-        "pillow",
-        "python",
-        "scipy",
-        "stickers",
-        "webp",
-        "whatsapp",
-        "astro",
-        "bilingual"
-      ],
-      "stack": [
-        "Python 3.12",
-        "scipy.ndimage",
-        "Pillow",
-        "numpy",
-        "Astro 6",
-        "Tailwind 4",
-        "Android (AGP 8.5 / Gradle 8.7)",
-        "WebP",
-        "WhatsApp stickers API"
-      ],
-      "status": null,
-      "language": "Java",
-      "languages": {
-        "Java": 112109,
-        "Astro": 36916,
-        "TypeScript": 30899,
-        "Python": 28154,
-        "CSS": 1533,
-        "JavaScript": 470
-      },
-      "stars": 0,
-      "forks": 0,
-      "lastPushed": "2026-06-15T19:37:56Z",
-      "createdAt": "2026-06-06T19:37:00Z",
-      "isFeatured": true,
-      "isArchived": false,
-      "isPrivate": true,
-      "tagline": "AI sticker sheets in, a signed bilingual WhatsApp sticker app out — image-processing pipeline plus end-to-end Android delivery.",
-      "thumbnail": "https://cdn.cushlabs.ai/cushlabs-sticker-gen/docs/images/thumbnail.png",
-      "problem": "AI image tools export sticker sheets with fake transparency — a checkerboard or flat tint baked into the pixels — and white die-cut borders pixel-identical to the background, defeating naive background removal. WhatsApp then only accepts a strict, on-device-validated format (512×512 WebP, ≤100 KB) served by an installed Android app via a ContentProvider contract, and caches packs aggressively. Getting from \"ChatGPT made me a cute sticker sheet\" to \"my branded pack is live in WhatsApp\" has no clean DIY path — this builds the whole factory.\n",
-      "solution": null,
-      "keyFeatures": [
-        "18 packs / 216 stickers shipped from AI sheets, every sheet carved clean with zero manual masking",
-        "Handles cartoon, dark-emblem, and photoreal art across 3×4 and 4×3 grids with grid auto-detection",
-        "Synthesized die-cut borders via distance-transform offset curves after proving color-keying impossible",
-        "Signed Android app (one APK, all packs) distributed via a trusted GitHub Releases CDN that beats Android download-blocking",
-        "Live bilingual (en / es-MX) marketing site with per-pack carousels, full SEO, and ~5-minute new-pack turnaround"
-      ],
-      "metrics": [],
-      "priority": 4,
-      "dateCompleted": null,
-      "slides": [
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-sticker-gen/docs/images/hero-contact-sheet.png",
-          "altEn": "CushLabs Sticker Gen",
-          "altEs": "CushLabs Sticker Gen"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-sticker-gen/docs/images/hero-party.png",
-          "altEn": "CushLabs Sticker Gen",
-          "altEs": "CushLabs Sticker Gen"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-sticker-gen/docs/images/hero-love.png",
-          "altEn": "CushLabs Sticker Gen",
-          "altEs": "CushLabs Sticker Gen"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-sticker-gen/docs/images/hero-thinking.png",
-          "altEn": "CushLabs Sticker Gen",
-          "altEs": "CushLabs Sticker Gen"
-        }
-      ],
-      "videoUrl": null,
-      "videoPoster": null
-    },
-    {
       "id": 1203303335,
       "name": "ny-english-messenger-bot",
       "title": "NY English Messenger Bot — Bilingual AI Assistant for an Executive English Studio",
@@ -844,14 +740,14 @@
       "status": "Production",
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 238497,
+        "TypeScript": 248038,
         "JavaScript": 19844,
         "HTML": 733,
         "CSS": 323
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-06-21T01:41:42Z",
+      "lastPushed": "2026-06-21T15:13:57Z",
       "createdAt": "2026-04-06T23:20:56Z",
       "isFeatured": true,
       "isArchived": false,
@@ -1225,13 +1121,13 @@
       "status": "Production",
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 234357,
+        "TypeScript": 253475,
         "CSS": 1268,
         "JavaScript": 486
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-06-21T02:30:33Z",
+      "lastPushed": "2026-06-21T19:41:27Z",
       "createdAt": "2026-03-17T18:08:51Z",
       "isFeatured": false,
       "isArchived": false,
@@ -1876,7 +1772,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-06-14T15:03:04Z",
+      "lastPushed": "2026-06-21T15:02:59Z",
       "createdAt": "2026-03-04T22:07:57Z",
       "isFeatured": false,
       "isArchived": false,
@@ -2876,6 +2772,114 @@
       "videoPoster": "https://cdn.cushlabs.ai/stock-alert/video/AI-StockAlert-brief-poster.jpg"
     },
     {
+      "id": 1261510865,
+      "name": "cushlabs-sticker-gen",
+      "title": "CushLabs Sticker Gen",
+      "description": "AI sticker sheet in, signed WhatsApp sticker-pack APK out. Python/scipy segmentation pipeline with synthesized die-cut borders + Android packaging via Meta's official sticker app contract.",
+      "summary": "> AI sticker sheets in, an installable WhatsApp sticker app out — a complete pipeline from generated PNGs to a signed Android APK, fronted by a bilingual marketing site.",
+      "url": "https://github.com/RCushmaniii/cushlabs-sticker-gen",
+      "demoUrl": "https://stickers.cushlabs.ai",
+      "liveUrl": "https://stickers.cushlabs.ai",
+      "homepage": null,
+      "topics": [
+        "android",
+        "automation",
+        "image-processing",
+        "pillow",
+        "python",
+        "scipy",
+        "stickers",
+        "webp",
+        "whatsapp"
+      ],
+      "categories": [
+        "Developer Tools"
+      ],
+      "tags": [
+        "android",
+        "automation",
+        "image-processing",
+        "pillow",
+        "python",
+        "scipy",
+        "stickers",
+        "webp",
+        "whatsapp",
+        "astro",
+        "bilingual"
+      ],
+      "stack": [
+        "Python 3.12",
+        "scipy.ndimage",
+        "Pillow",
+        "numpy",
+        "Astro 6",
+        "Tailwind 4",
+        "Android (AGP 8.5 / Gradle 8.7)",
+        "WebP",
+        "WhatsApp stickers API"
+      ],
+      "status": null,
+      "language": "Java",
+      "languages": {
+        "Java": 112109,
+        "Astro": 36916,
+        "TypeScript": 30899,
+        "Python": 28154,
+        "CSS": 1533,
+        "JavaScript": 470
+      },
+      "stars": 0,
+      "forks": 0,
+      "lastPushed": "2026-06-15T19:37:56Z",
+      "createdAt": "2026-06-06T19:37:00Z",
+      "isFeatured": false,
+      "isArchived": false,
+      "isPrivate": true,
+      "tagline": "AI sticker sheets in, a signed bilingual WhatsApp sticker app out — image-processing pipeline plus end-to-end Android delivery.",
+      "thumbnail": "https://cdn.cushlabs.ai/cushlabs-sticker-gen/docs/images/thumbnail.png",
+      "problem": "AI image tools export sticker sheets with fake transparency — a checkerboard or flat tint baked into the pixels — and white die-cut borders pixel-identical to the background, defeating naive background removal. WhatsApp then only accepts a strict, on-device-validated format (512×512 WebP, ≤100 KB) served by an installed Android app via a ContentProvider contract, and caches packs aggressively. Getting from \"ChatGPT made me a cute sticker sheet\" to \"my branded pack is live in WhatsApp\" has no clean DIY path — this builds the whole factory.\n",
+      "solution": "A Python pipeline keeps only the colored and dark artwork pixels, then synthesizes the white die-cut border as a distance-transform offset curve — so backgrounds and shadows can never survive into the output (a separate flat-background mode handles tinted sheets). Grid dimensions are auto-detected from sticker-centroid clustering, and satellite elements — hearts, ZZZ, confetti, caption text — are chained agglomeratively to the correct sticker. One signed Android APK then serves every pack through WhatsApp's official ContentProvider contract, distributed via a public GitHub Releases mirror that sidesteps Android's download-blocking, with image-data versioning so updated packs auto-refresh in WhatsApp without users re-adding them.\n",
+      "keyFeatures": [
+        "18 packs / 216 stickers shipped from AI sheets, every sheet carved clean with zero manual masking",
+        "Handles cartoon, dark-emblem, and photoreal art across 3×4 and 4×3 grids with grid auto-detection",
+        "Synthesized die-cut borders via distance-transform offset curves after proving color-keying impossible",
+        "Signed Android app (one APK, all packs) distributed via a trusted GitHub Releases CDN that beats Android download-blocking",
+        "Live bilingual (en / es-MX) marketing site with per-pack carousels, full SEO, and ~5-minute new-pack turnaround"
+      ],
+      "metrics": [
+        "18 packs · 216 stickers in production",
+        "~5-minute turnaround per new pack — raw AI sheet to installable",
+        "100% automated carving — zero manual masking"
+      ],
+      "priority": 20,
+      "dateCompleted": null,
+      "slides": [
+        {
+          "src": "https://cdn.cushlabs.ai/cushlabs-sticker-gen/docs/images/hero-contact-sheet.png",
+          "altEn": "Contact sheet of an AI-generated sticker pack — every sticker carved clean with a synthesized white die-cut border",
+          "altEs": "Hoja de contactos de un paquete de stickers generado con IA — cada sticker recortado con un borde die-cut blanco sintetizado"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/cushlabs-sticker-gen/docs/images/hero-party.png",
+          "altEn": "Party-themed WhatsApp sticker pack produced from a raw AI sheet",
+          "altEs": "Paquete de stickers de fiesta para WhatsApp producido a partir de una hoja generada con IA"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/cushlabs-sticker-gen/docs/images/hero-love.png",
+          "altEn": "Love-themed WhatsApp sticker pack produced from a raw AI sheet",
+          "altEs": "Paquete de stickers románticos para WhatsApp producido a partir de una hoja generada con IA"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/cushlabs-sticker-gen/docs/images/hero-thinking.png",
+          "altEn": "Expression-themed WhatsApp sticker pack produced from a raw AI sheet",
+          "altEs": "Paquete de stickers de expresiones para WhatsApp producido a partir de una hoja generada con IA"
+        }
+      ],
+      "videoUrl": null,
+      "videoPoster": null
+    },
+    {
       "id": 1157421817,
       "name": "comp-plan-simulator",
       "title": "Compensation Plan Simulator",
@@ -3057,8 +3061,8 @@
       "status": null,
       "language": "Astro",
       "languages": {
-        "Astro": 664968,
-        "TypeScript": 347699,
+        "Astro": 670628,
+        "TypeScript": 356555,
         "JavaScript": 99259,
         "HTML": 61067,
         "Python": 6606,
@@ -3066,7 +3070,7 @@
       },
       "stars": 2,
       "forks": 0,
-      "lastPushed": "2026-06-21T02:19:30Z",
+      "lastPushed": "2026-06-21T18:07:26Z",
       "createdAt": "2026-01-08T03:52:43Z",
       "isFeatured": false,
       "isArchived": false,
