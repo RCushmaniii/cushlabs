@@ -15,13 +15,11 @@ dist/
 Thumbs.db
 
 # generated portfolio listings (from scripts/list-portfolio.mjs / list-all-repos.mjs)
+# NOTE: all-repos-* hold stealth/admin URLs — never commit to this public repo
 portfolio-urls.csv
 portfolio-urls.json
 all-repos-urls.csv
 all-repos.json
-
-# internal URL inventory — contains stealth/admin URLs, never commit to public repo
-all-repos-urls.csv
 
 # IDE
 .vscode/
