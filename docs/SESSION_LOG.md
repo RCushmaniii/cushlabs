@@ -1,8 +1,104 @@
 # Session Log — cushlabs
 
-Entries are newest-first. Each entry documents one Claude Code working session.
+> Living document for cushlabs.ai — shipped work, open technical debt, prioritized backlog, recurring failure modes. Session entries are newest-first under "Session History."
+> Consolidated 2026-06-21: this file absorbed the former `docs/SESSION-LOG.md` rich tech-debt doc (now deleted). `SESSION_LOG.md` is the single source of truth — the `/session-logger` skill writes here.
 
 ---
+
+## Active Technical Debt
+
+Things that shipped with a known gap. Open items first; key resolved items kept for the trail.
+
+| #     | Item                                                                    | Severity   | Notes                                                                                                                                                                                                               |
+| ----- | ----------------------------------------------------------------------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1     | EN privacy "Your Rights" lacks Mexican-specific framing                 | Low        | ES privacy names LFPDPPP / derechos ARCO (PR #86); EN still says generic "depending on your location." Fine for a global EN audience, but worth a lawyer review if English-speaking Mexican residents are expected. |
+| 2     | `js-yaml` (via `gray-matter`) flagged by `npm audit` (moderate)         | Low        | Build-time only; parses trusted PORTFOLIO.md files. Not a Dependabot alert. Revisit if gray-matter ships a patched js-yaml.                                                                                         |
+| 3     | Legacy `src/components/home/` folder is dead but retained               | Low        | Live pages use `home2/`. The old `home/Hero.astro` still carries a stale "20+ Years IT Experience" string (never rendered). Remove the folder or update it if ever revived.                                         |
+| ~~—~~ | ~~ES privacy generic policy~~                                           | ~~High~~   | Resolved — PR #86 (2026-05-02).                                                                                                                                                                                     |
+| ~~—~~ | ~~No standalone Voice Agent page~~                                      | ~~Medium~~ | Resolved — PR #85 (2026-05-02).                                                                                                                                                                                     |
+| ~~—~~ | ~~`BaseLayout` canonical footgun (absolute URL bypasses `Astro.site`)~~ | ~~Medium~~ | Resolved — PR #93 (2026-05-10) strips protocol+host before `new URL(p, Astro.site)`.                                                                                                                                |
+| ~~—~~ | ~~No HowTo schema~~                                                     | ~~Low~~    | Resolved — PR #100 (2026-05-18) added HowTo JSON-LD to all 4 service pages (EN/ES).                                                                                                                                 |
+| ~~—~~ | ~~SEO automation only wired for cushlabs.ai~~                           | ~~Low~~    | Resolved — 2026-05-12 replicated GSC/IndexNow to voice, ny-eng, marketsignal (PRs #28/#170/#174).                                                                                                                   |
+| ~~—~~ | ~~Two divergent session-log files~~                                     | ~~Medium~~ | Resolved — 2026-06-21 merged `SESSION-LOG.md` into this file and deleted the hyphen copy.                                                                                                                           |
+
+---
+
+## Backlog (Prioritized)
+
+Planned but not started. Bundle related items into single PRs per CLAUDE.md.
+
+### High priority
+
+_(none open)_
+
+### Medium priority
+
+_(none open — canonical guardrail and HowTo schema both shipped)_
+
+### Low priority
+
+- **Triage portfolio sync issue #109** — 1 data-quality warning from the 2026-06-20 `generate-projects` run.
+- **Flesh out thin project detail pages** — e.g. cushlabs-messenger (1 screenshot, no solution/metrics).
+- **Title pixel-width audit** on `/data-deletion/` and `/es/data-deletion/` (both end in `| CushLabs.ai`) against Ahrefs's pixel threshold.
+- **Remove the dead `src/components/home/` folder** (tech-debt #3) once confirmed nothing imports it.
+
+---
+
+## Roadmap
+
+Directional ideas with a longer horizon than the Backlog. Themes, not tickets — promote to Backlog once scope is concrete.
+
+### Product expansion
+
+- **WhatsApp Business as a third channel** — Messenger Assistant tech is reusable. Many Mexican SMBs live on WhatsApp first, Facebook second. Spec a WhatsApp variant to broaden TAM without rebuilding the AI core. Validate demand via 2–3 prospects first.
+- **Outbound voice product** — currently disclaimed on the voice page. Productize if a real prospect asks; until then keep it custom-quoted.
+- **Multi-page / franchise Messenger setups** — disclaimed on `/messenger-assistant/` ("scoped separately"). Productize once a real client justifies it.
+- **AI Customer Support Chatbot dedicated page** — exists as a `/services` block (`support-assistants`) but has no standalone landing like `/messenger-assistant/` or `/voice-agent/`. Could be the third standalone product page once content is ready.
+
+### Distribution & growth
+
+- **Bilingual SEO automation as a productized offering** — the GSC/Bing/IndexNow weekly cron + structured-data audit pattern is itself a consultable service for bilingual local businesses.
+- **Insurance-vertical landing page** — per memory `project_outreach_pipeline`, insurance is the active beachhead. A vertical landing page (insurance copy + pricing + case studies) would compound outbound.
+
+### Internal tooling
+
+- **Pre-deploy SEO audit script: extend to FAQ/HowTo schema validation** — currently catches title/description/trailing-slash issues; schema validation closes the structured-data loop.
+- **Automated Ahrefs digest parser** — generalize the one-off post-SEO-PR verification into a parser that extracts errors/warnings from any Ahrefs digest and posts a structured summary.
+
+### Compliance & legal
+
+- **EN privacy LFPDPPP framing review** (tech-debt #1) — lawyer review on whether EN should mirror the Mexican-specific framing.
+- **Terms of Service freshness audit** — `terms.astro` / `es/terms.astro` haven't been touched since the Messenger Assistant launched; audit the same way privacy was.
+
+---
+
+## Recurring Failure Modes
+
+Patterns that have bitten this project before. Re-read before shipping any change to the listed surfaces.
+
+### 1. Bilingual parity drift on new pages
+
+**What happened:** PR #74 shipped `/data-deletion/` (EN-only). `BaseLayout` auto-emits hreflang pointing at `/es/data-deletion/` — which 404'd. Ahrefs flagged 4 cascading errors.
+
+**Rule:** Every new EN page MUST ship with its ES counterpart in the same PR. No "I'll add Spanish later." The hreflang machinery makes the gap immediately visible to crawlers.
+
+### 2. Bare-domain canonical bypassing `Astro.site`
+
+**What happened:** PR #74 passed `canonical="https://cushlabs.ai/..."` (bare domain); Astro's `new URL(absolute, base)` ignores `base` when the URL is already absolute → canonical resolved to `cushlabs.ai` while sitemap used `www.cushlabs.ai`. Ahrefs flagged "Non-canonical page in sitemap."
+
+**Rule:** Don't pass absolute URLs to `BaseLayout`'s `canonical` prop. A permanent guardrail shipped in PR #93 (2026-05-10) strips protocol+host, but prefer omitting `canonical` or passing a path-only string.
+
+### 3. PORTFOLIO.md silent YAML corruption
+
+Documented in `CLAUDE.md` and memory `feedback_portfolio_md_yaml_silent_corruption`. Duplicate top-level YAML keys (often `health_status:`) make gray-matter throw; a silent catch landed projects with `thumbnail: null`. Fix in place: `npm run validate:portfolio-md` runs before every sync and fails loudly. Don't relax that catch block.
+
+### 4. Tailwind 4 utility name collision
+
+Documented in CLAUDE.md and memory `feedback_tailwind4_color_collision`. Custom `--color-base` in `@theme` silently overrode the built-in `text-base` font-size utility. Avoid color names matching `xs`, `sm`, `base`, `lg`, `xl`, `2xl`–`9xl`. Use `canvas`, `surface`, `page`, `app`.
+
+---
+
+## Session History
 
 ## Session: 2026-06-21 — UX/SEO audit fixes (PR #114)
 
@@ -25,7 +121,7 @@ Entries are newest-first. Each entry documents one Claude Code working session.
 ### Immediate Next Steps
 
 - [ ] ROI "What's This Costing You?" estimator — tabled; full spec (conservative formula + defaults) is in the PR #114 thread if revisited.
-- [ ] (carryover) Consolidate the two divergent session-log files; dismiss the lone esbuild Dependabot alert (low, dev-only).
+- [x] Consolidated the two divergent session-log files into this one (`SESSION-LOG.md` deleted) and dismissed the esbuild Dependabot alert (#22, `tolerable_risk`). Done 2026-06-21.
 
 ### Technical Debt
 
@@ -294,3 +390,44 @@ Entries are newest-first. Each entry documents one Claude Code working session.
 - None.
 
 ---
+
+## Session: 2026-05-02 — Voice Agent page + ES privacy rewrite (PRs #84, #85, #86)
+
+**Trigger:** Synthesis session after PR #80 — captured what shipped, what's outstanding, then knocked out the two high-priority items in sequence.
+
+**Three PRs shipped to main:**
+
+1. **PR #84** (squash-merged 2026-05-02) — the original `docs/SESSION-LOG.md` introduced as a living document. Also moved `docs/voice-cushlabs-ai-briefing.md` from untracked into the repo as the source spec for the Voice Agent page.
+2. **PR #85** (squash-merged 2026-05-02, commit `e815cbc`) — `/voice-agent/` and `/es/voice-agent/` standalone landing pages, mirroring `/messenger-assistant/`. Hero with live-demo badge → voice.cushlabs.ai; problem/solution; 5 demo agents named (Clara, James, Sophia, Mike, David); pricing card ($1,497 / $10,997 MXN); ROI table vs receptionist. Adds `learnMoreUrl` to the voice-agent block in `ServiceBlock.astro`. Canonicals resolve to `www.cushlabs.ai`.
+3. **PR #86** (squash-merged 2026-05-02, commit `eb02e3f`) — `src/pages/es/privacy.astro` rewritten with full Messenger Assistant disclosures matching the EN structure. KV retention windows (1h/1h/30min) named; third-party processors named; **Tus Derechos** surfaces Mexican LFPDPPP / derechos ARCO.
+
+**Resolved:** tech-debt #1 (ES privacy parity) and #3 (no standalone Voice Agent page). **New tech-debt:** #6 — EN privacy lacks Mexican-specific framing.
+
+**Cross-references:** PRs [#84](https://github.com/RCushmaniii/cushlabs/pull/84) · [#85](https://github.com/RCushmaniii/cushlabs/pull/85) · [#86](https://github.com/RCushmaniii/cushlabs/pull/86)
+
+---
+
+## Session: 2026-04-27 — Ahrefs SEO recovery (PR #80)
+
+**Trigger:** Ahrefs digest showed health score dropped 100 → 96 on the 25 April crawl. +4 errors, +2 warnings.
+
+**Diagnosis:** Three regressions all from PR #74 (Messenger Assistant launch): (1) `/data-deletion/` shipped EN-only → 4 cascading hreflang errors; (2) `/messenger-assistant/` bare-domain canonical bypassed `Astro.site` → +2 "Non-canonical page in sitemap"; (3) both messenger titles crossed Ahrefs's pixel-width threshold → +2 "Title too long".
+
+**Fix — PR #80** (squash-merged 2026-04-27, commit `9c2de0c`): removed bare-domain canonical overrides; created `src/pages/es/data-deletion.astro`; added `/es/privacy/` → `/es/data-deletion/` link; tightened messenger titles to 37ch. Verified post-build: sitemap pairs `/data-deletion/` EN/ES with hreflang; canonicals match sitemap loc.
+
+**Flagged (→ became tech-debt #1):** `es/privacy.astro` was still the old generic policy — a real legal/compliance gap (later fixed in PR #86).
+
+**Cross-references:** [PR #80](https://github.com/RCushmaniii/cushlabs/pull/80) · memory `project_ahrefs_100_milestone` · `docs/seo/HREFLANG-FIX-SUMMARY.md`, `docs/seo/SITEMAP-SEO-ANALYSIS.md`
+
+---
+
+## Cross-references to existing audit docs
+
+This log complements (does not replace) the deeper audit docs in `docs/`:
+
+- `docs/LESSONS-LEARNED.md` — broader project lessons
+- `docs/SITE-AUDIT-2026-03-03.md` — earlier full-site audit
+- `docs/seo/SEO-FIXES-2025-11-29.md` — earlier SEO fix log
+- `docs/seo/SEO-TECHNICAL-CHECKLIST.md` — pre-deploy SEO checklist
+- `docs/architecture/BILINGUAL-PARITY-CHECKLIST.md` — EN/ES sync rules
+- `docs/voice-cushlabs-ai-briefing.md` — voice.cushlabs.ai product spec
