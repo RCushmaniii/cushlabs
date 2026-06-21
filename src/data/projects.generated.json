@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-21T22:36:18.469Z",
+  "generatedAt": "2026-06-21T22:42:47.958Z",
   "count": 36,
   "projects": [
     {
@@ -50,7 +50,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-06-15T17:15:44Z",
+      "lastPushed": "2026-06-21T22:36:44Z",
       "createdAt": "2025-12-02T07:09:31Z",
       "isFeatured": true,
       "isArchived": false,
@@ -251,149 +251,6 @@
       "videoPoster": "https://cdn.cushlabs.ai/ny-ai-chatbot/video/ny-eng-chatbot-brief-poster.jpg"
     },
     {
-      "id": 1232252613,
-      "name": "cushlabs-messenger",
-      "title": "CushLabs Messenger",
-      "description": "AI-powered Facebook Messenger bot platform — bilingual onboarding now, multi-tenant Worker runtime next.",
-      "summary": "> The platform layer for CushLabs' AI-powered Messenger bots — starting with bilingual client onboarding, growing into a multi-tenant bot runtime.",
-      "url": "https://github.com/RCushmaniii/cushlabs-messenger",
-      "demoUrl": "https://cushlabs.ai",
-      "liveUrl": "https://survey.cushlabs.ai/",
-      "homepage": "https://cushlabs.ai",
-      "topics": [
-        "ai-agents",
-        "bilingual",
-        "cloudflare-workers",
-        "cushlabs",
-        "kv-storage",
-        "messenger-platform",
-        "multi-tenant",
-        "react",
-        "tailwindcss",
-        "typescript"
-      ],
-      "categories": [
-        "AI Automation"
-      ],
-      "tags": [
-        "ai-agents",
-        "bilingual",
-        "cloudflare-workers",
-        "cushlabs",
-        "kv-storage",
-        "messenger-platform",
-        "multi-tenant",
-        "react",
-        "tailwindcss",
-        "typescript",
-        "claude-ai",
-        "rag",
-        "conversational-ai",
-        "facebook",
-        "vector-search",
-        "client-onboarding"
-      ],
-      "stack": [
-        "Cloudflare Workers",
-        "Claude API (Haiku + Sonnet)",
-        "Cloudflare Vectorize (RAG)",
-        "Cloudflare Workers AI (embeddings)",
-        "Cloudflare KV",
-        "Meta Messenger Platform",
-        "TypeScript (strict)",
-        "React 19 + Tailwind 4 (admin)",
-        "Sentry"
-      ],
-      "status": null,
-      "language": "TypeScript",
-      "languages": {
-        "TypeScript": 147273,
-        "JavaScript": 24529,
-        "HTML": 5184,
-        "CSS": 2701
-      },
-      "stars": 0,
-      "forks": 0,
-      "lastPushed": "2026-06-21T02:22:22Z",
-      "createdAt": "2026-05-07T18:38:22Z",
-      "isFeatured": true,
-      "isArchived": false,
-      "isPrivate": true,
-      "tagline": "The 24/7 bilingual AI assistant for Facebook Messenger — built from your business's own content, so no lead goes cold.",
-      "thumbnail": "https://cdn.cushlabs.ai/cushlabs-messenger/images/thumb.webp",
-      "problem": "Businesses on Facebook get a steady stream of Messenger questions — pricing, availability, hours,\nservices — and in bilingual markets like Mexico they arrive in both Spanish and English. No owner can\nwatch the inbox 24/7, generic auto-replies quietly lose the lead while the prospect keeps shopping, and\noff-the-shelf chatbots sound robotic and invent answers they can't stand behind. The result is missed\nconversations, slow first responses, and revenue that walks to whoever replied first.\n",
-      "solution": "A single multi-tenant Cloudflare Worker serves every client through page_id routing, with\nno per-client deployments to maintain. RAG grounded in each client's own content keeps answers\naccurate and on-brand, while native bilingual handling detects English or Spanish and replies\nwithout manual switching. When a conversation needs a person, the assistant hands off gracefully\nand then resumes automatically — and onboarding a new client takes one CLI command and one URL.\n",
-      "keyFeatures": [
-        "24/7 instant replies to customer inquiries on Facebook Messenger — pricing, availability, hours, services",
-        "Native bilingual EN/ES with automatic language detection — no manual switching mid-conversation",
-        "RAG-grounded answers drawn from the client's own content — accurate, never hallucinated",
-        "Graceful human handover when a conversation needs a person, then automatic resume",
-        "One multi-tenant Cloudflare Worker serves every client via page_id routing — no per-client deployments"
-      ],
-      "metrics": [
-        "New client onboards in under 60 seconds of operator time — one CLI command, one URL",
-        "Sub-100ms typical survey persistence latency via edge KV writes",
-        "Zero per-client deployments — a single Worker scales to every client through page_id routing",
-        "Structured, schema-validated voice profiles replace lossy email-and-spreadsheet onboarding"
-      ],
-      "priority": 3,
-      "dateCompleted": null,
-      "slides": [
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-messenger/images/thumb.webp",
-          "altEn": "A boutique customer messages the shop on Facebook — \"Do you have this in medium?\" — and the AI assistant answers instantly with availability and offers to reserve it.",
-          "altEs": "Una clienta le escribe a la boutique por Facebook — \"¿Tienen esta blusa en talla mediana?\" — y el asistente con IA responde al instante con la disponibilidad y le ofrece apartarla."
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-messenger/images/hero-01.webp",
-          "altEn": "The 24/7 AI Sales Assistant for Facebook Messenger — built from your content, trained on your business. Made by CushLabs.",
-          "altEs": "El asistente de ventas con IA 24/7 para Facebook Messenger — creado a partir de tu contenido y entrenado en tu negocio. Hecho por CushLabs."
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-messenger/images/hero-02.webp",
-          "altEn": "The problem every business owner knows — your Facebook page gets messages. You catch some. Most you don't.",
-          "altEs": "El problema que todo dueño de negocio conoce — tu página de Facebook recibe mensajes. Algunos los alcanzas a contestar. La mayoría no."
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-messenger/images/hero-03.webp",
-          "altEn": "Generic auto-replies are a polite way to lose a lead — the lead-decay curve.",
-          "altEs": "Las respuestas automáticas son una forma amable de perder un cliente potencial — la curva de decaimiento del prospecto."
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-messenger/images/hero-04.webp",
-          "altEn": "What if your inbox answered itself? Introducing the CushLabs AI Messaging Assistant.",
-          "altEs": "¿Y si tu bandeja de entrada se respondiera sola? Te presentamos el Asistente de Mensajería con IA de CushLabs."
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-messenger/images/hero-05.webp",
-          "altEn": "Never lose a prospect while you sleep — qualified conversations at 8:30 PM, 11:15 PM, 2:00 AM.",
-          "altEs": "Nunca pierdas un prospecto mientras duermes — conversaciones calificadas a las 8:30 PM, 11:15 PM y 2:00 AM."
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-messenger/images/hero-06.webp",
-          "altEn": "Get your time back and stop repeating yourself — the assistant handles FAQs so you only step in when a client is ready to buy.",
-          "altEs": "Recupera tu tiempo y deja de repetir lo mismo — el asistente responde las preguntas frecuentes para que solo intervengas cuando un cliente está listo para comprar."
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-messenger/images/hero-07.webp",
-          "altEn": "Speaks their language perfectly and without interruption — native bilingual EN/ES with no manual switching.",
-          "altEs": "Habla su idioma a la perfección y sin interrupciones — bilingüe nativo EN/ES, sin cambios manuales."
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-messenger/images/hero-08.webp",
-          "altEn": "Sells like you, because it's built from you — your website, your FAQs, your methodology, your prices.",
-          "altEs": "Vende como tú, porque está hecho de ti — tu sitio web, tus preguntas frecuentes, tu metodología, tus precios."
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-messenger/images/hero-09.webp",
-          "altEn": "The math is simple: it pays for itself the first time it converts a client you'd otherwise have lost.",
-          "altEs": "La cuenta es simple: se paga solo la primera vez que convierte a un cliente que de otro modo habrías perdido."
-        }
-      ],
-      "videoUrl": null,
-      "videoPoster": null
-    },
-    {
       "id": 1164355422,
       "name": "cushlabs-ai-voice-agent",
       "title": "AI Voice Agent Platform",
@@ -467,7 +324,7 @@
       },
       "stars": 0,
       "forks": 1,
-      "lastPushed": "2026-06-20T23:16:50Z",
+      "lastPushed": "2026-06-21T22:36:52Z",
       "createdAt": "2026-02-23T01:31:09Z",
       "isFeatured": true,
       "isArchived": false,
@@ -555,6 +412,149 @@
       "videoPoster": "https://cdn.cushlabs.ai/cushlabs-ai-voice-agent/video/voice-cushlabs-brief-poster.webp"
     },
     {
+      "id": 1232252613,
+      "name": "cushlabs-messenger",
+      "title": "CushLabs Messenger",
+      "description": "AI-powered Facebook Messenger bot platform — bilingual onboarding now, multi-tenant Worker runtime next.",
+      "summary": "> The platform layer for CushLabs' AI-powered Messenger bots — starting with bilingual client onboarding, growing into a multi-tenant bot runtime.",
+      "url": "https://github.com/RCushmaniii/cushlabs-messenger",
+      "demoUrl": "https://cushlabs.ai",
+      "liveUrl": "https://survey.cushlabs.ai/",
+      "homepage": "https://cushlabs.ai",
+      "topics": [
+        "ai-agents",
+        "bilingual",
+        "cloudflare-workers",
+        "cushlabs",
+        "kv-storage",
+        "messenger-platform",
+        "multi-tenant",
+        "react",
+        "tailwindcss",
+        "typescript"
+      ],
+      "categories": [
+        "AI Automation"
+      ],
+      "tags": [
+        "ai-agents",
+        "bilingual",
+        "cloudflare-workers",
+        "cushlabs",
+        "kv-storage",
+        "messenger-platform",
+        "multi-tenant",
+        "react",
+        "tailwindcss",
+        "typescript",
+        "claude-ai",
+        "rag",
+        "conversational-ai",
+        "facebook",
+        "vector-search",
+        "client-onboarding"
+      ],
+      "stack": [
+        "Cloudflare Workers",
+        "Claude API (Haiku + Sonnet)",
+        "Cloudflare Vectorize (RAG)",
+        "Cloudflare Workers AI (embeddings)",
+        "Cloudflare KV",
+        "Meta Messenger Platform",
+        "TypeScript (strict)",
+        "React 19 + Tailwind 4 (admin)",
+        "Sentry"
+      ],
+      "status": null,
+      "language": "TypeScript",
+      "languages": {
+        "TypeScript": 147273,
+        "JavaScript": 24529,
+        "HTML": 5184,
+        "CSS": 2701
+      },
+      "stars": 0,
+      "forks": 0,
+      "lastPushed": "2026-06-21T22:36:46Z",
+      "createdAt": "2026-05-07T18:38:22Z",
+      "isFeatured": true,
+      "isArchived": false,
+      "isPrivate": true,
+      "tagline": "The 24/7 bilingual AI assistant for Facebook Messenger — built from your business's own content, so no lead goes cold.",
+      "thumbnail": "https://cdn.cushlabs.ai/cushlabs-messenger/images/thumb.webp",
+      "problem": "Businesses on Facebook get a steady stream of Messenger questions — pricing, availability, hours,\nservices — and in bilingual markets like Mexico they arrive in both Spanish and English. No owner can\nwatch the inbox 24/7, generic auto-replies quietly lose the lead while the prospect keeps shopping, and\noff-the-shelf chatbots sound robotic and invent answers they can't stand behind. The result is missed\nconversations, slow first responses, and revenue that walks to whoever replied first.\n",
+      "solution": "A single multi-tenant Cloudflare Worker serves every client through page_id routing, with\nno per-client deployments to maintain. RAG grounded in each client's own content keeps answers\naccurate and on-brand, while native bilingual handling detects English or Spanish and replies\nwithout manual switching. When a conversation needs a person, the assistant hands off gracefully\nand then resumes automatically — and onboarding a new client takes one CLI command and one URL.\n",
+      "keyFeatures": [
+        "24/7 instant replies to customer inquiries on Facebook Messenger — pricing, availability, hours, services",
+        "Native bilingual EN/ES with automatic language detection — no manual switching mid-conversation",
+        "RAG-grounded answers drawn from the client's own content — accurate, never hallucinated",
+        "Graceful human handover when a conversation needs a person, then automatic resume",
+        "One multi-tenant Cloudflare Worker serves every client via page_id routing — no per-client deployments"
+      ],
+      "metrics": [
+        "New client onboards in under 60 seconds of operator time — one CLI command, one URL",
+        "Sub-100ms typical survey persistence latency via edge KV writes",
+        "Zero per-client deployments — a single Worker scales to every client through page_id routing",
+        "Structured, schema-validated voice profiles replace lossy email-and-spreadsheet onboarding"
+      ],
+      "priority": 3,
+      "dateCompleted": null,
+      "slides": [
+        {
+          "src": "https://cdn.cushlabs.ai/cushlabs-messenger/images/thumb.webp",
+          "altEn": "A boutique customer messages the shop on Facebook — \"Do you have this in medium?\" — and the AI assistant answers instantly with availability and offers to reserve it.",
+          "altEs": "Una clienta le escribe a la boutique por Facebook — \"¿Tienen esta blusa en talla mediana?\" — y el asistente con IA responde al instante con la disponibilidad y le ofrece apartarla."
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/cushlabs-messenger/images/hero-01.webp",
+          "altEn": "The 24/7 AI Sales Assistant for Facebook Messenger — built from your content, trained on your business. Made by CushLabs.",
+          "altEs": "El asistente de ventas con IA 24/7 para Facebook Messenger — creado a partir de tu contenido y entrenado en tu negocio. Hecho por CushLabs."
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/cushlabs-messenger/images/hero-02.webp",
+          "altEn": "The problem every business owner knows — your Facebook page gets messages. You catch some. Most you don't.",
+          "altEs": "El problema que todo dueño de negocio conoce — tu página de Facebook recibe mensajes. Algunos los alcanzas a contestar. La mayoría no."
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/cushlabs-messenger/images/hero-03.webp",
+          "altEn": "Generic auto-replies are a polite way to lose a lead — the lead-decay curve.",
+          "altEs": "Las respuestas automáticas son una forma amable de perder un cliente potencial — la curva de decaimiento del prospecto."
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/cushlabs-messenger/images/hero-04.webp",
+          "altEn": "What if your inbox answered itself? Introducing the CushLabs AI Messaging Assistant.",
+          "altEs": "¿Y si tu bandeja de entrada se respondiera sola? Te presentamos el Asistente de Mensajería con IA de CushLabs."
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/cushlabs-messenger/images/hero-05.webp",
+          "altEn": "Never lose a prospect while you sleep — qualified conversations at 8:30 PM, 11:15 PM, 2:00 AM.",
+          "altEs": "Nunca pierdas un prospecto mientras duermes — conversaciones calificadas a las 8:30 PM, 11:15 PM y 2:00 AM."
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/cushlabs-messenger/images/hero-06.webp",
+          "altEn": "Get your time back and stop repeating yourself — the assistant handles FAQs so you only step in when a client is ready to buy.",
+          "altEs": "Recupera tu tiempo y deja de repetir lo mismo — el asistente responde las preguntas frecuentes para que solo intervengas cuando un cliente está listo para comprar."
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/cushlabs-messenger/images/hero-07.webp",
+          "altEn": "Speaks their language perfectly and without interruption — native bilingual EN/ES with no manual switching.",
+          "altEs": "Habla su idioma a la perfección y sin interrupciones — bilingüe nativo EN/ES, sin cambios manuales."
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/cushlabs-messenger/images/hero-08.webp",
+          "altEn": "Sells like you, because it's built from you — your website, your FAQs, your methodology, your prices.",
+          "altEs": "Vende como tú, porque está hecho de ti — tu sitio web, tus preguntas frecuentes, tu metodología, tus precios."
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/cushlabs-messenger/images/hero-09.webp",
+          "altEn": "The math is simple: it pays for itself the first time it converts a client you'd otherwise have lost.",
+          "altEs": "La cuenta es simple: se paga solo la primera vez que convierte a un cliente que de otro modo habrías perdido."
+        }
+      ],
+      "videoUrl": null,
+      "videoPoster": null
+    },
+    {
       "id": 1196535593,
       "name": "cushlabs-marketsignal",
       "title": "MarketSignal — AI-Powered Local Competitive Intelligence",
@@ -624,7 +624,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-06-21T15:56:25Z",
+      "lastPushed": "2026-06-21T22:36:47Z",
       "createdAt": "2026-03-30T19:46:00Z",
       "isFeatured": true,
       "isArchived": false,
@@ -770,7 +770,7 @@
       "tagline": "The production Facebook Messenger assistant for New York English — an executive English coaching studio in Guadalajara — answering prospective students 24/7 in English and Spanish.",
       "thumbnail": "https://cdn.cushlabs.ai/ny-english-messenger-bot/public/images/thumb.webp",
       "problem": "New York English reactivated its Facebook page as a marketing channel, and prospective students —\nMexican professionals weighing executive English coaching — began sending Messenger questions about\npricing, scheduling, methodology, and online vs. in-person classes, in both English and Spanish. The\nstudio can't watch the inbox around the clock, prospects expect fast answers, and a generic auto-reply\nor a chatbot that invents course details would cost real enrollments.\n",
-      "solution": null,
+      "solution": "A two-layer router sends quick pleasantries to Claude Haiku for fast, low-cost replies and real questions to Claude Sonnet with RAG context — so answers about pricing, scheduling, and methodology are grounded in New York English's own bilingual content, never invented, and delivered in the prospect's detected language. When someone wants a person, Meta's Handover Protocol passes the thread to the studio's Page inbox and auto-resumes the bot after a 30-minute timeout. HMAC-verified webhooks, Sentry monitoring, and a /health endpoint keep it production-solid.\n",
       "keyFeatures": [
         "24/7 answers to prospective-student questions about NY English's pricing, scheduling, and methodology",
         "Bilingual EN/ES with automatic language detection — Mexican professionals are answered in their own language",
@@ -778,7 +778,12 @@
         "Handover to the studio's Page inbox when a prospect is ready to enroll or needs a personal reply",
         "Proven in production — the reference build the multi-tenant CushLabs Messenger platform was extracted from"
       ],
-      "metrics": [],
+      "metrics": [
+        "Instant, accurate answers on pricing, scheduling, and methodology — in the prospect's own language",
+        "Hours of repetitive Messenger triage reclaimed for the studio owner",
+        "RAG-grounded on real course content — zero invented details",
+        "Production reference build the CushLabs Messenger platform was extracted from"
+      ],
       "priority": 5,
       "dateCompleted": null,
       "slides": [],
@@ -999,7 +1004,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-05-12T06:59:36Z",
+      "lastPushed": "2026-06-21T22:36:49Z",
       "createdAt": "2026-03-06T18:20:23Z",
       "isFeatured": true,
       "isArchived": false,
@@ -1155,7 +1160,7 @@
       "tagline": "Full-stack operational command center with 7 API routes, 7 dashboard views, and live GitHub integration for portfolio health, goals, tasks, and business development",
       "thumbnail": "https://cdn.cushlabs.ai/cushlabs-OS-dashboard/images/portfolio/cushlabs-dashboard-thumb.webp",
       "problem": "Running a consultancy across 15+ GitHub repositories creates operational blind spots\nthat no single tool solves. Portfolio health, task execution, goal progress, business\ndevelopment pipeline, accomplishment tracking, and infrastructure status all live in\nseparate systems or structured JSON files with no unified view. Project managers and\nbusiness owners need a single command center to see everything at a glance — not\nrepo-by-repo GitHub audits or spreadsheet juggling.\n",
-      "solution": null,
+      "solution": "A single authenticated command center built on Next.js that aggregates everything into one\nview. GitHub OAuth secures access, and seven server-side API routes pull live repository\nmetrics via Octokit, merge them with business context, and serve seven specialized dashboard\nviews — portfolio health, business development, goals, tasks, accomplishments, infrastructure,\nand a system guide. Server-side caching with a manual refresh bypass keeps the data fresh\nwithout redundant API calls, turning reactive repo-by-repo checking into proactive oversight.\n",
       "keyFeatures": [
         "7 server-side API routes handling authentication, data aggregation, caching, and health checks",
         "7 dashboard views — portfolio, business dev, goals, tasks, accomplishments, infrastructure, guide",
@@ -1271,7 +1276,7 @@
       },
       "stars": 2,
       "forks": 0,
-      "lastPushed": "2026-06-20T09:36:45Z",
+      "lastPushed": "2026-06-21T22:36:50Z",
       "createdAt": "2025-12-20T10:31:00Z",
       "isFeatured": true,
       "isArchived": false,
@@ -1578,7 +1583,7 @@
       "tagline": "Remove baked-in watermarks from images, PDFs, and presentations with a layered AI detection pipeline and neural inpainting",
       "thumbnail": "https://cdn.cushlabs.ai/cushlabs-ai-unwatermark/images/portfolio/unwatermark-thumb.webp",
       "problem": "Exported slide decks and documents embed watermarks directly into raster images — there's no\nlayer to delete. NotebookLM, stock photo sites, and draft PDFs all produce files where the\nwatermark pixels replace original content. Manual Photoshop cleanup doesn't scale across\ndozens of slides. Unwatermark automates detection and removal using AI vision models and\nneural inpainting to produce clean, professional files in seconds.\n",
-      "solution": null,
+      "solution": "A layered AI detection pipeline tries the cheapest method first and escalates only when needed:\nEasyOCR catches text watermarks, Florence-2 and Grounded SAM handle visual detection with\npixel-perfect masks, and Claude Vision serves as a fallback for non-standard cases. LaMa neural\ninpainting then reconstructs the content beneath the watermark instead of cloning or blurring,\nwhile up to three detect-remove passes catch any residual marks. Format-specific handlers\nprocess images, PDFs, and PPTX files through the same core pipeline.\n",
       "keyFeatures": [
         "Layered detection pipeline: EasyOCR → Florence-2 → Grounded SAM → Claude Vision → heuristic",
         "LaMa neural inpainting produces artifact-free results that preserve surrounding content",
@@ -1588,39 +1593,44 @@
         "Supports images, PDFs, and PPTX with format-specific handlers",
         "Drag-and-drop web UI with real-time NDJSON streaming progress"
       ],
-      "metrics": [],
+      "metrics": [
+        "Clean PPTX, PDF, and image exports in under a minute",
+        "Neural inpainting output visually indistinguishable from unwatermarked originals",
+        "Orchestrates 4+ ML models with cost-aware fallback routing",
+        "Zero image-editing skill required — simple drag-and-drop web interface"
+      ],
       "priority": 10,
       "dateCompleted": null,
       "slides": [
         {
           "src": "https://cdn.cushlabs.ai/cushlabs-ai-unwatermark/images/portfolio/unwatermark-01.webp",
-          "altEn": "Unwatermark",
-          "altEs": "Unwatermark"
+          "altEn": "Unwatermark intro screen presenting the AI tool for removing baked-in watermarks from images, PDFs, and presentations",
+          "altEs": "Pantalla de introducción de Unwatermark que presenta la herramienta de IA para eliminar marcas de agua incrustadas en imágenes, PDF y presentaciones"
         },
         {
           "src": "https://cdn.cushlabs.ai/cushlabs-ai-unwatermark/images/portfolio/unwatermark-02.webp",
-          "altEn": "Unwatermark",
-          "altEs": "Unwatermark"
+          "altEn": "Drag-and-drop web interface where a watermarked file is uploaded for processing",
+          "altEs": "Interfaz web de arrastrar y soltar donde se sube un archivo con marca de agua para procesarlo"
         },
         {
           "src": "https://cdn.cushlabs.ai/cushlabs-ai-unwatermark/images/portfolio/unwatermark-03.webp",
-          "altEn": "Unwatermark",
-          "altEs": "Unwatermark"
+          "altEn": "AI detection pipeline identifying the watermark and generating a pixel-perfect mask over the affected area",
+          "altEs": "Flujo de detección con IA que identifica la marca de agua y genera una máscara de precisión sobre el área afectada"
         },
         {
           "src": "https://cdn.cushlabs.ai/cushlabs-ai-unwatermark/images/portfolio/unwatermark-04.webp",
-          "altEn": "Unwatermark",
-          "altEs": "Unwatermark"
+          "altEn": "Real-time streaming progress as each detect-and-remove pass completes",
+          "altEs": "Progreso en tiempo real conforme se completa cada pasada de detección y eliminación"
         },
         {
           "src": "https://cdn.cushlabs.ai/cushlabs-ai-unwatermark/images/portfolio/unwatermark-05.webp",
-          "altEn": "Unwatermark",
-          "altEs": "Unwatermark"
+          "altEn": "Before-and-after comparison showing the watermark removed by neural inpainting with surrounding content preserved",
+          "altEs": "Comparación de antes y después que muestra la marca de agua eliminada mediante inpainting neuronal con el contenido circundante intacto"
         },
         {
           "src": "https://cdn.cushlabs.ai/cushlabs-ai-unwatermark/images/portfolio/unwatermark-06.webp",
-          "altEn": "Unwatermark",
-          "altEs": "Unwatermark"
+          "altEn": "Clean exported result ready to download, free of watermarks",
+          "altEs": "Resultado exportado limpio y listo para descargar, sin marcas de agua"
         }
       ],
       "videoUrl": "https://cdn.cushlabs.ai/cushlabs-ai-unwatermark/images/portfolio/Unwatermark__The_Limits_of_AI.mp4",
@@ -1686,7 +1696,7 @@
       "tagline": "AI-powered ATS resume optimization with bilingual support and instant feedback",
       "thumbnail": "https://cdn.cushlabs.ai/ai-resume-tailor/images/ai-resume-tailor-thumb.jpg",
       "problem": "Over 75% of resumes are rejected by Applicant Tracking Systems before a human ever sees them.\nJob seekers submit into a black box with no visibility into why they're filtered out. Existing\ntools charge upfront, require accounts, or provide generic advice not tied to the specific posting.\nThe Latin American market is further underserved by English-only tools.\n",
-      "solution": null,
+      "solution": "GPT-4 returns structured JSON with a match score, keyword gaps, and severity-coded\nsuggestions, all parsed into type-safe TypeScript interfaces on the frontend. Guests\nget 5 free analyses with no account required, so the product delivers value before\nasking for anything in return. Full bilingual i18n makes English and Spanish first-class\ncitizens across every UI element, error message, and analysis output, and a privacy-first\narchitecture never persists resume data.\n",
       "keyFeatures": [
         "Structured ATS feedback in under 10 seconds",
         "5 free analyses before any signup prompt — value delivered first",
@@ -1694,39 +1704,44 @@
         "Full EN/ES bilingual coverage across UI and AI-generated analysis",
         "Guest-to-paid conversion funnel with embedded Stripe checkout"
       ],
-      "metrics": [],
+      "metrics": [
+        "Structured, actionable ATS feedback delivered in under 10 seconds",
+        "5 free analyses with no signup, no email, and no commitment",
+        "Native Spanish support — not machine-translated afterthoughts",
+        "Zero data retention — resume text is never persisted"
+      ],
       "priority": 11,
       "dateCompleted": null,
       "slides": [
         {
           "src": "https://cdn.cushlabs.ai/ai-resume-tailor/images/ai-resume-tailor-01.png",
-          "altEn": "AI Resume Tailor",
-          "altEs": "AI Resume Tailor"
+          "altEn": "AI Resume Tailor landing page introducing bilingual ATS resume optimization with instant feedback",
+          "altEs": "Página principal de AI Resume Tailor que presenta la optimización bilingüe de currículums para sistemas ATS con retroalimentación instantánea"
         },
         {
           "src": "https://cdn.cushlabs.ai/ai-resume-tailor/images/ai-resume-tailor-02.png",
-          "altEn": "AI Resume Tailor",
-          "altEs": "AI Resume Tailor"
+          "altEn": "Resume and job description input screen where the user pastes both for analysis",
+          "altEs": "Pantalla de entrada del currículum y la descripción del puesto donde el usuario pega ambos para el análisis"
         },
         {
           "src": "https://cdn.cushlabs.ai/ai-resume-tailor/images/ai-resume-tailor-03.png",
-          "altEn": "AI Resume Tailor",
-          "altEs": "AI Resume Tailor"
+          "altEn": "ATS match score result with overall compatibility percentage for the pasted resume",
+          "altEs": "Resultado de la puntuación de compatibilidad ATS con el porcentaje general para el currículum pegado"
         },
         {
           "src": "https://cdn.cushlabs.ai/ai-resume-tailor/images/ai-resume-tailor-04.png",
-          "altEn": "AI Resume Tailor",
-          "altEs": "AI Resume Tailor"
+          "altEn": "Missing keywords panel highlighting terms from the job posting absent in the resume",
+          "altEs": "Panel de palabras clave faltantes que resalta los términos de la oferta de empleo ausentes en el currículum"
         },
         {
           "src": "https://cdn.cushlabs.ai/ai-resume-tailor/images/ai-resume-tailor-05.png",
-          "altEn": "AI Resume Tailor",
-          "altEs": "AI Resume Tailor"
+          "altEn": "Severity-coded suggestion list using red, amber, and blue to prioritize fixes",
+          "altEs": "Lista de sugerencias codificadas por gravedad que usa rojo, ámbar y azul para priorizar las correcciones"
         },
         {
           "src": "https://cdn.cushlabs.ai/ai-resume-tailor/images/ai-resume-tailor-06.png",
-          "altEn": "AI Resume Tailor",
-          "altEs": "AI Resume Tailor"
+          "altEn": "Stripe checkout for upgrading from free analyses to a paid plan",
+          "altEs": "Pago con Stripe para pasar de los análisis gratuitos a un plan de pago"
         }
       ],
       "videoUrl": "https://cdn.cushlabs.ai/ai-resume-tailor/video/ai-resume-tailor-brief.mp4",
@@ -1805,7 +1820,7 @@
       "tagline": "Cinematic scrollytelling pitch site with AI-powered species identification for western Mexico's biodiversity platform",
       "thumbnail": "https://cdn.cushlabs.ai/biojalisco-pitch/assets/images/portfolio/scrollytelling_pitch_thumb.png",
       "problem": "Conservation researchers in western Mexico face an asymmetry: deep scientific\nexpertise but limited reach. Their work covers a fraction of Jalisco's 80,000+ km²\nterritory. BioJalisco proposes closing that gap through citizen science and technology,\nbut the vision needed a compelling presentation to win stakeholders and partners.\n",
-      "solution": null,
+      "solution": "A single self-contained HTML file delivers a cinematic 5-act narrative arc (Hook,\nProblem, Vision, Evidence, Ask) with scroll-triggered animations, animated counters,\nand a procedural forest soundscape generated in real time via the Web Audio API. A\ndata-lang attribute toggles ES/EN content instantly with no page reload, so Mexican\nacademics and international partners share one seamless bilingual experience. All nine\nimages are converted to WebP and embedded as base64 data URIs, making the 1.8MB site\nfully portable with no build step and no external dependencies beyond Google Fonts. A\nGPT-4o vision-powered species identifier lets stakeholders try the platform's core AI\ncapability immediately.\n",
       "keyFeatures": [
         "Self-contained single-file HTML site with 9 embedded images (~1.8MB total)",
         "Bilingual ES/EN with instant language switching",
@@ -1817,59 +1832,64 @@
         "Vercel serverless Python function for production API",
         "Deployed on Vercel with zero build step"
       ],
-      "metrics": [],
+      "metrics": [
+        "Complete narrative pitch accessible in both Spanish and English from a single shareable URL",
+        "Interactive Species Identifier lets stakeholders try real GPT-4o vision AI immediately",
+        "High-impact persuasion site shipped with no React, build system, or CMS",
+        "Image pipeline cut total payload from 16.8MB to 1.3MB (92% reduction)"
+      ],
       "priority": 12,
       "dateCompleted": null,
       "slides": [
         {
           "src": "https://cdn.cushlabs.ai/biojalisco-pitch/assets/images/portfolio/scrollytelling_pitch_01.png",
-          "altEn": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier",
-          "altEs": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier"
+          "altEn": "Cinematic hero section of the BioJalisco scrollytelling pitch opening the biodiversity story",
+          "altEs": "Sección principal cinematográfica del sitio scrollytelling de BioJalisco que abre la historia de la biodiversidad"
         },
         {
           "src": "https://cdn.cushlabs.ai/biojalisco-pitch/assets/images/portfolio/scrollytelling_pitch_02.png",
-          "altEn": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier",
-          "altEs": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier"
+          "altEn": "Problem section showing the data-coverage crisis across Jalisco's territory with animated counters",
+          "altEs": "Sección del problema que muestra la crisis de cobertura de datos en el territorio de Jalisco con contadores animados"
         },
         {
           "src": "https://cdn.cushlabs.ai/biojalisco-pitch/assets/images/portfolio/scrollytelling_pitch_03.png",
-          "altEn": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier",
-          "altEs": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier"
+          "altEn": "Vision section introducing the BioJalisco citizen-science biodiversity platform",
+          "altEs": "Sección de la visión que presenta la plataforma de biodiversidad de ciencia ciudadana BioJalisco"
         },
         {
           "src": "https://cdn.cushlabs.ai/biojalisco-pitch/assets/images/portfolio/scrollytelling_pitch_04.png",
-          "altEn": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier",
-          "altEs": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier"
+          "altEn": "Evidence section with project roadmap and conservation proof points",
+          "altEs": "Sección de evidencia con la hoja de ruta del proyecto y puntos de prueba de conservación"
         },
         {
           "src": "https://cdn.cushlabs.ai/biojalisco-pitch/assets/images/portfolio/scrollytelling_pitch_05.png",
-          "altEn": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier",
-          "altEs": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier"
+          "altEn": "Team and credibility section featuring researcher credentials and the book trilogy",
+          "altEs": "Sección de equipo y credibilidad que destaca las credenciales de los investigadores y la trilogía de libros"
         },
         {
           "src": "https://cdn.cushlabs.ai/biojalisco-pitch/assets/images/portfolio/scrollytelling_pitch_06.png",
-          "altEn": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier",
-          "altEs": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier"
+          "altEn": "Parallax wildlife photography of western Mexico's biodiversity",
+          "altEs": "Fotografía de fauna con efecto parallax de la biodiversidad del occidente de México"
         },
         {
           "src": "https://cdn.cushlabs.ai/biojalisco-pitch/assets/images/portfolio/scrollytelling_pitch_07.png",
-          "altEn": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier",
-          "altEs": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier"
+          "altEn": "AI Species Identifier interface ready to analyze an uploaded wildlife photo",
+          "altEs": "Interfaz del Identificador de Especies con IA lista para analizar una foto de fauna cargada"
         },
         {
           "src": "https://cdn.cushlabs.ai/biojalisco-pitch/assets/images/portfolio/scrollytelling_pitch_08.png",
-          "altEn": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier",
-          "altEs": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier"
+          "altEn": "Species identification results with confidence gauge and full taxonomy tree",
+          "altEs": "Resultados de identificación de especies con indicador de confianza y árbol taxonómico completo"
         },
         {
           "src": "https://cdn.cushlabs.ai/biojalisco-pitch/assets/images/portfolio/scrollytelling_pitch_09.png",
-          "altEn": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier",
-          "altEs": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier"
+          "altEn": "Ecology and conservation status tabs detailing habitat, range, and IUCN status",
+          "altEs": "Pestañas de ecología y estado de conservación que detallan el hábitat, el rango de distribución y el estado de la UICN"
         },
         {
           "src": "https://cdn.cushlabs.ai/biojalisco-pitch/assets/images/portfolio/scrollytelling_pitch_10.png",
-          "altEn": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier",
-          "altEs": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier"
+          "altEn": "Closing call-to-action section inviting partners and funders to support BioJalisco",
+          "altEs": "Sección de llamada a la acción final que invita a socios y patrocinadores a apoyar a BioJalisco"
         }
       ],
       "videoUrl": "https://cdn.cushlabs.ai/biojalisco-pitch/assets/video/scrollytelling-pitch.mp4",
@@ -1945,7 +1965,7 @@
       "tagline": "Brutal startup defensibility assessment with AI contradiction detection",
       "thumbnail": "https://cdn.cushlabs.ai/ai-idea-validator/images/portfolio/aI-Idea-validator-thumb.jpg",
       "problem": "Founders waste months building ideas that are structurally replaceable because traditional validation tools ignore defensibility. Self-assessment alone can't catch optimism bias — founders consistently rate their moats high while describing products with no switching costs.\n",
-      "solution": null,
+      "solution": "A 23-question structured assessment across four sections probes defensibility from multiple angles, with each question targeting a documented startup failure mode. GPT-4o-mini cross-references the numeric self-assessment scores against the written qualitative responses to flag specific contradictions and surface optimism bias. It then delivers one of four honest verdicts — KILL, FLIP, BUILD, or BET — each with a confidence score and detailed rationale. The entire experience is natively bilingual EN/ES, and an offline heuristic fallback always returns a verdict even without API access.\n",
       "keyFeatures": [
         "23-question defensibility assessment across 4 sections with AI-powered contradiction detection",
         "4 honest verdicts (KILL/FLIP/BUILD/BET) with confidence scores and detailed rationale",
@@ -1954,7 +1974,12 @@
         "Offline heuristic fallback — always returns a verdict, even without API access",
         "Sub-3-second AI analysis via GPT-4o-mini"
       ],
-      "metrics": [],
+      "metrics": [
+        "Structurally honest defensibility assessment delivered in under 3 seconds",
+        "Contradiction detection catches the optimism bias that self-assessment alone misses",
+        "Production-grade Next.js 15 app with server-side AI that keeps OpenAI keys off the client",
+        "Zero-storage privacy architecture — no accounts, databases, cookies, or analytics"
+      ],
       "priority": 13,
       "dateCompleted": "2026-02",
       "slides": [
@@ -2046,7 +2071,7 @@
       "tagline": "15 slash commands that turn Claude Code into a full-service marketing analysis platform",
       "thumbnail": "https://cdn.cushlabs.ai/cushlabs-ai-marketing/images/CUSHLABS-AI-MARKETING-THUMB.webp",
       "problem": "Marketing audits are expensive ($2K–$10K) and slow (1–3 weeks). Small agencies and solopreneurs\ncan't compete at that price point. The frameworks exist — CRO checklists, SEO rubrics, competitive\nanalysis templates — but executing them manually across six marketing dimensions takes dozens of\nhours per client. This suite encodes those frameworks into repeatable, scored Claude Code skills.\n",
-      "solution": null,
+      "solution": "The suite encodes proven marketing frameworks directly into Claude Code skill definitions, so\nanalysis follows a codified methodology instead of improvised judgment. A full website audit\nlaunches five subagents in parallel, each scoring its own dimension from 0–100 for deeper,\nfaster results. Every command produces client-ready deliverables — scored reports, proposals\nwith tiered pricing, email sequences, and content calendars — and installs in one command with\nno API keys or external services.\n",
       "keyFeatures": [
         "15 marketing commands available as Claude Code slash commands",
         "Full website audit with 5 parallel subagents running simultaneously",
@@ -2054,64 +2079,69 @@
         "Client-ready PDF reports with score gauges, charts, and branded styling",
         "Complete email sequences, ad campaigns, and 30-day content calendars generated in minutes"
       ],
-      "metrics": [],
+      "metrics": [
+        "Full marketing audit delivered in minutes instead of the typical 1–3 weeks",
+        "Consistent, scored analysis across 6 marketing dimensions for every client",
+        "Client-ready Markdown and PDF deliverables that need no extra formatting",
+        "Email sequences, ad campaigns, and 30-day content calendars generated on demand"
+      ],
       "priority": 14,
       "dateCompleted": null,
       "slides": [
         {
           "src": "https://cdn.cushlabs.ai/cushlabs-ai-marketing/images/cushlabs-ai-marketing-01.webp",
-          "altEn": "AI Marketing Suite for Claude Code",
-          "altEs": "AI Marketing Suite for Claude Code"
+          "altEn": "AI Marketing Suite overview — Claude Code running marketing slash commands",
+          "altEs": "Vista general de la suite de marketing con IA — Claude Code ejecutando comandos de marketing"
         },
         {
           "src": "https://cdn.cushlabs.ai/cushlabs-ai-marketing/images/cushlabs-ai-marketing-02.webp",
-          "altEn": "AI Marketing Suite for Claude Code",
-          "altEs": "AI Marketing Suite for Claude Code"
+          "altEn": "List of 15 marketing slash commands available inside Claude Code",
+          "altEs": "Lista de los 15 comandos de marketing disponibles dentro de Claude Code"
         },
         {
           "src": "https://cdn.cushlabs.ai/cushlabs-ai-marketing/images/cushlabs-ai-marketing-03.webp",
-          "altEn": "AI Marketing Suite for Claude Code",
-          "altEs": "AI Marketing Suite for Claude Code"
+          "altEn": "Full website audit launching five parallel subagents simultaneously",
+          "altEs": "Auditoría completa del sitio lanzando cinco subagentes en paralelo de forma simultánea"
         },
         {
           "src": "https://cdn.cushlabs.ai/cushlabs-ai-marketing/images/cushlabs-ai-marketing-04.webp",
-          "altEn": "AI Marketing Suite for Claude Code",
-          "altEs": "AI Marketing Suite for Claude Code"
+          "altEn": "Weighted scoring across six marketing dimensions with letter grades",
+          "altEs": "Puntuación ponderada en seis dimensiones de marketing con calificaciones por letra"
         },
         {
           "src": "https://cdn.cushlabs.ai/cushlabs-ai-marketing/images/cushlabs-ai-marketing-05.webp",
-          "altEn": "AI Marketing Suite for Claude Code",
-          "altEs": "AI Marketing Suite for Claude Code"
+          "altEn": "Marketing audit results with prioritized, revenue-focused recommendations",
+          "altEs": "Resultados de la auditoría de marketing con recomendaciones priorizadas enfocadas en ingresos"
         },
         {
           "src": "https://cdn.cushlabs.ai/cushlabs-ai-marketing/images/cushlabs-ai-marketing-06.webp",
-          "altEn": "AI Marketing Suite for Claude Code",
-          "altEs": "AI Marketing Suite for Claude Code"
+          "altEn": "Client-ready PDF report with score gauges and branded styling",
+          "altEs": "Reporte PDF listo para el cliente con indicadores de puntuación y estilo de marca"
         },
         {
           "src": "https://cdn.cushlabs.ai/cushlabs-ai-marketing/images/cushlabs-ai-marketing-07.webp",
-          "altEn": "AI Marketing Suite for Claude Code",
-          "altEs": "AI Marketing Suite for Claude Code"
+          "altEn": "Competitive analysis matrix comparing the brand against competitors",
+          "altEs": "Matriz de análisis competitivo comparando la marca con sus competidores"
         },
         {
           "src": "https://cdn.cushlabs.ai/cushlabs-ai-marketing/images/cushlabs-ai-marketing-08.webp",
-          "altEn": "AI Marketing Suite for Claude Code",
-          "altEs": "AI Marketing Suite for Claude Code"
+          "altEn": "Generated email sequence ready for client delivery",
+          "altEs": "Secuencia de correos generada y lista para entregar al cliente"
         },
         {
           "src": "https://cdn.cushlabs.ai/cushlabs-ai-marketing/images/cushlabs-ai-marketing-09.webp",
-          "altEn": "AI Marketing Suite for Claude Code",
-          "altEs": "AI Marketing Suite for Claude Code"
+          "altEn": "30-day content calendar generated from a single command",
+          "altEs": "Calendario de contenido de 30 días generado con un solo comando"
         },
         {
           "src": "https://cdn.cushlabs.ai/cushlabs-ai-marketing/images/cushlabs-ai-marketing-10.webp",
-          "altEn": "AI Marketing Suite for Claude Code",
-          "altEs": "AI Marketing Suite for Claude Code"
+          "altEn": "Proposal with Good-Better-Best pricing tiers and ROI projections",
+          "altEs": "Propuesta con niveles de precios Bueno-Mejor-Óptimo y proyecciones de retorno de inversión"
         },
         {
           "src": "https://cdn.cushlabs.ai/cushlabs-ai-marketing/images/cushlabs-ai-marketing-11.webp",
-          "altEn": "AI Marketing Suite for Claude Code",
-          "altEs": "AI Marketing Suite for Claude Code"
+          "altEn": "One-command install copying skill and agent definitions into Claude Code",
+          "altEs": "Instalación con un solo comando que copia las definiciones de habilidades y agentes a Claude Code"
         }
       ],
       "videoUrl": "https://cdn.cushlabs.ai/cushlabs-ai-marketing/video/cushlabs_ai_marketing_brief.mp4",
@@ -2617,7 +2647,7 @@
       "tagline": "Pass your driver's license exam in any country — even if you don't speak the language yet.",
       "thumbnail": "https://cdn.cushlabs.ai/expat-driver-license-prep/images/expatdrive__thumb.webp",
       "problem": "English-speaking expats struggle to pass foreign driver's license exams due to\nlegal and technical terminology in unfamiliar languages. Existing resources are\nfragmented, outdated, and rarely bilingual. ExpatDrive provides verified,\nstate-specific question banks with quality translations, spaced repetition\nstudy tools, and step-by-step process guides.\n",
-      "solution": null,
+      "solution": "ExpatDrive presents all 103 official Jalisco questions with polished bilingual translations,\nexplanations in both languages, and extracted vocabulary that teaches the answer and the\nlanguage at the same time. An SM-2 spaced-repetition system tracks mastery per question and\nschedules reviews at optimal intervals, while a progress dashboard highlights weak categories\nfor targeted study. State-specific process guides cover documents, fees, office procedures, and\nexam-day details, and a standardized content schema lets new regions be added as a content task\nwith no code changes.\n",
       "keyFeatures": [
         "103 official Jalisco questions translated, explained, and verified bilingually",
         "Multiple study modes: practice exams, flashcards with SM-2 spaced repetition, vocabulary drills",
@@ -2625,7 +2655,12 @@
         "Process guides cover documents, fees, procedures, and expat-specific tips",
         "Built for Phase 2 expansion to CDMX, Nuevo Leon, and Quintana Roo"
       ],
-      "metrics": [],
+      "metrics": [
+        "Single destination replacing study scattered across forums, PDFs, and videos",
+        "Spaced repetition focuses study time on weak areas instead of mastered content",
+        "Bilingual presentation teaches both the correct answer and exam-day vocabulary",
+        "Process guides remove the 'what do I even bring?' uncertainty before the exam"
+      ],
       "priority": 18,
       "dateCompleted": null,
       "slides": [
@@ -3100,7 +3135,7 @@
       },
       "stars": 2,
       "forks": 0,
-      "lastPushed": "2026-06-21T22:32:17Z",
+      "lastPushed": "2026-06-21T22:37:44Z",
       "createdAt": "2026-01-08T03:52:43Z",
       "isFeatured": false,
       "isArchived": false,
@@ -3240,7 +3275,7 @@
       "tagline": "A static portfolio system that syncs project data from GitHub repos into a filterable showcase",
       "thumbnail": "https://cdn.cushlabs.ai/ai-portfolio/images/portfolio-card.webp",
       "problem": "Maintaining a portfolio across dozens of GitHub repositories creates a content\nmanagement problem. Project descriptions, tech stacks, and status information\nscatter across READMEs and repo settings with no unified display layer. A\nseparate portfolio site inevitably falls out of sync with the actual work.\n",
-      "solution": null,
+      "solution": "Each repository owns its portfolio entry through a version-controlled PORTFOLIO.md file at its\nroot, keeping content co-located with the code it describes. A TypeScript sync script fetches\nand parses every file via the GitHub API, validates it through a Zod schema with\nbackward-compatible transforms, and outputs a single static JSON file — with sync errors and\nwarnings auto-reported as deduplicated GitHub Issues. The portfolio page drives search, category\nfiltering, and sort entirely through URL params for shareable views, and Next.js serves\nstatically generated pages with zero runtime API calls.\n",
       "keyFeatures": [
         "21 projects aggregated from GitHub repos into a single filterable interface",
         "Client-side search, category filtering, and sort — all via shareable URL params",
@@ -3250,7 +3285,12 @@
         "Featured project showcase with curated top-6 selection",
         "Dark mode with system preference detection"
       ],
-      "metrics": [],
+      "metrics": [
+        "21 projects browsable by category with instant client-side search, filter, and sort",
+        "Zero runtime API calls — fully static pages with sub-second loads",
+        "Featured showcase highlighting the 6 strongest projects with detailed breakdowns",
+        "Filtered views shareable via URL — bookmarkable category and sort combinations"
+      ],
       "priority": 22,
       "dateCompleted": null,
       "slides": [
@@ -3380,7 +3420,7 @@
       "tagline": "Five AI-powered practice tools backed by a 370K-word dictionary",
       "thumbnail": "https://cdn.cushlabs.ai/ai-scrabble-practice/images/ai-scrabble-practice-thumb.jpg",
       "problem": "Scrabble practice tools are either too simple (word checkers) or too powerful (board solvers) — neither builds actual skill. Players bounce between fragmented sites for validation, anagram solving, and word discovery with no structured practice mode.\n",
-      "solution": null,
+      "solution": "Five tools share a single 370K-word dictionary and a consistent interface — Word Validator, Word Finder, Anagram Solver, Magic Search, and the Practice Game — so players stay in one application for an entire session. Magic Search uses GPT-4o-mini to translate plain-English queries into validated, scored word lists, while the Practice Game runs timed rounds with realistic tile draws and on-demand AI hints. Server-side API proxies keep credentials off the client, and a type-safe i18n system delivers full English and Spanish support with locale-based routing.\n",
       "keyFeatures": [
         "370,105-word dictionary with sub-millisecond validation via Set-based O(1) lookups",
         "Anagram solving in under 500ms for 7-tile hands with wildcard support",
@@ -3388,34 +3428,39 @@
         "AI-powered natural language word search and timed practice with hints",
         "Full E2E test coverage with Playwright across all features and locales"
       ],
-      "metrics": [],
+      "metrics": [
+        "Five distinct practice tools consolidated into one app — no context switching",
+        "Sub-millisecond word validation and under-500ms anagram solving",
+        "Client-side dictionary architecture handling 370K entries with O(1) performance",
+        "Full E2E coverage across features, dark mode, and English/Spanish locales"
+      ],
       "priority": 23,
       "dateCompleted": "2025-09",
       "slides": [
         {
           "src": "https://cdn.cushlabs.ai/ai-scrabble-practice/images/ai-scrabble-practice-01.png",
-          "altEn": "AI Scrabble Practice",
-          "altEs": "AI Scrabble Practice"
+          "altEn": "AI Scrabble Practice home screen showing the five practice tools in a single bilingual interface",
+          "altEs": "Pantalla de inicio de AI Scrabble Practice mostrando las cinco herramientas de práctica en una sola interfaz bilingüe"
         },
         {
           "src": "https://cdn.cushlabs.ai/ai-scrabble-practice/images/ai-scrabble-practice-03.png",
-          "altEn": "AI Scrabble Practice",
-          "altEs": "AI Scrabble Practice"
+          "altEn": "Word Validator checking a word against the 370,000-word dictionary",
+          "altEs": "Validador de palabras verificando una palabra contra el diccionario de 370,000 palabras"
         },
         {
           "src": "https://cdn.cushlabs.ai/ai-scrabble-practice/images/ai-scrabble-practice-04.png",
-          "altEn": "AI Scrabble Practice",
-          "altEs": "AI Scrabble Practice"
+          "altEn": "Anagram Solver displaying valid words found from a seven-tile hand",
+          "altEs": "Solucionador de anagramas mostrando las palabras válidas encontradas a partir de una mano de siete fichas"
         },
         {
           "src": "https://cdn.cushlabs.ai/ai-scrabble-practice/images/ai-scrabble-practice-07.png",
-          "altEn": "AI Scrabble Practice",
-          "altEs": "AI Scrabble Practice"
+          "altEn": "Magic Search interpreting a natural language query and returning scored word results",
+          "altEs": "Búsqueda mágica interpretando una consulta en lenguaje natural y devolviendo resultados de palabras con puntaje"
         },
         {
           "src": "https://cdn.cushlabs.ai/ai-scrabble-practice/images/ai-scrabble-practice-08.png",
-          "altEn": "AI Scrabble Practice",
-          "altEs": "AI Scrabble Practice"
+          "altEn": "Timed Practice Game session with realistic tile draws and an on-demand AI hint",
+          "altEs": "Sesión del juego de práctica cronometrado con fichas realistas y una pista de IA disponible bajo demanda"
         }
       ],
       "videoUrl": "https://cdn.cushlabs.ai/ai-scrabble-practice/video/ai-scrabble-practice-brief.mp4",
@@ -3616,7 +3661,7 @@
       "tagline": "Authenticated image gallery with lightbox, WhatsApp sharing, auto-WebP, and PWA support",
       "thumbnail": "https://cdn.cushlabs.ai/cushlabs-image-portfolio/portfolio/image-portfolio-thumb.png",
       "problem": "Sharing a curated photo collection shouldn't require a CMS or social media account.\nMost gallery solutions are either bloated with unnecessary features or too basic to look professional.\nThis app provides an authenticated, minimal, high-quality image showcase with drag-and-drop upload,\nautomatic WebP optimization, WhatsApp sharing, and a native-app feel via PWA.\n",
-      "solution": null,
+      "solution": "A focused gallery that does four things well — display, navigate, upload, and share — kept private behind Clerk authentication with social login and a clean access-request onboarding flow. Every component follows a dark-first, brand-consistent design with subtle Framer Motion animation, putting the images front and center. Uploads are automatically converted to optimized WebP on the server via Sharp, dropping an 80MB batch of PNGs to under 3MB with no visible quality loss. The lightbox shares directly through the Web Share API on mobile, with a WhatsApp fallback on desktop.\n",
       "keyFeatures": [
         "Full masonry and grid gallery with animated transitions",
         "Full-screen lightbox with swipe, keyboard, and click navigation",
@@ -3625,39 +3670,44 @@
         "WhatsApp and native share sheet integration from lightbox",
         "PWA-ready for installation on mobile and desktop"
       ],
-      "metrics": [],
+      "metrics": [
+        "Sharp WebP pipeline reduces upload storage by 90%+ (80MB to under 3MB)",
+        "One-tap social sign-in via Google, Apple, or Facebook — no new account",
+        "Installable as a native-feeling PWA on Android and iOS",
+        "Clean architecture with minimal dependencies and no database requirement"
+      ],
       "priority": 25,
       "dateCompleted": null,
       "slides": [
         {
           "src": "https://cdn.cushlabs.ai/cushlabs-image-portfolio/portfolio/cushlabs-image-portfolio-01.webp",
-          "altEn": "CushLabs Image Portfolio",
-          "altEs": "CushLabs Image Portfolio"
+          "altEn": "Image gallery home view in masonry layout with the dark CushLabs orange and black theme",
+          "altEs": "Vista principal de la galería de imágenes en diseño tipo mampostería con el tema oscuro naranja y negro de CushLabs"
         },
         {
           "src": "https://cdn.cushlabs.ai/cushlabs-image-portfolio/portfolio/cushlabs-image-portfolio-02.webp",
-          "altEn": "CushLabs Image Portfolio",
-          "altEs": "CushLabs Image Portfolio"
+          "altEn": "Gallery displayed in grid layout after toggling from masonry view",
+          "altEs": "Galería mostrada en diseño de cuadrícula tras cambiar desde la vista de mampostería"
         },
         {
           "src": "https://cdn.cushlabs.ai/cushlabs-image-portfolio/portfolio/cushlabs-image-portfolio-03.webp",
-          "altEn": "CushLabs Image Portfolio",
-          "altEs": "CushLabs Image Portfolio"
+          "altEn": "Full-screen lightbox showing a single image with slider navigation",
+          "altEs": "Lightbox de pantalla completa mostrando una sola imagen con navegación por deslizador"
         },
         {
           "src": "https://cdn.cushlabs.ai/cushlabs-image-portfolio/portfolio/cushlabs-image-portfolio-04.webp",
-          "altEn": "CushLabs Image Portfolio",
-          "altEs": "CushLabs Image Portfolio"
+          "altEn": "Drag-and-drop upload zone with per-file progress and automatic WebP conversion",
+          "altEs": "Zona de carga de arrastrar y soltar con progreso por archivo y conversión automática a WebP"
         },
         {
           "src": "https://cdn.cushlabs.ai/cushlabs-image-portfolio/portfolio/cushlabs-image-portfolio-05.webp",
-          "altEn": "CushLabs Image Portfolio",
-          "altEs": "CushLabs Image Portfolio"
+          "altEn": "Lightbox share button opening WhatsApp and the native share sheet",
+          "altEs": "Botón de compartir del lightbox abriendo WhatsApp y el menú nativo para compartir"
         },
         {
           "src": "https://cdn.cushlabs.ai/cushlabs-image-portfolio/portfolio/cushlabs-image-portfolio-06.webp",
-          "altEn": "CushLabs Image Portfolio",
-          "altEs": "CushLabs Image Portfolio"
+          "altEn": "Clerk authentication screen with Google, Apple, and Facebook social login, styled in the dark brand theme",
+          "altEs": "Pantalla de autenticación de Clerk con inicio de sesión social de Google, Apple y Facebook, con el tema oscuro de la marca"
         }
       ],
       "videoUrl": null,
@@ -3987,9 +4037,14 @@
       "tagline": "Idempotent sprint board provisioning via Trello REST API for Roblox game development",
       "thumbnail": "https://cdn.cushlabs.ai/mazebreak-trello/images/mazebreak-trello.jpg",
       "problem": "Game development teams lose days of productivity to manual sprint board setup — and the boards they build by hand are inconsistent, fragile, and impossible to replicate. Cards get created without checklists, acceptance criteria, or quality gates, so \"done\" becomes subjective and bugs leak into later sprints. Dependency chains between tasks exist only as tribal knowledge, leaving new team members guessing at execution order. When a board needs to be rebuilt for the next sprint or a new project, all of that structure has to be painstakingly recreated from memory.\n",
-      "solution": null,
+      "solution": "A single Node.js script provisions an entire sprint board through the Trello REST API, creating the workspace, board, workflow lists, color-coded labels, and ten fully-specified cards in one run. Each card ships with ordered execution checklists, acceptance tests, a global Definition of Done, and dependency prefixes that encode execution order directly into the structure. Every resource uses a find-or-create pattern, so the script is idempotent — running it twice produces the same board with no duplicates or errors. Cards are defined as a declarative data spec separated from the API logic, so adding work means adding an object rather than writing new API calls.\n",
       "keyFeatures": [],
-      "metrics": [],
+      "metrics": [
+        "Provisions a complete Sprint 0 board from zero in under 30 seconds",
+        "Idempotent by design — safe to re-run as a baseline reset with no duplicates",
+        "Every card auto-generated with a 9-item Definition of Done quality gate",
+        "Encoded dependency chains replace tribal knowledge with enforced execution order"
+      ],
       "priority": 28,
       "dateCompleted": null,
       "slides": [
@@ -4076,9 +4131,14 @@
       "tagline": "Private, searchable game design document wiki for a Roblox development team",
       "thumbnail": "https://cdn.cushlabs.ai/mazebreak-wiki/images/mazebreak-wiki-01.png",
       "problem": "Game design documents start as shared Word files or Google Docs that no one\nactually consults once development begins — they're too slow to search, too\npainful to navigate, and too disconnected from the development workflow.\nA 2-person Roblox team was losing momentum every time they needed to look up\nan enemy stat, verify a damage formula, or cross-reference loot tables across\na 200+ page GDD, turning a 10-second lookup into a 2-minute context switch\nthat broke creative flow in Roblox Studio.\n",
-      "solution": null,
+      "solution": "The GDD Wiki turns a 30+ page design document into a private, searchable web app with 24 chapters organized into seven logical groups. A Ctrl+K command palette backed by Fuse.js delivers fuzzy, typo-tolerant search with relevance ranking and snippet previews in under 50 milliseconds. Each chapter is a standalone markdown file imported at build time, so updates ship through the same Git push workflow the team already uses for game code — no CMS or database to manage. Clerk authentication with Google sign-in and disabled public sign-up keeps the design decisions visible only to manually provisioned team members.\n",
       "keyFeatures": [],
-      "metrics": [],
+      "metrics": [
+        "Sub-50ms fuzzy search across all 24 chapters via client-side Fuse.js index",
+        "Design rules and stat tables reachable in 2-3 keystrokes from any browser",
+        "Entire app, including all GDD content, ships in a 357 KB gzipped bundle",
+        "Markdown-to-deploy in under 60 seconds via Git push and Vercel auto-deploy"
+      ],
       "priority": 29,
       "dateCompleted": null,
       "slides": [
