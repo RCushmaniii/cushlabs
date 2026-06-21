@@ -121,14 +121,22 @@ const ogLocaleAlternate = locale === "es" ? "en_US" : "es_MX";
         "@context": "https://schema.org",
         "@graph": [
           {
-            "@type": "Organization",
+            "@type": ["Organization", "ProfessionalService"],
             "@id": "https://www.cushlabs.ai/#organization",
             name: "CushLabs.ai",
             url: "https://www.cushlabs.ai",
             description:
               "AI consulting and modern software development for SMBs. Production-ready chatbots, automation, and custom applications.",
             email: "info@cushlabs.ai",
+            telephone: "+523315590572",
+            priceRange: "$$",
             foundingDate: "2025-01-01",
+            address: {
+              "@type": "PostalAddress",
+              addressLocality: "Guadalajara",
+              addressRegion: "Jalisco",
+              addressCountry: "MX",
+            },
             areaServed: [
               { "@type": "Country", name: "United States" },
               { "@type": "Country", name: "Mexico" },

@@ -70,7 +70,7 @@ const iframeSrc = `${DEMO_URL}?language=${locale}`;
       <div class="order-1 lg:order-2">
         <div class="rounded-2xl overflow-hidden shadow-2xl shadow-black/10 dark:shadow-black/40 border border-border w-full" style="height: 520px;">
           <iframe
-            src={iframeSrc}
+            data-src={iframeSrc}
             title={locale === 'es' ? 'Demo del asistente de IA de CushLabs' : 'CushLabs AI assistant demo'}
             class="w-full h-full border-0"
             loading="lazy"
@@ -82,3 +82,39 @@ const iframeSrc = `${DEMO_URL}?language=${locale}`;
     </div>
   </Container>
 </section>
+
+<script>
+  // Defer the cross-origin chat embed until the section is actually on screen.
+  // The embedded chat app autofocuses its input on load; if we render the iframe
+  // src immediately, the browser scrolls the page down to reveal that focused
+  // input — yanking visitors past the hero on first paint. Loading the iframe only
+  // once the user has scrolled to it makes that focus behavior expected instead of
+  // surprising, and avoids pulling a third-party embed before it's needed.
+  const frame = document.querySelector<HTMLIFrameElement>('#demo iframe[data-src]');
+  if (frame) {
+    const load = () => {
+      const src = frame.dataset.src;
+      if (src) {
+        frame.src = src;
+        delete frame.dataset.src;
+      }
+    };
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver(
+        (entries, obs) => {
+          for (const entry of entries) {
+            if (entry.isIntersecting) {
+              load();
+              obs.disconnect();
+              break;
+            }
+          }
+        },
+        { threshold: 0.15 }
+      );
+      io.observe(frame);
+    } else {
+      load();
+    }
+  }
+</script>

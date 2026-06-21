@@ -4,6 +4,7 @@ import Container from "../../components/layout/Container.astro";
 import Section from "../../components/layout/Section.astro";
 import projectsData from "../../data/projects.generated.json";
 import { getProjectDetailOverride } from "../../data/projectDetails";
+import { getEsCardCopy } from "../../data/projectCardsEs";
 
 const projects = projectsData.projects.filter(p => p.priority < 99);
 const allCategories = [...new Set(projects.flatMap(p => p.categories).filter(Boolean))].sort();
@@ -129,10 +130,13 @@ const t = {
         {projects.map((project) => {
           const thumb = getThumbnail(project);
           const detailHref = `/es/projects/${project.name}/`;
-          const tagline = project.tagline || project.summary || project.description || "";
+          const esCard = getEsCardCopy(project.name);
+          const displayTitle = esCard.title ?? project.title;
+          const tagline = esCard.tagline ?? project.tagline ?? project.summary ?? project.description ?? "";
           const category = project.categories[0] || null;
           const techBadges = project.stack.slice(0, 4);
-          const searchText = [project.title, tagline, category, ...project.stack, ...project.tags].filter(Boolean).join(" ").toLowerCase();
+          // Index both the Spanish display copy and the original English so search works in either language.
+          const searchText = [displayTitle, project.title, tagline, project.tagline, category, ...project.stack, ...project.tags].filter(Boolean).join(" ").toLowerCase();
 
           return (
             <article
@@ -147,10 +151,10 @@ const t = {
               <a href={detailHref} class="block">
                 <div class="aspect-[16/9] overflow-hidden bg-gray-100 dark:bg-gray-800 shimmer">
                   {thumb ? (
-                    <img src={thumb} alt={project.title} loading="lazy" width="760" height="428" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 img-fade" onload="this.classList.add('loaded');this.parentElement.classList.remove('shimmer')" />
+                    <img src={thumb} alt={displayTitle} loading="lazy" width="760" height="428" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 img-fade" onload="this.classList.add('loaded');this.parentElement.classList.remove('shimmer')" />
                   ) : (
                     <div class="w-full h-full flex items-center justify-center">
-                      <span class="font-display text-2xl font-bold text-gray-300 dark:text-gray-600">{project.title.slice(0, 2)}</span>
+                      <span class="font-display text-2xl font-bold text-gray-300 dark:text-gray-600">{displayTitle.slice(0, 2)}</span>
                     </div>
                   )}
                 </div>
@@ -180,7 +184,7 @@ const t = {
                 </div>
 
                 <h2 class="font-display text-lg font-bold text-gray-900 dark:text-white mb-1.5 leading-tight">
-                  <a href={detailHref} class="hover:text-cush-orange transition-colors">{project.title}</a>
+                  <a href={detailHref} class="hover:text-cush-orange transition-colors">{displayTitle}</a>
                 </h2>
 
                 <p class="text-sm text-gray-600 dark:text-gray-400 mb-4 line-clamp-2">{tagline}</p>

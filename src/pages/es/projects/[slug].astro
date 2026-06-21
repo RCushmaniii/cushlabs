@@ -3,6 +3,7 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
 import projectsData from "../../../data/projects.generated.json";
 import { t } from "../../../i18n";
 import { getProjectDetailOverride } from "../../../data/projectDetails";
+import { getEsCardCopy } from "../../../data/projectCardsEs";
 
 type Project = (typeof projectsData.projects)[number];
 
@@ -19,6 +20,7 @@ const dict = t(locale);
 const { project } = Astro.props as { project: Project };
 const override = getProjectDetailOverride(project.name);
 const detail = override?.es ?? null;
+const esCard = getEsCardCopy(project.name);
 
 // SEO-optimized title overrides (30-60 chars) for projects where
 // the GitHub title is too long or too short for search snippets
@@ -148,7 +150,7 @@ const relatedProjects = scored.slice(0, 3).map(s => s.project);
           <h1
             class="font-display text-4xl md:text-6xl font-bold text-foreground tracking-tight"
           >
-            {detail?.headline || project.title}
+            {detail?.headline ?? esCard.title ?? project.title}
           </h1>
           <p class="mt-4 text-lg text-muted max-w-3xl">
             {
@@ -491,28 +493,33 @@ const relatedProjects = scored.slice(0, 3).map(s => s.project);
             Proyectos Relacionados
           </h2>
           <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {relatedProjects.map((rp: any) => (
-              <a href={`/es/projects/${rp.name}/`} class="group block rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/50 overflow-hidden hover:border-cush-orange/40 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-                <div class="aspect-[16/10] bg-gray-100 dark:bg-gray-800 overflow-hidden">
-                  <img
-                    src={rp.thumbnail || rp.slides?.[0]?.src || '/images/portfolio/default-card.svg'}
-                    alt={rp.title}
-                    loading="lazy"
-                    width="400"
-                    height="250"
-                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-                <div class="p-5">
-                  <h3 class="font-display font-semibold text-gray-900 dark:text-white group-hover:text-cush-orange transition-colors">
-                    {rp.title}
-                  </h3>
-                  <p class="text-sm text-gray-500 dark:text-gray-400 mt-1 line-clamp-2">
-                    {rp.tagline || rp.description || ''}
-                  </p>
-                </div>
-              </a>
-            ))}
+            {relatedProjects.map((rp: any) => {
+              const card = getEsCardCopy(rp.name);
+              const cardTitle = card.title ?? rp.title;
+              const cardTagline = card.tagline ?? rp.tagline ?? rp.description ?? '';
+              return (
+                <a href={`/es/projects/${rp.name}/`} class="group block rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/50 overflow-hidden hover:border-cush-orange/40 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                  <div class="aspect-[16/10] bg-gray-100 dark:bg-gray-800 overflow-hidden">
+                    <img
+                      src={rp.thumbnail || rp.slides?.[0]?.src || '/images/portfolio/default-card.svg'}
+                      alt={cardTitle}
+                      loading="lazy"
+                      width="400"
+                      height="250"
+                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                  <div class="p-5">
+                    <h3 class="font-display font-semibold text-gray-900 dark:text-white group-hover:text-cush-orange transition-colors">
+                      {cardTitle}
+                    </h3>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mt-1 line-clamp-2">
+                      {cardTagline}
+                    </p>
+                  </div>
+                </a>
+              );
+            })}
           </div>
         </section>
       )}
