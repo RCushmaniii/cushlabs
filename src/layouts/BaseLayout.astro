@@ -226,11 +226,11 @@ const ogLocaleAlternate = locale === "es" ? "en_US" : "es_MX";
     (function() {
       const DEMO_ENABLED = true;
 
-      // Show the floating assistant on every page EXCEPT the homepage.
-      // The homepage already has the inline live demo, so a floating chat there
-      // just duplicates it; everywhere else this is the persistent site assistant.
-      const isHome = pathname === '/' || pathname === '/es/' || pathname === '/es';
-      if (!DEMO_ENABLED || isHome) return;
+      // The floating assistant is the single chat surface — shown on every page,
+      // including the homepage. In-page CTAs (the hero "Try the Live Chatbot"
+      // button and the "Try It Right Now" card) open it via [data-open-chat];
+      // opening it never moves the page because it's a fixed-position overlay.
+      if (!DEMO_ENABLED) return;
 
       // CushLabs bot served by the Converso SaaS (one tenant per deploy).
       const DEMO_URL = 'https://www.soyconverso.com/embed/chat';
@@ -350,6 +350,17 @@ const ogLocaleAlternate = locale === "es" ? "en_US" : "es_MX";
       let iframeLoaded = false;
 
       function openChat() {
+        // The chat is a fixed-position overlay, so opening it must not move the
+        // page. The embed autofocuses its input on load, which can nudge scroll;
+        // pin the page position for ~1s to absorb that.
+        const sx = window.scrollX, sy = window.scrollY;
+        let pins = 0;
+        const pin = () => {
+          if (window.scrollX !== sx || window.scrollY !== sy) window.scrollTo(sx, sy);
+          if (pins++ < 60) requestAnimationFrame(pin);
+        };
+        requestAnimationFrame(pin);
+
         if (!iframeLoaded) {
           iframe.src = DEMO_URL + '?language=' + lang;
           iframeLoaded = true;
@@ -364,6 +375,14 @@ const ogLocaleAlternate = locale === "es" ? "en_US" : "es_MX";
       }
 
       btn.addEventListener('click', openChat);
+      // In-page CTAs marked [data-open-chat] open this same widget, so the page
+      // never embeds a second chat in its flow.
+      document.querySelectorAll('[data-open-chat]').forEach((el) => {
+        el.addEventListener('click', (e) => {
+          e.preventDefault();
+          openChat();
+        });
+      });
       // The embedded SaaS chat closes itself by posting 'close-chat' to the parent.
       window.addEventListener('message', (event) => {
         if (event.origin === 'https://www.soyconverso.com' && event.data === 'close-chat') {
@@ -371,9 +390,9 @@ const ogLocaleAlternate = locale === "es" ? "en_US" : "es_MX";
         }
       });
 
-      // Launcher only — the widget stays a collapsed icon and opens on click.
-      // (No auto-open: the homepage already has an inline live demo, and an
-      // auto-popping second chat read as two chatbots side by side.)
+      // Launcher only — the widget stays a collapsed icon and opens on click
+      // (or via an in-page [data-open-chat] CTA). No auto-open: it shouldn't
+      // pop open and cover content before the visitor asks for it.
     })();
     </script>
   </body>

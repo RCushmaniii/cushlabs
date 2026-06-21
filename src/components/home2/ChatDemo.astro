@@ -7,8 +7,6 @@ interface Props {
 
 const { locale } = Astro.props;
 
-const DEMO_URL = 'https://www.soyconverso.com/embed/chat';
-
 const content = {
   en: {
     eyebrow: 'LIVE DEMO',
@@ -35,7 +33,6 @@ const content = {
 };
 
 const t = content[locale];
-const iframeSrc = `${DEMO_URL}?language=${locale}`;
 ---
 
 <section id="demo" aria-label="Live chatbot demo" class="scroll-mt-24 py-20 md:py-28 bg-surface/40">
@@ -72,20 +69,17 @@ const iframeSrc = `${DEMO_URL}?language=${locale}`;
         </p>
       </div>
 
-      <!-- Right: live chat — click-to-load facade. The cross-origin embed
-           autofocuses its input on load and scrolls the page to it; loading it
-           only on an explicit click keeps that out of the "scroll to demo" path. -->
+      <!-- Right: invitation card. "Start chatting" opens the single floating
+           assistant (a fixed-position overlay), rather than embedding a chat in
+           the page flow — so opening it never moves the page. -->
       <div class="order-1 lg:order-2">
         <div
-          id="cl-demo-shell"
           class="rounded-2xl overflow-hidden shadow-2xl shadow-black/10 dark:shadow-black/40 border border-border w-full"
           style="height: 520px;"
-          data-src={iframeSrc}
-          data-title={locale === 'es' ? 'Asistente de IA de CushLabs' : 'CushLabs AI assistant'}
         >
           <button
-            id="cl-demo-start"
             type="button"
+            data-open-chat
             class="group w-full h-full flex flex-col items-center justify-center gap-4 px-8 text-center bg-white dark:bg-cush-gray-900 cursor-pointer"
           >
             <span class="flex items-center justify-center w-16 h-16 rounded-full bg-cush-orange/10 text-cush-orange transition-transform group-hover:scale-105">
@@ -103,24 +97,3 @@ const iframeSrc = `${DEMO_URL}?language=${locale}`;
     </div>
   </Container>
 </section>
-
-<script>
-  // Load the cross-origin chat embed only when the visitor explicitly starts it.
-  // The embed autofocuses its input on load and scrolls the parent page to reach
-  // it; keeping it unloaded until click means the hero "scroll to demo" lands
-  // cleanly on the section top instead of being yanked down to the chat input.
-  const shell = document.getElementById('cl-demo-shell');
-  const startBtn = document.getElementById('cl-demo-start');
-  if (shell && startBtn) {
-    startBtn.addEventListener('click', () => {
-      const src = shell.dataset.src;
-      if (!src) return;
-      const iframe = document.createElement('iframe');
-      iframe.src = src;
-      iframe.title = shell.dataset.title || 'AI assistant';
-      iframe.className = 'w-full h-full border-0';
-      iframe.allow = 'clipboard-write';
-      shell.replaceChildren(iframe);
-    });
-  }
-</script>
