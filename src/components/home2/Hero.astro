@@ -136,6 +136,31 @@ const t = content[locale];
   </a>
 </section>
 
+<script>
+  // The scroll chevron jumps to the live-demo section. That section's cross-origin
+  // chat iframe autofocuses its input on load, which yanks the page down past the
+  // section to the input. Take over the scroll: land at the section top (below the
+  // sticky header) and snap back if the autofocus overshoots.
+  const chevron = document.querySelector<HTMLAnchorElement>('a[href="#demo"]');
+  const target = document.getElementById('demo');
+  if (chevron && target) {
+    chevron.addEventListener('click', (e) => {
+      e.preventDefault();
+      const header = document.querySelector<HTMLElement>('header');
+      const offset = (header?.offsetHeight ?? 72) + 16;
+      const destOf = () => Math.max(0, target.getBoundingClientRect().top + window.scrollY - offset);
+      window.scrollTo({ top: destOf(), behavior: 'smooth' });
+      let frames = 0;
+      const guard = () => {
+        const d = destOf();
+        if (window.scrollY > d + 40) window.scrollTo({ top: d, behavior: 'auto' });
+        if (frames++ < 110) requestAnimationFrame(guard); // ~1.8s
+      };
+      requestAnimationFrame(guard);
+    });
+  }
+</script>
+
 <style>
   @keyframes fade-in {
     from { opacity: 0; }
