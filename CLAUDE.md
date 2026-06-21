@@ -341,6 +341,24 @@ node scripts/list-portfolio.mjs --json    # machine-readable, pipe to jq
 
 Per-repo URLs surfaced: portfolio page (`/projects/<name>/`), GitHub, demo, live, homepage. If the data looks stale, run `npm run generate-projects` first to refresh it.
 
+### Listing ALL repos & their URLs (full GitHub inventory)
+
+`list-portfolio.mjs` (above) only covers projects that made it into the portfolio data. To inventory **every** repo on the GitHub account — including ones with no PORTFOLIO.md, `portfolio_enabled: false`, experiments, starters, backend/infra, and archived repos — use `scripts/list-all-repos.mjs`. It pulls the full repo list **live** via the `gh` CLI and merges in portfolio page/demo URLs for the ones that are published.
+
+```bash
+node scripts/list-all-repos.mjs          # grouped table: posted / hidden / not-listed
+node scripts/list-all-repos.mjs --csv     # writes all-repos-urls.csv (gitignored)
+node scripts/list-all-repos.mjs --json    # machine-readable
+```
+
+- **posted** = live on `/portfolio` (in the JSON, priority < 99).
+- **hidden** = synced into the JSON but priority >= 99 (no listing tile).
+- **not-listed** = not in the portfolio at all (no PORTFOLIO.md, or `portfolio_enabled: false`).
+
+Per-repo fields: name, status, archived, visibility, GitHub URL, best live URL (portfolio demo/live → GitHub homepage fallback), homepage, portfolio page. Requires `gh` authenticated (`gh auth status`); uses live GitHub data, so no refresh step is needed.
+
+**Which one to use:** `list-portfolio.mjs` answers "what's on the site"; `list-all-repos.mjs` answers "everything I own" (it's the superset — currently 65 repos vs 38 in the portfolio).
+
 ### Manual Three-Step Sync (legacy / debugging)
 
 If you need to run individual steps for debugging:
