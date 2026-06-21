@@ -4,6 +4,34 @@ Entries are newest-first. Each entry documents one Claude Code working session.
 
 ---
 
+## Session: 2026-06-20
+
+### Accomplished
+
+- Added `scripts/list-portfolio.mjs` — read-only tool that lists every portfolio project and its URLs (portfolio page / GitHub / demo / live / homepage) from the committed `projects.generated.json`, no GitHub API calls. Modes: default table (POSTED vs HIDDEN), `--csv`, `--json`.
+- Refreshed `src/data/projects.generated.json` via `pnpm generate-projects` — now **38 projects** (was 34), 9 featured, 27 excluded by `portfolio_enabled: false`. Auto-filed sync issue #109 (1 data-quality warning).
+- Documented the new tool in `CLAUDE.md` (Portfolio Pipeline → "Listing portfolio repos & their URLs") and gitignored the generated `portfolio-urls.{csv,json}`.
+
+### Decisions Made
+
+- Best programmatic source for "what's in the portfolio + URLs" is the local `projects.generated.json`, not the GitHub API — it carries the curated priority/URL metadata the API lacks.
+- Three repo buckets clarified: POSTED (priority < 99), HIDDEN (synced but priority ≥ 99), EXCLUDED (`portfolio_enabled: false`, dropped before JSON — found via PORTFOLIO.md grep).
+
+### Immediate Next Steps
+
+- [ ] Optional: triage portfolio sync issue #109 (the 1 flagged data gap).
+- [ ] Optional: flesh out thin detail pages (e.g. cushlabs-messenger: 1 screenshot, no solution/metrics).
+
+### Technical Debt
+
+- Two session-log files exist (`SESSION_LOG.md` active, `SESSION-LOG.md` stale 2026-05-04) — consider removing the hyphen one.
+
+### Open Questions / Blockers
+
+- None.
+
+---
+
 ## Session: 2026-06-09
 
 ### Accomplished

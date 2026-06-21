@@ -14,6 +14,10 @@ dist/
 .DS_Store
 Thumbs.db
 
+# generated portfolio listings (from scripts/list-portfolio.mjs)
+portfolio-urls.csv
+portfolio-urls.json
+
 # IDE
 .vscode/
 .idea/
