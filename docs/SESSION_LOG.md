@@ -11,22 +11,25 @@ Entries are newest-first. Each entry documents one Claude Code working session.
 - Verified portfolio data layer is in sync (validated 64 sibling PORTFOLIO.md files, 0 corruption, 0 missing thumbnails); confirmed `generate-projects` produced only timestamp/byte-count churn — no real drift.
 - Added `live_url: https://marketsignal.cushlabs.ai` to cushlabs-marketsignal PORTFOLIO.md (was empty → card had no Live button). Verified URL live (HTTP 200, public landing). Shipped via marketsignal PR #207 (squash-merged to main) + cushlabs PR #112 (regenerated `projects.generated.json`, merged).
 - Recorded 9 deployment URLs into internal `all-repos-urls.csv`: 1 public promotion (MarketSignal) + 8 admin/stealth/infra URLs into a new `additionalUrls` column, each mapped to the correct repo via repo configs.
-- Security: gitignored `all-repos-urls.csv` (held stealth/admin URLs, was one `git add` from leaking into the public portfolio repo).
+- Security: gitignored `all-repos-urls.csv` (held stealth/admin URLs, was one `git add` from leaking into the public portfolio repo); later deduped the entry into the listings block (`549e875`).
+- Patched 6 of 7 Dependabot alerts (both HIGH) via PR #113: astro ^6.1.8→^6.4.8 (SSRF + XSS), plus `overrides` for vite ^7.3.5 (fs.deny + NTLM), qs ^6.15.2 (DoS), @opentelemetry/core ^2.8.0 (baggage). Verified: build 103 pages + SEO gate, 20/20 smoke tests, `npm audit` high 1→0.
 
 ### Decisions Made
 
 - Only MarketSignal promoted to a public Live URL: the other 8 are admin panels (admin.cushlabs.ai, /admin paths), stealth deploys (connect/app.cushlabs.ai, admin.nyenglishteacher.com), or internal infra (vitals.cushlabs.ai). Publishing them would be a brand/security problem.
 - Did NOT promote `ny-ai-chatbot.vercel.app/demo` — the project already has a better custom-domain Live URL; the raw vercel.app would be a downgrade.
 - Logged to `docs/SESSION_LOG.md` (the actively maintained file) rather than the stale `docs/SESSION-LOG.md`.
+- Left esbuild at 0.27.7 (low, dev-only): its 0.28.1 fix is outside vite 7.3.5's `esbuild: ^0.27.0` peer range, so forcing it would break the build for a non-deployed issue. Should be dismissed in GitHub as "won't fix — dev-only."
 
 ### Immediate Next Steps
 
-- [ ] Triage 7 open Dependabot alerts on cushlabs (2 high: astro SSRF, vite fs.deny bypass). Confirm static-site/dev-only scope and dismiss-or-bump per the established pattern in CLAUDE.md.
+- [ ] Dismiss the lone remaining esbuild Dependabot alert (low, dev-only) in GitHub — can't be done via CLI with current perms.
 - [ ] Consolidate the two divergent session-log files (`SESSION_LOG.md` vs `SESSION-LOG.md`) — pick one, migrate, and align global + repo CLAUDE.md.
 
 ### Technical Debt
 
 - Two session-log files coexist with conflicting conventions (underscore = active per global skill; hyphen = older rich tech-debt doc per repo CLAUDE.md). Needs a decision + merge.
+- `js-yaml` (via `gray-matter`) flagged by `npm audit` (moderate) but not Dependabot — build-time only, parses trusted PORTFOLIO.md files. Low risk; revisit if gray-matter ships a patched js-yaml.
 
 ### Open Questions / Blockers
 
