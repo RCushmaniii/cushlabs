@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-21T22:12:59.872Z",
+  "generatedAt": "2026-06-21T22:36:18.469Z",
   "count": 36,
   "projects": [
     {
@@ -58,7 +58,7 @@
       "tagline": "Bilingual AI chatbot platform for service businesses — handles front desk and sales conversations 24/7",
       "thumbnail": "https://cdn.cushlabs.ai/ai-chatbot-saas/images/portfolio/ai-chatbot-saas-thumb.webp",
       "problem": "Service businesses in bilingual markets lose leads outside business hours\nand can't afford round-the-clock bilingual staff. Generic chatbots hallucinate\nanswers because they don't know the business. This platform gives each tenant\na knowledge-grounded AI assistant that answers accurately in English or Spanish,\nqualifies leads, and hands off to humans when needed.\n",
-      "solution": null,
+      "solution": "A deterministic RAG pipeline retrieves verified content from each tenant's own\nknowledge base and injects it into the prompt, so answers are grounded in facts and\ncite their sources instead of hallucinating. Native bilingual generation detects the\ncustomer's language on the first message and responds naturally in English or Spanish —\nnot auto-translation. A self-service admin dashboard lets non-technical owners ingest\ncontent, design conversation playbooks visually, manage leads, and handle billing,\nwhile a single embeddable script tag drops the assistant into any website.\n",
       "keyFeatures": [
         "Multi-tenant SaaS with full data isolation per business",
         "RAG-powered answers grounded in verified business content",
@@ -67,54 +67,59 @@
         "Stripe billing with subscription management and usage tracking",
         "One-tag embeddable widget for any website"
       ],
-      "metrics": [],
+      "metrics": [
+        "24/7 bilingual lead capture — recovers the 30-50% of inquiries that arrive after hours",
+        "Knowledge-grounded answers with source citations — eliminates chatbot hallucination on pricing and services",
+        "Zero-developer setup — owners configure knowledge, playbooks, and billing entirely self-service",
+        "Sub-second time-to-first-token via streaming chat from GPT-4o"
+      ],
       "priority": 1,
       "dateCompleted": null,
       "slides": [
         {
           "src": "https://cdn.cushlabs.ai/ai-chatbot-saas/images/portfolio/converso-01.webp",
-          "altEn": "Converso AI — Bilingual AI Front Desk & Sales Assistant",
-          "altEs": "Converso AI — Bilingual AI Front Desk & Sales Assistant"
+          "altEn": "Converso AI dashboard showing the bilingual AI front desk assistant with a live customer conversation in progress.",
+          "altEs": "Panel de Converso AI que muestra el asistente de recepción con IA bilingüe con una conversación de cliente en curso."
         },
         {
           "src": "https://cdn.cushlabs.ai/ai-chatbot-saas/images/portfolio/converso-02.webp",
-          "altEn": "Converso AI — Bilingual AI Front Desk & Sales Assistant",
-          "altEs": "Converso AI — Bilingual AI Front Desk & Sales Assistant"
+          "altEn": "The embedded chat widget answering a customer question accurately in English, grounded in the business's own knowledge base.",
+          "altEs": "El widget de chat integrado responde con precisión la pregunta de un cliente en inglés, basándose en la base de conocimiento del propio negocio."
         },
         {
           "src": "https://cdn.cushlabs.ai/ai-chatbot-saas/images/portfolio/converso-03.webp",
-          "altEn": "Converso AI — Bilingual AI Front Desk & Sales Assistant",
-          "altEs": "Converso AI — Bilingual AI Front Desk & Sales Assistant"
+          "altEn": "The chat assistant responding to the same question in Spanish, demonstrating native bilingual language detection.",
+          "altEs": "El asistente de chat responde la misma pregunta en español, mostrando la detección de idioma bilingüe nativa."
         },
         {
           "src": "https://cdn.cushlabs.ai/ai-chatbot-saas/images/portfolio/converso-04.webp",
-          "altEn": "Converso AI — Bilingual AI Front Desk & Sales Assistant",
-          "altEs": "Converso AI — Bilingual AI Front Desk & Sales Assistant"
+          "altEn": "Knowledge base ingestion screen where a business owner uploads documents and scrapes their website to train the assistant.",
+          "altEs": "Pantalla de carga de la base de conocimiento donde el dueño del negocio sube documentos y rastrea su sitio web para entrenar al asistente."
         },
         {
           "src": "https://cdn.cushlabs.ai/ai-chatbot-saas/images/portfolio/converso-05.webp",
-          "altEn": "Converso AI — Bilingual AI Front Desk & Sales Assistant",
-          "altEs": "Converso AI — Bilingual AI Front Desk & Sales Assistant"
+          "altEn": "The visual playbook builder built on React Flow, with message, question, condition, and handoff nodes connected into a conversation flow.",
+          "altEs": "El constructor visual de guiones hecho con React Flow, con nodos de mensaje, pregunta, condición y transferencia conectados en un flujo de conversación."
         },
         {
           "src": "https://cdn.cushlabs.ai/ai-chatbot-saas/images/portfolio/converso-06.webp",
-          "altEn": "Converso AI — Bilingual AI Front Desk & Sales Assistant",
-          "altEs": "Converso AI — Bilingual AI Front Desk & Sales Assistant"
+          "altEn": "Lead management view showing captured contacts with scoring and tagging from automated conversations.",
+          "altEs": "Vista de gestión de prospectos que muestra los contactos capturados con calificación y etiquetas de las conversaciones automatizadas."
         },
         {
           "src": "https://cdn.cushlabs.ai/ai-chatbot-saas/images/portfolio/converso-07.webp",
-          "altEn": "Converso AI — Bilingual AI Front Desk & Sales Assistant",
-          "altEs": "Converso AI — Bilingual AI Front Desk & Sales Assistant"
+          "altEn": "Live chat queue where a human agent takes over a high-intent conversation handed off by the AI assistant.",
+          "altEs": "Cola de chat en vivo donde un agente humano retoma una conversación de alta intención transferida por el asistente con IA."
         },
         {
           "src": "https://cdn.cushlabs.ai/ai-chatbot-saas/images/portfolio/converso-08.webp",
-          "altEn": "Converso AI — Bilingual AI Front Desk & Sales Assistant",
-          "altEs": "Converso AI — Bilingual AI Front Desk & Sales Assistant"
+          "altEn": "Stripe billing and subscription management screen with usage tracking for messages and knowledge base pages per tenant.",
+          "altEs": "Pantalla de facturación y gestión de suscripciones con Stripe, con seguimiento de uso de mensajes y páginas de la base de conocimiento por cliente."
         },
         {
           "src": "https://cdn.cushlabs.ai/ai-chatbot-saas/images/portfolio/converso-09.webp",
-          "altEn": "Converso AI — Bilingual AI Front Desk & Sales Assistant",
-          "altEs": "Converso AI — Bilingual AI Front Desk & Sales Assistant"
+          "altEn": "The one-tag embeddable widget configured from the admin panel and dropped into a sample business website.",
+          "altEs": "El widget integrable de una sola etiqueta configurado desde el panel de administración e insertado en un sitio web de negocio de ejemplo."
         }
       ],
       "videoUrl": "https://cdn.cushlabs.ai/ai-chatbot-saas/video/converso-brief.mp4",
@@ -179,7 +184,7 @@
       },
       "stars": 1,
       "forks": 0,
-      "lastPushed": "2026-06-17T20:40:14Z",
+      "lastPushed": "2026-06-21T22:25:12Z",
       "createdAt": "2025-11-23T00:24:28Z",
       "isFeatured": true,
       "isArchived": false,
@@ -317,7 +322,7 @@
       "tagline": "The 24/7 bilingual AI assistant for Facebook Messenger — built from your business's own content, so no lead goes cold.",
       "thumbnail": "https://cdn.cushlabs.ai/cushlabs-messenger/images/thumb.webp",
       "problem": "Businesses on Facebook get a steady stream of Messenger questions — pricing, availability, hours,\nservices — and in bilingual markets like Mexico they arrive in both Spanish and English. No owner can\nwatch the inbox 24/7, generic auto-replies quietly lose the lead while the prospect keeps shopping, and\noff-the-shelf chatbots sound robotic and invent answers they can't stand behind. The result is missed\nconversations, slow first responses, and revenue that walks to whoever replied first.\n",
-      "solution": null,
+      "solution": "A single multi-tenant Cloudflare Worker serves every client through page_id routing, with\nno per-client deployments to maintain. RAG grounded in each client's own content keeps answers\naccurate and on-brand, while native bilingual handling detects English or Spanish and replies\nwithout manual switching. When a conversation needs a person, the assistant hands off gracefully\nand then resumes automatically — and onboarding a new client takes one CLI command and one URL.\n",
       "keyFeatures": [
         "24/7 instant replies to customer inquiries on Facebook Messenger — pricing, availability, hours, services",
         "Native bilingual EN/ES with automatic language detection — no manual switching mid-conversation",
@@ -325,7 +330,12 @@
         "Graceful human handover when a conversation needs a person, then automatic resume",
         "One multi-tenant Cloudflare Worker serves every client via page_id routing — no per-client deployments"
       ],
-      "metrics": [],
+      "metrics": [
+        "New client onboards in under 60 seconds of operator time — one CLI command, one URL",
+        "Sub-100ms typical survey persistence latency via edge KV writes",
+        "Zero per-client deployments — a single Worker scales to every client through page_id routing",
+        "Structured, schema-validated voice profiles replace lossy email-and-spreadsheet onboarding"
+      ],
       "priority": 3,
       "dateCompleted": null,
       "slides": [
@@ -492,53 +502,53 @@
       "slides": [
         {
           "src": "https://cdn.cushlabs.ai/cushlabs-ai-voice-agent/portfolio/voice-cushlabs-01.webp",
-          "altEn": "AI Voice Agent Platform",
-          "altEs": "AI Voice Agent Platform"
+          "altEn": "CushLabs AI Voice Agent landing page at voice.cushlabs.ai showing the demo agent lineup",
+          "altEs": "Página principal del Agente de Voz con IA de CushLabs en voice.cushlabs.ai que muestra la lista de agentes de demostración"
         },
         {
           "src": "https://cdn.cushlabs.ai/cushlabs-ai-voice-agent/portfolio/voice-cushlabs-02.webp",
-          "altEn": "AI Voice Agent Platform",
-          "altEs": "AI Voice Agent Platform"
+          "altEn": "Clara lead-qualification voice agent demo screen with live call controls",
+          "altEs": "Pantalla de demostración del agente de voz Clara para calificación de prospectos con controles de llamada en vivo"
         },
         {
           "src": "https://cdn.cushlabs.ai/cushlabs-ai-voice-agent/portfolio/voice-cushlabs-03.webp",
-          "altEn": "AI Voice Agent Platform",
-          "altEs": "AI Voice Agent Platform"
+          "altEn": "James appointment-booking agent showing real-time Google Calendar availability during a call",
+          "altEs": "Agente James de reservación de citas que muestra la disponibilidad de Google Calendar en tiempo real durante una llamada"
         },
         {
           "src": "https://cdn.cushlabs.ai/cushlabs-ai-voice-agent/portfolio/voice-cushlabs-04.webp",
-          "altEn": "AI Voice Agent Platform",
-          "altEs": "AI Voice Agent Platform"
+          "altEn": "Sophia med spa front desk voice agent answering FAQs and booking treatments",
+          "altEs": "Agente de voz Sophia de recepción de spa médico que responde preguntas frecuentes y agenda tratamientos"
         },
         {
           "src": "https://cdn.cushlabs.ai/cushlabs-ai-voice-agent/portfolio/voice-cushlabs-05.webp",
-          "altEn": "AI Voice Agent Platform",
-          "altEs": "AI Voice Agent Platform"
+          "altEn": "Mike home services dispatch agent capturing a service request mid-conversation",
+          "altEs": "Agente Mike de despacho de servicios para el hogar que captura una solicitud de servicio durante la conversación"
         },
         {
           "src": "https://cdn.cushlabs.ai/cushlabs-ai-voice-agent/portfolio/voice-cushlabs-06.webp",
-          "altEn": "AI Voice Agent Platform",
-          "altEs": "AI Voice Agent Platform"
+          "altEn": "David outbound real estate agent placing a Twilio PSTN call to qualify a buyer",
+          "altEs": "Agente saliente de bienes raíces David realizando una llamada por Twilio PSTN para calificar a un comprador"
         },
         {
           "src": "https://cdn.cushlabs.ai/cushlabs-ai-voice-agent/portfolio/voice-cushlabs-07.webp",
-          "altEn": "AI Voice Agent Platform",
-          "altEs": "AI Voice Agent Platform"
+          "altEn": "Live call interface showing the Vapi voice agent status and transcript in progress",
+          "altEs": "Interfaz de llamada en vivo que muestra el estado del agente de voz Vapi y la transcripción en curso"
         },
         {
           "src": "https://cdn.cushlabs.ai/cushlabs-ai-voice-agent/portfolio/voice-cushlabs-08.webp",
-          "altEn": "AI Voice Agent Platform",
-          "altEs": "AI Voice Agent Platform"
+          "altEn": "Mock MLS property lookup results for the real estate demo with New Jersey listings",
+          "altEs": "Resultados de búsqueda de propiedades de MLS simulado para la demostración de bienes raíces con propiedades en Nueva Jersey"
         },
         {
           "src": "https://cdn.cushlabs.ai/cushlabs-ai-voice-agent/portfolio/voice-cushlabs-09.webp",
-          "altEn": "AI Voice Agent Platform",
-          "altEs": "AI Voice Agent Platform"
+          "altEn": "Appointment confirmation booked into Google Calendar with an auto-generated Google Meet link",
+          "altEs": "Confirmación de cita agendada en Google Calendar con un enlace de Google Meet generado automáticamente"
         },
         {
           "src": "https://cdn.cushlabs.ai/cushlabs-ai-voice-agent/portfolio/voice-cushlabs-10.webp",
-          "altEn": "AI Voice Agent Platform",
-          "altEs": "AI Voice Agent Platform"
+          "altEn": "Bilingual EN/ES interface toggle on the voice agent platform",
+          "altEs": "Selector de interfaz bilingüe inglés/español en la plataforma del agente de voz"
         }
       ],
       "videoUrl": "https://cdn.cushlabs.ai/cushlabs-ai-voice-agent/video/voice-cushlabs-brief.mp4",
@@ -622,14 +632,19 @@
       "tagline": "Google Maps competitor tracking — weekly reports delivered straight to WhatsApp",
       "thumbnail": "https://cdn.cushlabs.ai/cushlabs-marketsignal/portfolio/marketsignal/thumb-en.webp",
       "problem": "Local businesses in Mexico have no affordable way to systematically track their\nGoogle Maps rankings, monitor competitor activity, or receive actionable insights.\nThey rely on gut instinct or expensive enterprise tools that don't support the\nMexican market. MarketSignal fills that gap with AI-powered weekly reports\ndelivered directly to WhatsApp.\n",
-      "solution": null,
+      "solution": "MarketSignal captures weekly snapshots of Google Maps position, review count,\nand rating for every tracked location, then surfaces week-over-week deltas\nautomatically. Claude (Sonnet) turns that raw delta data into plain-language\ninsight and one specific, high-impact action item per location — not just a\ndashboard of charts. Reports are formatted for WhatsApp readability and land\nin the channel where Mexican business owners already operate, so insights get\nread instead of ignored.\n",
       "keyFeatures": [
         "Weekly competitive intelligence reports for 3-5 pilot clients",
         "Week-over-week ranking and review delta tracking per location",
         "AI-generated action items with specific, high-impact recommendations",
         "WhatsApp delivery — reports land where clients already communicate"
       ],
-      "metrics": [],
+      "metrics": [
+        "Structured competitive intelligence multi-location businesses previously had no access to",
+        "One actionable recommendation per week cuts decision fatigue for owners",
+        "WhatsApp delivery achieves higher read rates than email-based report alternatives",
+        "Phased architecture validates willingness-to-pay before automation is built"
+      ],
       "priority": 4,
       "dateCompleted": null,
       "slides": [
@@ -992,7 +1007,7 @@
       "tagline": "AI-powered species identification for conservation researchers in Mexico — photo in, verified species data out",
       "thumbnail": "https://cdn.cushlabs.ai/biojalisco-species-id/images/portfolio/biojalisco-thumb.webp",
       "problem": "Conservation biologists in Jalisco encounter thousands of species during fieldwork\nbut lack rapid identification tools with verified data. GPT-4o Vision alone\nfrequently misidentifies species without geographic context. No existing tool\ncombines AI vision, regional species data, global taxonomy verification, and\nMexico-specific conservation status (NOM-059, endemic classification) in one flow.\n",
-      "solution": null,
+      "solution": "BioJalisco chains five independent data sources into one identification flow.\nIt extracts GPS coordinates from photo EXIF metadata (stripping them for\nprivacy), reverse geocodes the exact location, and feeds that context to\nGPT-4o Vision so identifications are grounded in regional reality instead of\nglobal visual lookalikes. GBIF then overlays verified taxonomy and IUCN status,\nwhile CONABIO/EncicloVida adds Mexico-specific data — endemic classification,\nNOM-059 protection, and indigenous-language names. Verified-data badges keep\nauthoritative sources clearly separated from AI-generated content, and graceful\ndegradation lets the app run on just an OpenAI key.\n",
       "keyFeatures": [
         "Five-API pipeline: iNaturalist context + GPT-4o Vision + GBIF verification + EncicloVida/CONABIO enrichment + Nominatim reverse geocoding",
         "EXIF GPS extraction from photo metadata for precise location-aware identification (proven: corrected Broad-billed Hummingbird to Cinnamon Hummingbird with accurate coordinates)",
@@ -1003,59 +1018,64 @@
         "Bilingual (EN/ES) with dark/light theme, community observation gallery, and EXIF privacy stripping",
         "Graceful degradation: works with just an OpenAI key, enriched with optional services"
       ],
-      "metrics": [],
+      "metrics": [
+        "EXIF-based location proven to correct real misidentifications (Broad-billed → Cinnamon Hummingbird)",
+        "Verified taxonomy and IUCN status sourced from GBIF and CONABIO, not AI guesswork",
+        "Dual-mode interface serves both casual explorers and working scientists from one result",
+        "Production deployment runs on any camera phone with zero-config minimum setup (OpenAI key only)"
+      ],
       "priority": 6,
       "dateCompleted": null,
       "slides": [
         {
           "src": "https://cdn.cushlabs.ai/biojalisco-species-id/images/portfolio/biojalisco-slide-01.webp",
-          "altEn": "BioJalisco Species Identifier",
-          "altEs": "BioJalisco Species Identifier"
+          "altEn": "BioJalisco home screen with drag-and-drop photo upload for species identification",
+          "altEs": "Pantalla de inicio de BioJalisco con carga de fotos por arrastrar y soltar para identificar especies"
         },
         {
           "src": "https://cdn.cushlabs.ai/biojalisco-species-id/images/portfolio/biojalisco-slide-02.webp",
-          "altEn": "BioJalisco Species Identifier",
-          "altEs": "BioJalisco Species Identifier"
+          "altEn": "Species identification result showing the identified animal with common and scientific names",
+          "altEs": "Resultado de identificación de especie mostrando el animal identificado con nombre común y científico"
         },
         {
           "src": "https://cdn.cushlabs.ai/biojalisco-species-id/images/portfolio/biojalisco-slide-03.webp",
-          "altEn": "BioJalisco Species Identifier",
-          "altEs": "BioJalisco Species Identifier"
+          "altEn": "Explore mode tabs — About, Habitat and Range, and Similar Species for casual users",
+          "altEs": "Pestañas del modo Explorar — Acerca de, Hábitat y distribución, y Especies similares para usuarios casuales"
         },
         {
           "src": "https://cdn.cushlabs.ai/biojalisco-species-id/images/portfolio/biojalisco-slide-04.webp",
-          "altEn": "BioJalisco Species Identifier",
-          "altEs": "BioJalisco Species Identifier"
+          "altEn": "Research mode taxonomy tab with verified GBIF classification data",
+          "altEs": "Pestaña de taxonomía del modo Investigación con datos de clasificación verificados de GBIF"
         },
         {
           "src": "https://cdn.cushlabs.ai/biojalisco-species-id/images/portfolio/biojalisco-slide-05.webp",
-          "altEn": "BioJalisco Species Identifier",
-          "altEs": "BioJalisco Species Identifier"
+          "altEn": "Conservation tab showing IUCN Red List status and Mexico's NOM-059 protection level",
+          "altEs": "Pestaña de conservación mostrando el estatus de la Lista Roja de la UICN y el nivel de protección NOM-059 de México"
         },
         {
           "src": "https://cdn.cushlabs.ai/biojalisco-species-id/images/portfolio/biojalisco-slide-06.webp",
-          "altEn": "BioJalisco Species Identifier",
-          "altEs": "BioJalisco Species Identifier"
+          "altEn": "Data Sources panel with location metadata, GBIF match data, and EncicloVida enrichment",
+          "altEs": "Panel de Fuentes de datos con metadatos de ubicación, datos de coincidencia de GBIF y enriquecimiento de EncicloVida"
         },
         {
           "src": "https://cdn.cushlabs.ai/biojalisco-species-id/images/portfolio/biojalisco-slide-07.webp",
-          "altEn": "BioJalisco Species Identifier",
-          "altEs": "BioJalisco Species Identifier"
+          "altEn": "EXIF GPS extraction and reverse-geocoded location showing state, municipality, and city",
+          "altEs": "Extracción de GPS desde EXIF y ubicación geocodificada mostrando estado, municipio y ciudad"
         },
         {
           "src": "https://cdn.cushlabs.ai/biojalisco-species-id/images/portfolio/biojalisco-slide-08.webp",
-          "altEn": "BioJalisco Species Identifier",
-          "altEs": "BioJalisco Species Identifier"
+          "altEn": "Verified-data badges distinguishing authoritative sources from AI-generated content",
+          "altEs": "Insignias de datos verificados que distinguen las fuentes autorizadas del contenido generado por IA"
         },
         {
           "src": "https://cdn.cushlabs.ai/biojalisco-species-id/images/portfolio/biojalisco-slide-09.webp",
-          "altEn": "BioJalisco Species Identifier",
-          "altEs": "BioJalisco Species Identifier"
+          "altEn": "Community observation gallery with featured species submitted by researchers",
+          "altEs": "Galería de observaciones de la comunidad con especies destacadas enviadas por investigadores"
         },
         {
           "src": "https://cdn.cushlabs.ai/biojalisco-species-id/images/portfolio/biojalisco-slide-10.webp",
-          "altEn": "BioJalisco Species Identifier",
-          "altEs": "BioJalisco Species Identifier"
+          "altEn": "Bilingual interface with dark and light theme support for the research team",
+          "altEs": "Interfaz bilingüe con soporte para tema oscuro y claro para el equipo de investigación"
         }
       ],
       "videoUrl": "https://cdn.cushlabs.ai/biojalisco-species-id/video/biojalisco-brief.mp4",
@@ -1121,13 +1141,13 @@
       "status": "Production",
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 253475,
+        "TypeScript": 284784,
         "CSS": 1268,
         "JavaScript": 486
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-06-21T21:54:58Z",
+      "lastPushed": "2026-06-21T22:25:08Z",
       "createdAt": "2026-03-17T18:08:51Z",
       "isFeatured": false,
       "isArchived": false,
@@ -1259,7 +1279,7 @@
       "tagline": "Clone your brand voice once — AI writes like you across every channel, no drift",
       "thumbnail": "https://cdn.cushlabs.ai/context-writing-system/images/context-writing-system-thumb.webp",
       "problem": "AI-generated content starts strong but drifts into generic corporate filler within minutes. Teams spend more time editing AI output than they saved generating it — killing hype, restoring voice, and fact-checking hallucinated claims. Every new chat session starts from zero because there's no persistent memory of who you are, what you sell, or what you're allowed to say.\n",
-      "solution": null,
+      "solution": "Four persistent JSON truth files lock your reality — voice DNA, business profile, ideal client, and claims policy — so the AI loads your context every time instead of rebuilding it from scratch. Each content type gets a dedicated skill file with structure and QA rules, while a strict priority stack keeps truth and claims above voice, audience, and format. A compounding knowledge base feeds your best examples and templates back into the system, and the whole framework is tool-agnostic across Claude, ChatGPT, Cursor, or any RAG system.\n",
       "keyFeatures": [
         "First drafts arrive ready for review, not rewriting",
         "Editing time reduced from 45 minutes to 5 minutes per asset",
@@ -1267,64 +1287,69 @@
         "One voice system powers every content channel",
         "Tool-agnostic — works with Claude, ChatGPT, Cursor, or any RAG system"
       ],
-      "metrics": [],
+      "metrics": [
+        "Editing time cut from 45 minutes to 5 minutes per asset",
+        "Zero hallucinated claims shipped — enforced by policy, not review",
+        "One voice identity stays consistent across every channel",
+        "First drafts arrive review-ready instead of rewrite-ready"
+      ],
       "priority": 8,
       "dateCompleted": null,
       "slides": [
         {
           "src": "https://cdn.cushlabs.ai/context-writing-system/images/context-writing-system-01.webp",
-          "altEn": "AI Writing System",
-          "altEs": "AI Writing System"
+          "altEn": "AI Writing System Explorer dashboard home screen showing the writing system overview",
+          "altEs": "Pantalla principal del panel del Explorador del Sistema de Escritura con IA, mostrando la vista general del sistema"
         },
         {
           "src": "https://cdn.cushlabs.ai/context-writing-system/images/context-writing-system-02.webp",
-          "altEn": "AI Writing System",
-          "altEs": "AI Writing System"
+          "altEn": "Voice DNA truth file displayed as structured JSON defining brand tone, cadence, and phrasing",
+          "altEs": "Archivo de verdad de ADN de voz mostrado como JSON estructurado que define el tono, la cadencia y las frases de la marca"
         },
         {
           "src": "https://cdn.cushlabs.ai/context-writing-system/images/context-writing-system-03.webp",
-          "altEn": "AI Writing System",
-          "altEs": "AI Writing System"
+          "altEn": "Business profile context file listing offers, pricing logic, and positioning",
+          "altEs": "Archivo de contexto del perfil de negocio que lista las ofertas, la lógica de precios y el posicionamiento"
         },
         {
           "src": "https://cdn.cushlabs.ai/context-writing-system/images/context-writing-system-04.webp",
-          "altEn": "AI Writing System",
-          "altEs": "AI Writing System"
+          "altEn": "Ideal client profile context file detailing customer pains, desires, and objections",
+          "altEs": "Archivo de contexto del perfil del cliente ideal que detalla los problemas, deseos y objeciones del cliente"
         },
         {
           "src": "https://cdn.cushlabs.ai/context-writing-system/images/context-writing-system-05.webp",
-          "altEn": "AI Writing System",
-          "altEs": "AI Writing System"
+          "altEn": "Claims policy engine view showing rules for what the AI can and cannot state",
+          "altEs": "Vista del motor de política de afirmaciones que muestra las reglas sobre lo que la IA puede y no puede afirmar"
         },
         {
           "src": "https://cdn.cushlabs.ai/context-writing-system/images/context-writing-system-06.webp",
-          "altEn": "AI Writing System",
-          "altEs": "AI Writing System"
+          "altEn": "Skill file for a content format showing inputs, structure, and QA checklist in markdown",
+          "altEs": "Archivo de habilidad para un formato de contenido que muestra entradas, estructura y lista de verificación de calidad en markdown"
         },
         {
           "src": "https://cdn.cushlabs.ai/context-writing-system/images/context-writing-system-07.webp",
-          "altEn": "AI Writing System",
-          "altEs": "AI Writing System"
+          "altEn": "Hierarchical control stack diagram ordering truth, voice, audience, and format rules by priority",
+          "altEs": "Diagrama de la pila de control jerárquico que ordena por prioridad las reglas de verdad, voz, audiencia y formato"
         },
         {
           "src": "https://cdn.cushlabs.ai/context-writing-system/images/context-writing-system-08.webp",
-          "altEn": "AI Writing System",
-          "altEs": "AI Writing System"
+          "altEn": "Knowledge base view with gold-standard examples and reusable content templates",
+          "altEs": "Vista de la base de conocimiento con ejemplos de referencia y plantillas de contenido reutilizables"
         },
         {
           "src": "https://cdn.cushlabs.ai/context-writing-system/images/context-writing-system-09.webp",
-          "altEn": "AI Writing System",
-          "altEs": "AI Writing System"
+          "altEn": "File browser with trust-level badges and metadata across the writing system files",
+          "altEs": "Explorador de archivos con insignias de nivel de confianza y metadatos en los archivos del sistema de escritura"
         },
         {
           "src": "https://cdn.cushlabs.ai/context-writing-system/images/context-writing-system-10.webp",
-          "altEn": "AI Writing System",
-          "altEs": "AI Writing System"
+          "altEn": "Markdown rendering of a generated content asset inside the Explorer interface",
+          "altEs": "Representación en markdown de un recurso de contenido generado dentro de la interfaz del Explorador"
         },
         {
           "src": "https://cdn.cushlabs.ai/context-writing-system/images/context-writing-system-11.webp",
-          "altEn": "AI Writing System",
-          "altEs": "AI Writing System"
+          "altEn": "Responsive Explorer UI shown across desktop and mobile layouts",
+          "altEs": "Interfaz del Explorador adaptable mostrada en diseños de computadora y celular"
         }
       ],
       "videoUrl": "https://cdn.cushlabs.ai/context-writing-system/videos/context-writing-system-brief.mp4",
@@ -2824,14 +2849,14 @@
       "languages": {
         "Java": 112109,
         "Astro": 36916,
-        "TypeScript": 30899,
+        "TypeScript": 31189,
         "Python": 28154,
         "CSS": 1533,
         "JavaScript": 470
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-06-21T22:12:16Z",
+      "lastPushed": "2026-06-21T22:20:57Z",
       "createdAt": "2026-06-06T19:37:00Z",
       "isFeatured": false,
       "isArchived": false,
@@ -3066,7 +3091,7 @@
       "status": null,
       "language": "Astro",
       "languages": {
-        "Astro": 670628,
+        "Astro": 670964,
         "TypeScript": 356555,
         "JavaScript": 99259,
         "HTML": 61067,
@@ -3075,7 +3100,7 @@
       },
       "stars": 2,
       "forks": 0,
-      "lastPushed": "2026-06-21T22:00:07Z",
+      "lastPushed": "2026-06-21T22:32:17Z",
       "createdAt": "2026-01-08T03:52:43Z",
       "isFeatured": false,
       "isArchived": false,
