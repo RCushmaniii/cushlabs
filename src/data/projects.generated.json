@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-21T21:59:33.286Z",
+  "generatedAt": "2026-06-21T22:12:59.872Z",
   "count": 36,
   "projects": [
     {
@@ -2831,7 +2831,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-06-21T20:02:59Z",
+      "lastPushed": "2026-06-21T22:12:16Z",
       "createdAt": "2026-06-06T19:37:00Z",
       "isFeatured": false,
       "isArchived": false,
@@ -2856,28 +2856,33 @@
       "dateCompleted": null,
       "slides": [
         {
-          "src": "https://cdn.cushlabs.ai/cushlabs-sticker-gen/docs/images/hero-contact-sheet.png",
-          "altEn": "Contact sheet of an AI-generated sticker pack — every sticker carved clean with a synthesized white die-cut border",
-          "altEs": "Hoja de contactos de un paquete de stickers generado con IA — cada sticker recortado con un borde die-cut blanco sintetizado"
+          "src": "https://cdn.cushlabs.ai/cushlabs-sticker-gen/docs/images/portfolio/slider-01.jpg",
+          "altEn": "Sticker Gen homepage hero — 'Say it with a sticker', with sample axolotl, husky, and 'Puro clásico' stickers and a Download for Android button",
+          "altEs": "Página principal de Sticker Gen — 'Dilo con un sticker', con stickers de muestra (axolotl, husky y 'Puro clásico') y un botón de descargar para Android"
         },
         {
-          "src": "https://cdn.cushlabs.ai/cushlabs-sticker-gen/docs/images/hero-party.png",
-          "altEn": "Party-themed WhatsApp sticker pack produced from a raw AI sheet",
-          "altEs": "Paquete de stickers de fiesta para WhatsApp producido a partir de una hoja generada con IA"
+          "src": "https://cdn.cushlabs.ai/cushlabs-sticker-gen/docs/images/portfolio/slider-02.jpg",
+          "altEn": "Pack gallery — Axolotl, Barbarian, Diner Darling, Frog, Bird, and Bug Moods packs, each with four preview stickers",
+          "altEs": "Galería de paquetes — packs Axolotl, Barbarian, Diner Darling, Frog, Bird y Bug Moods, cada uno con cuatro stickers de muestra"
         },
         {
-          "src": "https://cdn.cushlabs.ai/cushlabs-sticker-gen/docs/images/hero-love.png",
-          "altEn": "Love-themed WhatsApp sticker pack produced from a raw AI sheet",
-          "altEs": "Paquete de stickers románticos para WhatsApp producido a partir de una hoja generada con IA"
+          "src": "https://cdn.cushlabs.ai/cushlabs-sticker-gen/docs/images/portfolio/slider-03.jpg",
+          "altEn": "Download page for the CushLabs Stickers Android app — version, size, included packs, and a direct APK download button",
+          "altEs": "Página de descarga de la app de stickers de CushLabs para Android — versión, tamaño, paquetes incluidos y un botón de descarga directa del APK"
         },
         {
-          "src": "https://cdn.cushlabs.ai/cushlabs-sticker-gen/docs/images/hero-thinking.png",
-          "altEn": "Expression-themed WhatsApp sticker pack produced from a raw AI sheet",
-          "altEs": "Paquete de stickers de expresiones para WhatsApp producido a partir de una hoja generada con IA"
+          "src": "https://cdn.cushlabs.ai/cushlabs-sticker-gen/docs/images/portfolio/slider-04.jpg",
+          "altEn": "English contact page — 'Get in touch' with email, CushLabs AI Services, and custom branded sticker pack options",
+          "altEs": "Página de contacto en inglés — 'Get in touch' con correo, CushLabs AI Services y la opción de packs de stickers personalizados"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/cushlabs-sticker-gen/docs/images/portfolio/slider-05.jpg",
+          "altEn": "Spanish (es-MX) contact page — 'Contáctanos', demonstrating the site's full bilingual build",
+          "altEs": "Página de contacto en español (es-MX) — 'Contáctanos', que muestra el sitio totalmente bilingüe"
         }
       ],
-      "videoUrl": null,
-      "videoPoster": null
+      "videoUrl": "https://cdn.cushlabs.ai/cushlabs-sticker-gen/docs/video/sticker-gen-brief.mp4",
+      "videoPoster": "https://cdn.cushlabs.ai/cushlabs-sticker-gen/docs/video/sticker-gen-brief-poster.jpg"
     },
     {
       "id": 1157421817,
@@ -3070,7 +3075,7 @@
       },
       "stars": 2,
       "forks": 0,
-      "lastPushed": "2026-06-21T20:03:33Z",
+      "lastPushed": "2026-06-21T22:00:07Z",
       "createdAt": "2026-01-08T03:52:43Z",
       "isFeatured": false,
       "isArchived": false,
