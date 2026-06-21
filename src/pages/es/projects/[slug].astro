@@ -67,8 +67,12 @@ const description = rawDescription.length > 160
   ? rawDescription.slice(0, 157).replace(/\s+\S*$/, "") + "..."
   : rawDescription;
 
+const overrideDemoUrl =
+  typeof override?.demoUrl === "string"
+    ? override.demoUrl
+    : override?.demoUrl?.[locale];
 const demoUrl =
-  override?.demoUrl || project.demoUrl || project.homepage || null;
+  overrideDemoUrl || project.demoUrl || project.homepage || null;
 const codeUrl = project.url;
 
 const githubMatch = project.url.match(/github\.com\/([^/]+)\/([^/]+)(?:\/|$)/i);

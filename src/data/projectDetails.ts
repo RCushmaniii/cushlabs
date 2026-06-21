@@ -19,7 +19,9 @@ export type ProjectDetailLocale = {
 
 export type ProjectDetailOverride = {
   slug: string;
-  demoUrl?: string;
+  // string for a single URL across locales, or { en, es } when the demo
+  // destination is locale-specific (e.g. an on-site section anchor).
+  demoUrl?: string | { en: string; es: string };
   thumbnail?: string;
   videoUrl?: string;
   videoPoster?: string;
@@ -31,6 +33,11 @@ export type ProjectDetailOverride = {
 const details: Record<string, ProjectDetailOverride> = {
   "cushlabs-messenger": {
     slug: "cushlabs-messenger",
+    // "Live demo" → the Messenger AI section of the services page (locale-aware).
+    demoUrl: {
+      en: "/services/#messenger-ai",
+      es: "/es/services/#messenger-ai",
+    },
     en: {
       headline:
         "CushLabs Messenger — The 24/7 Bilingual AI Assistant for Facebook Messenger",
