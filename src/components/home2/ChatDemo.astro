@@ -17,6 +17,9 @@ const content = {
     ctaLabel: 'Book a Free 30-min Call',
     ctaLink: '/consultation/',
     note: 'Every system is trained on your specific business — not a generic template.',
+    facadeTitle: 'Live AI Demo',
+    facadeBody: 'Ask it anything about services, pricing, or timelines — in English or Spanish.',
+    facadeCta: 'Start chatting',
   },
   es: {
     eyebrow: 'DEMO EN VIVO',
@@ -25,6 +28,9 @@ const content = {
     ctaLabel: 'Agendar Llamada Gratis — 30 min',
     ctaLink: '/es/reservar/',
     note: 'Cada sistema se entrena con tu negocio específico — no una plantilla genérica.',
+    facadeTitle: 'Demo de IA en Vivo',
+    facadeBody: 'Pregúntale lo que quieras sobre servicios, precios o tiempos — en inglés o español.',
+    facadeCta: 'Empezar a chatear',
   },
 };
 
@@ -66,16 +72,31 @@ const iframeSrc = `${DEMO_URL}?language=${locale}`;
         </p>
       </div>
 
-      <!-- Right: Real iframe chat -->
+      <!-- Right: live chat — click-to-load facade. The cross-origin embed
+           autofocuses its input on load and scrolls the page to it; loading it
+           only on an explicit click keeps that out of the "scroll to demo" path. -->
       <div class="order-1 lg:order-2">
-        <div class="rounded-2xl overflow-hidden shadow-2xl shadow-black/10 dark:shadow-black/40 border border-border w-full" style="height: 520px;">
-          <iframe
-            data-src={iframeSrc}
-            title={locale === 'es' ? 'Demo del asistente de IA de CushLabs' : 'CushLabs AI assistant demo'}
-            class="w-full h-full border-0"
-            loading="lazy"
-            allow="clipboard-write"
-          ></iframe>
+        <div
+          id="cl-demo-shell"
+          class="rounded-2xl overflow-hidden shadow-2xl shadow-black/10 dark:shadow-black/40 border border-border w-full"
+          style="height: 520px;"
+          data-src={iframeSrc}
+          data-title={locale === 'es' ? 'Asistente de IA de CushLabs' : 'CushLabs AI assistant'}
+        >
+          <button
+            id="cl-demo-start"
+            type="button"
+            class="group w-full h-full flex flex-col items-center justify-center gap-4 px-8 text-center bg-white dark:bg-cush-gray-900 cursor-pointer"
+          >
+            <span class="flex items-center justify-center w-16 h-16 rounded-full bg-cush-orange/10 text-cush-orange transition-transform group-hover:scale-105">
+              <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+              </svg>
+            </span>
+            <span class="font-display font-bold text-xl text-gray-900 dark:text-white">{t.facadeTitle}</span>
+            <span class="font-body text-sm text-gray-500 dark:text-gray-400 max-w-xs">{t.facadeBody}</span>
+            <span class="mt-1 inline-flex items-center gap-2 px-6 py-3 bg-cush-orange text-white font-display font-semibold rounded-lg shadow-lg shadow-cush-orange/20 group-hover:bg-cush-orange/90 transition-colors">{t.facadeCta}</span>
+          </button>
         </div>
       </div>
 
@@ -84,37 +105,22 @@ const iframeSrc = `${DEMO_URL}?language=${locale}`;
 </section>
 
 <script>
-  // Defer the cross-origin chat embed until the section is actually on screen.
-  // The embedded chat app autofocuses its input on load; if we render the iframe
-  // src immediately, the browser scrolls the page down to reveal that focused
-  // input — yanking visitors past the hero on first paint. Loading the iframe only
-  // once the user has scrolled to it makes that focus behavior expected instead of
-  // surprising, and avoids pulling a third-party embed before it's needed.
-  const frame = document.querySelector<HTMLIFrameElement>('#demo iframe[data-src]');
-  if (frame) {
-    const load = () => {
-      const src = frame.dataset.src;
-      if (src) {
-        frame.src = src;
-        delete frame.dataset.src;
-      }
-    };
-    if ('IntersectionObserver' in window) {
-      const io = new IntersectionObserver(
-        (entries, obs) => {
-          for (const entry of entries) {
-            if (entry.isIntersecting) {
-              load();
-              obs.disconnect();
-              break;
-            }
-          }
-        },
-        { threshold: 0.15 }
-      );
-      io.observe(frame);
-    } else {
-      load();
-    }
+  // Load the cross-origin chat embed only when the visitor explicitly starts it.
+  // The embed autofocuses its input on load and scrolls the parent page to reach
+  // it; keeping it unloaded until click means the hero "scroll to demo" lands
+  // cleanly on the section top instead of being yanked down to the chat input.
+  const shell = document.getElementById('cl-demo-shell');
+  const startBtn = document.getElementById('cl-demo-start');
+  if (shell && startBtn) {
+    startBtn.addEventListener('click', () => {
+      const src = shell.dataset.src;
+      if (!src) return;
+      const iframe = document.createElement('iframe');
+      iframe.src = src;
+      iframe.title = shell.dataset.title || 'AI assistant';
+      iframe.className = 'w-full h-full border-0';
+      iframe.allow = 'clipboard-write';
+      shell.replaceChildren(iframe);
+    });
   }
 </script>
