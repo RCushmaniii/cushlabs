@@ -11,6 +11,7 @@ Entries are newest-first. Each entry documents one Claude Code working session.
 - Added `scripts/list-portfolio.mjs` — read-only tool that lists every portfolio project and its URLs (portfolio page / GitHub / demo / live / homepage) from the committed `projects.generated.json`, no GitHub API calls. Modes: default table (POSTED vs HIDDEN), `--csv`, `--json`.
 - Refreshed `src/data/projects.generated.json` via `pnpm generate-projects` — now **38 projects** (was 34), 9 featured, 27 excluded by `portfolio_enabled: false`. Auto-filed sync issue #109 (1 data-quality warning).
 - Documented the new tool in `CLAUDE.md` (Portfolio Pipeline → "Listing portfolio repos & their URLs") and gitignored the generated `portfolio-urls.{csv,json}`.
+- Added `scripts/list-all-repos.mjs` — full GitHub inventory (all 65 repos via `gh repo list`, merged with portfolio data) grouped posted / hidden / not-listed, with all URLs. Modes: table / `--csv` / `--json`. Documented in CLAUDE.md ("Listing ALL repos & their URLs").
 
 ### Decisions Made
 
