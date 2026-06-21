@@ -29,23 +29,186 @@ export type ProjectDetailOverride = {
 };
 
 const details: Record<string, ProjectDetailOverride> = {
-  "cushlabs": {
+  "cushlabs-messenger": {
+    slug: "cushlabs-messenger",
+    en: {
+      headline:
+        "CushLabs Messenger — The 24/7 Bilingual AI Assistant for Facebook Messenger",
+      subheadline:
+        "A custom AI assistant that answers your customers instantly in English or Spanish, built from your own website, FAQs, and pricing — so every Messenger inquiry gets a real answer, day or night, and no lead goes cold.",
+      overallVerdictTitle: "The Solution",
+      overallVerdictBody:
+        "CushLabs Messenger turns a business's Facebook inbox into a 24/7 sales assistant. It ingests the client's real content — website, FAQs, methodology, pricing — into a retrieval index, then answers incoming Messenger questions with Claude, grounded in that content so it never invents details. Language is detected on the first message and locked for the conversation, so Spanish-speaking and English-speaking customers each get a natural, native exchange with no manual switching. Simple pleasantries route to a fast, low-cost model while real questions get the stronger one, keeping responses quick and economical. When a conversation needs a person, the assistant hands the thread to the business and steps aside, then resumes automatically. The whole platform is multi-tenant from day one: a single Cloudflare Worker serves every client by Facebook Page ID, with no per-client deployments to manage.",
+      whatItDoesWellTitle: "What it does well",
+      whatItDoesWell: [
+        "Answers in seconds, 24/7 — a prospect messaging at 11 PM gets a real reply, not a 'we'll get back to you'",
+        "Grounded in the client's own content via RAG retrieval — accurate answers, no hallucinated pricing or policies",
+        "Truly bilingual EN/ES with automatic language detection locked per conversation — no clunky toggles",
+        "Cost-aware model routing — pleasantries to a fast model, real questions to the stronger one",
+        "Graceful human handover with automatic resume — the business steps in only when a customer is ready to buy",
+        "Multi-tenant by design — one Worker serves every client, routed by Page ID; new clients onboard without new infrastructure",
+      ],
+      goodForTitle: "Good for",
+      goodFor: [
+        "Local and service businesses whose Facebook page is a real sales and inquiry channel",
+        "Bilingual markets — businesses serving customers who write in Spanish or English",
+        "Owners losing leads after hours or while busy, who can't staff the inbox around the clock",
+        "Businesses that want an assistant trained on their actual content, not a generic template bot",
+      ],
+      notForTitle: "Not a fit for",
+      notFor: [
+        "Businesses without an active Facebook Page or Messenger inquiry volume",
+        "Use cases needing a fully autonomous bot with zero human-escalation path",
+        "Companies that can't provide source content (site, FAQs, pricing) for the assistant to learn from",
+      ],
+      whatYouGetTitle: "What you get",
+      whatYouGet: [
+        "A custom AI Messenger assistant trained on your business's content, live on your Facebook Page",
+        "Bilingual English/Spanish handling, with Mexican Professional Spanish for MX audiences",
+        "Human handover to your Page inbox whenever you want to take over, with automatic resume",
+        "A guided bilingual onboarding survey that captures your voice, boundaries, FAQs, and escalation rules",
+        "Production-grade hosting on Cloudflare's edge with error monitoring and signature-verified webhooks",
+      ],
+      problemTitle: "The Challenge",
+      problemBody:
+        "Businesses on Facebook get a steady stream of Messenger questions — pricing, availability, hours, services — and in bilingual markets like Mexico they arrive in both Spanish and English. No owner can watch the inbox 24/7, generic auto-replies quietly lose the lead while the prospect keeps shopping, and off-the-shelf chatbots sound robotic and invent answers they can't stand behind. The business that replies first wins; the one that's asleep loses the conversation.",
+      resultsTitle: "Results",
+      results: [
+        "Every inquiry gets an instant, on-brand answer — including nights, weekends, and busy hours",
+        "Bilingual customers are met in their own language automatically, with no manual switching",
+        "Answers stay accurate because they're pulled from the business's real content, not invented",
+        "Owners reclaim hours of repetitive replying and step in only when a customer is ready to buy",
+        "New clients launch on the same single Worker — the platform scales without new deployments",
+      ],
+    },
+    es: {
+      headline:
+        "CushLabs Messenger — El asistente con IA bilingüe 24/7 para Facebook Messenger",
+      subheadline:
+        "Un asistente con IA personalizado que responde a tus clientes al instante en español o inglés, creado a partir de tu propio sitio web, tus preguntas frecuentes y tus precios — para que cada mensaje en Messenger reciba una respuesta real, de día o de noche, y ningún prospecto se enfríe.",
+      overallVerdictTitle: "La Solución",
+      overallVerdictBody:
+        "CushLabs Messenger convierte la bandeja de entrada de Facebook de un negocio en un asistente de ventas 24/7. Toma el contenido real del cliente — sitio web, preguntas frecuentes, metodología, precios — y lo indexa para recuperación; luego responde los mensajes de Messenger con Claude, apoyándose en ese contenido para nunca inventar datos. El idioma se detecta en el primer mensaje y se mantiene durante toda la conversación, así cada cliente — en español o en inglés — recibe un intercambio natural y nativo, sin cambios manuales. Los saludos sencillos se atienden con un modelo rápido y económico, mientras que las preguntas reales pasan al modelo más potente, manteniendo las respuestas ágiles y a bajo costo. Cuando una conversación necesita a una persona, el asistente le entrega la conversación al negocio y se hace a un lado, y luego retoma automáticamente. Toda la plataforma es multi-cliente desde el primer día: un solo Cloudflare Worker atiende a cada cliente por su ID de página de Facebook, sin despliegues por cliente que administrar.",
+      whatItDoesWellTitle: "Lo que hace bien",
+      whatItDoesWell: [
+        "Responde en segundos, 24/7 — quien escribe a las 11 de la noche recibe una respuesta real, no un 'luego te contactamos'",
+        "Se apoya en el contenido propio del cliente mediante recuperación (RAG) — respuestas precisas, sin precios ni políticas inventadas",
+        "Verdaderamente bilingüe EN/ES con detección automática de idioma fija por conversación — sin cambios incómodos",
+        "Enrutamiento de modelos según el costo — saludos a un modelo rápido, preguntas reales al más potente",
+        "Transferencia a una persona con retorno automático — el negocio interviene solo cuando el cliente está listo para comprar",
+        "Multi-cliente por diseño — un Worker atiende a todos los clientes, enrutados por ID de página; los nuevos clientes se integran sin nueva infraestructura",
+      ],
+      goodForTitle: "Ideal para",
+      goodFor: [
+        "Negocios locales y de servicios cuya página de Facebook es un canal real de ventas y consultas",
+        "Mercados bilingües — negocios que atienden a clientes que escriben en español o en inglés",
+        "Negocios que pierden prospectos fuera de horario o cuando hay mucho trabajo y no pueden atender la bandeja todo el tiempo",
+        "Negocios que quieren un asistente entrenado con su contenido real, no un bot genérico de plantilla",
+      ],
+      notForTitle: "No es ideal para",
+      notFor: [
+        "Negocios sin una página de Facebook activa o sin volumen de consultas en Messenger",
+        "Casos que requieren un bot totalmente autónomo, sin opción de escalar a una persona",
+        "Empresas que no pueden aportar contenido fuente (sitio, preguntas frecuentes, precios) para que el asistente aprenda",
+      ],
+      whatYouGetTitle: "Lo que recibes",
+      whatYouGet: [
+        "Un asistente con IA para Messenger entrenado con el contenido de tu negocio, activo en tu página de Facebook",
+        "Atención bilingüe español/inglés, con español profesional de México para el público mexicano",
+        "Transferencia a la bandeja de tu página cuando quieras tomar el control, con retorno automático",
+        "Una encuesta de incorporación bilingüe y guiada que captura tu voz, tus límites, tus preguntas frecuentes y tus reglas de escalamiento",
+        "Hospedaje de nivel producción en la red de Cloudflare, con monitoreo de errores y webhooks verificados por firma",
+      ],
+      problemTitle: "El Reto",
+      problemBody:
+        "Los negocios en Facebook reciben un flujo constante de preguntas por Messenger — precios, disponibilidad, horarios, servicios — y en mercados bilingües como México llegan tanto en español como en inglés. Ningún negocio puede vigilar la bandeja 24/7, las respuestas automáticas genéricas pierden al prospecto en silencio mientras sigue buscando, y los chatbots de plantilla suenan robóticos e inventan respuestas que no pueden sostener. El negocio que responde primero gana; el que está dormido pierde la conversación.",
+      resultsTitle: "Resultados",
+      results: [
+        "Cada consulta recibe una respuesta instantánea y acorde a la marca — incluso de noche, en fines de semana y en horas ocupadas",
+        "A los clientes bilingües se les atiende en su propio idioma automáticamente, sin cambios manuales",
+        "Las respuestas se mantienen precisas porque provienen del contenido real del negocio, no inventadas",
+        "Los negocios recuperan horas de respuestas repetitivas e intervienen solo cuando un cliente está listo para comprar",
+        "Los nuevos clientes arrancan sobre el mismo Worker — la plataforma escala sin nuevos despliegues",
+      ],
+    },
+  },
+  cushlabs: {
     slug: "cushlabs",
     demoUrl: "https://cushlabs.ai",
     thumbnail: "/images/portfolio/cushlabs-thumb.webp",
     videoUrl: "/images/portfolio/cushlabs-brief.mp4",
     videoPoster: "/images/portfolio/cushlabs-brief-poster.webp",
     images: [
-      { src: "/images/portfolio/cushlabs-01.webp", alt: { en: "CushLabs AI Services — The Self-Maintaining Bilingual Portfolio", es: "CushLabs AI Services — El Portafolio Bilingüe Auto-Mantenido" } },
-      { src: "/images/portfolio/cushlabs-02.webp", alt: { en: "Not Just a Website, But a System — bilingual, automated sync, serverless booking", es: "No Solo un Sitio Web, Sino un Sistema — bilingüe, sincronización automatizada, reservas serverless" } },
-      { src: "/images/portfolio/cushlabs-03.webp", alt: { en: "Premium Design is About Behavior — zero-flash theming, time-based dark mode, micro-interactions", es: "El Diseño Premium es Sobre Comportamiento — temas sin flash, modo oscuro basado en hora, micro-interacciones" } },
-      { src: "/images/portfolio/cushlabs-04.webp", alt: { en: "Engineering Visibility — the enterprise SEO stack with JSON-LD, hreflang, and lazy loading", es: "Visibilidad de Ingeniería — el stack SEO empresarial con JSON-LD, hreflang y carga lazy" } },
-      { src: "/images/portfolio/cushlabs-05.webp", alt: { en: "True Bilingual Architecture — 24-line custom TypeScript i18n vs 40KB+ i18next", es: "Arquitectura Bilingüe Real — i18n TypeScript personalizado de 24 líneas vs i18next de 40KB+" } },
-      { src: "/images/portfolio/cushlabs-06.webp", alt: { en: "The Serverless Booking Wizard — Cloudflare Worker to Google Calendar API, 3-step flow", es: "El Asistente de Reservas Serverless — Cloudflare Worker a Google Calendar API, flujo de 3 pasos" } },
-      { src: "/images/portfolio/cushlabs-07.webp", alt: { en: "Localization Beyond Language — WhatsApp integration with locale-aware pre-filled messages", es: "Localización Más Allá del Idioma — integración WhatsApp con mensajes prellenados según el idioma" } },
-      { src: "/images/portfolio/cushlabs-08.webp", alt: { en: "Security and Anti-Scraping — split-attribute email obfuscation", es: "Seguridad y Anti-Scraping — ofuscación de email por atributos divididos" } },
-      { src: "/images/portfolio/cushlabs-09.webp", alt: { en: "Fluid Typography and Responsive Design — clamp()-based scaling across all viewports", es: "Tipografía Fluida y Diseño Responsivo — escalado con clamp() en todas las pantallas" } },
-      { src: "/images/portfolio/cushlabs-10.webp", alt: { en: "Modern Services Page — scenario-based navigation with SVG icons and conversion-focused layout", es: "Página de Servicios Moderna — navegación por escenarios con íconos SVG y diseño orientado a conversión" } },
+      {
+        src: "/images/portfolio/cushlabs-01.webp",
+        alt: {
+          en: "CushLabs AI Services — The Self-Maintaining Bilingual Portfolio",
+          es: "CushLabs AI Services — El Portafolio Bilingüe Auto-Mantenido",
+        },
+      },
+      {
+        src: "/images/portfolio/cushlabs-02.webp",
+        alt: {
+          en: "Not Just a Website, But a System — bilingual, automated sync, serverless booking",
+          es: "No Solo un Sitio Web, Sino un Sistema — bilingüe, sincronización automatizada, reservas serverless",
+        },
+      },
+      {
+        src: "/images/portfolio/cushlabs-03.webp",
+        alt: {
+          en: "Premium Design is About Behavior — zero-flash theming, time-based dark mode, micro-interactions",
+          es: "El Diseño Premium es Sobre Comportamiento — temas sin flash, modo oscuro basado en hora, micro-interacciones",
+        },
+      },
+      {
+        src: "/images/portfolio/cushlabs-04.webp",
+        alt: {
+          en: "Engineering Visibility — the enterprise SEO stack with JSON-LD, hreflang, and lazy loading",
+          es: "Visibilidad de Ingeniería — el stack SEO empresarial con JSON-LD, hreflang y carga lazy",
+        },
+      },
+      {
+        src: "/images/portfolio/cushlabs-05.webp",
+        alt: {
+          en: "True Bilingual Architecture — 24-line custom TypeScript i18n vs 40KB+ i18next",
+          es: "Arquitectura Bilingüe Real — i18n TypeScript personalizado de 24 líneas vs i18next de 40KB+",
+        },
+      },
+      {
+        src: "/images/portfolio/cushlabs-06.webp",
+        alt: {
+          en: "The Serverless Booking Wizard — Cloudflare Worker to Google Calendar API, 3-step flow",
+          es: "El Asistente de Reservas Serverless — Cloudflare Worker a Google Calendar API, flujo de 3 pasos",
+        },
+      },
+      {
+        src: "/images/portfolio/cushlabs-07.webp",
+        alt: {
+          en: "Localization Beyond Language — WhatsApp integration with locale-aware pre-filled messages",
+          es: "Localización Más Allá del Idioma — integración WhatsApp con mensajes prellenados según el idioma",
+        },
+      },
+      {
+        src: "/images/portfolio/cushlabs-08.webp",
+        alt: {
+          en: "Security and Anti-Scraping — split-attribute email obfuscation",
+          es: "Seguridad y Anti-Scraping — ofuscación de email por atributos divididos",
+        },
+      },
+      {
+        src: "/images/portfolio/cushlabs-09.webp",
+        alt: {
+          en: "Fluid Typography and Responsive Design — clamp()-based scaling across all viewports",
+          es: "Tipografía Fluida y Diseño Responsivo — escalado con clamp() en todas las pantallas",
+        },
+      },
+      {
+        src: "/images/portfolio/cushlabs-10.webp",
+        alt: {
+          en: "Modern Services Page — scenario-based navigation with SVG icons and conversion-focused layout",
+          es: "Página de Servicios Moderna — navegación por escenarios con íconos SVG y diseño orientado a conversión",
+        },
+      },
     ],
     en: {
       headline: "CushLabs.ai — The Self-Maintaining Bilingual Portfolio",
@@ -656,9 +819,11 @@ const details: Record<string, ProjectDetailOverride> = {
     demoUrl: "https://biojalisco-pitch.vercel.app",
     en: {
       headline: "BioJalisco Pitch Site",
-      subheadline: "Cinematic scrollytelling site pitching a citizen-science biodiversity platform for western Mexico",
+      subheadline:
+        "Cinematic scrollytelling site pitching a citizen-science biodiversity platform for western Mexico",
       overallVerdictTitle: "The Verdict",
-      overallVerdictBody: "A persuasion artifact built as a single self-contained HTML file with embedded images, bilingual content switching, procedural audio, and scroll-triggered animations. Demonstrates that high-impact storytelling doesn't require React or a build system.",
+      overallVerdictBody:
+        "A persuasion artifact built as a single self-contained HTML file with embedded images, bilingual content switching, procedural audio, and scroll-triggered animations. Demonstrates that high-impact storytelling doesn't require React or a build system.",
       whatItDoesWellTitle: "What It Does Well",
       whatItDoesWell: [
         "5-act narrative arc (Hook → Problem → Vision → Evidence → Ask) designed for stakeholder persuasion",
@@ -692,9 +857,11 @@ const details: Record<string, ProjectDetailOverride> = {
     },
     es: {
       headline: "Sitio de Presentación BioJalisco",
-      subheadline: "Sitio de scrollytelling cinemático presentando una plataforma de biodiversidad de ciencia ciudadana para el occidente de México",
+      subheadline:
+        "Sitio de scrollytelling cinemático presentando una plataforma de biodiversidad de ciencia ciudadana para el occidente de México",
       overallVerdictTitle: "El Veredicto",
-      overallVerdictBody: "Un artefacto de persuasión construido como un archivo HTML autocontenido con imágenes embebidas, cambio de contenido bilingüe, audio procedural y animaciones activadas por scroll. Demuestra que la narración de alto impacto no requiere React ni un sistema de compilación.",
+      overallVerdictBody:
+        "Un artefacto de persuasión construido como un archivo HTML autocontenido con imágenes embebidas, cambio de contenido bilingüe, audio procedural y animaciones activadas por scroll. Demuestra que la narración de alto impacto no requiere React ni un sistema de compilación.",
       whatItDoesWellTitle: "Lo Que Hace Bien",
       whatItDoesWell: [
         "Arco narrativo de 5 actos (Gancho → Problema → Visión → Evidencia → Llamado) diseñado para persuasión de stakeholders",
@@ -782,7 +949,8 @@ const details: Record<string, ProjectDetailOverride> = {
       ],
     },
     es: {
-      headline: "Converso AI — Asistente Bilingue de IA para Recepcion y Ventas",
+      headline:
+        "Converso AI — Asistente Bilingue de IA para Recepcion y Ventas",
       subheadline:
         "Una plataforma SaaS multi-tenant que da a negocios de servicio un asistente de IA bilingue 24/7 — respuestas basadas en conocimiento, calificacion de leads, constructor visual de flujos y facturacion con Stripe. Un script para desplegar.",
       overallVerdictTitle: "La Solucion",
@@ -1159,7 +1327,8 @@ const details: Record<string, ProjectDetailOverride> = {
     slug: "context-writing-system",
     demoUrl: "https://context-writing-system.vercel.app",
     en: {
-      headline: "AI Writing System — Clone Your Brand Voice Once, Write Everywhere",
+      headline:
+        "AI Writing System — Clone Your Brand Voice Once, Write Everywhere",
       subheadline:
         "A structured framework that makes AI write like you instead of like AI. Persistent JSON truth files lock your voice, audience, business facts, and claim rules — then enforce them across every content channel with zero drift.",
       overallVerdictTitle: "The Solution",
@@ -1210,7 +1379,8 @@ const details: Record<string, ProjectDetailOverride> = {
       ],
     },
     es: {
-      headline: "Sistema de Escritura IA — Clona Tu Voz de Marca Una Vez, Escribe en Todos Lados",
+      headline:
+        "Sistema de Escritura IA — Clona Tu Voz de Marca Una Vez, Escribe en Todos Lados",
       subheadline:
         "Un framework estructurado que hace que la IA escriba como tu en vez de como IA. Archivos JSON persistentes bloquean tu voz, audiencia, hechos de negocio y reglas de claims — luego los aplican en cada canal de contenido sin drift.",
       overallVerdictTitle: "La Solucion",
@@ -1265,7 +1435,8 @@ const details: Record<string, ProjectDetailOverride> = {
     slug: "cushlabs-scrollytelling",
     demoUrl: "https://scrollytelling.cushlabs.ai",
     en: {
-      headline: "CushLabs Scrollytelling — Cinematic Pitch Decks That Win Attention",
+      headline:
+        "CushLabs Scrollytelling — Cinematic Pitch Decks That Win Attention",
       subheadline:
         "Config-driven Astro template with dual-mode interaction: auto-narrated presentation mode for board meetings and free-browse mode for due diligence. New pitch decks ship in hours, not weeks.",
       overallVerdictTitle: "The Solution",
@@ -1317,7 +1488,8 @@ const details: Record<string, ProjectDetailOverride> = {
       ],
     },
     es: {
-      headline: "CushLabs Scrollytelling — Pitch Decks Cinematicos Que Capturan Atencion",
+      headline:
+        "CushLabs Scrollytelling — Pitch Decks Cinematicos Que Capturan Atencion",
       subheadline:
         "Template Astro dirigido por configuracion con interaccion dual: modo presentacion auto-narrado para juntas directivas y modo navegacion libre para due diligence. Nuevos pitch decks se entregan en horas, no semanas.",
       overallVerdictTitle: "La Solucion",
@@ -1426,7 +1598,8 @@ const details: Record<string, ProjectDetailOverride> = {
       ],
     },
     es: {
-      headline: "Unwatermark — Deteccion y Eliminacion de Marcas de Agua con IA",
+      headline:
+        "Unwatermark — Deteccion y Eliminacion de Marcas de Agua con IA",
       subheadline:
         "Un pipeline de IA en capas que detecta y elimina marcas de agua incrustadas en imagenes, PDFs y presentaciones usando EasyOCR, Florence-2, Grounded SAM, Claude Vision e inpainting neuronal LaMa — con precision pixel-perfect.",
       overallVerdictTitle: "La Solucion",
@@ -1589,6 +1762,8 @@ const details: Record<string, ProjectDetailOverride> = {
   },
 };
 
-export function getProjectDetailOverride(slug: string): ProjectDetailOverride | null {
+export function getProjectDetailOverride(
+  slug: string,
+): ProjectDetailOverride | null {
   return details[slug] ?? null;
 }
