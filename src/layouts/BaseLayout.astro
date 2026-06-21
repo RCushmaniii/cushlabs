@@ -226,9 +226,11 @@ const ogLocaleAlternate = locale === "es" ? "en_US" : "es_MX";
     (function() {
       const DEMO_ENABLED = true;
 
-      // Only show on homepage (EN and ES)
+      // Show the floating assistant on every page EXCEPT the homepage.
+      // The homepage already has the inline live demo, so a floating chat there
+      // just duplicates it; everywhere else this is the persistent site assistant.
       const isHome = pathname === '/' || pathname === '/es/' || pathname === '/es';
-      if (!DEMO_ENABLED || !isHome) return;
+      if (!DEMO_ENABLED || isHome) return;
 
       // CushLabs bot served by the Converso SaaS (one tenant per deploy).
       const DEMO_URL = 'https://www.soyconverso.com/embed/chat';
