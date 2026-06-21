@@ -4,6 +4,39 @@ Entries are newest-first. Each entry documents one Claude Code working session.
 
 ---
 
+## Session: 2026-06-21 — UX/SEO audit fixes (PR #114)
+
+### Accomplished
+
+- Shipped PR #114 (squash-merged to main): a multi-part reconciliation from an external Anthropic UX/SEO audit of the live site.
+- Homepage copy: benefit-framed hero headline (replaced the "2 AM" clever inversion); project count made consistent at "30+" (killed the 50+ vs 34 collision); pricing aligned to the subscription model (removed stale fixed-price/milestone/refund copy on hero badge, `Guarantee.astro`, About); testimonial reframed — dropped "I'm Pre-Testimonial", now leads with Julio's real LinkedIn rec.
+- Bug: chat-demo iframe (`ChatDemo.astro`) was auto-scrolling the page past the hero on load (embed autofocuses its input). Fixed by deferring the iframe `src` via IntersectionObserver.
+- i18n: Spanish project cards rendered English everywhere (generated JSON has no ES fields). Added centralized es-MX map `src/data/projectCardsEs.ts`, wired into `/es/portfolio` grid + "Proyectos Relacionados" rail + detail H1 (English fallback).
+- Spanish quality: retranslated slangy "¿Hacemos Buen Equipo?" (`WhoItIsFor.astro`) to clean es-MX; brought the compressed Chatbot ES block (`ServiceBlock.astro`) to full EN/ES parity. Standardized discovery call on 30 min (FAQ EN/ES + booking label).
+- SEO: `/sitemap.xml` → `/sitemap-index.xml` 301; Organization JSON-LD upgraded to also be a `ProfessionalService` with Guadalajara `PostalAddress`/telephone/priceRange.
+- Brand: retired the bare tenure number ("30 yrs" / "20+ years") everywhere → "AI-native / Enterprise IT roots" + career-arc framing (EN/ES). Saved as standing memory preference `feedback_experience_framing_no_tenure_count`.
+
+### Decisions Made
+
+- Left the production CSP intact — declined to weaken `script-src` for the Anthropic browser extension's in-page script probe. Crawlers read static HTML and all audited data (hreflang, meta, schema, alt) was verified already present. Pointed the extension at the local CSP-free dev server (`localhost:4321`) instead.
+- Reframed experience as depth + AI-currency rather than a year count (Option A) to neutralize IT-ageism subtext and resolve the 30-vs-20 inconsistency in one move.
+- Tabled the audit's proposed ROI estimator — Robert isn't convinced clients would interact with sliders.
+
+### Immediate Next Steps
+
+- [ ] ROI "What's This Costing You?" estimator — tabled; full spec (conservative formula + defaults) is in the PR #114 thread if revisited.
+- [ ] (carryover) Consolidate the two divergent session-log files; dismiss the lone esbuild Dependabot alert (low, dev-only).
+
+### Technical Debt
+
+- `src/components/home/Hero.astro` (legacy, unused — live pages use `home2/`) still carries a "20+ Years IT Experience" string. Harmless (never rendered) but should be removed or updated if that folder is ever revived.
+
+### Open Questions / Blockers
+
+- None.
+
+---
+
 ## Session: 2026-06-21
 
 ### Accomplished
