@@ -499,16 +499,18 @@ const t = content[locale];
       const categories = (card.getAttribute("data-categories") || "").split(",");
       const searchData = card.getAttribute("data-search") || "";
 
-      let show = true;
-      if (currentFilter === "featured") {
+      // A search query bypasses the active category filter — searching looks
+      // across every project, not just the current filter's subset.
+      let show;
+      if (query) {
+        show = searchData.includes(query);
+      } else if (currentFilter === "featured") {
         show = isFeatured;
       } else if (currentFilter.startsWith("cat:")) {
         const cat = currentFilter.replace("cat:", "");
         show = categories.includes(cat);
-      }
-
-      if (show && query) {
-        show = searchData.includes(query);
+      } else {
+        show = true;
       }
 
       card.style.display = show ? "flex" : "none";
