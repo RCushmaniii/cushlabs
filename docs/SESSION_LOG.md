@@ -100,6 +100,42 @@ Documented in CLAUDE.md and memory `feedback_tailwind4_color_collision`. Custom 
 
 ## Session History
 
+## Session: 2026-06-21 — Homepage chat rework + portfolio audit & full depth sweep
+
+### Accomplished
+
+- **Homepage chat (PR #116/#117/#118):** after several iterations, replaced the in-page chat iframe (which fought page scroll) with a single floating assistant shown on every page incl. home; the "Try It Right Now" section + hero CTA open it via `[data-open-chat]`. Also fixed the hero scroll chevron skipping/overshooting the demo and removed a duplicate "Try the Live Chatbot" arrow. Browser-verified (Playwright): opening the chat moves the page 0px.
+- **Portfolio search bypasses the category filter (PR #122, EN/ES)** — searching now looks across all projects, not just the active filter's subset.
+- **Portfolio audit + full depth sweep, all 34 posted projects (PR #119/#120/#123/#124 + ~20 sibling repos):** surfaced Solution + Results copy from each repo's PORTFOLIO.md body into frontmatter, added descriptive bilingual (en/es-MX) slide alt. Coverage: empty Solution 19→1, empty Results 19→2, generic alt 11→1. Done via parallel subagents, validated centrally.
+- **9 featured** curated for the asymmetrical grid (added AI Writing System via `portfolio-order.json`).
+- **cushlabs-sticker-gen:** un-featured + de-prioritized (priority 20), fixed broken images (uploaded 5 assets to R2 — the upload step had never run for this repo), rewrote Challenge/Solution/tagline in a fun, human voice.
+- **eslint:** added `scripts/**` override allowing `console` — cleared 16 `no-console` warnings in CLI scripts.
+- **Dependabot:** dismissed esbuild, js-yaml, @babel/core as tolerable_risk (all build/dev-only, not in deployed runtime).
+
+### Decisions Made
+
+- One floating chat surface everywhere instead of an embedded in-page iframe — a `position: fixed` overlay can't hijack scroll, ending that whole bug class.
+- Featured/priority is curated in `src/data/portfolio-order.json` (overrides PORTFOLIO.md) — the real source of truth for the grid order.
+- Sibling PORTFOLIO.md commits use a precise pathspec (not `git add -u`) to avoid sweeping unrelated WIP.
+- Left production CSP intact (declined to weaken for a browser extension); reframed experience as "AI-native / Enterprise IT roots" to avoid IT-ageism + a 30-vs-20-year inconsistency.
+
+### Immediate Next Steps
+
+- [ ] Robert: add ny-english-messenger-bot video + real screenshots → then I run R2 upload + regen (featured, currently no slides; copy already surfaced).
+- [ ] Robert: set biojalisco-species-id `live_url`/`demo_url` (branded) + add Sentry → then regen.
+
+### Technical Debt
+
+- ny-english-messenger-bot: featured but no slides until screenshots added (being handled).
+- biojalisco-species-id: no Sentry (required by standard) + raw `*.vercel.app` URLs (being handled).
+- cushlabs self-entry + scrollytelling: empty solution/metrics in JSON — intentional (override / no source). Not page defects.
+
+### Open Questions / Blockers
+
+- None.
+
+---
+
 ## Session: 2026-06-21 — UX/SEO audit fixes (PR #114)
 
 ### Accomplished

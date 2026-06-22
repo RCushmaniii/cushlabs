@@ -82,7 +82,21 @@ export default [
     },
   },
 
+  // CLI / build scripts use console as their legitimate output channel.
   {
-    ignores: ["dist/", ".astro/", "node_modules/", "public/", "nextjs-react-agency-starter/"],
+    files: ["scripts/**"],
+    rules: {
+      "no-console": "off",
+    },
+  },
+
+  {
+    ignores: [
+      "dist/",
+      ".astro/",
+      "node_modules/",
+      "public/",
+      "nextjs-react-agency-starter/",
+    ],
   },
 ];
