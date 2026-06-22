@@ -79,7 +79,7 @@ const images = override?.images?.length
         src: img.src as string,
         alt: { en: img.altEn || project.title, es: img.altEs || project.title },
       }))
-    : ogImageUrl
+    : ogImageUrl && !project.isPrivate
       ? [{ src: ogImageUrl, alt: { en: project.title, es: project.title } }]
       : [];
 
