@@ -947,9 +947,9 @@
       "description": "AI-powered vertebrate species identification for Jalisco field research. Next.js 15, GPT-4o Vision, Clerk, Neon Postgres.",
       "summary": "> AI-powered species identification for Jalisco biodiversity research. Four-API pipeline delivers verified taxonomy, IUCN status, Mexico-specific conservation data (NOM-059), and endemic classificatio",
       "url": "https://github.com/RCushmaniii/biojalisco-species-id",
-      "demoUrl": "https://biojalisco-species-id.vercel.app",
-      "liveUrl": "https://biojalisco-species-id.vercel.app",
-      "homepage": "https://biojalisco-species-id.vercel.app",
+      "demoUrl": "https://biojalisco.cushlabs.ai",
+      "liveUrl": "https://biojalisco.cushlabs.ai",
+      "homepage": "https://biojalisco.cushlabs.ai",
       "topics": [
         "ai",
         "biodiversity",
