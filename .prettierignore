@@ -1,0 +1,10 @@
+# Generator-owned data files — written by scripts/generate-*.ts via
+# JSON.stringify(..., null, 2). Prettier would reflow them (collapsing
+# arrays), producing a noisy diff that diverges from the generator output
+# and churns back on the next regen. Leave them as the generator emits.
+src/data/projects.generated.json
+src/data/skills.generated.json
+
+# Build output
+dist/
+.astro/
