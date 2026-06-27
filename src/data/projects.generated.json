@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-06-22T14:23:41.941Z",
-  "count": 36,
+  "generatedAt": "2026-06-27T23:00:30.744Z",
+  "count": 37,
   "projects": [
     {
       "id": 1108213747,
@@ -50,7 +50,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-06-21T22:36:44Z",
+      "lastPushed": "2026-06-22T16:48:49Z",
       "createdAt": "2025-12-02T07:09:31Z",
       "isFeatured": true,
       "isArchived": false,
@@ -176,15 +176,15 @@
       "status": "Production",
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 1050883,
+        "TypeScript": 1087616,
         "JavaScript": 16173,
         "PLpgSQL": 10195,
-        "CSS": 8090,
+        "CSS": 8564,
         "PowerShell": 5924
       },
       "stars": 1,
       "forks": 0,
-      "lastPushed": "2026-06-22T06:34:53Z",
+      "lastPushed": "2026-06-26T00:12:27Z",
       "createdAt": "2025-11-23T00:24:28Z",
       "isFeatured": true,
       "isArchived": false,
@@ -318,13 +318,13 @@
       "language": "HTML",
       "languages": {
         "HTML": 518122,
-        "JavaScript": 124944,
+        "JavaScript": 125038,
         "CSS": 8475,
         "Dockerfile": 358
       },
       "stars": 0,
       "forks": 1,
-      "lastPushed": "2026-06-21T22:36:52Z",
+      "lastPushed": "2026-06-27T19:08:54Z",
       "createdAt": "2026-02-23T01:31:09Z",
       "isFeatured": true,
       "isArchived": false,
@@ -475,7 +475,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-06-21T22:36:46Z",
+      "lastPushed": "2026-06-22T15:38:26Z",
       "createdAt": "2026-05-07T18:38:22Z",
       "isFeatured": true,
       "isArchived": false,
@@ -616,15 +616,16 @@
       "status": null,
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 965087,
+        "TypeScript": 1092914,
         "JavaScript": 47285,
         "HTML": 29745,
         "CSS": 8310,
-        "Dockerfile": 2208
+        "Shell": 4049,
+        "Dockerfile": 2347
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-06-22T02:14:33Z",
+      "lastPushed": "2026-06-27T19:46:52Z",
       "createdAt": "2026-03-30T19:46:00Z",
       "isFeatured": true,
       "isArchived": false,
@@ -762,7 +763,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-06-22T14:22:40Z",
+      "lastPushed": "2026-06-22T15:22:43Z",
       "createdAt": "2026-04-06T23:20:56Z",
       "isFeatured": true,
       "isArchived": false,
@@ -1043,14 +1044,14 @@
       "status": null,
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 278317,
+        "TypeScript": 280579,
         "CSS": 80360,
         "Python": 27828,
         "JavaScript": 2805
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-06-22T02:37:57Z",
+      "lastPushed": "2026-06-22T15:22:56Z",
       "createdAt": "2026-03-06T18:20:23Z",
       "isFeatured": true,
       "isArchived": false,
@@ -1133,6 +1134,133 @@
       "videoPoster": "https://cdn.cushlabs.ai/biojalisco-species-id/images/portfolio/biojalisco-brief-poster.webp"
     },
     {
+      "id": 1279696759,
+      "name": "cushlabs-investment-model",
+      "title": "CushLabs Investment Desk",
+      "description": "Personal, non-advisory decision-support for a self-directed portfolio: a zero-AI daily tracker (E*TRADE OAuth 1.0a, real cost basis) plus a cost-minimized AI allocation engine. Deterministic, unit-tested money math. TypeScript.",
+      "summary": "> Monitor your portfolio and 401(k) while AI guides future investments — personal, non-advisory decision-support where deterministic code does every dollar figure.",
+      "url": "https://github.com/RCushmaniii/cushlabs-investment-model",
+      "demoUrl": "https://cushlabs-investment-model.vercel.app/demo",
+      "liveUrl": "https://cushlabs-investment-model.vercel.app/",
+      "homepage": "https://cushlabs-investment-model.vercel.app",
+      "topics": [
+        "decision-support",
+        "etrade-api",
+        "fintech",
+        "investing",
+        "nodejs",
+        "oauth",
+        "personal-finance",
+        "portfolio-tracker",
+        "typescript",
+        "vitest"
+      ],
+      "categories": [
+        "Tools"
+      ],
+      "tags": [
+        "decision-support",
+        "etrade-api",
+        "fintech",
+        "investing",
+        "nodejs",
+        "oauth",
+        "personal-finance",
+        "portfolio-tracker",
+        "typescript",
+        "vitest",
+        "nextjs",
+        "clerk-auth",
+        "neon-postgres",
+        "deterministic"
+      ],
+      "stack": [
+        "Next.js 15 (App Router, React 19)",
+        "TypeScript (strict, ESM)",
+        "Clerk (authentication)",
+        "Neon Postgres (serverless)",
+        "Vercel (hosting + cron)",
+        "E*TRADE API (OAuth 1.0a, hand-rolled HMAC-SHA1)",
+        "Yahoo Finance (keyless price feed)",
+        "Anthropic Claude (Opus 4.8)",
+        "Tailwind CSS 4",
+        "Vitest"
+      ],
+      "status": null,
+      "language": "TypeScript",
+      "languages": {
+        "TypeScript": 267096,
+        "JavaScript": 3946,
+        "CSS": 243
+      },
+      "stars": 0,
+      "forks": 0,
+      "lastPushed": "2026-06-27T23:00:02Z",
+      "createdAt": "2026-06-24T23:58:40Z",
+      "isFeatured": false,
+      "isArchived": false,
+      "isPrivate": true,
+      "tagline": "Monitor your portfolio and 401(k) while AI guides future investments — with deterministic code doing every dollar figure.",
+      "thumbnail": "https://cdn.cushlabs.ai/cushlabs-investment-model/images/portfolio/cushlabs-investment-model-thumb.webp",
+      "problem": "Brokerage dashboards tell you what you own but not what to do next, and AI tools that try will\ncheerfully invent a price, a weight, or a return you can't audit. This app is decision-support\nbuilt the opposite way: every dollar, percentage, and constraint check is computed in\ndeterministic, unit-tested code; the language model is reserved for judgment and never produces\na number that drives a dollar figure. It tracks a real E*TRADE account to the penny, compares\ncompeting allocation plans against your actual cash and existing concentration, and monitors a\nmanual-snapshot 401(k) — three surfaces, one trust core.\n",
+      "solution": null,
+      "keyFeatures": [
+        "Reconciles to the broker to the penny — real cost basis pulled from E*TRADE via hand-rolled OAuth 1.0a, no manual entry",
+        "Three integrated surfaces in one app: zero-AI daily tracker, multi-plan Decision Desk, and a Fidelity 401(k) monitor",
+        "Dual-denominator concentration — every plan measured as a share of new cash AND of the whole live account",
+        "46 deterministic unit tests; the AI is fenced out of the dollar path entirely",
+        "Cost-minimized AI: $0 for daily tracking, one cached Opus call for deep analysis",
+        "Fully interactive public demo (tracker, desk, 401k) on fictional data — no sign-in, for portfolio review"
+      ],
+      "metrics": [],
+      "priority": 7,
+      "dateCompleted": null,
+      "slides": [
+        {
+          "src": "https://cdn.cushlabs.ai/cushlabs-investment-model/images/portfolio/cushlabs-investment-model-01.webp",
+          "altEn": "Title slide for the CushLabs Investment Desk — 'Three surfaces, one trust core' over a radial trust-core motif.",
+          "altEs": "Diapositiva de título del CushLabs Investment Desk: «Tres superficies, un núcleo de confianza» sobre un motivo radial del núcleo de confianza."
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/cushlabs-investment-model/images/portfolio/cushlabs-investment-model-02.webp",
+          "altEn": "The problem — brokerage dashboards only show what you own, while generic AI invents prices, weights, and returns that are unaccountable and unauditable.",
+          "altEs": "El problema: los paneles de las casas de bolsa solo muestran lo que posees, mientras que la IA genérica inventa precios, ponderaciones y rendimientos que no son auditables ni verificables."
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/cushlabs-investment-model/images/portfolio/cushlabs-investment-model-03.webp",
+          "altEn": "The trust-core architecture — a membrane separating deterministic, unit-tested code (P&L, exposures, constraint checks) from the language model (Claude Opus 4.8), which only adds conviction grades, diagnosis, and synthesis rationale.",
+          "altEs": "La arquitectura del núcleo de confianza: una membrana que separa el código determinista y probado con pruebas unitarias (P&L, exposiciones, validación de límites) del modelo de lenguaje (Claude Opus 4.8), que solo aporta grados de convicción, diagnóstico y justificación de la síntesis."
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/cushlabs-investment-model/images/portfolio/cushlabs-investment-model-04.webp",
+          "altEn": "The Allocation Decision Desk comparing Plan A (your draft), Plan B (an AI suggestion), and a synthesized hybrid built by greedy allocation plus constraint repair that reconciles exactly to available cash.",
+          "altEs": "El Allocation Decision Desk comparando el Plan A (tu borrador), el Plan B (una sugerencia de IA) y un híbrido sintetizado mediante asignación voraz y reparación de restricciones que cuadra exactamente con el efectivo disponible."
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/cushlabs-investment-model/images/portfolio/cushlabs-investment-model-05.webp",
+          "altEn": "Dual-denominator risk catching hidden exposure — a position that is 20% of new cash but 75% of the whole account, flagged as an overexposed theme.",
+          "altEs": "El riesgo de doble denominador detecta una exposición oculta: una posición que es el 20% del efectivo nuevo pero el 75% de la cuenta completa, marcada como tema sobreexpuesto."
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/cushlabs-investment-model/images/portfolio/cushlabs-investment-model-06.webp",
+          "altEn": "The 401(k) monitor for a hostile environment — a Fidelity plan of institutional collective trusts with no tickers and no API, tracked via manual monthly snapshots with alerts and benchmark-proxy estimation.",
+          "altEs": "El monitor del 401(k) para un entorno hostil: un plan de Fidelity de fideicomisos colectivos institucionales sin símbolos bursátiles ni API, monitoreado con capturas mensuales manuales, alertas y estimación por ETF de referencia."
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/cushlabs-investment-model/images/portfolio/cushlabs-investment-model-07.webp",
+          "altEn": "Software that conforms to your reality — the investor at the center, explicitly non-advisory and grounded in your actual holdings rather than a vendor's generic benchmark model.",
+          "altEs": "Software que se adapta a tu realidad: el inversionista al centro, explícitamente no asesor y basado en tus tenencias reales en lugar del modelo de referencia genérico de un proveedor."
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/cushlabs-investment-model/images/portfolio/cushlabs-investment-model-08.webp",
+          "altEn": "A comparison table showing how the CushLabs trust core — unlike a brokerage dashboard, a robo-advisor, or generic AI — turns holdings into next steps, keeps the money math auditable, preserves user control, and hard-fences AI away from money movement.",
+          "altEs": "Una tabla comparativa que muestra cómo el núcleo de confianza de CushLabs —a diferencia del panel de una casa de bolsa, un robo-asesor o la IA genérica— convierte las tenencias en próximos pasos, mantiene auditable el cálculo del dinero, preserva el control del usuario y aísla a la IA de cualquier movimiento de dinero."
+        }
+      ],
+      "videoUrl": "https://cdn.cushlabs.ai/cushlabs-investment-model/video/cushlabs-investment-model-brief.mp4",
+      "videoPoster": "https://cdn.cushlabs.ai/cushlabs-investment-model/images/portfolio/cushlabs-investment-model-brief-poster.webp"
+    },
+    {
       "id": 1184574225,
       "name": "cushlabs-OS-dashboard",
       "title": "CushLabs OS Dashboard",
@@ -1192,13 +1320,13 @@
       "status": "Production",
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 284784,
-        "CSS": 1268,
-        "JavaScript": 486
+        "TypeScript": 321164,
+        "JavaScript": 12040,
+        "CSS": 1268
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-06-22T01:58:07Z",
+      "lastPushed": "2026-06-25T23:59:25Z",
       "createdAt": "2026-03-17T18:08:51Z",
       "isFeatured": false,
       "isArchived": false,
@@ -1224,7 +1352,7 @@
         "4 goal time horizons tracked with automated staleness warnings",
         "Sub-second client-side filtering across all interactive views"
       ],
-      "priority": 7,
+      "priority": 8,
       "dateCompleted": "2026-03",
       "slides": [
         {
@@ -1344,7 +1472,7 @@
         "One voice identity stays consistent across every channel",
         "First drafts arrive review-ready instead of rewrite-ready"
       ],
-      "priority": 8,
+      "priority": 9,
       "dateCompleted": null,
       "slides": [
         {
@@ -1482,7 +1610,7 @@
         "Mobile-responsive with scroll-snap carousels and touch support"
       ],
       "metrics": [],
-      "priority": 9,
+      "priority": 10,
       "dateCompleted": "2026-03",
       "slides": [
         {
@@ -1621,7 +1749,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-06-22T13:18:50Z",
+      "lastPushed": "2026-06-26T14:50:53Z",
       "createdAt": "2026-03-09T19:14:08Z",
       "isFeatured": false,
       "isArchived": false,
@@ -1645,7 +1773,7 @@
         "Orchestrates 4+ ML models with cost-aware fallback routing",
         "Zero image-editing skill required — simple drag-and-drop web interface"
       ],
-      "priority": 10,
+      "priority": 11,
       "dateCompleted": null,
       "slides": [
         {
@@ -1734,7 +1862,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-06-22T05:43:53Z",
+      "lastPushed": "2026-06-26T14:50:50Z",
       "createdAt": "2025-11-05T18:11:38Z",
       "isFeatured": false,
       "isArchived": false,
@@ -1756,7 +1884,7 @@
         "Native Spanish support — not machine-translated afterthoughts",
         "Zero data retention — resume text is never persisted"
       ],
-      "priority": 11,
+      "priority": 12,
       "dateCompleted": null,
       "slides": [
         {
@@ -1884,7 +2012,7 @@
         "High-impact persuasion site shipped with no React, build system, or CMS",
         "Image pipeline cut total payload from 16.8MB to 1.3MB (92% reduction)"
       ],
-      "priority": 12,
+      "priority": 13,
       "dateCompleted": null,
       "slides": [
         {
@@ -2001,9 +2129,9 @@
         "JavaScript": 11295,
         "CSS": 5180
       },
-      "stars": 0,
+      "stars": 1,
       "forks": 0,
-      "lastPushed": "2026-06-21T22:43:22Z",
+      "lastPushed": "2026-06-22T15:24:46Z",
       "createdAt": "2026-01-25T01:59:32Z",
       "isFeatured": false,
       "isArchived": false,
@@ -2026,7 +2154,7 @@
         "Production-grade Next.js 15 app with server-side AI that keeps OpenAI keys off the client",
         "Zero-storage privacy architecture — no accounts, databases, cookies, or analytics"
       ],
-      "priority": 13,
+      "priority": 14,
       "dateCompleted": "2026-02",
       "slides": [
         {
@@ -2131,7 +2259,7 @@
         "Client-ready Markdown and PDF deliverables that need no extra formatting",
         "Email sequences, ad campaigns, and 30-day content calendars generated on demand"
       ],
-      "priority": 14,
+      "priority": 15,
       "dateCompleted": null,
       "slides": [
         {
@@ -2282,7 +2410,7 @@
         "6 decision presets + 5 growth scenario presets",
         "Full state shareable via URL — no backend required"
       ],
-      "priority": 15,
+      "priority": 16,
       "dateCompleted": "2026-02",
       "slides": [
         {
@@ -2422,7 +2550,7 @@
         "12 universal folder categories",
         "10 free scans per user (backend-enforced)"
       ],
-      "priority": 16,
+      "priority": 17,
       "dateCompleted": "2026-02",
       "slides": [
         {
@@ -2563,7 +2691,7 @@
         "9 currency pair combinations (USD/MXN/EUR)",
         "Zero data transmitted — 100% client-side computation"
       ],
-      "priority": 17,
+      "priority": 18,
       "dateCompleted": "2026-02",
       "slides": [
         {
@@ -2707,7 +2835,7 @@
         "Bilingual presentation teaches both the correct answer and exam-day vocabulary",
         "Process guides remove the 'what do I even bring?' uncertainty before the exam"
       ],
-      "priority": 18,
+      "priority": 19,
       "dateCompleted": null,
       "slides": [
         {
@@ -2820,7 +2948,7 @@
         "15 stocks monitored simultaneously on free tier",
         "60 API calls/minute rate-limited token bucket for optimal Finnhub usage"
       ],
-      "priority": 19,
+      "priority": 20,
       "dateCompleted": "2026-02",
       "slides": [
         {
@@ -3050,7 +3178,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-05-12T18:59:34Z",
+      "lastPushed": "2026-06-22T23:05:01Z",
       "createdAt": "2026-02-13T19:55:19Z",
       "isFeatured": false,
       "isArchived": false,
@@ -3071,7 +3199,7 @@
         "4 chart types: waterfall, stacked bar, line with crossover, comparison table",
         "Full state shareable via URL — zero backend, zero data exposure"
       ],
-      "priority": 20,
+      "priority": 21,
       "dateCompleted": "2026-02",
       "slides": [
         {
@@ -3181,7 +3309,7 @@
       },
       "stars": 2,
       "forks": 0,
-      "lastPushed": "2026-06-22T08:34:27Z",
+      "lastPushed": "2026-06-22T14:24:31Z",
       "createdAt": "2026-01-08T03:52:43Z",
       "isFeatured": false,
       "isArchived": false,
@@ -3199,7 +3327,7 @@
         "100% EN/ES content parity enforced at build time — no language drift"
       ],
       "metrics": [],
-      "priority": 21,
+      "priority": 22,
       "dateCompleted": null,
       "slides": [
         {
@@ -3313,7 +3441,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-06-21T22:43:27Z",
+      "lastPushed": "2026-06-22T22:23:52Z",
       "createdAt": "2026-01-05T15:06:48Z",
       "isFeatured": false,
       "isArchived": false,
@@ -3337,7 +3465,7 @@
         "Featured showcase highlighting the 6 strongest projects with detailed breakdowns",
         "Filtered views shareable via URL — bookmarkable category and sort combinations"
       ],
-      "priority": 22,
+      "priority": 23,
       "dateCompleted": null,
       "slides": [
         {
@@ -3480,7 +3608,7 @@
         "Client-side dictionary architecture handling 370K entries with O(1) performance",
         "Full E2E coverage across features, dark mode, and English/Spanish locales"
       ],
-      "priority": 23,
+      "priority": 24,
       "dateCompleted": "2025-09",
       "slides": [
         {
@@ -3598,7 +3726,7 @@
         "Six-iteration UX refinement process documented end-to-end",
         "Zero i18n framework dependencies for full bilingual support"
       ],
-      "priority": 24,
+      "priority": 25,
       "dateCompleted": "2025-10",
       "slides": [
         {
@@ -3722,7 +3850,7 @@
         "Installable as a native-feeling PWA on Android and iOS",
         "Clean architecture with minimal dependencies and no database requirement"
       ],
-      "priority": 25,
+      "priority": 26,
       "dateCompleted": null,
       "slides": [
         {
@@ -3845,7 +3973,7 @@
         "0.3s FCP, 0.4s LCP, 0ms TBT — zero layout shift",
         "Auto-generated sitemap with hreflang alternates for 30+ locale-specific URLs"
       ],
-      "priority": 26,
+      "priority": 27,
       "dateCompleted": "2026-02",
       "slides": [
         {
@@ -3947,7 +4075,7 @@
       },
       "stars": 1,
       "forks": 0,
-      "lastPushed": "2026-05-12T00:24:44Z",
+      "lastPushed": "2026-06-22T23:24:07Z",
       "createdAt": "2026-01-23T00:50:02Z",
       "isFeatured": false,
       "isArchived": false,
@@ -3969,7 +4097,7 @@
         "100% static — $0 server cost",
         "Sub-second page loads via CDN"
       ],
-      "priority": 27,
+      "priority": 28,
       "dateCompleted": "2026-02",
       "slides": [
         {
@@ -4091,7 +4219,7 @@
         "Every card auto-generated with a 9-item Definition of Done quality gate",
         "Encoded dependency chains replace tribal knowledge with enforced execution order"
       ],
-      "priority": 28,
+      "priority": 29,
       "dateCompleted": null,
       "slides": [
         {
@@ -4185,7 +4313,7 @@
         "Entire app, including all GDD content, ships in a 357 KB gzipped bundle",
         "Markdown-to-deploy in under 60 seconds via Git push and Vercel auto-deploy"
       ],
-      "priority": 29,
+      "priority": 30,
       "dateCompleted": null,
       "slides": [
         {
@@ -4296,7 +4424,7 @@
         "Zero database dependencies — file-based MDX content",
         "End-to-end contact form with validation and email delivery"
       ],
-      "priority": 30,
+      "priority": 31,
       "dateCompleted": "2025-12",
       "slides": [
         {
@@ -4424,7 +4552,7 @@
         "1-2 days of setup time eliminated per project",
         "All dependencies pinned to stable Feb 2026 versions"
       ],
-      "priority": 31,
+      "priority": 32,
       "dateCompleted": "2026-02",
       "slides": [
         {
