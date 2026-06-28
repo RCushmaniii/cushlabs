@@ -1,3 +1,5 @@
+import { ES_TITLE_BIOJALISCO_PITCH } from "./esCanonicalTitles";
+
 export type ProjectDetailLocale = {
   headline: string;
   subheadline: string;
@@ -863,7 +865,7 @@ const details: Record<string, ProjectDetailOverride> = {
       ],
     },
     es: {
-      headline: "BioJalisco — Sitio de Presentación Cinematográfico",
+      headline: ES_TITLE_BIOJALISCO_PITCH,
       subheadline:
         "Sitio de scrollytelling cinemático presentando una plataforma de biodiversidad de ciencia ciudadana para el occidente de México",
       overallVerdictTitle: "El Veredicto",
