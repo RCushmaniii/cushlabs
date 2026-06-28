@@ -85,7 +85,7 @@ export const esCardCopy: Record<string, EsCardCopy> = {
       "Optimización de CV para sistemas ATS con IA, soporte bilingüe y retroalimentación instantánea",
   },
   "biojalisco-pitch": {
-    title: "BioJalisco — Atlas de Biodiversidad e Identificador de Especies",
+    title: "BioJalisco — Sitio de Presentación Cinematográfico",
     tagline:
       "Sitio de pitch con scrollytelling cinematográfico e identificación de especies con IA para la plataforma de biodiversidad del occidente de México",
   },

@@ -825,7 +825,7 @@ const details: Record<string, ProjectDetailOverride> = {
     slug: "biojalisco-pitch",
     demoUrl: "https://biojalisco-pitch.vercel.app",
     en: {
-      headline: "BioJalisco Pitch Site",
+      headline: "BioJalisco — Cinematic Scrollytelling Pitch Site",
       subheadline:
         "Cinematic scrollytelling site pitching a citizen-science biodiversity platform for western Mexico",
       overallVerdictTitle: "The Verdict",
@@ -863,7 +863,7 @@ const details: Record<string, ProjectDetailOverride> = {
       ],
     },
     es: {
-      headline: "Sitio de Presentación BioJalisco",
+      headline: "BioJalisco — Sitio de Presentación Cinematográfico",
       subheadline:
         "Sitio de scrollytelling cinemático presentando una plataforma de biodiversidad de ciencia ciudadana para el occidente de México",
       overallVerdictTitle: "El Veredicto",
