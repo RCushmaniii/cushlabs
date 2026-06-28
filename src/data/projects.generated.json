@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-28T01:09:16.216Z",
+  "generatedAt": "2026-06-28T02:24:35.028Z",
   "count": 37,
   "projects": [
     {
@@ -13,7 +13,9 @@
       "liveUrl": "",
       "homepage": "https://www.soyconverso.com",
       "topics": [],
-      "categories": ["AI Automation"],
+      "categories": [
+        "AI Automation"
+      ],
       "tags": [
         "ai-chatbot",
         "saas",
@@ -140,7 +142,9 @@
         "tailwindcss",
         "vercel-deployment"
       ],
-      "categories": ["AI Automation"],
+      "categories": [
+        "AI Automation"
+      ],
       "tags": [
         "ai-chatbot",
         "nextjs",
@@ -270,7 +274,9 @@
         "vapi",
         "voice-agent"
       ],
-      "categories": ["AI Automation"],
+      "categories": [
+        "AI Automation"
+      ],
       "tags": [
         "ai",
         "appointment-booking",
@@ -427,7 +433,9 @@
         "tailwindcss",
         "typescript"
       ],
-      "categories": ["AI Automation"],
+      "categories": [
+        "AI Automation"
+      ],
       "tags": [
         "ai-agents",
         "bilingual",
@@ -571,7 +579,9 @@
         "saas",
         "whatsapp-api"
       ],
-      "categories": ["AI Automation"],
+      "categories": [
+        "AI Automation"
+      ],
       "tags": [
         "ai-analytics",
         "business-intelligence",
@@ -606,7 +616,7 @@
       "status": null,
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 1095539,
+        "TypeScript": 1101931,
         "JavaScript": 47285,
         "HTML": 29745,
         "CSS": 8310,
@@ -615,7 +625,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-06-27T23:46:47Z",
+      "lastPushed": "2026-06-28T01:28:11Z",
       "createdAt": "2026-03-30T19:46:00Z",
       "isFeatured": true,
       "isArchived": false,
@@ -712,7 +722,9 @@
         "typescript",
         "workers-ai"
       ],
-      "categories": ["AI Automation"],
+      "categories": [
+        "AI Automation"
+      ],
       "tags": [
         "ai-assistant",
         "anthropic",
@@ -850,7 +862,9 @@
         "tailwindcss",
         "typescript"
       ],
-      "categories": ["Client Work"],
+      "categories": [
+        "Client Work"
+      ],
       "tags": [
         "astro",
         "bilingual",
@@ -993,7 +1007,9 @@
         "nextjs",
         "species-identification"
       ],
-      "categories": ["AI Automation"],
+      "categories": [
+        "AI Automation"
+      ],
       "tags": [
         "ai",
         "biodiversity",
@@ -1139,7 +1155,9 @@
         "typescript",
         "vitest"
       ],
-      "categories": ["Tools"],
+      "categories": [
+        "Tools"
+      ],
       "tags": [
         "decision-support",
         "etrade-api",
@@ -1268,7 +1286,9 @@
         "typescript",
         "vercel"
       ],
-      "categories": ["Tools"],
+      "categories": [
+        "Tools"
+      ],
       "tags": [
         "analytics",
         "dashboard",
@@ -1393,7 +1413,9 @@
         "llm-tools",
         "writing-system"
       ],
-      "categories": ["AI Automation"],
+      "categories": [
+        "AI Automation"
+      ],
       "tags": [
         "ai-assistant",
         "ai-content-generation",
@@ -1534,7 +1556,9 @@
         "svelte",
         "tailwindcss"
       ],
-      "categories": ["Templates"],
+      "categories": [
+        "Templates"
+      ],
       "tags": [
         "astro",
         "bilingual",
@@ -1675,7 +1699,9 @@
         "sam",
         "watermark-removal"
       ],
-      "categories": ["AI Automation"],
+      "categories": [
+        "AI Automation"
+      ],
       "tags": [
         "ai",
         "automation",
@@ -1795,7 +1821,9 @@
       "liveUrl": "https://resume.cushlabs.ai",
       "homepage": "https://resume.cushlabs.ai",
       "topics": [],
-      "categories": ["AI Automation"],
+      "categories": [
+        "AI Automation"
+      ],
       "tags": [
         "ai",
         "saas",
@@ -1918,7 +1946,9 @@
         "text-to-voice-application",
         "vercel"
       ],
-      "categories": ["Client Work"],
+      "categories": [
+        "Client Work"
+      ],
       "tags": [
         "bilingual",
         "biodiversity",
@@ -1956,7 +1986,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-06-28T00:46:26Z",
+      "lastPushed": "2026-06-28T02:05:59Z",
       "createdAt": "2026-03-04T22:07:57Z",
       "isFeatured": false,
       "isArchived": false,
@@ -2061,7 +2091,9 @@
         "tailwindcss",
         "typescript"
       ],
-      "categories": ["AI Automation"],
+      "categories": [
+        "AI Automation"
+      ],
       "tags": [
         "framer-motion",
         "i18n",
@@ -2175,7 +2207,9 @@
       "liveUrl": "",
       "homepage": null,
       "topics": [],
-      "categories": ["AI Automation"],
+      "categories": [
+        "AI Automation"
+      ],
       "tags": [
         "claude-code",
         "marketing-automation",
@@ -2314,7 +2348,9 @@
         "vercel",
         "weighted-scoring"
       ],
-      "categories": ["Tools"],
+      "categories": [
+        "Tools"
+      ],
       "tags": [
         "3pl",
         "build-vs-outsource",
@@ -2454,7 +2490,9 @@
         "typescript",
         "windows-app"
       ],
-      "categories": ["AI Automation"],
+      "categories": [
+        "AI Automation"
+      ],
       "tags": [
         "ai",
         "desktop-app",
@@ -2472,7 +2510,13 @@
         "bilingual",
         "windows"
       ],
-      "stack": ["Tauri 2", "Rust", "React", "TypeScript", "Claude Haiku"],
+      "stack": [
+        "Tauri 2",
+        "Rust",
+        "React",
+        "TypeScript",
+        "Claude Haiku"
+      ],
       "status": "Demo",
       "language": "TypeScript",
       "languages": {
@@ -2589,7 +2633,9 @@
         "tailwindcss",
         "typescript"
       ],
-      "categories": ["Tools"],
+      "categories": [
+        "Tools"
+      ],
       "tags": [
         "bilingual",
         "digital-nomad",
@@ -2729,7 +2775,9 @@
         "tailwindcss",
         "typescript"
       ],
-      "categories": ["Tools"],
+      "categories": [
+        "Tools"
+      ],
       "tags": [
         "astro",
         "bilingual",
@@ -2844,7 +2892,9 @@
         "windows",
         "windows-notifications"
       ],
-      "categories": ["Tools"],
+      "categories": [
+        "Tools"
+      ],
       "tags": [
         "desktop-app",
         "python",
@@ -2976,7 +3026,9 @@
         "webp",
         "whatsapp"
       ],
-      "categories": ["Developer Tools"],
+      "categories": [
+        "Developer Tools"
+      ],
       "tags": [
         "android",
         "automation",
@@ -3089,7 +3141,9 @@
         "typescript",
         "zustand"
       ],
-      "categories": ["Tools"],
+      "categories": [
+        "Tools"
+      ],
       "tags": [
         "compensation-plan",
         "cushlabs",
@@ -3215,7 +3269,9 @@
         "static-site",
         "tailwindcss"
       ],
-      "categories": ["Tools"],
+      "categories": [
+        "Tools"
+      ],
       "tags": [
         "ai-consulting",
         "astro",
@@ -3244,8 +3300,8 @@
       "status": null,
       "language": "Astro",
       "languages": {
-        "Astro": 671008,
-        "TypeScript": 356555,
+        "Astro": 671049,
+        "TypeScript": 357428,
         "JavaScript": 99453,
         "HTML": 61067,
         "Python": 6606,
@@ -3253,7 +3309,7 @@
       },
       "stars": 2,
       "forks": 0,
-      "lastPushed": "2026-06-27T23:01:37Z",
+      "lastPushed": "2026-06-28T02:03:08Z",
       "createdAt": "2026-01-08T03:52:43Z",
       "isFeatured": false,
       "isArchived": false,
@@ -3349,7 +3405,9 @@
         "typescript",
         "vercel"
       ],
-      "categories": ["Developer Tools"],
+      "categories": [
+        "Developer Tools"
+      ],
       "tags": [
         "github-api",
         "nextjs",
@@ -3376,14 +3434,14 @@
       "status": null,
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 178674,
+        "TypeScript": 182581,
         "PowerShell": 3372,
         "CSS": 1578,
         "JavaScript": 83
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-06-28T00:44:47Z",
+      "lastPushed": "2026-06-28T02:19:57Z",
       "createdAt": "2026-01-05T15:06:48Z",
       "isFeatured": false,
       "isArchived": false,
@@ -3486,7 +3544,9 @@
         "typescipt",
         "vite"
       ],
-      "categories": ["Games"],
+      "categories": [
+        "Games"
+      ],
       "tags": [
         "anagram-solver",
         "free-game",
@@ -3605,7 +3665,9 @@
         "typescript",
         "vercel"
       ],
-      "categories": ["Creative"],
+      "categories": [
+        "Creative"
+      ],
       "tags": [
         "cdn",
         "cdn-distribution",
@@ -3732,7 +3794,9 @@
       "liveUrl": "https://gallery.cushlabs.ai/",
       "homepage": "https://cushlabs-image-portfolio.vercel.app",
       "topics": [],
-      "categories": ["Tools"],
+      "categories": [
+        "Tools"
+      ],
       "tags": [
         "next-js",
         "typescript",
@@ -3846,7 +3910,9 @@
         "typescript",
         "windows-app"
       ],
-      "categories": ["Marketing"],
+      "categories": [
+        "Marketing"
+      ],
       "tags": [
         "ai",
         "claude-ai",
@@ -3972,7 +4038,9 @@
         "windows-alert",
         "windows-app"
       ],
-      "categories": ["Templates"],
+      "categories": [
+        "Templates"
+      ],
       "tags": [
         "price-alerts",
         "stock-alerts",
@@ -4105,7 +4173,9 @@
         "trello-power-up",
         "vercel"
       ],
-      "categories": ["Developer Tools"],
+      "categories": [
+        "Developer Tools"
+      ],
       "tags": [
         "game-development",
         "nodejs",
@@ -4118,7 +4188,13 @@
         "automation",
         "api-integration"
       ],
-      "stack": ["Node.js", "axios", "dotenv", "Trello REST API", "Vercel"],
+      "stack": [
+        "Node.js",
+        "axios",
+        "dotenv",
+        "Trello REST API",
+        "Vercel"
+      ],
       "status": null,
       "language": "HTML",
       "languages": {
@@ -4191,7 +4267,9 @@
       "liveUrl": "https://mazebreak-wiki.vercel.app/",
       "homepage": "https://mazebreak-wiki.vercel.app",
       "topics": [],
-      "categories": ["Developer Tools"],
+      "categories": [
+        "Developer Tools"
+      ],
       "tags": [
         "developer-tools",
         "documentation",
@@ -4287,8 +4365,15 @@
       "demoUrl": "https://nextjs-react-agency-starter.vercel.app/",
       "liveUrl": "https://nextjs-react-agency-starter.vercel.app/",
       "homepage": "https://nextjs-react-agency-starter.vercel.app/",
-      "topics": ["nextjs", "react", "starter-kit", "tailwindcss"],
-      "categories": ["Templates"],
+      "topics": [
+        "nextjs",
+        "react",
+        "starter-kit",
+        "tailwindcss"
+      ],
+      "categories": [
+        "Templates"
+      ],
       "tags": [
         "nextjs",
         "react",
@@ -4301,7 +4386,13 @@
         "agency",
         "resend"
       ],
-      "stack": ["Next.js 14", "TypeScript", "Tailwind CSS", "MDX", "Resend"],
+      "stack": [
+        "Next.js 14",
+        "TypeScript",
+        "Tailwind CSS",
+        "MDX",
+        "Resend"
+      ],
       "status": "Production",
       "language": "TypeScript",
       "languages": {
@@ -4395,8 +4486,16 @@
       "demoUrl": "https://react-vite-tailwind-base.vercel.app/components",
       "liveUrl": "https://react-vite-tailwind-base.vercel.app",
       "homepage": "https://react-vite-tailwind-base.vercel.app",
-      "topics": ["react", "shadcn", "shadcn-ui", "tailwindcss", "vite"],
-      "categories": ["Templates"],
+      "topics": [
+        "react",
+        "shadcn",
+        "shadcn-ui",
+        "tailwindcss",
+        "vite"
+      ],
+      "categories": [
+        "Templates"
+      ],
       "tags": [
         "react",
         "shadcn",
