@@ -13,9 +13,7 @@
       "liveUrl": "",
       "homepage": "https://www.soyconverso.com",
       "topics": [],
-      "categories": [
-        "AI Automation"
-      ],
+      "categories": ["AI Automation"],
       "tags": [
         "ai-chatbot",
         "saas",
@@ -142,9 +140,7 @@
         "tailwindcss",
         "vercel-deployment"
       ],
-      "categories": [
-        "AI Automation"
-      ],
+      "categories": ["AI Automation"],
       "tags": [
         "ai-chatbot",
         "nextjs",
@@ -274,9 +270,7 @@
         "vapi",
         "voice-agent"
       ],
-      "categories": [
-        "AI Automation"
-      ],
+      "categories": ["AI Automation"],
       "tags": [
         "ai",
         "appointment-booking",
@@ -433,9 +427,7 @@
         "tailwindcss",
         "typescript"
       ],
-      "categories": [
-        "AI Automation"
-      ],
+      "categories": ["AI Automation"],
       "tags": [
         "ai-agents",
         "bilingual",
@@ -579,9 +571,7 @@
         "saas",
         "whatsapp-api"
       ],
-      "categories": [
-        "AI Automation"
-      ],
+      "categories": ["AI Automation"],
       "tags": [
         "ai-analytics",
         "business-intelligence",
@@ -722,9 +712,7 @@
         "typescript",
         "workers-ai"
       ],
-      "categories": [
-        "AI Automation"
-      ],
+      "categories": ["AI Automation"],
       "tags": [
         "ai-assistant",
         "anthropic",
@@ -862,9 +850,7 @@
         "tailwindcss",
         "typescript"
       ],
-      "categories": [
-        "Client Work"
-      ],
+      "categories": ["Client Work"],
       "tags": [
         "astro",
         "bilingual",
@@ -1007,9 +993,7 @@
         "nextjs",
         "species-identification"
       ],
-      "categories": [
-        "AI Automation"
-      ],
+      "categories": ["AI Automation"],
       "tags": [
         "ai",
         "biodiversity",
@@ -1155,9 +1139,7 @@
         "typescript",
         "vitest"
       ],
-      "categories": [
-        "Tools"
-      ],
+      "categories": ["Tools"],
       "tags": [
         "decision-support",
         "etrade-api",
@@ -1286,9 +1268,7 @@
         "typescript",
         "vercel"
       ],
-      "categories": [
-        "Tools"
-      ],
+      "categories": ["Tools"],
       "tags": [
         "analytics",
         "dashboard",
@@ -1413,9 +1393,7 @@
         "llm-tools",
         "writing-system"
       ],
-      "categories": [
-        "AI Automation"
-      ],
+      "categories": ["AI Automation"],
       "tags": [
         "ai-assistant",
         "ai-content-generation",
@@ -1556,9 +1534,7 @@
         "svelte",
         "tailwindcss"
       ],
-      "categories": [
-        "Templates"
-      ],
+      "categories": ["Templates"],
       "tags": [
         "astro",
         "bilingual",
@@ -1699,9 +1675,7 @@
         "sam",
         "watermark-removal"
       ],
-      "categories": [
-        "AI Automation"
-      ],
+      "categories": ["AI Automation"],
       "tags": [
         "ai",
         "automation",
@@ -1821,9 +1795,7 @@
       "liveUrl": "https://resume.cushlabs.ai",
       "homepage": "https://resume.cushlabs.ai",
       "topics": [],
-      "categories": [
-        "AI Automation"
-      ],
+      "categories": ["AI Automation"],
       "tags": [
         "ai",
         "saas",
@@ -1924,7 +1896,7 @@
     {
       "id": 1172972613,
       "name": "biojalisco-pitch",
-      "title": "Scrollytelling Pitch Site — BioJalisco Biodiversity Vision",
+      "title": "BioJalisco — Cinematic Scrollytelling Pitch Site",
       "description": "BioJalisco — bilingual scrollytelling pitch site for a citizen-science biodiversity platform in western Mexico",
       "summary": "> Cinematic scrollytelling site pitching BioJalisco — a citizen-science biodiversity platform for western Mexico — plus an AI-powered Species Identifier tool.",
       "url": "https://github.com/RCushmaniii/biojalisco-pitch",
@@ -1946,9 +1918,7 @@
         "text-to-voice-application",
         "vercel"
       ],
-      "categories": [
-        "Client Work"
-      ],
+      "categories": ["Client Work"],
       "tags": [
         "bilingual",
         "biodiversity",
@@ -2091,9 +2061,7 @@
         "tailwindcss",
         "typescript"
       ],
-      "categories": [
-        "AI Automation"
-      ],
+      "categories": ["AI Automation"],
       "tags": [
         "framer-motion",
         "i18n",
@@ -2207,9 +2175,7 @@
       "liveUrl": "",
       "homepage": null,
       "topics": [],
-      "categories": [
-        "AI Automation"
-      ],
+      "categories": ["AI Automation"],
       "tags": [
         "claude-code",
         "marketing-automation",
@@ -2348,9 +2314,7 @@
         "vercel",
         "weighted-scoring"
       ],
-      "categories": [
-        "Tools"
-      ],
+      "categories": ["Tools"],
       "tags": [
         "3pl",
         "build-vs-outsource",
@@ -2490,9 +2454,7 @@
         "typescript",
         "windows-app"
       ],
-      "categories": [
-        "AI Automation"
-      ],
+      "categories": ["AI Automation"],
       "tags": [
         "ai",
         "desktop-app",
@@ -2510,13 +2472,7 @@
         "bilingual",
         "windows"
       ],
-      "stack": [
-        "Tauri 2",
-        "Rust",
-        "React",
-        "TypeScript",
-        "Claude Haiku"
-      ],
+      "stack": ["Tauri 2", "Rust", "React", "TypeScript", "Claude Haiku"],
       "status": "Demo",
       "language": "TypeScript",
       "languages": {
@@ -2633,9 +2589,7 @@
         "tailwindcss",
         "typescript"
       ],
-      "categories": [
-        "Tools"
-      ],
+      "categories": ["Tools"],
       "tags": [
         "bilingual",
         "digital-nomad",
@@ -2775,9 +2729,7 @@
         "tailwindcss",
         "typescript"
       ],
-      "categories": [
-        "Tools"
-      ],
+      "categories": ["Tools"],
       "tags": [
         "astro",
         "bilingual",
@@ -2892,9 +2844,7 @@
         "windows",
         "windows-notifications"
       ],
-      "categories": [
-        "Tools"
-      ],
+      "categories": ["Tools"],
       "tags": [
         "desktop-app",
         "python",
@@ -3026,9 +2976,7 @@
         "webp",
         "whatsapp"
       ],
-      "categories": [
-        "Developer Tools"
-      ],
+      "categories": ["Developer Tools"],
       "tags": [
         "android",
         "automation",
@@ -3141,9 +3089,7 @@
         "typescript",
         "zustand"
       ],
-      "categories": [
-        "Tools"
-      ],
+      "categories": ["Tools"],
       "tags": [
         "compensation-plan",
         "cushlabs",
@@ -3269,9 +3215,7 @@
         "static-site",
         "tailwindcss"
       ],
-      "categories": [
-        "Tools"
-      ],
+      "categories": ["Tools"],
       "tags": [
         "ai-consulting",
         "astro",
@@ -3405,9 +3349,7 @@
         "typescript",
         "vercel"
       ],
-      "categories": [
-        "Developer Tools"
-      ],
+      "categories": ["Developer Tools"],
       "tags": [
         "github-api",
         "nextjs",
@@ -3544,9 +3486,7 @@
         "typescipt",
         "vite"
       ],
-      "categories": [
-        "Games"
-      ],
+      "categories": ["Games"],
       "tags": [
         "anagram-solver",
         "free-game",
@@ -3665,9 +3605,7 @@
         "typescript",
         "vercel"
       ],
-      "categories": [
-        "Creative"
-      ],
+      "categories": ["Creative"],
       "tags": [
         "cdn",
         "cdn-distribution",
@@ -3794,9 +3732,7 @@
       "liveUrl": "https://gallery.cushlabs.ai/",
       "homepage": "https://cushlabs-image-portfolio.vercel.app",
       "topics": [],
-      "categories": [
-        "Tools"
-      ],
+      "categories": ["Tools"],
       "tags": [
         "next-js",
         "typescript",
@@ -3910,9 +3846,7 @@
         "typescript",
         "windows-app"
       ],
-      "categories": [
-        "Marketing"
-      ],
+      "categories": ["Marketing"],
       "tags": [
         "ai",
         "claude-ai",
@@ -4038,9 +3972,7 @@
         "windows-alert",
         "windows-app"
       ],
-      "categories": [
-        "Templates"
-      ],
+      "categories": ["Templates"],
       "tags": [
         "price-alerts",
         "stock-alerts",
@@ -4173,9 +4105,7 @@
         "trello-power-up",
         "vercel"
       ],
-      "categories": [
-        "Developer Tools"
-      ],
+      "categories": ["Developer Tools"],
       "tags": [
         "game-development",
         "nodejs",
@@ -4188,13 +4118,7 @@
         "automation",
         "api-integration"
       ],
-      "stack": [
-        "Node.js",
-        "axios",
-        "dotenv",
-        "Trello REST API",
-        "Vercel"
-      ],
+      "stack": ["Node.js", "axios", "dotenv", "Trello REST API", "Vercel"],
       "status": null,
       "language": "HTML",
       "languages": {
@@ -4267,9 +4191,7 @@
       "liveUrl": "https://mazebreak-wiki.vercel.app/",
       "homepage": "https://mazebreak-wiki.vercel.app",
       "topics": [],
-      "categories": [
-        "Developer Tools"
-      ],
+      "categories": ["Developer Tools"],
       "tags": [
         "developer-tools",
         "documentation",
@@ -4365,15 +4287,8 @@
       "demoUrl": "https://nextjs-react-agency-starter.vercel.app/",
       "liveUrl": "https://nextjs-react-agency-starter.vercel.app/",
       "homepage": "https://nextjs-react-agency-starter.vercel.app/",
-      "topics": [
-        "nextjs",
-        "react",
-        "starter-kit",
-        "tailwindcss"
-      ],
-      "categories": [
-        "Templates"
-      ],
+      "topics": ["nextjs", "react", "starter-kit", "tailwindcss"],
+      "categories": ["Templates"],
       "tags": [
         "nextjs",
         "react",
@@ -4386,13 +4301,7 @@
         "agency",
         "resend"
       ],
-      "stack": [
-        "Next.js 14",
-        "TypeScript",
-        "Tailwind CSS",
-        "MDX",
-        "Resend"
-      ],
+      "stack": ["Next.js 14", "TypeScript", "Tailwind CSS", "MDX", "Resend"],
       "status": "Production",
       "language": "TypeScript",
       "languages": {
@@ -4486,16 +4395,8 @@
       "demoUrl": "https://react-vite-tailwind-base.vercel.app/components",
       "liveUrl": "https://react-vite-tailwind-base.vercel.app",
       "homepage": "https://react-vite-tailwind-base.vercel.app",
-      "topics": [
-        "react",
-        "shadcn",
-        "shadcn-ui",
-        "tailwindcss",
-        "vite"
-      ],
-      "categories": [
-        "Templates"
-      ],
+      "topics": ["react", "shadcn", "shadcn-ui", "tailwindcss", "vite"],
+      "categories": ["Templates"],
       "tags": [
         "react",
         "shadcn",

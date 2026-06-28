@@ -20,12 +20,7 @@
       "Svelte",
       "Express.js"
     ],
-    "topDatabases": [
-      "PostgreSQL",
-      "Drizzle ORM",
-      "Redis",
-      "pgvector"
-    ],
+    "topDatabases": ["PostgreSQL", "Drizzle ORM", "Redis", "pgvector"],
     "topAPIs": [
       "OpenAI GPT-4o",
       "Anthropic Claude API",
@@ -150,9 +145,7 @@
       {
         "name": "Rust",
         "projectCount": 1,
-        "projects": [
-          "ai-filesense"
-        ],
+        "projects": ["ai-filesense"],
         "firstUsed": "2026-01-12T02:37:39Z",
         "lastUsed": "2026-03-13T01:28:59Z"
       }
@@ -249,45 +242,35 @@
       {
         "name": "Svelte",
         "projectCount": 1,
-        "projects": [
-          "cushlabs-scrollytelling"
-        ],
+        "projects": ["cushlabs-scrollytelling"],
         "firstUsed": "2026-03-06T17:57:40Z",
         "lastUsed": "2026-03-15T04:53:44Z"
       },
       {
         "name": "Express.js",
         "projectCount": 1,
-        "projects": [
-          "cushlabs-ai-voice-agent"
-        ],
+        "projects": ["cushlabs-ai-voice-agent"],
         "firstUsed": "2026-02-23T01:31:09Z",
         "lastUsed": "2026-03-13T04:47:10Z"
       },
       {
         "name": "Flask",
         "projectCount": 1,
-        "projects": [
-          "ai-resume-tailor"
-        ],
+        "projects": ["ai-resume-tailor"],
         "firstUsed": "2025-11-05T18:11:38Z",
         "lastUsed": "2026-03-13T01:29:15Z"
       },
       {
         "name": "FastAPI",
         "projectCount": 1,
-        "projects": [
-          "cushlabs-ai-unwatermark"
-        ],
+        "projects": ["cushlabs-ai-unwatermark"],
         "firstUsed": "2026-03-09T19:14:08Z",
         "lastUsed": "2026-03-17T01:41:55Z"
       },
       {
         "name": "Tauri",
         "projectCount": 1,
-        "projects": [
-          "ai-filesense"
-        ],
+        "projects": ["ai-filesense"],
         "firstUsed": "2026-01-12T02:37:39Z",
         "lastUsed": "2026-03-13T01:28:59Z"
       }
@@ -332,10 +315,7 @@
       {
         "name": "pgvector",
         "projectCount": 2,
-        "projects": [
-          "ai-chatbot-saas",
-          "ny-ai-chatbot"
-        ],
+        "projects": ["ai-chatbot-saas", "ny-ai-chatbot"],
         "firstUsed": "2025-11-23T00:24:28Z",
         "lastUsed": "2026-03-13T22:32:27Z"
       }
@@ -382,74 +362,56 @@
       {
         "name": "Stripe",
         "projectCount": 2,
-        "projects": [
-          "ai-chatbot-saas",
-          "ai-resume-tailor"
-        ],
+        "projects": ["ai-chatbot-saas", "ai-resume-tailor"],
         "firstUsed": "2025-11-05T18:11:38Z",
         "lastUsed": "2026-03-13T22:32:27Z"
       },
       {
         "name": "Twilio",
         "projectCount": 2,
-        "projects": [
-          "cushlabs-ai-voice-agent",
-          "stock-alert"
-        ],
+        "projects": ["cushlabs-ai-voice-agent", "stock-alert"],
         "firstUsed": "2025-10-23T22:24:30Z",
         "lastUsed": "2026-03-13T04:47:10Z"
       },
       {
         "name": "iNaturalist API",
         "projectCount": 1,
-        "projects": [
-          "biojalisco-species-id"
-        ],
+        "projects": ["biojalisco-species-id"],
         "firstUsed": "2026-03-06T18:20:23Z",
         "lastUsed": "2026-03-16T01:17:53Z"
       },
       {
         "name": "GBIF API",
         "projectCount": 1,
-        "projects": [
-          "biojalisco-species-id"
-        ],
+        "projects": ["biojalisco-species-id"],
         "firstUsed": "2026-03-06T18:20:23Z",
         "lastUsed": "2026-03-16T01:17:53Z"
       },
       {
         "name": "EncicloVida/CONABIO API",
         "projectCount": 1,
-        "projects": [
-          "biojalisco-species-id"
-        ],
+        "projects": ["biojalisco-species-id"],
         "firstUsed": "2026-03-06T18:20:23Z",
         "lastUsed": "2026-03-16T01:17:53Z"
       },
       {
         "name": "Google Calendar API",
         "projectCount": 1,
-        "projects": [
-          "cushlabs-ai-voice-agent"
-        ],
+        "projects": ["cushlabs-ai-voice-agent"],
         "firstUsed": "2026-02-23T01:31:09Z",
         "lastUsed": "2026-03-13T04:47:10Z"
       },
       {
         "name": "Cloudflare Workers",
         "projectCount": 1,
-        "projects": [
-          "ny-eng"
-        ],
+        "projects": ["ny-eng"],
         "firstUsed": "2025-03-23T03:27:14Z",
         "lastUsed": "2026-03-15T02:54:06Z"
       },
       {
         "name": "Google Fonts",
         "projectCount": 1,
-        "projects": [
-          "biojalisco-pitch"
-        ],
+        "projects": ["biojalisco-pitch"],
         "firstUsed": "2026-03-04T22:07:57Z",
         "lastUsed": "2026-03-13T01:27:45Z"
       }
@@ -491,18 +453,14 @@
       {
         "name": "Netlify",
         "projectCount": 1,
-        "projects": [
-          "ai-idea-validator"
-        ],
+        "projects": ["ai-idea-validator"],
         "firstUsed": "2026-01-25T01:59:32Z",
         "lastUsed": "2026-03-17T16:58:18Z"
       },
       {
         "name": "Vercel Serverless",
         "projectCount": 1,
-        "projects": [
-          "stock-alert"
-        ],
+        "projects": ["stock-alert"],
         "firstUsed": "2025-10-23T22:24:30Z",
         "lastUsed": "2026-03-13T01:29:20Z"
       }
@@ -565,18 +523,14 @@
       {
         "name": "Cron Jobs",
         "projectCount": 1,
-        "projects": [
-          "ny-ai-chatbot"
-        ],
+        "projects": ["ny-ai-chatbot"],
         "firstUsed": "2025-11-23T00:24:28Z",
         "lastUsed": "2026-03-13T01:29:52Z"
       },
       {
         "name": "localStorage (Phase 1)",
         "projectCount": 1,
-        "projects": [
-          "expat-driver-license-prep"
-        ],
+        "projects": ["expat-driver-license-prep"],
         "firstUsed": "2026-03-03T07:21:12Z",
         "lastUsed": "2026-03-13T01:29:37Z"
       }
@@ -585,9 +539,7 @@
       {
         "name": "Uvicorn",
         "projectCount": 1,
-        "projects": [
-          "cushlabs-ai-unwatermark"
-        ],
+        "projects": ["cushlabs-ai-unwatermark"],
         "firstUsed": "2026-03-09T19:14:08Z",
         "lastUsed": "2026-03-17T01:41:55Z"
       }
@@ -754,484 +706,371 @@
       {
         "name": "LangChain (OpenAI)",
         "projectCount": 2,
-        "projects": [
-          "ai-chatbot-saas",
-          "ny-ai-chatbot"
-        ],
+        "projects": ["ai-chatbot-saas", "ny-ai-chatbot"],
         "firstUsed": "2025-11-23T00:24:28Z",
         "lastUsed": "2026-03-13T22:32:27Z"
       },
       {
         "name": "Cheerio",
         "projectCount": 2,
-        "projects": [
-          "ai-chatbot-saas",
-          "ny-ai-chatbot"
-        ],
+        "projects": ["ai-chatbot-saas", "ny-ai-chatbot"],
         "firstUsed": "2025-11-23T00:24:28Z",
         "lastUsed": "2026-03-13T22:32:27Z"
       },
       {
         "name": "nanoid",
         "projectCount": 2,
-        "projects": [
-          "ai-chatbot-saas",
-          "ny-ai-chatbot"
-        ],
+        "projects": ["ai-chatbot-saas", "ny-ai-chatbot"],
         "firstUsed": "2025-11-23T00:24:28Z",
         "lastUsed": "2026-03-13T22:32:27Z"
       },
       {
         "name": "Requests",
         "projectCount": 2,
-        "projects": [
-          "ai-resume-tailor",
-          "stock-alert"
-        ],
+        "projects": ["ai-resume-tailor", "stock-alert"],
         "firstUsed": "2025-10-23T22:24:30Z",
         "lastUsed": "2026-03-13T01:29:20Z"
       },
       {
         "name": "Pillow",
         "projectCount": 2,
-        "projects": [
-          "cushlabs-ai-unwatermark",
-          "stock-alert"
-        ],
+        "projects": ["cushlabs-ai-unwatermark", "stock-alert"],
         "firstUsed": "2025-10-23T22:24:30Z",
         "lastUsed": "2026-03-17T01:41:55Z"
       },
       {
         "name": "Zustand 4.4",
         "projectCount": 2,
-        "projects": [
-          "comp-plan-simulator",
-          "freelance-income-planner"
-        ],
+        "projects": ["comp-plan-simulator", "freelance-income-planner"],
         "firstUsed": "2025-12-11T17:38:35Z",
         "lastUsed": "2026-03-13T01:29:32Z"
       },
       {
         "name": "next-intl",
         "projectCount": 2,
-        "projects": [
-          "ai-filesense-website",
-          "ai-stock-alert-website"
-        ],
+        "projects": ["ai-filesense-website", "ai-stock-alert-website"],
         "firstUsed": "2026-01-13T22:16:37Z",
         "lastUsed": "2026-03-13T01:29:27Z"
       },
       {
         "name": "EXIF Extraction (exifr)",
         "projectCount": 1,
-        "projects": [
-          "biojalisco-species-id"
-        ],
+        "projects": ["biojalisco-species-id"],
         "firstUsed": "2026-03-06T18:20:23Z",
         "lastUsed": "2026-03-16T01:17:53Z"
       },
       {
         "name": "OpenStreetMap Nominatim (reverse geocoding)",
         "projectCount": 1,
-        "projects": [
-          "biojalisco-species-id"
-        ],
+        "projects": ["biojalisco-species-id"],
         "firstUsed": "2026-03-06T18:20:23Z",
         "lastUsed": "2026-03-16T01:17:53Z"
       },
       {
         "name": "Three.js",
         "projectCount": 1,
-        "projects": [
-          "cushlabs-scrollytelling"
-        ],
+        "projects": ["cushlabs-scrollytelling"],
         "firstUsed": "2026-03-06T17:57:40Z",
         "lastUsed": "2026-03-15T04:53:44Z"
       },
       {
         "name": "Vapi",
         "projectCount": 1,
-        "projects": [
-          "cushlabs-ai-voice-agent"
-        ],
+        "projects": ["cushlabs-ai-voice-agent"],
         "firstUsed": "2026-02-23T01:31:09Z",
         "lastUsed": "2026-03-13T04:47:10Z"
       },
       {
         "name": "Claude Sonnet",
         "projectCount": 1,
-        "projects": [
-          "cushlabs-ai-voice-agent"
-        ],
+        "projects": ["cushlabs-ai-voice-agent"],
         "firstUsed": "2026-02-23T01:31:09Z",
         "lastUsed": "2026-03-13T04:47:10Z"
       },
       {
         "name": "Groq Llama 3.1",
         "projectCount": 1,
-        "projects": [
-          "cushlabs-ai-voice-agent"
-        ],
+        "projects": ["cushlabs-ai-voice-agent"],
         "firstUsed": "2026-02-23T01:31:09Z",
         "lastUsed": "2026-03-13T04:47:10Z"
       },
       {
         "name": "Deepgram Nova-2/3",
         "projectCount": 1,
-        "projects": [
-          "cushlabs-ai-voice-agent"
-        ],
+        "projects": ["cushlabs-ai-voice-agent"],
         "firstUsed": "2026-02-23T01:31:09Z",
         "lastUsed": "2026-03-13T04:47:10Z"
       },
       {
         "name": "Cartesia",
         "projectCount": 1,
-        "projects": [
-          "cushlabs-ai-voice-agent"
-        ],
+        "projects": ["cushlabs-ai-voice-agent"],
         "firstUsed": "2026-02-23T01:31:09Z",
         "lastUsed": "2026-03-13T04:47:10Z"
       },
       {
         "name": "ReportLab",
         "projectCount": 1,
-        "projects": [
-          "cushlabs-ai-marketing"
-        ],
+        "projects": ["cushlabs-ai-marketing"],
         "firstUsed": "2026-03-08T19:31:57Z",
         "lastUsed": "2026-03-13T01:28:05Z"
       },
       {
         "name": "Claude Code Skills System",
         "projectCount": 1,
-        "projects": [
-          "cushlabs-ai-marketing"
-        ],
+        "projects": ["cushlabs-ai-marketing"],
         "firstUsed": "2026-03-08T19:31:57Z",
         "lastUsed": "2026-03-13T01:28:05Z"
       },
       {
         "name": "Bash",
         "projectCount": 1,
-        "projects": [
-          "cushlabs-ai-marketing"
-        ],
+        "projects": ["cushlabs-ai-marketing"],
         "firstUsed": "2026-03-08T19:31:57Z",
         "lastUsed": "2026-03-13T01:28:05Z"
       },
       {
         "name": "HTML Parser (stdlib)",
         "projectCount": 1,
-        "projects": [
-          "cushlabs-ai-marketing"
-        ],
+        "projects": ["cushlabs-ai-marketing"],
         "firstUsed": "2026-03-08T19:31:57Z",
         "lastUsed": "2026-03-13T01:28:05Z"
       },
       {
         "name": "pdf-lib",
         "projectCount": 1,
-        "projects": [
-          "ny-eng"
-        ],
+        "projects": ["ny-eng"],
         "firstUsed": "2025-03-23T03:27:14Z",
         "lastUsed": "2026-03-15T02:54:06Z"
       },
       {
         "name": "HTML5",
         "projectCount": 1,
-        "projects": [
-          "biojalisco-pitch"
-        ],
+        "projects": ["biojalisco-pitch"],
         "firstUsed": "2026-03-04T22:07:57Z",
         "lastUsed": "2026-03-13T01:27:45Z"
       },
       {
         "name": "CSS3 (custom properties, grid, flexbox, scroll-snap)",
         "projectCount": 1,
-        "projects": [
-          "biojalisco-pitch"
-        ],
+        "projects": ["biojalisco-pitch"],
         "firstUsed": "2026-03-04T22:07:57Z",
         "lastUsed": "2026-03-13T01:27:45Z"
       },
       {
         "name": "Intersection Observer API",
         "projectCount": 1,
-        "projects": [
-          "biojalisco-pitch"
-        ],
+        "projects": ["biojalisco-pitch"],
         "firstUsed": "2026-03-04T22:07:57Z",
         "lastUsed": "2026-03-13T01:27:45Z"
       },
       {
         "name": "Web Audio API (procedural ambient + MP3 narration)",
         "projectCount": 1,
-        "projects": [
-          "biojalisco-pitch"
-        ],
+        "projects": ["biojalisco-pitch"],
         "firstUsed": "2026-03-04T22:07:57Z",
         "lastUsed": "2026-03-13T01:27:45Z"
       },
       {
         "name": "Base64 image embedding",
         "projectCount": 1,
-        "projects": [
-          "biojalisco-pitch"
-        ],
+        "projects": ["biojalisco-pitch"],
         "firstUsed": "2026-03-04T22:07:57Z",
         "lastUsed": "2026-03-13T01:27:45Z"
       },
       {
         "name": "SM-2 Spaced Repetition",
         "projectCount": 1,
-        "projects": [
-          "expat-driver-license-prep"
-        ],
+        "projects": ["expat-driver-license-prep"],
         "firstUsed": "2026-03-03T07:21:12Z",
         "lastUsed": "2026-03-13T01:29:37Z"
       },
       {
         "name": "JSON Content Collections",
         "projectCount": 1,
-        "projects": [
-          "expat-driver-license-prep"
-        ],
+        "projects": ["expat-driver-license-prep"],
         "firstUsed": "2026-03-03T07:21:12Z",
         "lastUsed": "2026-03-13T01:29:37Z"
       },
       {
         "name": "i18next",
         "projectCount": 1,
-        "projects": [
-          "ai-resume-tailor"
-        ],
+        "projects": ["ai-resume-tailor"],
         "firstUsed": "2025-11-05T18:11:38Z",
         "lastUsed": "2026-03-13T01:29:15Z"
       },
       {
         "name": "Beautiful Soup",
         "projectCount": 1,
-        "projects": [
-          "ai-resume-tailor"
-        ],
+        "projects": ["ai-resume-tailor"],
         "firstUsed": "2025-11-05T18:11:38Z",
         "lastUsed": "2026-03-13T01:29:15Z"
       },
       {
         "name": "JWT",
         "projectCount": 1,
-        "projects": [
-          "ai-resume-tailor"
-        ],
+        "projects": ["ai-resume-tailor"],
         "firstUsed": "2025-11-05T18:11:38Z",
         "lastUsed": "2026-03-13T01:29:15Z"
       },
       {
         "name": "PyMuPDF",
         "projectCount": 1,
-        "projects": [
-          "cushlabs-ai-unwatermark"
-        ],
+        "projects": ["cushlabs-ai-unwatermark"],
         "firstUsed": "2026-03-09T19:14:08Z",
         "lastUsed": "2026-03-17T01:41:55Z"
       },
       {
         "name": "Click",
         "projectCount": 1,
-        "projects": [
-          "cushlabs-ai-unwatermark"
-        ],
+        "projects": ["cushlabs-ai-unwatermark"],
         "firstUsed": "2026-03-09T19:14:08Z",
         "lastUsed": "2026-03-17T01:41:55Z"
       },
       {
         "name": "NumPy",
         "projectCount": 1,
-        "projects": [
-          "cushlabs-ai-unwatermark"
-        ],
+        "projects": ["cushlabs-ai-unwatermark"],
         "firstUsed": "2026-03-09T19:14:08Z",
         "lastUsed": "2026-03-17T01:41:55Z"
       },
       {
         "name": "SciPy",
         "projectCount": 1,
-        "projects": [
-          "cushlabs-ai-unwatermark"
-        ],
+        "projects": ["cushlabs-ai-unwatermark"],
         "firstUsed": "2026-03-09T19:14:08Z",
         "lastUsed": "2026-03-17T01:41:55Z"
       },
       {
         "name": "Multipart Form Handling",
         "projectCount": 1,
-        "projects": [
-          "cushlabs-ai-unwatermark"
-        ],
+        "projects": ["cushlabs-ai-unwatermark"],
         "firstUsed": "2026-03-09T19:14:08Z",
         "lastUsed": "2026-03-17T01:41:55Z"
       },
       {
         "name": "HTML / CSS / JS",
         "projectCount": 1,
-        "projects": [
-          "context-writing-system"
-        ],
+        "projects": ["context-writing-system"],
         "firstUsed": "2025-12-20T10:31:00Z",
         "lastUsed": "2026-03-17T04:23:07Z"
       },
       {
         "name": "JSON Context Files",
         "projectCount": 1,
-        "projects": [
-          "context-writing-system"
-        ],
+        "projects": ["context-writing-system"],
         "firstUsed": "2025-12-20T10:31:00Z",
         "lastUsed": "2026-03-17T04:23:07Z"
       },
       {
         "name": "Markdown Skills",
         "projectCount": 1,
-        "projects": [
-          "context-writing-system"
-        ],
+        "projects": ["context-writing-system"],
         "firstUsed": "2025-12-20T10:31:00Z",
         "lastUsed": "2026-03-17T04:23:07Z"
       },
       {
         "name": "Context Engineering",
         "projectCount": 1,
-        "projects": [
-          "context-writing-system"
-        ],
+        "projects": ["context-writing-system"],
         "firstUsed": "2025-12-20T10:31:00Z",
         "lastUsed": "2026-03-17T04:23:07Z"
       },
       {
         "name": "Claims Policy Engine",
         "projectCount": 1,
-        "projects": [
-          "context-writing-system"
-        ],
+        "projects": ["context-writing-system"],
         "firstUsed": "2025-12-20T10:31:00Z",
         "lastUsed": "2026-03-17T04:23:07Z"
       },
       {
         "name": "Formspree",
         "projectCount": 1,
-        "projects": [
-          "ai-idea-validator"
-        ],
+        "projects": ["ai-idea-validator"],
         "firstUsed": "2026-01-25T01:59:32Z",
         "lastUsed": "2026-03-17T16:58:18Z"
       },
       {
         "name": "GitHub API",
         "projectCount": 1,
-        "projects": [
-          "ai-portfolio"
-        ],
+        "projects": ["ai-portfolio"],
         "firstUsed": "2026-01-05T15:06:48Z",
         "lastUsed": "2026-03-16T21:04:13Z"
       },
       {
         "name": "Claude Haiku",
         "projectCount": 1,
-        "projects": [
-          "ai-filesense"
-        ],
+        "projects": ["ai-filesense"],
         "firstUsed": "2026-01-12T02:37:39Z",
         "lastUsed": "2026-03-13T01:28:59Z"
       },
       {
         "name": "PyQt6",
         "projectCount": 1,
-        "projects": [
-          "stock-alert"
-        ],
+        "projects": ["stock-alert"],
         "firstUsed": "2025-10-23T22:24:30Z",
         "lastUsed": "2026-03-13T01:29:20Z"
       },
       {
         "name": "Finnhub API",
         "projectCount": 1,
-        "projects": [
-          "stock-alert"
-        ],
+        "projects": ["stock-alert"],
         "firstUsed": "2025-10-23T22:24:30Z",
         "lastUsed": "2026-03-13T01:29:20Z"
       },
       {
         "name": "Remark",
         "projectCount": 1,
-        "projects": [
-          "marble-does-not-yield"
-        ],
+        "projects": ["marble-does-not-yield"],
         "firstUsed": "2026-01-04T03:47:35Z",
         "lastUsed": "2026-03-13T01:29:42Z"
       },
       {
         "name": "Axios",
         "projectCount": 1,
-        "projects": [
-          "mazebreak-trello"
-        ],
+        "projects": ["mazebreak-trello"],
         "firstUsed": "2026-02-17T04:40:23Z",
         "lastUsed": "2026-03-13T01:28:23Z"
       },
       {
         "name": "Node.js",
         "projectCount": 1,
-        "projects": [
-          "mazebreak-trello"
-        ],
+        "projects": ["mazebreak-trello"],
         "firstUsed": "2026-02-17T04:40:23Z",
         "lastUsed": "2026-03-13T01:28:23Z"
       },
       {
         "name": "dotenv",
         "projectCount": 1,
-        "projects": [
-          "mazebreak-trello"
-        ],
+        "projects": ["mazebreak-trello"],
         "firstUsed": "2026-02-17T04:40:23Z",
         "lastUsed": "2026-03-13T01:28:23Z"
       },
       {
         "name": "Fuse.js",
         "projectCount": 1,
-        "projects": [
-          "mazebreak-wiki"
-        ],
+        "projects": ["mazebreak-wiki"],
         "firstUsed": "2026-02-10T04:11:19Z",
         "lastUsed": "2026-03-16T23:00:46Z"
       },
       {
         "name": "MDX",
         "projectCount": 1,
-        "projects": [
-          "nextjs-react-agency-starter"
-        ],
+        "projects": ["nextjs-react-agency-starter"],
         "firstUsed": "2025-12-18T20:18:05Z",
         "lastUsed": "2026-03-13T01:29:47Z"
       },
       {
         "name": "ShadCN UI (Radix)",
         "projectCount": 1,
-        "projects": [
-          "react-vite-tailwind-base"
-        ],
+        "projects": ["react-vite-tailwind-base"],
         "firstUsed": "2025-10-02T22:40:01Z",
         "lastUsed": "2026-03-13T01:29:57Z"
       },
       {
         "name": "MSW",
         "projectCount": 1,
-        "projects": [
-          "react-vite-tailwind-base"
-        ],
+        "projects": ["react-vite-tailwind-base"],
         "firstUsed": "2025-10-02T22:40:01Z",
         "lastUsed": "2026-03-13T01:29:57Z"
       }
@@ -1251,15 +1090,8 @@
         "Netlify",
         "Formspree"
       ],
-      "patterns": [
-        "PWA",
-        "REST API"
-      ],
-      "languages": [
-        "TypeScript",
-        "JavaScript",
-        "CSS"
-      ],
+      "patterns": ["PWA", "REST API"],
+      "languages": ["TypeScript", "JavaScript", "CSS"],
       "createdAt": "2026-01-25T01:59:32Z",
       "lastPushed": "2026-03-17T16:58:18Z"
     },
@@ -1277,13 +1109,7 @@
         "Claims Policy Engine"
       ],
       "patterns": [],
-      "languages": [
-        "JavaScript",
-        "HTML/CSS",
-        "HTML",
-        "CSS",
-        "PowerShell"
-      ],
+      "languages": ["JavaScript", "HTML/CSS", "HTML", "CSS", "PowerShell"],
       "createdAt": "2025-12-20T10:31:00Z",
       "lastPushed": "2026-03-17T04:23:07Z"
     },
@@ -1307,10 +1133,7 @@
         "Render"
       ],
       "patterns": [],
-      "languages": [
-        "Python",
-        "Shell"
-      ],
+      "languages": ["Python", "Shell"],
       "createdAt": "2026-03-09T19:14:08Z",
       "lastPushed": "2026-03-17T01:41:55Z"
     },
@@ -1329,13 +1152,7 @@
         "Fuse.js"
       ],
       "patterns": [],
-      "languages": [
-        "JavaScript",
-        "HTML/CSS",
-        "Python",
-        "CSS",
-        "HTML"
-      ],
+      "languages": ["JavaScript", "HTML/CSS", "Python", "CSS", "HTML"],
       "createdAt": "2026-02-10T04:11:19Z",
       "lastPushed": "2026-03-16T23:00:46Z"
     },
@@ -1356,15 +1173,8 @@
         "Vercel",
         "GitHub API"
       ],
-      "patterns": [
-        "Internationalization (i18n)"
-      ],
-      "languages": [
-        "TypeScript",
-        "JavaScript",
-        "PowerShell",
-        "CSS"
-      ],
+      "patterns": ["Internationalization (i18n)"],
+      "languages": ["TypeScript", "JavaScript", "PowerShell", "CSS"],
       "createdAt": "2026-01-05T15:06:48Z",
       "lastPushed": "2026-03-16T21:04:13Z"
     },
@@ -1389,14 +1199,8 @@
         "EncicloVida/CONABIO API",
         "OpenStreetMap Nominatim (reverse geocoding)"
       ],
-      "patterns": [
-        "PWA"
-      ],
-      "languages": [
-        "TypeScript",
-        "JavaScript",
-        "CSS"
-      ],
+      "patterns": ["PWA"],
+      "languages": ["TypeScript", "JavaScript", "CSS"],
       "createdAt": "2026-03-06T18:20:23Z",
       "lastPushed": "2026-03-16T01:17:53Z"
     },
@@ -1412,14 +1216,8 @@
         "Three.js",
         "Vercel"
       ],
-      "patterns": [
-        "Monorepo"
-      ],
-      "languages": [
-        "JavaScript",
-        "TypeScript",
-        "CSS"
-      ],
+      "patterns": ["Monorepo"],
+      "languages": ["JavaScript", "TypeScript", "CSS"],
       "createdAt": "2026-03-06T17:57:40Z",
       "lastPushed": "2026-03-15T04:53:44Z"
     },
@@ -1442,10 +1240,7 @@
         "Vercel",
         "Cloudflare Workers"
       ],
-      "patterns": [
-        "Internationalization (i18n)",
-        "REST API"
-      ],
+      "patterns": ["Internationalization (i18n)", "REST API"],
       "languages": [
         "TypeScript",
         "JavaScript",
@@ -1488,13 +1283,7 @@
         "OpenAI GPT-4o"
       ],
       "patterns": [],
-      "languages": [
-        "TypeScript",
-        "JavaScript",
-        "SQL",
-        "HTML/CSS",
-        "CSS"
-      ],
+      "languages": ["TypeScript", "JavaScript", "SQL", "HTML/CSS", "CSS"],
       "createdAt": "2025-12-02T07:09:31Z",
       "lastPushed": "2026-03-13T22:32:27Z"
     },
@@ -1517,15 +1306,8 @@
         "Twilio",
         "Google Calendar API"
       ],
-      "patterns": [
-        "PWA"
-      ],
-      "languages": [
-        "JavaScript",
-        "HTML/CSS",
-        "HTML",
-        "CSS"
-      ],
+      "patterns": ["PWA"],
+      "languages": ["JavaScript", "HTML/CSS", "HTML", "CSS"],
       "createdAt": "2026-02-23T01:31:09Z",
       "lastPushed": "2026-03-13T04:47:10Z"
     },
@@ -1546,17 +1328,8 @@
         "ShadCN UI (Radix)",
         "MSW"
       ],
-      "patterns": [
-        "PWA",
-        "Monorepo"
-      ],
-      "languages": [
-        "TypeScript",
-        "JavaScript",
-        "HTML/CSS",
-        "HTML",
-        "CSS"
-      ],
+      "patterns": ["PWA", "Monorepo"],
+      "languages": ["TypeScript", "JavaScript", "HTML/CSS", "HTML", "CSS"],
       "createdAt": "2025-10-02T22:40:01Z",
       "lastPushed": "2026-03-13T01:29:57Z"
     },
@@ -1588,9 +1361,7 @@
         "GitHub Actions",
         "OpenAI GPT-4o"
       ],
-      "patterns": [
-        "Cron Jobs"
-      ],
+      "patterns": ["Cron Jobs"],
       "languages": [
         "TypeScript",
         "JavaScript",
@@ -1619,11 +1390,7 @@
         "MDX"
       ],
       "patterns": [],
-      "languages": [
-        "TypeScript",
-        "JavaScript",
-        "CSS"
-      ],
+      "languages": ["TypeScript", "JavaScript", "CSS"],
       "createdAt": "2025-12-18T20:18:05Z",
       "lastPushed": "2026-03-13T01:29:47Z"
     },
@@ -1640,14 +1407,8 @@
         "Tailwind CSS 3",
         "Vercel"
       ],
-      "patterns": [
-        "Internationalization (i18n)"
-      ],
-      "languages": [
-        "TypeScript",
-        "JavaScript",
-        "CSS"
-      ],
+      "patterns": ["Internationalization (i18n)"],
+      "languages": ["TypeScript", "JavaScript", "CSS"],
       "createdAt": "2026-01-04T03:47:35Z",
       "lastPushed": "2026-03-13T01:29:42Z"
     },
@@ -1667,16 +1428,8 @@
         "SM-2 Spaced Repetition",
         "JSON Content Collections"
       ],
-      "patterns": [
-        "Monorepo",
-        "localStorage (Phase 1)"
-      ],
-      "languages": [
-        "TypeScript",
-        "JavaScript",
-        "Python",
-        "CSS"
-      ],
+      "patterns": ["Monorepo", "localStorage (Phase 1)"],
+      "languages": ["TypeScript", "JavaScript", "Python", "CSS"],
       "createdAt": "2026-03-03T07:21:12Z",
       "lastPushed": "2026-03-13T01:29:37Z"
     },
@@ -1695,14 +1448,8 @@
         "Vercel",
         "Zustand"
       ],
-      "patterns": [
-        "Monorepo"
-      ],
-      "languages": [
-        "TypeScript",
-        "JavaScript",
-        "CSS"
-      ],
+      "patterns": ["Monorepo"],
+      "languages": ["TypeScript", "JavaScript", "CSS"],
       "createdAt": "2026-02-13T19:55:19Z",
       "lastPushed": "2026-03-13T01:29:32Z"
     },
@@ -1721,15 +1468,8 @@
         "Tailwind CSS 4",
         "shadcn/ui"
       ],
-      "patterns": [
-        "Internationalization (i18n)"
-      ],
-      "languages": [
-        "TypeScript",
-        "JavaScript",
-        "HTML/CSS",
-        "CSS"
-      ],
+      "patterns": ["Internationalization (i18n)"],
+      "languages": ["TypeScript", "JavaScript", "HTML/CSS", "CSS"],
       "createdAt": "2026-01-23T00:50:02Z",
       "lastPushed": "2026-03-13T01:29:27Z"
     },
@@ -1747,10 +1487,7 @@
         "Vercel Serverless"
       ],
       "patterns": [],
-      "languages": [
-        "Python",
-        "PowerShell"
-      ],
+      "languages": ["Python", "PowerShell"],
       "createdAt": "2025-10-23T22:24:30Z",
       "lastPushed": "2026-03-13T01:29:20Z"
     },
@@ -1779,9 +1516,7 @@
         "Vercel",
         "Render"
       ],
-      "patterns": [
-        "Monorepo"
-      ],
+      "patterns": ["Monorepo"],
       "languages": [
         "JavaScript",
         "TypeScript",
@@ -1811,14 +1546,8 @@
         "Vercel",
         "Resend"
       ],
-      "patterns": [
-        "Internationalization (i18n)"
-      ],
-      "languages": [
-        "TypeScript",
-        "JavaScript",
-        "CSS"
-      ],
+      "patterns": ["Internationalization (i18n)"],
+      "languages": ["TypeScript", "JavaScript", "CSS"],
       "createdAt": "2026-01-13T22:16:37Z",
       "lastPushed": "2026-03-13T01:29:05Z"
     },
@@ -1827,15 +1556,8 @@
       "title": "AI FileSense",
       "category": "AI Automation",
       "status": "Demo",
-      "techStack": [
-        "Tauri",
-        "React 18",
-        "Tailwind CSS 3",
-        "Claude Haiku"
-      ],
-      "patterns": [
-        "Internationalization (i18n)"
-      ],
+      "techStack": ["Tauri", "React 18", "Tailwind CSS 3", "Claude Haiku"],
+      "patterns": ["Internationalization (i18n)"],
       "languages": [
         "TypeScript",
         "JavaScript",
@@ -1862,14 +1584,8 @@
         "shadcn/ui",
         "Vercel"
       ],
-      "patterns": [
-        "Monorepo"
-      ],
-      "languages": [
-        "TypeScript",
-        "JavaScript",
-        "CSS"
-      ],
+      "patterns": ["Monorepo"],
+      "languages": ["TypeScript", "JavaScript", "CSS"],
       "createdAt": "2026-02-13T18:42:29Z",
       "lastPushed": "2026-03-13T01:28:54Z"
     },
@@ -1878,20 +1594,9 @@
       "title": "MazeBreak Trello Board Automation",
       "category": "Developer Tools",
       "status": null,
-      "techStack": [
-        "Axios",
-        "Vercel",
-        "Node.js",
-        "dotenv"
-      ],
-      "patterns": [
-        "Trello REST API"
-      ],
-      "languages": [
-        "JavaScript",
-        "HTML/CSS",
-        "HTML"
-      ],
+      "techStack": ["Axios", "Vercel", "Node.js", "dotenv"],
+      "patterns": ["Trello REST API"],
+      "languages": ["JavaScript", "HTML/CSS", "HTML"],
       "createdAt": "2026-02-17T04:40:23Z",
       "lastPushed": "2026-03-13T01:28:23Z"
     },
@@ -1911,11 +1616,7 @@
         "Zustand 4.4"
       ],
       "patterns": [],
-      "languages": [
-        "TypeScript",
-        "JavaScript",
-        "CSS"
-      ],
+      "languages": ["TypeScript", "JavaScript", "CSS"],
       "createdAt": "2025-12-11T17:38:35Z",
       "lastPushed": "2026-03-13T01:28:18Z"
     },
@@ -1931,16 +1632,13 @@
         "HTML Parser (stdlib)"
       ],
       "patterns": [],
-      "languages": [
-        "Python",
-        "Shell"
-      ],
+      "languages": ["Python", "Shell"],
       "createdAt": "2026-03-08T19:31:57Z",
       "lastPushed": "2026-03-13T01:28:05Z"
     },
     {
       "name": "biojalisco-pitch",
-      "title": "BioJalisco — Biodiversity Atlas Pitch Site + Species Identifier",
+      "title": "BioJalisco — Cinematic Scrollytelling Pitch Site",
       "category": "Client Work",
       "status": null,
       "techStack": [
@@ -1955,14 +1653,8 @@
         "Google Fonts",
         "Base64 image embedding"
       ],
-      "patterns": [
-        "REST API"
-      ],
-      "languages": [
-        "Python",
-        "HTML/CSS",
-        "HTML"
-      ],
+      "patterns": ["REST API"],
+      "languages": ["Python", "HTML/CSS", "HTML"],
       "createdAt": "2026-03-04T22:07:57Z",
       "lastPushed": "2026-03-13T01:27:45Z"
     },
@@ -1978,17 +1670,8 @@
         "Vite 7",
         "OpenAI GPT-4o-mini"
       ],
-      "patterns": [
-        "Internationalization (i18n)",
-        "Monorepo"
-      ],
-      "languages": [
-        "TypeScript",
-        "JavaScript",
-        "HTML/CSS",
-        "CSS",
-        "HTML"
-      ],
+      "patterns": ["Internationalization (i18n)", "Monorepo"],
+      "languages": ["TypeScript", "JavaScript", "HTML/CSS", "CSS", "HTML"],
       "createdAt": "2025-09-23T19:15:28Z",
       "lastPushed": "2026-03-13T01:27:40Z"
     }
