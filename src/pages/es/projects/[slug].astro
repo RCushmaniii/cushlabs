@@ -4,6 +4,7 @@ import projectsData from "../../../data/projects.generated.json";
 import { t } from "../../../i18n";
 import { getProjectDetailOverride } from "../../../data/projectDetails";
 import { getEsCardCopy } from "../../../data/projectCardsEs";
+import { ES_TITLE_BIOJALISCO_PITCH } from "../../../data/esCanonicalTitles";
 
 type Project = (typeof projectsData.projects)[number];
 
@@ -28,7 +29,7 @@ const metaTitles: Record<string, string> = {
   'ai-chatbot-saas': 'Converso AI — Chatbot Bilingüe SaaS',
   'ny-ai-chatbot': 'Chatbot IA para Sitios Web de PYMES',
   'ny-english-messenger-bot': 'NY English Messenger — Asistente Bilingüe IA',
-  'biojalisco-pitch': 'BioJalisco — Sitio de Presentación Cinematográfico',
+  'biojalisco-pitch': ES_TITLE_BIOJALISCO_PITCH,
   'expat-driver-license-prep': 'ExpatDrive — Examen de Licencia Bilingüe',
   'cushlabs-marketsignal': 'MarketSignal — Inteligencia Competitiva Local',
 };

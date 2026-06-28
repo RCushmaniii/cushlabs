@@ -15,6 +15,8 @@
 // in prose, "agendar". Common dev anglicisms (full-stack, pipeline, serverless, scroll)
 // are kept as they read naturally to a Mexican technical audience.
 
+import { ES_TITLE_BIOJALISCO_PITCH } from "./esCanonicalTitles";
+
 export interface EsCardCopy {
   /** Omit to keep the English brand/product name. */
   title?: string;
@@ -85,7 +87,7 @@ export const esCardCopy: Record<string, EsCardCopy> = {
       "Optimización de CV para sistemas ATS con IA, soporte bilingüe y retroalimentación instantánea",
   },
   "biojalisco-pitch": {
-    title: "BioJalisco — Sitio de Presentación Cinematográfico",
+    title: ES_TITLE_BIOJALISCO_PITCH,
     tagline:
       "Sitio de pitch con scrollytelling cinematográfico e identificación de especies con IA para la plataforma de biodiversidad del occidente de México",
   },
