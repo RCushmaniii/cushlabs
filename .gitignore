@@ -5,6 +5,9 @@ node_modules/
 dist/
 .astro/
 
+# portfolio sync diff baseline (working artifact)
+src/data/.projects.snapshot.json
+
 # environment
 .env
 .env.local

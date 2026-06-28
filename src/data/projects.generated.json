@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-06-28T02:24:35.028Z",
-  "count": 37,
+  "generatedAt": "2026-06-28T23:42:30.588Z",
+  "count": 38,
   "projects": [
     {
       "id": 1108213747,
@@ -616,7 +616,7 @@
       "status": null,
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 1101931,
+        "TypeScript": 1110718,
         "JavaScript": 47285,
         "HTML": 29745,
         "CSS": 8310,
@@ -625,7 +625,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-06-28T01:28:11Z",
+      "lastPushed": "2026-06-28T17:15:44Z",
       "createdAt": "2026-03-30T19:46:00Z",
       "isFeatured": true,
       "isArchived": false,
@@ -1326,7 +1326,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-06-25T23:59:25Z",
+      "lastPushed": "2026-06-28T17:39:54Z",
       "createdAt": "2026-03-17T18:08:51Z",
       "isFeatured": false,
       "isArchived": false,
@@ -1986,7 +1986,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-06-28T02:05:59Z",
+      "lastPushed": "2026-06-28T15:02:46Z",
       "createdAt": "2026-03-04T22:07:57Z",
       "isFeatured": false,
       "isArchived": false,
@@ -2232,12 +2232,13 @@
       "status": null,
       "language": "Python",
       "languages": {
-        "Python": 57110,
+        "Python": 73784,
+        "PowerShell": 9772,
         "Shell": 8952
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-06-21T22:43:23Z",
+      "lastPushed": "2026-06-28T15:02:14Z",
       "createdAt": "2026-03-08T19:31:57Z",
       "isFeatured": false,
       "isArchived": false,
@@ -2611,6 +2612,90 @@
       ],
       "videoUrl": "https://cdn.cushlabs.ai/ai-filesense/video/AI_FileSense-brief.mp4",
       "videoPoster": "https://cdn.cushlabs.ai/ai-filesense/video/AI-FileSense-brief-poster.jpg"
+    },
+    {
+      "id": 1117217007,
+      "name": "ai-webscraper",
+      "title": "AI-Powered Web Scraper & SEO Analyzer",
+      "description": "A full-stack web application for scraping websites with a React frontend, Python FastAPI backend, and Supabase for data storage.",
+      "summary": "| ![Login](.github/assets/ai-ws-login.jpg) | ![Report](.github/assets/ai-ws-analysis-report.jpg) |",
+      "url": "https://github.com/RCushmaniii/ai-webscraper",
+      "demoUrl": "",
+      "liveUrl": "",
+      "homepage": "",
+      "topics": [],
+      "categories": [
+        "AI Automation"
+      ],
+      "tags": [
+        "web-scraping",
+        "seo-analysis",
+        "ai-reports",
+        "data-extraction",
+        "crawling",
+        "fastapi",
+        "react",
+        "supabase"
+      ],
+      "stack": [
+        "React 18",
+        "TypeScript",
+        "FastAPI",
+        "Python 3.11",
+        "Supabase (PostgreSQL)",
+        "Celery",
+        "Redis",
+        "OpenAI GPT-4",
+        "Playwright",
+        "BeautifulSoup4",
+        "TailwindCSS"
+      ],
+      "status": null,
+      "language": "Python",
+      "languages": {
+        "Python": 708198,
+        "TypeScript": 584404,
+        "PLpgSQL": 54863,
+        "Batchfile": 4338,
+        "JavaScript": 4239,
+        "CSS": 2874,
+        "HTML": 2740,
+        "Dockerfile": 525
+      },
+      "stars": 0,
+      "forks": 0,
+      "lastPushed": "2026-06-28T23:40:20Z",
+      "createdAt": "2025-12-16T02:09:11Z",
+      "isFeatured": false,
+      "isArchived": false,
+      "isPrivate": false,
+      "tagline": "Crawl websites, detect SEO issues, and generate AI-powered analysis reports",
+      "thumbnail": "https://cdn.cushlabs.ai/ai-webscraper/images/portfolio/ai-webscraper-01.webp",
+      "problem": "Organizations need to understand their website health — broken links, missing SEO metadata,\nthin content, accessibility gaps — but enterprise tools cost thousands per year and manual\naudits don't scale. This platform automates the entire crawl-analyze-report pipeline with\nAI-generated insights at a fraction of the cost.\n",
+      "solution": null,
+      "keyFeatures": [
+        "1,150+ pages crawled and analyzed per session with sub-2s per-page processing",
+        "11 SEO issue categories detected automatically across every crawl",
+        "GPT-4 powered reports with executive summaries and actionable recommendations",
+        "Tier-based access system ready for SaaS monetization"
+      ],
+      "metrics": [],
+      "priority": 18,
+      "dateCompleted": null,
+      "slides": [
+        {
+          "src": "https://cdn.cushlabs.ai/ai-webscraper/images/portfolio/ai-webscraper-01.webp",
+          "altEn": "AI WebScraper crawl configuration screen with start URL, depth, page limits, rate limiting, and robots.txt controls",
+          "altEs": "Pantalla de configuración de rastreo de AI WebScraper con URL inicial, profundidad, límites de páginas, control de velocidad y respeto a robots.txt"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/ai-webscraper/images/portfolio/ai-webscraper-02.webp",
+          "altEn": "GPT-4 generated site analysis report showing health score, technical SEO, content quality, and crawl metrics",
+          "altEs": "Reporte de análisis del sitio generado con GPT-4 que muestra el puntaje de salud, SEO técnico, calidad de contenido y métricas de rastreo"
+        }
+      ],
+      "videoUrl": null,
+      "videoPoster": null
     },
     {
       "id": 1114660708,
@@ -3301,7 +3386,7 @@
       "language": "Astro",
       "languages": {
         "Astro": 671049,
-        "TypeScript": 357428,
+        "TypeScript": 358042,
         "JavaScript": 99453,
         "HTML": 61067,
         "Python": 6606,
@@ -3309,7 +3394,7 @@
       },
       "stars": 2,
       "forks": 0,
-      "lastPushed": "2026-06-28T02:03:08Z",
+      "lastPushed": "2026-06-28T02:51:31Z",
       "createdAt": "2026-01-08T03:52:43Z",
       "isFeatured": false,
       "isArchived": false,
@@ -3388,7 +3473,7 @@
       "id": 1128388603,
       "name": "ai-portfolio",
       "title": "AI Portfolio",
-      "description": "Static portfolio system that syncs project data from GitHub repos into a filterable showcase — Next.js 15, React 19, TypeScript, Tailwind CSS",
+      "description": "Static portfolio system that syncs project data from GitHub repos into a filterable, bilingual showcase — Next.js 16, React 19, TypeScript, Tailwind CSS",
       "summary": "> A bilingual (EN/ES) static portfolio system that aggregates project data from GitHub repositories and renders a professional, filterable showcase with SEO optimization and WebP images.",
       "url": "https://github.com/RCushmaniii/ai-portfolio",
       "demoUrl": "https://ai-portfolio-cushlabs.vercel.app/",
@@ -3434,14 +3519,14 @@
       "status": null,
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 182581,
+        "TypeScript": 186813,
         "PowerShell": 3372,
         "CSS": 1578,
-        "JavaScript": 83
+        "JavaScript": 363
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-06-28T02:19:57Z",
+      "lastPushed": "2026-06-28T17:45:33Z",
       "createdAt": "2026-01-05T15:06:48Z",
       "isFeatured": false,
       "isArchived": false,
@@ -3821,13 +3906,13 @@
       "status": null,
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 146410,
+        "TypeScript": 190403,
         "CSS": 4743,
         "JavaScript": 559
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-06-21T22:43:30Z",
+      "lastPushed": "2026-06-28T17:45:34Z",
       "createdAt": "2026-03-22T07:49:29Z",
       "isFeatured": false,
       "isArchived": false,
