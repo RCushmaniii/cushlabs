@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-28T23:42:30.588Z",
+  "generatedAt": "2026-06-29T20:33:20.897Z",
   "count": 38,
   "projects": [
     {
@@ -50,7 +50,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-06-22T16:48:49Z",
+      "lastPushed": "2026-06-29T16:48:29Z",
       "createdAt": "2025-12-02T07:09:31Z",
       "isFeatured": true,
       "isArchived": false,
@@ -184,7 +184,7 @@
       },
       "stars": 1,
       "forks": 0,
-      "lastPushed": "2026-06-28T00:20:12Z",
+      "lastPushed": "2026-06-29T06:34:14Z",
       "createdAt": "2025-11-23T00:24:28Z",
       "isFeatured": true,
       "isArchived": false,
@@ -324,7 +324,7 @@
       },
       "stars": 0,
       "forks": 1,
-      "lastPushed": "2026-06-27T19:08:54Z",
+      "lastPushed": "2026-06-29T19:44:07Z",
       "createdAt": "2026-02-23T01:31:09Z",
       "isFeatured": true,
       "isArchived": false,
@@ -616,16 +616,16 @@
       "status": null,
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 1110718,
+        "TypeScript": 1112987,
         "JavaScript": 47285,
         "HTML": 29745,
         "CSS": 8310,
-        "Shell": 4049,
+        "Shell": 5162,
         "Dockerfile": 2347
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-06-28T17:15:44Z",
+      "lastPushed": "2026-06-29T20:11:18Z",
       "createdAt": "2026-03-30T19:46:00Z",
       "isFeatured": true,
       "isArchived": false,
@@ -1326,7 +1326,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-06-28T17:39:54Z",
+      "lastPushed": "2026-06-29T15:43:49Z",
       "createdAt": "2026-03-17T18:08:51Z",
       "isFeatured": false,
       "isArchived": false,
@@ -1749,7 +1749,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-06-26T14:50:53Z",
+      "lastPushed": "2026-06-29T13:16:45Z",
       "createdAt": "2026-03-09T19:14:08Z",
       "isFeatured": false,
       "isArchived": false,
@@ -1862,7 +1862,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-06-26T14:50:50Z",
+      "lastPushed": "2026-06-29T05:44:14Z",
       "createdAt": "2025-11-05T18:11:38Z",
       "isFeatured": false,
       "isArchived": false,
@@ -2131,7 +2131,7 @@
       },
       "stars": 1,
       "forks": 0,
-      "lastPushed": "2026-06-22T15:24:46Z",
+      "lastPushed": "2026-06-29T03:56:48Z",
       "createdAt": "2026-01-25T01:59:32Z",
       "isFeatured": false,
       "isArchived": false,
@@ -2238,7 +2238,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-06-28T15:02:14Z",
+      "lastPushed": "2026-06-29T20:08:23Z",
       "createdAt": "2026-03-08T19:31:57Z",
       "isFeatured": false,
       "isArchived": false,
@@ -2529,7 +2529,7 @@
       },
       "stars": 1,
       "forks": 1,
-      "lastPushed": "2026-06-22T04:34:24Z",
+      "lastPushed": "2026-06-29T00:32:34Z",
       "createdAt": "2026-01-12T02:37:39Z",
       "isFeatured": false,
       "isArchived": false,
@@ -2621,7 +2621,7 @@
       "summary": "| ![Login](.github/assets/ai-ws-login.jpg) | ![Report](.github/assets/ai-ws-analysis-report.jpg) |",
       "url": "https://github.com/RCushmaniii/ai-webscraper",
       "demoUrl": "",
-      "liveUrl": "",
+      "liveUrl": "https://scraper.cushlabs.ai",
       "homepage": "",
       "topics": [],
       "categories": [
@@ -2639,22 +2639,22 @@
       ],
       "stack": [
         "React 18",
+        "Vite",
         "TypeScript",
         "FastAPI",
         "Python 3.11",
         "Supabase (PostgreSQL)",
-        "Celery",
-        "Redis",
         "OpenAI GPT-4",
         "Playwright",
         "BeautifulSoup4",
-        "TailwindCSS"
+        "TailwindCSS",
+        "Docker"
       ],
       "status": null,
       "language": "Python",
       "languages": {
         "Python": 708198,
-        "TypeScript": 584404,
+        "TypeScript": 601704,
         "PLpgSQL": 54863,
         "Batchfile": 4338,
         "JavaScript": 4239,
@@ -2664,13 +2664,13 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-06-28T23:40:20Z",
+      "lastPushed": "2026-06-29T20:10:26Z",
       "createdAt": "2025-12-16T02:09:11Z",
       "isFeatured": false,
       "isArchived": false,
       "isPrivate": false,
       "tagline": "Crawl websites, detect SEO issues, and generate AI-powered analysis reports",
-      "thumbnail": "https://cdn.cushlabs.ai/ai-webscraper/images/portfolio/ai-webscraper-01.webp",
+      "thumbnail": "https://cdn.cushlabs.ai/ai-webscraper/images/portfolio/ai-webscraper-cover.webp",
       "problem": "Organizations need to understand their website health — broken links, missing SEO metadata,\nthin content, accessibility gaps — but enterprise tools cost thousands per year and manual\naudits don't scale. This platform automates the entire crawl-analyze-report pipeline with\nAI-generated insights at a fraction of the cost.\n",
       "solution": null,
       "keyFeatures": [
@@ -2685,17 +2685,47 @@
       "slides": [
         {
           "src": "https://cdn.cushlabs.ai/ai-webscraper/images/portfolio/ai-webscraper-01.webp",
-          "altEn": "AI WebScraper crawl configuration screen with start URL, depth, page limits, rate limiting, and robots.txt controls",
-          "altEs": "Pantalla de configuración de rastreo de AI WebScraper con URL inicial, profundidad, límites de páginas, control de velocidad y respeto a robots.txt"
+          "altEn": "Slide: 'Crawl smarter. Rank higher. Convert more.' — AI WebScraper shown beside an executive AI site-audit report",
+          "altEs": "Diapositiva: 'Rastrea mejor. Posiciónate más alto. Convierte más.' — AI WebScraper junto a un reporte ejecutivo de auditoría del sitio con IA"
         },
         {
           "src": "https://cdn.cushlabs.ai/ai-webscraper/images/portfolio/ai-webscraper-02.webp",
-          "altEn": "GPT-4 generated site analysis report showing health score, technical SEO, content quality, and crawl metrics",
-          "altEs": "Reporte de análisis del sitio generado con GPT-4 que muestra el puntaje de salud, SEO técnico, calidad de contenido y métricas de rastreo"
+          "altEn": "Slide: 'Data is not a strategy' — most SEO tools bury you in metrics; AI WebScraper answers what to fix first",
+          "altEs": "Diapositiva: 'Los datos no son una estrategia' — la mayoría de las herramientas de SEO te abruman con métricas; AI WebScraper te dice qué corregir primero"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/ai-webscraper/images/portfolio/ai-webscraper-03.webp",
+          "altEn": "Slide: 'The intelligent consultant for your site' — raw crawl data flows through AI analysis into a prioritized action plan",
+          "altEs": "Diapositiva: 'El consultor inteligente para tu sitio' — los datos del rastreo pasan por el análisis con IA y se convierten en un plan de acción priorizado"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/ai-webscraper/images/portfolio/ai-webscraper-04.webp",
+          "altEn": "Slide: 'From URL to action in 5 steps' — enter a URL, crawl the site, detect issues, analyze with AI, get copy-paste fixes",
+          "altEs": "Diapositiva: 'De la URL a la acción en 5 pasos' — ingresa una URL, rastrea el sitio, detecta problemas, analiza con IA y obtén correcciones listas para copiar y pegar"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/ai-webscraper/images/portfolio/ai-webscraper-05.webp",
+          "altEn": "Slide: 'Surfacing the signals that matter' — detected issues grouped by severity into critical, high, and medium priority",
+          "altEs": "Diapositiva: 'Resaltamos las señales que importan' — los problemas detectados se agrupan por gravedad en prioridad crítica, alta y media"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/ai-webscraper/images/portfolio/ai-webscraper-06.webp",
+          "altEn": "Slide: 'More than a crawler, a strategic engine' — impact-versus-effort prioritization with before-and-after copy-paste fixes",
+          "altEs": "Diapositiva: 'Más que un rastreador, un motor estratégico' — priorización por impacto contra esfuerzo con correcciones de antes y después listas para copiar y pegar"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/ai-webscraper/images/portfolio/ai-webscraper-07.webp",
+          "altEn": "Slide: 'Built for the entire growth team' — business owners, marketing managers, agencies, and content/web teams",
+          "altEs": "Diapositiva: 'Hecho para todo el equipo de crecimiento' — dueños de negocios, gerentes de marketing, agencias y equipos de contenido y web"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/ai-webscraper/images/portfolio/ai-webscraper-08.webp",
+          "altEn": "Slide: 'From website crawl to growth roadmap' — enter your website URL and start a free AI audit",
+          "altEs": "Diapositiva: 'Del rastreo del sitio web a una hoja de ruta de crecimiento' — ingresa la URL de tu sitio e inicia una auditoría con IA gratis"
         }
       ],
-      "videoUrl": null,
-      "videoPoster": null
+      "videoUrl": "https://cdn.cushlabs.ai/ai-webscraper/video/ai-webscraper-brief.mp4",
+      "videoPoster": "https://cdn.cushlabs.ai/ai-webscraper/images/portfolio/ai-webscraper-brief-poster.webp"
     },
     {
       "id": 1114660708,
@@ -3394,7 +3424,7 @@
       },
       "stars": 2,
       "forks": 0,
-      "lastPushed": "2026-06-28T02:51:31Z",
+      "lastPushed": "2026-06-29T17:08:51Z",
       "createdAt": "2026-01-08T03:52:43Z",
       "isFeatured": false,
       "isArchived": false,
@@ -3789,7 +3819,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-06-22T12:24:35Z",
+      "lastPushed": "2026-06-29T01:42:04Z",
       "createdAt": "2026-01-04T03:47:35Z",
       "isFeatured": false,
       "isArchived": false,
@@ -3912,7 +3942,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-06-28T17:45:34Z",
+      "lastPushed": "2026-06-29T15:42:40Z",
       "createdAt": "2026-03-22T07:49:29Z",
       "isFeatured": false,
       "isArchived": false,
@@ -4160,7 +4190,7 @@
       },
       "stars": 1,
       "forks": 0,
-      "lastPushed": "2026-06-22T23:24:07Z",
+      "lastPushed": "2026-06-29T01:11:40Z",
       "createdAt": "2026-01-23T00:50:02Z",
       "isFeatured": false,
       "isArchived": false,
