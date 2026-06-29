@@ -1,0 +1,140 @@
+---
+// Stripped, standalone landing layout for es-MX cold-outreach pages.
+// NO global Header/Footer (they link to other-market pricing) and NO demo
+// chat widget — just brand polish + a single conversion focus.
+// Defaults to noindex; these pages are DM-driven, not organic SEO, and are
+// excluded from the sitemap in astro.config.mjs to protect the Ahrefs score.
+import "../styles/global.css";
+import ThemeScript from "../components/ThemeScript.astro";
+
+interface Props {
+  title: string;
+  description: string;
+  ogImage?: string;
+  lang?: string;
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description,
+  ogImage = "images/og/cushlabs-og.png",
+  lang = "es",
+  noindex = true,
+} = Astro.props;
+
+const pathname = Astro.url.pathname;
+const ensureTrailingSlash = (p: string) =>
+  p === "/" || p.endsWith("/") ? p : `${p}/`;
+const canonicalURL = new URL(ensureTrailingSlash(pathname), Astro.site);
+const resolvedOgImage = `${Astro.site}${ogImage.replace(/^\//, "")}`;
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <ThemeScript />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://analytics.ahrefs.com" />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;1,8..60,400&display=swap"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;1,8..60,400&display=swap"
+      />
+    </noscript>
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta
+      name="robots"
+      content={noindex ? "noindex, nofollow" : "index, follow"}
+    />
+    <link rel="canonical" href={canonicalURL} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={resolvedOgImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="CushLabs.ai" />
+    <meta property="og:locale" content="es_MX" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={resolvedOgImage} />
+
+    <meta name="theme-color" content="#FF6A3D" />
+    <meta name="author" content="Robert Cushman, CushLabs.ai" />
+    <meta name="generator" content={Astro.generator} />
+
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="/images/logo/cushlabs-logo.png" />
+
+    <script
+      src="https://analytics.ahrefs.com/analytics.js"
+      data-key="ruxKH1qjytlbUmJcCXIcUA"
+      async></script>
+  </head>
+  <body class="bg-white dark:bg-cush-gray-900 text-gray-900 dark:text-gray-100">
+    <!-- Brand background texture -->
+    <div
+      class="fixed inset-0 -z-20 bg-linear-to-b from-cush-orange/5 via-transparent to-transparent"
+    >
+    </div>
+    <div
+      class="fixed inset-0 -z-10 opacity-[0.015] pointer-events-none"
+      style="background-image: url(&quot;data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E&quot;)"
+    >
+    </div>
+
+    <!-- Minimal top bar: logo only, no nav (no links to other-market pricing) -->
+    <header
+      class="relative z-10 flex items-center justify-center py-5 border-b border-gray-100 dark:border-gray-800"
+    >
+      <img
+        src="/images/logo/cushlabs-logo.webp"
+        alt="CushLabs"
+        width="40"
+        height="40"
+        class="h-9 w-auto"
+      />
+      <span class="ml-2 font-display font-bold text-lg tracking-tight"
+        >CushLabs</span
+      >
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer
+      class="relative z-10 border-t border-gray-100 dark:border-gray-800 py-8 text-center text-sm text-gray-500 dark:text-gray-500"
+    >
+      <p>© 2026 CushLabs AI Services · Guadalajara, México</p>
+      <p class="mt-1">
+        <a href="/es/privacy/" class="hover:text-cush-orange underline underline-offset-4"
+          >Aviso de privacidad</a
+        >
+      </p>
+    </footer>
+
+    <script>
+      import { inject } from "@vercel/analytics";
+      inject();
+    </script>
+  </body>
+</html>

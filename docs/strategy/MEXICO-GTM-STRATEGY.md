@@ -169,10 +169,10 @@ Cold DM → landing page → **"Diagnóstico gratis"** → qualify & route:
 
 ## 8. Go-To-Market Tactics
 
-- **Acquisition:** cold FB/IG DM + WhatsApp → stripped es-MX landing page (`/spas`) → free diagnosis → 2-week free trial → paid (SPEI/OXXO).
-- **Outreach IS the validation.** Rather than a "call 20 businesses" checklist, the cold campaign measures manual-tail responsiveness directly — every reply/non-reply is data the desk research couldn't provide.
+- **Acquisition:** cold FB/IG DM + WhatsApp → stripped es-MX landing page (**`/salones/`**, LIVE) → free diagnosis → 2-week free trial → paid (SPEI/OXXO).
+- **Outreach IS the validation.** Rather than a "call 20 businesses" checklist, the cold campaign measures manual-tail responsiveness directly — every reply/non-reply is data the desk research couldn't provide. Outreach playbook (DM sequence + objection bank + go-live checklist): `docs/outreach/salones-outreach-es.md`.
 - **Repositioned pitch:** lead with "nunca pierdas un mensaje / agenda mientras duermes"; reminders + review-approval as included bonuses.
-- **Landing pages:** stripped, standalone, es-MX, single WhatsApp CTA. Sidesteps the site's old-pricing contradiction. First: beauty-spa `Recepción Digital` (copy drafted; rebuild headline around conversational AI).
+- **Landing pages:** stripped, standalone, es-MX, single WhatsApp CTA, `noindex` + sitemap-excluded (protects Ahrefs score). Built via reusable `src/layouts/LandingLayout.astro` (dental LP reuses it). First page LIVE: `/salones/` (`Recepción Digital`, headline = conversational AI).
 - **Proof engine:** land first salon wins fast → testimonials + before/after → reduce future friction → graduate to dental with case studies in hand.
 - **Trial framing:** 2-week free trial, "si no se gana su lugar, nos despedimos como amigos."
 
@@ -192,7 +192,8 @@ Cold DM → landing page → **"Diagnóstico gratis"** → qualify & route:
 - [ ] Live MX WhatsApp marketing per-message rate (verify in WhatsApp Manager)
 - [ ] Size of the manual tail in each niche (no public data — outreach will reveal)
 - [ ] Confirm product name `Recepción Digital`
-- [ ] Rebuild `/spas` landing copy around the conversational-AI headline (current draft leads with reminders/no-shows)
+- [x] ~~Rebuild landing copy around the conversational-AI headline~~ — DONE: `/salones/` live, headline = "nunca pierdas otra clienta por un mensaje sin contestar"
+- [ ] Dental LP (`/clinicas-dentales/`) — reuse `LandingLayout`, reviews co-headline, higher price tier
 
 ---
 

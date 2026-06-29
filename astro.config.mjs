@@ -1,16 +1,16 @@
-import { defineConfig } from 'astro/config';
-import tailwindcss from '@tailwindcss/vite';
-import sitemap from '@astrojs/sitemap';
-import sentry from '@sentry/astro';
+import { defineConfig } from "astro/config";
+import tailwindcss from "@tailwindcss/vite";
+import sitemap from "@astrojs/sitemap";
+import sentry from "@sentry/astro";
 
 // ── Slug-mismatched route pairs for sitemap hreflang ────────────────
 // EN path (no prefix) → ES slug (no /es prefix)
 const routePairs = {
-  '/consultation': '/reservar',
+  "/consultation": "/reservar",
 };
 
 // Build full bidirectional URL map: absolute EN URL ↔ absolute ES URL
-const SITE = 'https://www.cushlabs.ai';
+const SITE = "https://www.cushlabs.ai";
 const hreflangMap = new Map();
 
 // Static route pairs
@@ -23,13 +23,14 @@ for (const [enPath, esSlug] of Object.entries(routePairs)) {
 
 // ── Priority rules by URL pattern ───────────────────────────────────
 function getPriority(url) {
-  const path = url.replace(SITE, '');
-  if (path === '/' || path === '/es/' || path === '/es') return 1.0;
+  const path = url.replace(SITE, "");
+  if (path === "/" || path === "/es/" || path === "/es") return 1.0;
   if (/^\/(es\/)?services/.test(path)) return 0.9;
   if (/^\/(es\/)?portfolio/.test(path)) return 0.8;
   if (/^\/(es\/)?projects\//.test(path)) return 0.7;
   if (/^\/(es\/)?about/.test(path)) return 0.7;
-  if (/^\/(es\/)?consultation/.test(path) || /^\/(es\/)?reservar/.test(path)) return 0.8;
+  if (/^\/(es\/)?consultation/.test(path) || /^\/(es\/)?reservar/.test(path))
+    return 0.8;
   if (/^\/(es\/)?contact/.test(path)) return 0.7;
   if (/^\/(es\/)?faq/.test(path)) return 0.6;
   if (/^\/(es\/)?(terms|privacy)/.test(path)) return 0.3;
@@ -37,10 +38,10 @@ function getPriority(url) {
 }
 
 function getChangefreq(url) {
-  const path = url.replace(SITE, '');
-  if (path === '/' || path === '/es/' || path === '/es') return 'weekly';
-  if (/^\/(es\/)?(terms|privacy)/.test(path)) return 'yearly';
-  return 'monthly';
+  const path = url.replace(SITE, "");
+  if (path === "/" || path === "/es/" || path === "/es") return "weekly";
+  if (/^\/(es\/)?(terms|privacy)/.test(path)) return "yearly";
+  return "monthly";
 }
 
 export default defineConfig({
@@ -57,13 +58,17 @@ export default defineConfig({
     }),
     sitemap({
       filter: (page) => {
-        const path = page.replace(SITE, '');
-        if (path.includes('404')) return false;
-        if (path.includes('_')) return false;
+        const path = page.replace(SITE, "");
+        if (path.includes("404")) return false;
+        if (path.includes("_")) return false;
         // Internal flow pages with noindex meta — must NOT appear in sitemap
         // (Ahrefs flags "noindex page in sitemap" as a hard error).
         if (/\/messenger-assistant\/connect(ed)?\/?$/.test(path)) return false;
-        if (/\/es\/messenger-assistant\/connect(ed)?\/?$/.test(path)) return false;
+        if (/\/es\/messenger-assistant\/connect(ed)?\/?$/.test(path))
+          return false;
+        // es-MX cold-outreach landing pages (noindex, DM-driven, not organic SEO)
+        // — deliberately kept out of the sitemap. See docs/strategy/MEXICO-GTM-STRATEGY.md.
+        if (/\/(salones|clinicas-dentales)\/?$/.test(path)) return false;
         return true;
       },
       serialize: (item) => {
@@ -77,10 +82,10 @@ export default defineConfig({
         // Tier 1: Check explicit mismatched-slug map
         const partner = hreflangMap.get(url);
         if (partner) {
-          const isEs = url.includes('/es/') || url.endsWith('/es');
+          const isEs = url.includes("/es/") || url.endsWith("/es");
           item.links = [
-            { lang: 'en-US', url: isEs ? partner : url },
-            { lang: 'es-MX', url: isEs ? url : partner },
+            { lang: "en-US", url: isEs ? partner : url },
+            { lang: "es-MX", url: isEs ? url : partner },
           ];
           return item;
         }
@@ -93,20 +98,20 @@ export default defineConfig({
         return item;
       },
       i18n: {
-        defaultLocale: 'en',
+        defaultLocale: "en",
         locales: {
-          en: 'en-US',
-          es: 'es-MX',
+          en: "en-US",
+          es: "es-MX",
         },
       },
     }),
   ],
-  output: 'static',
-  trailingSlash: 'always',
-  site: 'https://www.cushlabs.ai',
+  output: "static",
+  trailingSlash: "always",
+  site: "https://www.cushlabs.ai",
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en', 'es'],
+    defaultLocale: "en",
+    locales: ["en", "es"],
     routing: {
       prefixDefaultLocale: false,
     },
