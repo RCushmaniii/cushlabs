@@ -100,6 +100,38 @@ Documented in CLAUDE.md and memory `feedback_tailwind4_color_collision`. Custom 
 
 ## Session History
 
+## Session: 2026-06-29 — Portfolio reconciliation: added AI WebScraper + fixed dashboard status drift
+
+### Accomplished
+
+- Reconciled the "43 live vs 35 posted" gap Robert flagged from the OS-dashboard Links tab. Cross-checked the 10 live-but-excluded repos: 9 are correctly `portfolio_enabled: false` (profile README, internal/infra, archived, private client/course tools); only `ai-webscraper` was a genuine add candidate.
+- **Added `ai-webscraper` to the portfolio** (priority 18, AI-tools cluster) — PRs `ai-webscraper#67` + `cushlabs#137`. Posted count 35 → 36. Generated two 16:9 WebP assets (crawl-config screen + GPT-4 analysis report) from existing `.github/assets` captures via `sharp`, uploaded to R2 (verified HTTP 200 on cdn.cushlabs.ai). GitHub-only, no live demo.
+- **Cleared a dead-demo footgun:** `ai-webscraper`'s GitHub homepage pointed at `ai-webscraper-tan.vercel.app` (404). The detail page's `demoUrl ?? homepage` fallback would have rendered a dead "Live Demo" button. Cleared the GitHub homepage via `gh repo edit`; build confirms 0 dead demo links.
+- **Fixed the dashboard "not-listed" mislabel** (`cushlabs-OS-dashboard#32`): `links.json` is hand-curated and not generated from `projects.generated.json`, so status drifts. Cross-checked all 65 entries — `cushlabs-investment-model` and `ai-webscraper` were both drifted. Set `status: posted` + real `portfolioPage`; cleared ai-webscraper's dead `liveUrl`. Surgical 5-line diff, typecheck passes, zero remaining drift.
+- Gitignored `src/data/.projects.snapshot.json` (sync-portfolio diff artifact) so it stops appearing as untracked.
+
+### Decisions Made
+
+- ai-webscraper listed GitHub-only (no live demo): containerized FastAPI/Celery/Redis/Supabase stack; a public crawl endpoint would need a rate limiter + paid always-on backend to avoid OpenAI cost drain. Not worth it for a portfolio piece — screenshot showcase matches other infra-heavy entries.
+- Priority 18 (not the PORTFOLIO.md's stale `3`): 3 would rank it among flagship work (voice-agent, messenger); mid-pack is honest for a no-live-demo piece.
+- "43 live vs 36 posted" is not a bug — "live" counts all deployed repos (superset); "posted" is portfolio-only. Expected to differ.
+
+### Immediate Next Steps
+
+- [ ] Eyeball the new card live after deploy: https://www.cushlabs.ai/projects/ai-webscraper/
+- [ ] (Optional) Build a CI guard in `cushlabs-OS-dashboard` that fails when `links.json` status drifts from `projects.generated.json` — prevents the mislabel from recurring. Needs a fetch of the committed cushlabs JSON in CI.
+- [ ] Dependency pass: review `cushlabs#76` (TypeScript 5.9→6.0, major) and `ai-webscraper#75` (FastAPI 0.104→0.138) before merging; other open Dependabot PRs are routine.
+
+### Technical Debt
+
+- `links.json` in `cushlabs-OS-dashboard` is hand-curated against the portfolio's real source of truth — drifts silently. Mitigated by this session's cross-check, but no automated guard yet (see Next Steps).
+
+### Open Questions / Blockers
+
+- None.
+
+---
+
 ## Session: 2026-06-21 — Homepage chat rework + portfolio audit & full depth sweep
 
 ### Accomplished
