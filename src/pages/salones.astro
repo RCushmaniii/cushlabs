@@ -29,7 +29,7 @@ const benefits = [
   },
   {
     title: "Te avisa cuando alguien está lista",
-    body: "Cuando una clienta quiere algo especial o está lista para reservar, te llega un mensaje a TU WhatsApp con su nombre y lo que busca. Tú cierras; el asistente hace el resto.",
+    body: "Cuando una clienta quiere algo especial o está lista para reservar, te llega un aviso al instante con su nombre y lo que busca. Tú cierras; el asistente hace el resto.",
   },
   {
     title: "Habla como tu salón, en español de México",
@@ -39,20 +39,20 @@ const benefits = [
 
 const included = [
   {
-    title: "Asistente conversacional con IA, 24/7",
-    desc: "En Facebook, Instagram y WhatsApp. Contesta, resuelve dudas y agenda — el corazón del servicio.",
-  },
-  {
-    title: "Recordatorios automáticos por WhatsApp",
-    desc: "Confirma y recuerda cada cita. Menos cancelaciones, menos huecos en tu agenda.",
+    title: "Asistente con IA en Facebook Messenger, 24/7",
+    desc: "Contesta, resuelve dudas y agenda directamente en los mensajes de tu página de Facebook. El corazón del servicio.",
   },
   {
     title: "Respuestas a tus reseñas de Google",
     desc: "Redactamos una respuesta profesional a cada reseña — y tú la apruebas antes de publicarse. Tu reputación, cuidada y con tu voz.",
   },
   {
-    title: "Aviso al instante a tu WhatsApp",
-    desc: "Cuando llega una clienta lista para reservar, te avisamos de inmediato con todos sus datos.",
+    title: "Aviso al instante cuando llega una clienta lista",
+    desc: "Cuando alguien está lista para reservar, te avisamos de inmediato con su nombre y sus datos para que tú cierres.",
+  },
+  {
+    title: "Configuración, entrenamiento y soporte",
+    desc: "Lo dejamos listo y lo mantenemos por ti, entrenado con tus servicios y precios, en español de México.",
   },
 ];
 
@@ -81,11 +81,15 @@ const faqs = [
   },
   {
     q: "Ya uso Booksy / una app de citas. ¿Esto para qué me sirve?",
-    a: "Esas apps mandan recordatorios, pero no contestan los mensajes de tus clientas. Cuando alguien te escribe por Instagram o Facebook preguntando precios o pidiendo cita, esa app no responde — tu asistente sí. Nosotros llenamos justo ese hueco.",
+    a: "Esas apps mandan recordatorios, pero no contestan los mensajes de tus clientas. Cuando alguien te escribe por Facebook preguntando precios o pidiendo cita, esa app no responde — tu asistente sí. Nosotros llenamos justo ese hueco.",
   },
   {
     q: "¿El asistente suena robótico?",
     a: "No. Habla con la voz de tu salón, en español de México, de forma natural y cálida. Lo entrenamos con tu información para que conteste como lo harías tú.",
+  },
+  {
+    q: "¿Funciona con Instagram y WhatsApp?",
+    a: "Hoy tu asistente trabaja en Facebook Messenger y en tus reseñas de Google. Instagram y WhatsApp están en camino y se agregarán sin costo extra para los clientes actuales en cuanto estén listos.",
   },
   {
     q: "¿Y si no me funciona?",
@@ -97,14 +101,14 @@ const faqs = [
   },
   {
     q: "¿Qué necesitan de mí para empezar?",
-    a: "Solo acceso a tu página de Facebook/Instagram y tu lista de servicios y precios. Del resto nos encargamos nosotros.",
+    a: "Solo acceso a tu página de Facebook y tu lista de servicios y precios. Del resto nos encargamos nosotros.",
   },
 ];
 ---
 
 <LandingLayout
   title="Recepción Digital para Salones y Spas | CushLabs"
-  description="Tu recepcionista con IA contesta Facebook, Instagram y WhatsApp al instante y agenda citas. Para salones y spas en México. Prueba gratis de 2 semanas."
+  description="Tu recepcionista con IA contesta los mensajes de tu Facebook al instante, agenda citas y cuida tus reseñas de Google. Para salones y spas en México."
 >
   <!-- ── Hero ───────────────────────────────────────────────────── -->
   <section class="relative overflow-hidden pt-16 pb-20 md:pt-24 md:pb-28">
@@ -135,9 +139,9 @@ const faqs = [
       <p
         class="text-fluid-lg text-gray-600 dark:text-gray-300 mb-4 max-w-3xl mx-auto leading-relaxed"
       >
-        Tu recepcionista con IA contesta Facebook, Instagram y WhatsApp al
-        instante — responde precios, agenda la cita y te avisa cuando alguien
-        está lista para reservar.
+        Tu recepcionista con IA contesta los mensajes de tu página de Facebook
+        al instante — responde precios, agenda la cita y te avisa cuando una
+        clienta está lista para reservar.
       </p>
       <p
         class="text-fluid-base text-gray-500 dark:text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed"
@@ -188,9 +192,10 @@ const faqs = [
         class="space-y-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed"
       >
         <p>
-          Mientras estás peinando o atendiendo, llegan tres mensajes por
-          Instagram preguntando precios y horarios. Cuando por fin los ves, ya es
-          tarde — la clienta encontró otro salón que le contestó primero.
+          Mientras estás peinando o atendiendo, llegan tres mensajes a tu
+          página de Facebook preguntando precios y horarios. Cuando por fin los
+          ves, ya es tarde — la clienta encontró otro salón que le contestó
+          primero.
         </p>
         <p>
           La mayoría de los mensajes son las mismas preguntas de siempre: cuánto
@@ -215,7 +220,7 @@ const faqs = [
           Una recepcionista que nunca duerme ni se satura
         </h2>
         <p class="text-xl text-cush-orange font-medium leading-relaxed">
-          Contesta cada mensaje, en cada plataforma, al instante.
+          Contesta cada mensaje de tu Facebook al instante.
         </p>
       </div>
 
@@ -283,6 +288,13 @@ const faqs = [
           ))
         }
       </div>
+
+      <p
+        class="mt-8 text-center text-sm text-gray-500 dark:text-gray-400 max-w-2xl mx-auto"
+      >
+        Próximamente y sin costo adicional para clientes actuales: Instagram,
+        WhatsApp y recordatorios automáticos de citas.
+      </p>
     </div>
   </section>
 
@@ -327,9 +339,9 @@ const faqs = [
           Una sola clienta al mes que no se te escape ya pagó el servicio.
         </p>
         <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
-          Entre las citas que recuperas de mensajes a deshoras y las que dejan de
-          cancelarse con los recordatorios, el servicio se paga solo varias
-          veces. Todo lo demás es ganancia.
+          Entre las citas que recuperas de mensajes que antes se te escapaban y
+          las clientas nuevas que llegan por tus reseñas bien cuidadas, el
+          servicio se paga solo varias veces. Todo lo demás es ganancia.
         </p>
       </div>
     </div>
