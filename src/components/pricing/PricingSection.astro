@@ -52,15 +52,17 @@ const copy = {
         featured: false,
         features: [
           "Everything in Premium",
-          "AI Voice Agent — 300 answered min/mo ($8.50 MXN/min overage)",
+          "AI Voice Agent — 300 answered min per location/mo ($8.50 MXN/min overage)",
           "Priority support",
           "Industry tuning (e.g. healthcare)",
         ],
         cta: "Get started",
       },
     ],
+    locations:
+      "Every plan includes up to 2 locations · additional locations +$690 MXN/mo each",
     notes:
-      "No setup fee · No contracts · 2-week free trial · Pay via SPEI or OXXO · CFDI invoice included",
+      "No setup fee · No contracts · 2-week free trial · Unlimited conversations (fair use) · Pay via SPEI or OXXO · CFDI invoice included",
     footerQ: "Need something custom?",
     footerLink: "Let's talk",
     footerHref: "/contact/",
@@ -105,15 +107,17 @@ const copy = {
         featured: false,
         features: [
           "Todo lo de Premium",
-          "Agente de Voz con IA — 300 minutos contestados/mes (excedente $8.50 MXN/min)",
+          "Agente de Voz con IA — 300 minutos contestados por sucursal/mes (excedente $8.50 MXN/min)",
           "Soporte prioritario",
           "Personalización por industria (p. ej. salud)",
         ],
         cta: "Empieza",
       },
     ],
+    locations:
+      "Todos los planes incluyen hasta 2 sucursales · sucursales adicionales +$690 MXN/mes cada una",
     notes:
-      "Sin cuota de instalación · Sin contratos · Prueba gratis de 2 semanas · Pago con SPEI u OXXO · Factura (CFDI) incluida",
+      "Sin cuota de instalación · Sin contratos · Prueba gratis de 2 semanas · Conversaciones ilimitadas (uso justo) · Pago con SPEI u OXXO · Factura (CFDI) incluida",
     footerQ: "¿Necesitas algo a la medida?",
     footerLink: "Hablemos",
     footerHref: "/es/contact/",
@@ -219,8 +223,15 @@ const t = copy[locale];
       }
     </div>
 
+    <!-- Multi-location -->
+    <p
+      class="text-center text-sm font-medium text-gray-700 dark:text-gray-200 mt-10"
+    >
+      {t.locations}
+    </p>
+
     <!-- Notes -->
-    <p class="text-center text-sm text-gray-500 dark:text-gray-400 mt-10">
+    <p class="text-center text-sm text-gray-500 dark:text-gray-400 mt-3">
       {t.notes}
     </p>
     <p class="text-center text-sm text-gray-600 dark:text-gray-300 mt-4">
