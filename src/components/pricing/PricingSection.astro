@@ -6,8 +6,10 @@ import type { Locale } from "../../i18n";
 
 interface Props {
   locale: Locale;
+  headingTag?: "h1" | "h2";
 }
-const { locale } = Astro.props;
+const { locale, headingTag = "h1" } = Astro.props;
+const Heading = headingTag;
 
 const copy = {
   en: {
@@ -137,11 +139,11 @@ const t = copy[locale];
       >
         {t.eyebrow}
       </p>
-      <h1
+      <Heading
         class="font-display text-fluid-4xl font-bold text-gray-900 dark:text-white mb-5 leading-tight tracking-tight"
       >
         {t.heading}
-      </h1>
+      </Heading>
       <p class="text-fluid-lg text-gray-600 dark:text-gray-300 leading-relaxed">
         {t.sub}
       </p>
