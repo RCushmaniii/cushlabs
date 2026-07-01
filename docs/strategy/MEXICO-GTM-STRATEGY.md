@@ -117,6 +117,15 @@ Good-Better-Best, all MXN/month, subscription, **no setup fee, no contract.** Ev
 
 **Deliverable-now audit:** only WhatsApp features + Instagram DMs are gated on Meta approval. Facebook Messenger (approved), Google reviews, lead alerts, website chatbot, local SEO report, and Voice Agent are all live-capable today.
 
+### Voice Agent — positioning & margin (validated 2026-07-01, 2nd-opinion analysis)
+
+- **Sell it as a call-capture layer** — missed calls, after-hours inquiries, basic questions, lead qualification. **NOT** "replaces your receptionist." Lower trust friction, easier to deliver, and honest given voice is new to us.
+- **Copy:** "300 **answered** minutes/month; extra at $8.50 MXN/min." ("Answered" makes the usage boundary clear.)
+- **Margin is healthy:** break-even ≈ $0.38 USD/min on the included 300 min; realistic all-in cost ~$0.10–0.18/min → **50–79% margin** on the $2,000 Premium→Ultra uplift. Overage ($8.50/min ≈ $0.49 USD) is healthy, not underpriced.
+- **CAVEAT (confidence 80%):** those costs are estimated — we haven't built a voice agent yet. **Build one and measure real per-minute cost before selling Ultra voice heavily.** Break-even room is large, so the risk is low.
+- **Real constraint is operational, not margin:** trust friction (misunderstandings, transfers, angry callers, recordings). Mitigate with human-transfer + call recordings + the narrow call-capture framing.
+- **Ultra is the clinic / med-spa / high-value tier.** Salons live in Basic/Premium; Ultra is where the real money is (clinics self-select in).
+
 ---
 
 ## 4. Build vs. Buy — BUILD (Meta Cloud API direct)
