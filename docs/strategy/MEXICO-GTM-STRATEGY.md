@@ -113,14 +113,31 @@ Good-Better-Best, all MXN/month, subscription, **no setup fee, no contract.** Ev
 | ----------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Basic**   | **$1,990/mo** | AI assistant on Facebook Messenger (24/7) · Google review management (with approval) · Owner lead alerts · Fully managed (es-MX, CFDI, SPEI/OXXO) |
 | **Premium** | **$3,490/mo** | Everything in Basic · Website chatbot · Weekly local SEO & competitor report                                                                      |
-| **Ultra**   | **$5,490/mo** | Everything in Premium · AI Voice Agent (inbound calls, 300 min, $8.50/min overage) · Priority support · Industry tuning                           |
+| **Ultra**   | **$5,490/mo** | Everything in Premium · AI Voice Agent (inbound calls, 300 answered min **per location**, $8.50/min overage) · Priority support · Industry tuning |
 
 **Deliverable-now audit:** only WhatsApp features + Instagram DMs are gated on Meta approval. Facebook Messenger (approved), Google reviews, lead alerts, website chatbot, local SEO report, and Voice Agent are all live-capable today.
+
+### Multi-location pricing — LOCKED 2026-07-01
+
+The published price is **per business, and includes up to 2 locations**. Additional locations are a **flat +$690 MXN/mo each, across all tiers**.
+
+- **Mental model:** ~$1,000/location, first two bundled. `$690` fits the `…90` price aesthetic.
+- **Why "up to 2" (not 1, not 4):** two locations is the most common "bigger than solo" case (salon + spa, or a second shop). The marginal delivery cost of a 2nd location is tiny (same AI brain, one account manager, one more Google profile), so bundling it buys goodwill cheaply. "First 4" was rejected — it gave away the _expensive_ locations; "up to 2" gives away the cheap one.
+- **Why $690 (not $990):** marginal work per extra location is genuinely low (we know it; the client doesn't). The add-on is a **land-grab / chain-capture lever**, not cost recovery. `$490` is the floor — below that, location 3 drops to ~half the effective rate of the bundled first two, which invites "so why am I paying $1,990 for the first two?", and it underprices recurring review-management labor.
+- **The formula scales cleanly, no brackets:** a 9-location Basic account = `$1,990 + 7 × $690 = $6,820/mo` (~$380 USD to run 9 locations). Chains get a fair auto-price; use "custom / let's talk" only when a shared-vs-per-location Facebook-page split justifies a discount (e.g. 9 locations on ONE shared FB page = ~1× Messenger workload → room to come down to ~$7,900 on higher tiers).
+- **Voice minutes are per location** (Ultra): 300 answered min **per location**/mo, $8.50/min overage. A shared pool across a chain would vanish instantly — per-location is the honest structure.
+
+### Fair-use policy on "unlimited conversations" — LOCKED 2026-07-01
+
+"Unlimited conversations" now always reads **"unlimited conversations (fair use)"** on the site. Reason: every message carries a metered LLM cost, and unbounded "unlimited" in front of a per-call cost is the exact failure mode the global rate-limit rule guards against (a viral post → surprise Anthropic/OpenAI bill that lands on Robert).
+
+- **Public copy:** "unlimited conversations (fair use)" — the marketing punch stays, the exposure is capped.
+- **Internal threshold (not published):** ~**1,000 conversations/mo per location**. Normal SMBs never approach this. Beyond it we right-size the plan — never a silent surprise charge. Keep the number internal to avoid "I'm at 999, gotcha" gaming.
 
 ### Voice Agent — positioning & margin (validated 2026-07-01, 2nd-opinion analysis)
 
 - **Sell it as a call-capture layer** — missed calls, after-hours inquiries, basic questions, lead qualification. **NOT** "replaces your receptionist." Lower trust friction, easier to deliver, and honest given voice is new to us.
-- **Copy:** "300 **answered** minutes/month; extra at $8.50 MXN/min." ("Answered" makes the usage boundary clear.)
+- **Copy:** "300 **answered** minutes per location/month; extra at $8.50 MXN/min." ("Answered" makes the usage boundary clear; **per location** — see Multi-location pricing above.)
 - **Margin is healthy:** break-even ≈ $0.38 USD/min on the included 300 min; realistic all-in cost ~$0.10–0.18/min → **50–79% margin** on the $2,000 Premium→Ultra uplift. Overage ($8.50/min ≈ $0.49 USD) is healthy, not underpriced.
 - **CAVEAT (confidence 80%):** those costs are estimated — we haven't built a voice agent yet. **Build one and measure real per-minute cost before selling Ultra voice heavily.** Break-even room is large, so the risk is low.
 - **Real constraint is operational, not margin:** trust friction (misunderstandings, transfers, angry callers, recordings). Mitigate with human-transfer + call recordings + the narrow call-capture framing.
