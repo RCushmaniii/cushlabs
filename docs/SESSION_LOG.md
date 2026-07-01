@@ -100,6 +100,32 @@ Documented in CLAUDE.md and memory `feedback_tailwind4_color_collision`. Custom 
 
 ## Session History
 
+## Session: 2026-07-01 — Edge-case operating policies + billing/cancellation terms
+
+### Accomplished
+
+- **Flushed out the remaining pricing edge cases** — PR #145, merged + verified live. Mostly policy/documentation with two light public touches.
+- **Pricing page** (EN + ES): added _"Prices in MXN · US or international? Let's talk"_ → routes US/international leads to contact.
+- **Terms page** (EN + ES): new **Subscriptions, Billing & Cancellation** section giving "cancel anytime" teeth — billed monthly in advance, adds/removes take effect next cycle, cancel = end of current paid month, no partial refunds, free trial = standard 1–2 location plans. Date bumped Feb → July 2026.
+- **Strategy doc**: new `§11 Edge Cases & Operating Policies` capturing all decisions (durable quoting reference).
+
+### Decisions Made
+
+- **Chains (5+ locations): paid pilot on 1–2 locations, then expand** — no free trial / no setup fee for chains. One policy solves both the setup-labor and trial-walkaway risks, and keeps "no setup fee" + "free trial" true for the ~95% standard-account market.
+- **US pricing DEFERRED** (Robert's call) — never auto-convert MXN↔USD; ~$100/mo parity captured as the working starting point for a later US/global alignment pass (flagged likely conservative for the US).
+- Review-response volume = fair-use ~50/mo/location (internal); EN/ES included, 3rd language = custom; franchise = one-owner-one-account, HQ-wide = enterprise quote.
+
+### Immediate Next Steps
+
+- [ ] 9-location prospect quote still pending her tier + shared-vs-9 FB pages (carried from prior entry).
+- [ ] US/global pricing alignment pass (deferred) — decide published USD vs. custom-quote, starting from ~$100/mo parity.
+
+### Open Questions / Blockers
+
+- None.
+
+---
+
 ## Session: 2026-07-01 — Multi-location pricing + fair-use cap on "unlimited"
 
 ### Accomplished
