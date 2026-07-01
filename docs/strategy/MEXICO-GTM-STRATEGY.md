@@ -251,6 +251,51 @@ Cold DM → landing page → **"Diagnóstico gratis"** → qualify & route:
 
 ---
 
+## 11. Edge Cases & Operating Policies
+
+Decided 2026-07-01. These drive how we quote and bill — keep consistent across deals. Most are internal policy; only **currency** (pricing-page note) and **billing/cancellation** (Terms page) surface publicly.
+
+### Multi-location chains (5+ locations)
+
+- **No free trial and no setup fee for chains — start with a paid pilot on 1–2 locations, then expand.** They pay standard price from day 1 of the pilot (covers onboarding labor), prove value on 2 locations, then roll out the rest at +$690/location. Land-and-expand — lower risk for both sides.
+- **Fallback lever:** if a chain insists on all locations live at once and won't pilot, quote a one-time onboarding fee instead. Not the default.
+- Keeps "no setup fee" + "2-week free trial" universally true on the public site (they apply to standard 1–2 location accounts, which is ~95% of the market).
+
+### Setup fee
+
+- **Standard accounts (1–2 locations): none, ever — it's a headline conversion lever.** Complex/chain onboarding is handled by the paid-pilot model above, not a published fee.
+
+### Free trial
+
+- **2-week free trial applies to standard single- or two-location plans only.** Multi-location rollouts begin with a paid pilot.
+
+### US / international leads (currency) — DEFERRED
+
+- **Full US/global pricing alignment is a separate later pass (Robert, 2026-07-01). Do not publish USD pricing yet.**
+- Interim: pricing page shows _"Prices in MXN · US or international? Let's talk,"_ routing US leads to a custom conversation.
+- **Never auto-convert MXN↔USD** — US willingness-to-pay is independent. Working starting point for the later pass: ~**$100 USD/mo** for Basic (up to 2 locations). Note this is ~parity with the peso price (so it reads as the same price in the customer's currency, not two-tiered) and is likely **conservative** for the US market — US SMBs pay $100–500/mo for managed services. Revisit before quoting US at scale.
+
+### Google review-response volume
+
+- Covered by per-location pricing (more reviews ≈ more locations ≈ more revenue); within one location, volume is naturally bounded. **Fair-use, internal threshold ~50 responses/mo per location** (far above normal). No public copy.
+
+### Billing, proration & cancellation (now on the Terms page)
+
+- Billed **monthly in advance**, per business, includes up to 2 locations.
+- **Added locations / upgrades:** effective next billing cycle. **Removals / downgrades:** effective next billing cycle.
+- **"Cancel anytime" = effective at the end of the current paid month; no partial refunds** for the current period.
+
+### Additional languages
+
+- **EN/ES included** (core bilingual value). A 3rd language (e.g. tourist-market French) = custom add-on on request, scoped per case.
+
+### Franchise vs. corporate buyer
+
+- Multi-location pricing assumes **one owner buying for all their locations.**
+- Independent franchisees = **separate standard accounts** (separate businesses). Franchise-HQ-buys-for-all = **enterprise / custom quote.**
+
+---
+
 ## Source Notes
 
 Research conducted 2026-06-28 via web search. Strongest (government/peer-reviewed): INEGI Censo Económico 2024 & DENUE/DataMéxico; IFT digital-adoption; Banxico SPEI; DataReportal/Statista WhatsApp penetration (~92%); Meta/WhatsApp developer docs. Directional (vendor-grade): clinic/salon behavior, no-show rates, ticket prices, and most competitor pricing (Kosmo, Booksy, Fresha, AgendaPro, Dentalink, Doctoralia, Neural IA, Dentiqa, Leadsales, Whaticket). **Key evidence gap:** no public survey quantifies software-penetration vs. manual operation in either niche — the manual tail is plausibly large but unmeasured; outreach is the validation.
