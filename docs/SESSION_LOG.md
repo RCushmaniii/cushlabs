@@ -100,6 +100,30 @@ Documented in CLAUDE.md and memory `feedback_tailwind4_color_collision`. Custom 
 
 ## Session History
 
+## Session: 2026-07-01 — Channel-accuracy pass: advertised channels ↔ Meta-approved reality
+
+### Accomplished
+
+- **Removed customer-facing deployment claims for channels we can't yet deliver** — PR #143, merged + verified live. Only Facebook Messenger (customer chat) + website chatbot are approved/available; WhatsApp awaits Meta review, Instagram needs a separate App Review, Telegram isn't offered.
+- `ServiceBlock.astro`: "deploy on website, WhatsApp, or both" → "website or Facebook Messenger"; audience line "Messenger and Instagram" → "Facebook Messenger" (EN + ES).
+- `services2/FAQ.astro`: "What's included in the plans?" answer dropped the website/WhatsApp/Facebook/Instagram/Telegram channel menu **and** the flat "everything" bundle (which contradicted the new tiers); rewritten to the real Basic/Premium/Ultra breakdown (EN + ES).
+- **Deliberately kept** (all real): owner-facing WhatsApp (lead alerts, weekly report delivery, contact/privacy/data-deletion), content-source mentions ("audit your WhatsApp threads"), and the honest "coming soon / próximamente" WhatsApp + Instagram copy on `/salones`.
+- Build clean, meta-description gate PASS (108 pages). Confirmed on live prod: `/services/` reads "website or Facebook Messenger"; zero remaining customer-facing Instagram/Telegram deployment claims.
+
+### Decisions Made
+
+- **Distinguish three uses of "WhatsApp"** — owner-notification (real, keep), content-source (real, keep), customer-facing deployment (overclaim, remove). Only the third is gated by Meta approval.
+
+### Technical Debt
+
+- None new. WhatsApp/Instagram customer channels layer back into the existing tiers at no price change once Meta approves (see Roadmap → Product expansion).
+
+### Open Questions / Blockers
+
+- None.
+
+---
+
 ## Session: 2026-06-30 — MX-first pricing pivot: 3-tier model reconciled site-wide + live
 
 ### Accomplished
