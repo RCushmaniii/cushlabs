@@ -100,6 +100,30 @@ Documented in CLAUDE.md and memory `feedback_tailwind4_color_collision`. Custom 
 
 ## Session History
 
+## Session: 2026-07-01 — Multi-location pricing + fair-use cap on "unlimited"
+
+### Accomplished
+
+- **Multi-location pricing (LOCKED)** — PR #144, merged + verified live on `/pricing`. Published price is per business and **includes up to 2 locations**; additional locations **+$690 MXN/mo each, flat across all tiers**. New callout line on the pricing chart (EN + ES). Formula scales with no brackets: 9-location Basic = 1,990 + 7×690 = **$6,820/mo**.
+- **Voice minutes now per location** (Ultra): "300 answered min **per location**/mo" — a shared chain pool would vanish instantly.
+- **Fair-use cap on "unlimited conversations"** — closed an active margin leak. "unlimited conversations" → "unlimited conversations (fair use)" in ServiceBlock (4 lines) + both messenger pages (2), plus fair-use added to the pricing-page notes strip (EN + ES). Internal, **unpublished** threshold ~1,000 conversations/mo per location. Rationale: unbounded "unlimited" in front of a metered LLM cost is the exact rate-limit failure mode from CLAUDE.md.
+- Documented the model in `docs/strategy/MEXICO-GTM-STRATEGY.md` (new Multi-location + Fair-use sections) and memory. Build clean, meta-description gate PASS (108 pages), verified live.
+
+### Decisions Made
+
+- **"Up to 2 locations" not 1 or 4** — the 2nd location's marginal cost is tiny, so bundling it buys goodwill cheaply; "first 4" was rejected because it gave away the _expensive_ locations.
+- **$690/additional location, not $990** — marginal work per extra location is genuinely low, so the add-on is a chain-capture lever, not cost recovery. **$490 is the floor** (below that, location 3 undercuts the bundled first two and it underprices review-management labor).
+
+### Open Questions / Blockers
+
+- The 9-location prospect still needs a quote: pending her **tier** and whether all locations share **one FB page vs. 9** (a shared page = ~1× Messenger workload → room to discount off the $6,820 formula).
+
+### Technical Debt
+
+- Remaining edge cases surfaced but not yet acted on (all lower-risk than the two shipped): setup fee for complex multi-location onboarding, trial economics for large builds, USD price for non-Mexico leads, downgrade/proration. Logged for a future pricing pass.
+
+---
+
 ## Session: 2026-07-01 — Channel-accuracy pass: advertised channels ↔ Meta-approved reality
 
 ### Accomplished
