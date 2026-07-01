@@ -7,6 +7,7 @@ import sentry from "@sentry/astro";
 // EN path (no prefix) → ES slug (no /es prefix)
 const routePairs = {
   "/consultation": "/reservar",
+  "/pricing": "/precios",
 };
 
 // Build full bidirectional URL map: absolute EN URL ↔ absolute ES URL
