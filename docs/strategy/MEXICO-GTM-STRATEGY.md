@@ -80,14 +80,42 @@ The wedge is **integration + es-MX quality + WhatsApp-handover-to-owner + done-f
 
 ---
 
-## 3. Pricing Architecture
+## 3. Pricing Architecture — 3 tiers (Basic / Premium / Ultra) — LOCKED 2026-07-01
 
-- **Core bundle — flat `1,990 MXN/mes` (salons)** — dead-simple, the hero offer; the 3 core services. This is the right call (Robert's instinct + commodity components shouldn't be sold à la carte).
-- **Dental tier — `~3,990–5,990 MXN/mes`** (on expansion) — dental clears MXN 4,000–8,000; reviews co-headline. (Corrects an earlier overestimate: typical MX clinic marketing spend is ~$440–1,950 USD/mo, NOT $2,000–5,000.)
-- **NO heavy à la carte.** The individual core services are commoditized; selling "reminders only" competes with free and invites price-shopping. Keep one bundle + add-ons.
-- **Add-ons / upsells / cross-sells:** marketing messaging (metered), website chatbot, SEO/competitor report, voice agent (premium).
+Good-Better-Best, all MXN/month, subscription, **no setup fee, no contract.** Evolved from the earlier flat-1,990 + à la carte idea. Principles:
 
-**Open:** exact add-on prices; whether a sub-1,990 micro entry rung is needed (test via outreach); final dental tier price.
+- **Tiers are horizontal** (feature/volume). **Industry verticals** (healthcare/NOM-024, etc.) = **tuning applied on Ultra**, NOT a separate "Clinic Package."
+- **No à la carte** — former add-ons are absorbed into tiers. Keeps it simple for price-sensitive micro-SMBs.
+- **Prices self-select by segment:** a micro salon lands on Basic; a high-WTP clinic lands on Ultra. This replaces the separate dental tier.
+- **Lead alerts** are generated FROM the AI conversation (assistant detects booking/intent signals) → owner gets the customer's FB name + conversation summary + any contact info the customer shared (Messenger doesn't auto-provide phone/email; the AI asks). Delivery by email/SMS now; WhatsApp once API is live.
+
+### Version 1 — Final package (target state, once Meta approves WhatsApp + Instagram)
+
+| Feature                                               | Basic $1,990 | Premium $3,490 | Ultra $5,490 |
+| ----------------------------------------------------- | ------------ | -------------- | ------------ |
+| AI assistant — Facebook Messenger                     | ✅           | ✅             | ✅           |
+| AI assistant — Instagram DMs                          | ✅           | ✅             | ✅           |
+| AI assistant — WhatsApp                               | ✅           | ✅             | ✅           |
+| Google review management (with approval)              | ✅           | ✅             | ✅           |
+| Owner lead alerts                                     | ✅           | ✅             | ✅           |
+| Automated WhatsApp reminders                          | —            | ✅             | ✅           |
+| Weekly local SEO & competitor report                  | —            | ✅             | ✅           |
+| Website chatbot                                       | —            | ✅             | ✅           |
+| AI Voice Agent (inbound, 300 min, $8.50/min overage)  | —            | —              | ✅           |
+| WhatsApp marketing (2,000 msgs/mo, $0.75/msg overage) | —            | —              | ✅           |
+| Priority support + industry tuning                    | —            | —              | ✅           |
+
+### Version 2 — Live now (what's published on the site TODAY)
+
+**WhatsApp + Instagram are fully removed — not shown, no "coming soon"** (a full-price tier listing unavailable features invites the "why pay full price for what you don't have" objection — Robert's call, 2026-07-01). Everything below is deliverable today; WhatsApp/IG capabilities layer into these same tiers at **no price change** once Meta approves.
+
+| Tier        | Price         | Included (live)                                                                                                                                   |
+| ----------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Basic**   | **$1,990/mo** | AI assistant on Facebook Messenger (24/7) · Google review management (with approval) · Owner lead alerts · Fully managed (es-MX, CFDI, SPEI/OXXO) |
+| **Premium** | **$3,490/mo** | Everything in Basic · Website chatbot · Weekly local SEO & competitor report                                                                      |
+| **Ultra**   | **$5,490/mo** | Everything in Premium · AI Voice Agent (inbound calls, 300 min, $8.50/min overage) · Priority support · Industry tuning                           |
+
+**Deliverable-now audit:** only WhatsApp features + Instagram DMs are gated on Meta approval. Facebook Messenger (approved), Google reviews, lead alerts, website chatbot, local SEO report, and Voice Agent are all live-capable today.
 
 ---
 
