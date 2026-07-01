@@ -100,6 +100,35 @@ Documented in CLAUDE.md and memory `feedback_tailwind4_color_collision`. Custom 
 
 ## Session History
 
+## Session: 2026-06-30 — MX-first pricing pivot: 3-tier model reconciled site-wide + live
+
+### Accomplished
+
+- **Shipped the bilingual pricing page** (`/pricing`, `/es/precios`) — PR #142. New reusable `src/components/pricing/PricingSection.astro` is the single source of truth for the 3-tier chart; added `routePairs` entry (`/pricing` ↔ `/precios`) to both `src/i18n/index.ts` and `astro.config.mjs`, plus a "Pricing/Precios" nav link in `Header.astro`.
+- **Reconciled the ENTIRE site to the locked 3-tier MXN model** — Basic $1,990 / Premium $3,490 / Ultra $5,490 MXN/mo. Retired all legacy US pricing ($997 bundle, $1,497 voice) and stale MXN figures ($8,497/$10,997/$3,500) across `ScenarioQualifier`, `ServiceBlock`, `home2/FAQ`, `services2/FAQ`, both `messenger-assistant` pages, both `voice-agent` pages (body copy + schema `estimatedCost` → MXN). Voice specs corrected: 500 min/$0.50 → 300 answered min/$8.50 MXN/min.
+- **Reused `PricingSection` on the services page** (new `headingTag="h2"` prop) instead of maintaining a duplicate chart — zero drift going forward. Deleted dead `services2/InvestmentOverview.astro` and `home/ServicesOverview.astro` (verified zero code imports first).
+- **Retired orphaned "Growth Bundle" naming** in Footer + FAQ; footer service links now point at the new `/pricing` (`/es/precios`) page and surface the product name "Recepción Digital."
+- Build clean, meta-description gate PASS (108 pages, 120–160 chars), all CI checks green. Squash-merged to `main` → production deploying.
+
+### Decisions Made
+
+- **Option B (all-in MX, both languages, retire US pricing now):** the wrong price had been live too long; reconcile everything in one pass rather than stage EN/ES separately.
+- **Single source of truth for pricing:** services page embeds `PricingSection` rather than a parallel component — eliminates the exact drift that caused this multi-price mess.
+
+### Immediate Next Steps
+
+- [ ] Visually verify production `/pricing` and `/es/precios` render the 3-tier chart correctly once the deploy lands.
+
+### Technical Debt
+
+- `home/ServicesOverview.astro` removed, but the rest of the dead `src/components/home/` folder (e.g. `Hero.astro` with the stale tenure string) still lingers — see tech-debt #3 / backlog line 43.
+
+### Open Questions / Blockers
+
+- None.
+
+---
+
 ## Session: 2026-06-29 — Portfolio reconciliation: added AI WebScraper + fixed dashboard status drift
 
 ### Accomplished
