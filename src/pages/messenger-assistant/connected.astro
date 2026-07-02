@@ -86,7 +86,7 @@ import Container from "../../components/layout/Container.astro";
             </svg>
         </div>
 
-        <h2 class="font-display text-fluid-3xl font-bold text-gray-900 dark:text-white mb-4 leading-tight tracking-tight">
+        <h2 id="error-heading" class="font-display text-fluid-3xl font-bold text-gray-900 dark:text-white mb-4 leading-tight tracking-tight">
           Connection didn't complete
         </h2>
 
@@ -126,19 +126,66 @@ import Container from "../../components/layout/Container.astro";
 
       loading.hidden = true;
 
+      // Stable error codes set by the Worker's OAuth callback
+      // (cushlabs-messenger-bot src/lib/oauth.ts). A deliberate cancel is
+      // not a failure and must not read like one. Unknown codes fall back
+      // to quoting Facebook's text.
+      const ERROR_COPY = {
+        user_cancelled: {
+          heading: "No changes were made",
+          message:
+            "You canceled the Facebook connection, so nothing on your page was changed. If you meant to connect it, you can start again anytime.",
+          neutral: true,
+        },
+        session_expired: {
+          heading: "Your connection link expired",
+          message:
+            "Secure connection sessions are valid for about 10 minutes. Start again and complete the Facebook steps in one sitting.",
+        },
+        no_pages: {
+          heading: "We couldn't find a page to connect",
+          message:
+            "Facebook didn't list any pages for the account you logged in with — usually that account isn't an admin of the business page. Log in with the page admin account, or check your page roles in Meta Business Suite.",
+        },
+        missing_params: {
+          heading: "Connection didn't complete",
+          message:
+            "We didn't receive the authorization details from Facebook. Please try again from the start.",
+        },
+        token_exchange_failed: {
+          heading: "Connection didn't complete",
+          message:
+            "Facebook accepted the connection, but we couldn't finish setting it up on our side. Please try again — if it happens twice, contact us and we'll sort it out.",
+        },
+        pages_fetch_failed: {
+          heading: "Connection didn't complete",
+          message:
+            "Facebook accepted the connection, but we couldn't finish setting it up on our side. Please try again — if it happens twice, contact us and we'll sort it out.",
+        },
+        server_misconfigured: {
+          heading: "Something's wrong on our side",
+          message:
+            "This one is on us, not you. Please contact us and we'll fix it right away.",
+        },
+      };
+
       if (!error && (pageName || pageId)) {
         if (pageName) {
           document.getElementById("page-name").textContent = pageName;
         }
         success.hidden = false;
       } else {
-        if (error) {
+        const copy = error && ERROR_COPY[error];
+        if (copy) {
+          document.getElementById("error-heading").textContent = copy.heading;
+          document.getElementById("error-message").textContent = copy.message;
+        } else if (error) {
           document.getElementById("error-message").textContent =
             'Facebook returned: "' + error + '". This sometimes happens if you cancel the authorization or if the session times out.';
         }
         if (bgGlow) {
           bgGlow.classList.remove("bg-green-500/10");
-          bgGlow.classList.add("bg-amber-500/10");
+          bgGlow.classList.add(copy && copy.neutral ? "bg-gray-400/10" : "bg-amber-500/10");
         }
         errorEl.hidden = false;
       }
