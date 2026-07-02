@@ -100,6 +100,24 @@ Documented in CLAUDE.md and memory `feedback_tailwind4_color_collision`. Custom 
 
 ## Session History
 
+## Session: 2026-07-01 — Chains get the free trial too (policy revision)
+
+### Accomplished
+
+- **Reversed the "chains get no free trial / paid pilot" default** from PR #145 — PR #146, merged + verified live on `/terms/`. Robert pushed on why chains were denied a trial; the setup-weight concern only holds if the trial covers _all_ of a chain's locations.
+- **New policy:** every new plan gets the 2-week free trial **on up to 2 locations, including chains** (trial on 1–2, then expand paid at +$690/location). Free-build exposure is capped at 2 setups regardless of eventual size. Paid pilot drops to a fallback (only if a chain demands all locations live during the free period).
+- Updated `terms.astro` + `es/terms.astro` (EN + ES free-trial sentence) and `MEXICO-GTM-STRATEGY.md §11` (chains / setup fee / free trial subsections). Build clean, gate PASS.
+
+### Decisions Made
+
+- **Free trial for chains beats paid-pilot** — LTV math: a 9-location Basic chain is ~$82k MXN/yr, so eating 2 free trial setups to land it is a trivial CAC. Denying the highest-LTV customers the best conversion tool was backwards.
+
+### Open Questions / Blockers
+
+- None. (9-location prospect quote + US pricing pass still carried from prior entries.)
+
+---
+
 ## Session: 2026-07-01 — Edge-case operating policies + billing/cancellation terms
 
 ### Accomplished
