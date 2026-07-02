@@ -100,6 +100,26 @@ Documented in CLAUDE.md and memory `feedback_tailwind4_color_collision`. Custom 
 
 ## Session History
 
+## Session: 2026-07-01 — Align homepage/about/taglines to "days, not weeks"
+
+### Accomplished
+
+- **Aligned the broader brand copy to the new timeline framing** — PR #148, merged + verified live. Follow-up to #147; Robert chose to make it consistent site-wide (home/about/footer/meta had said "2–6 weeks" while services said "days").
+- home2 Hero subheadline + HowItWorks heading, Footer taglines, and index.astro meta descriptions (EN + ES): "2–6 weeks" → "days, not weeks."
+- about.astro + es/about.astro "Fast Delivery": "2-4 weeks" → "days, not weeks."
+- FAQ (home2 section + standalone faq pages, EN + ES): rewritten to lead with "within days of your intake form" while keeping the honest caveat that complex custom builds can take a few weeks — no over-promise on bigger work.
+- Meta-description gate still PASS (108 pages) with the slightly longer descriptions. Free-trial "2 weeks" copy untouched; dead `home/` folder left as-is.
+
+### Immediate Next Steps
+
+- [ ] ~~Homepage/FAQ/about timeline alignment~~ — DONE (this entry).
+
+### Open Questions / Blockers
+
+- None. (9-location quote + US pricing pass still carried.)
+
+---
+
 ## Session: 2026-07-01 — Generalize service delivery timelines (drop hard "live in 2 weeks")
 
 ### Accomplished
