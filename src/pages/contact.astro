@@ -199,7 +199,10 @@ const hero = content[locale];
                 class="mt-1 h-4 w-4 rounded border-border bg-canvas/40 text-cush-orange focus:ring-cush-orange"
               />
               <label for="consent" class="text-sm text-muted">
-                {dict.contact.formConsent}
+                {dict.contact.formConsentLead}{" "}
+                <a href={locale === "es" ? "/es/terms/" : "/terms/"} class="text-cush-orange underline underline-offset-2 hover:opacity-80">{dict.contact.formConsentTerms}</a>{" "}
+                {dict.contact.formConsentAnd}{" "}
+                <a href={locale === "es" ? "/es/privacy/" : "/privacy/"} class="text-cush-orange underline underline-offset-2 hover:opacity-80">{dict.contact.formConsentPrivacy}</a>
                 <span class="text-cush-orange">*</span>
               </label>
             </div>

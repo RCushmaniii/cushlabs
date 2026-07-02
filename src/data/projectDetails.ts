@@ -263,7 +263,7 @@ const details: Record<string, ProjectDetailOverride> = {
         "Building a bilingual marketing site for a consultancy serving the US and Mexico introduces compounding complexity: every page needs full content parity in two languages, the portfolio goes stale the moment you stop manually updating it, booking widgets from third parties break the design consistency, and SEO for bilingual sites is notoriously tricky with hreflang, canonical URLs, and sitemaps that must cover both languages correctly. Most solutions involve heavyweight i18n libraries, CMS platforms, and embedded third-party widgets — adding cost, complexity, and runtime overhead to what should be a fast static site.",
       resultsTitle: "Results",
       results: [
-        "27 portfolio projects synced automatically from GitHub with zero manual maintenance",
+        "36 portfolio projects synced automatically from GitHub with zero manual maintenance",
         "Full bilingual parity enforced by automated pre-deploy audit — no translation drift",
         "Zero-runtime i18n: 24 lines of TypeScript vs ~40KB+ for i18next",
         "Booking flow creates Google Calendar events with Meet links — no third-party embed",
@@ -315,7 +315,7 @@ const details: Record<string, ProjectDetailOverride> = {
         "Construir un sitio de marketing bilingüe para una consultoría que sirve a EE.UU. y México introduce complejidad acumulada: cada pagina necesita paridad completa de contenido en dos idiomas, el portafolio se vuelve obsoleto en el momento en que dejas de actualizarlo manualmente, los widgets de reservas de terceros rompen la consistencia del diseño, y el SEO para sitios bilingües es notoriamente complicado con hreflang, URLs canónicas y sitemaps que deben cubrir ambos idiomas correctamente. La mayoría de las soluciones involucran bibliotecas i18n pesadas, plataformas CMS y widgets de terceros embebidos — agregando costo, complejidad y overhead en runtime a lo que debería ser un sitio estático rápido.",
       resultsTitle: "Resultados",
       results: [
-        "27 proyectos de portafolio sincronizados automáticamente desde GitHub sin mantenimiento manual",
+        "36 proyectos de portafolio sincronizados automáticamente desde GitHub sin mantenimiento manual",
         "Paridad bilingüe completa aplicada por auditoria pre-deploy automatizada — sin drift de traducciones",
         "i18n sin runtime: 24 lineas de TypeScript vs ~40KB+ para i18next",
         "Flujo de reservas crea eventos de Google Calendar con links Meet — sin embed de terceros",

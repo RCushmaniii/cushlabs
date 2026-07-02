@@ -12,6 +12,16 @@ const dict = t(locale);
 
 const toEn = getLocalizedPath(pathname, "en");
 const toEs = getLocalizedPath(pathname, "es");
+
+const navLinks = [
+  { href: locale === "es" ? "/es/about/" : "/about/", label: dict.nav.about },
+  { href: locale === "es" ? "/es/services/" : "/services/", label: locale === "es" ? "Servicios" : "Services" },
+  { href: locale === "es" ? "/es/precios/" : "/pricing/", label: locale === "es" ? "Precios" : "Pricing" },
+  { href: locale === "es" ? "/es/portfolio/" : "/portfolio/", label: locale === "es" ? "Portafolio" : "Portfolio" },
+  { href: locale === "es" ? "/es/contact/" : "/contact/", label: dict.nav.contact },
+];
+
+const isActiveLink = (href: string) => pathname === href || pathname === href.replace(/\/$/, "");
 ---
 
 <header
@@ -35,21 +45,12 @@ const toEs = getLocalizedPath(pathname, "es");
     </a>
 
     <nav class="hidden items-center gap-6 md:flex">
-      {[
-        { href: locale === "es" ? "/es/about/" : "/about/", label: dict.nav.about },
-        { href: locale === "es" ? "/es/services/" : "/services/", label: locale === "es" ? "Servicios" : "Services" },
-        { href: locale === "es" ? "/es/precios/" : "/pricing/", label: locale === "es" ? "Precios" : "Pricing" },
-        { href: locale === "es" ? "/es/portfolio/" : "/portfolio/", label: locale === "es" ? "Portafolio" : "Portfolio" },
-        { href: locale === "es" ? "/es/contact/" : "/contact/", label: dict.nav.contact },
-      ].map(({ href, label }) => {
-        const isActive = pathname === href || pathname === href.replace(/\/$/, '');
-        return (
-          <a
-            href={href}
-            class={`font-display text-base transition-colors ${isActive ? "text-cush-orange font-semibold" : "text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"}`}
-          >{label}</a>
-        );
-      })}
+      {navLinks.map(({ href, label }) => (
+        <a
+          href={href}
+          class={`font-display text-base transition-colors ${isActiveLink(href) ? "text-cush-orange font-semibold" : "text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"}`}
+        >{label}</a>
+      ))}
     </nav>
 
     <div class="flex items-center gap-3">
@@ -107,7 +108,40 @@ const toEs = getLocalizedPath(pathname, "es");
           hreflang="es"
         >ES</a>
       </div>
+
+      <button
+        type="button"
+        class="md:hidden rounded-lg border border-border bg-surface p-2 text-foreground hover:opacity-80 transition-all duration-300 hover:border-cush-orange/50"
+        data-mobile-menu-toggle
+        aria-label={locale === "es" ? "Abrir menú" : "Open menu"}
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+      >
+        <svg data-menu-icon="open" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+        <svg data-menu-icon="close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 hidden">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
     </div>
+  </div>
+
+  <div
+    id="mobile-menu"
+    class="md:hidden hidden border-t border-border bg-white dark:bg-cush-gray-900"
+  >
+    <nav class="mx-auto max-w-7xl flex flex-col px-4 py-2">
+      {navLinks.map(({ href, label }) => (
+        <a
+          href={href}
+          class={`py-3 font-display text-base border-b border-border/50 last:border-0 transition-colors ${isActiveLink(href) ? "text-cush-orange font-semibold" : "text-gray-700 dark:text-gray-200 hover:text-cush-orange"}`}
+        >{label}</a>
+      ))}
+    </nav>
   </div>
 </header>
 
@@ -152,4 +186,26 @@ const toEs = getLocalizedPath(pathname, "es");
   }
 
   syncThemeToggleUI();
+
+  // Mobile menu toggle
+  const menuBtn = document.querySelector("[data-mobile-menu-toggle]");
+  const menu = document.getElementById("mobile-menu");
+  if (menuBtn && menu) {
+    const openIcon = menuBtn.querySelector('[data-menu-icon="open"]');
+    const closeIcon = menuBtn.querySelector('[data-menu-icon="close"]');
+    menuBtn.addEventListener("click", () => {
+      const isOpen = menu.classList.toggle("hidden") === false;
+      menuBtn.setAttribute("aria-expanded", String(isOpen));
+      menuBtn.setAttribute(
+        "aria-label",
+        isOpen
+          ? document.documentElement.lang === "es" ? "Cerrar menú" : "Close menu"
+          : document.documentElement.lang === "es" ? "Abrir menú" : "Open menu"
+      );
+      if (openIcon && closeIcon) {
+        openIcon.classList.toggle("hidden", isOpen);
+        closeIcon.classList.toggle("hidden", !isOpen);
+      }
+    });
+  }
 </script>
