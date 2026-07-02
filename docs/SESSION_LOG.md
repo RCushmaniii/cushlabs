@@ -100,6 +100,29 @@ Documented in CLAUDE.md and memory `feedback_tailwind4_color_collision`. Custom 
 
 ## Session History
 
+## Session: 2026-07-01 — Generalize service delivery timelines (drop hard "live in 2 weeks")
+
+### Accomplished
+
+- **Replaced the hard "Live in 2 weeks" timeline claims across all service surfaces** — PR #147, merged + verified live. Robert flagged it on the Messenger block: it both undersold actual speed and set a rigid SLA. Delivery is fast once the client's intake form is in, so timelines now key off that — general and honest, no hard week-count.
+- ServiceBlock timelines (messenger, support, voice — EN + ES): → _"Fast setup — often live within days of your intake form."_ Voice kept more measured (_"live soon after your intake form"_) since it's newer to us. Monitoring's _"first report in 1 week"_ left as-is (positive deliverable).
+- messenger-assistant + voice-agent pages (Timeline callouts + voice hero); HowIWork subheading; **WhoItIsFor** — reconciled the now-contradictory _"my fastest delivery is 2 weeks"_ / _"2–8 week timeline"_ to the faster reality (EN + ES).
+- **Free-trial "2 weeks" copy intentionally untouched** (that's the trial length, not delivery time). Build clean, gate PASS.
+
+### Decisions Made
+
+- **Timelines key off the intake form, not a fixed week-count** — honest (speed depends on getting client info), faster-sounding, and avoids a rigid SLA Robert would have to defend.
+
+### Immediate Next Steps
+
+- [ ] Decide whether homepage / FAQ / about "2–6 weeks" (broader brand/project copy, incl. index.astro meta descriptions) should also generalize to match the services' "days" framing, or stay as a wider range for complex custom work.
+
+### Open Questions / Blockers
+
+- None. (9-location quote + US pricing pass still carried.)
+
+---
+
 ## Session: 2026-07-01 — Chains get the free trial too (policy revision)
 
 ### Accomplished
