@@ -182,6 +182,10 @@ export const en = {
     formMessageHint:
       "What are you building? What does success look like for you?",
     formConsent: "I agree to the Terms of Use and Privacy Policy",
+    formConsentLead: "I agree to the",
+    formConsentTerms: "Terms of Service",
+    formConsentAnd: "and",
+    formConsentPrivacy: "Privacy Policy",
     formSubmit: "Send Message",
     formError: "Please complete the required fields and accept the terms.",
   },

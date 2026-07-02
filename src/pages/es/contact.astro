@@ -88,7 +88,7 @@ const hero = {
 
             <div class="flex items-start gap-3">
               <input id="consent" name="consent" type="checkbox" required class="mt-1 h-4 w-4 rounded border-border bg-canvas/40 text-cush-orange focus:ring-cush-orange" />
-              <label for="consent" class="text-sm text-muted">{dict.contact.formConsent}<span class="text-cush-orange">*</span></label>
+              <label for="consent" class="text-sm text-muted">{dict.contact.formConsentLead}{" "}<a href="/es/terms/" class="text-cush-orange underline underline-offset-2 hover:opacity-80">{dict.contact.formConsentTerms}</a>{" "}{dict.contact.formConsentAnd}{" "}<a href="/es/privacy/" class="text-cush-orange underline underline-offset-2 hover:opacity-80">{dict.contact.formConsentPrivacy}</a><span class="text-cush-orange">*</span></label>
             </div>
 
             <div id="form-error" class="hidden rounded-lg bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 p-3 text-sm text-red-700 dark:text-red-400" role="alert" aria-live="polite" aria-atomic="true"></div>
