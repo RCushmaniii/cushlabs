@@ -82,7 +82,7 @@ import Container from "../../../components/layout/Container.astro";
           </svg>
         </div>
 
-        <h2 class="font-display text-fluid-3xl font-bold text-gray-900 dark:text-white mb-4 leading-tight tracking-tight">
+        <h2 id="error-heading" class="font-display text-fluid-3xl font-bold text-gray-900 dark:text-white mb-4 leading-tight tracking-tight">
           La conexión no se completó
         </h2>
 
@@ -122,19 +122,66 @@ import Container from "../../../components/layout/Container.astro";
 
       loading.hidden = true;
 
+      // Códigos de error estables del callback OAuth del Worker
+      // (cushlabs-messenger-bot src/lib/oauth.ts). Cancelar a propósito no es
+      // un error y no debe leerse como uno. Códigos desconocidos usan el
+      // texto de Facebook.
+      const ERROR_COPY = {
+        user_cancelled: {
+          heading: "No se hizo ningún cambio",
+          message:
+            "Cancelaste la conexión con Facebook, así que no se modificó nada en tu página. Si querías conectarla, puedes intentarlo de nuevo cuando gustes.",
+          neutral: true,
+        },
+        session_expired: {
+          heading: "Tu enlace de conexión expiró",
+          message:
+            "Las sesiones seguras de conexión duran unos 10 minutos. Vuelve a empezar y completa los pasos de Facebook de una sola vez.",
+        },
+        no_pages: {
+          heading: "No encontramos una página para conectar",
+          message:
+            "Facebook no mostró ninguna página en la cuenta con la que iniciaste sesión — normalmente significa que esa cuenta no es administradora de la página del negocio. Inicia sesión con la cuenta administradora o revisa los roles de tu página en Meta Business Suite.",
+        },
+        missing_params: {
+          heading: "La conexión no se completó",
+          message:
+            "No recibimos los datos de autorización de Facebook. Intenta de nuevo desde el inicio.",
+        },
+        token_exchange_failed: {
+          heading: "La conexión no se completó",
+          message:
+            "Facebook aceptó la conexión, pero no pudimos terminar de configurarla de nuestro lado. Intenta de nuevo — si pasa dos veces, contáctanos y lo resolvemos.",
+        },
+        pages_fetch_failed: {
+          heading: "La conexión no se completó",
+          message:
+            "Facebook aceptó la conexión, pero no pudimos terminar de configurarla de nuestro lado. Intenta de nuevo — si pasa dos veces, contáctanos y lo resolvemos.",
+        },
+        server_misconfigured: {
+          heading: "Algo falló de nuestro lado",
+          message:
+            "Esto es cosa nuestra, no tuya. Contáctanos y lo arreglamos de inmediato.",
+        },
+      };
+
       if (!error && (pageName || pageId)) {
         if (pageName) {
           document.getElementById("page-name").textContent = pageName;
         }
         success.hidden = false;
       } else {
-        if (error) {
+        const copy = error && ERROR_COPY[error];
+        if (copy) {
+          document.getElementById("error-heading").textContent = copy.heading;
+          document.getElementById("error-message").textContent = copy.message;
+        } else if (error) {
           document.getElementById("error-message").textContent =
             'Facebook respondió: "' + error + '". Esto pasa a veces si se cancela la autorización o si la sesión expira.';
         }
         if (bgGlow) {
           bgGlow.classList.remove("bg-green-500/10");
-          bgGlow.classList.add("bg-amber-500/10");
+          bgGlow.classList.add(copy && copy.neutral ? "bg-gray-400/10" : "bg-amber-500/10");
         }
         errorEl.hidden = false;
       }
