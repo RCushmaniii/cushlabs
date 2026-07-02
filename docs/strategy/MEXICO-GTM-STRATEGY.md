@@ -257,17 +257,18 @@ Decided 2026-07-01. These drive how we quote and bill — keep consistent across
 
 ### Multi-location chains (5+ locations)
 
-- **No free trial and no setup fee for chains — start with a paid pilot on 1–2 locations, then expand.** They pay standard price from day 1 of the pilot (covers onboarding labor), prove value on 2 locations, then roll out the rest at +$690/location. Land-and-expand — lower risk for both sides.
-- **Fallback lever:** if a chain insists on all locations live at once and won't pilot, quote a one-time onboarding fee instead. Not the default.
-- Keeps "no setup fee" + "2-week free trial" universally true on the public site (they apply to standard 1–2 location accounts, which is ~95% of the market).
+- **Chains get the standard 2-week free trial — scoped to 1–2 locations — then expand to the rest (paid, +$690/location).** They evaluate risk-free on 1–2 locations; your free-build exposure is capped at 2 setups no matter how big they eventually are. Land-and-expand. (Revised 2026-07-01 — the LTV math wins: a 9-location Basic chain is ~$82k MXN/yr, so eating 2 free setups to land it is a trivial CAC. Denying the highest-LTV customers the best conversion tool was backwards.)
+- **No setup fee for chains** — onboarding labor during the free period is capped at the 1–2 trial locations; the remaining locations are built only after they commit and pay.
+- **Paid-pilot fallback:** only if a chain refuses a scoped trial and demands all locations live at once during the free period — that's the genuinely heavy, walk-away-risky case. Then quote a paid pilot / one-time onboarding fee. Not the default.
+- Keeps "no setup fee" + "2-week free trial" universally true on the public site.
 
 ### Setup fee
 
-- **Standard accounts (1–2 locations): none, ever — it's a headline conversion lever.** Complex/chain onboarding is handled by the paid-pilot model above, not a published fee.
+- **None, ever, on the published plans — it's a headline conversion lever.** Chain onboarding stays free because the free period is scoped to 1–2 locations; the rest is built only after they commit. Paid pilot / onboarding fee is the fallback only if a chain demands all locations live during the free trial.
 
 ### Free trial
 
-- **2-week free trial applies to standard single- or two-location plans only.** Multi-location rollouts begin with a paid pilot.
+- **Every new plan gets the 2-week free trial, scoped to up to 2 locations** — including chains, which trial on 1–2 locations then expand to the rest (paid). Paid pilot only as the fallback (see chains).
 
 ### US / international leads (currency) — DEFERRED
 
