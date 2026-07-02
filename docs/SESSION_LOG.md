@@ -100,6 +100,32 @@ Documented in CLAUDE.md and memory `feedback_tailwind4_color_collision`. Custom 
 
 ## Session History
 
+## Session: 2026-07-01 — External site-review follow-ups (mobile nav, FAQ schema, consent links)
+
+### Accomplished
+
+- **Acted on an external AI site review — verified every claim in code first, then fixed the real ones** — PR #149, merged + verified live.
+- 🔴 **Mobile navigation (real bug):** `Header.astro` nav was `hidden md:flex` with **no hamburger** — phone visitors had zero way to reach any page. Added an accessible hamburger toggle + slide-down menu panel (aria-expanded, icon swap, EN/ES labels); extracted `navLinks` to a shared const.
+- 🟡 **Services-page FAQ schema:** added `FAQPage` JSON-LD (every other FAQ surface had it; `services2/FAQ.astro` didn't).
+- 🟡 **Contact consent links:** "Terms of Use and Privacy Policy" was plain text and mis-named → real locale-aware links to `/terms/` + `/privacy/` with correct "Terms of Service" label, via new i18n keys (EN + ES).
+- 🟢 **Number consistency:** hero "30+ projects" → "35+" (portfolio has 36); stale "27 portfolio projects synced" → "36" in projectDetails.
+
+### Verified already-correct (reviewer's false alarms)
+
+- **hreflang** — `BaseLayout` already emits `en-US` / `es-MX` / `x-default`.
+- **Schema** — `Organization` + `ProfessionalService` (LocalBusiness subtype) with address, areaServed US+Mexico, offer catalog already present. FAQ schema was on all surfaces except the one fixed above.
+
+### Immediate Next Steps
+
+- [ ] **Add 1–2 more testimonials + a 2nd case study** (different industry) — needs real client content from Robert; will not fabricate.
+- [ ] **USD pricing** — reviewer's #1 ask; deliberately deferred (see US/global pricing pass). Interim "Let's talk" note is live.
+
+### Open Questions / Blockers
+
+- None.
+
+---
+
 ## Session: 2026-07-01 — Align homepage/about/taglines to "days, not weeks"
 
 ### Accomplished
