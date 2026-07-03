@@ -27,6 +27,38 @@ const bestFor = [
   "Businesses with bilingual customers (Spanish + English)",
   "Anyone whose competitors are responding faster than they are",
 ];
+
+// Live production assistants reachable via m.me deep links — the demo IS
+// production. No sandbox to maintain; Messenger opens straight into the
+// real bot. Suggested questions mirror each page's ice breakers.
+const liveDemos = [
+  {
+    badge: "The product, selling itself",
+    name: "CushLabs",
+    tagline: "Software company — the page you're reading right now",
+    copy: "The exact assistant this page describes, running on CushLabs' own Facebook page. It knows the services, handles pricing questions the honest way, and hands off to Robert when it should.",
+    questions: [
+      "What services do you offer?",
+      "¿Cuánto cuesta?",
+      "I have a salon — how can you help me?",
+    ],
+    href: "https://m.me/cushlabs",
+    cta: "Message CushLabs",
+  },
+  {
+    badge: "Live client deployment",
+    name: "New York English",
+    tagline: "Executive English coaching — our first production client",
+    copy: "Answering real customers in English and Spanish since April. Ask about pricing, hours, or booking and watch it answer from the business's own data — then ask for a human and watch the handoff.",
+    questions: [
+      "How much does a session cost?",
+      "¿Cuál es el horario?",
+      "How do I book a class?",
+    ],
+    href: "https://m.me/nyenglishteacher",
+    cta: "Message New York English",
+  },
+];
 ---
 
 <BaseLayout
@@ -74,6 +106,51 @@ const bestFor = [
           </a>
         </div>
       </div>
+    </Container>
+  </section>
+
+  <!-- Live demos — production assistants you can message right now -->
+  <section class="py-20 md:py-28">
+    <Container size="lg">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cush-orange/10 border border-cush-orange/20 text-cush-orange text-sm font-semibold mb-6">
+          <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+          Live demos — no signup, no sandbox
+        </div>
+        <h2 class="font-display font-bold text-3xl md:text-4xl text-gray-900 dark:text-white mb-4 leading-tight tracking-tight">
+          Don't take our word for it — talk to one right now
+        </h2>
+        <p class="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+          These aren't scripted demos. They're the real production assistants, answering on real Facebook pages today. Open one in Messenger and ask it anything.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        {liveDemos.map(demo => (
+          <div class="flex flex-col rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/40 p-8">
+            <span class="inline-flex self-start px-3 py-1 rounded-full bg-cush-orange/10 text-cush-orange text-xs font-display font-semibold uppercase tracking-wider mb-4">{demo.badge}</span>
+            <h3 class="font-display font-semibold text-2xl text-gray-900 dark:text-white mb-1">{demo.name}</h3>
+            <p class="text-sm text-gray-500 dark:text-gray-500 mb-4">{demo.tagline}</p>
+            <p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">{demo.copy}</p>
+            <div class="mb-8">
+              <p class="text-xs font-display font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-500 mb-3">Try asking</p>
+              <div class="flex flex-wrap gap-2">
+                {demo.questions.map(q => (
+                  <span class="px-3 py-1.5 rounded-full bg-gray-100 dark:bg-gray-800 text-sm text-gray-700 dark:text-gray-300">{q}</span>
+                ))}
+              </div>
+            </div>
+            <a href={demo.href} target="_blank" rel="noopener" class="mt-auto inline-flex items-center justify-center gap-2 px-6 py-3 bg-cush-orange text-white font-display font-semibold rounded-lg hover:bg-cush-orange/90 transition-colors duration-300">
+              {demo.cta}
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+            </a>
+          </div>
+        ))}
+      </div>
+
+      <p class="text-center text-sm text-gray-500 dark:text-gray-500 mt-8 max-w-2xl mx-auto">
+        Both open Facebook Messenger. Write in English or Spanish — they switch automatically. Say "talk to a human" and watch the human handoff work, too.
+      </p>
     </Container>
   </section>
 
