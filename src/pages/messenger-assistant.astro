@@ -29,17 +29,20 @@ const bestFor = [
 ];
 
 // Live production assistants reachable via m.me deep links — the demo IS
-// production. No sandbox to maintain; Messenger opens straight into the
-// real bot. Suggested questions mirror each page's ice breakers.
+// production. The questions listed are the EXACT tappable ice breakers each
+// bot shows in Messenger (English set — Facebook automatically shows the
+// Spanish set to visitors whose Facebook is in Spanish). Keep in sync with
+// cushlabs-messenger-bot/scripts/set-messenger-profile.ts.
 const liveDemos = [
   {
     badge: "The product, selling itself",
     name: "CushLabs",
     tagline: "Software company — the page you're reading right now",
-    copy: "The exact assistant this page describes, running on CushLabs' own Facebook page. It knows the services, handles pricing questions the honest way, and hands off to Robert when it should.",
+    copy: "The exact assistant this page describes, running on CushLabs' own Facebook page. It knows the services, handles pricing questions the honest way, and hands off to Robert when it should. Ask what it looks like in action and it replies with a visual.",
     questions: [
       "What services do you offer?",
-      "¿Cuánto cuesta?",
+      "What does it look like in action?",
+      "How much does it cost?",
       "I have a salon — how can you help me?",
     ],
     href: "https://m.me/cushlabs",
@@ -49,11 +52,12 @@ const liveDemos = [
     badge: "Live client deployment",
     name: "New York English",
     tagline: "Executive English coaching — our first production client",
-    copy: "Answering real customers in English and Spanish since April. Ask about pricing, hours, or booking and watch it answer from the business's own data — then ask for a human and watch the handoff.",
+    copy: "Answering real customers in English and Spanish since April. Ask about pricing, hours, or booking and watch it answer from the business's own data — the confidence question even comes back with a mini-lesson image.",
     questions: [
+      "How do you help with confidence when speaking English?",
       "How much does a session cost?",
-      "¿Cuál es el horario?",
-      "How do I book a class?",
+      "What are your hours?",
+      "How do I book a free consultation?",
     ],
     href: "https://m.me/nyenglishteacher",
     cta: "Message New York English",
@@ -149,7 +153,7 @@ const liveDemos = [
       </div>
 
       <p class="text-center text-sm text-gray-500 dark:text-gray-500 mt-8 max-w-2xl mx-auto">
-        Both open Facebook Messenger. Write in English or Spanish — they switch automatically. Say "talk to a human" and watch the human handoff work, too.
+        Both open Facebook Messenger, where these exact questions appear as tappable suggestions — in Spanish automatically if that's the language your Facebook is set to. Write in either language and the assistant follows you. Say "talk to a human" and watch the human handoff work, too.
       </p>
     </Container>
   </section>
