@@ -63,6 +63,21 @@ const liveDemos = [
     cta: "Escribir a New York English",
   },
 ];
+
+// Capacidades reales y vendibles — cada una está respaldada por lo que el
+// asistente en producción realmente hace hoy (ver los demos en vivo arriba y el
+// schema HowTo abajo). Orientado a beneficios, no una lista técnica.
+const capabilities = [
+  { title: "Responde en menos de 5 segundos — 24/7", desc: "Cada mensaje contestado al instante, de día o de noche, fines de semana incluidos.", icon: "M13 10V3L4 14h7v7l9-11h-7z" },
+  { title: "Habla español e inglés automáticamente", desc: "Sigue el idioma en que escribe tu cliente — sin menús, sin nada que configurar.", icon: "M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" },
+  { title: "Entrenado con tu negocio exacto", desc: "Tus productos, precios, horarios, políticas y tono — contesta como lo harías tú.", icon: "M12 14l9-5-9-5-9 5 9 5z M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" },
+  { title: "Recomienda el producto correcto", desc: "Guía al cliente a lo que de verdad le sirve en vez de tirarle el catálogo encima.", icon: "M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" },
+  { title: "Agenda citas y captura leads", desc: "Recoge el nombre, contacto e intención que necesitas, y te lo enruta directo.", icon: "M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" },
+  { title: "Te pasa la conversación — con todo el contexto", desc: "Cuando se necesita una persona, se hace a un lado y te resume lo que pasó.", icon: "M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" },
+  { title: "Alerta por WhatsApp en cuanto hay un lead caliente", desc: "Recibes un mensaje con su nombre, número y lo que quiere — listo para cerrar.", icon: "M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" },
+  { title: "Responde solo con tu contenido real", desc: "Basado en lo que de verdad has dicho — no inventa precios ni datos.", icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" },
+  { title: "Envía fotos y visuales en el chat", desc: "Menús, antes y después, mini-lecciones — puede responder con una imagen, no solo texto.", icon: "M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" },
+];
 ---
 
 <BaseLayout
@@ -108,6 +123,29 @@ const liveDemos = [
           <a href="/es/services/" class="font-display font-medium text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white underline underline-offset-4 decoration-gray-300 hover:decoration-cush-orange transition-all">
             Ver todos los servicios →
           </a>
+        </div>
+
+        <!-- Bots en vivo — escríbele a un asistente real en producción ahora mismo (elevado desde la sección de abajo) -->
+        <div class="mt-8 flex flex-col items-center gap-3">
+          <p class="inline-flex items-center gap-2 text-sm font-display font-medium text-gray-500 dark:text-gray-400">
+            <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+            O escríbele a un bot real ahora mismo
+          </p>
+          <div class="flex flex-col sm:flex-row items-center gap-3">
+            {liveDemos.map(demo => (
+              <a
+                href={demo.href}
+                target="_blank"
+                rel="noopener"
+                class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border-2 border-gray-300 dark:border-gray-700 text-gray-800 dark:text-gray-200 font-display font-semibold text-sm hover:border-cush-orange hover:text-cush-orange dark:hover:border-cush-orange dark:hover:text-cush-orange transition-all duration-300"
+              >
+                <svg class="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 0C5.373 0 0 4.974 0 11.111c0 3.498 1.744 6.614 4.469 8.654V24l4.088-2.242c1.092.301 2.246.464 3.443.464 6.627 0 12-4.975 12-11.111C24 4.974 18.627 0 12 0zm1.191 14.963l-3.055-3.26-5.963 3.26L10.732 8l3.131 3.259L19.752 8l-6.561 6.963z"/>
+                </svg>
+                {demo.cta}
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </Container>
@@ -301,6 +339,33 @@ const liveDemos = [
           </div>
         </div>
 
+      </div>
+    </Container>
+  </section>
+
+  <!-- Capacidades — todo lo que el asistente realmente hace -->
+  <section class="py-20 md:py-28">
+    <Container size="lg">
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <h2 class="font-display font-bold text-3xl md:text-4xl text-gray-900 dark:text-white mb-4 leading-tight tracking-tight">
+          Todo lo que tu asistente maneja
+        </h2>
+        <p class="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+          No es una lista de funciones por presumir — cada una es un cliente que dejas de perder.
+        </p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        {capabilities.map(cap => (
+          <div class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/40 p-6 hover:border-cush-orange/50 transition-colors duration-300">
+            <div class="w-11 h-11 rounded-lg bg-cush-orange/10 flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-cush-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={cap.icon} />
+              </svg>
+            </div>
+            <h3 class="font-display font-semibold text-lg text-gray-900 dark:text-white mb-2 leading-snug">{cap.title}</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">{cap.desc}</p>
+          </div>
+        ))}
       </div>
     </Container>
   </section>
