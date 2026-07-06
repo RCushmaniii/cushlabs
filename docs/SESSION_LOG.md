@@ -54,6 +54,7 @@ Directional ideas with a longer horizon than the Backlog. Themes, not tickets �
 - **Outbound voice product** — currently disclaimed on the voice page. Productize if a real prospect asks; until then keep it custom-quoted.
 - **Multi-page / franchise Messenger setups** — disclaimed on `/messenger-assistant/` ("scoped separately"). Productize once a real client justifies it.
 - **AI Customer Support Chatbot dedicated page** — exists as a `/services` block (`support-assistants`) but has no standalone landing like `/messenger-assistant/` or `/voice-agent/`. Could be the third standalone product page once content is ready.
+- **Messenger premium upgrades (HELD)** — see `docs/strategy/MESSENGER-PREMIUM-UPGRADES-HELD.md`. WhatsApp channel, in-chat booking, Meta notifications, operator-alert webhook, self-serve content-edit UI, etc. All List 2 (roadmap/shovel-ready), off the public page. Promotion trigger: built AND mapped into a pricing tier (no à-la-carte).
 
 ### Distribution & growth
 
@@ -99,6 +100,28 @@ Documented in CLAUDE.md and memory `feedback_tailwind4_color_collision`. Custom 
 ---
 
 ## Session History
+
+## Session: 2026-07-06 — Messenger page: live-bot demos + four "included today" themes
+
+### Accomplished
+
+- **Restructured `/messenger-assistant/` body around four benefit-led themes** (EN + ES) — PR #156, squash-merged, verified live on both locales. Replaced the flat 9-item capabilities grid with: (1) It answers instantly — and correctly, (2) It feels like a real, modern experience, (3) It knows when to get out of the way, (4) It's built like a real product.
+- **Every theme bullet is grounded in a verified LIVE capability** — List 1 in `cushlabs-messenger-bot/docs/FEATURE-INVENTORY.md` (enabled, running on the two demo bots). No roadmap language on the public page.
+- Bundled with the earlier live-bot demos work on the same branch (hero "message a real bot right now" + dedicated live-demos section for CushLabs + New York English with exact Messenger ice breakers).
+- Renamed the pricing-sidebar list "What's Included" → "Every plan includes" (EN) / "Cada plan incluye" (ES) to avoid colliding with the new "What's included today" / "Qué incluye hoy" section heading.
+- **Premium upgrades documented but HELD off the public site** — new `docs/strategy/MESSENGER-PREMIUM-UPGRADES-HELD.md` classifies every premium item against List 2 (buildable-on-request vs roadmap) with a promotion trigger. Nothing publishes until it's built AND mapped into a pricing tier.
+- Build passed, meta-description-gate green (108 pages, 0 violations), `projects.generated.json` reverted out of the PR.
+
+### Decisions Made
+
+- **Public page = List 1 only** — the marketing page claims exactly what the production bot does today. All aspirational/premium copy is quarantined in the HELD doc until it's real. Directly serves the AI-bot launch-gate rule (no claims the decision layer can't back up).
+- **Premium upgrades must fold into tiers, not reopen à-la-carte** — flagged in the HELD doc: when List 2 features ship, they map into Basic/Premium/Ultra. Keeps the locked 3-tier no-add-on model intact.
+
+### Technical Debt / Notes
+
+- Held-premium doc lists two **shovel-ready** upsells (operator-alert webhook, self-serve content-edit UI) — code paths exist, need wiring/UI. Everything else premium is genuine roadmap, several Meta-platform-gated.
+
+---
 
 ## Session: 2026-07-02 — USD pricing via market toggle (MXN ⇄ USD)
 
