@@ -64,19 +64,60 @@ const liveDemos = [
   },
 ];
 
-// Capacidades reales y vendibles — cada una está respaldada por lo que el
-// asistente en producción realmente hace hoy (ver los demos en vivo arriba y el
-// schema HowTo abajo). Orientado a beneficios, no una lista técnica.
-const capabilities = [
-  { title: "Responde en menos de 5 segundos — 24/7", desc: "Cada mensaje contestado al instante, de día o de noche, fines de semana incluidos.", icon: "M13 10V3L4 14h7v7l9-11h-7z" },
-  { title: "Habla español e inglés automáticamente", desc: "Sigue el idioma en que escribe tu cliente — sin menús, sin nada que configurar.", icon: "M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" },
-  { title: "Entrenado con tu negocio exacto", desc: "Tus productos, precios, horarios, políticas y tono — contesta como lo harías tú.", icon: "M12 14l9-5-9-5-9 5 9 5z M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" },
-  { title: "Recomienda el producto correcto", desc: "Guía al cliente a lo que de verdad le sirve en vez de tirarle el catálogo encima.", icon: "M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" },
-  { title: "Agenda citas y captura leads", desc: "Recoge el nombre, contacto e intención que necesitas, y te lo enruta directo.", icon: "M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" },
-  { title: "Te pasa la conversación — con todo el contexto", desc: "Cuando se necesita una persona, se hace a un lado y te resume lo que pasó.", icon: "M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" },
-  { title: "Alerta por WhatsApp en cuanto hay un lead caliente", desc: "Recibes un mensaje con su nombre, número y lo que quiere — listo para cerrar.", icon: "M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" },
-  { title: "Responde solo con tu contenido real", desc: "Basado en lo que de verdad has dicho — no inventa precios ni datos.", icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" },
-  { title: "Envía fotos y visuales en el chat", desc: "Menús, antes y después, mini-lecciones — puede responder con una imagen, no solo texto.", icon: "M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" },
+// "Qué incluye hoy" — organizado en cuatro temas. Cada punto está respaldado
+// por lo que el asistente en producción realmente hace AHORA MISMO (List 1 en
+// cushlabs-messenger-bot/docs/FEATURE-INVENTORY.md — habilitado y activo en los
+// dos bots demo de arriba). Nada aquí es roadmap. Mantener esta lista solo en
+// List 1; los elementos premium/roadmap (List 2) se documentan aparte y se
+// mantienen fuera de esta página a propósito hasta que se liberen.
+const themes = [
+  {
+    title: "Responde al instante — y con precisión",
+    promise: "Cada mensaje recibe una respuesta real en segundos — y la respuesta es correcta, porque solo habla desde tu negocio real.",
+    icon: "M13 10V3L4 14h7v7l9-11h-7z",
+    points: [
+      "Responde en menos de 5 segundos, 24/7 — noches, fines de semana y días festivos incluidos",
+      "Entrenado con tus productos, precios, horarios, políticas y tono reales",
+      "Solo respuestas basadas en tu contenido — nunca inventa un precio ni promete de más",
+      "Los datos duros como horarios y precios salen exactos, siempre",
+    ],
+  },
+  {
+    title: "Se siente como una experiencia real y moderna",
+    promise: "Tus clientes tienen un chat rápido, natural y bilingüe — no un árbol de menús anticuado.",
+    icon: "M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z",
+    points: [
+      "Habla español e inglés automáticamente, siguiendo el idioma en que escribe el cliente",
+      "Envía fotos y visuales en el chat — menús, antes y después, mini-lecciones",
+      "Lee las fotos que envían los clientes y responde según lo que hay en ellas",
+      "Recuerda la conversación para que el cliente nunca tenga que repetirse",
+      "Preguntas sugeridas para tocar y un menú fijo guían a la gente a lo que necesita",
+    ],
+  },
+  {
+    title: "Sabe cuándo hacerse a un lado",
+    promise: "Maneja lo rutinario y se hace a un lado en cuanto de verdad se necesita una persona.",
+    icon: "M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z",
+    points: [
+      "Te pasa la conversación con todo el contexto cuando el cliente pide una persona",
+      "Contesta \"¿eres un bot?\" con honestidad — sin traspasos falsos ni incómodos",
+      "Captura el lead — nombre, contacto, intención — con el consentimiento del cliente",
+      "Alertas al dueño opcionales en cuanto un lead está caliente, listo para cerrar",
+      "Retoma la conversación automáticamente cuando terminas",
+    ],
+  },
+  {
+    title: "Está construido como un producto de verdad",
+    promise: "No es un chatbot de fin de semana — es un sistema de producción monitoreado y reforzado que operamos por ti.",
+    icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z",
+    points: [
+      "Le avisa a cada nuevo cliente desde el inicio que está hablando con una IA",
+      "Los guardrails bloquean inyección de prompts y manipulación, a la entrada y a la salida",
+      "Con límite de uso y protección contra abuso para que nadie infle tu cuenta",
+      "El monitoreo de errores y la analítica funcionan 24/7 — sin guardar datos personales",
+      "Totalmente gestionado por CushLabs: configuración, entrenamiento, reportes semanales y ajuste mensual",
+    ],
+  },
 ];
 ---
 
@@ -310,7 +351,7 @@ const capabilities = [
 
           <!-- Included -->
           <div>
-            <h3 class="font-display font-semibold text-xl text-gray-900 dark:text-white mb-6">Qué Incluye</h3>
+            <h3 class="font-display font-semibold text-xl text-gray-900 dark:text-white mb-6">Cada plan incluye</h3>
             <ul class="space-y-4">
               {included.map(item => (
                 <li class="flex gap-4">
@@ -343,27 +384,43 @@ const capabilities = [
     </Container>
   </section>
 
-  <!-- Capacidades — todo lo que el asistente realmente hace -->
+  <!-- Qué incluye hoy — cuatro temas (todo List 1 / activo en producción) -->
   <section class="py-20 md:py-28">
     <Container size="lg">
       <div class="text-center max-w-3xl mx-auto mb-14">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cush-orange/10 border border-cush-orange/20 text-cush-orange text-sm font-semibold mb-6">
+          <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+          Incluido hoy — activo en producción
+        </div>
         <h2 class="font-display font-bold text-3xl md:text-4xl text-gray-900 dark:text-white mb-4 leading-tight tracking-tight">
-          Todo lo que tu asistente maneja
+          Qué incluye hoy
         </h2>
         <p class="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-          No es una lista de funciones por presumir — cada una es un cliente que dejas de perder.
+          Sin promesas de roadmap. Cada capacidad de abajo está activa ahora mismo — en los dos bots que puedes escribir arriba.
         </p>
       </div>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-        {capabilities.map(cap => (
-          <div class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/40 p-6 hover:border-cush-orange/50 transition-colors duration-300">
-            <div class="w-11 h-11 rounded-lg bg-cush-orange/10 flex items-center justify-center mb-4">
-              <svg class="w-6 h-6 text-cush-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={cap.icon} />
-              </svg>
+      <div class="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+        {themes.map(theme => (
+          <div class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/40 p-8 hover:border-cush-orange/50 transition-colors duration-300">
+            <div class="flex items-center gap-4 mb-4">
+              <div class="w-12 h-12 rounded-lg bg-cush-orange/10 flex items-center justify-center shrink-0">
+                <svg class="w-6 h-6 text-cush-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={theme.icon} />
+                </svg>
+              </div>
+              <h3 class="font-display font-semibold text-xl text-gray-900 dark:text-white leading-snug">{theme.title}</h3>
             </div>
-            <h3 class="font-display font-semibold text-lg text-gray-900 dark:text-white mb-2 leading-snug">{cap.title}</h3>
-            <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">{cap.desc}</p>
+            <p class="text-cush-orange font-medium leading-relaxed mb-5">{theme.promise}</p>
+            <ul class="space-y-3">
+              {theme.points.map(point => (
+                <li class="flex gap-3">
+                  <svg class="w-5 h-5 text-green-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">{point}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         ))}
       </div>
