@@ -2,13 +2,20 @@
 // Bilingual pricing section — 3-tier chart (Basic / Premium / Ultra).
 // Shows the LIVE-NOW offering (WhatsApp + Instagram intentionally not listed
 // until Meta approves; they layer into these tiers at no price change).
+//
+// Currency: a market toggle (MXN ⇄ USD) decoupled from the EN/ES language
+// switch. MXN = Mexico + Central/South America; USD = US + Canada. USD prices
+// are independently anchored marketing numbers (seeded from the FX rate once,
+// then owned as their own numbers) — NOT a live conversion. See
+// docs/strategy/MEXICO-GTM-STRATEGY.md §11.
 import type { Locale } from "../../i18n";
 
 interface Props {
   locale: Locale;
   headingTag?: "h1" | "h2";
+  showCurrency?: boolean;
 }
-const { locale, headingTag = "h1" } = Astro.props;
+const { locale, headingTag = "h1", showCurrency = true } = Astro.props;
 const Heading = headingTag;
 
 const copy = {
@@ -16,13 +23,16 @@ const copy = {
     eyebrow: "Pricing",
     heading: "Simple, transparent pricing",
     sub: "One monthly price. Everything set up and managed for you. No setup fees, no contracts.",
-    perMonth: "MXN/mo",
+    perMonth: { mxn: "MXN/mo", usd: "USD/mo" },
     popular: "Most popular",
     bookHref: "/consultation/",
+    curAria: "Select your region and currency",
+    curMxnLabel: "México & LatAm · MXN",
+    curUsdLabel: "US & Canada · USD",
     tiers: [
       {
         name: "Basic",
-        price: "$1,990",
+        price: { mxn: "$1,990", usd: "$129" },
         tagline: "For getting started",
         featured: false,
         features: [
@@ -35,7 +45,7 @@ const copy = {
       },
       {
         name: "Premium",
-        price: "$3,490",
+        price: { mxn: "$3,490", usd: "$229" },
         tagline: "For growing businesses",
         featured: true,
         features: [
@@ -47,24 +57,29 @@ const copy = {
       },
       {
         name: "Ultra",
-        price: "$5,490",
+        price: { mxn: "$5,490", usd: "$349" },
         tagline: "For clinics & high-volume businesses",
         featured: false,
         features: [
           "Everything in Premium",
-          "AI Voice Agent — 300 answered min per location/mo ($8.50 MXN/min overage)",
+          {
+            mxn: "AI Voice Agent — 300 answered min per location/mo ($8.50 MXN/min overage)",
+            usd: "AI Voice Agent — 300 answered min per location/mo ($0.59 USD/min overage)",
+          },
           "Priority support",
           "Industry tuning (e.g. healthcare)",
         ],
         cta: "Get started",
       },
     ],
-    locations:
-      "Every plan includes up to 2 locations · additional locations +$690 MXN/mo each",
-    notes:
-      "No setup fee · No contracts · 2-week free trial · Unlimited conversations (fair use) · Pay via SPEI or OXXO · CFDI invoice included",
-    geo: "Prices in MXN. In the US or elsewhere?",
-    geoLink: "Let's talk",
+    locations: {
+      mxn: "Every plan includes up to 2 locations · additional locations +$690 MXN/mo each",
+      usd: "Every plan includes up to 2 locations · additional locations +$49 USD/mo each",
+    },
+    notes: {
+      mxn: "No setup fee · No contracts · 2-week free trial · Unlimited conversations (fair use) · Pay via SPEI or OXXO · CFDI invoice included",
+      usd: "No setup fee · No contracts · 2-week free trial · Unlimited conversations (fair use) · Pay by card · Invoice included",
+    },
     footerQ: "Need something custom?",
     footerLink: "Let's talk",
     footerHref: "/contact/",
@@ -73,13 +88,16 @@ const copy = {
     eyebrow: "Precios",
     heading: "Precios simples y transparentes",
     sub: "Un solo precio al mes. Todo configurado y gestionado por nosotros. Sin cuotas de instalación, sin contratos.",
-    perMonth: "MXN/mes",
+    perMonth: { mxn: "MXN/mes", usd: "USD/mes" },
     popular: "Más popular",
     bookHref: "/es/reservar/",
+    curAria: "Selecciona tu región y moneda",
+    curMxnLabel: "México & LatAm · MXN",
+    curUsdLabel: "EE.UU. & Canadá · USD",
     tiers: [
       {
         name: "Básico",
-        price: "$1,990",
+        price: { mxn: "$1,990", usd: "$129" },
         tagline: "Para empezar",
         featured: false,
         features: [
@@ -92,7 +110,7 @@ const copy = {
       },
       {
         name: "Premium",
-        price: "$3,490",
+        price: { mxn: "$3,490", usd: "$229" },
         tagline: "Para negocios en crecimiento",
         featured: true,
         features: [
@@ -104,24 +122,29 @@ const copy = {
       },
       {
         name: "Ultra",
-        price: "$5,490",
+        price: { mxn: "$5,490", usd: "$349" },
         tagline: "Para clínicas y negocios de alto volumen",
         featured: false,
         features: [
           "Todo lo de Premium",
-          "Agente de Voz con IA — 300 minutos contestados por sucursal/mes (excedente $8.50 MXN/min)",
+          {
+            mxn: "Agente de Voz con IA — 300 minutos contestados por sucursal/mes (excedente $8.50 MXN/min)",
+            usd: "Agente de Voz con IA — 300 minutos contestados por sucursal/mes (excedente $0.59 USD/min)",
+          },
           "Soporte prioritario",
           "Personalización por industria (p. ej. salud)",
         ],
         cta: "Empieza",
       },
     ],
-    locations:
-      "Todos los planes incluyen hasta 2 sucursales · sucursales adicionales +$690 MXN/mes cada una",
-    notes:
-      "Sin cuota de instalación · Sin contratos · Prueba gratis de 2 semanas · Conversaciones ilimitadas (uso justo) · Pago con SPEI u OXXO · Factura (CFDI) incluida",
-    geo: "Precios en MXN. ¿En EE.UU. u otro país?",
-    geoLink: "Hablemos",
+    locations: {
+      mxn: "Todos los planes incluyen hasta 2 sucursales · sucursales adicionales +$690 MXN/mes cada una",
+      usd: "Todos los planes incluyen hasta 2 sucursales · sucursales adicionales +$49 USD/mes cada una",
+    },
+    notes: {
+      mxn: "Sin cuota de instalación · Sin contratos · Prueba gratis de 2 semanas · Conversaciones ilimitadas (uso justo) · Pago con SPEI u OXXO · Factura (CFDI) incluida",
+      usd: "Sin cuota de instalación · Sin contratos · Prueba gratis de 2 semanas · Conversaciones ilimitadas (uso justo) · Pago con tarjeta · Factura incluida",
+    },
     footerQ: "¿Necesitas algo a la medida?",
     footerLink: "Hablemos",
     footerHref: "/es/contact/",
@@ -131,7 +154,11 @@ const copy = {
 const t = copy[locale];
 ---
 
-<section class="relative overflow-hidden py-20 md:py-28">
+<section
+  class="relative overflow-hidden py-20 md:py-28"
+  data-pricing-section
+  {...(showCurrency ? { "data-currency-enabled": "" } : {})}
+>
   <div class="absolute inset-0 -z-10">
     <div
       class="absolute top-0 left-1/3 w-[500px] h-[500px] bg-cush-orange/10 rounded-full blur-[120px]"
@@ -141,7 +168,7 @@ const t = copy[locale];
 
   <div class="max-w-6xl mx-auto px-6">
     <!-- Header -->
-    <div class="text-center max-w-2xl mx-auto mb-14">
+    <div class="text-center max-w-2xl mx-auto mb-10">
       <p
         class="font-display text-sm font-semibold uppercase tracking-wider text-cush-orange mb-4"
       >
@@ -156,6 +183,35 @@ const t = copy[locale];
         {t.sub}
       </p>
     </div>
+
+    {
+      showCurrency && (
+        <div class="flex justify-center mb-12">
+          <div
+            class="inline-flex items-center gap-1 rounded-lg border border-gray-200 dark:border-gray-700 p-1 bg-white dark:bg-gray-800/40"
+            role="group"
+            aria-label={t.curAria}
+          >
+            <button
+              type="button"
+              data-cur-btn="mxn"
+              aria-pressed="true"
+              class="px-4 py-2 rounded-md text-sm font-display font-semibold transition-colors bg-cush-orange text-black"
+            >
+              {t.curMxnLabel}
+            </button>
+            <button
+              type="button"
+              data-cur-btn="usd"
+              aria-pressed="false"
+              class="px-4 py-2 rounded-md text-sm font-display font-semibold transition-colors text-gray-600 dark:text-gray-300"
+            >
+              {t.curUsdLabel}
+            </button>
+          </div>
+        </div>
+      )
+    }
 
     <!-- Tier cards -->
     <div class="grid gap-6 md:grid-cols-3 items-start">
@@ -183,9 +239,17 @@ const t = copy[locale];
 
             <div class="mb-6 flex items-baseline gap-2">
               <span class="font-display text-4xl font-bold text-gray-900 dark:text-white">
-                {tier.price}
+                <span data-cur="mxn">{tier.price.mxn}</span>
+                <span data-cur="usd" class="hidden">
+                  {tier.price.usd}
+                </span>
               </span>
-              <span class="text-gray-500 dark:text-gray-400">{t.perMonth}</span>
+              <span class="text-gray-500 dark:text-gray-400">
+                <span data-cur="mxn">{t.perMonth.mxn}</span>
+                <span data-cur="usd" class="hidden">
+                  {t.perMonth.usd}
+                </span>
+              </span>
             </div>
 
             <ul class="space-y-3 mb-8 grow">
@@ -206,7 +270,16 @@ const t = copy[locale];
                     />
                   </svg>
                   <span class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
-                    {f}
+                    {typeof f === "string" ? (
+                      f
+                    ) : (
+                      <>
+                        <span data-cur="mxn">{f.mxn}</span>
+                        <span data-cur="usd" class="hidden">
+                          {f.usd}
+                        </span>
+                      </>
+                    )}
                   </span>
                 </li>
               ))}
@@ -231,19 +304,17 @@ const t = copy[locale];
     <p
       class="text-center text-sm font-medium text-gray-700 dark:text-gray-200 mt-10"
     >
-      {t.locations}
+      <span data-cur="mxn">{t.locations.mxn}</span><span
+        data-cur="usd"
+        class="hidden">{t.locations.usd}</span
+      >
     </p>
 
     <!-- Notes -->
     <p class="text-center text-sm text-gray-500 dark:text-gray-400 mt-3">
-      {t.notes}
-    </p>
-    <p class="text-center text-sm text-gray-500 dark:text-gray-400 mt-3">
-      {t.geo}{" "}
-      <a
-        href={t.footerHref}
-        class="text-cush-orange font-semibold underline underline-offset-4 hover:opacity-80"
-        >{t.geoLink}</a
+      <span data-cur="mxn">{t.notes.mxn}</span><span
+        data-cur="usd"
+        class="hidden">{t.notes.usd}</span
       >
     </p>
     <p class="text-center text-sm text-gray-600 dark:text-gray-300 mt-4">
@@ -256,3 +327,51 @@ const t = copy[locale];
     </p>
   </div>
 </section>
+
+<script>
+  (function () {
+    // Only wire the toggle where currency is enabled (the dedicated pricing
+    // page). Elsewhere (e.g. the services page embed) prices stay MXN.
+    if (!document.querySelector("[data-currency-enabled]")) return;
+
+    const KEY = "pricingCurrency";
+
+    function apply(cur: string) {
+      const isUsd = cur === "usd";
+      document
+        .querySelectorAll('[data-cur="mxn"]')
+        .forEach((el) => el.classList.toggle("hidden", isUsd));
+      document
+        .querySelectorAll('[data-cur="usd"]')
+        .forEach((el) => el.classList.toggle("hidden", !isUsd));
+      document.querySelectorAll("[data-cur-btn]").forEach((btn) => {
+        const active = btn.getAttribute("data-cur-btn") === cur;
+        btn.setAttribute("aria-pressed", String(active));
+        btn.classList.toggle("bg-cush-orange", active);
+        btn.classList.toggle("text-black", active);
+        btn.classList.toggle("text-gray-600", !active);
+        btn.classList.toggle("dark:text-gray-300", !active);
+      });
+    }
+
+    let saved: string | null = null;
+    try {
+      saved = localStorage.getItem(KEY);
+    } catch (e) {
+      /* no-op */
+    }
+    apply(saved === "usd" ? "usd" : "mxn");
+
+    document.querySelectorAll("[data-cur-btn]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const cur = btn.getAttribute("data-cur-btn") || "mxn";
+        try {
+          localStorage.setItem(KEY, cur);
+        } catch (e) {
+          /* no-op */
+        }
+        apply(cur);
+      });
+    });
+  })();
+</script>
