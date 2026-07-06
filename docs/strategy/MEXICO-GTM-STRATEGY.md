@@ -270,11 +270,27 @@ Decided 2026-07-01. These drive how we quote and bill — keep consistent across
 
 - **Every new plan gets the 2-week free trial, scoped to up to 2 locations** — including chains, which trial on 1–2 locations then expand to the rest (paid). Paid pilot only as the fallback (see chains).
 
-### US / international leads (currency) — DEFERRED
+### Currency by market — MXN + USD toggle — IMPLEMENTED 2026-07-02
 
-- **Full US/global pricing alignment is a separate later pass (Robert, 2026-07-01). Do not publish USD pricing yet.**
-- Interim: pricing page shows _"Prices in MXN · US or international? Let's talk,"_ routing US leads to a custom conversation.
-- **Never auto-convert MXN↔USD** — US willingness-to-pay is independent. Working starting point for the later pass: ~**$100 USD/mo** for Basic (up to 2 locations). Note this is ~parity with the peso price (so it reads as the same price in the customer's currency, not two-tiered) and is likely **conservative** for the US market — US SMBs pay $100–500/mo for managed services. Revisit before quoting US at scale.
+Currency follows the **business's market**, not the site language (a US Latino business may read the ES site but pays USD; a Mexican may read EN but pays MXN). Two buckets:
+
+- 🇲🇽 **Mexico + Central & South America (all LatAm)** → **MXN** ($1,990 / $3,490 / $5,490)
+- 🇺🇸🇨🇦 **US + Canada** → **USD** ($129 / $229 / $349)
+
+**Implementation:** a market toggle (MXN ⇄ USD) on the dedicated pricing page, **decoupled from the EN/ES language switch**, defaulting to MXN (core market), persisted in localStorage. Self-select (visitor picks their market) beats geo-IP — it _is_ the segmentation, needs zero infra, and can't be wrong the way an IP guess can. Geo-defaulting is a possible Phase 2 if US traffic materializes. The services-page embed stays MXN-only (`showCurrency={false}`) — scope is the pricing page.
+
+**USD numbers (LOCKED 2026-07-02):** seeded from the FX rate (17.4541) + ~10%, then **anchored as independent marketing numbers** — NOT a live conversion, never displayed with a "≈" or re-derived when the peso moves.
+
+|                | MXN                | USD                   |
+| -------------- | ------------------ | --------------------- |
+| Basic          | $1,990             | **$129**              |
+| Premium        | $3,490             | **$229**              |
+| Ultra          | $5,490             | **$349**              |
+| Add'l location | +$690              | **+$49**              |
+| Voice overage  | $8.50/min          | **$0.59/min**         |
+| Payment line   | SPEI · OXXO · CFDI | Pay by card · Invoice |
+
+- **Margins are healthy and USD is still conservative for the US** (US SMBs pay $100–500/mo for managed services; Ultra at $349 with a voice agent is a steal). Raise once there's US signal. `docs` note: never auto-convert MXN↔USD — the two markets have independent willingness-to-pay.
 
 ### Google review-response volume
 
