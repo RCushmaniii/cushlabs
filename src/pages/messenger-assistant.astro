@@ -63,6 +63,62 @@ const liveDemos = [
     cta: "Message New York English",
   },
 ];
+
+// "What's included today" — organized into four themes. Every point is
+// grounded in what the production assistant actually does RIGHT NOW (List 1 in
+// cushlabs-messenger-bot/docs/FEATURE-INVENTORY.md — enabled and live on the
+// two demo bots above). Nothing here is roadmap. Keep this list to List 1 only;
+// premium/roadmap items (List 2) are documented separately and intentionally
+// held off this page until they ship.
+const themes = [
+  {
+    title: "It answers instantly — and correctly",
+    promise: "Every message gets a real answer in seconds — and the answer is right, because it only speaks from your actual business.",
+    icon: "M13 10V3L4 14h7v7l9-11h-7z",
+    points: [
+      "Replies in under 5 seconds, 24/7 — nights, weekends, and holidays included",
+      "Trained on your real products, prices, hours, policies, and tone",
+      "Grounded answers only — it never invents a price or makes up a promise",
+      "Hard facts like hours and pricing come back exact, every single time",
+    ],
+  },
+  {
+    title: "It feels like a real, modern experience",
+    promise: "Customers get a fast, natural, bilingual chat — not a clunky menu tree.",
+    icon: "M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z",
+    points: [
+      "Speaks English and Spanish automatically, following whatever the customer writes",
+      "Sends photos and visuals in the chat — menus, before-and-afters, mini-lessons",
+      "Reads photos customers send and answers based on what's in them",
+      "Remembers the conversation so customers never have to repeat themselves",
+      "Tappable suggested questions and a persistent menu guide people to what they need",
+    ],
+  },
+  {
+    title: "It knows when to get out of the way",
+    promise: "It handles the routine and steps aside the moment a real human is genuinely needed.",
+    icon: "M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z",
+    points: [
+      "Hands off to you with full context when a customer asks for a person",
+      "Answers \"are you a bot?\" honestly — no awkward false handoffs",
+      "Captures the lead — name, contact, intent — with the customer's consent",
+      "Optional owner alerts the moment a lead is hot, ready for you to close",
+      "Picks the conversation back up automatically once you're done",
+    ],
+  },
+  {
+    title: "It's built like a real product",
+    promise: "Not a weekend chatbot — a monitored, hardened, production system we run for you.",
+    icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z",
+    points: [
+      "Tells every new customer up front that they're chatting with an AI",
+      "Guardrails block prompt-injection and manipulation, on the way in and out",
+      "Rate-limited and abuse-protected so no one can run up your bill",
+      "Error monitoring and analytics run 24/7 — with no personal data stored",
+      "Fully managed by CushLabs: setup, training, weekly reports, monthly tuning",
+    ],
+  },
+];
 ---
 
 <BaseLayout
@@ -108,6 +164,29 @@ const liveDemos = [
           <a href="/services/" class="font-display font-medium text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white underline underline-offset-4 decoration-gray-300 hover:decoration-cush-orange transition-all">
             See all services →
           </a>
+        </div>
+
+        <!-- Live bots — message a real production assistant right now (elevated from the section below) -->
+        <div class="mt-8 flex flex-col items-center gap-3">
+          <p class="inline-flex items-center gap-2 text-sm font-display font-medium text-gray-500 dark:text-gray-400">
+            <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+            Or message a real bot right now
+          </p>
+          <div class="flex flex-col sm:flex-row items-center gap-3">
+            {liveDemos.map(demo => (
+              <a
+                href={demo.href}
+                target="_blank"
+                rel="noopener"
+                class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border-2 border-gray-300 dark:border-gray-700 text-gray-800 dark:text-gray-200 font-display font-semibold text-sm hover:border-cush-orange hover:text-cush-orange dark:hover:border-cush-orange dark:hover:text-cush-orange transition-all duration-300"
+              >
+                <svg class="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 0C5.373 0 0 4.974 0 11.111c0 3.498 1.744 6.614 4.469 8.654V24l4.088-2.242c1.092.301 2.246.464 3.443.464 6.627 0 12-4.975 12-11.111C24 4.974 18.627 0 12 0zm1.191 14.963l-3.055-3.26-5.963 3.26L10.732 8l3.131 3.259L19.752 8l-6.561 6.963z"/>
+                </svg>
+                {demo.cta}
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </Container>
@@ -272,7 +351,7 @@ const liveDemos = [
 
           <!-- Included -->
           <div>
-            <h3 class="font-display font-semibold text-xl text-gray-900 dark:text-white mb-6">What's Included</h3>
+            <h3 class="font-display font-semibold text-xl text-gray-900 dark:text-white mb-6">Every plan includes</h3>
             <ul class="space-y-4">
               {included.map(item => (
                 <li class="flex gap-4">
@@ -301,6 +380,49 @@ const liveDemos = [
           </div>
         </div>
 
+      </div>
+    </Container>
+  </section>
+
+  <!-- What's included today — four themes (all List 1 / live in production) -->
+  <section class="py-20 md:py-28">
+    <Container size="lg">
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cush-orange/10 border border-cush-orange/20 text-cush-orange text-sm font-semibold mb-6">
+          <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+          Included today — running in production
+        </div>
+        <h2 class="font-display font-bold text-3xl md:text-4xl text-gray-900 dark:text-white mb-4 leading-tight tracking-tight">
+          What's included today
+        </h2>
+        <p class="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+          No roadmap promises. Every capability below is live right now — on the two bots you can message above.
+        </p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+        {themes.map(theme => (
+          <div class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/40 p-8 hover:border-cush-orange/50 transition-colors duration-300">
+            <div class="flex items-center gap-4 mb-4">
+              <div class="w-12 h-12 rounded-lg bg-cush-orange/10 flex items-center justify-center shrink-0">
+                <svg class="w-6 h-6 text-cush-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={theme.icon} />
+                </svg>
+              </div>
+              <h3 class="font-display font-semibold text-xl text-gray-900 dark:text-white leading-snug">{theme.title}</h3>
+            </div>
+            <p class="text-cush-orange font-medium leading-relaxed mb-5">{theme.promise}</p>
+            <ul class="space-y-3">
+              {theme.points.map(point => (
+                <li class="flex gap-3">
+                  <svg class="w-5 h-5 text-green-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">{point}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
       </div>
     </Container>
   </section>

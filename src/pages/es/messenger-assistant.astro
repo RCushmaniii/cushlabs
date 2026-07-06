@@ -63,6 +63,62 @@ const liveDemos = [
     cta: "Escribir a New York English",
   },
 ];
+
+// "Qué incluye hoy" — organizado en cuatro temas. Cada punto está respaldado
+// por lo que el asistente en producción realmente hace AHORA MISMO (List 1 en
+// cushlabs-messenger-bot/docs/FEATURE-INVENTORY.md — habilitado y activo en los
+// dos bots demo de arriba). Nada aquí es roadmap. Mantener esta lista solo en
+// List 1; los elementos premium/roadmap (List 2) se documentan aparte y se
+// mantienen fuera de esta página a propósito hasta que se liberen.
+const themes = [
+  {
+    title: "Responde al instante — y con precisión",
+    promise: "Cada mensaje recibe una respuesta real en segundos — y la respuesta es correcta, porque solo habla desde tu negocio real.",
+    icon: "M13 10V3L4 14h7v7l9-11h-7z",
+    points: [
+      "Responde en menos de 5 segundos, 24/7 — noches, fines de semana y días festivos incluidos",
+      "Entrenado con tus productos, precios, horarios, políticas y tono reales",
+      "Solo respuestas basadas en tu contenido — nunca inventa un precio ni promete de más",
+      "Los datos duros como horarios y precios salen exactos, siempre",
+    ],
+  },
+  {
+    title: "Se siente como una experiencia real y moderna",
+    promise: "Tus clientes tienen un chat rápido, natural y bilingüe — no un árbol de menús anticuado.",
+    icon: "M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z",
+    points: [
+      "Habla español e inglés automáticamente, siguiendo el idioma en que escribe el cliente",
+      "Envía fotos y visuales en el chat — menús, antes y después, mini-lecciones",
+      "Lee las fotos que envían los clientes y responde según lo que hay en ellas",
+      "Recuerda la conversación para que el cliente nunca tenga que repetirse",
+      "Preguntas sugeridas para tocar y un menú fijo guían a la gente a lo que necesita",
+    ],
+  },
+  {
+    title: "Sabe cuándo hacerse a un lado",
+    promise: "Maneja lo rutinario y se hace a un lado en cuanto de verdad se necesita una persona.",
+    icon: "M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z",
+    points: [
+      "Te pasa la conversación con todo el contexto cuando el cliente pide una persona",
+      "Contesta \"¿eres un bot?\" con honestidad — sin traspasos falsos ni incómodos",
+      "Captura el lead — nombre, contacto, intención — con el consentimiento del cliente",
+      "Alertas al dueño opcionales en cuanto un lead está caliente, listo para cerrar",
+      "Retoma la conversación automáticamente cuando terminas",
+    ],
+  },
+  {
+    title: "Está construido como un producto de verdad",
+    promise: "No es un chatbot de fin de semana — es un sistema de producción monitoreado y reforzado que operamos por ti.",
+    icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z",
+    points: [
+      "Le avisa a cada nuevo cliente desde el inicio que está hablando con una IA",
+      "Los guardrails bloquean inyección de prompts y manipulación, a la entrada y a la salida",
+      "Con límite de uso y protección contra abuso para que nadie infle tu cuenta",
+      "El monitoreo de errores y la analítica funcionan 24/7 — sin guardar datos personales",
+      "Totalmente gestionado por CushLabs: configuración, entrenamiento, reportes semanales y ajuste mensual",
+    ],
+  },
+];
 ---
 
 <BaseLayout
@@ -108,6 +164,29 @@ const liveDemos = [
           <a href="/es/services/" class="font-display font-medium text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white underline underline-offset-4 decoration-gray-300 hover:decoration-cush-orange transition-all">
             Ver todos los servicios →
           </a>
+        </div>
+
+        <!-- Bots en vivo — escríbele a un asistente real en producción ahora mismo (elevado desde la sección de abajo) -->
+        <div class="mt-8 flex flex-col items-center gap-3">
+          <p class="inline-flex items-center gap-2 text-sm font-display font-medium text-gray-500 dark:text-gray-400">
+            <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+            O escríbele a un bot real ahora mismo
+          </p>
+          <div class="flex flex-col sm:flex-row items-center gap-3">
+            {liveDemos.map(demo => (
+              <a
+                href={demo.href}
+                target="_blank"
+                rel="noopener"
+                class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border-2 border-gray-300 dark:border-gray-700 text-gray-800 dark:text-gray-200 font-display font-semibold text-sm hover:border-cush-orange hover:text-cush-orange dark:hover:border-cush-orange dark:hover:text-cush-orange transition-all duration-300"
+              >
+                <svg class="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 0C5.373 0 0 4.974 0 11.111c0 3.498 1.744 6.614 4.469 8.654V24l4.088-2.242c1.092.301 2.246.464 3.443.464 6.627 0 12-4.975 12-11.111C24 4.974 18.627 0 12 0zm1.191 14.963l-3.055-3.26-5.963 3.26L10.732 8l3.131 3.259L19.752 8l-6.561 6.963z"/>
+                </svg>
+                {demo.cta}
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </Container>
@@ -272,7 +351,7 @@ const liveDemos = [
 
           <!-- Included -->
           <div>
-            <h3 class="font-display font-semibold text-xl text-gray-900 dark:text-white mb-6">Qué Incluye</h3>
+            <h3 class="font-display font-semibold text-xl text-gray-900 dark:text-white mb-6">Cada plan incluye</h3>
             <ul class="space-y-4">
               {included.map(item => (
                 <li class="flex gap-4">
@@ -301,6 +380,49 @@ const liveDemos = [
           </div>
         </div>
 
+      </div>
+    </Container>
+  </section>
+
+  <!-- Qué incluye hoy — cuatro temas (todo List 1 / activo en producción) -->
+  <section class="py-20 md:py-28">
+    <Container size="lg">
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cush-orange/10 border border-cush-orange/20 text-cush-orange text-sm font-semibold mb-6">
+          <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+          Incluido hoy — activo en producción
+        </div>
+        <h2 class="font-display font-bold text-3xl md:text-4xl text-gray-900 dark:text-white mb-4 leading-tight tracking-tight">
+          Qué incluye hoy
+        </h2>
+        <p class="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+          Sin promesas de roadmap. Cada capacidad de abajo está activa ahora mismo — en los dos bots que puedes escribir arriba.
+        </p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+        {themes.map(theme => (
+          <div class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/40 p-8 hover:border-cush-orange/50 transition-colors duration-300">
+            <div class="flex items-center gap-4 mb-4">
+              <div class="w-12 h-12 rounded-lg bg-cush-orange/10 flex items-center justify-center shrink-0">
+                <svg class="w-6 h-6 text-cush-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={theme.icon} />
+                </svg>
+              </div>
+              <h3 class="font-display font-semibold text-xl text-gray-900 dark:text-white leading-snug">{theme.title}</h3>
+            </div>
+            <p class="text-cush-orange font-medium leading-relaxed mb-5">{theme.promise}</p>
+            <ul class="space-y-3">
+              {theme.points.map(point => (
+                <li class="flex gap-3">
+                  <svg class="w-5 h-5 text-green-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">{point}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
       </div>
     </Container>
   </section>
