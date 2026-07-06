@@ -100,6 +100,31 @@ Documented in CLAUDE.md and memory `feedback_tailwind4_color_collision`. Custom 
 
 ## Session History
 
+## Session: 2026-07-02 — USD pricing via market toggle (MXN ⇄ USD)
+
+### Accomplished
+
+- **Shipped a market/currency toggle on the pricing page** — PR #157, merged + verified live on `/pricing` (both currency sets, both region buttons, both labels present).
+- Currency now follows the **business's market, not the site language**: 🇲🇽 Mexico + all LatAm → MXN; 🇺🇸🇨🇦 US + Canada → USD. Toggle is **decoupled from the EN/ES switch**, defaults to MXN, persists in localStorage. Self-select chosen over geo-IP (it _is_ the segmentation, zero infra, can't misfire).
+- **USD numbers (anchored, not live-converted):** Basic $129 / Premium $229 / Ultra $349; add'l location +$49; voice overage $0.59/min; USD payment line swaps MX-only SPEI/OXXO/CFDI → "Pay by card · Invoice included." Seeded from FX 17.4541 +~10%, then owned as independent marketing numbers.
+- Services-page embed stays MXN (`showCurrency={false}`); progressive-enhancement safe (MXN server-rendered, JS only reveals USD on the `data-currency-enabled` section). Strategy doc §11 + memory updated.
+
+### Decisions Made
+
+- **Self-select market toggle, not geo-IP** — the visitor picking their market is more reliable than an IP guess and needs no edge infra; geo-defaulting is a possible Phase 2 if US traffic appears.
+- **USD numbers are anchored, never a live "÷ FX" conversion** — displayed as clean numbers ($129, not "≈$125"), revisited on our schedule, not tied to the peso. Still conservative for the US; raise once there's US signal.
+
+### Technical Debt / Notes
+
+- **Live click-swap not automated-tested** (Playwright not installed) — verified structurally + build + rendered HTML; feature is safe-default MXN. Worth a manual eyeball.
+- **Branch untangle:** my pricing commit briefly landed on `feat/messenger-demos-and-capabilities` (branch was switched mid-session); cleanly lifted onto its own branch via cherry-pick, messenger branch repointed to its own HEAD. No work lost or mixed.
+
+### Open Questions / Blockers
+
+- None. (US pricing now shipped; testimonials/case study still blocked on having a first client.)
+
+---
+
 ## Session: 2026-07-01 — External site-review follow-ups (mobile nav, FAQ schema, consent links)
 
 ### Accomplished
