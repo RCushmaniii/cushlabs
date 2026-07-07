@@ -442,6 +442,28 @@ const themes = [
             Ya resolvimos los problemas difíciles: soporte bilingüe, respuestas precisas basadas en el contenido real de tu negocio, transferencia elegante a humanos, uptime 24/7 con monitoreo de errores. No nos pagas para que lo descubramos — ya lo descubrimos.
           </p>
         </div>
+
+        <div class="mt-10 grid sm:grid-cols-2 gap-x-8 gap-y-5 text-left">
+          {[
+            { title: "Hecho por nosotros, no por ti", body: "Lo construimos, entrenamos, conectamos y monitoreamos. Tú nunca tocas un panel." },
+            { title: "Respuestas desde tu contenido real", body: "Basadas en tus servicios, precios y voz — no inventa nada." },
+            { title: "Verdaderamente bilingüe (EN/ES)", body: "Cambia al idioma de tu cliente automáticamente — sin menús, sin configurar nada." },
+            { title: "Traspaso elegante a un humano", body: "Se hace a un lado cuando se necesita una persona y te resume con todo el contexto." },
+            { title: "Disponibilidad 24/7 monitoreada", body: "El monitoreo de errores y la confiabilidad corren por nuestra cuenta — no es algo más que administras." },
+            { title: "Activo en páginas reales de Facebook hoy", body: "No es un beta. Está en producción, atendiendo clientes reales ahora mismo." },
+          ].map(item => (
+            <div class="flex gap-3">
+              <svg class="w-5 h-5 text-green-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <div>
+                <strong class="text-gray-900 dark:text-white font-semibold">{item.title}</strong>
+                <span class="block text-sm text-gray-600 dark:text-gray-400 leading-relaxed mt-0.5">{item.body}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+
         <div class="mt-10">
           <a
             href="/es/reservar/"
