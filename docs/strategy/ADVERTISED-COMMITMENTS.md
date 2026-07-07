@@ -332,14 +332,83 @@ bumped and you update your `MARKETING-CONTRACT.md`. Drift between the two repos 
 
 ---
 
-## 11. Open discrepancies flagged during this reconciliation (2026-07-07)
+## 11. VERIFIED reconciliation — advertised vs. bot List 1 (investigated 2026-07-07)
 
-1. **Bot docs quote-on-call vs. site's explicit $1,990.** `PRODUCT_TIERS.md` is a draft with no peso
-   figures and the es pricing content avoids a number — while the site commits $1,990. **Fix:** §10.2–10.3.
-2. **Two different "weekly reports"** (Messenger performance report vs. Premium SEO/competitor report) —
-   easy to conflate; see §3 warning. Ensure the bot describes the right one per tier.
-3. **WhatsApp/Instagram** are built-adjacent (Meta App Review in progress per the bot roadblocks doc) but
-   **not advertised** and **not priced** yet. The bot must not offer them as live channels until Meta
-   approves and this doc is updated. See §2.4.
-4. **"Unlimited conversations (fair use)"** is the public promise; any internal per-tenant token cap must
-   be treated as an internal cost control, never surfaced as a customer-facing limit. See §10.2.
+Cross-checked the four advertised Messenger themes (§4) against the bot's code-verified
+`cushlabs-messenger-bot/docs/FEATURE-INVENTORY.md` **List 1** (items #1–#22) and the es content the
+bot serves. Verdict: **the advertising is overwhelmingly backed by shipped code — with ONE material
+gap and a few precision nuances.**
+
+### 11.1 🔴 Material gap — "Owner lead alerts" is advertised as live but is DORMANT in code
+
+- **Advertised as:** a **Basic-tier** included feature — `PricingSection.astro` Basic card: _"Owner lead
+  alerts"_ — and Messenger theme 3: _"Optional owner alerts the moment a lead is hot."_
+- **Reality (FEATURE-INVENTORY List 1 #10):** the operator alert on handover is _"**Wired but dormant**
+  (needs `HANDOVER_ALERT_WEBHOOK`)"_. The WhatsApp-delivered version (the whole "we ping you on WhatsApp
+  when a lead is ready" positioning in the project CLAUDE.md) is **List 2, Tier 3 #10 — roadmap**, "planned
+  to become a WhatsApp notification post-approval."
+- **Why it matters:** the pricing page lists it flatly (no "optional") as something a $1,990 Basic client
+  is buying. Until the webhook is configured per tenant, that client does not get alerts. This is the
+  exact under-deliver-a-promise failure the launch-gate rule exists to catch. **Decision needed (Robert):**
+  either (a) wire `HANDOVER_ALERT_WEBHOOK` (List-2 #10 is "shovel-ready — code exists, needs turning on")
+  before selling Basic, or (b) soften the pricing-page wording to "owner alerts (setup on request)" until
+  the WhatsApp path ships. I recommend (a) — it's a config task, not a build.
+
+### 11.2 🟡 Pricing docs are stale/quote-on-call vs. the site's explicit tiers
+
+- `cushlabs-messenger-bot/docs/PRODUCT_TIERS.md` is an explicit **DRAFT** ("Nothing here is enforced in
+  code") with placeholder names **Trial / Starter / Growth** and **no peso figures** — fully divergent
+  from the live **Basic $1,990 / Premium $3,490 / Ultra $5,490**. Reconcile to §2 (task §10.2).
+- `content/cushlabs-ai/es/pricing-and-engagement.txt` is deliberately **quote-on-call** (says "precios
+  fijos" but routes to Robert for the number). It does not _contradict_ $1,990, but it is now inconsistent
+  with a self-serve site that publishes tiers. The CushLabs demo tenant is configured "pricing quoted
+  personally" (FEATURE-INVENTORY tenant table), yet a demo ice-breaker is literally _"¿Cuánto cuesta?"_.
+  **Decision needed (Robert):** should the bot now _state_ the $1,990 entry price and route only
+  multi-location/custom to a call, or keep quoting personally? (I'd state the entry price — the site
+  already does, so withholding it from the bot just feels evasive.)
+
+### 11.3 🟡 Internal conversation caps vs. public "unlimited (fair use)"
+
+- `PRODUCT_TIERS.md` proposes hard caps (500 / 3,000 / 15,000 conversations/mo). The site promises
+  **"unlimited conversations (fair use)."** **Confirmed no cap language leaks into customer-facing
+  content** (grep of `content/` is clean) — so today this is an _internal-draft_ tension, not a live
+  customer contradiction. Guardrail: if a cap is ever enforced in code it must stay an internal cost
+  control; "fair use" is the only public statement. See §10.2.
+
+### 11.4 🟢 Precision nuances — accurate, but word carefully
+
+- **"Remembers the conversation"** = List 1 #7, rolling **last-10 exchanges, 1h TTL** — true within a
+  session, not permanent memory. Current copy is fine; don't escalate it to "remembers everything forever."
+- **"With the customer's consent"** (lead capture) = List 1 #13 is **prompt-level** consent via one-tap
+  share chips, **not a stored consent record** (FEATURE-INVENTORY caveat). Fine for the current claim;
+  do **not** upgrade to a compliance/GDPR-style "logged consent" claim without building the record.
+- **"Never invents a price"** — strongly backed: hard facts are injected verbatim and marked authoritative
+  over RAG (List 1 #4); RAG fails soft at min score 0.6. Solid claim.
+
+### 11.5 🟢 Everything else advertised → confirmed live in List 1
+
+Instant/grounded answers (#3,#4), EN/es-MX auto (#5), vision/reads photos (#6), sends visuals & carousels
+(#12), honest handoff incl. "are you a bot?" (#8, unit-tested), auto-resume (#9), AI self-disclosure (#15),
+in+out guardrails (#17, tested), rate-limiting/abuse protection (#16), analytics with no PII (#19),
+error monitoring (#21). **No over-claim** among these.
+
+### 11.6 💰 Under-sold — List 1 capabilities the site does NOT mention (upsell/marketing opportunities)
+
+- **Operator console / admin API** (List 1 #18) — Clerk-authed per-page inbox, handoff badges, one-click
+  return-to-bot. A real owner-facing deliverable; the site never mentions the client gets a console.
+- **Smooth OAuth page-connect onboarding** (#20) — "connect your Page, no app re-review per client" is a
+  friction-killer worth saying out loud.
+- **QA simulation gate** (#22) — "every change is tested against the real production decision pipeline
+  before it touches a customer" is a strong trust signal for a savvy buyer; currently invisible.
+- **Multi-tenant isolation** (#1) — per-Page data isolation is a security/trust point for bigger clients.
+
+### 11.7 🟢 Correctly consistent across both repos (no action)
+
+- **WhatsApp/Instagram**: site omits them; bot es content says _"Instagram y WhatsApp están en camino y se
+  agregarán sin costo extra"_ — matches the "layer in at no price change" stance. Keep until Meta approves.
+- **Two "weekly reports"**: bot content keeps them distinct (`services-messenger-bot` performance report
+  vs. `services-marketsignal` SEO/competitor report). Just don't conflate per §3.
+
+**Bottom line:** advertising integrity is high (confidence 90%). The one thing that would embarrass you in
+front of a Basic client is §11.1 — owner lead alerts sold as included but dormant in code. Fix that webhook
+or soften the copy before the next Basic signup.
