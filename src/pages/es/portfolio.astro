@@ -9,6 +9,22 @@ import { getEsCardCopy } from "../../data/projectCardsEs";
 const projects = projectsData.projects.filter(p => p.priority < 99);
 const allCategories = [...new Set(projects.flatMap(p => p.categories).filter(Boolean))].sort();
 
+// Spanish display labels for the (English-keyed) portfolio categories. The
+// filter logic still keys off the English category string (data-categories /
+// data-filter), so only the visible label is localized. Falls back to the raw
+// English category if a new one appears before it's translated here.
+const categoryEs: Record<string, string> = {
+  "AI Automation": "Automatización con IA",
+  "Client Work": "Proyectos de Cliente",
+  "Creative": "Creativo",
+  "Developer Tools": "Herramientas de Desarrollo",
+  "Games": "Juegos",
+  "Marketing": "Marketing",
+  "Templates": "Plantillas",
+  "Tools": "Herramientas",
+};
+const catEs = (cat: string): string => categoryEs[cat] ?? cat;
+
 function getThumbnail(project: typeof projects[number]): string {
   const override = getProjectDetailOverride(project.name);
   if (override?.thumbnail) return override.thumbnail;
@@ -118,7 +134,7 @@ const t = {
         <button class="filter-btn active px-4 py-2 rounded-lg border border-cush-orange bg-cush-orange/10 font-display text-sm font-semibold text-cush-orange transition-all" data-filter="featured">{t.filters.featured}</button>
         <button class="filter-btn px-4 py-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-transparent font-display text-sm font-semibold text-gray-600 dark:text-gray-400 hover:border-cush-orange hover:text-cush-orange transition-all" data-filter="all">{t.filters.all}</button>
         {allCategories.map(cat => (
-          <button class="filter-btn px-4 py-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-transparent font-display text-sm font-semibold text-gray-600 dark:text-gray-400 hover:border-cush-orange hover:text-cush-orange transition-all" data-filter={`cat:${cat}`}>{cat}</button>
+          <button class="filter-btn px-4 py-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-transparent font-display text-sm font-semibold text-gray-600 dark:text-gray-400 hover:border-cush-orange hover:text-cush-orange transition-all" data-filter={`cat:${cat}`}>{catEs(cat)}</button>
         ))}
       </div>
 
@@ -136,7 +152,7 @@ const t = {
           const category = project.categories[0] || null;
           const techBadges = project.stack.slice(0, 4);
           // Index both the Spanish display copy and the original English so search works in either language.
-          const searchText = [displayTitle, project.title, tagline, project.tagline, category, ...project.stack, ...project.tags].filter(Boolean).join(" ").toLowerCase();
+          const searchText = [displayTitle, project.title, tagline, project.tagline, category, category ? catEs(category) : null, ...project.stack, ...project.tags].filter(Boolean).join(" ").toLowerCase();
 
           return (
             <article
@@ -163,7 +179,7 @@ const t = {
               <div class="flex flex-col flex-1 p-5">
                 <div class="flex items-center gap-2 mb-3 flex-wrap">
                   {category && (
-                    <span class="px-2 py-0.5 bg-cush-orange/10 text-cush-orange text-xs font-display font-semibold rounded">{category}</span>
+                    <span class="px-2 py-0.5 bg-cush-orange/10 text-cush-orange text-xs font-display font-semibold rounded">{catEs(category)}</span>
                   )}
                   {project.status && (
                     <span class:list={[
@@ -172,7 +188,7 @@ const t = {
                       project.status === "Demo" ? "bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400" :
                       "bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400"
                     ]}>
-                      {project.status === "Production" ? "Produccion" :
+                      {project.status === "Production" ? "Producción" :
                        project.status === "Demo" ? "Demo" :
                        project.status === "Archived" ? "Archivado" :
                        project.status}

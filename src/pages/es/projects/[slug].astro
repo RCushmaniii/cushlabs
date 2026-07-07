@@ -178,7 +178,9 @@ const relatedProjects = scored.slice(0, 3).map(s => s.project);
             {
               project.status && (
                 <span class="px-2 py-1 text-xs font-display font-semibold rounded uppercase tracking-wide bg-canvas/40 border border-border text-muted">
-                  {project.status}
+                  {project.status === "Production" ? "Producción" :
+                   project.status === "Archived" ? "Archivado" :
+                   project.status}
                 </span>
               )
             }
