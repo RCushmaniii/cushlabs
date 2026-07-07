@@ -1,9 +1,10 @@
 ---
-// Stripped, standalone landing layout for es-MX cold-outreach pages.
-// NO global Header/Footer (they link to other-market pricing) and NO demo
-// chat widget — just brand polish + a single conversion focus.
-// Defaults to noindex; these pages are DM-driven, not organic SEO, and are
-// excluded from the sitemap in astro.config.mjs to protect the Ahrefs score.
+// Stripped, standalone landing layout for cold-outreach pages (es-MX /salones/
+// and en-US /salons/). NO global Header/Footer (they link to other-market
+// pricing) and NO demo chat widget — just brand polish + a single conversion
+// focus. Language-aware chrome (og:locale, footer, privacy link) follows the
+// `lang` prop. Defaults to noindex; these pages are DM-driven, not organic SEO,
+// and are excluded from the sitemap in astro.config.mjs to protect the Ahrefs score.
 import "../styles/global.css";
 import ThemeScript from "../components/ThemeScript.astro";
 
@@ -28,6 +29,14 @@ const ensureTrailingSlash = (p: string) =>
   p === "/" || p.endsWith("/") ? p : `${p}/`;
 const canonicalURL = new URL(ensureTrailingSlash(pathname), Astro.site);
 const resolvedOgImage = `${Astro.site}${ogImage.replace(/^\//, "")}`;
+
+// Language-aware chrome — the layout serves both the es-MX (/salones/) and
+// en-US (/salons/) cold-outreach pages, so the OG locale, footer copy, and
+// privacy link follow the `lang` prop instead of being hardcoded es-MX.
+const isEn = lang === "en";
+const ogLocale = isEn ? "en_US" : "es_MX";
+const privacyHref = isEn ? "/privacy/" : "/es/privacy/";
+const privacyLabel = isEn ? "Privacy Policy" : "Aviso de privacidad";
 ---
 
 <!doctype html>
@@ -70,7 +79,7 @@ const resolvedOgImage = `${Astro.site}${ogImage.replace(/^\//, "")}`;
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:site_name" content="CushLabs.ai" />
-    <meta property="og:locale" content="es_MX" />
+    <meta property="og:locale" content={ogLocale} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
@@ -124,10 +133,10 @@ const resolvedOgImage = `${Astro.site}${ogImage.replace(/^\//, "")}`;
     <footer
       class="relative z-10 border-t border-gray-100 dark:border-gray-800 py-8 text-center text-sm text-gray-500 dark:text-gray-500"
     >
-      <p>© 2026 CushLabs AI Services · Guadalajara, México</p>
+      <p>© 2026 CushLabs AI Services · Guadalajara, {isEn ? "Mexico" : "México"}</p>
       <p class="mt-1">
-        <a href="/es/privacy/" class="hover:text-cush-orange underline underline-offset-4"
-          >Aviso de privacidad</a
+        <a href={privacyHref} class="hover:text-cush-orange underline underline-offset-4"
+          >{privacyLabel}</a
         >
       </p>
     </footer>
