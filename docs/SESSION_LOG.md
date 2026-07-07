@@ -42,6 +42,7 @@ _(none open — canonical guardrail and HowTo schema both shipped)_
 - **Flesh out thin project detail pages** — e.g. cushlabs-messenger (1 screenshot, no solution/metrics).
 - **Title pixel-width audit** on `/data-deletion/` and `/es/data-deletion/` (both end in `| CushLabs.ai`) against Ahrefs's pixel threshold.
 - **Remove the dead `src/components/home/` folder** (tech-debt #3) once confirmed nothing imports it.
+- **Label EN Services example figures as USD** — the community-manager / receptionist cost examples on `/services/` don't state a currency (external-audit item, 2026-07-07).
 
 ---
 
@@ -101,6 +102,26 @@ Documented in CLAUDE.md and memory `feedback_tailwind4_color_collision`. Custom 
 ---
 
 ## Session History
+
+## Session: 2026-07-07 — Messenger proof bullets, external-audit fixes, product/pricing summary
+
+### Accomplished
+
+- **Proof bullets on the Messenger "Why CushLabs" section** — PR #158 (merged, live). Six scannable value bullets (EN/ES) between the narrative and the trial CTA, each grounded in a verified List-1 capability. Sits right where the Home→live-demo journey arrives looking for proof.
+- **External site-audit fixes** — PR #161 (merged, live). Three verified items: (1) project-count consistency — Home stat block `30+`→`35+` (EN/ES) to match the hero and the real 36; (2) ES portfolio localization — added a `categoryEs` display map for the English-keyed category pills/badges, fixed `Produccion`→`Producción`, localized the ES project-detail status badge; (3) pronoun voice — standardized the Messenger page (body, "Why CushLabs", HowTo schema, EN/ES) from mixed "we"/"I" to solo-founder **"I"**, leaving the two mocked-autoresponder quotes plural.
+- **Consolidated product & pricing reference** — new `docs/strategy/PRODUCT-AND-PRICING-SUMMARY.md` + branded prospect-facing `docs/strategy/CushLabs-Product-Pricing-Summary.pdf` (rendered via headless Chrome). Mirrors `PricingSection.astro`: 3 tiers, add-ons, held premium roadmap, features/benefits, MXN + USD.
+
+### Decisions Made
+
+- **Portfolio hobby categories: leave as-is.** Audit suggested hiding Games/Templates/Tools; verified the portfolio defaults to the "Featured" filter (all 9 featured = AI Automation/Client Work), so hobby projects never surface unless a visitor clicks deeper. Robert confirmed leave-as-is — reads as range, not dilution.
+- **Currency follows market, not language** — reaffirmed in the new summary: MXN = MX + LatAm, USD = US + Canada, never auto-converted.
+
+### Technical Debt / Notes
+
+- **Open audit item (minor):** EN Services page example figures (community-manager / receptionist cost) don't state currency — label as USD when convenient.
+- **Concurrent-session hygiene:** got auto-switched onto another session's branch mid-task (branches appearing/disappearing — marketing↔bot + salons work, all since merged #155/#159/#160/#162). Caught it, stash→clean branch off main→isolated PR #161. No work mixed or lost. Watch for multiple sessions in one working tree.
+
+---
 
 ## Session: 2026-07-07 — Marketing↔bot source-of-truth contract + Messenger page exposure
 
