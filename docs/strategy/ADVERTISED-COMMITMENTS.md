@@ -309,19 +309,29 @@ directly. Do the following to establish durable connectivity:
    ADVERTISED-COMMITMENTS.md §2 on <date>". **Do not invent a usage cap** the site doesn't state — the
    site says "unlimited conversations (fair use)"; if you need an internal token ceiling, record it as an
    _internal_ cost control, clearly separated from the public promise.
-3. **Reconcile `content/cushlabs-ai/es/pricing-and-engagement.txt`** so it does not contradict the public
-   $1,990 entry price. It may still route custom/multi-location scope to a discovery call.
-4. **Prove the §4 List-1 claims with golden-set tests.** Each advertised bullet in §4 that is a _decision_
+3. **DECISION (2026-07-07 — Robert): the bot STATES the entry price.** Update
+   `content/cushlabs-ai/es/pricing-and-engagement.txt` (and the `en/` equivalent) and the CushLabs tenant
+   config (currently "pricing quoted personally") so the assistant answers price questions with
+   **"desde $1,990 MXN/mes"** and the Basic/Premium/Ultra shape from §2, routing to a discovery call **only**
+   for multi-location / custom / voice scope. Retire the blanket quote-on-call behavior for the entry price.
+
+4. **DECISION (2026-07-07 — Robert): wire owner lead alerts BEFORE selling Basic.** `src/lib/alert.ts`
+   (List 1 #10) is built but dormant. Configure `HANDOVER_ALERT_WEBHOOK` (interim Slack/Discord destination
+   until the WhatsApp path ships post-Meta-approval) so the Basic-tier "Owner lead alerts" promise is
+   actually delivered. This is List 2 #10, "shovel-ready — code exists, needs turning on." Until it is set,
+   do not onboard a Basic client who expects alerts. Mind the bot repo's documented `wrangler deploy` OAuth
+   gotcha when redeploying the Worker.
+5. **Prove the §4 List-1 claims with golden-set tests.** Each advertised bullet in §4 that is a _decision_
    (handoff on "talk to a person," honest "are you a bot?", grounded-only answers, consent-based lead
    capture) needs a behavioral test against real EN + es-MX phrasings. Every production bug becomes a
    permanent fixture the same day (global CLAUDE.md launch gate).
-5. **Enforce the two-class content model (§7).** Audit that every hard fact (hours/prices/address/phone/
+6. **Enforce the two-class content model (§7).** Audit that every hard fact (hours/prices/address/phone/
    closures/booking URL) is a structured record injected verbatim — never RAG prose. Any hard fact found
    in the vector DB = P0.
-6. **Keep List 1 / List 2 honest.** Only List 1 may be advertised. If you ship a List-2 feature, flag it
+7. **Keep List 1 / List 2 honest.** Only List 1 may be advertised. If you ship a List-2 feature, flag it
    here so marketing promotes it on the site and in this doc in the _same_ change — never let the bot
    silently exceed (or fall short of) the advertised set.
-7. **Answer "what do we charge 1,990 pesos for?" from §2.1 Basic**, not from memory: AI Messenger
+8. **Answer "what do we charge 1,990 pesos for?" from §2.1 Basic**, not from memory: AI Messenger
    Assistant (24/7, the full §4 feature set) + Google review management (owner-approved) + owner lead
    alerts + fully-managed (setup/training/support), per business incl. up to 2 locations, no setup fee,
    no contract, 2-week free trial, unlimited conversations (fair use), CFDI invoice.
