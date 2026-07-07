@@ -1,0 +1,635 @@
+---
+// Interactive "your business inside Messenger" sales demo.
+// Ported from a standalone artifact into an on-domain, bilingual, theme-aware
+// component. Integrates with the site's `.dark` class strategy (no separate
+// theme toggle — the header owns that). Styles are `is:global` but namespaced
+// under `.clmd` so the script-injected chat bubbles/cards/chips get styled
+// (Astro's scoped styles don't reach innerHTML-generated nodes).
+//
+// Copy is grounded in what the production bot actually does today (List 1):
+// instant bilingual replies, product/service carousels, book/reserve buttons,
+// consent-based lead capture, human handoff. It says "book/reserve FROM the
+// chat" (a tap that books via link / captures the lead + hands off), never
+// "without leaving the chat" — true in-chat webview booking is List 2 (roadmap).
+
+interface Props {
+  locale: "en" | "es";
+}
+const { locale } = Astro.props;
+
+const STRINGS = {
+  en: {
+    brandSub: "Sales demo",
+    h1a: "This is what your business looks like ",
+    h1em: "inside Messenger",
+    h1b: ".",
+    lede: "Pick an industry. You'll see the same conversation one of your customers would have — a question, an instant reply, and a carousel where they book or reserve from the chat. In English and Spanish, 24/7.",
+    chipsLabel: "Choose an industry",
+    bizStatus: "Replies instantly",
+    inputPlaceholder: "Type a message…",
+    phoneAria: "Preview of a Messenger conversation",
+    facts: [
+      ["Replies in seconds", ", even while you're with a customer or already closed."],
+      ["Books and reserves from the chat", " — the customer won't go looking elsewhere."],
+      ["You approve", " what matters; the assistant hands off to a person when needed."],
+    ],
+    note: "Illustrative demo. Products, copy, and prices are customized with your business's own.",
+    footBrand: "CushLabs AI Services",
+    footMid: "AI Assistant on Messenger · Bilingual 24/7",
+    footLoc: "Guadalajara, Mexico",
+  },
+  es: {
+    brandSub: "Demo de ventas",
+    h1a: "Así se ve tu negocio ",
+    h1em: "dentro de Messenger",
+    h1b: ".",
+    lede: "Elige un giro. Verás la misma conversación que tendría un cliente tuyo — una pregunta, respuesta al instante y un carrusel donde reserva o aparta desde el chat. En español, 24/7.",
+    chipsLabel: "Elige un giro de negocio",
+    bizStatus: "Responde al instante",
+    inputPlaceholder: "Escribe un mensaje…",
+    phoneAria: "Vista previa de una conversación de Messenger",
+    facts: [
+      ["Responde en segundos", ", aunque estés atendiendo o ya cerraste."],
+      ["Reserva y aparta desde el chat", " — el cliente no se va a buscar a otro."],
+      ["Tú apruebas", " lo importante; el asistente pasa el caso a una persona cuando hace falta."],
+    ],
+    note: "Demo con fines ilustrativos. Los productos, textos y precios se personalizan con los de tu negocio.",
+    footBrand: "CushLabs AI Services",
+    footMid: "Asistente de IA en Messenger · Español 24/7",
+    footLoc: "Guadalajara, México",
+  },
+} as const;
+const S = STRINGS[locale];
+
+// Shared (locale-independent) + localized industry content.
+const CATALOG = [
+  {
+    id: "ropa", icon: "dress", biz: "Boutique Marbella", av: "BM",
+    art: "linear-gradient(140deg,#e8a0a8,#b46b8e)", avbg: "#b46b8e",
+    en: {
+      chip: "Clothing boutique",
+      open: "Hi 👋 Do you have dresses for a wedding?",
+      lead: "Of course! These are this season's most-wanted 👗",
+      kick: "Clothing boutique",
+      title: "She messages at 10 p.m. You still make the sale.",
+      desc: "70% of questions are the same: sizes, prices, availability. Your assistant answers them instantly and shows the pieces to reserve — so you don't lose the sale by missing a message.",
+      cards: [
+        { t: 'Long "Marbella" dress', tag: "New", p: "$1,890", b: "Reserve" },
+        { t: "Linen set", p: "$1,240", b: "Reserve" },
+        { t: "Fitted blazer", p: "$980", b: "See more" },
+      ],
+    },
+    es: {
+      chip: "Boutique de ropa",
+      open: "Hola 👋 ¿Tienen vestidos para una boda?",
+      lead: "¡Claro! Estos son los más pedidos de esta temporada 👗",
+      kick: "Boutique de ropa",
+      title: "La clienta pregunta a las 10 de la noche. Tú vendes igual.",
+      desc: "El 70% de las dudas son las mismas: tallas, precios, disponibilidad. Tu asistente las contesta al instante y muestra las prendas para apartar, sin que pierdas la venta por no ver el mensaje a tiempo.",
+      cards: [
+        { t: 'Vestido largo "Marbella"', tag: "Nuevo", p: "$1,890", b: "Apartar" },
+        { t: "Conjunto de lino", p: "$1,240", b: "Apartar" },
+        { t: "Blazer entallado", p: "$980", b: "Ver más" },
+      ],
+    },
+  },
+  {
+    id: "swim", icon: "swim", biz: "Sol & Mar Swim", av: "SM",
+    art: "linear-gradient(140deg,#4bc4d6,#1f7fb0)", avbg: "#1f7fb0",
+    en: {
+      chip: "Swimwear",
+      open: "What women's swimwear do you carry?",
+      lead: "Our Summer '26 collection just dropped 🌴 Take a look:",
+      kick: "Swimwear boutique",
+      title: "New collection, instant reply, reserved right in the chat.",
+      desc: "Every season brings the same size-and-color questions. The assistant shows the collection, reserves the piece, and pings the customer when it's back in stock — all inside Messenger.",
+      cards: [
+        { t: '"Tulum" bikini', tag: "Summer '26", p: "$650", b: "Reserve" },
+        { t: '"Sayulita" one-piece', p: "$890", b: "Reserve" },
+        { t: "Beach cover-up", p: "$540", b: "See more" },
+      ],
+    },
+    es: {
+      chip: "Trajes de baño",
+      open: "¿Qué trajes de baño manejan para dama?",
+      lead: "Ya tenemos lista la colección Verano '26 🌴 Mira:",
+      kick: "Boutique de trajes de baño",
+      title: "Colección nueva, respuesta inmediata, apartado en el chat.",
+      desc: "Cada temporada llegan las mismas preguntas por talla y color. El asistente muestra la colección, aparta la pieza y avisa cuando vuelve a haber existencia — todo dentro de Messenger.",
+      cards: [
+        { t: 'Bikini "Tulum"', tag: "Verano '26", p: "$650", b: "Apartar" },
+        { t: 'Traje entero "Sayulita"', p: "$890", b: "Apartar" },
+        { t: "Salida de playa", p: "$540", b: "Ver más" },
+      ],
+    },
+  },
+  {
+    id: "cafe-dist", icon: "beans", biz: "Café de Altura MX", av: "CA",
+    art: "linear-gradient(140deg,#c79a5b,#7d5230)", avbg: "#7d5230",
+    en: {
+      chip: "Coffee distributor",
+      open: "I'm looking for a coffee supplier for my café — do you sell wholesale?",
+      lead: "Yes, we supply businesses by volume. Here are the wholesale options ☕",
+      kick: "Coffee distributor (B2B)",
+      title: "Quote wholesale without leaving the buyer waiting.",
+      desc: "In B2B, whoever replies first wins the account. The assistant qualifies the volume, shares wholesale pricing, and books the call with your sales team while interest is hot.",
+      cards: [
+        { t: "Green beans · 25 kg sack", p: "$4,200", b: "Get quote" },
+        { t: "Medium roast · 5 kg", p: "$980", b: "Get quote" },
+        { t: "Monthly recurring plan", p: "from $3,500/mo", b: "Book a call" },
+      ],
+    },
+    es: {
+      chip: "Distribuidora de café",
+      open: "Busco proveedor de café para mi cafetería, ¿manejan mayoreo?",
+      lead: "Sí, manejamos volumen para negocios. Estas son las opciones de mayoreo ☕",
+      kick: "Distribuidora de café (B2B)",
+      title: "Cotiza al mayoreo sin dejar esperando al comprador.",
+      desc: "En venta de negocio a negocio, quien responde primero gana la cuenta. El asistente califica el volumen, comparte precios de mayoreo y agenda la llamada con tu equipo comercial mientras el interés está caliente.",
+      cards: [
+        { t: "Grano oro · saco 25 kg", p: "$4,200", b: "Cotizar" },
+        { t: "Tueste medio · 5 kg", p: "$980", b: "Cotizar" },
+        { t: "Plan mensual recurrente", p: "desde $3,500/mes", b: "Agendar llamada" },
+      ],
+    },
+  },
+  {
+    id: "cafeteria", icon: "cup", biz: "La Esquina Café", av: "LE",
+    art: "linear-gradient(140deg,#d8a566,#9c6534)", avbg: "#9c6534",
+    en: {
+      chip: "Coffee shop",
+      open: "Can I reserve a table for 4 on Saturday?",
+      lead: "Happy to! I'll reserve it and show you our most-loved picks 👇",
+      kick: "Coffee shop",
+      title: "Reserve tables and take orders while you work the bar.",
+      desc: "You don't have to step away from the espresso machine to answer a DM. The assistant reserves the table, shares the weekend menu, and takes to-go orders — none slip through.",
+      cards: [
+        { t: "Reserve table · Sat 6:00 pm", p: "For 4 people", b: "Reserve" },
+        { t: "Weekend brunch", p: "$220", b: "See menu" },
+        { t: "Seasonal box", tag: "Limited", p: "$180", b: "Order" },
+      ],
+    },
+    es: {
+      chip: "Cafetería",
+      open: "¿Puedo apartar mesa para 4 el sábado?",
+      lead: "¡Con gusto! Te ayudo a apartar y de paso te muestro lo más pedido 👇",
+      kick: "Cafetería",
+      title: "Aparta mesas y toma pedidos mientras atiendes la barra.",
+      desc: "No tienes que soltar la máquina de espresso para contestar un DM. El asistente aparta la mesa, comparte el menú del fin y toma pedidos para llevar, sin que se pierda ninguno.",
+      cards: [
+        { t: "Apartar mesa · Sáb 6:00 pm", p: "Para 4 personas", b: "Reservar" },
+        { t: "Brunch de fin de semana", p: "$220", b: "Ver menú" },
+        { t: "Caja de temporada", tag: "Edición", p: "$180", b: "Ordenar" },
+      ],
+    },
+  },
+  {
+    id: "rest", icon: "plate", biz: "Terraza Jalisco", av: "TJ",
+    art: "linear-gradient(140deg,#e0785f,#a83b2f)", avbg: "#a83b2f",
+    en: {
+      chip: "Restaurant",
+      open: "Do you have a table for tonight?",
+      lead: "Yes, we still have room 🍽️ Here are tonight's options:",
+      kick: "Restaurant",
+      title: "Fill the terrace by answering reservations the moment they land.",
+      desc: "Reservations come in over WhatsApp and Messenger right at service time, when no one can answer. The assistant confirms the table, suggests the house menu, and flags large parties for you.",
+      cards: [
+        { t: "Reservation 8:30 pm", p: "Table for 2", b: "Reserve" },
+        { t: "Tasting menu", tag: "Chef", p: "$890 / person", b: "See menu" },
+        { t: "Terrace table", p: "Subject to availability", b: "Reserve" },
+      ],
+    },
+    es: {
+      chip: "Restaurante",
+      open: "¿Tienen mesa para hoy en la noche?",
+      lead: "Sí, todavía hay lugar 🍽️ Estas son las opciones para esta noche:",
+      kick: "Restaurante",
+      title: "Llena la terraza contestando las reservaciones al momento.",
+      desc: "Las reservaciones llegan por WhatsApp y Messenger a la hora del servicio, justo cuando nadie puede contestar. El asistente confirma la mesa, sugiere el menú de la casa y te avisa de los grupos grandes.",
+      cards: [
+        { t: "Reservación 8:30 pm", p: "Mesa para 2", b: "Reservar" },
+        { t: "Menú degustación", tag: "Chef", p: "$890 / persona", b: "Ver menú" },
+        { t: "Mesa en terraza", p: "Sujeto a disponibilidad", b: "Reservar" },
+      ],
+    },
+  },
+  {
+    id: "dental", icon: "tooth", biz: "Clínica Dental Sonríe", av: "DS",
+    art: "linear-gradient(140deg,#5ea9e6,#2f6bb0)", avbg: "#2f6bb0",
+    en: {
+      chip: "Dental clinic",
+      open: "My tooth hurts — do you have an appointment this week?",
+      lead: "Sorry to hear that 🦷 We have these openings:",
+      kick: "Dental clinic",
+      title: "Book the patient before they call the clinic next door.",
+      desc: "A toothache doesn't wait. The assistant offers the evaluation, books the appointment, and answers price questions instantly — routing emergencies to your front desk so no patient cools off.",
+      cards: [
+        { t: "Evaluation + X-ray", p: "$450", b: "Book" },
+        { t: "Dental cleaning", p: "$600", b: "Book" },
+        { t: "Same-day emergency", tag: "Priority", p: "Based on evaluation", b: "Book today" },
+      ],
+    },
+    es: {
+      chip: "Clínica dental",
+      open: "Me duele una muela, ¿tienen cita esta semana?",
+      lead: "Lamento la molestia 🦷 Tenemos estos espacios disponibles:",
+      kick: "Clínica dental",
+      title: "Agenda al paciente antes de que llame a la clínica de junto.",
+      desc: "Un dolor de muela no espera. El asistente ofrece la valoración, agenda la cita y responde las dudas de precio al instante — y pasa las urgencias a tu recepción para que ningún paciente se enfríe.",
+      cards: [
+        { t: "Valoración + radiografía", p: "$450", b: "Agendar" },
+        { t: "Limpieza dental", p: "$600", b: "Agendar" },
+        { t: "Urgencia · mismo día", tag: "Prioridad", p: "Según valoración", b: "Agendar hoy" },
+      ],
+    },
+  },
+  {
+    id: "ortho", icon: "ortho", biz: "Ortodoncia Estudio 32", av: "E32",
+    art: "linear-gradient(140deg,#7db7c9,#3c7f96)", avbg: "#3c7f96",
+    en: {
+      chip: "Orthodontics",
+      open: "How much are braces?",
+      lead: "Happy to explain 😁 Here are the treatment options:",
+      kick: "Orthodontics",
+      title: "Turn “how much does it cost?” into a booked evaluation.",
+      desc: "Price is the first question and the one that loses the most patients when you're slow. The assistant explains the treatments, offers the free evaluation, and books it — leaving the plan close to you.",
+      cards: [
+        { t: "Orthodontic evaluation", tag: "Free", p: "No cost", b: "Book" },
+        { t: "Metal braces", p: "from $12,000", b: "Get quote" },
+        { t: "Clear aligners", p: "from $28,000", b: "Get quote" },
+      ],
+    },
+    es: {
+      chip: "Ortodoncia",
+      open: "¿Cuánto cuestan los brackets?",
+      lead: "Con gusto te explico 😁 Estas son las opciones de tratamiento:",
+      kick: "Ortodoncia",
+      title: "Convierte la pregunta de “¿cuánto cuesta?” en una valoración agendada.",
+      desc: "El precio es la primera pregunta y la que más pacientes pierde por tardar. El asistente explica los tratamientos, ofrece la valoración gratis y agenda — dejando el cierre del plan para ti.",
+      cards: [
+        { t: "Valoración de ortodoncia", tag: "Gratis", p: "Sin costo", b: "Agendar" },
+        { t: "Brackets metálicos", p: "desde $12,000", b: "Cotizar" },
+        { t: "Alineadores transparentes", p: "desde $28,000", b: "Cotizar" },
+      ],
+    },
+  },
+  {
+    id: "spa", icon: "spa", biz: "Spa Serena", av: "SS",
+    art: "linear-gradient(140deg,#7fc9a6,#3f9576)", avbg: "#3f9576",
+    en: {
+      chip: "Spa",
+      open: "Do you have massages available this weekend?",
+      lead: "Yes! 💆‍♀️ These are our most-requested services:",
+      kick: "Spa",
+      title: "Fill the weekend calendar without being glued to the phone.",
+      desc: "Clients ask about services and times at all hours. The assistant shows the treatments, books the slot, and builds packages — so you arrive Saturday with the calendar already full.",
+      cards: [
+        { t: "Relaxing massage · 60 min", p: "$750", b: "Book" },
+        { t: "Hydrating facial", p: "$900", b: "Book" },
+        { t: "Couples package", tag: "Popular", p: "$2,400", b: "Book" },
+      ],
+    },
+    es: {
+      chip: "Spa",
+      open: "¿Tienen masajes disponibles este fin?",
+      lead: "¡Sí! 💆‍♀️ Estos son nuestros servicios más pedidos:",
+      kick: "Spa",
+      title: "Llena la agenda del fin de semana sin estar pegada al teléfono.",
+      desc: "Las clientas preguntan por servicios y horarios a cualquier hora. El asistente muestra los tratamientos, reserva el espacio y arma paquetes — para que llegues el sábado con la agenda ya llena.",
+      cards: [
+        { t: "Masaje relajante · 60 min", p: "$750", b: "Reservar" },
+        { t: "Facial hidratante", p: "$900", b: "Reservar" },
+        { t: "Paquete en pareja", tag: "Popular", p: "$2,400", b: "Reservar" },
+      ],
+    },
+  },
+  {
+    id: "salon", icon: "scissors", biz: "Estética Bella", av: "EB",
+    art: "linear-gradient(140deg,#e0a3c8,#a44f86)", avbg: "#a44f86",
+    en: {
+      chip: "Beauty salon",
+      open: "Do you have room for a cut and color on Friday?",
+      lead: "Of course! 💇‍♀️ These are the services you can book:",
+      kick: "Beauty salon & studio",
+      title: "Fill the salon's calendar while your hands are busy.",
+      desc: "Between cuts you can't pick up the phone. The assistant shows the services, holds the spot, and confirms the appointment — so no client leaves for a competitor over an unanswered message.",
+      cards: [
+        { t: "Cut + style", p: "$350", b: "Book" },
+        { t: "Root color", p: "$650", b: "Book" },
+        { t: "Nails + lashes package", tag: "Popular", p: "$890", b: "Book" },
+      ],
+    },
+    es: {
+      chip: "Salón de belleza",
+      open: "¿Tienen espacio para corte y tinte el viernes?",
+      lead: "¡Claro! 💇‍♀️ Estos son los servicios que puedes apartar:",
+      kick: "Salón de belleza y estética",
+      title: "Llena la agenda del salón mientras tienes las manos ocupadas.",
+      desc: "Entre corte y corte no puedes contestar el teléfono. El asistente muestra los servicios, aparta el lugar y confirma la cita en español — para que ninguna clienta se vaya con la competencia por no recibir respuesta.",
+      cards: [
+        { t: "Corte + peinado", p: "$350", b: "Apartar" },
+        { t: "Tinte de raíz", p: "$650", b: "Apartar" },
+        { t: "Paquete uñas + pestañas", tag: "Popular", p: "$890", b: "Apartar" },
+      ],
+    },
+  },
+  {
+    id: "hotel", icon: "hotel", biz: "Casa Violeta", av: "CV",
+    art: "linear-gradient(140deg,#8f8ada,#524fa1)", avbg: "#524fa1",
+    en: {
+      chip: "Boutique hotel",
+      open: "Do you have a room for two nights this weekend?",
+      lead: "Yes! 🏨 Here are the rooms available for those dates:",
+      kick: "Boutique hotel",
+      title: "Close the direct booking — no platform commission.",
+      desc: "Every guest who books with you on Messenger is a commission you don't pay a platform. The assistant shows the rooms, confirms dates, and takes the direct booking — in Spanish, instantly.",
+      cards: [
+        { t: "Deluxe room", p: "$2,400 / night", b: "Reserve" },
+        { t: "Suite with terrace", tag: "View", p: "$3,600 / night", b: "Reserve" },
+        { t: "Romantic package · 2 nights", p: "$6,500", b: "See details" },
+      ],
+    },
+    es: {
+      chip: "Hotel boutique",
+      open: "¿Tienen habitación para dos noches este fin?",
+      lead: "¡Sí! 🏨 Estas son las habitaciones disponibles para esas fechas:",
+      kick: "Hotel boutique",
+      title: "Cierra la reservación directa, sin comisión de las plataformas.",
+      desc: "Cada huésped que reserva contigo por Messenger es una comisión que no le pagas a la plataforma. El asistente muestra las habitaciones, confirma fechas y toma la reservación directa, en español y al instante.",
+      cards: [
+        { t: "Habitación Deluxe", p: "$2,400 / noche", b: "Reservar" },
+        { t: "Suite con terraza", tag: "Vista", p: "$3,600 / noche", b: "Reservar" },
+        { t: "Paquete romántico · 2 noches", p: "$6,500", b: "Ver detalles" },
+      ],
+    },
+  },
+];
+
+const industries = CATALOG.map((c) => ({
+  id: c.id, icon: c.icon, biz: c.biz, av: c.av, art: c.art, avbg: c.avbg,
+  ...c[locale],
+}));
+---
+
+<section class="clmd">
+  <div class="wrap">
+    <div class="top">
+      <div class="brand">
+        <div class="mark"><span>C</span></div>
+        <div>
+          <b>CushLabs</b>
+          <div class="sub">{S.brandSub}</div>
+        </div>
+      </div>
+      <span class="msgr-badge" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 4.974 0 11.111c0 3.498 1.744 6.614 4.469 8.654V24l4.088-2.242c1.092.301 2.246.464 3.443.464 6.627 0 12-4.975 12-11.111C24 4.974 18.627 0 12 0zm1.191 14.963l-3.055-3.26-5.963 3.26L10.732 8l3.131 3.259L19.752 8l-6.561 6.963z"></path></svg>
+      </span>
+    </div>
+
+    <div class="lede">
+      <h1>{S.h1a}<em>{S.h1em}</em>{S.h1b}</h1>
+      <p>{S.lede}</p>
+    </div>
+
+    <div class="chips-label">{S.chipsLabel}</div>
+    <div class="chips" id="clmd-chips" role="tablist" aria-label={S.chipsLabel}></div>
+
+    <div class="stage">
+      <div class="phone" role="img" aria-label={S.phoneAria}>
+        <div class="status">
+          <span>10:30</span>
+          <span class="bars" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M2 14a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-4Zm5-3a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1v-7Zm5-3a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1V8Zm5-3a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1V5Z"></path></svg>
+          </span>
+        </div>
+        <div class="mhead">
+          <span class="back" aria-hidden="true">‹</span>
+          <div class="avatar" id="clmd-avatar"></div>
+          <div class="who">
+            <b id="clmd-bizname">—</b>
+            <span id="clmd-bizstatus">{S.bizStatus}</span>
+          </div>
+          <span class="msgr" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 4.974 0 11.111c0 3.498 1.744 6.614 4.469 8.654V24l4.088-2.242c1.092.301 2.246.464 3.443.464 6.627 0 12-4.975 12-11.111C24 4.974 18.627 0 12 0zm1.191 14.963l-3.055-3.26-5.963 3.26L10.732 8l3.131 3.259L19.752 8l-6.561 6.963z"></path></svg>
+          </span>
+        </div>
+        <div class="thread" id="clmd-thread"></div>
+        <div class="input">
+          <div class="field">{S.inputPlaceholder}</div>
+          <div class="send" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.4 20.4 21 12 3.4 3.6 3 10l12 2-12 2 .4 6.4Z"></path></svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="read">
+        <div class="kick" id="clmd-kick">{industries[0].kick}</div>
+        <h2 id="clmd-title">{industries[0].title}</h2>
+        <p id="clmd-desc">{industries[0].desc}</p>
+        <ul class="facts">
+          {S.facts.map((f) => (
+            <li>
+              <span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"></path></svg></span>
+              <span><b>{f[0]}</b>{f[1]}</span>
+            </li>
+          ))}
+        </ul>
+        <p class="note">{S.note}</p>
+      </div>
+    </div>
+
+    <div class="foot">
+      <b>{S.footBrand}</b>
+      <span>{S.footMid}</span>
+      <span>{S.footLoc}</span>
+    </div>
+  </div>
+</section>
+
+<style is:global>
+  .clmd {
+    --ground: #f5f4f1; --ground-2: #eceae5;
+    --ink: #111827; --ink-soft: #55606f; --ink-faint: #8b95a3;
+    --line: #e2ded7; --panel: #ffffff;
+    --phone: #ffffff; --phone-frame: #d9d5cd;
+    --bubble-in: #eceef1; --bubble-in-ink: #14181f;
+    --msgr: #0084ff; --bubble-out-ink: #ffffff;
+    --card: #ffffff; --card-line: #e7e3db;
+    --accent: #ff6a3d; --accent-ink: #ffffff;
+    --shadow: 0 22px 60px -22px rgba(17,24,39,.32), 0 6px 18px -12px rgba(17,24,39,.22);
+    --shadow-card: 0 2px 8px -4px rgba(17,24,39,.22);
+    display: block;
+    background:
+      radial-gradient(1200px 600px at 82% -8%, color-mix(in srgb, var(--accent) 9%, transparent), transparent 60%),
+      var(--ground);
+    color: var(--ink);
+  }
+  .dark .clmd {
+    --ground: #0b0f17; --ground-2: #10151f;
+    --ink: #f2f4f8; --ink-soft: #9aa5b4; --ink-faint: #6b7788;
+    --line: #232a37; --panel: #141a25;
+    --phone: #0f141d; --phone-frame: #232a37;
+    --bubble-in: #242c3a; --bubble-in-ink: #eef1f6;
+    --msgr: #0a90ff; --bubble-out-ink: #ffffff;
+    --card: #161d29; --card-line: #263042;
+    --accent: #ff7a4f; --accent-ink: #1a0e08;
+    --shadow: 0 26px 70px -24px rgba(0,0,0,.7), 0 8px 22px -14px rgba(0,0,0,.6);
+    --shadow-card: 0 3px 10px -6px rgba(0,0,0,.6);
+  }
+
+  .clmd * { box-sizing: border-box; }
+  .clmd .wrap { max-width: 940px; margin: 0 auto; padding: clamp(20px,4vw,48px) clamp(16px,4vw,32px) 64px; }
+
+  .clmd .top { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+  .clmd .brand { display: flex; align-items: center; gap: 11px; }
+  .clmd .brand .mark { width: 34px; height: 34px; border-radius: 9px; background: linear-gradient(150deg, var(--ink), #2a3446); display: grid; place-items: center; box-shadow: var(--shadow-card); }
+  .clmd .brand .mark span { color: var(--accent); font-weight: 800; font-size: 18px; line-height: 1; }
+  .clmd .brand b { font-weight: 800; letter-spacing: -.02em; font-size: 17px; }
+  .clmd .brand .sub { color: var(--ink-faint); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; margin-top: 1px; }
+  .clmd .msgr-badge svg { width: 26px; height: 26px; color: var(--msgr); display: block; }
+
+  .clmd .lede { margin: clamp(22px,4vw,40px) 0 6px; }
+  .clmd .lede h1 { font-size: clamp(26px,4.4vw,40px); line-height: 1.06; letter-spacing: -.03em; font-weight: 800; margin: 0; text-wrap: balance; max-width: 20ch; }
+  .clmd .lede h1 em { font-style: normal; color: var(--accent); }
+  .clmd .lede p { margin: 12px 0 0; color: var(--ink-soft); font-size: clamp(14px,1.6vw,16px); max-width: 58ch; text-wrap: pretty; }
+
+  .clmd .chips-label { margin: 30px 0 10px; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-faint); font-weight: 700; }
+  .clmd .chips { display: flex; gap: 9px; overflow-x: auto; padding: 4px 2px 12px; scrollbar-width: thin; }
+  .clmd .chips::-webkit-scrollbar { height: 6px; }
+  .clmd .chips::-webkit-scrollbar-thumb { background: var(--line); border-radius: 99px; }
+  .clmd .chip { appearance: none; cursor: pointer; white-space: nowrap; flex: 0 0 auto; display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--line); background: var(--panel); color: var(--ink-soft); padding: 9px 14px 9px 11px; border-radius: 999px; font-size: 13.5px; font-weight: 600; transition: color .15s, border-color .15s, background .15s; }
+  .clmd .chip:hover { color: var(--ink); border-color: var(--ink-faint); }
+  .clmd .chip:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .clmd .chip .ic { width: 17px; height: 17px; color: var(--ink-faint); transition: color .15s; }
+  .clmd .chip[aria-selected="true"] { background: var(--ink); color: #fff; border-color: var(--ink); }
+  .clmd .chip[aria-selected="true"] .ic { color: var(--accent); }
+
+  .clmd .stage { display: grid; grid-template-columns: minmax(0,380px) 1fr; gap: clamp(24px,4vw,48px); align-items: start; margin-top: 8px; }
+  @media (max-width: 720px) { .clmd .stage { grid-template-columns: 1fr; } }
+
+  .clmd .phone { justify-self: center; width: 100%; max-width: 380px; background: var(--phone); border: 10px solid var(--phone-frame); border-radius: 40px; box-shadow: var(--shadow); overflow: hidden; position: relative; }
+  .clmd .status { display: flex; align-items: center; justify-content: space-between; padding: 12px 22px 4px; font-size: 12.5px; font-weight: 600; color: var(--ink-soft); font-variant-numeric: tabular-nums; }
+  .clmd .status .bars svg { width: 15px; height: 15px; display: block; }
+
+  .clmd .mhead { display: flex; align-items: center; gap: 11px; padding: 8px 14px 12px; border-bottom: 1px solid var(--line); }
+  .clmd .mhead .back { color: var(--msgr); font-weight: 700; font-size: 22px; line-height: 1; }
+  .clmd .avatar { width: 38px; height: 38px; border-radius: 50%; display: grid; place-items: center; color: #fff; font-weight: 700; font-size: 14px; flex: 0 0 auto; letter-spacing: -.01em; }
+  .clmd .mhead .who { display: flex; flex-direction: column; min-width: 0; }
+  .clmd .mhead .who b { font-size: 15px; letter-spacing: -.01em; }
+  .clmd .mhead .who span { font-size: 11.5px; color: var(--ink-faint); display: flex; align-items: center; gap: 5px; }
+  .clmd .mhead .who span::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #29c26a; }
+  .clmd .mhead .msgr { margin-left: auto; }
+  .clmd .mhead .msgr svg { width: 22px; height: 22px; color: var(--msgr); display: block; }
+
+  .clmd .thread { padding: 16px 12px 12px; display: flex; flex-direction: column; gap: 9px; min-height: 442px; background: linear-gradient(0deg, color-mix(in srgb, var(--msgr) 4%, transparent), transparent 30%); }
+  .clmd .row { display: flex; }
+  .clmd .row.in { justify-content: flex-start; }
+  .clmd .row.out { justify-content: flex-end; }
+  .clmd .bubble { max-width: 78%; padding: 9px 13px; border-radius: 19px; font-size: 14.5px; line-height: 1.35; word-wrap: break-word; }
+  .clmd .in .bubble { background: var(--bubble-in); color: var(--bubble-in-ink); border-bottom-left-radius: 6px; }
+  .clmd .out .bubble { background: linear-gradient(180deg, #2b9dff, #0064e0); color: var(--bubble-out-ink); border-bottom-right-radius: 6px; }
+
+  .clmd .carousel { display: flex; gap: 9px; overflow-x: auto; padding: 4px 2px 8px; margin: 0 -2px; scroll-snap-type: x mandatory; scrollbar-width: none; }
+  .clmd .carousel::-webkit-scrollbar { display: none; }
+  .clmd .pcard { flex: 0 0 63%; max-width: 208px; scroll-snap-align: start; background: var(--card); border: 1px solid var(--card-line); border-radius: 15px; overflow: hidden; box-shadow: var(--shadow-card); display: flex; flex-direction: column; }
+  .clmd .pcard .art { aspect-ratio: 16 / 10; position: relative; display: grid; place-items: center; background: var(--art, linear-gradient(140deg,#dfe3ea,#c9cfda)); }
+  .clmd .pcard .art svg { width: 40%; height: 40%; color: rgba(255,255,255,.92); }
+  .clmd .pcard .art .tag { position: absolute; top: 8px; left: 8px; font-size: 10px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: #fff; background: rgba(17,24,39,.42); backdrop-filter: blur(3px); padding: 3px 7px; border-radius: 6px; }
+  .clmd .pcard .body { padding: 10px 11px 11px; display: flex; flex-direction: column; gap: 3px; flex: 1; }
+  .clmd .pcard .body h4 { margin: 0; font-size: 13.5px; font-weight: 700; letter-spacing: -.01em; line-height: 1.2; }
+  .clmd .pcard .body .price { font-size: 13px; color: var(--ink-soft); font-weight: 600; font-variant-numeric: tabular-nums; }
+  .clmd .pcard .body .price b { color: var(--ink); font-weight: 800; }
+  .clmd .pcard .btn { margin-top: auto; display: block; text-align: center; text-decoration: none; background: var(--accent); color: var(--accent-ink); font-weight: 700; font-size: 13px; padding: 9px 10px; border-radius: 10px; letter-spacing: .01em; cursor: pointer; transition: filter .15s; }
+  .clmd .pcard .btn:hover { filter: brightness(1.05); }
+
+  .clmd .input { display: flex; align-items: center; gap: 10px; padding: 10px 14px 14px; border-top: 1px solid var(--line); }
+  .clmd .input .field { flex: 1; background: var(--bubble-in); color: var(--ink-faint); border-radius: 999px; padding: 9px 14px; font-size: 13.5px; }
+  .clmd .input .send { width: 34px; height: 34px; border-radius: 50%; background: var(--msgr); display: grid; place-items: center; flex: 0 0 auto; }
+  .clmd .input .send svg { width: 17px; height: 17px; color: #fff; }
+
+  .clmd .read { align-self: center; }
+  .clmd .read .kick { font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--accent); font-weight: 800; }
+  .clmd .read h2 { font-size: clamp(20px,2.6vw,26px); letter-spacing: -.02em; margin: 8px 0 0; text-wrap: balance; }
+  .clmd .read p { color: var(--ink-soft); margin: 12px 0 0; font-size: 15px; max-width: 44ch; }
+  .clmd .facts { list-style: none; margin: 20px 0 0; padding: 0; display: flex; flex-direction: column; gap: 11px; }
+  .clmd .facts li { display: flex; gap: 11px; align-items: flex-start; font-size: 14px; color: var(--ink); }
+  .clmd .facts .dot { flex: 0 0 auto; margin-top: 3px; width: 18px; height: 18px; border-radius: 6px; background: color-mix(in srgb, var(--accent) 16%, transparent); display: grid; place-items: center; }
+  .clmd .facts .dot svg { width: 12px; height: 12px; color: var(--accent); }
+  .clmd .facts li b { font-weight: 700; }
+  .clmd .note { margin-top: 22px; font-size: 12.5px; color: var(--ink-faint); border-top: 1px solid var(--line); padding-top: 14px; max-width: 46ch; }
+
+  .clmd .foot { margin-top: 44px; padding-top: 18px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 8px 18px; align-items: baseline; font-size: 12.5px; color: var(--ink-faint); }
+  .clmd .foot b { color: var(--ink-soft); font-weight: 700; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .clmd * { transition: none !important; scroll-behavior: auto !important; }
+  }
+</style>
+
+<script define:vars={{ industries }}>
+  (function () {
+    const IC = {
+      dress: '<path d="M8 3h8l-1.2 3.5L16 9l-1.5 1 1.5 8a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2l1.5-8L8 9l1.2-2.5L8 3Z"/>',
+      swim: '<path d="M3 8c2 0 2 2 4.5 2S9.5 8 12 8s2 2 4.5 2S18.5 8 21 8"/><path d="M6 12l1 6a2 2 0 0 0 2 1.5M18 12l-1 6a2 2 0 0 1-2 1.5"/><circle cx="12" cy="5" r="1.6"/>',
+      beans: '<ellipse cx="9" cy="9" rx="4" ry="5.5" transform="rotate(-30 9 9)"/><ellipse cx="15" cy="15" rx="4" ry="5.5" transform="rotate(-30 15 15)"/>',
+      cup: '<path d="M4 8h12v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V8Z"/><path d="M16 9h2a2.5 2.5 0 0 1 0 5h-2"/><path d="M7 3.5c0 1-1 1.2-1 2.5M11 3.5c0 1-1 1.2-1 2.5"/>',
+      plate: '<path d="M4 4v6a3 3 0 0 0 3 3v8M7 4v5M5.5 4v5"/><path d="M17 4c-2 0-3 2-3 5s1 4 3 4v8"/>',
+      tooth: '<path d="M12 4c-2-1.6-5-1.6-6.5.4C4 6.4 4.5 9 5.5 13c.6 2.4.9 6 2 6s1.4-3 2-4.4c.2-.6.8-.6 1 0 .6 1.4.9 4.4 2 4.4s1.4-3.6 2-6c1-4 1.5-6.6 0-8.6C15 2.4 14 3 12 4Z"/>',
+      ortho: '<rect x="3" y="9" width="18" height="6" rx="2"/><path d="M8 9v6M12 9v6M16 9v6M3 12h18"/>',
+      spa: '<path d="M12 21c0-4-3-6-6-6 0 3 2.5 6 6 6ZM12 21c0-4 3-6 6-6 0 3-2.5 6-6 6Z"/><path d="M12 21c-1-4 0-8 0-8s1 4 0 8Z"/><path d="M12 8c-1.5-2-1-4 0-5 1 1 1.5 3 0 5Z"/>',
+      scissors: '<circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.12 15.88M14.47 14.48 20 20M8.12 8.12 12 12"/>',
+      hotel: '<path d="M3 20V6a1 1 0 0 1 1-1h9v15M13 10h6a1 1 0 0 1 1 1v9M6 8h1M6 11h1M6 14h1M10 8h1M10 11h1M16 14h1M16 17h1"/>',
+    };
+    const icon = (k, cls) =>
+      `<svg class="${cls}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">${IC[k] || ""}</svg>`;
+
+    // The define:vars script renders as a sibling after <section.clmd>, so
+    // closest() won't reach it — query the section directly (one demo per page).
+    const root = document.querySelector(".clmd");
+    if (!root) return;
+    const q = (id) => root.querySelector(id);
+    const chipsEl = q("#clmd-chips");
+    const threadEl = q("#clmd-thread");
+    const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c]));
+
+    function cardHTML(c, iconKey, art) {
+      const tag = c.tag ? `<span class="tag">${esc(c.tag)}</span>` : "";
+      const price = c.p.includes("$")
+        ? `<span class="price"><b>${esc(c.p)}</b></span>`
+        : `<span class="price">${esc(c.p)}</span>`;
+      return `<div class="pcard"><div class="art" style="--art:${art}">${tag}${icon(iconKey, "")}</div><div class="body"><h4>${esc(c.t)}</h4>${price}<span class="btn">${esc(c.b)}</span></div></div>`;
+    }
+
+    function render(v) {
+      const av = q("#clmd-avatar");
+      av.textContent = v.av;
+      av.style.background = `linear-gradient(145deg, ${v.avbg}, color-mix(in srgb, ${v.avbg} 60%, #111827))`;
+      q("#clmd-bizname").textContent = v.biz;
+      q("#clmd-kick").textContent = v.kick;
+      q("#clmd-title").textContent = v.title;
+      q("#clmd-desc").textContent = v.desc;
+      threadEl.innerHTML =
+        `<div class="row out"><div class="bubble">${esc(v.open)}</div></div>` +
+        `<div class="row in"><div class="bubble">${esc(v.lead)}</div></div>` +
+        `<div class="carousel">${v.cards.map((c) => cardHTML(c, v.icon, v.art)).join("")}</div>`;
+      threadEl.scrollTop = threadEl.scrollHeight;
+    }
+
+    industries.forEach((v, i) => {
+      const b = document.createElement("button");
+      b.className = "chip";
+      b.type = "button";
+      b.setAttribute("role", "tab");
+      b.setAttribute("aria-selected", i === 0 ? "true" : "false");
+      b.innerHTML = icon(v.icon, "ic") + "<span>" + esc(v.chip) + "</span>";
+      b.addEventListener("click", () => {
+        chipsEl.querySelectorAll(".chip").forEach((c) => c.setAttribute("aria-selected", "false"));
+        b.setAttribute("aria-selected", "true");
+        render(v);
+      });
+      chipsEl.appendChild(b);
+    });
+
+    render(industries[0]);
+  })();
+</script>
