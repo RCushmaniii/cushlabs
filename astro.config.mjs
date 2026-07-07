@@ -67,9 +67,10 @@ export default defineConfig({
         if (/\/messenger-assistant\/connect(ed)?\/?$/.test(path)) return false;
         if (/\/es\/messenger-assistant\/connect(ed)?\/?$/.test(path))
           return false;
-        // es-MX cold-outreach landing pages (noindex, DM-driven, not organic SEO)
-        // — deliberately kept out of the sitemap. See docs/strategy/MEXICO-GTM-STRATEGY.md.
-        if (/\/(salones|clinicas-dentales)\/?$/.test(path)) return false;
+        // Cold-outreach landing pages (noindex, DM-driven, not organic SEO) —
+        // deliberately kept out of the sitemap. es-MX: /salones/, /clinicas-dentales/;
+        // en-US: /salons/. See docs/strategy/MEXICO-GTM-STRATEGY.md.
+        if (/\/(salones|salons|clinicas-dentales)\/?$/.test(path)) return false;
         return true;
       },
       serialize: (item) => {

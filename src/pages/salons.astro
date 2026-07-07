@@ -1,0 +1,466 @@
+---
+import LandingLayout from "../layouts/LandingLayout.astro";
+
+// ── US cold-outreach mirror of /salones/ (es-MX). ───────────────────
+// Same stripped LandingLayout, noindex + sitemap-excluded, single conversion
+// focus — adapted for the US market: English copy, USD pricing, card/invoice
+// billing (no SPEI/OXXO/CFDI), and a booking CTA to /consultation/ (the US
+// equivalent of the MX WhatsApp-diagnosis CTA — a +52 WhatsApp number is
+// friction for a US salon). Pricing = Basic $129 USD/mo, locked in
+// docs/strategy/MEXICO-GTM-STRATEGY.md §11.
+const ctaHref = "/consultation/";
+
+const benefits = [
+  {
+    title: "Answers in seconds, any hour",
+    body: "11pm, Sunday, mid-appointment — your assistant replies instantly. The client who messages after hours no longer drifts to the salon down the street.",
+  },
+  {
+    title: "Quotes prices and services with YOUR information",
+    body: "Trained on your services, your prices, and how you talk. It handles the same questions you answer every day — 'how much for balayage?', 'any openings tomorrow?' — without you touching your phone.",
+  },
+  {
+    title: "Books the appointment in the same conversation",
+    body: "It doesn't just answer: it guides the client to book. Less back-and-forth, more confirmed appointments.",
+  },
+  {
+    title: "Answers in English and Spanish, automatically",
+    body: "Serve every client in their language. Your assistant switches between English and Spanish on its own — you never lose a booking because someone wrote in the other language.",
+  },
+  {
+    title: "Pings you the moment someone's ready",
+    body: "When a client wants something special or is ready to book, you get an instant alert with their name and what they're after. You close; the assistant does the rest.",
+  },
+];
+
+const included = [
+  {
+    title: "24/7 AI assistant on Facebook Messenger",
+    desc: "Answers, resolves questions, and books directly inside your Facebook page's messages. The heart of the service.",
+  },
+  {
+    title: "Google review responses",
+    desc: "We draft a professional reply to every review — and you approve it before it posts. Your reputation, handled, in your voice.",
+  },
+  {
+    title: "Instant alerts when a ready client arrives",
+    desc: "The moment someone's ready to book, we notify you right away with their name and details so you can close.",
+  },
+  {
+    title: "Setup, training, and support",
+    desc: "We set it up and maintain it for you, trained on your services and prices. You just serve the clients who arrive ready.",
+  },
+];
+
+const steps = [
+  {
+    n: "1",
+    title: "Free assessment",
+    desc: "We review your page and how you book today. No commitment, no jargon.",
+  },
+  {
+    n: "2",
+    title: "We set it up for you",
+    desc: "We have it working in a few days. You don't lift a finger — we handle everything.",
+  },
+  {
+    n: "3",
+    title: "2-week free trial",
+    desc: "You watch it win clients. If it doesn't earn its place, we part as friends.",
+  },
+];
+
+const faqs = [
+  {
+    q: "Do I need to be tech-savvy?",
+    a: "Not at all. We set it up, train it, and maintain it. You just serve the clients who arrive ready to book.",
+  },
+  {
+    q: "I already use Booksy / a scheduling app. What's this for?",
+    a: "Those apps send reminders, but they don't answer your clients' messages. When someone messages you on Facebook asking about prices or availability, that app stays silent — your assistant doesn't. We fill exactly that gap.",
+  },
+  {
+    q: "Does the assistant sound robotic?",
+    a: "No. It speaks with your salon's voice, naturally and warmly, in English or Spanish. We train it on your information so it answers the way you would.",
+  },
+  {
+    q: "Does it work with Instagram and WhatsApp?",
+    a: "Today your assistant works on Facebook Messenger and your Google reviews. Instagram and WhatsApp are on the way and will be added at no extra cost for current clients as soon as they're ready.",
+  },
+  {
+    q: "What if it doesn't work for me?",
+    a: "You get a 2-week free trial and there are no contracts. If it doesn't bring you more clients, cancel anytime.",
+  },
+  {
+    q: "How do I pay?",
+    a: "Pay by card, monthly. An invoice is available at no extra cost.",
+  },
+  {
+    q: "What do you need from me to start?",
+    a: "Just access to your Facebook page and your list of services and prices. We take care of the rest.",
+  },
+];
+---
+
+<LandingLayout
+  lang="en"
+  title="AI Front Desk for Salons & Spas | CushLabs"
+  description="Your AI receptionist answers your Facebook messages instantly, books appointments, and manages your Google reviews — in English and Spanish. For salons & spas."
+>
+  <!-- ── Hero ───────────────────────────────────────────────────── -->
+  <section class="relative overflow-hidden pt-16 pb-20 md:pt-24 md:pb-28">
+    <div class="absolute inset-0 -z-10">
+      <div
+        class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-cush-orange/15 rounded-full blur-[120px]"
+      >
+      </div>
+      <div
+        class="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-cush-orange/10 rounded-full blur-[100px]"
+      >
+      </div>
+    </div>
+
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <div
+        class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cush-orange/10 border border-cush-orange/20 text-cush-orange text-sm font-semibold mb-8"
+      >
+        For beauty salons &amp; spas
+      </div>
+
+      <h1
+        class="font-display text-fluid-4xl font-bold mb-6 leading-tight tracking-tight"
+      >
+        Never lose another client to an unanswered message
+      </h1>
+
+      <p
+        class="text-fluid-lg text-gray-600 dark:text-gray-300 mb-4 max-w-3xl mx-auto leading-relaxed"
+      >
+        Your AI receptionist answers your Facebook messages the instant they
+        arrive — quotes prices, books the appointment, and pings you the moment
+        a client is ready to commit.
+      </p>
+      <p
+        class="text-fluid-base text-gray-500 dark:text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed"
+      >
+        Around the clock. Even when you're with a client, driving, or asleep.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a
+          href={ctaHref}
+          class="group inline-flex items-center gap-2 px-8 py-4 bg-cush-orange text-white font-display font-semibold rounded-lg hover:bg-cush-orange/90 transition-all duration-300 shadow-lg shadow-cush-orange/25 hover:shadow-xl text-lg"
+        >
+          Get your free assessment
+          <svg
+            class="w-5 h-5 transition-transform group-hover:translate-x-1"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+          </svg>
+        </a>
+      </div>
+      <p class="mt-6 text-sm text-gray-500 dark:text-gray-400">
+        No setup fees · No contracts · 2-week free trial
+      </p>
+    </div>
+  </section>
+
+  <!-- ── The problem ────────────────────────────────────────────── -->
+  <section
+    class="py-20 md:py-28 bg-gray-50 dark:bg-gray-900/30 border-y border-gray-100 dark:border-gray-800"
+  >
+    <div class="max-w-3xl mx-auto px-6">
+      <h2
+        class="font-display font-bold text-3xl md:text-4xl mb-8 leading-tight tracking-tight"
+      >
+        The message you didn't answer already booked somewhere else
+      </h2>
+      <div
+        class="space-y-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed"
+      >
+        <p>
+          While you're mid-cut or with a client, three messages land in your
+          Facebook inbox asking about prices and availability. By the time you
+          look, it's too late — that client already found a salon that answered
+          first.
+        </p>
+        <p>
+          Most of those messages are the same handful of questions: how much,
+          what times, is there room tomorrow. Answering them one by one steals
+          time you should be charging for.
+        </p>
+        <p class="font-medium text-gray-900 dark:text-white">
+          8 in 10 clients would rather book by message than call. If no one
+          answers in time, that appointment simply doesn't happen.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── The solution ───────────────────────────────────────────── -->
+  <section class="py-20 md:py-28">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <h2
+          class="font-display font-bold text-3xl md:text-5xl mb-4 leading-tight tracking-tight"
+        >
+          A front desk that never sleeps or gets swamped
+        </h2>
+        <p class="text-xl text-cush-orange font-medium leading-relaxed">
+          Answers every message on your Facebook the instant it arrives.
+        </p>
+      </div>
+
+      <div class="space-y-6 max-w-2xl mx-auto">
+        {
+          benefits.map((item) => (
+            <div class="flex gap-4">
+              <svg
+                class="w-6 h-6 text-cush-orange shrink-0 mt-0.5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M5 13l4 4L19 7"
+                />
+              </svg>
+              <div>
+                <strong class="font-display font-semibold text-gray-900 dark:text-white">
+                  {item.title}.
+                </strong>{" "}
+                <span class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                  {item.body}
+                </span>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- ── What's included ────────────────────────────────────────── -->
+  <section
+    class="py-20 md:py-28 bg-gray-50 dark:bg-gray-900/30 border-y border-gray-100 dark:border-gray-800"
+  >
+    <div class="max-w-4xl mx-auto px-6">
+      <h2
+        class="font-display font-bold text-3xl md:text-4xl mb-4 text-center leading-tight tracking-tight"
+      >
+        Everything included, one price
+      </h2>
+      <p
+        class="text-center text-gray-600 dark:text-gray-400 mb-12 max-w-2xl mx-auto"
+      >
+        We set it up, train it, and look after it for you. You just serve the
+        clients who arrive ready.
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        {
+          included.map((item) => (
+            <div class="bg-white dark:bg-gray-800/50 rounded-2xl p-6 border border-gray-100 dark:border-gray-800">
+              <h3 class="font-display font-semibold text-lg text-gray-900 dark:text-white mb-2">
+                {item.title}
+              </h3>
+              <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                {item.desc}
+              </p>
+            </div>
+          ))
+        }
+      </div>
+
+      <p
+        class="mt-8 text-center text-sm text-gray-500 dark:text-gray-400 max-w-2xl mx-auto"
+      >
+        Coming soon and at no extra cost for current clients: Instagram,
+        WhatsApp, and automated appointment reminders.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── Price ──────────────────────────────────────────────────── -->
+  <section class="py-20 md:py-28">
+    <div class="max-w-xl mx-auto px-6">
+      <div
+        class="bg-gray-900 dark:bg-gray-800 rounded-3xl p-10 text-center shadow-xl"
+      >
+        <p
+          class="font-display font-semibold text-white/70 uppercase text-xs tracking-wider mb-4"
+        >
+          All inclusive
+        </p>
+        <div class="flex items-baseline justify-center gap-2 mb-2">
+          <span class="font-display text-5xl md:text-6xl font-bold text-white"
+            >$129</span
+          >
+          <span class="text-xl text-white/70">USD/mo</span>
+        </div>
+        <p class="text-white/70 mb-6">
+          No setup fee. No contracts. Cancel anytime.
+        </p>
+        <p class="text-sm text-white/60 mb-8">
+          Pay by card · Invoice available
+        </p>
+        <a
+          href={ctaHref}
+          class="block w-full px-6 py-4 bg-cush-orange text-white font-display font-semibold rounded-lg hover:bg-cush-orange/90 transition-colors duration-300 text-lg"
+        >
+          Start your 2-week free trial
+        </a>
+      </div>
+
+      <!-- ROI -->
+      <div class="mt-12 text-center max-w-lg mx-auto">
+        <p
+          class="font-display font-bold text-2xl md:text-3xl text-gray-900 dark:text-white mb-3 leading-snug"
+        >
+          A single client a month you don't lose already pays for it.
+        </p>
+        <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+          Between the appointments you win back from messages that used to slip
+          away and the new clients who arrive through your well-tended reviews,
+          the service pays for itself several times over. Everything else is
+          profit.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── How we start ───────────────────────────────────────────── -->
+  <section
+    class="py-20 md:py-28 bg-gray-50 dark:bg-gray-900/30 border-y border-gray-100 dark:border-gray-800"
+  >
+    <div class="max-w-4xl mx-auto px-6">
+      <h2
+        class="font-display font-bold text-3xl md:text-4xl mb-12 text-center leading-tight tracking-tight"
+      >
+        How we start
+      </h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        {
+          steps.map((step) => (
+            <div class="text-center">
+              <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-cush-orange text-white font-display font-bold text-lg mb-5">
+                {step.n}
+              </div>
+              <h3 class="font-display font-semibold text-lg text-gray-900 dark:text-white mb-2">
+                {step.title}
+              </h3>
+              <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                {step.desc}
+              </p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FAQ ────────────────────────────────────────────────────── -->
+  <section class="py-20 md:py-28">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2
+        class="font-display font-bold text-3xl md:text-4xl mb-12 text-center leading-tight tracking-tight"
+      >
+        Frequently asked questions
+      </h2>
+      <div class="space-y-4">
+        {
+          faqs.map((faq) => (
+            <details class="group bg-gray-50 dark:bg-gray-800/50 rounded-xl border border-gray-100 dark:border-gray-800 p-6">
+              <summary class="flex items-center justify-between cursor-pointer font-display font-semibold text-gray-900 dark:text-white list-none">
+                {faq.q}
+                <svg
+                  class="w-5 h-5 text-cush-orange shrink-0 transition-transform group-open:rotate-45"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 4v16m8-8H4"
+                  />
+                </svg>
+              </summary>
+              <p class="mt-4 text-gray-600 dark:text-gray-400 leading-relaxed">
+                {faq.a}
+              </p>
+            </details>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Final CTA ──────────────────────────────────────────────── -->
+  <section
+    class="py-20 md:py-28 bg-gray-50 dark:bg-gray-900/30 border-t border-gray-100 dark:border-gray-800"
+  >
+    <div class="max-w-2xl mx-auto px-6 text-center">
+      <h2
+        class="font-display font-bold text-3xl md:text-4xl mb-6 leading-tight tracking-tight"
+      >
+        Ready to stop losing clients?
+      </h2>
+      <p class="text-lg text-gray-600 dark:text-gray-400 mb-10">
+        Book your free assessment and we'll show you exactly where messages are
+        slipping away today.
+      </p>
+      <a
+        href={ctaHref}
+        class="group inline-flex items-center gap-2 px-8 py-4 bg-cush-orange text-white font-display font-semibold rounded-lg hover:bg-cush-orange/90 transition-all duration-300 shadow-lg shadow-cush-orange/25 hover:shadow-xl text-lg"
+      >
+        Get your free assessment
+        <svg
+          class="w-5 h-5 transition-transform group-hover:translate-x-1"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+        </svg>
+      </a>
+      <p class="mt-6 text-sm text-gray-500 dark:text-gray-400">
+        We respond within 24 hours
+      </p>
+    </div>
+  </section>
+
+  <!-- FAQPage structured data -->
+  <script
+    type="application/ld+json"
+    is:inline
+    set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: faqs.map((f) => ({
+        "@type": "Question",
+        name: f.q,
+        acceptedAnswer: { "@type": "Answer", text: f.a },
+      })),
+    })}
+  />
+</LandingLayout>
