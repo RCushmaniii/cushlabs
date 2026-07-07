@@ -315,12 +315,16 @@ directly. Do the following to establish durable connectivity:
    **"desde $1,990 MXN/mes"** and the Basic/Premium/Ultra shape from §2, routing to a discovery call **only**
    for multi-location / custom / voice scope. Retire the blanket quote-on-call behavior for the entry price.
 
-4. **DECISION (2026-07-07 — Robert): wire owner lead alerts BEFORE selling Basic.** `src/lib/alert.ts`
-   (List 1 #10) is built but dormant. Configure `HANDOVER_ALERT_WEBHOOK` (interim Slack/Discord destination
-   until the WhatsApp path ships post-Meta-approval) so the Basic-tier "Owner lead alerts" promise is
-   actually delivered. This is List 2 #10, "shovel-ready — code exists, needs turning on." Until it is set,
-   do not onboard a Basic client who expects alerts. Mind the bot repo's documented `wrangler deploy` OAuth
-   gotcha when redeploying the Worker.
+4. **DECISION (2026-07-07 — Robert): wire owner lead alerts — but the channel that matters is WhatsApp,
+   which is BLOCKED on Meta App Review.** See §11.1 for the full constraint. `src/lib/alert.ts` (List 1 #10)
+   is built but dormant; it accepts any Slack/Discord incoming webhook today. **Mexican SMB clients will not
+   use Slack/Discord — they expect a Meta WhatsApp message** — and WhatsApp Business messaging is gated on
+   the in-progress Meta App Review (submitted 2026-07-06). So: (a) interim, wire `HANDOVER_ALERT_WEBHOOK` to
+   Slack/Discord for **Robert's own operator visibility only** (his two bots), not as the client deliverable;
+   (b) the real client-facing WhatsApp alert activates **post-approval**; (c) until then, the truthful client
+   story is "leads land in your Facebook Page Inbox + operator console now; proactive WhatsApp alerts turn on
+   once Meta approves." Marketing copy on the Basic card must not imply a live WhatsApp ping before approval.
+   Mind the bot repo's documented `wrangler deploy` OAuth gotcha when redeploying the Worker.
 5. **Prove the §4 List-1 claims with golden-set tests.** Each advertised bullet in §4 that is a _decision_
    (handoff on "talk to a person," honest "are you a bot?", grounded-only answers, consent-based lead
    capture) needs a behavioral test against real EN + es-MX phrasings. Every production bug becomes a
@@ -358,11 +362,25 @@ gap and a few precision nuances.**
   when a lead is ready" positioning in the project CLAUDE.md) is **List 2, Tier 3 #10 — roadmap**, "planned
   to become a WhatsApp notification post-approval."
 - **Why it matters:** the pricing page lists it flatly (no "optional") as something a $1,990 Basic client
-  is buying. Until the webhook is configured per tenant, that client does not get alerts. This is the
-  exact under-deliver-a-promise failure the launch-gate rule exists to catch. **Decision needed (Robert):**
-  either (a) wire `HANDOVER_ALERT_WEBHOOK` (List-2 #10 is "shovel-ready — code exists, needs turning on")
-  before selling Basic, or (b) soften the pricing-page wording to "owner alerts (setup on request)" until
-  the WhatsApp path ships. I recommend (a) — it's a config task, not a build.
+  is buying. Until it is delivered, that client does not get proactive alerts. This is the exact
+  under-deliver-a-promise failure the launch-gate rule exists to catch.
+- **🔑 CRITICAL CONSTRAINT (Robert, 2026-07-07): the channel Mexican clients actually want is Meta WhatsApp —
+  and it is BLOCKED.** MX SMB owners will not adopt Slack or Discord; they expect the lead alert to arrive as
+  a WhatsApp message (this is the core CushLabs positioning — "we alert you on WhatsApp when someone's
+  ready"). But WhatsApp Business messaging is gated on the **Meta App Review submitted 2026-07-06** (decision
+  typically within ~20 days), so the WhatsApp alert **cannot be wired yet**. `alert.ts`'s Slack/Discord path
+  works today but is not a channel a client will use.
+- **What IS available to the owner today:** leads/handoffs are captured and visible in the client's
+  **Facebook Page Inbox** and the **operator console** (List 1 #18) — the missing piece is the _proactive
+  push_, specifically the WhatsApp push.
+- **Resolution (supersedes the earlier "just wire the webhook" call):**
+  1. **Interim, now:** wire `HANDOVER_ALERT_WEBHOOK` → Slack/Discord for **Robert's own operator visibility**
+     on his two bots (dog-fooding), NOT presented to clients as the deliverable.
+  2. **Client-facing, post-approval:** ship the WhatsApp alert the moment Meta approves; promote List-2 #10 →
+     List 1 and update this doc + the site in the same change.
+  3. **Until approval:** the Basic "Owner lead alerts" copy must be truthful — "leads appear in your Facebook
+     Page Inbox and console now; instant WhatsApp alerts activate once our WhatsApp access is approved."
+     Do **not** imply a live WhatsApp ping. (Marketing action item on the `cushlabs` side.)
 
 ### 11.2 🟡 Pricing docs are stale/quote-on-call vs. the site's explicit tiers
 
