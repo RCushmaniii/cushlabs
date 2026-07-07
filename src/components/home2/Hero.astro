@@ -21,6 +21,7 @@ const content = {
     ],
     ctaPrimary: 'Book a Free 30-min Call',
     ctaSecondary: 'Try the Live Chatbot',
+    ctaDemo: 'See a demo for your industry →',
     scrollHint: 'Scroll to explore',
   },
   es: {
@@ -36,6 +37,7 @@ const content = {
     ],
     ctaPrimary: 'Agendar Llamada Gratis — 30 min',
     ctaSecondary: 'Probar el Chatbot en Vivo',
+    ctaDemo: 'Ve un demo para tu industria →',
     scrollHint: 'Explorar',
   },
 };
@@ -119,6 +121,14 @@ const t = content[locale];
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
           </svg>
         </button>
+      </div>
+
+      <!-- Tertiary link: interactive industry demo gallery (/demos/) -->
+      <div class="mt-5 animate-fade-in-up" style="animation-delay: 0.4s;">
+        <a
+          href={locale === 'es' ? '/es/demos/' : '/demos/'}
+          class="font-display text-sm font-medium text-gray-500 dark:text-gray-400 underline underline-offset-4 decoration-gray-300 hover:decoration-cush-orange hover:text-gray-900 dark:hover:text-white transition-all"
+        >{t.ctaDemo}</a>
       </div>
     </div>
   </Container>
