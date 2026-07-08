@@ -23,6 +23,7 @@ interface Props {
   altLocaleHref?: { en?: string; es?: string };
   articlePublishedTime?: string;
   articleModifiedTime?: string;
+  rssHref?: string;
 }
 
 const {
@@ -37,6 +38,7 @@ const {
   altLocaleHref,
   articlePublishedTime,
   articleModifiedTime,
+  rssHref,
 } = Astro.props;
 const pathname = Astro.url.pathname;
 const locale =
@@ -156,6 +158,9 @@ const ogLocaleAlternate = locale === "es" ? "en_US" : "es_MX";
     <link rel="icon" type="image/webp" href="/images/logo/cushlabs-logo.webp" />
     <link rel="apple-touch-icon" href="/images/logo/cushlabs-logo.png" />
     <link rel="manifest" href="/site.webmanifest" />
+    {rssHref && (
+      <link rel="alternate" type="application/rss+xml" title="CushLabs Blog" href={rssHref} />
+    )}
 
     <script
       type="application/ld+json"

@@ -51,6 +51,7 @@ const idxHref = blogIndexUrl(locale);
   altLocaleHref={altLocaleHref}
   articlePublishedTime={post.data.publishDate.toISOString()}
   articleModifiedTime={(post.data.lastmod ?? post.data.publishDate).toISOString()}
+  rssHref={locale === "es" ? "/es/blog/rss.xml" : "/blog/rss.xml"}
 >
   <ArticleSchema
     title={post.data.title}
