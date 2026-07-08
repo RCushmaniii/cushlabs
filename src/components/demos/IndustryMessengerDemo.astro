@@ -11,6 +11,12 @@
 // consent-based lead capture, human handoff. It says "book/reserve FROM the
 // chat" (a tap that books via link / captures the lead + hands off), never
 // "without leaving the chat" — true in-chat webview booking is List 2 (roadmap).
+//
+// Claim audit 2026-07-08 vs bot `docs/FEATURE-INVENTORY.md` List 1: every desc
+// now uses truthful verbs (answers / shows / books-via-link / captures contact /
+// hands off on request). Removed overclaims that were List 2 or not-built —
+// restock pings (outbound notif), order-taking, auto-urgency "routing", large-
+// party flagging, hold/confirm booking, WhatsApp channel. Keep it List 1.
 
 interface Props {
   locale: "en" | "es";
@@ -30,8 +36,8 @@ const STRINGS = {
     phoneAria: "Preview of a Messenger conversation",
     facts: [
       ["Replies in seconds", ", even while you're with a customer or already closed."],
-      ["Books and reserves from the chat", " — the customer won't go looking elsewhere."],
-      ["You approve", " what matters; the assistant hands off to a person when needed."],
+      ["Sends them to book and captures the lead", " — the customer won't go looking elsewhere."],
+      ["The important stuff reaches you", " — it hands off to a person the moment a customer asks."],
     ],
     note: "Illustrative demo. Products, copy, and prices are customized with your business's own.",
     footBrand: "CushLabs AI Services",
@@ -50,8 +56,8 @@ const STRINGS = {
     phoneAria: "Vista previa de una conversación de Messenger",
     facts: [
       ["Responde en segundos", ", aunque estés atendiendo o ya cerraste."],
-      ["Reserva y aparta desde el chat", " — el cliente no se va a buscar a otro."],
-      ["Tú apruebas", " lo importante; el asistente pasa el caso a una persona cuando hace falta."],
+      ["Los lleva a reservar y capta sus datos", " — el cliente no se va a buscar a otro."],
+      ["Lo importante llega a ti", " — pasa la conversación a una persona en cuanto el cliente lo pide."],
     ],
     note: "Demo con fines ilustrativos. Los productos, textos y precios se personalizan con los de tu negocio.",
     footBrand: "CushLabs AI Services",
@@ -101,8 +107,8 @@ const CATALOG = [
       open: "What women's swimwear do you carry?",
       lead: "Our Summer '26 collection just dropped 🌴 Take a look:",
       kick: "Swimwear boutique",
-      title: "New collection, instant reply, reserved right in the chat.",
-      desc: "Every season brings the same size-and-color questions. The assistant shows the collection, reserves the piece, and pings the customer when it's back in stock — all inside Messenger.",
+      title: "New collection, instant reply, no sale lost to a slow answer.",
+      desc: "Every season brings the same size-and-color questions. The assistant answers instantly, shows the collection, and takes the customer's contact so you can let them know when it's back in stock — all inside Messenger.",
       cards: [
         { t: '"Tulum" bikini', tag: "Summer '26", p: "$650", b: "Reserve" },
         { t: '"Sayulita" one-piece', p: "$890", b: "Reserve" },
@@ -114,8 +120,8 @@ const CATALOG = [
       open: "¿Qué trajes de baño manejan para dama?",
       lead: "Ya tenemos lista la colección Verano '26 🌴 Mira:",
       kick: "Boutique de trajes de baño",
-      title: "Colección nueva, respuesta inmediata, apartado en el chat.",
-      desc: "Cada temporada llegan las mismas preguntas por talla y color. El asistente muestra la colección, aparta la pieza y avisa cuando vuelve a haber existencia — todo dentro de Messenger.",
+      title: "Colección nueva, respuesta inmediata, sin ventas perdidas por tardar.",
+      desc: "Cada temporada llegan las mismas preguntas por talla y color. El asistente contesta al instante, muestra la colección y capta el contacto del cliente para que tú le avises cuando vuelva a haber existencia — todo dentro de Messenger.",
       cards: [
         { t: 'Bikini "Tulum"', tag: "Verano '26", p: "$650", b: "Apartar" },
         { t: 'Traje entero "Sayulita"', p: "$890", b: "Apartar" },
@@ -132,7 +138,7 @@ const CATALOG = [
       lead: "Yes, we supply businesses by volume. Here are the wholesale options ☕",
       kick: "Coffee distributor (B2B)",
       title: "Quote wholesale without leaving the buyer waiting.",
-      desc: "In B2B, whoever replies first wins the account. The assistant qualifies the volume, shares wholesale pricing, and books the call with your sales team while interest is hot.",
+      desc: "In B2B, whoever replies first wins the account. The assistant answers instantly, gathers the volume and the details, and hands the lead to your sales team while interest is hot.",
       cards: [
         { t: "Green beans · 25 kg sack", p: "$4,200", b: "Get quote" },
         { t: "Medium roast · 5 kg", p: "$980", b: "Get quote" },
@@ -145,7 +151,7 @@ const CATALOG = [
       lead: "Sí, manejamos volumen para negocios. Estas son las opciones de mayoreo ☕",
       kick: "Distribuidora de café (B2B)",
       title: "Cotiza al mayoreo sin dejar esperando al comprador.",
-      desc: "En venta de negocio a negocio, quien responde primero gana la cuenta. El asistente califica el volumen, comparte precios de mayoreo y agenda la llamada con tu equipo comercial mientras el interés está caliente.",
+      desc: "En venta de negocio a negocio, quien responde primero gana la cuenta. El asistente contesta al instante, reúne el volumen y los datos, y pasa el prospecto a tu equipo comercial mientras el interés está caliente.",
       cards: [
         { t: "Grano oro · saco 25 kg", p: "$4,200", b: "Cotizar" },
         { t: "Tueste medio · 5 kg", p: "$980", b: "Cotizar" },
@@ -161,8 +167,8 @@ const CATALOG = [
       open: "Can I reserve a table for 4 on Saturday?",
       lead: "Happy to! I'll reserve it and show you our most-loved picks 👇",
       kick: "Coffee shop",
-      title: "Reserve tables and take orders while you work the bar.",
-      desc: "You don't have to step away from the espresso machine to answer a DM. The assistant reserves the table, shares the weekend menu, and takes to-go orders — none slip through.",
+      title: "Never miss a table or a to-go order while you work the bar.",
+      desc: "You don't have to step away from the espresso machine to answer a DM. The assistant answers instantly, shares the weekend menu, and sends table reservations and to-go requests straight to your team — none slip through.",
       cards: [
         { t: "Reserve table · Sat 6:00 pm", p: "For 4 people", b: "Reserve" },
         { t: "Weekend brunch", p: "$220", b: "See menu" },
@@ -174,8 +180,8 @@ const CATALOG = [
       open: "¿Puedo apartar mesa para 4 el sábado?",
       lead: "¡Con gusto! Te ayudo a apartar y de paso te muestro lo más pedido 👇",
       kick: "Cafetería",
-      title: "Aparta mesas y toma pedidos mientras atiendes la barra.",
-      desc: "No tienes que soltar la máquina de espresso para contestar un DM. El asistente aparta la mesa, comparte el menú del fin y toma pedidos para llevar, sin que se pierda ninguno.",
+      title: "No pierdas ni una mesa ni un pedido para llevar mientras atiendes la barra.",
+      desc: "No tienes que soltar la máquina de espresso para contestar un DM. El asistente responde al instante, comparte el menú del fin y manda las reservaciones y los pedidos para llevar directo a tu equipo — sin que se pierda ninguno.",
       cards: [
         { t: "Apartar mesa · Sáb 6:00 pm", p: "Para 4 personas", b: "Reservar" },
         { t: "Brunch de fin de semana", p: "$220", b: "Ver menú" },
@@ -192,7 +198,7 @@ const CATALOG = [
       lead: "Yes, we still have room 🍽️ Here are tonight's options:",
       kick: "Restaurant",
       title: "Fill the terrace by answering reservations the moment they land.",
-      desc: "Reservations come in over WhatsApp and Messenger right at service time, when no one can answer. The assistant confirms the table, suggests the house menu, and flags large parties for you.",
+      desc: "Reservations come in over Messenger right at service time, when no one can answer. The assistant replies instantly, offers open times, and sends the reservation request to you — handing bigger parties straight to your team.",
       cards: [
         { t: "Reservation 8:30 pm", p: "Table for 2", b: "Reserve" },
         { t: "Tasting menu", tag: "Chef", p: "$890 / person", b: "See menu" },
@@ -205,7 +211,7 @@ const CATALOG = [
       lead: "Sí, todavía hay lugar 🍽️ Estas son las opciones para esta noche:",
       kick: "Restaurante",
       title: "Llena la terraza contestando las reservaciones al momento.",
-      desc: "Las reservaciones llegan por WhatsApp y Messenger a la hora del servicio, justo cuando nadie puede contestar. El asistente confirma la mesa, sugiere el menú de la casa y te avisa de los grupos grandes.",
+      desc: "Las reservaciones llegan por Messenger a la hora del servicio, justo cuando nadie puede contestar. El asistente responde al instante, ofrece horarios disponibles y te manda la solicitud de reservación — pasando los grupos grandes directo a tu equipo.",
       cards: [
         { t: "Reservación 8:30 pm", p: "Mesa para 2", b: "Reservar" },
         { t: "Menú degustación", tag: "Chef", p: "$890 / persona", b: "Ver menú" },
@@ -222,7 +228,7 @@ const CATALOG = [
       lead: "Sorry to hear that 🦷 We have these openings:",
       kick: "Dental clinic",
       title: "Book the patient before they call the clinic next door.",
-      desc: "A toothache doesn't wait. The assistant offers the evaluation, books the appointment, and answers price questions instantly — routing emergencies to your front desk so no patient cools off.",
+      desc: "A toothache doesn't wait. The assistant answers price questions instantly, offers the evaluation, and books through your link — and hands urgent cases to your front desk the moment a patient asks for a person.",
       cards: [
         { t: "Evaluation + X-ray", p: "$450", b: "Book" },
         { t: "Dental cleaning", p: "$600", b: "Book" },
@@ -235,7 +241,7 @@ const CATALOG = [
       lead: "Lamento la molestia 🦷 Tenemos estos espacios disponibles:",
       kick: "Clínica dental",
       title: "Agenda al paciente antes de que llame a la clínica de junto.",
-      desc: "Un dolor de muela no espera. El asistente ofrece la valoración, agenda la cita y responde las dudas de precio al instante — y pasa las urgencias a tu recepción para que ningún paciente se enfríe.",
+      desc: "Un dolor de muela no espera. El asistente responde las dudas de precio al instante, ofrece la valoración y agenda por tu liga — y pasa los casos urgentes a tu recepción en cuanto el paciente pide hablar con una persona.",
       cards: [
         { t: "Valoración + radiografía", p: "$450", b: "Agendar" },
         { t: "Limpieza dental", p: "$600", b: "Agendar" },
@@ -282,7 +288,7 @@ const CATALOG = [
       lead: "Yes! 💆‍♀️ These are our most-requested services:",
       kick: "Spa",
       title: "Fill the weekend calendar without being glued to the phone.",
-      desc: "Clients ask about services and times at all hours. The assistant shows the treatments, books the slot, and builds packages — so you arrive Saturday with the calendar already full.",
+      desc: "Clients ask about services and times at all hours. The assistant answers instantly, shows the treatments and packages, and books through your link — so you arrive Saturday with the calendar already filling up.",
       cards: [
         { t: "Relaxing massage · 60 min", p: "$750", b: "Book" },
         { t: "Hydrating facial", p: "$900", b: "Book" },
@@ -295,7 +301,7 @@ const CATALOG = [
       lead: "¡Sí! 💆‍♀️ Estos son nuestros servicios más pedidos:",
       kick: "Spa",
       title: "Llena la agenda del fin de semana sin estar pegada al teléfono.",
-      desc: "Las clientas preguntan por servicios y horarios a cualquier hora. El asistente muestra los tratamientos, reserva el espacio y arma paquetes — para que llegues el sábado con la agenda ya llena.",
+      desc: "Las clientas preguntan por servicios y horarios a cualquier hora. El asistente responde al instante, muestra los tratamientos y paquetes, y agenda por tu liga — para que llegues el sábado con la agenda llenándose sola.",
       cards: [
         { t: "Masaje relajante · 60 min", p: "$750", b: "Reservar" },
         { t: "Facial hidratante", p: "$900", b: "Reservar" },
@@ -312,7 +318,7 @@ const CATALOG = [
       lead: "Of course! 💇‍♀️ These are the services you can book:",
       kick: "Beauty salon & studio",
       title: "Fill the salon's calendar while your hands are busy.",
-      desc: "Between cuts you can't pick up the phone. The assistant shows the services, holds the spot, and confirms the appointment — so no client leaves for a competitor over an unanswered message.",
+      desc: "Between cuts you can't pick up the phone. The assistant answers instantly, shows the services, and books through your link — so no client leaves for a competitor over an unanswered message.",
       cards: [
         { t: "Cut + style", p: "$350", b: "Book" },
         { t: "Root color", p: "$650", b: "Book" },
@@ -325,7 +331,7 @@ const CATALOG = [
       lead: "¡Claro! 💇‍♀️ Estos son los servicios que puedes apartar:",
       kick: "Salón de belleza y estética",
       title: "Llena la agenda del salón mientras tienes las manos ocupadas.",
-      desc: "Entre corte y corte no puedes contestar el teléfono. El asistente muestra los servicios, aparta el lugar y confirma la cita en español — para que ninguna clienta se vaya con la competencia por no recibir respuesta.",
+      desc: "Entre corte y corte no puedes contestar el teléfono. El asistente responde al instante, muestra los servicios y agenda por tu liga — para que ninguna clienta se vaya con la competencia por no recibir respuesta.",
       cards: [
         { t: "Corte + peinado", p: "$350", b: "Apartar" },
         { t: "Tinte de raíz", p: "$650", b: "Apartar" },
@@ -341,8 +347,8 @@ const CATALOG = [
       open: "Do you have a room for two nights this weekend?",
       lead: "Yes! 🏨 Here are the rooms available for those dates:",
       kick: "Boutique hotel",
-      title: "Close the direct booking — no platform commission.",
-      desc: "Every guest who books with you on Messenger is a commission you don't pay a platform. The assistant shows the rooms, confirms dates, and takes the direct booking — in Spanish, instantly.",
+      title: "Win the direct booking — no platform commission.",
+      desc: "Every guest who books with you on Messenger is a commission you don't pay a platform. The assistant answers instantly, shows the rooms, and sends them to your direct-booking link — in Spanish, so the reservation stays yours.",
       cards: [
         { t: "Deluxe room", p: "$2,400 / night", b: "Reserve" },
         { t: "Suite with terrace", tag: "View", p: "$3,600 / night", b: "Reserve" },
@@ -354,8 +360,8 @@ const CATALOG = [
       open: "¿Tienen habitación para dos noches este fin?",
       lead: "¡Sí! 🏨 Estas son las habitaciones disponibles para esas fechas:",
       kick: "Hotel boutique",
-      title: "Cierra la reservación directa, sin comisión de las plataformas.",
-      desc: "Cada huésped que reserva contigo por Messenger es una comisión que no le pagas a la plataforma. El asistente muestra las habitaciones, confirma fechas y toma la reservación directa, en español y al instante.",
+      title: "Gana la reservación directa, sin comisión de plataformas.",
+      desc: "Cada huésped que reserva contigo por Messenger es una comisión que no le pagas a la plataforma. El asistente responde al instante, muestra las habitaciones y los manda a tu liga de reservación directa — en español, para que la reservación siga siendo tuya.",
       cards: [
         { t: "Habitación Deluxe", p: "$2,400 / noche", b: "Reservar" },
         { t: "Suite con terraza", tag: "Vista", p: "$3,600 / noche", b: "Reservar" },
