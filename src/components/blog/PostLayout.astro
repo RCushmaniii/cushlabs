@@ -1,0 +1,142 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Container from "../layout/Container.astro";
+import ArticleSchema from "./ArticleSchema.astro";
+import BreadcrumbSchema from "./BreadcrumbSchema.astro";
+import FaqSchema from "./FaqSchema.astro";
+import ShareBar from "./ShareBar.astro";
+import BlogCard from "./BlogCard.astro";
+import type { BlogPost } from "../../lib/blog";
+import { postLang, postSlug, postUrl, blogIndexUrl } from "../../lib/blog";
+import { categoryLabel } from "../../data/blogCategories";
+
+interface Props {
+  post: BlogPost;
+  url: string; // absolute
+  hreflangAlternates: { lang: string; href: string }[];
+  hreflangXDefault: string;
+  altLocaleHref: { en?: string; es?: string };
+  related: BlogPost[];
+  newer: BlogPost | null;
+  older: BlogPost | null;
+}
+const { post, url, hreflangAlternates, hreflangXDefault, altLocaleHref, related, newer, older } =
+  Astro.props;
+const locale = postLang(post);
+const SITE = "https://www.cushlabs.ai";
+
+const seoTitle = post.data.seo?.title ?? `${post.data.title} | CushLabs.ai`;
+const seoDescription = post.data.seo?.description ?? post.data.excerpt;
+const dateStr = post.data.publishDate.toLocaleDateString(
+  locale === "es" ? "es-MX" : "en-US",
+  { year: "numeric", month: "long", day: "numeric" },
+);
+
+const tt = {
+  en: { home: "Home", blog: "Blog", related: "Keep reading", newer: "← Newer post", older: "Older post →", by: "By Robert Cushman" },
+  es: { home: "Inicio", blog: "Blog", related: "Sigue leyendo", newer: "← Artículo más nuevo", older: "Artículo más antiguo →", by: "Por Robert Cushman" },
+}[locale];
+
+const homeHref = locale === "es" ? "/es/" : "/";
+const idxHref = blogIndexUrl(locale);
+---
+
+<BaseLayout
+  title={seoTitle}
+  description={seoDescription}
+  canonical={url}
+  ogType="article"
+  hreflangAlternates={hreflangAlternates}
+  hreflangXDefault={hreflangXDefault}
+  altLocaleHref={altLocaleHref}
+  articlePublishedTime={post.data.publishDate.toISOString()}
+  articleModifiedTime={(post.data.lastmod ?? post.data.publishDate).toISOString()}
+>
+  <ArticleSchema
+    title={post.data.title}
+    description={post.data.excerpt}
+    url={url}
+    publishDate={post.data.publishDate}
+    modifiedDate={post.data.lastmod}
+    locale={locale}
+    categories={post.data.categories}
+  />
+  <BreadcrumbSchema
+    items={[
+      { name: tt.home, url: `${SITE}${homeHref}` },
+      { name: tt.blog, url: `${SITE}${idxHref}` },
+      { name: post.data.title, url },
+    ]}
+  />
+  {post.data.faq && post.data.faq.length > 0 && <FaqSchema faqs={post.data.faq} />}
+
+  <article class="pt-24 pb-20 md:pt-32">
+    <Container size="md">
+      <!-- Breadcrumb -->
+      <nav class="mb-6 font-display text-sm text-gray-500 dark:text-gray-400">
+        <a href={homeHref} class="hover:text-cush-orange">{tt.home}</a>
+        <span class="mx-2">/</span>
+        <a href={idxHref} class="hover:text-cush-orange">{tt.blog}</a>
+      </nav>
+
+      <!-- Meta -->
+      <div class="mb-4 flex flex-wrap items-center gap-3 text-sm">
+        {post.data.categories[0] && (
+          <span class="rounded bg-cush-orange/10 px-2.5 py-0.5 font-display font-semibold text-cush-orange">
+            {categoryLabel(post.data.categories[0], locale)}
+          </span>
+        )}
+        <time class="text-gray-500 dark:text-gray-400">{dateStr}</time>
+        {post.data.readingTime && (
+          <span class="text-gray-500 dark:text-gray-400">· {post.data.readingTime}</span>
+        )}
+      </div>
+
+      <h1 class="mb-4 font-display text-fluid-4xl font-bold leading-tight tracking-tight text-gray-900 dark:text-white">
+        {post.data.title}
+      </h1>
+      <p class="mb-6 font-display text-sm text-gray-500 dark:text-gray-400">{tt.by}</p>
+
+      <div class="mb-10 border-b border-gray-100 pb-8 dark:border-gray-800">
+        <ShareBar url={url} title={post.data.title} locale={locale} />
+      </div>
+
+      <!-- Body -->
+      <div class="prose prose-lg max-w-none dark:prose-invert prose-headings:font-display prose-a:text-cush-orange prose-a:no-underline hover:prose-a:underline">
+        <slot />
+      </div>
+
+      <div class="mt-12 border-t border-gray-100 pt-8 dark:border-gray-800">
+        <ShareBar url={url} title={post.data.title} locale={locale} />
+      </div>
+
+      <!-- Prev / Next -->
+      {(newer || older) && (
+        <div class="mt-12 flex justify-between gap-4 font-display text-sm font-semibold">
+          {newer ? (
+            <a href={postUrl(locale, postSlug(newer))} class="max-w-[45%] text-cush-orange hover:opacity-80">
+              {tt.newer}<span class="mt-1 block text-gray-600 dark:text-gray-300">{newer.data.title}</span>
+            </a>
+          ) : <span></span>}
+          {older ? (
+            <a href={postUrl(locale, postSlug(older))} class="max-w-[45%] text-right text-cush-orange hover:opacity-80">
+              {tt.older}<span class="mt-1 block text-gray-600 dark:text-gray-300">{older.data.title}</span>
+            </a>
+          ) : <span></span>}
+        </div>
+      )}
+    </Container>
+
+    <!-- Related -->
+    {related.length > 0 && (
+      <Container size="lg">
+        <div class="mt-20">
+          <h2 class="mb-8 text-center font-display text-2xl font-bold text-gray-900 dark:text-white">{tt.related}</h2>
+          <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
+            {related.map((p) => <BlogCard post={p} />)}
+          </div>
+        </div>
+      </Container>
+    )}
+  </article>
+</BaseLayout>

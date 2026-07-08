@@ -1,0 +1,35 @@
+---
+// Article JSON-LD. Author/publisher reference the global Person/Organization
+// nodes emitted by BaseLayout's @graph (by @id) so Google sees one connected
+// entity, not three unrelated blobs.
+interface Props {
+  title: string;
+  description: string;
+  url: string; // absolute
+  image?: string; // absolute
+  publishDate: Date;
+  modifiedDate?: Date;
+  locale: "en" | "es";
+  categories?: string[];
+}
+const { title, description, url, image, publishDate, modifiedDate, locale, categories = [] } =
+  Astro.props;
+
+const SITE = "https://www.cushlabs.ai";
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: title,
+  description,
+  ...(image ? { image } : {}),
+  datePublished: publishDate.toISOString(),
+  dateModified: (modifiedDate ?? publishDate).toISOString(),
+  inLanguage: locale === "es" ? "es-MX" : "en-US",
+  ...(categories.length ? { articleSection: categories[0], keywords: categories.join(", ") } : {}),
+  author: { "@id": `${SITE}/#person` },
+  publisher: { "@id": `${SITE}/#organization` },
+  mainEntityOfPage: { "@type": "WebPage", "@id": url },
+};
+---
+
+<script type="application/ld+json" is:inline set:html={JSON.stringify(schema)} />

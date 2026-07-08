@@ -1,4 +1,7 @@
 import { defineConfig } from "astro/config";
+import fs from "node:fs";
+import path from "node:path";
+import matter from "gray-matter";
 import tailwindcss from "@tailwindcss/vite";
 import sitemap from "@astrojs/sitemap";
 import sentry from "@sentry/astro";
@@ -22,10 +25,36 @@ for (const [enPath, esSlug] of Object.entries(routePairs)) {
   hreflangMap.set(esUrl, enUrl);
 }
 
+// Blog cornerstone (bilingual) pairs — derived from EN post frontmatter, the
+// single source of truth (ES posts link back via translations.en). Only posts
+// with a reciprocal translations.es become a pair; single-language posts are
+// intentionally absent, so the sitemap emits self-referencing hreflang for them
+// (the hybrid model — docs/strategy/BLOG-HYBRID-ARCHITECTURE-PROPOSAL.md).
+const blogEnDir = path.resolve("./src/content/blog/en");
+if (fs.existsSync(blogEnDir)) {
+  for (const file of fs.readdirSync(blogEnDir)) {
+    if (!file.endsWith(".md")) continue;
+    const { data } = matter(
+      fs.readFileSync(path.join(blogEnDir, file), "utf-8"),
+    );
+    const esTwin = data?.translations?.es;
+    if (!esTwin) continue;
+    const esSlug = esTwin.startsWith("/")
+      ? esTwin.split("/").filter(Boolean).pop()
+      : esTwin;
+    const enUrl = `${SITE}/blog/${file.replace(/\.md$/, "")}/`;
+    const esUrl = `${SITE}/es/blog/${esSlug}/`;
+    hreflangMap.set(enUrl, esUrl);
+    hreflangMap.set(esUrl, enUrl);
+  }
+}
+
 // ── Priority rules by URL pattern ───────────────────────────────────
 function getPriority(url) {
   const path = url.replace(SITE, "");
   if (path === "/" || path === "/es/" || path === "/es") return 1.0;
+  if (/^\/(es\/)?blog\/?$/.test(path)) return 0.7;
+  if (/^\/(es\/)?blog\//.test(path)) return 0.6;
   if (/^\/(es\/)?services/.test(path)) return 0.9;
   if (/^\/(es\/)?portfolio/.test(path)) return 0.8;
   if (/^\/(es\/)?projects\//.test(path)) return 0.7;
@@ -41,6 +70,7 @@ function getPriority(url) {
 function getChangefreq(url) {
   const path = url.replace(SITE, "");
   if (path === "/" || path === "/es/" || path === "/es") return "weekly";
+  if (/^\/(es\/)?blog/.test(path)) return "weekly";
   if (/^\/(es\/)?(terms|privacy)/.test(path)) return "yearly";
   return "monthly";
 }

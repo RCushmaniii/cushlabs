@@ -5,13 +5,16 @@ import { getLocalizedPath, t } from "../i18n";
 interface Props {
   locale: Locale;
   pathname: string;
+  // Override language-switch targets where the twin isn't a prefix-swap
+  // (single-language blog posts route to the other blog index, not a 404).
+  altLocaleHref?: { en?: string; es?: string };
 }
 
-const { locale, pathname } = Astro.props;
+const { locale, pathname, altLocaleHref } = Astro.props;
 const dict = t(locale);
 
-const toEn = getLocalizedPath(pathname, "en");
-const toEs = getLocalizedPath(pathname, "es");
+const toEn = altLocaleHref?.en ?? getLocalizedPath(pathname, "en");
+const toEs = altLocaleHref?.es ?? getLocalizedPath(pathname, "es");
 
 const navLinks = [
   { href: locale === "es" ? "/es/about/" : "/about/", label: dict.nav.about },

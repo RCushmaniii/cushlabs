@@ -1,24 +1,25 @@
 /* Google Fonts loaded via <link> in BaseLayout.astro for non-blocking render */
 
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 /* Dark mode via class strategy */
 @custom-variant dark (&:where(.dark, .dark *));
 
 /* ── Theme tokens (static colors, fonts, sizes) ── */
 @theme {
-  --color-cush-orange: #FF6A3D;
+  --color-cush-orange: #ff6a3d;
   --color-cush-black: #000000;
-  --color-cush-gray-900: #0A0A0A;
+  --color-cush-gray-900: #0a0a0a;
   --color-cush-gray-800: #141414;
-  --color-cush-gray-700: #1A1A1A;
-  --color-cush-gray-600: #2A2A2A;
+  --color-cush-gray-700: #1a1a1a;
+  --color-cush-gray-600: #2a2a2a;
   --color-cush-gray-400: #666666;
   --color-cush-gray-300: #888888;
-  --color-cush-gray-200: #AAAAAA;
+  --color-cush-gray-200: #aaaaaa;
 
-  --font-display: 'Space Grotesk', sans-serif;
-  --font-body: 'Source Serif 4', Georgia, serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-body: "Source Serif 4", Georgia, serif;
 
   --text-fluid-xs: var(--fluid-text-xs);
   --text-fluid-sm: var(--fluid-text-sm);
@@ -110,8 +111,12 @@ body {
 
 /* Shimmer placeholder for lazy-loaded images */
 @keyframes shimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
 }
 
 .shimmer {

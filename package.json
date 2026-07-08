@@ -5,7 +5,7 @@
   "license": "SEE LICENSE IN LICENSE",
   "scripts": {
     "dev": "astro dev",
-    "build": "npm run generate-projects && astro build && node scripts/seo/meta-description-gate.mjs",
+    "build": "npm run generate-projects && node scripts/validate-blog-translations.mjs && astro build && node scripts/seo/meta-description-gate.mjs",
     "start": "astro preview",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
@@ -28,9 +28,11 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.8",
+    "@astrojs/rss": "^4.0.19",
     "@astrojs/sitemap": "^3.7.2",
     "@sentry/astro": "^10.48.0",
     "@sentry/node": "^10.47.0",
+    "@tailwindcss/typography": "^0.5.20",
     "@tailwindcss/vite": "^4.2.2",
     "@vercel/analytics": "^2.0.1",
     "astro": "^6.4.8",

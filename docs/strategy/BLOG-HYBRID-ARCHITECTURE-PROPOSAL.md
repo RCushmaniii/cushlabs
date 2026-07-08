@@ -1,9 +1,11 @@
 # CushLabs Bilingual Blog — Hybrid Content Architecture (Proposal)
 
-**Status:** Proposal — no code yet. React to the shape before anything is built.
+**Status:** Decisions locked 2026-07-07 (see §8) — Phase-1 MVP build in progress.
 **Created:** 2026-07-07
-**Reference implementation:** `C:\Users\Robert Cushman\Projects\ny-eng\docs\BLOG-SYSTEM-PLAYBOOK.md` (the NY English blog — the proven system we port from)
-**Governs:** a re-introduced blog on cushlabs.ai (the blog was removed pre-launch for "no content strategy" — this doc _is_ the strategy).
+
+> **Decisions locked (2026-07-07):** Primary goal = **sales enablement + repurposing** (SEO is a bonus). Primary track = **Spanish/MX first** (EN lighter). Cadence = **aggressive, 1–2 posts/week** — held to a hard per-piece quality bar because posts are client-facing (AI does research/outline/draft/translation; a real CushLabs result or opinion goes in every post). Author = **Robert Cushman, named** (Person schema). Defaults accepted: `/blog/` + `/es/blog/` with Spanish slugs, pure Markdown for v1, add Bing + RSS.
+> **Reference implementation:** `C:\Users\Robert Cushman\Projects\ny-eng\docs\BLOG-SYSTEM-PLAYBOOK.md` (the NY English blog — the proven system we port from)
+> **Governs:** a re-introduced blog on cushlabs.ai (the blog was removed pre-launch for "no content strategy" — this doc _is_ the strategy).
 
 ---
 
