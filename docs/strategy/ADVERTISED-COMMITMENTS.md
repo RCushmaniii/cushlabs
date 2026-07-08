@@ -250,18 +250,18 @@ rate-limiter check).
 
 For each advertised claim: where the site renders it, and the bot-side artifact that must back it.
 
-| #   | Advertised claim                           | Marketing render (this repo)                                                                 | Bot source-of-truth (sibling repo)                                                                       | Reconcile check                                                                                |
-| --- | ------------------------------------------ | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| 1   | Basic = $1,990 MXN / $129 USD              | `src/components/pricing/PricingSection.astro`                                                | `docs/PRODUCT_TIERS.md`, `content/cushlabs-ai/es/pricing-and-engagement.txt`                             | Bot docs must not say "no price"/contradict $1,990                                             |
-| 2   | Tiers, terms, locations, overage           | `PricingSection.astro`; `home2/FAQ.astro`                                                    | `docs/PRODUCT_TIERS.md`                                                                                  | Numbers identical both sides                                                                   |
-| 3   | Messenger 4-theme feature set              | `src/pages/messenger-assistant.astro` (`themes`)                                             | `docs/FEATURE-INVENTORY.md` **List 1**                                                                   | Every bullet ∈ List 1 (live), not roadmap                                                      |
-| 4   | Held/premium (WhatsApp, IG, List 2)        | `docs/strategy/MESSENGER-PREMIUM-UPGRADES-HELD.md`                                           | `docs/FEATURE-INVENTORY.md` **List 2**                                                                   | Neither surface advertises List 2                                                              |
-| 5   | Guarantees (trial, cancel, data ownership) | `src/components/home2/Guarantee.astro`                                                       | Bot conversation + handoff logic                                                                         | Bot never contradicts (e.g., never claims lock-in)                                             |
-| 6   | "Grounded answers / hands off when unsure" | `home2/FAQ.astro`; Messenger themes 1 & 3                                                    | Bot decision layer + golden-set tests                                                                    | Tests exist proving the decision                                                               |
-| 7   | "Hard facts exact, always"                 | Messenger theme 1                                                                            | Bot structured-records injection (§7)                                                                    | No hard fact in RAG prose                                                                      |
-| 8   | "No data used to train models"             | `home2/FAQ.astro`                                                                            | Bot data-handling config                                                                                 | Config matches the promise                                                                     |
-| 9   | es-MX everywhere                           | Global `CLAUDE.md`                                                                           | `scripts/set-messenger-profile.ts`                                                                       | No Iberian markers either side                                                                 |
-| 10  | Industry demo carousels (10 verticals)     | `src/components/demos/IndustryMessengerDemo.astro`; `public/assistant-media/card-demo-*.png` | `scripts/lib/industry-demos.mjs` (seeds KV `carousels:cushlabs`); `docs/FEATURE-INVENTORY.md` **List 1** | Every card verb ∈ List 1; sample prices ∈ `MARKETING-CONTRACT.md` §2 (no tier-price collision) |
+| #   | Advertised claim                                 | Marketing render (this repo)                                                                 | Bot source-of-truth (sibling repo)                                                                       | Reconcile check                                                                                                                                   |
+| --- | ------------------------------------------------ | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1   | Basic = $1,990 MXN / $129 USD                    | `src/components/pricing/PricingSection.astro`                                                | `docs/PRODUCT_TIERS.md`, `content/cushlabs-ai/es/pricing-and-engagement.txt`                             | Bot docs must not say "no price"/contradict $1,990                                                                                                |
+| 2   | Tiers, terms, locations, overage                 | `PricingSection.astro`; `home2/FAQ.astro`                                                    | `docs/PRODUCT_TIERS.md`                                                                                  | Numbers identical both sides                                                                                                                      |
+| 3   | Messenger 4-theme feature set                    | `src/pages/messenger-assistant.astro` (`themes`)                                             | `docs/FEATURE-INVENTORY.md` **List 1**                                                                   | Every bullet ∈ List 1 (live), not roadmap                                                                                                         |
+| 4   | Held/premium (WhatsApp, IG, List 2)              | `docs/strategy/MESSENGER-PREMIUM-UPGRADES-HELD.md`                                           | `docs/FEATURE-INVENTORY.md` **List 2**                                                                   | Neither surface advertises List 2                                                                                                                 |
+| 5   | Guarantees (trial, cancel, data ownership)       | `src/components/home2/Guarantee.astro`                                                       | Bot conversation + handoff logic                                                                         | Bot never contradicts (e.g., never claims lock-in)                                                                                                |
+| 6   | "Grounded answers / offers a person when unsure" | `home2/FAQ.astro`; Messenger themes 1 & 3                                                    | Bot decision layer + golden-set tests                                                                    | Explicit/identity handoff tested (`handoff-triggers.test.ts`); confidence→offer path = prompt behavior, eval tracked in bot `TECH_DEBT.md` (§8.1) |
+| 7   | "Hard facts exact, always"                       | Messenger theme 1                                                                            | Bot structured-records injection (§7)                                                                    | No hard fact in RAG prose                                                                                                                         |
+| 8   | "No data used to train models"                   | `home2/FAQ.astro`                                                                            | Bot data-handling config                                                                                 | Config matches the promise                                                                                                                        |
+| 9   | es-MX everywhere                                 | Global `CLAUDE.md`                                                                           | `scripts/set-messenger-profile.ts`                                                                       | No Iberian markers either side                                                                                                                    |
+| 10  | Industry demo carousels (10 verticals)           | `src/components/demos/IndustryMessengerDemo.astro`; `public/assistant-media/card-demo-*.png` | `scripts/lib/industry-demos.mjs` (seeds KV `carousels:cushlabs`); `docs/FEATURE-INVENTORY.md` **List 1** | Every card verb ∈ List 1; sample prices ∈ `MARKETING-CONTRACT.md` §2 (no tier-price collision)                                                    |
 
 ---
 
@@ -271,21 +271,25 @@ Ran the same List-1 truth pass the `/demos/` page got (#169) across the rest of 
 surfaces: Messenger 4 themes, the 6 home FAQs, and the 4 guarantees. **Result: substantially
 truthful.** Grounding/no-guessing, "are you a bot?" honesty, consent-based lead capture, auto-resume
 after human, AI disclosure, guardrails, rate limiting, error monitoring + analytics, no-training-data,
-es-MX, pricing, and all four guarantees map cleanly to bot List 1. **Two items sit on documented
-reconciliation decisions and are Robert's call — NOT unilaterally changed:**
+es-MX, pricing, and all four guarantees map cleanly to bot List 1. **Two overclaims found and FIXED
+this pass** (Robert delegated the calls, 2026-07-08):
 
-1. **Owner lead alerts** (§2.1 tier #3, §3 catalog "Basic+", §4 Theme 3 bullet 4). Advertised as a
-   Basic feature, but the WhatsApp alert workflow is a **deferred open item** (Meta WhatsApp approval
-   pending — see `cushlabs-messenger-bot/docs/MARKETING-CONTRACT.md` open items). This is the single
-   most material gap: a paid-tier advertised feature not yet deliverable. Interim truth = leads land in
-   the Page Inbox / operator console now; instant alerts activate on WhatsApp approval. **Decision
-   needed:** soften to the interim story, or hold as-is pending approval.
-2. **"Hands off when unsure"** (§5.2 accuracy, §4 Theme 3, §8 #6). Advertised (and §8 #6 claims
-   test-backed), but List-1 behavior is **explicit-intent handoff + an _offered_ `[QR:human]` chip when
-   the user seems unsure** — not an automatic low-confidence transfer. Defensible if "hands off" reads
-   as "offers to connect," but the current phrasing implies auto-transfer. **Decision needed:** tighten
-   the verb to "offers to connect you with a person," and confirm the §8 #6 golden-set test for this
-   decision actually exists.
+1. **Owner lead alerts — FIXED.** The WhatsApp alert workflow is a **deferred open item** (Meta
+   WhatsApp approval pending; `cushlabs-messenger-bot/docs/MARKETING-CONTRACT.md:59`; sales guidance
+   `docs/sales/azucar-meeting-brief.md:48` literally says "do NOT promise WhatsApp"). The pricing table
+   already hedged honestly ("instant WhatsApp alerts on the way" / "muy pronto"), but the Messenger
+   theme bullet stated it as live ("the moment a lead is hot, ready for you to close") and — worse — the
+   page's **JSON-LD structured data** asserted "you get a WhatsApp alert with their contact info" as a
+   machine-readable fact. Brought both (EN + ES) in line with the interim truth: leads land in your
+   inbox now, instant WhatsApp alerts on the way. Reconciles with the pricing table's existing hedge.
+2. **"Hands off when unsure" — FIXED.** List-1 behavior is **explicit-intent handoff + an _offered_
+   `[QR:human]` chip when the user seems unsure** (`FEATURE-INVENTORY.md:122`; `GUARDRAILS.md:49`
+   "offer to connect") — not an automatic low-confidence transfer. FAQ verb tightened (EN + ES) from
+   "hands off to your team" → "says so and offers to connect the customer with your team — it doesn't
+   guess." **Test-coverage note (§8 #6 correction):** the explicit/identity handoff _decisions_ ARE
+   golden-set tested (`src/__tests__/handoff-triggers.test.ts`), but the "not-confident → offers human"
+   path is an LLM prompt behavior with **no** golden-set eval. Recorded as tracked debt in the bot's
+   `docs/TECH_DEBT.md` (promotion trigger: before onboarding tenant #2 / any launch-gate run).
 
 ---
 
