@@ -1,0 +1,59 @@
+---
+import { Image } from "astro:assets";
+import type { BlogPost } from "../../lib/blog";
+import { postLang, postSlug, postUrl } from "../../lib/blog";
+import { categoryLabel } from "../../data/blogCategories";
+
+interface Props {
+  post: BlogPost;
+}
+const { post } = Astro.props;
+const locale = postLang(post);
+const href = postUrl(locale, postSlug(post));
+const cat = post.data.categories[0];
+const dateStr = post.data.publishDate.toLocaleDateString(
+  locale === "es" ? "es-MX" : "en-US",
+  { year: "numeric", month: "short", day: "numeric" },
+);
+---
+
+<article
+  class="group flex flex-col overflow-hidden rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/40 transition-all duration-300 hover:-translate-y-1 hover:border-cush-orange/50 hover:shadow-lg"
+>
+  <a href={href} class="block">
+    <div class="aspect-[16/9] overflow-hidden bg-gradient-to-br from-cush-orange/15 to-cush-orange/5 dark:from-cush-orange/20 dark:to-transparent">
+      {post.data.featuredImage ? (
+        <Image
+          src={post.data.featuredImage}
+          alt={post.data.imageAlt ?? post.data.title}
+          width={760}
+          height={428}
+          class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+        />
+      ) : (
+        <div class="flex h-full w-full items-center justify-center">
+          <span class="font-display text-3xl font-bold text-cush-orange/40">CushLabs</span>
+        </div>
+      )}
+    </div>
+  </a>
+  <div class="flex flex-1 flex-col p-6">
+    <div class="mb-3 flex items-center gap-3 text-xs">
+      {cat && (
+        <span class="rounded bg-cush-orange/10 px-2 py-0.5 font-display font-semibold text-cush-orange">
+          {categoryLabel(cat, locale)}
+        </span>
+      )}
+      <time class="text-gray-500 dark:text-gray-400">{dateStr}</time>
+      {post.data.readingTime && (
+        <span class="text-gray-500 dark:text-gray-400">· {post.data.readingTime}</span>
+      )}
+    </div>
+    <h2 class="mb-2 font-display text-lg font-bold leading-snug text-gray-900 dark:text-white">
+      <a href={href} class="transition-colors hover:text-cush-orange">{post.data.title}</a>
+    </h2>
+    <p class="line-clamp-3 text-sm leading-relaxed text-gray-600 dark:text-gray-400">
+      {post.data.excerpt}
+    </p>
+  </div>
+</article>

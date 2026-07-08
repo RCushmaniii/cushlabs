@@ -1,0 +1,27 @@
+---
+import type { GetStaticPaths } from "astro";
+import { getCollection } from "astro:content";
+import BlogIndex from "../../components/blog/BlogIndex.astro";
+import { postsForLocale } from "../../lib/blog";
+import { blogCategories } from "../../data/blogCategories";
+
+export const getStaticPaths = (async ({ paginate }) => {
+  const all = await getCollection("blog");
+  return paginate(postsForLocale(all, "en"), { pageSize: 6 });
+}) satisfies GetStaticPaths;
+
+const { page } = Astro.props;
+const all = await getCollection("blog");
+const enPosts = postsForLocale(all, "en");
+const categoriesInUse = blogCategories
+  .map((c) => c.key)
+  .filter((k) => enPosts.some((p) => p.data.categories.includes(k)));
+---
+
+<BlogIndex
+  locale="en"
+  posts={page.data}
+  categoriesInUse={categoriesInUse}
+  page={{ current: page.currentPage, last: page.lastPage, prevUrl: page.url.prev, nextUrl: page.url.next }}
+  canonical={page.url.current}
+/>

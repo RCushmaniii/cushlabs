@@ -1,0 +1,142 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Container from "../layout/Container.astro";
+import BlogCard from "./BlogCard.astro";
+import type { BlogPost } from "../../lib/blog";
+import { postLang, postSlug } from "../../lib/blog";
+import { categoryLabel } from "../../data/blogCategories";
+
+interface Props {
+  locale: "en" | "es";
+  posts: BlogPost[];
+  categoriesInUse: string[];
+  page?: { current: number; last: number; prevUrl?: string; nextUrl?: string };
+  canonical: string;
+}
+const { locale, posts, categoriesInUse, page, canonical } = Astro.props;
+
+const copy = {
+  en: {
+    title: "The CushLabs Blog | AI & Growth for Local Business",
+    description:
+      "Practical guides on AI chatbots, Facebook Messenger, local SEO, and lead generation for small and local businesses. Written by CushLabs.",
+    heading: "The CushLabs Blog",
+    sub: "AI, automation, and local growth for small businesses — in plain language.",
+    all: "All",
+    empty: "No posts yet — check back soon.",
+    prev: "← Newer",
+    next: "Older →",
+  },
+  es: {
+    title: "Blog de CushLabs | IA y Crecimiento para Negocios Locales",
+    description:
+      "Guías prácticas sobre chatbots con IA, Facebook Messenger, SEO local y generación de leads para negocios pequeños y locales. Escrito por CushLabs.",
+    heading: "Blog de CushLabs",
+    sub: "IA, automatización y crecimiento local para negocios pequeños — en palabras simples.",
+    all: "Todo",
+    empty: "Aún no hay artículos — vuelve pronto.",
+    prev: "← Más nuevos",
+    next: "Más antiguos →",
+  },
+}[locale];
+---
+
+<BaseLayout
+  title={copy.title}
+  description={copy.description}
+  canonical={canonical}
+  rssHref={locale === "es" ? "/es/blog/rss.xml" : "/blog/rss.xml"}
+>
+  <section class="relative overflow-hidden pt-24 pb-10 md:pt-32">
+    <div class="absolute inset-0 -z-10">
+      <div class="absolute left-1/3 top-0 h-[400px] w-[400px] rounded-full bg-cush-orange/10 blur-[120px]"></div>
+    </div>
+    <Container size="lg">
+      <div class="mx-auto max-w-2xl text-center">
+        <h1 class="mb-4 font-display text-fluid-4xl font-bold tracking-tight text-gray-900 dark:text-white">
+          {copy.heading}
+        </h1>
+        <p class="text-fluid-lg leading-relaxed text-gray-600 dark:text-gray-300">{copy.sub}</p>
+      </div>
+    </Container>
+  </section>
+
+  <section class="pb-24">
+    <Container size="lg">
+      {categoriesInUse.length > 0 && (
+        <div class="mb-8 flex flex-wrap justify-center gap-2" data-blog-filters>
+          <button
+            type="button"
+            data-filter="all"
+            class="filter-btn active rounded-lg border border-cush-orange bg-cush-orange/10 px-4 py-2 font-display text-sm font-semibold text-cush-orange"
+          >
+            {copy.all}
+          </button>
+          {categoriesInUse.map((key) => (
+            <button
+              type="button"
+              data-filter={key}
+              class="filter-btn rounded-lg border border-gray-200 px-4 py-2 font-display text-sm font-semibold text-gray-600 transition-colors hover:border-cush-orange hover:text-cush-orange dark:border-gray-700 dark:text-gray-400"
+            >
+              {categoryLabel(key, locale)}
+            </button>
+          ))}
+        </div>
+      )}
+
+      {posts.length === 0 ? (
+        <p class="text-center text-gray-500 dark:text-gray-400">{copy.empty}</p>
+      ) : (
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3" data-blog-grid>
+          {posts.map((post) => (
+            <div data-categories={post.data.categories.join(",")}>
+              <BlogCard post={post} />
+            </div>
+          ))}
+        </div>
+      )}
+
+      {page && page.last > 1 && (
+        <nav class="mt-12 flex items-center justify-center gap-4 font-display text-sm font-semibold">
+          {page.prevUrl ? (
+            <a href={page.prevUrl} class="text-cush-orange hover:opacity-80">{copy.prev}</a>
+          ) : (
+            <span class="text-gray-300 dark:text-gray-700">{copy.prev}</span>
+          )}
+          <span class="text-gray-500 dark:text-gray-400">{page.current} / {page.last}</span>
+          {page.nextUrl ? (
+            <a href={page.nextUrl} class="text-cush-orange hover:opacity-80">{copy.next}</a>
+          ) : (
+            <span class="text-gray-300 dark:text-gray-700">{copy.next}</span>
+          )}
+        </nav>
+      )}
+    </Container>
+  </section>
+</BaseLayout>
+
+<script>
+  const wrap = document.querySelector("[data-blog-filters]");
+  if (wrap) {
+    const btns = wrap.querySelectorAll(".filter-btn");
+    const cards = document.querySelectorAll("[data-blog-grid] > [data-categories]");
+    wrap.addEventListener("click", (e) => {
+      const btn = (e.target as HTMLElement).closest(".filter-btn");
+      if (!btn) return;
+      const f = btn.getAttribute("data-filter");
+      btns.forEach((b) => {
+        const on = b === btn;
+        b.classList.toggle("active", on);
+        b.classList.toggle("border-cush-orange", on);
+        b.classList.toggle("bg-cush-orange/10", on);
+        b.classList.toggle("text-cush-orange", on);
+        b.classList.toggle("border-gray-200", !on);
+        b.classList.toggle("text-gray-600", !on);
+      });
+      cards.forEach((c) => {
+        const cats = (c.getAttribute("data-categories") || "").split(",");
+        (c as HTMLElement).style.display = f === "all" || cats.includes(f!) ? "" : "none";
+      });
+    });
+  }
+</script>

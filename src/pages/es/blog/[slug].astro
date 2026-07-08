@@ -1,0 +1,51 @@
+---
+import type { GetStaticPaths } from "astro";
+import { getCollection, render } from "astro:content";
+import PostLayout from "../../../components/blog/PostLayout.astro";
+import {
+  postsForLocale,
+  postLang,
+  postSlug,
+  postUrl,
+  blogIndexUrl,
+  postHreflangs,
+  relatedPosts,
+  prevNext,
+  extractSlug,
+} from "../../../lib/blog";
+
+export const getStaticPaths = (async () => {
+  const all = await getCollection("blog");
+  return all
+    .filter((p) => postLang(p) === "es" && p.data.publish !== false)
+    .map((post) => ({ params: { slug: postSlug(post) }, props: { post } }));
+}) satisfies GetStaticPaths;
+
+const { post } = Astro.props;
+const all = await getCollection("blog");
+const SITE = "https://www.cushlabs.ai";
+const { Content } = await render(post);
+
+const url = `${SITE}${postUrl("es", postSlug(post))}`;
+const { alternates, xDefault } = postHreflangs(post, SITE);
+
+const twinSlug = extractSlug(post.data.translations?.en);
+const altLocaleHref = { en: twinSlug ? postUrl("en", twinSlug) : blogIndexUrl("en") };
+
+const sameLang = postsForLocale(all, "es");
+const { newer, older } = prevNext(sameLang, post);
+const related = relatedPosts(all, post, 3);
+---
+
+<PostLayout
+  post={post}
+  url={url}
+  hreflangAlternates={alternates}
+  hreflangXDefault={xDefault}
+  altLocaleHref={altLocaleHref}
+  related={related}
+  newer={newer}
+  older={older}
+>
+  <Content />
+</PostLayout>

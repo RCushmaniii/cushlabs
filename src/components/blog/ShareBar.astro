@@ -1,0 +1,56 @@
+---
+interface Props {
+  url: string; // absolute
+  title: string;
+  locale: "en" | "es";
+}
+const { url, title, locale } = Astro.props;
+const enc = encodeURIComponent;
+const label = locale === "es" ? "Compartir" : "Share";
+const copyLabel = locale === "es" ? "Copiar enlace" : "Copy link";
+const links = [
+  { name: "WhatsApp", href: `https://wa.me/?text=${enc(`${title} ${url}`)}` },
+  { name: "Facebook", href: `https://www.facebook.com/sharer/sharer.php?u=${enc(url)}` },
+  { name: "LinkedIn", href: `https://www.linkedin.com/sharing/share-offsite/?url=${enc(url)}` },
+  { name: "X", href: `https://twitter.com/intent/tweet?url=${enc(url)}&text=${enc(title)}` },
+];
+---
+
+<div class="flex flex-wrap items-center gap-2" data-share-bar data-share-url={url}>
+  <span class="mr-1 font-display text-sm font-semibold text-gray-500 dark:text-gray-400">{label}:</span>
+  {links.map((l) => (
+    <a
+      href={l.href}
+      target="_blank"
+      rel="noopener"
+      class="rounded-lg border border-gray-200 px-3 py-1.5 font-display text-xs font-semibold text-gray-700 transition-colors hover:border-cush-orange hover:text-cush-orange dark:border-gray-700 dark:text-gray-300"
+    >
+      {l.name}
+    </a>
+  ))}
+  <button
+    type="button"
+    data-copy-link
+    class="rounded-lg border border-gray-200 px-3 py-1.5 font-display text-xs font-semibold text-gray-700 transition-colors hover:border-cush-orange hover:text-cush-orange dark:border-gray-700 dark:text-gray-300"
+  >
+    {copyLabel}
+  </button>
+</div>
+
+<script>
+  document.querySelectorAll("[data-share-bar]").forEach((bar) => {
+    const url = bar.getAttribute("data-share-url") || location.href;
+    const btn = bar.querySelector("[data-copy-link]");
+    if (!btn) return;
+    btn.addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(url);
+        const prev = btn.textContent;
+        btn.textContent = "✓";
+        setTimeout(() => (btn.textContent = prev), 1500);
+      } catch {
+        /* clipboard unavailable — no-op */
+      }
+    });
+  });
+</script>
