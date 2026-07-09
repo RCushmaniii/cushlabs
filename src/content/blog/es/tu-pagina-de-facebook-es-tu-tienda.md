@@ -6,6 +6,8 @@ categories:
   - "facebook-messenger"
   - "small-business"
 readingTime: "6 min de lectura"
+featuredImage: "../../../assets/blog/tu-pagina-de-facebook-es-tu-tienda.webp"
+imageAlt: "Un salón local, Estudio Bella, atiende a una clienta que agendó por Facebook Messenger —mechas y corte, sábado 11:00, $850— y en el mostrador recibe su cita confirmada, con pago en efectivo, tarjeta o transferencia."
 seo:
   description: "Para un negocio local en México, tu página de Facebook ya es tu tienda. Te explico por qué casi nunca necesitas un sitio web y qué hacer en su lugar."
 ---
