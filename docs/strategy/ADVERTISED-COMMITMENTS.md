@@ -95,9 +95,9 @@ Three tiers. One flat monthly price each. **Per business, includes up to 2 locat
 ### 2.2 Universal terms (apply to every tier)
 
 - **Locations:** every plan includes **up to 2 locations**; additional locations **+$690 MXN/mo** ( **+$49 USD/mo** ) each.
-- **No setup fee. No contracts. 2-week free trial. Unlimited conversations (fair use).**
-- **Payment (MXN):** SPEI or OXXO; **CFDI invoice included.**
-- **Payment (USD):** card; invoice included.
+- **No setup fee. No contracts. 1-week free trial. Unlimited conversations (fair use).**
+- **Payment (MXN):** bank transfer (SPEI); **CFDI invoice included.** (OXXO = roadmap via Mercado Pago; not live.)
+- **Payment (USD):** bank transfer; invoice included.
 
 ### 2.3 Currency rule (do not break this)
 
@@ -200,7 +200,7 @@ two demo bots `m.me/cushlabs` and `m.me/nyenglishteacher`).
 ### 5.1 The four guarantees (`Guarantee.astro`)
 
 1. **Free discovery call** — 30 min; honest fit assessment; "no hard sell, ever."
-2. **Free 2-week trial** — no setup fee, no deposit; client pays nothing until it works as agreed.
+2. **Free 1-week trial** — no setup fee, no deposit; client pays nothing until it works as agreed.
 3. **Month-to-month, cancel anytime** — no lock-in; 30 days' notice; no penalty.
 4. **Client owns their data & system** — full documentation, access credentials, code where applicable; fully portable.
 
@@ -375,7 +375,7 @@ directly. Do the following to establish durable connectivity:
 8. **Answer "what do we charge 1,990 pesos for?" from §2.1 Basic**, not from memory: AI Messenger
    Assistant (24/7, the full §4 feature set) + Google review management (owner-approved) + owner lead
    alerts + fully-managed (setup/training/support), per business incl. up to 2 locations, no setup fee,
-   no contract, 2-week free trial, unlimited conversations (fair use), CFDI invoice.
+   no contract, 1-week free trial, unlimited conversations (fair use), CFDI invoice.
 
 **Sync protocol going forward:** any change to price, a guarantee, or an advertised feature is made in
 the marketing repo **and** reflected here in the _same_ PR; then this file's `Last reconciled` date is
