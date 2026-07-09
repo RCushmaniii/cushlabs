@@ -6,6 +6,8 @@ categories:
   - "facebook-messenger"
   - "ai-chatbots"
 readingTime: "8 min de lectura"
+featuredImage: "../../../assets/blog/turn-messenger-into-sales-channel.webp"
+imageAlt: "Un teléfono en la recepción de un salón luminoso y abierto muestra una conversación de Facebook Messenger: una clienta pregunta por el precio y la disponibilidad de balayage para el fin de semana, y el salón responde con el precio, dos horarios y un botón de 'Reservar ahora · Depósito de $50'."
 translations:
   en: "turn-messenger-into-sales-channel"
 seo:
