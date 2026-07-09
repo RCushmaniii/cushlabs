@@ -14,8 +14,17 @@ interface Props {
   locale: Locale;
   headingTag?: "h1" | "h2";
   showCurrency?: boolean;
+  // When set, renders a low-emphasis "Compare all features" link under the
+  // cards that jumps to the full comparison matrix (PricingComparison.astro).
+  // Only the dedicated pricing pages pass this; the Services embed omits it.
+  compareHref?: string;
 }
-const { locale, headingTag = "h1", showCurrency = true } = Astro.props;
+const {
+  locale,
+  headingTag = "h1",
+  showCurrency = true,
+  compareHref,
+} = Astro.props;
 const Heading = headingTag;
 
 const copy = {
@@ -83,6 +92,7 @@ const copy = {
     footerQ: "Need something custom?",
     footerLink: "Let's talk",
     footerHref: "/contact/",
+    compareLink: "Compare all features",
   },
   es: {
     eyebrow: "Precios",
@@ -148,6 +158,7 @@ const copy = {
     footerQ: "¿Necesitas algo a la medida?",
     footerLink: "Hablemos",
     footerHref: "/es/contact/",
+    compareLink: "Compara todas las funciones",
   },
 } as const;
 
@@ -299,6 +310,28 @@ const t = copy[locale];
         ))
       }
     </div>
+
+    {
+      compareHref && (
+        <div class="text-center mt-8">
+          <a
+            href={compareHref}
+            class="inline-flex items-center gap-1.5 font-display text-sm font-semibold text-cush-orange hover:opacity-80 transition-opacity"
+          >
+            {t.compareLink}
+            <svg
+              class="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
+          </a>
+        </div>
+      )
+    }
 
     <!-- Multi-location -->
     <p

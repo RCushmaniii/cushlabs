@@ -1,0 +1,516 @@
+---
+// Full feature-comparison matrix + pricing FAQ. Lives ONLY on the dedicated
+// pricing pages (pricing.astro / es/precios.astro), never on the Services
+// embed. Reuses the same currency mechanism as PricingSection: cells that
+// differ by market use paired <span data-cur="mxn"> / <span data-cur="usd">
+// nodes, toggled by the global script in PricingSection (which queries the
+// whole document, so this section is driven for free — no extra JS here).
+//
+// SOURCE OF TRUTH for prices / overage / location fees is PricingSection.astro.
+// If those change there, mirror them in the `rows` below. Both render on the
+// same page, so a reviewer sees any drift side by side.
+import type { Locale } from "../../i18n";
+
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+
+// A cell value:
+//   true            → included (check)
+//   false           → not included (dash)
+//   string          → literal text, same in both currencies
+//   { mxn, usd }     → currency-aware text
+type Cell = true | false | string | { mxn: string; usd: string };
+interface Row {
+  label: string;
+  cells: [Cell, Cell, Cell]; // Basic, Premium, Ultra
+}
+interface Group {
+  label: string;
+  rows: Row[];
+}
+
+const copy: Record<
+  Locale,
+  {
+    eyebrow: string;
+    heading: string;
+    sub: string;
+    curMxnLabel: string;
+    curUsdLabel: string;
+    curAria: string;
+    colTiers: [string, string, string];
+    colTaglines: [string, string, string];
+    priceLabel: string;
+    prices: [{ mxn: string; usd: string }, { mxn: string; usd: string }, { mxn: string; usd: string }];
+    popular: string;
+    included: string;
+    notIncluded: string;
+    cta: string;
+    ctaHref: string;
+    groups: Group[];
+    faqHeading: string;
+    faqSub: string;
+    faqs: { q: string; a: string }[];
+  }
+> = {
+  en: {
+    eyebrow: "Full comparison",
+    heading: "Compare every feature",
+    sub: "The three cards above keep it simple. Here's the complete picture — what's in each plan, the limits, and exactly where the lines are drawn.",
+    curMxnLabel: "México & LatAm · MXN",
+    curUsdLabel: "US & Canada · USD",
+    curAria: "Select your region and currency",
+    colTiers: ["Basic", "Premium", "Ultra"],
+    colTaglines: ["For getting started", "For growing businesses", "For clinics & high-volume"],
+    priceLabel: "Monthly price",
+    prices: [
+      { mxn: "$1,990", usd: "$129" },
+      { mxn: "$3,490", usd: "$229" },
+      { mxn: "$5,490", usd: "$349" },
+    ],
+    popular: "Most popular",
+    included: "Included",
+    notIncluded: "Not included",
+    cta: "Get started",
+    ctaHref: "/consultation/",
+    groups: [
+      {
+        label: "Channels",
+        rows: [
+          { label: "AI assistant on Facebook Messenger (24/7)", cells: [true, true, true] },
+          { label: "Website chatbot", cells: [false, true, true] },
+        ],
+      },
+      {
+        label: "Reviews & local SEO",
+        rows: [
+          { label: "Google review management — with your approval", cells: [true, true, true] },
+          { label: "Weekly local SEO & competitor report", cells: [false, true, true] },
+        ],
+      },
+      {
+        label: "Leads & handoff",
+        rows: [
+          { label: "Lead capture from every conversation", cells: [true, true, true] },
+          {
+            label: "Owner lead alerts",
+            cells: [
+              "Email + Messenger (WhatsApp rolling out)",
+              "Email + Messenger (WhatsApp rolling out)",
+              "Email + Messenger (WhatsApp rolling out)",
+            ],
+          },
+          { label: "Human handoff when it matters", cells: [true, true, true] },
+        ],
+      },
+      {
+        label: "Voice",
+        rows: [
+          { label: "AI Voice Agent for missed calls", cells: [false, false, true] },
+          { label: "Answered voice minutes included", cells: ["—", "—", "300 min / location / mo"] },
+          {
+            label: "Voice overage rate",
+            cells: ["—", "—", { mxn: "$8.50 MXN / min", usd: "$0.59 USD / min" }],
+          },
+        ],
+      },
+      {
+        label: "Setup & support",
+        rows: [
+          { label: "Fully managed setup & training", cells: [true, true, true] },
+          { label: "Ongoing support", cells: [true, true, true] },
+          { label: "Priority support", cells: [false, false, true] },
+          { label: "Industry tuning (e.g. healthcare)", cells: [false, false, true] },
+        ],
+      },
+      {
+        label: "Included with every plan",
+        rows: [
+          { label: "Locations included", cells: ["Up to 2", "Up to 2", "Up to 2"] },
+          {
+            label: "Each additional location",
+            cells: [
+              { mxn: "+$690 MXN/mo", usd: "+$49 USD/mo" },
+              { mxn: "+$690 MXN/mo", usd: "+$49 USD/mo" },
+              { mxn: "+$690 MXN/mo", usd: "+$49 USD/mo" },
+            ],
+          },
+          { label: "Conversations", cells: ["Unlimited (fair use)", "Unlimited (fair use)", "Unlimited (fair use)"] },
+          { label: "Free trial", cells: ["2 weeks", "2 weeks", "2 weeks"] },
+          { label: "Setup fee", cells: ["None", "None", "None"] },
+          { label: "Contract", cells: ["Month-to-month", "Month-to-month", "Month-to-month"] },
+        ],
+      },
+    ],
+    faqHeading: "Questions about the plans",
+    faqSub: "The details behind the checkmarks.",
+    faqs: [
+      {
+        q: "What counts as a \"location\"?",
+        a: "One physical business address — a storefront, clinic, or office. Every plan includes up to two. Beyond that it's a flat +$690 MXN (+$49 USD) per location each month, at any tier.",
+      },
+      {
+        q: "What does \"unlimited conversations (fair use)\" mean?",
+        a: "We don't meter or bill you per message — talk to as many customers as you want. \"Fair use\" is just a guardrail against automated abuse; a normal small business will never come close. If your volume ever grows to enterprise scale, we'll reach out and figure out the right setup together — no surprise charges.",
+      },
+      {
+        q: "What happens if I go over the 300 voice minutes on Ultra?",
+        a: "Nothing breaks — the agent keeps answering. Extra answered minutes bill at $8.50 MXN ($0.59 USD) per minute, and we flag it for you as you approach the included 300 so there are no surprises.",
+      },
+      {
+        q: "When do the WhatsApp lead alerts go live?",
+        a: "You get instant lead alerts today by email and inside Messenger. Direct WhatsApp alerts are rolling out as Meta approves our messaging access — every plan gets them automatically when they land, at no price change.",
+      },
+      {
+        q: "Can I switch plans later?",
+        a: "Anytime, up or down, with no penalty. Start on Basic, move to Premium when you want the website chatbot and SEO reports, add Ultra's voice agent when you're ready. Changes take effect the next billing cycle.",
+      },
+      {
+        q: "Is there really no setup fee or contract?",
+        a: "Correct — no setup fee, no contract, month-to-month, cancel anytime. You also get a 2-week free trial to see it working on your own business before you pay a peso.",
+      },
+    ],
+  },
+  es: {
+    eyebrow: "Comparación completa",
+    heading: "Compara todas las funciones",
+    sub: "Las tres tarjetas de arriba lo mantienen simple. Aquí está el panorama completo — qué incluye cada plan, los límites y exactamente dónde están las líneas.",
+    curMxnLabel: "México & LatAm · MXN",
+    curUsdLabel: "EE.UU. & Canadá · USD",
+    curAria: "Selecciona tu región y moneda",
+    colTiers: ["Básico", "Premium", "Ultra"],
+    colTaglines: ["Para empezar", "Para negocios en crecimiento", "Para clínicas y alto volumen"],
+    priceLabel: "Precio mensual",
+    prices: [
+      { mxn: "$1,990", usd: "$129" },
+      { mxn: "$3,490", usd: "$229" },
+      { mxn: "$5,490", usd: "$349" },
+    ],
+    popular: "Más popular",
+    included: "Incluido",
+    notIncluded: "No incluido",
+    cta: "Empieza",
+    ctaHref: "/es/reservar/",
+    groups: [
+      {
+        label: "Canales",
+        rows: [
+          { label: "Asistente con IA en Facebook Messenger (24/7)", cells: [true, true, true] },
+          { label: "Chatbot para tu sitio web", cells: [false, true, true] },
+        ],
+      },
+      {
+        label: "Reseñas y SEO local",
+        rows: [
+          { label: "Gestión de reseñas de Google — con tu aprobación", cells: [true, true, true] },
+          { label: "Reporte semanal de SEO local y competencia", cells: [false, true, true] },
+        ],
+      },
+      {
+        label: "Leads y transferencia",
+        rows: [
+          { label: "Captura de leads en cada conversación", cells: [true, true, true] },
+          {
+            label: "Avisos de leads al dueño",
+            cells: [
+              "Correo + Messenger (WhatsApp muy pronto)",
+              "Correo + Messenger (WhatsApp muy pronto)",
+              "Correo + Messenger (WhatsApp muy pronto)",
+            ],
+          },
+          { label: "Transferencia a una persona cuando hace falta", cells: [true, true, true] },
+        ],
+      },
+      {
+        label: "Voz",
+        rows: [
+          { label: "Agente de Voz con IA para llamadas perdidas", cells: [false, false, true] },
+          { label: "Minutos de voz contestados incluidos", cells: ["—", "—", "300 min / sucursal / mes"] },
+          {
+            label: "Excedente de voz",
+            cells: ["—", "—", { mxn: "$8.50 MXN / min", usd: "$0.59 USD / min" }],
+          },
+        ],
+      },
+      {
+        label: "Configuración y soporte",
+        rows: [
+          { label: "Configuración y entrenamiento gestionados", cells: [true, true, true] },
+          { label: "Soporte continuo", cells: [true, true, true] },
+          { label: "Soporte prioritario", cells: [false, false, true] },
+          { label: "Personalización por industria (p. ej. salud)", cells: [false, false, true] },
+        ],
+      },
+      {
+        label: "Incluido en todos los planes",
+        rows: [
+          { label: "Sucursales incluidas", cells: ["Hasta 2", "Hasta 2", "Hasta 2"] },
+          {
+            label: "Cada sucursal adicional",
+            cells: [
+              { mxn: "+$690 MXN/mes", usd: "+$49 USD/mes" },
+              { mxn: "+$690 MXN/mes", usd: "+$49 USD/mes" },
+              { mxn: "+$690 MXN/mes", usd: "+$49 USD/mes" },
+            ],
+          },
+          {
+            label: "Conversaciones",
+            cells: ["Ilimitadas (uso justo)", "Ilimitadas (uso justo)", "Ilimitadas (uso justo)"],
+          },
+          { label: "Prueba gratis", cells: ["2 semanas", "2 semanas", "2 semanas"] },
+          { label: "Cuota de instalación", cells: ["Ninguna", "Ninguna", "Ninguna"] },
+          { label: "Contrato", cells: ["Mes a mes", "Mes a mes", "Mes a mes"] },
+        ],
+      },
+    ],
+    faqHeading: "Preguntas sobre los planes",
+    faqSub: "Los detalles detrás de las palomitas.",
+    faqs: [
+      {
+        q: "¿Qué cuenta como una \"sucursal\"?",
+        a: "Una dirección física del negocio — un local, clínica u oficina. Todos los planes incluyen hasta dos. Después son +$690 MXN (+$49 USD) fijos por sucursal al mes, en cualquier nivel.",
+      },
+      {
+        q: "¿Qué significa \"conversaciones ilimitadas (uso justo)\"?",
+        a: "No medimos ni te cobramos por mensaje — atiende a todos los clientes que quieras. El \"uso justo\" es solo una protección contra el abuso automatizado; un negocio normal nunca se acerca al límite. Si algún día tu volumen crece a escala empresarial, te buscamos y definimos juntos la configuración correcta — sin cargos sorpresa.",
+      },
+      {
+        q: "¿Qué pasa si me paso de los 300 minutos de voz en Ultra?",
+        a: "Nada se detiene — el agente sigue contestando. Los minutos contestados extra se cobran a $8.50 MXN ($0.59 USD) por minuto, y te avisamos conforme te acercas a los 300 incluidos para que no haya sorpresas.",
+      },
+      {
+        q: "¿Cuándo se activan los avisos de leads por WhatsApp?",
+        a: "Hoy ya recibes avisos de leads al instante por correo y dentro de Messenger. Los avisos directos por WhatsApp se están activando conforme Meta aprueba nuestro acceso de mensajería — todos los planes los reciben automáticamente cuando lleguen, sin cambio de precio.",
+      },
+      {
+        q: "¿Puedo cambiar de plan después?",
+        a: "Cuando quieras, hacia arriba o hacia abajo, sin penalización. Empieza en Básico, pásate a Premium cuando quieras el chatbot web y los reportes de SEO, y agrega el agente de voz de Ultra cuando estés listo. Los cambios aplican en el siguiente ciclo de facturación.",
+      },
+      {
+        q: "¿De verdad no hay cuota de instalación ni contrato?",
+        a: "Así es — sin cuota de instalación, sin contrato, mes a mes, cancela cuando quieras. Además tienes una prueba gratis de 2 semanas para verlo funcionando en tu propio negocio antes de pagar un peso.",
+      },
+    ],
+  },
+};
+
+const t = copy[locale];
+
+// A small check / dash renderer flag lives in markup below.
+---
+
+<section id="compare-plans" class="relative py-20 md:py-24 scroll-mt-24">
+  <div class="max-w-6xl mx-auto px-6">
+    <!-- Header -->
+    <div class="text-center max-w-2xl mx-auto mb-10">
+      <p class="font-display text-sm font-semibold uppercase tracking-wider text-cush-orange mb-4">
+        {t.eyebrow}
+      </p>
+      <h2 class="font-display text-fluid-3xl font-bold text-gray-900 dark:text-white mb-4 leading-tight tracking-tight">
+        {t.heading}
+      </h2>
+      <p class="text-fluid-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+        {t.sub}
+      </p>
+    </div>
+
+    <!-- Currency toggle (mirrors PricingSection; the global script wires all
+         [data-cur-btn] buttons and keeps every toggle on the page in sync). -->
+    <div class="flex justify-center mb-10">
+      <div
+        class="inline-flex items-center gap-1 rounded-lg border border-gray-200 dark:border-gray-700 p-1 bg-white dark:bg-gray-800/40"
+        role="group"
+        aria-label={t.curAria}
+      >
+        <button
+          type="button"
+          data-cur-btn="mxn"
+          aria-pressed="true"
+          class="px-4 py-2 rounded-md text-sm font-display font-semibold transition-colors bg-cush-orange text-black"
+        >
+          {t.curMxnLabel}
+        </button>
+        <button
+          type="button"
+          data-cur-btn="usd"
+          aria-pressed="false"
+          class="px-4 py-2 rounded-md text-sm font-display font-semibold transition-colors text-gray-600 dark:text-gray-300"
+        >
+          {t.curUsdLabel}
+        </button>
+      </div>
+    </div>
+
+    <!-- Matrix: horizontally scrollable on small screens, sticky first column -->
+    <div class="overflow-x-auto -mx-6 px-6 pb-2">
+      <table class="w-full min-w-[720px] border-collapse text-left">
+        <caption class="sr-only">{t.heading}</caption>
+        <thead>
+          <tr>
+            <th scope="col" class="sticky left-0 z-10 bg-white dark:bg-gray-950 w-[34%] align-bottom pb-5"></th>
+            {
+              t.colTiers.map((name, i) => {
+                const featured = i === 1;
+                return (
+                  <th
+                    scope="col"
+                    class={`align-bottom pb-5 px-4 text-center ${
+                      featured ? "rounded-t-2xl border-x-2 border-t-2 border-cush-orange bg-cush-orange/[0.04]" : ""
+                    }`}
+                  >
+                    {featured && (
+                      <span class="inline-block mb-2 px-3 py-0.5 rounded-full bg-cush-orange text-white text-[11px] font-display font-semibold uppercase tracking-wide">
+                        {t.popular}
+                      </span>
+                    )}
+                    <span class="block font-display text-lg font-bold text-gray-900 dark:text-white">
+                      {name}
+                    </span>
+                    <span class="block text-xs text-gray-500 dark:text-gray-400 mt-0.5">
+                      {t.colTaglines[i]}
+                    </span>
+                    <span class="block mt-2">
+                      <span class="font-display text-2xl font-bold text-gray-900 dark:text-white">
+                        <span data-cur="mxn">{t.prices[i].mxn}</span>
+                        <span data-cur="usd" class="hidden">{t.prices[i].usd}</span>
+                      </span>
+                    </span>
+                  </th>
+                );
+              })
+            }
+          </tr>
+        </thead>
+        <tbody>
+          {
+            t.groups.map((group) => (
+              <>
+                <tr>
+                  <th
+                    scope="colgroup"
+                    colspan="4"
+                    class="sticky left-0 bg-white dark:bg-gray-950 pt-7 pb-2 font-display text-xs font-bold uppercase tracking-wider text-cush-orange"
+                  >
+                    {group.label}
+                  </th>
+                </tr>
+                {group.rows.map((row) => (
+                  <tr class="border-t border-gray-100 dark:border-gray-800/70">
+                    <th
+                      scope="row"
+                      class="sticky left-0 z-10 bg-white dark:bg-gray-950 py-3.5 pr-4 font-normal text-sm text-gray-700 dark:text-gray-300 align-top"
+                    >
+                      {row.label}
+                    </th>
+                    {row.cells.map((cell, i) => {
+                      const featured = i === 1;
+                      const base = `py-3.5 px-4 text-center text-sm align-top ${
+                        featured ? "border-x-2 border-cush-orange bg-cush-orange/[0.04]" : ""
+                      }`;
+                      if (cell === true) {
+                        return (
+                          <td class={base}>
+                            <span class="sr-only">{t.included}</span>
+                            <svg
+                              class="inline w-5 h-5 text-cush-orange"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                              aria-hidden="true"
+                            >
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                          </td>
+                        );
+                      }
+                      if (cell === false) {
+                        return (
+                          <td class={`${base} text-gray-300 dark:text-gray-600`}>
+                            <span class="sr-only">{t.notIncluded}</span>
+                            <span aria-hidden="true">—</span>
+                          </td>
+                        );
+                      }
+                      if (typeof cell === "string") {
+                        return (
+                          <td class={`${base} text-gray-700 dark:text-gray-200 font-medium`}>{cell}</td>
+                        );
+                      }
+                      return (
+                        <td class={`${base} text-gray-700 dark:text-gray-200 font-medium`}>
+                          <span data-cur="mxn">{cell.mxn}</span>
+                          <span data-cur="usd" class="hidden">{cell.usd}</span>
+                        </td>
+                      );
+                    })}
+                  </tr>
+                ))}
+              </>
+            ))
+          }
+        </tbody>
+        <tfoot>
+          <tr class="border-t border-gray-200 dark:border-gray-700">
+            <td class="sticky left-0 bg-white dark:bg-gray-950"></td>
+            {
+              t.colTiers.map((_, i) => {
+                const featured = i === 1;
+                return (
+                  <td
+                    class={`pt-5 px-4 text-center ${
+                      featured ? "rounded-b-2xl border-x-2 border-b-2 border-cush-orange bg-cush-orange/[0.04]" : ""
+                    }`}
+                  >
+                    <a
+                      href={t.ctaHref}
+                      class={`block w-full text-center px-4 py-2.5 rounded-lg font-display font-semibold text-sm transition-colors duration-300 ${
+                        featured
+                          ? "bg-cush-orange text-white hover:bg-cush-orange/90"
+                          : "border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white hover:border-cush-orange hover:text-cush-orange"
+                      }`}
+                    >
+                      {t.cta}
+                    </a>
+                  </td>
+                );
+              })
+            }
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+
+    <!-- FAQ -->
+    <div class="max-w-3xl mx-auto mt-20">
+      <div class="text-center mb-8">
+        <h3 class="font-display text-fluid-2xl font-bold text-gray-900 dark:text-white">
+          {t.faqHeading}
+        </h3>
+        <p class="text-gray-600 dark:text-gray-400 mt-2">{t.faqSub}</p>
+      </div>
+      <div class="divide-y divide-gray-200 dark:divide-gray-800 border-y border-gray-200 dark:border-gray-800">
+        {
+          t.faqs.map((faq) => (
+            <details class="group">
+              <summary class="flex items-center justify-between gap-4 cursor-pointer list-none py-5 font-display font-semibold text-gray-900 dark:text-white">
+                <span>{faq.q}</span>
+                <svg
+                  class="w-5 h-5 shrink-0 text-cush-orange transition-transform duration-300 group-open:rotate-45"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v14M5 12h14" />
+                </svg>
+              </summary>
+              <p class="pb-5 -mt-1 text-gray-600 dark:text-gray-300 leading-relaxed">{faq.a}</p>
+            </details>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>

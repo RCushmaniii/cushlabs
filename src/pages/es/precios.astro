@@ -1,11 +1,13 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import PricingSection from "../../components/pricing/PricingSection.astro";
+import PricingComparison from "../../components/pricing/PricingComparison.astro";
 ---
 
 <BaseLayout
   title="Precios — Planes Mensuales Simples | CushLabs.ai"
   description="Precios de CushLabs — tres planes mensuales de IA: asistente, reseñas y voz. Desde $1,990 MXN/mes. Sin cuota de instalación, sin contratos."
 >
-  <PricingSection locale="es" />
+  <PricingSection locale="es" compareHref="#compare-plans" />
+  <PricingComparison locale="es" />
 </BaseLayout>
