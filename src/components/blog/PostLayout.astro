@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Container from "../layout/Container.astro";
 import ArticleSchema from "./ArticleSchema.astro";
@@ -97,6 +98,17 @@ const idxHref = blogIndexUrl(locale);
         {post.data.title}
       </h1>
       <p class="mb-6 font-display text-sm text-gray-500 dark:text-gray-400">{tt.by}</p>
+
+      {post.data.featuredImage && (
+        <Image
+          src={post.data.featuredImage}
+          alt={post.data.imageAlt ?? post.data.title}
+          widths={[768, 1200, 1600]}
+          sizes="(max-width: 768px) 100vw, 768px"
+          class="mb-10 aspect-[16/9] w-full rounded-2xl object-cover"
+          loading="eager"
+        />
+      )}
 
       <div class="mb-10 border-b border-gray-100 pb-8 dark:border-gray-800">
         <ShareBar url={url} title={post.data.title} locale={locale} />
