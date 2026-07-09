@@ -4,7 +4,7 @@ import LandingLayout from "../layouts/LandingLayout.astro";
 // ── US cold-outreach mirror of /salones/ (es-MX). ───────────────────
 // Same stripped LandingLayout, noindex + sitemap-excluded, single conversion
 // focus — adapted for the US market: English copy, USD pricing, card/invoice
-// billing (no SPEI/OXXO/CFDI), and a booking CTA to /consultation/ (the US
+// billing (bank transfer + CFDI), and a booking CTA to /consultation/ (the US
 // equivalent of the MX WhatsApp-diagnosis CTA — a +52 WhatsApp number is
 // friction for a US salon). Pricing = Basic $129 USD/mo, locked in
 // docs/strategy/MEXICO-GTM-STRATEGY.md §11.
@@ -65,7 +65,7 @@ const steps = [
   },
   {
     n: "3",
-    title: "2-week free trial",
+    title: "1-week free trial",
     desc: "You watch it win clients. If it doesn't earn its place, we part as friends.",
   },
 ];
@@ -89,11 +89,11 @@ const faqs = [
   },
   {
     q: "What if it doesn't work for me?",
-    a: "You get a 2-week free trial and there are no contracts. If it doesn't bring you more clients, cancel anytime.",
+    a: "You get a 1-week free trial and there are no contracts. If it doesn't bring you more clients, cancel anytime.",
   },
   {
     q: "How do I pay?",
-    a: "Pay by card, monthly. An invoice is available at no extra cost.",
+    a: "Pay by bank transfer, monthly. A CFDI invoice is included at no extra cost.",
   },
   {
     q: "What do you need from me to start?",
@@ -168,7 +168,7 @@ const faqs = [
         </a>
       </div>
       <p class="mt-6 text-sm text-gray-500 dark:text-gray-400">
-        No setup fees · No contracts · 2-week free trial
+        No setup fees · No contracts · 1-week free trial
       </p>
     </div>
   </section>
@@ -314,13 +314,13 @@ const faqs = [
           No setup fee. No contracts. Cancel anytime.
         </p>
         <p class="text-sm text-white/60 mb-8">
-          Pay by card · Invoice available
+          Pay by bank transfer · CFDI invoice included
         </p>
         <a
           href={ctaHref}
           class="block w-full px-6 py-4 bg-cush-orange text-white font-display font-semibold rounded-lg hover:bg-cush-orange/90 transition-colors duration-300 text-lg"
         >
-          Start your 2-week free trial
+          Start your 1-week free trial
         </a>
       </div>
 
