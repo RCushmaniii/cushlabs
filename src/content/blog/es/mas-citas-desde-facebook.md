@@ -6,6 +6,8 @@ categories:
   - "facebook-messenger"
   - "lead-generation"
 readingTime: "5 min de lectura"
+featuredImage: "../../../assets/blog/facebook-leads-after-6pm.webp"
+imageAlt: "Un teléfono en la recepción de un negocio local ya cerrado por la noche muestra un mensaje de Facebook Messenger —'¡Hola! ¿Tienen disponibilidad este fin de semana?'— que llega a las 9:01 p. m."
 seo:
   description: "Convierte los mensajes de Facebook de tu negocio en citas agendadas sin contratar personal ni vivir pegado al celular. Guía práctica para dueños."
 ---
