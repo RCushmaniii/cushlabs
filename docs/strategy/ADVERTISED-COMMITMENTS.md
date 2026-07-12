@@ -125,16 +125,16 @@ America; USD = US + Canada. Rationale: `docs/strategy/MEXICO-GTM-STRATEGY.md` §
 Each tier is a **bundle** of these named products. This is the mapping the bot needs so it can
 describe "what's included at my price" accurately.
 
-| Product                                  | What it is                                                | Included at tier | Rendered / described in                                                                                         |
-| ---------------------------------------- | --------------------------------------------------------- | ---------------- | --------------------------------------------------------------------------------------------------------------- |
-| **AI Messenger Assistant**               | 24/7 bilingual AI on the client's Facebook page           | **Basic+**       | `src/pages/messenger-assistant.astro` (+ `es/`), `src/components/services2/ServiceBlock.astro` (`messenger-ai`) |
-| **Google Review Management**             | Monitors/queues review responses, owner-approved          | **Basic+**       | `PricingSection.astro` Basic card                                                                               |
-| **Owner Lead Alerts**                    | Owner pinged when a lead is hot (WhatsApp alert workflow) | **Basic+**       | `PricingSection.astro`; Messenger page theme 3                                                                  |
-| **Website Chatbot**                      | Same assistant tech on the client's website               | **Premium+**     | `PricingSection.astro`; `ServiceBlock.astro` (`support-assistants`)                                             |
-| **Weekly Local SEO & Competitor Report** | Google Maps ranking + competitor watch, one action/wk     | **Premium+**     | `PricingSection.astro`; `src/components/home2/SolutionOverview.astro` (pillar 2)                                |
-| **AI Voice Agent**                       | Inbound phone agent, 300 answered min/loc/mo              | **Ultra**        | `PricingSection.astro`; `SolutionOverview.astro` (pillar 3); live at `voice.cushlabs.ai`                        |
-| **Industry Tuning**                      | Vertical-specific tuning (e.g. healthcare)                | **Ultra**        | `PricingSection.astro` Ultra card                                                                               |
-| **Fully-managed wrapper**                | Setup, training, weekly reports, monthly tuning           | **All**          | `Guarantee.astro`, Messenger page "What's Included", `ServiceBlock.astro`                                       |
+| Product                                  | What it is                                                                              | Included at tier | Rendered / described in                                                                                         |
+| ---------------------------------------- | --------------------------------------------------------------------------------------- | ---------------- | --------------------------------------------------------------------------------------------------------------- |
+| **AI Messenger Assistant**               | 24/7 bilingual AI on the client's Facebook page                                         | **Basic+**       | `src/pages/messenger-assistant.astro` (+ `es/`), `src/components/services2/ServiceBlock.astro` (`messenger-ai`) |
+| **Google Review Management**             | Monitors/queues review responses, owner-approved                                        | **Basic+**       | `PricingSection.astro` Basic card                                                                               |
+| **Owner Lead Alerts**                    | Owner pinged **via WhatsApp** the moment a lead is hot — **LIVE 2026-07-09** (see §8.2) | **Basic+**       | `PricingSection.astro`; Messenger page theme 3                                                                  |
+| **Website Chatbot**                      | Same assistant tech on the client's website                                             | **Premium+**     | `PricingSection.astro`; `ServiceBlock.astro` (`support-assistants`)                                             |
+| **Weekly Local SEO & Competitor Report** | Google Maps ranking + competitor watch, one action/wk                                   | **Premium+**     | `PricingSection.astro`; `src/components/home2/SolutionOverview.astro` (pillar 2)                                |
+| **AI Voice Agent**                       | Inbound phone agent, 300 answered min/loc/mo                                            | **Ultra**        | `PricingSection.astro`; `SolutionOverview.astro` (pillar 3); live at `voice.cushlabs.ai`                        |
+| **Industry Tuning**                      | Vertical-specific tuning (e.g. healthcare)                                              | **Ultra**        | `PricingSection.astro` Ultra card                                                                               |
+| **Fully-managed wrapper**                | Setup, training, weekly reports, monthly tuning                                         | **All**          | `Guarantee.astro`, Messenger page "What's Included", `ServiceBlock.astro`                                       |
 
 > ⚠️ **Report naming trap (reconcile carefully):** there are **two different "weekly reports."**
 > (a) The Messenger product's **"weekly performance report"** = what customers asked / what converted
@@ -175,7 +175,7 @@ two demo bots `m.me/cushlabs` and `m.me/nyenglishteacher`).
 - **Hands off with full context** when a customer asks for a person.
 - Answers **"are you a bot?" honestly** — no awkward false handoffs.
 - **Captures the lead** (name, contact, intent) **with consent**.
-- **Optional owner alerts** the moment a lead is hot.
+- **Instant WhatsApp owner alert** the moment a lead is hot — _live 2026-07-09; see §8.2_.
 - **Resumes automatically** once the human is done.
 
 ### Theme 4 — "It's built like a real product"
@@ -274,7 +274,8 @@ after human, AI disclosure, guardrails, rate limiting, error monitoring + analyt
 es-MX, pricing, and all four guarantees map cleanly to bot List 1. **Two overclaims found and FIXED
 this pass** (Robert delegated the calls, 2026-07-08):
 
-1. **Owner lead alerts — FIXED.** The WhatsApp alert workflow is a **deferred open item** (Meta
+1. **Owner lead alerts — FIXED (interim); SUPERSEDED 2026-07-09 → now LIVE, see §8.2.** At the time of
+   this pass the WhatsApp alert workflow was a **deferred open item** (Meta
    WhatsApp approval pending; `cushlabs-messenger-bot/docs/MARKETING-CONTRACT.md:59`; sales guidance
    `docs/sales/azucar-meeting-brief.md:48` literally says "do NOT promise WhatsApp"). The pricing table
    already hedged honestly ("instant WhatsApp alerts on the way" / "muy pronto"), but the Messenger
@@ -298,6 +299,28 @@ this pass** (Robert delegated the calls, 2026-07-08):
    "offers to connect… — it doesn't guess" is verified on the "doesn't guess" clause and defensible on
    the "offers to connect" clause (always true for explicit requests, situational otherwise). Full write-up:
    bot `docs/TECH_DEBT.md` → Done, "Golden-set eval for the 'doesn't guess' claim."
+
+---
+
+## 8.2 WhatsApp owner-alert shipped — 2026-07-09 (supersedes §8.1 #1)
+
+The Meta WhatsApp approval landed and the **owner/handoff WhatsApp alert is now LIVE** — verified
+2026-07-09: es-MX template Active, prod `WHATSAPP_ALERT_LANG=es_MX`, bot redeployed, live send returned
+200/accepted. This **supersedes §8.1 #1**; the alert is no longer a deferred/interim item, so the honest
+call flips from "hedge it" to "advertise it."
+
+- **Marketing de-hedged (cushlabs PR #181):** every "instant WhatsApp alerts on the way / muy pronto /
+  rolling out" hedge on the **owner alert** was removed across the pricing Basic bullet, the comparison
+  matrix + its FAQ, and the messenger-assistant hero (EN + ES). The alert is now advertised as live
+  (List 1). Shipped alongside: the Google review closed-loop copy ("approve → posts to Google
+  automatically", PR #181) and a reviews-freshness FAQ (PR #184).
+- **Still HELD — do not conflate:** WhatsApp/Instagram as a **customer channel** (the bot answering the
+  client's customers there) remains **List 2 / not advertised**. Only the owner-facing _alert_ went live.
+- **Bot-side follow-up (owned by the bot session):** if `cushlabs-messenger-bot/docs/FEATURE-INVENTORY.md`
+  still lists the WhatsApp alert delivery as List 2 / dormant, promote it to List 1 there to close the
+  reconciliation on the bot side.
+- **Obsolete reminder:** the scheduled routine `trig_017gUH6pBx89DyodKwpN8jZU` (fires 2026-07-20 to check
+  the Meta approval) is now moot — cancel it.
 
 ---
 
