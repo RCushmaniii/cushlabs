@@ -9,18 +9,18 @@
 
 Things that shipped with a known gap. Open items first; key resolved items kept for the trail.
 
-| #     | Item                                                                     | Severity   | Notes                                                                                                                                                                                                                                                                                                                        |
-| ----- | ------------------------------------------------------------------------ | ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1     | EN privacy "Your Rights" lacks Mexican-specific framing                  | Low        | ES privacy names LFPDPPP / derechos ARCO (PR #86); EN still says generic "depending on your location." Fine for a global EN audience, but worth a lawyer review if English-speaking Mexican residents are expected.                                                                                                          |
-| 2     | `js-yaml` (via `gray-matter`) flagged by `npm audit` (moderate)          | Low        | Build-time only; parses trusted PORTFOLIO.md files. Not a Dependabot alert. Revisit if gray-matter ships a patched js-yaml.                                                                                                                                                                                                  |
-| 3     | Legacy `src/components/home/` folder is dead but retained                | Low        | Live pages use `home2/`. The old `home/Hero.astro` still carries a stale "20+ Years IT Experience" string (never rendered). Remove the folder or update it if ever revived.                                                                                                                                                  |
-| 4     | "Owner lead alerts" (Basic tier) not fully delivered until Meta approves | Medium     | WhatsApp alert (client-expected channel) is Meta-gated; `cushlabs-messenger-bot/src/lib/alert.ts` (#10) is wired-but-dormant. Pricing copy softened to "on the way" (PR #159). Un-gate when App Review approves (routine `trig_017gUH6pBx89DyodKwpN8jZU`, ~2026-07-26). See `docs/strategy/ADVERTISED-COMMITMENTS.md` §11.1. |
-| ~~—~~ | ~~ES privacy generic policy~~                                            | ~~High~~   | Resolved — PR #86 (2026-05-02).                                                                                                                                                                                                                                                                                              |
-| ~~—~~ | ~~No standalone Voice Agent page~~                                       | ~~Medium~~ | Resolved — PR #85 (2026-05-02).                                                                                                                                                                                                                                                                                              |
-| ~~—~~ | ~~`BaseLayout` canonical footgun (absolute URL bypasses `Astro.site`)~~  | ~~Medium~~ | Resolved — PR #93 (2026-05-10) strips protocol+host before `new URL(p, Astro.site)`.                                                                                                                                                                                                                                         |
-| ~~—~~ | ~~No HowTo schema~~                                                      | ~~Low~~    | Resolved — PR #100 (2026-05-18) added HowTo JSON-LD to all 4 service pages (EN/ES).                                                                                                                                                                                                                                          |
-| ~~—~~ | ~~SEO automation only wired for cushlabs.ai~~                            | ~~Low~~    | Resolved — 2026-05-12 replicated GSC/IndexNow to voice, ny-eng, marketsignal (PRs #28/#170/#174).                                                                                                                                                                                                                            |
-| ~~—~~ | ~~Two divergent session-log files~~                                      | ~~Medium~~ | Resolved — 2026-06-21 merged `SESSION-LOG.md` into this file and deleted the hyphen copy.                                                                                                                                                                                                                                    |
+| #     | Item                                                                         | Severity   | Notes                                                                                                                                                                                                                                                                                                                                                                     |
+| ----- | ---------------------------------------------------------------------------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1     | EN privacy "Your Rights" lacks Mexican-specific framing                      | Low        | ES privacy names LFPDPPP / derechos ARCO (PR #86); EN still says generic "depending on your location." Fine for a global EN audience, but worth a lawyer review if English-speaking Mexican residents are expected.                                                                                                                                                       |
+| 2     | `js-yaml` (via `gray-matter`) flagged by `npm audit` (moderate)              | Low        | Build-time only; parses trusted PORTFOLIO.md files. Not a Dependabot alert. Revisit if gray-matter ships a patched js-yaml.                                                                                                                                                                                                                                               |
+| 3     | Legacy `src/components/home/` folder is dead but retained                    | Low        | Live pages use `home2/`. The old `home/Hero.astro` still carries a stale "20+ Years IT Experience" string (never rendered). Remove the folder or update it if ever revived.                                                                                                                                                                                               |
+| ~~4~~ | ~~"Owner lead alerts" (Basic tier) not fully delivered until Meta approves~~ | ~~Medium~~ | **Resolved 2026-07-09** — WhatsApp owner alert LIVE (es*MX template Active, verified send 200). Copy de-hedged site-wide (PR #181), contract doc reconciled (PR #186 §8.2), routine `trig_017gUH6pBx89DyodKwpN8jZU` disabled. Bot-side leftover: promote `FEATURE-INVENTORY.md` List-2 #10 → List 1. NOTE: WhatsApp/IG \_customer channel* is separate and still pending. |
+| ~~—~~ | ~~ES privacy generic policy~~                                                | ~~High~~   | Resolved — PR #86 (2026-05-02).                                                                                                                                                                                                                                                                                                                                           |
+| ~~—~~ | ~~No standalone Voice Agent page~~                                           | ~~Medium~~ | Resolved — PR #85 (2026-05-02).                                                                                                                                                                                                                                                                                                                                           |
+| ~~—~~ | ~~`BaseLayout` canonical footgun (absolute URL bypasses `Astro.site`)~~      | ~~Medium~~ | Resolved — PR #93 (2026-05-10) strips protocol+host before `new URL(p, Astro.site)`.                                                                                                                                                                                                                                                                                      |
+| ~~—~~ | ~~No HowTo schema~~                                                          | ~~Low~~    | Resolved — PR #100 (2026-05-18) added HowTo JSON-LD to all 4 service pages (EN/ES).                                                                                                                                                                                                                                                                                       |
+| ~~—~~ | ~~SEO automation only wired for cushlabs.ai~~                                | ~~Low~~    | Resolved — 2026-05-12 replicated GSC/IndexNow to voice, ny-eng, marketsignal (PRs #28/#170/#174).                                                                                                                                                                                                                                                                         |
+| ~~—~~ | ~~Two divergent session-log files~~                                          | ~~Medium~~ | Resolved — 2026-06-21 merged `SESSION-LOG.md` into this file and deleted the hyphen copy.                                                                                                                                                                                                                                                                                 |
 
 ---
 
@@ -99,9 +99,50 @@ Documented in `CLAUDE.md` and memory `feedback_portfolio_md_yaml_silent_corrupti
 
 Documented in CLAUDE.md and memory `feedback_tailwind4_color_collision`. Custom `--color-base` in `@theme` silently overrode the built-in `text-base` font-size utility. Avoid color names matching `xs`, `sm`, `base`, `lg`, `xl`, `2xl`–`9xl`. Use `canvas`, `surface`, `page`, `app`.
 
+### 5. Parallel sessions on the same repo → merge wars
+
+**What happened (2026-07-12):** two Claude sessions edited cushlabs concurrently — one on ToS/pricing copy, one on the blog. `main` went through a revert cascade (#175 merged on a stale base and reverted #171/#116; #176 restored it), which silently re-introduced stale "2-week"/SPEI-OXXO strings onto an in-flight branch during an auto-merge. Cost ~20 minutes and four re-merges on PR #174. **Rule:** one actor per repo at a time (CLAUDE.md "One Branch at a Time — Sequential, Never Parallel"). When a second session is unavoidable, the later actor works in an isolated `git worktree` off latest `main`, re-runs any idempotent fix **after** merging to catch silent reverts, and greps for stale strings before pushing. Never trust a clean auto-merge on churned files — verify.
+
 ---
 
 ## Session History
+
+## Session: 2026-07-12 — Demos, pricing depth, ToS/legal, now-live capabilities
+
+Continuous multi-day context (2026-07-07 → 07-12). Eight PRs merged; all worktree-isolated to survive a concurrent blog session.
+
+### Accomplished
+
+- **#163** — verified + merged the bilingual industry Messenger demo (`/demos/`, `/es/demos/`).
+- **#167** — fixed a demo product price ($1,890 → $2,150) that read as the $1,990 Basic plan.
+- **#171** — pricing feature-comparison matrix + FAQ (currency/theme-aware, bilingual); hero cards untouched. Chosen over per-tier subpages (keeps comparison context, avoids 6× bilingual maintenance).
+- **#174** — aligned public ToS (EN+ES, 15 sections) to real terms, and reconciled trial `2wk→1wk` + payment `→ bank transfer + CFDI` **site-wide** across ~24 files (idempotent Node script; deliberately preserved the "1–2 weeks" setup-time rows).
+- **#181** — reflected two now-live capabilities: Google review **auto-post** ("approve → posts to Google automatically") and **WhatsApp owner alert LIVE** (removed all "on the way / muy pronto" hedges). Left the WhatsApp/IG _customer channel_ hedged (still pending).
+- **#183** — ToS governing law → Mexican law / Guadalajara, Jalisco / PROFECO (EN+ES); ES privacy doc renamed "Política de Privacidad" → **"Aviso de Privacidad"** site-wide (page + i18n + footer + link); EN ToS "Privacy Notice" → "Privacy Policy".
+- **#184** — Google-reviews freshness FAQ (EN+ES).
+- **#186** — reconciled `docs/strategy/ADVERTISED-COMMITMENTS.md` (WhatsApp owner-alert List-2 → List-1; new §8.2; §8.1 #1 superseded). Docs-only, no deploy.
+- Disabled cloud routine `trig_017gUH6pBx89DyodKwpN8jZU` (would have opened a redundant "mark WhatsApp live" PR on 2026-07-20). Delivered a reusable ToS hand-off packet (scratchpad). Updated memory `project_marketing_bot_contract`.
+
+### Decisions Made
+
+- Trial = **1 week** (not 2); payment = **universal bank transfer + CFDI** (Robert's calls via clarifying question) — reconciled everywhere.
+- ToS governing law = Mexican law / Guadalajara, Jalisco / PROFECO. Privacy naming: **"Aviso de Privacidad"** (es, LFPDPPP term), "Privacy Policy" (en).
+- Comparison matrix over per-tier landing pages.
+- Attorney/accountant sign-off on the ToS (CFDI/LFPDPPP/PROFECO) **tabled** — no traffic/volume yet.
+
+### Technical Debt / Notes
+
+- **Bot-repo follow-up (owned by the bot session):** promote `cushlabs-messenger-bot/docs/FEATURE-INVENTORY.md` List-2 #10 → List 1. Flagged in ADVERTISED-COMMITMENTS.md §8.2.
+- ToS is substantively complete but **un-reviewed legal text** — sign-off before relying on it.
+
+### Immediate Next Steps
+
+- [ ] (Bot session) promote `FEATURE-INVENTORY.md` List-2 #10 → List 1 to fully close the bot-side reconciliation.
+- [ ] Attorney sign-off on the ToS when volume justifies (currently tabled).
+
+### Open Questions / Blockers
+
+- None.
 
 ## Session: 2026-07-07 — Messenger proof bullets, external-audit fixes, product/pricing summary
 
