@@ -11,6 +11,7 @@ imageAlt: "Split comparison: on the left, an AI assistant answers a customer's M
 translations:
   es: "asistente-de-ia-vs-recepcionista"
 seo:
+  title: "AI Assistant vs. Hiring a Receptionist | CushLabs"
   description: "Before you hire a receptionist to answer messages, run the math: what a front desk really costs, what it can't cover, and where an AI assistant fits."
 faq:
   - question: "Will an AI assistant replace my staff?"

@@ -11,6 +11,7 @@ imageAlt: "A phone on the front desk of a bright, open salon shows a Facebook Me
 translations:
   es: "messenger-canal-de-ventas"
 seo:
+  title: "Turn Messenger Into a Sales Channel | CushLabs"
   description: "A practical playbook for turning Facebook Messenger from a support inbox into a real sales channel: qualify, recommend, capture, and hand off to close."
 faq:
   - question: "Do I need a website to sell through Messenger?"

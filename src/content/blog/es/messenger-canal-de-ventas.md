@@ -11,6 +11,7 @@ imageAlt: "Un teléfono en la recepción de un salón luminoso y abierto muestra
 translations:
   en: "turn-messenger-into-sales-channel"
 seo:
+  title: "Convierte Messenger en un canal de ventas | CushLabs"
   description: "Playbook práctico para convertir Facebook Messenger de bandeja de soporte a canal de ventas real: califica, recomienda, captura y pasa al cierre."
 faq:
   - question: "¿Necesito una página web para vender por Messenger?"
