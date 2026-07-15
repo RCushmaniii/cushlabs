@@ -9,6 +9,7 @@ readingTime: "5 min read"
 featuredImage: "../../../assets/blog/facebook-leads-after-6pm.webp"
 imageAlt: "A phone propped on the front desk of a closed local business at night shows a Facebook Messenger message — 'Hi! Are you available this weekend?' — arriving at 9:01 PM."
 seo:
+  title: "Why You Lose Facebook Leads After 6 PM | CushLabs"
   description: "Most small businesses lose their best Facebook leads after hours. Here's why the 15-minute response window matters and how to answer in five seconds."
 ---
 

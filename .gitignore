@@ -36,6 +36,9 @@ scripts/seo/gsc-credentials.json
 # SEO submission logs
 scripts/seo/.submissions/
 
+# generated blog OG images (built from hero art at build time)
+public/images/og/blog/
+
 # misc
 *.log
 *.pem

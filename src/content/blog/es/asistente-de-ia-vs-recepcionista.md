@@ -11,6 +11,7 @@ imageAlt: "Comparación dividida: a la izquierda, un asistente de IA contesta el
 translations:
   en: "ai-assistant-vs-hiring-a-receptionist"
 seo:
+  title: "Asistente de IA vs. contratar recepcionista | CushLabs"
   description: "Antes de contratar una recepcionista para contestar mensajes, saca cuentas: lo que de verdad cuesta una recepción, lo que no cubre y dónde entra la IA."
 faq:
   - question: "¿Un asistente de IA va a reemplazar a mi personal?"

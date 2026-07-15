@@ -5,7 +5,7 @@
   "license": "SEE LICENSE IN LICENSE",
   "scripts": {
     "dev": "astro dev",
-    "build": "npm run generate-projects && node scripts/validate-blog-translations.mjs && astro build && node scripts/seo/meta-description-gate.mjs",
+    "build": "npm run generate-projects && node scripts/validate-blog-translations.mjs && node scripts/generate-og-images.mjs && astro build && node scripts/seo/meta-description-gate.mjs",
     "start": "astro preview",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
@@ -17,6 +17,7 @@
     "validate:portfolio-md": "tsx scripts/validate-portfolio-md.ts",
     "sync:portfolio": "tsx scripts/sync-portfolio.ts",
     "generate-projects": "tsx scripts/validate-portfolio-md.ts && tsx scripts/generate-projects.ts",
+    "og:blog": "node scripts/generate-og-images.mjs",
     "sync:all": "tsx scripts/sync-all.ts",
     "audit:predeploy": "tsx scripts/audit-predeploy.ts",
     "audit:portfolio": "tsx scripts/audit-portfolio.ts",
