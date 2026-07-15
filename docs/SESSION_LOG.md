@@ -14,6 +14,7 @@ Things that shipped with a known gap. Open items first; key resolved items kept 
 | 1     | EN privacy "Your Rights" lacks Mexican-specific framing                      | Low        | ES privacy names LFPDPPP / derechos ARCO (PR #86); EN still says generic "depending on your location." Fine for a global EN audience, but worth a lawyer review if English-speaking Mexican residents are expected.                                                                                                                                                       |
 | 2     | `js-yaml` (via `gray-matter`) flagged by `npm audit` (moderate)              | Low        | Build-time only; parses trusted PORTFOLIO.md files. Not a Dependabot alert. Revisit if gray-matter ships a patched js-yaml.                                                                                                                                                                                                                                               |
 | 3     | Legacy `src/components/home/` folder is dead but retained                    | Low        | Live pages use `home2/`. The old `home/Hero.astro` still carries a stale "20+ Years IT Experience" string (never rendered). Remove the folder or update it if ever revived.                                                                                                                                                                                               |
+| 5     | `/azucar/` landing page missing its meta description                         | Low        | Surfaced by `meta-description-gate` ("1 missing meta") during the 2026-07-15 blog audit. Pre-existing, unrelated to the blog. Gate warns but doesn't fail. Add a `description` to the page.                                                                                                                                                                               |
 | ~~4~~ | ~~"Owner lead alerts" (Basic tier) not fully delivered until Meta approves~~ | ~~Medium~~ | **Resolved 2026-07-09** — WhatsApp owner alert LIVE (es*MX template Active, verified send 200). Copy de-hedged site-wide (PR #181), contract doc reconciled (PR #186 §8.2), routine `trig_017gUH6pBx89DyodKwpN8jZU` disabled. Bot-side leftover: promote `FEATURE-INVENTORY.md` List-2 #10 → List 1. NOTE: WhatsApp/IG \_customer channel* is separate and still pending. |
 | ~~—~~ | ~~ES privacy generic policy~~                                                | ~~High~~   | Resolved — PR #86 (2026-05-02).                                                                                                                                                                                                                                                                                                                                           |
 | ~~—~~ | ~~No standalone Voice Agent page~~                                           | ~~Medium~~ | Resolved — PR #85 (2026-05-02).                                                                                                                                                                                                                                                                                                                                           |
@@ -43,6 +44,8 @@ _(none open — canonical guardrail and HowTo schema both shipped)_
 - **Title pixel-width audit** on `/data-deletion/` and `/es/data-deletion/` (both end in `| CushLabs.ai`) against Ahrefs's pixel threshold.
 - **Remove the dead `src/components/home/` folder** (tech-debt #3) once confirmed nothing imports it.
 - **Label EN Services example figures as USD** — the community-manager / receptionist cost examples on `/services/` don't state a currency (external-audit item, 2026-07-07).
+- **Add meta description to `/azucar/`** (tech-debt #5) — pre-existing gap found in the 2026-07-15 blog audit.
+- **AI Voice Agent blog article** — no blog coverage yet. EN-native missed-calls angle ("every missed call is a customer calling your competitor") proposed 2026-07-15; pairs with `/voice-agent/`. Would balance the blog beyond Messenger. Needs a hero.
 
 ---
 
@@ -101,11 +104,51 @@ Documented in CLAUDE.md and memory `feedback_tailwind4_color_collision`. Custom 
 
 ### 5. Parallel sessions on the same repo → merge wars
 
-**What happened (2026-07-12):** two Claude sessions edited cushlabs concurrently — one on ToS/pricing copy, one on the blog. `main` went through a revert cascade (#175 merged on a stale base and reverted #171/#116; #176 restored it), which silently re-introduced stale "2-week"/SPEI-OXXO strings onto an in-flight branch during an auto-merge. Cost ~20 minutes and four re-merges on PR #174. **Rule:** one actor per repo at a time (CLAUDE.md "One Branch at a Time — Sequential, Never Parallel"). When a second session is unavoidable, the later actor works in an isolated `git worktree` off latest `main`, re-runs any idempotent fix **after** merging to catch silent reverts, and greps for stale strings before pushing. Never trust a clean auto-merge on churned files — verify.
+**What happened (2026-07-12):** two Claude sessions edited cushlabs concurrently — one on ToS/pricing copy, one on the blog. `main` went through a revert cascade (#175 merged on a stale base and reverted #171/#116; #176 restored it), which silently re-introduced stale "2-week"/SPEI-OXXO strings onto an in-flight branch during an auto-merge. Cost ~20 minutes and four re-merges on PR #174. **Rule:** one actor per repo at a time (CLAUDE.md "One Branch at a Time — Sequential, Never Parallel"). When a second session is unavoidable, the later actor works in an isolated `git worktree` off latest `main`, re-runs any idempotent fix **after** merging to catch silent reverts, and greps for stale strings before pushing. Never trust a clean auto-merge on churned files — verify. **Corollary (2026-07-15, #175/#176):** always `git fetch && git rebase origin/main` (or branch fresh) before opening a PR when other merges may have landed. A branch cut from a stale local `main` carries old copies of files main has since changed; GitHub's squash then reverts them silently. Verify a merge changed **only** the files you touched (`git show --stat HEAD`).
+
+### 6. Removed-feature redirects block its own relaunch
+
+**What happened (2026-07-08):** the blog was removed pre-launch with permanent `/blog→/portfolio` redirects (`/blog`, `/blog/`, `/blog/:path*`, and the `/es/blog` set) in `vercel.json`. When the blog relaunched (#168) those redirects were never removed — they hijacked the new blog **index and both RSS feeds** (leaf post pages happened to serve, so the relaunch looked live). Fixed in #172.
+
+**Rule:** when relaunching a previously-removed feature, grep `vercel.json` (and any redirects config) for stale rules targeting its paths and delete them. Verify the **index and feed URLs**, not just a leaf page — a leaf can pass while the entry points 302 away.
 
 ---
 
 ## Session History
+
+## Session: 2026-07-15 — Bilingual blog launch, heroes, cornerstone, SEO/OG polish
+
+Continuous multi-day context (2026-07-08 → 07-15). Nine PRs merged; the blog went from an unmerged branch to a fully-launched bilingual blog (3 EN + 4 ES posts, one cornerstone pair).
+
+### Accomplished
+
+- **#168** — launched the bilingual hybrid blog engine (`/blog/` + `/es/blog/`, index/pagination/detail, RSS, Article/Breadcrumb/FAQ schema, nav+footer links). Rebased onto latest `main` before merge to preserve in-flight reconciliation.
+- **#172** — removed stale `/blog→/portfolio` 308 redirects (leftover from the pre-launch blog removal) that were hijacking the relaunched blog **index + both RSS feeds** (leaf posts served, so it looked live). See Failure Mode #6.
+- **#175 → #176** — added the first post hero, but #175 merged on a **stale local `main`** and its squash reverted 24 files (#171 pricing matrix + #116) to pre-release copy; **#176 restored all 24 to `7c6070f` verbatim**. Root cause: branched without `git fetch`. See Failure Mode #5.
+- **#177 / #178 / #179** — hero on the Messenger sales-channel cornerstone (EN+ES); hero on standalone ES `mas-citas` (killed the placeholder first-card); new **ES-only** post "Tu página de Facebook ya es tu tienda" + custom hero.
+- **#185** — promoted AI-vs-Receptionist to a **bilingual cornerstone** (new es-MX twin, reciprocal hreflang, matching heroes) + four copy upgrades in both languages.
+- **#188** — per-post **1200×630 JPEG OG images** generated at build from each hero (gitignored, Vercel regenerates); trimmed all blog `<title>`s to **≤60 chars** via `seo.title` (on-page H1 unchanged).
+- **Audit (no code):** sitemap verified clean — cornerstones paired across mismatched Spanish slugs, single-language posts emit **no phantom hreflang**, no noindex pages leaked. Warm Mexican Spanish confirmed across all ES posts (tú address, zero Iberian markers).
+
+### Decisions Made
+
+- "You don't need a website" kept **ES-only** (market-native for MX, weaker/contestable for a US audience); AI-vs-Receptionist made **bilingual** because the argument is universal.
+- Hero infographics: **dropped the dollar figures** ($49 was wrong — real Basic is $129 USD; also apples-to-oranges since chat ≠ phone). Kept booking copy truthful (capture + booking link + handoff; **no live-calendar claim**) per `ADVERTISED-COMMITMENTS.md`.
+- OG images **generated at build, not committed** (no binary churn, auto-syncs with hero art); JPEG 1200×630 for social compatibility.
+
+### Technical Debt / Notes
+
+- `/azucar/` landing page **missing its meta description** — surfaced by the meta-gate ("1 missing meta"). Pre-existing, unrelated to blog. Tech-debt #5.
+- OG images depend on the build chain running `scripts/generate-og-images.mjs`; a bare `astro build` (not `npm run build`) would skip them → og:image 404. Vercel uses `npm run build`, so safe.
+
+### Immediate Next Steps
+
+- [ ] Add a meta description to `/azucar/` (and its ES twin if present).
+- [ ] Consider the **AI Voice Agent** blog article (proposed, not chosen this round) — no blog coverage yet; pairs with `/voice-agent/`.
+
+### Open Questions / Blockers
+
+- None.
 
 ## Session: 2026-07-12 — Demos, pricing depth, ToS/legal, now-live capabilities
 
