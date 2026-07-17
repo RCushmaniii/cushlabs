@@ -16,6 +16,10 @@ const content = {
     ctaPrimary: "Agendar Llamada Gratis",
     ctaSecondary: "Ver Soluciones Reales",
   },
+  statement: {
+    label: "En pocas palabras",
+    body: `CushLabs es una consultoría de IA y desarrollo full-stack con base en Guadalajara, que atiende a pequeñas y medianas empresas en ambos lados de la frontera entre México y Estados Unidos. Fundada por Robert tras una carrera completa en TI empresarial, CushLabs trabaja con un enfoque de <span class="text-cush-orange font-semibold">diagnóstico primero</span>: entender qué está realmente fallando antes de recetar una solución, en lugar de vender paquetes prearmados.`,
+  },
   trust: {
     title: "Construido sobre Experiencia, No Promesas",
     stats: [
@@ -102,6 +106,18 @@ const t = content;
             <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
           </a>
         </div>
+      </div>
+    </Container>
+  </section>
+
+  <!-- Declaración en pocas palabras -->
+  <section class="py-16 lg:py-20">
+    <Container>
+      <div class="max-w-3xl mx-auto text-center">
+        <span class="inline-block px-3 py-1 text-xs font-display font-semibold text-cush-orange bg-cush-orange/10 rounded-full mb-6">
+          {t.statement.label}
+        </span>
+        <p class="text-xl md:text-2xl leading-relaxed text-gray-700 dark:text-gray-300" set:html={t.statement.body} />
       </div>
     </Container>
   </section>
