@@ -112,9 +112,42 @@ Documented in CLAUDE.md and memory `feedback_tailwind4_color_collision`. Custom 
 
 **Rule:** when relaunching a previously-removed feature, grep `vercel.json` (and any redirects config) for stale rules targeting its paths and delete them. Verify the **index and feed URLs**, not just a leaf page — a leaf can pass while the entry points 302 away.
 
+### 7. About page EN/ES are separate files, not one locale-branched page
+
+**What happened (2026-07-16):** added an "In plain English" statement to `src/pages/about.astro`, populating both its `content.en` and `content.es` objects. EN rendered; ES did not. `/es/about` is served by a **separate file** — `src/pages/es/about.astro` — with its own standalone `content` object, so the EN file's `content.es` is dead code no route ever reads. Robert caught the missing ES statement in production; fixed in #192.
+
+**Rule:** the About page does NOT follow the single-file `content[locale]` pattern most pages use. EN = `src/pages/about.astro`, ES = `src/pages/es/about.astro` — two files, two `content` objects. Any About edit must touch BOTH. (The dead `content.es` inside `about.astro` renders nothing — ignore or delete it.)
+
 ---
 
 ## Session History
+
+## Session: 2026-07-16 — About positioning statement (bilingual) + AI-agent debugger blog post
+
+### Accomplished
+
+- **#190 / #192** — added an "In plain English" positioning statement to the About page (EN + ES), leading with the **diagnosis-first** framing not previously stated anywhere on the site. ES initially missed because `/es/about` is a separate file (Failure Mode #7); fixed in #192. Both verified live on production.
+- **#191** — published a **bilingual blog post** adapted from Robert's LinkedIn article "Your AI coding agent will quietly turn you into its debugger" (`/blog/ai-agent-turns-you-into-its-debugger/` + es-MX twin `tu-agente-de-ia-te-convierte-en-su-depurador`). Three inline figures (prerequisite chain, documentation flywheel, pre-flight checklist), language-matched, PNG→webp; LinkedIn cover as hero + auto 1200×630 OG. **First inline-figure post** on the blog. es-MX audited clean (tú register; `palomita verde`, `platiquemos`, `a la mala`; zero Iberian markers).
+
+### Decisions Made
+
+- Cut the "former Fortune 500 IT leader" claim from the About statement (unverifiable; the "no hype" page can't carry it) → "after a full career in enterprise IT." Founder framed as "Robert" for tone, not security (surname is already public via the brand).
+- Blog published **2026-07-16, ahead of the 2026-07-28 LinkedIn schedule** — on-domain first makes cushlabs.ai the canonical origin for the shared text (SEO).
+- Reused the LinkedIn cover as the blog hero (perfect OG source) despite it baking in title+byline the layout also renders — flagged for optional crop.
+
+### Technical Debt / Notes
+
+- **Blog hero doubling** — the debugger post's cover art bakes in title + byline + read-time, duplicated by the layout below it. Optional cleanup: crop the byline strip. Left live per Robert's "sync to production."
+- Dead `content.es` object remains in `src/pages/about.astro` (never rendered).
+
+### Immediate Next Steps
+
+- [ ] (Optional) Crop the debugger-post hero to drop the baked byline strip, or leave as-is.
+- [ ] (Optional) If the blog should stay dark until the 07-28 LinkedIn drop, set `publish: false` on both posts until then.
+
+### Open Questions / Blockers
+
+- None.
 
 ## Session: 2026-07-15 — Bilingual blog launch, heroes, cornerstone, SEO/OG polish
 
