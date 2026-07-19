@@ -58,6 +58,17 @@
       "permanent": true
     }
   ],
+  "rewrites": [
+    {
+      "source": "/demo/:path*",
+      "destination": "/api/demo?path=:path*"
+    }
+  ],
+  "functions": {
+    "api/demo.ts": {
+      "includeFiles": "demos/**"
+    }
+  },
   "headers": [
     {
       "source": "/images/(.*)",
