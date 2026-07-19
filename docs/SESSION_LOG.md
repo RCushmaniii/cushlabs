@@ -122,6 +122,33 @@ Documented in CLAUDE.md and memory `feedback_tailwind4_color_collision`. Custom 
 
 ## Session History
 
+## Session: 2026-07-19 — Debugger article: graft "proactive vs productive" section (bilingual)
+
+### Accomplished
+
+- Compared Robert's updated LinkedIn draft of the debugger article against the live blog version; decided against a wholesale replace (LinkedIn draft is more verbose/repetitive and would drop the blog's FAQ, figure captions, and pull-quotes).
+- Grafted the one net-new idea — the **"proactive agent, not just a productive one"** framing — into both `src/content/blog/en/ai-agent-turns-you-into-its-debugger.md` and `src/content/blog/es/tu-agente-de-ia-te-convierte-en-su-depurador.md` as a new section between the three failure modes and the cure.
+- es-MX version written in `tú` register, no Iberian markers; build passed clean (124 pages, all quality gates green).
+- Shipped via PR #193, squash-merged to main, deployed to production.
+
+### Decisions Made
+
+- Surgical graft over wholesale replace: blog version is the better-structured web asset (SEO/FAQ/figures); only the productive-vs-proactive framing was worth importing from the LinkedIn draft.
+
+### Immediate Next Steps
+
+- [ ] None outstanding — article is live in both languages.
+
+### Technical Debt
+
+- None
+
+### Open Questions / Blockers
+
+- None
+
+---
+
 ## Session: 2026-07-16 — About positioning statement (bilingual) + AI-agent debugger blog post
 
 ### Accomplished
