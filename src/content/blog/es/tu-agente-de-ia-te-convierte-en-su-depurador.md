@@ -52,6 +52,10 @@ Así que cuando choca contra una pared que no logra ver, hace lo localmente efic
 
 _Cada eslabón de esta cadena se podía verificar antes de una sola prueba humana. Solo se rompió el rojo — y era el más barato de revisar._
 
+## La meta es un agente proactivo, no solo productivo
+
+Un agente _productivo_ termina la tarea que le entregaste. Uno _proactivo_ va más allá: antes de devolverte el trabajo, busca las razones por las que su propio trabajo podría fallar — un permiso faltante, un token vencido, un webhook sin suscribir, una puerta de acceso de un tercero, el caso extremo que tu petición nunca mencionó. No espera a que tú saques cada uno de esos a la luz con otra prueba en vivo; sale a cazar las trampas por su cuenta. El código rápido es bueno. Los despliegues rápidos son buenos. Las pruebas en verde son buenas. Nada de eso cuenta si el agente nunca cuestionó sus propias suposiciones sobre el mundo real en el que la función tiene que correr. La vara no es _"terminé — ahora tú averigua si funciona."_ Es _"terminé, intenté romperlo, revisé los puntos de falla probables y resolví todo lo que pude antes de involucrarte."_
+
 ## La cura no es un mejor prompt. Es medicina preventiva que dejas por escrito.
 
 Aquí está la parte que casi todos se pierden. **No** arreglas estas tendencias creando un prompt más ingenioso en cada sesión con la esperanza de que se quede. Las arreglas como arreglas cualquier falla recurrente en cualquier sistema: con **restricciones de operación escritas y permanentes** que el agente lee cada vez que arranca.
