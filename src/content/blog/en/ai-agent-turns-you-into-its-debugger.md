@@ -52,6 +52,10 @@ So when it hits a wall it can't see through, it does the locally efficient thing
 
 _Every link in this chain was verifiable before a single human test. Only the red one broke — and it was the cheapest one to check._
 
+## The goal is a proactive agent, not just a productive one
+
+A _productive_ agent finishes the task you handed it. A _proactive_ one goes further: before it hands the work back, it hunts for the reasons its own work might fail — a missing permission, a stale token, an unsubscribed webhook, a third-party gate, the edge case your request never mentioned. It doesn't wait for you to surface each of those through another live test; it goes looking for the traps itself. Fast code is good. Fast deploys are good. Green tests are good. None of it counts if the agent never questioned its own assumptions about the live world the feature has to run in. The bar isn't _"I finished — now you find out whether it works."_ It's _"I finished, tried to break it, checked the likely failure points, and cleared everything I could before involving you."_
+
 ## The cure is not a smarter prompt. It's preventative medicine you write down.
 
 Here is the part almost everyone misses. You do **not** fix these tendencies by crafting a cleverer prompt each session and hoping it sticks. You fix them the way you fix any recurring failure in any system: with **persistent, written operating constraints** the agent reads every single time it starts.
