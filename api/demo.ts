@@ -44,12 +44,17 @@ interface DemoConfig {
 const DEFAULT_LIFESPAN_DAYS = 90;
 
 const DEMOS: Record<string, DemoConfig> = {
-  latiendita: {
-    clientName: "La Tiendita de Guadalajara (Juan Vélez)",
-    accessToken: "latiendita-kMK1IfouWqGH9eM3oF",
-    createdAt: "2026-07-19",
-    pages: ["proposal.html", "websiteexample.html"],
-  },
+  // PARKED 2026-07-19 — the latiendita pages are built on a WhatsApp-ordering
+  // concept CushLabs does NOT sell (see docs/AI-ASSISTANT-ONBOARDING.md). The
+  // files stay in demos/latiendita/ for reference; this entry is removed so the
+  // wrong content is un-servable (404) until rebuilt on the real Facebook offer.
+  //
+  // latiendita: {
+  //   clientName: "La Tiendita de Guadalajara (Juan Vélez)",
+  //   accessToken: "latiendita-kMK1IfouWqGH9eM3oF",
+  //   createdAt: "2026-07-19",
+  //   pages: ["proposal.html", "websiteexample.html"],
+  // },
   azucar: {
     clientName: "Azúcar Trajes de Baño (Susy)",
     accessToken: "azucar-4u8W9ivs8fhjPRXENlIq",
