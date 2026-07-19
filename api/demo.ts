@@ -9,24 +9,62 @@
  *      → vercel.json rewrites it to /api/demo?path=<company>/<page>.html&token=...
  *   2. Valid secret → set httpOnly cookie `demo_<company>`, 302 to the clean URL
  *      (secret leaves the address bar).
- *   3. Clean URL (no secret) → cookie is validated → the HTML is streamed with
- *      X-Robots-Tag: noindex.
+ *   3. Clean URL (no secret) → cookie is validated → HTML streamed with noindex.
  *   4. Missing / wrong / expired secret and no cookie → 404 ("doesn't exist").
  *
- * Node runtime with the classic (req, res) signature — NOT the Fetch `Request`
- * handler, which only works on this project's edge functions and fails on Node
- * with FUNCTION_INVOCATION_FAILED. Node is required anyway: it needs `fs` to
- * read the bundled HTML, and the pages are too large for the edge bundle cap.
- * `demos/**` ships with this function via `functions` → `includeFiles` in
- * vercel.json.
+ * SELF-CONTAINED ON PURPOSE. Vercel's Node builder for this (Astro) project does
+ * not bundle cross-folder imports — a `../src/lib/...` import ships only api/ and
+ * dies at runtime with ERR_MODULE_NOT_FOUND. So the access registry lives right
+ * here; this is the single source of truth for demo links. Node runtime (needs
+ * `fs`); pages ship via `functions` → `includeFiles: demos/**` in vercel.json.
+ *
+ * To add a client:
+ *   1. Drop their page(s) in demos/<company>/<page>.html.
+ *   2. Add an entry to DEMOS below with a fresh secret:
+ *        node -e "console.log(require('crypto').randomBytes(15).toString('base64').replace(/[^a-zA-Z0-9]/g,'').slice(0,20))"
+ *   3. List the allowed filenames in `pages`.
+ *   4. Send: https://www.cushlabs.ai/demo/<company>/<page>.html?token=<secret>
  */
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 import type { IncomingMessage, ServerResponse } from "node:http";
-import {
-  getDemoAccessStatus,
-  isAllowedPage,
-} from "../src/lib/demo-access/config";
+
+interface DemoConfig {
+  clientName: string;
+  /** Shared secret carried in the URL on first click. Rotate by editing this. */
+  accessToken: string;
+  /** ISO date issued. Expiry = createdAt + DEFAULT_LIFESPAN_DAYS unless overridden. */
+  createdAt: string;
+  expiresAt?: string;
+  /** Allowed filenames under demos/<company>/. Anything not listed → 404. */
+  pages: string[];
+}
+
+/** 90 days covers a B2B sales cycle without a stale link (out-of-date pricing) living forever. */
+const DEFAULT_LIFESPAN_DAYS = 90;
+
+const DEMOS: Record<string, DemoConfig> = {
+  latiendita: {
+    clientName: "La Tiendita de Guadalajara (Juan Vélez)",
+    accessToken: "latiendita-kMK1IfouWqGH9eM3oF",
+    createdAt: "2026-07-19",
+    pages: ["proposal.html", "websiteexample.html"],
+  },
+  azucar: {
+    clientName: "Azúcar Trajes de Baño (Susy)",
+    accessToken: "azucar-4u8W9ivs8fhjPRXENlIq",
+    createdAt: "2026-07-19",
+    pages: ["proposal.html"],
+  },
+};
+
+function expiryOf(c: DemoConfig): Date {
+  if (c.expiresAt) return new Date(`${c.expiresAt}T23:59:59Z`);
+  return new Date(
+    new Date(c.createdAt).getTime() +
+      DEFAULT_LIFESPAN_DAYS * 24 * 60 * 60 * 1000,
+  );
+}
 
 const COMPANY_RE = /^[a-z0-9-]+$/;
 const PAGE_RE = /^[a-z0-9._-]+\.html$/;
@@ -56,11 +94,11 @@ export default async function handler(
     const [company, page] = parts;
     if (!COMPANY_RE.test(company) || !PAGE_RE.test(page)) return notFound(res);
 
-    const status = getDemoAccessStatus(company);
-    if (!status || status.expired) return notFound(res);
-    if (!isAllowedPage(company, page)) return notFound(res);
+    const config = DEMOS[company];
+    if (!config) return notFound(res);
+    if (new Date() > expiryOf(config)) return notFound(res);
+    if (!config.pages.includes(page)) return notFound(res);
 
-    const { config } = status;
     const cookieName = `demo_${company}`;
     const cookieHeader = req.headers.cookie || "";
     const hasCookie = cookieHeader
@@ -73,7 +111,8 @@ export default async function handler(
 
     // First click with a valid secret → set the cookie and bounce to the clean URL.
     if (!hasCookie && queryToken === config.accessToken) {
-      const remainingDays = Math.max(1, status.daysRemaining);
+      const remainingMs = expiryOf(config).getTime() - Date.now();
+      const remainingDays = Math.max(1, Math.ceil(remainingMs / 86400000));
       const cookie = [
         `${cookieName}=${config.accessToken}`,
         "HttpOnly",
@@ -116,7 +155,6 @@ export default async function handler(
     res.setHeader("Cache-Control", "private, no-store");
     res.end(doc);
   } catch (err) {
-    // Surface the real cause in runtime logs instead of an opaque 500.
     console.error("demo function error:", err);
     res.statusCode = 500;
     res.setHeader("Content-Type", "text/plain; charset=utf-8");
