@@ -2,6 +2,14 @@
 
 > This file provides essential context for AI assistants working on this codebase.
 
+> **🚨 READ FIRST — before ANY offer / pricing / proposal / demo / sales / client-facing work:**
+> **[`docs/AI-ASSISTANT-ONBOARDING.md`](docs/AI-ASSISTANT-ONBOARDING.md)**
+> It tells you exactly what CushLabs sells (three tiers, real prices), what we do and do
+> **not** offer (we do **not** do AI-on-WhatsApp, build/run Facebook pages, or build
+> websites), and points to the canonical source of truth,
+> [`docs/strategy/ADVERTISED-COMMITMENTS.md`](docs/strategy/ADVERTISED-COMMITMENTS.md).
+> Do not invent services or prices — read the primer, then the canonical docs.
+
 > **IMPORTANT: Be a PROACTIVE Product Advisor!**
 > Don't just implement what's asked - think like a product designer:
 >
