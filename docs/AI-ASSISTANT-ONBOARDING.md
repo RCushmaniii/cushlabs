@@ -15,7 +15,7 @@
 Real errors a prior assistant shipped by NOT reading the docs below:
 
 - Built an entire client proposal **and** website around an **"AI assistant on WhatsApp"** — a channel CushLabs **cannot sell** (it's Meta-gated and HELD).
-- Listed **"we build & run your Facebook page"** and **"we fix your 1-page site"** as included services — **neither is a service CushLabs offers.**
+- Listed **"we build & run your Facebook page"** as an included service — CushLabs deploys AI onto a client's _existing_ page; it does not run/manage the page for them ongoing. (Building a website, by contrast, _is_ something Robert does — see §3 — just not a default tier inclusion.)
 - Asked Robert questions (what do we charge? is Google reviews included? what's the offer?) whose answers are **written down, verbatim, in this repo.**
 
 **The rule:** if it's about what we sell, price, or promise — the answer is in the canonical docs (§5), not your imagination and not Robert's inbox. Read them.
@@ -60,7 +60,7 @@ These are **HELD (List 2)** or simply **not a service**. Never advertise, quote,
 - ❌ **AI assistant on WhatsApp as a customer channel** (the bot answering the client's _customers_ on WhatsApp). Meta-gated, HELD. _(The only WhatsApp we do is the **owner alert** — see §4.)_
 - ❌ **AI on Instagram** — HELD, same reason.
 - ❌ **Building or running a client's Facebook page** — not a service. (We deploy AI onto their _existing_ page.)
-- ❌ **Building or "fixing" a website / 1-page site** — not a service. (We offer a _website chatbot_ at Premium, not web development.)
+- ⚠️ **Website building** — NOT a standard 3-tier inclusion (don't list it as part of Basic/Premium/Ultra by default). BUT Robert is a 25-year web developer and **does build custom sites** — e.g. a simple website for a specific client, often on the client's own existing hosting. Include it when Robert decides to for a given client (as with La Tiendita). Separately, the _website chatbot_ (the AI chat widget) is a real Premium feature — different from building the site itself.
 - ❌ **À-la-carte feature pricing / custom per-feature add-ons** — the model is tiered; extras fold into Basic/Premium/Ultra.
 - ❌ **Outbound auto-dialing / cold-calling campaigns.**
 - ❌ In-chat booking, Meta notifications, lead-gen form blocks, multi-page OAuth picker, etc. — all List 2 roadmap. See `MESSENGER-PREMIUM-UPGRADES-HELD.md`.
