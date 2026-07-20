@@ -122,6 +122,39 @@ Documented in CLAUDE.md and memory `feedback_tailwind4_color_collision`. Custom 
 
 ## Session History
 
+## Session: 2026-07-19/20 — Token-gated client demo system + real-offer onboarding + La Tiendita rebuild
+
+### Accomplished
+
+- **Token-gated client demo/proposal delivery on cushlabs.ai** — client-facing proposals/demos are now served as real gated web pages at `cushlabs.ai/demo/<company>/<page>.html?token=…`, replacing Claude artifact links (which open in the Claude app on phones and don't work as shareable pages). Files live in `demos/` (NOT `public/`); `api/demo.ts` (Node fn) does secret→httpOnly cookie→clean-URL redirect→`noindex`, 404 otherwise; `vercel.json` rewrite + `includeFiles: demos/**`; `robots.txt` disallow `/demo/`. Mirrors the MarketSignal pitch-token pattern. PRs #194–#197. Verified live on prod (gate 404s without secret, 200 with, mobile viewport present).
+- **`docs/AI-ASSISTANT-ONBOARDING.md` + a CLAUDE.md 🚨 READ-FIRST pointer** — the real offer/pricing/services truth (3 tiers; what we do and do NOT offer), created to stop assistants inventing services (an assistant had built a whole La Tiendita proposal + site on "AI-on-WhatsApp," which we can't sell). Points to `docs/strategy/ADVERTISED-COMMITMENTS.md` as source of truth.
+- **Rebuilt the La Tiendita proposal on the REAL Facebook offer** — Messenger AI + Google review management + owner WhatsApp alert + fully managed, Basic $1,990, outcome-led, es-MX default; **website included** (neighbor with existing hosting). Plus enhanced the store website: "Síguenos" social row (FB/Messenger pop a "coming soon" modal, WhatsApp live) and a "Productos populares" carousel of illustrated _abarrotes_ items.
+- **Live prospect:** sent WhatsApp Msg-1 (website gift) to **Juan Vélez / La Tiendita** (neighbor) on 2026-07-20; awaiting reply.
+- **GTM captured** in bot repo `docs/GTM_OUTLINE.md` §6–8: partner/reseller channel ("get others to sell it"), warm gift-first outreach playbook, and Meta submission status/horizon.
+
+### Decisions Made
+
+- **Client deliverables = real gated web pages, never Claude artifact links** — artifact URLs open in the Claude app on mobile; they're for preview/iteration, not client delivery.
+- **We DO build websites** — corrected the onboarding doc's wrong "we don't build websites"; Robert is a 25-yr web dev and includes a site for a client when it fits (e.g. La Tiendita, on the client's own hosting). Not a default tier inclusion.
+- **Demo product images = illustrated SVG tiles for now** — no scraping copyrighted photos; swap for real client photos later.
+- **Env-var hardening of demo secrets deferred** — low-severity for marketing pages (noindex + robots already block bots); documented fast-follow.
+
+### Immediate Next Steps
+
+- [ ] Await Juan's reply; if he bites → send Msg-2 (proposal link) then Msg-3 (coffee/visit). Sequence in `GTM_OUTLINE.md` §7.
+- [ ] Before gating anything sensitive under `/demo`: move access secrets from `api/demo.ts` to Vercel env vars + rotate.
+- [ ] Optional: apply "website included" framing to Azúcar; reconcile Azúcar proposal feature lines against the real 4 Messenger themes.
+
+### Technical Debt
+
+- **Demo access secrets are in the public repo source (`api/demo.ts`).** Low-severity for marketing demos (bots blocked by noindex/robots, content non-sensitive), but harden to Vercel env vars + rotate before gating anything sensitive.
+
+### Open Questions / Blockers
+
+- None (awaiting Juan's reply is a normal outreach wait).
+
+---
+
 ## Session: 2026-07-19 — Debugger article: graft "proactive vs productive" section (bilingual)
 
 ### Accomplished
