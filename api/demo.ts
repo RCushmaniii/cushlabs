@@ -48,11 +48,10 @@ const DEMOS: Record<string, DemoConfig> = {
     clientName: "La Tiendita de Guadalajara (Juan Vélez)",
     accessToken: "latiendita-kMK1IfouWqGH9eM3oF",
     createdAt: "2026-07-19",
-    // proposal.html rebuilt on the real Facebook offer (2026-07-19).
-    // websiteexample.html is intentionally NOT listed — it's the old
-    // WhatsApp-ordering site (a service we don't sell) and stays un-servable
-    // until rebuilt or dropped. See docs/AI-ASSISTANT-ONBOARDING.md.
-    pages: ["proposal.html"],
+    // Both live: the proposal (rebuilt on the real Facebook offer) and the
+    // convenience-store website. Robert builds websites (25-yr web dev); for
+    // this neighbor it's included in the deal, on the client's own hosting.
+    pages: ["proposal.html", "websiteexample.html"],
   },
   azucar: {
     clientName: "Azúcar Trajes de Baño (Susy)",
