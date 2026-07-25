@@ -1,0 +1,1641 @@
+<title>Lumière Medspa — AI Assistant on Messenger · Proposal by CushLabs</title>
+<style>
+  /* No external font import — gated demo pages stay self-contained (CSP-safe,
+     matching demos/azucar). Brand fonts are used when locally available; the
+     stacks fall back cleanly to system-ui / Georgia otherwise. */
+  :root {
+    --bg: #f6f3f0;
+    --surface: #ffffff;
+    --surface-2: #f1ece7;
+    --ink: #16130f;
+    --ink-soft: #5f5a54;
+    --orange: #ff6a3d;
+    --orange-ink: #d24d20;
+    --orange-deep: #e0522a;
+    --line: #e8e1d9;
+    --shadow: 24px 24px 60px rgba(22, 19, 15, 0.08);
+    --glow: rgba(255, 106, 61, 0.18);
+    --font-display: "Space Grotesk", system-ui, sans-serif;
+    --font-body: "Source Serif 4", Georgia, "Times New Roman", serif;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #000000;
+      --surface: #111111;
+      --surface-2: #191919;
+      --ink: #ffffff;
+      --ink-soft: #a6a6a6;
+      --orange: #ff6a3d;
+      --orange-ink: #ff8256;
+      --orange-deep: #ff7d52;
+      --line: #232323;
+      --shadow: 24px 24px 60px rgba(0, 0, 0, 0.45);
+      --glow: rgba(255, 106, 61, 0.22);
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="light"] {
+    --bg: #f6f3f0;
+    --surface: #ffffff;
+    --surface-2: #f1ece7;
+    --ink: #16130f;
+    --ink-soft: #5f5a54;
+    --orange: #ff6a3d;
+    --orange-ink: #d24d20;
+    --orange-deep: #e0522a;
+    --line: #e8e1d9;
+    --shadow: 24px 24px 60px rgba(22, 19, 15, 0.08);
+    --glow: rgba(255, 106, 61, 0.18);
+    color-scheme: light;
+  }
+  :root[data-theme="dark"] {
+    --bg: #000000;
+    --surface: #111111;
+    --surface-2: #191919;
+    --ink: #ffffff;
+    --ink-soft: #a6a6a6;
+    --orange: #ff6a3d;
+    --orange-ink: #ff8256;
+    --orange-deep: #ff7d52;
+    --line: #232323;
+    --shadow: 24px 24px 60px rgba(0, 0, 0, 0.45);
+    --glow: rgba(255, 106, 61, 0.22);
+    color-scheme: dark;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 17px;
+    line-height: 1.65;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    text-wrap: balance;
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+  p {
+    margin: 0;
+  }
+  a {
+    color: var(--orange-ink);
+  }
+  ::selection {
+    background: var(--orange);
+    color: #000;
+  }
+  :focus-visible {
+    outline: 2px solid var(--orange);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+
+  .wrap {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .narrow {
+    max-width: 760px;
+  }
+
+  /* ---------- language toggle ---------- */
+  .langtoggle {
+    position: fixed;
+    top: 14px;
+    right: 14px;
+    z-index: 50;
+    display: flex;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 100px;
+    padding: 3px;
+    box-shadow: var(--shadow);
+  }
+  .langtoggle button {
+    border: 0;
+    background: transparent;
+    color: var(--ink-soft);
+    font-family: var(--font-display);
+    font-size: 12.5px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    padding: 6px 15px;
+    border-radius: 100px;
+    cursor: pointer;
+  }
+  .langtoggle button.on {
+    background: var(--orange);
+    color: #000;
+  }
+  #doc[data-lang="es"] .lang-en {
+    display: none !important;
+  }
+  #doc[data-lang="en"] .lang-es {
+    display: none !important;
+  }
+
+  /* ---------- topbar ---------- */
+  .topbar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 26px 0 0;
+    color: var(--ink-soft);
+    font-size: 13px;
+    letter-spacing: 0.04em;
+  }
+  .wordmark {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 9px;
+  }
+  .wordmark .name {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 21px;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+  }
+  .wordmark .name b {
+    color: var(--orange);
+    font-weight: 700;
+  }
+  .wordmark .kicker {
+    font-family: var(--font-display);
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+  .topbar .by {
+    margin-left: auto;
+    font-family: var(--font-display);
+    font-size: 11.5px;
+    letter-spacing: 0.06em;
+  }
+  .topbar .by b {
+    color: var(--ink);
+    font-weight: 600;
+  }
+  @media (max-width: 560px) {
+    .topbar .by {
+      display: none;
+    }
+  }
+
+  .eyebrow {
+    font-family: var(--font-display);
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--orange-ink);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+  }
+  .eyebrow svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  /* ---------- hero ---------- */
+  .hero {
+    position: relative;
+    padding: 30px 0 56px;
+  }
+  .hero-glow {
+    position: absolute;
+    top: -40px;
+    left: 20%;
+    width: 460px;
+    height: 460px;
+    background: var(--glow);
+    border-radius: 50%;
+    filter: blur(120px);
+    z-index: -1;
+    pointer-events: none;
+  }
+  .hero-inner {
+    padding-top: 34px;
+  }
+  .hero h1 {
+    font-size: clamp(33px, 5.6vw, 56px);
+    line-height: 1.05;
+    max-width: 18ch;
+  }
+  .hero h1 em {
+    color: var(--orange);
+    font-style: normal;
+  }
+  .hero .lede {
+    margin-top: 22px;
+    max-width: 60ch;
+    font-size: clamp(17px, 2.2vw, 19px);
+    color: var(--ink-soft);
+    line-height: 1.6;
+  }
+  .hero .meta {
+    margin-top: 30px;
+    font-size: 13.5px;
+    color: var(--ink-soft);
+    letter-spacing: 0.02em;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .hero .meta .pill {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 100px;
+    padding: 6px 15px;
+    color: var(--ink);
+    font-weight: 500;
+    font-family: var(--font-display);
+    font-size: 12.5px;
+  }
+
+  /* ---------- sections ---------- */
+  section {
+    padding: 58px 0;
+  }
+  .band {
+    background: var(--surface);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .section-head {
+    max-width: 46ch;
+    margin-bottom: 34px;
+  }
+  .section-head.center {
+    margin-inline: auto;
+    text-align: center;
+    max-width: 42ch;
+  }
+  .section-head.center .eyebrow {
+    justify-content: center;
+  }
+  .section-head h2 {
+    font-size: clamp(26px, 4.2vw, 38px);
+    line-height: 1.12;
+  }
+  .section-head p {
+    margin-top: 15px;
+    color: var(--ink-soft);
+    max-width: 60ch;
+  }
+
+  /* ---------- problem stats ---------- */
+  .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-top: 8px;
+  }
+  .stat {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 26px 24px;
+  }
+  .band .stat {
+    background: var(--bg);
+  }
+  .stat .num {
+    font-family: var(--font-display);
+    font-size: clamp(30px, 4.4vw, 40px);
+    font-weight: 700;
+    color: var(--orange);
+    display: block;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+  }
+  .stat .cap {
+    font-size: 14.5px;
+    color: var(--ink-soft);
+    margin-top: 10px;
+    display: block;
+    line-height: 1.5;
+  }
+  @media (max-width: 720px) {
+    .stat-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* ---------- callout ---------- */
+  .callout {
+    max-width: 720px;
+    margin: 34px auto 0;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--orange);
+    border-radius: 0 16px 16px 0;
+    padding: 26px 30px;
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: clamp(18px, 2.6vw, 22px);
+    line-height: 1.45;
+    color: var(--ink);
+  }
+  .band .callout {
+    background: var(--bg);
+  }
+
+  /* ---------- offer / feature list ---------- */
+  .feature-list {
+    list-style: none;
+    margin: 8px 0 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .feature-list li {
+    display: grid;
+    grid-template-columns: 42px 1fr;
+    gap: 16px;
+    align-items: start;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 20px 22px;
+  }
+  .band .feature-list li {
+    background: var(--bg);
+  }
+  .feature-list .fic {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    background: color-mix(in srgb, var(--orange) 12%, transparent);
+    display: grid;
+    place-items: center;
+    color: var(--orange-deep);
+    flex: none;
+  }
+  .feature-list .fic svg {
+    width: 21px;
+    height: 21px;
+  }
+  .feature-list h3 {
+    font-family: var(--font-display);
+    font-size: 16.5px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: var(--ink);
+  }
+  .feature-list p {
+    font-size: 14.5px;
+    color: var(--ink-soft);
+    line-height: 1.5;
+  }
+  @media (max-width: 720px) {
+    .feature-list {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* ---------- pricing tiers ---------- */
+  .tiers {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    align-items: start;
+    margin-top: 8px;
+  }
+  .tier {
+    position: relative;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: 28px 26px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  .band .tier {
+    background: var(--bg);
+  }
+  .tier.featured {
+    border: 2px solid var(--orange);
+    box-shadow:
+      0 18px 44px var(--glow),
+      var(--shadow);
+  }
+  .tier .badge {
+    position: absolute;
+    top: -13px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--orange);
+    color: #fff;
+    font-family: var(--font-display);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 100px;
+    white-space: nowrap;
+  }
+  .tier .tname {
+    font-family: var(--font-display);
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--ink);
+  }
+  .tier .ttag {
+    font-size: 13.5px;
+    color: var(--ink-soft);
+    margin-top: 3px;
+    min-height: 2.6em;
+  }
+  .tier .price {
+    margin-top: 16px;
+    display: flex;
+    align-items: baseline;
+    gap: 7px;
+  }
+  .tier .price .amt {
+    font-family: var(--font-display);
+    font-size: 40px;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+  }
+  .tier .price .per {
+    font-size: 14px;
+    color: var(--ink-soft);
+  }
+  .tier ul {
+    list-style: none;
+    margin: 22px 0 0;
+    padding: 0;
+    display: grid;
+    gap: 12px;
+    flex: 1;
+  }
+  .tier ul li {
+    display: grid;
+    grid-template-columns: 20px 1fr;
+    gap: 11px;
+    font-size: 14.5px;
+    color: var(--ink);
+    line-height: 1.45;
+    align-items: start;
+  }
+  .tier ul li svg {
+    width: 18px;
+    height: 18px;
+    color: var(--orange);
+    margin-top: 2px;
+    flex: none;
+  }
+  .tier ul li.lead {
+    color: var(--ink-soft);
+    font-style: italic;
+  }
+  .tier .tcta {
+    margin-top: 24px;
+    display: block;
+    text-align: center;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 15px;
+    text-decoration: none;
+    padding: 13px 20px;
+    border-radius: 12px;
+    border: 1px solid var(--line);
+    color: var(--ink);
+    transition:
+      border-color 0.2s ease,
+      color 0.2s ease,
+      background 0.2s ease;
+  }
+  .tier .tcta:hover {
+    border-color: var(--orange);
+    color: var(--orange-ink);
+  }
+  .tier.featured .tcta {
+    background: var(--orange);
+    color: #fff;
+    border-color: var(--orange);
+  }
+  .tier.featured .tcta:hover {
+    background: var(--orange-deep);
+    color: #fff;
+  }
+  @media (max-width: 820px) {
+    .tiers {
+      grid-template-columns: 1fr;
+    }
+    .tier .ttag {
+      min-height: 0;
+    }
+  }
+
+  .tiers-note {
+    text-align: center;
+    font-size: 14px;
+    color: var(--ink-soft);
+    margin-top: 24px;
+    max-width: 62ch;
+    margin-inline: auto;
+  }
+
+  .trust-strip {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    justify-content: center;
+    margin-top: 26px;
+  }
+  .trust-strip span {
+    font-family: var(--font-display);
+    font-size: 12.5px;
+    color: var(--ink);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 100px;
+    padding: 8px 16px;
+    font-weight: 500;
+  }
+  .band .trust-strip span {
+    background: var(--bg);
+  }
+
+  /* ---------- recommend box ---------- */
+  .recommend {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 26px 1fr;
+    gap: 16px;
+    padding: 24px 28px;
+    border-radius: 16px;
+    background: color-mix(in srgb, var(--orange) 8%, var(--surface));
+    border: 1px solid color-mix(in srgb, var(--orange) 32%, var(--line));
+  }
+  .band .recommend {
+    background: color-mix(in srgb, var(--orange) 9%, var(--bg));
+  }
+  .recommend > svg {
+    width: 24px;
+    height: 24px;
+    color: var(--orange-deep);
+    margin-top: 2px;
+  }
+  .recommend h3 {
+    font-family: var(--font-display);
+    font-size: 16.5px;
+    font-weight: 600;
+    margin-bottom: 7px;
+    color: var(--ink);
+  }
+  .recommend p {
+    font-size: 15px;
+    color: var(--ink-soft);
+    line-height: 1.55;
+  }
+  .recommend b {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  /* ---------- compliance note ---------- */
+  .compliance {
+    max-width: 62ch;
+    margin: 30px auto 0;
+    text-align: center;
+    font-size: 13.5px;
+    color: var(--ink-soft);
+    line-height: 1.6;
+  }
+
+  /* ---------- next steps ---------- */
+  .steps-list {
+    list-style: none;
+    margin: 8px 0 0;
+    padding: 0;
+    counter-reset: step;
+    display: grid;
+    gap: 12px;
+  }
+  .steps-list li {
+    counter-increment: step;
+    display: grid;
+    grid-template-columns: 34px 1fr;
+    gap: 15px;
+    align-items: center;
+    font-size: 15.5px;
+    color: var(--ink);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 16px 20px;
+  }
+  .band .steps-list li {
+    background: var(--bg);
+  }
+  .steps-list li::before {
+    content: counter(step);
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--orange-ink);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--surface-2);
+    display: grid;
+    place-items: center;
+  }
+  .band .steps-list li::before {
+    background: var(--surface);
+  }
+
+  /* ---------- final cta ---------- */
+  .final {
+    text-align: center;
+    padding: 70px 0;
+  }
+  .final h2 {
+    font-size: clamp(28px, 5vw, 42px);
+    line-height: 1.1;
+    max-width: 20ch;
+    margin: 0 auto;
+  }
+  .final h2 em {
+    color: var(--orange);
+    font-style: normal;
+  }
+  .final p {
+    margin: 20px auto 0;
+    max-width: 48ch;
+    color: var(--ink-soft);
+  }
+
+  /* ---------- footer ---------- */
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 32px 0;
+    text-align: center;
+    font-size: 13px;
+    color: var(--ink-soft);
+  }
+  footer .foot-brand {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--ink);
+  }
+  footer .foot-brand span {
+    color: var(--orange);
+  }
+  footer .foot-meta {
+    margin-top: 6px;
+  }
+
+  /* ---------- reveal ---------- */
+  .reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition:
+      opacity 0.7s ease,
+      transform 0.7s ease;
+  }
+  .reveal.in {
+    opacity: 1;
+    transform: none;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
+</style>
+
+<div class="langtoggle" role="group" aria-label="Language / Idioma">
+  <button id="btnEn" class="on" aria-pressed="true">EN</button>
+  <button id="btnEs" aria-pressed="false">ES</button>
+</div>
+
+<div id="doc" data-lang="en">
+  <!-- ===================== HERO ===================== -->
+  <div class="hero">
+    <div class="hero-glow"></div>
+    <div class="wrap">
+      <div class="topbar">
+        <span class="wordmark">
+          <span class="name">Lumi<b>è</b>re</span>
+          <span class="kicker">Medspa</span>
+        </span>
+        <span class="by lang-en">Prepared by <b>CushLabs.ai</b></span>
+        <span class="by lang-es">Preparado por <b>CushLabs.ai</b></span>
+      </div>
+
+      <div class="hero-inner">
+        <div class="eyebrow">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path
+              d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+            />
+            <path d="M14 2v6h6" />
+            <path d="M9 15h6" />
+            <path d="M9 11h6" />
+          </svg>
+          <span class="lang-en">Proposal · AI Assistant on Messenger</span>
+          <span class="lang-es">Propuesta · Asistente de IA en Messenger</span>
+        </div>
+
+        <h1 class="lang-en">
+          The leads are already in your DMs. <em>Camila</em> makes sure none
+          slip away.
+        </h1>
+        <h1 class="lang-es">
+          Los clientes ya están en tus mensajes. <em>Camila</em> se asegura de
+          que ninguno se pierda.
+        </h1>
+
+        <p class="lede lang-en">
+          A 24/7 bilingual AI assistant that lives on Lumière's Facebook page —
+          answering every Messenger DM and post comment in seconds, booking free
+          consults, and alerting you on WhatsApp the moment a client is ready.
+          You keep the page you already have. We put a world-class front desk on
+          it.
+        </p>
+        <p class="lede lang-es">
+          Un asistente de IA bilingüe 24/7 que vive en la página de Facebook de
+          Lumière — contesta cada mensaje y comentario en segundos, agenda
+          consultas gratuitas y te avisa por WhatsApp en cuanto una clienta está
+          lista. Conservas la página que ya tienes. Nosotros le ponemos una
+          recepción de primer nivel.
+        </p>
+
+        <div class="meta">
+          <span class="pill lang-en">Prepared for Lumière Medspa</span>
+          <span class="pill lang-es">Preparado para Lumière Medspa</span>
+          <span>Austin, TX</span>
+          <span style="opacity: 0.5">·</span>
+          <span class="lang-en">July 2026</span>
+          <span class="lang-es">Julio 2026</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== THE PROBLEM ===================== -->
+  <section class="band">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M12 9v4" />
+            <path d="M12 17h.01" />
+            <path
+              d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"
+            />
+          </svg>
+          <span class="lang-en">The opportunity</span>
+          <span class="lang-es">La oportunidad</span>
+        </div>
+        <h2 class="lang-en">
+          A medspa's leads arrive after hours — when no one is at the desk.
+        </h2>
+        <h2 class="lang-es">
+          Los clientes de un medspa llegan fuera de horario — cuando no hay
+          nadie en recepción.
+        </h2>
+        <p class="lang-en">
+          People scroll and DM at night and on weekends, exactly when your front
+          desk is closed. A question that waits until morning is a booking your
+          competitor already took.
+        </p>
+        <p class="lang-es">
+          La gente navega y escribe de noche y en fin de semana, justo cuando tu
+          recepción está cerrada. Una pregunta que espera hasta la mañana es una
+          cita que tu competencia ya se llevó.
+        </p>
+      </div>
+
+      <div class="stat-grid reveal">
+        <div class="stat">
+          <span class="num">78%</span>
+          <span class="cap lang-en"
+            >of customers buy from the business that
+            <b>responds first</b>.</span
+          >
+          <span class="cap lang-es"
+            >de los clientes compran con el negocio que
+            <b>responde primero</b>.</span
+          >
+        </div>
+        <div class="stat">
+          <span class="num">&lt; 5s</span>
+          <span class="cap lang-en"
+            >Camila's reply time — versus hours for a message left
+            overnight.</span
+          >
+          <span class="cap lang-es"
+            >tiempo de respuesta de Camila — frente a horas de un mensaje dejado
+            de madrugada.</span
+          >
+        </div>
+        <div class="stat">
+          <span class="num">24/7</span>
+          <span class="cap lang-en"
+            >coverage in English and Spanish, including the nights and Sundays
+            you're closed.</span
+          >
+          <span class="cap lang-es"
+            >cobertura en inglés y español, incluidas las noches y los domingos
+            que cierras.</span
+          >
+        </div>
+      </div>
+
+      <div class="callout reveal">
+        <span class="lang-en"
+          >"Sorry for the late reply!" is the most expensive sentence in a
+          medspa's inbox. Camila never has to send it.</span
+        >
+        <span class="lang-es"
+          >"¡Perdón por la respuesta tardía!" es la frase más cara en la bandeja
+          de un medspa. Camila nunca tiene que enviarla.</span
+        >
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== THE OFFER ===================== -->
+  <section>
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z" />
+          </svg>
+          <span class="lang-en">What Camila does</span>
+          <span class="lang-es">Qué hace Camila</span>
+        </div>
+        <h2 class="lang-en">
+          An AI front desk for Lumière's Messenger — trained to sound like you.
+        </h2>
+        <h2 class="lang-es">
+          Una recepción con IA para el Messenger de Lumière — entrenada para
+          sonar como tú.
+        </h2>
+        <p class="lang-en">
+          We build, train, connect, and manage the whole thing. Camila learns
+          your real menu, prices, hours, and policies — she answers from facts
+          and never invents.
+        </p>
+        <p class="lang-es">
+          Nosotros construimos, entrenamos, conectamos y administramos todo.
+          Camila aprende tu menú, precios, horarios y políticas reales —
+          responde con datos y nunca inventa.
+        </p>
+      </div>
+
+      <ul class="feature-list reveal">
+        <li>
+          <span class="fic"
+            ><svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" /></svg
+          ></span>
+          <div>
+            <h3 class="lang-en">Answers DMs &amp; comments in seconds</h3>
+            <h3 class="lang-es">Contesta mensajes y comentarios en segundos</h3>
+            <p class="lang-en">
+              Every Messenger DM and every comment on a post gets an instant,
+              on-brand reply — and comments move to a private message.
+            </p>
+            <p class="lang-es">
+              Cada mensaje de Messenger y cada comentario recibe una respuesta
+              instantánea y con tu estilo — y los comentarios pasan a mensaje
+              privado.
+            </p>
+          </div>
+        </li>
+        <li>
+          <span class="fic"
+            ><svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="m5 8 6 6" />
+              <path d="m4 14 6-6 2-3" />
+              <path d="M2 5h12" />
+              <path d="M7 2h1" />
+              <path d="m22 22-5-10-5 10" />
+              <path d="M14 18h6" /></svg
+          ></span>
+          <div>
+            <h3 class="lang-en">Bilingual, automatically</h3>
+            <h3 class="lang-es">Bilingüe, automáticamente</h3>
+            <p class="lang-en">
+              She replies in English or Spanish, following whatever language the
+              customer writes in — no setting to flip.
+            </p>
+            <p class="lang-es">
+              Responde en inglés o español, según el idioma en que escriba el
+              cliente — sin nada que configurar.
+            </p>
+          </div>
+        </li>
+        <li>
+          <span class="fic"
+            ><svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M8 2v4" />
+              <path d="M16 2v4" />
+              <rect width="18" height="18" x="3" y="4" rx="2" />
+              <path d="M3 10h18" />
+              <path d="m9 16 2 2 4-4" /></svg
+          ></span>
+          <div>
+            <h3 class="lang-en">Books free consults</h3>
+            <h3 class="lang-es">Agenda consultas gratuitas</h3>
+            <p class="lang-en">
+              For any injectable or laser treatment, she routes the client to a
+              free consult with a licensed medical provider — never medical
+              advice.
+            </p>
+            <p class="lang-es">
+              Para cualquier tratamiento inyectable o láser, deriva al cliente a
+              una consulta gratuita con un médico con licencia — nunca da
+              consejo médico.
+            </p>
+          </div>
+        </li>
+        <li>
+          <span class="fic"
+            ><svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9" />
+              <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0" /></svg
+          ></span>
+          <div>
+            <h3 class="lang-en">Alerts you on WhatsApp</h3>
+            <h3 class="lang-es">Te avisa por WhatsApp</h3>
+            <p class="lang-en">
+              The moment a lead is hot, you get a WhatsApp ping with the name,
+              contact, and what they want — you only step in to close.
+            </p>
+            <p class="lang-es">
+              En cuanto un cliente está listo, recibes un aviso por WhatsApp con
+              el nombre, el contacto y lo que busca — tú solo entras a cerrar.
+            </p>
+          </div>
+        </li>
+        <li>
+          <span class="fic"
+            ><svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path
+                d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"
+              /></svg
+          ></span>
+          <div>
+            <h3 class="lang-en">Manages your Google reviews</h3>
+            <h3 class="lang-es">Gestiona tus reseñas de Google</h3>
+            <p class="lang-en">
+              She drafts on-brand responses to new Google reviews — you approve,
+              and it posts. Your reputation stays fresh without the busywork.
+            </p>
+            <p class="lang-es">
+              Redacta respuestas con tu estilo para las reseñas nuevas de Google
+              — tú apruebas y se publica. Tu reputación se mantiene al día sin
+              trabajo extra.
+            </p>
+          </div>
+        </li>
+        <li>
+          <span class="fic"
+            ><svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M20 6 9 17l-5-5" /></svg
+          ></span>
+          <div>
+            <h3 class="lang-en">Grounded — never invents</h3>
+            <h3 class="lang-es">Basada en datos — nunca inventa</h3>
+            <p class="lang-en">
+              Hours and prices come back exact. When she isn't sure, she offers
+              a human instead of guessing.
+            </p>
+            <p class="lang-es">
+              Horarios y precios salen exactos. Cuando no está segura, ofrece a
+              una persona en vez de adivinar.
+            </p>
+          </div>
+        </li>
+      </ul>
+
+      <p class="compliance reveal">
+        <span class="lang-en"
+          >Lumière Medspa is a fictitious business used to demonstrate the
+          assistant. Camila answers questions and books consults — she does not
+          diagnose, prescribe, or give medical advice. Every injectable and
+          laser service begins with a free consultation with a licensed medical
+          provider.</span
+        >
+        <span class="lang-es"
+          >Lumière Medspa es un negocio ficticio usado para demostrar el
+          asistente. Camila responde preguntas y agenda consultas — no
+          diagnostica, no receta ni da consejo médico. Todo servicio inyectable
+          o láser comienza con una consulta gratuita con un médico con
+          licencia.</span
+        >
+      </p>
+    </div>
+  </section>
+
+  <!-- ===================== PRICING ===================== -->
+  <section class="band">
+    <div class="wrap">
+      <div class="section-head center reveal">
+        <div class="eyebrow">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <line x1="12" x2="12" y1="2" y2="22" />
+            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+          </svg>
+          <span class="lang-en">Simple, transparent pricing</span>
+          <span class="lang-es">Precios simples y transparentes</span>
+        </div>
+        <h2 class="lang-en">
+          One monthly price. Everything set up and managed for you.
+        </h2>
+        <h2 class="lang-es">
+          Un solo precio al mes. Todo configurado y gestionado por nosotros.
+        </h2>
+        <p class="lang-en">
+          No setup fee, no contract. Pick a tier and we handle the rest.
+        </p>
+        <p class="lang-es">
+          Sin cuota de instalación, sin contrato. Eliges un plan y nosotros
+          hacemos el resto.
+        </p>
+      </div>
+
+      <div class="tiers reveal">
+        <!-- Basic -->
+        <div class="tier">
+          <div class="tname">Basic</div>
+          <div class="ttag lang-en">For getting started</div>
+          <div class="ttag lang-es">Para empezar</div>
+          <div class="price">
+            <span class="amt">$129</span>
+            <span class="per lang-en">USD/mo</span>
+            <span class="per lang-es">USD/mes</span>
+          </div>
+          <ul>
+            <li>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M20 6 9 17l-5-5" /></svg
+              ><span class="lang-en"
+                >AI assistant on Facebook Messenger (24/7, bilingual)</span
+              ><span class="lang-es"
+                >Asistente de IA en Facebook Messenger (24/7, bilingüe)</span
+              >
+            </li>
+            <li>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M20 6 9 17l-5-5" /></svg
+              ><span class="lang-en"
+                >Google review management — you approve, it posts</span
+              ><span class="lang-es"
+                >Gestión de reseñas de Google — apruebas y se publica</span
+              >
+            </li>
+            <li>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M20 6 9 17l-5-5" /></svg
+              ><span class="lang-en"
+                >Lead capture + instant owner alerts on WhatsApp</span
+              ><span class="lang-es"
+                >Captura de clientes + avisos al instante por WhatsApp</span
+              >
+            </li>
+            <li>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M20 6 9 17l-5-5" /></svg
+              ><span class="lang-en"
+                >Fully managed: setup, training, ongoing support</span
+              ><span class="lang-es"
+                >Todo gestionado: configuración, entrenamiento y soporte</span
+              >
+            </li>
+          </ul>
+          <a class="tcta" href="#next-steps"
+            ><span class="lang-en">Get started</span
+            ><span class="lang-es">Empieza</span></a
+          >
+        </div>
+
+        <!-- Premium -->
+        <div class="tier">
+          <div class="tname">Premium</div>
+          <div class="ttag lang-en">For growing practices</div>
+          <div class="ttag lang-es">Para consultorios en crecimiento</div>
+          <div class="price">
+            <span class="amt">$229</span>
+            <span class="per lang-en">USD/mo</span>
+            <span class="per lang-es">USD/mes</span>
+          </div>
+          <ul>
+            <li class="lead">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M20 6 9 17l-5-5" /></svg
+              ><span class="lang-en">Everything in Basic, plus:</span
+              ><span class="lang-es">Todo lo de Basic, más:</span>
+            </li>
+            <li>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M20 6 9 17l-5-5" /></svg
+              ><span class="lang-en"
+                >Website chatbot — the same AI brain on your site</span
+              ><span class="lang-es"
+                >Chatbot para tu sitio web — el mismo cerebro de IA en tu
+                sitio</span
+              >
+            </li>
+            <li>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M20 6 9 17l-5-5" /></svg
+              ><span class="lang-en"
+                >Weekly local SEO &amp; competitor report</span
+              ><span class="lang-es"
+                >Reporte semanal de SEO local y competencia</span
+              >
+            </li>
+          </ul>
+          <a class="tcta" href="#next-steps"
+            ><span class="lang-en">Get started</span
+            ><span class="lang-es">Empieza</span></a
+          >
+        </div>
+
+        <!-- Ultra (featured, medspa tier) -->
+        <div class="tier featured">
+          <span class="badge lang-en">Recommended for medspas</span>
+          <span class="badge lang-es">Recomendado para medspas</span>
+          <div class="tname">Ultra</div>
+          <div class="ttag lang-en">For clinics &amp; high-volume medspas</div>
+          <div class="ttag lang-es">
+            Para clínicas y medspas de alto volumen
+          </div>
+          <div class="price">
+            <span class="amt">$349</span>
+            <span class="per lang-en">USD/mo</span>
+            <span class="per lang-es">USD/mes</span>
+          </div>
+          <ul>
+            <li class="lead">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M20 6 9 17l-5-5" /></svg
+              ><span class="lang-en">Everything in Premium, plus:</span
+              ><span class="lang-es">Todo lo de Premium, más:</span>
+            </li>
+            <li>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M20 6 9 17l-5-5" /></svg
+              ><span class="lang-en"
+                >AI Voice Agent — captures missed calls (300 answered
+                min/mo)</span
+              ><span class="lang-es"
+                >Agente de Voz con IA — captura llamadas perdidas (300 min
+                contestados/mes)</span
+              >
+            </li>
+            <li>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M20 6 9 17l-5-5" /></svg
+              ><span class="lang-en"
+                >Weekly reputation &amp; reviews report</span
+              ><span class="lang-es"
+                >Reporte semanal de reputación y reseñas</span
+              >
+            </li>
+            <li>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M20 6 9 17l-5-5" /></svg
+              ><span class="lang-en"
+                >Priority support + healthcare industry tuning</span
+              ><span class="lang-es"
+                >Soporte prioritario + personalización para el sector
+                salud</span
+              >
+            </li>
+          </ul>
+          <a class="tcta" href="#next-steps"
+            ><span class="lang-en">Start the free trial</span
+            ><span class="lang-es">Inicia la prueba gratis</span></a
+          >
+        </div>
+      </div>
+
+      <p class="tiers-note reveal">
+        <span class="lang-en"
+          >Every plan includes up to 2 locations · additional locations +$49
+          USD/mo each. USD pricing for US-based businesses.</span
+        >
+        <span class="lang-es"
+          >Todos los planes incluyen hasta 2 sucursales · sucursales adicionales
+          +$49 USD/mes cada una. Precios en USD para negocios en EE. UU.</span
+        >
+      </p>
+
+      <div class="trust-strip reveal">
+        <span class="lang-en">Free 1-week trial</span
+        ><span class="lang-es">Prueba gratis de 1 semana</span>
+        <span class="lang-en">No setup fee</span
+        ><span class="lang-es">Sin cuota de instalación</span>
+        <span class="lang-en">Month-to-month, no contract</span
+        ><span class="lang-es">Mes a mes, sin contrato</span>
+        <span class="lang-en">Unlimited conversations</span
+        ><span class="lang-es">Conversaciones ilimitadas</span>
+      </div>
+
+      <div class="recommend reveal">
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path d="m9 12 2 2 4-4" />
+          <path d="M5 7c0-1.1.9-2 2-2h10a2 2 0 0 1 2 2v12l-7-3-7 3z" />
+        </svg>
+        <div>
+          <h3 class="lang-en">Why we recommend Ultra for Lumière</h3>
+          <h3 class="lang-es">Por qué recomendamos Ultra para Lumière</h3>
+          <p class="lang-en">
+            A medspa lives and dies on <b>booked consults</b> and
+            <b>reputation</b>. Ultra's <b>AI Voice Agent</b> catches the calls
+            you miss when the desk is full, and the
+            <b>weekly reputation report</b> keeps your Google star rating
+            climbing — the two levers that move revenue most in aesthetics.
+            Messenger, website chat, and voice all share one brain that knows
+            your menu.
+          </p>
+          <p class="lang-es">
+            Un medspa vive de las <b>consultas agendadas</b> y la
+            <b>reputación</b>. El <b>Agente de Voz con IA</b> de Ultra atrapa
+            las llamadas que se pierden cuando la recepción está llena, y el
+            <b>reporte semanal de reputación</b> mantiene tu calificación de
+            Google en ascenso — las dos palancas que más mueven los ingresos en
+            estética. Messenger, chat web y voz comparten un solo cerebro que
+            conoce tu menú.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== NEXT STEPS ===================== -->
+  <section id="next-steps">
+    <div class="wrap narrow">
+      <div class="section-head reveal">
+        <div class="eyebrow">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M5 12h14" />
+            <path d="m12 5 7 7-7 7" />
+          </svg>
+          <span class="lang-en">Next steps</span>
+          <span class="lang-es">Siguientes pasos</span>
+        </div>
+        <h2 class="lang-en">Live on your Facebook page in about a week.</h2>
+        <h2 class="lang-es">
+          En vivo en tu página de Facebook en cerca de una semana.
+        </h2>
+      </div>
+
+      <ol class="steps-list reveal">
+        <li>
+          <span class="lang-en"
+            >You approve the plan and share your menu, prices, and hours.</span
+          >
+          <span class="lang-es"
+            >Apruebas el plan y compartes tu menú, precios y horarios.</span
+          >
+        </li>
+        <li>
+          <span class="lang-en"
+            >We build and train Camila on Lumière's real services and
+            tone.</span
+          >
+          <span class="lang-es"
+            >Construimos y entrenamos a Camila con los servicios y el tono
+            reales de Lumière.</span
+          >
+        </li>
+        <li>
+          <span class="lang-en"
+            >We connect her to your existing Facebook page — nothing new for you
+            to run.</span
+          >
+          <span class="lang-es"
+            >La conectamos a tu página de Facebook actual — nada nuevo que tú
+            tengas que operar.</span
+          >
+        </li>
+        <li>
+          <span class="lang-en"
+            >You test her free for a week. If she's not carrying her weight, you
+            walk away.</span
+          >
+          <span class="lang-es"
+            >La pruebas gratis una semana. Si no está a la altura, te retiras
+            sin compromiso.</span
+          >
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ===================== FINAL CTA ===================== -->
+  <section class="final band">
+    <div class="wrap narrow">
+      <h2 class="lang-en reveal">
+        Stop losing after-hours leads. <em>Put Camila on the front desk.</em>
+      </h2>
+      <h2 class="lang-es reveal">
+        Deja de perder clientes fuera de horario.
+        <em>Pon a Camila en recepción.</em>
+      </h2>
+      <p class="lang-en reveal">
+        A free week, no setup fee, and no contract. If it works, you keep it.
+        That's the whole risk.
+      </p>
+      <p class="lang-es reveal">
+        Una semana gratis, sin cuota de instalación y sin contrato. Si funciona,
+        te quedas. Ese es todo el riesgo.
+      </p>
+      <div class="trust-strip reveal">
+        <span class="lang-en">Free 1-week trial</span
+        ><span class="lang-es">Prueba gratis de 1 semana</span>
+        <span class="lang-en">No setup fee</span
+        ><span class="lang-es">Sin cuota de instalación</span>
+        <span class="lang-en">Live in ~1 week</span
+        ><span class="lang-es">En vivo en ~1 semana</span>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div class="foot-brand">Cush<span>Labs</span>.ai</div>
+      <div class="foot-meta lang-en">
+        Proposal prepared by CushLabs.ai · Demonstration · Lumière Medspa is a
+        fictitious business created for this demo.
+      </div>
+      <div class="foot-meta lang-es">
+        Propuesta preparada por CushLabs.ai · Demostración · Lumière Medspa es
+        un negocio ficticio creado para esta demostración.
+      </div>
+    </div>
+  </footer>
+</div>
+
+<script>
+  (function () {
+    var doc = document.getElementById("doc");
+    var btnEs = document.getElementById("btnEs");
+    var btnEn = document.getElementById("btnEn");
+
+    function setLang(lang) {
+      doc.setAttribute("data-lang", lang);
+      btnEs.classList.toggle("on", lang === "es");
+      btnEn.classList.toggle("on", lang === "en");
+      btnEs.setAttribute("aria-pressed", String(lang === "es"));
+      btnEn.setAttribute("aria-pressed", String(lang === "en"));
+    }
+    btnEs.addEventListener("click", function () {
+      setLang("es");
+    });
+    btnEn.addEventListener("click", function () {
+      setLang("en");
+    });
+    setLang("en");
+
+    var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var reveals = document.querySelectorAll(".reveal");
+    if (reduce || !("IntersectionObserver" in window)) {
+      reveals.forEach(function (el) {
+        el.classList.add("in");
+      });
+    } else {
+      var io = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) {
+              e.target.classList.add("in");
+              io.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.12 },
+      );
+      reveals.forEach(function (el) {
+        io.observe(el);
+      });
+    }
+  })();
+</script>

@@ -59,6 +59,16 @@ const DEMOS: Record<string, DemoConfig> = {
     createdAt: "2026-07-19",
     pages: ["proposal.html"],
   },
+  // Fictitious US bilingual medspa showcase (Estéticas niche, US bilingual-wedge).
+  // preview.html = live "chat with Camila" hub; proposal.html = medspa sales page.
+  // Shareable to many US medspa prospects — the demo store lives in
+  // cushlabs-messenger-bot (page + bot); this is its gated client-facing wrapper.
+  lumiere: {
+    clientName: "Lumière Medspa (Demo) — US medspa showcase",
+    accessToken: "lumiere-DZK5Tk4i4yhTvINZMbf2",
+    createdAt: "2026-07-25",
+    pages: ["preview.html", "proposal.html"],
+  },
 };
 
 function expiryOf(c: DemoConfig): Date {
