@@ -122,6 +122,35 @@ Documented in CLAUDE.md and memory `feedback_tailwind4_color_collision`. Custom 
 
 ## Session History
 
+## Session: 2026-07-25 — Lumière Medspa: bilingual US medspa demo (preview hub + proposal)
+
+### Accomplished
+
+- **Two gated demo pages shipped to production** (PR #203, live at `cushlabs.ai/demo/lumiere/`): `preview.html` (interactive "chat with Camila" hub — m.me CTA, copy-to-clipboard sample prompts, bilingual tester caveat) and `proposal.html` (medspa sales proposal, Ultra framed as the clinic/medspa tier, USD $129/$229/$349, never converted). Bilingual EN-default with es-MX toggle, brand system (cush-orange, Space Grotesk + Source Serif stacks, dark-mode), inline Lucide SVG, self-contained.
+- **Registered in `api/demo.ts`** (`lumiere` slug, 90-day gate). Verified live on prod: token→302→200, httpOnly cookie, `noindex`.
+- **Removed a Google Fonts `@import`** a subagent had added — gated demos stay self-contained/CSP-safe like `demos/azucar`.
+- **New strategy doc** `docs/strategy/US-ESTETICA-BILINGUAL-WEDGE.md` — scoped extension of MX-first (not a reversal): US Estéticas as the bilingual-wedge intersection of our #1 beauty/medspa vertical and the documented US angle. Names the US-client billing/compliance gate.
+
+### Decisions Made
+
+- Preview-first before prod merge to catch the look (approved), then pushed to production.
+- The demo store is split across repos: FB page + AI agent = `cushlabs-messenger-bot` (tenant `lumiere-demo`, built by the new config-driven demo factory); this gated wrapper = here.
+
+### Immediate Next Steps
+
+- [ ] The preview hub's **`m.me` CTA is a placeholder** (`M_ME_PAGE_ID_PLACEHOLDER`) — NOT send-ready until the Lumière FB page is created (bot-repo side) and the real page id is swapped in.
+- [ ] Explore a composite CushLabs-services demo (Messenger + WhatsApp + voice + reputation) and in-chat booking (Google Calendar + owner email).
+
+### Technical Debt
+
+- None new here. US-client LLC + medical-ad compliance gate tracked in the bot repo's `TECH_DEBT.md` #15.
+
+### Open Questions / Blockers
+
+- m.me go-live depends on the bot-repo FB page step.
+
+---
+
 ## Session: 2026-07-19/20 — Token-gated client demo system + real-offer onboarding + La Tiendita rebuild
 
 ### Accomplished
