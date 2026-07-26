@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-30T16:52:10.496Z",
+  "generatedAt": "2026-07-21T20:44:20.339Z",
   "count": 38,
   "projects": [
     {
@@ -44,13 +44,13 @@
       "status": null,
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 1268985,
+        "TypeScript": 1269672,
         "JavaScript": 12530,
         "CSS": 10362
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-06-29T16:48:29Z",
+      "lastPushed": "2026-07-20T16:48:39Z",
       "createdAt": "2025-12-02T07:09:31Z",
       "isFeatured": true,
       "isArchived": false,
@@ -176,7 +176,7 @@
       "status": "Production",
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 1091630,
+        "TypeScript": 1093273,
         "JavaScript": 16173,
         "PLpgSQL": 10195,
         "CSS": 8564,
@@ -184,7 +184,7 @@
       },
       "stars": 1,
       "forks": 0,
-      "lastPushed": "2026-06-29T06:34:14Z",
+      "lastPushed": "2026-07-20T06:35:03Z",
       "createdAt": "2025-11-23T00:24:28Z",
       "isFeatured": true,
       "isArchived": false,
@@ -249,6 +249,149 @@
       ],
       "videoUrl": "https://cdn.cushlabs.ai/ny-ai-chatbot/video/ny-eng-chatbot-brief.mp4",
       "videoPoster": "https://cdn.cushlabs.ai/ny-ai-chatbot/video/ny-eng-chatbot-brief-poster.jpg"
+    },
+    {
+      "id": 1232252613,
+      "name": "cushlabs-messenger",
+      "title": "CushLabs Messenger",
+      "description": "AI-powered Facebook Messenger bot platform — bilingual onboarding now, multi-tenant Worker runtime next.",
+      "summary": "> The client-onboarding layer for CushLabs' AI-powered Messenger bots — bilingual voice-profile capture that",
+      "url": "https://github.com/RCushmaniii/cushlabs-messenger",
+      "demoUrl": "https://cushlabs.ai",
+      "liveUrl": "https://survey.cushlabs.ai/",
+      "homepage": "https://cushlabs.ai",
+      "topics": [
+        "ai-agents",
+        "bilingual",
+        "cloudflare-workers",
+        "cushlabs",
+        "kv-storage",
+        "messenger-platform",
+        "multi-tenant",
+        "react",
+        "tailwindcss",
+        "typescript"
+      ],
+      "categories": [
+        "AI Automation"
+      ],
+      "tags": [
+        "ai-agents",
+        "bilingual",
+        "cloudflare-workers",
+        "cushlabs",
+        "kv-storage",
+        "messenger-platform",
+        "multi-tenant",
+        "react",
+        "tailwindcss",
+        "typescript",
+        "claude-ai",
+        "rag",
+        "conversational-ai",
+        "facebook",
+        "vector-search",
+        "client-onboarding"
+      ],
+      "stack": [
+        "Cloudflare Workers",
+        "Claude API (Haiku + Sonnet)",
+        "Cloudflare Vectorize (RAG)",
+        "Cloudflare Workers AI (embeddings)",
+        "Cloudflare KV",
+        "Meta Messenger Platform",
+        "TypeScript (strict)",
+        "React 19 + Tailwind 4 (admin)",
+        "Sentry"
+      ],
+      "status": null,
+      "language": "TypeScript",
+      "languages": {
+        "TypeScript": 192632,
+        "JavaScript": 24852,
+        "HTML": 5989,
+        "CSS": 5847
+      },
+      "stars": 0,
+      "forks": 0,
+      "lastPushed": "2026-07-17T00:49:32Z",
+      "createdAt": "2026-05-07T18:38:22Z",
+      "isFeatured": true,
+      "isArchived": false,
+      "isPrivate": true,
+      "tagline": "The 24/7 bilingual AI assistant for Facebook Messenger — built from your business's own content, so no lead goes cold.",
+      "thumbnail": "https://cdn.cushlabs.ai/cushlabs-messenger/images/thumb.webp",
+      "problem": "Businesses on Facebook get a steady stream of Messenger questions — pricing, availability, hours,\nservices — and in bilingual markets like Mexico they arrive in both Spanish and English. No owner can\nwatch the inbox 24/7, generic auto-replies quietly lose the lead while the prospect keeps shopping, and\noff-the-shelf chatbots sound robotic and invent answers they can't stand behind. The result is missed\nconversations, slow first responses, and revenue that walks to whoever replied first.\n",
+      "solution": "A single multi-tenant Cloudflare Worker serves every client through page_id routing, with\nno per-client deployments to maintain. RAG grounded in each client's own content keeps answers\naccurate and on-brand, while native bilingual handling detects English or Spanish and replies\nwithout manual switching. When a conversation needs a person, the assistant hands off gracefully\nand then resumes automatically — and onboarding a new client takes one CLI command and one URL.\n",
+      "keyFeatures": [
+        "24/7 instant replies to customer inquiries on Facebook Messenger — pricing, availability, hours, services",
+        "Native bilingual EN/ES with automatic language detection — no manual switching mid-conversation",
+        "RAG-grounded answers drawn from the client's own content — accurate, never hallucinated",
+        "Graceful human handover when a conversation needs a person, then automatic resume",
+        "One multi-tenant Cloudflare Worker serves every client via page_id routing — no per-client deployments"
+      ],
+      "metrics": [
+        "New client onboards in under 60 seconds of operator time — one CLI command, one URL",
+        "Sub-100ms typical survey persistence latency via edge KV writes",
+        "Zero per-client deployments — a single Worker scales to every client through page_id routing",
+        "Structured, schema-validated voice profiles replace lossy email-and-spreadsheet onboarding"
+      ],
+      "priority": 3,
+      "dateCompleted": null,
+      "slides": [
+        {
+          "src": "https://cdn.cushlabs.ai/cushlabs-messenger/images/thumb.webp",
+          "altEn": "A boutique customer messages the shop on Facebook — \"Do you have this in medium?\" — and the AI assistant answers instantly with availability and offers to reserve it.",
+          "altEs": "Una clienta le escribe a la boutique por Facebook — \"¿Tienen esta blusa en talla mediana?\" — y el asistente con IA responde al instante con la disponibilidad y le ofrece apartarla."
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/cushlabs-messenger/images/hero-01.webp",
+          "altEn": "The 24/7 AI Sales Assistant for Facebook Messenger — built from your content, trained on your business. Made by CushLabs.",
+          "altEs": "El asistente de ventas con IA 24/7 para Facebook Messenger — creado a partir de tu contenido y entrenado en tu negocio. Hecho por CushLabs."
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/cushlabs-messenger/images/hero-02.webp",
+          "altEn": "The problem every business owner knows — your Facebook page gets messages. You catch some. Most you don't.",
+          "altEs": "El problema que todo dueño de negocio conoce — tu página de Facebook recibe mensajes. Algunos los alcanzas a contestar. La mayoría no."
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/cushlabs-messenger/images/hero-03.webp",
+          "altEn": "Generic auto-replies are a polite way to lose a lead — the lead-decay curve.",
+          "altEs": "Las respuestas automáticas son una forma amable de perder un cliente potencial — la curva de decaimiento del prospecto."
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/cushlabs-messenger/images/hero-04.webp",
+          "altEn": "What if your inbox answered itself? Introducing the CushLabs AI Messaging Assistant.",
+          "altEs": "¿Y si tu bandeja de entrada se respondiera sola? Te presentamos el Asistente de Mensajería con IA de CushLabs."
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/cushlabs-messenger/images/hero-05.webp",
+          "altEn": "Never lose a prospect while you sleep — qualified conversations at 8:30 PM, 11:15 PM, 2:00 AM.",
+          "altEs": "Nunca pierdas un prospecto mientras duermes — conversaciones calificadas a las 8:30 PM, 11:15 PM y 2:00 AM."
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/cushlabs-messenger/images/hero-06.webp",
+          "altEn": "Get your time back and stop repeating yourself — the assistant handles FAQs so you only step in when a client is ready to buy.",
+          "altEs": "Recupera tu tiempo y deja de repetir lo mismo — el asistente responde las preguntas frecuentes para que solo intervengas cuando un cliente está listo para comprar."
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/cushlabs-messenger/images/hero-07.webp",
+          "altEn": "Speaks their language perfectly and without interruption — native bilingual EN/ES with no manual switching.",
+          "altEs": "Habla su idioma a la perfección y sin interrupciones — bilingüe nativo EN/ES, sin cambios manuales."
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/cushlabs-messenger/images/hero-08.webp",
+          "altEn": "Sells like you, because it's built from you — your website, your FAQs, your methodology, your prices.",
+          "altEs": "Vende como tú, porque está hecho de ti — tu sitio web, tus preguntas frecuentes, tu metodología, tus precios."
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/cushlabs-messenger/images/hero-09.webp",
+          "altEn": "The math is simple: it pays for itself the first time it converts a client you'd otherwise have lost.",
+          "altEs": "La cuenta es simple: se paga solo la primera vez que convierte a un cliente que de otro modo habrías perdido."
+        }
+      ],
+      "videoUrl": null,
+      "videoPoster": null
     },
     {
       "id": 1164355422,
@@ -317,14 +460,14 @@
       "status": "Production",
       "language": "HTML",
       "languages": {
-        "HTML": 518122,
-        "JavaScript": 125038,
+        "HTML": 516363,
+        "JavaScript": 159258,
         "CSS": 8475,
         "Dockerfile": 358
       },
       "stars": 0,
       "forks": 1,
-      "lastPushed": "2026-06-29T19:44:07Z",
+      "lastPushed": "2026-07-07T20:40:04Z",
       "createdAt": "2026-02-23T01:31:09Z",
       "isFeatured": true,
       "isArchived": false,
@@ -412,149 +555,6 @@
       "videoPoster": "https://cdn.cushlabs.ai/cushlabs-ai-voice-agent/video/voice-cushlabs-brief-poster.webp"
     },
     {
-      "id": 1232252613,
-      "name": "cushlabs-messenger",
-      "title": "CushLabs Messenger",
-      "description": "AI-powered Facebook Messenger bot platform — bilingual onboarding now, multi-tenant Worker runtime next.",
-      "summary": "> The platform layer for CushLabs' AI-powered Messenger bots — starting with bilingual client onboarding, growing into a multi-tenant bot runtime.",
-      "url": "https://github.com/RCushmaniii/cushlabs-messenger",
-      "demoUrl": "https://cushlabs.ai",
-      "liveUrl": "https://survey.cushlabs.ai/",
-      "homepage": "https://cushlabs.ai",
-      "topics": [
-        "ai-agents",
-        "bilingual",
-        "cloudflare-workers",
-        "cushlabs",
-        "kv-storage",
-        "messenger-platform",
-        "multi-tenant",
-        "react",
-        "tailwindcss",
-        "typescript"
-      ],
-      "categories": [
-        "AI Automation"
-      ],
-      "tags": [
-        "ai-agents",
-        "bilingual",
-        "cloudflare-workers",
-        "cushlabs",
-        "kv-storage",
-        "messenger-platform",
-        "multi-tenant",
-        "react",
-        "tailwindcss",
-        "typescript",
-        "claude-ai",
-        "rag",
-        "conversational-ai",
-        "facebook",
-        "vector-search",
-        "client-onboarding"
-      ],
-      "stack": [
-        "Cloudflare Workers",
-        "Claude API (Haiku + Sonnet)",
-        "Cloudflare Vectorize (RAG)",
-        "Cloudflare Workers AI (embeddings)",
-        "Cloudflare KV",
-        "Meta Messenger Platform",
-        "TypeScript (strict)",
-        "React 19 + Tailwind 4 (admin)",
-        "Sentry"
-      ],
-      "status": null,
-      "language": "TypeScript",
-      "languages": {
-        "TypeScript": 147273,
-        "JavaScript": 24529,
-        "HTML": 5184,
-        "CSS": 2701
-      },
-      "stars": 0,
-      "forks": 0,
-      "lastPushed": "2026-06-22T15:38:26Z",
-      "createdAt": "2026-05-07T18:38:22Z",
-      "isFeatured": true,
-      "isArchived": false,
-      "isPrivate": true,
-      "tagline": "The 24/7 bilingual AI assistant for Facebook Messenger — built from your business's own content, so no lead goes cold.",
-      "thumbnail": "https://cdn.cushlabs.ai/cushlabs-messenger/images/thumb.webp",
-      "problem": "Businesses on Facebook get a steady stream of Messenger questions — pricing, availability, hours,\nservices — and in bilingual markets like Mexico they arrive in both Spanish and English. No owner can\nwatch the inbox 24/7, generic auto-replies quietly lose the lead while the prospect keeps shopping, and\noff-the-shelf chatbots sound robotic and invent answers they can't stand behind. The result is missed\nconversations, slow first responses, and revenue that walks to whoever replied first.\n",
-      "solution": "A single multi-tenant Cloudflare Worker serves every client through page_id routing, with\nno per-client deployments to maintain. RAG grounded in each client's own content keeps answers\naccurate and on-brand, while native bilingual handling detects English or Spanish and replies\nwithout manual switching. When a conversation needs a person, the assistant hands off gracefully\nand then resumes automatically — and onboarding a new client takes one CLI command and one URL.\n",
-      "keyFeatures": [
-        "24/7 instant replies to customer inquiries on Facebook Messenger — pricing, availability, hours, services",
-        "Native bilingual EN/ES with automatic language detection — no manual switching mid-conversation",
-        "RAG-grounded answers drawn from the client's own content — accurate, never hallucinated",
-        "Graceful human handover when a conversation needs a person, then automatic resume",
-        "One multi-tenant Cloudflare Worker serves every client via page_id routing — no per-client deployments"
-      ],
-      "metrics": [
-        "New client onboards in under 60 seconds of operator time — one CLI command, one URL",
-        "Sub-100ms typical survey persistence latency via edge KV writes",
-        "Zero per-client deployments — a single Worker scales to every client through page_id routing",
-        "Structured, schema-validated voice profiles replace lossy email-and-spreadsheet onboarding"
-      ],
-      "priority": 3,
-      "dateCompleted": null,
-      "slides": [
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-messenger/images/thumb.webp",
-          "altEn": "A boutique customer messages the shop on Facebook — \"Do you have this in medium?\" — and the AI assistant answers instantly with availability and offers to reserve it.",
-          "altEs": "Una clienta le escribe a la boutique por Facebook — \"¿Tienen esta blusa en talla mediana?\" — y el asistente con IA responde al instante con la disponibilidad y le ofrece apartarla."
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-messenger/images/hero-01.webp",
-          "altEn": "The 24/7 AI Sales Assistant for Facebook Messenger — built from your content, trained on your business. Made by CushLabs.",
-          "altEs": "El asistente de ventas con IA 24/7 para Facebook Messenger — creado a partir de tu contenido y entrenado en tu negocio. Hecho por CushLabs."
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-messenger/images/hero-02.webp",
-          "altEn": "The problem every business owner knows — your Facebook page gets messages. You catch some. Most you don't.",
-          "altEs": "El problema que todo dueño de negocio conoce — tu página de Facebook recibe mensajes. Algunos los alcanzas a contestar. La mayoría no."
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-messenger/images/hero-03.webp",
-          "altEn": "Generic auto-replies are a polite way to lose a lead — the lead-decay curve.",
-          "altEs": "Las respuestas automáticas son una forma amable de perder un cliente potencial — la curva de decaimiento del prospecto."
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-messenger/images/hero-04.webp",
-          "altEn": "What if your inbox answered itself? Introducing the CushLabs AI Messaging Assistant.",
-          "altEs": "¿Y si tu bandeja de entrada se respondiera sola? Te presentamos el Asistente de Mensajería con IA de CushLabs."
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-messenger/images/hero-05.webp",
-          "altEn": "Never lose a prospect while you sleep — qualified conversations at 8:30 PM, 11:15 PM, 2:00 AM.",
-          "altEs": "Nunca pierdas un prospecto mientras duermes — conversaciones calificadas a las 8:30 PM, 11:15 PM y 2:00 AM."
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-messenger/images/hero-06.webp",
-          "altEn": "Get your time back and stop repeating yourself — the assistant handles FAQs so you only step in when a client is ready to buy.",
-          "altEs": "Recupera tu tiempo y deja de repetir lo mismo — el asistente responde las preguntas frecuentes para que solo intervengas cuando un cliente está listo para comprar."
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-messenger/images/hero-07.webp",
-          "altEn": "Speaks their language perfectly and without interruption — native bilingual EN/ES with no manual switching.",
-          "altEs": "Habla su idioma a la perfección y sin interrupciones — bilingüe nativo EN/ES, sin cambios manuales."
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-messenger/images/hero-08.webp",
-          "altEn": "Sells like you, because it's built from you — your website, your FAQs, your methodology, your prices.",
-          "altEs": "Vende como tú, porque está hecho de ti — tu sitio web, tus preguntas frecuentes, tu metodología, tus precios."
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-messenger/images/hero-09.webp",
-          "altEn": "The math is simple: it pays for itself the first time it converts a client you'd otherwise have lost.",
-          "altEs": "La cuenta es simple: se paga solo la primera vez que convierte a un cliente que de otro modo habrías perdido."
-        }
-      ],
-      "videoUrl": null,
-      "videoPoster": null
-    },
-    {
       "id": 1196535593,
       "name": "cushlabs-marketsignal",
       "title": "MarketSignal — AI-Powered Local Competitive Intelligence",
@@ -603,29 +603,30 @@
         "drizzle-orm"
       ],
       "stack": [
-        "Next.js 15 (App Router)",
+        "Next.js 16 (App Router)",
         "React 19",
         "Tailwind CSS 4",
         "Neon (serverless PostgreSQL)",
         "Drizzle ORM",
         "Claude API (Sonnet)",
         "WhatsApp Business API",
-        "Playwright",
+        "DataForSEO API (Google Maps + reviews)",
+        "Google Business Profile API (review replies)",
         "TypeScript"
       ],
       "status": null,
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 1144341,
-        "JavaScript": 47285,
+        "TypeScript": 1244770,
+        "JavaScript": 58346,
         "HTML": 29745,
-        "CSS": 8310,
+        "CSS": 10386,
         "Shell": 5162,
         "Dockerfile": 2347
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-06-30T15:10:03Z",
+      "lastPushed": "2026-07-17T00:48:31Z",
       "createdAt": "2026-03-30T19:46:00Z",
       "isFeatured": true,
       "isArchived": false,
@@ -638,7 +639,8 @@
         "Weekly competitive intelligence reports for 3-5 pilot clients",
         "Week-over-week ranking and review delta tracking per location",
         "AI-generated action items with specific, high-impact recommendations",
-        "WhatsApp delivery — reports land where clients already communicate"
+        "WhatsApp delivery — reports land where clients already communicate",
+        "AI reputation manager — drafts tone-matched replies to unanswered Google reviews for one-click owner approval"
       ],
       "metrics": [
         "Structured competitive intelligence multi-location businesses previously had no access to",
@@ -700,11 +702,11 @@
     },
     {
       "id": 1203303335,
-      "name": "ny-english-messenger-bot",
+      "name": "cushlabs-messenger-bot",
       "title": "NY English Messenger Bot — Bilingual AI Assistant for Facebook Messenger",
       "description": "Bilingual AI assistant for the New York English Facebook page — Claude (Anthropic) on Cloudflare Workers, with RAG over a Qdrant knowledge base and Meta Messenger webhook integration. First deployment of a reusable CushLabs Messenger bot template.",
-      "summary": "> Facebook Messenger AI assistant for the New York English page — bilingual EN/ES customer engagement powered by Claude, RAG, and Cloudflare Workers.",
-      "url": "https://github.com/RCushmaniii/ny-english-messenger-bot",
+      "summary": "> Multi-tenant Facebook Messenger AI platform — one Cloudflare Worker serving many business Pages with bilingual (EN/es-MX) Claude-powered assistants, RAG knowledge bases, structured business facts, a",
+      "url": "https://github.com/RCushmaniii/cushlabs-messenger-bot",
       "demoUrl": null,
       "liveUrl": "",
       "homepage": null,
@@ -756,20 +758,20 @@
       "status": "Production",
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 237775,
-        "JavaScript": 21118,
+        "TypeScript": 562882,
+        "JavaScript": 83445,
         "HTML": 733,
         "CSS": 323
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-06-30T15:58:53Z",
+      "lastPushed": "2026-07-20T16:08:14Z",
       "createdAt": "2026-04-06T23:20:56Z",
       "isFeatured": true,
       "isArchived": false,
       "isPrivate": true,
       "tagline": "The production Facebook Messenger assistant for New York English — an executive English coaching studio in Guadalajara — answering prospective students 24/7 in English and Spanish.",
-      "thumbnail": "https://cdn.cushlabs.ai/ny-english-messenger-bot/public/images/thumb.webp",
+      "thumbnail": "https://cdn.cushlabs.ai/cushlabs-messenger-bot/public/images/thumb.webp",
       "problem": "New York English reactivated its Facebook page as a marketing channel, and prospective students —\nMexican professionals weighing executive English coaching — began sending Messenger questions about\npricing, scheduling, methodology, and online vs. in-person classes, in both English and Spanish. The\nstudio can't watch the inbox around the clock, prospects expect fast answers, and a generic auto-reply\nor a chatbot that invents course details would cost real enrollments.\n",
       "solution": "A two-layer router sends quick pleasantries to Claude Haiku for fast, low-cost replies and real questions to Claude Sonnet with RAG context — so answers about pricing, scheduling, and methodology are grounded in New York English's own bilingual content, never invented, and delivered in the prospect's detected language. When someone wants a person, Meta's Handover Protocol passes the thread to the studio's Page inbox and auto-resumes the bot after a 30-minute timeout. HMAC-verified webhooks, Sentry monitoring, and a /health endpoint keep it production-solid.\n",
       "keyFeatures": [
@@ -777,64 +779,64 @@
         "Bilingual EN/ES with automatic language detection — Mexican professionals are answered in their own language",
         "RAG-grounded responses pulled from New York English's real course and pricing content — never invented",
         "Handover to the studio's Page inbox when a prospect is ready to enroll or needs a personal reply",
-        "Proven in production — the reference build the multi-tenant CushLabs Messenger platform was extracted from"
+        "Proven in production — the deployment that grew into the multi-tenant CushLabs Messenger platform"
       ],
       "metrics": [
         "Instant, accurate answers on pricing, scheduling, and methodology — in the prospect's own language",
         "Hours of repetitive Messenger triage reclaimed for the studio owner",
         "RAG-grounded on real course content — zero invented details",
-        "Production reference build the CushLabs Messenger platform was extracted from"
+        "Client #0 of the multi-tenant CushLabs Messenger platform — the deployment it grew from"
       ],
       "priority": 5,
       "dateCompleted": null,
       "slides": [
         {
-          "src": "https://cdn.cushlabs.ai/ny-english-messenger-bot/public/images/portfolio/slide-01.webp",
+          "src": "https://cdn.cushlabs.ai/cushlabs-messenger-bot/public/images/portfolio/slide-01.webp",
           "altEn": "NY English Messenger Bot — Bilingual AI Assistant for Facebook Messenger",
           "altEs": "NY English Messenger Bot — Bilingual AI Assistant for Facebook Messenger"
         },
         {
-          "src": "https://cdn.cushlabs.ai/ny-english-messenger-bot/public/images/portfolio/slide-02.webp",
+          "src": "https://cdn.cushlabs.ai/cushlabs-messenger-bot/public/images/portfolio/slide-02.webp",
           "altEn": "NY English Messenger Bot — Bilingual AI Assistant for Facebook Messenger",
           "altEs": "NY English Messenger Bot — Bilingual AI Assistant for Facebook Messenger"
         },
         {
-          "src": "https://cdn.cushlabs.ai/ny-english-messenger-bot/public/images/portfolio/slide-03.webp",
+          "src": "https://cdn.cushlabs.ai/cushlabs-messenger-bot/public/images/portfolio/slide-03.webp",
           "altEn": "NY English Messenger Bot — Bilingual AI Assistant for Facebook Messenger",
           "altEs": "NY English Messenger Bot — Bilingual AI Assistant for Facebook Messenger"
         },
         {
-          "src": "https://cdn.cushlabs.ai/ny-english-messenger-bot/public/images/portfolio/slide-04.webp",
+          "src": "https://cdn.cushlabs.ai/cushlabs-messenger-bot/public/images/portfolio/slide-04.webp",
           "altEn": "NY English Messenger Bot — Bilingual AI Assistant for Facebook Messenger",
           "altEs": "NY English Messenger Bot — Bilingual AI Assistant for Facebook Messenger"
         },
         {
-          "src": "https://cdn.cushlabs.ai/ny-english-messenger-bot/public/images/portfolio/slide-05.webp",
+          "src": "https://cdn.cushlabs.ai/cushlabs-messenger-bot/public/images/portfolio/slide-05.webp",
           "altEn": "NY English Messenger Bot — Bilingual AI Assistant for Facebook Messenger",
           "altEs": "NY English Messenger Bot — Bilingual AI Assistant for Facebook Messenger"
         },
         {
-          "src": "https://cdn.cushlabs.ai/ny-english-messenger-bot/public/images/portfolio/slide-06.webp",
+          "src": "https://cdn.cushlabs.ai/cushlabs-messenger-bot/public/images/portfolio/slide-06.webp",
           "altEn": "NY English Messenger Bot — Bilingual AI Assistant for Facebook Messenger",
           "altEs": "NY English Messenger Bot — Bilingual AI Assistant for Facebook Messenger"
         },
         {
-          "src": "https://cdn.cushlabs.ai/ny-english-messenger-bot/public/images/portfolio/slide-07.webp",
+          "src": "https://cdn.cushlabs.ai/cushlabs-messenger-bot/public/images/portfolio/slide-07.webp",
           "altEn": "NY English Messenger Bot — Bilingual AI Assistant for Facebook Messenger",
           "altEs": "NY English Messenger Bot — Bilingual AI Assistant for Facebook Messenger"
         },
         {
-          "src": "https://cdn.cushlabs.ai/ny-english-messenger-bot/public/images/portfolio/slide-08.webp",
+          "src": "https://cdn.cushlabs.ai/cushlabs-messenger-bot/public/images/portfolio/slide-08.webp",
           "altEn": "NY English Messenger Bot — Bilingual AI Assistant for Facebook Messenger",
           "altEs": "NY English Messenger Bot — Bilingual AI Assistant for Facebook Messenger"
         },
         {
-          "src": "https://cdn.cushlabs.ai/ny-english-messenger-bot/public/images/portfolio/slide-09.webp",
+          "src": "https://cdn.cushlabs.ai/cushlabs-messenger-bot/public/images/portfolio/slide-09.webp",
           "altEn": "NY English Messenger Bot — Bilingual AI Assistant for Facebook Messenger",
           "altEs": "NY English Messenger Bot — Bilingual AI Assistant for Facebook Messenger"
         }
       ],
-      "videoUrl": "https://cdn.cushlabs.ai/ny-english-messenger-bot/public/images/portfolio/24_7_AI_Sales_Assistant.mp4",
+      "videoUrl": "https://cdn.cushlabs.ai/cushlabs-messenger-bot/public/images/portfolio/24_7_AI_Sales_Assistant.mp4",
       "videoPoster": null
     },
     {
@@ -895,10 +897,10 @@
       "status": "Production",
       "language": "Astro",
       "languages": {
-        "Astro": 3377063,
-        "TypeScript": 2310406,
+        "Astro": 3872244,
+        "TypeScript": 2453612,
         "HTML": 838639,
-        "JavaScript": 408936,
+        "JavaScript": 412096,
         "CSS": 40875,
         "Python": 30138,
         "MDX": 23889,
@@ -906,7 +908,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-06-17T22:01:45Z",
+      "lastPushed": "2026-07-08T18:59:07Z",
       "createdAt": "2025-03-23T03:27:14Z",
       "isFeatured": true,
       "isArchived": false,
@@ -1051,7 +1053,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-06-22T15:22:56Z",
+      "lastPushed": "2026-07-13T06:27:58Z",
       "createdAt": "2026-03-06T18:20:23Z",
       "isFeatured": true,
       "isArchived": false,
@@ -1189,13 +1191,13 @@
       "status": null,
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 267096,
-        "JavaScript": 3946,
-        "CSS": 243
+        "TypeScript": 330883,
+        "JavaScript": 4400,
+        "CSS": 469
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-06-27T23:00:02Z",
+      "lastPushed": "2026-07-15T21:30:12Z",
       "createdAt": "2026-06-24T23:58:40Z",
       "isFeatured": false,
       "isArchived": false,
@@ -1320,13 +1322,13 @@
       "status": "Production",
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 321164,
+        "TypeScript": 321842,
         "JavaScript": 12040,
         "CSS": 1268
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-06-29T15:43:49Z",
+      "lastPushed": "2026-07-19T01:16:17Z",
       "createdAt": "2026-03-17T18:08:51Z",
       "isFeatured": false,
       "isArchived": false,
@@ -1444,13 +1446,13 @@
       "language": "HTML",
       "languages": {
         "HTML": 257402,
-        "JavaScript": 75583,
+        "JavaScript": 77304,
         "CSS": 41745,
         "PowerShell": 1981
       },
       "stars": 2,
       "forks": 0,
-      "lastPushed": "2026-06-21T22:36:50Z",
+      "lastPushed": "2026-07-19T05:15:27Z",
       "createdAt": "2025-12-20T10:31:00Z",
       "isFeatured": true,
       "isArchived": false,
@@ -1584,7 +1586,7 @@
       "status": "Production",
       "language": "Svelte",
       "languages": {
-        "Svelte": 185668,
+        "Svelte": 185670,
         "TypeScript": 27503,
         "Astro": 19234,
         "CSS": 4232,
@@ -1592,8 +1594,8 @@
         "MDX": 1211
       },
       "stars": 0,
-      "forks": 0,
-      "lastPushed": "2026-06-28T00:31:28Z",
+      "forks": 1,
+      "lastPushed": "2026-07-13T06:30:20Z",
       "createdAt": "2026-03-06T17:57:40Z",
       "isFeatured": false,
       "isArchived": false,
@@ -1749,7 +1751,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-06-29T13:16:45Z",
+      "lastPushed": "2026-07-13T06:28:11Z",
       "createdAt": "2026-03-09T19:14:08Z",
       "isFeatured": false,
       "isArchived": false,
@@ -1862,7 +1864,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-06-29T05:44:14Z",
+      "lastPushed": "2026-07-13T06:28:26Z",
       "createdAt": "2025-11-05T18:11:38Z",
       "isFeatured": false,
       "isArchived": false,
@@ -1986,7 +1988,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-06-28T15:02:46Z",
+      "lastPushed": "2026-07-19T15:03:01Z",
       "createdAt": "2026-03-04T22:07:57Z",
       "isFeatured": false,
       "isArchived": false,
@@ -2131,7 +2133,7 @@
       },
       "stars": 1,
       "forks": 0,
-      "lastPushed": "2026-06-29T03:56:48Z",
+      "lastPushed": "2026-07-13T06:28:02Z",
       "createdAt": "2026-01-25T01:59:32Z",
       "isFeatured": false,
       "isArchived": false,
@@ -2238,7 +2240,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-06-29T20:08:23Z",
+      "lastPushed": "2026-07-13T06:28:15Z",
       "createdAt": "2026-03-08T19:31:57Z",
       "isFeatured": false,
       "isArchived": false,
@@ -2653,8 +2655,8 @@
       "status": null,
       "language": "Python",
       "languages": {
-        "Python": 718157,
-        "TypeScript": 611486,
+        "Python": 742403,
+        "TypeScript": 615255,
         "PLpgSQL": 54863,
         "Batchfile": 4338,
         "JavaScript": 4239,
@@ -2662,9 +2664,9 @@
         "HTML": 2740,
         "Dockerfile": 525
       },
-      "stars": 0,
+      "stars": 1,
       "forks": 0,
-      "lastPushed": "2026-06-30T16:42:40Z",
+      "lastPushed": "2026-07-21T13:17:12Z",
       "createdAt": "2025-12-16T02:09:11Z",
       "isFeatured": false,
       "isArchived": false,
@@ -2784,7 +2786,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-06-22T11:44:38Z",
+      "lastPushed": "2026-07-13T06:28:13Z",
       "createdAt": "2025-12-11T17:38:35Z",
       "isFeatured": false,
       "isArchived": false,
@@ -2920,7 +2922,7 @@
       "status": null,
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 180780,
+        "TypeScript": 181574,
         "Astro": 86603,
         "JavaScript": 20715,
         "Python": 14928,
@@ -2928,7 +2930,7 @@
       },
       "stars": 1,
       "forks": 1,
-      "lastPushed": "2026-06-22T13:24:50Z",
+      "lastPushed": "2026-07-21T07:59:10Z",
       "createdAt": "2026-03-03T07:21:12Z",
       "isFeatured": false,
       "isArchived": false,
@@ -3035,14 +3037,14 @@
       "status": "Production",
       "language": "Python",
       "languages": {
-        "Python": 533555,
+        "Python": 550905,
         "PowerShell": 4838,
         "Inno Setup": 3850,
         "Batchfile": 240
       },
       "stars": 1,
       "forks": 0,
-      "lastPushed": "2026-06-22T10:44:51Z",
+      "lastPushed": "2026-07-20T10:44:51Z",
       "createdAt": "2025-10-23T22:24:30Z",
       "isFeatured": false,
       "isArchived": false,
@@ -3180,7 +3182,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-06-21T22:20:57Z",
+      "lastPushed": "2026-07-13T06:28:30Z",
       "createdAt": "2026-06-06T19:37:00Z",
       "isFeatured": false,
       "isArchived": false,
@@ -3415,16 +3417,16 @@
       "status": null,
       "language": "Astro",
       "languages": {
-        "Astro": 671049,
-        "TypeScript": 358042,
-        "JavaScript": 99453,
-        "HTML": 61067,
+        "Astro": 851084,
+        "TypeScript": 372552,
+        "HTML": 129025,
+        "JavaScript": 107727,
         "Python": 6606,
-        "CSS": 4655
+        "CSS": 4702
       },
       "stars": 2,
       "forks": 0,
-      "lastPushed": "2026-06-29T21:25:28Z",
+      "lastPushed": "2026-07-21T20:41:39Z",
       "createdAt": "2026-01-08T03:52:43Z",
       "isFeatured": false,
       "isArchived": false,
@@ -3549,14 +3551,14 @@
       "status": null,
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 186813,
+        "TypeScript": 186815,
         "PowerShell": 3372,
         "CSS": 1578,
         "JavaScript": 363
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-06-29T22:25:40Z",
+      "lastPushed": "2026-07-20T22:24:35Z",
       "createdAt": "2026-01-05T15:06:48Z",
       "isFeatured": false,
       "isArchived": false,
@@ -3701,7 +3703,7 @@
       },
       "stars": 1,
       "forks": 0,
-      "lastPushed": "2026-06-22T01:24:02Z",
+      "lastPushed": "2026-07-13T06:28:24Z",
       "createdAt": "2025-09-23T19:15:28Z",
       "isFeatured": false,
       "isArchived": false,
@@ -3819,7 +3821,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-06-29T01:42:04Z",
+      "lastPushed": "2026-07-20T12:24:58Z",
       "createdAt": "2026-01-04T03:47:35Z",
       "isFeatured": false,
       "isArchived": false,
@@ -3936,13 +3938,13 @@
       "status": null,
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 190403,
-        "CSS": 4743,
+        "TypeScript": 191942,
+        "CSS": 5560,
         "JavaScript": 559
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-06-29T15:42:40Z",
+      "lastPushed": "2026-07-15T21:15:42Z",
       "createdAt": "2026-03-22T07:49:29Z",
       "isFeatured": false,
       "isArchived": false,
@@ -4059,14 +4061,14 @@
       "status": "Production",
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 202021,
+        "TypeScript": 202688,
         "MDX": 34006,
         "JavaScript": 1552,
         "CSS": 1352
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-06-22T00:08:02Z",
+      "lastPushed": "2026-07-15T21:15:47Z",
       "createdAt": "2026-01-13T22:16:37Z",
       "isFeatured": false,
       "isArchived": false,
@@ -4190,7 +4192,7 @@
       },
       "stars": 1,
       "forks": 0,
-      "lastPushed": "2026-06-29T01:11:40Z",
+      "lastPushed": "2026-07-13T18:23:40Z",
       "createdAt": "2026-01-23T00:50:02Z",
       "isFeatured": false,
       "isArchived": false,
@@ -4518,7 +4520,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-06-22T02:13:55Z",
+      "lastPushed": "2026-07-13T06:28:31Z",
       "createdAt": "2025-12-18T20:18:05Z",
       "isFeatured": false,
       "isArchived": false,
@@ -4645,7 +4647,7 @@
       },
       "stars": 2,
       "forks": 0,
-      "lastPushed": "2026-06-20T16:44:18Z",
+      "lastPushed": "2026-07-13T06:28:20Z",
       "createdAt": "2025-10-02T22:40:01Z",
       "isFeatured": false,
       "isArchived": false,

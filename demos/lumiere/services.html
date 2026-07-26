@@ -349,22 +349,6 @@
   .badge-status.live .bdot {
     background: var(--live);
   }
-  .badge-status.new {
-    color: #fff;
-    background: var(--orange);
-    border: 1px solid var(--orange);
-  }
-  .badge-status.new .bdot {
-    background: #fff;
-  }
-  .badge-status.roadmap {
-    color: var(--ink-soft);
-    background: transparent;
-    border: 1px dashed color-mix(in srgb, var(--ink-soft) 50%, var(--line));
-  }
-  .badge-status.roadmap .bdot {
-    background: var(--ink-soft);
-  }
 
   /* ---------- capability grid ---------- */
   .cap-grid {
@@ -384,9 +368,6 @@
   }
   .band .cap {
     background: var(--bg);
-  }
-  .cap.soon {
-    border-style: dashed;
   }
   .cap-top {
     display: flex;
@@ -451,9 +432,11 @@
   /* ---------- powered by Meta band ---------- */
   .meta-platforms {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 14px;
     margin-top: 30px;
+    max-width: 640px;
+    margin-inline: auto;
   }
   .mp {
     display: flex;
@@ -909,15 +892,13 @@
 
         <p class="lede lang-en">
           One AI brain across Messenger, Google, WhatsApp alerts, and voice —
-          trained on your real menu, prices, and hours. Here's the whole front
-          office for a medspa like Lumière, and an honest map of what's live
-          today versus what's on the way.
+          trained on your real menu, prices, and hours. This is the whole front
+          office for a medspa like Lumière, live and working today.
         </p>
         <p class="lede lang-es">
           Un solo cerebro de IA en Messenger, Google, avisos por WhatsApp y voz
           — entrenado con tu menú, precios y horarios reales. Esta es toda la
-          recepción para un medspa como Lumière, con un mapa honesto de qué está
-          en vivo hoy y qué viene en camino.
+          recepción para un medspa como Lumière, en vivo y funcionando hoy.
         </p>
 
         <div class="meta">
@@ -951,25 +932,18 @@
             <rect width="7" height="7" x="14" y="14" rx="1" />
             <rect width="7" height="7" x="3" y="14" rx="1" />
           </svg>
-          <span class="lang-en">Every capability, honestly badged</span>
-          <span class="lang-es">Cada función, con su estado honesto</span>
+          <span class="lang-en">Every capability, live today</span>
+          <span class="lang-es">Cada función, en vivo hoy</span>
         </div>
-        <h2 class="lang-en">
-          The front office, piece by piece — and what's real today.
-        </h2>
-        <h2 class="lang-es">
-          La recepción, pieza por pieza — y qué es real hoy.
-        </h2>
+        <h2 class="lang-en">The front office, piece by piece.</h2>
+        <h2 class="lang-es">La recepción, pieza por pieza.</h2>
         <p class="lang-en">
-          Every card carries an honest status. <b>Live today</b> is running in
-          production right now. <b>New</b> just went live. <b>Roadmap</b> is
-          coming — clearly labeled, never sold as if it already exists.
+          Every card below is <b>live today</b> — running in production and
+          included in the plans right now.
         </p>
         <p class="lang-es">
-          Cada tarjeta lleva un estado honesto. <b>En vivo hoy</b> ya está
-          funcionando en producción. <b>Nuevo</b> acaba de activarse.
-          <b>Roadmap</b> viene en camino — bien señalado, nunca vendido como si
-          ya existiera.
+          Cada tarjeta de abajo está <b>en vivo hoy</b> — funcionando en
+          producción e incluida en los planes ahora mismo.
         </p>
       </div>
 
@@ -1096,47 +1070,7 @@
           </p>
         </div>
 
-        <!-- 4 · WhatsApp conversational assistant · ROADMAP -->
-        <div class="cap soon">
-          <div class="cap-top">
-            <span class="cap-ic">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                aria-hidden="true"
-              >
-                <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" />
-                <path d="M8 12h.01" />
-                <path d="M12 12h.01" />
-                <path d="M16 12h.01" />
-              </svg>
-            </span>
-            <span class="badge-status roadmap">
-              <span class="bdot"></span><span class="lang-en">Roadmap</span
-              ><span class="lang-es">Roadmap</span>
-            </span>
-          </div>
-          <h3 class="lang-en">WhatsApp conversational assistant</h3>
-          <h3 class="lang-es">Asistente conversacional en WhatsApp</h3>
-          <p class="lang-en">
-            The same assistant answering your customers directly on WhatsApp.
-            Messaging permissions were approved 2026-07-22, but the
-            conversational channel is still in review — coming soon, not live
-            yet.
-          </p>
-          <p class="lang-es">
-            El mismo asistente contestando a tus clientes directamente en
-            WhatsApp. Los permisos de mensajería se aprobaron el 2026-07-22,
-            pero el canal conversacional sigue en revisión — próximamente, aún
-            no está en vivo.
-          </p>
-        </div>
-
-        <!-- 5 · AI Voice agent · LIVE -->
+        <!-- 4 · AI Voice agent · LIVE -->
         <div class="cap">
           <div class="cap-top">
             <span class="cap-ic">
@@ -1171,8 +1105,8 @@
           </p>
         </div>
 
-        <!-- 6 · In-chat booking · ROADMAP -->
-        <div class="cap soon">
+        <!-- 5 · In-chat booking · LIVE -->
+        <div class="cap">
           <div class="cap-top">
             <span class="cap-ic">
               <svg
@@ -1191,23 +1125,39 @@
                 <path d="m9 16 2 2 4-4" />
               </svg>
             </span>
-            <span class="badge-status roadmap">
-              <span class="bdot"></span><span class="lang-en">Roadmap</span
-              ><span class="lang-es">Roadmap</span>
+            <span class="badge-status live">
+              <span class="bdot"></span><span class="lang-en">Live today</span
+              ><span class="lang-es">En vivo hoy</span>
             </span>
           </div>
           <h3 class="lang-en">In-chat booking</h3>
           <h3 class="lang-es">Agenda dentro del chat</h3>
           <p class="lang-en">
-            Collect a preferred time inside the chat and drop it straight onto
-            the owner's calendar with an email confirmation. On the roadmap —
-            coming soon.
+            Camila, our AI assistant, books consultations right in the chat —
+            she offers real open times and sends a confirmation with a
+            video-call link.
           </p>
           <p class="lang-es">
-            Captura el horario preferido dentro del chat y pásalo directo al
-            calendario del dueño con confirmación por correo. En el roadmap —
-            próximamente.
+            Camila, nuestra asistente de IA, agenda consultas dentro del mismo
+            chat — ofrece horarios reales disponibles y envía una confirmación
+            con un enlace de videollamada.
           </p>
+          <a class="cap-link" href="preview.html">
+            <span class="lang-en">See it live</span
+            ><span class="lang-es">Míralo en vivo</span>
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M5 12h14" />
+              <path d="m12 5 7 7-7 7" />
+            </svg>
+          </a>
         </div>
       </div>
     </div>
@@ -1235,14 +1185,14 @@
         <h2 class="lang-en">One platform behind it all: Meta.</h2>
         <h2 class="lang-es">Una sola plataforma detrás de todo: Meta.</h2>
         <p class="lang-en">
-          Messenger and WhatsApp both run on Meta's official Business Platform.
-          Here's the honest status of each channel — what's approved and live,
-          and what's still in review.
+          Messenger and WhatsApp both run on Meta's official Business Platform —
+          approved, connected, and live, handling your customers and alerting
+          your owner in real time.
         </p>
         <p class="lang-es">
           Messenger y WhatsApp funcionan sobre la Plataforma de Negocios oficial
-          de Meta. Este es el estado honesto de cada canal — qué está aprobado y
-          en vivo, y qué sigue en revisión.
+          de Meta — aprobados, conectados y en vivo, atendiendo a tus clientes y
+          avisando al dueño en tiempo real.
         </p>
       </div>
 
@@ -1297,270 +1247,7 @@
             </div>
           </div>
         </div>
-        <div class="mp">
-          <span class="mp-ic">
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              aria-hidden="true"
-            >
-              <path d="M12 6v6l4 2" />
-              <circle cx="12" cy="12" r="10" />
-            </svg>
-          </span>
-          <div>
-            <div class="mp-name lang-en">WhatsApp — customer messaging</div>
-            <div class="mp-name lang-es">WhatsApp — mensajería a clientes</div>
-            <div class="mp-sub lang-en">
-              New: messaging approved 2026-07-22. The conversational assistant
-              is in review — not live yet.
-            </div>
-            <div class="mp-sub lang-es">
-              Nuevo: mensajería aprobada el 2026-07-22. El asistente
-              conversacional está en revisión — aún no en vivo.
-            </div>
-          </div>
-        </div>
       </div>
-    </div>
-  </section>
-
-  <!-- ===================== LIVE vs COMING ===================== -->
-  <section class="band">
-    <div class="wrap">
-      <div class="section-head center reveal">
-        <div class="eyebrow">
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            aria-hidden="true"
-          >
-            <path d="M2 12a10 10 0 1 0 20 0 10 10 0 1 0-20 0" />
-            <path d="M12 6v6l4 2" />
-          </svg>
-          <span class="lang-en">No surprises</span>
-          <span class="lang-es">Sin sorpresas</span>
-        </div>
-        <h2 class="lang-en">What's live today vs. what's coming.</h2>
-        <h2 class="lang-es">Qué está en vivo hoy y qué viene en camino.</h2>
-        <p class="lang-en">
-          We'd rather under-promise. Everything on the left is running in
-          production right now; everything on the right is genuinely on the
-          roadmap and clearly labeled as such.
-        </p>
-        <p class="lang-es">
-          Preferimos prometer de menos. Todo lo de la izquierda está funcionando
-          en producción ahora mismo; todo lo de la derecha está de verdad en el
-          roadmap y así lo señalamos.
-        </p>
-      </div>
-
-      <div class="split reveal">
-        <div class="split-col now">
-          <div class="split-h">
-            <span class="badge-status live">
-              <span class="bdot"></span><span class="lang-en">Live today</span
-              ><span class="lang-es">En vivo hoy</span>
-            </span>
-          </div>
-          <ul>
-            <li>
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                aria-hidden="true"
-              >
-                <path d="M20 6 9 17l-5-5" />
-              </svg>
-              <span class="lang-en"
-                >Messenger AI assistant — DMs + comments, bilingual, 24/7</span
-              >
-              <span class="lang-es"
-                >Asistente de IA en Messenger — mensajes + comentarios,
-                bilingüe, 24/7</span
-              >
-            </li>
-            <li>
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                aria-hidden="true"
-              >
-                <path d="M20 6 9 17l-5-5" />
-              </svg>
-              <span class="lang-en"
-                >Google review management + weekly competitor ranking</span
-              >
-              <span class="lang-es"
-                >Gestión de reseñas de Google + ranking semanal de
-                competencia</span
-              >
-            </li>
-            <li>
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                aria-hidden="true"
-              >
-                <path d="M20 6 9 17l-5-5" />
-              </svg>
-              <span class="lang-en"
-                >Owner lead-alerts on WhatsApp — name, contact, intent</span
-              >
-              <span class="lang-es"
-                >Avisos de clientes al dueño por WhatsApp — nombre, contacto,
-                intención</span
-              >
-            </li>
-            <li>
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                aria-hidden="true"
-              >
-                <path d="M20 6 9 17l-5-5" />
-              </svg>
-              <span class="lang-en"
-                >AI Voice agent (Ultra) — captures missed calls</span
-              >
-              <span class="lang-es"
-                >Agente de voz con IA (Ultra) — captura llamadas perdidas</span
-              >
-            </li>
-            <li>
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                aria-hidden="true"
-              >
-                <path d="M20 6 9 17l-5-5" />
-              </svg>
-              <span class="lang-en"
-                >Fully managed — setup, training, support, weekly reports</span
-              >
-              <span class="lang-es"
-                >Todo gestionado — configuración, entrenamiento, soporte,
-                reportes semanales</span
-              >
-            </li>
-          </ul>
-        </div>
-
-        <div class="split-col next">
-          <div class="split-h">
-            <span class="badge-status roadmap">
-              <span class="bdot"></span
-              ><span class="lang-en">On the roadmap</span
-              ><span class="lang-es">En el roadmap</span>
-            </span>
-          </div>
-          <ul>
-            <li>
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                aria-hidden="true"
-              >
-                <path d="M12 6v6l4 2" />
-                <circle cx="12" cy="12" r="10" />
-              </svg>
-              <span class="lang-en"
-                >WhatsApp conversational assistant — customer channel, in
-                review</span
-              >
-              <span class="lang-es"
-                >Asistente conversacional en WhatsApp — canal de clientes, en
-                revisión</span
-              >
-            </li>
-            <li>
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                aria-hidden="true"
-              >
-                <path d="M12 6v6l4 2" />
-                <circle cx="12" cy="12" r="10" />
-              </svg>
-              <span class="lang-en"
-                >In-chat booking → owner's calendar + email confirmation</span
-              >
-              <span class="lang-es"
-                >Agenda dentro del chat → calendario del dueño + confirmación
-                por correo</span
-              >
-            </li>
-            <li>
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                aria-hidden="true"
-              >
-                <path d="M12 6v6l4 2" />
-                <circle cx="12" cy="12" r="10" />
-              </svg>
-              <span class="lang-en"
-                >Instagram DM assistant — same brain, Meta-gated</span
-              >
-              <span class="lang-es"
-                >Asistente de mensajes en Instagram — el mismo cerebro, sujeto a
-                Meta</span
-              >
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <p class="compliance reveal">
-        <span class="lang-en"
-          >If we're ever unsure whether something is live, we badge it Roadmap.
-          Under-claiming is the only honest default.</span
-        >
-        <span class="lang-es"
-          >Si alguna vez no estamos seguros de si algo está en vivo, lo marcamos
-          como Roadmap. Prometer de menos es el único estándar honesto.</span
-        >
-      </p>
     </div>
   </section>
 
@@ -1864,11 +1551,10 @@
   <section class="final band">
     <div class="wrap narrow">
       <h2 class="lang-en reveal">
-        See the live piece for yourself — <em>message Camila</em>.
+        See it for yourself — <em>message Camila</em>.
       </h2>
       <h2 class="lang-es reveal">
-        Comprueba tú mismo lo que ya está en vivo —
-        <em>escríbele a Camila</em>.
+        Compruébalo tú mismo — <em>escríbele a Camila</em>.
       </h2>
       <p class="lang-en reveal">
         The Messenger assistant is running right now. Chat with Camila and see
