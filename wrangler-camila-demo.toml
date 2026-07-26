@@ -1,0 +1,28 @@
+name = "cushlabs-camila-demo"
+main = "workers/camila-demo.js"
+compatibility_date = "2025-10-11"
+
+[observability]
+enabled = true
+
+[observability.logs]
+enabled = true
+
+# Service binding to the existing booking Worker. REQUIRED: a Worker cannot fetch
+# another same-account Worker via its public workers.dev URL (Cloudflare error
+# 1042), so booking calls go through this binding (env.BOOKING), not a plain fetch.
+[[services]]
+binding = "BOOKING"
+service = "cushlabs-booking"
+
+[vars]
+# Fallback base URL (used only for local dev without the service binding).
+BOOKING_API_URL = "https://cushlabs-booking.rcushmaniii.workers.dev"
+# Comma-separated allow list. Supports "*.suffix" (https subdomains) and a
+# "http://localhost:*" wildcard port for local dev.
+ALLOWED_ORIGINS = "https://www.cushlabs.ai,https://cushlabs.ai,*.vercel.app,http://localhost:4321,http://localhost:4322,http://localhost:*"
+# Publishable Sentry DSN (cushlabsai org). Not a secret — safe to commit.
+SENTRY_DSN = "https://5a52c85b3eed94813303a6aafb1febec@o4511162786185216.ingest.us.sentry.io/4511166268112896"
+
+# NOTE: ANTHROPIC_API_KEY is a SECRET — do not put it here.
+# Set it with:  npx wrangler secret put ANTHROPIC_API_KEY -c wrangler-camila-demo.toml
