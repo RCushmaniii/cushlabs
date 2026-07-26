@@ -187,10 +187,23 @@ const TOOLS = [
 
 /* ─── Tool execution (calls the cushlabs-booking Worker) ─── */
 
+// Call the cushlabs-booking Worker. MUST prefer the Service Binding (env.BOOKING):
+// a Worker cannot fetch another same-account Worker via its public workers.dev
+// URL — Cloudflare returns error 1042. The binding routes worker-to-worker
+// directly. Falls back to a plain fetch only for local dev without the binding.
+function bookingFetch(env, pathAndQuery, init) {
+  if (env.BOOKING && typeof env.BOOKING.fetch === "function") {
+    return env.BOOKING.fetch(`https://booking${pathAndQuery}`, init);
+  }
+  return fetch(`${env.BOOKING_API_URL}${pathAndQuery}`, init);
+}
+
 async function execGetAvailableSlots(env, input, lang) {
   const date = String(input.date || "").trim();
-  const url = `${env.BOOKING_API_URL}/slots/${encodeURIComponent(date)}?lang=${lang}`;
-  const res = await fetch(url);
+  const res = await bookingFetch(
+    env,
+    `/slots/${encodeURIComponent(date)}?lang=${lang}`,
+  );
   if (!res.ok) {
     throw new Error(`slots ${res.status}: ${await res.text()}`);
   }
@@ -199,7 +212,7 @@ async function execGetAvailableSlots(env, input, lang) {
 }
 
 async function execCreateBooking(env, input, lang) {
-  const res = await fetch(`${env.BOOKING_API_URL}/book`, {
+  const res = await bookingFetch(env, `/book`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({

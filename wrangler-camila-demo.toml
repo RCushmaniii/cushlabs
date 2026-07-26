@@ -8,8 +8,15 @@ enabled = true
 [observability.logs]
 enabled = true
 
+# Service binding to the existing booking Worker. REQUIRED: a Worker cannot fetch
+# another same-account Worker via its public workers.dev URL (Cloudflare error
+# 1042), so booking calls go through this binding (env.BOOKING), not a plain fetch.
+[[services]]
+binding = "BOOKING"
+service = "cushlabs-booking"
+
 [vars]
-# Base URL of the existing cushlabs-booking Worker (do NOT modify that worker).
+# Fallback base URL (used only for local dev without the service binding).
 BOOKING_API_URL = "https://cushlabs-booking.rcushmaniii.workers.dev"
 # Comma-separated allow list. Supports "*.suffix" (https subdomains) and a
 # "http://localhost:*" wildcard port for local dev.
