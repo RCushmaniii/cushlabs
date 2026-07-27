@@ -67,7 +67,9 @@ const DEMOS: Record<string, DemoConfig> = {
     clientName: "Lumière Medspa (Demo) — US medspa showcase",
     accessToken: "lumiere-DZK5Tk4i4yhTvINZMbf2",
     createdAt: "2026-07-25",
-    pages: ["preview.html", "proposal.html"],
+    // services.html = public offerings-only composite (only what we deliver today,
+    // incl. live in-chat booking). No roadmap/"coming soon" items are referenced.
+    pages: ["preview.html", "proposal.html", "services.html"],
   },
 };
 
