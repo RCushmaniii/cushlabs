@@ -67,7 +67,9 @@ const DEMOS: Record<string, DemoConfig> = {
     clientName: "Lumière Medspa (Demo) — US medspa showcase",
     accessToken: "lumiere-DZK5Tk4i4yhTvINZMbf2",
     createdAt: "2026-07-25",
-    pages: ["preview.html", "proposal.html"],
+    // services.html = the composite "full CushLabs AI front office" showcase
+    // (Messenger + WhatsApp + Voice + Reputation + Booking), honest live/roadmap badges.
+    pages: ["preview.html", "proposal.html", "services.html"],
   },
 };
 
