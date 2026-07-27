@@ -122,6 +122,36 @@ Documented in CLAUDE.md and memory `feedback_tailwind4_color_collision`. Custom 
 
 ## Session History
 
+## Session: 2026-07-26 — Camila Live (in-chat booking) + public offerings-only services page
+
+### Accomplished
+
+- **Camila Live — web chat with REAL in-chat booking** (PR #205, live on prod). New Cloudflare Worker `cushlabs-camila-demo` (`workers/camila-demo.js`): Claude tool-use loop (`get_available_slots`, `create_booking`) reusing the existing `cushlabs-booking` Worker **untouched** — real availability from the Google Calendar, real event + Meet link + Google-sent confirmation. Bilingual (EN default / es-MX) medspa persona + medical-compliance + honest-demo. Embedded as an iframe ("Chat with Camila right now") on `demos/lumiere/preview.html` as the primary CTA (m.me kept secondary) — so the demo works end-to-end on the web with no Facebook page.
+- **Fixed Cloudflare error 1042** — a Worker can't fetch another same-account `workers.dev` Worker; switched the booking calls to a **service binding** (`env.BOOKING`). Verified end-to-end live: chat responds EN+es-MX, availability pulls real slots, a test booking created a real event (10:00 slot then showed blocked).
+- **Public offerings-only services page** (PR #207, live on prod): `demos/lumiere/services.html` — the composite "complete AI front office," present-tense, showing ONLY delivered capabilities (Messenger AI, Google reviews, owner WhatsApp alert, AI Voice, and now **in-chat booking · Live** with a "See it live" link to Camila). All roadmap/"coming soon"/Instagram/WhatsApp-conversational references removed (0 verified). Registered in `api/demo.ts`.
+
+### Decisions Made
+
+- Booking writes to Robert's real CushLabs consultation calendar (his call) — demo-testers become real leads. Per-client, we'd point booking at the client's own calendar/title.
+- Public services page = offerings only (never advertise what we don't yet have); the full roadmap-badged version is kept private as Robert's internal reference.
+- A parallel Claude session had committed a rate-limiter fix + portfolio/logo changes onto the shared services branch; isolated the services page onto a clean branch off main (PR #207) to avoid bundling unrelated work.
+
+### Immediate Next Steps
+
+- [ ] Facebook-page step (bot repo) → activates Camila on Messenger + the `m.me` button; then swap `M_ME_PAGE_ID_PLACEHOLDER`.
+- [ ] Delete two test calendar events (07-30 10:00 "DEMO TEST"; 07-29 10:00 self-test) + the example.com bounce.
+- [ ] Optional: a second niche demo, or the offerings page for other verticals.
+
+### Technical Debt
+
+- The parallel session's branch (`feat/lumiere-services-public`: rate-limiter fix + portfolio/logo) is unmerged — Robert/that session to PR separately.
+
+### Open Questions / Blockers
+
+- None blocking. Camila Live + both demo pages are live on prod.
+
+---
+
 ## Session: 2026-07-25 — Lumière Medspa: bilingual US medspa demo (preview hub + proposal)
 
 ### Accomplished
