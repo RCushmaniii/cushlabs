@@ -20,10 +20,14 @@
  *
  * To add a client:
  *   1. Drop their page(s) in demos/<company>/<page>.html.
- *   2. Add an entry to DEMOS below with a fresh secret:
+ *   2. Add an entry to DEMOS below (no secret in this file — see tokenFor).
+ *   3. Mint a secret:
  *        node -e "console.log(require('crypto').randomBytes(15).toString('base64').replace(/[^a-zA-Z0-9]/g,'').slice(0,20))"
- *   3. List the allowed filenames in `pages`.
- *   4. Send: https://www.cushlabs.ai/demo/<company>/<page>.html?token=<secret>
+ *   4. Store it as DEMO_TOKEN_<COMPANY> in Vercel (all environments) and in
+ *      the gitignored .env.local for local dev. Never in this file: the repo
+ *      is public, so a committed token is a published secret.
+ *   5. List the allowed filenames in `pages`.
+ *   6. Send: https://www.cushlabs.ai/demo/<company>/<page>.html?token=<secret>
  */
 import { readFile } from "node:fs/promises";
 import path from "node:path";
@@ -31,13 +35,28 @@ import type { IncomingMessage, ServerResponse } from "node:http";
 
 interface DemoConfig {
   clientName: string;
-  /** Shared secret carried in the URL on first click. Rotate by editing this. */
-  accessToken: string;
   /** ISO date issued. Expiry = createdAt + DEFAULT_LIFESPAN_DAYS unless overridden. */
   createdAt: string;
   expiresAt?: string;
   /** Allowed filenames under demos/<company>/. Anything not listed → 404. */
   pages: string[];
+}
+
+/**
+ * Resolve a demo's capability secret from the environment.
+ *
+ * THIS REPOSITORY IS PUBLIC. An access token written in source is a published
+ * secret: anyone reading GitHub can open the gated client proposal, pricing
+ * included. Tokens therefore live only in the environment
+ * (`DEMO_TOKEN_<COMPANY>`, set in Vercel and in a gitignored .env.local for
+ * local dev) and never in this file.
+ *
+ * Returns undefined when unset, which disables that demo entirely — failing
+ * closed, because a gate that silently opens is worse than a broken link.
+ */
+function tokenFor(company: string): string | undefined {
+  const value = process.env[`DEMO_TOKEN_${company.toUpperCase()}`];
+  return value && value.trim() ? value.trim() : undefined;
 }
 
 /** 90 days covers a B2B sales cycle without a stale link (out-of-date pricing) living forever. */
@@ -46,7 +65,6 @@ const DEFAULT_LIFESPAN_DAYS = 90;
 const DEMOS: Record<string, DemoConfig> = {
   latiendita: {
     clientName: "La Tiendita de Guadalajara (Juan Vélez)",
-    accessToken: "latiendita-kMK1IfouWqGH9eM3oF",
     createdAt: "2026-07-19",
     // Both live: the proposal (rebuilt on the real Facebook offer) and the
     // convenience-store website. Robert builds websites (25-yr web dev); for
@@ -55,7 +73,6 @@ const DEMOS: Record<string, DemoConfig> = {
   },
   azucar: {
     clientName: "Azúcar Trajes de Baño (Susy)",
-    accessToken: "azucar-4u8W9ivs8fhjPRXENlIq",
     createdAt: "2026-07-19",
     // preview.html = the live demo hub (what the assistant already knows, what
     // to ask it, what is real vs demonstration, and the 3 open questions).
@@ -68,7 +85,6 @@ const DEMOS: Record<string, DemoConfig> = {
   // cushlabs-messenger-bot (page + bot); this is its gated client-facing wrapper.
   lumiere: {
     clientName: "Lumière Medspa (Demo) — US medspa showcase",
-    accessToken: "lumiere-DZK5Tk4i4yhTvINZMbf2",
     createdAt: "2026-07-25",
     // services.html = public offerings-only composite (only what we deliver today,
     // incl. live in-chat booking). No roadmap/"coming soon" items are referenced.
@@ -117,22 +133,33 @@ export default async function handler(
     if (new Date() > expiryOf(config)) return notFound(res);
     if (!config.pages.includes(page)) return notFound(res);
 
+    // Fail closed. If the token is not configured the demo is unreachable
+    // rather than open: a gate that silently stops gating is the worst
+    // outcome, since it looks like it is still working.
+    const secret = tokenFor(company);
+    if (!secret) {
+      console.error(
+        `demo: DEMO_TOKEN_${company.toUpperCase()} is not set — "${company}" is disabled`,
+      );
+      return notFound(res);
+    }
+
     const cookieName = `demo_${company}`;
     const cookieHeader = req.headers.cookie || "";
     const hasCookie = cookieHeader
       .split(";")
       .map((c) => c.trim())
-      .some((c) => c === `${cookieName}=${config.accessToken}`);
+      .some((c) => c === `${cookieName}=${secret}`);
 
     const queryToken = url.searchParams.get("token");
     const cleanPath = `/demo/${company}/${page}`;
 
     // First click with a valid secret → set the cookie and bounce to the clean URL.
-    if (!hasCookie && queryToken === config.accessToken) {
+    if (!hasCookie && queryToken === secret) {
       const remainingMs = expiryOf(config).getTime() - Date.now();
       const remainingDays = Math.max(1, Math.ceil(remainingMs / 86400000));
       const cookie = [
-        `${cookieName}=${config.accessToken}`,
+        `${cookieName}=${secret}`,
         "HttpOnly",
         "Secure",
         "SameSite=Lax",
