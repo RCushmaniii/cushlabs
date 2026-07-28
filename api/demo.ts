@@ -57,7 +57,10 @@ const DEMOS: Record<string, DemoConfig> = {
     clientName: "Azúcar Trajes de Baño (Susy)",
     accessToken: "azucar-4u8W9ivs8fhjPRXENlIq",
     createdAt: "2026-07-19",
-    pages: ["proposal.html"],
+    // preview.html = the live demo hub (what the assistant already knows, what
+    // to ask it, what is real vs demonstration, and the 3 open questions).
+    // proposal.html = the sales page.
+    pages: ["preview.html", "proposal.html"],
   },
   // Fictitious US bilingual medspa showcase (Estéticas niche, US bilingual-wedge).
   // preview.html = live "chat with Camila" hub; proposal.html = medspa sales page.
