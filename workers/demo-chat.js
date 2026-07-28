@@ -13,26 +13,13 @@
  *   ALLOWED_ORIGINS   comma-separated list
  */
 
-/* ─── Rate limiting (in-memory, per cold-start) ─── */
+/* ─── Rate limiting ─── */
 
-const rateLimitStore = new Map();
-const RATE_MAX = 30; // requests per window
-const RATE_WINDOW = 3600000; // 1 hour in ms
-
-function checkRateLimit(ip) {
-  const now = Date.now();
-  const key = `rl:${ip}`;
-  let data = rateLimitStore.get(key);
-
-  if (!data || now - data.windowStart > RATE_WINDOW) {
-    data = { count: 1, windowStart: now };
-    rateLimitStore.set(key, data);
-    return true;
-  }
-  if (data.count >= RATE_MAX) return false;
-  data.count++;
-  return true;
-}
+// Distributed, edge-enforced. The previous in-memory Map limiter did not work:
+// it lived in a single V8 isolate, so it never bounded traffic across
+// Cloudflare's isolates and left ANTHROPIC_API_KEY effectively unprotected.
+// See workers/lib/rate-limit.js.
+import { enforceRateLimit, rateLimitMessage } from "./lib/rate-limit.js";
 
 /* ─── CORS ─── */
 
@@ -783,12 +770,17 @@ export default {
     if (request.method === "POST" && url.pathname === "/chat") {
       const ip = request.headers.get("CF-Connecting-IP") || "unknown";
 
-      if (!checkRateLimit(ip)) {
+      const rate = await enforceRateLimit(env, ip);
+      if (!rate.allowed) {
         return new Response(
-          JSON.stringify({ error: "Rate limit exceeded. Please slow down." }),
+          JSON.stringify({ error: rateLimitMessage(rate.scope) }),
           {
             status: 429,
-            headers: { "Content-Type": "application/json", ...corsHeaders },
+            headers: {
+              "Content-Type": "application/json",
+              "Retry-After": "60",
+              ...corsHeaders,
+            },
           },
         );
       }
