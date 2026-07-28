@@ -1,0 +1,542 @@
+<title>Azúcar Trajes de Baño — Tu asistente de IA · CushLabs</title>
+<style>
+  /* Self-contained: no external fonts, scripts or images (CSP-safe gated demo).
+     Palette taken from Azúcar's own brand — gold script on dark wood, sand. */
+  :root {
+    --bg: #faf5ec;
+    --surface: #ffffff;
+    --surface-2: #f3ead9;
+    --ink: #1c1712;
+    --ink-soft: #6b6055;
+    --gold: #b8860b;
+    --gold-ink: #8a6508;
+    --gold-soft: #e8d5a3;
+    --rose: #c2185b;
+    --line: #e7dcc7;
+    --shadow: 0 18px 48px rgba(28, 23, 18, 0.09);
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #12100d;
+      --surface: #1c1915;
+      --surface-2: #251f18;
+      --ink: #f7f1e6;
+      --ink-soft: #b3a894;
+      --gold: #d9a72b;
+      --gold-ink: #e8bf55;
+      --gold-soft: #4a3c1c;
+      --rose: #e8608f;
+      --line: #33291d;
+      --shadow: 0 18px 48px rgba(0, 0, 0, 0.5);
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="light"] {
+    --bg: #faf5ec;
+    --surface: #ffffff;
+    --surface-2: #f3ead9;
+    --ink: #1c1712;
+    --ink-soft: #6b6055;
+    --gold: #b8860b;
+    --gold-ink: #8a6508;
+    --gold-soft: #e8d5a3;
+    --rose: #c2185b;
+    --line: #e7dcc7;
+    --shadow: 0 18px 48px rgba(28, 23, 18, 0.09);
+    color-scheme: light;
+  }
+  :root[data-theme="dark"] {
+    --bg: #12100d;
+    --surface: #1c1915;
+    --surface-2: #251f18;
+    --ink: #f7f1e6;
+    --ink-soft: #b3a894;
+    --gold: #d9a72b;
+    --gold-ink: #e8bf55;
+    --gold-soft: #4a3c1c;
+    --rose: #e8608f;
+    --line: #33291d;
+    --shadow: 0 18px 48px rgba(0, 0, 0, 0.5);
+    color-scheme: dark;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family:
+      system-ui,
+      -apple-system,
+      "Segoe UI",
+      Roboto,
+      sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 20px 72px;
+  }
+
+  /* ---------- hero ---------- */
+  header.hero {
+    background: linear-gradient(165deg, var(--surface-2), var(--bg));
+    border-bottom: 1px solid var(--line);
+    padding: 44px 20px 40px;
+    text-align: center;
+  }
+  .eyebrow {
+    display: inline-block;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold-ink);
+    background: var(--gold-soft);
+    border-radius: 999px;
+    padding: 6px 14px;
+    font-weight: 700;
+  }
+  h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(30px, 7vw, 46px);
+    line-height: 1.12;
+    margin: 18px 0 10px;
+    letter-spacing: -0.01em;
+  }
+  h1 .accent {
+    color: var(--gold-ink);
+    font-style: italic;
+  }
+  .sub {
+    color: var(--ink-soft);
+    font-size: 17px;
+    max-width: 46ch;
+    margin: 0 auto;
+  }
+
+  .status {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 20px;
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--ink);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 8px 16px;
+    box-shadow: var(--shadow);
+  }
+  .dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #1faa59;
+    box-shadow: 0 0 0 4px rgba(31, 170, 89, 0.18);
+  }
+
+  /* ---------- buttons ---------- */
+  .cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 26px;
+  }
+  .btn {
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 16px;
+    padding: 15px 26px;
+    border-radius: 12px;
+    transition: transform 0.12s ease;
+  }
+  .btn:active {
+    transform: translateY(1px);
+  }
+  .btn-primary {
+    background: var(--gold);
+    color: #1c1712;
+    box-shadow: var(--shadow);
+  }
+  .btn-secondary {
+    background: var(--surface);
+    color: var(--ink);
+    border: 1px solid var(--line);
+  }
+
+  /* ---------- sections ---------- */
+  section {
+    margin-top: 46px;
+  }
+  h2 {
+    font-family: Georgia, serif;
+    font-size: 24px;
+    margin: 0 0 6px;
+    letter-spacing: -0.01em;
+  }
+  .lede {
+    color: var(--ink-soft);
+    margin: 0 0 20px;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 22px;
+    box-shadow: var(--shadow);
+  }
+
+  /* ---------- knows list ---------- */
+  ul.knows {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  ul.knows li {
+    display: flex;
+    gap: 13px;
+    align-items: flex-start;
+    padding: 13px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  ul.knows li:last-child {
+    border-bottom: 0;
+    padding-bottom: 0;
+  }
+  ul.knows li:first-child {
+    padding-top: 0;
+  }
+  .check {
+    flex: 0 0 auto;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--gold-soft);
+    color: var(--gold-ink);
+    display: grid;
+    place-items: center;
+    font-size: 13px;
+    font-weight: 800;
+    margin-top: 2px;
+  }
+  .knows strong {
+    display: block;
+    font-size: 15.5px;
+  }
+  .knows span {
+    color: var(--ink-soft);
+    font-size: 14.5px;
+  }
+
+  /* ---------- ask chips ---------- */
+  .asks {
+    display: grid;
+    gap: 10px;
+  }
+  .ask {
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 13px 16px;
+    font-size: 15.5px;
+  }
+  .ask em {
+    color: var(--ink-soft);
+    font-style: normal;
+    font-size: 13.5px;
+    display: block;
+    margin-top: 3px;
+  }
+
+  /* ---------- note ---------- */
+  .note {
+    border-left: 3px solid var(--gold);
+    background: var(--surface-2);
+    border-radius: 0 12px 12px 0;
+    padding: 16px 18px;
+    font-size: 15px;
+  }
+  .note strong {
+    color: var(--gold-ink);
+  }
+
+  footer {
+    margin-top: 56px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+    color: var(--ink-soft);
+    font-size: 13.5px;
+    text-align: center;
+  }
+  footer a {
+    color: var(--gold-ink);
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14.5px;
+  }
+  .scroll {
+    overflow-x: auto;
+  }
+  th,
+  td {
+    text-align: left;
+    padding: 9px 10px;
+    border-bottom: 1px solid var(--line);
+  }
+  th {
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+  td.branch {
+    font-weight: 700;
+    white-space: nowrap;
+  }
+</style>
+
+<header class="hero">
+  <span class="eyebrow">Demostración · CushLabs.ai</span>
+  <h1>
+    Azúcar Trajes&nbsp;de&nbsp;Baño<br /><span class="accent"
+      >tu asistente de IA</span
+    >
+  </h1>
+  <p class="sub">
+    Responde comentarios y mensajes al instante, con tus sucursales, tus precios
+    y tu forma de atender. Ya está funcionando — pruébala ahora mismo.
+  </p>
+  <div class="status">
+    <span class="dot"></span> Activa · responde en segundos, 24/7
+  </div>
+  <div class="cta-row">
+    <a class="btn btn-primary" href="https://m.me/1240057929189198"
+      >Escríbele por Messenger</a
+    >
+    <a
+      class="btn btn-secondary"
+      href="https://www.facebook.com/1240057929189198"
+      >Ver la página</a
+    >
+  </div>
+</header>
+
+<div class="wrap">
+  <section>
+    <h2>Lo que ya sabe de Azúcar</h2>
+    <p class="lede">Todo esto lo tomamos de lo que tú misma nos compartiste.</p>
+    <div class="card">
+      <ul class="knows">
+        <li>
+          <span class="check">✓</span>
+          <div>
+            <strong>Tus 4 sucursales</strong>
+            <span
+              >Dirección, teléfono (también WhatsApp), horario y liga de Google
+              Maps de cada una.</span
+            >
+          </div>
+        </li>
+        <li>
+          <span class="check">✓</span>
+          <div>
+            <strong>El aviso de Condoplaza</strong>
+            <span
+              >Aclara sola que están <em>sobre</em> la Avenida Plaza del Sol y
+              no dentro del centro comercial. Cada vez, sin que tú lo
+              escribas.</span
+            >
+          </div>
+        </li>
+        <li>
+          <span class="check">✓</span>
+          <div>
+            <strong>Tus precios reales</strong>
+            <span
+              >Completos, tipo vestido, tops, bikinis, tiro alto, blusas y
+              salidas de baño.</span
+            >
+          </div>
+        </li>
+        <li>
+          <span class="check">✓</span>
+          <div>
+            <strong>Tallas y probadores</strong>
+            <span
+              >XS a 4XL, los modelos varían por talla, y se pueden armar piezas
+              por separado.</span
+            >
+          </div>
+        </li>
+        <li>
+          <span class="check">✓</span>
+          <div>
+            <strong>Formas de pago</strong>
+            <span
+              >Manda tu imagen de tarjetas y vales cuando alguien pregunta cómo
+              pagar.</span
+            >
+          </div>
+        </li>
+        <li>
+          <span class="check">✓</span>
+          <div>
+            <strong>Tus álbumes por sucursal y por talla</strong>
+            <span
+              >Si preguntan por talla extra grande, manda ese álbum — no uno
+              cualquiera. También pareos y salidas de baño.</span
+            >
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Tus 4 sucursales, como las contesta</h2>
+    <div class="card scroll">
+      <table>
+        <thead>
+          <tr>
+            <th>Sucursal</th>
+            <th>Dónde</th>
+            <th>Tel / WhatsApp</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="branch">Guadalajara</td>
+            <td>Av. Francisco Javier Mina 715, entre la 28 y la 30</td>
+            <td>33 2819 6804</td>
+          </tr>
+          <tr>
+            <td class="branch">Zapopan</td>
+            <td>Gómez Farías 134, local 5 — por la basílica</td>
+            <td>33 1859 2896</td>
+          </tr>
+          <tr>
+            <td class="branch">Condoplaza</td>
+            <td>Av. Plaza del Sol 25, local 54 — sobre la avenida</td>
+            <td>33 2589 5689</td>
+          </tr>
+          <tr>
+            <td class="branch">Santa Tere</td>
+            <td>C. Joaquín Ángulo 1419, Santa Teresita</td>
+            <td>33 2216 3015</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="margin: 14px 0 0; color: var(--ink-soft); font-size: 14px">
+        Todas: lunes a sábado de 11 a 7 · domingo cerrado. Cada respuesta
+        incluye la liga de Google Maps.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Pruébala — pregúntale esto</h2>
+    <p class="lede">
+      Déjale un comentario en cualquier publicación, o escríbele por Messenger.
+    </p>
+    <div class="asks">
+      <div class="ask">
+        ¿Dónde están ubicadas sus tiendas?<em
+          >Te da las cuatro, con dirección y horario.</em
+        >
+      </div>
+      <div class="ask">
+        ¿Cómo llego a Condoplaza?<em
+          >Dirección, mapa y el aviso de que no están dentro de la plaza.</em
+        >
+      </div>
+      <div class="ask">
+        ¿Tienen talla extra grande?<em>Te manda el álbum de esa talla.</em>
+      </div>
+      <div class="ask">
+        ¿Cuánto cuesta un bikini?<em>Precios reales, por tipo de prenda.</em>
+      </div>
+      <div class="ask">
+        ¿Aceptan tarjeta?<em
+          >Responde y te manda tu imagen de tarjetas y vales.</em
+        >
+      </div>
+      <div class="ask">
+        Do you have my size?<em
+          >Contesta en inglés si te escriben en inglés.</em
+        >
+      </div>
+    </div>
+    <p style="margin-top: 16px; color: var(--ink-soft); font-size: 14.5px">
+      Si dejas el comentario en una computadora, actualiza la página para ver la
+      respuesta. En el celular aparece sola. Revisa también tus mensajes — manda
+      los detalles por privado.
+    </p>
+  </section>
+
+  <section>
+    <h2>Qué es real y qué no</h2>
+    <div class="note">
+      <p style="margin: 0 0 10px">
+        <strong>Es real:</strong> tus cuatro sucursales, direcciones, teléfonos,
+        horarios, mapas, precios, tallas, formas de pago y tus álbumes.
+      </p>
+      <p style="margin: 0">
+        <strong>Es demostración:</strong> esta página no es tu página oficial y
+        aquí no se procesan compras ni apartados. Sirve para que veas cómo
+        trabajaría tu asistente antes de conectarla a Azúcar Trajes de Baño.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Lo único que falta</h2>
+    <p class="lede">
+      Tres cosas que no sabemos, y preferimos preguntarte antes que adivinar.
+    </p>
+    <div class="card">
+      <ul class="knows">
+        <li>
+          <span class="check">1</span>
+          <div>
+            <strong>¿Hacen envíos?</strong
+            ><span>Y si sí, ¿a dónde y con qué costo?</span>
+          </div>
+        </li>
+        <li>
+          <span class="check">2</span>
+          <div>
+            <strong>¿Aceptan apartados?</strong
+            ><span>Y si sí, ¿con qué porcentaje?</span>
+          </div>
+        </li>
+        <li>
+          <span class="check">3</span>
+          <div>
+            <strong>¿Manejan traje de baño de niña?</strong
+            ><span>¿O solo de dama?</span>
+          </div>
+        </li>
+      </ul>
+      <p style="margin: 18px 0 0; color: var(--ink-soft); font-size: 14.5px">
+        Mientras no lo sepamos, la asistente no inventa: dice que Susy lo
+        confirma y comparte el WhatsApp de la sucursal más cercana.
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    Hecho por <a href="https://www.cushlabs.ai">CushLabs.ai</a> para Azúcar
+    Trajes de Baño · Página privada, no indexada.
+  </footer>
+</div>
