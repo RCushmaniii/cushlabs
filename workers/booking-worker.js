@@ -29,37 +29,15 @@
 
 /* ------------------------ Rate Limiting ------------------------ */
 
-const rateLimitStore = new Map();
-
-function cleanupRateLimitStore(windowMs) {
-  const now = Date.now();
-  for (const [key, data] of rateLimitStore.entries()) {
-    if (now - data.windowStart > windowMs * 2) {
-      rateLimitStore.delete(key);
-    }
-  }
-}
-
-function checkRateLimit(identifier, maxRequests, windowMs) {
-  const now = Date.now();
-  const key = `rate:${identifier}`;
-
-  let data = rateLimitStore.get(key);
-
-  if (!data || now - data.windowStart > windowMs) {
-    data = { count: 1, windowStart: now };
-    rateLimitStore.set(key, data);
-    return { allowed: true, remaining: maxRequests - 1 };
-  }
-
-  if (data.count >= maxRequests) {
-    const resetIn = Math.ceil((data.windowStart + windowMs - now) / 1000);
-    return { allowed: false, remaining: 0, resetIn };
-  }
-
-  data.count++;
-  return { allowed: true, remaining: maxRequests - data.count };
-}
+// D1-backed and shared across isolates. The Map that used to live here counted
+// per-isolate, so "5 bookings per hour" was really 5 per isolate with the count
+// resetting on every cold start. See workers/lib/rate-limit-d1.js for why this
+// Worker uses D1 while the demo Workers use KV.
+import {
+  checkRateLimit,
+  checkRateLimitEnforcement,
+  clientKey,
+} from "./lib/rate-limit-d1.js";
 
 /* ------------------------ Token Cache ------------------------ */
 
@@ -101,28 +79,45 @@ export default {
 
     try {
       // Health check
-      if (request.method === "GET" && path === "/")
+      if (request.method === "GET" && path === "/") {
+        // Reports whether the limiter is ENFORCING, not merely reachable. The
+        // limiter this replaced failed silently — a counter that counts nothing
+        // looks identical from outside to one that works — so /health returns
+        // 503 when it cannot prove enforcement.
+        const rateLimit = await checkRateLimitEnforcement(env.DB);
         return json(
           {
-            ok: true,
+            ok: rateLimit.ok,
             service: "CushLabs Booking API v1",
             endpoints: ["/slots/:date", "/book"],
+            rateLimit,
           },
-          200,
+          rateLimit.ok ? 200 : 503,
           request,
           env,
         );
+      }
 
       // Debug endpoint
       if (request.method === "GET" && path === "/debug") {
         if (env.DEBUG_ENABLED !== "true") {
-          return json({ ok: false, error: "Debug endpoint is disabled" }, 404, request, env);
+          return json(
+            { ok: false, error: "Debug endpoint is disabled" },
+            404,
+            request,
+            env,
+          );
         }
 
         if (env.DEBUG_KEY) {
           const providedKey = request.headers.get("X-Debug-Key");
           if (providedKey !== env.DEBUG_KEY) {
-            return json({ ok: false, error: "Unauthorized" }, 401, request, env);
+            return json(
+              { ok: false, error: "Unauthorized" },
+              401,
+              request,
+              env,
+            );
           }
         }
 
@@ -136,10 +131,14 @@ export default {
               has_calendar_id: !!(env.CALENDAR_ID || env.GOOGLE_CALENDAR_ID),
               has_personal_calendar_id: !!env.PERSONAL_CALENDAR_ID,
               timezone: env.TIMEZONE || "America/Mexico_City (default)",
-              weekday_morning: env.WEEKDAY_MORNING_HOURS || "09:00-14:00 (default)",
-              weekday_afternoon: env.WEEKDAY_AFTERNOON_HOURS || "16:00-20:00 (default)",
+              weekday_morning:
+                env.WEEKDAY_MORNING_HOURS || "09:00-14:00 (default)",
+              weekday_afternoon:
+                env.WEEKDAY_AFTERNOON_HOURS || "16:00-20:00 (default)",
               saturday_hours: env.SATURDAY_HOURS || "09:00-13:00 (default)",
-              allowed_origins: env.ALLOWED_ORIGINS ? "(configured)" : "* (default)",
+              allowed_origins: env.ALLOWED_ORIGINS
+                ? "(configured)"
+                : "* (default)",
             },
           },
           200,
@@ -156,8 +155,44 @@ export default {
         if (!skipCache) {
           const cachedResult = getCachedSlots(dateStr);
           if (cachedResult) {
-            return json({ ok: true, slots: cachedResult.slots, cached: true }, 200, request, env);
+            return json(
+              { ok: true, slots: cachedResult.slots, cached: true },
+              200,
+              request,
+              env,
+            );
           }
+        }
+
+        // Only a cache MISS reaches Google, so only a miss is rate limited. A
+        // cached response costs nothing and must not consume anyone's budget —
+        // limiting it would punish the ordinary case of a visitor clicking
+        // through several dates on the booking widget.
+        //
+        // 60/hour per /64 is generous for a human browsing dates and still caps
+        // what a scraper can pull from the Calendar API quota. Note ?nocache=1
+        // bypasses the cache, so this is also what stops that being a free
+        // passthrough to Google.
+        const slotsCheck = await checkRateLimit(
+          env.DB,
+          `slots:${clientKey(
+            request.headers.get("CF-Connecting-IP") ||
+              request.headers.get("X-Forwarded-For")?.split(",")[0]?.trim(),
+          )}`,
+          parseInt(env.SLOTS_RATE_LIMIT_MAX || "60"),
+          3600000,
+        );
+        if (!slotsCheck.allowed) {
+          return json(
+            {
+              ok: false,
+              error: t(lang, "rate_limited"),
+              retryAfter: slotsCheck.resetIn,
+            },
+            429,
+            request,
+            env,
+          );
         }
 
         const showDebug = url.searchParams.get("debug") === "1";
@@ -178,12 +213,19 @@ export default {
           request.headers.get("X-Forwarded-For")?.split(",")[0]?.trim() ||
           "unknown";
 
-        cleanupRateLimitStore(windowMs);
-
-        const rateCheck = checkRateLimit(clientIP, maxRequests, windowMs);
+        const rateCheck = await checkRateLimit(
+          env.DB,
+          `book:${clientKey(clientIP)}`,
+          maxRequests,
+          windowMs,
+        );
         if (!rateCheck.allowed) {
           return json(
-            { ok: false, error: t(lang, "rate_limited"), retryAfter: rateCheck.resetIn },
+            {
+              ok: false,
+              error: t(lang, "rate_limited"),
+              retryAfter: rateCheck.resetIn,
+            },
             429,
             request,
             env,
@@ -203,7 +245,12 @@ export default {
       return json({ ok: false, error: "Not found" }, 404, request, env);
     } catch (err) {
       console.error("Worker error:", err);
-      return json({ ok: false, error: err?.message || String(err) }, 500, request, env);
+      return json(
+        { ok: false, error: err?.message || String(err) },
+        500,
+        request,
+        env,
+      );
     }
   },
 };
@@ -243,7 +290,8 @@ async function getAvailableSlots(dateStr, env, timeZone) {
   // Fetch busy times from BOTH calendars to avoid double-bookings:
   //   GOOGLE_CALENDAR_ID = rcushmaniii@gmail.com (bookings created here)
   //   PERSONAL_CALENDAR_ID = shared work calendar (checked for conflicts only)
-  const personalCalendar = env.PERSONAL_CALENDAR_ID || env.GOOGLE_CALENDAR_ID || env.CALENDAR_ID;
+  const personalCalendar =
+    env.PERSONAL_CALENDAR_ID || env.GOOGLE_CALENDAR_ID || env.CALENDAR_ID;
   const workCalendar = env.GOOGLE_CALENDAR_ID || env.CALENDAR_ID;
 
   const freeBusy = await fetchJSON(
