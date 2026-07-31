@@ -2,6 +2,16 @@ name = "cushlabs-booking"
 main = "workers/booking-worker.js"
 compatibility_date = "2025-10-11"
 
+# Backs the rate limiter. POST /book creates a real calendar event and GET
+# /slots burns Google Calendar quota, both without authentication, so the
+# counter has to be shared across isolates — an in-memory Map (what this
+# replaced) counted per-isolate and enforced almost nothing. See
+# workers/lib/rate-limit-d1.js.
+[[d1_databases]]
+binding = "DB"
+database_name = "cushlabs-booking"
+database_id = "9a3ee9e6-77f5-4ff2-b0e2-49da7456d523"
+
 [observability]
 enabled = true
 

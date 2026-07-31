@@ -11,9 +11,27 @@
  * WHY NOT CLOUDFLARE'S NATIVE RATE LIMITING BINDING:
  * Tried first and empirically rejected on 2026-07-26. With
  * `simple = { limit = 10, period = 60 }` the binding returned
- * `{"success":true}` on every call including request 14 — it is a no-op on
- * this account (Workers free plan). Verified via wrangler tail, not assumed.
- * Shipping it would have been worse than the Map: false confidence.
+ * `{"success":true}` on every call including request 14. Shipping it would
+ * have been worse than the Map: false confidence.
+ *
+ * CORRECTION, 2026-07-30 — the observation above was right, the diagnosis was
+ * not, and the difference matters if anyone reconsiders this later. The binding
+ * is NOT a no-op on this account. Measured on cushlabs-whatsapp with
+ * `simple = { limit = 300, period = 60 }`:
+ *
+ *   420 sequential requests over ONE keep-alive socket → first 429 at #302
+ *   1,500 requests over 25 parallel connections        → zero 429s
+ *
+ * The counter is ISOLATE-LOCAL. Fourteen ordinary HTTP requests land on enough
+ * different isolates that none of them individually reaches the limit, which is
+ * exactly what was seen here. The binding works; it just cannot see traffic
+ * spread across connections.
+ *
+ * The practical conclusion for THIS file is unchanged — a public endpoint
+ * holding a paid API key needs a counter that is genuinely shared, and the
+ * binding is not one. But it is a reasonable cheap first line in front of a
+ * surface that authenticates before it spends, which is how cushlabs-whatsapp
+ * and cushlabs-connect now use it.
  *
  * WHY NOT DURABLE OBJECTS: they require a paid Workers plan.
  *
@@ -79,7 +97,9 @@ export async function enforceRateLimit(env, ip) {
   if (!kv || typeof kv.get !== "function") {
     // Configuration error, not a transient fault. Deny: an unmetered public
     // endpoint spending on an API key is the exact failure being prevented.
-    console.error("rate-limit: RATE_LIMIT KV binding missing — denying request");
+    console.error(
+      "rate-limit: RATE_LIMIT KV binding missing — denying request",
+    );
     return { allowed: false, scope: "unavailable" };
   }
 
@@ -108,7 +128,9 @@ export async function enforceRateLimit(env, ip) {
   try {
     await Promise.all([
       kv.put(ipKey, String(ipCount + 1), { expirationTtl: TTL_SECONDS }),
-      kv.put(globalKey, String(globalCount + 1), { expirationTtl: TTL_SECONDS }),
+      kv.put(globalKey, String(globalCount + 1), {
+        expirationTtl: TTL_SECONDS,
+      }),
     ]);
   } catch (error) {
     console.error(`rate-limit: KV write failed: ${error.message}`);
@@ -125,7 +147,9 @@ export async function enforceRateLimit(env, ip) {
  * @param {string} [lang] "es" for Spanish.
  */
 export function rateLimitMessage(scope, lang) {
-  const spanish = String(lang || "").toLowerCase().startsWith("es");
+  const spanish = String(lang || "")
+    .toLowerCase()
+    .startsWith("es");
 
   if (scope === "global") {
     return spanish
