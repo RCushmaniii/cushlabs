@@ -15,6 +15,9 @@ Things that shipped with a known gap. Open items first; key resolved items kept 
 | 2     | `js-yaml` (via `gray-matter`) flagged by `npm audit` (moderate)              | Low        | Build-time only; parses trusted PORTFOLIO.md files. Not a Dependabot alert. Revisit if gray-matter ships a patched js-yaml.                                                                                                                                                                                                                                               |
 | 3     | Legacy `src/components/home/` folder is dead but retained                    | Low        | Live pages use `home2/`. The old `home/Hero.astro` still carries a stale "20+ Years IT Experience" string (never rendered). Remove the folder or update it if ever revived.                                                                                                                                                                                               |
 | 5     | `/azucar/` landing page missing its meta description                         | Low        | Surfaced by `meta-description-gate` ("1 missing meta") during the 2026-07-15 blog audit. Pre-existing, unrelated to the blog. Gate warns but doesn't fail. Add a `description` to the page.                                                                                                                                                                               |
+| 6     | Ungated client proposal reachable at `/azucar/`                              | Medium     | `public/azucar/index.html` serves **200 with no token** (verified live 2026-07-27 and 2026-08-02). `noindex, nofollow`, but publicly reachable — contradicts the gating contract in `api/demo.ts:4`. Also a _different, older_ doc (67 KB) than the gated `demos/azucar/proposal.html` (168 KB), so two Azúcar proposals are live at once. Delete the `public/` copy.     |
+| 7     | Two thin repo pages generate + enter the sitemap with no inbound link        | Low        | `cushlabs-ai-dispatch` and `cushlabs-stickers-releases` have no `PORTFOLIO.md`, so `generate-projects.ts:436` defaults `priority: 99` — hides the card but still builds the detail page and sitemaps it (EN+ES = 4 pages). `thumbnail: null`, no tagline, auto-titlecased H1. `ai-dispatch` is the internal sales pipeline — brand risk, not just SEO.                    |
+| 8     | Self-portfolio `demoUrl` points at the non-www apex                          | Low        | `src/data/projectDetails.ts:146` = `https://cushlabs.ai` → live **307** to `https://www.cushlabs.ai/`. Only redirecting internal link on the site; renders on 4 pages. Ahrefs 3XX warning. One-line fix.                                                                                                                                                                  |
 | ~~4~~ | ~~"Owner lead alerts" (Basic tier) not fully delivered until Meta approves~~ | ~~Medium~~ | **Resolved 2026-07-09** — WhatsApp owner alert LIVE (es*MX template Active, verified send 200). Copy de-hedged site-wide (PR #181), contract doc reconciled (PR #186 §8.2), routine `trig_017gUH6pBx89DyodKwpN8jZU` disabled. Bot-side leftover: promote `FEATURE-INVENTORY.md` List-2 #10 → List 1. NOTE: WhatsApp/IG \_customer channel* is separate and still pending. |
 | ~~—~~ | ~~ES privacy generic policy~~                                                | ~~High~~   | Resolved — PR #86 (2026-05-02).                                                                                                                                                                                                                                                                                                                                           |
 | ~~—~~ | ~~No standalone Voice Agent page~~                                           | ~~Medium~~ | Resolved — PR #85 (2026-05-02).                                                                                                                                                                                                                                                                                                                                           |
@@ -35,7 +38,15 @@ _(none open)_
 
 ### Medium priority
 
-_(none open — canonical guardrail and HowTo schema both shipped)_
+- **Ahrefs 2026-07-25 crawl fixes — one `fix/` branch, four changes** (tech debt #6, #7, #8). All
+  re-verified still open 2026-08-02.
+  1. `src/data/projectDetails.ts:146` → `https://www.cushlabs.ai/` (kills the 3XX warning).
+  2. Add `PORTFOLIO.md` with `portfolio_enabled: false` to `cushlabs-ai-dispatch` and
+     `cushlabs-stickers-releases`, then `npm run generate-projects` (drops 4 thin pages from the
+     sitemap). Do the two sibling-repo commits first — they're separate repos, no branch conflict.
+  3. Delete `public/azucar/index.html` (ungated proposal); the gated route already serves the current
+     168 KB version. **Verify before deleting** per CLAUDE.md: grep for `/azucar/` references first.
+  4. `npm run seo:indexnow`.
 
 ### Low priority
 
@@ -121,6 +132,68 @@ Documented in CLAUDE.md and memory `feedback_tailwind4_color_collision`. Custom 
 ---
 
 ## Session History
+
+## Session: 2026-07-27 — Ahrefs crawl triage (findings only, nothing shipped)
+
+Triaged the Ahrefs 2026-07-25 crawl mail (118 URLs, health 100, 0 errors, 1 warning, 8 notices)
+against the built `dist/` and the live site. **Diagnosis only — no code changed this session.** The
+session then pivoted to the Azúcar/Susy demo work, which is logged in `cushlabs-messenger-bot`
+(`docs/SESSION_LOG.md` 2026-07-27 entries + `docs/sales/azucar-contact-log.md`).
+
+### Accomplished
+
+- **Root-caused the "3XX redirect" warning to one line.** `src/data/projectDetails.ts:146` has
+  `demoUrl: "https://cushlabs.ai"` (non-www, no trailing slash) on the cushlabs self-portfolio entry.
+  Live it returns **307 → `https://www.cushlabs.ai/`**. Renders on 4 pages: `/portfolio/`,
+  `/es/portfolio/`, `/projects/cushlabs/`, `/es/projects/cushlabs/`. It is the only redirecting
+  internal link on the site — a link-graph pass over all 125 `dist` HTML files found no other
+  redirect targets and no missing trailing slashes.
+- **Root-caused "only one dofollow incoming internal link" (4 pages).** Exactly EN+ES
+  `/projects/cushlabs-ai-dispatch/` and `/projects/cushlabs-stickers-releases/`. Neither repo has a
+  `PORTFOLIO.md`, so `generate-projects.ts:436` defaults them to `priority: 99` — which hides the
+  portfolio _card_ but still generates the detail page **and still emits it to the sitemap**. Their
+  only inbound link is each other's language switcher. Both render `thumbnail: null`, no tagline,
+  GitHub-description-only bodies, and auto-titlecased H1s ("Cushlabs Ai Dispatch").
+- **Dismissed "HTTP to HTTPS redirect" as a non-issue.** Zero `http://` links exist in any of the 125
+  built pages. It is the Ahrefs crawl seed (`http://cushlabs.ai` → 308). Correct behavior; nothing to
+  fix in the repo.
+- **Found an ungated client proposal in `public/`.** `https://www.cushlabs.ai/azucar/` returns **200
+  with no token**. It is `noindex, nofollow` but publicly reachable, which contradicts the gating
+  design stated in `api/demo.ts:4` ("NOT in `public/`, so there is no un-gated route to them"). It is
+  also a _different, older_ document (67 KB) than the gated `demos/azucar/proposal.html` (168 KB).
+- **Verified the gated demo system is sound.** `demo/azucar/proposal.html` → 404 without cookie, 302
+  with token, 200 with cookie, `X-Robots-Tag: noindex, nofollow`, viewport meta present. Token valid
+  through 2026-10-17.
+- Confirmed `/azucar/`, `/salons/`, `/salones/` are true orphans (0 inbound, absent from sitemap) but
+  all three carry `noindex, nofollow` — intentional campaign pages, no action.
+
+### Decisions Made
+
+- **Nothing shipped.** Findings were parked rather than fixed because a feature branch was in flight
+  and the CLAUDE.md one-branch-at-a-time rule applies. All four items re-verified still open on
+  2026-08-02.
+- **`ignoreCommand`/`[skip ci]` untouched** — the redirect fix is a source change and will build
+  normally when it ships.
+
+### Immediate Next Steps
+
+- [ ] Fix `projectDetails.ts:146` → `demoUrl: "https://www.cushlabs.ai/"`, kills the 3XX warning.
+- [ ] Add `PORTFOLIO.md` with `portfolio_enabled: false` to `cushlabs-ai-dispatch` and
+      `cushlabs-stickers-releases`, then `npm run generate-projects` — removes 4 thin pages from the
+      site and sitemap. **Brand note:** `cushlabs-ai-dispatch` is the internal sales/outreach
+      pipeline; a public indexed page describing it is a credibility risk, not just an SEO notice.
+- [ ] Delete `public/azucar/index.html`; keep only the gated `demos/azucar/proposal.html` route.
+- [ ] Run `npm run seo:indexnow` (clears the "3 pages to submit" notice; trending 12 → 3, working).
+
+### Technical Debt
+
+- New rows #6, #7, #8 added to Active Technical Debt below.
+
+### Open Questions / Blockers
+
+- None. All four items are self-contained and independently shippable in one `fix/` branch.
+
+---
 
 ## Session: 2026-07-26 — Camila Live (in-chat booking) + public offerings-only services page
 
