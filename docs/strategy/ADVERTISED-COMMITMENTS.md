@@ -108,10 +108,50 @@ America; USD = US + Canada. Rationale: `docs/strategy/MEXICO-GTM-STRATEGY.md` §
 
 ### 2.4 What is deliberately NOT priced or listed yet
 
-- **WhatsApp and Instagram** channels are intentionally **absent** from the pricing tiers "until Meta
-  approves; they layer into these tiers at no price change" (comment in `PricingSection.astro`). The
-  bot must not advertise WhatsApp/IG as an available channel on any client-facing surface until that
-  approval lands and this doc is updated. (Meta App Review status lives in the bot repo's roadblocks doc.)
+- **Instagram** channel is intentionally **absent** from the pricing tiers "until Meta approves; they
+  layer into these tiers at no price change" (comment in `PricingSection.astro`). The bot must not
+  advertise IG as an available channel on any client-facing surface until that approval lands and this
+  doc is updated.
+
+- **WhatsApp — THE APPROVAL GATE NAMED ABOVE HAS BEEN CLEARED. Updated 2026-08-02.**
+
+  This entry previously grouped WhatsApp with Instagram as "held until Meta approves." **That is no
+  longer accurate and had been inaccurate for eleven days.** The gate it named was satisfied on
+  **2026-07-22**; this document was last reconciled **2026-07-08** and nobody carried the change
+  across. This is the two-repo blindness problem in §0 running in the other direction — the site
+  UNDER-claiming a capability that is approved and live.
+
+  **Verified evidence (2026-08-02):**
+
+  | Fact                                                                                              | Source                                                                                     |
+  | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
+  | App Review **approved 2026-07-22 00:45 CST**, Advanced Access on first submission                 | Meta dashboard submission card; "App Review results are ready" email to robert@cushlabs.ai |
+  | `whatsapp_business_messaging` — **Advanced access granted**, Active                               | App Dashboard → Permissions and Features (`1670575657528474`)                              |
+  | `whatsapp_business_management` — **Advanced access granted**, Active                              | same                                                                                       |
+  | App **Live**, type Business                                                                       | same                                                                                       |
+  | First **external** account (no app role) through Facebook Login → Embedded Signup asset selection | `cushlabs-connect/docs/SESSION_LOG.md` 2026-07-26                                          |
+
+  **What is now advertisable:** CushLabs operating as a Meta **Tech Provider** — client businesses
+  connect **their own** WhatsApp Business Account via Embedded Signup, and CushLabs sends utility
+  messages (reminders, confirmations, notifications) on their behalf. Advanced Access on those two
+  permissions is precisely what permits acting on a WABA the app does not own; Standard Access does
+  not.
+
+  **Two things that are still true and must not be blurred:**
+
+  1. **WhatsApp is not on the pricing cards.** `PricingSection.astro` still renders three tiers with
+     no WhatsApp line. Approved ≠ published. Until those components change, no page may imply
+     WhatsApp is included in Basic/Premium/Ultra, because the price table on the same site says
+     otherwise. **That is a marketing-repo follow-up, not a claims question.**
+  2. **Delivery readiness is tracked separately.** As of `cushlabs-connect` 2026-07-27 the remaining
+     item was Meta's phone-number verification step and a full end-to-end + token-scope check.
+     Confirm current status in that repo before a page promises a delivery timeline. The permission
+     to sell it is not the same as a completed client onboarding.
+
+  **Reference implementation:** `cushlabs-whatsapp` runs WhatsApp utility messaging in production for
+  NY English (own WABA, single tenant, real recipients since 2026-08-01). It is the proof the
+  capability is real and the App Review demo tenant. Capability claims may cite it.
+
 - The Spanish long-form content the bot serves (`cushlabs-messenger-bot/content/cushlabs-ai/es/pricing-and-engagement.txt`)
   was written **quote-on-call**. That is now **superseded** by the explicit tiers above for the
   _self-serve site_, but the bot may still route complex/custom scope to a discovery call. **Action for
