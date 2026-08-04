@@ -113,6 +113,47 @@ America; USD = US + Canada. Rationale: `docs/strategy/MEXICO-GTM-STRATEGY.md` §
   advertise IG as an available channel on any client-facing surface until that approval lands and this
   doc is updated.
 
+  **DECIDED AND REASONED, 2026-08-04 — Instagram BUNDLES. It is never an add-on, never a surcharge.**
+
+  This was previously only an inherited comment in a component. It is now an explicit commitment,
+  because the first paying client asked for Instagram unprompted **four hours into her first day**.
+
+  **The evidence that settled it.** Azúcar's Business Suite inbox on go-live day read **Messenger 6,
+  Instagram 7, WhatsApp 9** — Messenger, the only channel we cover, was the _smallest_ of the three,
+  and nearly every Instagram thread was an ad reply she is paying to generate. Charging separately
+  for the channel carrying more of her volume than the one she bought would read as bait.
+
+  **Four reasons, in order of weight:**
+
+  1. **Clients do not think in channels.** Meta itself presents Messenger, Instagram and WhatsApp as
+     ONE inbox with tabs. The channel split is an artefact of our architecture. Charging per channel
+     forces us to explain our plumbing to justify a price, which is always a losing conversation.
+  2. **Per-channel pricing competes against free.** Meta gives away Instant Reply and FAQ
+     auto-replies at zero cost, and they can be scoped to a single channel — Azúcar switched Meta's
+     own automation on for Instagram the same evening. As an add-on, the comparison is "pay CushLabs
+     more vs. use Meta's free one." Bundled, the comparison is "one assistant that knows my prices
+     everywhere vs. a canned reply." We win the second comparison and lose the first.
+  3. **Marginal cost scales with MESSAGES, not channels.** Same tenant record, same prompt, same
+     facts, same retrieval. Adding Instagram costs inference tokens proportional to volume. So price
+     the thing that drives cost — **locations and volume**, which the tiers already do.
+  4. **It converts a gap into a retention hook.** "It's included and it's coming" is a reason to stay
+     through the App Review wait. "That'll be extra" invites the client to solve it with Meta's free
+     tool and never come back to us for it.
+
+  **Where the money is instead:** locations (already priced), a fair-use ceiling on total
+  conversations at the top end, and the genuinely separate products — Voice Agent, review management,
+  website chatbot. Those are different work, not the same assistant pointed at another inbox.
+
+  **The one open risk, stated rather than hidden.** Per-conversation inference cost at real volume is
+  unmeasured. If Instagram doubles or triples a client's message count, "included" could become
+  uncomfortable on a $1,990 plan. **Measure it in D1 before committing publicly to unlimited.** The
+  safe form is a fair-use ceiling on total conversations — never a per-channel charge.
+
+  **What may be said to a client today:** that Instagram is part of what the messaging tier becomes,
+  that it needs Meta's approval first, that it will be switched on at no extra cost when it lands, and
+  **no date** — `instagram_manage_messages` requires an App Review, and the 2026-07-19 submission was
+  rejected on 07-31. We have no basis for a timeline.
+
 - **WhatsApp — THE APPROVAL GATE NAMED ABOVE HAS BEEN CLEARED. Updated 2026-08-02.**
 
   This entry previously grouped WhatsApp with Instagram as "held until Meta approves." **That is no
