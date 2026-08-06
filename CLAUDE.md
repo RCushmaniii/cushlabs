@@ -1,5 +1,31 @@
 # CLAUDE.md - CushLabs.ai Repository Guide
 
+<!-- capability-registry-pointer -->
+## Platform approvals — read the registry, never restate it
+
+**Canonical source:** `C:/Users/Robert Cushman/Projects/operating-system/cushlabs/capability-registry.json`
+
+This repo does **not** record platform approval status in prose. Anything here that states whether
+Meta, Google, or any other platform has approved something is a **bug** — it will drift, and it has,
+four separate times in one week. Ask the registry instead:
+
+```powershell
+node "C:/Users/Robert Cushman/Projects/operating-system/scripts/validate-capability-registry.mjs"
+```
+
+**What this repo depends on:**
+
+- EVERY approval marked `reachable_by: any_client` — this repo is the advertising surface.
+- `ADVERTISED-COMMITMENTS.md` in this repo is checked against the registry by the validator.
+
+**The distinction that keeps causing errors:** `status: approved` and `reachable_by: any_client` are
+different facts. An approval can be granted and still unusable by a paying client. Only
+`reachable_by: any_client` makes a capability sellable.
+
+Deep-dive how-to docs in this repo stay where they are — the registry owns *state*, not procedure.
+
+---
+
 > This file provides essential context for AI assistants working on this codebase.
 
 > **🚨 READ FIRST — before ANY offer / pricing / proposal / demo / sales / client-facing work:**
