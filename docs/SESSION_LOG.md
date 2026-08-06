@@ -159,40 +159,32 @@ Documented in CLAUDE.md and memory `feedback_tailwind4_color_collision`. Custom 
 
 ### Accomplished
 
-- **Closed PR #173** (`fix/pricing-alignment`, open since 2026-07-09, 24 files / 20 live marketing
-  pages) **without merging**; branch deleted, evidence trail in the PR:
-  https://github.com/RCushmaniii/cushlabs/pull/173
-- **Verified its substance is already live** on `origin/main` @ `bd0edb0`: 1-week trial across
-  `home2/{Hero,Guarantee,FAQ}`, `pricing/{PricingSection,PricingComparison}`,
-  `services2/{Hero,FAQ,HowIWork,FinalCTA,ServiceBlock}`, `terms` + `es/terms` (EN+ES); bank transfer
-  only, with **zero `OXXO` and zero card-payment hits under `src/`**. Landed via #174 + #181, with
-  #176 restoring what #175's stale-base squash reverted.
-- **Found tech debt #11** — the USD payment note shows the MX method (see table above).
+- **Closed PR #173** (`fix/pricing-alignment`, open since 2026-07-09, 24 files / 20 live pages)
+  **without merging**; branch deleted, evidence in https://github.com/RCushmaniii/cushlabs/pull/173
+- **Verified its substance is already live** @ `bd0edb0` (EN+ES 1-week trial, bank transfer only,
+  **zero `OXXO`/card hits under `src/`**) — landed via #174 + #181, #176 restoring what #175 reverted.
 
 ### Decisions Made
 
-- **Close, don't merge.** A simulated 3-way merge into current `main` produced 4 files / 30 inserted
-  lines that were **all conflict markers**; the other 20 files auto-merged byte-identical to `main`.
-  Base `c7133d9` was **55 commits behind**. Only real difference was CFDI wording, where main's
-  phrasing is the more specific one. Zero upside against the realized #175 → #176 revert risk.
-- **Did not touch the USD payment copy.** Which side is wrong depends on a payment-processor fact
-  not knowable from this repo; guessing would either ship a false capability claim or delete a true one.
+- **Close, don't merge.** A simulated 3-way merge gave 4 files / 30 inserted lines that were **all
+  conflict markers**; the other 20 auto-merged byte-identical. Base was **55 commits behind**.
+- **Did not touch the USD payment copy** — which side is wrong needs a payment-processor fact not
+  knowable from this repo; guessing ships a false capability claim or deletes a true one.
 
 ### Immediate Next Steps
 
-- [ ] Answer: **is card processing live for USD?** Then fix the losing side of tech debt #11 via the
-      `copywriting` skill (published copy — do not free-write).
-- [ ] Triage **PR #204** (Lumière composite showcase, open since 2026-07-26) — same stale-branch
-      shape as #173 while siblings #206/#207 merged: https://github.com/RCushmaniii/cushlabs/pull/204
+- [ ] Answer **is card processing live for USD?**, then fix the losing side of #11 via `copywriting`.
+- [ ] Triage **PR #204** (open since 2026-07-26, same stale-base shape while #206/#207 merged).
 
 ### Technical Debt
 
-- New **#11** (Medium) — USD payment line contradicts `ADVERTISED-COMMITMENTS.md` §2.2 and
-  `MEXICO-GTM-STRATEGY.md:304`. The 2026-08-05 reconciliation banner missed this exact line.
+- New **#11** (Medium, see table above) — the 2026-08-05 reconciliation banner missed this line.
 
 ### Open Questions / Blockers
 
-- Is USD card payment actually live, or is "Pay by card" an unbacked claim in both strategy docs?
+- **Two sessions edited this repo concurrently today** — failure mode #5. A
+  `chore/portfolio-single-messenger-entry` branch appeared mid-session and a commit of mine landed on
+  it; moved to `main`, branch restored to `b456802`, nothing wrong pushed.
 
 ## Session: 2026-07-27 — Ahrefs crawl triage (findings only, nothing shipped)
 
