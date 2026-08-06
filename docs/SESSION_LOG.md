@@ -41,6 +41,15 @@ _(none open)_
 
 ### Medium priority
 
+- **Resolve the USD payment line** (tech debt #11, opened 2026-08-06). Needs one fact first — is
+  card processing live for USD? If yes, `PricingSection.astro:90`/`:156` and `salons.astro:96`/`:317`
+  are wrong and become "Pay by card · Invoice included"; if no, `ADVERTISED-COMMITMENTS.md` §2.2 and
+  `MEXICO-GTM-STRATEGY.md:304` are advertising a capability we don't have and must be corrected
+  instead. Route the copy change through the `copywriting` skill.
+- **Triage stale open PRs** — **#204** (Lumière composite showcase) has been open since 2026-07-26
+  while siblings #206/#207 merged; same stale-base shape that made #173 unmergeable. Also confirm
+  the four open Dependabot PRs (#215, #217, #218, #219, #220) are still wanted — #218 (TypeScript
+  5→7) and #220 (ESLint 9→10) are majors and need a build check, not a blind merge.
 - **Ahrefs 2026-07-25 crawl fixes — one item left** (tech debt #8).
   1. `src/data/projectDetails.ts:146` → `https://www.cushlabs.ai/` (kills the 3XX warning).
      Still open as of 2026-08-05.
@@ -148,35 +157,42 @@ Documented in CLAUDE.md and memory `feedback_tailwind4_color_collision`. Custom 
 
 ## Session: 2026-08-06 — Closed stale PR #173 (superseded, not merged)
 
-`fix/pricing-alignment` / **PR #173** had been open since 2026-07-09 across 24 files, 20 of them
-live marketing pages. Verified its substance against `origin/main` @ `bd0edb0` and **closed it
-without merging**; branch deleted. PR record: https://github.com/RCushmaniii/cushlabs/pull/173
+### Accomplished
 
-### Verified before closing
+- **Closed PR #173** (`fix/pricing-alignment`, open since 2026-07-09, 24 files / 20 live marketing
+  pages) **without merging**; branch deleted, evidence trail in the PR:
+  https://github.com/RCushmaniii/cushlabs/pull/173
+- **Verified its substance is already live** on `origin/main` @ `bd0edb0`: 1-week trial across
+  `home2/{Hero,Guarantee,FAQ}`, `pricing/{PricingSection,PricingComparison}`,
+  `services2/{Hero,FAQ,HowIWork,FinalCTA,ServiceBlock}`, `terms` + `es/terms` (EN+ES); bank transfer
+  only, with **zero `OXXO` and zero card-payment hits under `src/`**. Landed via #174 + #181, with
+  #176 restoring what #175's stale-base squash reverted.
+- **Found tech debt #11** — the USD payment note shows the MX method (see table above).
 
-- **1-week trial is live**, EN + ES — `home2/{Hero,Guarantee,FAQ}.astro`,
-  `pricing/{PricingSection,PricingComparison}.astro`,
-  `services2/{Hero,FAQ,HowIWork,FinalCTA,ServiceBlock}.astro`, `terms.astro` + `es/terms.astro`.
-- **Bank transfer only is live** — zero `OXXO` and zero card-payment hits anywhere under `src/`.
-- **No stale `2-week` / `2 semanas` under `src/`.** The surviving `1–2 semanas` is
-  `es/voice-agent.astro:273`, the hiring-time comparison #173 deliberately excluded.
-- Substance landed via **#174** (ToS EN+ES) and **#181** (capability de-hedging), with **#176**
-  restoring what #175's stale-base squash reverted. Commitments doc reconciled 2026-08-05.
+### Decisions Made
 
-### Why closed rather than merged
+- **Close, don't merge.** A simulated 3-way merge into current `main` produced 4 files / 30 inserted
+  lines that were **all conflict markers**; the other 20 files auto-merged byte-identical to `main`.
+  Base `c7133d9` was **55 commits behind**. Only real difference was CFDI wording, where main's
+  phrasing is the more specific one. Zero upside against the realized #175 → #176 revert risk.
+- **Did not touch the USD payment copy.** Which side is wrong depends on a payment-processor fact
+  not knowable from this repo; guessing would either ship a false capability claim or delete a true one.
 
-A simulated 3-way merge into current `main` produced **4 files / 30 inserted lines, every one of
-them a conflict marker** — the other 20 files auto-merged to byte-identical `main`. The branch's
-base `c7133d9` was **55 commits behind**. The only genuine textual difference was CFDI wording
-(`CFDI invoice included` on main vs `Invoice included` on the branch); main's is the more specific
-phrasing and matches `ADVERTISED-COMMITMENTS.md`. Merging 24 churned live pages off a four-week-old
-base to gain zero content is the exact shape of #175 → #176 ("restore pricing/#171 content reverted
-by stale-base merge"). Zero upside, a known-realized downside.
+### Immediate Next Steps
 
-### Flagged (not fixed)
+- [ ] Answer: **is card processing live for USD?** Then fix the losing side of tech debt #11 via the
+      `copywriting` skill (published copy — do not free-write).
+- [ ] Triage **PR #204** (Lumière composite showcase, open since 2026-07-26) — same stale-branch
+      shape as #173 while siblings #206/#207 merged: https://github.com/RCushmaniii/cushlabs/pull/204
 
-New tech-debt **#11** — the USD payment line on the live site shows the MX payment method. Found
-while grepping for payment strings; needs a fact from Robert, not a copy edit (see the table above).
+### Technical Debt
+
+- New **#11** (Medium) — USD payment line contradicts `ADVERTISED-COMMITMENTS.md` §2.2 and
+  `MEXICO-GTM-STRATEGY.md:304`. The 2026-08-05 reconciliation banner missed this exact line.
+
+### Open Questions / Blockers
+
+- Is USD card payment actually live, or is "Pay by card" an unbacked claim in both strategy docs?
 
 ## Session: 2026-07-27 — Ahrefs crawl triage (findings only, nothing shipped)
 
