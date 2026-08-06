@@ -24,7 +24,7 @@ Real errors a prior assistant shipped by NOT reading the docs below:
 
 ## 1. What CushLabs sells — one product, three tiers
 
-**One managed monthly subscription per business.** No à-la-carte menu, no setup fee. You pick a tier; CushLabs builds, trains, deploys, and maintains everything. Every plan includes **up to 2 locations**, **unlimited conversations (fair use)**, a **2-week free trial**, and **no contract**.
+**One managed monthly subscription per business.** No à-la-carte menu, no setup fee. You pick a tier; CushLabs builds, trains, deploys, and maintains everything. Every plan includes **up to 2 locations**, **unlimited conversations (fair use)**, a **1-week free trial**, and **no contract**.
 
 | Tier                              | MXN/mo     | USD/mo   | What it adds                                                                                             |
 | --------------------------------- | ---------- | -------- | -------------------------------------------------------------------------------------------------------- |
@@ -36,7 +36,7 @@ Real errors a prior assistant shipped by NOT reading the docs below:
 - **Voice overage (Ultra):** $8.50 MXN / $0.59 USD per minute past 300 min/loc/mo.
 - **Currency follows the MARKET, not the language:** MXN for Mexico + Central/South America; USD for US + Canada. USD figures are **independently anchored marketing numbers — never a live FX conversion.** Do not auto-convert.
 
-**"What do we charge 1,990 pesos for?" (Basic, verbatim):** AI Messenger Assistant on Facebook (24/7, bilingual, full feature set) + Google review management (owner-approved) + owner lead alerts + fully managed (setup, training, support). Per business, up to 2 locations, no setup fee, no contract, 2-week free trial, unlimited conversations (fair use), CFDI invoice included.
+**"What do we charge 1,990 pesos for?" (Basic, verbatim):** AI Messenger Assistant on Facebook (24/7, bilingual, full feature set) + Google review management (owner-approved) + owner lead alerts + fully managed (setup, training, support). Per business, up to 2 locations, no setup fee, no contract, 1-week free trial, unlimited conversations (fair use), CFDI invoice included.
 
 ---
 

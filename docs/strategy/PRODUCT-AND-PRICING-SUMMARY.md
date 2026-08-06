@@ -1,6 +1,6 @@
 # CushLabs — Product & Pricing Summary
 
-**Last updated:** 2026-07-07
+**Last updated:** 2026-08-05 (trial length + MX payment methods reconciled to the live site)
 **Canonical price source:** `src/components/pricing/PricingSection.astro` (this doc mirrors it — if they ever disagree, the component wins).
 **Related:** `MEXICO-GTM-STRATEGY.md` (strategy, edge cases, USD rationale) · `MESSENGER-PREMIUM-UPGRADES-HELD.md` (premium roadmap).
 
@@ -14,7 +14,7 @@
 
 CushLabs sells **one product**: a fully-managed AI subscription for local/SMB businesses, billed monthly per business. There are no à-la-carte add-ons and no setup fee — you pick a tier, and everything in it is built, trained, deployed, and maintained for you.
 
-Every plan includes **up to 2 locations**, **unlimited conversations (fair use)**, a **2-week free trial**, and **no contract**.
+Every plan includes **up to 2 locations**, **unlimited conversations (fair use)**, a **1-week free trial**, and **no contract**.
 
 ### Pricing table
 
@@ -34,9 +34,10 @@ Every plan includes **up to 2 locations**, **unlimited conversations (fair use)*
 ### Terms that apply to every plan
 
 - **No setup fee. No contracts. Cancel anytime.**
-- **2-week free trial** on up to two locations. Larger multi-location rollouts run the trial on 1–2 locations first, then expand.
+- **1-week free trial** on up to two locations. Larger multi-location rollouts run the trial on 1–2 locations first, then expand.
 - **Unlimited conversations (fair use)** — internal soft cap ~1,000 conversations/mo/location.
-- **Payment:** 🇲🇽 SPEI · OXXO · CFDI invoice included. 🇺🇸🇨🇦 Pay by card · invoice included.
+- **Payment:** 🇲🇽 bank transfer / _transferencia_ (rides SPEI) · CFDI invoice included. 🇺🇸🇨🇦 Pay by card · invoice included. **OXXO and card in MX are roadmap via Mercado Pago — not live.**
+- **Billing:** monthly, **in advance**. Prepay: quarterly **5%**, annual **10%** off the recurring subscription only.
 
 ---
 
@@ -136,5 +137,5 @@ Every plan includes **up to 2 locations**, **unlimited conversations (fair use)*
 | Included locations                   | 2            | 2            | 2                     |
 | Extra location (MXN / USD)           | +$690 / +$49 | +$690 / +$49 | +$690 / +$49          |
 | Voice overage (MXN / USD)            | —            | —            | $8.50 / $0.59 per min |
-| Free trial                           | 2 weeks      | 2 weeks      | 2 weeks               |
+| Free trial                           | 1 week       | 1 week       | 1 week                |
 | Setup fee / contract                 | None / None  | None / None  | None / None           |

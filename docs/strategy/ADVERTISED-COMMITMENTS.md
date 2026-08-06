@@ -95,9 +95,19 @@ Three tiers. One flat monthly price each. **Per business, includes up to 2 locat
 ### 2.2 Universal terms (apply to every tier)
 
 - **Locations:** every plan includes **up to 2 locations**; additional locations **+$690 MXN/mo** ( **+$49 USD/mo** ) each.
-- **No setup fee. No contracts. 2-week free trial. Unlimited conversations (fair use).**
-- **Payment (MXN):** SPEI or OXXO; **CFDI invoice included.**
+- **No setup fee. No contracts. 1-week free trial. Unlimited conversations (fair use).**
+- **Payment (MXN):** bank transfer / _transferencia_ (rides SPEI); **CFDI invoice included.**
+  **OXXO and card are roadmap via Mercado Pago — not live, never advertise them.**
 - **Payment (USD):** card; invoice included.
+- **Billing:** monthly, **in advance**. Prepay discounts: **quarterly 5%, annual 10%**, applied to
+  the recurring subscription only.
+
+> **Reconciled to the live site 2026-08-05.** This block had said "2-week free trial" and "SPEI or
+> OXXO" since before 2026-07-08. Both were wrong: `PricingSection.astro`, `terms.astro` and
+> `es/terms.astro` all say **1 week** and **bank transfer only**, and have since PRs #174/#181.
+> This is the same failure as the 2026-08-04 WhatsApp allowlist miss (`a-134`) — the site moved and
+> the file the copywriting system reads did not. Trial length and payment methods are the two lines
+> most likely to reach a prospect verbatim; check them first at every reconciliation.
 
 ### 2.3 Currency rule (do not break this)
 
@@ -479,7 +489,7 @@ directly. Do the following to establish durable connectivity:
 8. **Answer "what do we charge 1,990 pesos for?" from §2.1 Basic**, not from memory: AI Messenger
    Assistant (24/7, the full §4 feature set) + Google review management (owner-approved) + owner lead
    alerts + fully-managed (setup/training/support), per business incl. up to 2 locations, no setup fee,
-   no contract, 2-week free trial, unlimited conversations (fair use), CFDI invoice.
+   no contract, 1-week free trial, unlimited conversations (fair use), CFDI invoice.
 
 **Sync protocol going forward:** any change to price, a guarantee, or an advertised feature is made in
 the marketing repo **and** reflected here in the _same_ PR; then this file's `Last reconciled` date is

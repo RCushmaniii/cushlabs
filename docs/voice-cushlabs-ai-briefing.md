@@ -17,6 +17,7 @@
 ## Current State of the Site (audited 2026-04-13)
 
 ### What exists and is working well
+
 - **Homepage** — Strong hero: "Stop Losing Leads to Voicemail." Good pain-first framing. Describes 4 capabilities (Lead Qualification, Appointment Booking, Customer Support, AI Front Desk). Has a "How It Works" 4-step process.
 - **Live Demo pages** — 5 demo agents: Clara (lead qual), James (exec coaching scheduler), Sophia (med spa front desk), Mike (home services dispatcher), David (real estate setter). These are the strongest asset on the site — they let prospects actually talk to the AI.
 - **Portfolio page** — Exists (not yet audited in detail)
@@ -25,11 +26,13 @@
 - **Bilingual toggle** — ES button exists in nav
 
 ### What is MISSING
+
 1. **No Services/Pricing page** — The biggest gap. A prospect who wants to know what it costs and what they get has nowhere to go. They either leave or have to book a call just to find out the price. This is the #1 thing to build.
 2. **No FAQ page** — Common objections (does it sound robotic? what if I go over minutes? do I need a developer?) are unanswered.
 3. **"New York, NY" in the footer** — WRONG. Robert is based in Mexico and serves US + Mexico. This needs to be removed or changed to "Serving US & Mexico."
 
 ### Messaging issues to fix
+
 - Footer says `"Built by Robert Cushman — powered by AI and voice."` — fine, keep it.
 - The `/nyc-coaching` demo page says **"NEW YORK ENGLISH"** as a brand — this is a different client brand (possibly the ny-english-teacher client). Make sure this isn't creating confusion about CushLabs' location/identity.
 - Homepage process step says **"Clara lives inside your CRM and Calendar"** — this hardcodes the demo agent name into generic copy. Should say "Your agent lives inside your CRM..." since every client gets a custom agent, not Clara.
@@ -40,6 +43,7 @@
 ## The Services/Pricing Page to Build
 
 ### URL
+
 `/services` (and `/es/services` for Spanish)
 
 ### What it should communicate
@@ -47,6 +51,7 @@
 This page should answer: **"What do I get, what does it cost, and how does this work?"**
 
 #### Price
+
 - **US:** $1,497/mo
 - **Mexico/LATAM:** $10,997 MXN/mes
 - 500 minutes included per month
@@ -55,6 +60,7 @@ This page should answer: **"What do I get, what does it cost, and how does this 
 - No setup fee. No long-term contract. Cancel anytime.
 
 #### What's included (feature list)
+
 - Natural-sounding AI voice matched to your brand
 - Answers every call on the first ring, 24/7
 - 500 minutes/mo included
@@ -67,6 +73,7 @@ This page should answer: **"What do I get, what does it cost, and how does this 
 - No IT team needed — fully managed setup and maintenance
 
 #### Pain-first framing (use this, don't lead with features)
+
 Lead with the cost of inaction. The buyer's real problem is missed calls = missed revenue. Frame it like this:
 
 - You miss 3–5 calls a day while you're with clients, driving, or at lunch.
@@ -76,6 +83,7 @@ Lead with the cost of inaction. The buyer's real problem is missed calls = misse
 - Your AI voice agent works 24/7 for $1,497/mo and never calls in sick.
 
 #### Who it's for (use these as "scenario cards" or bullet points)
+
 - **Home services companies** (plumbing, HVAC, roofing) — every missed call is a $1,200 job
 - **Med spas and clinics** — front desk that never puts callers on hold
 - **Real estate teams** — outbound follow-up and inbound lead qualification
@@ -83,25 +91,28 @@ Lead with the cost of inaction. The buyer's real problem is missed calls = misse
 - **Any business that misses calls** — if your phone rings and nobody picks up, this is for you
 
 #### How it works (keep it to 3–4 steps)
+
 1. **Discovery call (free)** — We learn your call flow, customer questions, and business rules
 2. **We build your agent** — Custom voice, persona, and scripts in days, not months
 3. **Connect your systems** — Calendar, CRM, text notifications
 4. **Go live + monthly optimization** — Launch, then we tune it based on real call data
 
 #### CTA
+
 Primary: "Start Free Trial" → `/consultation`
 Secondary: "Talk to Clara first" → demo embed or `/` anchor
 
 #### ROI block
+
 Include this comparison:
 
-| | Full-time receptionist | AI Voice Agent |
-|---|---|---|
-| Cost | $3,000–$4,500/mo | $1,497/mo |
-| Hours | 8/day, 5 days/week | 24/7, 365 days/year |
-| Sick days | Yes | Never |
-| Bilingual | Rarely | Always |
-| Appointment booking | Manual | Automatic |
+|                     | Full-time receptionist | AI Voice Agent      |
+| ------------------- | ---------------------- | ------------------- |
+| Cost                | $3,000–$4,500/mo       | $1,497/mo           |
+| Hours               | 8/day, 5 days/week     | 24/7, 365 days/year |
+| Sick days           | Yes                    | Never               |
+| Bilingual           | Rarely                 | Always              |
+| Appointment booking | Manual                 | Automatic           |
 
 ---
 
@@ -142,17 +153,17 @@ Yes. Happy to sign a mutual NDA before any sensitive business information is sha
 
 Before shipping the services page, verify these match cushlabs.ai exactly:
 
-| Element | cushlabs.ai | voice.cushlabs.ai |
-|---|---|---|
-| US Voice Agent price | $1,497/mo | Must match |
-| MX Voice Agent price | $10,997 MXN/mes | Must match |
-| Minutes included | 500 | Must match |
-| Overage rate | $0.50/min US / $8.50 MXN | Must match |
-| Free trial length | 2 weeks | Must match |
-| CTA text | "Start Free Trial" | Should match |
-| Consultation URL | /consultation/ | Already matches |
-| Location | "Serving US & Mexico" | Fix footer — remove "New York, NY" |
-| Free trial messaging | "No setup fee. No contract. Cancel anytime." | Add this |
+| Element              | cushlabs.ai                                  | voice.cushlabs.ai                  |
+| -------------------- | -------------------------------------------- | ---------------------------------- |
+| US Voice Agent price | $1,497/mo                                    | Must match                         |
+| MX Voice Agent price | $10,997 MXN/mes                              | Must match                         |
+| Minutes included     | 500                                          | Must match                         |
+| Overage rate         | $0.50/min US / $8.50 MXN                     | Must match                         |
+| Free trial length    | 1 week                                       | Must match                         |
+| CTA text             | "Start Free Trial"                           | Should match                       |
+| Consultation URL     | /consultation/                               | Already matches                    |
+| Location             | "Serving US & Mexico"                        | Fix footer — remove "New York, NY" |
+| Free trial messaging | "No setup fee. No contract. Cancel anytime." | Add this                           |
 
 ---
 
@@ -179,6 +190,7 @@ Add "SERVICES" as a primary nav link. This is the most important missing piece �
 ## Tone and Voice Guidelines
 
 Match the tone of cushlabs.ai:
+
 - **Direct, not corporate.** Write like a smart person talking to a business owner, not like a SaaS marketing team.
 - **Pain-first, not feature-first.** Lead with what it costs them NOT to have this.
 - **Confident without bragging.** Let the live demos do the selling — your job is to get them to try one.
@@ -198,4 +210,4 @@ Match the tone of cushlabs.ai:
 
 ---
 
-*Briefing written 2026-04-13 based on cushlabs.ai pricing overhaul (PR #66) and live site audit of voice.cushlabs.ai.*
+_Briefing written 2026-04-13 based on cushlabs.ai pricing overhaul (PR #66) and live site audit of voice.cushlabs.ai._

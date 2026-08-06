@@ -34,7 +34,7 @@ Pick one; rotate to avoid pattern-matching. Warm, respectful, short. First touch
 
 **Follow-up 1**
 
-> Hola de nuevo 🙂 Le dejo aquí el link por si quiere echarle un ojo cuando tenga un momento: https://www.cushlabs.ai/salones/ — son 2 semanas de prueba gratis, sin contratos.
+> Hola de nuevo 🙂 Le dejo aquí el link por si quiere echarle un ojo cuando tenga un momento: https://www.cushlabs.ai/salones/ — es una semana de prueba gratis, sin contratos.
 
 **Follow-up 2 (final, soft close)**
 
@@ -44,14 +44,14 @@ Pick one; rotate to avoid pattern-matching. Warm, respectful, short. First touch
 
 ## Objection bank (quick replies)
 
-| Si dice…                               | Responde…                                                                                                                                                                          |
-| -------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| "Ya uso Booksy / una app de citas"     | "¡Perfecto, no la quita! Esa app manda recordatorios, pero no contesta los mensajes de sus clientas en Instagram o Facebook. Eso es justo lo que yo hago. Se complementan."        |
-| "Está muy caro / no tengo presupuesto" | "Le entiendo. Son $1,990 al mes, todo incluido — y con una sola clienta al mes que no se le escape ya se pagó. Por eso le ofrezco 2 semanas gratis: lo prueba sin arriesgar nada." |
-| "No le sé a la tecnología"             | "No se preocupe, yo lo configuro y lo cuido todo. Usted solo atiende a las clientas que le lleguen listas para agendar."                                                           |
-| "¿Suena a robot?"                      | "Para nada — habla con la voz de su salón, en español, natural y cálido. Si quiere le mando un ejemplo."                                                                           |
-| "Déjame pensarlo"                      | "¡Claro! Le dejo el link para cuando guste: https://www.cushlabs.ai/salones/ La prueba gratis está disponible cuando decida."                                                      |
-| "¿Cómo te pago?"                       | "Por SPEI u OXXO, lo que le sea más fácil, y le doy factura sin costo extra."                                                                                                      |
+| Si dice…                               | Responde…                                                                                                                                                                           |
+| -------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| "Ya uso Booksy / una app de citas"     | "¡Perfecto, no la quita! Esa app manda recordatorios, pero no contesta los mensajes de sus clientas en Instagram o Facebook. Eso es justo lo que yo hago. Se complementan."         |
+| "Está muy caro / no tengo presupuesto" | "Le entiendo. Son $1,990 al mes, todo incluido — y con una sola clienta al mes que no se le escape ya se pagó. Por eso le ofrezco una semana gratis: lo prueba sin arriesgar nada." |
+| "No le sé a la tecnología"             | "No se preocupe, yo lo configuro y lo cuido todo. Usted solo atiende a las clientas que le lleguen listas para agendar."                                                            |
+| "¿Suena a robot?"                      | "Para nada — habla con la voz de su salón, en español, natural y cálido. Si quiere le mando un ejemplo."                                                                            |
+| "Déjame pensarlo"                      | "¡Claro! Le dejo el link para cuando guste: https://www.cushlabs.ai/salones/ La prueba gratis está disponible cuando decida."                                                       |
+| "¿Cómo te pago?"                       | "Por transferencia bancaria, y le doy su factura sin costo extra."                                                                                                                  |
 
 ---
 
@@ -71,7 +71,7 @@ When they arrive, run the **qualification flow** (see strategy doc §7B): págin
 - [ ] **`PUBLIC_WHATSAPP_NUMBER` confirmed** in the cushlabs env (landing CTA falls back to +52 33 1559 0572 if unset).
 - [ ] **Client intake:** their FB/IG page access + a list of services & prices (the only things needed to train the assistant).
 - [ ] **WhatsApp utility templates** drafted + submitted for approval (appointment reminders).
-- [ ] **Payment:** SPEI account + OXXO reference ready; CFDI invoicing set up.
+- [ ] **Payment:** bank-transfer account ready; CFDI invoicing set up. (OXXO and card are roadmap via Mercado Pago — **not live, do not offer them.**)
 - [ ] **First case study:** capture before/after (response time, citas recovered) from client #1 for social proof.
 
 ---
