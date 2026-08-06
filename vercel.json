@@ -56,6 +56,26 @@
       "source": "/es/servicios/",
       "destination": "/es/services/",
       "permanent": true
+    },
+    {
+      "source": "/projects/cushlabs-messenger",
+      "destination": "/projects/cushlabs-messenger-bot/",
+      "permanent": true
+    },
+    {
+      "source": "/projects/cushlabs-messenger/",
+      "destination": "/projects/cushlabs-messenger-bot/",
+      "permanent": true
+    },
+    {
+      "source": "/es/projects/cushlabs-messenger",
+      "destination": "/es/projects/cushlabs-messenger-bot/",
+      "permanent": true
+    },
+    {
+      "source": "/es/projects/cushlabs-messenger/",
+      "destination": "/es/projects/cushlabs-messenger-bot/",
+      "permanent": true
     }
   ],
   "rewrites": [
