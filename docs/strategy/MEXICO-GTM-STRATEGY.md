@@ -2,6 +2,19 @@
 
 > **Status:** Living strategy document. Started 2026-06-28.
 > **Owner:** Robert Cushman (Guadalajara, Mexico)
+>
+> ⚠️ **Two published terms in this file are stale (flagged 2026-08-05). The live site wins.**
+>
+> - **Free trial is 1 week, not 2.** Every "2-week free trial" below (lines ~226, 231, 260, 263, 271)
+>   predates the site-wide change and is history, not policy. `PricingSection.astro`, `terms.astro`
+>   and `es/terms.astro` all say 1 week. The strategic _reasoning_ in §"chains get the trial" is
+>   unchanged and still correct — only the number moved.
+> - **OXXO is not a live payment method.** "SPEI/OXXO" below (lines ~75, 114, 220, 226) describes the
+>   intended end state. Today MX payment is **bank transfer / transferencia + CFDI**; OXXO and card
+>   are roadmap via Mercado Pago. The market analysis at line ~57 (card-on-file alone reaches ~half
+>   of MX SMBs) is why OXXO is still on the roadmap and remains valid.
+>
+> Do not quote a prospect from this file. Quote from `ADVERTISED-COMMITMENTS.md` §2.2.
 > **Purpose:** Durable home for the MX-first repositioning — pricing, services, unit economics, market research, niche selection, decision trees, and go-to-market tactics. Supersedes the prior US-oriented model.
 
 ---
@@ -121,7 +134,7 @@ Good-Better-Best, all MXN/month, subscription, **no setup fee, no contract.** Ev
 
 The published price is **per business, and includes up to 2 locations**. Additional locations are a **flat +$690 MXN/mo each, across all tiers**.
 
-- **Mental model:** ~$1,000/location, first two bundled. `$690` fits the `…90` price aesthetic.
+- **Mental model:** ~$1,000/location, first two bundled. `$690`fits the`…90` price aesthetic.
 - **Why "up to 2" (not 1, not 4):** two locations is the most common "bigger than solo" case (salon + spa, or a second shop). The marginal delivery cost of a 2nd location is tiny (same AI brain, one account manager, one more Google profile), so bundling it buys goodwill cheaply. "First 4" was rejected — it gave away the _expensive_ locations; "up to 2" gives away the cheap one.
 - **Why $690 (not $990):** marginal work per extra location is genuinely low (we know it; the client doesn't). The add-on is a **land-grab / chain-capture lever**, not cost recovery. `$490` is the floor — below that, location 3 drops to ~half the effective rate of the bundled first two, which invites "so why am I paying $1,990 for the first two?", and it underprices recurring review-management labor.
 - **The formula scales cleanly, no brackets:** a 9-location Basic account = `$1,990 + 7 × $690 = $6,820/mo` (~$380 USD to run 9 locations). Chains get a fair auto-price; use "custom / let's talk" only when a shared-vs-per-location Facebook-page split justifies a discount (e.g. 9 locations on ONE shared FB page = ~1× Messenger workload → room to come down to ~$7,900 on higher tiers).
