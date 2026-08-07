@@ -98,7 +98,11 @@ Three tiers. One flat monthly price each. **Per business, includes up to 2 locat
 - **No setup fee. No contracts. 1-week free trial. Unlimited conversations (fair use).**
 - **Payment (MXN):** bank transfer / _transferencia_ (rides SPEI); **CFDI invoice included.**
   **OXXO and card are roadmap via Mercado Pago — not live, never advertise them.**
-- **Payment (USD):** card; invoice included.
+- **Payment (USD):** bank transfer; invoice included.
+  **Card is not live in ANY currency** — confirmed by Robert 2026-08-06. This line said "card"
+  until then, which advertised a capability that does not exist. The live site was already correct
+  (`PricingSection.astro` usd note + `salons.astro` both say bank transfer); the doc was the wrong
+  side. Card is roadmap via Mercado Pago along with OXXO — never advertise either.
 - **Billing:** monthly, **in advance**. Prepay discounts: **quarterly 5%, annual 10%**, applied to
   the recurring subscription only.
 

@@ -9,10 +9,13 @@
 >   predates the site-wide change and is history, not policy. `PricingSection.astro`, `terms.astro`
 >   and `es/terms.astro` all say 1 week. The strategic _reasoning_ in §"chains get the trial" is
 >   unchanged and still correct — only the number moved.
-> - **OXXO is not a live payment method.** "SPEI/OXXO" below (lines ~75, 114, 220, 226) describes the
->   intended end state. Today MX payment is **bank transfer / transferencia + CFDI**; OXXO and card
->   are roadmap via Mercado Pago. The market analysis at line ~57 (card-on-file alone reaches ~half
->   of MX SMBs) is why OXXO is still on the roadmap and remains valid.
+> - **Neither OXXO nor card is a live payment method — in any currency.** "SPEI/OXXO" below (lines
+>   ~75, 114, 220, 226) describes the intended end state. Today payment is **bank transfer /
+>   transferencia** everywhere, with CFDI in MX; OXXO and card are roadmap via Mercado Pago. The
+>   market analysis at line ~57 (card-on-file alone reaches ~half of MX SMBs) is why OXXO is still on
+>   the roadmap and remains valid. **The USD column of the pricing table said "Pay by card" until
+>   2026-08-06** — corrected after Robert confirmed card processing is not live. The live site was
+>   already right; this file and `ADVERTISED-COMMITMENTS.md` §2.2 were the wrong side.
 >
 > Do not quote a prospect from this file. Quote from `ADVERTISED-COMMITMENTS.md` §2.2.
 > **Purpose:** Durable home for the MX-first repositioning — pricing, services, unit economics, market research, niche selection, decision trees, and go-to-market tactics. Supersedes the prior US-oriented model.
@@ -294,14 +297,14 @@ Currency follows the **business's market**, not the site language (a US Latino b
 
 **USD numbers (LOCKED 2026-07-02):** seeded from the FX rate (17.4541) + ~10%, then **anchored as independent marketing numbers** — NOT a live conversion, never displayed with a "≈" or re-derived when the peso moves.
 
-|                | MXN                | USD                   |
-| -------------- | ------------------ | --------------------- |
-| Basic          | $1,990             | **$129**              |
-| Premium        | $3,490             | **$229**              |
-| Ultra          | $5,490             | **$349**              |
-| Add'l location | +$690              | **+$49**              |
-| Voice overage  | $8.50/min          | **$0.59/min**         |
-| Payment line   | SPEI · OXXO · CFDI | Pay by card · Invoice |
+|                | MXN                  | USD                     |
+| -------------- | -------------------- | ----------------------- |
+| Basic          | $1,990               | **$129**                |
+| Premium        | $3,490               | **$229**                |
+| Ultra          | $5,490               | **$349**                |
+| Add'l location | +$690                | **+$49**                |
+| Voice overage  | $8.50/min            | **$0.59/min**           |
+| Payment line   | Bank transfer · CFDI | Bank transfer · Invoice |
 
 - **Margins are healthy and USD is still conservative for the US** (US SMBs pay $100–500/mo for managed services; Ultra at $349 with a voice agent is a steal). Raise once there's US signal. `docs` note: never auto-convert MXN↔USD — the two markets have independent willingness-to-pay.
 
