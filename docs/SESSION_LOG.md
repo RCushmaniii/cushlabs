@@ -63,7 +63,11 @@ _(none open)_
 
 ### Low priority
 
-- **Triage portfolio sync issue #109** — 1 data-quality warning from the 2026-06-20 `generate-projects` run.
+- ~~**Triage portfolio sync issue #109**~~ — **closed 2026-08-06.** The issue itself was closed
+  2026-06-22, and the underlying warning ("`ny-english-messenger-bot`: no portfolio slides") is moot:
+  that repo has no `PORTFOLIO.md`, so under the opt-in rule from PR #222 it is no longer published at
+  all and is absent from `projects.generated.json`. Verified both, not just the issue state.
+  **The repo now has zero open issues.**
 - **Flesh out thin project detail pages** — e.g. cushlabs-messenger (1 screenshot, no solution/metrics).
 - **Title pixel-width audit** on `/data-deletion/` and `/es/data-deletion/` (both end in `| CushLabs.ai`) against Ahrefs's pixel threshold.
 - **Remove the dead `src/components/home/` folder** (tech-debt #3) once confirmed nothing imports it.
