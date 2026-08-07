@@ -41,7 +41,11 @@ const metaDescriptions: Record<string, string> = {
   'ai-resume-tailor': 'AI-powered resume optimization tool that analyzes job descriptions and tailors your resume to match. Highlights skill gaps and suggests improvements for better ATS scores.',
   'comp-plan-simulator': 'Interactive compensation plan simulator for direct-selling companies. Model earnings across ranks, visualize team growth scenarios, and compare plan structures.',
   'cushlabs-ai-marketing': 'AI-powered marketing toolkit with 15 Claude slash commands for competitive analysis, content audits, SEO strategy, and client deliverables. Built with Anthropic API.',
-  'cushlabs-messenger': 'Bilingual AI-powered Facebook Messenger bot platform with RAG knowledge base, Spanish-English support, and multi-tenant Cloudflare Workers runtime for business automation.',
+  // Re-keyed 2026-08-06 from 'cushlabs-messenger' (project removed) to the
+  // surviving slug. Without an entry here this page fell back to the GitHub
+  // repo description, which opens on "Multi-tenant ... page_id routing" and
+  // was being truncated mid-sentence in the search snippet.
+  'cushlabs-messenger-bot': 'The 24/7 bilingual AI assistant for Facebook Messenger — answers your customers in English or Spanish using your own prices, hours and policies.',
 };
 
 const rawDescription = (

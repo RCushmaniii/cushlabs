@@ -34,7 +34,12 @@ export const esCardCopy: Record<string, EsCardCopy> = {
     tagline:
       "Chatbot con IA para un negocio de coaching — convierte a los visitantes del sitio en llamadas agendadas; reemplazó 4 roles",
   },
-  "cushlabs-messenger": {
+  // Re-keyed 2026-08-06 from "cushlabs-messenger" to the surviving slug. The two
+  // Messenger repos rendered as two near-identical cards; the product is now a
+  // single entry owned by cushlabs-messenger-bot. Without this key the Spanish
+  // card and its meta description fell back to the English GitHub description.
+  "cushlabs-messenger-bot": {
+    title: "CushLabs Messenger — Asistente Bilingüe con IA",
     tagline:
       "El asistente de IA bilingüe 24/7 para Facebook Messenger — construido con el contenido de tu propio negocio, para que ningún prospecto se enfríe.",
   },
@@ -52,11 +57,9 @@ export const esCardCopy: Record<string, EsCardCopy> = {
     tagline:
       "De hojas de stickers generadas con IA a una app de stickers bilingüe y firmada para WhatsApp — pipeline de procesamiento de imágenes y entrega completa en Android.",
   },
-  "ny-english-messenger-bot": {
-    title: "NY English Messenger — Asistente Bilingüe con IA",
-    tagline:
-      "El asistente de producción en Facebook Messenger para New York English — un estudio de inglés ejecutivo en Guadalajara — que atiende a prospectos 24/7 en inglés y español.",
-  },
+  // "ny-english-messenger-bot" removed 2026-08-06 — the repo was renamed to
+  // cushlabs-messenger-bot on 2026-07-01 and no project has carried that slug
+  // since, so this override had been dead for five weeks.
   "ny-eng": {
     tagline:
       "Sitio de generación de prospectos para un negocio de coaching de inglés — reemplazó 4 roles y opera por $0 al mes",
