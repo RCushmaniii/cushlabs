@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-08-06T03:33:29.464Z",
-  "count": 36,
+  "generatedAt": "2026-08-06T18:31:00.686Z",
+  "count": 35,
   "projects": [
     {
       "id": 1108213747,
@@ -50,7 +50,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-08-03T16:48:45Z",
+      "lastPushed": "2026-08-06T16:46:25Z",
       "createdAt": "2025-12-02T07:09:31Z",
       "isFeatured": true,
       "isArchived": false,
@@ -184,7 +184,7 @@
       },
       "stars": 1,
       "forks": 0,
-      "lastPushed": "2026-08-06T03:30:25Z",
+      "lastPushed": "2026-08-06T16:46:59Z",
       "createdAt": "2025-11-23T00:24:28Z",
       "isFeatured": true,
       "isArchived": false,
@@ -249,6 +249,157 @@
       ],
       "videoUrl": "https://cdn.cushlabs.ai/ny-ai-chatbot/video/ny-eng-chatbot-brief.mp4",
       "videoPoster": "https://cdn.cushlabs.ai/ny-ai-chatbot/video/ny-eng-chatbot-brief-poster.jpg"
+    },
+    {
+      "id": 1203303335,
+      "name": "cushlabs-messenger-bot",
+      "title": "CushLabs Messenger",
+      "description": "Multi-tenant Facebook Messenger AI platform — one Cloudflare Worker serving many business Pages via page_id routing, with bilingual (EN/es-MX) Claude assistants, Vectorize RAG, structured business facts, and human handoff.",
+      "summary": "> Multi-tenant Facebook Messenger AI platform — one Cloudflare Worker serving many business Pages with bilingual (EN/es-MX) Claude-powered assistants, RAG knowledge bases, structured business facts, a",
+      "url": "https://github.com/RCushmaniii/cushlabs-messenger-bot",
+      "demoUrl": "https://m.me/cushlabs",
+      "liveUrl": "",
+      "homepage": null,
+      "topics": [
+        "ai-assistant",
+        "anthropic",
+        "bilingual",
+        "chatbot",
+        "claude",
+        "cloudflare-workers",
+        "facebook-messenger",
+        "messenger-bot",
+        "qdrant",
+        "rag",
+        "typescript",
+        "workers-ai"
+      ],
+      "categories": [
+        "AI Automation"
+      ],
+      "tags": [
+        "ai-assistant",
+        "anthropic",
+        "bilingual",
+        "chatbot",
+        "claude",
+        "cloudflare-workers",
+        "facebook-messenger",
+        "messenger-bot",
+        "qdrant",
+        "rag",
+        "typescript",
+        "workers-ai",
+        "claude-ai",
+        "multi-tenant",
+        "facebook",
+        "vector-search",
+        "conversational-ai"
+      ],
+      "stack": [
+        "Cloudflare Workers",
+        "TypeScript",
+        "Claude API (Haiku + Sonnet)",
+        "Cloudflare Vectorize (vector search)",
+        "Cloudflare Workers AI (embeddings)",
+        "Cloudflare KV (tenant config + session state)",
+        "Cloudflare D1 (analytics)",
+        "Upstash Redis (rate limiting)",
+        "Clerk (operator console auth)",
+        "Meta Messenger Platform",
+        "Sentry (error monitoring)",
+        "GitHub Actions (CI/CD)"
+      ],
+      "status": "Production",
+      "language": "TypeScript",
+      "languages": {
+        "TypeScript": 751505,
+        "JavaScript": 211470,
+        "PowerShell": 7945,
+        "HTML": 733,
+        "CSS": 323
+      },
+      "stars": 0,
+      "forks": 0,
+      "lastPushed": "2026-08-06T18:27:01Z",
+      "createdAt": "2026-04-06T23:20:56Z",
+      "isFeatured": true,
+      "isArchived": false,
+      "isPrivate": true,
+      "tagline": "The 24/7 bilingual AI assistant for Facebook Messenger — built from your business's own content, so no lead goes cold.",
+      "thumbnail": "https://cdn.cushlabs.ai/cushlabs-messenger-bot/images/portfolio/card-messenger.webp",
+      "problem": "Businesses that market on Facebook get Messenger questions about pricing, hours, and services at all\nhours, in whatever language the customer speaks. Nobody watches the inbox around the clock, customers\nexpect fast answers, and a generic auto-reply — or a chatbot that invents details — costs real\nbusiness. The usual agency fix is a separate bot build per client: separate deploy, separate Meta app,\nseparate review cycle, separate thing to maintain. That does not scale past a couple of clients.\n",
+      "solution": "One Cloudflare Worker serves every connected Page. Each inbound webhook is routed by page_id to that tenant's own system prompt, per-Page access token, structured business facts, and tenant-scoped vector index — so onboarding a client is a config and content operation, not a deploy. A two-layer router sends pleasantries to Claude Haiku and real questions to Claude Sonnet with RAG context. Hard facts (hours, pricing, address, booking URL) live as structured records injected verbatim and marked authoritative, so a price change is a one-field edit that is live on the next message with no re-embed. When a customer wants a person, the bot goes quiet and alerts the operator, who replies from the Page Inbox.\n",
+      "keyFeatures": [
+        "Answers customer questions in under 5 seconds, 24/7 — nights, weekends, holidays",
+        "English and Spanish automatically, following whatever the customer writes, with no manual switching",
+        "Answers come from the client's own approved content — it never invents a price or makes up a promise",
+        "Hours and pricing come back exact every time, because they are stored as data, not as prose the AI has to interpret",
+        "Hands off to a person with full context when a customer asks, alerts the owner, then resumes on its own",
+        "One Worker, many client Pages — a new client onboards as configuration, with no code change and no Meta re-review"
+      ],
+      "metrics": [
+        "2 live client Pages running on a single Worker deployment",
+        "485 automated tests across 29 files, covering the decision layer and not just API plumbing",
+        "53 scripted QA scenarios run against production before a client goes live, cross-tenant isolation included",
+        "~50 seconds from merge to live, typecheck and tests gated"
+      ],
+      "priority": 3,
+      "dateCompleted": null,
+      "slides": [
+        {
+          "src": "https://cdn.cushlabs.ai/cushlabs-messenger-bot/images/portfolio/card-messenger.webp",
+          "altEn": "CushLabs Messenger",
+          "altEs": "CushLabs Messenger"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/cushlabs-messenger-bot/images/hero-en-01.webp",
+          "altEn": "CushLabs Messenger",
+          "altEs": "CushLabs Messenger"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/cushlabs-messenger-bot/images/hero-en-02.webp",
+          "altEn": "CushLabs Messenger",
+          "altEs": "CushLabs Messenger"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/cushlabs-messenger-bot/images/hero-en-03.webp",
+          "altEn": "CushLabs Messenger",
+          "altEs": "CushLabs Messenger"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/cushlabs-messenger-bot/images/hero-en-04.webp",
+          "altEn": "CushLabs Messenger",
+          "altEs": "CushLabs Messenger"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/cushlabs-messenger-bot/images/hero-en-05.webp",
+          "altEn": "CushLabs Messenger",
+          "altEs": "CushLabs Messenger"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/cushlabs-messenger-bot/images/hero-en-06.webp",
+          "altEn": "CushLabs Messenger",
+          "altEs": "CushLabs Messenger"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/cushlabs-messenger-bot/images/hero-en-07.webp",
+          "altEn": "CushLabs Messenger",
+          "altEs": "CushLabs Messenger"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/cushlabs-messenger-bot/images/hero-en-08.webp",
+          "altEn": "CushLabs Messenger",
+          "altEs": "CushLabs Messenger"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/cushlabs-messenger-bot/images/hero-en-09.webp",
+          "altEn": "CushLabs Messenger",
+          "altEs": "CushLabs Messenger"
+        }
+      ],
+      "videoUrl": "https://cdn.cushlabs.ai/cushlabs-messenger-bot/images/portfolio/24_7_AI_Sales_Assistant.mp4",
+      "videoPoster": null
     },
     {
       "id": 1164355422,
@@ -324,7 +475,7 @@
       },
       "stars": 0,
       "forks": 1,
-      "lastPushed": "2026-08-06T03:07:51Z",
+      "lastPushed": "2026-08-06T18:14:41Z",
       "createdAt": "2026-02-23T01:31:09Z",
       "isFeatured": true,
       "isArchived": false,
@@ -412,149 +563,6 @@
       "videoPoster": "https://cdn.cushlabs.ai/cushlabs-ai-voice-agent/video/voice-cushlabs-brief-poster.webp"
     },
     {
-      "id": 1232252613,
-      "name": "cushlabs-messenger",
-      "title": "CushLabs Messenger",
-      "description": "AI-powered Facebook Messenger bot platform — bilingual onboarding now, multi-tenant Worker runtime next.",
-      "summary": "> The client-onboarding layer for CushLabs' AI-powered Messenger bots — bilingual voice-profile capture that",
-      "url": "https://github.com/RCushmaniii/cushlabs-messenger",
-      "demoUrl": "https://cushlabs.ai",
-      "liveUrl": "https://survey.cushlabs.ai/",
-      "homepage": "https://cushlabs.ai",
-      "topics": [
-        "ai-agents",
-        "bilingual",
-        "cloudflare-workers",
-        "cushlabs",
-        "kv-storage",
-        "messenger-platform",
-        "multi-tenant",
-        "react",
-        "tailwindcss",
-        "typescript"
-      ],
-      "categories": [
-        "AI Automation"
-      ],
-      "tags": [
-        "ai-agents",
-        "bilingual",
-        "cloudflare-workers",
-        "cushlabs",
-        "kv-storage",
-        "messenger-platform",
-        "multi-tenant",
-        "react",
-        "tailwindcss",
-        "typescript",
-        "claude-ai",
-        "rag",
-        "conversational-ai",
-        "facebook",
-        "vector-search",
-        "client-onboarding"
-      ],
-      "stack": [
-        "Cloudflare Workers",
-        "Claude API (Haiku + Sonnet)",
-        "Cloudflare Vectorize (RAG)",
-        "Cloudflare Workers AI (embeddings)",
-        "Cloudflare KV",
-        "Meta Messenger Platform",
-        "TypeScript (strict)",
-        "React 19 + Tailwind 4 (admin)",
-        "Sentry"
-      ],
-      "status": null,
-      "language": "TypeScript",
-      "languages": {
-        "TypeScript": 192632,
-        "JavaScript": 24852,
-        "HTML": 5989,
-        "CSS": 5847
-      },
-      "stars": 0,
-      "forks": 0,
-      "lastPushed": "2026-08-06T02:50:45Z",
-      "createdAt": "2026-05-07T18:38:22Z",
-      "isFeatured": true,
-      "isArchived": false,
-      "isPrivate": true,
-      "tagline": "The 24/7 bilingual AI assistant for Facebook Messenger — built from your business's own content, so no lead goes cold.",
-      "thumbnail": "https://cdn.cushlabs.ai/cushlabs-messenger/images/thumb.webp",
-      "problem": "Businesses on Facebook get a steady stream of Messenger questions — pricing, availability, hours,\nservices — and in bilingual markets like Mexico they arrive in both Spanish and English. No owner can\nwatch the inbox 24/7, generic auto-replies quietly lose the lead while the prospect keeps shopping, and\noff-the-shelf chatbots sound robotic and invent answers they can't stand behind. The result is missed\nconversations, slow first responses, and revenue that walks to whoever replied first.\n",
-      "solution": "A single multi-tenant Cloudflare Worker serves every client through page_id routing, with\nno per-client deployments to maintain. RAG grounded in each client's own content keeps answers\naccurate and on-brand, while native bilingual handling detects English or Spanish and replies\nwithout manual switching. When a conversation needs a person, the assistant hands off gracefully\nand then resumes automatically — and onboarding a new client takes one CLI command and one URL.\n",
-      "keyFeatures": [
-        "24/7 instant replies to customer inquiries on Facebook Messenger — pricing, availability, hours, services",
-        "Native bilingual EN/ES with automatic language detection — no manual switching mid-conversation",
-        "RAG-grounded answers drawn from the client's own content — accurate, never hallucinated",
-        "Graceful human handover when a conversation needs a person, then automatic resume",
-        "One multi-tenant Cloudflare Worker serves every client via page_id routing — no per-client deployments"
-      ],
-      "metrics": [
-        "New client onboards in under 60 seconds of operator time — one CLI command, one URL",
-        "Sub-100ms typical survey persistence latency via edge KV writes",
-        "Zero per-client deployments — a single Worker scales to every client through page_id routing",
-        "Structured, schema-validated voice profiles replace lossy email-and-spreadsheet onboarding"
-      ],
-      "priority": 3,
-      "dateCompleted": null,
-      "slides": [
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-messenger/images/thumb.webp",
-          "altEn": "A boutique customer messages the shop on Facebook — \"Do you have this in medium?\" — and the AI assistant answers instantly with availability and offers to reserve it.",
-          "altEs": "Una clienta le escribe a la boutique por Facebook — \"¿Tienen esta blusa en talla mediana?\" — y el asistente con IA responde al instante con la disponibilidad y le ofrece apartarla."
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-messenger/images/hero-01.webp",
-          "altEn": "The 24/7 AI Sales Assistant for Facebook Messenger — built from your content, trained on your business. Made by CushLabs.",
-          "altEs": "El asistente de ventas con IA 24/7 para Facebook Messenger — creado a partir de tu contenido y entrenado en tu negocio. Hecho por CushLabs."
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-messenger/images/hero-02.webp",
-          "altEn": "The problem every business owner knows — your Facebook page gets messages. You catch some. Most you don't.",
-          "altEs": "El problema que todo dueño de negocio conoce — tu página de Facebook recibe mensajes. Algunos los alcanzas a contestar. La mayoría no."
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-messenger/images/hero-03.webp",
-          "altEn": "Generic auto-replies are a polite way to lose a lead — the lead-decay curve.",
-          "altEs": "Las respuestas automáticas son una forma amable de perder un cliente potencial — la curva de decaimiento del prospecto."
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-messenger/images/hero-04.webp",
-          "altEn": "What if your inbox answered itself? Introducing the CushLabs AI Messaging Assistant.",
-          "altEs": "¿Y si tu bandeja de entrada se respondiera sola? Te presentamos el Asistente de Mensajería con IA de CushLabs."
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-messenger/images/hero-05.webp",
-          "altEn": "Never lose a prospect while you sleep — qualified conversations at 8:30 PM, 11:15 PM, 2:00 AM.",
-          "altEs": "Nunca pierdas un prospecto mientras duermes — conversaciones calificadas a las 8:30 PM, 11:15 PM y 2:00 AM."
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-messenger/images/hero-06.webp",
-          "altEn": "Get your time back and stop repeating yourself — the assistant handles FAQs so you only step in when a client is ready to buy.",
-          "altEs": "Recupera tu tiempo y deja de repetir lo mismo — el asistente responde las preguntas frecuentes para que solo intervengas cuando un cliente está listo para comprar."
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-messenger/images/hero-07.webp",
-          "altEn": "Speaks their language perfectly and without interruption — native bilingual EN/ES with no manual switching.",
-          "altEs": "Habla su idioma a la perfección y sin interrupciones — bilingüe nativo EN/ES, sin cambios manuales."
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-messenger/images/hero-08.webp",
-          "altEn": "Sells like you, because it's built from you — your website, your FAQs, your methodology, your prices.",
-          "altEs": "Vende como tú, porque está hecho de ti — tu sitio web, tus preguntas frecuentes, tu metodología, tus precios."
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-messenger/images/hero-09.webp",
-          "altEn": "The math is simple: it pays for itself the first time it converts a client you'd otherwise have lost.",
-          "altEs": "La cuenta es simple: se paga solo la primera vez que convierte a un cliente que de otro modo habrías perdido."
-        }
-      ],
-      "videoUrl": null,
-      "videoPoster": null
-    },
-    {
       "id": 1196535593,
       "name": "cushlabs-marketsignal",
       "title": "MarketSignal — AI-Powered Local Competitive Intelligence",
@@ -626,7 +634,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-08-06T03:17:56Z",
+      "lastPushed": "2026-08-06T15:49:12Z",
       "createdAt": "2026-03-30T19:46:00Z",
       "isFeatured": true,
       "isArchived": false,
@@ -701,152 +709,6 @@
       "videoPoster": "https://cdn.cushlabs.ai/cushlabs-marketsignal/portfolio/marketsignal/brief-poster.webp"
     },
     {
-      "id": 1203303335,
-      "name": "cushlabs-messenger-bot",
-      "title": "CushLabs Messenger Bot — Multi-Tenant Bilingual AI for Facebook Messenger",
-      "description": "Multi-tenant Facebook Messenger AI platform — one Cloudflare Worker serving many business Pages via page_id routing, with bilingual (EN/es-MX) Claude assistants, Vectorize RAG, structured business facts, and human handoff.",
-      "summary": "> Multi-tenant Facebook Messenger AI platform — one Cloudflare Worker serving many business Pages with bilingual (EN/es-MX) Claude-powered assistants, RAG knowledge bases, structured business facts, a",
-      "url": "https://github.com/RCushmaniii/cushlabs-messenger-bot",
-      "demoUrl": null,
-      "liveUrl": "",
-      "homepage": null,
-      "topics": [
-        "ai-assistant",
-        "anthropic",
-        "bilingual",
-        "chatbot",
-        "claude",
-        "cloudflare-workers",
-        "facebook-messenger",
-        "messenger-bot",
-        "qdrant",
-        "rag",
-        "typescript",
-        "workers-ai"
-      ],
-      "categories": [
-        "AI Automation"
-      ],
-      "tags": [
-        "ai-assistant",
-        "anthropic",
-        "bilingual",
-        "chatbot",
-        "claude",
-        "cloudflare-workers",
-        "facebook-messenger",
-        "messenger-bot",
-        "qdrant",
-        "rag",
-        "typescript",
-        "workers-ai",
-        "claude-ai",
-        "multi-tenant",
-        "facebook",
-        "vector-search",
-        "conversational-ai"
-      ],
-      "stack": [
-        "Cloudflare Workers",
-        "TypeScript",
-        "Claude API (Haiku + Sonnet)",
-        "Cloudflare Vectorize (vector search)",
-        "Cloudflare Workers AI (embeddings)",
-        "Cloudflare KV (tenant config + session state)",
-        "Cloudflare D1 (analytics)",
-        "Upstash Redis (rate limiting)",
-        "Clerk (operator console auth)",
-        "Meta Messenger Platform",
-        "Sentry (error monitoring)",
-        "GitHub Actions (CI/CD)"
-      ],
-      "status": "Production",
-      "language": "TypeScript",
-      "languages": {
-        "TypeScript": 751505,
-        "JavaScript": 211470,
-        "PowerShell": 7945,
-        "HTML": 733,
-        "CSS": 323
-      },
-      "stars": 0,
-      "forks": 0,
-      "lastPushed": "2026-08-06T03:03:37Z",
-      "createdAt": "2026-04-06T23:20:56Z",
-      "isFeatured": true,
-      "isArchived": false,
-      "isPrivate": true,
-      "tagline": "One Cloudflare Worker serving every client's Facebook Page — bilingual Claude assistants with per-tenant knowledge bases and human handoff.",
-      "thumbnail": "https://cdn.cushlabs.ai/cushlabs-messenger-bot/public/images/thumb.webp",
-      "problem": "Businesses that market on Facebook get Messenger questions about pricing, hours, and services at all\nhours, in whatever language the customer speaks. Nobody watches the inbox around the clock, customers\nexpect fast answers, and a generic auto-reply — or a chatbot that invents details — costs real\nbusiness. The usual agency fix is a separate bot build per client: separate deploy, separate Meta app,\nseparate review cycle, separate thing to maintain. That does not scale past a couple of clients.\n",
-      "solution": "One Cloudflare Worker serves every connected Page. Each inbound webhook is routed by page_id to that tenant's own system prompt, per-Page access token, structured business facts, and tenant-scoped vector index — so onboarding a client is a config and content operation, not a deploy. A two-layer router sends pleasantries to Claude Haiku and real questions to Claude Sonnet with RAG context. Hard facts (hours, pricing, address, booking URL) live as structured records injected verbatim and marked authoritative, so a price change is a one-field edit that is live on the next message with no re-embed. When a customer wants a person, the bot goes quiet and alerts the operator, who replies from the Page Inbox.\n",
-      "keyFeatures": [
-        "One Worker, many client Pages — new tenants onboard with zero code changes and no Meta re-review",
-        "Meta Advanced Access approved 2026-06-29, so any business can connect its Page without per-client review",
-        "Bilingual EN/es-MX with automatic language detection, locked per session to prevent mid-conversation flipping",
-        "Hard facts served from structured records, not RAG prose — a pricing edit goes live instantly, never hallucinated",
-        "Automated QA gate: 27/27 production scenarios passing, including cross-tenant isolation",
-        "314 tests across 22 files, covering the decision layer and not just API plumbing"
-      ],
-      "metrics": [
-        "2 live tenants running on a single Worker deployment",
-        "27/27 automated QA scenarios passing against production, cross-tenant isolation included",
-        "314 automated tests across 22 files",
-        "~50 seconds from merge to live, typecheck and tests gated"
-      ],
-      "priority": 5,
-      "dateCompleted": null,
-      "slides": [
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-messenger-bot/public/images/portfolio/slide-01.webp",
-          "altEn": "CushLabs Messenger Bot — Multi-Tenant Bilingual AI for Facebook Messenger",
-          "altEs": "CushLabs Messenger Bot — Multi-Tenant Bilingual AI for Facebook Messenger"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-messenger-bot/public/images/portfolio/slide-02.webp",
-          "altEn": "CushLabs Messenger Bot — Multi-Tenant Bilingual AI for Facebook Messenger",
-          "altEs": "CushLabs Messenger Bot — Multi-Tenant Bilingual AI for Facebook Messenger"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-messenger-bot/public/images/portfolio/slide-03.webp",
-          "altEn": "CushLabs Messenger Bot — Multi-Tenant Bilingual AI for Facebook Messenger",
-          "altEs": "CushLabs Messenger Bot — Multi-Tenant Bilingual AI for Facebook Messenger"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-messenger-bot/public/images/portfolio/slide-04.webp",
-          "altEn": "CushLabs Messenger Bot — Multi-Tenant Bilingual AI for Facebook Messenger",
-          "altEs": "CushLabs Messenger Bot — Multi-Tenant Bilingual AI for Facebook Messenger"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-messenger-bot/public/images/portfolio/slide-05.webp",
-          "altEn": "CushLabs Messenger Bot — Multi-Tenant Bilingual AI for Facebook Messenger",
-          "altEs": "CushLabs Messenger Bot — Multi-Tenant Bilingual AI for Facebook Messenger"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-messenger-bot/public/images/portfolio/slide-06.webp",
-          "altEn": "CushLabs Messenger Bot — Multi-Tenant Bilingual AI for Facebook Messenger",
-          "altEs": "CushLabs Messenger Bot — Multi-Tenant Bilingual AI for Facebook Messenger"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-messenger-bot/public/images/portfolio/slide-07.webp",
-          "altEn": "CushLabs Messenger Bot — Multi-Tenant Bilingual AI for Facebook Messenger",
-          "altEs": "CushLabs Messenger Bot — Multi-Tenant Bilingual AI for Facebook Messenger"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-messenger-bot/public/images/portfolio/slide-08.webp",
-          "altEn": "CushLabs Messenger Bot — Multi-Tenant Bilingual AI for Facebook Messenger",
-          "altEs": "CushLabs Messenger Bot — Multi-Tenant Bilingual AI for Facebook Messenger"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-messenger-bot/public/images/portfolio/slide-09.webp",
-          "altEn": "CushLabs Messenger Bot — Multi-Tenant Bilingual AI for Facebook Messenger",
-          "altEs": "CushLabs Messenger Bot — Multi-Tenant Bilingual AI for Facebook Messenger"
-        }
-      ],
-      "videoUrl": "https://cdn.cushlabs.ai/cushlabs-messenger-bot/public/images/portfolio/24_7_AI_Sales_Assistant.mp4",
-      "videoPoster": null
-    },
-    {
       "id": 953305892,
       "name": "ny-eng",
       "title": "NY English Teacher",
@@ -916,7 +778,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-08-06T02:13:06Z",
+      "lastPushed": "2026-08-06T18:13:11Z",
       "createdAt": "2025-03-23T03:27:14Z",
       "isFeatured": true,
       "isArchived": false,
@@ -1061,7 +923,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-08-06T03:10:31Z",
+      "lastPushed": "2026-08-06T16:46:31Z",
       "createdAt": "2026-03-06T18:20:23Z",
       "isFeatured": true,
       "isArchived": false,
@@ -1205,7 +1067,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-08-01T04:10:53Z",
+      "lastPushed": "2026-08-06T16:46:41Z",
       "createdAt": "2026-06-24T23:58:40Z",
       "isFeatured": false,
       "isArchived": false,
@@ -1336,7 +1198,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-08-06T02:19:47Z",
+      "lastPushed": "2026-08-06T16:46:44Z",
       "createdAt": "2026-03-17T18:08:51Z",
       "isFeatured": false,
       "isArchived": false,
@@ -1460,7 +1322,7 @@
       },
       "stars": 2,
       "forks": 0,
-      "lastPushed": "2026-08-06T03:07:05Z",
+      "lastPushed": "2026-08-06T16:29:32Z",
       "createdAt": "2025-12-20T10:31:00Z",
       "isFeatured": true,
       "isArchived": false,
@@ -1603,7 +1465,7 @@
       },
       "stars": 0,
       "forks": 1,
-      "lastPushed": "2026-08-06T03:27:54Z",
+      "lastPushed": "2026-08-06T16:46:46Z",
       "createdAt": "2026-03-06T17:57:40Z",
       "isFeatured": false,
       "isArchived": false,
@@ -1872,7 +1734,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-08-06T03:24:05Z",
+      "lastPushed": "2026-08-06T16:45:57Z",
       "createdAt": "2025-11-05T18:11:38Z",
       "isFeatured": false,
       "isArchived": false,
@@ -1996,7 +1858,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-08-06T03:07:17Z",
+      "lastPushed": "2026-08-06T16:46:30Z",
       "createdAt": "2026-03-04T22:07:57Z",
       "isFeatured": false,
       "isArchived": false,
@@ -2400,7 +2262,7 @@
       },
       "stars": 0,
       "forks": 1,
-      "lastPushed": "2026-08-06T03:28:16Z",
+      "lastPushed": "2026-08-06T16:46:23Z",
       "createdAt": "2026-02-13T18:42:29Z",
       "isFeatured": false,
       "isArchived": false,
@@ -2539,7 +2401,7 @@
       },
       "stars": 1,
       "forks": 1,
-      "lastPushed": "2026-08-06T03:31:17Z",
+      "lastPushed": "2026-08-06T16:45:56Z",
       "createdAt": "2026-01-12T02:37:39Z",
       "isFeatured": false,
       "isArchived": false,
@@ -2622,6 +2484,147 @@
       ],
       "videoUrl": "https://cdn.cushlabs.ai/ai-filesense/video/AI_FileSense-brief.mp4",
       "videoPoster": "https://cdn.cushlabs.ai/ai-filesense/video/AI-FileSense-brief-poster.jpg"
+    },
+    {
+      "id": 1114660708,
+      "name": "freelance-income-planner",
+      "title": "Freelance Income Planner",
+      "description": "A privacy-first income simulator for freelancers. Instantly see how rate changes, sick days, and taxes impact your real take-home pay. Bill in USD, spend in MXN. Plan for feast or famine. All calculations happen in your browser—your data never leaves your device.",
+      "summary": "description: A bilingual income planning tool for freelancers and consultants.",
+      "url": "https://github.com/RCushmaniii/freelance-income-planner",
+      "demoUrl": "https://freelance-income-planner.vercel.app",
+      "liveUrl": "https://freelance-income-planner.vercel.app",
+      "homepage": "https://freelance-income-planner.vercel.app/",
+      "topics": [
+        "bilingual",
+        "digital-nomad",
+        "freelance",
+        "i18n",
+        "income-calculator",
+        "nextjs",
+        "react",
+        "tailwindcss",
+        "typescript"
+      ],
+      "categories": [
+        "Tools"
+      ],
+      "tags": [
+        "bilingual",
+        "digital-nomad",
+        "freelance",
+        "i18n",
+        "income-calculator",
+        "nextjs",
+        "react",
+        "tailwindcss",
+        "typescript",
+        "privacy-first",
+        "zustand",
+        "recharts",
+        "multi-currency"
+      ],
+      "stack": [
+        "Next.js 14",
+        "TypeScript 5.5",
+        "React 18.3",
+        "Tailwind CSS 3.4",
+        "Zustand 4.4",
+        "Recharts 2.10",
+        "Vercel"
+      ],
+      "status": "Production",
+      "language": "TypeScript",
+      "languages": {
+        "TypeScript": 272945,
+        "CSS": 4579,
+        "JavaScript": 1563
+      },
+      "stars": 0,
+      "forks": 0,
+      "lastPushed": "2026-08-06T16:46:48Z",
+      "createdAt": "2025-12-11T17:38:35Z",
+      "isFeatured": false,
+      "isArchived": false,
+      "isPrivate": false,
+      "tagline": "Privacy-first income simulator — see how rates, taxes, and currencies impact take-home pay",
+      "thumbnail": "https://cdn.cushlabs.ai/freelance-income-planner/images/freelance-income-planner-thumb.jpg",
+      "problem": "Freelancers can't predict take-home pay reliably. Variable hours, shifting tax rates, business expenses, and cross-currency billing make it nearly impossible to answer 'can I afford this lifestyle?' without a spreadsheet. Existing tools either require account creation, send data to servers, or don't handle multi-currency scenarios.",
+      "solution": "A privacy-first bilingual income calculator that runs entirely in the browser. Enter your rate, hours, taxes, and expenses — get an instant breakdown of real take-home pay. Supports 9 currency pair combinations (USD/MXN/EUR), three-scenario forecasting with seasonal modeling, and honest deficit reporting. No login, no database, no cookies.",
+      "keyFeatures": [
+        "Real-time income projections with transparent calculation breakdowns — math updates as you type, no submit button",
+        "Dual-currency engine supporting 9 currency pair combinations (USD/MXN/EUR) with bidirectional conversion",
+        "Three-scenario forecasting — pessimistic, realistic, optimistic with monthly projection charts and runway analysis",
+        "Zero data leaves the browser — 100% client-side computation with localStorage persistence",
+        "Fully bilingual interface (EN/ES) with automatic number formatting per locale"
+      ],
+      "metrics": [
+        "Answers 'what's my real take-home?' in under 30 seconds",
+        "151 edge cases validated in the calculation engine",
+        "9 currency pair combinations (USD/MXN/EUR)",
+        "Zero data transmitted — 100% client-side computation"
+      ],
+      "priority": 18,
+      "dateCompleted": "2026-02",
+      "slides": [
+        {
+          "src": "https://cdn.cushlabs.ai/freelance-income-planner/images/freelance-income-planner-01.png",
+          "altEn": "Freelance Income Planner — financial clarity for independent workers, answering what do I actually take home",
+          "altEs": "Planificador de Ingresos Freelance — claridad financiera para trabajadores independientes, respondiendo cuanto realmente me llevo a casa"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/freelance-income-planner/images/freelance-income-planner-02.png",
+          "altEn": "$100/hr does not equal wealthy — taxes, admin time, expenses, and currency conversion create a fog that hides real earnings",
+          "altEs": "$100/hr no significa ser rico — impuestos, tiempo administrativo, gastos y conversion de moneda crean una niebla que oculta las ganancias reales"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/freelance-income-planner/images/freelance-income-planner-03.png",
+          "altEn": "The tool gap — spreadsheets are fragile, accounting software is backward-looking, online calculators are too simple",
+          "altEs": "La brecha de herramientas — las hojas de calculo son fragiles, el software contable mira al pasado, las calculadoras en linea son demasiado simples"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/freelance-income-planner/images/freelance-income-planner-04.png",
+          "altEn": "No login, no loading — no signup wall, no onboarding carousel, no database, no cookies, clarity without ceremony",
+          "altEs": "Sin login, sin carga — sin muro de registro, sin carrusel de onboarding, sin base de datos, sin cookies, claridad sin ceremonias"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/freelance-income-planner/images/freelance-income-planner-05.png",
+          "altEn": "The Snapshot — sensible defaults pre-filled, math updates as you type, proof the tool works in 30 seconds",
+          "altEs": "La Instantanea — valores predeterminados sensatos, las matematicas se actualizan al escribir, prueba de que la herramienta funciona en 30 segundos"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/freelance-income-planner/images/freelance-income-planner-06.png",
+          "altEn": "The Reality Check — pre-tax logic shows how business expenses reduce taxable income, revealing effective hourly rate of $68/hr on a $100/hr billed rate",
+          "altEs": "La Verificacion de Realidad — la logica pre-impuestos muestra como los gastos de negocio reducen el ingreso gravable, revelando una tarifa efectiva de $68/hr sobre una tarifa facturada de $100/hr"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/freelance-income-planner/images/freelance-income-planner-07.png",
+          "altEn": "Modeling the future — drag the slider to test rate increases from -20% to +50% and instantly see the impact on annual net",
+          "altEs": "Modelando el futuro — arrastra el slider para probar aumentos de tarifa de -20% a +50% y ver al instante el impacto en el neto anual"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/freelance-income-planner/images/freelance-income-planner-08.png",
+          "altEn": "Earn in one currency, live in another — dual-currency engine with 9 combinations showing real purchasing power in your local currency",
+          "altEs": "Gana en una moneda, vive en otra — motor de doble moneda con 9 combinaciones mostrando poder adquisitivo real en tu moneda local"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/freelance-income-planner/images/freelance-income-planner-09.png",
+          "altEn": "Freelancing is seasonal — three-scenario planning with monthly projection charts modeling feast and famine cycles and savings runway",
+          "altEs": "El freelance es estacional — planificacion de tres escenarios con graficos de proyeccion mensual modelando ciclos de abundancia y escasez y pista de ahorros"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/freelance-income-planner/images/freelance-income-planner-10.png",
+          "altEn": "Engineered for reliability — deterministic math validated against 151 edge cases, fully bilingual with automatic number formatting",
+          "altEs": "Disenado para confiabilidad — matematicas deterministas validadas contra 151 casos limite, completamente bilingue con formato numerico automatico"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/freelance-income-planner/images/freelance-income-planner-11.png",
+          "altEn": "Who is this for — hourly freelancers, cross-border workers earning in USD living in MXN/EUR, privacy advocates, and agency owners",
+          "altEs": "Para quien es — freelancers por hora, trabajadores transfronterizos que ganan en USD y viven en MXN/EUR, defensores de la privacidad y duenos de agencias"
+        }
+      ],
+      "videoUrl": "https://cdn.cushlabs.ai/freelance-income-planner/video/freelance-income-planner-brief.mp4",
+      "videoPoster": "https://cdn.cushlabs.ai/freelance-income-planner/video/freelance-income-planner-brief-poster.jpg"
     },
     {
       "id": 1117217007,
@@ -2738,147 +2741,6 @@
       "videoPoster": "https://cdn.cushlabs.ai/ai-webscraper/images/portfolio/ai-webscraper-brief-poster.webp"
     },
     {
-      "id": 1114660708,
-      "name": "freelance-income-planner",
-      "title": "Freelance Income Planner",
-      "description": "A privacy-first income simulator for freelancers. Instantly see how rate changes, sick days, and taxes impact your real take-home pay. Bill in USD, spend in MXN. Plan for feast or famine. All calculations happen in your browser—your data never leaves your device.",
-      "summary": "description: A bilingual income planning tool for freelancers and consultants.",
-      "url": "https://github.com/RCushmaniii/freelance-income-planner",
-      "demoUrl": "https://freelance-income-planner.vercel.app",
-      "liveUrl": "https://freelance-income-planner.vercel.app",
-      "homepage": "https://freelance-income-planner.vercel.app/",
-      "topics": [
-        "bilingual",
-        "digital-nomad",
-        "freelance",
-        "i18n",
-        "income-calculator",
-        "nextjs",
-        "react",
-        "tailwindcss",
-        "typescript"
-      ],
-      "categories": [
-        "Tools"
-      ],
-      "tags": [
-        "bilingual",
-        "digital-nomad",
-        "freelance",
-        "i18n",
-        "income-calculator",
-        "nextjs",
-        "react",
-        "tailwindcss",
-        "typescript",
-        "privacy-first",
-        "zustand",
-        "recharts",
-        "multi-currency"
-      ],
-      "stack": [
-        "Next.js 14",
-        "TypeScript 5.5",
-        "React 18.3",
-        "Tailwind CSS 3.4",
-        "Zustand 4.4",
-        "Recharts 2.10",
-        "Vercel"
-      ],
-      "status": "Production",
-      "language": "TypeScript",
-      "languages": {
-        "TypeScript": 272945,
-        "CSS": 4579,
-        "JavaScript": 1563
-      },
-      "stars": 0,
-      "forks": 0,
-      "lastPushed": "2026-08-06T03:28:55Z",
-      "createdAt": "2025-12-11T17:38:35Z",
-      "isFeatured": false,
-      "isArchived": false,
-      "isPrivate": false,
-      "tagline": "Privacy-first income simulator — see how rates, taxes, and currencies impact take-home pay",
-      "thumbnail": "https://cdn.cushlabs.ai/freelance-income-planner/images/freelance-income-planner-thumb.jpg",
-      "problem": "Freelancers can't predict take-home pay reliably. Variable hours, shifting tax rates, business expenses, and cross-currency billing make it nearly impossible to answer 'can I afford this lifestyle?' without a spreadsheet. Existing tools either require account creation, send data to servers, or don't handle multi-currency scenarios.",
-      "solution": "A privacy-first bilingual income calculator that runs entirely in the browser. Enter your rate, hours, taxes, and expenses — get an instant breakdown of real take-home pay. Supports 9 currency pair combinations (USD/MXN/EUR), three-scenario forecasting with seasonal modeling, and honest deficit reporting. No login, no database, no cookies.",
-      "keyFeatures": [
-        "Real-time income projections with transparent calculation breakdowns — math updates as you type, no submit button",
-        "Dual-currency engine supporting 9 currency pair combinations (USD/MXN/EUR) with bidirectional conversion",
-        "Three-scenario forecasting — pessimistic, realistic, optimistic with monthly projection charts and runway analysis",
-        "Zero data leaves the browser — 100% client-side computation with localStorage persistence",
-        "Fully bilingual interface (EN/ES) with automatic number formatting per locale"
-      ],
-      "metrics": [
-        "Answers 'what's my real take-home?' in under 30 seconds",
-        "151 edge cases validated in the calculation engine",
-        "9 currency pair combinations (USD/MXN/EUR)",
-        "Zero data transmitted — 100% client-side computation"
-      ],
-      "priority": 18,
-      "dateCompleted": "2026-02",
-      "slides": [
-        {
-          "src": "https://cdn.cushlabs.ai/freelance-income-planner/images/freelance-income-planner-01.png",
-          "altEn": "Freelance Income Planner — financial clarity for independent workers, answering what do I actually take home",
-          "altEs": "Planificador de Ingresos Freelance — claridad financiera para trabajadores independientes, respondiendo cuanto realmente me llevo a casa"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/freelance-income-planner/images/freelance-income-planner-02.png",
-          "altEn": "$100/hr does not equal wealthy — taxes, admin time, expenses, and currency conversion create a fog that hides real earnings",
-          "altEs": "$100/hr no significa ser rico — impuestos, tiempo administrativo, gastos y conversion de moneda crean una niebla que oculta las ganancias reales"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/freelance-income-planner/images/freelance-income-planner-03.png",
-          "altEn": "The tool gap — spreadsheets are fragile, accounting software is backward-looking, online calculators are too simple",
-          "altEs": "La brecha de herramientas — las hojas de calculo son fragiles, el software contable mira al pasado, las calculadoras en linea son demasiado simples"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/freelance-income-planner/images/freelance-income-planner-04.png",
-          "altEn": "No login, no loading — no signup wall, no onboarding carousel, no database, no cookies, clarity without ceremony",
-          "altEs": "Sin login, sin carga — sin muro de registro, sin carrusel de onboarding, sin base de datos, sin cookies, claridad sin ceremonias"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/freelance-income-planner/images/freelance-income-planner-05.png",
-          "altEn": "The Snapshot — sensible defaults pre-filled, math updates as you type, proof the tool works in 30 seconds",
-          "altEs": "La Instantanea — valores predeterminados sensatos, las matematicas se actualizan al escribir, prueba de que la herramienta funciona en 30 segundos"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/freelance-income-planner/images/freelance-income-planner-06.png",
-          "altEn": "The Reality Check — pre-tax logic shows how business expenses reduce taxable income, revealing effective hourly rate of $68/hr on a $100/hr billed rate",
-          "altEs": "La Verificacion de Realidad — la logica pre-impuestos muestra como los gastos de negocio reducen el ingreso gravable, revelando una tarifa efectiva de $68/hr sobre una tarifa facturada de $100/hr"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/freelance-income-planner/images/freelance-income-planner-07.png",
-          "altEn": "Modeling the future — drag the slider to test rate increases from -20% to +50% and instantly see the impact on annual net",
-          "altEs": "Modelando el futuro — arrastra el slider para probar aumentos de tarifa de -20% a +50% y ver al instante el impacto en el neto anual"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/freelance-income-planner/images/freelance-income-planner-08.png",
-          "altEn": "Earn in one currency, live in another — dual-currency engine with 9 combinations showing real purchasing power in your local currency",
-          "altEs": "Gana en una moneda, vive en otra — motor de doble moneda con 9 combinaciones mostrando poder adquisitivo real en tu moneda local"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/freelance-income-planner/images/freelance-income-planner-09.png",
-          "altEn": "Freelancing is seasonal — three-scenario planning with monthly projection charts modeling feast and famine cycles and savings runway",
-          "altEs": "El freelance es estacional — planificacion de tres escenarios con graficos de proyeccion mensual modelando ciclos de abundancia y escasez y pista de ahorros"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/freelance-income-planner/images/freelance-income-planner-10.png",
-          "altEn": "Engineered for reliability — deterministic math validated against 151 edge cases, fully bilingual with automatic number formatting",
-          "altEs": "Disenado para confiabilidad — matematicas deterministas validadas contra 151 casos limite, completamente bilingue con formato numerico automatico"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/freelance-income-planner/images/freelance-income-planner-11.png",
-          "altEn": "Who is this for — hourly freelancers, cross-border workers earning in USD living in MXN/EUR, privacy advocates, and agency owners",
-          "altEs": "Para quien es — freelancers por hora, trabajadores transfronterizos que ganan en USD y viven en MXN/EUR, defensores de la privacidad y duenos de agencias"
-        }
-      ],
-      "videoUrl": "https://cdn.cushlabs.ai/freelance-income-planner/video/freelance-income-planner-brief.mp4",
-      "videoPoster": "https://cdn.cushlabs.ai/freelance-income-planner/video/freelance-income-planner-brief-poster.jpg"
-    },
-    {
       "id": 1171395937,
       "name": "expat-driver-license-prep",
       "title": "ExpatDrive — Bilingual Driver's License Exam Prep",
@@ -2938,7 +2800,7 @@
       },
       "stars": 1,
       "forks": 1,
-      "lastPushed": "2026-08-06T03:30:58Z",
+      "lastPushed": "2026-08-06T17:48:46Z",
       "createdAt": "2026-03-03T07:21:12Z",
       "isFeatured": false,
       "isArchived": false,
@@ -3304,7 +3166,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-08-06T03:31:29Z",
+      "lastPushed": "2026-08-06T16:46:33Z",
       "createdAt": "2026-02-13T19:55:19Z",
       "isFeatured": false,
       "isArchived": false,
@@ -3426,8 +3288,8 @@
       "status": null,
       "language": "Astro",
       "languages": {
-        "Astro": 851084,
-        "TypeScript": 379738,
+        "Astro": 850553,
+        "TypeScript": 382018,
         "JavaScript": 154925,
         "HTML": 61067,
         "Python": 6606,
@@ -3435,7 +3297,7 @@
       },
       "stars": 3,
       "forks": 0,
-      "lastPushed": "2026-08-06T03:23:53Z",
+      "lastPushed": "2026-08-06T16:46:38Z",
       "createdAt": "2026-01-08T03:52:43Z",
       "isFeatured": false,
       "isArchived": false,
@@ -3567,7 +3429,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-08-06T03:12:49Z",
+      "lastPushed": "2026-08-06T16:46:28Z",
       "createdAt": "2026-01-05T15:06:48Z",
       "isFeatured": false,
       "isArchived": false,
@@ -3712,7 +3574,7 @@
       },
       "stars": 1,
       "forks": 0,
-      "lastPushed": "2026-08-06T03:32:53Z",
+      "lastPushed": "2026-08-06T16:45:59Z",
       "createdAt": "2025-09-23T19:15:28Z",
       "isFeatured": false,
       "isArchived": false,
@@ -3830,7 +3692,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-08-06T03:33:01Z",
+      "lastPushed": "2026-08-06T16:46:50Z",
       "createdAt": "2026-01-04T03:47:35Z",
       "isFeatured": false,
       "isArchived": false,
@@ -3953,7 +3815,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-07-15T21:15:42Z",
+      "lastPushed": "2026-08-06T16:46:39Z",
       "createdAt": "2026-03-22T07:49:29Z",
       "isFeatured": false,
       "isArchived": false,
@@ -4077,7 +3939,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-08-06T03:27:38Z",
+      "lastPushed": "2026-08-06T16:46:26Z",
       "createdAt": "2026-01-13T22:16:37Z",
       "isFeatured": false,
       "isArchived": false,
@@ -4329,7 +4191,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-08-06T03:27:33Z",
+      "lastPushed": "2026-08-06T16:46:51Z",
       "createdAt": "2026-02-17T04:40:23Z",
       "isFeatured": false,
       "isArchived": false,
@@ -4423,7 +4285,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-08-06T03:29:10Z",
+      "lastPushed": "2026-08-06T16:46:54Z",
       "createdAt": "2026-02-10T04:11:19Z",
       "isFeatured": false,
       "isArchived": false,
@@ -4529,7 +4391,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-08-06T03:31:26Z",
+      "lastPushed": "2026-08-06T16:46:56Z",
       "createdAt": "2025-12-18T20:18:05Z",
       "isFeatured": false,
       "isArchived": false,
@@ -4656,7 +4518,7 @@
       },
       "stars": 2,
       "forks": 0,
-      "lastPushed": "2026-08-06T03:28:02Z",
+      "lastPushed": "2026-08-06T16:47:02Z",
       "createdAt": "2025-10-02T22:40:01Z",
       "isFeatured": false,
       "isArchived": false,
