@@ -72,7 +72,22 @@ const overrideDemoUrl =
     : override?.demoUrl?.[locale];
 const demoUrl =
   overrideDemoUrl || project.demoUrl || project.homepage || null;
-const codeUrl = project.url;
+
+// A private repo's GitHub URL is a 404 for every visitor — they are not signed
+// in as Robert. Ten of the published projects are private on purpose, so the
+// "Source code" button was sending real prospects to a dead page.
+//
+// Public repo  -> link the source, as before.
+// Private repo -> never link GitHub. Offer the public site instead, unless that
+//                 same URL is already rendered above as the Live demo button.
+// Private repo with nothing public -> render no second button at all. A missing
+//                 button is honest; a broken one is not.
+const isPrivateRepo = project.isPrivate === true;
+const codeUrl = isPrivateRepo ? null : project.url;
+const publicSiteUrl =
+  isPrivateRepo && project.liveUrl && project.liveUrl !== demoUrl
+    ? project.liveUrl
+    : null;
 
 const githubMatch = project.url.match(/github\.com\/([^/]+)\/([^/]+)(?:\/|$)/i);
 const ogImageUrl = githubMatch
@@ -201,15 +216,32 @@ const relatedProjects = scored.slice(0, 3).map(s => s.project);
                 </a>
               )
             }
-            <a
-              href={codeUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="inline-flex items-center justify-center gap-2 rounded-lg border border-border bg-canvas/40 px-5 py-3 text-sm font-display font-semibold text-foreground hover:opacity-90 transition-opacity"
-            >
-              {dict.project.sourceCode}
-              <span aria-hidden="true">↗</span>
-            </a>
+            {
+              codeUrl && (
+                <a
+                  href={codeUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center justify-center gap-2 rounded-lg border border-border bg-canvas/40 px-5 py-3 text-sm font-display font-semibold text-foreground hover:opacity-90 transition-opacity"
+                >
+                  {dict.project.sourceCode}
+                  <span aria-hidden="true">↗</span>
+                </a>
+              )
+            }
+            {
+              publicSiteUrl && (
+                <a
+                  href={publicSiteUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center justify-center gap-2 rounded-lg border border-border bg-canvas/40 px-5 py-3 text-sm font-display font-semibold text-foreground hover:opacity-90 transition-opacity"
+                >
+                  {dict.project.visitSite}
+                  <span aria-hidden="true">↗</span>
+                </a>
+              )
+            }
           </div>
 
           <dl class="mt-6 space-y-3 text-sm">

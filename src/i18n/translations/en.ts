@@ -137,6 +137,9 @@ export const en = {
     links: "Links",
     liveDemo: "Live demo",
     sourceCode: "Source code",
+    // Shown instead of "Source code" when the repo is private, so visitors are
+    // never sent to a GitHub 404. See the codeUrl logic in projects/[slug].astro.
+    visitSite: "Visit the site",
     lastUpdated: "Last updated",
     stars: "Stars",
     forks: "Forks",

@@ -135,6 +135,9 @@ export const es = {
     links: "Enlaces",
     liveDemo: "Demo en vivo",
     sourceCode: "Código fuente",
+    // Se muestra en lugar de "Código fuente" cuando el repo es privado, para que
+    // nadie termine en un 404 de GitHub.
+    visitSite: "Visitar el sitio",
     lastUpdated: "Actualizado",
     stars: "Estrellas",
     forks: "Forks",

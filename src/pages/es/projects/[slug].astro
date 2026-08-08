@@ -81,7 +81,16 @@ const overrideDemoUrl =
     : override?.demoUrl?.[locale];
 const demoUrl =
   overrideDemoUrl || project.demoUrl || project.homepage || null;
-const codeUrl = project.url;
+
+// Ver la nota completa en la versión EN de esta página. Resumen: el repo privado
+// da 404 a cualquier visitante, así que nunca se enlaza GitHub cuando es privado;
+// se ofrece el sitio público, y si no hay ninguno no se muestra segundo botón.
+const isPrivateRepo = project.isPrivate === true;
+const codeUrl = isPrivateRepo ? null : project.url;
+const publicSiteUrl =
+  isPrivateRepo && project.liveUrl && project.liveUrl !== demoUrl
+    ? project.liveUrl
+    : null;
 
 const githubMatch = project.url.match(/github\.com\/([^/]+)\/([^/]+)(?:\/|$)/i);
 const ogImageUrl = githubMatch
@@ -212,15 +221,32 @@ const relatedProjects = scored.slice(0, 3).map(s => s.project);
                 </a>
               )
             }
-            <a
-              href={codeUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="inline-flex items-center justify-center gap-2 rounded-lg border border-border bg-canvas/40 px-5 py-3 text-sm font-display font-semibold text-foreground hover:opacity-90 transition-opacity"
-            >
-              {dict.project.sourceCode}
-              <span aria-hidden="true">&nearr;</span>
-            </a>
+            {
+              codeUrl && (
+                <a
+                  href={codeUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center justify-center gap-2 rounded-lg border border-border bg-canvas/40 px-5 py-3 text-sm font-display font-semibold text-foreground hover:opacity-90 transition-opacity"
+                >
+                  {dict.project.sourceCode}
+                  <span aria-hidden="true">&nearr;</span>
+                </a>
+              )
+            }
+            {
+              publicSiteUrl && (
+                <a
+                  href={publicSiteUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center justify-center gap-2 rounded-lg border border-border bg-canvas/40 px-5 py-3 text-sm font-display font-semibold text-foreground hover:opacity-90 transition-opacity"
+                >
+                  {dict.project.visitSite}
+                  <span aria-hidden="true">&nearr;</span>
+                </a>
+              )
+            }
           </div>
 
           <dl class="mt-6 space-y-3 text-sm">
