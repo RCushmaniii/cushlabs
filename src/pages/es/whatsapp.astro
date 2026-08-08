@@ -1,0 +1,226 @@
+---
+// Recordatorios de citas por WhatsApp — la oferta de CushLabs Connect.
+//
+// Consolidada el 2026-08-08 desde el sitio independiente connect.cushlabs.ai,
+// cuya raíz ahora redirige (301) aquí. El texto se trasladó tal cual; lo único
+// que cambió es el sistema visual, para que coincida con las demás páginas de
+// canal del sitio (messenger-assistant, voice-agent).
+//
+// SIGUEN VIVAS en connect.cushlabs.ai y NO se movieron a propósito. Dos de
+// ellas están registradas ante Meta en una app ya aprobada:
+//   /privacy/               aviso de privacidad registrado en Meta App Review
+//   /privacy/#data-deletion URL de eliminación de datos registrada en Meta
+//   /terms/
+//   /onboard/?t=<token>     entrada de Embedded Signup para clientes
+//   /admin                  consola de operación
+// No las redirijas ni las elimines sin revisar antes la configuración de la app en Meta.
+//
+// LÍMITE DE CLAIMS (docs/strategy/ADVERTISED-COMMITMENTS.md): WhatsApp no está
+// en las tarjetas de precios. Esta página lo vende como su propia oferta y nunca
+// debe dar a entender que está incluido en Basic / Premium / Ultra. El encuadre
+// de "Próximamente" es correcto: la app de Meta está aprobada pero todavía no
+// está en Live, así que el registro autoservicio no está abierto.
+//
+// Español: Mexican Professional Spanish (es-MX).
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Container from "../../components/layout/Container.astro";
+import FinalCTA from "../../components/services2/FinalCTA.astro";
+
+const locale = "es" as const;
+
+const steps = [
+  {
+    n: "1",
+    title: "Conecta tu WhatsApp Business",
+    desc: "Con el registro integrado de Meta, en minutos. Conservas tu número y tu cuenta; nosotros nunca los reemplazamos.",
+  },
+  {
+    n: "2",
+    title: "Configura tus recordatorios",
+    desc: "Plantillas en español, con la anticipación que elijas: un día antes, unas horas antes, o ambas.",
+  },
+  {
+    n: "3",
+    title: "Tus clientes confirman con un toque",
+    desc: "Reciben el recordatorio con botones para confirmar o reagendar, directo en WhatsApp. Sin llamadas y sin apps.",
+  },
+];
+
+const benefits = [
+  { title: "Menos inasistencias", desc: "Recordatorios automáticos que mantienen tu agenda llena." },
+  { title: "100% automático", desc: "Se envían solos. Tú te dedicas a atender." },
+  { title: "En su idioma", desc: "Español mexicano natural, no traducciones robóticas." },
+  { title: "Con permiso", desc: "Doble consentimiento y baja inmediata. Nada de spam." },
+  { title: "Conservas tu número", desc: "Es tu cuenta de WhatsApp Business, no la nuestra." },
+  { title: "Sin instalar nada", desc: "Funciona sobre WhatsApp. Tus clientes no descargan nada." },
+];
+
+const trust = [
+  "Proveedor de tecnología autorizado de Meta",
+  "Tokens de acceso guardados cifrados",
+  "Consentimiento y baja (opt-out) integrados",
+  "Infraestructura sobre Cloudflare",
+  "Sin venta de datos ni publicidad de terceros",
+  "Solo mensajes que tu cliente aceptó recibir",
+];
+---
+
+<BaseLayout
+  title="Recordatorios de Citas por WhatsApp | CushLabs.ai"
+  description="Conecta tu WhatsApp Business y envía recordatorios y confirmaciones automáticas a tus clientes. Menos inasistencias, agenda llena y cero trabajo manual."
+>
+  <!-- Hero -->
+  <section class="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden">
+    <div class="absolute inset-0 -z-10">
+      <div class="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-cush-orange/15 rounded-full blur-[120px]"></div>
+      <div class="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-cush-orange/10 rounded-full blur-[100px]"></div>
+    </div>
+
+    <Container size="md">
+      <div class="text-center max-w-4xl mx-auto">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cush-orange/10 border border-cush-orange/20 text-cush-orange text-sm font-semibold mb-8">
+          <span class="w-2 h-2 rounded-full bg-cush-orange animate-pulse"></span>
+          Próximamente
+        </div>
+
+        <h1 class="font-display text-fluid-4xl font-bold text-gray-900 dark:text-white mb-6 leading-tight tracking-tight">
+          Recordatorios de citas por WhatsApp, sin complicaciones.
+        </h1>
+
+        <p class="text-fluid-lg text-gray-600 dark:text-gray-300 mb-10 max-w-3xl mx-auto leading-relaxed">
+          Conecta tu WhatsApp Business y envía recordatorios y confirmaciones automáticas a tus pacientes y clientes. Menos inasistencias, tu agenda llena y cero trabajo manual.
+        </p>
+
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a
+            href="/es/contact/"
+            class="group inline-flex items-center gap-2 px-8 py-4 bg-cush-orange text-white font-display font-semibold rounded-lg hover:bg-cush-orange/90 transition-all duration-300 shadow-lg shadow-cush-orange/25 hover:shadow-xl hover:shadow-cush-orange/30 text-lg"
+          >
+            Escríbenos
+            <svg class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+          <a href="/es/services/" class="font-display font-medium text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white underline underline-offset-4 decoration-gray-300 hover:decoration-cush-orange transition-all">
+            Ver todos los servicios →
+          </a>
+        </div>
+
+        <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-x-6 gap-y-2 text-sm text-gray-500 dark:text-gray-400">
+          <span class="inline-flex items-center gap-2">
+            <svg class="w-4 h-4 text-cush-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+            Proveedor de tecnología autorizado de Meta
+          </span>
+          <span class="inline-flex items-center gap-2">
+            <svg class="w-4 h-4 text-cush-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+            Mensajes con consentimiento
+          </span>
+        </div>
+      </div>
+    </Container>
+  </section>
+
+  <!-- Problema -->
+  <section class="py-16 md:py-24 bg-gray-50 dark:bg-white/5">
+    <Container size="md">
+      <div class="text-center max-w-3xl mx-auto">
+        <p class="font-display text-sm font-semibold uppercase tracking-wider text-cush-orange mb-4">El problema</p>
+        <h2 class="font-display text-fluid-3xl font-bold text-gray-900 dark:text-white mb-6 tracking-tight">
+          Cada cita no asistida es dinero que no regresa.
+        </h2>
+        <p class="text-fluid-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+          Un lugar vacío en tu agenda no se recupera. Un recordatorio a tiempo por WhatsApp —el canal que tus clientes ya usan y sí abren— convierte esas ausencias en citas confirmadas.
+        </p>
+      </div>
+    </Container>
+  </section>
+
+  <!-- Cómo funciona -->
+  <section class="py-16 md:py-24">
+    <Container size="md">
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <p class="font-display text-sm font-semibold uppercase tracking-wider text-cush-orange mb-4">Cómo funciona</p>
+        <h2 class="font-display text-fluid-3xl font-bold text-gray-900 dark:text-white tracking-tight">
+          Listo en tres pasos.
+        </h2>
+      </div>
+
+      <ol class="grid gap-6 md:grid-cols-3 list-none">
+        {steps.map((step) => (
+          <li class="rounded-xl border border-gray-200 dark:border-white/10 bg-white dark:bg-white/5 p-7">
+            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-cush-orange text-white font-display font-bold mb-5">
+              {step.n}
+            </span>
+            <h3 class="font-display text-lg font-semibold text-gray-900 dark:text-white mb-2">{step.title}</h3>
+            <p class="text-gray-600 dark:text-gray-300 leading-relaxed">{step.desc}</p>
+          </li>
+        ))}
+      </ol>
+    </Container>
+  </section>
+
+  <!-- Por qué -->
+  <section class="py-16 md:py-24 bg-gray-50 dark:bg-white/5">
+    <Container size="md">
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <p class="font-display text-sm font-semibold uppercase tracking-wider text-cush-orange mb-4">Por qué CushLabs Connect</p>
+        <h2 class="font-display text-fluid-3xl font-bold text-gray-900 dark:text-white tracking-tight">
+          Todo a tu favor, nada en tu contra.
+        </h2>
+      </div>
+
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {benefits.map((b) => (
+          <div class="rounded-xl border border-gray-200 dark:border-white/10 bg-white dark:bg-white/5 p-7">
+            <h3 class="font-display text-lg font-semibold text-gray-900 dark:text-white mb-2">{b.title}</h3>
+            <p class="text-gray-600 dark:text-gray-300 leading-relaxed">{b.desc}</p>
+          </div>
+        ))}
+      </div>
+    </Container>
+  </section>
+
+  <!-- Confianza -->
+  <section class="py-16 md:py-24">
+    <Container size="md">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <p class="font-display text-sm font-semibold uppercase tracking-wider text-cush-orange mb-4">Confianza</p>
+        <h2 class="font-display text-fluid-3xl font-bold text-gray-900 dark:text-white tracking-tight">
+          Seguro, y con las reglas claras.
+        </h2>
+      </div>
+
+      <ul class="grid gap-4 sm:grid-cols-2 max-w-3xl mx-auto list-none">
+        {trust.map((item) => (
+          <li class="flex items-start gap-3 text-gray-600 dark:text-gray-300">
+            <svg class="w-5 h-5 mt-0.5 shrink-0 text-cush-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
+
+      <p class="mt-10 text-center">
+        <a href="https://connect.cushlabs.ai/privacy/" class="font-display font-medium text-cush-orange hover:underline underline-offset-4">
+          Lee nuestro Aviso de Privacidad →
+        </a>
+      </p>
+    </Container>
+  </section>
+
+  <!-- Estado -->
+  <section class="py-16 md:py-24 bg-gray-50 dark:bg-white/5">
+    <Container size="md">
+      <div class="text-center max-w-2xl mx-auto">
+        <p class="font-display text-sm font-semibold uppercase tracking-wider text-cush-orange mb-4">Próximamente</p>
+        <h2 class="font-display text-fluid-3xl font-bold text-gray-900 dark:text-white mb-6 tracking-tight">
+          Estamos afinando los últimos detalles.
+        </h2>
+        <p class="text-fluid-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+          Muy pronto abrimos el registro. ¿Quieres ser de los primeros en conectar tu negocio? Escríbenos y te avisamos apenas esté listo.
+        </p>
+      </div>
+    </Container>
+  </section>
+
+  <FinalCTA locale={locale} />
+</BaseLayout>
