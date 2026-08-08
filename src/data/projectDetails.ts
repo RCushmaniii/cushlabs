@@ -1228,14 +1228,16 @@ const details: Record<string, ProjectDetailOverride> = {
     slug: "cushlabs-marketsignal",
     demoUrl: "https://marketsignal.cushlabs.ai",
     en: {
-      headline: "MarketSignal — AI-Powered Local Competitive Intelligence",
+      headline:
+        "MarketSignal — Google Reputation & Local Competitive Intelligence",
       subheadline:
-        "Monitor Google Maps rankings, reviews, and competitor activity for multi-location businesses in Mexico — AI-generated weekly reports with one actionable recommendation, delivered straight to WhatsApp.",
+        "Manage your Google reputation and track the competition in one place — AI-drafted replies to unanswered reviews, plus Google Maps rank tracking and one clear action item, delivered weekly to WhatsApp.",
       overallVerdictTitle: "The Solution",
       overallVerdictBody:
-        "MarketSignal is an AI-powered competitive intelligence platform built specifically for multi-location businesses in Mexico. It systematically tracks Google Maps rankings, review velocity, rating trends, and competitor activity — then uses Claude to distill everything into a weekly WhatsApp report with one specific, high-impact action item. No dashboards to check, no reports to download. The insight arrives in the conversation thread where business owners already operate. The architecture is built for phased go-to-market: Phase 1 validates willingness to pay through a manual service model, Phase 2 adds automated scraping and WhatsApp delivery, Phase 3 opens self-service onboarding.",
+        "MarketSignal does two jobs for a local business. It manages their Google reputation — detecting unanswered reviews, drafting tone-matched replies per star rating, and posting them live through the Google Business Profile API once the owner approves, so reviews stop sitting unanswered for weeks. And it tracks the competitive picture around them: Google Maps rankings, review velocity, rating trends, and competitor movement, distilled by Claude into a weekly WhatsApp report with one specific, high-impact action item. No dashboards to check, no reports to download — the insight arrives in the conversation thread where Mexican business owners already operate. The architecture is built for phased go-to-market: Phase 1 validates willingness to pay through a manual service model, Phase 2 adds automated collection and WhatsApp delivery, Phase 3 opens self-service onboarding.",
       whatItDoesWellTitle: "Technical Highlights",
       whatItDoesWell: [
+        "AI reputation manager — detects unanswered Google reviews, drafts tone-matched replies per star rating, and tracks a draft → approve → post lifecycle with live posting through the Google Business Profile API",
         "Append-only snapshot architecture — historical data is never overwritten, enabling re-analysis and audit trails",
         "Claude API integration for natural-language insights with actionable recommendations per location",
         "Multi-org data model with dynamic [orgSlug] routing — scales from day one without migration",
@@ -1246,6 +1248,7 @@ const details: Record<string, ProjectDetailOverride> = {
       ],
       goodForTitle: "Good for",
       goodFor: [
+        "Businesses whose Google reviews sit unanswered because nobody has time to reply to every one",
         "Multi-location businesses in Mexico that need affordable local SEO intelligence",
         "Companies competing on Google Maps where a 20-review swing can cost 3 ranking positions",
         "Business owners who want one clear action per week, not a dashboard full of charts",
@@ -1259,6 +1262,7 @@ const details: Record<string, ProjectDetailOverride> = {
       ],
       whatYouGetTitle: "What you get",
       whatYouGet: [
+        "Google review management — unanswered reviews detected, replies drafted in your tone, posted live once you approve",
         "Full-stack Next.js 15 competitive intelligence dashboard with App Router and server components",
         "AI-powered weekly reports with Claude — structured analysis, not just raw data",
         "WhatsApp-native delivery formatted for mobile readability",
@@ -1271,6 +1275,7 @@ const details: Record<string, ProjectDetailOverride> = {
         "Local businesses in Mexico have no affordable way to systematically track their Google Maps rankings or monitor competitor activity. Enterprise tools like BrightLocal and Whitespark don't serve the Mexican market well — pricing is in USD, support is in English, and the tools assume US-centric search patterns. A competitor can gain 20 reviews in a week and jump 3 positions in Maps, and without systematic tracking, businesses don't know until their phone stops ringing. Most rank tracking tools show data but don't tell you what to do. And in Mexico, email reports get ignored — WhatsApp is where business happens.",
       resultsTitle: "Results",
       results: [
+        "Reviews get answered instead of sitting unanswered — replies drafted automatically, owner approves in one click",
         "Structured competitive intelligence that multi-location businesses previously had no access to",
         "One actionable recommendation per week reduces decision fatigue and drives specific improvements",
         "WhatsApp delivery achieves higher read rates than email-based alternatives",
@@ -1280,14 +1285,16 @@ const details: Record<string, ProjectDetailOverride> = {
       ],
     },
     es: {
-      headline: "MarketSignal — Inteligencia Competitiva Local con IA",
+      headline:
+        "MarketSignal — Reputación en Google e Inteligencia Competitiva Local",
       subheadline:
-        "Monitorea rankings en Google Maps, reseñas y actividad de competidores para negocios multi-sucursal en México — reportes semanales generados por IA con una recomendación accionable, entregados directo a WhatsApp.",
+        "Administra tu reputación en Google y vigila a la competencia en un solo lugar — respuestas a reseñas sin contestar redactadas con IA, más monitoreo de rankings en Google Maps y una acción clara por semana, directo a tu WhatsApp.",
       overallVerdictTitle: "La Solución",
       overallVerdictBody:
-        "MarketSignal es una plataforma de inteligencia competitiva impulsada por IA construida específicamente para negocios multi-sucursal en México. Rastrea sistemáticamente rankings en Google Maps, velocidad de reseñas, tendencias de calificación y actividad de competidores — luego usa Claude para destilar todo en un reporte semanal por WhatsApp con una recomendación especifica y de alto impacto. Sin dashboards que revisar, sin reportes que descargar. El insight llega en el hilo de conversación donde los dueños de negocio ya operan. La arquitectura está construida para go-to-market por fases: Fase 1 valida disposición a pagar a través de un modelo de servicio manual, Fase 2 agrega scraping automatizado y entrega por WhatsApp, Fase 3 abre onboarding autoservicio.",
+        "MarketSignal hace dos trabajos para un negocio local. Administra su reputación en Google — detecta reseñas sin contestar, redacta respuestas con el tono adecuado según la calificación y las publica en vivo a través de la API de Google Business Profile una vez que el dueño las aprueba, para que las reseñas dejen de quedarse sin respuesta durante semanas. Y monitorea el panorama competitivo a su alrededor: rankings en Google Maps, velocidad de reseñas, tendencias de calificación y movimientos de la competencia, que Claude destila en un reporte semanal por WhatsApp con una acción específica y de alto impacto. Sin dashboards que revisar, sin reportes que descargar — el insight llega en el hilo de conversación donde los dueños de negocio en México ya operan. La arquitectura está construida para go-to-market por fases: Fase 1 valida disposición a pagar con un modelo de servicio manual, Fase 2 agrega recolección automatizada y entrega por WhatsApp, Fase 3 abre onboarding autoservicio.",
       whatItDoesWellTitle: "Destacados Técnicos",
       whatItDoesWell: [
+        "Gestor de reputación con IA — detecta reseñas de Google sin contestar, redacta respuestas con el tono adecuado según la calificación y maneja el ciclo borrador → aprobación → publicación, publicando en vivo con la API de Google Business Profile",
         "Arquitectura de snapshots append-only — los datos históricos nunca se sobreescriben, habilitando re-análisis y trazabilidad",
         "Integración con API de Claude para insights en lenguaje natural con recomendaciones accionables por ubicación",
         "Modelo de datos multi-org con ruteo dinámico [orgSlug] — escala desde el día uno sin migración",
@@ -1298,6 +1305,7 @@ const details: Record<string, ProjectDetailOverride> = {
       ],
       goodForTitle: "Ideal para",
       goodFor: [
+        "Negocios cuyas reseñas de Google se quedan sin contestar porque nadie tiene tiempo de responder cada una",
         "Negocios multi-sucursal en México que necesitan inteligencia local SEO accesible",
         "Empresas compitiendo en Google Maps donde 20 reseñas de diferencia pueden costar 3 posiciones de ranking",
         "Dueños de negocio que quieren una acción clara por semana, no un dashboard lleno de gráficas",
@@ -1311,6 +1319,7 @@ const details: Record<string, ProjectDetailOverride> = {
       ],
       whatYouGetTitle: "Que obtienes",
       whatYouGet: [
+        "Gestión de reseñas de Google — detectamos las que no tienen respuesta, redactamos la contestación con tu tono y se publica en cuanto la apruebas",
         "Dashboard de inteligencia competitiva full-stack Next.js 15 con App Router y server components",
         "Reportes semanales impulsados por IA con Claude — análisis estructurado, no solo datos crudos",
         "Entrega nativa por WhatsApp formateada para lectura móvil",
@@ -1323,6 +1332,7 @@ const details: Record<string, ProjectDetailOverride> = {
         "Los negocios locales en México no tienen forma accesible de rastrear sistemáticamente sus rankings en Google Maps o monitorear la actividad de competidores. Herramientas enterprise como BrightLocal y Whitespark no sirven bien al mercado mexicano — los precios están en dólares, el soporte es en inglés, y las herramientas asumen patrones de búsqueda centrados en EE.UU. Un competidor puede ganar 20 reseñas en una semana y saltar 3 posiciones en Maps, y sin rastreo sistemático, los negocios no se enteran hasta que su teléfono deja de sonar. La mayoría de herramientas de ranking muestran datos pero no te dicen que hacer. Y en México, los reportes por email se ignoran — WhatsApp es donde sucede el negocio.",
       resultsTitle: "Resultados",
       results: [
+        "Las reseñas se contestan en lugar de quedarse sin respuesta — la contestación se redacta sola y el dueño aprueba con un clic",
         "Inteligencia competitiva estructurada que negocios multi-sucursal antes no tenían forma de acceder",
         "Una recomendación accionable por semana reduce la fatiga de decisiones y genera mejoras especificas",
         "Entrega por WhatsApp logra tasas de lectura superiores a alternativas basadas en email",
