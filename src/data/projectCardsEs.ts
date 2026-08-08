@@ -48,10 +48,13 @@ export const esCardCopy: Record<string, EsCardCopy> = {
     tagline:
       "Agentes telefónicos con IA que contestan llamadas, califican prospectos y agendan citas — 24/7, con respuesta en menos de 500 ms",
   },
+  // Updated 2026-08-07 to surface Google reputation management, a core CushLabs
+  // service that was described in the body of the entry but absent from the card.
   "cushlabs-marketsignal": {
-    title: "MarketSignal — Inteligencia Competitiva Local con IA",
+    title:
+      "MarketSignal — Reputación en Google e Inteligencia Competitiva Local",
     tagline:
-      "Monitoreo de competidores en Google Maps — reportes semanales directo a tu WhatsApp",
+      "Gestión de reputación en Google y monitoreo de competidores — respuestas a reseñas redactadas con IA y una acción clave por semana, directo a tu WhatsApp",
   },
   "cushlabs-sticker-gen": {
     tagline:

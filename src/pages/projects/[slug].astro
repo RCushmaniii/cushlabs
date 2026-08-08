@@ -26,7 +26,7 @@ const metaTitles: Record<string, string> = {
   'ai-chatbot-saas': 'Converso AI — Bilingual AI Chatbot SaaS',
   'ny-ai-chatbot': 'AI Chatbot Widget for Small Business Websites',
   'expat-driver-license-prep': 'ExpatDrive — Bilingual License Exam Prep',
-  'cushlabs-marketsignal': 'MarketSignal — Local Competitive Intelligence',
+  'cushlabs-marketsignal': 'MarketSignal — Google Reputation & Competitor Intel',
 };
 
 const title = `${metaTitles[project.name] || project.title} | CushLabs.ai`;
@@ -46,6 +46,10 @@ const metaDescriptions: Record<string, string> = {
   // repo description, which opens on "Multi-tenant ... page_id routing" and
   // was being truncated mid-sentence in the search snippet.
   'cushlabs-messenger-bot': 'The 24/7 bilingual AI assistant for Facebook Messenger — answers your customers in English or Spanish using your own prices, hours and policies.',
+  // Added 2026-08-07. Previously fell back to the GitHub description, which was
+  // truncated mid-sentence at "one actionable..." and never named reputation
+  // management — a core service, not a footnote.
+  'cushlabs-marketsignal': 'Google reputation management and Maps competitor tracking for multi-location businesses in Mexico — AI-drafted review replies and a weekly action item.',
 };
 
 const rawDescription = (
