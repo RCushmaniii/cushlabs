@@ -48,6 +48,11 @@ export const esCardCopy: Record<string, EsCardCopy> = {
     tagline:
       "Agentes telefónicos con IA que contestan llamadas, califican prospectos y agendan citas — 24/7, con respuesta en menos de 500 ms",
   },
+  "cushlabs-connect": {
+    title: "CushLabs Connect — Plataforma WhatsApp Multi-Tenant",
+    tagline:
+      "Plataforma de WhatsApp como Meta Tech Provider — un negocio conecta su propia cuenta en minutos y envía recordatorios de citas que sus clientes sí leen",
+  },
   // Updated 2026-08-07 to surface Google reputation management, a core CushLabs
   // service that was described in the body of the entry but absent from the card.
   "cushlabs-marketsignal": {
