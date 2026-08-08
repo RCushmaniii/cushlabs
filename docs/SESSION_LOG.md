@@ -161,6 +161,37 @@ Documented in CLAUDE.md and memory `feedback_tailwind4_color_collision`. Custom 
 
 ## Session History
 
+## Session: 2026-08-08 — REPO_PURPOSE.md, and the registry gap behind the underclaiming incident
+
+### Accomplished
+
+- **`docs/REPO_PURPOSE.md` created** (`b757aef`) — six siblings had one, the repo that makes the
+  claims did not. Written from the selling side, not cloned. Linked from `CLAUDE.md`.
+- **Card question settled** (`66d0100`) — not live in any currency; the two strategy docs were wrong, not the site.
+- **Registered the live single-tenant WhatsApp system** (`operating-system` `33bfe0a`), validator 11 → 12.
+
+### Decisions Made
+
+- **The underclaiming incident was structural, not a careless reader.** `cushlabs-whatsapp` sat in
+  `_meta.consumers` with **no row**, so the file's only WhatsApp answer was Connect's
+  `reachable_by: none`. Two different Meta apps — Connect `1670575657528474` vs CushLabs Reminders
+  `1743948843431645`. New row is `robert_only`: not sellable ≠ not working.
+- **Recorded what I could not verify** — app-level permission grants marked NOT verified;
+  `GET /{app-id}/permissions` returned no rows, so that array rests on repo docs.
+
+### Immediate Next Steps
+
+- [ ] Confirm CFDI on the USD surfaces (rest of tech debt #11) via `copywriting`.
+- [ ] Settle `code_verification_status: EXPIRED` on the NY English number — gates re-registration.
+
+### Technical Debt
+
+- New entitlement `whatsapp-number-code-verification-expired`, filed as neither broken nor fine.
+
+### Open Questions / Blockers
+
+- **`google-oauth-sensitive-scope-verification` still fails the validator as BLOCKS REVENUE** — sold on Basic, Azúcar invoiced **2026-08-12**. Pre-existing, untouched here.
+
 ## Session: 2026-08-06 — Closed stale PR #173 (superseded, not merged)
 
 ### Accomplished
