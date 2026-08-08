@@ -1,6 +1,7 @@
 # CLAUDE.md - CushLabs.ai Repository Guide
 
 <!-- capability-registry-pointer -->
+
 ## Platform approvals — read the registry, never restate it
 
 **Canonical source:** `C:/Users/Robert Cushman/Projects/operating-system/cushlabs/capability-registry.json`
@@ -22,7 +23,7 @@ node "C:/Users/Robert Cushman/Projects/operating-system/scripts/validate-capabil
 different facts. An approval can be granted and still unusable by a paying client. Only
 `reachable_by: any_client` makes a capability sellable.
 
-Deep-dive how-to docs in this repo stay where they are — the registry owns *state*, not procedure.
+Deep-dive how-to docs in this repo stay where they are — the registry owns _state_, not procedure.
 
 ---
 
@@ -573,6 +574,10 @@ const dict = t(locale);
 
 The `docs/` folder contains lessons learned from the New York English repo:
 
+- `docs/REPO_PURPOSE.md` - **What this repo is, what it is not, and where it sits in the CushLabs
+  family.** Read it before writing or removing any capability claim — it holds the overclaiming /
+  underclaiming rules and explains why a single `reachable_by` field is not a verdict on whether
+  something works.
 - `docs/architecture/BILINGUAL-SYSTEM-GUIDE.md` - i18n patterns
 - `docs/architecture/BILINGUAL-PARITY-CHECKLIST.md` - EN/ES sync rules
 - `docs/architecture/BLOG-I18N-EDGE-CASES.md` - Blog hreflang pitfalls
