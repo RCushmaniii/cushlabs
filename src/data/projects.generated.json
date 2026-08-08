@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-08-08T04:35:41.417Z",
-  "count": 35,
+  "generatedAt": "2026-08-08T05:36:01.159Z",
+  "count": 36,
   "projects": [
     {
       "id": 1108213747,
@@ -324,7 +324,7 @@
       },
       "stars": 0,
       "forks": 1,
-      "lastPushed": "2026-08-08T04:24:05Z",
+      "lastPushed": "2026-08-08T05:32:10Z",
       "createdAt": "2026-02-23T01:31:09Z",
       "isFeatured": true,
       "isArchived": false,
@@ -474,15 +474,15 @@
       "status": "Production",
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 758561,
-        "JavaScript": 218328,
+        "TypeScript": 790749,
+        "JavaScript": 222718,
         "PowerShell": 7945,
-        "HTML": 733,
-        "CSS": 323
+        "CSS": 4047,
+        "HTML": 1562
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-08-07T21:40:17Z",
+      "lastPushed": "2026-08-08T05:30:12Z",
       "createdAt": "2026-04-06T23:20:56Z",
       "isFeatured": true,
       "isArchived": false,
@@ -634,7 +634,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-08-08T04:35:12Z",
+      "lastPushed": "2026-08-08T04:41:58Z",
       "createdAt": "2026-03-30T19:46:00Z",
       "isFeatured": true,
       "isArchived": false,
@@ -858,6 +858,103 @@
       ],
       "videoUrl": "https://cdn.cushlabs.ai/ny-eng/video/ny-eng-brief.mp4",
       "videoPoster": "https://cdn.cushlabs.ai/ny-eng/video/ny-eng-brief-poster.jpg"
+    },
+    {
+      "id": 1268645928,
+      "name": "cushlabs-connect",
+      "title": "CushLabs Connect — Multi-Tenant WhatsApp Platform",
+      "description": "Multi-tenant WhatsApp reminders & confirmations platform — CushLabs as a Meta Tech Provider; businesses connect their own WhatsApp via Embedded Signup. v2 of cushlabs-whatsapp.",
+      "summary": "A multi-tenant WhatsApp messaging platform. CushLabs operates as a Meta **Tech",
+      "url": "https://github.com/RCushmaniii/cushlabs-connect",
+      "demoUrl": null,
+      "liveUrl": "https://connect.cushlabs.ai/",
+      "homepage": null,
+      "topics": [
+        "cloudflare-workers",
+        "d1",
+        "embedded-signup",
+        "hono",
+        "multi-tenant",
+        "react",
+        "saas",
+        "tailwindcss",
+        "typescript",
+        "whatsapp",
+        "whatsapp-cloud-api"
+      ],
+      "categories": [
+        "AI Automation"
+      ],
+      "tags": [
+        "cloudflare-workers",
+        "d1",
+        "embedded-signup",
+        "hono",
+        "multi-tenant",
+        "react",
+        "saas",
+        "tailwindcss",
+        "typescript",
+        "whatsapp",
+        "whatsapp-cloud-api",
+        "meta-tech-provider"
+      ],
+      "stack": [
+        "Cloudflare Workers",
+        "Hono",
+        "TypeScript (strict)",
+        "Cloudflare D1",
+        "Cloudflare Cron Triggers",
+        "WhatsApp Cloud API",
+        "Meta Embedded Signup",
+        "React + Vite + Tailwind (admin console)",
+        "Clerk (admin auth)",
+        "Cloudflare Pages"
+      ],
+      "status": "Production",
+      "language": "TypeScript",
+      "languages": {
+        "TypeScript": 294554,
+        "HTML": 124023,
+        "JavaScript": 4795,
+        "CSS": 439
+      },
+      "stars": 0,
+      "forks": 0,
+      "lastPushed": "2026-08-08T05:35:31Z",
+      "createdAt": "2026-06-13T19:20:38Z",
+      "isFeatured": true,
+      "isArchived": false,
+      "isPrivate": true,
+      "tagline": "A Meta Tech Provider platform that lets a business connect its own WhatsApp account in minutes and send appointment reminders patients actually read.",
+      "thumbnail": "https://cdn.cushlabs.ai/cushlabs-connect/images/portfolio/card-connect.webp",
+      "problem": "An appointment-driven business loses real money every time someone does not show up. WhatsApp is\nwhere Mexican customers actually read messages, but sending on it legitimately is genuinely hard:\nbusiness verification, a WhatsApp Business Account, message templates approved one at a time,\nMeta App Review, and ongoing compliance rules that change. Most small businesses cannot clear\nthose gates, and most developers do not want to. The alternative — a per-client build — means a\nseparate deployment, a separate review cycle, and a separate thing to maintain for every business\nserved, which stops working economically almost immediately.\n",
+      "solution": "CushLabs operates as a Meta Tech Provider so client businesses never touch the WhatsApp API. A business connects its own WhatsApp Business Account through Embedded Signup — a Facebook-hosted flow that takes minutes and leaves the business owning its own account and its own customer relationships. From there a single Cloudflare Worker sends that tenant's reminders and confirmations on their behalf, with per-tenant isolation in D1 and a scheduled job driving the send window. One approved Meta app serves every tenant, so onboarding a business is configuration rather than a new deployment and a new review cycle.\n",
+      "keyFeatures": [
+        "Meta App Review approved on the first submission — both WhatsApp permissions hold Advanced Access",
+        "Proven end to end: an approved template sent from a real WhatsApp Business Account to a real phone",
+        "Businesses connect their own WhatsApp account through Embedded Signup and keep ownership of it",
+        "One approved Meta app serves every tenant — onboarding is configuration, not a new deploy or a new review",
+        "Reminders and confirmations run unattended on a schedule, so follow-up never depends on anyone remembering",
+        "Built from a system already live in production, so the multi-tenant rewrite started from proven behavior"
+      ],
+      "metrics": [
+        "Meta App Review cleared in 16 days, approved on the first submission",
+        "Both WhatsApp permissions confirmed at Advanced Access on the Graph API, not just the dashboard",
+        "163 automated tests across 7 files",
+        "One Worker and one approved Meta app serve every tenant — zero per-client deployments"
+      ],
+      "priority": 6,
+      "dateCompleted": null,
+      "slides": [
+        {
+          "src": "https://cdn.cushlabs.ai/cushlabs-connect/images/portfolio/card-connect.webp",
+          "altEn": "CushLabs Connect — Multi-Tenant WhatsApp Platform",
+          "altEs": "CushLabs Connect — Multi-Tenant WhatsApp Platform"
+        }
+      ],
+      "videoUrl": null,
+      "videoPoster": null
     },
     {
       "id": 1174690198,
@@ -3288,8 +3385,8 @@
       "status": null,
       "language": "Astro",
       "languages": {
-        "Astro": 851223,
-        "TypeScript": 382320,
+        "Astro": 851942,
+        "TypeScript": 382581,
         "JavaScript": 154925,
         "HTML": 61067,
         "Python": 6606,
@@ -3297,7 +3394,7 @@
       },
       "stars": 3,
       "forks": 0,
-      "lastPushed": "2026-08-07T02:36:01Z",
+      "lastPushed": "2026-08-08T05:34:45Z",
       "createdAt": "2026-01-08T03:52:43Z",
       "isFeatured": false,
       "isArchived": false,
