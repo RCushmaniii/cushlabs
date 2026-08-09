@@ -226,7 +226,15 @@ const trust = [
 <style>
   /* Hero background carried over verbatim from connect.cushlabs.ai — the same
      photograph, the same dark gradient, the same 55% 30% focal point that keeps
-     the phone screen readable behind the headline. */
+     the phone screen readable behind the headline.
+
+     The -v2 suffix is a cache bust, not a second version of the artwork.
+     vercel.json serves /images/(.*) with `max-age=31536000, immutable`, so a
+     404 returned for one of these paths — e.g. by anything requesting the URL
+     in the window between merge and deploy — is cached at the edge for a year
+     and never revalidates. That happened to whatsapp-hero.webp on 2026-08-08.
+     A new filename is the only reliable fix for an immutable asset: change the
+     name whenever you replace or re-add an image under /images/. */
   .wa-hero {
     background-color: #1a120e;
     background-image:
@@ -236,7 +244,7 @@ const trust = [
         rgba(14, 11, 9, 0.5) 45%,
         rgba(14, 11, 9, 0.82) 100%
       ),
-      url("/images/whatsapp-hero.webp");
+      url("/images/whatsapp-hero-v2.webp");
     background-size: cover;
     background-position: 55% 30%;
     background-repeat: no-repeat;
@@ -277,7 +285,7 @@ const trust = [
           rgba(14, 11, 9, 0.66) 45%,
           rgba(14, 11, 9, 0.88) 100%
         ),
-        url("/images/whatsapp-hero.webp");
+        url("/images/whatsapp-hero-v2.webp");
     }
   }
 </style>
