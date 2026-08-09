@@ -119,6 +119,49 @@ const themes = [
     ],
   },
 ];
+
+// ---------------------------------------------------------------------------
+// Hero design decisions (2026-08-09). Kept in the frontmatter deliberately:
+// Astro strips top-level HTML comments from the built page but SERVES comments
+// nested inside elements, so an explanatory <!-- --> next to the badge shipped
+// to every visitor. Frontmatter comments are never served. Put reasoning here.
+//
+// HERO IMAGE — /images/messenger-hero-v1.webp
+//   Full-bleed photograph, same treatment as /whatsapp/. A salon owner in
+//   Guadalajara, cathedral through the window, holding a phone showing a real
+//   Messenger thread in Spanish. The blue Messenger chrome is what makes the
+//   channel unmistakable before a word is read. Do not swap it for a gradient.
+//   The -v1 suffix is load-bearing: vercel.json serves /images/(.*) as
+//   immutable for a year, so a replaced image needs a NEW FILENAME or the old
+//   bytes are served forever.
+//
+//   Framing was tuned against screenshots at nine viewports. Desktop sits at
+//   72% so the phone clears the centred text column; portrait viewports gate on
+//   ASPECT RATIO not width, because `cover` over-zooms a 16:9 photo whenever
+//   the viewport is taller than it is wide; phones carry a much deeper overlay
+//   because the text column lands square on the message bubbles there.
+//
+//   The conversation in the photo shows the assistant offering a specific
+//   appointment time. The shipped bot CANNOT do that — it renders a booking
+//   button and hands off. Published on Robert's explicit call with the page's
+//   own prose held to List 1. Do not add a booking claim to the copy to match
+//   the picture. Tracked as TECH_DEBT #27 in cushlabs-messenger-bot.
+//
+// BADGE (the pill above the h1 — a badge, not an eyebrow)
+//   Reads as capability, deliberately NOT as proof. The previous copy was
+//   "Already live with a real client — in production now", which stacked three
+//   reassurances into one line and argued for something the page demonstrates
+//   200px lower, where the live-bot chips let a visitor message a production
+//   assistant on the spot. Demonstrating beats asserting. Both current facts
+//   are ADVERTISED-COMMITMENTS List 1 (Theme 1 "under 5 seconds, 24/7";
+//   Theme 2 "English & Spanish automatically"). Keep it to shipped capability.
+//
+// CHIPS (the bordered m.me buttons)
+//   These stay above the fold even though a fuller section repeats them below.
+//   They are the strongest proof on the page and the reason the badge does not
+//   need to argue.
+// ---------------------------------------------------------------------------
+
 ---
 
 <BaseLayout
@@ -126,34 +169,9 @@ const themes = [
   description="A 24/7 AI sales assistant in your Facebook Messenger — built from your content, trained on your business, live in weeks. Bilingual EN/ES. Fully managed."
 >
 
-  <!-- Hero — full-bleed photograph, same treatment as /whatsapp/.
-       A salon owner in Guadalajara, cathedral through the window, holding a
-       phone showing a real Messenger conversation in Spanish. Channel, market,
-       language and interaction in one frame; the blue Messenger chrome is what
-       makes the channel unmistakable at a glance. Do not swap it for an
-       abstract gradient.
-
-       NOTE ON THE CONVERSATION IN THE PHOTO: it shows the assistant offering a
-       specific appointment time. Live calendar availability and in-chat booking
-       are NOT shipped — they sit on the held list in
-       cushlabs/docs/strategy/MESSENGER-PREMIUM-UPGRADES-HELD.md, and the QA
-       gate scenario `grounded-en-availability` currently requires the bot to
-       refuse exactly that. Published on Robert's explicit call 2026-08-09, with
-       the page's own prose kept to List 1. Do not add booking claims to the
-       copy until the feature ships and the held list is updated. Tracked in
-       cushlabs-messenger-bot/docs/TECH_DEBT.md. -->
   <section class="ma-hero relative flex items-center text-slate-50">
     <Container size="md">
       <div class="max-w-3xl mx-auto text-center py-24 flex flex-col items-center">
-        <!-- Badge, not an eyebrow: a capability statement, deliberately NOT a
-             proof-claim. The previous copy read "Already live with a real client
-             — in production now", which stacked three reassurances into one line
-             and argued for something the page demonstrates 200px lower, where the
-             live-bot chips let a visitor message a production assistant on the
-             spot. Demonstrating beats asserting. Both facts here are
-             ADVERTISED-COMMITMENTS List 1 (Theme 1 "under 5 seconds, 24/7",
-             Theme 2 "English & Spanish automatically"). Keep it to shipped
-             capability; do not turn it back into a status boast. -->
         <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-white text-sm font-semibold mb-8 backdrop-blur-sm">
           <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
           Bilingual EN/ES · Replies in under 5 seconds
@@ -182,8 +200,6 @@ const themes = [
           </a>
         </div>
 
-        <!-- Live bots — the strongest proof on the page, so it stays above the
-             fold even though a fuller section repeats it below. -->
         <div class="mt-9 flex flex-col items-center gap-3">
           <p class="inline-flex items-center gap-2 text-sm font-display font-medium text-slate-300">
             <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
