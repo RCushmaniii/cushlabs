@@ -67,25 +67,25 @@ const trust = [
   title="WhatsApp Appointment Reminders | CushLabs.ai"
   description="Connect your WhatsApp Business account and send automatic appointment reminders and confirmations — fewer no-shows, a fuller calendar, zero manual work."
 >
-  <!-- Hero -->
-  <section class="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden">
-    <div class="absolute inset-0 -z-10">
-      <div class="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-cush-orange/15 rounded-full blur-[120px]"></div>
-      <div class="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-cush-orange/10 rounded-full blur-[100px]"></div>
-    </div>
-
+  <!-- Hero — full-bleed photograph, carried over from connect.cushlabs.ai.
+       The image IS the pitch: a real customer in Guadalajara receiving an
+       actual WhatsApp reminder in Spanish with CONFIRMAR / REAGENDAR buttons.
+       Market, product, language and interaction in one frame. Do not swap it
+       for an abstract gradient. Overlay values and focal point (55% 30%) are
+       the originals, tuned so the phone screen stays legible. -->
+  <section class="wa-hero relative flex items-center min-h-[100svh] text-slate-50">
     <Container size="md">
-      <div class="text-center max-w-4xl mx-auto">
-        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cush-orange/10 border border-cush-orange/20 text-cush-orange text-sm font-semibold mb-8">
+      <div class="max-w-3xl mx-auto text-center py-24 flex flex-col items-center">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-white text-sm font-semibold mb-8 backdrop-blur-sm">
           <span class="w-2 h-2 rounded-full bg-cush-orange animate-pulse"></span>
           Coming soon
         </div>
 
-        <h1 class="font-display text-fluid-4xl font-bold text-gray-900 dark:text-white mb-6 leading-tight tracking-tight">
+        <h1 class="wa-h1 font-display font-bold text-white">
           WhatsApp appointment reminders, without the hassle.
         </h1>
 
-        <p class="text-fluid-lg text-gray-600 dark:text-gray-300 mb-10 max-w-3xl mx-auto leading-relaxed">
+        <p class="wa-sub">
           Connect your WhatsApp Business account and send automatic reminders and confirmations to your patients and customers. Fewer no-shows, a fuller calendar, zero manual work.
         </p>
 
@@ -99,12 +99,12 @@ const trust = [
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
           </a>
-          <a href="/services/" class="font-display font-medium text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white underline underline-offset-4 decoration-gray-300 hover:decoration-cush-orange transition-all">
+          <a href="/services/" class="font-display font-medium text-slate-300 hover:text-white underline underline-offset-4 decoration-white/30 hover:decoration-cush-orange transition-all">
             See all services →
           </a>
         </div>
 
-        <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-x-6 gap-y-2 text-sm text-gray-500 dark:text-gray-400">
+        <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-x-6 gap-y-2 text-sm text-slate-300">
           <span class="inline-flex items-center gap-2">
             <svg class="w-4 h-4 text-cush-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
             Authorized Meta Tech Provider
@@ -222,3 +222,62 @@ const trust = [
 
   <FinalCTA locale={locale} />
 </BaseLayout>
+
+<style>
+  /* Hero background carried over verbatim from connect.cushlabs.ai — the same
+     photograph, the same dark gradient, the same 55% 30% focal point that keeps
+     the phone screen readable behind the headline. */
+  .wa-hero {
+    background-color: #1a120e;
+    background-image:
+      linear-gradient(
+        to bottom,
+        rgba(14, 11, 9, 0.62) 0%,
+        rgba(14, 11, 9, 0.5) 45%,
+        rgba(14, 11, 9, 0.82) 100%
+      ),
+      url("/images/whatsapp-hero.webp");
+    background-size: cover;
+    background-position: 55% 30%;
+    background-repeat: no-repeat;
+  }
+
+  /* Type scale copied from the original page. The site's default hero scale is
+     much larger and swallowed the photograph — at 17ch the headline sits beside
+     the subject instead of on top of her. Text shadows are what keep it legible
+     over a photo; do not drop them. */
+  .wa-h1 {
+    font-size: clamp(30px, 5.4vw, 50px);
+    line-height: 1.1;
+    letter-spacing: -0.028em;
+    max-width: 17ch;
+    margin: 0 0 16px;
+    text-shadow: 0 2px 22px rgba(0, 0, 0, 0.45);
+  }
+
+  .wa-sub {
+    color: rgba(255, 255, 255, 0.92);
+    font-size: clamp(16px, 2.2vw, 19px);
+    max-width: 52ch;
+    margin: 0 0 26px;
+    line-height: 1.6;
+    text-shadow: 0 1px 14px rgba(0, 0, 0, 0.5);
+  }
+
+  /* On narrow screens the frame crops toward the subject, so bias the focal
+     point right to keep the woman and the phone in shot, and deepen the
+     overlay because the text column now sits directly over the image. */
+  @media (max-width: 640px) {
+    .wa-hero {
+      background-position: 38% 32%;
+      background-image:
+        linear-gradient(
+          to bottom,
+          rgba(14, 11, 9, 0.74) 0%,
+          rgba(14, 11, 9, 0.66) 45%,
+          rgba(14, 11, 9, 0.88) 100%
+        ),
+        url("/images/whatsapp-hero.webp");
+    }
+  }
+</style>
