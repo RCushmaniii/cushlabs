@@ -126,31 +126,33 @@ const themes = [
   description="Un asistente de ventas con IA disponible 24/7 en tu Facebook Messenger — entrenado con tu negocio, activo en semanas. Bilingüe EN/ES. Totalmente gestionado."
 >
 
-  <!-- Hero -->
-  <section class="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden">
-    <div class="absolute inset-0 -z-10">
-      <div class="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-cush-orange/15 rounded-full blur-[120px]"></div>
-      <div class="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-cush-orange/10 rounded-full blur-[100px]"></div>
-    </div>
+  <!-- Hero — fotografía a sangre, mismo tratamiento que /es/whatsapp/.
+       Una dueña de estética en Guadalajara, la Catedral por la ventana, con el
+       celular mostrando una conversación real de Messenger en español. El azul
+       de Messenger es lo que hace inconfundible el canal de un vistazo.
 
+       NOTA SOBRE LA CONVERSACIÓN DE LA FOTO: el asistente ofrece un horario
+       concreto. La consulta de disponibilidad en vivo y el agendado dentro del
+       chat NO están en producción — están en la lista de funciones retenidas
+       (cushlabs/docs/strategy/MESSENGER-PREMIUM-UPGRADES-HELD.md) y el QA gate
+       exige hoy que el bot se niegue a eso. Publicado por decisión explícita de
+       Robert el 2026-08-09; el texto de la página se mantiene en List 1. No
+       agregues promesas de agendado hasta que la función exista. -->
+  <section class="ma-hero relative flex items-center text-slate-50">
     <Container size="md">
-      <div class="text-center max-w-4xl mx-auto">
-        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cush-orange/10 border border-cush-orange/20 text-cush-orange text-sm font-semibold mb-8">
-          <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+      <div class="max-w-3xl mx-auto text-center py-24 flex flex-col items-center">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-white text-sm font-semibold mb-8 backdrop-blur-sm">
+          <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
           Ya está activo con un cliente real — en producción ahora mismo
         </div>
 
-        <h1 class="font-display text-fluid-4xl font-bold text-gray-900 dark:text-white mb-6 leading-tight tracking-tight">
+        <h1 class="ma-h1 font-display font-bold text-white">
           Asistente de IA en tu Facebook Messenger que Vende Mientras Duermes
         </h1>
 
-        <p class="text-fluid-lg text-gray-600 dark:text-gray-300 mb-4 max-w-3xl mx-auto leading-relaxed">
+        <p class="ma-sub">
           Un asistente de ventas con IA disponible 24/7 en tu Facebook Messenger — entrenado con tu negocio, activo en semanas.
         </p>
-        <p class="text-fluid-base text-gray-500 dark:text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed">
-          Cada mensaje contestado en segundos. Cada cliente capturado. Cada pregunta resuelta en su idioma — con tu voz — las 24 horas del día.
-        </p>
-
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
             href="/es/reservar/"
@@ -161,15 +163,15 @@ const themes = [
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
           </a>
-          <a href="/es/services/" class="font-display font-medium text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white underline underline-offset-4 decoration-gray-300 hover:decoration-cush-orange transition-all">
+          <a href="/es/services/" class="font-display font-medium text-slate-300 hover:text-white underline underline-offset-4 decoration-white/30 hover:decoration-cush-orange transition-all">
             Ver todos los servicios →
           </a>
         </div>
 
         <!-- Bots en vivo — escríbele a un asistente real en producción ahora mismo (elevado desde la sección de abajo) -->
-        <div class="mt-8 flex flex-col items-center gap-3">
-          <p class="inline-flex items-center gap-2 text-sm font-display font-medium text-gray-500 dark:text-gray-400">
-            <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+        <div class="mt-9 flex flex-col items-center gap-3">
+          <p class="inline-flex items-center gap-2 text-sm font-display font-medium text-slate-300">
+            <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
             O escríbele a un bot real ahora mismo
           </p>
           <div class="flex flex-col sm:flex-row items-center gap-3">
@@ -178,7 +180,7 @@ const themes = [
                 href={demo.href}
                 target="_blank"
                 rel="noopener"
-                class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border-2 border-gray-300 dark:border-gray-700 text-gray-800 dark:text-gray-200 font-display font-semibold text-sm hover:border-cush-orange hover:text-cush-orange dark:hover:border-cush-orange dark:hover:text-cush-orange transition-all duration-300"
+                class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border-2 border-white/30 bg-white/5 text-white font-display font-semibold text-sm backdrop-blur-sm hover:border-cush-orange hover:text-cush-orange transition-all duration-300"
               >
                 <svg class="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M12 0C5.373 0 0 4.974 0 11.111c0 3.498 1.744 6.614 4.469 8.654V24l4.088-2.242c1.092.301 2.246.464 3.443.464 6.627 0 12-4.975 12-11.111C24 4.974 18.627 0 12 0zm1.191 14.963l-3.055-3.26-5.963 3.26L10.732 8l3.131 3.259L19.752 8l-6.561 6.963z"/>
@@ -523,3 +525,66 @@ const themes = [
   })} />
 
 </BaseLayout>
+
+<style>
+  /* Mismo tratamiento de hero que /es/whatsapp/. La foto carga el argumento, el
+     degradado oscuro mantiene legible el texto blanco encima, y el punto focal
+     está elegido para que la pantalla del celular se alcance a leer. El sufijo
+     -v1 es a propósito: vercel.json sirve /images/(.*) como immutable durante un
+     año, así que reemplazar una imagen exige un nombre nuevo. */
+  .ma-hero {
+    min-height: 100svh;
+    background-color: #14161f;
+    background-image:
+      linear-gradient(
+        to bottom,
+        rgba(10, 12, 18, 0.66) 0%,
+        rgba(10, 12, 18, 0.64) 45%,
+        rgba(10, 12, 18, 0.84) 100%
+      ),
+      url("/images/messenger-hero-v1.webp");
+    background-size: cover;
+    background-position: 72% 32%;
+    background-repeat: no-repeat;
+  }
+
+  @media (max-aspect-ratio: 1 / 1) {
+    .ma-hero {
+      min-height: 82svh;
+      background-position: 44% 28%;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .ma-hero {
+      min-height: 88svh;
+      background-position: 46% 26%;
+      background-image:
+        linear-gradient(
+          to bottom,
+          rgba(10, 12, 18, 0.84) 0%,
+          rgba(10, 12, 18, 0.8) 45%,
+          rgba(10, 12, 18, 0.93) 100%
+        ),
+        url("/images/messenger-hero-v1.webp");
+    }
+  }
+
+  .ma-h1 {
+    font-size: clamp(30px, 5.4vw, 50px);
+    line-height: 1.1;
+    letter-spacing: -0.028em;
+    max-width: 17ch;
+    margin: 0 0 16px;
+    text-shadow: 0 2px 22px rgba(0, 0, 0, 0.45);
+  }
+
+  .ma-sub {
+    color: rgba(255, 255, 255, 0.92);
+    font-size: clamp(16px, 2.2vw, 19px);
+    max-width: 52ch;
+    margin: 0 0 26px;
+    line-height: 1.6;
+    text-shadow: 0 1px 14px rgba(0, 0, 0, 0.5);
+  }
+</style>
