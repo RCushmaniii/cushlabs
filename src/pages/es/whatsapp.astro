@@ -74,7 +74,7 @@ const trust = [
        recordatorio de WhatsApp en español con botones CONFIRMAR / REAGENDAR.
        Mercado, producto, idioma e interacción en un solo cuadro. No la
        cambies por un degradado abstracto. -->
-  <section class="wa-hero relative flex items-center min-h-[100svh] text-slate-50">
+  <section class="wa-hero relative flex items-center text-slate-50">
     <Container size="md">
       <div class="max-w-3xl mx-auto text-center py-24 flex flex-col items-center">
         <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-white text-sm font-semibold mb-8 backdrop-blur-sm">
@@ -229,6 +229,7 @@ const trust = [
      mismo degradado oscuro y mismo punto focal 55% 30%, que es el que deja
      legible la pantalla del celular detrás del titular. */
   .wa-hero {
+    min-height: 100svh;
     background-color: #1a120e;
     background-image:
       linear-gradient(
@@ -241,6 +242,18 @@ const trust = [
     background-size: cover;
     background-position: 55% 30%;
     background-repeat: no-repeat;
+  }
+
+  /* The photo is 16:9. `cover` scales to fill whichever axis is short, so on a
+     viewport taller than it is wide it zooms hard and throws the phone off the
+     left edge — the phone is the proof, so losing it defeats the hero. The real
+     variable is aspect ratio, not width, so gate on that: demand less vertical
+     fill and bias the crop back toward the phone. */
+  @media (max-aspect-ratio: 1 / 1) {
+    .wa-hero {
+      min-height: 78svh;
+      background-position: 40% 30%;
+    }
   }
 
   /* Escala tipográfica copiada de la página original. La escala de hero por
@@ -265,9 +278,12 @@ const trust = [
     text-shadow: 0 1px 14px rgba(0, 0, 0, 0.5);
   }
 
+  /* Phones crop hardest and the text column sits directly over the image, so
+     hold the phone in frame and deepen the overlay for legibility. */
   @media (max-width: 640px) {
     .wa-hero {
-      background-position: 38% 32%;
+      min-height: 84svh;
+      background-position: 36% 32%;
       background-image:
         linear-gradient(
           to bottom,
