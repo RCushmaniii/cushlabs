@@ -126,29 +126,36 @@ const themes = [
   description="A 24/7 AI sales assistant in your Facebook Messenger — built from your content, trained on your business, live in weeks. Bilingual EN/ES. Fully managed."
 >
 
-  <!-- Hero -->
-  <section class="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden">
-    <div class="absolute inset-0 -z-10">
-      <div class="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-cush-orange/15 rounded-full blur-[120px]"></div>
-      <div class="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-cush-orange/10 rounded-full blur-[100px]"></div>
-    </div>
+  <!-- Hero — full-bleed photograph, same treatment as /whatsapp/.
+       A salon owner in Guadalajara, cathedral through the window, holding a
+       phone showing a real Messenger conversation in Spanish. Channel, market,
+       language and interaction in one frame; the blue Messenger chrome is what
+       makes the channel unmistakable at a glance. Do not swap it for an
+       abstract gradient.
 
+       NOTE ON THE CONVERSATION IN THE PHOTO: it shows the assistant offering a
+       specific appointment time. Live calendar availability and in-chat booking
+       are NOT shipped — they sit on the held list in
+       cushlabs/docs/strategy/MESSENGER-PREMIUM-UPGRADES-HELD.md, and the QA
+       gate scenario `grounded-en-availability` currently requires the bot to
+       refuse exactly that. Published on Robert's explicit call 2026-08-09, with
+       the page's own prose kept to List 1. Do not add booking claims to the
+       copy until the feature ships and the held list is updated. Tracked in
+       cushlabs-messenger-bot/docs/TECH_DEBT.md. -->
+  <section class="ma-hero relative flex items-center text-slate-50">
     <Container size="md">
-      <div class="text-center max-w-4xl mx-auto">
-        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cush-orange/10 border border-cush-orange/20 text-cush-orange text-sm font-semibold mb-8">
-          <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+      <div class="max-w-3xl mx-auto text-center py-24 flex flex-col items-center">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-white text-sm font-semibold mb-8 backdrop-blur-sm">
+          <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
           Already live with a real client — in production now
         </div>
 
-        <h1 class="font-display text-fluid-4xl font-bold text-gray-900 dark:text-white mb-6 leading-tight tracking-tight">
+        <h1 class="ma-h1 font-display font-bold text-white">
           AI Messenger Assistant for Your Facebook Page
         </h1>
 
-        <p class="text-fluid-lg text-gray-600 dark:text-gray-300 mb-4 max-w-3xl mx-auto leading-relaxed">
+        <p class="ma-sub">
           A 24/7 AI sales assistant in your Facebook Messenger — built from your content, trained on your business, live in weeks.
-        </p>
-        <p class="text-fluid-base text-gray-500 dark:text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed">
-          Every message answered in seconds. Every customer captured. Every question handled in their language — in your voice — 24 hours a day.
         </p>
 
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -161,15 +168,16 @@ const themes = [
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
           </a>
-          <a href="/services/" class="font-display font-medium text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white underline underline-offset-4 decoration-gray-300 hover:decoration-cush-orange transition-all">
+          <a href="/services/" class="font-display font-medium text-slate-300 hover:text-white underline underline-offset-4 decoration-white/30 hover:decoration-cush-orange transition-all">
             See all services →
           </a>
         </div>
 
-        <!-- Live bots — message a real production assistant right now (elevated from the section below) -->
-        <div class="mt-8 flex flex-col items-center gap-3">
-          <p class="inline-flex items-center gap-2 text-sm font-display font-medium text-gray-500 dark:text-gray-400">
-            <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+        <!-- Live bots — the strongest proof on the page, so it stays above the
+             fold even though a fuller section repeats it below. -->
+        <div class="mt-9 flex flex-col items-center gap-3">
+          <p class="inline-flex items-center gap-2 text-sm font-display font-medium text-slate-300">
+            <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
             Or message a real bot right now
           </p>
           <div class="flex flex-col sm:flex-row items-center gap-3">
@@ -178,7 +186,7 @@ const themes = [
                 href={demo.href}
                 target="_blank"
                 rel="noopener"
-                class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border-2 border-gray-300 dark:border-gray-700 text-gray-800 dark:text-gray-200 font-display font-semibold text-sm hover:border-cush-orange hover:text-cush-orange dark:hover:border-cush-orange dark:hover:text-cush-orange transition-all duration-300"
+                class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border-2 border-white/30 bg-white/5 text-white font-display font-semibold text-sm backdrop-blur-sm hover:border-cush-orange hover:text-cush-orange transition-all duration-300"
               >
                 <svg class="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M12 0C5.373 0 0 4.974 0 11.111c0 3.498 1.744 6.614 4.469 8.654V24l4.088-2.242c1.092.301 2.246.464 3.443.464 6.627 0 12-4.975 12-11.111C24 4.974 18.627 0 12 0zm1.191 14.963l-3.055-3.26-5.963 3.26L10.732 8l3.131 3.259L19.752 8l-6.561 6.963z"/>
@@ -523,3 +531,75 @@ const themes = [
   })} />
 
 </BaseLayout>
+
+<style>
+  /* Same hero treatment as /whatsapp/ — see that file for the full reasoning.
+     Short version: the photo carries the pitch, the dark gradient keeps white
+     text legible over it, and the focal point is chosen so the phone screen
+     stays readable. The -v1 suffix is deliberate: vercel.json serves
+     /images/(.*) as immutable for a year, so a replaced image needs a new
+     filename or the old bytes are served forever. */
+  .ma-hero {
+    min-height: 100svh;
+    background-color: #14161f;
+    background-image:
+      linear-gradient(
+        to bottom,
+        rgba(10, 12, 18, 0.66) 0%,
+        rgba(10, 12, 18, 0.64) 45%,
+        rgba(10, 12, 18, 0.84) 100%
+      ),
+      url("/images/messenger-hero-v1.webp");
+    background-size: cover;
+    background-position: 72% 32%;
+    background-repeat: no-repeat;
+  }
+
+  /* The photo is 16:9, so `cover` over-zooms on any viewport taller than it is
+     wide and pushes the phone off the left edge. Gate on aspect ratio, not
+     width: a 1024 tablet in landscape is fine, an 820 tablet in portrait is not. */
+  @media (max-aspect-ratio: 1 / 1) {
+    .ma-hero {
+      min-height: 82svh;
+      background-position: 44% 28%;
+    }
+  }
+
+  /* Phones crop hardest and the text sits directly over the image. */
+  @media (max-width: 640px) {
+    .ma-hero {
+      min-height: 88svh;
+      background-position: 46% 26%;
+      background-image:
+        linear-gradient(
+          to bottom,
+          rgba(10, 12, 18, 0.84) 0%,
+          rgba(10, 12, 18, 0.8) 45%,
+          rgba(10, 12, 18, 0.93) 100%
+        ),
+        url("/images/messenger-hero-v1.webp");
+    }
+  }
+
+  /* Type scale matched to /whatsapp/. The site's default hero scale is far
+     larger and swallows a photograph — at 17ch the headline sits beside the
+     subject rather than on top of her. The text shadows are what keep white
+     type legible over a photo; do not drop them. */
+  .ma-h1 {
+    font-size: clamp(30px, 5.4vw, 50px);
+    line-height: 1.1;
+    letter-spacing: -0.028em;
+    max-width: 17ch;
+    margin: 0 0 16px;
+    text-shadow: 0 2px 22px rgba(0, 0, 0, 0.45);
+  }
+
+  .ma-sub {
+    color: rgba(255, 255, 255, 0.92);
+    font-size: clamp(16px, 2.2vw, 19px);
+    max-width: 52ch;
+    margin: 0 0 26px;
+    line-height: 1.6;
+    text-shadow: 0 1px 14px rgba(0, 0, 0, 0.5);
+  }
+</style>
