@@ -73,7 +73,7 @@ const trust = [
        Market, product, language and interaction in one frame. Do not swap it
        for an abstract gradient. Overlay values and focal point (55% 30%) are
        the originals, tuned so the phone screen stays legible. -->
-  <section class="wa-hero relative flex items-center min-h-[100svh] text-slate-50">
+  <section class="wa-hero relative flex items-center text-slate-50">
     <Container size="md">
       <div class="max-w-3xl mx-auto text-center py-24 flex flex-col items-center">
         <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-white text-sm font-semibold mb-8 backdrop-blur-sm">
@@ -236,6 +236,7 @@ const trust = [
      A new filename is the only reliable fix for an immutable asset: change the
      name whenever you replace or re-add an image under /images/. */
   .wa-hero {
+    min-height: 100svh;
     background-color: #1a120e;
     background-image:
       linear-gradient(
@@ -248,6 +249,18 @@ const trust = [
     background-size: cover;
     background-position: 55% 30%;
     background-repeat: no-repeat;
+  }
+
+  /* The photo is 16:9. `cover` scales to fill whichever axis is short, so on a
+     viewport taller than it is wide it zooms hard and throws the phone off the
+     left edge — the phone is the proof, so losing it defeats the hero. The real
+     variable is aspect ratio, not width, so gate on that: demand less vertical
+     fill and bias the crop back toward the phone. */
+  @media (max-aspect-ratio: 1 / 1) {
+    .wa-hero {
+      min-height: 78svh;
+      background-position: 40% 30%;
+    }
   }
 
   /* Type scale copied from the original page. The site's default hero scale is
@@ -275,9 +288,12 @@ const trust = [
   /* On narrow screens the frame crops toward the subject, so bias the focal
      point right to keep the woman and the phone in shot, and deepen the
      overlay because the text column now sits directly over the image. */
+  /* Phones crop hardest and the text column sits directly over the image, so
+     hold the phone in frame and deepen the overlay for legibility. */
   @media (max-width: 640px) {
     .wa-hero {
-      background-position: 38% 32%;
+      min-height: 84svh;
+      background-position: 36% 32%;
       background-image:
         linear-gradient(
           to bottom,
