@@ -184,9 +184,19 @@ Documented in CLAUDE.md and memory `feedback_tailwind4_color_collision`. Custom 
 
 ### Immediate Next Steps
 
-- [ ] Clerk login UX + enable Google auth.
-- [ ] Cut the onboarding survey ~75%; seed voice/facts by scraping the client's own Facebook replies,
-      then tweak with the client. First paying client would not complete the long form.
+- [ ] **The rebrand is not finished outside this repo.** A palette fingerprint across `~/Projects`
+      found the retired 3D mark still shipping in: `cushlabs-messenger-bot/fb-content/cushlabs-app-icon-1024.png`
+      (the Meta app icon **every client sees in the Facebook consent dialog** — highest stakes),
+      `cushlabs-ai-voice-agent/public/` (favicons + `images/voice_agent_logo.webp`, live on
+      voice.cushlabs.ai), `cushlabs-OS-dashboard/public/images/logo-{light,dark}.png`, and
+      `react-vite-tailwind-base/public/` (the starter — every new project inherits the old mark).
+- [ ] Merge PR #243 (rebased onto v3, safe now) and triage PR #204, open since 2026-07-26.
+- [ ] External surfaces still on the old mark and not fixable from a repo: WhatsApp Business profile,
+      LinkedIn (company + personal), Facebook page, Google Business Profile, GitHub org avatar, IG.
+      `cushlabs-logo-instagram-profile-v2.png` is ready to upload for the last one.
+
+> Clerk login UX and the onboarding-survey rewrite were raised this session but belong to other
+> repos, not this one. Not tracked here.
 
 ### Technical Debt
 
