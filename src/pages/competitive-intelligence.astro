@@ -365,9 +365,9 @@ const comparison = [
     background-image:
       linear-gradient(
         to bottom,
-        rgba(20, 17, 13, 0.62) 0%,
-        rgba(20, 17, 13, 0.72) 45%,
-        rgba(20, 17, 13, 0.88) 100%
+        rgba(20, 17, 13, 0.66) 0%,
+        rgba(20, 17, 13, 0.8) 45%,
+        rgba(20, 17, 13, 0.9) 100%
       ),
       url("/images/competitive-intelligence-hero-v1.webp");
     background-size: cover;
@@ -401,17 +401,24 @@ const comparison = [
     font-size: clamp(30px, 5.4vw, 50px);
     line-height: 1.1;
     letter-spacing: -0.028em;
-    max-width: 18ch;
-    margin: 0 0 16px;
-    text-shadow: 0 2px 22px rgba(0, 0, 0, 0.5);
+    /* Narrower than the other 4 heroes' 17-18ch: at ~1024px tablet widths the
+       photo's crop math shifts the laptop screen further left than at desktop
+       or mobile widths (this specific photo has more background-position
+       sensitivity in that range), and 18ch let the third line reach into it. */
+    max-width: 16ch;
+    margin: 0 auto 16px;
+    text-shadow: 0 2px 26px rgba(0, 0, 0, 0.65);
   }
 
   .ci-sub {
     color: rgba(255, 255, 255, 0.92);
     font-size: clamp(16px, 2.2vw, 19px);
-    max-width: 52ch;
-    margin: 0 0 26px;
+    /* Narrower than the other heroes' 52ch: this photo's laptop screen sits
+       closer to center than the other four, with too little crop headroom
+       at desktop/tablet widths to reposition it via background-position. */
+    max-width: 44ch;
+    margin: 0 auto 26px;
     line-height: 1.6;
-    text-shadow: 0 1px 14px rgba(0, 0, 0, 0.55);
+    text-shadow: 0 1px 16px rgba(0, 0, 0, 0.65);
   }
 </style>

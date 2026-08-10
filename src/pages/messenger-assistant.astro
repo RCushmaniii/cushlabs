@@ -576,7 +576,7 @@ const themes = [
       ),
       url("/images/messenger-hero-v1.webp");
     background-size: cover;
-    background-position: 72% 32%;
+    background-position: 80% 32%;
     background-repeat: no-repeat;
   }
 
@@ -622,8 +622,13 @@ const themes = [
   .ma-sub {
     color: rgba(255, 255, 255, 0.92);
     font-size: clamp(16px, 2.2vw, 19px);
-    max-width: 52ch;
-    margin: 0 0 26px;
+    /* Narrower than the site's other 4 hero subheads (52ch): at ~1440px the
+       source photo has almost no crop headroom (its aspect ratio is nearly
+       identical to the viewport's), so background-position can't shift the
+       phone out of the way. A 52ch line reached far enough left to overlap
+       the phone's chat bubbles. 40ch keeps every line clear of it. */
+    max-width: 40ch;
+    margin: 0 auto 26px;
     line-height: 1.6;
     text-shadow: 0 1px 14px rgba(0, 0, 0, 0.5);
   }
