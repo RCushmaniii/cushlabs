@@ -118,24 +118,35 @@ softer contrast on mid-tone backgrounds and photo overlays.
 
 ### Files in this repo
 
-| File                                         | Size     | Use                                             |
-| -------------------------------------------- | -------- | ----------------------------------------------- |
-| `public/images/logo/cushlabs-logo.webp`      | 256²     | Header, footer, landing bar — **light theme**   |
-| `public/images/logo/cushlabs-logo-dark.webp` | 256²     | Same surfaces — **dark theme**                  |
-| `public/images/logo/cushlabs-logo.png`       | 512²     | Light master for external use                   |
-| `public/images/logo/cushlabs-logo-dark.png`  | 512²     | Dark master for external use                    |
-| `public/favicon.ico`                         | 16/32/48 | Browser tabs, bookmarks                         |
-| `public/favicon-32x32.png`                   | 32²      | Modern browsers                                 |
-| `public/favicon-16x16.png`                   | 16²      | Small-tab fallback                              |
-| `public/apple-touch-icon.png`                | 180²     | iOS home screen                                 |
-| `public/icon-512.png`                        | 512²     | PWA / Android                                   |
-| `public/images/og/cushlabs-og.png`           | 1200×630 | Social share card (mark + wordmark, near-black) |
+| File                                             | Size     | Use                                             |
+| ------------------------------------------------ | -------- | ----------------------------------------------- |
+| `public/images/logo/cushlabs-logo-on-light.webp` | 256²     | Header, footer, landing bar — **light theme**   |
+| `public/images/logo/cushlabs-logo-on-dark.webp`  | 256²     | Same surfaces — **dark theme**                  |
+| `public/images/logo/cushlabs-logo-on-light.png`  | 512²     | Light master for external use                   |
+| `public/images/logo/cushlabs-logo-on-dark.png`   | 512²     | Dark master for external use                    |
+| `public/favicon.ico`                             | 16/32/48 | Browser tabs, bookmarks                         |
+| `public/favicon-32x32.png`                       | 32²      | Modern browsers                                 |
+| `public/favicon-16x16.png`                       | 16²      | Small-tab fallback                              |
+| `public/apple-touch-icon.png`                    | 180²     | iOS home screen                                 |
+| `public/icon-512.png`                            | 512²     | PWA / Android                                   |
+| `public/images/og/cushlabs-og.png`               | 1200×630 | Social share card (mark + wordmark, near-black) |
 
 All logo files carry true alpha — the counter-space inside the C is transparent so the background
 shows through. **Favicons and touch icons are trimmed to the mark and re-padded ~6%**, so the glyph
 fills the tab rather than floating in the master's margin.
 
 **Naming convention:** files are named for the background they go on, not the chevron color.
+
+> **This convention is a cache-safety mechanism, not just a readability one — learned the hard way
+> on 2026-08-10.** The first cut of the chevron mark reused the retired mark's filenames
+> (`cushlabs-logo.webp`). Same URL, new bytes: every returning visitor's browser served the old 3D
+> hexagon from cache and never asked the server for it. Production was correct and the site still
+> looked unchanged. **Any future mark change must ship under new filenames.** Never overwrite a logo
+> at an existing path.
+>
+> Favicons are the exception — browsers probe `/favicon.ico` by path, so those keep conventional
+> names and are cache-busted with a `?v=N` query on the `<link>` tags in `BaseLayout.astro` and
+> `LandingLayout.astro`. **Bump N whenever the icon art changes**, and keep the two layouts in sync.
 
 ### Theme switching
 
