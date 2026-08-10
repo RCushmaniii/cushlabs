@@ -11,6 +11,7 @@ const included = [
   { title: "Google Business Profile audit", desc: "Weekly scoring of your GBP against competitors — photos, hours, description, categories, reviews" },
   { title: "One priority action per week", desc: "The single highest-leverage thing you can do this week — specific, not generic. Delivered to WhatsApp every Monday" },
   { title: "Review intelligence", desc: "What customers are saying, what themes are emerging, how your response rate compares to competitors" },
+  { title: "Google review management", desc: "Unanswered reviews are caught and a reply is drafted in your voice — you approve it and it posts to Google automatically" },
   { title: "Alert detection", desc: "Immediate notification when a competitor makes a significant move or your position drops sharply" },
   { title: "Bilingual reports (EN/ES)", desc: "Delivered in the language you prefer — English or Spanish" },
 ];
@@ -18,7 +19,6 @@ const included = [
 const notIncluded = [
   "Social media monitoring (Google Maps and Google Business Profile only)",
   "Paid ad campaign management or Google Ads optimization",
-  "Responding to reviews on your behalf (available as a separate add-on)",
 ];
 
 const bestFor = [
@@ -48,9 +48,15 @@ const comparison = [
        Profile review UI) span nearly the full frame, same composition challenge as the
        homepage hero — middle band is the darkest overlay stop, not the lightest, so the
        headline has solid backing wherever it lands. The screen shows a DRAFTED reply
-       waiting for her click, not an auto-sent one — keep copy scoped to "review
-       intelligence" (what's included), never to automated reply-sending (that's the
-       explicit notIncluded line below; it's a separate add-on). -->
+       waiting for her click, which is exactly right — the reply is drafted for the
+       owner and posts on her approval.
+
+       SCOPE CORRECTED 2026-08-09. This page used to exclude review replies as "a
+       separate add-on" while /pricing/ sold "Google review management — approve a
+       reply and it posts to Google automatically" as an included plan feature. Two
+       live pages contradicting each other on what the customer is buying. Robert
+       settled it: review management is IN the plan. Do not reintroduce it as an
+       add-on here without changing the pricing page in the same edit. -->
   <section class="ci-hero relative flex items-center text-slate-50">
     <Container size="md">
       <div class="max-w-3xl mx-auto text-center py-24 flex flex-col items-center">
