@@ -161,6 +161,43 @@ Documented in CLAUDE.md and memory `feedback_tailwind4_color_collision`. Custom 
 
 ## Session History
 
+## Session: 2026-08-10 — Chevron mark shipped; three cache lessons paid for in production
+
+### Accomplished
+
+- **New logo live** across header, footer, landing bar, favicons, apple-touch, PWA icon and the OG
+  card, with a light/dark swap (the chevron is near-black on one master, near-white on the other, so
+  one file loses it on one theme). Masters recoloured `#FD4C00` → `#ff6a3d` to match the site.
+- **Brand kit de-duplicated.** The local copy is now a 42-line pointer (#244); canonical is
+  `operating-system/cushlabs/{brand-kit,brand-mark}.md`, which the OS dashboard renders.
+- **IG avatar regenerated**, 512 masters dropped (they duplicate `operating-system/cushlabs/assets/`).
+
+### Decisions Made
+
+- **New art means a new filename — no exceptions.** Vercel serves `/public` `immutable, max-age=1y`.
+  Overwriting in place left the CDN serving the old bytes while production was correct. Measured:
+  deployment URL and cache-busted request returned the new file, plain URL returned the old one.
+- **`og:image` stays PNG.** FB/LinkedIn crawlers are unreliable with WebP `og:image`; WhatsApp uses
+  Meta's scraper. No upside either — crawlers fetch it, visitors never do.
+- Ported both rules plus the favicon `?v=N` rule into `brand-mark.md` (`operating-system` `d09ed6b`)
+  before deleting the local kit; grep confirmed the canonical files covered none of them.
+
+### Immediate Next Steps
+
+- [ ] Clerk login UX + enable Google auth.
+- [ ] Cut the onboarding survey ~75%; seed voice/facts by scraping the client's own Facebook replies,
+      then tweak with the client. First paying client would not complete the long form.
+
+### Technical Debt
+
+- `cushlabs-og.webp` and `cushlabs-signature.webp` are unreferenced but retained deliberately —
+  signatures already pasted into Gmail may point at either. Do not "clean up".
+
+### Open Questions / Blockers
+
+- **Never poll an asset URL right after a deploy.** A 404 fetched before propagation got cached at
+  the edge and forced the `-v2` → `-v3` rename ladder on art that never changed.
+
 ## Session: 2026-08-08 — REPO_PURPOSE.md, and the registry gap behind the underclaiming incident
 
 ### Accomplished
