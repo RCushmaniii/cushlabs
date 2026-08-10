@@ -43,32 +43,28 @@ const comparison = [
   description="A 24/7 AI chat assistant on your website — trained on your business, answers in English and Spanish, hands off to your team when needed. Free 1-week trial."
 >
 
-  <!-- Hero — no dedicated photo yet (unlike the other 4 service pages). Plain
-       gradient-orb treatment, matching how messenger-assistant.astro and
-       voice-agent.astro looked before their photo upgrades. Swap for the full-bleed
-       photo pattern once a hero image exists — see those two files for the CSS. -->
-  <section class="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden">
-    <div class="absolute inset-0 -z-10">
-      <div class="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-cush-orange/15 rounded-full blur-[120px]"></div>
-      <div class="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-cush-orange/10 rounded-full blur-[100px]"></div>
-    </div>
-
+  <!-- Hero — full-bleed photo, same mechanic as the other 4 service pages: the
+       photo IS the pitch. Real proof shot: a boutique's own website with the chat
+       widget open, answering a size-availability question. Unlike the homepage/
+       competitive-intelligence photos, this one has real open space above the
+       subject and laptop (ceiling/blurred racks), so the overlay follows the
+       ORIGINAL lighter-middle pattern from messenger-assistant.astro/whatsapp.astro
+       rather than the darkened-middle fix — verify against real viewports before
+       assuming that holds. -->
+  <section class="wc-hero relative flex items-center text-slate-50">
     <Container size="md">
-      <div class="text-center max-w-4xl mx-auto">
-        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cush-orange/10 border border-cush-orange/20 text-cush-orange text-sm font-semibold mb-8">
-          <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+      <div class="max-w-3xl mx-auto text-center py-24 flex flex-col items-center">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-white text-sm font-semibold mb-8 backdrop-blur-sm">
+          <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
           On your website, 24/7 · Bilingual EN/ES
         </div>
 
-        <h1 class="font-display text-fluid-4xl font-bold text-gray-900 dark:text-white mb-6 leading-tight tracking-tight">
+        <h1 class="wc-h1 font-display font-bold text-white">
           Intelligent Customer Support AI Chatbot
         </h1>
 
-        <p class="text-fluid-lg text-gray-600 dark:text-gray-300 mb-4 max-w-3xl mx-auto leading-relaxed">
+        <p class="wc-sub">
           A customer asks a question at 9 PM. By morning, they bought from your competitor. That stops today.
-        </p>
-        <p class="text-fluid-base text-gray-500 dark:text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed">
-          Bilingual EN/ES. Fully managed. Fast setup. Free 1-week trial.
         </p>
 
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -81,10 +77,14 @@ const comparison = [
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
           </a>
-          <a href="/services/" class="font-display font-medium text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white underline underline-offset-4 decoration-gray-300 hover:decoration-cush-orange transition-all">
+          <a href="/services/" class="font-display font-medium text-slate-300 hover:text-white underline underline-offset-4 decoration-white/30 hover:decoration-cush-orange transition-all">
             Or see all services →
           </a>
         </div>
+
+        <p class="mt-9 text-sm font-display font-medium text-slate-300">
+          Bilingual EN/ES. Fully managed. Fast setup. Free 1-week trial.
+        </p>
       </div>
     </Container>
   </section>
@@ -324,3 +324,67 @@ const comparison = [
   })} />
 
 </BaseLayout>
+
+<style>
+  /* Same hero mechanic as messenger-assistant.astro/whatsapp.astro/voice-agent.astro/
+     competitive-intelligence.astro. This photo has real open space above the subject
+     and laptop (blurred ceiling/racks), so it uses the ORIGINAL lighter-middle overlay
+     pattern rather than the darkened-middle fix used on home2/Hero.astro and
+     competitive-intelligence.astro. -v1 suffix is load-bearing: vercel.json serves
+     /images/(.*) as immutable for a year, so any replacement needs a NEW FILENAME. */
+  .wc-hero {
+    min-height: 100svh;
+    background-color: #14110d;
+    background-image:
+      linear-gradient(
+        to bottom,
+        rgba(20, 17, 13, 0.64) 0%,
+        rgba(20, 17, 13, 0.56) 45%,
+        rgba(20, 17, 13, 0.86) 100%
+      ),
+      url("/images/website-chatbot-hero-v1.webp");
+    background-size: cover;
+    background-position: 62% 30%;
+    background-repeat: no-repeat;
+  }
+
+  @media (max-aspect-ratio: 1 / 1) {
+    .wc-hero {
+      min-height: 82svh;
+      background-position: 46% 26%;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .wc-hero {
+      min-height: 88svh;
+      background-position: 48% 24%;
+      background-image:
+        linear-gradient(
+          to bottom,
+          rgba(20, 17, 13, 0.78) 0%,
+          rgba(20, 17, 13, 0.7) 45%,
+          rgba(20, 17, 13, 0.9) 100%
+        ),
+        url("/images/website-chatbot-hero-v1.webp");
+    }
+  }
+
+  .wc-h1 {
+    font-size: clamp(30px, 5.4vw, 50px);
+    line-height: 1.1;
+    letter-spacing: -0.028em;
+    max-width: 18ch;
+    margin: 0 0 16px;
+    text-shadow: 0 2px 22px rgba(0, 0, 0, 0.5);
+  }
+
+  .wc-sub {
+    color: rgba(255, 255, 255, 0.92);
+    font-size: clamp(16px, 2.2vw, 19px);
+    max-width: 52ch;
+    margin: 0 0 26px;
+    line-height: 1.6;
+    text-shadow: 0 1px 14px rgba(0, 0, 0, 0.55);
+  }
+</style>
