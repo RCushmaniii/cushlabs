@@ -118,22 +118,36 @@ softer contrast on mid-tone backgrounds and photo overlays.
 
 ### Files in this repo
 
-| File                                             | Size     | Use                                             |
-| ------------------------------------------------ | -------- | ----------------------------------------------- |
-| `public/images/logo/cushlabs-logo-on-light.webp` | 256²     | Header, footer, landing bar — **light theme**   |
-| `public/images/logo/cushlabs-logo-on-dark.webp`  | 256²     | Same surfaces — **dark theme**                  |
-| `public/images/logo/cushlabs-logo-on-light.png`  | 512²     | Light master for external use                   |
-| `public/images/logo/cushlabs-logo-on-dark.png`   | 512²     | Dark master for external use                    |
-| `public/favicon.ico`                             | 16/32/48 | Browser tabs, bookmarks                         |
-| `public/favicon-32x32.png`                       | 32²      | Modern browsers                                 |
-| `public/favicon-16x16.png`                       | 16²      | Small-tab fallback                              |
-| `public/apple-touch-icon.png`                    | 180²     | iOS home screen                                 |
-| `public/icon-512.png`                            | 512²     | PWA / Android                                   |
-| `public/images/og/cushlabs-og.png`               | 1200×630 | Social share card (mark + wordmark, near-black) |
+| File                                             | Size     | Use                                                                 |
+| ------------------------------------------------ | -------- | ------------------------------------------------------------------- |
+| `public/images/logo/cushlabs-logo-on-light.webp` | 256²     | Header, footer, landing bar — **light theme**                       |
+| `public/images/logo/cushlabs-logo-on-dark.webp`  | 256²     | Same surfaces — **dark theme**                                      |
+| `public/images/logo/cushlabs-logo-on-light.png`  | 512²     | Light master for external use                                       |
+| `public/images/logo/cushlabs-logo-on-dark.png`   | 512²     | Dark master for external use                                        |
+| `public/favicon.ico`                             | 16/32/48 | Browser tabs, bookmarks                                             |
+| `public/favicon-32x32.png`                       | 32²      | Modern browsers                                                     |
+| `public/favicon-16x16.png`                       | 16²      | Small-tab fallback                                                  |
+| `public/apple-touch-icon.png`                    | 180²     | iOS home screen                                                     |
+| `public/icon-512.png`                            | 512²     | PWA / Android                                                       |
+| `public/images/og/cushlabs-og.png`               | 1200×630 | Social share card — **the `og:image`. Keep it PNG.**                |
+| `public/images/og/cushlabs-og.webp`              | 1200×630 | Same art, for the **email signature** (`docs/email-signature.html`) |
 
 All logo files carry true alpha — the counter-space inside the C is transparent so the background
 shows through. **Favicons and touch icons are trimmed to the mark and re-padded ~6%**, so the glyph
 fills the tab rather than floating in the master's margin.
+
+> **The `og:image` stays PNG. Do not convert it to WebP.** Facebook and LinkedIn crawlers are
+> unreliable with WebP `og:image` and can fall back to no preview at all — those two are the primary
+> distribution channels, and WhatsApp uses Meta's scraper. There is also nothing to gain: the
+> `og:image` is fetched by crawlers, never by a visitor, so it is not on any human's rendering path
+> and shrinking it buys no page speed. All risk, no upside.
+>
+> **`cushlabs-og.webp` is the one deliberate same-filename overwrite in this kit.** It is consumed by
+> `docs/email-signature.html`, which is already pasted into a live Gmail signature pointing at that
+> exact URL. Renaming it would break the signature in every email already sent and every client that
+> has it saved. The logo naming rule above exists because browsers cache aggressively; here the
+> consumer is outside the repo and cannot be updated, so the URL must stay stable and the bytes
+> change instead. Regenerate it from `cushlabs-og.png` whenever the card changes.
 
 **Naming convention:** files are named for the background they go on, not the chevron color.
 
