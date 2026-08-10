@@ -120,7 +120,7 @@ softer contrast on mid-tone backgrounds and photo overlays.
 
 | File                                                | Size     | Use                                                                 |
 | --------------------------------------------------- | -------- | ------------------------------------------------------------------- |
-| `public/images/logo/cushlabs-logo-on-light-v2.webp` | 256²     | Header, footer, landing bar — **light theme**                       |
+| `public/images/logo/cushlabs-logo-on-light-v3.webp` | 256²     | Header, footer, landing bar — **light theme**                       |
 | `public/images/logo/cushlabs-logo-on-dark.webp`     | 256²     | Same surfaces — **dark theme**                                      |
 | `public/images/logo/cushlabs-logo-on-light.png`     | 512²     | Light master for external use                                       |
 | `public/images/logo/cushlabs-logo-on-dark.png`      | 512²     | Dark master for external use                                        |
@@ -171,18 +171,27 @@ immutable`, so the edge kept returning the old bytes — verified: the deploymen
 > names and are cache-busted with a `?v=N` query on the `<link>` tags in `BaseLayout.astro` and
 > `LandingLayout.astro`. **Bump N whenever the icon art changes**, and keep the two layouts in sync.
 >
-> **A new filename can still get poisoned before it ever serves real bytes.** `cushlabs-logo-on-light.webp`
-> (the very file this rule produced) went live 2026-08-10 07:38 UTC and a request landed in the few
-> seconds before Vercel's edge finished propagating the deploy. That request got a 404, and Cloudflare
-> cached it with `Cache-Control: public, max-age=31536000, immutable` — Cloudflare obeys the immutable
-> directive on error responses too, so the 404 froze for the same year a good response would have.
-> Verified via `curl -sI -L`: `cf-cache-status: HIT`, `Age` climbing, `last-modified` stamped seconds
-> after the commit. No Cloudflare token in this repo's `.env` carries Cache Purge scope (`DNS_API_TOKEN`
-> is Zone DNS + Email Routing only — confirmed by attempting the purge, which returned "Authentication
-> error"), so the only fix from inside the repo is the same one that fixes stale-cache: a filename the
-> edge has never seen. Renamed to `cushlabs-logo-on-light-v2.webp`. **If a freshly-renamed asset 404s
-> right after a deploy, don't wait for the cache to expire — rename again rather than debugging the
-> deploy**, since the origin is very likely already correct.
+> **A new filename can still get poisoned before it ever serves real bytes — and checking too soon is
+> what poisons it.** `cushlabs-logo-on-light.webp` (the very file this rule produced) went live
+> 2026-08-10 07:38 UTC and a request landed in the few seconds before Vercel's edge finished
+> propagating the deploy. That request got a 404, and Cloudflare cached it with
+> `Cache-Control: public, max-age=31536000, immutable` — Cloudflare obeys the immutable directive on
+> error responses too, so the 404 froze for the same year a good response would have. Verified via
+> `curl -sI -L`: `cf-cache-status: HIT`, `Age` climbing, `last-modified` stamped seconds after the
+> commit. No Cloudflare token in this repo's `.env` carries Cache Purge scope (`DNS_API_TOKEN` is
+> Zone DNS + Email Routing only — confirmed by attempting the purge, which returned "Authentication
+> error"), so the fix was the same one that fixes stale-cache: rename to a URL the edge has never
+> seen (`cushlabs-logo-on-light-v2.webp`).
+>
+> **It happened again immediately, self-inflicted.** The very first verification request against
+> `cushlabs-logo-on-light-v2.webp` — an automated `curl` loop against `www.cushlabs.ai` started right
+> after the merge — landed inside that same propagation window and poisoned the _replacement_ file's
+> URL too. **The rule: never `curl`/fetch the production custom domain (`cushlabs.ai` /
+> `www.cushlabs.ai`) as a post-deploy check.** Instead verify the deployment's own `*.vercel.app` URL
+> (from `vercel list_deployments` / `vercel.com` dashboard — it bypasses Cloudflare entirely, so it
+> cannot poison anything and confirms the bytes are correct) and give the custom domain a real buffer
+> — a couple of minutes untouched — before the first request through Cloudflare, ideally a manual
+> browser hard-refresh rather than a scripted poll. Current file: `cushlabs-logo-on-light-v3.webp`.
 
 ### Theme switching
 
@@ -299,10 +308,10 @@ mathematically perfect symmetry and a file under 2 KB.
 
 ## 8. Version History
 
-| Version | Change                                                                                                                                                                                                                                                                |
-| ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **1.1** | Brand orange reconciled to the site's `#ff6a3d`; masters recoloured. Favicon package shipped. Dark/light variants wired into Header, Footer and LandingLayout. On-light webp renamed to `-v2` after a post-deploy 404 got cached immutable on Cloudflare's edge (§4). |
-| 1.0     | Chevron mark adopted. On-light and on-dark PNG variants established at `#FD4C00`.                                                                                                                                                                                     |
-| —       | **Retired:** 3D isometric hexagon in blue/teal/orange gradient. Three competing colors meant owning none; isometric gradient cubes read as dated crypto-era language; didn't survive flattening.                                                                      |
-| —       | **Rejected:** solid triangle. Reads unavoidably as a play button, pulling the brand toward media/video, and one of the most common icon constructions in existence.                                                                                                   |
-| —       | **Rejected:** rounded paper-plane arrow. Interior slit measured ~2% of mark width and collapsed below 32px; rounded joints conflicted with the hard-edged hexagon; over-anchored the brand to messaging.                                                              |
+| Version | Change                                                                                                                                                                                                                                                                                                                                                     |
+| ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **1.1** | Brand orange reconciled to the site's `#ff6a3d`; masters recoloured. Favicon package shipped. Dark/light variants wired into Header, Footer and LandingLayout. On-light webp renamed `-v2` then `-v3` after two rounds of a post-deploy 404 caching immutable on Cloudflare's edge, the second self-inflicted by checking the custom domain too soon (§4). |
+| 1.0     | Chevron mark adopted. On-light and on-dark PNG variants established at `#FD4C00`.                                                                                                                                                                                                                                                                          |
+| —       | **Retired:** 3D isometric hexagon in blue/teal/orange gradient. Three competing colors meant owning none; isometric gradient cubes read as dated crypto-era language; didn't survive flattening.                                                                                                                                                           |
+| —       | **Rejected:** solid triangle. Reads unavoidably as a play button, pulling the brand toward media/video, and one of the most common icon constructions in existence.                                                                                                                                                                                        |
+| —       | **Rejected:** rounded paper-plane arrow. Interior slit measured ~2% of mark width and collapsed below 32px; rounded joints conflicted with the hard-edged hexagon; over-anchored the brand to messaging.                                                                                                                                                   |
