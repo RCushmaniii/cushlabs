@@ -1,0 +1,326 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Container from "../../components/layout/Container.astro";
+import FinalCTA from "../../components/services2/FinalCTA.astro";
+
+const locale = "es" as const;
+
+const included = [
+  { title: "Configuración y entrenamiento personalizado", desc: "Audito tu contenido existente (documentos, preguntas frecuentes, políticas, conversaciones de WhatsApp) y construyo una base de conocimiento estructurada que tu asistente consulta" },
+  { title: "Asistente con respuestas validadas", desc: "Respuestas basadas en tus fuentes aprobadas, no en el internet abierto. Barreras de seguridad integradas para evitar alucinaciones" },
+  { title: "Salida bilingüe (EN/ES)", desc: "Respuestas profesionales en ambos idiomas, alineadas con la voz y el tono de tu marca" },
+  { title: "Flujo de transferencia humana", desc: "Enruta a tu equipo con todo el contexto cuando se necesita criterio humano — sin clientes frustrados repitiendo lo mismo" },
+  { title: "Captura y calificación de leads", desc: "Los visitantes fuera de horario reciben atención de inmediato. Se captura su información de contacto, se califica su intención y se enruta a tu proceso de ventas" },
+  { title: "Reporte semanal de desempeño", desc: "Qué preguntan los clientes, dónde se atoran, qué contenido falta y cómo está desempeñándose el asistente" },
+  { title: "Ajuste mensual", desc: "Refino el asistente conforme tu negocio evoluciona — nuevos productos, nuevos precios, nuevas temporadas" },
+  { title: "Instalación en tu sitio web (o también en Facebook Messenger)", desc: "Documentación operativa completa para que tu equipo pueda gestionarlo" },
+];
+
+const notIncluded = [
+  "Integración con CRMs/ERPs personalizados (se cotiza aparte)",
+  "Creación de contenido nuevo — el asistente surte TU conocimiento existente, no crea texto de marketing",
+];
+
+const bestFor = [
+  "Equipos de atención al cliente que manejan más de 500 consultas al mes",
+  "Negocios que pierden leads fuera de horario o en fines de semana",
+  "Empresas con preguntas repetitivas de alto volumen (precios, políticas, estatus de pedidos)",
+  "Equipos que atienden a bases de clientes bilingües (EN/ES)",
+];
+
+const comparison = [
+  ["Costo mensual", "$8,000–$15,000 MXN + prestaciones", "Desde $1,990 MXN/mes"],
+  ["Horas cubiertas", "8 horas/día, 5 días a la semana", "24/7, los 365 días del año"],
+  ["Tiempo de respuesta", "Minutos a horas (si está en línea)", "Segundos, siempre"],
+  ["Bilingüe EN/ES", "Depende a quién contrates", "Siempre, automáticamente"],
+  ["Consistencia en respuestas", "Varía según la persona y el día", "Basada en tus fuentes aprobadas, siempre"],
+  ["Escala con el volumen", "Necesitas contratar a alguien más", "Conversaciones ilimitadas (uso justo)"],
+];
+---
+
+<BaseLayout
+  title="Chatbot Inteligente de Atención al Cliente para tu Sitio Web | CushLabs.ai"
+  description="Un asistente de IA 24/7 en tu sitio web — entrenado con tu negocio, responde en inglés y español y transfiere a tu equipo. Prueba gratis 1 semana."
+>
+
+  <!-- Hero — sin foto dedicada todavía (a diferencia de los otros 4 servicios).
+       Tratamiento simple con degradado, igual a como se veían messenger-assistant.astro
+       y voice-agent.astro antes de sus fotos. Cambiar al patrón de foto a sangre en
+       cuanto exista una imagen — ver esos dos archivos para el CSS. -->
+  <section class="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden">
+    <div class="absolute inset-0 -z-10">
+      <div class="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-cush-orange/15 rounded-full blur-[120px]"></div>
+      <div class="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-cush-orange/10 rounded-full blur-[100px]"></div>
+    </div>
+
+    <Container size="md">
+      <div class="text-center max-w-4xl mx-auto">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cush-orange/10 border border-cush-orange/20 text-cush-orange text-sm font-semibold mb-8">
+          <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+          Un widget de chat para tu sitio web — no otra página de Facebook
+        </div>
+
+        <h1 class="font-display text-fluid-4xl font-bold text-gray-900 dark:text-white mb-6 leading-tight tracking-tight">
+          Chatbot Inteligente de Atención al Cliente
+        </h1>
+
+        <p class="text-fluid-lg text-gray-600 dark:text-gray-300 mb-4 max-w-3xl mx-auto leading-relaxed">
+          Un cliente pregunta a las 9 de la noche. Para la mañana, ya compró con tu competidor. Eso se acaba hoy.
+        </p>
+        <p class="text-fluid-base text-gray-500 dark:text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed">
+          Bilingüe EN/ES. Totalmente gestionado. Configuración rápida. Prueba gratis de 1 semana.
+        </p>
+
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a
+            href="/es/reservar/"
+            class="group inline-flex items-center gap-2 px-8 py-4 bg-cush-orange text-white font-display font-semibold rounded-lg hover:bg-cush-orange/90 transition-all duration-300 shadow-lg shadow-cush-orange/25 hover:shadow-xl hover:shadow-cush-orange/30 text-lg"
+          >
+            Agendar Llamada
+            <svg class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+          <a href="/es/services/" class="font-display font-medium text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white underline underline-offset-4 decoration-gray-300 hover:decoration-cush-orange transition-all">
+            O ve todos los servicios →
+          </a>
+        </div>
+      </div>
+    </Container>
+  </section>
+
+  <!-- Problema -->
+  <section class="py-20 md:py-28 bg-gray-50 dark:bg-gray-900/30 border-y border-gray-100 dark:border-gray-800">
+    <Container size="lg">
+      <div class="max-w-3xl">
+        <h2 class="font-display font-bold text-3xl md:text-4xl text-gray-900 dark:text-white mb-8 leading-tight tracking-tight">
+          Tu equipo no puede estar en todos lados, todo el tiempo
+        </h2>
+        <div class="space-y-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+          <p>
+            Tu equipo responde las mismas preguntas docenas de veces al día. Los clientes esperan. Los leads preguntan a las 9pm y nunca regresan. No puedes contratar lo suficientemente rápido, y la gente que sí contratas pasa su primer mes aprendiendo respuestas que viven en documentos dispersos.
+          </p>
+          <p>
+            Un community manager cuesta $8,000–$15,000 MXN/mes — y solo trabaja 8 horas al día. Tu asistente de IA trabaja 24/7 por una fracción de eso.
+          </p>
+        </div>
+      </div>
+    </Container>
+  </section>
+
+  <!-- Solución -->
+  <section class="py-20 md:py-32">
+    <Container size="lg">
+      <div class="grid lg:grid-cols-12 gap-12 lg:gap-16">
+
+        <!-- Left: narrativa -->
+        <div class="lg:col-span-7 space-y-12">
+          <div>
+            <h2 class="font-display font-bold text-3xl md:text-5xl text-gray-900 dark:text-white mb-4 leading-tight tracking-tight">
+              Un asistente que de verdad conoce tu negocio
+            </h2>
+            <p class="text-xl md:text-2xl text-cush-orange font-medium leading-relaxed mb-8">
+              No es un chatbot genérico. No es "no entendí eso."
+            </p>
+            <div class="prose prose-lg dark:prose-invert max-w-none">
+              <div class="text-gray-900 dark:text-gray-200 bg-cush-orange/5 border-l-4 border-cush-orange pl-6 py-4 rounded-r-lg space-y-3">
+                <p>Un asistente de IA entrenado con EL conocimiento de TU negocio — tus documentos, tus políticas, tus precios, la información de tus productos — que responde las preguntas de tus clientes con precisión, en inglés y español, las 24 horas.</p>
+                <p>No es un chatbot genérico. Es un sistema que conoce tu negocio, valida sus respuestas contra tus fuentes aprobadas y transfiere a tu equipo cuando se necesita criterio humano.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Lo que significa -->
+          <div>
+            <h3 class="font-display font-semibold text-2xl text-gray-900 dark:text-white mb-6">
+              Lo que significa para tu negocio
+            </h3>
+            <div class="space-y-5">
+              {[
+                { title: "Dejas de perder leads fuera de horario.", body: "Quien pregunta a las 9pm recibe una respuesta real y precisa — no un formulario, no silencio." },
+                { title: "Dejas de contestar las mismas preguntas.", body: "Precios, políticas, estatus de pedidos, horarios — tu asistente lo maneja todo, basado en lo que realmente aprobaste." },
+                { title: "Habla su idioma.", body: "¿Visitante en español? Español. ¿En inglés? Inglés. Automático, natural." },
+                { title: "Sabe cuándo llamarte.", body: "Cuando una conversación realmente necesita a una persona, transfiere con todo el contexto — sin que el cliente repita nada." },
+                { title: "Nunca inventa cosas.", body: "Las respuestas están basadas en tus fuentes aprobadas, con barreras contra alucinaciones — no en el internet abierto adivinando por ti." },
+              ].map(item => (
+                <div class="flex gap-4">
+                  <svg class="w-5 h-5 text-green-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <div>
+                    <strong class="text-gray-900 dark:text-white font-semibold">{item.title}</strong>
+                    {" "}<span class="text-gray-600 dark:text-gray-400">{item.body}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- Ideal Para -->
+          <div>
+            <h3 class="font-display font-semibold text-sm text-gray-900 dark:text-white mb-6 uppercase tracking-wider">
+              Ideal Para:
+            </h3>
+            <div class="grid sm:grid-cols-2 gap-4">
+              {bestFor.map(item => (
+                <div class="flex gap-3">
+                  <svg class="w-5 h-5 text-green-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span class="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: specs -->
+        <div class="lg:col-span-5 space-y-8">
+
+          <!-- Precio -->
+          <div class="bg-gray-900 dark:bg-gray-800 rounded-2xl p-8 shadow-xl text-gray-300">
+            <div class="mb-6 pb-6 border-b border-gray-700">
+              <h4 class="font-display font-semibold text-white mb-2 uppercase text-xs tracking-wider">Línea de Tiempo</h4>
+              <div class="text-lg text-white font-medium">Configuración rápida — en vivo pocos días después de tu formulario. Llamada → entrenamiento → pruebas → lanzamiento.</div>
+            </div>
+            <div class="mb-4">
+              <h4 class="font-display font-semibold text-white mb-2 uppercase text-xs tracking-wider">Inversión</h4>
+              <div class="text-base leading-relaxed">
+                Incluido en <span class="text-white font-bold">todos los planes — desde $1,990 MXN/mes</span>. Conversaciones ilimitadas (uso justo), totalmente gestionado. Incluye configuración, entrenamiento, reportes semanales y ajuste mensual. Sin cuota de instalación. Sin contrato.
+              </div>
+            </div>
+            <p class="text-xs text-cush-orange font-medium mt-4 italic">Prueba gratis de 1 semana. Cancela cuando quieras.</p>
+            <div class="mt-8">
+              <a href="/es/reservar/" class="block w-full text-center px-6 py-3 bg-cush-orange text-white font-display font-semibold rounded-lg hover:bg-cush-orange/90 transition-colors duration-300">
+                Agendar Llamada
+              </a>
+            </div>
+          </div>
+
+          <!-- Incluye -->
+          <div>
+            <h3 class="font-display font-semibold text-xl text-gray-900 dark:text-white mb-6">Cada plan incluye</h3>
+            <ul class="space-y-4">
+              {included.map(item => (
+                <li class="flex gap-4">
+                  <div class="w-1.5 h-1.5 bg-cush-orange rounded-full mt-2.5 shrink-0"></div>
+                  <div>
+                    <strong class="text-gray-900 dark:text-white font-semibold">{item.title}</strong> — <span class="text-gray-600 dark:text-gray-400 text-sm">{item.desc}</span>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <!-- No incluye -->
+          <div class="pt-6 border-t border-gray-200 dark:border-gray-800">
+            <h3 class="font-display font-semibold text-base text-gray-900 dark:text-white mb-4">Lo Que NO Incluye</h3>
+            <ul class="space-y-2">
+              {notIncluded.map(item => (
+                <li class="flex gap-3 text-sm text-gray-500 dark:text-gray-500">
+                  <svg class="w-4 h-4 text-gray-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </Container>
+  </section>
+
+  <!-- Comparación -->
+  <section class="py-20 md:py-28 bg-gray-50 dark:bg-gray-900/30 border-y border-gray-100 dark:border-gray-800">
+    <Container size="md">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="font-display font-bold text-3xl md:text-4xl text-gray-900 dark:text-white mb-8 leading-tight tracking-tight text-center">
+          Community Manager vs. Asistente de IA
+        </h2>
+        <div class="overflow-x-auto rounded-xl border border-gray-200 dark:border-gray-800">
+          <table class="w-full text-left">
+            <thead class="bg-gray-100 dark:bg-gray-800/60">
+              <tr>
+                <th class="px-6 py-4 font-display font-semibold text-sm uppercase tracking-wider text-gray-500 dark:text-gray-400"></th>
+                <th class="px-6 py-4 font-display font-semibold text-sm uppercase tracking-wider text-gray-500 dark:text-gray-400">Community Manager</th>
+                <th class="px-6 py-4 font-display font-semibold text-sm uppercase tracking-wider text-cush-orange">Asistente de IA</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200 dark:divide-gray-800 bg-white dark:bg-gray-900/30">
+              {comparison.map(([label, before, after]) => (
+                <tr>
+                  <td class="px-6 py-4 font-display font-semibold text-gray-900 dark:text-white">{label}</td>
+                  <td class="px-6 py-4 text-gray-600 dark:text-gray-400">{before}</td>
+                  <td class="px-6 py-4 text-gray-900 dark:text-white font-medium">{after}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </Container>
+  </section>
+
+  <!-- Por qué CushLabs -->
+  <section class="py-20 md:py-28">
+    <Container size="md">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="font-display font-bold text-3xl md:text-4xl text-gray-900 dark:text-white mb-8 leading-tight tracking-tight">
+          Por qué CushLabs y no una plataforma de chatbots genérica
+        </h2>
+        <div class="space-y-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed text-left">
+          <p>
+            Las plataformas genéricas te dan un constructor. CushLabs te da un asistente desplegado, listo para producción — construido, configurado, probado y monitoreado. Yo me encargo de la configuración, la ingesta de contenido y la confiabilidad continua. Tú obtienes los resultados.
+          </p>
+          <p>
+            Ya resolví los problemas difíciles: soporte bilingüe, respuestas precisas basadas en el contenido real de tu negocio, transferencia elegante a humanos, uptime 24/7 con monitoreo de errores. No pagas para que yo lo descubra — ya lo descubrí.
+          </p>
+        </div>
+        <div class="mt-10">
+          <a
+            href="/es/reservar/"
+            class="inline-flex items-center gap-2 px-8 py-4 bg-cush-orange text-white font-display font-semibold rounded-lg hover:bg-cush-orange/90 transition-all duration-300 shadow-lg shadow-cush-orange/25 hover:shadow-xl text-lg"
+          >
+            Empieza Tu Prueba Gratis de 1 Semana
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </Container>
+  </section>
+
+  <FinalCTA locale={locale} />
+
+  <script type="application/ld+json" is:inline set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "Cómo agregar un chatbot de atención al cliente con IA a tu sitio web",
+    "description": "Despliega un asistente bilingüe de atención al cliente en tu sitio web en 3 pasos — totalmente gestionado, sin configuración técnica.",
+    "estimatedCost": { "@type": "MonetaryAmount", "currency": "MXN", "value": "1990" },
+    "step": [
+      {
+        "@type": "HowToStep",
+        "position": 1,
+        "name": "Agenda una llamada de descubrimiento gratuita",
+        "text": "Dedico 20 minutos a conocer tu negocio: las preguntas más comunes de tus clientes, tus políticas y precios, y el tono que quieres que use la IA. Sin compromiso."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 2,
+        "name": "Construyo y entreno tu asistente de IA",
+        "text": "Tu asistente se entrena con el conocimiento específico de tu negocio y se conecta a tu sitio web. Yo manejo toda la configuración técnica. Tiempo de entrega típico: 5-7 días hábiles."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 3,
+        "name": "Entra en operación — tu asistente maneja cada conversación",
+        "text": "Tu IA responde al instante a cada visitante de tu sitio web 24/7 en inglés y español. Cuando un cliente está listo para comprar o necesita una persona, transfiere con todo el contexto."
+      }
+    ]
+  })} />
+
+</BaseLayout>
