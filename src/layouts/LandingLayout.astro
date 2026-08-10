@@ -89,10 +89,11 @@ const privacyLabel = isEn ? "Privacy Policy" : "Aviso de privacidad";
     <meta name="author" content="Robert Cushman, CushLabs.ai" />
     <meta name="generator" content={Astro.generator} />
 
-    <link rel="icon" href="/favicon.ico" sizes="48x48" />
-    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32" />
-    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <!-- ?v=2 — see the note in BaseLayout.astro. Keep the two in sync. -->
+    <link rel="icon" href="/favicon.ico?v=2" sizes="48x48" />
+    <link rel="icon" type="image/png" href="/favicon-32x32.png?v=2" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/favicon-16x16.png?v=2" sizes="16x16" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2" />
 
     <script
       src="https://analytics.ahrefs.com/analytics.js"
@@ -116,14 +117,14 @@ const privacyLabel = isEn ? "Privacy Policy" : "Aviso de privacidad";
       class="relative z-10 flex items-center justify-center py-5 border-b border-gray-100 dark:border-gray-800"
     >
       <img
-        src="/images/logo/cushlabs-logo.webp"
+        src="/images/logo/cushlabs-logo-on-light.webp"
         alt="CushLabs"
         width="256"
         height="256"
         class="h-9 w-auto dark:hidden"
       />
       <img
-        src="/images/logo/cushlabs-logo-dark.webp"
+        src="/images/logo/cushlabs-logo-on-dark.webp"
         alt="CushLabs"
         width="256"
         height="256"

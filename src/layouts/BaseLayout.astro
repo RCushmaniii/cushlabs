@@ -153,10 +153,14 @@ const ogLocaleAlternate = locale === "es" ? "en_US" : "es_MX";
     <meta name="generator" content={Astro.generator} />
 
     <!-- Favicon -->
-    <link rel="icon" href="/favicon.ico" sizes="48x48" />
-    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32" />
-    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <!-- ?v=2 busts the cached 3D-hexagon icons. Favicons keep their
+         conventional filenames (browsers probe /favicon.ico directly), so a
+         version query is the only way to force a refetch after a mark change.
+         Bump this whenever the icon art changes. -->
+    <link rel="icon" href="/favicon.ico?v=2" sizes="48x48" />
+    <link rel="icon" type="image/png" href="/favicon-32x32.png?v=2" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/favicon-16x16.png?v=2" sizes="16x16" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2" />
     <link rel="manifest" href="/site.webmanifest" />
     {rssHref && (
       <link rel="alternate" type="application/rss+xml" title="CushLabs Blog" href={rssHref} />
@@ -192,7 +196,7 @@ const ogLocaleAlternate = locale === "es" ? "en_US" : "es_MX";
             knowsLanguage: ["en", "es"],
             logo: {
               "@type": "ImageObject",
-              url: "https://www.cushlabs.ai/images/logo/cushlabs-logo.webp",
+              url: "https://www.cushlabs.ai/images/logo/cushlabs-logo-on-light.webp",
               width: 512,
               height: 512,
             },
