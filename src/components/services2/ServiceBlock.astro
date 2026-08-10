@@ -12,6 +12,8 @@ const { locale, id, isAlternate = false } = Astro.props;
 // This component handles the rendering logic for all 5 services by selecting the right ID.
 const data = {
   'support-assistants': {
+    learnMoreUrl: { en: '/website-chatbot/', es: '/es/website-chatbot/' },
+    learnMoreLabel: { en: 'Full service details →', es: 'Ver detalles completos →' },
     en: {
       heading: "Intelligent Customer Support AI Chatbot",
       subheading: "A customer asks a question at 9 PM. By morning, they bought from your competitor. That stops today.",

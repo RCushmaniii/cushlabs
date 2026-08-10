@@ -1,0 +1,326 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Container from "../components/layout/Container.astro";
+import FinalCTA from "../components/services2/FinalCTA.astro";
+
+const locale = "en" as const;
+
+const included = [
+  { title: "Custom setup and training", desc: "I audit your existing content (docs, FAQs, policies, WhatsApp threads) and build a structured knowledge base your assistant references" },
+  { title: "AI assistant with validated responses", desc: "Answers grounded in your approved sources, not the open internet. Built-in guardrails to prevent hallucination" },
+  { title: "Bilingual output (EN/ES)", desc: "Professional responses in both languages, matched to your brand voice and tone" },
+  { title: "Human handoff flow", desc: "Routes to your team with full context when human judgment is needed — no frustrated customers repeating themselves" },
+  { title: "Lead capture and qualification", desc: "After-hours visitors get engaged immediately. Contact info captured, intent qualified, routed to your sales process" },
+  { title: "Weekly performance report", desc: "What customers are asking, where they get stuck, what content is missing, and how the assistant is performing" },
+  { title: "Monthly tuning", desc: "I refine the assistant as your business evolves — new products, new pricing, new seasons" },
+  { title: "Deployment on your website (or Facebook Messenger too)", desc: "Full operational documentation so your team can manage it" },
+];
+
+const notIncluded = [
+  "Integration with custom CRMs or ERPs (scoped separately if needed)",
+  "Generating new content — the assistant surfaces YOUR existing knowledge, it doesn't create marketing copy",
+];
+
+const bestFor = [
+  "Customer support teams handling 500+ inquiries/month",
+  "Businesses losing leads after hours or on weekends",
+  "Companies with high-volume repetitive questions (pricing, policies, order status)",
+  "Teams serving bilingual (EN/ES) customer bases",
+];
+
+const comparison = [
+  ["Monthly cost", "$4,000–$6,000 MXN + benefits", "From $1,990 MXN/mo"],
+  ["Hours covered", "8 hours/day, 5 days/week", "24/7, 365 days/year"],
+  ["Response time", "Minutes to hours (when online)", "Seconds, every time"],
+  ["Bilingual EN/ES", "Depends who you hire", "Always, automatically"],
+  ["Answer consistency", "Varies by person and mood", "Grounded in your approved sources, every time"],
+  ["Scales with volume", "Needs another hire", "Unlimited conversations (fair use)"],
+];
+---
+
+<BaseLayout
+  title="AI Customer Support Chatbot for Your Website | CushLabs.ai"
+  description="A 24/7 AI chat assistant on your website — trained on your business, answers in English and Spanish, hands off to your team when needed. Free 1-week trial."
+>
+
+  <!-- Hero — no dedicated photo yet (unlike the other 4 service pages). Plain
+       gradient-orb treatment, matching how messenger-assistant.astro and
+       voice-agent.astro looked before their photo upgrades. Swap for the full-bleed
+       photo pattern once a hero image exists — see those two files for the CSS. -->
+  <section class="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden">
+    <div class="absolute inset-0 -z-10">
+      <div class="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-cush-orange/15 rounded-full blur-[120px]"></div>
+      <div class="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-cush-orange/10 rounded-full blur-[100px]"></div>
+    </div>
+
+    <Container size="md">
+      <div class="text-center max-w-4xl mx-auto">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cush-orange/10 border border-cush-orange/20 text-cush-orange text-sm font-semibold mb-8">
+          <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+          A chat widget for your website — not another Facebook page
+        </div>
+
+        <h1 class="font-display text-fluid-4xl font-bold text-gray-900 dark:text-white mb-6 leading-tight tracking-tight">
+          Intelligent Customer Support AI Chatbot
+        </h1>
+
+        <p class="text-fluid-lg text-gray-600 dark:text-gray-300 mb-4 max-w-3xl mx-auto leading-relaxed">
+          A customer asks a question at 9 PM. By morning, they bought from your competitor. That stops today.
+        </p>
+        <p class="text-fluid-base text-gray-500 dark:text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed">
+          Bilingual EN/ES. Fully managed. Fast setup. Free 1-week trial.
+        </p>
+
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a
+            href="/consultation/"
+            class="group inline-flex items-center gap-2 px-8 py-4 bg-cush-orange text-white font-display font-semibold rounded-lg hover:bg-cush-orange/90 transition-all duration-300 shadow-lg shadow-cush-orange/25 hover:shadow-xl hover:shadow-cush-orange/30 text-lg"
+          >
+            Book a Discovery Call
+            <svg class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+          <a href="/services/" class="font-display font-medium text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white underline underline-offset-4 decoration-gray-300 hover:decoration-cush-orange transition-all">
+            Or see all services →
+          </a>
+        </div>
+      </div>
+    </Container>
+  </section>
+
+  <!-- Problem -->
+  <section class="py-20 md:py-28 bg-gray-50 dark:bg-gray-900/30 border-y border-gray-100 dark:border-gray-800">
+    <Container size="lg">
+      <div class="max-w-3xl">
+        <h2 class="font-display font-bold text-3xl md:text-4xl text-gray-900 dark:text-white mb-8 leading-tight tracking-tight">
+          Your team can't be everywhere, all the time
+        </h2>
+        <div class="space-y-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+          <p>
+            Your team answers the same questions dozens of times a day. Customers wait. Leads ask a question at 9pm and never come back. You can't hire fast enough, and the people you do hire spend their first month learning answers that live in scattered documents.
+          </p>
+          <p>
+            A community manager costs $4,000–$6,000/month — and only works 8 hours a day. Your AI assistant works 24/7 for a fraction of that.
+          </p>
+        </div>
+      </div>
+    </Container>
+  </section>
+
+  <!-- Solution -->
+  <section class="py-20 md:py-32">
+    <Container size="lg">
+      <div class="grid lg:grid-cols-12 gap-12 lg:gap-16">
+
+        <!-- Left: Solution narrative -->
+        <div class="lg:col-span-7 space-y-12">
+          <div>
+            <h2 class="font-display font-bold text-3xl md:text-5xl text-gray-900 dark:text-white mb-4 leading-tight tracking-tight">
+              An assistant that actually knows your business
+            </h2>
+            <p class="text-xl md:text-2xl text-cush-orange font-medium leading-relaxed mb-8">
+              Not a generic chatbot. Not "I didn't understand that."
+            </p>
+            <div class="prose prose-lg dark:prose-invert max-w-none">
+              <div class="text-gray-900 dark:text-gray-200 bg-cush-orange/5 border-l-4 border-cush-orange pl-6 py-4 rounded-r-lg space-y-3">
+                <p>An AI assistant trained on YOUR business knowledge — your docs, your policies, your pricing, your product information — that answers customer questions accurately, in English and Spanish, around the clock.</p>
+                <p>Not a generic chatbot. A system that knows your business, validates its answers against your approved sources, and hands off to your team when human judgment is needed.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- What it means -->
+          <div>
+            <h3 class="font-display font-semibold text-2xl text-gray-900 dark:text-white mb-6">
+              What it means for your business
+            </h3>
+            <div class="space-y-5">
+              {[
+                { title: "You stop losing leads after hours.", body: "Visitors who ask a question at 9pm get a real, accurate answer — not a form, not silence." },
+                { title: "You stop answering the same questions.", body: "Pricing, policies, order status, hours — your assistant handles all of it, grounded in what you've actually approved." },
+                { title: "It speaks their language.", body: "Spanish-speaking visitor? They get Spanish. English? English. Automatic, natural." },
+                { title: "It knows when to get you.", body: "When a conversation genuinely needs a person, it hands off with full context — no repeating themselves." },
+                { title: "It never makes things up.", body: "Answers are grounded in your approved sources, with guardrails against hallucination — not the open internet guessing on your behalf." },
+              ].map(item => (
+                <div class="flex gap-4">
+                  <svg class="w-5 h-5 text-green-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <div>
+                    <strong class="text-gray-900 dark:text-white font-semibold">{item.title}</strong>
+                    {" "}<span class="text-gray-600 dark:text-gray-400">{item.body}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- Best For -->
+          <div>
+            <h3 class="font-display font-semibold text-sm text-gray-900 dark:text-white mb-6 uppercase tracking-wider">
+              Best For:
+            </h3>
+            <div class="grid sm:grid-cols-2 gap-4">
+              {bestFor.map(item => (
+                <div class="flex gap-3">
+                  <svg class="w-5 h-5 text-green-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span class="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Specs card -->
+        <div class="lg:col-span-5 space-y-8">
+
+          <!-- Pricing card -->
+          <div class="bg-gray-900 dark:bg-gray-800 rounded-2xl p-8 shadow-xl text-gray-300">
+            <div class="mb-6 pb-6 border-b border-gray-700">
+              <h4 class="font-display font-semibold text-white mb-2 uppercase text-xs tracking-wider">Timeline</h4>
+              <div class="text-lg text-white font-medium">Fast setup — often live within days of your intake form. Discovery call → training → testing → launch.</div>
+            </div>
+            <div class="mb-4">
+              <h4 class="font-display font-semibold text-white mb-2 uppercase text-xs tracking-wider">Investment</h4>
+              <div class="text-base leading-relaxed">
+                Included in <span class="text-white font-bold">every plan — from $1,990 MXN/mo</span>. Unlimited conversations (fair use), fully managed. Includes setup, training, weekly reports, and monthly tuning. No setup fee. No contract.
+              </div>
+            </div>
+            <p class="text-xs text-cush-orange font-medium mt-4 italic">Free 1-week trial. Cancel anytime.</p>
+            <div class="mt-8">
+              <a href="/consultation/" class="block w-full text-center px-6 py-3 bg-cush-orange text-white font-display font-semibold rounded-lg hover:bg-cush-orange/90 transition-colors duration-300">
+                Book a Discovery Call
+              </a>
+            </div>
+          </div>
+
+          <!-- Included -->
+          <div>
+            <h3 class="font-display font-semibold text-xl text-gray-900 dark:text-white mb-6">Every plan includes</h3>
+            <ul class="space-y-4">
+              {included.map(item => (
+                <li class="flex gap-4">
+                  <div class="w-1.5 h-1.5 bg-cush-orange rounded-full mt-2.5 shrink-0"></div>
+                  <div>
+                    <strong class="text-gray-900 dark:text-white font-semibold">{item.title}</strong> — <span class="text-gray-600 dark:text-gray-400 text-sm">{item.desc}</span>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <!-- Not included -->
+          <div class="pt-6 border-t border-gray-200 dark:border-gray-800">
+            <h3 class="font-display font-semibold text-base text-gray-900 dark:text-white mb-4">What's NOT Included</h3>
+            <ul class="space-y-2">
+              {notIncluded.map(item => (
+                <li class="flex gap-3 text-sm text-gray-500 dark:text-gray-500">
+                  <svg class="w-4 h-4 text-gray-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </Container>
+  </section>
+
+  <!-- Comparison -->
+  <section class="py-20 md:py-28 bg-gray-50 dark:bg-gray-900/30 border-y border-gray-100 dark:border-gray-800">
+    <Container size="md">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="font-display font-bold text-3xl md:text-4xl text-gray-900 dark:text-white mb-8 leading-tight tracking-tight text-center">
+          Community Manager vs. AI Assistant
+        </h2>
+        <div class="overflow-x-auto rounded-xl border border-gray-200 dark:border-gray-800">
+          <table class="w-full text-left">
+            <thead class="bg-gray-100 dark:bg-gray-800/60">
+              <tr>
+                <th class="px-6 py-4 font-display font-semibold text-sm uppercase tracking-wider text-gray-500 dark:text-gray-400"></th>
+                <th class="px-6 py-4 font-display font-semibold text-sm uppercase tracking-wider text-gray-500 dark:text-gray-400">Community Manager</th>
+                <th class="px-6 py-4 font-display font-semibold text-sm uppercase tracking-wider text-cush-orange">AI Assistant</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200 dark:divide-gray-800 bg-white dark:bg-gray-900/30">
+              {comparison.map(([label, before, after]) => (
+                <tr>
+                  <td class="px-6 py-4 font-display font-semibold text-gray-900 dark:text-white">{label}</td>
+                  <td class="px-6 py-4 text-gray-600 dark:text-gray-400">{before}</td>
+                  <td class="px-6 py-4 text-gray-900 dark:text-white font-medium">{after}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </Container>
+  </section>
+
+  <!-- Why CushLabs -->
+  <section class="py-20 md:py-28">
+    <Container size="md">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="font-display font-bold text-3xl md:text-4xl text-gray-900 dark:text-white mb-8 leading-tight tracking-tight">
+          Why CushLabs over a generic chatbot platform
+        </h2>
+        <div class="space-y-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed text-left">
+          <p>
+            Generic platforms give you a builder. CushLabs gives you a deployed, production-ready assistant — built, configured, tested, and monitored. I handle the setup, the content ingestion, and the ongoing reliability. You get the results.
+          </p>
+          <p>
+            I've already solved the hard problems: bilingual support, accurate answers grounded in your actual business content, graceful handover to humans, 24/7 uptime with error monitoring. You don't pay for me to figure it out — I've already figured it out.
+          </p>
+        </div>
+        <div class="mt-10">
+          <a
+            href="/consultation/"
+            class="inline-flex items-center gap-2 px-8 py-4 bg-cush-orange text-white font-display font-semibold rounded-lg hover:bg-cush-orange/90 transition-all duration-300 shadow-lg shadow-cush-orange/25 hover:shadow-xl text-lg"
+          >
+            Start Your Free 1-Week Trial
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </Container>
+  </section>
+
+  <FinalCTA locale={locale} />
+
+  <script type="application/ld+json" is:inline set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to add an AI customer support chatbot to your website",
+    "description": "Deploy a bilingual AI customer support assistant to your website in 3 steps — fully managed, no technical setup required.",
+    "estimatedCost": { "@type": "MonetaryAmount", "currency": "MXN", "value": "1990" },
+    "step": [
+      {
+        "@type": "HowToStep",
+        "position": 1,
+        "name": "Schedule a free discovery call",
+        "text": "I spend 20 minutes learning your business: your most common customer questions, your policies and pricing, and the tone you want the AI to use. No commitment required."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 2,
+        "name": "I build and train your AI assistant",
+        "text": "Your assistant is trained on your specific business knowledge and connected to your website. I handle all the technical setup. Typical turnaround: 5-7 business days."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 3,
+        "name": "Go live — your assistant handles every conversation",
+        "text": "Your AI responds instantly to every website visitor 24/7 in English and Spanish. When a customer is ready to buy or needs a person, it hands off with full context."
+      }
+    ]
+  })} />
+
+</BaseLayout>
