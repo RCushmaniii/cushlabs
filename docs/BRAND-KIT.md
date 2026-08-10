@@ -142,12 +142,21 @@ fills the tab rather than floating in the master's margin.
 > `og:image` is fetched by crawlers, never by a visitor, so it is not on any human's rendering path
 > and shrinking it buys no page speed. All risk, no upside.
 >
-> **`cushlabs-og.webp` is the one deliberate same-filename overwrite in this kit.** It is consumed by
-> `docs/email-signature.html`, which is already pasted into a live Gmail signature pointing at that
-> exact URL. Renaming it would break the signature in every email already sent and every client that
-> has it saved. The logo naming rule above exists because browsers cache aggressively; here the
-> consumer is outside the repo and cannot be updated, so the URL must stay stable and the bytes
-> change instead. Regenerate it from `cushlabs-og.png` whenever the card changes.
+> **The email signature image is `cushlabs-signature.webp`, and it must get a NEW filename every
+> time the art changes.** This was tried the other way first and it failed: `cushlabs-og.webp` was
+> overwritten in place on the theory that a Gmail signature already pointed at that URL and could not
+> be updated. Vercel serves `/public` assets with `Cache-Control: public, max-age=31536000,
+immutable`, so the edge kept returning the old bytes — verified: the deployment URL and a
+> cache-busted request both returned the new 8,266-byte file while the plain URL returned the old
+> 9,344-byte one. Gmail's image proxy caches on top of that.
+>
+> **The rule holds without exception: new art, new filename.** Since the signature has to be
+> re-pasted into Gmail to pick up new art anyway, there is nothing to protect by freezing the URL.
+> `cushlabs-og.webp` is left in place as a fallback for signatures already in circulation — it still
+> shows the retired mark, which is better than a broken image.
+>
+> Use the `www.` host in the signature, not the apex: `cushlabs.ai` 307-redirects to `www`, and not
+> every mail client follows redirects on images.
 
 **Naming convention:** files are named for the background they go on, not the chevron color.
 
