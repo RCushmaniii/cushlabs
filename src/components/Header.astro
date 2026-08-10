@@ -1,4 +1,16 @@
 ---
+// Nav breakpoint is `lg` (1024px), NOT `md` (768px). Do not lower it.
+//
+// The desktop nav is the brand lockup + seven links + theme toggle + language
+// switcher. Measured on 2026-08-09, that set does not fit beside the logo until
+// roughly 880px: at 768px and 800px the gap between the end of the brand and the
+// first nav link is 0px and the logo text visually collides with "About",
+// rendering as "CUSHLABSAbout" on every page of the site including the homepage.
+// 840px still only clears by 8px.
+//
+// So 768-1023px now gets the hamburger, which is the correct control for a
+// tablet anyway. If links are ever added to the nav, re-measure — the fit point
+// moves right with every item.
 import type { Locale } from "../i18n";
 import { getLocalizedPath, t } from "../i18n";
 
@@ -60,7 +72,7 @@ const isActiveLink = (href: string) => pathname === href || pathname === href.re
       <span><span class="text-gray-900 dark:text-white">CUSH</span><span class="text-cush-orange">LABS.AI</span></span>
     </a>
 
-    <nav class="hidden items-center gap-6 md:flex">
+    <nav class="hidden items-center gap-6 lg:flex">
       {navLinks.map(({ href, label }) => (
         <a
           href={href}
@@ -127,7 +139,7 @@ const isActiveLink = (href: string) => pathname === href || pathname === href.re
 
       <button
         type="button"
-        class="md:hidden rounded-lg border border-border bg-surface p-2 text-foreground hover:opacity-80 transition-all duration-300 hover:border-cush-orange/50"
+        class="lg:hidden rounded-lg border border-border bg-surface p-2 text-foreground hover:opacity-80 transition-all duration-300 hover:border-cush-orange/50"
         data-mobile-menu-toggle
         aria-label={locale === "es" ? "Abrir menú" : "Open menu"}
         aria-expanded="false"
@@ -148,7 +160,7 @@ const isActiveLink = (href: string) => pathname === href || pathname === href.re
 
   <div
     id="mobile-menu"
-    class="md:hidden hidden border-t border-border bg-white dark:bg-cush-gray-900"
+    class="lg:hidden hidden border-t border-border bg-white dark:bg-cush-gray-900"
   >
     <nav class="mx-auto max-w-7xl flex flex-col px-4 py-2">
       {navLinks.map(({ href, label }) => (
