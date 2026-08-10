@@ -359,9 +359,9 @@ const comparison = [
     background-image:
       linear-gradient(
         to bottom,
-        rgba(20, 17, 13, 0.62) 0%,
-        rgba(20, 17, 13, 0.72) 45%,
-        rgba(20, 17, 13, 0.88) 100%
+        rgba(20, 17, 13, 0.66) 0%,
+        rgba(20, 17, 13, 0.8) 45%,
+        rgba(20, 17, 13, 0.9) 100%
       ),
       url("/images/competitive-intelligence-hero-v1.webp");
     background-size: cover;
@@ -395,17 +395,18 @@ const comparison = [
     font-size: clamp(30px, 5.4vw, 50px);
     line-height: 1.1;
     letter-spacing: -0.028em;
-    max-width: 18ch;
-    margin: 0 0 16px;
-    text-shadow: 0 2px 22px rgba(0, 0, 0, 0.5);
+    /* Ver src/pages/competitive-intelligence.astro — 15ch en vez de 18ch. */
+    max-width: 16ch;
+    margin: 0 auto 16px;
+    text-shadow: 0 2px 26px rgba(0, 0, 0, 0.65);
   }
 
   .ci-sub {
     color: rgba(255, 255, 255, 0.92);
     font-size: clamp(16px, 2.2vw, 19px);
-    max-width: 52ch;
-    margin: 0 0 26px;
+    max-width: 44ch;
+    margin: 0 auto 26px;
     line-height: 1.6;
-    text-shadow: 0 1px 14px rgba(0, 0, 0, 0.55);
+    text-shadow: 0 1px 16px rgba(0, 0, 0, 0.65);
   }
 </style>
