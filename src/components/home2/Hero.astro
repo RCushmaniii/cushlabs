@@ -45,53 +45,30 @@ const content = {
 const t = content[locale];
 ---
 
-<section aria-labelledby="hero-heading" class="relative flex items-center overflow-hidden pt-24 pb-16 min-h-[90vh]">
-  <!-- Background Image -->
-  <div class="absolute inset-0 -z-20">
-    <img
-      src="/images/hero/home-hero3.webp"
-      alt="Abstract technology background representing AI integration and digital transformation"
-      fetchpriority="high"
-      width="1920"
-      height="1080"
-      class="w-full h-full object-cover opacity-20 dark:opacity-10"
-    />
-    <!-- Multi-stop gradient overlay for smooth fade -->
-    <div class="absolute inset-0 bg-linear-to-b from-white/80 via-white/60 to-white/30 dark:from-black/70 dark:via-black/55 dark:to-black/20"></div>
-  </div>
-  <!-- Subtle Gradient Orbs -->
-  <div class="absolute inset-0 -z-10">
-    <div class="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-cush-orange/10 rounded-full blur-[120px] animate-pulse"></div>
-    <div class="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-cush-orange/5 rounded-full blur-[100px] animate-pulse" style="animation-delay: 1s;"></div>
-  </div>
-  <!-- Bottom fade strip — dissolves hero into next section -->
-  <div class="absolute bottom-0 left-0 right-0 h-24 md:h-32 bg-linear-to-b from-transparent to-white dark:to-black -z-5"></div>
-
+<section aria-labelledby="hero-heading" class="home-hero relative flex items-center text-slate-50">
   <Container size="lg">
     <div class="text-center max-w-4xl mx-auto">
       <!-- Trust Badge -->
-      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cush-orange/10 border border-cush-orange/20 mb-5 animate-fade-in">
-        <svg class="w-4 h-4 text-cush-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-        </svg>
-        <span class="font-display text-sm font-semibold tracking-wide text-cush-orange">{t.badge}</span>
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm mb-5 animate-fade-in">
+        <span class="w-2 h-2 rounded-full bg-cush-orange animate-pulse"></span>
+        <span class="font-display text-sm font-semibold tracking-wide text-white">{t.badge}</span>
       </div>
 
       <!-- Headline -->
-      <h1 id="hero-heading" class="font-display text-fluid-4xl font-bold text-gray-900 dark:text-white mb-6 leading-tight tracking-tight animate-fade-in-up">
+      <h1 id="hero-heading" class="home-h1 font-display font-bold text-white mb-6 animate-fade-in-up">
         {t.headline}
       </h1>
 
       <!-- Subheadline -->
-      <div class="text-fluid-lg text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto animate-fade-in-up" style="animation-delay: 0.1s;">
-        <p class="mb-2 font-medium text-gray-800 dark:text-gray-200">{t.subheadline1}</p>
+      <div class="home-sub mb-8 animate-fade-in-up" style="animation-delay: 0.1s;">
+        <p class="mb-2 font-medium text-white">{t.subheadline1}</p>
         <p>{t.subheadline2}</p>
       </div>
 
       <!-- Trust Strip -->
       <div class="flex flex-wrap justify-center gap-x-6 gap-y-3 mb-10 animate-fade-in-up" style="animation-delay: 0.2s;">
         {t.trustStrip.map((item) => (
-          <div class="flex items-center gap-2 font-display text-sm font-medium text-gray-700 dark:text-gray-400">
+          <div class="flex items-center gap-2 font-display text-sm font-medium text-slate-200">
             <svg class="w-4 h-4 text-cush-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
             </svg>
@@ -114,7 +91,7 @@ const t = content[locale];
         <button
           type="button"
           data-open-chat
-          class="group inline-flex items-center gap-2 px-8 py-4 border-2 border-gray-500 dark:border-gray-600 text-gray-900 dark:text-white font-display font-semibold rounded-lg hover:border-cush-orange hover:text-cush-orange dark:hover:border-cush-orange dark:hover:text-cush-orange transition-all duration-300 text-lg cursor-pointer"
+          class="group inline-flex items-center gap-2 px-8 py-4 border-2 border-white/30 text-white font-display font-semibold rounded-lg hover:border-cush-orange hover:text-cush-orange transition-all duration-300 text-lg cursor-pointer backdrop-blur-sm"
         >
           {t.ctaSecondary}
           <svg class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -127,7 +104,7 @@ const t = content[locale];
       <div class="mt-5 animate-fade-in-up" style="animation-delay: 0.4s;">
         <a
           href={locale === 'es' ? '/es/demos/' : '/demos/'}
-          class="font-display text-sm font-medium text-gray-500 dark:text-gray-400 underline underline-offset-4 decoration-gray-300 hover:decoration-cush-orange hover:text-gray-900 dark:hover:text-white transition-all"
+          class="font-display text-sm font-medium text-slate-300 underline underline-offset-4 decoration-white/30 hover:decoration-cush-orange hover:text-white transition-all"
         >{t.ctaDemo}</a>
       </div>
     </div>
@@ -136,11 +113,11 @@ const t = content[locale];
   <!-- Scroll chevron — guides visitors into the funnel (the live demo is the next section) -->
   <a
     href="#demo"
-    class="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-1.5 text-gray-400 dark:text-gray-500 hover:text-cush-orange dark:hover:text-cush-orange transition-colors group animate-fade-in"
+    class="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-1.5 text-white/60 hover:text-cush-orange transition-colors group animate-fade-in"
     style="animation-delay: 0.6s;"
     aria-label={t.scrollHint}
   >
-    <span class="text-xs font-display font-medium tracking-wider uppercase opacity-60 group-hover:opacity-100 transition-opacity">{t.scrollHint}</span>
+    <span class="text-xs font-display font-medium tracking-wider uppercase opacity-80 group-hover:opacity-100 transition-opacity">{t.scrollHint}</span>
     <svg class="w-6 h-6 animate-bounce-subtle" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
     </svg>
@@ -148,6 +125,79 @@ const t = content[locale];
 </section>
 
 <style>
+  /* Full-bleed photo hero — same mechanic as messenger-assistant.astro/whatsapp.astro/
+     voice-agent.astro: the photo IS the pitch, dark gradient keeps white text legible.
+     This section overrides the site's light/dark theme toggle with a fixed dark
+     treatment (matching the other three), since a warm night-interior photo reads
+     naturally as a dark section regardless of the visitor's site-wide theme.
+     home-hero-v1.webp: a small-business owner (beauty/spa — matches the beauty-spa
+     wedge) at home at night, reaching for her phone to find the AI assistant already
+     answered a customer's Messenger question and offered to book. Ties directly to
+     the headline's "day, night, and weekends" claim. Subject sits left-of-center in
+     the source photo, so background-position is biased LEFT (low %) to keep her and
+     the phone screen clear of the centered text column — tune against real viewports
+     before shipping, same as the other three heroes.
+     -v1 suffix is load-bearing: vercel.json serves /images/(.*) as immutable for a
+     year, so any replacement needs a NEW FILENAME, not an overwrite. */
+  .home-hero {
+    min-height: 100svh;
+    background-color: #14110d;
+    /* Middle stop is the DARKEST here (not the lightest, like the other three heroes) —
+       this photo has no clean empty zone for text, so the headline band needs solid
+       backing wherever it lands rather than dodging around the subject. */
+    background-image:
+      linear-gradient(
+        to bottom,
+        rgba(20, 17, 13, 0.62) 0%,
+        rgba(20, 17, 13, 0.72) 45%,
+        rgba(20, 17, 13, 0.88) 100%
+      ),
+      url("/images/home-hero-v1.webp");
+    background-size: cover;
+    background-position: 32% 58%;
+    background-repeat: no-repeat;
+  }
+
+  @media (max-aspect-ratio: 1 / 1) {
+    .home-hero {
+      min-height: 86svh;
+      background-position: 38% 50%;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .home-hero {
+      min-height: 96svh;
+      background-position: 42% 48%;
+      background-image:
+        linear-gradient(
+          to bottom,
+          rgba(20, 17, 13, 0.76) 0%,
+          rgba(20, 17, 13, 0.82) 45%,
+          rgba(20, 17, 13, 0.93) 100%
+        ),
+        url("/images/home-hero-v1.webp");
+    }
+  }
+
+  .home-h1 {
+    font-size: clamp(30px, 5.4vw, 54px);
+    line-height: 1.12;
+    letter-spacing: -0.026em;
+    max-width: 20ch;
+    margin: 0 auto 16px;
+    text-shadow: 0 2px 22px rgba(0, 0, 0, 0.5);
+  }
+
+  .home-sub {
+    color: rgba(255, 255, 255, 0.92);
+    font-size: clamp(16px, 2.2vw, 19px);
+    max-width: 52ch;
+    margin: 0 auto;
+    line-height: 1.6;
+    text-shadow: 0 1px 14px rgba(0, 0, 0, 0.55);
+  }
+
   @keyframes fade-in {
     from { opacity: 0; }
     to { opacity: 1; }
