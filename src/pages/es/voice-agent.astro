@@ -35,29 +35,25 @@ const bestFor = [
   description="Agente de voz con IA disponible 24/7 — contesta tu teléfono, agenda citas y captura leads. Bilingüe EN/ES. Demos en vivo en voice.cushlabs.ai."
 >
 
-  <!-- Hero -->
-  <section class="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden">
-    <div class="absolute inset-0 -z-10">
-      <div class="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-cush-orange/15 rounded-full blur-[120px]"></div>
-      <div class="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-cush-orange/10 rounded-full blur-[100px]"></div>
-    </div>
-
+  <!-- Hero — mismo mecanismo que messenger-assistant.astro/whatsapp.astro (foto a
+       sangre + degradado oscuro), pero con un overlay notablemente más pesado — esta
+       foto no tiene un elemento de prueba en cuadro (sin teléfono/pantalla de llamada
+       visible, a diferencia de los otros dos heroes), así que por decisión de Robert se
+       trata como fondo atmosférico, no como una afirmación visual nítida. -->
+  <section class="va-hero relative flex items-center text-slate-50">
     <Container size="md">
-      <div class="text-center max-w-4xl mx-auto">
-        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cush-orange/10 border border-cush-orange/20 text-cush-orange text-sm font-semibold mb-8">
-          <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+      <div class="max-w-3xl mx-auto text-center py-24 flex flex-col items-center">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-white text-sm font-semibold mb-8 backdrop-blur-sm">
+          <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
           Agentes demo en vivo que puedes llamar ahora mismo en voice.cushlabs.ai
         </div>
 
-        <h1 class="font-display text-fluid-4xl font-bold text-gray-900 dark:text-white mb-6 leading-tight tracking-tight">
+        <h1 class="va-h1 font-display font-bold text-white">
           Deja de Perder Leads en el Buzón de Voz
         </h1>
 
-        <p class="text-fluid-lg text-gray-600 dark:text-gray-300 mb-4 max-w-3xl mx-auto leading-relaxed">
+        <p class="va-sub">
           Un agente de voz con IA disponible 24/7 que contesta el teléfono de tu negocio con voz natural — agenda citas, captura leads y nunca manda a un cliente al buzón.
-        </p>
-        <p class="text-fluid-base text-gray-500 dark:text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed">
-          Bilingüe EN/ES. Totalmente gestionado. Configuración rápida. Prueba gratis de 1 semana.
         </p>
 
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -70,10 +66,14 @@ const bestFor = [
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
           </a>
-          <a href="/es/reservar/" class="font-display font-medium text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white underline underline-offset-4 decoration-gray-300 hover:decoration-cush-orange transition-all">
+          <a href="/es/reservar/" class="font-display font-medium text-slate-300 hover:text-white underline underline-offset-4 decoration-white/30 hover:decoration-cush-orange transition-all">
             O agenda una llamada →
           </a>
         </div>
+
+        <p class="mt-9 text-sm font-display font-medium text-slate-300">
+          Bilingüe EN/ES. Totalmente gestionado. Configuración rápida. Prueba gratis de 1 semana.
+        </p>
       </div>
     </Container>
   </section>
@@ -349,3 +349,63 @@ const bestFor = [
   })} />
 
 </BaseLayout>
+
+<style>
+  /* Ver src/pages/voice-agent.astro para la explicación completa — mismo overlay
+     reforzado, misma razón (sin elemento de prueba en cuadro en esta foto). */
+  .va-hero {
+    min-height: 100svh;
+    background-color: #14110d;
+    background-image:
+      linear-gradient(
+        to bottom,
+        rgba(20, 17, 13, 0.74) 0%,
+        rgba(20, 17, 13, 0.68) 45%,
+        rgba(20, 17, 13, 0.9) 100%
+      ),
+      url("/images/voice-hero-v1.webp");
+    background-size: cover;
+    background-position: 70% 28%;
+    background-repeat: no-repeat;
+  }
+
+  @media (max-aspect-ratio: 1 / 1) {
+    .va-hero {
+      min-height: 82svh;
+      background-position: 42% 26%;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .va-hero {
+      min-height: 88svh;
+      background-position: 44% 24%;
+      background-image:
+        linear-gradient(
+          to bottom,
+          rgba(20, 17, 13, 0.86) 0%,
+          rgba(20, 17, 13, 0.8) 45%,
+          rgba(20, 17, 13, 0.94) 100%
+        ),
+        url("/images/voice-hero-v1.webp");
+    }
+  }
+
+  .va-h1 {
+    font-size: clamp(30px, 5.4vw, 50px);
+    line-height: 1.1;
+    letter-spacing: -0.028em;
+    max-width: 17ch;
+    margin: 0 0 16px;
+    text-shadow: 0 2px 22px rgba(0, 0, 0, 0.45);
+  }
+
+  .va-sub {
+    color: rgba(255, 255, 255, 0.92);
+    font-size: clamp(16px, 2.2vw, 19px);
+    max-width: 52ch;
+    margin: 0 0 26px;
+    line-height: 1.6;
+    text-shadow: 0 1px 14px rgba(0, 0, 0, 0.5);
+  }
+</style>
