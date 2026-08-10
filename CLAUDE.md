@@ -543,7 +543,10 @@ const dict = t(locale);
 
 ## Brand Colors
 
-**The logo, its variants, usage rules, and the reasons behind them: [`docs/BRAND-KIT.md`](docs/BRAND-KIT.md).**
+**The brand kit is canonical in `operating-system`, NOT here** — `cushlabs/brand-kit.md` (colour,
+type, voice, claims) and `cushlabs/brand-mark.md` (the mark, specs, and the three rules for shipping
+a logo change to a web surface). [`docs/BRAND-KIT.md`](docs/BRAND-KIT.md) is a pointer; do not let it
+grow back into a copy. Read `brand-mark.md` before replacing any logo asset.
 Read it before touching any logo asset — it records what was rejected and why, so retired directions
 don't get re-proposed. `#ff6a3d` below is canonical and the mark was recoloured to match it.
 
