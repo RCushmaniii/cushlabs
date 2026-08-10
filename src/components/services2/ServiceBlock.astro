@@ -258,18 +258,86 @@ const data = {
         "Cualquiera pagando $8,000+ MXN/mes por una recepcionista que solo trabaja 40 horas a la semana"
       ]
     }
+  },
+  'whatsapp': {
+    // CLAIMS BOUNDARY (docs/strategy/ADVERTISED-COMMITMENTS.md §"WhatsApp — approval gate cleared"):
+    // WhatsApp is not on the pricing cards. Never let `investment` imply it's part of
+    // Basic/Premium/Ultra, and keep the primary CTA as "Get in touch" (not "Book a Discovery
+    // Call" → /consultation/) — self-serve signup isn't open yet. Mirrors src/pages/whatsapp.astro.
+    learnMoreUrl: { en: '/whatsapp/', es: '/es/whatsapp/' },
+    learnMoreLabel: { en: 'Full service details →', es: 'Ver detalles completos →' },
+    primaryCtaLabel: { en: 'Get in Touch', es: 'Escríbenos' },
+    primaryCtaHref: { en: '/contact/', es: '/es/contact/' },
+    en: {
+      heading: "WhatsApp Appointment Reminders, Without the Hassle",
+      subheading: "Connect your WhatsApp Business account and send automatic reminders and confirmations. Fewer no-shows, a fuller calendar, zero manual work.",
+      problem: "Every no-show is money that doesn't come back. An empty slot in your day is gone for good.\n\nA timely WhatsApp reminder — the channel your customers already use and actually open — turns those no-shows into confirmed appointments.",
+      whatIBuild: "A reminder system connected to your own WhatsApp Business account through Meta's Embedded Signup, in minutes. You keep your number and your account — we never replace them.\n\nYou set up Spanish-language reminder templates sent as far ahead as you like — a day before, hours before, or both. Customers confirm or reschedule with one tap, right in WhatsApp. No calls, no apps.",
+      included: [
+        { title: "Fewer no-shows", desc: "Automatic reminders that keep your calendar full" },
+        { title: "Fully automatic", desc: "They send themselves — you focus on your customers" },
+        { title: "In their language", desc: "Natural Mexican Spanish, not robotic translation" },
+        { title: "Permission-based", desc: "Double opt-in and instant opt-out. No spam" },
+        { title: "Keep your number", desc: "It's your WhatsApp Business account, not ours" },
+        { title: "Nothing to install", desc: "It runs on WhatsApp. Your customers download nothing" },
+      ],
+      notIncluded: [
+        "Self-serve signup — not open yet; onboarding today is by request while we finish the last technical steps",
+        "Included in the Basic/Premium/Ultra plans — this is a separate add-on with its own price",
+        "WhatsApp as a customer-chat channel — this is appointment reminders only, not a general inbox",
+      ],
+      timeline: "Coming soon — the Meta approval is done and we're finishing the last technical steps before sign-ups open.",
+      investment: "**Priced separately** from the Basic/Premium/Ultra plans. Get in touch and we'll quote it once sign-ups open.",
+      investmentDisclaimer: "Sign-ups aren't open yet — reach out to be first in line.",
+      bestFor: [
+        "Clinics, salons, and service businesses with a steady stream of booked appointments",
+        "Owners tired of manually calling or texting to confirm bookings",
+        "Businesses whose customers already live in WhatsApp",
+        "Anyone who wants fewer no-shows without hiring someone to chase confirmations",
+      ]
+    },
+    es: {
+      heading: "Recordatorios de Citas por WhatsApp, sin Complicaciones",
+      subheading: "Conecta tu WhatsApp Business y envía recordatorios y confirmaciones automáticas. Menos inasistencias, agenda llena, cero trabajo manual.",
+      problem: "Cada cita no asistida es dinero que no regresa. Un lugar vacío en tu agenda no se recupera.\n\nUn recordatorio a tiempo por WhatsApp — el canal que tus clientes ya usan y sí abren — convierte esas ausencias en citas confirmadas.",
+      whatIBuild: "Un sistema de recordatorios conectado a tu propia cuenta de WhatsApp Business, con el registro integrado de Meta, en minutos. Conservas tu número y tu cuenta; nosotros nunca los reemplazamos.\n\nConfiguras plantillas en español con la anticipación que elijas — un día antes, unas horas antes, o ambas. Tus clientes confirman o reagendan con un toque, directo en WhatsApp. Sin llamadas y sin apps.",
+      included: [
+        { title: "Menos inasistencias", desc: "Recordatorios automáticos que mantienen tu agenda llena" },
+        { title: "100% automático", desc: "Se envían solos — tú te dedicas a atender" },
+        { title: "En su idioma", desc: "Español mexicano natural, no traducciones robóticas" },
+        { title: "Con permiso", desc: "Doble consentimiento y baja inmediata. Nada de spam" },
+        { title: "Conservas tu número", desc: "Es tu cuenta de WhatsApp Business, no la nuestra" },
+        { title: "Sin instalar nada", desc: "Funciona sobre WhatsApp. Tus clientes no descargan nada" },
+      ],
+      notIncluded: [
+        "Registro autoservicio — todavía no está abierto; hoy la incorporación es por solicitud mientras afinamos los últimos detalles técnicos",
+        "Incluido en los planes Basic/Premium/Ultra — es un complemento aparte con su propio precio",
+        "WhatsApp como canal de chat con clientes — esto es solo recordatorios de citas, no una bandeja general",
+      ],
+      timeline: "Próximamente — la aprobación de Meta ya está lista y estamos afinando los últimos detalles técnicos antes de abrir el registro.",
+      investment: "**Con precio aparte** de los planes Basic/Premium/Ultra. Escríbenos y te cotizamos en cuanto abramos el registro.",
+      investmentDisclaimer: "El registro todavía no está abierto — escríbenos para ser de los primeros.",
+      bestFor: [
+        "Clínicas, salones y negocios de servicio con un flujo constante de citas agendadas",
+        "Dueños cansados de llamar o escribir manualmente para confirmar citas",
+        "Negocios cuyos clientes ya viven en WhatsApp",
+        "Cualquiera que quiera menos inasistencias sin contratar a alguien para perseguir confirmaciones",
+      ]
+    }
   }
 };
 
 const block = data[id as keyof typeof data][locale];
 if (!block) throw new Error(`Block ${id} not found for locale ${locale}`);
 // liveUrl / liveLabel / learnMoreUrl / learnMoreLabel are optional top-level fields on select service blocks
-type ServiceEntry = { liveUrl?: string; liveLabel?: Record<string, string>; learnMoreUrl?: Record<string, string>; learnMoreLabel?: Record<string, string> };
+type ServiceEntry = { liveUrl?: string; liveLabel?: Record<string, string>; learnMoreUrl?: Record<string, string>; learnMoreLabel?: Record<string, string>; primaryCtaLabel?: Record<string, string>; primaryCtaHref?: Record<string, string> };
 const entry = data[id as keyof typeof data] as ServiceEntry;
 const liveUrl = entry.liveUrl;
 const liveLabel = entry.liveLabel?.[locale];
 const learnMoreUrl = entry.learnMoreUrl?.[locale];
 const learnMoreLabel = entry.learnMoreLabel?.[locale];
+const primaryCtaLabel = entry.primaryCtaLabel?.[locale] ?? (locale === 'en' ? 'Book a Discovery Call' : 'Agendar Llamada');
+const primaryCtaHref = entry.primaryCtaHref?.[locale] ?? (locale === 'en' ? '/consultation/' : '/es/reservar/');
 
 const bgClass = isAlternate ? 'bg-gray-50 dark:bg-gray-900/30' : 'bg-white dark:bg-black';
 
@@ -346,8 +414,8 @@ const bgClass = isAlternate ? 'bg-gray-50 dark:bg-gray-900/30' : 'bg-white dark:
             {block.investmentDisclaimer}
           </p>
           <div class="mt-8 flex flex-col gap-3">
-            <a href={locale === 'en' ? '/consultation/' : '/es/reservar/'} class="block w-full text-center px-6 py-3 bg-cush-orange text-white font-display font-semibold rounded-lg hover:bg-cush-orange/90 transition-colors duration-300">
-              {locale === 'en' ? 'Book a Discovery Call' : 'Agendar Llamada'}
+            <a href={primaryCtaHref} class="block w-full text-center px-6 py-3 bg-cush-orange text-white font-display font-semibold rounded-lg hover:bg-cush-orange/90 transition-colors duration-300">
+              {primaryCtaLabel}
             </a>
             {liveUrl && liveLabel && (
               <a href={liveUrl} target="_blank" rel="noopener noreferrer" class="block w-full text-center px-6 py-3 border border-gray-600 text-gray-300 font-display font-semibold rounded-lg hover:border-cush-orange hover:text-cush-orange transition-colors duration-300">
