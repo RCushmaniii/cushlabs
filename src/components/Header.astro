@@ -38,13 +38,24 @@ const isActiveLink = (href: string) => pathname === href || pathname === href.re
       href={locale === "es" ? "/es/" : "/"}
       class="flex items-center gap-2 font-display text-base font-semibold tracking-wider uppercase text-gray-900 dark:text-white hover:opacity-80 transition-opacity duration-300"
     >
+      <!-- Two variants: the chevron is near-black on light and near-white on
+           dark, so a single file would lose it on one of the two themes. Both
+           masters share a bounding box, so swapping causes no position shift. -->
       <img
         src="/images/logo/cushlabs-logo.webp"
         alt="CushLabs logo"
         loading="eager"
-        width="64"
-        height="64"
-        class="h-8 w-8 rounded-md object-contain"
+        width="256"
+        height="256"
+        class="h-8 w-8 rounded-md object-contain dark:hidden"
+      />
+      <img
+        src="/images/logo/cushlabs-logo-dark.webp"
+        alt="CushLabs logo"
+        loading="eager"
+        width="256"
+        height="256"
+        class="hidden h-8 w-8 rounded-md object-contain dark:block"
       />
       <span><span class="text-gray-900 dark:text-white">CUSH</span><span class="text-cush-orange">LABS.AI</span></span>
     </a>
