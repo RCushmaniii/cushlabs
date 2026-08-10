@@ -118,19 +118,19 @@ softer contrast on mid-tone backgrounds and photo overlays.
 
 ### Files in this repo
 
-| File                                             | Size     | Use                                                                 |
-| ------------------------------------------------ | -------- | ------------------------------------------------------------------- |
-| `public/images/logo/cushlabs-logo-on-light.webp` | 256²     | Header, footer, landing bar — **light theme**                       |
-| `public/images/logo/cushlabs-logo-on-dark.webp`  | 256²     | Same surfaces — **dark theme**                                      |
-| `public/images/logo/cushlabs-logo-on-light.png`  | 512²     | Light master for external use                                       |
-| `public/images/logo/cushlabs-logo-on-dark.png`   | 512²     | Dark master for external use                                        |
-| `public/favicon.ico`                             | 16/32/48 | Browser tabs, bookmarks                                             |
-| `public/favicon-32x32.png`                       | 32²      | Modern browsers                                                     |
-| `public/favicon-16x16.png`                       | 16²      | Small-tab fallback                                                  |
-| `public/apple-touch-icon.png`                    | 180²     | iOS home screen                                                     |
-| `public/icon-512.png`                            | 512²     | PWA / Android                                                       |
-| `public/images/og/cushlabs-og.png`               | 1200×630 | Social share card — **the `og:image`. Keep it PNG.**                |
-| `public/images/og/cushlabs-og.webp`              | 1200×630 | Same art, for the **email signature** (`docs/email-signature.html`) |
+| File                                                | Size     | Use                                                                 |
+| --------------------------------------------------- | -------- | ------------------------------------------------------------------- |
+| `public/images/logo/cushlabs-logo-on-light-v2.webp` | 256²     | Header, footer, landing bar — **light theme**                       |
+| `public/images/logo/cushlabs-logo-on-dark.webp`     | 256²     | Same surfaces — **dark theme**                                      |
+| `public/images/logo/cushlabs-logo-on-light.png`     | 512²     | Light master for external use                                       |
+| `public/images/logo/cushlabs-logo-on-dark.png`      | 512²     | Dark master for external use                                        |
+| `public/favicon.ico`                                | 16/32/48 | Browser tabs, bookmarks                                             |
+| `public/favicon-32x32.png`                          | 32²      | Modern browsers                                                     |
+| `public/favicon-16x16.png`                          | 16²      | Small-tab fallback                                                  |
+| `public/apple-touch-icon.png`                       | 180²     | iOS home screen                                                     |
+| `public/icon-512.png`                               | 512²     | PWA / Android                                                       |
+| `public/images/og/cushlabs-og.png`                  | 1200×630 | Social share card — **the `og:image`. Keep it PNG.**                |
+| `public/images/og/cushlabs-og.webp`                 | 1200×630 | Same art, for the **email signature** (`docs/email-signature.html`) |
 
 All logo files carry true alpha — the counter-space inside the C is transparent so the background
 shows through. **Favicons and touch icons are trimmed to the mark and re-padded ~6%**, so the glyph
@@ -170,6 +170,19 @@ immutable`, so the edge kept returning the old bytes — verified: the deploymen
 > Favicons are the exception — browsers probe `/favicon.ico` by path, so those keep conventional
 > names and are cache-busted with a `?v=N` query on the `<link>` tags in `BaseLayout.astro` and
 > `LandingLayout.astro`. **Bump N whenever the icon art changes**, and keep the two layouts in sync.
+>
+> **A new filename can still get poisoned before it ever serves real bytes.** `cushlabs-logo-on-light.webp`
+> (the very file this rule produced) went live 2026-08-10 07:38 UTC and a request landed in the few
+> seconds before Vercel's edge finished propagating the deploy. That request got a 404, and Cloudflare
+> cached it with `Cache-Control: public, max-age=31536000, immutable` — Cloudflare obeys the immutable
+> directive on error responses too, so the 404 froze for the same year a good response would have.
+> Verified via `curl -sI -L`: `cf-cache-status: HIT`, `Age` climbing, `last-modified` stamped seconds
+> after the commit. No Cloudflare token in this repo's `.env` carries Cache Purge scope (`DNS_API_TOKEN`
+> is Zone DNS + Email Routing only — confirmed by attempting the purge, which returned "Authentication
+> error"), so the only fix from inside the repo is the same one that fixes stale-cache: a filename the
+> edge has never seen. Renamed to `cushlabs-logo-on-light-v2.webp`. **If a freshly-renamed asset 404s
+> right after a deploy, don't wait for the cache to expire — rename again rather than debugging the
+> deploy**, since the origin is very likely already correct.
 
 ### Theme switching
 
@@ -286,10 +299,10 @@ mathematically perfect symmetry and a file under 2 KB.
 
 ## 8. Version History
 
-| Version | Change                                                                                                                                                                                                   |
-| ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **1.1** | Brand orange reconciled to the site's `#ff6a3d`; masters recoloured. Favicon package shipped. Dark/light variants wired into Header, Footer and LandingLayout.                                           |
-| 1.0     | Chevron mark adopted. On-light and on-dark PNG variants established at `#FD4C00`.                                                                                                                        |
-| —       | **Retired:** 3D isometric hexagon in blue/teal/orange gradient. Three competing colors meant owning none; isometric gradient cubes read as dated crypto-era language; didn't survive flattening.         |
-| —       | **Rejected:** solid triangle. Reads unavoidably as a play button, pulling the brand toward media/video, and one of the most common icon constructions in existence.                                      |
-| —       | **Rejected:** rounded paper-plane arrow. Interior slit measured ~2% of mark width and collapsed below 32px; rounded joints conflicted with the hard-edged hexagon; over-anchored the brand to messaging. |
+| Version | Change                                                                                                                                                                                                                                                                |
+| ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **1.1** | Brand orange reconciled to the site's `#ff6a3d`; masters recoloured. Favicon package shipped. Dark/light variants wired into Header, Footer and LandingLayout. On-light webp renamed to `-v2` after a post-deploy 404 got cached immutable on Cloudflare's edge (§4). |
+| 1.0     | Chevron mark adopted. On-light and on-dark PNG variants established at `#FD4C00`.                                                                                                                                                                                     |
+| —       | **Retired:** 3D isometric hexagon in blue/teal/orange gradient. Three competing colors meant owning none; isometric gradient cubes read as dated crypto-era language; didn't survive flattening.                                                                      |
+| —       | **Rejected:** solid triangle. Reads unavoidably as a play button, pulling the brand toward media/video, and one of the most common icon constructions in existence.                                                                                                   |
+| —       | **Rejected:** rounded paper-plane arrow. Interior slit measured ~2% of mark width and collapsed below 32px; rounded joints conflicted with the hard-edged hexagon; over-anchored the brand to messaging.                                                              |
