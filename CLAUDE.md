@@ -292,7 +292,9 @@ BaseLayout.astro automatically generates hreflang tags:
 - ~~Placeholder testimonials~~ — Real LinkedIn recommendation from Julio Cesar Aldana Gomez, bilingual EN/ES
 - ~~Dependabot vulnerabilities~~ — yaml CVE fixed via override, Astro/esbuild CVEs dismissed (static site, SSR-only vulnerabilities)
 - ~~Sitemap broken~~ — @astrojs/sitemap 3.2.1 installed and configured with i18n locales
-- ~~No og-image~~ — OG image exists at `public/images/og/cushlabs_logo_lt.jpg`
+- ~~No og-image~~ — OG image is `public/images/og/cushlabs-og.png`, set in `BaseLayout.astro:64`
+  and `LandingLayout.astro:22`. (This line used to name `cushlabs_logo_lt.jpg`, which was never the
+  OG image and was a stock circuit-brain graphic nothing referenced — deleted 2026-08-10.)
 - ~~Image optimization~~ — All portfolio/logo/client images converted to WebP, lazy loading added
 - ~~Broken portfolio images~~ — All 28 project pages migrated to Cloudflare R2 CDN (`cdn.cushlabs.ai`), 399 assets, 28/28 pages verified clean
 
