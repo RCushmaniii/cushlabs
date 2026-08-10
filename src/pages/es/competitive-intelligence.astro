@@ -1,0 +1,411 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Container from "../../components/layout/Container.astro";
+import FinalCTA from "../../components/services2/FinalCTA.astro";
+
+const locale = "es" as const;
+
+const included = [
+  { title: "Monitoreo semanal de posicionamiento", desc: "Tu posición rastreada en múltiples palabras clave y ubicaciones — cada semana, de forma automática" },
+  { title: "Seguimiento de competidores", desc: "Hasta 5 competidores monitoreados: posición, calificación, velocidad de reseñas y cambios en su perfil" },
+  { title: "Auditoría del Perfil de Negocio en Google", desc: "Puntuación semanal de tu perfil comparado con competidores — fotos, horarios, descripción, categorías, reseñas" },
+  { title: "Una acción prioritaria por semana", desc: "La acción de mayor impacto que puedes tomar esta semana — específica, no genérica. Enviada por WhatsApp cada lunes" },
+  { title: "Inteligencia de reseñas", desc: "Qué dicen tus clientes, qué temas emergen y cómo tu tasa de respuesta se compara con la competencia" },
+  { title: "Detección de alertas", desc: "Notificación inmediata cuando un competidor hace un movimiento significativo o tu posición baja bruscamente" },
+  { title: "Reportes bilingües (EN/ES)", desc: "Entregados en el idioma que prefieras — inglés o español" },
+];
+
+const notIncluded = [
+  "Monitoreo de redes sociales (solo Google Maps y Perfil de Negocio en Google)",
+  "Gestión de campañas pagadas o Google Ads",
+  "Responder reseñas en tu nombre (disponible como servicio adicional)",
+];
+
+const bestFor = [
+  "Negocios con 2+ ubicaciones compitiendo en Google Maps",
+  "Dueños que quieren conocer su posición competitiva sin volverse expertos en SEO",
+  "Cualquier negocio donde el posicionamiento en Google Maps genera tráfico o llamadas",
+  "Negocios que ven a sus competidores avanzar sin entender por qué",
+];
+
+const comparison = [
+  ["Tiempo invertido por semana", "Horas revisando perfiles y listados en Maps", "Cero — un mensaje, cada lunes"],
+  ["Visibilidad de competidores", "De oídas y suposiciones", "Hasta 5 competidores monitoreados automáticamente"],
+  ["Perfil de Negocio en Google", "Se configura una vez y nunca se revisa", "Auditado semanalmente contra la competencia"],
+  ["Monitoreo de reseñas", "Revisado manualmente, si acaso", "Cada reseña, cada tema, rastreado"],
+  ["Qué hacer después", "No está claro", "Una acción específica, cada semana"],
+  ["Costo", "Tu tiempo", "$3,490 MXN/mes, incluido desde Premium"],
+];
+---
+
+<BaseLayout
+  title="Inteligencia Competitiva y Monitoreo de Google Maps | CushLabs.ai"
+  description="Monitoreo con IA de tu posicionamiento en Google Maps, competidores y reseñas — una acción clara por WhatsApp cada lunes. Prueba gratis de 1 semana."
+>
+
+  <!-- Hero — mismo mecanismo que messenger-assistant.astro/whatsapp.astro/voice-agent.astro/
+       home2/Hero.astro. Igual que la foto del home, esta tampoco tiene una zona vacía
+       limpia para el texto, así que la banda media es el punto MÁS oscuro del degradado,
+       no el más claro. La pantalla muestra una respuesta REDACTADA esperando su clic, no
+       una enviada automáticamente — el texto se mantiene dentro de "inteligencia de
+       reseñas" (lo que sí incluye), nunca de respuesta automática (eso es un servicio
+       adicional aparte, ver notIncluded). -->
+  <section class="ci-hero relative flex items-center text-slate-50">
+    <Container size="md">
+      <div class="max-w-3xl mx-auto text-center py-24 flex flex-col items-center">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-white text-sm font-semibold mb-8 backdrop-blur-sm">
+          <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+          Míralo en vivo en marketsignal.cushlabs.ai
+        </div>
+
+        <h1 class="ci-h1 font-display font-bold text-white">
+          Monitoreo a tus Competidores y te Digo Exactamente Qué Hacer — Cada Semana
+        </h1>
+
+        <p class="ci-sub">
+          Posicionamiento, reseñas y brechas en tu Perfil de Google — convertidos en una acción clara en tu WhatsApp cada lunes.
+        </p>
+
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a
+            href="/es/reservar/"
+            class="group inline-flex items-center gap-2 px-8 py-4 bg-cush-orange text-white font-display font-semibold rounded-lg hover:bg-cush-orange/90 transition-all duration-300 shadow-lg shadow-cush-orange/25 hover:shadow-xl hover:shadow-cush-orange/30 text-lg"
+          >
+            Agendar Llamada
+            <svg class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+          <a href="/es/services/" class="font-display font-medium text-slate-300 hover:text-white underline underline-offset-4 decoration-white/30 hover:decoration-cush-orange transition-all">
+            Ver todos los servicios →
+          </a>
+        </div>
+
+        <p class="mt-9 text-sm font-display font-medium text-slate-300">
+          Bilingüe EN/ES. Totalmente gestionado. Primer reporte en 1 semana. Prueba gratis de 1 semana.
+        </p>
+      </div>
+    </Container>
+  </section>
+
+  <!-- Problema -->
+  <section class="py-20 md:py-28 bg-gray-50 dark:bg-gray-900/30 border-y border-gray-100 dark:border-gray-800">
+    <Container size="lg">
+      <div class="max-w-3xl">
+        <h2 class="font-display font-bold text-3xl md:text-4xl text-gray-900 dark:text-white mb-8 leading-tight tracking-tight">
+          El costo de no saber
+        </h2>
+        <div class="space-y-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+          <p>
+            Sabes que la competencia en Google Maps se está poniendo más difícil, pero no sabes quién te está ganando, por qué, ni qué cambió esta semana. Un competidor agregó fotos. Otro subió tres posiciones y te quitó tu keyword más importante. Tus reseñas se acumulan sin una sola respuesta.
+          </p>
+          <p>
+            Para cuando te das cuenta del problema, ya te costó clientes. Cada semana sin visibilidad es una semana que tus competidores se adelantan.
+          </p>
+        </div>
+      </div>
+    </Container>
+  </section>
+
+  <!-- Solución -->
+  <section class="py-20 md:py-32">
+    <Container size="lg">
+      <div class="grid lg:grid-cols-12 gap-12 lg:gap-16">
+
+        <!-- Left: narrativa -->
+        <div class="lg:col-span-7 space-y-12">
+          <div>
+            <h2 class="font-display font-bold text-3xl md:text-5xl text-gray-900 dark:text-white mb-4 leading-tight tracking-tight">
+              Un mensaje cada lunes. Sin dashboard, sin hojas de cálculo.
+            </h2>
+            <p class="text-xl md:text-2xl text-cush-orange font-medium leading-relaxed mb-8">
+              No es una herramienta de reportes. Es la respuesta a "¿qué hago esta semana?"
+            </p>
+            <div class="prose prose-lg dark:prose-invert max-w-none">
+              <div class="text-gray-900 dark:text-gray-200 bg-cush-orange/5 border-l-4 border-cush-orange pl-6 py-4 rounded-r-lg space-y-3">
+                <p>Un sistema de inteligencia con IA que monitorea tus posiciones en Google Maps, rastrea los movimientos de tus competidores y audita tu Perfil de Negocio en Google — y lo convierte todo en una acción clara enviada a tu WhatsApp cada lunes por la mañana.</p>
+                <p>No entras a ningún dashboard. No descifras hojas de cálculo. Lees un mensaje y sabes exactamente qué hacer esta semana para mejorar tu posición.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Míralo en vivo -->
+          <div class="rounded-2xl border border-cush-orange/30 bg-cush-orange/5 p-8">
+            <h3 class="font-display font-semibold text-2xl text-gray-900 dark:text-white mb-3">
+              Míralo tú mismo
+            </h3>
+            <p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-5">
+              Esto es MarketSignal, la herramienta que corre detrás de este servicio — en vivo, no una maqueta. Mira un dashboard real de posicionamiento, comparación de competidores y auditoría de Perfil de Negocio en Google.
+            </p>
+            <a
+              href="https://marketsignal.cushlabs.ai"
+              target="_blank"
+              rel="noopener"
+              class="inline-flex items-center gap-2 font-display font-semibold text-cush-orange hover:text-cush-orange/80 transition-colors"
+            >
+              Mira MarketSignal en marketsignal.cushlabs.ai
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+          </div>
+
+          <!-- Lo que significa -->
+          <div>
+            <h3 class="font-display font-semibold text-2xl text-gray-900 dark:text-white mb-6">
+              Lo que significa para tu negocio
+            </h3>
+            <div class="space-y-5">
+              {[
+                { title: "Siempre sabes dónde estás parado.", body: "Tu posición en cada palabra clave y ubicación que importa, rastreada automáticamente, cada semana." },
+                { title: "Ves venir a la competencia antes de que te pase.", body: "Hasta 5 competidores monitoreados por posición, reseñas y cambios de perfil — con alerta inmediata cuando algo cambia de forma significativa." },
+                { title: "Tu Perfil de Negocio en Google se mantiene afilado.", body: "Auditado semanalmente contra tu competencia — fotos, horarios, descripción, categorías, reseñas." },
+                { title: "Sabes lo que tus clientes realmente dicen.", body: "Temas en tus reseñas, cómo te comparas con la competencia en tasa de respuesta — sin leer cada reseña tú mismo." },
+                { title: "Nunca tienes que adivinar qué sigue.", body: "Una acción específica de mayor impacto — no una lista genérica — enviada por WhatsApp cada lunes." },
+              ].map(item => (
+                <div class="flex gap-4">
+                  <svg class="w-5 h-5 text-green-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <div>
+                    <strong class="text-gray-900 dark:text-white font-semibold">{item.title}</strong>
+                    {" "}<span class="text-gray-600 dark:text-gray-400">{item.body}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- Ideal Para -->
+          <div>
+            <h3 class="font-display font-semibold text-sm text-gray-900 dark:text-white mb-6 uppercase tracking-wider">
+              Ideal Para:
+            </h3>
+            <div class="grid sm:grid-cols-2 gap-4">
+              {bestFor.map(item => (
+                <div class="flex gap-3">
+                  <svg class="w-5 h-5 text-green-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span class="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: specs -->
+        <div class="lg:col-span-5 space-y-8">
+
+          <!-- Precio -->
+          <div class="bg-gray-900 dark:bg-gray-800 rounded-2xl p-8 shadow-xl text-gray-300">
+            <div class="mb-6 pb-6 border-b border-gray-700">
+              <h4 class="font-display font-semibold text-white mb-2 uppercase text-xs tracking-wider">Línea de Tiempo</h4>
+              <div class="text-lg text-white font-medium">Primer reporte en 1 semana. Llamada de descubrimiento → configuración → primera entrega el lunes.</div>
+            </div>
+            <div class="mb-4">
+              <h4 class="font-display font-semibold text-white mb-2 uppercase text-xs tracking-wider">Inversión</h4>
+              <div class="text-base leading-relaxed">
+                Incluido desde el <span class="text-white font-bold text-2xl">plan Premium — $3,490 MXN/mes</span>. Totalmente gestionado — configuración, monitoreo y entrega semanal. Sin cuota de instalación. Sin contrato.
+              </div>
+            </div>
+            <p class="text-xs text-cush-orange font-medium mt-4 italic">Prueba gratis de 1 semana. Cancela cuando quieras.</p>
+            <div class="mt-8 space-y-3">
+              <a href="/es/reservar/" class="block w-full text-center px-6 py-3 bg-cush-orange text-white font-display font-semibold rounded-lg hover:bg-cush-orange/90 transition-colors duration-300">
+                Agendar Llamada
+              </a>
+              <a href="https://marketsignal.cushlabs.ai" target="_blank" rel="noopener" class="block w-full text-center px-6 py-3 border border-gray-600 text-white font-display font-semibold rounded-lg hover:border-cush-orange transition-colors duration-300">
+                Ver MarketSignal en Vivo
+              </a>
+            </div>
+          </div>
+
+          <!-- Incluye -->
+          <div>
+            <h3 class="font-display font-semibold text-xl text-gray-900 dark:text-white mb-6">Qué Incluye</h3>
+            <ul class="space-y-4">
+              {included.map(item => (
+                <li class="flex gap-4">
+                  <div class="w-1.5 h-1.5 bg-cush-orange rounded-full mt-2.5 shrink-0"></div>
+                  <div>
+                    <strong class="text-gray-900 dark:text-white font-semibold">{item.title}</strong> — <span class="text-gray-600 dark:text-gray-400 text-sm">{item.desc}</span>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <!-- No incluye -->
+          <div class="pt-6 border-t border-gray-200 dark:border-gray-800">
+            <h3 class="font-display font-semibold text-base text-gray-900 dark:text-white mb-4">Lo Que NO Incluye</h3>
+            <ul class="space-y-2">
+              {notIncluded.map(item => (
+                <li class="flex gap-3 text-sm text-gray-500 dark:text-gray-500">
+                  <svg class="w-4 h-4 text-gray-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </Container>
+  </section>
+
+  <!-- Comparación -->
+  <section class="py-20 md:py-28 bg-gray-50 dark:bg-gray-900/30 border-y border-gray-100 dark:border-gray-800">
+    <Container size="md">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="font-display font-bold text-3xl md:text-4xl text-gray-900 dark:text-white mb-8 leading-tight tracking-tight text-center">
+          Revisar Manualmente vs. Inteligencia Competitiva
+        </h2>
+        <div class="overflow-x-auto rounded-xl border border-gray-200 dark:border-gray-800">
+          <table class="w-full text-left">
+            <thead class="bg-gray-100 dark:bg-gray-800/60">
+              <tr>
+                <th class="px-6 py-4 font-display font-semibold text-sm uppercase tracking-wider text-gray-500 dark:text-gray-400"></th>
+                <th class="px-6 py-4 font-display font-semibold text-sm uppercase tracking-wider text-gray-500 dark:text-gray-400">Revisar Manualmente</th>
+                <th class="px-6 py-4 font-display font-semibold text-sm uppercase tracking-wider text-cush-orange">Inteligencia Competitiva</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200 dark:divide-gray-800 bg-white dark:bg-gray-900/30">
+              {comparison.map(([label, before, after]) => (
+                <tr>
+                  <td class="px-6 py-4 font-display font-semibold text-gray-900 dark:text-white">{label}</td>
+                  <td class="px-6 py-4 text-gray-600 dark:text-gray-400">{before}</td>
+                  <td class="px-6 py-4 text-gray-900 dark:text-white font-medium">{after}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </Container>
+  </section>
+
+  <!-- Por qué CushLabs -->
+  <section class="py-20 md:py-28">
+    <Container size="md">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="font-display font-bold text-3xl md:text-4xl text-gray-900 dark:text-white mb-8 leading-tight tracking-tight">
+          Por qué CushLabs en vez de revisarlo tú mismo
+        </h2>
+        <div class="space-y-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed text-left">
+          <p>
+            Las herramientas gratuitas te muestran datos. No te dicen qué hacer con ellos. CushLabs construye, despliega y opera el monitoreo por ti — obtienes una acción clara, no un dashboard que interpretar.
+          </p>
+          <p>
+            Ya resolví los problemas difíciles: rastrear posiciones en distintas ubicaciones y palabras clave, comparar contra los competidores correctos, calificar tu Perfil de Negocio en Google contra el de ellos, y convertir todo eso en lo único más importante que hacer esta semana.
+          </p>
+          <p>
+            Y antes de comprometerte, puedes ver la herramienta real corriendo en vivo en <a href="https://marketsignal.cushlabs.ai" class="text-cush-orange underline underline-offset-4 hover:no-underline">marketsignal.cushlabs.ai</a>.
+          </p>
+        </div>
+        <div class="mt-10">
+          <a
+            href="/es/reservar/"
+            class="inline-flex items-center gap-2 px-8 py-4 bg-cush-orange text-white font-display font-semibold rounded-lg hover:bg-cush-orange/90 transition-all duration-300 shadow-lg shadow-cush-orange/25 hover:shadow-xl text-lg"
+          >
+            Empieza Tu Prueba Gratis de 1 Semana
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </Container>
+  </section>
+
+  <FinalCTA locale={locale} />
+
+  <script type="application/ld+json" is:inline set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "Cómo obtener inteligencia competitiva para tu posicionamiento en Google Maps",
+    "description": "Despliega monitoreo semanal de posicionamiento en Google Maps, seguimiento de competidores y auditorías de Perfil de Negocio en Google en 3 pasos — totalmente gestionado, sin dashboard.",
+    "estimatedCost": { "@type": "MonetaryAmount", "currency": "MXN", "value": "3490" },
+    "step": [
+      {
+        "@type": "HowToStep",
+        "position": 1,
+        "name": "Agenda una llamada de descubrimiento gratuita",
+        "text": "Dedicamos 20 minutos a entender tu negocio: tus ubicaciones, tus palabras clave principales y hasta 5 competidores a rastrear. Sin compromiso."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 2,
+        "name": "Configuramos tu monitoreo",
+        "text": "Tus posiciones en Google Maps, competidores y Perfil de Negocio en Google quedan configurados para rastreo. Tiempo de entrega típico: 5-7 días hábiles."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 3,
+        "name": "Recibe tu primer reporte el lunes",
+        "text": "Cada lunes por la mañana recibes un mensaje de WhatsApp: tu posición, qué cambió la competencia y la acción de mayor impacto para esta semana."
+      }
+    ]
+  })} />
+
+</BaseLayout>
+
+<style>
+  /* Ver src/pages/competitive-intelligence.astro para la explicación completa. */
+  .ci-hero {
+    min-height: 100svh;
+    background-color: #14110d;
+    background-image:
+      linear-gradient(
+        to bottom,
+        rgba(20, 17, 13, 0.62) 0%,
+        rgba(20, 17, 13, 0.72) 45%,
+        rgba(20, 17, 13, 0.88) 100%
+      ),
+      url("/images/competitive-intelligence-hero-v1.webp");
+    background-size: cover;
+    background-position: 38% 42%;
+    background-repeat: no-repeat;
+  }
+
+  @media (max-aspect-ratio: 1 / 1) {
+    .ci-hero {
+      min-height: 86svh;
+      background-position: 42% 36%;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .ci-hero {
+      min-height: 92svh;
+      background-position: 46% 34%;
+      background-image:
+        linear-gradient(
+          to bottom,
+          rgba(20, 17, 13, 0.76) 0%,
+          rgba(20, 17, 13, 0.82) 45%,
+          rgba(20, 17, 13, 0.93) 100%
+        ),
+        url("/images/competitive-intelligence-hero-v1.webp");
+    }
+  }
+
+  .ci-h1 {
+    font-size: clamp(30px, 5.4vw, 50px);
+    line-height: 1.1;
+    letter-spacing: -0.028em;
+    max-width: 18ch;
+    margin: 0 0 16px;
+    text-shadow: 0 2px 22px rgba(0, 0, 0, 0.5);
+  }
+
+  .ci-sub {
+    color: rgba(255, 255, 255, 0.92);
+    font-size: clamp(16px, 2.2vw, 19px);
+    max-width: 52ch;
+    margin: 0 0 26px;
+    line-height: 1.6;
+    text-shadow: 0 1px 14px rgba(0, 0, 0, 0.55);
+  }
+</style>
