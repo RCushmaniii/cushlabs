@@ -12,7 +12,7 @@ Things that shipped with a known gap. Open items first; key resolved items kept 
 | #     | Item                                                                         | Severity   | Notes                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 | ----- | ---------------------------------------------------------------------------- | ---------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 1     | EN privacy "Your Rights" lacks Mexican-specific framing                      | Low        | ES privacy names LFPDPPP / derechos ARCO (PR #86); EN still says generic "depending on your location." Fine for a global EN audience, but worth a lawyer review if English-speaking Mexican residents are expected.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-| 2     | `js-yaml` (via `gray-matter`) flagged by `npm audit` (moderate)              | Low        | Build-time only; parses trusted PORTFOLIO.md files. Not a Dependabot alert. Revisit if gray-matter ships a patched js-yaml.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| ~~2~~ | ~~`js-yaml` (via `gray-matter`) flagged by `npm audit` (moderate)~~          | ~~Low~~    | **Resolved 2026-08-12** — turned out to be 2 separate HIGH-severity Dependabot alerts (js-yaml on two paths, plus nanoid), not the build-time-only nit previously assumed. Fixed via nested `package.json` overrides: js-yaml 4.3.1 for the astro/eslint path, 3.15.1 for gray-matter's own path (so its frontmatter parsing wasn't forced onto an incompatible major); nanoid 3.3.17 via eslint-plugin-astro's postcss. Verified with a full build. PR #256.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | 3     | Legacy `src/components/home/` folder is dead but retained                    | Low        | Live pages use `home2/`. The old `home/Hero.astro` still carries a stale "20+ Years IT Experience" string (never rendered). Remove the folder or update it if ever revived.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | 10    | Hardcoded `metaTitles` / `metaDescriptions` maps are a second claims surface | Medium     | `src/pages/projects/[slug].astro` and its `es/` twin carry hand-written SEO overrides keyed by repo name. They **override** `PORTFOLIO.md`, so nothing validates them and no gate reads them — this is where the fabricated "Claude Dispatch platform for multi-tenant operations…" string actually lived (#7 was the delivery mechanism, this was the source). Two dead keys removed 2026-08-06; the surviving entries have never been audited against what the repos do. Notably `'cushlabs-messenger'` is described as the "multi-tenant Cloudflare Workers runtime" — that is `cushlabs-messenger-bot`; the `-messenger` repo is the onboarding/survey layer. **Rewrites are published copy → route through the `copywriting` skill, do not free-write.** Also consider having the maps fail the build on a key that matches no published project.                                                                                                                                                          |
 | ~~5~~ | ~~`/azucar/` landing page missing its meta description~~                     | ~~Low~~    | **Resolved 2026-08-05** as a side effect of #6 — the page that was missing the description was the ungated proposal, now deleted. `meta-description-gate` went from "1 missing meta" to **0 missing** on the same build.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
@@ -48,10 +48,11 @@ _(none open)_
   receives a CFDI or a plain invoice, then fix via the `copywriting` skill (published copy).
 - **Triage stale open PRs** — **#224** (Messenger portfolio merge, opened 2026-08-06 by a parallel
   session) is unreviewed and touches the live portfolio + adds redirects; review before it goes
-  stale like #173 did. **#204** (Lumière composite showcase) has been open since 2026-07-26 while
-  siblings #206/#207 merged. Also confirm the seven open Dependabot PRs (#128, #198, #215, #217,
-  #218, #219, #220) are still wanted — #218 (TypeScript 5→7) and #220 (ESLint 9→10) are majors and
-  need a build check, not a blind merge.
+  stale like #173 did. ~~**#204**~~ **closed 2026-08-12** — superseded by #207 two days after it
+  opened, which shipped a safer live-only version with more features; nothing on the branch was
+  worth carrying forward. ~~Dependabot #215~~ **merged 2026-08-12** (resolved a medium security
+  alert). Remaining open Dependabot PRs: #128, #198, #217, #218, #219, #220 — #218 (TypeScript 5→7)
+  and #220 (ESLint 9→10) are majors and need a build check, not a blind merge.
 - **Ahrefs 2026-07-25 crawl fixes — one item left** (tech debt #8).
   1. `src/data/projectDetails.ts:146` → `https://www.cushlabs.ai/` (kills the 3XX warning).
      Still open as of 2026-08-05.
@@ -160,6 +161,57 @@ Documented in CLAUDE.md and memory `feedback_tailwind4_color_collision`. Custom 
 ---
 
 ## Session History
+
+## Session: 2026-08-10/12 — 5-service landing page pattern completed; sitewide UX audit; security cleanup
+
+### Accomplished
+
+- WhatsApp Reminders and Voice Agent surfaced from near-invisible to fully discoverable — homepage
+  solution cards, footer, and `/services/` scenario cards fixed, one of which pointed at the wrong
+  section entirely (#243).
+- Two new dedicated landing pages built from scratch — Competitive Intelligence (ties to the live
+  MarketSignal tool) and Website Chatbot — completing the site's 5-core-service pattern (#249, #250).
+- Full-bleed photo heroes shipped on Voice Agent, homepage, and Website Chatbot; caught and fixed a
+  hero badge that read as an unintended Facebook jab before it shipped (#246, #248, #251, #252).
+- Post-ship UX/copy audit found and fixed 3 real defects: an unbalanced service-block layout, two
+  hero text/photo collisions (Messenger + Competitive Intelligence, real overlaps at common viewport
+  widths), a header/nav collision at 768-870px tablet widths ("CUSHLABSAbout"), and a live
+  contradiction between `/pricing/` and `/competitive-intelligence/` on whether review replies are
+  included (#253, #254, #255).
+- Closed PR #204 (Lumière demo, stale since 2026-07-26) as superseded by #207, which shipped a safer
+  version 2 days later. Queued from the prior session's next-steps; nothing worth carrying forward.
+- Fixed 3 high/medium security alerts with no auto-fix PR — js-yaml (2 vulnerable paths, patched
+  independently so gray-matter wasn't forced onto an incompatible major) and nanoid — plus merged the
+  existing postcss Dependabot PR (#256, #215).
+
+### Decisions Made
+
+- `/whatsapp/` stays "Coming soon" — verified in `cushlabs-connect` (not just Meta's dashboard) that
+  the client onboarding flow has never run end-to-end; the real blocker is a prepaid SIM + a live
+  test run, tracked in that repo, not here.
+- Instagram as a customer channel: confirmed not built at all — no approval, no product, no page.
+  Separate distance from WhatsApp, not just "the same wait."
+- Darkened-middle overlay is now the default hero treatment whenever a photo has no clean empty zone
+  for text (established on the homepage hero, reused for Competitive Intelligence).
+
+### Immediate Next Steps
+
+- [ ] Once Robert completes a real WhatsApp client onboarding test (blocked on his prepaid SIM
+      registration), flip `/whatsapp/` off "Coming soon."
+- [ ] Triage remaining open Dependabot PRs (#217-220, #198, #128) — #218 (TypeScript 5→7) and #220
+      (ESLint 9→10) are majors, need a build check before merging.
+- [ ] `operating-system` capability registry's WhatsApp entries are stale (still say "flip-to-Live
+      pending"); offered to correct, Robert hasn't confirmed yet.
+
+### Technical Debt
+
+- None new — the audit found and fixed defects same-session rather than deferring them.
+
+### Open Questions / Blockers
+
+- None new to this repo — see `cushlabs-connect/docs/SESSION_LOG.md` for the SIM/onboarding chain.
+
+---
 
 ## Session: 2026-08-10 — Chevron mark shipped; three cache lessons paid for in production
 
