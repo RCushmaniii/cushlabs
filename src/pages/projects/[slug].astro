@@ -249,6 +249,13 @@ const relatedProjects = scored.slice(0, 3).map(s => s.project);
               <dt class="text-muted">{dict.project.lastUpdated}</dt>
               <dd class="text-foreground text-right">{lastPushed}</dd>
             </div>
+            {/* Stars and forks are GitHub popularity counters. A private repo
+                cannot be starred or forked by anyone, so these can only ever
+                read 0 — which a visitor reads as "nobody cares about this
+                project" rather than "this repo is private". Hidden for private
+                repos; shown normally for public ones. */}
+            {!isPrivateRepo && (
+              <>
             <div class="flex items-start justify-between gap-4">
               <dt class="text-muted">{dict.project.stars}</dt>
               <dd class="text-foreground text-right">{stars}</dd>
@@ -257,6 +264,8 @@ const relatedProjects = scored.slice(0, 3).map(s => s.project);
               <dt class="text-muted">{dict.project.forks}</dt>
               <dd class="text-foreground text-right">{forks}</dd>
             </div>
+              </>
+            )}
           </dl>
         </aside>
       </header>
