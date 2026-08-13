@@ -254,22 +254,26 @@ const relatedProjects = scored.slice(0, 3).map(s => s.project);
               <dt class="text-muted">{dict.project.lastUpdated}</dt>
               <dd class="text-foreground text-right">{lastPushed}</dd>
             </div>
-            {/* Stars and forks are GitHub popularity counters. A private repo
-                cannot be starred or forked by anyone, so these can only ever
-                read 0 — which a visitor reads as "nobody cares about this
-                project" rather than "this repo is private". Hidden for private
-                repos; shown normally for public ones. */}
-            {!isPrivateRepo && (
-              <>
+            {/* Stars and forks are GitHub popularity counters. A zero here
+                reads as "nobody cares about this project" — beside Robert's
+                best work — whether the cause is a private repo (nobody CAN
+                star it) or a public repo nobody has starred yet. So the rule
+                is simply: never render a zero. Robert's call, 2026-08-12,
+                replacing an earlier private-only version of this fix that
+                left public zero-star repos like ny-eng still showing 0. Each
+                row is judged on its own count, so a repo with 3 stars and 0
+                forks shows only the stars row. */}
+            {stars > 0 && (
             <div class="flex items-start justify-between gap-4">
               <dt class="text-muted">{dict.project.stars}</dt>
               <dd class="text-foreground text-right">{stars}</dd>
             </div>
+            )}
+            {forks > 0 && (
             <div class="flex items-start justify-between gap-4">
               <dt class="text-muted">{dict.project.forks}</dt>
               <dd class="text-foreground text-right">{forks}</dd>
             </div>
-              </>
             )}
           </dl>
         </aside>
