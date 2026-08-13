@@ -41,6 +41,12 @@ _(none open)_
 
 ### Medium priority
 
+- **Reconcile bot es content to the new cost language** (from 2026-08-13 session) — the bot still
+  says _"Instagram y WhatsApp están en camino y se agregarán sin costo extra"_; "sin costo extra" is
+  now banned for WhatsApp (Meta per-message fees — cost-language rule #3 in
+  `ADVERTISED-COMMITMENTS.md` §2.4). Replace with _"sin aumento en tu mensualidad"_ in
+  `cushlabs-messenger-bot`. Also check the bot's pricing content states "más IVA" per the new §2.2
+  Taxes rule.
 - **Confirm CFDI on the USD surfaces** (remainder of tech debt #11). The card question is settled —
   card is not live, docs corrected 2026-08-06. Left over: `PricingSection.astro:156` and
   `salons.astro:96`/`:317` promise a **CFDI** to a USD/US audience, and `salons.astro:7`'s header
@@ -161,6 +167,39 @@ Documented in CLAUDE.md and memory `feedback_tailwind4_color_collision`. Custom 
 ---
 
 ## Session History
+
+## Session: 2026-08-13 — IVA disclosure sitewide; WhatsApp "no extra cost" promise re-scoped
+
+### Accomplished
+
+- **IVA ambiguity closed on every MXN price surface.** The site never said "más IVA" anywhere — if
+  prices were read as IVA-included, that's a silent ~13.8% haircut on every subscription, forever.
+  Now: pricing cards say "MXN/mes + IVA" on the unit label, the notes line says "Precios más IVA,
+  desglosado en tu factura (CFDI)", every inline MXN price sitewide carries "+ IVA" (service pages,
+  scenario qualifier, comparison tables vs. receptionist/CM, home FAQ), and both terms pages state
+  it as a binding billing term with a foreign-client carve-out. USD prices deliberately untouched
+  (tax treatment lives in the service agreement). A "¿Los precios incluyen IVA?" FAQ added to the
+  comparison matrix frames it as a benefit (deducible, CFDI desglosado). EN/ES parity throughout.
+- **WhatsApp/Instagram "no extra cost" promise re-scoped before it became a liability.** Meta bills
+  per-message on WhatsApp; "sin costo extra" promised to absorb an unbounded variable cost on a
+  product that doesn't exist yet. All future-channel promises now read "with no increase in your
+  monthly plan price" / "sin aumento en tu mensualidad" (`salons.astro`, `salones.astro`), and the
+  owner-alert FAQ dropped "at no extra cost" (kept "included on every plan" — bounded, one template
+  per hot lead).
+- **`ADVERTISED-COMMITMENTS.md` updated as the canonical rule, not just the symptom:** §2.2 Taxes
+  bullet (never quote MXN as IVA-included), cost-language rule #3 under the WhatsApp entry ("no
+  extra cost" banned for WhatsApp in any tense; approved phrasings recorded), Instagram entry and
+  §11.7 reconciled. Registry validator: 12 passed / 0 failed after the change.
+
+### Known gaps / follow-ups
+
+- **Bot repo still says "se agregarán sin costo extra"** (`cushlabs-messenger-bot` es content) — now
+  banned language; reconcile to "sin aumento en tu mensualidad". Noted in §11.7 and the new rule #3.
+- **Delivered prospect proposals quote flat MXN prices with no IVA** (`/demo/latiendita/…`,
+  `/demo/azucar/…` — live token-gated URLs). Deliberately NOT edited: silently changing a quote a
+  prospect already received is a business call. Decision owner: Robert.
+- Meta descriptions on `/pricing/` and `/es/precios/` still say "From $1,990 MXN/mo" without IVA —
+  deliberate (SERP snippet, not a quote surface; the page discloses immediately).
 
 ## Session: 2026-08-10/12 — 5-service landing page pattern completed; sitewide UX audit; security cleanup
 

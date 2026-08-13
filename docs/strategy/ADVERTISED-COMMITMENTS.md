@@ -105,6 +105,13 @@ Three tiers. One flat monthly price each. **Per business, includes up to 2 locat
   side. Card is roadmap via Mercado Pago along with OXXO — never advertise either.
 - **Billing:** monthly, **in advance**. Prepay discounts: **quarterly 5%, annual 10%**, applied to
   the recurring subscription only.
+- **Taxes (added 2026-08-13):** all MXN prices are **más IVA** — the IVA is added at the applicable
+  rate and itemized on the CFDI. Site-wide as of the same date: pricing cards say "MXN/mes + IVA",
+  every inline MXN price carries "+ IVA", and `terms.astro` / `es/terms.astro` state it as a billing
+  term. **Never quote an MXN price as IVA-included**, in copy or in bot replies — before this rule
+  the site was silent, which read as IVA-included and would have been a permanent ~13.8% haircut on
+  every subscription. USD prices (US/Canada clients) are stated as-is; their tax treatment lives in
+  the individual service agreement, not in marketing copy.
 
 > **Reconciled to the live site 2026-08-05.** This block had said "2-week free trial" and "SPEI or
 > OXXO" since before 2026-07-08. Both were wrong: `PricingSection.astro`, `terms.astro` and
@@ -138,7 +145,6 @@ America; USD = US + Canada. Rationale: `docs/strategy/MEXICO-GTM-STRATEGY.md` §
   for the channel carrying more of her volume than the one she bought would read as bait.
 
   **Four reasons, in order of weight:**
-
   1. **Clients do not think in channels.** Meta itself presents Messenger, Instagram and WhatsApp as
      ONE inbox with tabs. The channel split is an artefact of our architecture. Charging per channel
      forces us to explain our plumbing to justify a price, which is always a losing conversation.
@@ -164,7 +170,9 @@ America; USD = US + Canada. Rationale: `docs/strategy/MEXICO-GTM-STRATEGY.md` §
   safe form is a fair-use ceiling on total conversations — never a per-channel charge.
 
   **What may be said to a client today:** that Instagram is part of what the messaging tier becomes,
-  that it needs Meta's approval first, that it will be switched on at no extra cost when it lands, and
+  that it needs Meta's approval first, that it will be switched on **with no increase in the plan's
+  monthly price** when it lands (say exactly that — see the cost-language rule under the WhatsApp
+  entry below for why "no extra cost" is banned), and
   **no date** — `instagram_manage_messages` requires an App Review, and the 2026-07-19 submission was
   rejected on 07-31. We have no basis for a timeline.
 
@@ -193,7 +201,6 @@ America; USD = US + Canada. Rationale: `docs/strategy/MEXICO-GTM-STRATEGY.md` §
   not.
 
   **Two things that are still true and must not be blurred:**
-
   1. **WhatsApp is not on the pricing cards.** `PricingSection.astro` still renders three tiers with
      no WhatsApp line. Approved ≠ published. Until those components change, no page may imply
      WhatsApp is included in Basic/Premium/Ultra, because the price table on the same site says
@@ -202,6 +209,19 @@ America; USD = US + Canada. Rationale: `docs/strategy/MEXICO-GTM-STRATEGY.md` §
      item was Meta's phone-number verification step and a full end-to-end + token-scope check.
      Confirm current status in that repo before a page promises a delivery timeline. The permission
      to sell it is not the same as a completed client onboarding.
+
+  3. **Cost language (rule added 2026-08-13): never promise WhatsApp "at no extra cost" — anywhere,
+     in any tense.** Meta bills per-message fees on WhatsApp business messaging (template/utility
+     rates, set by Meta, changeable by Meta). "No extra cost" promises to absorb an unbounded
+     variable cost on a product that does not exist yet. The approved forms are **"with no increase
+     in your monthly plan price"** / **"sin aumento en tu mensualidad"** — they commit the
+     subscription price and nothing else, leaving Meta's usage fees to be priced when the channel
+     ships. The site was scrubbed of "no extra cost / sin costo extra" for future channels on
+     2026-08-13 (`salons.astro`, `salones.astro`, `PricingComparison.astro`). The owner **alert**
+     stays "included on every plan" (bounded: one template message per hot lead), but its FAQ no
+     longer says "at no extra cost" either. **Bot-side follow-up:** the bot's es content still says
+     "se agregarán sin costo extra" — reconcile it to "sin aumento en tu mensualidad" in
+     `cushlabs-messenger-bot`.
 
   **Reference implementation:** `cushlabs-whatsapp` runs WhatsApp utility messaging in production for
   NY English (own WABA, single tenant, real recipients since 2026-08-01). It is the proof the
@@ -587,8 +607,11 @@ error monitoring (#21). **No over-claim** among these.
 
 ### 11.7 🟢 Correctly consistent across both repos (no action)
 
-- **WhatsApp/Instagram**: site omits them; bot es content says _"Instagram y WhatsApp están en camino y se
-  agregarán sin costo extra"_ — matches the "layer in at no price change" stance. Keep until Meta approves.
+- **WhatsApp/Instagram**: site omits them from pricing. **No longer fully consistent as of
+  2026-08-13:** the bot es content still says _"Instagram y WhatsApp están en camino y se agregarán
+  sin costo extra"_, but "sin costo extra" is now banned language (cost-language rule #3 under the
+  §2.4 WhatsApp entry — Meta bills per-message on WhatsApp). Bot side must move to _"sin aumento en
+  tu mensualidad"_.
 - **Two "weekly reports"**: bot content keeps them distinct (`services-messenger-bot` performance report
   vs. `services-marketsignal` SEO/competitor report). Just don't conflate per §3.
 
