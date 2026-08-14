@@ -394,10 +394,18 @@ async function createBooking(data, env, timeZone, lang) {
   const endTime = `${String(endH).padStart(2, "0")}:${String(endM).padStart(2, "0")}`;
   const endDateTime = `${date}T${endTime}:00`;
 
+  // Optional label naming which front door produced the booking, e.g. the
+  // Lumière Medspa demo bot. The meeting is a CushLabs AI strategy consultation
+  // either way — this only records how the prospect arrived, so bookings from a
+  // demo persona are distinguishable at a glance from cushlabs.ai/consultation
+  // on a calendar that several booking systems write to. Omitted by default, so
+  // the cushlabs.ai form's title is unchanged.
+  const source = sanitizeInput(data.source || "");
+  const sourceTag = source ? ` (${source})` : "";
   const summary =
     lang === "es"
-      ? `Consulta de Estrategia de IA - CushLabs: ${name}`
-      : `AI Strategy Consultation - CushLabs: ${name}`;
+      ? `Consulta de Estrategia de IA - CushLabs${sourceTag}: ${name}`
+      : `AI Strategy Consultation - CushLabs${sourceTag}: ${name}`;
 
   const notes = sanitizeInput(data.notes || "");
   const description =
