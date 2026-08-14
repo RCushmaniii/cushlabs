@@ -1,11 +1,13 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import IndustryMessengerDemo from "../components/demos/IndustryMessengerDemo.astro";
+import LiveDemoStrip from "../components/demos/LiveDemoStrip.astro";
 ---
 
 <BaseLayout
   title="See a Messenger AI Demo for Your Business | CushLabs.ai"
   description="Pick your industry and watch a CushLabs AI assistant answer customers and book sales right inside Facebook Messenger — bilingual, 24/7."
 >
+  <LiveDemoStrip locale="en" />
   <IndustryMessengerDemo locale="en" />
 </BaseLayout>

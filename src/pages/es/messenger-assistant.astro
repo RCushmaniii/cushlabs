@@ -33,36 +33,9 @@ const bestFor = [
 // bot muestra en Messenger (versión en español — Facebook la muestra
 // automáticamente a quien tiene Facebook en español). Mantener en sync con
 // cushlabs-messenger-bot/scripts/set-messenger-profile.ts.
-const liveDemos = [
-  {
-    badge: "El producto, vendiéndose solo",
-    name: "CushLabs",
-    tagline: "Empresa de software — la página de la que estás leyendo",
-    copy: "El mismo asistente que describe esta página, trabajando en la propia página de Facebook de CushLabs. Conoce los servicios, maneja las preguntas de precio con honestidad y pasa la conversación a Robert cuando debe hacerlo. Pregunta cómo se ve en acción y responde con un visual.",
-    questions: [
-      "¿Qué servicios ofrecen?",
-      "¿Cómo se ve en acción?",
-      "¿Cuánto cuesta?",
-      "Tengo un salón — ¿cómo me pueden ayudar?",
-    ],
-    href: "https://m.me/cushlabs",
-    cta: "Escribir a CushLabs",
-  },
-  {
-    badge: "Cliente real en producción",
-    name: "New York English",
-    tagline: "Coaching de inglés ejecutivo — mi primer cliente en producción",
-    copy: "Atiende clientes reales en español e inglés desde abril. Pregunta precios, horarios o cómo reservar y mira cómo responde con los datos del propio negocio — la pregunta de confianza incluso llega con una mini-lección en imagen.",
-    questions: [
-      "¿Cómo me ayudan con la confianza al hablar inglés?",
-      "¿Cuánto cuesta una sesión?",
-      "¿Cuál es el horario?",
-      "¿Cómo agendo una consulta gratis?",
-    ],
-    href: "https://m.me/nyenglishteacher",
-    cta: "Escribir a New York English",
-  },
-];
+import { messengerDemos } from "../../data/liveDemos";
+
+const liveDemos = messengerDemos.es;
 
 // "Qué incluye hoy" — organizado en cuatro temas. Cada punto está respaldado
 // por lo que el asistente en producción realmente hace AHORA MISMO (List 1 en
