@@ -209,6 +209,10 @@ async function execCreateBooking(env, input, lang) {
       time: input.time,
       lang,
       notes: input.notes || "",
+      // Camila is the Lumière Medspa demo persona. The booking is a real
+      // CushLabs AI strategy consultation, so the title keeps that framing —
+      // this tag only records that the prospect came in through the demo.
+      source: "Lumière Demo",
     }),
   });
   if (!res.ok) {
