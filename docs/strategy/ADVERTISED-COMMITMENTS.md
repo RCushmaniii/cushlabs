@@ -219,9 +219,12 @@ America; USD = US + Canada. Rationale: `docs/strategy/MEXICO-GTM-STRATEGY.md` §
      ships. The site was scrubbed of "no extra cost / sin costo extra" for future channels on
      2026-08-13 (`salons.astro`, `salones.astro`, `PricingComparison.astro`). The owner **alert**
      stays "included on every plan" (bounded: one template message per hot lead), but its FAQ no
-     longer says "at no extra cost" either. **Bot-side follow-up:** the bot's es content still says
-     "se agregarán sin costo extra" — reconcile it to "sin aumento en tu mensualidad" in
-     `cushlabs-messenger-bot`.
+     longer says "at no extra cost" either. **Bot-side follow-up: DONE same day** —
+     `cushlabs-messenger-bot` PR #270 (2026-08-13) reconciled all bot content, the pricing hard
+     fact, and the system prompt to both rules; live KV updated and QA-gated 34/34. One residue:
+     the corrected RAG prose could not be re-embedded (dead `CF_AI_TOKEN` — bot repo Open Items
+     #15), so old "sin costo extra" chunks remain retrievable until the token is rotated and
+     `pnpm ingest` re-runs.
 
   **Reference implementation:** `cushlabs-whatsapp` runs WhatsApp utility messaging in production for
   NY English (own WABA, single tenant, real recipients since 2026-08-01). It is the proof the
@@ -607,11 +610,11 @@ error monitoring (#21). **No over-claim** among these.
 
 ### 11.7 🟢 Correctly consistent across both repos (no action)
 
-- **WhatsApp/Instagram**: site omits them from pricing. **No longer fully consistent as of
-  2026-08-13:** the bot es content still says _"Instagram y WhatsApp están en camino y se agregarán
-  sin costo extra"_, but "sin costo extra" is now banned language (cost-language rule #3 under the
-  §2.4 WhatsApp entry — Meta bills per-message on WhatsApp). Bot side must move to _"sin aumento en
-  tu mensualidad"_.
+- **WhatsApp/Instagram**: site omits them from pricing. **Re-reconciled 2026-08-13** — the bot's
+  "sin costo extra" phrasing (banned under cost-language rule #3, §2.4 WhatsApp entry) was replaced
+  with _"sin aumento en tu mensualidad"_ across bot content, hard facts, prompt, and live KV
+  (`cushlabs-messenger-bot` PR #270). Remaining residue: stale RAG vectors until the dead
+  `CF_AI_TOKEN` is rotated and the corpus re-ingested (bot repo Open Items #15).
 - **Two "weekly reports"**: bot content keeps them distinct (`services-messenger-bot` performance report
   vs. `services-marketsignal` SEO/competitor report). Just don't conflate per §3.
 

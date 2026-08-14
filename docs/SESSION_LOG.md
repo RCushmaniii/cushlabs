@@ -41,12 +41,11 @@ _(none open)_
 
 ### Medium priority
 
-- **Reconcile bot es content to the new cost language** (from 2026-08-13 session) — the bot still
-  says _"Instagram y WhatsApp están en camino y se agregarán sin costo extra"_; "sin costo extra" is
-  now banned for WhatsApp (Meta per-message fees — cost-language rule #3 in
-  `ADVERTISED-COMMITMENTS.md` §2.4). Replace with _"sin aumento en tu mensualidad"_ in
-  `cushlabs-messenger-bot`. Also check the bot's pricing content states "más IVA" per the new §2.2
-  Taxes rule.
+- **Rotate `CF_AI_TOKEN` in `cushlabs-messenger-bot/.dev.vars`, then re-ingest the corrected RAG
+  corpus** — the bot-content reconciliation shipped same night (bot PR #270, live KV + QA-gated),
+  but the token is dead at Cloudflare (invalid since ≤2026-08-13, last ingest 2026-07-02), so the
+  corrected prose can't be embedded and stale "2-week / SPEI-OXXO / sin costo extra" chunks remain
+  retrievable. Steps + verification: bot repo `docs/SESSION_LOG.md` Open Items #15.
 - **Confirm CFDI on the USD surfaces** (remainder of tech debt #11). The card question is settled —
   card is not live, docs corrected 2026-08-06. Left over: `PricingSection.astro:156` and
   `salons.astro:96`/`:317` promise a **CFDI** to a USD/US audience, and `salons.astro:7`'s header
@@ -193,8 +192,13 @@ Documented in CLAUDE.md and memory `feedback_tailwind4_color_collision`. Custom 
 
 ### Known gaps / follow-ups
 
-- **Bot repo still says "se agregarán sin costo extra"** (`cushlabs-messenger-bot` es content) — now
-  banned language; reconcile to "sin aumento en tu mensualidad". Noted in §11.7 and the new rule #3.
+- ~~**Bot repo still says "se agregarán sin costo extra"**~~ — **DONE same night**,
+  `cushlabs-messenger-bot` PR #270: all bot content, the pricing hard fact, and the system prompt
+  reconciled to both new rules (plus older drift fixed: 2-week→1-week trial, SPEI/OXXO→bank
+  transfer, price-quoting gag retired per the 2026-07-07 decision). Live KV updated surgically,
+  QA gate 34/34, live replies verified. **Still open there:** RAG re-ingest blocked on a dead
+  `CF_AI_TOKEN` (bot repo Open Items #15) — stale prose chunks retrievable until Robert rotates
+  the token.
 - **Delivered prospect proposals quote flat MXN prices with no IVA** (`/demo/latiendita/…`,
   `/demo/azucar/…` — live token-gated URLs). Deliberately NOT edited: silently changing a quote a
   prospect already received is a business call. Decision owner: Robert.
