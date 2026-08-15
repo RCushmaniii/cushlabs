@@ -11,6 +11,8 @@ Things that shipped with a known gap. Open items first; key resolved items kept 
 
 | #     | Item                                                                         | Severity   | Notes                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 | ----- | ---------------------------------------------------------------------------- | ---------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 12    | Instagram is advertised as "Coming" while **nothing is submitted**           | **High**   | Added 2026-08-15. `/pricing/` and `/es/precios/` now show the Instagram assistant as Coming on Premium & Ultra. The registry records `meta-instagram-messaging-permissions` as **`not_submitted`** — no App Review request exists, so no amount of waiting produces it. The wording is honest (no date promised) and the pricing page is not the problem; the absence of a submission is. The 07-31 rejection's documented cause — a screencast that didn't prove _the app_ performed the action — is reusable, so the next submission starts ahead of the last. **Consider submitting `instagram_manage_messages` without `instagram_manage_comments`**, rather than risking the bundle on the permission class Meta already refused once. Blocks nothing today; becomes real the first time a prospect's decision turns on Instagram.                                                                                                                                                                         |
+| 13    | Voice de-prioritized for sales, but the site still leads with it             | Medium     | Added 2026-08-15 from Tier Spec v1.2 §3. Voice is "on the grid, never pitched" — yet it keeps a full service page (`voice-agent.astro` + `es/`), a nav entry, a slot in the `/demos/` live strip, and a mention in the site meta description. More structurally: voice is the only capability that makes Ultra a _different_ product rather than a bigger one, and once Instagram + WhatsApp land in **Premium**, Ultra's $2,000/mo premium rests on priority support and industry tuning alone. Either pitch voice, re-cut Ultra around something else (volume, locations, SLA), or accept Ultra as a list-price-only tier. **Robert's call — see `operating-system/cushlabs/tier-feature-spec.md` §7.5.**                                                                                                                                                                                                                                                                                                     |
 | 1     | EN privacy "Your Rights" lacks Mexican-specific framing                      | Low        | ES privacy names LFPDPPP / derechos ARCO (PR #86); EN still says generic "depending on your location." Fine for a global EN audience, but worth a lawyer review if English-speaking Mexican residents are expected.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | ~~2~~ | ~~`js-yaml` (via `gray-matter`) flagged by `npm audit` (moderate)~~          | ~~Low~~    | **Resolved 2026-08-12** — turned out to be 2 separate HIGH-severity Dependabot alerts (js-yaml on two paths, plus nanoid), not the build-time-only nit previously assumed. Fixed via nested `package.json` overrides: js-yaml 4.3.1 for the astro/eslint path, 3.15.1 for gray-matter's own path (so its frontmatter parsing wasn't forced onto an incompatible major); nanoid 3.3.17 via eslint-plugin-astro's postcss. Verified with a full build. PR #256.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | 3     | Legacy `src/components/home/` folder is dead but retained                    | Low        | Live pages use `home2/`. The old `home/Hero.astro` still carries a stale "20+ Years IT Experience" string (never rendered). Remove the folder or update it if ever revived.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
@@ -166,6 +168,58 @@ Documented in CLAUDE.md and memory `feedback_tailwind4_color_collision`. Custom 
 ---
 
 ## Session History
+
+## Session: 2026-08-15 — Tier & Feature Spec v1.2 published to the pricing page; Instagram approval status corrected
+
+**Shipped (PR #262, branch `feat/tier-spec-v12-pricing`):** Robert's Tier & Feature Spec v1.1 + v1.2
+addendum, reconciled against the capability registry and rendered onto `/pricing/` and `/es/precios/`.
+
+- **New "Coming" state, enforced by types not memory.** `PricingSection.astro` now has two separate
+  arrays per tier — `features` (live, orange check) and `soon` (not built, dashed pill, never a
+  check). `PricingComparison.astro`'s `Cell` type gained a distinct `{ soon: … }` variant. **A coming
+  feature cannot be rendered with a check without changing the type.** This is the structural answer
+  to the overclaiming failure mode that has recurred four times.
+- **Published as Coming on Premium & Ultra:** Instagram assistant, WhatsApp customer assistant,
+  WhatsApp utility notifications (500 / 2,000 msgs mo), WhatsApp marketing campaigns.
+- **New published numbers:** extra same-brand surface +$490 MXN (+$35 USD)/mo · extra WhatsApp number
+  +$690 (+$49) · utility overage $0.50/msg · marketing $0.70/delivered msg · campaign fee $1,490 up to
+  1,000 recipients +$490/1,000 · Ultra now includes 2 websites, Premium 1.
+- **New published boundaries:** 3 alert recipients/location · ~10 KB updates/mo · SEO report 10
+  keywords + 5 competitors/location · ES+EN included, third language quoted · Google-only reviews with
+  Facebook recommendations and TripAdvisor named as not offered · trial starts at go-live · 12-month
+  price protection · client keeps ownership of pages, numbers, profiles and domains.
+- **7 new FAQs per locale**, opening with the four-WhatsApps disambiguation and "what does Coming mean
+  — will my price go up."
+- **Per-message rates are MXN-only.** The USD column reads "Quoted" for every one. Meta's US/Canada
+  rates sit on a different, unvalidated cost basis; publishing a USD per-message rate would quote
+  against a cost never measured.
+
+**Registry corrected — the find of the session.** `ADVERTISED-COMMITMENTS.md` §2.4 stated that
+"`instagram_manage_messages` requires an App Review, and the 2026-07-19 submission was rejected on
+07-31." **Instagram was never in that submission.**
+`cushlabs-messenger-bot/docs/APP_REVIEW_REJECTION_2026-07-31.md` names the rejected permissions
+exhaustively: `pages_read_user_content` and `pages_manage_engagement`. True status is
+**`not_submitted`** — now recorded as `meta-instagram-messaging-permissions` in the registry
+(validator: 13 passed · 0 failed · 5 warnings). That is worse than a rejection, not better: a
+rejection has a next action and a clock; an un-submitted permission has neither.
+
+**Kept off the page deliberately:** Comment → DM. Robert's draft grid had it ✅ on all three tiers with
+a "⚠registry" marker and named the grid as the source for the pricing page. The registry has it
+`status: rejected` + `do_not_advertise: true`. A ⚠ marker in an internal doc does not survive the trip
+to a pricing page; a ✅ does. Demo it live, never write it down. Reasoning recorded in
+`operating-system/cushlabs/tier-feature-spec.md` §0 so it is not silently re-reverted.
+
+**Docs filed (they existed only in `Downloads/` before, where no tool reads them):**
+`operating-system/cushlabs/tier-feature-spec.md` (internal — economics, margins, gates) and
+`docs/strategy/SERVICE-REFERENCE.md` (client-facing, bilingual, publish-ready).
+`ADVERTISED-COMMITMENTS.md` gained §2.5 (Surfaces Rule) and §2.6 (WhatsApp message economics), and its
+"WhatsApp is not on the pricing cards" item is now resolved rather than outstanding.
+
+**Verification:** build 126 pages clean · meta-description-gate 124/124 · `npm run check` 52 problems
+/ 26 errors, **identical to main** · `npm test` 31/31 · Iberian-marker audit clean across both new
+components and both new docs · rendered output confirmed in `dist/pricing/` and `dist/es/precios/`.
+
+**Also merged this session:** PR #261 (live demo strip on `/demos/`).
 
 ## Session: 2026-08-13 — IVA disclosure sitewide; WhatsApp "no extra cost" promise re-scoped
 

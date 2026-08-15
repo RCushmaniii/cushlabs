@@ -21,7 +21,16 @@ const { locale } = Astro.props;
 //   false           → not included (dash)
 //   string          → literal text, same in both currencies
 //   { mxn, usd }     → currency-aware text
-type Cell = true | false | string | { mxn: string; usd: string };
+//   { soon: … }      → NOT LIVE YET. Renders a "Coming"/"En camino" pill, never a
+//                     check. `soon: true` is the bare pill; a string or a
+//                     currency pair adds the allotment/rate underneath.
+//
+// The `soon` state exists because the honesty position is a product decision, not
+// a formatting one: a coming feature must be visually impossible to mistake for
+// an included one, on a page where the reader is deciding what they're buying.
+// See docs/strategy/TIER-FEATURE-SPEC.md §"Honesty first".
+type CurPair = { mxn: string; usd: string };
+type Cell = true | false | string | CurPair | { soon: true | string | CurPair };
 interface Row {
   label: string;
   cells: [Cell, Cell, Cell]; // Basic, Premium, Ultra
@@ -30,6 +39,8 @@ interface Group {
   label: string;
   rows: Row[];
 }
+const isSoon = (c: Cell): c is { soon: true | string | CurPair } =>
+  typeof c === "object" && c !== null && "soon" in c;
 
 const copy: Record<
   Locale,
@@ -47,6 +58,8 @@ const copy: Record<
     popular: string;
     included: string;
     notIncluded: string;
+    soonLabel: string;
+    soonNote: string;
     cta: string;
     ctaHref: string;
     groups: Group[];
@@ -73,36 +86,85 @@ const copy: Record<
     popular: "Most popular",
     included: "Included",
     notIncluded: "Not included",
+    soonLabel: "Coming",
+    soonNote:
+      "“Coming” means built and switched on the moment it exists, in the plan shown — and your plan keeps everything it includes today, always. We never sell a coming feature as if it were ready, and we never quote a date we can't keep.",
     cta: "Get started",
     ctaHref: "/consultation/",
     groups: [
       {
-        label: "Channels",
+        label: "Channels — where the assistant answers your customers",
         rows: [
           { label: "AI assistant on Facebook Messenger (24/7)", cells: [true, true, true] },
-          { label: "Website chatbot", cells: [false, true, true] },
+          { label: "Website chatbot — the same assistant on your site", cells: [false, true, true] },
+          {
+            label: "Instagram assistant — DMs, story replies and mentions",
+            cells: [false, { soon: true }, { soon: true }],
+          },
+          {
+            label: "WhatsApp assistant — the AI answers your customers on your business number",
+            cells: [false, { soon: true }, { soon: true }],
+          },
         ],
       },
       {
         label: "Reviews & local SEO",
         rows: [
           { label: "Google review management — approve a reply and it posts to Google automatically", cells: [true, true, true] },
+          { label: "Review platforms covered", cells: ["Google", "Google", "Google"] },
           { label: "Weekly local SEO & competitor report", cells: [false, true, true] },
+          {
+            label: "Report scope",
+            cells: ["—", "10 keywords + 5 competitors / location", "10 keywords + 5 competitors / location"],
+          },
         ],
       },
       {
-        label: "Leads & handoff",
+        label: "Leads & handoff — messages that come to you",
         rows: [
           { label: "Lead capture from every conversation", cells: [true, true, true] },
           {
-            label: "Owner lead alerts",
+            label: "Owner lead alerts by WhatsApp",
             cells: [
               "Instant WhatsApp + email & Messenger",
               "Instant WhatsApp + email & Messenger",
               "Instant WhatsApp + email & Messenger",
             ],
           },
+          {
+            label: "Alert recipients",
+            cells: ["Up to 3 / location", "Up to 3 / location", "Up to 3 / location"],
+          },
           { label: "Human handoff when it matters", cells: [true, true, true] },
+        ],
+      },
+      {
+        label: "WhatsApp — messages your business sends to customers",
+        rows: [
+          {
+            label: "Utility notifications — appointment reminders, confirmations, order updates (opted-in customers only)",
+            cells: [false, { soon: "500 messages / mo" }, { soon: "2,000 messages / mo" }],
+          },
+          {
+            label: "Additional utility messages",
+            cells: [
+              "—",
+              { soon: { mxn: "$0.50 MXN each + IVA", usd: "Quoted" } },
+              { soon: { mxn: "$0.50 MXN each + IVA", usd: "Quoted" } },
+            ],
+          },
+          {
+            label: "Marketing campaigns — promotions to your consented list, written, sent and reported",
+            cells: [false, { soon: "Add-on" }, { soon: "Add-on" }],
+          },
+          {
+            label: "Campaign price",
+            cells: [
+              "—",
+              { soon: { mxn: "$1,490 + IVA up to 1,000 recipients, plus $0.70 / delivered message", usd: "Quoted per campaign" } },
+              { soon: { mxn: "$1,490 + IVA up to 1,000 recipients, plus $0.70 / delivered message", usd: "Quoted per campaign" } },
+            ],
+          },
         ],
       },
       {
@@ -121,12 +183,21 @@ const copy: Record<
         rows: [
           { label: "Fully managed setup & training", cells: [true, true, true] },
           { label: "Ongoing support", cells: [true, true, true] },
-          { label: "Priority support", cells: [false, false, true] },
+          {
+            label: "Routine content updates (prices, hours, products)",
+            cells: [
+              "Included · guide ~10 / mo",
+              "Included · guide ~10 / mo",
+              "Included · guide ~10 / mo",
+            ],
+          },
+          { label: "Languages", cells: ["Spanish & English", "Spanish & English", "Spanish & English"] },
+          { label: "Priority support — 4-business-hour response", cells: [false, false, true] },
           { label: "Industry tuning (e.g. healthcare)", cells: [false, false, true] },
         ],
       },
       {
-        label: "Included with every plan",
+        label: "What your plan covers",
         rows: [
           { label: "Locations included", cells: ["Up to 2", "Up to 2", "Up to 2"] },
           {
@@ -137,10 +208,52 @@ const copy: Record<
               { mxn: "+$690 MXN/mo", usd: "+$49 USD/mo" },
             ],
           },
+          {
+            label: "Facebook Page + Google Business Profile",
+            cells: ["1 each / location", "1 each / location", "1 each / location"],
+          },
+          { label: "Websites included", cells: ["—", "1", "2"] },
+          {
+            label: "Each additional same-brand surface (extra site, Instagram account or Page)",
+            cells: [
+              { mxn: "+$490 MXN/mo", usd: "+$35 USD/mo" },
+              { mxn: "+$490 MXN/mo", usd: "+$35 USD/mo" },
+              { mxn: "+$490 MXN/mo", usd: "+$35 USD/mo" },
+            ],
+          },
+          {
+            label: "Each additional WhatsApp number",
+            cells: [
+              { mxn: "+$690 MXN/mo", usd: "+$49 USD/mo" },
+              { mxn: "+$690 MXN/mo", usd: "+$49 USD/mo" },
+              { mxn: "+$690 MXN/mo", usd: "+$49 USD/mo" },
+            ],
+          },
           { label: "Conversations", cells: ["Unlimited (fair use)", "Unlimited (fair use)", "Unlimited (fair use)"] },
-          { label: "Free trial", cells: ["1 week", "1 week", "1 week"] },
+        ],
+      },
+      {
+        label: "Terms",
+        rows: [
+          {
+            label: "Free trial",
+            cells: [
+              "1 week, starts at go-live",
+              "1 week, starts at go-live",
+              "1 week, starts at go-live",
+            ],
+          },
           { label: "Setup fee", cells: ["None", "None", "None"] },
           { label: "Contract", cells: ["Month-to-month", "Month-to-month", "Month-to-month"] },
+          { label: "Your price is protected for", cells: ["12 months", "12 months", "12 months"] },
+          {
+            label: "You keep ownership of your pages, number, profiles and domain",
+            cells: [true, true, true],
+          },
+          {
+            label: "If you leave, we hand you your knowledge base",
+            cells: [true, true, true],
+          },
         ],
       },
     ],
@@ -148,8 +261,20 @@ const copy: Record<
     faqSub: "The details behind the checkmarks.",
     faqs: [
       {
+        q: "There are four different things here called \"WhatsApp.\" Which is which?",
+        a: "The direction of the message is what separates them. (1) Owner alerts — we message YOU when a conversation shows real buying intent; live today on every plan. (2) WhatsApp assistant — the AI answers YOUR customers on your business number; coming, Premium and up. (3) Utility notifications — messages your business sends to customers who opted in: appointment reminders, confirmations, order updates; coming, Premium and Ultra. (4) Marketing campaigns — promotions to your consented list; coming, as a per-campaign add-on. In short: #1 alerts you, #2 answers them, #3 reminds them, #4 promotes to them.",
+      },
+      {
+        q: "What does \"Coming\" mean — and will my price go up when it arrives?",
+        a: "Coming means it isn't built yet, and we'd rather show you the roadmap than pretend the gap isn't there. When it ships it switches on in the plan shown on this page, and your plan keeps everything it includes today — always. What we won't do is quote you a date. These channels depend on Meta's approval process, and we have no honest way to predict it. If a date ever matters to your decision, tell us and we'll tell you plainly where the approval actually stands.",
+      },
+      {
         q: "What counts as a \"location\"?",
-        a: "One physical business address — a storefront, clinic, or office. Every plan includes up to two. Beyond that it's a flat +$690 MXN (+$49 USD) per location each month, at any tier.",
+        a: "One physical business address — a storefront, clinic, or office, with its own Google Business Profile. Every plan includes up to two. Beyond that it's a flat +$690 MXN (+$49 USD) per location each month, at any tier. Each location brings its own Facebook Page and Google profile with it.",
+      },
+      {
+        q: "I have two websites for the same business. Does that cost extra?",
+        a: "One plan covers one brand and one knowledge base. Premium includes one website — the root domain and its subdomains, landing pages included — and Ultra includes two. An extra same-brand surface beyond that (another site, another Instagram account, another Page) is +$490 MXN (+$35 USD) per month: same brain, another door. An extra WhatsApp number is +$690 MXN (+$49 USD), because every number carries its own registration, templates, and quality rating. A genuinely different brand with different information is a separate plan — we'll tell you that up front rather than discover it later.",
       },
       {
         q: "What does \"unlimited conversations (fair use)\" mean?",
@@ -173,11 +298,31 @@ const copy: Record<
       },
       {
         q: "Is there really no setup fee or contract?",
-        a: "Correct — no setup fee, no contract, month-to-month, cancel anytime. You also get a 1-week free trial to see it working on your own business before you pay a peso.",
+        a: "Correct — no setup fee, no contract, month-to-month, cancel anytime. The 1-week free trial starts when your assistant actually goes live, not when you sign, so the week you get is a week of it working. Cancel and it's effective at the end of the period you've paid for.",
       },
       {
         q: "Do prices include IVA?",
         a: "MXN prices are plus IVA, like any business service in Mexico. Every payment comes with a CFDI invoice with the IVA itemized, so it's deductible and your accounting stays clean from day one.",
+      },
+      {
+        q: "What will a WhatsApp campaign cost me?",
+        a: "$1,490 MXN + IVA per campaign for up to 1,000 recipients (+$490 for each additional 1,000), plus $0.70 MXN + IVA per delivered message. You only pay for messages that actually arrive. Full transparency on that per-message rate: Meta charges roughly $0.52 for a marketing message in Mexico on its July 2026 rate card — our $0.70 covers that fee, the delivery, and keeping you inside the rules. If Meta changes its rates, ours move with them and we tell you before they do.",
+      },
+      {
+        q: "Do you manage my Facebook recommendations or TripAdvisor reviews too?",
+        a: "Not today — Google is the platform we manage, and it's the one that moves local search. Facebook recommendations, TripAdvisor and the rest we simply don't offer yet. We'd rather tell you that than leave it vague and have you assume it was covered.",
+      },
+      {
+        q: "Who owns my Facebook Page, WhatsApp number, and Google profile?",
+        a: "You do, always. We work as a collaborator on accounts that stay in your name — we never take ownership of a page, a number, a profile, or a domain. If you ever leave, nothing has to be pried back, and we hand you your knowledge base: your information, your documented tone, your FAQs. It's yours because you gave it to us.",
+      },
+      {
+        q: "What happens to my customers' conversations?",
+        a: "They're used to serve your business and nothing else. Never sold, never used to train anything for another client. And a rule we won't bend on the sending side: consented lists only. We don't work with purchased lists — that protects your number's reputation as much as ours.",
+      },
+      {
+        q: "What if the assistant gets something wrong?",
+        a: "Tell us and we fix it the same day — with a named person accountable, not an anonymous support queue. What we won't promise is zero errors; anyone promising that hasn't run one of these in production. The assistant only answers from information you approved, and when it doesn't know something it says so and hands the conversation to a person rather than inventing an answer.",
       },
     ],
   },
@@ -199,36 +344,85 @@ const copy: Record<
     popular: "Más popular",
     included: "Incluido",
     notIncluded: "No incluido",
+    soonLabel: "En camino",
+    soonNote:
+      "«En camino» significa que se activa en cuanto existe, en el plan que aquí se indica — y tu plan conserva todo lo que incluye hoy, siempre. Nunca vendemos algo en camino como si ya estuviera listo, ni prometemos una fecha que no podamos cumplir.",
     cta: "Empieza",
     ctaHref: "/es/reservar/",
     groups: [
       {
-        label: "Canales",
+        label: "Canales — dónde el asistente atiende a tus clientes",
         rows: [
           { label: "Asistente con IA en Facebook Messenger (24/7)", cells: [true, true, true] },
-          { label: "Chatbot para tu sitio web", cells: [false, true, true] },
+          { label: "Chatbot en tu sitio web — el mismo asistente en tu página", cells: [false, true, true] },
+          {
+            label: "Asistente de Instagram — mensajes directos, respuestas a historias y menciones",
+            cells: [false, { soon: true }, { soon: true }],
+          },
+          {
+            label: "Asistente de WhatsApp — la IA responde a tus clientes en tu número de negocio",
+            cells: [false, { soon: true }, { soon: true }],
+          },
         ],
       },
       {
         label: "Reseñas y SEO local",
         rows: [
           { label: "Gestión de reseñas de Google — apruebas la respuesta y se publica en Google automáticamente", cells: [true, true, true] },
+          { label: "Plataformas de reseñas que atendemos", cells: ["Google", "Google", "Google"] },
           { label: "Reporte semanal de SEO local y competencia", cells: [false, true, true] },
+          {
+            label: "Alcance del reporte",
+            cells: ["—", "10 palabras clave + 5 competidores / sucursal", "10 palabras clave + 5 competidores / sucursal"],
+          },
         ],
       },
       {
-        label: "Leads y transferencia",
+        label: "Leads y transferencia — mensajes que te llegan a ti",
         rows: [
           { label: "Captura de leads en cada conversación", cells: [true, true, true] },
           {
-            label: "Avisos de leads al dueño",
+            label: "Alertas de leads al dueño por WhatsApp",
             cells: [
               "WhatsApp al instante + correo y Messenger",
               "WhatsApp al instante + correo y Messenger",
               "WhatsApp al instante + correo y Messenger",
             ],
           },
+          {
+            label: "Destinatarios de las alertas",
+            cells: ["Hasta 3 / sucursal", "Hasta 3 / sucursal", "Hasta 3 / sucursal"],
+          },
           { label: "Transferencia a una persona cuando hace falta", cells: [true, true, true] },
+        ],
+      },
+      {
+        label: "WhatsApp — mensajes que tu negocio envía a sus clientes",
+        rows: [
+          {
+            label: "Notificaciones — recordatorios de cita, confirmaciones y avisos de pedido (solo a clientes que lo autorizaron)",
+            cells: [false, { soon: "500 mensajes / mes" }, { soon: "2,000 mensajes / mes" }],
+          },
+          {
+            label: "Mensajes adicionales",
+            cells: [
+              "—",
+              { soon: { mxn: "$0.50 MXN c/u + IVA", usd: "Se cotiza" } },
+              { soon: { mxn: "$0.50 MXN c/u + IVA", usd: "Se cotiza" } },
+            ],
+          },
+          {
+            label: "Campañas de marketing — promociones a tu lista con consentimiento: redactadas, enviadas y reportadas",
+            cells: [false, { soon: "Complemento" }, { soon: "Complemento" }],
+          },
+          {
+            label: "Precio por campaña",
+            cells: [
+              "—",
+              { soon: { mxn: "$1,490 + IVA hasta 1,000 destinatarios, más $0.70 por mensaje entregado", usd: "Se cotiza por campaña" } },
+              { soon: { mxn: "$1,490 + IVA hasta 1,000 destinatarios, más $0.70 por mensaje entregado", usd: "Se cotiza por campaña" } },
+            ],
+          },
         ],
       },
       {
@@ -247,12 +441,21 @@ const copy: Record<
         rows: [
           { label: "Configuración y entrenamiento gestionados", cells: [true, true, true] },
           { label: "Soporte continuo", cells: [true, true, true] },
-          { label: "Soporte prioritario", cells: [false, false, true] },
+          {
+            label: "Actualizaciones rutinarias (precios, horarios, productos)",
+            cells: [
+              "Incluidas · guía ~10 / mes",
+              "Incluidas · guía ~10 / mes",
+              "Incluidas · guía ~10 / mes",
+            ],
+          },
+          { label: "Idiomas", cells: ["Español e inglés", "Español e inglés", "Español e inglés"] },
+          { label: "Soporte prioritario — respuesta en 4 horas hábiles", cells: [false, false, true] },
           { label: "Personalización por industria (p. ej. salud)", cells: [false, false, true] },
         ],
       },
       {
-        label: "Incluido en todos los planes",
+        label: "Qué cubre tu plan",
         rows: [
           { label: "Sucursales incluidas", cells: ["Hasta 2", "Hasta 2", "Hasta 2"] },
           {
@@ -264,12 +467,54 @@ const copy: Record<
             ],
           },
           {
+            label: "Página de Facebook + perfil de Google",
+            cells: ["1 de cada uno / sucursal", "1 de cada uno / sucursal", "1 de cada uno / sucursal"],
+          },
+          { label: "Sitios web incluidos", cells: ["—", "1", "2"] },
+          {
+            label: "Cada superficie adicional de la misma marca (otro sitio, otra cuenta de Instagram u otra página)",
+            cells: [
+              { mxn: "+$490 MXN/mes", usd: "+$35 USD/mes" },
+              { mxn: "+$490 MXN/mes", usd: "+$35 USD/mes" },
+              { mxn: "+$490 MXN/mes", usd: "+$35 USD/mes" },
+            ],
+          },
+          {
+            label: "Cada número de WhatsApp adicional",
+            cells: [
+              { mxn: "+$690 MXN/mes", usd: "+$49 USD/mes" },
+              { mxn: "+$690 MXN/mes", usd: "+$49 USD/mes" },
+              { mxn: "+$690 MXN/mes", usd: "+$49 USD/mes" },
+            ],
+          },
+          {
             label: "Conversaciones",
             cells: ["Ilimitadas (uso justo)", "Ilimitadas (uso justo)", "Ilimitadas (uso justo)"],
           },
-          { label: "Prueba gratis", cells: ["1 semana", "1 semana", "1 semana"] },
+        ],
+      },
+      {
+        label: "Condiciones",
+        rows: [
+          {
+            label: "Prueba gratis",
+            cells: [
+              "1 semana, empieza al entrar en línea",
+              "1 semana, empieza al entrar en línea",
+              "1 semana, empieza al entrar en línea",
+            ],
+          },
           { label: "Cuota de instalación", cells: ["Ninguna", "Ninguna", "Ninguna"] },
           { label: "Contrato", cells: ["Mes a mes", "Mes a mes", "Mes a mes"] },
+          { label: "Tu precio está protegido por", cells: ["12 meses", "12 meses", "12 meses"] },
+          {
+            label: "Tus páginas, tu número, tus perfiles y tu dominio siguen siendo tuyos",
+            cells: [true, true, true],
+          },
+          {
+            label: "Si te vas, te entregamos tu base de conocimiento",
+            cells: [true, true, true],
+          },
         ],
       },
     ],
@@ -277,8 +522,20 @@ const copy: Record<
     faqSub: "Los detalles detrás de las palomitas.",
     faqs: [
       {
+        q: "Aquí hay cuatro cosas distintas que se llaman \"WhatsApp\". ¿Cuál es cuál?",
+        a: "Lo que las separa es la dirección del mensaje. (1) Alertas al dueño — nosotros TE escribimos a ti cuando una conversación muestra intención real de compra; activo hoy en todos los planes. (2) Asistente de WhatsApp — la IA responde a TUS clientes en tu número de negocio; en camino, Premium y superiores. (3) Notificaciones — mensajes que tu negocio envía a clientes que lo autorizaron: recordatorios de cita, confirmaciones, avisos de pedido; en camino, Premium y Ultra. (4) Campañas — promociones a tu lista con consentimiento; en camino, como complemento por campaña. En corto: la 1 te avisa, la 2 les responde, la 3 les recuerda, la 4 les promociona.",
+      },
+      {
+        q: "¿Qué significa \"En camino\" y me va a subir el precio cuando llegue?",
+        a: "En camino significa que todavía no está construido, y preferimos enseñarte el plan completo a fingir que no existe ese hueco. Cuando salga se activa en el plan que aparece en esta página, y tu plan conserva todo lo que incluye hoy — siempre. Lo que no vamos a hacer es darte una fecha. Estos canales dependen del proceso de aprobación de Meta y no tenemos forma honesta de predecirlo. Si la fecha pesa en tu decisión, dínoslo y te decimos con claridad en qué punto está realmente la aprobación.",
+      },
+      {
         q: "¿Qué cuenta como una \"sucursal\"?",
-        a: "Una dirección física del negocio — un local, clínica u oficina. Todos los planes incluyen hasta dos. Después son +$690 MXN (+$49 USD) fijos por sucursal al mes, en cualquier nivel.",
+        a: "Una dirección física del negocio — un local, clínica u oficina, con su propio perfil de Google. Todos los planes incluyen hasta dos. Después son +$690 MXN (+$49 USD) fijos por sucursal al mes, en cualquier nivel. Cada sucursal trae consigo su página de Facebook y su perfil de Google.",
+      },
+      {
+        q: "Tengo dos sitios web del mismo negocio. ¿Eso cuesta extra?",
+        a: "Un plan cubre una marca y una base de conocimiento. Premium incluye un sitio web — el dominio principal y sus subdominios, con todo y páginas de aterrizaje — y Ultra incluye dos. Una superficie adicional de la misma marca más allá de eso (otro sitio, otra cuenta de Instagram, otra página) son +$490 MXN (+$35 USD) al mes: el mismo cerebro, otra puerta. Un número de WhatsApp adicional son +$690 MXN (+$49 USD), porque cada número carga con su propio registro, sus plantillas y su calificación de calidad. Una marca realmente distinta, con información distinta, es un plan aparte — te lo decimos de frente desde el principio, no después.",
       },
       {
         q: "¿Qué significa \"conversaciones ilimitadas (uso justo)\"?",
@@ -302,11 +559,31 @@ const copy: Record<
       },
       {
         q: "¿De verdad no hay cuota de instalación ni contrato?",
-        a: "Así es — sin cuota de instalación, sin contrato, mes a mes, cancela cuando quieras. Además tienes una prueba gratis de 1 semana para verlo funcionando en tu propio negocio antes de pagar un peso.",
+        a: "Así es — sin cuota de instalación, sin contrato, mes a mes, cancela cuando quieras. La prueba gratis de 1 semana empieza cuando tu asistente entra en línea, no cuando firmas, para que la semana que recibas sea una semana de verlo funcionando. Si cancelas, aplica al final del periodo que ya pagaste.",
       },
       {
         q: "¿Los precios incluyen IVA?",
         a: "Los precios en MXN son más IVA, como cualquier servicio empresarial en México. Cada pago incluye tu factura (CFDI) con el IVA desglosado, así que es deducible y tu contabilidad queda en orden desde el primer día.",
+      },
+      {
+        q: "¿Cuánto me costaría una campaña de WhatsApp?",
+        a: "$1,490 MXN + IVA por campaña hasta 1,000 destinatarios (+$490 por cada 1,000 adicionales), más $0.70 MXN + IVA por mensaje entregado. Solo pagas los mensajes que sí llegan. Transparencia completa sobre esa tarifa por mensaje: Meta cobra alrededor de $0.52 por un mensaje de marketing en México según su tarifa vigente de julio de 2026 — nuestros $0.70 cubren esa tarifa, la entrega y el cumplimiento de las reglas. Si Meta ajusta sus tarifas, las nuestras se mueven con ellas y te avisamos antes.",
+      },
+      {
+        q: "¿También atienden mis recomendaciones de Facebook o mis reseñas de TripAdvisor?",
+        a: "Hoy no — Google es la plataforma que atendemos, y es la que mueve la búsqueda local. Las recomendaciones de Facebook, TripAdvisor y las demás simplemente no las ofrecemos todavía. Preferimos decírtelo a dejarlo en el aire y que des por hecho que estaban cubiertas.",
+      },
+      {
+        q: "¿De quién son mi página de Facebook, mi número de WhatsApp y mi perfil de Google?",
+        a: "Tuyos, siempre. Trabajamos como colaboradores en cuentas que quedan a tu nombre — nunca tomamos la propiedad de una página, un número, un perfil ni un dominio. Si algún día te vas, no hay nada que recuperar a la fuerza, y te entregamos tu base de conocimiento: tu información, tu tono documentado, tus preguntas frecuentes. Es tuya porque tú nos la diste.",
+      },
+      {
+        q: "¿Qué pasa con las conversaciones de mis clientes?",
+        a: "Se usan para atender a tu negocio y para nada más. Nunca se venden ni entrenan nada para otro cliente. Y una regla que no negociamos del lado del envío: solo listas con consentimiento. No trabajamos con listas compradas — eso protege la reputación de tu número tanto como la nuestra.",
+      },
+      {
+        q: "¿Y si el asistente contesta algo mal?",
+        a: "Nos avisas y lo corregimos el mismo día — con una persona con nombre y apellido que responde por ello, no un centro de soporte anónimo. Lo que no vamos a prometer es cero errores; quien lo promete no ha operado uno de estos en producción. El asistente solo responde con información que tú aprobaste, y cuando no sabe algo lo dice y pasa la conversación a una persona en lugar de inventar una respuesta.",
       },
     ],
   },
@@ -454,6 +731,30 @@ const t = copy[locale];
                           <td class={`${base} text-gray-700 dark:text-gray-200 font-medium`}>{cell}</td>
                         );
                       }
+                      // Not live yet. A dashed, unfilled pill — deliberately never
+                      // the orange check, so no reader can skim this row as included.
+                      if (isSoon(cell)) {
+                        const note = cell.soon;
+                        return (
+                          <td class={base}>
+                            <span class="inline-block rounded-full border border-dashed border-gray-400 dark:border-gray-500 px-2.5 py-0.5 font-display text-[11px] font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400">
+                              {t.soonLabel}
+                            </span>
+                            {note !== true && (
+                              <span class="mt-1.5 block text-xs text-gray-500 dark:text-gray-400">
+                                {typeof note === "string" ? (
+                                  note
+                                ) : (
+                                  <>
+                                    <span data-cur="mxn">{note.mxn}</span>
+                                    <span data-cur="usd" class="hidden">{note.usd}</span>
+                                  </>
+                                )}
+                              </span>
+                            )}
+                          </td>
+                        );
+                      }
                       return (
                         <td class={`${base} text-gray-700 dark:text-gray-200 font-medium`}>
                           <span data-cur="mxn">{cell.mxn}</span>
@@ -497,6 +798,18 @@ const t = copy[locale];
         </tfoot>
       </table>
     </div>
+
+    <!-- What the "Coming" pill commits to. Sits directly under the matrix
+         because that is where the reader first meets it. -->
+    <p
+      class="mx-auto mt-8 max-w-3xl text-center text-sm leading-relaxed text-gray-500 dark:text-gray-400"
+    >
+      <span
+        class="mr-2 inline-block rounded-full border border-dashed border-gray-400 px-2.5 py-0.5 align-middle font-display text-[11px] font-semibold uppercase tracking-wide text-gray-500 dark:border-gray-500 dark:text-gray-400"
+        >{t.soonLabel}</span
+      >
+      {t.soonNote}
+    </p>
 
     <!-- FAQ -->
     <div class="max-w-3xl mx-auto mt-20">
