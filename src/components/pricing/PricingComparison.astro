@@ -28,7 +28,10 @@ const { locale } = Astro.props;
 // The `soon` state exists because the honesty position is a product decision, not
 // a formatting one: a coming feature must be visually impossible to mistake for
 // an included one, on a page where the reader is deciding what they're buying.
-// See docs/strategy/TIER-FEATURE-SPEC.md §"Honesty first".
+// See operating-system/cushlabs/tier-feature-spec.md §0 and §6. That spec is
+// NOT in this repo — pricing definitions live in the operating-system, this
+// component owns the rendered numbers. (The old pointer here named a path in
+// this repo that never existed.)
 type CurPair = { mxn: string; usd: string };
 type Cell = true | false | string | CurPair | { soon: true | string | CurPair };
 interface Row {

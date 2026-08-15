@@ -16,10 +16,13 @@
 > file, so a stale stamp on current content is its own failure mode. **Bump this line in the same
 > PR as any §2/§4/§5 change.**
 >
-> **Companion documents added 2026-08-15:** the client-facing service reference lives at
-> [`SERVICE-REFERENCE.md`](./SERVICE-REFERENCE.md) (bilingual, linkable from proposals); the
-> internal economics, margins and gates live in `operating-system/cushlabs/tier-feature-spec.md`.
-> This file stays the bridge between the two — it is what the bot repo reads.
+> **Companion documents, 2026-08-15:** both live in the operating-system repo, not here. The
+> client-facing service reference is `operating-system/cushlabs/service-reference.md` (bilingual,
+> linkable from proposals); the internal economics, margins and gates are
+> `operating-system/cushlabs/tier-feature-spec.md`. A copy of the service reference was briefly
+> authored at `./SERVICE-REFERENCE.md` in this repo; that path is now a pointer, because two copies
+> of a pricing document in two repos is the drift the single-source-of-truth rule exists to prevent.
+> This file stays the bridge — it is what the bot repo reads.
 
 ---
 
