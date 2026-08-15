@@ -8,7 +8,12 @@
 > **Owner:** the marketing repo (`cushlabs`). **Audience:** humans doing GTM/pricing work **and**
 > the AI assistant building the bot in the sibling repo (`cushlabs-messenger-bot`).
 >
-> **Last reconciled against the live components:** 2026-07-08.
+> **Last reconciled against the live components:** 2026-08-13 (IVA disclosure site-wide, the
+> WhatsApp cost-language rule, and the bot-side reconciliation in `cushlabs-messenger-bot` #270).
+> This stamp read `2026-07-08` until 2026-08-14 while the body below carried four August
+> reconciliations — the bot-repo assistant reads this line first to decide whether to trust the
+> file, so a stale stamp on current content is its own failure mode. **Bump this line in the same
+> PR as any §2/§4/§5 change.**
 
 ---
 
