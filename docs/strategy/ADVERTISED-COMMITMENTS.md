@@ -189,8 +189,12 @@ America; USD = US + Canada. Rationale: `operating-system/strategy/from-marketing
   > "`instagram_manage_messages` requires an App Review, and the 2026-07-19 submission was rejected
   > on 07-31." **Instagram messaging was never in that submission.**
   > `cushlabs-messenger-bot/docs/APP_REVIEW_REJECTION_2026-07-31.md` names the rejected permissions
-  > exhaustively — `pages_read_user_content` and `pages_manage_engagement` — and no Instagram
-  > permission appears in it, in the registry, or in any submission record.
+  > exhaustively — **both belong to the Facebook Page comment-handling pair**, neither is an
+  > Instagram permission — and no Instagram permission appears in it, in the registry, or in any
+  > submission record. The two names are deliberately not written out here: they carry
+  > `do_not_advertise: true`, and the registry validator fails this file on sight of them, which is
+  > exactly the guard working. Read them from `meta-messaging-platform-comment-permissions` in
+  > `operating-system/cushlabs/capability-registry.json`.
   >
   > The true status is **`not_submitted`**, now recorded as `meta-instagram-messaging-permissions`
   > in the capability registry. That is worse news than a rejection, not better: a rejection has a
