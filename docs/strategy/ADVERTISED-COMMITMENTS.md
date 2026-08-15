@@ -49,14 +49,14 @@ Gate & Content Model" rule).
 
 ## 1. Ownership model — who is the source of truth for what
 
-| Domain                                           | Source of truth                                             | Everything else must conform              |
-| ------------------------------------------------ | ----------------------------------------------------------- | ----------------------------------------- |
-| **Price numbers, tiers, terms, currency**        | This doc §2 ← `PricingSection.astro`                        | Bot proposals, quotes, `PRODUCT_TIERS.md` |
-| **Guarantees & promises**                        | This doc §5 ← `Guarantee.astro` + `FAQ.astro`               | Bot conversation behavior, handoff copy   |
-| **What features are LIVE (advertisable)**        | Bot `docs/FEATURE-INVENTORY.md` **List 1**                  | This doc §4, Messenger service page       |
-| **What features are HELD (not advertised)**      | Bot List 2 ↔ marketing `MESSENGER-PREMIUM-UPGRADES-HELD.md` | Never rendered on the public site         |
-| **Hard facts per client** (hours/prices/address) | Structured records injected verbatim (bot)                  | Never RAG prose — see §7                  |
-| **Language / market standard**                   | Global CLAUDE.md (es-MX) + this doc §6                      | All bilingual output, both repos          |
+| Domain                                           | Source of truth                                                                                 | Everything else must conform              |
+| ------------------------------------------------ | ----------------------------------------------------------------------------------------------- | ----------------------------------------- |
+| **Price numbers, tiers, terms, currency**        | This doc §2 ← `PricingSection.astro`                                                            | Bot proposals, quotes, `PRODUCT_TIERS.md` |
+| **Guarantees & promises**                        | This doc §5 ← `Guarantee.astro` + `FAQ.astro`                                                   | Bot conversation behavior, handoff copy   |
+| **What features are LIVE (advertisable)**        | Bot `docs/FEATURE-INVENTORY.md` **List 1**                                                      | This doc §4, Messenger service page       |
+| **What features are HELD (not advertised)**      | Bot List 2 ↔ `operating-system/strategy/from-marketing-site/MESSENGER-PREMIUM-UPGRADES-HELD.md` | Never rendered on the public site         |
+| **Hard facts per client** (hours/prices/address) | Structured records injected verbatim (bot)                                                      | Never RAG prose — see §7                  |
+| **Language / market standard**                   | Global CLAUDE.md (es-MX) + this doc §6                                                          | All bilingual output, both repos          |
 
 ---
 
@@ -130,7 +130,7 @@ Three tiers. One flat monthly price each. **Per business, includes up to 2 locat
 The MXN⇄USD control is a **market toggle, not a live FX conversion.** USD prices are
 **independently anchored marketing numbers** (seeded once from an FX rate, then owned as their own
 figures). **Never auto-convert MXN↔USD in code, quotes, or bot replies.** MXN = Mexico + Central/South
-America; USD = US + Canada. Rationale: `docs/strategy/MEXICO-GTM-STRATEGY.md` §11.
+America; USD = US + Canada. Rationale: `operating-system/strategy/from-marketing-site/MEXICO-GTM-STRATEGY.md` §11.
 
 ### 2.4 What is deliberately NOT priced or listed yet
 
@@ -310,7 +310,7 @@ two demo bots `m.me/cushlabs` and `m.me/nyenglishteacher`).
 - **Fully managed by CushLabs**: setup, training, weekly reports, monthly tuning.
 
 > **Held features (List 2) — must NOT appear on the public site or be promised by the bot.**
-> Tracked in marketing at `docs/strategy/MESSENGER-PREMIUM-UPGRADES-HELD.md` and must equal bot List 2.
+> Tracked in marketing at `operating-system/strategy/from-marketing-site/MESSENGER-PREMIUM-UPGRADES-HELD.md` and must equal bot List 2.
 > If the bot ships a List-2 feature, it is promoted to List 1 **and advertised only after** this doc
 > and the Messenger page are updated in the same change.
 
@@ -378,7 +378,7 @@ For each advertised claim: where the site renders it, and the bot-side artifact 
 | 1   | Basic = $1,990 MXN / $129 USD                    | `src/components/pricing/PricingSection.astro`                                                | `docs/PRODUCT_TIERS.md`, `content/cushlabs-ai/es/pricing-and-engagement.txt`                             | Bot docs must not say "no price"/contradict $1,990                                                                                                               |
 | 2   | Tiers, terms, locations, overage                 | `PricingSection.astro`; `home2/FAQ.astro`                                                    | `docs/PRODUCT_TIERS.md`                                                                                  | Numbers identical both sides                                                                                                                                     |
 | 3   | Messenger 4-theme feature set                    | `src/pages/messenger-assistant.astro` (`themes`)                                             | `docs/FEATURE-INVENTORY.md` **List 1**                                                                   | Every bullet ∈ List 1 (live), not roadmap                                                                                                                        |
-| 4   | Held/premium (WhatsApp, IG, List 2)              | `docs/strategy/MESSENGER-PREMIUM-UPGRADES-HELD.md`                                           | `docs/FEATURE-INVENTORY.md` **List 2**                                                                   | Neither surface advertises List 2                                                                                                                                |
+| 4   | Held/premium (WhatsApp, IG, List 2)              | `operating-system/strategy/from-marketing-site/MESSENGER-PREMIUM-UPGRADES-HELD.md`           | `docs/FEATURE-INVENTORY.md` **List 2**                                                                   | Neither surface advertises List 2                                                                                                                                |
 | 5   | Guarantees (trial, cancel, data ownership)       | `src/components/home2/Guarantee.astro`                                                       | Bot conversation + handoff logic                                                                         | Bot never contradicts (e.g., never claims lock-in)                                                                                                               |
 | 6   | "Grounded answers / offers a person when unsure" | `home2/FAQ.astro`; Messenger themes 1 & 3                                                    | Bot decision layer + golden-set tests                                                                    | Explicit/identity handoff tested (`handoff-triggers.test.ts`); "doesn't guess"/grounding gated in `qa-gate.ts` (PR #116); soft-chip offer situational — see §8.1 |
 | 7   | "Hard facts exact, always"                       | Messenger theme 1                                                                            | Bot structured-records injection (§7)                                                                    | No hard fact in RAG prose                                                                                                                                        |
@@ -451,18 +451,18 @@ call flips from "hedge it" to "advertise it."
 
 ### Marketing repo — `C:\Users\Robert Cushman\Projects\cushlabs`
 
-| Purpose                                      | Absolute path                                                                                     | Repo-relative                                           |
-| -------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------- |
-| **This document**                            | `C:\Users\Robert Cushman\Projects\cushlabs\docs\strategy\ADVERTISED-COMMITMENTS.md`               | `docs/strategy/ADVERTISED-COMMITMENTS.md`               |
-| Pricing (all tiers, terms, currency)         | `...\cushlabs\src\components\pricing\PricingSection.astro`                                        | `src/components/pricing/PricingSection.astro`           |
-| Pricing pages                                | `...\cushlabs\src\pages\pricing.astro` · `...\src\pages\es\precios.astro`                         | `src/pages/pricing.astro`, `src/pages/es/precios.astro` |
-| Messenger service page (feature themes)      | `...\cushlabs\src\pages\messenger-assistant.astro` · `...\src\pages\es\messenger-assistant.astro` | `src/pages/messenger-assistant.astro` (+ `es/`)         |
-| Services blocks (all products)               | `...\cushlabs\src\components\services2\ServiceBlock.astro`                                        | `src/components/services2/ServiceBlock.astro`           |
-| Three-systems overview                       | `...\cushlabs\src\components\home2\SolutionOverview.astro`                                        | `src/components/home2/SolutionOverview.astro`           |
-| Guarantees                                   | `...\cushlabs\src\components\home2\Guarantee.astro`                                               | `src/components/home2/Guarantee.astro`                  |
-| FAQ (promises, security, pricing)            | `...\cushlabs\src\components\home2\FAQ.astro`                                                     | `src/components/home2/FAQ.astro`                        |
-| MX go-to-market strategy (USD anchoring §11) | `...\cushlabs\docs\strategy\MEXICO-GTM-STRATEGY.md`                                               | `docs/strategy/MEXICO-GTM-STRATEGY.md`                  |
-| Held premium features                        | `...\cushlabs\docs\strategy\MESSENGER-PREMIUM-UPGRADES-HELD.md`                                   | `docs/strategy/MESSENGER-PREMIUM-UPGRADES-HELD.md`      |
+| Purpose                                      | Absolute path                                                                                     | Repo-relative                                                                      |
+| -------------------------------------------- | ------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| **This document**                            | `C:\Users\Robert Cushman\Projects\cushlabs\docs\strategy\ADVERTISED-COMMITMENTS.md`               | `docs/strategy/ADVERTISED-COMMITMENTS.md`                                          |
+| Pricing (all tiers, terms, currency)         | `...\cushlabs\src\components\pricing\PricingSection.astro`                                        | `src/components/pricing/PricingSection.astro`                                      |
+| Pricing pages                                | `...\cushlabs\src\pages\pricing.astro` · `...\src\pages\es\precios.astro`                         | `src/pages/pricing.astro`, `src/pages/es/precios.astro`                            |
+| Messenger service page (feature themes)      | `...\cushlabs\src\pages\messenger-assistant.astro` · `...\src\pages\es\messenger-assistant.astro` | `src/pages/messenger-assistant.astro` (+ `es/`)                                    |
+| Services blocks (all products)               | `...\cushlabs\src\components\services2\ServiceBlock.astro`                                        | `src/components/services2/ServiceBlock.astro`                                      |
+| Three-systems overview                       | `...\cushlabs\src\components\home2\SolutionOverview.astro`                                        | `src/components/home2/SolutionOverview.astro`                                      |
+| Guarantees                                   | `...\cushlabs\src\components\home2\Guarantee.astro`                                               | `src/components/home2/Guarantee.astro`                                             |
+| FAQ (promises, security, pricing)            | `...\cushlabs\src\components\home2\FAQ.astro`                                                     | `src/components/home2/FAQ.astro`                                                   |
+| MX go-to-market strategy (USD anchoring §11) | `...\cushlabs\docs\strategy\MEXICO-GTM-STRATEGY.md`                                               | `operating-system/strategy/from-marketing-site/MEXICO-GTM-STRATEGY.md`             |
+| Held premium features                        | `...\cushlabs\docs\strategy\MESSENGER-PREMIUM-UPGRADES-HELD.md`                                   | `operating-system/strategy/from-marketing-site/MESSENGER-PREMIUM-UPGRADES-HELD.md` |
 
 ### Bot repo — `C:\Users\Robert Cushman\Projects\cushlabs-messenger-bot`
 
