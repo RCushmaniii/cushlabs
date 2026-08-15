@@ -99,7 +99,7 @@ export default defineConfig({
           return false;
         // Cold-outreach landing pages (noindex, DM-driven, not organic SEO) —
         // deliberately kept out of the sitemap. es-MX: /salones/, /clinicas-dentales/;
-        // en-US: /salons/. See docs/strategy/MEXICO-GTM-STRATEGY.md.
+        // en-US: /salons/. See operating-system/strategy/from-marketing-site/MEXICO-GTM-STRATEGY.md.
         if (/\/(salones|salons|clinicas-dentales)\/?$/.test(path)) return false;
         return true;
       },

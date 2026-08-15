@@ -63,7 +63,7 @@ These are **HELD (List 2)** or simply **not a service**. Never advertise, quote,
 - ⚠️ **Website building** — NOT a standard 3-tier inclusion (don't list it as part of Basic/Premium/Ultra by default). BUT Robert is a 25-year web developer and **does build custom sites** — e.g. a simple website for a specific client, often on the client's own existing hosting. Include it when Robert decides to for a given client (as with La Tiendita). Separately, the _website chatbot_ (the AI chat widget) is a real Premium feature — different from building the site itself.
 - ❌ **À-la-carte feature pricing / custom per-feature add-ons** — the model is tiered; extras fold into Basic/Premium/Ultra.
 - ❌ **Outbound auto-dialing / cold-calling campaigns.**
-- ❌ In-chat booking, Meta notifications, lead-gen form blocks, multi-page OAuth picker, etc. — all List 2 roadmap. See `MESSENGER-PREMIUM-UPGRADES-HELD.md`.
+- ❌ In-chat booking, Meta notifications, lead-gen form blocks, multi-page OAuth picker, etc. — all List 2 roadmap. See `operating-system/strategy/from-marketing-site/MESSENGER-PREMIUM-UPGRADES-HELD.md`.
 
 If a prospect's natural channel is WhatsApp-only (e.g. a corner store with no Facebook and no FB audience), that is a **weak fit** for our Facebook-first product — say so honestly rather than inventing a WhatsApp offer.
 
@@ -93,9 +93,9 @@ Positioning for the Mexican SMB market (from CLAUDE.md): many local businesses h
 **In this repo (`cushlabs`):**
 
 - `docs/strategy/ADVERTISED-COMMITMENTS.md` — **THE authoritative record** of everything we advertise, price, and promise, traced to the exact file that renders it. Start here.
-- `docs/strategy/PRODUCT-AND-PRICING-SUMMARY.md` — the tiers/prices/terms in one place (mirrors `PricingSection.astro`).
-- `docs/strategy/MESSENGER-PREMIUM-UPGRADES-HELD.md` — the HELD/List-2 features. **Never publish these.**
-- `docs/strategy/MEXICO-GTM-STRATEGY.md` — go-to-market, ICP, the USD-anchoring rationale.
+- `operating-system/strategy/from-marketing-site/PRODUCT-AND-PRICING-SUMMARY.md` — the tiers/prices/terms in one place (mirrors `PricingSection.astro`).
+- `operating-system/strategy/from-marketing-site/MESSENGER-PREMIUM-UPGRADES-HELD.md` — the HELD/List-2 features. **Never publish these.**
+- `operating-system/strategy/from-marketing-site/MEXICO-GTM-STRATEGY.md` — go-to-market, ICP, the USD-anchoring rationale.
 - `src/components/pricing/PricingSection.astro` — the price component; **if a doc disagrees with it, the component wins.**
 - `src/pages/messenger-assistant.astro` (+ `es/`) — the live Messenger feature themes (List 1 only).
 

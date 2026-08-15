@@ -2,7 +2,7 @@
 
 > Cold-outreach assets for the salon beachhead. All copy is Mexican Professional Spanish (es-MX).
 > Landing page: **https://www.cushlabs.ai/salones/** (send every prospect here).
-> Strategy context: `docs/strategy/MEXICO-GTM-STRATEGY.md`.
+> Strategy context: `operating-system/strategy/from-marketing-site/MEXICO-GTM-STRATEGY.md`.
 
 ---
 
