@@ -1,7 +1,14 @@
 ---
 // Bilingual pricing section — 3-tier chart (Basic / Premium / Ultra).
-// Shows the LIVE-NOW offering (WhatsApp + Instagram intentionally not listed
-// until Meta approves; they layer into these tiers at no price change).
+//
+// Two classes of feature, and the distinction is load-bearing:
+//   `features` — LIVE. Rendered with the orange check.
+//   `soon`     — NOT BUILT YET. Rendered under a dashed "Coming"/"En camino"
+//                pill, never a check, so it cannot be skimmed as included.
+// Adding a coming feature to `features` would be an overclaim; that is the
+// whole reason the two arrays are separate. Anything listed in `soon` must
+// also carry a "Coming" cell in PricingComparison.astro, and must never
+// appear in a written commitment to a client until it ships.
 //
 // Currency: a market toggle (MXN ⇄ USD) decoupled from the EN/ES language
 // switch. MXN = Mexico + Central/South America; USD = US + Canada. USD prices
@@ -62,6 +69,11 @@ const copy = {
           "Website chatbot",
           "Weekly local SEO & competitor report",
         ],
+        soon: [
+          "Instagram assistant",
+          "WhatsApp assistant on your business number",
+          "WhatsApp notifications — 500 messages/mo",
+        ],
         cta: "Get started",
       },
       {
@@ -78,9 +90,17 @@ const copy = {
           "Priority support",
           "Industry tuning (e.g. healthcare)",
         ],
+        soon: [
+          "Instagram assistant",
+          "WhatsApp assistant on your business number",
+          "WhatsApp notifications — 2,000 messages/mo",
+        ],
         cta: "Get started",
       },
     ],
+    soonLabel: "Coming",
+    soonNote:
+      "Coming = switched on in the plan shown the moment it exists, with no increase to your monthly price. We don't quote dates we can't keep.",
     locations: {
       mxn: "Every plan includes up to 2 locations · additional locations +$690 MXN/mo each",
       usd: "Every plan includes up to 2 locations · additional locations +$49 USD/mo each",
@@ -128,6 +148,11 @@ const copy = {
           "Chatbot para tu sitio web",
           "Reporte semanal de SEO local y competencia",
         ],
+        soon: [
+          "Asistente de Instagram",
+          "Asistente de WhatsApp en tu número de negocio",
+          "Notificaciones de WhatsApp — 500 mensajes/mes",
+        ],
         cta: "Empieza",
       },
       {
@@ -144,9 +169,17 @@ const copy = {
           "Soporte prioritario",
           "Personalización por industria (p. ej. salud)",
         ],
+        soon: [
+          "Asistente de Instagram",
+          "Asistente de WhatsApp en tu número de negocio",
+          "Notificaciones de WhatsApp — 2,000 mensajes/mes",
+        ],
         cta: "Empieza",
       },
     ],
+    soonLabel: "En camino",
+    soonNote:
+      "En camino = se activa en el plan indicado en cuanto existe, sin aumento en tu mensualidad. No prometemos fechas que no podamos cumplir.",
     locations: {
       mxn: "Todos los planes incluyen hasta 2 sucursales · sucursales adicionales +$690 MXN/mes cada una",
       usd: "Todos los planes incluyen hasta 2 sucursales · sucursales adicionales +$49 USD/mes cada una",
@@ -296,6 +329,21 @@ const t = copy[locale];
               ))}
             </ul>
 
+            {"soon" in tier && tier.soon && (
+              <div class="-mt-4 mb-8 border-t border-dashed border-gray-200 pt-4 dark:border-gray-700">
+                <span class="inline-block rounded-full border border-dashed border-gray-400 px-2.5 py-0.5 font-display text-[11px] font-semibold uppercase tracking-wide text-gray-500 dark:border-gray-500 dark:text-gray-400">
+                  {t.soonLabel}
+                </span>
+                <ul class="mt-3 space-y-1.5">
+                  {tier.soon.map((s) => (
+                    <li class="text-sm leading-relaxed text-gray-500 dark:text-gray-400">
+                      {s}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
             <a
               href={t.bookHref}
               class={`block w-full text-center px-6 py-3 rounded-lg font-display font-semibold transition-colors duration-300 ${
@@ -333,9 +381,20 @@ const t = copy[locale];
       )
     }
 
+    <!-- What the "Coming" pill on the Premium/Ultra cards commits to -->
+    <p
+      class="mx-auto mt-10 max-w-2xl text-center text-sm leading-relaxed text-gray-500 dark:text-gray-400"
+    >
+      <span
+        class="mr-2 inline-block rounded-full border border-dashed border-gray-400 px-2.5 py-0.5 align-middle font-display text-[11px] font-semibold uppercase tracking-wide text-gray-500 dark:border-gray-500 dark:text-gray-400"
+        >{t.soonLabel}</span
+      >
+      {t.soonNote}
+    </p>
+
     <!-- Multi-location -->
     <p
-      class="text-center text-sm font-medium text-gray-700 dark:text-gray-200 mt-10"
+      class="text-center text-sm font-medium text-gray-700 dark:text-gray-200 mt-6"
     >
       <span data-cur="mxn">{t.locations.mxn}</span><span
         data-cur="usd"

@@ -8,12 +8,21 @@
 > **Owner:** the marketing repo (`cushlabs`). **Audience:** humans doing GTM/pricing work **and**
 > the AI assistant building the bot in the sibling repo (`cushlabs-messenger-bot`).
 >
-> **Last reconciled against the live components:** 2026-08-13 (IVA disclosure site-wide, the
-> WhatsApp cost-language rule, and the bot-side reconciliation in `cushlabs-messenger-bot` #270).
+> **Last reconciled against the live components:** 2026-08-15 (Tier & Feature Spec v1.2 —
+> Instagram/WhatsApp published as "Coming" on Premium & Ultra, the Surfaces Rule and its $490/$690
+> fees, WhatsApp message economics, and the correction of the Instagram approval status in §2.4).
 > This stamp read `2026-07-08` until 2026-08-14 while the body below carried four August
 > reconciliations — the bot-repo assistant reads this line first to decide whether to trust the
 > file, so a stale stamp on current content is its own failure mode. **Bump this line in the same
 > PR as any §2/§4/§5 change.**
+>
+> **Companion documents, 2026-08-15:** both live in the operating-system repo, not here. The
+> client-facing service reference is `operating-system/cushlabs/service-reference.md` (bilingual,
+> linkable from proposals); the internal economics, margins and gates are
+> `operating-system/cushlabs/tier-feature-spec.md`. A copy of the service reference was briefly
+> authored at `./SERVICE-REFERENCE.md` in this repo; that path is now a pointer, because two copies
+> of a pricing document in two repos is the drift the single-source-of-truth rule exists to prevent.
+> This file stays the bridge — it is what the bot repo reads.
 
 ---
 
@@ -177,9 +186,35 @@ America; USD = US + Canada. Rationale: `operating-system/strategy/from-marketing
   **What may be said to a client today:** that Instagram is part of what the messaging tier becomes,
   that it needs Meta's approval first, that it will be switched on **with no increase in the plan's
   monthly price** when it lands (say exactly that — see the cost-language rule under the WhatsApp
-  entry below for why "no extra cost" is banned), and
-  **no date** — `instagram_manage_messages` requires an App Review, and the 2026-07-19 submission was
-  rejected on 07-31. We have no basis for a timeline.
+  entry below for why "no extra cost" is banned), and **no date**.
+
+  > **CORRECTION, 2026-08-15 — this bullet said the wrong thing for eleven days.** It read:
+  > "`instagram_manage_messages` requires an App Review, and the 2026-07-19 submission was rejected
+  > on 07-31." **Instagram messaging was never in that submission.**
+  > `cushlabs-messenger-bot/docs/APP_REVIEW_REJECTION_2026-07-31.md` names the rejected permissions
+  > exhaustively — **both belong to the Facebook Page comment-handling pair**, neither is an
+  > Instagram permission — and no Instagram permission appears in it, in the registry, or in any
+  > submission record. The two names are deliberately not written out here: they carry
+  > `do_not_advertise: true`, and the registry validator fails this file on sight of them, which is
+  > exactly the guard working. Read them from `meta-messaging-platform-comment-permissions` in
+  > `operating-system/cushlabs/capability-registry.json`.
+  >
+  > The true status is **`not_submitted`**, now recorded as `meta-instagram-messaging-permissions`
+  > in the capability registry. That is worse news than a rejection, not better: a rejection has a
+  > next action and a clock, and an un-submitted permission has neither. The registry's own enum
+  > calls `not_submitted` "the most dangerous state, because nothing is ticking."
+  >
+  > The conclusion the bullet reached — no date, no timeline — was right. The reason it gave was
+  > wrong, and a wrong reason survives longer than a wrong conclusion because nobody re-checks it.
+
+  **Tier placement, decided 2026-08-15 (Tier & Feature Spec v1.2):** Instagram lands in **Premium
+  and Ultra**, not Basic. This does not reopen the bundling decision above — Instagram is still
+  never an add-on and never a surcharge; it sits inside a tier. **But it does create one obligation
+  that must not be quietly dropped:** every client told before 2026-08-15 that Instagram was coming
+  to _their_ plan at no price increase keeps that promise, whatever tier they are on. That is the
+  founding-cohort clause, and Azúcar is inside it. New clients from 2026-08-15 get the successor
+  wording: _"Lo En camino se activa en el plan que le corresponde — y tu plan conserva todo lo que
+  incluye hoy, siempre."_
 
 - **WhatsApp — THE APPROVAL GATE NAMED ABOVE HAS BEEN CLEARED. Updated 2026-08-02.**
 
@@ -206,10 +241,19 @@ America; USD = US + Canada. Rationale: `operating-system/strategy/from-marketing
   not.
 
   **Two things that are still true and must not be blurred:**
-  1. **WhatsApp is not on the pricing cards.** `PricingSection.astro` still renders three tiers with
-     no WhatsApp line. Approved ≠ published. Until those components change, no page may imply
-     WhatsApp is included in Basic/Premium/Ultra, because the price table on the same site says
-     otherwise. **That is a marketing-repo follow-up, not a claims question.**
+  1. ~~**WhatsApp is not on the pricing cards.**~~ **RESOLVED 2026-08-15 — the follow-up this item
+     asked for has shipped.** `PricingSection.astro` and `PricingComparison.astro` now carry the
+     WhatsApp customer assistant and WhatsApp utility notifications on **Premium and Ultra**, under
+     a dashed **"Coming" / "En camino"** pill that is deliberately never the orange check. The
+     distinction the old item was protecting is now enforced in the type system rather than by
+     memory: `PricingSection` has two separate arrays (`features` = live, `soon` = not built), and
+     `PricingComparison`'s `Cell` type has a distinct `{ soon: … }` variant. **A coming feature
+     cannot be rendered with a check mark without changing the type.**
+
+     What has NOT changed: WhatsApp still may not be described as included, working, or available
+     today on any surface, and no date may be quoted for it. "Coming" commits the tier it lands in
+     and the price it lands at — nothing else.
+
   2. **Delivery readiness is tracked separately.** As of `cushlabs-connect` 2026-07-27 the remaining
      item was Meta's phone-number verification step and a full end-to-end + token-scope check.
      Confirm current status in that repo before a page promises a delivery timeline. The permission
@@ -240,6 +284,73 @@ America; USD = US + Canada. Rationale: `operating-system/strategy/from-marketing
   _self-serve site_, but the bot may still route complex/custom scope to a discovery call. **Action for
   the bot side:** reconcile that file so it does not _contradict_ the published $1,990 entry price
   (it can still say "custom scope is quoted on a call").
+
+### 2.5 The Surfaces Rule — what one subscription covers (added 2026-08-15)
+
+**One plan = one brand = one knowledge base.** This closes a whole class of gap that used to be
+settled ad hoc, per client, in a WhatsApp thread: how many websites, how many Instagram accounts,
+how many Pages, how many WhatsApp numbers.
+
+**Included:**
+
+| Scope        | What comes with it                                                              |
+| ------------ | ------------------------------------------------------------------------------- |
+| Per location | 1 Facebook Page + 1 Google Business Profile (carried by the +$690 location fee) |
+| Per business | 1 website on Premium, **2 on Ultra** (root domain + subdomains + landing pages) |
+| Per business | 1 Instagram account, 1 WhatsApp number — each as and when it goes live          |
+
+**Priced additions:**
+
+| Item                                                                         | MXN/mo   | USD/mo |
+| ---------------------------------------------------------------------------- | -------- | ------ |
+| Additional same-brand **surface** (extra site, extra IG account, extra Page) | **$490** | $35    |
+| Additional **WhatsApp number**                                               | **$690** | $49    |
+| Additional **location**                                                      | **$690** | $49    |
+
+A surface is priced below a location because it adds a connection, not a location's workload. A
+WhatsApp number is priced at the location rate because each number carries its own registration,
+its own approved templates, and its own quality rating to protect.
+
+**A different brand with a different knowledge base is a separate plan.** Say this up front, in the
+proposal — never discover it after onboarding. It is the line that stops one subscription quietly
+covering two businesses.
+
+**Other boundaries now published** (all on `/pricing/` and `/es/precios/`): owner alerts to up to
+**3 recipients per location** · routine content updates included with a **~10/month** guideline,
+daily-changing data quoted as an integration · SEO report scoped to **10 keywords + 5 competitors
+per location** · **Spanish and English** included, a third language quoted · **Google only** for
+reviews, with Facebook recommendations and TripAdvisor named as not offered rather than left
+implied · the free trial starts **at go-live, not at signature** · price protected **12 months** ·
+the client keeps ownership of every page, number, profile and domain.
+
+### 2.6 WhatsApp message economics (added 2026-08-15 — DO NOT quote these until the channel ships)
+
+Published on the pricing page under the **Coming** pill. Basis: Meta's WhatsApp rate card
+**effective 2026-07-01**, Mexico recipients, read 2026-08-14, FX reference $17.05 MXN/USD.
+
+| Item                               | Client price (+IVA)                                | Meta's list rate |
+| ---------------------------------- | -------------------------------------------------- | ---------------- |
+| Utility allotment — Premium        | 500 messages/mo included                           | —                |
+| Utility allotment — Ultra          | 2,000 messages/mo included                         | —                |
+| Utility overage                    | **$0.50 MXN/msg**                                  | ~$0.145 MXN      |
+| Marketing message (campaigns only) | **$0.70 MXN/msg delivered**                        | ~$0.52 MXN       |
+| Campaign service fee               | **$1,490** up to 1,000 recipients, +$490 per 1,000 | —                |
+
+**Three rules that travel with these numbers:**
+
+1. **Show Meta's rate next to ours.** The $0.70 line is quoted as "Meta charges ~$0.52; our $0.70
+   covers that fee, the delivery, and the compliance." Hiding the spread would be the ordinary
+   move; showing it is the brand. The pricing FAQ already states it in both languages.
+2. **MXN only.** The USD column reads **"Quoted"** for every per-message rate, deliberately. Meta's
+   US/Canada rates sit on a different cost basis (marketing $0.0250, utility $0.0034) that has not
+   been validated against a real send, and campaigns are an MX-strength product. Publishing a USD
+   per-message rate would be quoting against a cost we have not measured.
+3. **Delivered-only billing.** Meta does not charge for undelivered messages and neither do we.
+
+**Before the channel ships, three things must land:** Twilio's per-message markup added to the cost
+basis (margins shrink a few points, prices do not move) · MXN-denominated WABA billing adopted to
+kill FX exposure · this section re-stamped against the then-current Meta card. Meta publishes new
+cards roughly quarterly; **a stale rate card here becomes a margin error on every campaign.**
 
 ---
 
