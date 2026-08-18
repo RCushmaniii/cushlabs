@@ -1,5 +1,27 @@
 # CLAUDE.md - CushLabs.ai Repository Guide
 
+<!-- client-registry-pointer -->
+
+## Client & revenue state — read the registry, never restate it
+
+**Canonical source:** `C:/Users/Robert Cushman/Projects/operating-system/strategy/clients.json`
+
+This repo does **not** record who is paying, what they pay, what stage a client is at, or when they
+were last invoiced. Anything here that asserts a client count, a price, a trial state, or a billing
+status is a **bug** — it will drift. It already has: on 2026-08-18 a doc marked "READ THIS FIRST" in
+`cushlabs-marketsignal` still asserted a paying-client count of zero two weeks after the first client went live,
+and the session that read it recommended invoicing a client who had already paid. Ask the registry
+instead:
+
+```powershell
+node -e "const c=require('C:/Users/Robert Cushman/Projects/operating-system/strategy/clients.json');console.log('as of '+c.last_updated);for(const x of c.clients)console.log([x.id,x.status,x.billing.amount+' '+x.billing.currency+'/'+x.billing.cadence,'since '+x.since].join(' | '))"
+```
+
+A dated snapshot is not an exception — "verified against production on DATE" reads as rigor and ages
+into false authority. If a doc here needs a commercial fact, it links the registry; it does not
+quote it. Enforced by `operating-system/scripts/validate-client-registry.mjs`, which fails when this
+clause is removed or a known drift phrase appears in this repo's markdown.
+
 <!-- capability-registry-pointer -->
 
 ## Platform approvals — read the registry, never restate it
