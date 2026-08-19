@@ -18,8 +18,27 @@
  * here; this is the single source of truth for demo links. Node runtime (needs
  * `fs`); pages ship via `functions` → `includeFiles: demos/**` in vercel.json.
  *
+ * ─────────────────────────────────────────────────────────────────────────────
+ * THE GATE PROTECTS THE URL, NOT THE FILE. THIS REPO IS PUBLIC.
+ *
+ * Everything below — the capability secret, the httpOnly cookie, the 404-on-miss,
+ * the 90-day expiry, the noindex — controls who can reach the *route*. None of it
+ * does anything about the *file*, which anyone can read on GitHub the moment it is
+ * committed. On 2026-08-19 a converted client's proposal, including her negotiated
+ * monthly rate, was found readable at
+ * raw.githubusercontent.com/RCushmaniii/cushlabs/main/demos/azucar/proposal.html
+ * with no authentication, 31 days after it was committed.
+ *
+ * So: `demos/*​/proposal.html` is gitignored — proposals are the pages that carry
+ * commercial terms. Demo hubs (preview.html, services.html) carry no pricing and are
+ * fine to commit. Lumière is exempt because it is a fictitious showcase.
+ *
+ * A real client's proposal is delivered out-of-band, NOT through this repo.
+ * ─────────────────────────────────────────────────────────────────────────────
+ *
  * To add a client:
- *   1. Drop their page(s) in demos/<company>/<page>.html.
+ *   1. Drop their page(s) in demos/<company>/<page>.html. If the page contains
+ *      pricing, it does NOT get committed — see the block above.
  *   2. Add an entry to DEMOS below (no secret in this file — see tokenFor).
  *   3. Mint a secret:
  *        node -e "console.log(require('crypto').randomBytes(15).toString('base64').replace(/[^a-zA-Z0-9]/g,'').slice(0,20))"
@@ -63,21 +82,17 @@ function tokenFor(company: string): string | undefined {
 const DEFAULT_LIFESPAN_DAYS = 90;
 
 const DEMOS: Record<string, DemoConfig> = {
-  latiendita: {
-    clientName: "La Tiendita de Guadalajara (Juan Vélez)",
-    createdAt: "2026-07-19",
-    // Both live: the proposal (rebuilt on the real Facebook offer) and the
-    // convenience-store website. Robert builds websites (25-yr web dev); for
-    // this neighbor it's included in the deal, on the client's own hosting.
-    pages: ["proposal.html", "websiteexample.html"],
-  },
+  // La Tiendita removed 2026-08-19 — the prospect never responded, and their
+  // proposal + website mockup were sitting in this PUBLIC repo. See the warning
+  // above `tokenFor`.
   azucar: {
     clientName: "Azúcar Trajes de Baño (Susy)",
     createdAt: "2026-07-19",
     // preview.html = the live demo hub (what the assistant already knows, what
     // to ask it, what is real vs demonstration, and the 3 open questions).
-    // proposal.html = the sales page.
-    pages: ["preview.html", "proposal.html"],
+    // proposal.html was DELETED 2026-08-19: Susy converted, so the sales page had
+    // served its purpose, and it carried her negotiated monthly rate in a public repo.
+    pages: ["preview.html"],
   },
   // Fictitious US bilingual medspa showcase (Estéticas niche, US bilingual-wedge).
   // preview.html = live "chat with Camila" hub; proposal.html = medspa sales page.

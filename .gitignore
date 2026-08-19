@@ -48,3 +48,17 @@ nul
 
 .vercel
 .env*.local
+
+# Client proposal pages (api/demo.ts).
+#
+# THIS REPO IS PUBLIC. The demo gate protects the URL; it does nothing about the
+# file, which is world-readable on GitHub the moment it is committed. A converted
+# client's proposal — carrying her negotiated monthly rate — was readable at
+# raw.githubusercontent.com with no auth for 31 days before anyone noticed
+# (removed 2026-08-19).
+#
+# Proposals are the pages that carry commercial terms, so they never get committed.
+# Demo hubs (preview.html, services.html) carry no pricing and are fine.
+# Lumière is exempt: it is a fictitious showcase with no real client in it.
+demos/*/proposal.html
+!demos/lumiere/proposal.html
