@@ -69,7 +69,7 @@ Astro generates pure HTML for 95% of the site, edge-cached globally for sub-seco
 - **Zero-maintenance portfolio pipeline** — GitHub Actions weekly sync with smart diffs (only commits when data changes), `[skip ci]` loop prevention, and graceful degradation when `GITHUB_TOKEN` is missing
 - **24-line custom i18n** replacing 40KB+ i18next — three functions total, compile-time locale resolution, build-time parity enforcement
 - **Cloudflare Worker booking system** with Google Calendar OAuth2, FreeBusy availability queries, auto-generated Meet links, IP-based rate limiting, and input sanitization
-- **requestIdleCallback video preloading** — homepage video ships with `preload="none"` and upgrades to `preload="auto"` only during idle time (with Safari-specific fallback), contributing zero bytes to initial page weight
+- **requestIdleCallback video preloading** — video ships with `preload="none"` and warms only to `preload="metadata"` during idle time (with Safari-specific fallback), so a ~4 MB file costs a few KB until the visitor actually presses play
 - **Split-attribute email obfuscation** — address divided across `data-u` and `data-d` attributes, assembled into `mailto:` only via client-side JS to defeat scrapers
 - **Pre-deploy audit suite** running 6 checks: repo hygiene, env vars, secret leak detection (GitHub tokens, OpenAI keys), i18n parity, TypeScript validation, and build artifact verification across 13 expected HTML paths in both languages
 - **Structured data** with Organization + WebPage JSON-LD schemas for rich search results

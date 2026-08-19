@@ -97,7 +97,12 @@ const b = dict.booking;
       </h2>
 
       <!-- Error Message -->
-      <div id="form-error" class="hidden rounded-xl border border-red-300 dark:border-red-800 bg-red-50 dark:bg-red-900/20 p-4 mb-6">
+      <div
+        id="form-error"
+        role="alert"
+        aria-live="assertive"
+        class="hidden rounded-xl border border-red-300 dark:border-red-800 bg-red-50 dark:bg-red-900/20 p-4 mb-6"
+      >
         <p class="text-red-600 dark:text-red-400 text-sm"></p>
       </div>
 
@@ -301,6 +306,10 @@ const b = dict.booking;
         es: 'No se pudieron cargar los horarios. Intenta de nuevo o escríbeme por WhatsApp y te agendo directamente.',
       },
       errorRequired: { en: 'Please fill in required fields.', es: 'Por favor completa los campos requeridos.' },
+      errorEmail: {
+        en: 'Please enter a valid email address — your calendar invite is sent there.',
+        es: 'Ingresa un correo válido — ahí te llega la invitación de calendario.',
+      },
       errorDateTime: { en: 'Please select a date and time first.', es: 'Por favor selecciona una fecha y hora primero.' },
       errorGeneric: { en: 'There was an error. Please try again.', es: 'Hubo un error. Por favor intenta de nuevo.' },
       processing: { en: 'Processing...', es: 'Procesando...' },
@@ -420,7 +429,7 @@ const b = dict.booking;
       const displayTop = document.getElementById('selected-date-display-top');
       if (displayTop && date) {
         const options: Intl.DateTimeFormatOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-        displayTop.textContent = date.toLocaleDateString(lang === 'es' ? 'es-ES' : 'en-US', options);
+        displayTop.textContent = date.toLocaleDateString(lang === 'es' ? 'es-MX' : 'en-US', options);
       }
     }
 
@@ -485,7 +494,7 @@ const b = dict.booking;
               data-local-time="${localTime}"
             >
               <span class="block text-base">${localTime}</span>
-              <span class="block text-xs opacity-60">${time} CDMX</span>
+              <span class="block text-xs opacity-60">${time} ${lang === 'es' ? 'CDMX' : 'Mexico City'}</span>
             </button>
           `;
         }
@@ -546,21 +555,30 @@ const b = dict.booking;
         return;
       }
 
-      if (!nameInput?.value || !emailInput?.value) {
+      if (!nameInput?.value.trim() || !emailInput?.value.trim()) {
         showError(str('errorRequired'));
+        return;
+      }
+
+      // The whole confirmation is an emailed calendar invite, so a typo'd address
+      // is a silent no-show. Validate before we promise the user anything.
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value.trim())) {
+        showError(str('errorEmail'));
+        emailInput.focus();
         return;
       }
 
       if (isBooking) return;
 
       isBooking = true;
+      // Do NOT clone/replace this node to clear listeners: the click handler is bound
+      // once to the original element, so a clone is listener-free and the error path
+      // below re-enables a permanently dead button. `isBooking` is the guard.
       const btn = document.getElementById('confirm-booking') as HTMLButtonElement;
-      const newBtn = btn.cloneNode(true) as HTMLButtonElement;
-      btn.parentNode?.replaceChild(newBtn, btn);
-      newBtn.disabled = true;
-      newBtn.style.opacity = '0.6';
-      newBtn.style.cursor = 'not-allowed';
-      newBtn.textContent = str('processing');
+      btn.disabled = true;
+      btn.style.opacity = '0.6';
+      btn.style.cursor = 'not-allowed';
+      btn.textContent = str('processing');
 
       formData = {
         name: nameInput.value,
@@ -622,7 +640,10 @@ const b = dict.booking;
         } else {
           throw new Error(data.error || 'Booking failed');
         }
-      } catch {
+      } catch (err) {
+        console.error('[booking] booking request failed', err);
+        (window as unknown as { Sentry?: { captureException?: (e: unknown) => void } })
+          .Sentry?.captureException?.(err);
         showError(str('errorGeneric'));
         isBooking = false;
         const resetBtn = document.getElementById('confirm-booking') as HTMLButtonElement | null;

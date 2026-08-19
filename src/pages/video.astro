@@ -150,11 +150,14 @@ const defaultPoster = `/videos/${DEFAULT_VIDEO}${esSuffix}-poster.jpg`;
         posterImg.setAttribute('src', `/videos/${safe}${suffix}-poster.jpg`);
       }
 
-      // Smart preload — start buffering video after page settles
+      // Warm to 'metadata', never 'auto'. These files are ~3-4 MB and the primary
+      // market is Mexican mobile: 'auto' billed every visitor for the whole video
+      // whether or not they pressed play. 'metadata' costs a few KB, and click-to-play
+      // buffers from there.
       if ('requestIdleCallback' in window) {
-        requestIdleCallback(() => { video.preload = 'auto'; }, { timeout: 3000 });
+        requestIdleCallback(() => { video.preload = 'metadata'; }, { timeout: 3000 });
       } else {
-        setTimeout(() => { video.preload = 'auto'; }, 2000);
+        setTimeout(() => { video.preload = 'metadata'; }, 2000);
       }
 
       // Click poster → play video

@@ -2,10 +2,13 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Container from "../components/layout/Container.astro";
 
-// Detect locale from URL or default to English
-const pathname = Astro.url.pathname;
-const isSpanish = pathname.startsWith('/es');
-const locale = isSpanish ? 'es' : 'en';
+// This page is prerendered ONCE (output: "static"), and Vercel serves the single
+// /404.html for every unmatched path — including /es/*. So Astro.url.pathname is
+// always "/404" here and a build-time locale branch can never fire. Render English
+// at build time and localize in the browser from the real pathname (see the inline
+// script at the bottom); anything else silently ships English to Spanish visitors,
+// with English recovery links that eject them from the Spanish site.
+const locale = 'en';
 
 const content = {
   en: {
@@ -67,18 +70,18 @@ const t = content[locale];
         </div>
 
         <!-- Headline -->
-        <h1 class="font-display text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+        <h1 id="nf-headline" class="font-display text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
           {t.headline}
         </h1>
 
         <!-- Description -->
-        <p class="text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-md mx-auto">
+        <p id="nf-description" class="text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-md mx-auto">
           {t.description}
         </p>
 
         <!-- Helpful Links -->
-        <p class="text-sm text-gray-500 dark:text-gray-500 mb-4">{t.suggestion}</p>
-        <div class="flex flex-wrap justify-center gap-3 mb-10">
+        <p id="nf-suggestion" class="text-sm text-gray-500 dark:text-gray-500 mb-4">{t.suggestion}</p>
+        <div id="nf-links" class="flex flex-wrap justify-center gap-3 mb-10">
           {t.links.map((link) => (
             <a
               href={link.href}
@@ -91,22 +94,20 @@ const t = content[locale];
 
         <!-- Primary CTA -->
         <a
-          href={locale === 'es' ? '/es' : '/'}
-          class="group inline-flex items-center gap-2 px-8 py-4 bg-cush-orange text-white font-display font-semibold rounded-lg hover:bg-cush-orange/90 transition-all shadow-lg shadow-cush-orange/25"
+          id="nf-cta"
+          href="/"
+          class="group inline-flex items-center gap-2 px-8 py-4 bg-cush-orange text-black font-display font-semibold rounded-lg hover:bg-cush-orange/90 transition-all shadow-lg shadow-cush-orange/25"
         >
-          <svg class="w-5 h-5 rotate-180 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg class="w-5 h-5 rotate-180 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
           </svg>
-          {t.cta}
+          <span id="nf-cta-label">{t.cta}</span>
         </a>
 
         <!-- Contact fallback -->
         <p class="mt-8 text-sm text-gray-500 dark:text-gray-500">
-          {t.contact}{" "}
-          <a
-            href={locale === 'es' ? '/es/contact/' : '/contact/'}
-            class="text-cush-orange hover:underline"
-          >
+          <span id="nf-contact">{t.contact}</span>{" "}
+          <a id="nf-contact-link" href="/contact/" class="text-cush-orange hover:underline">
             {t.contactLink}
           </a>.
         </p>
@@ -114,3 +115,43 @@ const t = content[locale];
     </Container>
   </section>
 </BaseLayout>
+
+{/*
+  Runs before paint so a Spanish visitor never sees an English flash. Vercel serves
+  this one file for every unmatched path, so the real locale is only knowable here,
+  at request time, from location.pathname.
+*/}
+<script is:inline define:vars={{ es: content.es }}>
+  if (location.pathname.startsWith("/es")) {
+    document.documentElement.lang = "es";
+    document.title = es.title;
+
+    const set = (id, value) => {
+      const el = document.getElementById(id);
+      if (el) el.textContent = value;
+    };
+    set("nf-headline", es.headline);
+    set("nf-description", es.description);
+    set("nf-suggestion", es.suggestion);
+    set("nf-cta-label", es.cta);
+    set("nf-contact", es.contact);
+    set("nf-contact-link", es.contactLink);
+
+    const cta = document.getElementById("nf-cta");
+    if (cta) cta.setAttribute("href", "/es/");
+
+    const contactLink = document.getElementById("nf-contact-link");
+    if (contactLink) contactLink.setAttribute("href", "/es/contact/");
+
+    const links = document.getElementById("nf-links");
+    if (links) {
+      const anchors = links.querySelectorAll("a");
+      es.links.forEach((link, i) => {
+        const anchor = anchors[i];
+        if (!anchor) return;
+        anchor.setAttribute("href", link.href);
+        anchor.textContent = link.label;
+      });
+    }
+  }
+</script>

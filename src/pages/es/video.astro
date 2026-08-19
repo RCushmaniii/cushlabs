@@ -92,10 +92,12 @@ const defaultPoster = `/videos/${DEFAULT_VIDEO}${esSuffix}-poster.jpg`;
         posterImg.setAttribute('src', `/videos/${safe}${esSuffix}-poster.jpg`);
       }
 
+      // 'metadata', never 'auto' — see the note in the English twin. These files are
+      // ~3-4 MB and 'auto' charged every mobile visitor for the full download.
       if ('requestIdleCallback' in window) {
-        requestIdleCallback(() => { video.preload = 'auto'; }, { timeout: 3000 });
+        requestIdleCallback(() => { video.preload = 'metadata'; }, { timeout: 3000 });
       } else {
-        setTimeout(() => { video.preload = 'auto'; }, 2000);
+        setTimeout(() => { video.preload = 'metadata'; }, 2000);
       }
 
       poster.addEventListener('click', () => {
