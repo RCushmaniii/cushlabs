@@ -296,6 +296,10 @@ const b = dict.booking;
     const jsStrings: Record<string, Record<string, string>> = {
       loading: { en: 'Loading...', es: 'Cargando...' },
       noSlots: { en: 'No available times.', es: 'No hay horarios disponibles.' },
+      slotsUnavailable: {
+        en: "Couldn't load available times. Please try again, or message me on WhatsApp and I'll book you directly.",
+        es: 'No se pudieron cargar los horarios. Intenta de nuevo o escríbeme por WhatsApp y te agendo directamente.',
+      },
       errorRequired: { en: 'Please fill in required fields.', es: 'Por favor completa los campos requeridos.' },
       errorDateTime: { en: 'Please select a date and time first.', es: 'Por favor selecciona una fecha y hora primero.' },
       errorGeneric: { en: 'There was an error. Please try again.', es: 'Hubo un error. Por favor intenta de nuevo.' },
@@ -435,23 +439,32 @@ const b = dict.booking;
 
       container.innerHTML = `<p class="col-span-full text-center text-muted">${str('loading')}</p>`;
 
+      // A booking API that is down must NOT look like a full calendar. "No available
+      // times" is a legitimate answer only when the API actually answered.
       if (!API_BASE) {
-        container.innerHTML = `<p class="col-span-full text-center text-muted">${str('noSlots')}</p>`;
+        console.error('[booking] PUBLIC_BOOKING_API_URL is not configured');
+        container.innerHTML = `<p class="col-span-full text-center text-muted">${str('slotsUnavailable')}</p>`;
         return;
       }
 
       try {
         const dateStr = date.toISOString().split('T')[0];
         const response = await fetch(`${API_BASE}/slots/${dateStr}?lang=${lang}`);
+        if (!response.ok) throw new Error(`slots request failed: ${response.status}`);
         const data = await response.json();
 
-        if (data.ok && data.slots && data.slots.length > 0) {
+        if (!data.ok) throw new Error(`slots response not ok: ${data.error ?? 'unknown'}`);
+
+        if (data.slots && data.slots.length > 0) {
           renderTimeSlots(data.slots);
         } else {
           container.innerHTML = `<p class="col-span-full text-center text-muted">${str('noSlots')}</p>`;
         }
-      } catch {
-        container.innerHTML = `<p class="col-span-full text-center text-muted">${str('noSlots')}</p>`;
+      } catch (err) {
+        console.error('[booking] could not load slots', err);
+        (window as unknown as { Sentry?: { captureException?: (e: unknown) => void } })
+          .Sentry?.captureException?.(err);
+        container.innerHTML = `<p class="col-span-full text-center text-muted">${str('slotsUnavailable')}</p>`;
       }
     }
 

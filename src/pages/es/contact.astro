@@ -225,6 +225,12 @@ const hero = {
           form.classList.add('hidden');
           successEl.classList.remove('hidden');
         } catch (err) {
+          // Never swallow this: a silent catch here is why a CSP that blocked the
+          // submit endpoint went unnoticed and dropped every lead.
+          console.error('[contact] submit failed', err);
+          (window as unknown as { Sentry?: { captureException?: (e: unknown) => void } })
+            .Sentry?.captureException?.(err);
+
           errorEl.textContent = 'Hubo un error al enviar. Intenta de nuevo o escríbeme por WhatsApp.';
           errorEl.classList.remove('hidden');
 
