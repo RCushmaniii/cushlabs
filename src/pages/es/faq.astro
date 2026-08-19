@@ -15,7 +15,7 @@ const content = {
       faqs: [
         {
           question: "¿Cuánto cuesta? ¿Es accesible para PyMEs?",
-          answer: "Los Sprints de Descubrimiento típicamente empiezan en miles de dólares. Las construcciones completas son de alcance fijo y se cotizan después del descubrimiento. Diseñado para PyMEs, no presupuestos empresariales. Sabrás el costo exacto antes de empezar—sin sorpresas."
+          answer: "Los planes comienzan en $1,990 MXN/mes (Básico) y llegan hasta $5,490 (Ultra), más IVA — puedes ver el desglose completo en la página de Precios. Todo es una suscripción mensual simple: sin cuotas de instalación, sin contratos y con prueba gratis de 1 semana. La llamada de descubrimiento es gratuita — te recomiendo el plan correcto antes de que te comprometas a nada."
         },
         {
           question: "¿Cuánto tiempo toma la implementación? ¿Necesitamos ingenieros?",
@@ -36,7 +36,7 @@ const content = {
         },
         {
           question: "¿Cómo manejas la seguridad de datos y privacidad?",
-          answer: "Diseño consciente de la privacidad con controles de acceso de mínimo privilegio, registros de auditoría y límites claros de datos. Tus documentos internos permanecen privados. Documento el manejo de datos antes del lanzamiento y sigo disciplina de TI empresarial de más de 17 años de experiencia de liderazgo en Fortune 500."
+          answer: "Diseño consciente de la privacidad con controles de acceso de mínimo privilegio, registros de auditoría y límites claros de datos. Tus documentos internos permanecen privados. Documento el manejo de datos antes del lanzamiento y aplico la disciplina de TI empresarial que traigo del liderazgo de TI Fortune 500 en Praxair/Linde: más de 100 iniciativas tecnológicas globales para 26,000 empleados en 42 países."
         },
         {
           question: "¿Esto ralentizará nuestro sitio web o afectará el SEO?",
@@ -100,7 +100,7 @@ const content = {
     })))
   })} />
 
-  <main class="min-h-screen bg-white dark:bg-gray-950">
+  <div class="min-h-screen bg-white dark:bg-gray-950">
     <!-- Hero -->
     <section class="relative pt-24 pb-12">
       <div class="absolute inset-0 -z-10">
@@ -166,7 +166,7 @@ const content = {
           </p>
           <a
             href={content.cta.href}
-            class="inline-flex items-center gap-2 px-6 py-3 bg-cush-orange text-white font-display font-semibold rounded-lg hover:bg-cush-orange/90 transition-colors"
+            class="inline-flex items-center gap-2 px-6 py-3 bg-cush-orange text-black font-display font-semibold rounded-lg hover:bg-cush-orange/90 transition-colors"
           >
             {content.cta.button}
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -176,5 +176,5 @@ const content = {
         </div>
       </div>
     </section>
-  </main>
+  </div>
 </BaseLayout>

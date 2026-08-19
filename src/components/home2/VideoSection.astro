@@ -95,15 +95,17 @@ const t = content[locale];
   const video = document.getElementById('brief-video') as HTMLVideoElement | null;
 
   if (container && poster && video) {
-    // Preload video after page finishes loading (low priority)
+    // 'metadata', never 'auto'. This component is currently parked behind a commented
+    // import in index.astro; 'auto' here would put a ~4 MB unrequested download on the
+    // HOMEPAGE the moment it is switched back on.
     if ('requestIdleCallback' in window) {
       requestIdleCallback(() => {
-        video.preload = 'auto';
+        video.preload = 'metadata';
       }, { timeout: 3000 });
     } else {
       // Fallback for Safari
       setTimeout(() => {
-        video.preload = 'auto';
+        video.preload = 'metadata';
       }, 2000);
     }
 

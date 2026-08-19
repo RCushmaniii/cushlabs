@@ -12,7 +12,7 @@ const content = {
       faqs: [
         {
           question: "How much does this cost? Is it SMB-affordable?",
-          answer: "Discovery Sprints typically start in the low four figures. Full builds are fixed-scope and quoted after discovery. Designed for SMBs, not enterprise budgets. You'll know the exact cost before I start—no surprises."
+          answer: "Plans start at $1,990 MXN/mo (Basic) and go up to $5,490 (Ultra), plus IVA — see the full breakdown on the Pricing page. Everything's a simple monthly subscription: no setup fees, no contracts, and a free 1-week trial. The discovery call is free — I'll recommend the right plan before you commit to anything."
         },
         {
           question: "How long does implementation take? Do we need engineers?",
@@ -33,7 +33,7 @@ const content = {
         },
         {
           question: "How do you handle data security and privacy?",
-          answer: "Privacy-aware design with least-privilege access controls, audit logs, and clear data boundaries. Your internal documents stay private. I document data handling before launch and follow enterprise IT discipline from 17+ years of Fortune 500 IT leadership experience."
+          answer: "Privacy-aware design with least-privilege access controls, audit logs, and clear data boundaries. Your internal documents stay private. I document data handling before launch and follow the enterprise IT discipline I carried out of Fortune 500 IT leadership at Praxair/Linde — 100+ global technology initiatives supporting 26,000 employees across 42 countries."
         },
         {
           question: "Will this slow down our website or hurt SEO?",
@@ -97,7 +97,7 @@ const content = {
     })))
   })} />
 
-  <main class="min-h-screen bg-white dark:bg-gray-950">
+  <div class="min-h-screen bg-white dark:bg-gray-950">
     <!-- Hero -->
     <section class="relative pt-24 pb-12">
       <div class="absolute inset-0 -z-10">
@@ -163,7 +163,7 @@ const content = {
           </p>
           <a
             href={content.cta.href}
-            class="inline-flex items-center gap-2 px-6 py-3 bg-cush-orange text-white font-display font-semibold rounded-lg hover:bg-cush-orange/90 transition-colors"
+            class="inline-flex items-center gap-2 px-6 py-3 bg-cush-orange text-black font-display font-semibold rounded-lg hover:bg-cush-orange/90 transition-colors"
           >
             {content.cta.button}
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -173,5 +173,5 @@ const content = {
         </div>
       </div>
     </section>
-  </main>
+  </div>
 </BaseLayout>

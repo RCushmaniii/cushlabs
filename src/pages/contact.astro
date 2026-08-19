@@ -80,7 +80,7 @@ const hero = content[locale];
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-4">
           <a
             href={locale === "es" ? "/es/reservar/" : "/consultation/"}
-            class="group inline-flex items-center gap-2 px-6 py-3 bg-cush-orange text-white font-display font-semibold rounded-lg hover:bg-cush-orange/90 transition-all shadow-lg shadow-cush-orange/25"
+            class="group inline-flex items-center gap-2 px-6 py-3 bg-cush-orange text-black font-display font-semibold rounded-lg hover:bg-cush-orange/90 transition-all shadow-lg shadow-cush-orange/25"
           >
             {hero.ctaPrimary}
             <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -106,7 +106,7 @@ const hero = content[locale];
     </Container>
   </section>
 
-  <main class="pb-24">
+  <div class="pb-24">
 
     <section id="contact-form" class="mx-auto max-w-7xl px-4 pt-12">
       <div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
@@ -133,6 +133,7 @@ const hero = content[locale];
                   id="name"
                   name="name"
                   type="text"
+                  autocomplete="name"
                   required
                   class="mt-2 w-full rounded-lg border border-border bg-canvas/40 px-3 py-2 text-foreground placeholder:text-muted focus:outline-hidden focus:ring-2 focus:ring-cush-orange"
                 />
@@ -150,6 +151,7 @@ const hero = content[locale];
                   id="email"
                   name="email"
                   type="email"
+                  autocomplete="email"
                   required
                   class="mt-2 w-full rounded-lg border border-border bg-canvas/40 px-3 py-2 text-foreground placeholder:text-muted focus:outline-hidden focus:ring-2 focus:ring-cush-orange"
                 />
@@ -167,6 +169,7 @@ const hero = content[locale];
                 id="phone"
                 name="phone"
                 type="tel"
+                autocomplete="tel"
                 placeholder={dict.contact.formPhoneHint}
                 class="mt-2 w-full rounded-lg border border-border bg-canvas/40 px-3 py-2 text-foreground placeholder:text-muted focus:outline-hidden focus:ring-2 focus:ring-cush-orange"
               />
@@ -226,7 +229,7 @@ const hero = content[locale];
           </form>
 
           <!-- Success message (replaces form) -->
-          <div id="form-success" class="hidden text-center py-8">
+          <div id="form-success" role="status" tabindex="-1" class="hidden text-center py-8">
             <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 dark:bg-green-900/30 mb-4">
               <svg class="w-8 h-8 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
@@ -312,7 +315,7 @@ const hero = content[locale];
         </aside>
       </div>
     </section>
-  </main>
+  </div>
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -394,7 +397,16 @@ const hero = content[locale];
           // Success — hide form, show confirmation
           form.classList.add('hidden');
           successEl.classList.remove('hidden');
+          // Focus was on the submit button, which now sits inside a display:none form,
+          // so focus would otherwise fall to <body> and the user be told nothing.
+          successEl.focus();
         } catch (err) {
+          // Never swallow this: a silent catch here is why a CSP that blocked the
+          // submit endpoint went unnoticed and dropped every lead.
+          console.error('[contact] submit failed', err);
+          (window as unknown as { Sentry?: { captureException?: (e: unknown) => void } })
+            .Sentry?.captureException?.(err);
+
           errorEl.textContent = locale === 'es'
             ? 'Hubo un error al enviar. Intenta de nuevo o escríbeme por WhatsApp.'
             : 'Something went wrong. Please try again or reach out via WhatsApp.';

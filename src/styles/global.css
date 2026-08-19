@@ -88,6 +88,10 @@ html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* The header is sticky at ~69px. Without this, tabbing or anchoring to a control
+     just below the fold scrolls it flush to the viewport top, underneath the header
+     (WCAG 2.4.11 Focus Not Obscured). */
+  scroll-padding-top: 5rem;
 }
 
 body {
@@ -98,6 +102,16 @@ body {
 
 ::selection {
   @apply bg-cush-orange text-black;
+}
+
+/* Global keyboard focus indicator.
+   Most interactive elements relied on the UA default, and the ~14 that override it use
+   `focus:ring-cush-orange`, which is 2.85:1 against white — below the 3:1 that WCAG
+   1.4.11 requires of a focus indicator. currentColor inherits the element's own text
+   colour, so it stays visible in both themes without a new token. */
+:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
 }
 
 /* ── Custom utilities ── */

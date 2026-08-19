@@ -81,13 +81,22 @@ Deep-dive how-to docs in this repo stay where they are — the registry owns _st
 **Owner:** Robert Cushman
 **Business:** CushLabs.ai - AI Integration & Software Development Consulting
 **Launch Target:** 2026
-**Location:** Serving US and Mexico (fully bilingual EN/ES)
+**Location:** Serving US and Mexico. The published business locality is **Guadalajara** — it is in `BaseLayout.astro` schema.org `addressLocality`, the footer, and the homepage badge. Do not change it in copy without changing the structured data in the same commit.
+**Delivery:** Bilingual EN/ES product output — assistants, apps, and content validated in both languages; project execution is English-first
 
 **Robert's Background:**
 
-- 20 years in IT: Developer → Senior IT Manager → IT Project Manager
+- Fortune 500 IT leadership at Praxair/Linde: Senior Developer → Project Manager → Senior IT Manager
+- 100+ global technology initiatives, 26,000 employees, 42 countries
+- Earlier IT consulting work with Kodak and Corning (a separate, pre-Praxair period — no duration attaches to it)
 - 2.5 years intensive work with AI tools and premium LLMs
 - Current focus: Claude Code, AI agents, and automation
+
+> **Biographical hard rules — this block seeds generated copy, so violations regenerate.**
+> NEVER state an aggregate career-year total here or in any asset ("20 years," "17 years," "20+ years").
+> NEVER fuse Praxair/Linde with the Kodak/Corning era, and never attach a duration to Kodak/Corning.
+> "Bilingual" attaches to the product, never to Robert — his Spanish is basic.
+> Canonical: `operating-system/cushlabs/claims-policy.json` → `rules.biographical_facts`.
 
 **Business Model:** Help businesses transform through AI with:
 
@@ -142,8 +151,8 @@ When working on copy or pages for the Facebook Messenger AI service, keep this f
 
 ## Technical Architecture
 
-**Framework:** Astro 6.1.4 (Static Site Generation)
-**Styling:** Tailwind CSS 4.2.2 (CSS-first config via @tailwindcss/vite)
+**Framework:** Astro 7 (Static Site Generation) — requires Node >= 22.12
+**Styling:** Tailwind CSS 4 (CSS-first config via @tailwindcss/vite; there is no `tailwind.config.*`)
 **Deployment:** Vercel-ready (Edge Functions for forms)
 **Output:** Static HTML
 
@@ -164,13 +173,17 @@ When working on copy or pages for the Facebook Messenger AI service, keep this f
 
 ### URL Structure
 
-| English (default) | Spanish        |
-| ----------------- | -------------- |
-| `/`               | `/es`          |
-| `/about`          | `/es/about`    |
-| `/work`           | `/es/work`     |
-| `/contact`        | `/es/contact`  |
-| `/consultation`   | `/es/reservar` |
+| English (default) | Spanish         |
+| ----------------- | --------------- |
+| `/`               | `/es`           |
+| `/about`          | `/es/about`     |
+| `/portfolio`      | `/es/portfolio` |
+| `/blog`           | `/es/blog`      |
+| `/contact`        | `/es/contact`   |
+| `/consultation`   | `/es/reservar`  |
+
+`/work` and `/es/work` no longer exist — `vercel.json` 301s them to `/portfolio/`. Do not
+re-create a `work.astro`.
 
 ---
 
@@ -190,7 +203,8 @@ cushlabs/
 │   │   └── BaseLayout.astro  # Master layout (SEO, hreflang, schema)
 │   ├── pages/                # File-based routing
 │   │   ├── index.astro       # Home (EN)
-│   │   ├── work.astro
+│   │   ├── portfolio.astro
+│   │   ├── blog/             # Live — see the blog warning under "Resolved"
 │   │   ├── contact.astro
 │   │   └── es/               # Spanish versions
 │   │       ├── index.astro
@@ -286,7 +300,7 @@ BaseLayout.astro automatically generates hreflang tags:
 
 ### Sitemap
 
-@astrojs/sitemap 3.2.1 is installed and configured with i18n locales. Generates `sitemap-index.xml` automatically at build time.
+@astrojs/sitemap is installed and configured with i18n locales. Generates `sitemap-index.xml` automatically at build time.
 
 ### Meta Tags (Ahrefs Standards)
 
@@ -304,21 +318,29 @@ BaseLayout.astro automatically generates hreflang tags:
 
 ### Resolved
 
-- ~~Astro 4 + Tailwind 3~~ — Migrated to Astro 6.1.4 + Tailwind CSS 4.2.2 with @tailwindcss/vite plugin, CSS-first @theme config
+- ~~Astro 4 + Tailwind 3~~ — Migrated to Astro 7 + Tailwind CSS 4 with @tailwindcss/vite plugin, CSS-first @theme config
 - ~~Booking "No available times"~~ — CSP connect-src was missing the Cloudflare Worker domain; also added Sentry US region wildcard
 - ~~Pre-deploy audit script incomplete~~ — Fully working: env checks, i18n parity, typecheck, build, SEO audit (titles, descriptions, trailing slashes, orphan detection)
-- ~~Blog needs migration~~ — Blog removed entirely (pre-launch, no traffic, no content strategy). 301 redirects in place.
+- ~~Blog needs migration~~ — **The blog is LIVE. Never add `/blog` redirects to `vercel.json`.**
+  This line used to say the blog was removed with 301 redirects in place. It was, briefly — then it
+  was relaunched, and the leftover redirects hijacked the blog index and BOTH RSS feeds until they
+  were deleted in PR #172. Live surfaces: `src/pages/blog/` and `src/pages/es/blog/` (index
+  pagination, `[slug]`, `rss.xml.js`), 9 posts under `src/content/blog/{en,es}`,
+  `scripts/validate-blog-translations.mjs` gating every build. `vercel.json` correctly contains no
+  `/blog` rule — that absence is deliberate, not an oversight.
 - ~~No error monitoring~~ — Sentry integrated with client-side tracking, source maps, and Crons monitoring for weekly sync
 - ~~No analytics~~ — Vercel Web Analytics installed and configured
 - ~~No tests~~ — 20 smoke tests (vitest) running in CI after every build
 - ~~Placeholder testimonials~~ — Real LinkedIn recommendation from Julio Cesar Aldana Gomez, bilingual EN/ES
 - ~~Dependabot vulnerabilities~~ — yaml CVE fixed via override, Astro/esbuild CVEs dismissed (static site, SSR-only vulnerabilities)
-- ~~Sitemap broken~~ — @astrojs/sitemap 3.2.1 installed and configured with i18n locales
+- ~~Sitemap broken~~ — @astrojs/sitemap installed and configured with i18n locales
 - ~~No og-image~~ — OG image is `public/images/og/cushlabs-og.png`, set in `BaseLayout.astro:64`
   and `LandingLayout.astro:22`. (This line used to name `cushlabs_logo_lt.jpg`, which was never the
   OG image and was a stock circuit-brain graphic nothing referenced — deleted 2026-08-10.)
 - ~~Image optimization~~ — All portfolio/logo/client images converted to WebP, lazy loading added
-- ~~Broken portfolio images~~ — All 28 project pages migrated to Cloudflare R2 CDN (`cdn.cushlabs.ai`), 399 assets, 28/28 pages verified clean
+- ~~Broken portfolio images~~ — Project pages migrated to Cloudflare R2 CDN (`cdn.cushlabs.ai`). The
+  "28/28 verified clean" count that used to sit here was true on the day it was written and has since
+  been outgrown; for the current number ask `projects.generated.json`, not this file.
 
 ---
 
@@ -416,7 +438,7 @@ node scripts/list-all-repos.mjs --json    # machine-readable
 
 Per-repo fields: name, status, archived, visibility, GitHub URL, best live URL (portfolio demo/live → GitHub homepage fallback), homepage, portfolio page. Requires `gh` authenticated (`gh auth status`); uses live GitHub data, so no refresh step is needed.
 
-**Which one to use:** `list-portfolio.mjs` answers "what's on the site"; `list-all-repos.mjs` answers "everything I own" (it's the superset — currently 65 repos vs 38 in the portfolio).
+**Which one to use:** `list-portfolio.mjs` answers "what's on the site"; `list-all-repos.mjs` answers "everything I own" (it's the superset). Both print live counts — read them from the script output rather than quoting a number here, which is how the previous "65 vs 38" line went stale.
 
 ### Manual Three-Step Sync (legacy / debugging)
 
@@ -603,18 +625,25 @@ don't get re-proposed. `#ff6a3d` below is canonical and the mark was recoloured 
 
 ## Documentation Reference
 
-The `docs/` folder contains lessons learned from the New York English repo:
+> **Not every file under `docs/` describes THIS site.** A batch of documents was imported from the
+> nyenglishteacher.com repo and never re-scoped. They describe a Next.js/Netlify/Supabase stack, an
+> `/en/` URL prefix, a `src/lib/i18n.ts` module, category pages, and a quiz system — **none of which
+> exist here.** Before trusting any doc in this folder, check that the files it names actually exist.
+> Files carrying a `> ⚠️ NOT THIS REPO` banner at the top are kept only for their reusable
+> reasoning; never follow their instructions literally. The three below are the ones verified
+> against this codebase.
 
 - `docs/REPO_PURPOSE.md` - **What this repo is, what it is not, and where it sits in the CushLabs
   family.** Read it before writing or removing any capability claim — it holds the overclaiming /
   underclaiming rules and explains why a single `reachable_by` field is not a verdict on whether
   something works.
-- `docs/architecture/BILINGUAL-SYSTEM-GUIDE.md` - i18n patterns
-- `docs/architecture/BILINGUAL-PARITY-CHECKLIST.md` - EN/ES sync rules
-- `docs/architecture/BLOG-I18N-EDGE-CASES.md` - Blog hreflang pitfalls
-- `docs/seo/HREFLANG-FIX-SUMMARY.md` - Hreflang implementation
-- `docs/seo/SITEMAP-SEO-ANALYSIS.md` - Sitemap best practices
-- `docs/seo/SEO-TECHNICAL-CHECKLIST.md` - SEO validation checklist
+- `docs/SESSION_LOG.md` - **Living session log + tech debt + roadmap. READ THIS FIRST when starting work; update at the end of every substantive session.**
+- `docs/AI-ASSISTANT-ONBOARDING.md` - What CushLabs sells. Read before any pricing or sales work.
+
+**This repo's actual i18n system** is `src/i18n/index.ts` + `translations/{en,es}.ts` with a `t(locale)`
+dictionary, and English is **unprefixed** (`prefixDefaultLocale: false`). Any doc describing
+`src/lib/i18n.ts`, a `TKey` union, or `/en/` routes is describing the other site.
+
 - `docs/SESSION_LOG.md` - **Living session log + tech debt + roadmap. READ THIS FIRST when starting work; update at the end of every substantive session.**
 
 ---
