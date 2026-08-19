@@ -21,19 +21,22 @@ const days = locale === 'es'
     <button
       type="button"
       id="prev-month"
+      aria-label={locale === "es" ? "Mes anterior" : "Previous month"}
       class="p-2 rounded-xl border border-border bg-surface hover:border-cush-orange hover:text-cush-orange transition-colors"
     >
-      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
       </svg>
     </button>
-    <h3 id="current-month" class="text-lg font-display font-bold text-foreground" aria-live="polite">&nbsp;</h3>
+    <h3 id="current-month" class="text-lg font-display font-bold text-foreground">&nbsp;</h3>
+    <span id="current-month-status" role="status" class="sr-only"></span>
     <button
       type="button"
       id="next-month"
+      aria-label={locale === "es" ? "Mes siguiente" : "Next month"}
       class="p-2 rounded-xl border border-border bg-surface hover:border-cush-orange hover:text-cush-orange transition-colors"
     >
-      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
       </svg>
     </button>
@@ -51,7 +54,7 @@ const days = locale === 'es'
   </div>
 </div>
 
-<script define:vars={{ months }}>
+<script define:vars={{ months, locale }}>
   class DatePicker {
     constructor() {
       this.currentDate = new Date();
@@ -98,6 +101,11 @@ const days = locale === 'es'
         header.textContent = `${this.months[month]} ${year}`;
       }
 
+      // Announce the month change; the heading itself is not a live region so that
+      // it keeps a stable accessible name for heading navigation.
+      const monthStatus = document.getElementById('current-month-status');
+      if (monthStatus) monthStatus.textContent = `${this.months[month]} ${year}`;
+
       const firstDay = new Date(year, month, 1).getDay();
       const daysInMonth = new Date(year, month + 1, 0).getDate();
       const today = new Date();
@@ -122,6 +130,21 @@ const days = locale === 'es'
         const dayCell = document.createElement('button');
         dayCell.type = 'button';
         dayCell.textContent = String(day);
+
+        // The bare number is the entire accessible name otherwise — "14, button",
+        // with no month or year to place it.
+        dayCell.setAttribute(
+          'aria-label',
+          dayDate.toLocaleDateString(locale === 'es' ? 'es-MX' : 'en-US', {
+            weekday: 'long',
+            day: 'numeric',
+            month: 'long',
+            year: 'numeric',
+          })
+        );
+        // Selection is otherwise conveyed by background colour alone.
+        dayCell.setAttribute('aria-pressed', String(Boolean(isSelected)));
+        if (isToday) dayCell.setAttribute('aria-current', 'date');
 
         let classes = 'p-2 text-center rounded-xl transition-all text-sm font-display font-semibold';
 

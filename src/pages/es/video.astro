@@ -23,7 +23,7 @@ const defaultPoster = `/videos/${DEFAULT_VIDEO}${esSuffix}-poster.jpg`;
 ---
 
 <BaseLayout title={t.title} description={t.description}>
-  <main class="py-[8vh] md:py-[10vh]">
+  <div class="py-[8vh] md:py-[10vh]">
     <section class="relative overflow-hidden">
       <div class="absolute inset-0 -z-10">
         <div class="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-cush-orange/10 rounded-full blur-[120px]"></div>
@@ -61,7 +61,7 @@ const defaultPoster = `/videos/${DEFAULT_VIDEO}${esSuffix}-poster.jpg`;
 
         <div class="mt-[5vh] text-center">
           <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-4">
-            <a href="/es/reservar/" class="group inline-flex items-center gap-2 px-6 py-3 bg-cush-orange text-white font-display font-semibold rounded-lg hover:bg-cush-orange/90 transition-all shadow-lg shadow-cush-orange/25">
+            <a href="/es/reservar/" class="group inline-flex items-center gap-2 px-6 py-3 bg-cush-orange text-black font-display font-semibold rounded-lg hover:bg-cush-orange/90 transition-all shadow-lg shadow-cush-orange/25">
               {t.ctaPrimary}
               <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
             </a>
@@ -74,7 +74,7 @@ const defaultPoster = `/videos/${DEFAULT_VIDEO}${esSuffix}-poster.jpg`;
         </div>
       </Container>
     </section>
-  </main>
+  </div>
 
   <script define:vars={{ DEFAULT_VIDEO, esSuffix }}>
     const poster = document.getElementById('video-poster');
