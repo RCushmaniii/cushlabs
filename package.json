@@ -8,7 +8,7 @@
     "build": "npm run generate-projects && node scripts/validate-blog-translations.mjs && node scripts/generate-og-images.mjs && astro build && node scripts/seo/meta-description-gate.mjs",
     "start": "astro preview",
     "lint": "eslint .",
-    "typecheck": "tsc --noEmit",
+    "typecheck": "astro sync && tsc --noEmit",
     "test": "vitest run",
     "check": "npm run lint && npm run typecheck",
     "astro:check": "astro check",
