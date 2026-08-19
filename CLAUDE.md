@@ -81,13 +81,22 @@ Deep-dive how-to docs in this repo stay where they are — the registry owns _st
 **Owner:** Robert Cushman
 **Business:** CushLabs.ai - AI Integration & Software Development Consulting
 **Launch Target:** 2026
-**Location:** Serving US and Mexico (fully bilingual EN/ES)
+**Location:** Serving US and Mexico. The published business locality is **Guadalajara** — it is in `BaseLayout.astro` schema.org `addressLocality`, the footer, and the homepage badge. Do not change it in copy without changing the structured data in the same commit.
+**Delivery:** Bilingual EN/ES product output — assistants, apps, and content validated in both languages; project execution is English-first
 
 **Robert's Background:**
 
-- 20 years in IT: Developer → Senior IT Manager → IT Project Manager
+- Fortune 500 IT leadership at Praxair/Linde: Senior Developer → Project Manager → Senior IT Manager
+- 100+ global technology initiatives, 26,000 employees, 42 countries
+- Earlier IT consulting work with Kodak and Corning (a separate, pre-Praxair period — no duration attaches to it)
 - 2.5 years intensive work with AI tools and premium LLMs
 - Current focus: Claude Code, AI agents, and automation
+
+> **Biographical hard rules — this block seeds generated copy, so violations regenerate.**
+> NEVER state an aggregate career-year total here or in any asset ("20 years," "17 years," "20+ years").
+> NEVER fuse Praxair/Linde with the Kodak/Corning era, and never attach a duration to Kodak/Corning.
+> "Bilingual" attaches to the product, never to Robert — his Spanish is basic.
+> Canonical: `operating-system/cushlabs/claims-policy.json` → `rules.biographical_facts`.
 
 **Business Model:** Help businesses transform through AI with:
 
