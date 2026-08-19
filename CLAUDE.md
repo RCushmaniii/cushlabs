@@ -81,7 +81,7 @@ Deep-dive how-to docs in this repo stay where they are — the registry owns _st
 **Owner:** Robert Cushman
 **Business:** CushLabs.ai - AI Integration & Software Development Consulting
 **Launch Target:** 2026
-**Location:** Serving US and Mexico. The published business locality is **Guadalajara** — it is in `BaseLayout.astro` schema.org `addressLocality`, the footer, and the homepage badge. Do not change it in copy without changing the structured data in the same commit.
+**Location:** Based in Guadalajara, Mexico. Serves clients across Mexico, the US, and LATAM.
 **Delivery:** Bilingual EN/ES product output — assistants, apps, and content validated in both languages; project execution is English-first
 
 **Robert's Background:**
