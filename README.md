@@ -1,8 +1,17 @@
 # CushLabs.ai
 
-![Astro](https://img.shields.io/badge/Astro-4.16-BC52EE?logo=astro)
+<!--
+  MAINTAINERS / AI ASSISTANTS — source of truth lives in the private operating-system repo:
+  - Pricing, clients, billing state:  operating-system/strategy/clients.json
+  - Platform approval state:          operating-system/cushlabs/capability-registry.json
+  - Sellable capabilities:            docs/strategy/ADVERTISED-COMMITMENTS.md (this repo)
+  This README is public showcase copy. Never restate prices, client counts, billing status,
+  or platform-approval claims here — they drift. Link or point; do not quote.
+-->
+
+![Astro](https://img.shields.io/badge/Astro-7.1-BC52EE?logo=astro)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.9-3178C6?logo=typescript)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-06B6D4?logo=tailwindcss)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.3-06B6D4?logo=tailwindcss)
 ![Cloudflare Workers](https://img.shields.io/badge/Cloudflare_Workers-F38020?logo=cloudflare)
 
 > AI consulting and software development for SMBs. Bilingual (EN/ES) business site with automated GitHub portfolio sync and serverless booking.
@@ -70,7 +79,7 @@ Astro generates pure HTML for 95% of the site, edge-cached globally for sub-seco
 
 ### Prerequisites
 
-- Node.js >= 18.17
+- Node.js >= 22.12
 - GitHub Personal Access Token with `public_repo` scope
 - Google Calendar OAuth2 credentials (for booking feature)
 
@@ -89,12 +98,12 @@ cp .env.example .env
 notepad .env
 ```
 
-| Variable | Required | Description |
-|----------|----------|-------------|
-| `GITHUB_TOKEN` | Yes | GitHub PAT for portfolio sync (`public_repo` scope) |
-| `GITHUB_OWNER` | Yes | GitHub username (`RCushmaniii`) |
-| `PUBLIC_WHATSAPP_NUMBER` | No | WhatsApp contact number |
-| `PUBLIC_CONSULTATION_URL` | No | Booking widget fallback URL |
+| Variable                  | Required | Description                                         |
+| ------------------------- | -------- | --------------------------------------------------- |
+| `GITHUB_TOKEN`            | Yes      | GitHub PAT for portfolio sync (`public_repo` scope) |
+| `GITHUB_OWNER`            | Yes      | GitHub username (`RCushmaniii`)                     |
+| `PUBLIC_WHATSAPP_NUMBER`  | No       | WhatsApp contact number                             |
+| `PUBLIC_CONSULTATION_URL` | No       | Booking widget fallback URL                         |
 
 ### Development
 
@@ -168,14 +177,14 @@ A GitHub Actions workflow refreshes portfolio data weekly with smart diffing —
 
 ### Available Commands
 
-| Command | Description |
-|---------|-------------|
-| `npm run dev` | Start dev server at `localhost:4321` |
-| `npm run build` | Sync GitHub projects + production build |
-| `npm run preview` | Preview production build locally |
-| `npm run check` | ESLint + TypeScript validation |
-| `npm run generate-projects` | Sync GitHub repos to JSON |
-| `npm run audit:predeploy` | 6-check pre-deployment validation |
+| Command                     | Description                             |
+| --------------------------- | --------------------------------------- |
+| `npm run dev`               | Start dev server at `localhost:4321`    |
+| `npm run build`             | Sync GitHub projects + production build |
+| `npm run preview`           | Preview production build locally        |
+| `npm run check`             | ESLint + TypeScript validation          |
+| `npm run generate-projects` | Sync GitHub repos to JSON               |
+| `npm run audit:predeploy`   | 6-check pre-deployment validation       |
 
 ## Security
 
@@ -188,24 +197,24 @@ A GitHub Actions workflow refreshes portfolio data weekly with smart diffing —
 
 ## Design System
 
-| Token | Value | Usage |
-|-------|-------|-------|
-| `cush-orange` | `#FF6A3D` | Primary accent |
-| Display font | Space Grotesk | Headings, nav, buttons |
-| Body font | Source Serif 4 | Paragraphs, content |
+| Token         | Value          | Usage                  |
+| ------------- | -------------- | ---------------------- |
+| `cush-orange` | `#FF6A3D`      | Primary accent         |
+| Display font  | Space Grotesk  | Headings, nav, buttons |
+| Body font     | Source Serif 4 | Paragraphs, content    |
 
 Full brand documentation in [`docs/BRAND-DESIGN-SYSTEM.md`](docs/BRAND-DESIGN-SYSTEM.md).
 
 ## Results
 
-| Metric | Detail |
-|--------|--------|
-| Portfolio projects | 27+ synced automatically from GitHub with zero manual entry |
-| i18n runtime overhead | 0 KB (24-line custom system vs ~40KB+ i18next) |
-| Pre-deploy checks | 6 automated validations before every production build |
-| Page load | Sub-second with static HTML edge-cached globally |
-| Booking cost | $0/month (Cloudflare Worker free tier vs $8-16/month Calendly) |
-| Language coverage | 100% EN/ES parity enforced at build time |
+| Metric                | Detail                                                         |
+| --------------------- | -------------------------------------------------------------- |
+| Portfolio projects    | 35+ synced automatically from GitHub with zero manual entry    |
+| i18n runtime overhead | 0 KB (24-line custom system vs ~40KB+ i18next)                 |
+| Pre-deploy checks     | 6 automated validations before every production build          |
+| Page load             | Sub-second with static HTML edge-cached globally               |
+| Booking cost          | $0/month (Cloudflare Worker free tier vs $8-16/month Calendly) |
+| Language coverage     | 100% EN/ES parity enforced at build time                       |
 
 The site demonstrates that a solo consultant's web presence doesn't have to choose between automation and polish. Static generation handles performance and cost. Serverless workers handle the dynamic edges. And build-time enforcement handles the quality that manual processes inevitably drop.
 
@@ -221,7 +230,3 @@ Guadalajara, Mexico
 ## License
 
 © 2026 Robert Cushman. All rights reserved. See [LICENSE](LICENSE) for details.
-
----
-
-*Last Updated: 2026-03-02*
