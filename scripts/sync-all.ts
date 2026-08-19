@@ -8,19 +8,19 @@
  * Usage: npm run sync:all
  */
 
-import { execSync } from 'child_process';
-import { resolve } from 'path';
-import { existsSync } from 'fs';
+import { execSync } from "child_process";
+import { resolve } from "path";
+import { existsSync } from "fs";
 
-const CUSHLABS_DIR = resolve(import.meta.dirname!, '..');
-const AI_PORTFOLIO_DIR = resolve(CUSHLABS_DIR, '../ai-portfolio');
+const CUSHLABS_DIR = resolve(import.meta.dirname!, "..");
+const AI_PORTFOLIO_DIR = resolve(CUSHLABS_DIR, "../ai-portfolio");
 
 function run(cmd: string, cwd: string, label: string): boolean {
-  console.log(`\n${'='.repeat(60)}`);
+  console.log(`\n${"=".repeat(60)}`);
   console.log(`🔄 ${label}`);
-  console.log(`${'='.repeat(60)}\n`);
+  console.log(`${"=".repeat(60)}\n`);
   try {
-    execSync(cmd, { cwd, stdio: 'inherit', env: { ...process.env } });
+    execSync(cmd, { cwd, stdio: "inherit", env: { ...process.env } });
     return true;
   } catch {
     console.error(`\n❌ Failed: ${label}`);
@@ -30,9 +30,9 @@ function run(cmd: string, cwd: string, label: string): boolean {
 
 function hasChanges(cwd: string, paths: string[]): boolean {
   try {
-    const status = execSync(`git status --porcelain -- ${paths.join(' ')}`, {
+    const status = execSync(`git status --porcelain -- ${paths.join(" ")}`, {
       cwd,
-      encoding: 'utf-8',
+      encoding: "utf-8",
     }).trim();
     return status.length > 0;
   } catch {
@@ -42,12 +42,9 @@ function hasChanges(cwd: string, paths: string[]): boolean {
 
 function commitAndPush(cwd: string, files: string[], message: string): boolean {
   try {
-    execSync(`git add ${files.join(' ')}`, { cwd, stdio: 'inherit' });
-    execSync(
-      `git commit -m "${message}"`,
-      { cwd, stdio: 'inherit' }
-    );
-    execSync('git push', { cwd, stdio: 'inherit' });
+    execSync(`git add ${files.join(" ")}`, { cwd, stdio: "inherit" });
+    execSync(`git commit -m "${message}"`, { cwd, stdio: "inherit" });
+    execSync("git push", { cwd, stdio: "inherit" });
     console.log(`✅ Committed and pushed: ${message}`);
     return true;
   } catch {
@@ -57,12 +54,12 @@ function commitAndPush(cwd: string, files: string[], message: string): boolean {
 }
 
 async function main() {
-  console.log('🚀 CushLabs Portfolio Sync — All Repos\n');
+  console.log("🚀 CushLabs Portfolio Sync — All Repos\n");
 
   // Verify ai-portfolio repo exists
   if (!existsSync(AI_PORTFOLIO_DIR)) {
     console.error(`❌ ai-portfolio repo not found at: ${AI_PORTFOLIO_DIR}`);
-    console.error('   Expected: ../ai-portfolio relative to cushlabs repo');
+    console.error("   Expected: ../ai-portfolio relative to cushlabs repo");
     process.exit(1);
   }
 
@@ -71,44 +68,50 @@ async function main() {
 
   // ── Step 1: Sync cushlabs ──
   cushlabsOk = run(
-    'npx tsx scripts/generate-projects.ts',
+    "npx tsx scripts/generate-projects.ts",
     CUSHLABS_DIR,
-    'CushLabs — generate-projects'
+    "CushLabs — generate-projects",
   );
 
-  if (cushlabsOk && hasChanges(CUSHLABS_DIR, ['src/data/projects.generated.json'])) {
+  if (
+    cushlabsOk &&
+    hasChanges(CUSHLABS_DIR, ["src/data/projects.generated.json"])
+  ) {
     commitAndPush(
       CUSHLABS_DIR,
-      ['src/data/projects.generated.json'],
-      'chore: refresh projects data [skip ci]'
+      ["src/data/projects.generated.json"],
+      "chore: refresh projects data [skip ci]",
     );
   } else if (cushlabsOk) {
-    console.log('ℹ️  CushLabs: no changes to commit');
+    console.log("ℹ️  CushLabs: no changes to commit");
   }
 
   // ── Step 2: Sync ai-portfolio ──
   aiPortfolioOk = run(
-    'pnpm sync',
+    "pnpm sync",
     AI_PORTFOLIO_DIR,
-    'AI Portfolio — sync-portfolio'
+    "AI Portfolio — sync-portfolio",
   );
 
-  if (aiPortfolioOk && hasChanges(AI_PORTFOLIO_DIR, ['content/portfolio.json'])) {
+  if (
+    aiPortfolioOk &&
+    hasChanges(AI_PORTFOLIO_DIR, ["content/portfolio.json"])
+  ) {
     commitAndPush(
       AI_PORTFOLIO_DIR,
-      ['content/portfolio.json'],
-      'chore: refresh portfolio data [skip ci]'
+      ["content/portfolio.json"],
+      "chore: refresh portfolio data [skip ci]",
     );
   } else if (aiPortfolioOk) {
-    console.log('ℹ️  AI Portfolio: no changes to commit');
+    console.log("ℹ️  AI Portfolio: no changes to commit");
   }
 
   // ── Summary ──
-  console.log(`\n${'='.repeat(60)}`);
-  console.log('📋 Sync Summary');
-  console.log(`${'='.repeat(60)}`);
-  console.log(`  CushLabs:     ${cushlabsOk ? '✅' : '❌'}`);
-  console.log(`  AI Portfolio:  ${aiPortfolioOk ? '✅' : '❌'}`);
+  console.log(`\n${"=".repeat(60)}`);
+  console.log("📋 Sync Summary");
+  console.log(`${"=".repeat(60)}`);
+  console.log(`  CushLabs:     ${cushlabsOk ? "✅" : "❌"}`);
+  console.log(`  AI Portfolio:  ${aiPortfolioOk ? "✅" : "❌"}`);
   console.log();
 
   if (!cushlabsOk || !aiPortfolioOk) {
@@ -116,4 +119,10 @@ async function main() {
   }
 }
 
-main();
+// A rejection here must fail the run loudly. Left floating, an unhandled rejection
+// would print a warning and still exit 0 — a sync that reports success having done
+// nothing, which is the failure mode this repo has already been bitten by.
+main().catch((err) => {
+  console.error("sync-all failed:", err);
+  process.exit(1);
+});

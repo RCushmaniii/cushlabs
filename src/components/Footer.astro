@@ -198,7 +198,7 @@ const t = content[locale];
                 <li>
                   {'isEmail' in link && link.isEmail ? (
                     <a
-                      href="#"
+                      href={locale === "es" ? "/es/contact/" : "/contact/"}
                       id="footer-email-link"
                       data-u="info"
                       data-d="cushlabs.ai"
@@ -297,7 +297,9 @@ const t = content[locale];
   </div>
 
   <script is:inline>
-    // Assemble obfuscated email link at runtime to prevent scraper/CDN rewriting
+    // Assemble obfuscated email link at runtime to prevent scraper/CDN rewriting.
+    // The server-rendered href points at the contact page, so this degrades to a
+    // working link without JS instead of the dead "#" it used to ship.
     (function() {
       var el = document.getElementById('footer-email-link');
       if (el) {

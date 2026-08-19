@@ -81,7 +81,11 @@ function tokenFor(company: string): string | undefined {
 /** 90 days covers a B2B sales cycle without a stale link (out-of-date pricing) living forever. */
 const DEFAULT_LIFESPAN_DAYS = 90;
 
-const DEMOS: Record<string, DemoConfig> = {
+// Value type is `DemoConfig | undefined` on purpose. A plain Record<string, DemoConfig>
+// tells the compiler that ANY key returns a config, so the `if (!config)` guard below —
+// the check that rejects an unknown company — reads as dead code and gets flagged as an
+// unnecessary condition. The lookup really can miss; the type should say so.
+const DEMOS: Record<string, DemoConfig | undefined> = {
   // La Tiendita removed 2026-08-19 — the prospect never responded, and their
   // proposal + website mockup were sitting in this PUBLIC repo. See the warning
   // above `tokenFor`.
