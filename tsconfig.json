@@ -13,6 +13,13 @@
     "jsx": "react-jsx",
     "jsxImportSource": "react"
   },
-  "include": [".astro/types.d.ts", "src/**/*", "scripts/**/*", "api/**/*"],
+  "include": [
+    ".astro/types.d.ts",
+    "src/**/*",
+    "scripts/**/*",
+    "api/**/*",
+    "tests/**/*",
+    "sentry.client.config.ts"
+  ],
   "exclude": ["node_modules", "dist"]
 }

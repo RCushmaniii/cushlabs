@@ -11,6 +11,30 @@ export default [
   // Astro-aware a11y extensions (requires eslint-plugin-jsx-a11y)
   ...eslintPluginAstro.configs["flat/jsx-a11y-recommended"],
 
+  {
+    files: ["**/*.astro"],
+    rules: {
+      // Scope this rule to handlers that are actually *interactions*. Its default
+      // handler list includes onLoad and onError, which are lifecycle events — so a
+      // plain `<img onload="...">` driving a shimmer placeholder was reported as an
+      // accessibility error. Keyboard/pointer handlers on non-interactive elements
+      // are still caught, which is the behaviour worth having.
+      "astro/jsx-a11y/no-noninteractive-element-interactions": [
+        "error",
+        {
+          handlers: [
+            "onClick",
+            "onMouseDown",
+            "onMouseUp",
+            "onKeyPress",
+            "onKeyDown",
+            "onKeyUp",
+          ],
+        },
+      ],
+    },
+  },
+
   // Make sure formatting rules don't fight Prettier
   prettier,
 
@@ -87,6 +111,17 @@ export default [
     files: ["scripts/**"],
     rules: {
       "no-console": "off",
+
+      // These scripts consume the GitHub API through Octokit, whose generated types
+      // declare fields like `stargazers_count`, `pushed_at`, and `archived` as always
+      // present. The API omits them depending on endpoint, permissions, and repo
+      // visibility — so the `?? 0` / `?? ""` fallbacks the rule calls "unnecessary" are
+      // the only thing keeping `undefined` out of projects.generated.json.
+      //
+      // Deleting a guard because a type promised it could not fire is precisely how
+      // this repo shipped `thumbnail: null` to production in April. The types are
+      // wrong here; the guards stay.
+      "@typescript-eslint/no-unnecessary-condition": "off",
     },
   },
 

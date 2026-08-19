@@ -16,6 +16,11 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      # Runs before the build so a lint or type error fails fast. This step is the
+      # reason the gate stays green: `npm run check` sat at 26 errors on main for an
+      # unknown stretch precisely because nothing here ran it.
+      - name: Lint + typecheck
+        run: npm run check
       - name: Build
         run: npm run build
         env:

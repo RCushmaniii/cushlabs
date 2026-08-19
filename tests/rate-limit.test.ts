@@ -1,5 +1,5 @@
 import { describe, it, expect, vi } from "vitest";
-// @ts-expect-error — plain JS Worker module, no types alongside it.
+// Plain JS Worker module with no types alongside it; resolves as implicit `any`.
 import { checkRateLimit, clientKey } from "../workers/lib/rate-limit-d1.js";
 
 describe("clientKey — the unit a limit applies to", () => {
