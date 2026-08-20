@@ -105,7 +105,14 @@ const t = {
         <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
       </button>
       <div class="relative aspect-video bg-black rounded-xl overflow-hidden">
-        <div id="modal-poster" class="absolute inset-0 cursor-pointer group z-10">
+        <!-- role=button + tabindex + keydown — ver la nota en la versión EN. -->
+        <div
+          id="modal-poster"
+          role="button"
+          tabindex="0"
+          aria-label="Reproducir video"
+          class="absolute inset-0 cursor-pointer group z-10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+        >
           <img src={t.video.poster} alt={t.video.alt} width="1280" height="720" class="w-full h-full object-cover" />
           <div class="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/30 transition-colors">
             <div class="w-20 h-20 rounded-full bg-cush-orange/90 flex items-center justify-center group-hover:bg-cush-orange group-hover:scale-110 transition-all duration-300 shadow-lg shadow-black/30">
@@ -115,7 +122,8 @@ const t = {
         </div>
         <video id="modal-video" class="w-full h-full object-contain" controls preload="none" playsinline>
           <source src={t.video.src} type="video/mp4" />
-          <track kind="captions" />
+          {/* No <track> — an empty caption track with no src advertises captions
+              that do not exist. Add a real .vtt (src + srclang + label) when they do. */}
         </video>
       </div>
     </div>
@@ -267,9 +275,22 @@ const t = {
       modal.showModal();
     });
 
-    modalPoster.addEventListener('click', () => {
+    // Mueve el foco al reproductor — ver la nota en la versión EN.
+    const playModalVideo = () => {
       modalPoster.classList.add('hidden');
-      modalVideo.play();
+      modalVideo.focus();
+      void modalVideo.play().catch(() => {
+        /* los controles están visibles; el usuario puede iniciarlo manualmente */
+      });
+    }
+
+    modalPoster.addEventListener('click', playModalVideo);
+    modalPoster.addEventListener('keydown', (e) => {
+      const key = e.key;
+      if (key === 'Enter' || key === ' ' || key === 'Spacebar') {
+        e.preventDefault();
+        playModalVideo();
+      }
     });
 
     modal.querySelectorAll('[data-close-modal]').forEach((el) => {

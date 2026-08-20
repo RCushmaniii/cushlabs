@@ -40,7 +40,14 @@ const defaultPoster = `/videos/${DEFAULT_VIDEO}${esSuffix}-poster.jpg`;
         <div class="px-[2vw]">
           <div class="relative rounded-2xl overflow-hidden border border-border bg-black shadow-2xl shadow-black/20">
             <div id="video-container" class="relative aspect-video cursor-pointer group">
-              <div id="video-poster" class="absolute inset-0 z-10">
+              <!-- role=button + tabindex + keydown — ver la nota en la versión EN. -->
+              <div
+                id="video-poster"
+                role="button"
+                tabindex="0"
+                aria-label={t.playLabel}
+                class="absolute inset-0 z-10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+              >
                 <img id="poster-img" src={defaultPoster} alt={t.headline} width="1280" height="720" class="w-full h-full object-cover" fetchpriority="high" />
                 <div class="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/30 transition-colors">
                   <div class="text-center">
@@ -53,7 +60,7 @@ const defaultPoster = `/videos/${DEFAULT_VIDEO}${esSuffix}-poster.jpg`;
               </div>
               <video id="video-player" class="w-full h-full object-contain bg-black hidden" controls playsinline preload="none">
                 <source id="video-source" src={defaultVideoSrc} type="video/mp4" />
-                <track kind="captions" />
+                {/* Sin <track> a propósito — ver la nota en la versión EN. */}
               </video>
             </div>
           </div>
@@ -100,10 +107,24 @@ const defaultPoster = `/videos/${DEFAULT_VIDEO}${esSuffix}-poster.jpg`;
         setTimeout(() => { video.preload = 'metadata'; }, 2000);
       }
 
-      poster.addEventListener('click', () => {
+      // Mueve el foco al reproductor: el elemento activado queda display:none y el foco
+      // caería a <body>.
+      function activateVideo() {
         poster.classList.add('hidden');
         video.classList.remove('hidden');
-        video.play();
+        video.focus();
+        void video.play().catch(() => {
+          /* si el navegador rechaza la reproducción automática, los controles están visibles */
+        });
+      }
+
+      poster.addEventListener('click', activateVideo);
+      poster.addEventListener('keydown', (e) => {
+        const key = e.key;
+        if (key === 'Enter' || key === ' ' || key === 'Spacebar') {
+          e.preventDefault();
+          activateVideo();
+        }
       });
 
       video.addEventListener('ended', () => {

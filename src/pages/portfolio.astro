@@ -182,8 +182,16 @@ const t = content[locale];
         </svg>
       </button>
       <div class="relative aspect-video bg-black rounded-xl overflow-hidden">
-        <!-- Poster overlay -->
-        <div id="modal-poster" class="absolute inset-0 cursor-pointer group z-10">
+        <!-- Poster overlay. role=button + tabindex + keydown (see script): the poster
+             sits on top of the <video>, so without a keyboard path a keyboard-only user
+             inside this dialog cannot start playback at all. -->
+        <div
+          id="modal-poster"
+          role="button"
+          tabindex="0"
+          aria-label="Play video"
+          class="absolute inset-0 cursor-pointer group z-10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+        >
           <img
             src={t.video.poster}
             alt={t.video.alt}
@@ -208,7 +216,8 @@ const t = content[locale];
           playsinline
         >
           <source src={t.video.src} type="video/mp4" />
-          <track kind="captions" />
+          {/* No <track> — an empty caption track with no src advertises captions
+              that do not exist. Add a real .vtt (src + srclang + label) when they do. */}
         </video>
       </div>
     </div>
@@ -438,10 +447,23 @@ const t = content[locale];
       modal.showModal();
     });
 
-    // Click poster to play
-    modalPoster.addEventListener('click', () => {
+    // Activate poster to play. Focus moves to the player because the poster is about to
+    // be hidden and focus would otherwise fall out of the dialog.
+    const playModalVideo = () => {
       modalPoster.classList.add('hidden');
-      modalVideo.play();
+      modalVideo.focus();
+      void modalVideo.play().catch(() => {
+        /* controls are visible; the user can start it manually */
+      });
+    }
+
+    modalPoster.addEventListener('click', playModalVideo);
+    modalPoster.addEventListener('keydown', (e) => {
+      const key = e.key;
+      if (key === 'Enter' || key === ' ' || key === 'Spacebar') {
+        e.preventDefault();
+        playModalVideo();
+      }
     });
 
     // Close button / backdrop clicks
