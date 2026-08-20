@@ -70,7 +70,7 @@
     "playwright": "^1.62.1",
     "prettier": "^3.8.2",
     "tsx": "^4.7.0",
-    "typescript": "^5.9.3",
+    "typescript": "^7.0.2",
     "vitest": "^4.1.2"
   }
 }
