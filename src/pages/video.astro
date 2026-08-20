@@ -64,8 +64,18 @@ const defaultPoster = `/videos/${DEFAULT_VIDEO}${esSuffix}-poster.jpg`;
         <div class="px-[2vw]">
           <div class="relative rounded-2xl overflow-hidden border border-border bg-black shadow-2xl shadow-black/20">
             <div id="video-container" class="relative aspect-video cursor-pointer group">
-              <!-- Poster overlay — loads first, no video download until click -->
-              <div id="video-poster" class="absolute inset-0 z-10">
+              <!-- Poster overlay — loads first, no video download until activated.
+                   role=button + tabindex + a keydown handler (see the script below):
+                   the <video> is display:none until this is activated, so without a
+                   keyboard path there is NO way to start the video without a mouse.
+                   Same pattern as projects/[slug].astro. -->
+              <div
+                id="video-poster"
+                role="button"
+                tabindex="0"
+                aria-label={t.playLabel}
+                class="absolute inset-0 z-10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+              >
                 <img
                   id="poster-img"
                   src={defaultPoster}
@@ -96,7 +106,11 @@ const defaultPoster = `/videos/${DEFAULT_VIDEO}${esSuffix}-poster.jpg`;
                 preload="none"
               >
                 <source id="video-source" src={defaultVideoSrc} type="video/mp4" />
-                <track kind="captions" />
+                {/* No <track> here on purpose. An empty <track kind="captions"> with no
+                    src advertises a caption track that does not exist — worse than
+                    shipping none, because assistive tech reports captions as available.
+                    Add a real .vtt (src + srclang + label + default) when captions
+                    exist; until then this stays out. */}
               </video>
             </div>
           </div>
@@ -160,11 +174,25 @@ const defaultPoster = `/videos/${DEFAULT_VIDEO}${esSuffix}-poster.jpg`;
         setTimeout(() => { video.preload = 'metadata'; }, 2000);
       }
 
-      // Click poster → play video
-      poster.addEventListener('click', () => {
+      // Activate poster → reveal and play. Focus moves to the player, because the
+      // element the user just activated is about to be display:none'd and focus would
+      // otherwise fall to <body>.
+      function activateVideo() {
         poster.classList.add('hidden');
         video.classList.remove('hidden');
-        video.play();
+        video.focus();
+        void video.play().catch(() => {
+          /* autoplay refusal is fine — controls are visible and the user can press play */
+        });
+      }
+
+      poster.addEventListener('click', activateVideo);
+      poster.addEventListener('keydown', (e) => {
+        const key = e.key;
+        if (key === 'Enter' || key === ' ' || key === 'Spacebar') {
+          e.preventDefault(); // stop Space from scrolling the page
+          activateVideo();
+        }
       });
 
       // Video ends → show poster again
