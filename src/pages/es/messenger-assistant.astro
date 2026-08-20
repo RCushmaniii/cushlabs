@@ -220,14 +220,17 @@ const themes = [
             <h3 class="font-display font-semibold text-2xl text-gray-900 dark:text-white mb-1">{demo.name}</h3>
             <p class="text-sm text-gray-500 dark:text-gray-500 mb-4">{demo.tagline}</p>
             <p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">{demo.copy}</p>
-            <div class="mb-8">
-              <p class="text-xs font-display font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-500 mb-3">Prueba preguntar</p>
-              <div class="flex flex-wrap gap-2">
-                {demo.questions.map(q => (
-                  <span class="px-3 py-1.5 rounded-full bg-gray-100 dark:bg-gray-800 text-sm text-gray-700 dark:text-gray-300">{q}</span>
-                ))}
+            {/* `questions` es opcional en LiveDemo — ver la nota en la versión EN. */}
+            {demo.questions && demo.questions.length > 0 && (
+              <div class="mb-8">
+                <p class="text-xs font-display font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-500 mb-3">Prueba preguntar</p>
+                <div class="flex flex-wrap gap-2">
+                  {demo.questions.map(q => (
+                    <span class="px-3 py-1.5 rounded-full bg-gray-100 dark:bg-gray-800 text-sm text-gray-700 dark:text-gray-300">{q}</span>
+                  ))}
+                </div>
               </div>
-            </div>
+            )}
             <a href={demo.href} target="_blank" rel="noopener" class="mt-auto inline-flex items-center justify-center gap-2 px-6 py-3 bg-cush-orange text-black font-display font-semibold rounded-lg hover:bg-cush-orange/90 transition-colors duration-300">
               {demo.cta}
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>

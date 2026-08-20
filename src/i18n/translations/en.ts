@@ -75,39 +75,12 @@ export const en = {
     subtitle: "Recent client and production work",
     viewAll: "See All Projects",
   },
-  testimonials: {
-    title: "What People Say",
-    items: [
-      {
-        name: "Michael Chen",
-        title: "Founder, TechStart",
-        quote:
-          "Robert's attention to detail helped us launch ahead of schedule. The code quality is excellent.",
-        avatar: "/images/testimonials/avatar-1.webp",
-      },
-      {
-        name: "Sarah Rodriguez",
-        title: "Operations Director",
-        quote:
-          "The automation system Robert built saves us 20+ hours per week. ROI was obvious within the first month.",
-        avatar: "/images/testimonials/avatar-2.webp",
-      },
-      {
-        name: "David Kim",
-        title: "CEO, DataFlow",
-        quote:
-          "Working with Robert was easy. He delivered a custom AI solution that exceeded what we hoped for.",
-        avatar: "/images/testimonials/avatar-3.webp",
-      },
-      {
-        name: "Emily Thompson",
-        title: "Product Manager",
-        quote:
-          "Clear communication, solid engineering, no drama. The whole process was smooth from start to finish.",
-        avatar: "/images/testimonials/avatar-4.webp",
-      },
-    ],
-  },
+  // No `testimonials` block here on purpose. It used to hold four invented people
+  // (Michael Chen, Sarah Rodriguez, David Kim, Emily Thompson) with invented quotes and
+  // stock avatars — removed 2026-08-20 along with the orphaned TestimonialsSection that
+  // was its only consumer. The real social proof is a named, verifiable LinkedIn
+  // recommendation in `src/components/home2/SocialProof.astro`. Never add a placeholder
+  // testimonial here: placeholders ship.
   cta: {
     title: "Let's Build Something",
     subtitle:
