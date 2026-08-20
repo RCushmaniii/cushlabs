@@ -184,7 +184,7 @@ const themes = [
                 href={demo.href}
                 target="_blank"
                 rel="noopener"
-                class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border-2 border-white/30 bg-white/5 text-white font-display font-semibold text-sm backdrop-blur-sm hover:border-cush-orange hover:text-cush-orange transition-all duration-300"
+                class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border-2 border-white/30 bg-white/5 text-white font-display font-semibold text-sm backdrop-blur-sm hover:border-cush-orange hover:text-accent-text transition-all duration-300"
               >
                 <svg class="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M12 0C5.373 0 0 4.974 0 11.111c0 3.498 1.744 6.614 4.469 8.654V24l4.088-2.242c1.092.301 2.246.464 3.443.464 6.627 0 12-4.975 12-11.111C24 4.974 18.627 0 12 0zm1.191 14.963l-3.055-3.26-5.963 3.26L10.732 8l3.131 3.259L19.752 8l-6.561 6.963z"/>
@@ -202,7 +202,7 @@ const themes = [
   <section class="py-20 md:py-28">
     <Container size="lg">
       <div class="text-center max-w-3xl mx-auto mb-12">
-        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cush-orange/10 border border-cush-orange/20 text-cush-orange text-sm font-semibold mb-6">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cush-orange/10 border border-cush-orange/20 text-accent-text text-sm font-semibold mb-6">
           <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
           Live demos — no signup, no sandbox
         </div>
@@ -217,18 +217,23 @@ const themes = [
       <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
         {liveDemos.map(demo => (
           <div class="flex flex-col rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/40 p-8">
-            <span class="inline-flex self-start px-3 py-1 rounded-full bg-cush-orange/10 text-cush-orange text-xs font-display font-semibold uppercase tracking-wider mb-4">{demo.badge}</span>
+            <span class="inline-flex self-start px-3 py-1 rounded-full bg-cush-orange/10 text-accent-text text-xs font-display font-semibold uppercase tracking-wider mb-4">{demo.badge}</span>
             <h3 class="font-display font-semibold text-2xl text-gray-900 dark:text-white mb-1">{demo.name}</h3>
             <p class="text-sm text-gray-500 dark:text-gray-500 mb-4">{demo.tagline}</p>
             <p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">{demo.copy}</p>
-            <div class="mb-8">
-              <p class="text-xs font-display font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-500 mb-3">Try asking</p>
-              <div class="flex flex-wrap gap-2">
-                {demo.questions.map(q => (
-                  <span class="px-3 py-1.5 rounded-full bg-gray-100 dark:bg-gray-800 text-sm text-gray-700 dark:text-gray-300">{q}</span>
-                ))}
+            {/* `questions` is optional on LiveDemo, so guard the whole block —
+                otherwise a demo without it renders a "Try asking" heading above
+                nothing, and `.map` on undefined fails the build outright. */}
+            {demo.questions && demo.questions.length > 0 && (
+              <div class="mb-8">
+                <p class="text-xs font-display font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-500 mb-3">Try asking</p>
+                <div class="flex flex-wrap gap-2">
+                  {demo.questions.map(q => (
+                    <span class="px-3 py-1.5 rounded-full bg-gray-100 dark:bg-gray-800 text-sm text-gray-700 dark:text-gray-300">{q}</span>
+                  ))}
+                </div>
               </div>
-            </div>
+            )}
             <a href={demo.href} target="_blank" rel="noopener" class="mt-auto inline-flex items-center justify-center gap-2 px-6 py-3 bg-cush-orange text-black font-display font-semibold rounded-lg hover:bg-cush-orange/90 transition-colors duration-300">
               {demo.cta}
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
@@ -245,7 +250,7 @@ const themes = [
       <div class="text-center mt-10">
         <a
           href="/demos/"
-          class="group inline-flex items-center gap-2 px-6 py-3 rounded-lg border-2 border-gray-300 dark:border-gray-700 text-gray-800 dark:text-gray-200 font-display font-semibold hover:border-cush-orange hover:text-cush-orange dark:hover:border-cush-orange dark:hover:text-cush-orange transition-all duration-300"
+          class="group inline-flex items-center gap-2 px-6 py-3 rounded-lg border-2 border-gray-300 dark:border-gray-700 text-gray-800 dark:text-gray-200 font-display font-semibold hover:border-cush-orange hover:text-accent-text dark:hover:border-cush-orange dark:hover:text-accent-text transition-all duration-300"
         >
           See a demo for your industry
           <svg class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -289,7 +294,7 @@ const themes = [
             <h2 class="font-display font-bold text-3xl md:text-5xl text-gray-900 dark:text-white mb-4 leading-tight tracking-tight">
               What CushLabs builds instead
             </h2>
-            <p class="text-xl md:text-2xl text-cush-orange font-medium leading-relaxed mb-8">
+            <p class="text-xl md:text-2xl text-accent-text font-medium leading-relaxed mb-8">
               Not a template. Not a chatbot that says "I didn't understand that."
             </p>
             <div class="prose prose-lg dark:prose-invert max-w-none">
@@ -360,7 +365,7 @@ const themes = [
                 Included in <span class="text-white font-bold">every plan — from $1,990 MXN/mo + IVA</span>. Single page, unlimited conversations (fair use), fully managed. Includes setup, training, weekly reports, and monthly tuning. No setup fee. No contract.
               </div>
             </div>
-            <p class="text-xs text-cush-orange font-medium mt-4 italic">Free 1-week trial. Cancel anytime.</p>
+            <p class="text-xs text-accent-text font-medium mt-4 italic">Free 1-week trial. Cancel anytime.</p>
             <div class="mt-8">
               <a href="/consultation/" class="block w-full text-center px-6 py-3 bg-cush-orange text-black font-display font-semibold rounded-lg hover:bg-cush-orange/90 transition-colors duration-300">
                 Book a Discovery Call
@@ -407,7 +412,7 @@ const themes = [
   <section class="py-20 md:py-28">
     <Container size="lg">
       <div class="text-center max-w-3xl mx-auto mb-14">
-        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cush-orange/10 border border-cush-orange/20 text-cush-orange text-sm font-semibold mb-6">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cush-orange/10 border border-cush-orange/20 text-accent-text text-sm font-semibold mb-6">
           <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
           Included today — running in production
         </div>
@@ -423,13 +428,13 @@ const themes = [
           <div class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/40 p-8 hover:border-cush-orange/50 transition-colors duration-300">
             <div class="flex items-center gap-4 mb-4">
               <div class="w-12 h-12 rounded-lg bg-cush-orange/10 flex items-center justify-center shrink-0">
-                <svg class="w-6 h-6 text-cush-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-6 h-6 text-accent-text" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={theme.icon} />
                 </svg>
               </div>
               <h3 class="font-display font-semibold text-xl text-gray-900 dark:text-white leading-snug">{theme.title}</h3>
             </div>
-            <p class="text-cush-orange font-medium leading-relaxed mb-5">{theme.promise}</p>
+            <p class="text-accent-text font-medium leading-relaxed mb-5">{theme.promise}</p>
             <ul class="space-y-3">
               {theme.points.map(point => (
                 <li class="flex gap-3">

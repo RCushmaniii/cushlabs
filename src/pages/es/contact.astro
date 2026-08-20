@@ -39,7 +39,7 @@ const hero = {
 
     <Container>
       <div class="text-center max-w-3xl mx-auto">
-        <span class="inline-block px-3 py-1 text-xs font-display font-semibold text-cush-orange bg-cush-orange/10 rounded-full mb-4">{hero.badge}</span>
+        <span class="inline-block px-3 py-1 text-xs font-display font-semibold text-accent-text bg-cush-orange/10 rounded-full mb-4">{hero.badge}</span>
         <h1 class="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">{hero.headline}</h1>
         <p class="text-lg text-gray-600 dark:text-gray-400 mb-8">{hero.subheadline}</p>
 
@@ -48,7 +48,7 @@ const hero = {
             {hero.ctaPrimary}
             <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
           </a>
-          <a href="#contact-form" class="group inline-flex items-center gap-2 px-6 py-3 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 font-display font-semibold rounded-lg hover:border-cush-orange hover:text-cush-orange transition-all">
+          <a href="#contact-form" class="group inline-flex items-center gap-2 px-6 py-3 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 font-display font-semibold rounded-lg hover:border-cush-orange hover:text-accent-text transition-all">
             {hero.ctaSecondary}
             <svg class="w-5 h-5 group-hover:translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" /></svg>
           </a>
@@ -67,11 +67,11 @@ const hero = {
           <form id="contact-form-el" class="space-y-4" data-locale={locale}>
             <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
               <div>
-                <label for="name" class="block text-sm font-display font-semibold text-foreground">{dict.contact.formName}<span class="text-cush-orange">*</span></label>
+                <label for="name" class="block text-sm font-display font-semibold text-foreground">{dict.contact.formName}<span class="text-accent-text">*</span></label>
                 <input id="name" name="name" type="text" autocomplete="name" required class="mt-2 w-full rounded-lg border border-border bg-canvas/40 px-3 py-2 text-foreground placeholder:text-muted focus:outline-hidden focus:ring-2 focus:ring-cush-orange" />
               </div>
               <div>
-                <label for="email" class="block text-sm font-display font-semibold text-foreground">{dict.contact.formEmail}<span class="text-cush-orange">*</span></label>
+                <label for="email" class="block text-sm font-display font-semibold text-foreground">{dict.contact.formEmail}<span class="text-accent-text">*</span></label>
                 <input id="email" name="email" type="email" autocomplete="email" required class="mt-2 w-full rounded-lg border border-border bg-canvas/40 px-3 py-2 text-foreground placeholder:text-muted focus:outline-hidden focus:ring-2 focus:ring-cush-orange" />
               </div>
             </div>
@@ -82,13 +82,13 @@ const hero = {
             </div>
 
             <div>
-              <label for="message" class="block text-sm font-display font-semibold text-foreground">{dict.contact.formMessage}<span class="text-cush-orange">*</span></label>
+              <label for="message" class="block text-sm font-display font-semibold text-foreground">{dict.contact.formMessage}<span class="text-accent-text">*</span></label>
               <textarea id="message" name="message" required rows={6} placeholder={dict.contact.formMessageHint} class="mt-2 w-full rounded-lg border border-border bg-canvas/40 px-3 py-2 text-foreground placeholder:text-muted focus:outline-hidden focus:ring-2 focus:ring-cush-orange"></textarea>
             </div>
 
             <div class="flex items-start gap-3">
-              <input id="consent" name="consent" type="checkbox" required class="mt-1 h-4 w-4 rounded border-border bg-canvas/40 text-cush-orange focus:ring-cush-orange" />
-              <label for="consent" class="text-sm text-muted">{dict.contact.formConsentLead}{" "}<a href="/es/terms/" class="text-cush-orange underline underline-offset-2 hover:opacity-80">{dict.contact.formConsentTerms}</a>{" "}{dict.contact.formConsentAnd}{" "}<a href="/es/privacy/" class="text-cush-orange underline underline-offset-2 hover:opacity-80">{dict.contact.formConsentPrivacy}</a><span class="text-cush-orange">*</span></label>
+              <input id="consent" name="consent" type="checkbox" required class="mt-1 h-4 w-4 rounded border-border bg-canvas/40 text-accent-text focus:ring-cush-orange" />
+              <label for="consent" class="text-sm text-muted">{dict.contact.formConsentLead}{" "}<a href="/es/terms/" class="text-accent-text underline underline-offset-2 hover:opacity-80">{dict.contact.formConsentTerms}</a>{" "}{dict.contact.formConsentAnd}{" "}<a href="/es/privacy/" class="text-accent-text underline underline-offset-2 hover:opacity-80">{dict.contact.formConsentPrivacy}</a><span class="text-accent-text">*</span></label>
             </div>
 
             <div id="form-error" class="hidden rounded-lg bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 p-3 text-sm text-red-700 dark:text-red-400" role="alert" aria-live="polite" aria-atomic="true"></div>
@@ -118,7 +118,7 @@ const hero = {
           <p class="mt-2 text-muted">{dict.contact.infoSubtitle}</p>
 
           <div class="mt-6 flex flex-col gap-3">
-            <a id="email-btn" href="mailto:" data-u={emailUser} data-d={emailDomain} data-s={encodeURIComponent("CushLabs Inquiry")} class="inline-flex items-center justify-center gap-2 rounded-lg border border-border bg-canvas/40 px-5 py-3 text-sm font-display font-semibold text-foreground hover:border-cush-orange hover:text-cush-orange transition-colors">
+            <a id="email-btn" href="mailto:" data-u={emailUser} data-d={emailDomain} data-s={encodeURIComponent("CushLabs Inquiry")} class="inline-flex items-center justify-center gap-2 rounded-lg border border-border bg-canvas/40 px-5 py-3 text-sm font-display font-semibold text-foreground hover:border-cush-orange hover:text-accent-text transition-colors">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
               <span>{dict.contact.sendEmail}</span>
             </a>
@@ -142,7 +142,7 @@ const hero = {
 
           <div class="mt-6 pt-6 border-t border-border">
             <p class="text-sm text-muted mb-3">¿Prefieres hablar en vivo?</p>
-            <a href="/es/reservar/" class="inline-flex items-center gap-2 text-sm font-display font-semibold text-cush-orange hover:opacity-80 transition-opacity">
+            <a href="/es/reservar/" class="inline-flex items-center gap-2 text-sm font-display font-semibold text-accent-text hover:opacity-80 transition-opacity">
               {dict.contact.consultation}
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
             </a>

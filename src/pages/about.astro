@@ -19,7 +19,7 @@ const content = {
     },
     statement: {
       label: "In plain English",
-      body: `CushLabs is an AI consulting and full-stack development practice based in Guadalajara, serving small and mid-sized businesses on both sides of the US–Mexico border. Founded by Robert after a full career in enterprise IT, CushLabs takes a <span class="text-cush-orange font-semibold">diagnosis-first</span> approach — understanding what's actually broken before prescribing a fix, instead of pushing pre-packaged solutions.`,
+      body: `CushLabs is an AI consulting and full-stack development practice based in Guadalajara, serving small and mid-sized businesses on both sides of the US–Mexico border. Founded by Robert after a full career in enterprise IT, CushLabs takes a <span class="text-accent-text font-semibold">diagnosis-first</span> approach — understanding what's actually broken before prescribing a fix, instead of pushing pre-packaged solutions.`,
     },
     trust: {
       title: "Built on Experience, Not Hype",
@@ -103,7 +103,7 @@ const content = {
     },
     statement: {
       label: "En pocas palabras",
-      body: `CushLabs es una consultoría de IA y desarrollo full-stack con base en Guadalajara, que atiende a pequeñas y medianas empresas en ambos lados de la frontera entre México y Estados Unidos. Fundada por Robert tras una carrera completa en TI empresarial, CushLabs trabaja con un enfoque de <span class="text-cush-orange font-semibold">diagnóstico primero</span>: entender qué está realmente fallando antes de recetar una solución, en lugar de vender paquetes prearmados.`,
+      body: `CushLabs es una consultoría de IA y desarrollo full-stack con base en Guadalajara, que atiende a pequeñas y medianas empresas en ambos lados de la frontera entre México y Estados Unidos. Fundada por Robert tras una carrera completa en TI empresarial, CushLabs trabaja con un enfoque de <span class="text-accent-text font-semibold">diagnóstico primero</span>: entender qué está realmente fallando antes de recetar una solución, en lugar de vender paquetes prearmados.`,
     },
     trust: {
       title: "Construido sobre Experiencia, No Promesas",
@@ -200,7 +200,7 @@ const t = content[locale];
 
     <Container>
       <div class="text-center max-w-4xl mx-auto">
-        <span class="inline-block px-3 py-1 text-xs font-display font-semibold text-cush-orange bg-cush-orange/10 rounded-full mb-4">
+        <span class="inline-block px-3 py-1 text-xs font-display font-semibold text-accent-text bg-cush-orange/10 rounded-full mb-4">
           {t.hero.badge}
         </span>
         <h1 class="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
@@ -223,7 +223,7 @@ const t = content[locale];
           </a>
           <a
             href={locale === "es" ? "/es/portfolio/" : "/portfolio/"}
-            class="group inline-flex items-center gap-2 px-6 py-3 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 font-display font-semibold rounded-lg hover:border-cush-orange hover:text-cush-orange transition-all"
+            class="group inline-flex items-center gap-2 px-6 py-3 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 font-display font-semibold rounded-lg hover:border-cush-orange hover:text-accent-text transition-all"
           >
             {t.hero.ctaSecondary}
             <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -239,7 +239,7 @@ const t = content[locale];
   <section class="py-16 lg:py-20">
     <Container>
       <div class="max-w-3xl mx-auto text-center">
-        <span class="inline-block px-3 py-1 text-xs font-display font-semibold text-cush-orange bg-cush-orange/10 rounded-full mb-6">
+        <span class="inline-block px-3 py-1 text-xs font-display font-semibold text-accent-text bg-cush-orange/10 rounded-full mb-6">
           {t.statement.label}
         </span>
         <p class="text-xl md:text-2xl leading-relaxed text-gray-700 dark:text-gray-300" set:html={t.statement.body} />
@@ -256,7 +256,7 @@ const t = content[locale];
       <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
         {t.trust.stats.map((stat) => (
           <div class="text-center">
-            <div class="font-display text-4xl md:text-5xl font-bold text-cush-orange mb-2">{stat.value}</div>
+            <div class="font-display text-4xl md:text-5xl font-bold text-accent-text mb-2">{stat.value}</div>
             <div class="font-display font-semibold text-gray-900 dark:text-white">{stat.label}</div>
             <div class="text-sm text-gray-500 dark:text-gray-400">{stat.sublabel}</div>
           </div>
@@ -285,7 +285,7 @@ const t = content[locale];
             </li>
           ))}
         </ul>
-        <p class="text-xl font-display font-semibold text-cush-orange">
+        <p class="text-xl font-display font-semibold text-accent-text">
           {t.problem.conclusion}
         </p>
       </div>
@@ -303,7 +303,7 @@ const t = content[locale];
           <div class="p-6 md:p-8 rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800/50">
             <div class="flex items-center gap-3 mb-4">
               <div class="w-10 h-10 rounded-lg bg-cush-orange/10 flex items-center justify-center shrink-0">
-                <span class="font-display font-bold text-cush-orange">{String(index + 1).padStart(2, '0')}</span>
+                <span class="font-display font-bold text-accent-text">{String(index + 1).padStart(2, '0')}</span>
               </div>
               <h3 class="font-display text-xl font-bold text-gray-900 dark:text-white">
                 {item.title}
@@ -341,7 +341,7 @@ const t = content[locale];
             href="https://www.linkedin.com/in/robert-cushman3/"
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 text-cush-orange font-display font-semibold hover:underline"
+            class="inline-flex items-center gap-2 text-accent-text font-display font-semibold hover:underline"
           >
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
               <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>

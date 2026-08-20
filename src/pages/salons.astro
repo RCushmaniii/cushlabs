@@ -3,8 +3,10 @@ import LandingLayout from "../layouts/LandingLayout.astro";
 
 // ── US cold-outreach mirror of /salones/ (es-MX). ───────────────────
 // Same stripped LandingLayout, noindex + sitemap-excluded, single conversion
-// focus — adapted for the US market: English copy, USD pricing, card/invoice
-// billing (bank transfer + CFDI), and a booking CTA to /consultation/ (the US
+// focus — adapted for the US market: English copy, USD pricing, bank-transfer
+// billing with an ITEMIZED INVOICE (a US buyer does not receive a CFDI — that is
+// the Mexican SAT tax receipt and belongs only on the MXN surfaces; card is not
+// live in any currency), and a booking CTA to /consultation/ (the US
 // equivalent of the MX WhatsApp-diagnosis CTA — a +52 WhatsApp number is
 // friction for a US salon). Pricing = Basic $129 USD/mo, locked in
 // operating-system/strategy/from-marketing-site/MEXICO-GTM-STRATEGY.md §11.
@@ -93,7 +95,7 @@ const faqs = [
   },
   {
     q: "How do I pay?",
-    a: "Pay by bank transfer, monthly. A CFDI invoice is included at no extra cost.",
+    a: "Pay by bank transfer, monthly. An itemized invoice is included at no extra cost — services, amount, and payment terms, ready for your bookkeeping.",
   },
   {
     q: "What do you need from me to start?",
@@ -122,7 +124,7 @@ const faqs = [
 
     <div class="max-w-4xl mx-auto px-6 text-center">
       <div
-        class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cush-orange/10 border border-cush-orange/20 text-cush-orange text-sm font-semibold mb-8"
+        class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cush-orange/10 border border-cush-orange/20 text-accent-text text-sm font-semibold mb-8"
       >
         For beauty salons &amp; spas
       </div>
@@ -214,7 +216,7 @@ const faqs = [
         >
           A front desk that never sleeps or gets swamped
         </h2>
-        <p class="text-xl text-cush-orange font-medium leading-relaxed">
+        <p class="text-xl text-accent-text font-medium leading-relaxed">
           Answers every message on your Facebook the instant it arrives.
         </p>
       </div>
@@ -224,7 +226,7 @@ const faqs = [
           benefits.map((item) => (
             <div class="flex gap-4">
               <svg
-                class="w-6 h-6 text-cush-orange shrink-0 mt-0.5"
+                class="w-6 h-6 text-accent-text shrink-0 mt-0.5"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -315,7 +317,7 @@ const faqs = [
           No setup fee. No contracts. Cancel anytime.
         </p>
         <p class="text-sm text-white/60 mb-8">
-          Pay by bank transfer · CFDI invoice included
+          Pay by bank transfer · Itemized invoice included
         </p>
         <a
           href={ctaHref}
@@ -387,7 +389,7 @@ const faqs = [
               <summary class="flex items-center justify-between cursor-pointer font-display font-semibold text-gray-900 dark:text-white list-none">
                 {faq.q}
                 <svg
-                  class="w-5 h-5 text-cush-orange shrink-0 transition-transform group-open:rotate-45"
+                  class="w-5 h-5 text-accent-text shrink-0 transition-transform group-open:rotate-45"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"

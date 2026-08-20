@@ -455,13 +455,19 @@ const industries = CATALOG.map((c) => ({
 <style is:global>
   .clmd {
     --ground: #f5f4f1; --ground-2: #eceae5;
-    --ink: #111827; --ink-soft: #55606f; --ink-faint: #8b95a3;
+    /* --ink-faint was #8b95a3: 3.03:1 on white and 2.61:1 on the bubble grey, both
+       under AA. Darkened to the first value clearing 4.5:1 on all three surfaces this
+       component paints on — white 5.26:1, ground #f5f4f1 4.79:1, bubble #eceef1 4.53:1.
+       The bubble grey is the binding constraint, not white. */
+    --ink: #111827; --ink-soft: #55606f; --ink-faint: #626d7d;
     --line: #e2ded7; --panel: #ffffff;
     --phone: #ffffff; --phone-frame: #d9d5cd;
     --bubble-in: #eceef1; --bubble-in-ink: #14181f;
     --msgr: #0084ff; --bubble-out-ink: #ffffff;
     --card: #ffffff; --card-line: #e7e3db;
-    --accent: #ff6a3d; --accent-ink: #ffffff;
+    /* --accent-ink was #ffffff on the orange fill: 2.85:1, failing AA. Black on that
+       same orange is 7.38:1 — the same fix applied site-wide to the CTA buttons. */
+    --accent: #ff6a3d; --accent-ink: #000000;
     --shadow: 0 22px 60px -22px rgba(17,24,39,.32), 0 6px 18px -12px rgba(17,24,39,.22);
     --shadow-card: 0 2px 8px -4px rgba(17,24,39,.22);
     display: block;
@@ -472,7 +478,9 @@ const industries = CATALOG.map((c) => ({
   }
   .dark .clmd {
     --ground: #0b0f17; --ground-2: #10151f;
-    --ink: #f2f4f8; --ink-soft: #9aa5b4; --ink-faint: #6b7788;
+    /* --ink-faint was #6b7788: 4.06:1 on the dark panel and 3.09:1 on the dark bubble.
+       Lightened until it clears 4.5:1 on both — panel 5.95:1, bubble 4.52:1. */
+    --ink: #f2f4f8; --ink-soft: #9aa5b4; --ink-faint: #8594a9;
     --line: #232a37; --panel: #141a25;
     --phone: #0f141d; --phone-frame: #232a37;
     --bubble-in: #242c3a; --bubble-in-ink: #eef1f6;

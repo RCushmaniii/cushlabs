@@ -32,7 +32,7 @@ const dateStr = post.data.publishDate.toLocaleDateString(
         />
       ) : (
         <div class="flex h-full w-full items-center justify-center">
-          <span class="font-display text-3xl font-bold text-cush-orange/40">CushLabs</span>
+          <span class="font-display text-3xl font-bold text-accent-text/40">CushLabs</span>
         </div>
       )}
     </div>
@@ -40,7 +40,7 @@ const dateStr = post.data.publishDate.toLocaleDateString(
   <div class="flex flex-1 flex-col p-6">
     <div class="mb-3 flex items-center gap-3 text-xs">
       {cat && (
-        <span class="rounded bg-cush-orange/10 px-2 py-0.5 font-display font-semibold text-cush-orange">
+        <span class="rounded bg-cush-orange/10 px-2 py-0.5 font-display font-semibold text-accent-text">
           {categoryLabel(cat, locale)}
         </span>
       )}
@@ -50,7 +50,7 @@ const dateStr = post.data.publishDate.toLocaleDateString(
       )}
     </div>
     <h2 class="mb-2 font-display text-lg font-bold leading-snug text-gray-900 dark:text-white">
-      <a href={href} class="transition-colors hover:text-cush-orange">{post.data.title}</a>
+      <a href={href} class="transition-colors hover:text-accent-text">{post.data.title}</a>
     </h2>
     <p class="line-clamp-3 text-sm leading-relaxed text-gray-600 dark:text-gray-400">
       {post.data.excerpt}

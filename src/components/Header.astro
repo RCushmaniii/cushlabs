@@ -69,14 +69,14 @@ const isActiveLink = (href: string) => pathname === href || pathname === href.re
         height="256"
         class="hidden h-8 w-8 rounded-md object-contain dark:block"
       />
-      <span><span class="text-gray-900 dark:text-white">CUSH</span><span class="text-cush-orange">LABS.AI</span></span>
+      <span><span class="text-gray-900 dark:text-white">CUSH</span><span class="text-accent-text">LABS.AI</span></span>
     </a>
 
     <nav class="hidden items-center gap-6 lg:flex">
       {navLinks.map(({ href, label }) => (
         <a
           href={href}
-          class={`font-display text-base transition-colors ${isActiveLink(href) ? "text-cush-orange font-semibold" : "text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"}`}
+          class={`font-display text-base transition-colors ${isActiveLink(href) ? "text-accent-text font-semibold" : "text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"}`}
         >{label}</a>
       ))}
     </nav>
@@ -166,7 +166,7 @@ const isActiveLink = (href: string) => pathname === href || pathname === href.re
       {navLinks.map(({ href, label }) => (
         <a
           href={href}
-          class={`py-3 font-display text-base border-b border-border/50 last:border-0 transition-colors ${isActiveLink(href) ? "text-cush-orange font-semibold" : "text-gray-700 dark:text-gray-200 hover:text-cush-orange"}`}
+          class={`py-3 font-display text-base border-b border-border/50 last:border-0 transition-colors ${isActiveLink(href) ? "text-accent-text font-semibold" : "text-gray-700 dark:text-gray-200 hover:text-accent-text"}`}
         >{label}</a>
       ))}
     </nav>

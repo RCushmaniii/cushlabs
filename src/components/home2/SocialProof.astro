@@ -98,7 +98,7 @@ const t = content[locale];
       <!-- Testimonial — spans 3 cols -->
       <div class="lg:col-span-3 p-8 rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 relative">
         <!-- Quote mark -->
-        <div class="absolute -top-4 left-8 text-6xl font-serif text-cush-orange/20 leading-none select-none">&ldquo;</div>
+        <div class="absolute -top-4 left-8 text-6xl font-serif text-accent-text/20 leading-none select-none">&ldquo;</div>
 
         <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-5 text-base">
           {t.testimonial.quote}
@@ -107,7 +107,7 @@ const t = content[locale];
         <ul class="space-y-2 mb-5">
           {t.testimonial.highlights.map((h) => (
             <li class="flex items-start gap-2 text-sm text-gray-600 dark:text-gray-400">
-              <svg class="w-4 h-4 text-cush-orange mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-4 h-4 text-accent-text mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
               </svg>
               <span>{h}</span>
@@ -129,7 +129,7 @@ const t = content[locale];
           <div>
             <div class="font-display font-semibold text-sm text-gray-900 dark:text-white">{t.testimonial.name}</div>
             <div class="text-xs text-gray-500 dark:text-gray-400">{t.testimonial.title}</div>
-            <div class="text-xs text-cush-orange">{t.testimonial.source}</div>
+            <div class="text-xs text-accent-text">{t.testimonial.source}</div>
           </div>
         </div>
       </div>
@@ -140,7 +140,7 @@ const t = content[locale];
         <!-- Case Study card -->
         <div class="p-6 rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 flex-1">
           <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cush-orange/10 border border-cush-orange/20 mb-4">
-            <span class="text-xs font-display font-semibold text-cush-orange uppercase tracking-wider">{t.caseStudy.label}</span>
+            <span class="text-xs font-display font-semibold text-accent-text uppercase tracking-wider">{t.caseStudy.label}</span>
           </div>
           <h3 class="font-display font-bold text-lg text-gray-900 dark:text-white mb-1">{t.caseStudy.title}</h3>
           <p class="text-sm text-gray-500 dark:text-gray-400 mb-5">{t.caseStudy.subtitle}</p>
@@ -148,7 +148,7 @@ const t = content[locale];
           <div class="grid grid-cols-2 gap-4">
             {t.caseStudy.metrics.map((m) => (
               <div>
-                <div class="font-display font-bold text-2xl text-cush-orange">{m.value}</div>
+                <div class="font-display font-bold text-2xl text-accent-text">{m.value}</div>
                 <div class="text-xs font-semibold text-gray-800 dark:text-gray-200">{m.label}</div>
                 <div class="text-xs text-gray-500 dark:text-gray-400">{m.desc}</div>
               </div>
@@ -159,7 +159,7 @@ const t = content[locale];
         <!-- Credibility strip -->
         <div class="p-6 rounded-2xl border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900/50">
           <div class="flex items-center gap-2 mb-4">
-            <svg class="w-4 h-4 text-cush-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-4 h-4 text-accent-text" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
             <span class="text-xs font-display font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wider">{t.credibility.label}</span>

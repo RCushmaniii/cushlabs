@@ -73,39 +73,11 @@ export const es = {
     subtitle: "Trabajo reciente en producción",
     viewAll: "Ver Todos los Proyectos",
   },
-  testimonials: {
-    title: "Lo Que Dicen",
-    items: [
-      {
-        name: "Michael Chen",
-        title: "Fundador, TechStart",
-        quote:
-          "La atención al detalle de Robert nos ayudó a lanzar antes de tiempo. La calidad del código es excelente.",
-        avatar: "/images/testimonials/avatar-1.webp",
-      },
-      {
-        name: "Sarah Rodriguez",
-        title: "Directora de Operaciones",
-        quote:
-          "El sistema de automatización que Robert construyó nos ahorra más de 20 horas por semana. El ROI fue obvio desde el primer mes.",
-        avatar: "/images/testimonials/avatar-2.webp",
-      },
-      {
-        name: "David Kim",
-        title: "CEO, DataFlow",
-        quote:
-          "Trabajar con Robert fue fácil. Entregó una solución de IA personalizada que superó lo que esperábamos.",
-        avatar: "/images/testimonials/avatar-3.webp",
-      },
-      {
-        name: "Emily Thompson",
-        title: "Product Manager",
-        quote:
-          "Comunicación clara, ingeniería sólida, sin drama. Todo el proceso fue fluido de principio a fin.",
-        avatar: "/images/testimonials/avatar-4.webp",
-      },
-    ],
-  },
+  // Sin bloque `testimonials` a propósito — ver la nota equivalente en `en.ts`.
+  // Contenía cuatro personas inventadas con citas inventadas y fotos de stock; se
+  // eliminó el 2026-08-20 junto con el componente huérfano que era su único consumidor.
+  // La prueba social real es una recomendación verificable de LinkedIn en
+  // `src/components/home2/SocialProof.astro`.
   cta: {
     title: "Construyamos Algo",
     subtitle:

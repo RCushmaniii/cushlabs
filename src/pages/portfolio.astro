@@ -131,7 +131,7 @@ const t = content[locale];
     </div>
     <Container>
       <div class="text-center max-w-3xl mx-auto">
-        <span class="inline-block px-3 py-1 text-xs font-display font-semibold text-cush-orange bg-cush-orange/10 rounded-full mb-4">
+        <span class="inline-block px-3 py-1 text-xs font-display font-semibold text-accent-text bg-cush-orange/10 rounded-full mb-4">
           {t.badge}
         </span>
         <h1 class="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
@@ -155,7 +155,7 @@ const t = content[locale];
           <button
             id="open-video-modal"
             type="button"
-            class="group inline-flex items-center gap-2 px-6 py-3 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 font-display font-semibold rounded-lg hover:border-cush-orange hover:text-cush-orange transition-all"
+            class="group inline-flex items-center gap-2 px-6 py-3 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 font-display font-semibold rounded-lg hover:border-cush-orange hover:text-accent-text transition-all"
           >
             {t.ctaSecondary}
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -235,20 +235,20 @@ const t = content[locale];
       <!-- Category Filters -->
       <div class="flex flex-wrap gap-2 justify-center mb-4" id="filters">
         <button
-          class="filter-btn active px-4 py-2 rounded-lg border border-cush-orange bg-cush-orange/10 font-display text-sm font-semibold text-cush-orange transition-all"
+          class="filter-btn active px-4 py-2 rounded-lg border border-cush-orange bg-cush-orange/10 font-display text-sm font-semibold text-accent-text transition-all"
           data-filter="featured"
         >
           {t.filters.featured}
         </button>
         <button
-          class="filter-btn px-4 py-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-transparent font-display text-sm font-semibold text-gray-600 dark:text-gray-400 hover:border-cush-orange hover:text-cush-orange transition-all"
+          class="filter-btn px-4 py-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-transparent font-display text-sm font-semibold text-gray-600 dark:text-gray-400 hover:border-cush-orange hover:text-accent-text transition-all"
           data-filter="all"
         >
           {t.filters.all}
         </button>
         {allCategories.map(cat => (
           <button
-            class="filter-btn px-4 py-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-transparent font-display text-sm font-semibold text-gray-600 dark:text-gray-400 hover:border-cush-orange hover:text-cush-orange transition-all"
+            class="filter-btn px-4 py-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-transparent font-display text-sm font-semibold text-gray-600 dark:text-gray-400 hover:border-cush-orange hover:text-accent-text transition-all"
             data-filter={`cat:${cat}`}
           >
             {cat}
@@ -307,7 +307,7 @@ const t = content[locale];
                 {/* Top row: category + status */}
                 <div class="flex items-center gap-2 mb-3 flex-wrap">
                   {category && (
-                    <span class="px-2 py-0.5 bg-cush-orange/10 text-cush-orange text-xs font-display font-semibold rounded">
+                    <span class="px-2 py-0.5 bg-cush-orange/10 text-accent-text text-xs font-display font-semibold rounded">
                       {category}
                     </span>
                   )}
@@ -335,7 +335,7 @@ const t = content[locale];
 
                 {/* Title */}
                 <h2 class="font-display text-lg font-bold text-gray-900 dark:text-white mb-1.5 leading-tight">
-                  <a href={detailHref} class="hover:text-cush-orange transition-colors">
+                  <a href={detailHref} class="hover:text-accent-text transition-colors">
                     {project.title}
                   </a>
                 </h2>
@@ -367,7 +367,7 @@ const t = content[locale];
                       href={project.demoUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      class="inline-flex items-center gap-1 px-3 py-1.5 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 text-xs font-display font-semibold rounded hover:border-cush-orange hover:text-cush-orange transition-all"
+                      class="inline-flex items-center gap-1 px-3 py-1.5 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 text-xs font-display font-semibold rounded hover:border-cush-orange hover:text-accent-text transition-all"
                     >
                       {t.card.demo} ↗
                     </a>
@@ -477,10 +477,10 @@ const t = content[locale];
       const isActive = btn.getAttribute("data-filter") === filter;
 
       if (isActive) {
-        btn.classList.add("border-cush-orange", "bg-cush-orange/10", "text-cush-orange");
+        btn.classList.add("border-cush-orange", "bg-cush-orange/10", "text-accent-text");
         btn.classList.remove("border-gray-200", "dark:border-gray-700", "text-gray-600", "dark:text-gray-400");
       } else {
-        btn.classList.remove("border-cush-orange", "bg-cush-orange/10", "text-cush-orange");
+        btn.classList.remove("border-cush-orange", "bg-cush-orange/10", "text-accent-text");
         btn.classList.add("border-gray-200", "dark:border-gray-700", "text-gray-600", "dark:text-gray-400");
       }
     });

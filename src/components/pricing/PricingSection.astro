@@ -107,7 +107,7 @@ const copy = {
     },
     notes: {
       mxn: "No setup fee · No contracts · 1-week free trial · Unlimited conversations (fair use) · Pay by bank transfer · Prices plus IVA, itemized on your CFDI invoice",
-      usd: "No setup fee · No contracts · 1-week free trial · Unlimited conversations (fair use) · Pay by bank transfer · CFDI invoice included",
+      usd: "No setup fee · No contracts · 1-week free trial · Unlimited conversations (fair use) · Pay by bank transfer · Itemized invoice included",
     },
     footerQ: "Need something custom?",
     footerLink: "Let's talk",
@@ -186,7 +186,7 @@ const copy = {
     },
     notes: {
       mxn: "Sin cuota de instalación · Sin contratos · Prueba gratis de 1 semana · Conversaciones ilimitadas (uso justo) · Pago por transferencia bancaria · Precios más IVA, desglosado en tu factura (CFDI)",
-      usd: "Sin cuota de instalación · Sin contratos · Prueba gratis de 1 semana · Conversaciones ilimitadas (uso justo) · Pago por transferencia bancaria · Factura (CFDI) incluida",
+      usd: "Sin cuota de instalación · Sin contratos · Prueba gratis de 1 semana · Conversaciones ilimitadas (uso justo) · Pago por transferencia bancaria · Factura detallada incluida",
     },
     footerQ: "¿Necesitas algo a la medida?",
     footerLink: "Hablemos",
@@ -214,7 +214,7 @@ const t = copy[locale];
     <!-- Header -->
     <div class="text-center max-w-2xl mx-auto mb-10">
       <p
-        class="font-display text-sm font-semibold uppercase tracking-wider text-cush-orange mb-4"
+        class="font-display text-sm font-semibold uppercase tracking-wider text-accent-text mb-4"
       >
         {t.eyebrow}
       </p>
@@ -300,7 +300,7 @@ const t = copy[locale];
               {tier.features.map((f) => (
                 <li class="flex gap-3">
                   <svg
-                    class="w-5 h-5 text-cush-orange shrink-0 mt-0.5"
+                    class="w-5 h-5 text-accent-text shrink-0 mt-0.5"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -349,7 +349,7 @@ const t = copy[locale];
               class={`block w-full text-center px-6 py-3 rounded-lg font-display font-semibold transition-colors duration-300 ${
                 tier.featured
                   ? "bg-cush-orange text-black hover:bg-cush-orange/90"
-                  : "border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white hover:border-cush-orange hover:text-cush-orange"
+                  : "border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white hover:border-cush-orange hover:text-accent-text"
               }`}
             >
               {tier.cta}
@@ -364,7 +364,7 @@ const t = copy[locale];
         <div class="text-center mt-8">
           <a
             href={compareHref}
-            class="inline-flex items-center gap-1.5 font-display text-sm font-semibold text-cush-orange hover:opacity-80 transition-opacity"
+            class="inline-flex items-center gap-1.5 font-display text-sm font-semibold text-accent-text hover:opacity-80 transition-opacity"
           >
             {t.compareLink}
             <svg
@@ -413,7 +413,7 @@ const t = copy[locale];
       {t.footerQ}{" "}
       <a
         href={t.footerHref}
-        class="text-cush-orange font-semibold underline underline-offset-4 hover:opacity-80"
+        class="text-accent-text font-semibold underline underline-offset-4 hover:opacity-80"
         >{t.footerLink}</a
       >
     </p>
