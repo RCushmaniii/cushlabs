@@ -100,7 +100,7 @@ const icons: Record<string, string> = {
       <div class="p-8 rounded-2xl border-2 border-cush-orange/30 bg-white dark:bg-gray-900 shadow-lg">
         <div class="flex flex-col md:flex-row md:items-start gap-6">
           <div class="shrink-0">
-            <div class="w-16 h-16 rounded-xl bg-cush-orange/10 flex items-center justify-center text-cush-orange">
+            <div class="w-16 h-16 rounded-xl bg-cush-orange/10 flex items-center justify-center text-accent-text">
               <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" set:html={icons[t.differentiators[0].icon]} />
             </div>
           </div>
@@ -120,7 +120,7 @@ const icons: Record<string, string> = {
     <div class="grid md:grid-cols-2 gap-6">
       {t.differentiators.slice(1).map((item) => (
         <div class="p-6 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 hover:border-cush-orange/30 transition-colors">
-          <div class="w-12 h-12 rounded-lg bg-cush-orange/10 flex items-center justify-center text-cush-orange mb-4">
+          <div class="w-12 h-12 rounded-lg bg-cush-orange/10 flex items-center justify-center text-accent-text mb-4">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" set:html={icons[item.icon]} />
           </div>
           <h3 class="text-lg font-display font-semibold text-gray-900 dark:text-white mb-2">

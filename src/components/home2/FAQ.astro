@@ -103,7 +103,7 @@ const faqSchema = {
       {t.faqs.map((faq) => (
         <details class="group border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/50 rounded-xl overflow-hidden [&_summary::-webkit-details-marker]:hidden">
           <summary class="flex items-center justify-between gap-4 p-6 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
-            <h3 class="font-display font-semibold text-lg text-gray-900 dark:text-white group-open:text-cush-orange transition-colors">
+            <h3 class="font-display font-semibold text-lg text-gray-900 dark:text-white group-open:text-accent-text transition-colors">
               {faq.q}
             </h3>
             <span aria-hidden="true" class="shrink-0 ml-1.5 w-6 h-6 rounded-full border border-gray-300 dark:border-gray-700 flex items-center justify-center text-gray-500 group-open:rotate-180 transition-transform duration-300">
@@ -129,7 +129,7 @@ const faqSchema = {
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
         </svg>
       </a>
-      <a href={t.ctaLink} class="inline-flex items-center gap-2 text-cush-orange font-medium hover:underline text-lg transition-colors duration-300 hover:text-cush-orange/80">
+      <a href={t.ctaLink} class="inline-flex items-center gap-2 text-accent-text font-medium hover:underline text-lg transition-colors duration-300 hover:text-accent-text/80">
         {t.cta}
       </a>
     </div>

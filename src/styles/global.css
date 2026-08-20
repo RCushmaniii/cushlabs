@@ -41,6 +41,12 @@
   --color-muted: rgb(var(--muted));
   --color-surface: rgb(var(--surface));
   --color-border: rgb(var(--border));
+
+  /* Accent for TEXT. Use this instead of `text-cush-orange`.
+     `--color-cush-orange` (#ff6a3d) stays exactly as-is for fills, borders and rings —
+     it is only unsafe as text on a light surface, where it measures 2.85:1 against
+     white and fails AA at every size. See scripts/audit-contrast.mjs. */
+  --color-accent-text: rgb(var(--accent-text));
 }
 
 /* ── CSS custom properties for light/dark theming ── */
@@ -50,6 +56,11 @@
   --muted: 75 85 99;
   --surface: 245 245 245;
   --border: 229 231 235;
+
+  /* #ba4d2d — the brand orange walked toward black along its own hue, stopping at the
+     first value that clears 4.5:1 on every light surface this site uses:
+     white 5.00:1, surface #f5f5f5 4.59:1, footer #f9fafb 4.78:1, tint #fff0ec 4.51:1. */
+  --accent-text: 186 77 45;
 
   --color-orange-glow: rgba(255, 106, 61, 0.15);
   --color-orange-soft: rgba(255, 106, 61, 0.08);
@@ -81,6 +92,18 @@
   --muted: 170 170 170;
   --surface: 20 20 20;
   --border: 26 26 26;
+
+  /* On dark surfaces the full-strength brand orange is the accessible choice:
+     7.38:1 on black, 6.96:1 on #0a0a0a, 6.48:1 on #141414. */
+  --accent-text: 255 106 61;
+}
+
+/* Sections that stay dark REGARDLESS of theme — a dark band inside a light page.
+   Put this on the element that owns the dark background and the accent inside it
+   reverts to full-strength orange, because #ba4d2d on near-black is unreadable.
+   The variable cascades, so one class covers everything nested beneath it. */
+.on-dark {
+  --accent-text: 255 106 61;
 }
 
 /* ── Base styles ── */

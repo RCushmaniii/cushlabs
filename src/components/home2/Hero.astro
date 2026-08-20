@@ -69,7 +69,7 @@ const t = content[locale];
       <div class="flex flex-wrap justify-center gap-x-6 gap-y-3 mb-10 animate-fade-in-up" style="animation-delay: 0.2s;">
         {t.trustStrip.map((item) => (
           <div class="flex items-center gap-2 font-display text-sm font-medium text-slate-200">
-            <svg class="w-4 h-4 text-cush-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-4 h-4 text-accent-text" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
             </svg>
             <span>{item}</span>
@@ -91,7 +91,7 @@ const t = content[locale];
         <button
           type="button"
           data-open-chat
-          class="group inline-flex items-center gap-2 px-8 py-4 border-2 border-white/30 text-white font-display font-semibold rounded-lg hover:border-cush-orange hover:text-cush-orange transition-all duration-300 text-lg cursor-pointer backdrop-blur-sm"
+          class="group inline-flex items-center gap-2 px-8 py-4 border-2 border-white/30 text-white font-display font-semibold rounded-lg hover:border-cush-orange hover:text-accent-text transition-all duration-300 text-lg cursor-pointer backdrop-blur-sm"
         >
           {t.ctaSecondary}
           <svg class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -113,7 +113,7 @@ const t = content[locale];
   <!-- Scroll chevron — guides visitors into the funnel (the live demo is the next section) -->
   <a
     href="#demo"
-    class="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-1.5 text-white/60 hover:text-cush-orange transition-colors group animate-fade-in"
+    class="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-1.5 text-white/60 hover:text-accent-text transition-colors group animate-fade-in"
     style="animation-delay: 0.6s;"
     aria-label={t.scrollHint}
   >

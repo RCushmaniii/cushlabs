@@ -356,7 +356,7 @@ const bgClass = isAlternate ? 'bg-gray-50 dark:bg-gray-900/30' : 'bg-white dark:
       <h2 class="font-display font-bold text-3xl md:text-5xl text-gray-900 dark:text-white mb-4 leading-tight tracking-tight">
         {block.heading}
       </h2>
-      <p class="text-xl md:text-2xl text-cush-orange font-medium leading-relaxed">
+      <p class="text-xl md:text-2xl text-accent-text font-medium leading-relaxed">
         {block.subheading}
       </p>
     </div>
@@ -415,7 +415,7 @@ const bgClass = isAlternate ? 'bg-gray-50 dark:bg-gray-900/30' : 'bg-white dark:
             </h4>
             <div class="text-base leading-relaxed" set:html={block.investment.replace(/\*\*(.*?)\*\*/g, '<span class="text-white font-bold">$1</span>')} />
           </div>
-          <p class="text-xs text-cush-orange font-medium mt-4 italic">
+          <p class="text-xs text-accent-text font-medium mt-4 italic">
             {block.investmentDisclaimer}
           </p>
           <div class="mt-8 flex flex-col gap-3">
@@ -423,12 +423,12 @@ const bgClass = isAlternate ? 'bg-gray-50 dark:bg-gray-900/30' : 'bg-white dark:
               {primaryCtaLabel}
             </a>
             {liveUrl && liveLabel && (
-              <a href={liveUrl} target="_blank" rel="noopener noreferrer" class="block w-full text-center px-6 py-3 border border-gray-600 text-gray-300 font-display font-semibold rounded-lg hover:border-cush-orange hover:text-cush-orange transition-colors duration-300">
+              <a href={liveUrl} target="_blank" rel="noopener noreferrer" class="block w-full text-center px-6 py-3 border border-gray-600 text-gray-300 font-display font-semibold rounded-lg hover:border-cush-orange hover:text-accent-text transition-colors duration-300">
                 {liveLabel}
               </a>
             )}
             {learnMoreUrl && learnMoreLabel && (
-              <a href={learnMoreUrl} class="block w-full text-center px-6 py-3 text-gray-400 font-display font-medium text-sm hover:text-cush-orange transition-colors duration-300 underline underline-offset-4 decoration-gray-600 hover:decoration-cush-orange">
+              <a href={learnMoreUrl} class="block w-full text-center px-6 py-3 text-gray-400 font-display font-medium text-sm hover:text-accent-text transition-colors duration-300 underline underline-offset-4 decoration-gray-600 hover:decoration-cush-orange">
                 {learnMoreLabel}
               </a>
             )}

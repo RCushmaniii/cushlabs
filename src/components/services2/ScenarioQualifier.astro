@@ -97,7 +97,7 @@ const t = content[locale];
     <div class="grid md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">
       {t.scenarios.map((scenario) => (
         <a href={scenario.href} class="group block p-8 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/80 hover:border-cush-orange/50 hover:shadow-xl hover:shadow-cush-orange/10 transition-all duration-300 relative overflow-hidden">
-          <div class="w-10 h-10 rounded-lg bg-cush-orange/10 dark:bg-cush-orange/15 flex items-center justify-center text-cush-orange mb-4 group-hover:bg-cush-orange/20 transition-colors">
+          <div class="w-10 h-10 rounded-lg bg-cush-orange/10 dark:bg-cush-orange/15 flex items-center justify-center text-accent-text mb-4 group-hover:bg-cush-orange/20 transition-colors">
             <Fragment set:html={icons[scenario.iconKey as keyof typeof icons]} />
           </div>
           <h3 class="font-display font-semibold text-xl text-gray-900 dark:text-white mb-3">
@@ -106,7 +106,7 @@ const t = content[locale];
           <p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
             {scenario.body}
           </p>
-          <div class="inline-flex items-center text-sm font-display font-semibold uppercase tracking-wider text-cush-orange group-hover:text-cush-orange transition-colors">
+          <div class="inline-flex items-center text-sm font-display font-semibold uppercase tracking-wider text-accent-text group-hover:text-accent-text transition-colors">
             {scenario.linkText}
           </div>
         </a>

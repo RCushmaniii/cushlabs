@@ -68,7 +68,7 @@ const copy = {
           <button
             type="button"
             data-filter="all"
-            class="filter-btn active rounded-lg border border-cush-orange bg-cush-orange/10 px-4 py-2 font-display text-sm font-semibold text-cush-orange"
+            class="filter-btn active rounded-lg border border-cush-orange bg-cush-orange/10 px-4 py-2 font-display text-sm font-semibold text-accent-text"
           >
             {copy.all}
           </button>
@@ -76,7 +76,7 @@ const copy = {
             <button
               type="button"
               data-filter={key}
-              class="filter-btn rounded-lg border border-gray-200 px-4 py-2 font-display text-sm font-semibold text-gray-600 transition-colors hover:border-cush-orange hover:text-cush-orange dark:border-gray-700 dark:text-gray-400"
+              class="filter-btn rounded-lg border border-gray-200 px-4 py-2 font-display text-sm font-semibold text-gray-600 transition-colors hover:border-cush-orange hover:text-accent-text dark:border-gray-700 dark:text-gray-400"
             >
               {categoryLabel(key, locale)}
             </button>
@@ -99,13 +99,13 @@ const copy = {
       {page && page.last > 1 && (
         <nav class="mt-12 flex items-center justify-center gap-4 font-display text-sm font-semibold">
           {page.prevUrl ? (
-            <a href={page.prevUrl} class="text-cush-orange hover:opacity-80">{copy.prev}</a>
+            <a href={page.prevUrl} class="text-accent-text hover:opacity-80">{copy.prev}</a>
           ) : (
             <span class="text-gray-300 dark:text-gray-700">{copy.prev}</span>
           )}
           <span class="text-gray-500 dark:text-gray-400">{page.current} / {page.last}</span>
           {page.nextUrl ? (
-            <a href={page.nextUrl} class="text-cush-orange hover:opacity-80">{copy.next}</a>
+            <a href={page.nextUrl} class="text-accent-text hover:opacity-80">{copy.next}</a>
           ) : (
             <span class="text-gray-300 dark:text-gray-700">{copy.next}</span>
           )}
@@ -129,7 +129,7 @@ const copy = {
         b.classList.toggle("active", on);
         b.classList.toggle("border-cush-orange", on);
         b.classList.toggle("bg-cush-orange/10", on);
-        b.classList.toggle("text-cush-orange", on);
+        b.classList.toggle("text-accent-text", on);
         b.classList.toggle("border-gray-200", !on);
         b.classList.toggle("text-gray-600", !on);
       });

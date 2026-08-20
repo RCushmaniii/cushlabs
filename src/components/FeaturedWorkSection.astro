@@ -78,12 +78,12 @@ const solutionsUrl = locale === "es" ? "/es/portfolio/" : "/portfolio/";
             <div class="p-6">
               <div class="flex flex-wrap gap-2 mb-3">
                 {project.displayTags?.slice(0, 2).map((tech: string) => (
-                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-cush-orange/10 text-cush-orange">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-cush-orange/10 text-accent-text">
                     {tech}
                   </span>
                 ))}
               </div>
-              <h3 class="font-display text-lg font-semibold text-foreground mb-2 group-hover:text-cush-orange transition-colors">
+              <h3 class="font-display text-lg font-semibold text-foreground mb-2 group-hover:text-accent-text transition-colors">
                 {project.title}
               </h3>
               <p class="text-sm text-muted line-clamp-2">
@@ -98,7 +98,7 @@ const solutionsUrl = locale === "es" ? "/es/portfolio/" : "/portfolio/";
     <div class="text-center mt-12">
       <a
         href={solutionsUrl}
-        class="inline-flex items-center gap-2 px-6 py-3 border border-border bg-surface text-foreground font-display font-semibold rounded-lg hover:border-cush-orange hover:text-cush-orange transition-all duration-300"
+        class="inline-flex items-center gap-2 px-6 py-3 border border-border bg-surface text-foreground font-display font-semibold rounded-lg hover:border-cush-orange hover:text-accent-text transition-all duration-300"
       >
         {dict.featuredWork.viewAll}
       </a>

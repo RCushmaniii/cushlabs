@@ -82,15 +82,15 @@ const idxHref = blogIndexUrl(locale);
     <Container size="md">
       <!-- Breadcrumb -->
       <nav class="mb-6 font-display text-sm text-gray-500 dark:text-gray-400">
-        <a href={homeHref} class="hover:text-cush-orange">{tt.home}</a>
+        <a href={homeHref} class="hover:text-accent-text">{tt.home}</a>
         <span class="mx-2">/</span>
-        <a href={idxHref} class="hover:text-cush-orange">{tt.blog}</a>
+        <a href={idxHref} class="hover:text-accent-text">{tt.blog}</a>
       </nav>
 
       <!-- Meta -->
       <div class="mb-4 flex flex-wrap items-center gap-3 text-sm">
         {post.data.categories[0] && (
-          <span class="rounded bg-cush-orange/10 px-2.5 py-0.5 font-display font-semibold text-cush-orange">
+          <span class="rounded bg-cush-orange/10 px-2.5 py-0.5 font-display font-semibold text-accent-text">
             {categoryLabel(post.data.categories[0], locale)}
           </span>
         )}
@@ -121,7 +121,7 @@ const idxHref = blogIndexUrl(locale);
       </div>
 
       <!-- Body -->
-      <div class="prose prose-lg max-w-none dark:prose-invert prose-headings:font-display prose-a:text-cush-orange prose-a:no-underline hover:prose-a:underline">
+      <div class="prose prose-lg max-w-none dark:prose-invert prose-headings:font-display prose-a:text-accent-text prose-a:no-underline hover:prose-a:underline">
         <slot />
       </div>
 
@@ -133,12 +133,12 @@ const idxHref = blogIndexUrl(locale);
       {(newer || older) && (
         <div class="mt-12 flex justify-between gap-4 font-display text-sm font-semibold">
           {newer ? (
-            <a href={postUrl(locale, postSlug(newer))} class="max-w-[45%] text-cush-orange hover:opacity-80">
+            <a href={postUrl(locale, postSlug(newer))} class="max-w-[45%] text-accent-text hover:opacity-80">
               {tt.newer}<span class="mt-1 block text-gray-600 dark:text-gray-300">{newer.data.title}</span>
             </a>
           ) : <span></span>}
           {older ? (
-            <a href={postUrl(locale, postSlug(older))} class="max-w-[45%] text-right text-cush-orange hover:opacity-80">
+            <a href={postUrl(locale, postSlug(older))} class="max-w-[45%] text-right text-accent-text hover:opacity-80">
               {tt.older}<span class="mt-1 block text-gray-600 dark:text-gray-300">{older.data.title}</span>
             </a>
           ) : <span></span>}

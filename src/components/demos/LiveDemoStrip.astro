@@ -39,11 +39,14 @@ const STRINGS = {
 const S = STRINGS[locale];
 ---
 
-<section class="bg-cush-gray-900 py-20 sm:py-24">
+{/* `on-dark` — this band stays dark inside a light page, so the accent has to revert
+    to full-strength orange. Without it the light-surface accent (#ba4d2d) lands on
+    #0a0a0a at 3.95:1 and fails AA. */}
+<section class="on-dark bg-cush-gray-900 py-20 sm:py-24">
   <div class="mx-auto max-w-6xl px-4 sm:px-6">
     <div class="max-w-2xl">
       <p
-        class="font-display text-xs font-bold uppercase tracking-[0.16em] text-cush-orange"
+        class="font-display text-xs font-bold uppercase tracking-[0.16em] text-accent-text"
       >
         <span
           class="mr-2 inline-block h-2 w-2 animate-pulse rounded-full bg-cush-orange align-middle"
@@ -62,7 +65,7 @@ const S = STRINGS[locale];
       {
         demos.map((d) => (
           <li class="flex flex-col rounded-xl border border-gray-700 bg-black/40 p-6 transition-colors duration-300 hover:border-cush-orange">
-            <span class="font-display text-[11px] font-bold uppercase tracking-[0.14em] text-cush-orange">
+            <span class="font-display text-[11px] font-bold uppercase tracking-[0.14em] text-accent-text">
               {d.badge}
             </span>
             <h3 class="mt-3 font-display text-xl font-bold text-white">
