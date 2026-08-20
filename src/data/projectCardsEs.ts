@@ -178,6 +178,30 @@ export const esCardCopy: Record<string, EsCardCopy> = {
     tagline:
       "Wiki privada y buscable del documento de diseño de juego (GDD) para un equipo de desarrollo en Roblox",
   },
+
+  // Added 2026-08-20. These six were the last projects with no Spanish tagline, which
+  // is why their /es/projects/ pages were serving an ENGLISH meta description — the
+  // description chain now reads from here, so a gap here becomes a gap in the snippet.
+  "cushlabs-investment-model": {
+    title: "CushLabs Investment Desk",
+    tagline:
+      "Monitorea tu portafolio y tu plan de retiro mientras la IA orienta las decisiones — cada cifra en dólares la calcula código determinista, no el modelo",
+  },
+  "ai-webscraper": {
+    title: "Rastreador Web y Analizador SEO con IA",
+    tagline:
+      "Rastrea sitios web, detecta problemas de SEO y genera reportes de análisis con IA sobre lo que conviene corregir primero",
+  },
+  "nextjs-react-agency-starter": {
+    title: "Next.js Agency Starter",
+    tagline:
+      "Plantilla de sitio de agencia lista para producción, con contenido en MDX y un flujo de correo ya conectado",
+  },
+  "react-vite-tailwind-base": {
+    title: "React Vite Tailwind Base",
+    tagline:
+      "Starter de React 19 listo para producción, con componentes ShadCN UI, gráficas y un sistema de reservaciones funcionando",
+  },
 };
 
 /** Returns es-MX card overrides for a project slug, or an empty object if none exist. */

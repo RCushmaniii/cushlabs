@@ -8,6 +8,13 @@ const DIST = path.resolve(__dirname, "../../dist");
 const MIN = 120;
 const MAX = 160;
 
+// Function words only — they are what actually differ between the two languages.
+const EN_WORDS =
+  /\b(the|and|with|for|your|from|that|into|this|built|which|when|their|are|is|of|to|you|it)\b/gi;
+const ES_WORDS =
+  /\b(el|la|los|las|de|del|con|para|tu|tus|que|una|un|por|sobre|como|desde|más|y|en|su)\b/gi;
+const wrongLanguage = [];
+
 const EXCLUDE_PREFIXES = ["dev/docs/", "admin/"];
 const EXCLUDE_FILES = new Set(["index.html", "404.html"]);
 
@@ -56,13 +63,40 @@ for (const file of files) {
   checked++;
   if (len > MAX) tooLong.push({ rel, len, desc });
   else if (len < MIN) tooShort.push({ rel, len, desc });
+
+  // A length check cannot see the worst failure mode: an English description on a
+  // Spanish page. On 2026-08-20 that was true of 18 of 36 /es/projects/ pages — the
+  // description chain fell through to the GitHub repo blurb — and every length-based
+  // check reported them as fine. Function words are the signal; topic nouns and product
+  // names are shared between the languages and prove nothing.
+  if (rel.startsWith("es/")) {
+    const en = (desc.match(EN_WORDS) || []).length;
+    const es = (desc.match(ES_WORDS) || []).length;
+    if (en > es) wrongLanguage.push({ rel, en, es, desc });
+  }
 }
 
 console.log(
-  `meta-description-gate: ${checked} pages checked, ${tooShort.length} too short (FAIL), ${tooLong.length} too long (FAIL), ${missing} missing meta, ${excluded} excluded`,
+  `meta-description-gate: ${checked} pages checked, ${tooShort.length} too short (FAIL), ${tooLong.length} too long (FAIL), ${wrongLanguage.length} wrong language (FAIL), ${missing} missing meta, ${excluded} excluded`,
 );
 
-const failed = tooShort.length + tooLong.length;
+const failed = tooShort.length + tooLong.length + wrongLanguage.length;
+
+if (wrongLanguage.length > 0) {
+  console.error(
+    `\n❌ FAIL — ${wrongLanguage.length} Spanish page(s) serving an ENGLISH meta description:`,
+  );
+  for (const v of wrongLanguage) {
+    console.error(`  /${v.rel}  (en:${v.en} es:${v.es})`);
+    console.error(`    "${v.desc}"`);
+  }
+  console.error(
+    `  Add Spanish copy for these projects in src/data/projectCardsEs.ts, or an entry in`,
+  );
+  console.error(
+    `  the metaDescriptions map in src/pages/es/projects/[slug].astro.`,
+  );
+}
 
 if (tooShort.length > 0) {
   console.error(

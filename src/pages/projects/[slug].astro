@@ -3,6 +3,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import projectsData from "../../data/projects.generated.json";
 import { t } from "../../i18n";
 import { getProjectDetailOverride } from "../../data/projectDetails";
+import { composeMetaDescription } from "../../lib/meta";
 
 type Project = (typeof projectsData.projects)[number];
 
@@ -26,7 +27,19 @@ const metaTitles: Record<string, string> = {
   'ai-chatbot-saas': 'Converso AI — Bilingual AI Chatbot SaaS',
   'ny-ai-chatbot': 'AI Chatbot Widget for Small Business Websites',
   'expat-driver-license-prep': 'ExpatDrive — Bilingual License Exam Prep',
-  'cushlabs-marketsignal': 'MarketSignal — Google Reputation & Competitor Intel',
+  // Shortened 2026-08-20: at 50 chars plus " | CushLabs.ai" this rendered at 69 and was
+  // cut off in search results.
+  'cushlabs-marketsignal': 'MarketSignal — Google Reputation Management',
+  'cushlabs-connect': 'CushLabs Connect — WhatsApp Multi-Tenant',
+  'biojalisco-pitch': 'BioJalisco — Scrollytelling Pitch Site',
+  // Added 2026-08-20. These rendered under 30 chars — the repo name plus the brand,
+  // which tells a searcher nothing about what the project does. `/projects/cushlabs/`
+  // was literally "CushLabs.ai | CushLabs.ai".
+  'ai-filesense': 'AI FileSense — AI File Organizer for Windows',
+  'ai-portfolio': 'AI Portfolio — GitHub-Synced Showcase',
+  'cushlabs': 'CushLabs.ai — Bilingual Astro Site',
+  'cushlabs-ai-unwatermark': 'Unwatermark — Batch Watermark Remover',
+  'stock-alert': 'AI StockAlert — WhatsApp Stock Alerts',
 };
 
 const title = `${metaTitles[project.name] || project.title} | CushLabs.ai`;
@@ -37,7 +50,6 @@ const metaDescriptions: Record<string, string> = {
   'ai-chatbot-saas': 'Multi-tenant AI chatbot SaaS with bilingual support, knowledge base integration, and embeddable widget. Automates front desk and sales.',
   'ny-ai-chatbot': 'Production-ready AI chatbot widget with RAG intelligence, multi-language support, and admin dashboard. Drop-in solution for small business websites.',
   'cushlabs-OS-dashboard': 'Internal operations dashboard with live GitHub portfolio analytics, deployment status monitoring, and project health metrics for CushLabs management.',
-  'biojalisco-pitch': 'Cinematic scrollytelling pitch site for a citizen-science biodiversity platform in western Mexico. Built as self-contained HTML5 with scroll-triggered animations and bilingual content.',
   'ai-resume-tailor': 'AI-powered resume optimization tool that analyzes job descriptions and tailors your resume to match. Highlights skill gaps and suggests improvements for better ATS scores.',
   'comp-plan-simulator': 'Interactive compensation plan simulator for direct-selling companies. Model earnings across ranks, visualize team growth scenarios, and compare plan structures.',
   'cushlabs-ai-marketing': 'AI-powered marketing toolkit with 15 Claude slash commands for competitive analysis, content audits, SEO strategy, and client deliverables. Built with Anthropic API.',
@@ -51,20 +63,24 @@ const metaDescriptions: Record<string, string> = {
   // management — a core service, not a footnote.
   'cushlabs-marketsignal': 'Google reputation management and Maps competitor tracking for multi-location businesses in Mexico — AI-drafted review replies and a weekly action item.',
   'cushlabs-connect': 'Multi-tenant WhatsApp platform built as a Meta Tech Provider — businesses connect their own account via Embedded Signup and send appointment reminders.',
+  // Added 2026-08-20. These five had no source copy reaching 120 chars, so the snippet
+  // Google printed was a thin one-liner. The build gate now fails on anything shorter.
+  'ai-filesense': 'Local AI file organizer for Windows — private, safe, zero config. Scans your documents, classifies them with Claude, and files them where you expect.',
+  'ai-portfolio': 'Static portfolio system that syncs project data straight from your GitHub repos into a fast, filterable, bilingual showcase — with no CMS to maintain.',
+  'biojalisco-species-id': 'AI species identification for conservation researchers in Mexico — upload a field photo and get verified vertebrate data back in seconds.',
 };
 
-const rawDescription = (
-  metaDescriptions[project.name] ||
-  detail?.subheadline ||
-  project.description ||
-  project.summary ||
-  ""
-).replace(/<[^>]*>/g, "");
-
-// Truncate to 160 chars for SEO (cut at last word boundary, add ellipsis)
-const description = rawDescription.length > 160
-  ? rawDescription.slice(0, 157).replace(/\s+\S*$/, "") + "..."
-  : rawDescription;
+// Order matters and is the whole fix: `tagline` (the marketing line from PORTFOLIO.md,
+// present on all 36 projects) now outranks `project.description` (the GitHub repo blurb,
+// written for developers). Composed and trimmed on a sentence boundary — see src/lib/meta.ts
+// for the measurements that motivated this.
+const description = composeMetaDescription([
+  metaDescriptions[project.name],
+  detail?.subheadline,
+  project.tagline,
+  project.description,
+  project.summary,
+]);
 
 const overrideDemoUrl =
   typeof override?.demoUrl === "string"

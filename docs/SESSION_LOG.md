@@ -12,7 +12,7 @@
 > Resolved items collapse to one line under [Resolved](#resolved-technical-debt); the trail stays so a
 > future session does not re-litigate a settled decision.
 
-**10 open** · 14 resolved · last reconciled 2026-08-20
+**9 open** · 15 resolved · last reconciled 2026-08-20
 
 ### #12 — Instagram advertised as "Coming", submission deliberately queued behind another Meta review
 
@@ -68,14 +68,6 @@ checked, and a photo swap could silently break any of them.
 **Next:** extend the auditor to sample actual rendered pixels behind those nodes via a screenshot
 instead of reading CSS, which removes the blind spot permanently.
 
-### #10 — Hardcoded `metaTitles` / `metaDescriptions` maps are a second claims surface
-
-**Medium**
-
-`src/pages/projects/[slug].astro` and its `es/` twin carry hand-written SEO overrides keyed by repo name. They **override** `PORTFOLIO.md`, so nothing validates them and no gate reads them — this is where the fabricated "Claude Dispatch platform for multi-tenant operations…" string actually lived (#7 was the delivery mechanism, this was the source). Two dead keys removed 2026-08-06; the surviving entries have never been audited against what the repos do. Notably `'cushlabs-messenger'` is described as the "multi-tenant Cloudflare Workers runtime" — that is `cushlabs-messenger-bot`; the `-messenger` repo is the onboarding/survey layer. **Rewrites are published copy → route through the `copywriting` skill, do not free-write.** Also consider having the maps fail the build on a key that matches no published project.
-
-**Next:** audit the surviving `metaTitles`/`metaDescriptions` entries against what each repo actually does, then make the map fail the build on a key matching no published project. Rewrites are published copy — route through the `copywriting` skill.
-
 ### #13 — Voice de-prioritized for sales, but the site still leads with it
 
 **Medium**
@@ -128,6 +120,7 @@ ES privacy names LFPDPPP / derechos ARCO (PR #86); EN still says generic "depend
 
 Kept for the trail. Newest numbers first.
 
+- **#10 Hand-written SEO meta maps were a second, unvalidated claims surface** — Resolved 2026-08-20 (PR #269), and the audit found the maps were the smaller half of the problem. Measured on a real build of the 72 project pages (57% of the site's URLs): **50 descriptions were cut off mid-sentence** with an ellipsis, and **18 of 36 SPANISH pages served an ENGLISH description** because the ES chain never consulted `esCard.tagline` despite Spanish copy existing for 30 of 36 projects — it reached for the GitHub blurb, prefixed with the title, to dodge a duplicate-description warning. Both are now zero, as are the 6 over-length and 10 under-length titles (`/projects/cushlabs/` rendered as "CushLabs.ai | CushLabs.ai"). Fixed structurally: `src/lib/meta.ts` composes best-first and trims on a sentence boundary, `tagline` now outranks the GitHub description, and `meta-description-gate.mjs` fails the build when an `/es/` page serves English — verified by injecting one. The remaining concern from the original entry stands and is narrower now: the override entries themselves are still hand-written and unvalidated against what each repo does.
 - **#21 Orange as body text failed AA on light backgrounds** — Resolved 2026-08-20. Fixed with a theme-aware `--accent-text` token (`#ba4d2d` light / `#ff6a3d` dark) plus an `.on-dark` class for dark bands inside light pages; 300 `text-cush-orange` occurrences across 73 files became `text-accent-text`. `--color-cush-orange` is unchanged for fills and borders. Measured 252 failures → 0 in both themes with the new `scripts/audit-contrast.mjs`.
 - **#22 Muted greys failed non-text contrast** — Resolved 2026-08-20 for the greys (`--ink-faint` light `#8b95a3`→`#626d7d`, dark `#6b7788`→`#8594a9`; both verified ≥4.5:1 on every surface they paint on). The `border-border` form-field boundary at 1.24:1 was NOT changed — it is a border, not text, and needs a design decision about how visible field edges should be. Reopen as a design task if that matters.
 - **#16 / #3 Orphaned components carrying stale claims** — Resolved 2026-08-20. Verified 16 of 53 orphaned via a real transitive import graph (1,572 lines) and deleted, including all of `src/components/home/`. The four fabricated testimonials and their stock avatars went with them. The "17+ years Fortune 500" claim in that entry was already gone — a repo-wide sweep found zero aggregate career-year claims and zero personal "bilingual" claims in `src/`.

@@ -4,7 +4,7 @@ import projectsData from "../../../data/projects.generated.json";
 import { t } from "../../../i18n";
 import { getProjectDetailOverride } from "../../../data/projectDetails";
 import { getEsCardCopy } from "../../../data/projectCardsEs";
-import { ES_TITLE_BIOJALISCO_PITCH } from "../../../data/esCanonicalTitles";
+import { composeMetaDescription } from "../../../lib/meta";
 
 type Project = (typeof projectsData.projects)[number];
 
@@ -28,10 +28,27 @@ const esCard = getEsCardCopy(project.name);
 const metaTitles: Record<string, string> = {
   'ai-chatbot-saas': 'Converso AI — Chatbot Bilingüe SaaS',
   'ny-ai-chatbot': 'Chatbot IA para Sitios Web de PYMES',
-  'biojalisco-pitch': ES_TITLE_BIOJALISCO_PITCH,
+  // NOT the canonical ES title here. `ES_TITLE_BIOJALISCO_PITCH` (esCanonicalTitles.ts)
+  // is right for the card
+  // and the page headline, where length is free, but with " · CushLabs.ai" appended it
+  // renders at 64 chars and Google truncates it. The SEO tag is the one surface with a
+  // hard ~60-char budget, so it gets a shortened variant while the canonical string
+  // still drives the other two.
+  'biojalisco-pitch': 'BioJalisco — Presentación Cinematográfica',
   'expat-driver-license-prep': 'ExpatDrive — Examen de Licencia Bilingüe',
-  'cushlabs-marketsignal': 'MarketSignal — Reputación en Google e Inteligencia Local',
-  'cushlabs-connect': 'CushLabs Connect — Plataforma WhatsApp Multi-Tenant',
+  // Acortados 2026-08-20: con " · CushLabs.ai" llegaban a 65-70 caracteres y Google los
+  // cortaba en los resultados.
+  'cushlabs-marketsignal': 'MarketSignal — Reputación en Google',
+  // Differentiated from the EN title — an identical string on both language variants is
+  // reported as a duplicate title even though hreflang marks them as alternates.
+  'cushlabs-connect': 'CushLabs Connect — WhatsApp Multi-Cuenta',
+  // Añadidos 2026-08-20: se renderizaban con menos de 30 caracteres, sólo el nombre del
+  // repo más la marca. `/es/projects/cushlabs/` decía "CushLabs.ai · CushLabs.ai".
+  'ai-filesense': 'AI FileSense — Organizador de Archivos con IA',
+  'ai-portfolio': 'AI Portfolio — Portafolio desde GitHub',
+  cushlabs: 'CushLabs.ai — Sitio Bilingüe con Reservaciones',
+  'cushlabs-ai-unwatermark': 'Unwatermark — Quita Marcas de Agua por Lote',
+  'stock-alert': 'AI StockAlert — Alertas por WhatsApp',
 };
 
 // For projects without a Spanish title override, use interpunct separator (·) instead of
@@ -57,23 +74,32 @@ const metaDescriptions: Record<string, string> = {
   // card-level surface until now.
   'cushlabs-marketsignal': 'Gestión de reputación en Google y monitoreo de competidores para negocios multi-sucursal en México — respuestas a reseñas con IA y una acción semanal.',
   'cushlabs-connect': 'Plataforma de WhatsApp multi-tenant como Meta Tech Provider — cada negocio conecta su propia cuenta y envía recordatorios de citas que sus clientes leen.',
+  // Añadidas 2026-08-20. Ninguna de estas tenía copy en español que llegara a 120
+  // caracteres, así que Google imprimía un fragmento muy corto. Español de México.
+  'ai-filesense': 'Organizador de archivos con IA para Windows: privado, seguro y sin configuración. Revisa tus documentos, los clasifica y los archiva donde esperas.',
+  'ai-filesense-website': 'Sitio de marketing bilingüe para AI FileSense: Lighthouse 100, descargas, aviso de privacidad y captura de prospectos lista para campañas.',
+  'ai-idea-validator': 'Evaluación implacable de la defensibilidad de tu idea de negocio, con detección de contradicciones por IA — antes de que inviertas meses en construirla.',
+  'ai-portfolio': 'Sistema de portafolio estático que sincroniza tus proyectos desde repos de GitHub hacia una vitrina filtrable y bilingüe, sin ningún CMS que mantener.',
+  'ai-scrabble-practice': 'Cinco herramientas de práctica con IA respaldadas por un diccionario de 370 mil palabras: puntuación, validación de palabras y entrenamiento de jugadas.',
+  'cushlabs-image-portfolio': 'Galería de imágenes autenticada con lightbox, compartir por WhatsApp, conversión automática a WebP y soporte PWA para consultarla sin conexión.',
+  'marble-does-not-yield': 'App web literaria bilingüe con narrativa guiada por scroll, animaciones a medida y cumplimiento WCAG AAA de principio a fin.',
+  'stock-alert': 'App de escritorio para Windows con alertas de acciones en tiempo real por WhatsApp y notificaciones nativas, monitoreando varios símbolos a la vez.',
 };
 
-// For ES pages falling back to English GitHub descriptions, prefix with the project
-// title to produce a description string distinct from the EN counterpart —
-// prevents DESC_DUPLICATE flags while also improving keyword density.
-const rawDescription = (
-  metaDescriptions[project.name] ||
-  detail?.subheadline ||
-  (project.description ? `${project.title}: ${project.description}` : '') ||
-  project.summary ||
-  ""
-).replace(/<[^>]*>/g, "");
-
-// Truncate to 160 chars for SEO (cut at last word boundary, add ellipsis)
-const description = rawDescription.length > 160
-  ? rawDescription.slice(0, 157).replace(/\s+\S*$/, "") + "..."
-  : rawDescription;
+// SPANISH SOURCES ONLY, in order. The previous chain reached straight for the English
+// GitHub blurb — prefixed with the project title to dodge a duplicate-description
+// warning — which put an English snippet in front of Spanish searchers on 18 of these
+// 36 pages. `esCard.tagline` was sitting right there, unused, for 30 of 36 projects.
+//
+// The English fields are deliberately NOT in this list: a missing Spanish description is
+// caught by scripts/seo/meta-description-gate.mjs, whereas an English one silently looks
+// fine to every length-based check.
+const description = composeMetaDescription([
+  metaDescriptions[project.name],
+  detail?.subheadline,
+  esCard.tagline,
+  esCard.title,
+]);
 
 const overrideDemoUrl =
   typeof override?.demoUrl === "string"
