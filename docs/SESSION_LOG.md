@@ -63,9 +63,9 @@ _(none open)_
   `salons.astro:96`/`:317` promise a **CFDI** to a USD/US audience, and `salons.astro:7`'s header
   comment still says "card/invoice billing", contradicting its own body. Confirm whether a US client
   receives a CFDI or a plain invoice, then fix via the `copywriting` skill (published copy).
-- **Triage stale open PRs** — **#224** (Messenger portfolio merge, opened 2026-08-06 by a parallel
-  session) is unreviewed and touches the live portfolio + adds redirects; review before it goes
-  stale like #173 did. ~~**#204**~~ **closed 2026-08-12** — superseded by #207 two days after it
+- **Triage stale open PRs** — ~~**#224**~~ **no longer open** (verified against `gh pr list`
+  2026-08-19; this line asserted it needed review for an unknown stretch after it had already been
+  closed or merged). ~~**#204**~~ **closed 2026-08-12** — superseded by #207 two days after it
   opened, which shipped a safer live-only version with more features; nothing on the branch was
   worth carrying forward. ~~Dependabot #215~~ **merged 2026-08-12** (resolved a medium security
   alert). Remaining open Dependabot PRs: #128, #198, #217, #218, #219, #220 — #218 (TypeScript 5→7)
