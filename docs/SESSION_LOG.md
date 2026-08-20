@@ -33,13 +33,25 @@ app_ performed the action — is reusable, so the next attempt starts ahead of t
 without `instagram_manage_comments` — that is the permission class Meta already refused once, and
 bundling them risks the whole request.
 
-### #20 — Videos ship an empty `<track>` and cannot be started by keyboard
+### #20 — Videos have no real captions (keyboard access resolved)
 
-**High**
+**Medium** · opened 2026-08-18 · keyboard half resolved 2026-08-20 (PR #268)
 
-Found 2026-08-18. `video.astro:99`, `es/video.astro:56`, `portfolio.astro:211`, `es/portfolio.astro:118` all emit `<track kind="captions" />` with **no `src`, no `srclang`, no `label`** — there are zero `.vtt` files in the repo and no transcript on any page. An empty track is worse than none: it advertises captions that do not exist (**1.2.2 A**; **1.2.5 AA** wants the transcript). Separately the play affordance is a `<div>` with a click handler while the `<video>` is `display:none` until clicked, so **a keyboard-only user can never start any video** (**2.1.1 A**). The correct implementation already exists at `projects/[slug].astro:291-296` (`role="button" tabindex="0" aria-label` + `keydown` at `:614`) — port it, or use a real `<button>`.
+**Resolved:** all four video surfaces are keyboard-operable, verified by driving a browser —
+`role=button`, `tabindex`, `aria-label`, Enter/Space, and focus moving to the player on
+activation. The empty `<track kind="captions">` elements are gone from all five sites; they
+declared a caption track that does not exist, which made assistive tech report captions as
+available when none were.
 
-**Next:** two separable jobs. (a) Keyboard access is a code fix — port the working pattern from `projects/[slug].astro:291-296` to the four `<video>` play affordances, or use a real `<button>`. (b) Captions need actual `.vtt` files; until they exist, DELETE the empty `<track>` elements, because advertising captions that do not exist is worse than shipping none. Note there are ~38 videos (34 portfolio + 4 site), so if any already carry burned-in subtitles those satisfy a deaf viewer but not WCAG — they cannot be turned off, translated, or read by a screen reader.
+**Still open:** there are no real captions. ~38 videos (34 portfolio + 4 site) and zero `.vtt`
+files in the repo or on the CDN — both the sidecar path and a `captions.vtt` were checked for a
+sample and returned 404. Robert confirmed 2026-08-20 that most have none at all. Any burned-in
+subtitles help a deaf viewer but do not satisfy 1.2.2: they cannot be turned off, translated, or
+read by a screen reader.
+
+**Next:** content work, not code. Generate `.vtt` per language for the videos that matter most —
+the two site portfolio videos first, since those are what a prospect actually watches — then wire
+`src` + `srclang` + `label` + `default`. Everything else is already in place to receive them.
 
 ### #24 — Text over hero images and gradients is unverified for contrast
 
