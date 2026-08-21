@@ -12,7 +12,7 @@
 > Resolved items collapse to one line under [Resolved](#resolved-technical-debt); the trail stays so a
 > future session does not re-litigate a settled decision.
 
-**9 open** · 15 resolved · last reconciled 2026-08-20
+**7 open** · 17 resolved · last reconciled 2026-08-20
 
 ### #12 — Instagram advertised as "Coming", submission deliberately queued behind another Meta review
 
@@ -76,22 +76,6 @@ Added 2026-08-15 from Tier Spec v1.2 §3. Voice is "on the grid, never pitched" 
 
 **Next:** Robert confirmed 2026-08-20 that voice stays de-prioritized. Decide what Ultra is FOR once Instagram and WhatsApp land in Premium — volume, locations, or SLA — because voice is currently the only thing making Ultra a different product rather than a bigger one. See `operating-system/cushlabs/tier-feature-spec.md` §7.5.
 
-### #18 — Docs imported from nyenglishteacher.com describe a stack this repo doesn't have
-
-**Medium**
-
-Found 2026-08-18. `docs/architecture/HYBRID-ARCHITECTURE.md` (Hostinger/Netlify/Supabase/`www.nyenglishteacher.com`), `docs/seo/FINAL-SEO-STATUS.md` (113 pages, `/en/` routes, category pages), `BILINGUAL-SYSTEM-GUIDE.md` + `BILINGUAL-PARITY-CHECKLIST.md` (a `src/lib/i18n.ts` and `/en/` prefix that do not exist here), `ENGINEERING-TOOLKIT.md` (Next.js/shadcn/pnpm), and the quiz/free-assets/DB-migration docs. CLAUDE.md was pointing at several as _this_ repo's reference; corrected 2026-08-18 with a scoping warning. Remaining work: add a `> ⚠️ NOT THIS REPO` banner to each, or delete them. Also dead across docs: `npm run pre-deploy`, `validate:seo`, `validate:hreflang`, `build:validate`, `prebuild`, `google:auth`, `build:check`, `crawl:internal` — none exist in `package.json`.
-
-**Next:** add a `> ⚠️ NOT THIS REPO` banner to the top of each imported doc, or delete them. CLAUDE.md's pointer list was scoped 2026-08-18, so nothing routes assistants there any more — this is now about not wasting a reader's time. Also purge the dead script references (`npm run pre-deploy`, `validate:seo`, `validate:hreflang`, `build:validate`, `prebuild`, `google:auth`, `build:check`, `crawl:internal`), none of which exist in `package.json`.
-
-### #19 — Booking success is announced without verification; no reschedule path
-
-**Medium**
-
-Found 2026-08-18. `BookingFormSteps.astro` checks only `data.ok`; `eventId` and `meetLink` are declared in `src/types/booking.ts:17-18` and **never read**. The UI tells the user an invite was sent whether or not one was. No booking reference, no `.ics`, no reschedule link — refresh or Back loses the record. Separately `PUBLIC_BOOKING_API_URL` is **absent from `.env.example`**, so an unset value on Vercel silently disables the primary conversion page (now at least shows a real error rather than "No available times").
-
-**Next:** read `eventId` and `meetLink` from the booking response and show a booking reference, so the success screen stops asserting something it never checked. Add `PUBLIC_BOOKING_API_URL` to `.env.example` in the same pass — it is missing, and an unset value silently disables the primary conversion page.
-
 ### #23 — `/demos/` runs a private design system and an incomplete tab pattern
 
 **Medium**
@@ -120,6 +104,8 @@ ES privacy names LFPDPPP / derechos ARCO (PR #86); EN still says generic "depend
 
 Kept for the trail. Newest numbers first.
 
+- **#19 Booking success announced without verification** — Resolved 2026-08-20 (PR #270). `data.ok` was the entire success test, so a worker replying ok without creating an event still rendered "You're Booked." `eventId` and `meetLink` had been in `BookingResponse` since the worker was written and neither was ever read. Now a missing `eventId` throws instead of claiming success, and the Meet link plus a booking reference render when returned — the join link is built in JS rather than shipping a dead `href="#"`. Verified by driving the real wizard with a mocked API in both directions. Two things found while in there: the summary said **"Central Time (GMT-6)"**, which is ambiguous and wrong for half the year for a US visitor (US Central shifts; Mexico City is UTC−6 year-round) — now "Mexico City time (UTC−6)" in both languages; and `PUBLIC_BOOKING_API_URL` was missing from `.env.example`, so an unset value silently disabled the primary conversion page with no build error.
+- **#18 Imported docs describing a different site** — Resolved 2026-08-20 (PR #271). 16 files deleted, 9 bannered with a `NOT THIS REPO` block naming exactly what is wrong. Inbound references were checked first: every link came from another doc in the same imported cluster or from SESSION_LOG, nothing in code, config or CI. Deleted the quiz system, free-assets router, Supabase migration, Netlify/Hostinger deployment guides, the Next.js/shadcn toolkit, WindsurfRules, and `BOOKING-SYSTEM.md` (which claimed a Cal.com widget). Kept, with banners, the bilingual and SEO docs whose reasoning generalises. Also fixed `docs/templates/readme-instructions.md`, which was seeding every new repo's README with "Node.js 18.17+" while Astro 7 requires >= 22.12. New `npm run audit:docs` flags foreign-stack markers in unbannered docs and `npm run` references to scripts that do not exist — advisory, not a gate, since a legitimate mention of another project is not a defect. 43 flagged docs → 27, every remaining heavy offender bannered.
 - **#10 Hand-written SEO meta maps were a second, unvalidated claims surface** — Resolved 2026-08-20 (PR #269), and the audit found the maps were the smaller half of the problem. Measured on a real build of the 72 project pages (57% of the site's URLs): **50 descriptions were cut off mid-sentence** with an ellipsis, and **18 of 36 SPANISH pages served an ENGLISH description** because the ES chain never consulted `esCard.tagline` despite Spanish copy existing for 30 of 36 projects — it reached for the GitHub blurb, prefixed with the title, to dodge a duplicate-description warning. Both are now zero, as are the 6 over-length and 10 under-length titles (`/projects/cushlabs/` rendered as "CushLabs.ai | CushLabs.ai"). Fixed structurally: `src/lib/meta.ts` composes best-first and trims on a sentence boundary, `tagline` now outranks the GitHub description, and `meta-description-gate.mjs` fails the build when an `/es/` page serves English — verified by injecting one. The remaining concern from the original entry stands and is narrower now: the override entries themselves are still hand-written and unvalidated against what each repo does.
 - **#21 Orange as body text failed AA on light backgrounds** — Resolved 2026-08-20. Fixed with a theme-aware `--accent-text` token (`#ba4d2d` light / `#ff6a3d` dark) plus an `.on-dark` class for dark bands inside light pages; 300 `text-cush-orange` occurrences across 73 files became `text-accent-text`. `--color-cush-orange` is unchanged for fills and borders. Measured 252 failures → 0 in both themes with the new `scripts/audit-contrast.mjs`.
 - **#22 Muted greys failed non-text contrast** — Resolved 2026-08-20 for the greys (`--ink-faint` light `#8b95a3`→`#626d7d`, dark `#6b7788`→`#8594a9`; both verified ≥4.5:1 on every surface they paint on). The `border-border` form-field boundary at 1.24:1 was NOT changed — it is a border, not text, and needs a design decision about how visible field edges should be. Reopen as a design task if that matters.
