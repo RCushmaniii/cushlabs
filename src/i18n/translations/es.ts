@@ -350,11 +350,15 @@ export const es = {
     successMessage:
       "Te he enviado una invitación de calendario a tu correo. Por favor revísala ahora y da clic en 'Sí' o 'Aceptar' para asegurar tu espacio.",
     summaryDateTime: "Fecha y Hora",
-    summaryTimezone: "Hora del Centro (GMT-6)",
+    // Ver la nota en en.ts: "Hora del Centro" es ambigua — el Centro de EE.UU. cambia
+    // con el horario de verano. La Ciudad de México es UTC−6 todo el año desde 2022.
+    summaryTimezone: "Hora de Ciudad de México (UTC−6)",
     summaryDetails: "Tus Detalles",
     summaryMeetingType: "Tipo de Reunión",
     summaryMeetingValue: "Videollamada por Google Meet",
     summaryMeetingHint: "El enlace se enviará a tu correo",
+    joinLink: "Unirse a la videollamada",
+    summaryReference: "Referencia de tu reservación",
     summaryNotProvided: "No proporcionado",
     prepareTitle: "Cómo prepararte:",
     prepareBody:
