@@ -242,7 +242,21 @@ const b = dict.booking;
               <p class="text-sm font-display font-semibold text-muted">{b.summaryMeetingType}</p>
               <p class="font-display font-bold text-foreground">{b.summaryMeetingValue}</p>
               <p class="text-sm text-muted mt-1">{b.summaryMeetingHint}</p>
+
+              {/* Populated from the booking response. The worker has always returned
+                  `meetLink`, and this screen has always thrown it away — telling the user
+                  an invite was sent while giving them no way to reach the meeting if the
+                  email lands in spam. Hidden until a link actually comes back, so the
+                  page never shows an empty promise. */}
+              <p id="summary-meet-wrap" class="hidden mt-3" data-join-label={b.joinLink}></p>
             </div>
+          </div>
+
+          {/* Booking reference — the only thing the user can quote back if something goes
+              wrong, and previously nothing on this screen survived a refresh. */}
+          <div id="summary-ref-wrap" class="hidden border-t border-cush-orange/20 pt-4">
+            <p class="text-sm font-display font-semibold text-muted">{b.summaryReference}</p>
+            <p id="summary-ref" class="font-mono text-sm text-foreground break-all"></p>
           </div>
         </div>
 
@@ -605,6 +619,13 @@ const b = dict.booking;
 
         const data = await response.json();
 
+        // `data.ok` alone was the entire success test, so a worker that returned ok
+        // without actually creating an event still produced "You're Booked." An event
+        // that exists has an id; require it before telling the user anything happened.
+        if (data.ok && !data.eventId) {
+          throw new Error('booking reported ok but returned no eventId');
+        }
+
         if (data.ok) {
           const dateOptions: Intl.DateTimeFormatOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
           const dateStrFormatted = selectedDate.toLocaleDateString(lang === 'es' ? 'es-MX' : 'en-US', dateOptions);
@@ -632,6 +653,33 @@ const b = dict.booking;
           if (summaryName) summaryName.textContent = formData.name;
           if (summaryEmail) summaryEmail.textContent = formData.email;
           if (summaryPhone) summaryPhone.textContent = formData.phone || str('notProvided');
+
+          // Surface what the API actually returned. Both fields have been in
+          // BookingResponse since the worker was written and neither was ever read, so
+          // the user was told an invite was sent with no way to verify it or to reach
+          // the call if the email went to spam.
+          // The anchor is BUILT here rather than sitting in the markup with a placeholder
+          // href. A dead `href="#"` is both an accessibility failure and a real one: it
+          // is focusable and clickable, and it goes nowhere.
+          const meetWrap = document.getElementById('summary-meet-wrap');
+          if (meetWrap && typeof data.meetLink === 'string' && data.meetLink) {
+            const a = document.createElement('a');
+            a.href = data.meetLink;
+            a.target = '_blank';
+            a.rel = 'noopener noreferrer';
+            a.className =
+              'inline-flex items-center gap-1.5 text-sm font-display font-semibold text-accent-text underline underline-offset-2 hover:opacity-80';
+            a.textContent = meetWrap.dataset.joinLabel ?? 'Join the video call';
+            meetWrap.replaceChildren(a);
+            meetWrap.classList.remove('hidden');
+          }
+
+          const refWrap = document.getElementById('summary-ref-wrap');
+          const refEl = document.getElementById('summary-ref');
+          if (refWrap && refEl && typeof data.eventId === 'string' && data.eventId) {
+            refEl.textContent = data.eventId;
+            refWrap.classList.remove('hidden');
+          }
 
           setTimeout(() => {
             showStep(3);

@@ -352,11 +352,16 @@ export const en = {
     successMessage:
       "I have sent a calendar invitation to your email. Please check it now and click 'Yes' or 'Accept' to lock in your time slot.",
     summaryDateTime: "Date & Time",
-    summaryTimezone: "Central Time (GMT-6)",
+    // NOT "Central Time". US Central is UTC-5 in summer and UTC-6 in winter, so that
+    // label is ambiguous and wrong for half the year — a US visitor reading it could
+    // arrive an hour late. Mexico City has been UTC-6 year-round since 2022.
+    summaryTimezone: "Mexico City time (UTC−6)",
     summaryDetails: "Your Details",
     summaryMeetingType: "Meeting Type",
     summaryMeetingValue: "Google Meet Video Call",
     summaryMeetingHint: "Link will be sent to your email",
+    joinLink: "Join the video call",
+    summaryReference: "Booking reference",
     summaryNotProvided: "Not provided",
     prepareTitle: "How to prepare:",
     prepareBody:
