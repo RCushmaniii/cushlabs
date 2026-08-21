@@ -1,3 +1,12 @@
+> ## ⚠️ NOT THIS REPO
+>
+> Analyses `/en/` redirect chains on nyenglishteacher.com. This repo has no `/en/` prefix; its redirects live in `vercel.json`.
+>
+> **Do not follow the file paths, commands, or counts in this document literally.**
+> Verify anything it names actually exists before acting on it. Kept for the reasoning,
+> not the specifics. See technical debt #18 in `docs/SESSION_LOG.md`.
+
+---
 # Redirect Analysis Summary
 
 ## 📊 **CSV Audit Results: Redirected Pages**

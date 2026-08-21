@@ -1,3 +1,12 @@
+> ## ⚠️ NOT THIS REPO
+>
+> It instructs you to check `/en/` and `/es/` files. **There is no `/en/` here** — English is unprefixed. The checklist's shape is still useful; its paths are not.
+>
+> **Do not follow the file paths, commands, or counts in this document literally.**
+> Verify anything it names actually exists before acting on it. Kept for the reasoning,
+> not the specifics. See technical debt #18 in `docs/SESSION_LOG.md`.
+
+---
 # 🌍 Bilingual Parity Checklist
 
 ## CRITICAL RULE: Always Check Both Languages

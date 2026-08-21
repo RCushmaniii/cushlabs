@@ -6,7 +6,7 @@
 
 ## Context Extraction Prompt
 
-```markdown
+````markdown
 You are generating a production-grade README.md file using the provided template.
 
 ## PROJECT CONTEXT
@@ -21,6 +21,7 @@ First, analyze the repository and extract:
 6. **Unique Value**: What makes this different from alternatives?
 
 Scan these files for context:
+
 - `/package.json` — dependencies, scripts
 - `/app/` or `/src/` — architecture patterns
 - `/.env.example` — required configuration
@@ -31,6 +32,7 @@ Scan these files for context:
 ## TONE & VOICE REQUIREMENTS
 
 ✅ **DO:**
+
 - Use calm, professional tone (executive-level)
 - Lead with outcomes and benefits
 - Include concrete metrics when available
@@ -40,6 +42,7 @@ Scan these files for context:
 - Assume Windows 11 + PowerShell for all commands
 
 ❌ **DON'T:**
+
 - Use hype language ("revolutionary", "game-changing", "cutting-edge")
 - Make unsupported claims
 - Use emoji excessively (functional icons only)
@@ -50,18 +53,21 @@ Scan these files for context:
 ## CONTENT RULES
 
 ### 1. Overview Section
+
 - **Maximum 3 sentences** for description
 - Include 1 concrete value proposition
 - If metrics exist (e.g., "52% ticket deflection"), feature prominently
 - Example: ❌ "A powerful tool for automation" → ✅ "Reduces manual data entry time by 73% through AI-powered document processing"
 
 ### 2. Features Section
+
 - **Benefits over features**: ✅ "Sub-2s response time" not ❌ "Fast performance"
 - Use table format for feature/benefit mapping
 - Include 4-6 core capabilities maximum
 - Each feature needs measurable or observable outcome
 
 ### 3. Quick Start Section
+
 - **All commands must be PowerShell-ready**
 - Include full file paths: `notepad .env.local` not `edit .env`
 - Number steps clearly (1, 2, 3, 4)
@@ -69,24 +75,28 @@ Scan these files for context:
 - Include expected output or success indicators
 
 ### 4. Live Demo
+
 - If live demo exists → make it prominent (top 3 sections)
 - If no demo → remove section entirely (don't say "coming soon")
 - Include 2-3 specific test scenarios users can try
 - Add screenshot with descriptive caption
 
 ### 5. Project Structure
+
 - Show actual directory structure from repository
 - Include 1-line comment per key directory
 - Maximum 2 levels deep unless critical
 - Format as code block with proper tree structure
 
 ### 6. Performance/Metrics
+
 - Only include if you have real data
 - Show targets vs actuals in table format
 - Use P95/P99 percentiles for latency
 - Source from monitoring tools or benchmarks
 
 ### 7. Security Section
+
 - List implemented security measures (✅ checkmark)
 - Reference separate SECURITY.md if exists
 - Flag missing critical security (rate limiting, RLS, etc.)
@@ -106,8 +116,10 @@ cd .\app\api
 vim .env.local
 nano config.ts
 ```
+````
 
 For cross-platform file references in documentation, use forward slashes:
+
 ```markdown
 See `src/lib/config.ts` for configuration
 ```
@@ -130,26 +142,31 @@ Before finalizing, verify:
 ## DECISION TREE FOR OPTIONAL SECTIONS
 
 **Include "Live Demo" if:**
+
 - Deployed URL exists AND is stable
 - Demo is representative of actual functionality
 - No authentication required for basic testing
 
 **Include "Performance" if:**
+
 - Real metrics from production/staging exist
 - OR benchmarks have been run with methodology
 - Skip if only theoretical expectations
 
 **Include "Roadmap" if:**
+
 - Specific features with timeline exist
 - OR active GitHub project board exists
 - Mark completed items with strikethrough
 
 **Include "vs. Alternatives" if:**
+
 - Direct competitors exist and are well-known
 - Meaningful differentiation can be shown
 - Comparison is factual, not marketing
 
 **Include "Video Walkthrough" if:**
+
 - Professional video exists (not placeholder)
 - Video adds value beyond screenshots
 - URL is permanent (YouTube, Vimeo)
@@ -167,20 +184,27 @@ Generate in this order:
 ## EXAMPLE QUALITY MARKERS
 
 ### ✅ GOOD - Specific, measurable, calm
+
 > "Processes 10,000 documents/hour with 99.3% accuracy using GPT-4 Vision. Reduces manual review time from 8 hours to 45 minutes per batch."
 
 ### ❌ BAD - Vague, hypey, unmeasurable
+
 > "Revolutionary AI-powered solution that transforms your document workflow. Experience the future of automation!"
 
 ### ✅ GOOD - Clear command with context
+
 ```powershell
-# Install dependencies (requires Node.js 18.17+)
+# Install dependencies (state the version the project ACTUALLY requires — read
+# `engines` in the dependency's package.json, do not copy a number from here.
+# This line said 18.17 while Astro 7 requires >= 22.12, so a fresh clone following
+# it would fail to build.)
 pnpm install
 
 # Expected output: "Packages: +247 (30s)"
 ```
 
 ### ❌ BAD - Unclear command, no context
+
 ```bash
 npm i
 ```
@@ -188,6 +212,7 @@ npm i
 ## FINAL CHECK
 
 Ask yourself:
+
 1. Could an experienced developer deploy this in <30 minutes?
 2. Does every claim have evidence or clear attribution?
 3. Would a non-technical executive understand the value?
@@ -195,7 +220,8 @@ Ask yourself:
 5. Do all code examples include file paths?
 
 If any answer is "no", revise before delivering.
-```
+
+````
 
 ---
 
@@ -219,9 +245,10 @@ Additional context:
 - Target audience: [SMBs / Developers / Enterprises / etc.]
 
 Follow all tone, formatting, and validation requirements exactly.
-```
+````
 
 **Step 3**: AI outputs:
+
 1. Summary of project understanding
 2. Assumptions made
 3. Complete README.md
@@ -234,13 +261,13 @@ Follow all tone, formatting, and validation requirements exactly.
 
 Before accepting the generated README, verify:
 
-| Criteria | Pass/Fail |
-|----------|-----------|
-| Zero placeholder text | ⬜ |
-| All commands are PowerShell | ⬜ |
-| No hype language present | ⬜ |
-| Live demo works (or removed) | ⬜ |
-| File paths match repo structure | ⬜ |
-| Metrics are sourced or flagged | ⬜ |
-| Quick start is <5 steps | ⬜ |
-| Code blocks have language tags | ⬜ |
+| Criteria                        | Pass/Fail |
+| ------------------------------- | --------- |
+| Zero placeholder text           | ⬜        |
+| All commands are PowerShell     | ⬜        |
+| No hype language present        | ⬜        |
+| Live demo works (or removed)    | ⬜        |
+| File paths match repo structure | ⬜        |
+| Metrics are sourced or flagged  | ⬜        |
+| Quick start is <5 steps         | ⬜        |
+| Code blocks have language tags  | ⬜        |

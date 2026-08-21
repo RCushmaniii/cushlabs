@@ -1,3 +1,12 @@
+> ## ⚠️ NOT THIS REPO
+>
+> Written against nyenglishteacher.com. The techniques generalise; the file paths, measurements and page counts do not describe this site.
+>
+> **Do not follow the file paths, commands, or counts in this document literally.**
+> Verify anything it names actually exists before acting on it. Kept for the reasoning,
+> not the specifics. See technical debt #18 in `docs/SESSION_LOG.md`.
+
+---
 # 🚀 Mobile Performance Optimizations - Homepage
 
 **Target:** Improve mobile PageSpeed Insights score from 87 to 90+

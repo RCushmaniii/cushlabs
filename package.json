@@ -27,7 +27,8 @@
     "seo:indexnow": "node scripts/seo/indexnow-submit.mjs",
     "seo:gsc": "node scripts/seo/gsc-submit-urls.mjs --sitemap",
     "seo:gsc:url": "node scripts/seo/gsc-submit-urls.mjs --url",
-    "seo:submit": "npm run seo:indexnow && npm run seo:gsc"
+    "seo:submit": "npm run seo:indexnow && npm run seo:gsc",
+    "audit:docs": "node scripts/audit-docs.mjs"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.9",

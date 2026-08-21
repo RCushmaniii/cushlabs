@@ -1,3 +1,12 @@
+> ## ⚠️ NOT THIS REPO
+>
+> Mixes this repo with nyenglishteacher.com. It references `src/lib/i18n.ts` and `npm run pre-deploy`, **neither of which exists here** — this repo deploys to Vercel and its pre-deploy check is `npm run audit:predeploy`.
+>
+> **Do not follow the file paths, commands, or counts in this document literally.**
+> Verify anything it names actually exists before acting on it. Kept for the reasoning,
+> not the specifics. See technical debt #18 in `docs/SESSION_LOG.md`.
+
+---
 # Pre-Deployment Checklist & Audit System
 
 ## Overview

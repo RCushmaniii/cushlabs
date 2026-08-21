@@ -1,3 +1,12 @@
+> ## ⚠️ NOT THIS REPO
+>
+> Reports 113 pages, 91 URLs, 33 category pages and testimonials pages. **None of that is this site** — cushlabs has no `/category/`, no `/en/` prefix and no testimonials pages. It is a status report for nyenglishteacher.com and is kept only as a worked example.
+>
+> **Do not follow the file paths, commands, or counts in this document literally.**
+> Verify anything it names actually exists before acting on it. Kept for the reasoning,
+> not the specifics. See technical debt #18 in `docs/SESSION_LOG.md`.
+
+---
 # ✅ FINAL SEO STATUS - COMPLETE
 
 **Date:** 2025-10-03  

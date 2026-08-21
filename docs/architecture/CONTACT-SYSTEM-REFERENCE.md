@@ -1,3 +1,12 @@
+> ## ⚠️ NOT THIS REPO
+>
+> Partly stale for a different reason: it documents `ConsultationBookingFlow.astro` and `src/scripts/bookingFlow.ts` as the booking path. **Both were deleted on 2026-08-20** as orphaned code. The live booking flow is `src/components/booking/BookingFormSteps.astro` talking to the Cloudflare Worker. The contact-form half of this document is still accurate.
+>
+> **Do not follow the file paths, commands, or counts in this document literally.**
+> Verify anything it names actually exists before acting on it. Kept for the reasoning,
+> not the specifics. See technical debt #18 in `docs/SESSION_LOG.md`.
+
+---
 # Contact & Booking System — Architecture Reference
 
 > **Purpose:** Complete inventory and lessons learned from the CushLabs.ai contact/booking system.
