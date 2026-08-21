@@ -1,3 +1,12 @@
+> ## ⚠️ NOT THIS REPO
+>
+> Its own opening line names `https://www.nyenglishteacher.com`. Kept for the sitemap reasoning only.
+>
+> **Do not follow the file paths, commands, or counts in this document literally.**
+> Verify anything it names actually exists before acting on it. Kept for the reasoning,
+> not the specifics. See technical debt #18 in `docs/SESSION_LOG.md`.
+
+---
 # 🔍 Sitemap & SEO Analysis Report
 
 **Date:** 2025-10-03  

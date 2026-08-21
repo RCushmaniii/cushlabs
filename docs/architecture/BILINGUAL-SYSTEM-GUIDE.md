@@ -1,3 +1,12 @@
+> ## ⚠️ NOT THIS REPO
+>
+> It describes a `src/lib/i18n.ts` module with a `TKey` union and `/en/`-prefixed routes. **This repo has neither.** Its i18n is `src/i18n/index.ts` + `translations/{en,es}.ts` with a `t(locale)` dictionary, and English is UNPREFIXED (`prefixDefaultLocale: false`). The general principle — enforce parity at build time — is why this file is kept.
+>
+> **Do not follow the file paths, commands, or counts in this document literally.**
+> Verify anything it names actually exists before acting on it. Kept for the reasoning,
+> not the specifics. See technical debt #18 in `docs/SESSION_LOG.md`.
+
+---
 # Bilingual System Guide
 
 ## Overview

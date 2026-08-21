@@ -1,3 +1,12 @@
+> ## ⚠️ NOT THIS REPO
+>
+> The hreflang reasoning is sound and worth keeping. The specifics are not this site: `/en/` routes, `src/utils/hreflang.ts`, `npm run validate:hreflang` and `npm run build:validate` **do not exist here**. This repo emits hreflang from `BaseLayout.astro`.
+>
+> **Do not follow the file paths, commands, or counts in this document literally.**
+> Verify anything it names actually exists before acting on it. Kept for the reasoning,
+> not the specifics. See technical debt #18 in `docs/SESSION_LOG.md`.
+
+---
 # Hreflang SEO Issues - Complete Fix Summary
 
 ## 🔍 Issues Identified from CSV Audit
