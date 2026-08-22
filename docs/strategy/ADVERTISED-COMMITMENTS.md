@@ -347,9 +347,19 @@ Published on the pricing page under the **Coming** pill. Basis: Meta's WhatsApp 
    per-message rate would be quoting against a cost we have not measured.
 3. **Delivered-only billing.** Meta does not charge for undelivered messages and neither do we.
 
-**Before the channel ships, three things must land:** Twilio's per-message markup added to the cost
-basis (margins shrink a few points, prices do not move) · MXN-denominated WABA billing adopted to
-kill FX exposure · this section re-stamped against the then-current Meta card. Meta publishes new
+**Before the channel ships, two things must land:** MXN-denominated WABA billing adopted to
+kill FX exposure · this section re-stamped against the then-current Meta card.
+
+> **CORRECTION 2026-08-22 — the Twilio line is gone, and it did damage before it went.** This
+> paragraph used to open "Twilio's per-message markup added to the cost basis." **There is no
+> Twilio in this business.** Twilio sells CushLabs phone numbers and nothing else — it is not a
+> BSP, not in the message path, and not in the cost basis. CushLabs works with Meta **directly as
+> an approved Tech Provider** (app `1670575657528474`, Advanced Access granted 2026-07-22).
+>
+> Recorded because the line already cost real time: on 2026-08-22 a session read it as a live
+> plan and built a strategic fork out of it — "Twilio BSP vs Tech Provider" — that does not exist.
+> A stale sentence in a canonical doc outranks the truth for anyone who reads it, which is exactly
+> the failure mode §0 is about. Meta publishes new
 cards roughly quarterly; **a stale rate card here becomes a margin error on every campaign.**
 
 ---
