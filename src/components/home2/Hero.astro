@@ -10,8 +10,23 @@ const { locale } = Astro.props;
 const content = {
   en: {
     badge: 'AI Engineering for Small Business · Bilingual EN/ES · Guadalajara → U.S.',
-    headline: "AI That Answers Customers When You Can't — Day, Night, and Weekends.",
-    subheadline1: 'I build AI systems that answer messages, book appointments, and capture leads while your team sleeps — in English and Spanish, live in days, not weeks.',
+    // Robert's line, 2026-08-21. Reader-first: the sentence opens on THEM, not on the
+    // product, which is the one thing the previous headline gave away.
+    //
+    // "AI" stays deliberately. Removing it was considered and rejected: an answering
+    // service or a VA could run this line verbatim without it, which collapses the
+    // differentiator into a commodity claim and loses the argument on price. voice-dna's
+    // `jargon_rule` allows a technical term when it is the most precise language AND the
+    // audience understands it — this audience is actively shopping for AI.
+    //
+    // "I", never "we" — solo-founder access is the asset an agency cannot match, and the
+    // About page sells it directly ("the person you hire is the person writing the code").
+    //
+    // "I put AI to work" over "I make sure": voice-dna `never_do` forbids implying
+    // guarantees, and message delivery runs through Meta's platform, which we do not
+    // control. "Put AI to work" is also already this brand's phrasing, in both languages.
+    headline: 'You keep running your business. I put AI to work answering your customers.',
+    subheadline1: "Messages answered, appointments booked, leads captured — while you're with a customer, closing up, or asleep. English and Spanish, live in days.",
     subheadline2: '',
     trustStrip: [
       '35+ projects shipped',
@@ -26,8 +41,10 @@ const content = {
   },
   es: {
     badge: 'Ingeniería de IA para Pymes · Bilingüe EN/ES · Guadalajara → EE.UU.',
-    headline: 'IA Que Atiende a Tus Clientes Cuando Tú No Puedes — Día, Noche y Fines de Semana.',
-    subheadline1: 'Construyo sistemas de IA que contestan mensajes, agendan citas y capturan leads mientras tu equipo duerme — en español e inglés, en vivo en días, no semanas.',
+    // es-MX, registro "tú" como el resto del sitio. Ver la nota en la versión EN.
+    // "prospectos" y no "leads" en prosa; "agendar" y no "reservar".
+    headline: 'Tú sigues con tu negocio. Yo pongo la IA a contestar a tus clientes.',
+    subheadline1: 'Mensajes contestados, citas agendadas, prospectos capturados — mientras atiendes a alguien, cierras el negocio o duermes. En español e inglés, en vivo en días.',
     subheadline2: '',
     trustStrip: [
       '35+ proyectos entregados',
@@ -132,8 +149,16 @@ const t = content[locale];
      naturally as a dark section regardless of the visitor's site-wide theme.
      home-hero-v1.webp: a small-business owner (beauty/spa — matches the beauty-spa
      wedge) at home at night, reaching for her phone to find the AI assistant already
-     answered a customer's Messenger question and offered to book. Ties directly to
-     the headline's "day, night, and weekends" claim. Subject sits left-of-center in
+     answered a customer's Messenger question and offered to book.
+
+     NOTE 2026-08-21: this photo was chosen to illustrate the OLD headline's "day,
+     night, and weekends" phrase, which the new headline drops. It still earns its
+     place — the subheadline's "while you're with a customer, closing up, or asleep"
+     carries the same idea, and the image now does that work visually instead of the
+     headline doing it in words. If the subheadline ever loses that clause, revisit
+     the photo too, or it becomes a night shot illustrating nothing.
+
+     Subject sits left-of-center in
      the source photo, so background-position is biased LEFT (low %) to keep her and
      the phone screen clear of the centered text column — tune against real viewports
      before shipping, same as the other three heroes.
