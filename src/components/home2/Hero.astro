@@ -25,7 +25,7 @@ const content = {
     // "I put AI to work" over "I make sure": voice-dna `never_do` forbids implying
     // guarantees, and message delivery runs through Meta's platform, which we do not
     // control. "Put AI to work" is also already this brand's phrasing, in both languages.
-    headline: 'You keep running your business. I put AI to work answering your customers.',
+    headline: 'You keep running your business. | I put AI to work answering your customers.',
     subheadline1: "Messages answered, appointments booked, leads captured — while you're with a customer, closing up, or asleep. English and Spanish, live in days.",
     subheadline2: '',
     trustStrip: [
@@ -43,7 +43,7 @@ const content = {
     badge: 'Ingeniería de IA para Pymes · Bilingüe EN/ES · Guadalajara → EE.UU.',
     // es-MX, registro "tú" como el resto del sitio. Ver la nota en la versión EN.
     // "prospectos" y no "leads" en prosa; "agendar" y no "reservar".
-    headline: 'Tú sigues con tu negocio. Yo pongo la IA a contestar a tus clientes.',
+    headline: 'Tú sigues con tu negocio. | Yo pongo la IA a contestar a tus clientes.',
     subheadline1: 'Mensajes contestados, citas agendadas, prospectos capturados — mientras atiendes a alguien, cierras el negocio o duermes. En español e inglés, en vivo en días.',
     subheadline2: '',
     trustStrip: [
@@ -71,9 +71,16 @@ const t = content[locale];
         <span class="font-display text-sm font-semibold tracking-wide text-white">{t.badge}</span>
       </div>
 
-      <!-- Headline -->
+      {/* The headline is two sentences and the PAUSE between them is the mechanism —
+          "you do this / I do that" only lands if the reader sees two halves. Rendered
+          as separate lines rather than one wrapped block, where the sentence break fell
+          mid-line ("...your business. I put AI to...") and the parallel disappeared.
+          A plain \n would not survive HTML whitespace collapsing, so the two halves are
+          separate spans. Reads as one sentence to a screen reader either way. */}
       <h1 id="hero-heading" class="home-h1 font-display font-bold text-white mb-6 animate-fade-in-up">
-        {t.headline}
+        {t.headline.split(" | ").map((part, i) => (
+          <span class:list={["block", i > 0 && "text-white/90"]}>{part}</span>
+        ))}
       </h1>
 
       <!-- Subheadline -->
