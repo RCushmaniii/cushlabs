@@ -89,9 +89,14 @@ const ogLocaleAlternate = locale === "es" ? "en_US" : "es_MX";
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;1,8..60,400&display=swap" />
     </noscript>
 
-    <!-- Preload LCP hero image on homepage -->
+    {/* Preload the LCP hero image on the homepage.
+        This pointed at /images/hero/home-hero3.webp until 2026-08-22 — a file the hero
+        has never painted and nothing else references. Every homepage visitor fetched
+        107 KB at high priority, on the critical path, for an image they never saw,
+        while the image actually behind the headline was not preloaded at all.
+        Keep this path in sync with the background-image in home2/Hero.astro. */}
     {(pathname === '/' || pathname === '/es' || pathname === '/es/') && (
-      <link rel="preload" as="image" href="/images/hero/home-hero3.webp" fetchpriority="high" />
+      <link rel="preload" as="image" href="/images/home-hero-v1.webp" fetchpriority="high" />
     )}
 
     <title>{title}</title>
