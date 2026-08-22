@@ -328,19 +328,42 @@ the client keeps ownership of every page, number, profile and domain.
 Published on the pricing page under the **Coming** pill. Basis: Meta's WhatsApp rate card
 **effective 2026-07-01**, Mexico recipients, read 2026-08-14, FX reference $17.05 MXN/USD.
 
-| Item                               | Client price (+IVA)                                | Meta's list rate |
-| ---------------------------------- | -------------------------------------------------- | ---------------- |
-| Utility allotment — Premium        | 500 messages/mo included                           | —                |
-| Utility allotment — Ultra          | 2,000 messages/mo included                         | —                |
-| Utility overage                    | **$0.50 MXN/msg**                                  | ~$0.145 MXN      |
-| Marketing message (campaigns only) | **$0.70 MXN/msg delivered**                        | ~$0.52 MXN       |
-| Campaign service fee               | **$1,490** up to 1,000 recipients, +$490 per 1,000 | —                |
+| Item                          | Client price (+IVA)                                | Who bills the message  |
+| ----------------------------- | -------------------------------------------------- | ---------------------- |
+| Utility capacity — Premium    | up to 500 messages/mo                              | Meta, to the client    |
+| Utility capacity — Ultra      | up to 2,000 messages/mo                            | Meta, to the client    |
+| Messages beyond that capacity | —                                                  | Meta, to the client    |
+| Marketing message delivery    | —                                                  | Meta, to the client    |
+| Campaign service fee          | **$1,490** up to 1,000 recipients, +$490 per 1,000 | n/a — this is our work |
+
+> **CORRECTED 2026-08-22 — the per-message resale lines are gone, and they were never chargeable.**
+> This table used to sell utility overage at $0.50 MXN/msg against Meta's ~$0.145, and marketing at
+> $0.70 against ~$0.52, with a rule to "show Meta's rate next to ours."
+>
+> **CushLabs is a Meta Tech Provider, and a Tech Provider cannot bill for message usage.** Meta's
+> own partner documentation: *"clients onboarded by Tech Providers must provide their own payment
+> method after onboarding is complete. Meta will then bill these clients for API usage, and the
+> Tech Provider will bill for other services."* The client's card sits on the client's own WABA and
+> Meta charges it directly — verified on all three live accounts 2026-08-21. Charging $0.50 on top
+> would have billed the client twice for one message.
+>
+> The spread was also an artefact of an assumed Twilio reseller path that does not exist (see the
+> correction under §2.6's closing note). What survives is the **campaign service fee**, which pays
+> for real work — writing the campaign, getting the template approved, sending, reporting — and is
+> chargeable no matter who Meta bills.
+>
+> **The replacement claim is stronger than the one it replaces:** there is no markup on messaging
+> because, structurally, there is nowhere to put one. A reseller cannot say that.
+>
+> Live surfaces updated the same day: `PricingComparison.astro` EN + ES, both pricing tables and
+> both FAQ answers.
 
 **Three rules that travel with these numbers:**
 
-1. **Show Meta's rate next to ours.** The $0.70 line is quoted as "Meta charges ~$0.52; our $0.70
-   covers that fee, the delivery, and the compliance." Hiding the spread would be the ordinary
-   move; showing it is the brand. The pricing FAQ already states it in both languages.
+1. **Say who bills the message, every time.** Meta bills the client directly, at Meta's published
+   rate, on an account in the client's own name. The ordinary move in this market is to bury the
+   messaging fee inside a platform price; naming it -- and naming who charges it -- is the brand.
+   The pricing FAQ states it in both languages.
 2. **MXN only.** The USD column reads **"Quoted"** for every per-message rate, deliberately. Meta's
    US/Canada rates sit on a different cost basis (marketing $0.0250, utility $0.0034) that has not
    been validated against a real send, and campaigns are an MX-strength product. Publishing a USD
