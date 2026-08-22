@@ -10,61 +10,65 @@ const { locale } = Astro.props;
 const content = {
   en: {
     heading: "Does This Sound Like Your Business?",
-    closing: "Every missed message is lost money. Every hour on repetitive work is an hour you're not growing.",
+    closing:
+      "Every unanswered message can become a lost customer. Every hour spent on repetitive work is time you could spend growing your business.",
+    ctaLabel: "See What AI Could Handle for You",
     pains: [
       {
-        title: "Same Questions, All Day",
-        desc: "Pricing, order status, policies, how-to — your team answers the same things over and over while response times slip and customers get frustrated."
+        title: "The Same Questions, All Day",
+        desc: "\u201CHow much does it cost?\u201D \u201CAre you open?\u201D \u201CDo you have availability?\u201D You and your team answer the same questions again and again."
       },
       {
-        title: "Knowledge Lives Everywhere",
-        desc: "Answers are scattered across WhatsApp, Google Docs, PDFs, and \"just ask Juan.\" Onboarding new hires is painful. Losing a key employee is terrifying."
+        title: "Messages Arrive While You're Busy",
+        desc: "Customers write while you're helping someone else, driving, working, or running the business. By the time you look, hours have passed."
       },
       {
         title: "Leads Disappear After Hours",
-        desc: "Prospects visit your site, ask questions, then vanish because nobody responds fast enough — especially nights and weekends. Every missed message is lost revenue."
+        desc: "Someone contacts you at 9:30 PM. By morning they may already have contacted your competitor \u2014 and you never knew they were interested."
       },
       {
-        title: "Repetitive Work Is Eating Your Team's Time",
-        desc: "Data entry, document processing, report generation, manual follow-ups — your team spends hours on work that should take minutes. They were hired for judgment, not copy-paste."
+        title: "Calls Interrupt Your Work",
+        desc: "The phone rings while you're with a customer. Answer it and you interrupt the person in front of you; ignore it and you may lose the lead."
       },
       {
-        title: "No Bandwidth for AI Projects",
-        desc: "Your lean team can't spare someone to own a big implementation. You need something that works without becoming a second job — and without a six-month timeline."
+        title: "Appointments Need Follow-Up",
+        desc: "Confirmations and reminders take time, and every missed appointment leaves empty space on your calendar that someone else could have filled."
       },
       {
-        title: "You've Been Burned Before",
-        desc: "You've seen the demos. Maybe you've even paid for one. A chatbot that sounds dumb, hallucinates wrong answers, or creates more tickets than it solves. You're skeptical — and you should be."
+        title: "Customers Contact You Everywhere",
+        desc: "WhatsApp, Messenger, Instagram, your website, the phone \u2014 keeping up with every channel quietly becomes another job on top of the one you have."
       }
     ]
   },
   es: {
-    heading: "¿Esto Te Suena Como Tu Negocio?",
-    closing: "Cada mensaje sin responder es dinero perdido. Cada hora en trabajo repetitivo es una hora que no estás creciendo.",
+    heading: "\u00BFEsto Te Suena Como Tu Negocio?",
+    closing:
+      "Cada mensaje sin responder puede convertirse en un cliente perdido. Cada hora en trabajo repetitivo es tiempo que podr\u00EDas dedicar a hacer crecer tu negocio.",
+    ctaLabel: "Ve Qu\u00E9 Podr\u00EDa Atender la IA por Ti",
     pains: [
       {
-        title: "Las Mismas Preguntas, Todo el Día",
-        desc: "Precios, estados de pedidos, políticas, tutoriales — tu equipo responde lo mismo una y otra vez mientras los tiempos de respuesta caen y los clientes se frustran."
+        title: "Las Mismas Preguntas, Todo el D\u00EDa",
+        desc: "\u201C\u00BFCu\u00E1nto cuesta?\u201D \u201C\u00BFEst\u00E1n abiertos?\u201D \u201C\u00BFTienen disponibilidad?\u201D T\u00FA y tu equipo contestan lo mismo una y otra vez."
       },
       {
-        title: "El Conocimiento Vive en Todas Partes",
-        desc: "Las respuestas están dispersas en WhatsApp, Google Docs, PDFs y 'solo pregúntale a Juan'. Capacitar a nuevos empleados es doloroso. Perder a un empleado clave es aterrador."
+        title: "Los Mensajes Llegan Cuando Est\u00E1s Ocupado",
+        desc: "Tus clientes escriben mientras atiendes a alguien m\u00E1s, manejas, trabajas o sacas adelante el negocio. Cuando alcanzas a ver, ya pasaron horas."
       },
       {
         title: "Los Prospectos Desaparecen Fuera de Horario",
-        desc: "Los prospectos visitan tu sitio, preguntan y luego desaparecen porque nadie responde a tiempo — especialmente de noche y fines de semana. Cada mensaje perdido es dinero perdido."
+        desc: "Alguien te escribe a las 9:30 de la noche. Para la ma\u00F1ana ya pudo haber contactado a tu competencia \u2014 y nunca supiste que estaba interesado."
       },
       {
-        title: "El Trabajo Repetitivo Consume el Tiempo de tu Equipo",
-        desc: "Entrada de datos, procesamiento de documentos, informes — tu equipo pasa horas en tareas que deberían tomar minutos. Los contrataste por su criterio, no para copiar y pegar."
+        title: "Las Llamadas Interrumpen Tu Trabajo",
+        desc: "Suena el tel\u00E9fono mientras est\u00E1s con un cliente. Si contestas, interrumpes a quien tienes enfrente; si no, puedes perder al prospecto."
       },
       {
-        title: "Sin Capacidad para Proyectos de IA",
-        desc: "Tu equipo ajustado no puede dedicar a alguien para liderar una gran implementación. Necesitas algo que funcione sin convertirse en un segundo trabajo — y sin que tome seis meses."
+        title: "Las Citas Necesitan Seguimiento",
+        desc: "Confirmar y recordar citas toma tiempo, y cada cita perdida deja un hueco en tu agenda que alguien m\u00E1s pudo haber ocupado."
       },
       {
-        title: "Te Han Decepcionado Antes",
-        desc: "Has visto las demostraciones. Quizás pagaste por una. Un chatbot que suena tonto, inventa respuestas o crea más problemas de los que resuelve. Eres escéptico — y deberías serlo."
+        title: "Tus Clientes Te Buscan por Todos Lados",
+        desc: "WhatsApp, Messenger, Instagram, tu sitio web, el tel\u00E9fono \u2014 estar al pendiente de cada canal se vuelve otro trabajo encima del que ya tienes."
       }
     ]
   }
@@ -107,7 +111,11 @@ const t = content[locale];
         href={locale === 'es' ? '/es/reservar/' : '/consultation/'}
         class="inline-flex items-center gap-2 px-6 py-3 bg-cush-orange text-black font-display font-semibold rounded-lg hover:bg-cush-orange/90 transition-all duration-300 shadow-lg shadow-cush-orange/25 group"
       >
-        {locale === 'es' ? 'Hablemos de Tu Negocio' : "Let's Talk About Your Business"}
+        {/* Was "Let's Talk About Your Business" — generic, and disconnected from the six
+            problems the reader just recognised themselves in. This label answers the
+            question the section just raised. Localised via the dictionary rather than a
+            ternary so the two languages cannot drift apart. */}
+        {t.ctaLabel}
         <svg class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
         </svg>

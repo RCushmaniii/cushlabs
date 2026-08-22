@@ -9,35 +9,81 @@ const { locale } = Astro.props;
 
 const content = {
   en: {
-    badge: 'AI Engineering for Small Business · Bilingual EN/ES · Guadalajara → U.S.',
-    headline: "AI That Answers Customers When You Can't — Day, Night, and Weekends.",
-    subheadline1: 'I build AI systems that answer messages, book appointments, and capture leads while your team sleeps — in English and Spanish, live in days, not weeks.',
+    badge: 'AI for Small Business · English + Spanish · Guadalajara → U.S.',
+    // Robert's line, 2026-08-21. Reader-first: the sentence opens on THEM, not on the
+    // product, which is the one thing the previous headline gave away.
+    //
+    // "AI" stays deliberately. Removing it was considered and rejected: an answering
+    // service or a VA could run this line verbatim without it, which collapses the
+    // differentiator into a commodity claim and loses the argument on price. voice-dna's
+    // `jargon_rule` allows a technical term when it is the most precise language AND the
+    // audience understands it — this audience is actively shopping for AI.
+    //
+    // "I", never "we" — solo-founder access is the asset an agency cannot match, and the
+    // About page sells it directly ("the person you hire is the person writing the code").
+    //
+    // "I put AI to work" over "I make sure": voice-dna `never_do` forbids implying
+    // guarantees, and message delivery runs through Meta's platform, which we do not
+    // control. "Put AI to work" is also already this brand's phrasing, in both languages.
+    headline: 'You Run Your Business. | I Put AI to Work Answering Your Customers.',
+
+    // CHANNELS ARE A CLAIMS SURFACE. Only name what is live TODAY.
+    //
+    // Instagram: ADVERTISED-COMMITMENTS §2.4 — "must not advertise IG as an available
+    // channel on any client-facing surface until that approval lands." The registry has
+    // `meta-instagram-messaging-permissions` as not_submitted; there is no pending review.
+    //
+    // WhatsApp: List 2 (held) as a CUSTOMER channel. What is live is the OWNER alert —
+    // WhatsApp messages Robert when a lead is hot — which is why the line below says
+    // "alert you", not "answer on WhatsApp". Different claim, and this one is true.
+    //
+    // Booking: the assistant LINKS to the booking page, it does not book in chat
+    // (confirmed by Robert 2026-08-21). The voice agent does book directly, so "send
+    // customers straight to your calendar" is true of both without overstating either.
+    //
+    // "Comments" was in the draft and is out: not in List 1's four themes.
+    //
+    // Both channels ARE rendered on /pricing/ in the `soon:` array. Naming them here as
+    // live would contradict our own pricing page one click away, which reads as bait
+    // rather than ambition — and the first paying client asked for Instagram four hours
+    // into day one, so she is exactly who would find it.
+    subheadline1:
+      'I build AI agents that answer questions, capture leads, and send customers straight to your calendar — on Messenger, your website, and by phone. English and Spanish, 24/7.',
     subheadline2: '',
     trustStrip: [
-      '35+ projects shipped',
-      'Bilingual EN/ES delivery',
-      'Free 1-week trial',
-      'Live demo below ↓',
+      '35+ Projects Delivered',
+      'English + Spanish',
+      // "1-week", not "7-day", to match /pricing/ and ADVERTISED-COMMITMENTS verbatim.
+      'Free 1-Week Trial',
+      'Launch in Days or Weeks — Not Months',
     ],
-    ctaPrimary: 'Book a Free 30-min Call',
-    ctaSecondary: 'Try the Live Chatbot',
-    ctaDemo: 'See a demo for your industry →',
+    ctaPrimary: 'Try the Live Demo',
+    ctaSecondary: 'Book a Free 30-Min Call',
+    ctaDemo: 'See a Demo for Your Business ↓',
     scrollHint: 'Scroll to explore',
   },
   es: {
-    badge: 'Ingeniería de IA para Pymes · Bilingüe EN/ES · Guadalajara → EE.UU.',
-    headline: 'IA Que Atiende a Tus Clientes Cuando Tú No Puedes — Día, Noche y Fines de Semana.',
-    subheadline1: 'Construyo sistemas de IA que contestan mensajes, agendan citas y capturan leads mientras tu equipo duerme — en español e inglés, en vivo en días, no semanas.',
+    badge: 'IA para Pequeños Negocios · Español + Inglés · Guadalajara → EE. UU.',
+
+    // "Poner la IA a trabajar" es deliberado y NO se debe traducir a algo más literal:
+    // presenta la IA como un trabajador práctico y no como tecnología abstracta, que es
+    // exactamente el modelo mental que queremos en un prospecto mexicano. Registro "tú",
+    // "prospectos" y no "leads" en prosa, "agendar" y no "reservar".
+    // Las restricciones de canales están explicadas en la versión EN.
+    headline: 'Tú Manejas Tu Negocio. | Yo Pongo la IA a Trabajar Respondiendo a Tus Clientes.',
+    subheadline1:
+      'Creo agentes de IA que contestan preguntas, captan prospectos y llevan a tus clientes directo a tu calendario — en Messenger, tu sitio web y por teléfono. Español e inglés, 24/7.',
     subheadline2: '',
     trustStrip: [
-      '35+ proyectos entregados',
-      'Entregas bilingües EN/ES',
-      'Prueba gratis de 1 semana',
-      'Demo en vivo aquí abajo ↓',
+      'Más de 35 Proyectos Entregados',
+      'Español + Inglés',
+      // "1 semana", no "7 días", para que coincida con /es/precios/ palabra por palabra.
+      'Prueba Gratis de 1 Semana',
+      'Listo en Días o Semanas — No Meses',
     ],
-    ctaPrimary: 'Agendar Llamada Gratis — 30 min',
-    ctaSecondary: 'Probar el Chatbot en Vivo',
-    ctaDemo: 'Ve un demo para tu industria →',
+    ctaPrimary: 'Prueba la Demo en Vivo',
+    ctaSecondary: 'Agenda una Llamada Gratis de 30 Min',
+    ctaDemo: 'Ve una Demo para Tu Negocio ↓',
     scrollHint: 'Explorar',
   },
 };
@@ -54,9 +100,16 @@ const t = content[locale];
         <span class="font-display text-sm font-semibold tracking-wide text-white">{t.badge}</span>
       </div>
 
-      <!-- Headline -->
+      {/* The headline is two sentences and the PAUSE between them is the mechanism —
+          "you do this / I do that" only lands if the reader sees two halves. Rendered
+          as separate lines rather than one wrapped block, where the sentence break fell
+          mid-line ("...your business. I put AI to...") and the parallel disappeared.
+          A plain \n would not survive HTML whitespace collapsing, so the two halves are
+          separate spans. Reads as one sentence to a screen reader either way. */}
       <h1 id="hero-heading" class="home-h1 font-display font-bold text-white mb-6 animate-fade-in-up">
-        {t.headline}
+        {t.headline.split(" | ").map((part, i) => (
+          <span class:list={["block", i > 0 && "text-white/90"]}>{part}</span>
+        ))}
       </h1>
 
       <!-- Subheadline -->
@@ -78,26 +131,31 @@ const t = content[locale];
       </div>
 
       <!-- CTA Buttons -->
+      {/* PRIMARY is now the demo, SECONDARY is the call (swapped 2026-08-21). The ACTIONS
+          moved with the labels, not just the text — leaving them in place would have
+          pointed "Try the Live Demo" at the booking page. Demo-first lowers the
+          commitment of the first click: trying something costs nothing, booking a call
+          costs a calendar slot and a conversation. */}
       <div class="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up" style="animation-delay: 0.3s;">
-        <a
-          href={locale === 'es' ? '/es/reservar/' : '/consultation/'}
-          class="group inline-flex items-center gap-2 px-8 py-4 bg-cush-orange text-black font-display font-semibold rounded-lg hover:bg-cush-orange/90 transition-all duration-300 shadow-lg shadow-cush-orange/25 hover:shadow-xl hover:shadow-cush-orange/30 text-lg"
+        <button
+          type="button"
+          data-open-chat
+          class="group inline-flex items-center gap-2 px-8 py-4 bg-cush-orange text-black font-display font-semibold rounded-lg hover:bg-cush-orange/90 transition-all duration-300 shadow-lg shadow-cush-orange/25 hover:shadow-xl hover:shadow-cush-orange/30 text-lg cursor-pointer"
         >
           {t.ctaPrimary}
           <svg class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
           </svg>
-        </a>
-        <button
-          type="button"
-          data-open-chat
-          class="group inline-flex items-center gap-2 px-8 py-4 border-2 border-white/30 text-white font-display font-semibold rounded-lg hover:border-cush-orange hover:text-accent-text transition-all duration-300 text-lg cursor-pointer backdrop-blur-sm"
+        </button>
+        <a
+          href={locale === 'es' ? '/es/reservar/' : '/consultation/'}
+          class="group inline-flex items-center gap-2 px-8 py-4 border-2 border-white/30 text-white font-display font-semibold rounded-lg hover:border-cush-orange hover:text-accent-text transition-all duration-300 text-lg backdrop-blur-sm"
         >
           {t.ctaSecondary}
           <svg class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
           </svg>
-        </button>
+        </a>
       </div>
 
       <!-- Tertiary link: interactive industry demo gallery (/demos/) -->
@@ -132,8 +190,16 @@ const t = content[locale];
      naturally as a dark section regardless of the visitor's site-wide theme.
      home-hero-v1.webp: a small-business owner (beauty/spa — matches the beauty-spa
      wedge) at home at night, reaching for her phone to find the AI assistant already
-     answered a customer's Messenger question and offered to book. Ties directly to
-     the headline's "day, night, and weekends" claim. Subject sits left-of-center in
+     answered a customer's Messenger question and offered to book.
+
+     NOTE 2026-08-21: this photo was chosen to illustrate the OLD headline's "day,
+     night, and weekends" phrase, which the new headline drops. It still earns its
+     place — the subheadline's "while you're with a customer, closing up, or asleep"
+     carries the same idea, and the image now does that work visually instead of the
+     headline doing it in words. If the subheadline ever loses that clause, revisit
+     the photo too, or it becomes a night shot illustrating nothing.
+
+     Subject sits left-of-center in
      the source photo, so background-position is biased LEFT (low %) to keep her and
      the phone screen clear of the centered text column — tune against real viewports
      before shipping, same as the other three heroes.

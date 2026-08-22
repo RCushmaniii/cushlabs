@@ -9,37 +9,48 @@ const { locale } = Astro.props;
 
 const content = {
   en: {
-    heading: 'How It Works — Your AI Is Live in Days, Not Weeks',
+    // Heading no longer promises a timeline. "Days, not weeks" contradicted the
+    // "2–6 wks — Time to Live" figure in SocialProof on this same page, and had reached
+    // the meta description, so it was printing in search results.
+    heading: 'How It Works — From Idea to Working AI',
     steps: [
       {
-        title: 'Step 1: Discovery',
-        desc: 'Free 30-minute call. I learn about your business, find the best place for AI to help, and tell you honestly if it makes sense. No commitment.'
+        title: 'Step 1: Understand Your Business',
+        // "where AI can realistically help — and where it can't" is doing real work here.
+        // voice-dna's comfort zones include "decision clarity and tradeoffs" and its
+        // never_do forbids overselling; naming the limit is what makes the rest credible.
+        desc: "We start with a free 30-minute call. You show me what's taking your time, where customers are getting lost, and what you'd like to improve. I'll tell you where AI can realistically help — and where it can't."
       },
       {
-        title: 'Step 2: Build',
-        desc: 'I design and implement your solution — chatbots, automations, document systems, or custom tools. You see progress weekly, not at the end. Validated, tested, and secure from day one.'
+        title: 'Step 2: Build & Train',
+        desc: 'I build the system around your actual business: your services, pricing, policies, customers, language, and workflow. You review it and see it working before launch.'
       },
       {
-        title: 'Step 3: Launch & Measure',
-        desc: 'I deploy, test with real users, and hand over everything documented. Then I measure what matters — deflection rate, time-to-answer, leads captured, hours saved — and iterate based on real data.'
+        title: 'Step 3: Launch & Improve',
+        // "deflection rate" is gone. It is a support-industry metric that means nothing
+        // to a salon or clinic owner, and using it signalled that this page was written
+        // for someone else.
+        desc: 'We test it with real conversations, launch it, and measure what happens — response times, leads captured, appointments booked, and hours saved.'
       }
     ],
     addon: 'Want ongoing optimization? I offer monthly retainers to keep your systems sharp as your business evolves.'
   },
   es: {
-    heading: 'Cómo Funciona — Tu IA en Vivo en Días, No Semanas',
+    // Ver las notas en la versión EN: el encabezado ya no promete un plazo, y
+    // "desviación de tickets" se eliminó por ser jerga de la industria de soporte.
+    heading: 'Cómo Funciona — De la Idea a la IA Funcionando',
     steps: [
       {
-        title: 'Paso 1: Descubrimiento',
-        desc: 'Llamada gratuita de 30 minutos. Conozco tu negocio, encuentro el mejor lugar para que la IA ayude y te digo honestamente si tiene sentido. Sin compromiso.'
+        title: 'Paso 1: Entender Tu Negocio',
+        desc: 'Empezamos con una llamada gratuita de 30 minutos. Me muestras qué te está quitando tiempo, dónde se te pierden clientes y qué te gustaría mejorar. Te digo dónde la IA puede ayudarte de verdad — y dónde no.'
       },
       {
-        title: 'Paso 2: Construcción',
-        desc: 'Diseño e implemento tu solución — chatbots, automatizaciones, sistemas documentales o herramientas a la medida. Ves el progreso cada semana, no solo al final. Validado, probado y seguro desde el día uno.'
+        title: 'Paso 2: Construir y Entrenar',
+        desc: 'Construyo el sistema alrededor de tu negocio real: tus servicios, precios, políticas, clientes, lenguaje y forma de trabajar. Lo revisas y lo ves funcionando antes de lanzarlo.'
       },
       {
-        title: 'Paso 3: Lanzamiento y Medición',
-        desc: 'Despliego, pruebo con usuarios reales y te entrego todo documentado. Luego mido lo que importa — desviación de tickets, tiempo de respuesta, captura de leads, horas ahorradas — e itero basándome en datos reales.'
+        title: 'Paso 3: Lanzar y Mejorar',
+        desc: 'Lo probamos con conversaciones reales, lo lanzamos y medimos qué pasa — tiempos de respuesta, prospectos captados, citas agendadas y horas ahorradas.'
       }
     ],
     addon: '¿Quieres optimización continua? Ofrezco planes mensuales para mantener tus sistemas afinados mientras tu negocio evoluciona.'
