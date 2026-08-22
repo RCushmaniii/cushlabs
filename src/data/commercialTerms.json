@@ -1,0 +1,102 @@
+{
+  "_meta": {
+    "purpose": "Single source of truth for CushLabs commercial terms — price, trial, cancellation, billing, invoicing, and delivery timing.",
+    "why_this_exists": "These claims kept drifting because they were retyped as prose on every surface that needed them. In one week: the homepage promised 'Cancel Anytime' and then '30 days notice' while the contract required neither; USD surfaces promised a CFDI, which is a Mexican tax receipt a US client does not receive; 'Live in days, not weeks' appeared in the footer, the hero and the meta description while the same homepage showed '2-6 wks'. Every time, a source document was already correct and a second surface had drifted from it. Reading a document is optional; importing data is not.",
+    "how_to_use": "Do NOT retype these values into components. Import them. cushlabs runs `npm run sync:terms`, which copies this file to src/data/commercialTerms.json, and components read from there. `npm run validate:terms` fails the build when a surface contradicts this file.",
+    "owner": "Robert Cushman",
+    "last_updated": "2026-08-22",
+    "consumers": [
+      "cushlabs — homepage Guarantee + FAQ, /pricing/, /terms/, /salons/ and /salones/",
+      "cushlabs-messenger-bot — anything the assistant says about price or terms"
+    ]
+  },
+
+  "currency_rule": {
+    "statement": "MXN and USD are separate price lists, not conversions of one another.",
+    "never": "Never auto-convert MXN to USD or back. The USD list is its own decision.",
+    "mxn_tax_note": "ALL MXN prices are quoted plus IVA. Locked 2026-08-13."
+  },
+
+  "pricing": {
+    "mxn": {
+      "cadence": "monthly",
+      "tax": "plus IVA",
+      "tiers": { "basic": 1990, "premium": 3490, "ultra": 5490 },
+      "display": { "basic": "$1,990", "premium": "$3,490", "ultra": "$5,490" },
+      "unit_label": "MXN/mo + IVA"
+    },
+    "usd": {
+      "cadence": "monthly",
+      "tiers": { "basic": 129, "premium": 229, "ultra": 349 },
+      "display": { "basic": "$129", "premium": "$229", "ultra": "$349" },
+      "unit_label": "USD/mo"
+    },
+    "locations_included": 2,
+    "additional_location": { "mxn": 690, "usd": 49 }
+  },
+
+  "trial": {
+    "length_days": 7,
+    "label_en": "1-week free trial",
+    "label_es": "prueba gratis de 1 semana",
+    "never_say": ["7-day trial", "2-week trial", "prueba de 2 semanas"],
+    "why_wording_matters": "The pricing page and ADVERTISED-COMMITMENTS both say '1 week'. Saying '7-day' elsewhere is the same duration in different words, and a prospect comparing two surfaces cannot tell whether they are two offers.",
+    "setup_fee": false,
+    "deposit": false,
+    "starts": "the day the assistant goes live, not the day the client signs",
+    "walk_away": "If it is not doing what was agreed, the client owes nothing."
+  },
+
+  "cancellation": {
+    "notice_period_days": 0,
+    "effective": "end of the current paid month",
+    "partial_refund": false,
+    "fixed_term_contract": false,
+    "statement_en": "Cancel whenever you want: it takes effect at the end of the month you have already paid for, and there is nothing else to settle.",
+    "statement_es": "Cancela cuando quieras: aplica al terminar el mes que ya pagaste, y no queda nada más por saldar.",
+    "never_say": [
+      "30 days notice",
+      "30 días de aviso",
+      "cancel with notice",
+      "notice period"
+    ],
+    "why": "Billing is monthly IN ADVANCE, so the month in progress is already paid. Cancelling means no next invoice — there is no refund exposure and no unbilled work. A notice period would collect a further month after a client said stop."
+  },
+
+  "billing": {
+    "cadence": "monthly",
+    "timing": "in advance",
+    "methods_live": ["bank transfer"],
+    "methods_not_live": ["card"],
+    "card_note": "Card processing is NOT live in any currency. Confirmed 2026-08-06. Any surface saying 'pay by card' is wrong.",
+    "prepay_discounts": { "quarterly_pct": 5, "annual_pct": 10 }
+  },
+
+  "invoicing": {
+    "mexico": {
+      "document": "CFDI",
+      "note": "IVA itemized on the CFDI. This is what makes the payment deductible in Mexico."
+    },
+    "outside_mexico": {
+      "document": "itemized commercial invoice",
+      "note": "NOT a CFDI. A CFDI is a Mexican SAT tax receipt and is meaningless to a US buyer. Confirmed by Robert 2026-08-20.",
+      "taxes": "determined in the individual service agreement"
+    }
+  },
+
+  "delivery_timing": {
+    "simple": {
+      "unit": "days",
+      "statement_en": "Simple setups launch in days."
+    },
+    "complex": {
+      "min_weeks": 2,
+      "max_weeks": 6,
+      "statement_en": "More complex integrations typically take 2 to 6 weeks."
+    },
+    "combined_en": "Simple setups launch in days; more complex integrations typically take 2 to 6 weeks.",
+    "combined_es": "Las configuraciones simples se lanzan en días; las integraciones más complejas suelen tomar de 2 a 6 semanas.",
+    "never_say": ["live in days, not weeks", "en vivo en días, no semanas"],
+    "why": "'Days, not weeks' was in the footer of every page, the hero, /about/ and the homepage meta description — while the same homepage showed '2-6 wks - Time to Live'. It promised a timeline some projects cannot hit."
+  }
+}

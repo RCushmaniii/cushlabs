@@ -5,7 +5,7 @@
   "license": "SEE LICENSE IN LICENSE",
   "scripts": {
     "dev": "astro dev",
-    "build": "npm run generate-projects && node scripts/validate-blog-translations.mjs && node scripts/generate-og-images.mjs && astro build && node scripts/seo/meta-description-gate.mjs",
+    "build": "npm run sync:terms && npm run generate-projects && node scripts/validate-blog-translations.mjs && node scripts/generate-og-images.mjs && astro build && node scripts/seo/meta-description-gate.mjs && node scripts/validate-terms.mjs",
     "start": "astro preview",
     "lint": "eslint .",
     "typecheck": "astro sync && tsc --noEmit",
@@ -28,7 +28,9 @@
     "seo:gsc": "node scripts/seo/gsc-submit-urls.mjs --sitemap",
     "seo:gsc:url": "node scripts/seo/gsc-submit-urls.mjs --url",
     "seo:submit": "npm run seo:indexnow && npm run seo:gsc",
-    "audit:docs": "node scripts/audit-docs.mjs"
+    "audit:docs": "node scripts/audit-docs.mjs",
+    "sync:terms": "node scripts/sync-terms.mjs",
+    "validate:terms": "node scripts/validate-terms.mjs"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.10",
