@@ -307,6 +307,51 @@ Documented in CLAUDE.md and memory `feedback_tailwind4_color_collision`. Custom 
 
 ## Session History
 
+## Session: 2026-08-21/22 — Homepage rewritten for the SMB buyer; three overclaims stopped at the door
+
+Robert wrote a new hero line and then a full section-by-section brief for the rest of the page.
+Implemented across PRs #272 and the ones before it, minus the claims that are not shippable.
+
+**The positioning problem being fixed.** Two different CushLabs were competing on one page: the
+simple one the hero establishes ("I put AI to work answering your customers") and a broader
+AI-engineering consultancy talking about RAG, deflection rates, enterprise IT and
+operationalisation. For a Mexican SMB owner the first has to dominate. The sophisticated work is
+still offered — it just no longer interrupts the doorway.
+
+**Three overclaims were stopped before they shipped**, all the same shape as the four incidents that
+produced the capability registry:
+
+- **Instagram** as a live channel, in the hero and again in the services section. Registry says
+  `not_submitted` — no App Review request exists.
+- **WhatsApp** as a customer channel. List 2, held. What is live is the owner alert, a different
+  and true claim.
+- **Comment replies.** Robert proposed pointing the hero demo button at the CushLabs Facebook page
+  so prospects could "try the DM or make a comment." The DM half works. **The comment half cannot** —
+  the Facebook Page comment-handling permissions were rejected 2026-07-31 and carry
+  `do_not_advertise: true`. A prospect commenting would get public silence on Robert's own page.
+
+Each would have contradicted `/pricing/`, which renders both channels in its `soon:` array one
+click away. The first paying client asked for Instagram four hours into day one, so she is exactly
+who would have found it.
+
+**A live promise that contradicted itself.** "Live in days, not weeks" was in the footer on every
+page, in HowItWorks, on /about/, in the hero trust strip, **and in the homepage meta description**,
+so Google was printing it — while SocialProof said "2–6 wks · Time to Live" on the same page. Now
+consistent: simple setups in days, complex integrations 2–6 weeks.
+
+**Also fixed while in there:** the homepage presented WhatsApp reminders as shipped while
+`/whatsapp/` says "Coming soon" twice — it now carries a badge, with its own muted styling because
+the green live-dot treatment made "Coming soon" read as running. The Guarantee's "I'm building my
+practice. You shouldn't carry the risk of that" is gone; it landed immediately after 35+ projects
+and a named testimonial and told the reader the opposite. Portfolio cards translate stack to
+capability. "Deflection rate" is gone. Three of six pain cards were rewritten from
+enterprise-transformation problems to ones a salon owner actually has.
+
+**Flagged and accepted:** the case-study panel lost three of four metrics at Robert's direction,
+leaving one real number. A panel headed "Case Study" carrying a single figure is weaker evidence.
+The slot is waiting in the code if a real leads-captured or appointments-booked figure surfaces.
+
+
 ## Session: 2026-08-18 — Repo-wide audit: contact form was dropping every lead, booking Confirm button was bricked, client proposals found in the public repo
 
 Started as a README date-stamp fix and turned into a four-agent audit (docs staleness, security &
