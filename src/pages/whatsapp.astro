@@ -15,11 +15,22 @@
 //   /admin                  operator console
 // Do not repoint or remove those without re-checking the Meta app settings.
 //
-// CLAIMS BOUNDARY (docs/strategy/ADVERTISED-COMMITMENTS.md): WhatsApp is not
-// on the pricing cards. This page sells it as its own offer and must never
-// imply it is included in Basic / Premium / Ultra. The "Coming soon" framing
-// is accurate — the Meta app is approved but not yet flipped to Live, so
-// self-serve signup is not open.
+// CLAIMS BOUNDARY (docs/strategy/ADVERTISED-COMMITMENTS.md): this page sells
+// WhatsApp as its OWN offer and must never imply it is included in Basic /
+// Premium / Ultra. Those cards carry it under a separate "Coming" pill.
+//
+// UPDATED 2026-08-22. This comment used to say the framing was accurate
+// because "the Meta app is approved but not yet flipped to Live." The app IS
+// live — verified against the Graph API 2026-08-22, app_status "live_mode".
+// It had been live for some time and nobody re-checked, which is why the page
+// spent weeks describing a finished product as unfinished.
+//
+// What IS still true: no genuinely unrelated person has completed the
+// onboarding flow on their own Facebook account, so the capability registry
+// reads reachable_by: robert_only and SELF-SERVE signup must not be promised.
+// Guided setup on a call is the model anyway, and that is what this page now
+// sells. See cushlabs-connect/docs/CLIENT_ONBOARDING_RUNBOOK.md — "the
+// external-user acceptance test".
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Container from "../components/layout/Container.astro";
 import FinalCTA from "../components/services2/FinalCTA.astro";
@@ -30,7 +41,7 @@ const steps = [
   {
     n: "1",
     title: "Connect your WhatsApp Business",
-    desc: "Through Meta's Embedded Signup, in minutes. You keep your number and your account — we never replace them.",
+    desc: "On a 20-minute call, through Meta's official signup. The account is created in your business's name — you keep the number, we never replace it.",
   },
   {
     n: "2",
@@ -45,17 +56,18 @@ const steps = [
 ];
 
 const benefits = [
-  { title: "Fewer no-shows", desc: "Automatic reminders that keep your calendar full." },
-  { title: "Fully automatic", desc: "They send themselves. You focus on your customers." },
+  { title: "Fewer no-shows", desc: "Reminders that send themselves, so your calendar stays full without anyone chasing it." },
+  { title: "The account stays yours", desc: "Your number, your WhatsApp Business account, your contacts — in your business's name from day one. Leave whenever you like and you take all of it with you." },
+  { title: "No markup on messages", desc: "Meta bills you directly, at Meta's published rate. We never add anything on top, and you can see the charges yourself because the account is yours." },
   { title: "In their language", desc: "Natural Mexican Spanish, not robotic translation." },
   { title: "Permission-based", desc: "Double opt-in and instant opt-out. No spam." },
-  { title: "Keep your number", desc: "It's your WhatsApp Business account, not ours." },
   { title: "Nothing to install", desc: "It runs on WhatsApp. Your customers download nothing." },
 ];
 
 const trust = [
-  "Authorized Meta Tech Provider",
-  "Access tokens stored encrypted",
+  "Authorized Meta Tech Provider, working with Meta directly",
+  "Your connection renews itself — you never have to reconnect",
+  "Credentials stored encrypted",
   "Built-in consent and opt-out",
   "Infrastructure hosted on Cloudflare",
   "No data sales or third-party advertising",
@@ -78,7 +90,7 @@ const trust = [
       <div class="max-w-3xl mx-auto text-center py-24 flex flex-col items-center">
         <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-white text-sm font-semibold mb-8 backdrop-blur-sm">
           <span class="w-2 h-2 rounded-full bg-cush-orange animate-pulse"></span>
-          Coming soon
+          Now onboarding · guided setup
         </div>
 
         <h1 class="wa-h1 font-display font-bold text-white">
@@ -209,12 +221,15 @@ const trust = [
   <section class="py-16 md:py-24 bg-gray-50 dark:bg-white/5">
     <Container size="md">
       <div class="text-center max-w-2xl mx-auto">
-        <p class="font-display text-sm font-semibold uppercase tracking-wider text-accent-text mb-4">Coming soon</p>
+        <p class="font-display text-sm font-semibold uppercase tracking-wider text-accent-text mb-4">How to start</p>
         <h2 class="font-display text-fluid-3xl font-bold text-gray-900 dark:text-white mb-6 tracking-tight">
-          We're putting the finishing touches in place.
+          We set it up with you, on one call.
         </h2>
         <p class="text-fluid-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-          Sign-ups open very soon. Want to be among the first to connect your business? Get in touch and we'll let you know the moment it's ready.
+          There is no form to fill out and nothing to configure on your own. We book 20 minutes, connect your WhatsApp Business account together, and you approve it from your side. You leave the call with reminders working.
+        </p>
+        <p class="mt-5 text-fluid-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+          Meta charges for message delivery, billed to your own account at Meta's rate. We tell you what to expect before you commit — not on your first invoice.
         </p>
       </div>
     </Container>
