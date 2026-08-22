@@ -30,7 +30,8 @@
     "seo:submit": "npm run seo:indexnow && npm run seo:gsc",
     "audit:docs": "node scripts/audit-docs.mjs",
     "sync:terms": "node scripts/sync-terms.mjs",
-    "validate:terms": "node scripts/validate-terms.mjs"
+    "validate:terms": "node scripts/validate-terms.mjs",
+    "sync:status": "node ../operating-system/scripts/sync-check.mjs"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.10",
