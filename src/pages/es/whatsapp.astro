@@ -15,11 +15,20 @@
 //   /admin                  consola de operación
 // No las redirijas ni las elimines sin revisar antes la configuración de la app en Meta.
 //
-// LÍMITE DE CLAIMS (docs/strategy/ADVERTISED-COMMITMENTS.md): WhatsApp no está
-// en las tarjetas de precios. Esta página lo vende como su propia oferta y nunca
-// debe dar a entender que está incluido en Basic / Premium / Ultra. El encuadre
-// de "Próximamente" es correcto: la app de Meta está aprobada pero todavía no
-// está en Live, así que el registro autoservicio no está abierto.
+// LÍMITE DE CLAIMS (docs/strategy/ADVERTISED-COMMITMENTS.md): esta página vende
+// WhatsApp como su PROPIA oferta y nunca debe dar a entender que está incluido
+// en Basic / Premium / Ultra.
+//
+// ACTUALIZADO 2026-08-22. Este comentario decía que "Próximamente" era correcto
+// porque la app de Meta "todavía no está en Live". La app SÍ está en live —
+// verificado contra el Graph API el 2026-08-22, app_status "live_mode". Llevaba
+// tiempo así y nadie lo volvió a revisar, por eso la página describió durante
+// semanas un producto terminado como si no lo estuviera.
+//
+// Lo que SÍ sigue siendo cierto: ninguna persona ajena ha completado el flujo
+// con su propia cuenta de Facebook, así que el registro AUTOSERVICIO no se
+// promete. La configuración guiada en una llamada es el modelo de todos modos,
+// y es lo que esta página vende ahora.
 //
 // Español: Mexican Professional Spanish (es-MX).
 import BaseLayout from "../../layouts/BaseLayout.astro";
@@ -32,7 +41,7 @@ const steps = [
   {
     n: "1",
     title: "Conecta tu WhatsApp Business",
-    desc: "Con el registro integrado de Meta, en minutos. Conservas tu número y tu cuenta; nosotros nunca los reemplazamos.",
+    desc: "En una llamada de 20 minutos, con el registro oficial de Meta. La cuenta se crea a nombre de tu negocio: conservas tu número y nosotros nunca lo reemplazamos.",
   },
   {
     n: "2",
@@ -47,17 +56,18 @@ const steps = [
 ];
 
 const benefits = [
-  { title: "Menos inasistencias", desc: "Recordatorios automáticos que mantienen tu agenda llena." },
-  { title: "100% automático", desc: "Se envían solos. Tú te dedicas a atender." },
+  { title: "Menos inasistencias", desc: "Recordatorios que se envían solos, para que tu agenda se mantenga llena sin que nadie ande persiguiendo confirmaciones." },
+  { title: "La cuenta es tuya", desc: "Tu número, tu cuenta de WhatsApp Business y tus contactos, a nombre de tu negocio desde el primer día. Si un día te vas, te llevas todo." },
+  { title: "Sin comisión por mensaje", desc: "Meta te factura directo, a la tarifa que Meta publica. Nosotros no le agregamos nada encima, y tú puedes verlo porque la cuenta es tuya." },
   { title: "En su idioma", desc: "Español mexicano natural, no traducciones robóticas." },
   { title: "Con permiso", desc: "Doble consentimiento y baja inmediata. Nada de spam." },
-  { title: "Conservas tu número", desc: "Es tu cuenta de WhatsApp Business, no la nuestra." },
   { title: "Sin instalar nada", desc: "Funciona sobre WhatsApp. Tus clientes no descargan nada." },
 ];
 
 const trust = [
-  "Proveedor de tecnología autorizado de Meta",
-  "Tokens de acceso guardados cifrados",
+  "Proveedor de tecnología autorizado de Meta, trabajamos directo con Meta",
+  "Tu conexión se renueva sola: nunca tienes que volver a conectarla",
+  "Credenciales guardadas cifradas",
   "Consentimiento y baja (opt-out) integrados",
   "Infraestructura sobre Cloudflare",
   "Sin venta de datos ni publicidad de terceros",
@@ -79,7 +89,7 @@ const trust = [
       <div class="max-w-3xl mx-auto text-center py-24 flex flex-col items-center">
         <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-white text-sm font-semibold mb-8 backdrop-blur-sm">
           <span class="w-2 h-2 rounded-full bg-cush-orange animate-pulse"></span>
-          Próximamente
+          Ya estamos conectando negocios · configuración guiada
         </div>
 
         <h1 class="wa-h1 font-display font-bold text-white">
@@ -210,12 +220,15 @@ const trust = [
   <section class="py-16 md:py-24 bg-gray-50 dark:bg-white/5">
     <Container size="md">
       <div class="text-center max-w-2xl mx-auto">
-        <p class="font-display text-sm font-semibold uppercase tracking-wider text-accent-text mb-4">Próximamente</p>
+        <p class="font-display text-sm font-semibold uppercase tracking-wider text-accent-text mb-4">Cómo empezar</p>
         <h2 class="font-display text-fluid-3xl font-bold text-gray-900 dark:text-white mb-6 tracking-tight">
-          Estamos afinando los últimos detalles.
+          Lo configuramos contigo, en una sola llamada.
         </h2>
         <p class="text-fluid-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-          Muy pronto abrimos el registro. ¿Quieres ser de los primeros en conectar tu negocio? Escríbenos y te avisamos apenas esté listo.
+          No hay formulario que llenar ni nada que configures por tu cuenta. Agendamos 20 minutos, conectamos juntos tu cuenta de WhatsApp Business y tú la autorizas desde tu lado. Sales de la llamada con los recordatorios funcionando.
+        </p>
+        <p class="mt-5 text-fluid-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+          Meta cobra por la entrega de mensajes y lo factura a tu propia cuenta, a su tarifa. Te decimos cuánto esperar antes de que te comprometas, no en tu primera factura.
         </p>
       </div>
     </Container>
