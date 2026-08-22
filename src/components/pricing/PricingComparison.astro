@@ -146,14 +146,14 @@ const copy: Record<
         rows: [
           {
             label: "Utility notifications — appointment reminders, confirmations, order updates (opted-in customers only)",
-            cells: [false, { soon: "500 messages / mo" }, { soon: "2,000 messages / mo" }],
+            cells: [false, { soon: "Up to 500 / mo" }, { soon: "Up to 2,000 / mo" }],
           },
           {
             label: "Additional utility messages",
             cells: [
               "—",
-              { soon: { mxn: "$0.50 MXN each + IVA", usd: "Quoted" } },
-              { soon: { mxn: "$0.50 MXN each + IVA", usd: "Quoted" } },
+              { soon: { mxn: "Billed by Meta at their rate", usd: "Billed by Meta" } },
+              { soon: { mxn: "Billed by Meta at their rate", usd: "Billed by Meta" } },
             ],
           },
           {
@@ -164,8 +164,8 @@ const copy: Record<
             label: "Campaign price",
             cells: [
               "—",
-              { soon: { mxn: "$1,490 + IVA up to 1,000 recipients, plus $0.70 / delivered message", usd: "Quoted per campaign" } },
-              { soon: { mxn: "$1,490 + IVA up to 1,000 recipients, plus $0.70 / delivered message", usd: "Quoted per campaign" } },
+              { soon: { mxn: "$1,490 + IVA up to 1,000 recipients (+$490 per 1,000 more) — Meta bills delivery separately", usd: "Quoted per campaign" } },
+              { soon: { mxn: "$1,490 + IVA up to 1,000 recipients (+$490 per 1,000 more) — Meta bills delivery separately", usd: "Quoted per campaign" } },
             ],
           },
         ],
@@ -309,7 +309,7 @@ const copy: Record<
       },
       {
         q: "What will a WhatsApp campaign cost me?",
-        a: "$1,490 MXN + IVA per campaign for up to 1,000 recipients (+$490 for each additional 1,000), plus $0.70 MXN + IVA per delivered message. You only pay for messages that actually arrive. Full transparency on that per-message rate: Meta charges roughly $0.52 for a marketing message in Mexico on its July 2026 rate card — our $0.70 covers that fee, the delivery, and keeping you inside the rules. If Meta changes its rates, ours move with them and we tell you before they do.",
+        a: "$1,490 MXN + IVA per campaign for up to 1,000 recipients, plus $490 for each additional 1,000. That covers writing the campaign, getting the template approved by Meta, sending it and reporting back on it. Meta charges separately for delivering each message, and that goes on your own WhatsApp account at Meta's published rate — we never add anything on top of it. The account is in your name, so you can see exactly what Meta charged.",
       },
       {
         q: "Do you manage my Facebook recommendations or TripAdvisor reviews too?",
@@ -404,14 +404,14 @@ const copy: Record<
         rows: [
           {
             label: "Notificaciones — recordatorios de cita, confirmaciones y avisos de pedido (solo a clientes que lo autorizaron)",
-            cells: [false, { soon: "500 mensajes / mes" }, { soon: "2,000 mensajes / mes" }],
+            cells: [false, { soon: "Hasta 500 / mes" }, { soon: "Hasta 2,000 / mes" }],
           },
           {
             label: "Mensajes adicionales",
             cells: [
               "—",
-              { soon: { mxn: "$0.50 MXN c/u + IVA", usd: "Se cotiza" } },
-              { soon: { mxn: "$0.50 MXN c/u + IVA", usd: "Se cotiza" } },
+              { soon: { mxn: "Meta te lo factura a su tarifa", usd: "Lo factura Meta" } },
+              { soon: { mxn: "Meta te lo factura a su tarifa", usd: "Lo factura Meta" } },
             ],
           },
           {
@@ -422,8 +422,8 @@ const copy: Record<
             label: "Precio por campaña",
             cells: [
               "—",
-              { soon: { mxn: "$1,490 + IVA hasta 1,000 destinatarios, más $0.70 por mensaje entregado", usd: "Se cotiza por campaña" } },
-              { soon: { mxn: "$1,490 + IVA hasta 1,000 destinatarios, más $0.70 por mensaje entregado", usd: "Se cotiza por campaña" } },
+              { soon: { mxn: "$1,490 + IVA hasta 1,000 destinatarios (+$490 por cada 1,000 más) — Meta factura el envío por separado", usd: "Se cotiza por campaña" } },
+              { soon: { mxn: "$1,490 + IVA hasta 1,000 destinatarios (+$490 por cada 1,000 más) — Meta factura el envío por separado", usd: "Se cotiza por campaña" } },
             ],
           },
         ],
@@ -570,7 +570,7 @@ const copy: Record<
       },
       {
         q: "¿Cuánto me costaría una campaña de WhatsApp?",
-        a: "$1,490 MXN + IVA por campaña hasta 1,000 destinatarios (+$490 por cada 1,000 adicionales), más $0.70 MXN + IVA por mensaje entregado. Solo pagas los mensajes que sí llegan. Transparencia completa sobre esa tarifa por mensaje: Meta cobra alrededor de $0.52 por un mensaje de marketing en México según su tarifa vigente de julio de 2026 — nuestros $0.70 cubren esa tarifa, la entrega y el cumplimiento de las reglas. Si Meta ajusta sus tarifas, las nuestras se mueven con ellas y te avisamos antes.",
+        a: "$1,490 MXN + IVA por campaña hasta 1,000 destinatarios, más $490 por cada 1,000 adicionales. Eso cubre redactar la campaña, conseguir que Meta apruebe la plantilla, enviarla y entregarte el reporte. Meta cobra aparte por entregar cada mensaje: eso se carga a tu propia cuenta de WhatsApp, a la tarifa que Meta publica, y nosotros no le agregamos nada encima. La cuenta está a nombre de tu negocio, así que puedes ver exactamente cuánto cobró Meta.",
       },
       {
         q: "¿También atienden mis recomendaciones de Facebook o mis reseñas de TripAdvisor?",

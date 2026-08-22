@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-15T23:22:33.341Z",
+  "generatedAt": "2026-08-22T18:01:33.889Z",
   "count": 36,
   "projects": [
     {
@@ -50,7 +50,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-08-10T16:48:39Z",
+      "lastPushed": "2026-08-17T18:55:17Z",
       "createdAt": "2025-12-02T07:09:31Z",
       "isFeatured": true,
       "isArchived": false,
@@ -313,15 +313,15 @@
       "status": "Production",
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 856915,
-        "JavaScript": 248549,
+        "TypeScript": 914745,
+        "JavaScript": 260716,
         "PowerShell": 7945,
-        "CSS": 5159,
+        "CSS": 6629,
         "HTML": 1562
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-08-14T14:59:02Z",
+      "lastPushed": "2026-08-19T21:43:40Z",
       "createdAt": "2026-04-06T23:20:56Z",
       "isFeatured": true,
       "isArchived": false,
@@ -625,16 +625,16 @@
       "status": null,
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 1552808,
-        "JavaScript": 63465,
+        "TypeScript": 1616953,
+        "JavaScript": 64230,
         "HTML": 29745,
-        "CSS": 15056,
-        "Shell": 5162,
+        "CSS": 17107,
+        "Shell": 6070,
         "Dockerfile": 2347
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-08-15T23:21:30Z",
+      "lastPushed": "2026-08-22T16:24:54Z",
       "createdAt": "2026-03-30T19:46:00Z",
       "isFeatured": true,
       "isArchived": false,
@@ -914,14 +914,14 @@
       "status": "Production",
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 309616,
-        "HTML": 124023,
-        "JavaScript": 4795,
+        "TypeScript": 427416,
+        "HTML": 132762,
+        "JavaScript": 16838,
         "CSS": 439
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-08-13T14:22:57Z",
+      "lastPushed": "2026-08-22T16:04:10Z",
       "createdAt": "2026-06-13T19:20:38Z",
       "isFeatured": true,
       "isArchived": false,
@@ -1295,7 +1295,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-08-15T22:35:58Z",
+      "lastPushed": "2026-08-16T01:16:06Z",
       "createdAt": "2026-03-17T18:08:51Z",
       "isFeatured": false,
       "isArchived": false,
@@ -2206,7 +2206,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-08-06T03:07:07Z",
+      "lastPushed": "2026-08-18T21:48:13Z",
       "createdAt": "2026-03-08T19:31:57Z",
       "isFeatured": false,
       "isArchived": false,
@@ -2358,7 +2358,7 @@
       },
       "stars": 0,
       "forks": 1,
-      "lastPushed": "2026-08-06T16:46:23Z",
+      "lastPushed": "2026-08-19T15:02:56Z",
       "createdAt": "2026-02-13T18:42:29Z",
       "isFeatured": false,
       "isArchived": false,
@@ -2582,6 +2582,147 @@
       "videoPoster": "https://cdn.cushlabs.ai/ai-filesense/video/AI-FileSense-brief-poster.jpg"
     },
     {
+      "id": 1114660708,
+      "name": "freelance-income-planner",
+      "title": "Freelance Income Planner",
+      "description": "A privacy-first income simulator for freelancers. Instantly see how rate changes, sick days, and taxes impact your real take-home pay. Bill in USD, spend in MXN. Plan for feast or famine. All calculations happen in your browser—your data never leaves your device.",
+      "summary": "description: A bilingual income planning tool for freelancers and consultants.",
+      "url": "https://github.com/RCushmaniii/freelance-income-planner",
+      "demoUrl": "https://freelance-income-planner.vercel.app",
+      "liveUrl": "https://freelance-income-planner.vercel.app",
+      "homepage": "https://freelance-income-planner.vercel.app/",
+      "topics": [
+        "bilingual",
+        "digital-nomad",
+        "freelance",
+        "i18n",
+        "income-calculator",
+        "nextjs",
+        "react",
+        "tailwindcss",
+        "typescript"
+      ],
+      "categories": [
+        "Tools"
+      ],
+      "tags": [
+        "bilingual",
+        "digital-nomad",
+        "freelance",
+        "i18n",
+        "income-calculator",
+        "nextjs",
+        "react",
+        "tailwindcss",
+        "typescript",
+        "privacy-first",
+        "zustand",
+        "recharts",
+        "multi-currency"
+      ],
+      "stack": [
+        "Next.js 14",
+        "TypeScript 5.5",
+        "React 18.3",
+        "Tailwind CSS 3.4",
+        "Zustand 4.4",
+        "Recharts 2.10",
+        "Vercel"
+      ],
+      "status": "Production",
+      "language": "TypeScript",
+      "languages": {
+        "TypeScript": 272945,
+        "CSS": 4579,
+        "JavaScript": 1563
+      },
+      "stars": 0,
+      "forks": 0,
+      "lastPushed": "2026-08-20T14:25:56Z",
+      "createdAt": "2025-12-11T17:38:35Z",
+      "isFeatured": false,
+      "isArchived": false,
+      "isPrivate": false,
+      "tagline": "Privacy-first income simulator — see how rates, taxes, and currencies impact take-home pay",
+      "thumbnail": "https://cdn.cushlabs.ai/freelance-income-planner/images/freelance-income-planner-thumb.jpg",
+      "problem": "Freelancers can't predict take-home pay reliably. Variable hours, shifting tax rates, business expenses, and cross-currency billing make it nearly impossible to answer 'can I afford this lifestyle?' without a spreadsheet. Existing tools either require account creation, send data to servers, or don't handle multi-currency scenarios.",
+      "solution": "A privacy-first bilingual income calculator that runs entirely in the browser. Enter your rate, hours, taxes, and expenses — get an instant breakdown of real take-home pay. Supports 9 currency pair combinations (USD/MXN/EUR), three-scenario forecasting with seasonal modeling, and honest deficit reporting. No login, no database, no cookies.",
+      "keyFeatures": [
+        "Real-time income projections with transparent calculation breakdowns — math updates as you type, no submit button",
+        "Dual-currency engine supporting 9 currency pair combinations (USD/MXN/EUR) with bidirectional conversion",
+        "Three-scenario forecasting — pessimistic, realistic, optimistic with monthly projection charts and runway analysis",
+        "Zero data leaves the browser — 100% client-side computation with localStorage persistence",
+        "Fully bilingual interface (EN/ES) with automatic number formatting per locale"
+      ],
+      "metrics": [
+        "Answers 'what's my real take-home?' in under 30 seconds",
+        "151 edge cases validated in the calculation engine",
+        "9 currency pair combinations (USD/MXN/EUR)",
+        "Zero data transmitted — 100% client-side computation"
+      ],
+      "priority": 18,
+      "dateCompleted": "2026-02",
+      "slides": [
+        {
+          "src": "https://cdn.cushlabs.ai/freelance-income-planner/images/freelance-income-planner-01.png",
+          "altEn": "Freelance Income Planner — financial clarity for independent workers, answering what do I actually take home",
+          "altEs": "Planificador de Ingresos Freelance — claridad financiera para trabajadores independientes, respondiendo cuanto realmente me llevo a casa"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/freelance-income-planner/images/freelance-income-planner-02.png",
+          "altEn": "$100/hr does not equal wealthy — taxes, admin time, expenses, and currency conversion create a fog that hides real earnings",
+          "altEs": "$100/hr no significa ser rico — impuestos, tiempo administrativo, gastos y conversion de moneda crean una niebla que oculta las ganancias reales"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/freelance-income-planner/images/freelance-income-planner-03.png",
+          "altEn": "The tool gap — spreadsheets are fragile, accounting software is backward-looking, online calculators are too simple",
+          "altEs": "La brecha de herramientas — las hojas de calculo son fragiles, el software contable mira al pasado, las calculadoras en linea son demasiado simples"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/freelance-income-planner/images/freelance-income-planner-04.png",
+          "altEn": "No login, no loading — no signup wall, no onboarding carousel, no database, no cookies, clarity without ceremony",
+          "altEs": "Sin login, sin carga — sin muro de registro, sin carrusel de onboarding, sin base de datos, sin cookies, claridad sin ceremonias"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/freelance-income-planner/images/freelance-income-planner-05.png",
+          "altEn": "The Snapshot — sensible defaults pre-filled, math updates as you type, proof the tool works in 30 seconds",
+          "altEs": "La Instantanea — valores predeterminados sensatos, las matematicas se actualizan al escribir, prueba de que la herramienta funciona en 30 segundos"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/freelance-income-planner/images/freelance-income-planner-06.png",
+          "altEn": "The Reality Check — pre-tax logic shows how business expenses reduce taxable income, revealing effective hourly rate of $68/hr on a $100/hr billed rate",
+          "altEs": "La Verificacion de Realidad — la logica pre-impuestos muestra como los gastos de negocio reducen el ingreso gravable, revelando una tarifa efectiva de $68/hr sobre una tarifa facturada de $100/hr"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/freelance-income-planner/images/freelance-income-planner-07.png",
+          "altEn": "Modeling the future — drag the slider to test rate increases from -20% to +50% and instantly see the impact on annual net",
+          "altEs": "Modelando el futuro — arrastra el slider para probar aumentos de tarifa de -20% a +50% y ver al instante el impacto en el neto anual"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/freelance-income-planner/images/freelance-income-planner-08.png",
+          "altEn": "Earn in one currency, live in another — dual-currency engine with 9 combinations showing real purchasing power in your local currency",
+          "altEs": "Gana en una moneda, vive en otra — motor de doble moneda con 9 combinaciones mostrando poder adquisitivo real en tu moneda local"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/freelance-income-planner/images/freelance-income-planner-09.png",
+          "altEn": "Freelancing is seasonal — three-scenario planning with monthly projection charts modeling feast and famine cycles and savings runway",
+          "altEs": "El freelance es estacional — planificacion de tres escenarios con graficos de proyeccion mensual modelando ciclos de abundancia y escasez y pista de ahorros"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/freelance-income-planner/images/freelance-income-planner-10.png",
+          "altEn": "Engineered for reliability — deterministic math validated against 151 edge cases, fully bilingual with automatic number formatting",
+          "altEs": "Disenado para confiabilidad — matematicas deterministas validadas contra 151 casos limite, completamente bilingue con formato numerico automatico"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/freelance-income-planner/images/freelance-income-planner-11.png",
+          "altEn": "Who is this for — hourly freelancers, cross-border workers earning in USD living in MXN/EUR, privacy advocates, and agency owners",
+          "altEs": "Para quien es — freelancers por hora, trabajadores transfronterizos que ganan en USD y viven en MXN/EUR, defensores de la privacidad y duenos de agencias"
+        }
+      ],
+      "videoUrl": "https://cdn.cushlabs.ai/freelance-income-planner/video/freelance-income-planner-brief.mp4",
+      "videoPoster": "https://cdn.cushlabs.ai/freelance-income-planner/video/freelance-income-planner-brief-poster.jpg"
+    },
+    {
       "id": 1117217007,
       "name": "ai-webscraper",
       "title": "AI-Powered Web Scraper & SEO Analyzer",
@@ -2694,147 +2835,6 @@
       ],
       "videoUrl": "https://cdn.cushlabs.ai/ai-webscraper/video/ai-webscraper-brief.mp4",
       "videoPoster": "https://cdn.cushlabs.ai/ai-webscraper/images/portfolio/ai-webscraper-brief-poster.webp"
-    },
-    {
-      "id": 1114660708,
-      "name": "freelance-income-planner",
-      "title": "Freelance Income Planner",
-      "description": "A privacy-first income simulator for freelancers. Instantly see how rate changes, sick days, and taxes impact your real take-home pay. Bill in USD, spend in MXN. Plan for feast or famine. All calculations happen in your browser—your data never leaves your device.",
-      "summary": "description: A bilingual income planning tool for freelancers and consultants.",
-      "url": "https://github.com/RCushmaniii/freelance-income-planner",
-      "demoUrl": "https://freelance-income-planner.vercel.app",
-      "liveUrl": "https://freelance-income-planner.vercel.app",
-      "homepage": "https://freelance-income-planner.vercel.app/",
-      "topics": [
-        "bilingual",
-        "digital-nomad",
-        "freelance",
-        "i18n",
-        "income-calculator",
-        "nextjs",
-        "react",
-        "tailwindcss",
-        "typescript"
-      ],
-      "categories": [
-        "Tools"
-      ],
-      "tags": [
-        "bilingual",
-        "digital-nomad",
-        "freelance",
-        "i18n",
-        "income-calculator",
-        "nextjs",
-        "react",
-        "tailwindcss",
-        "typescript",
-        "privacy-first",
-        "zustand",
-        "recharts",
-        "multi-currency"
-      ],
-      "stack": [
-        "Next.js 14",
-        "TypeScript 5.5",
-        "React 18.3",
-        "Tailwind CSS 3.4",
-        "Zustand 4.4",
-        "Recharts 2.10",
-        "Vercel"
-      ],
-      "status": "Production",
-      "language": "TypeScript",
-      "languages": {
-        "TypeScript": 272945,
-        "CSS": 4579,
-        "JavaScript": 1563
-      },
-      "stars": 0,
-      "forks": 0,
-      "lastPushed": "2026-08-11T18:43:14Z",
-      "createdAt": "2025-12-11T17:38:35Z",
-      "isFeatured": false,
-      "isArchived": false,
-      "isPrivate": false,
-      "tagline": "Privacy-first income simulator — see how rates, taxes, and currencies impact take-home pay",
-      "thumbnail": "https://cdn.cushlabs.ai/freelance-income-planner/images/freelance-income-planner-thumb.jpg",
-      "problem": "Freelancers can't predict take-home pay reliably. Variable hours, shifting tax rates, business expenses, and cross-currency billing make it nearly impossible to answer 'can I afford this lifestyle?' without a spreadsheet. Existing tools either require account creation, send data to servers, or don't handle multi-currency scenarios.",
-      "solution": "A privacy-first bilingual income calculator that runs entirely in the browser. Enter your rate, hours, taxes, and expenses — get an instant breakdown of real take-home pay. Supports 9 currency pair combinations (USD/MXN/EUR), three-scenario forecasting with seasonal modeling, and honest deficit reporting. No login, no database, no cookies.",
-      "keyFeatures": [
-        "Real-time income projections with transparent calculation breakdowns — math updates as you type, no submit button",
-        "Dual-currency engine supporting 9 currency pair combinations (USD/MXN/EUR) with bidirectional conversion",
-        "Three-scenario forecasting — pessimistic, realistic, optimistic with monthly projection charts and runway analysis",
-        "Zero data leaves the browser — 100% client-side computation with localStorage persistence",
-        "Fully bilingual interface (EN/ES) with automatic number formatting per locale"
-      ],
-      "metrics": [
-        "Answers 'what's my real take-home?' in under 30 seconds",
-        "151 edge cases validated in the calculation engine",
-        "9 currency pair combinations (USD/MXN/EUR)",
-        "Zero data transmitted — 100% client-side computation"
-      ],
-      "priority": 18,
-      "dateCompleted": "2026-02",
-      "slides": [
-        {
-          "src": "https://cdn.cushlabs.ai/freelance-income-planner/images/freelance-income-planner-01.png",
-          "altEn": "Freelance Income Planner — financial clarity for independent workers, answering what do I actually take home",
-          "altEs": "Planificador de Ingresos Freelance — claridad financiera para trabajadores independientes, respondiendo cuanto realmente me llevo a casa"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/freelance-income-planner/images/freelance-income-planner-02.png",
-          "altEn": "$100/hr does not equal wealthy — taxes, admin time, expenses, and currency conversion create a fog that hides real earnings",
-          "altEs": "$100/hr no significa ser rico — impuestos, tiempo administrativo, gastos y conversion de moneda crean una niebla que oculta las ganancias reales"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/freelance-income-planner/images/freelance-income-planner-03.png",
-          "altEn": "The tool gap — spreadsheets are fragile, accounting software is backward-looking, online calculators are too simple",
-          "altEs": "La brecha de herramientas — las hojas de calculo son fragiles, el software contable mira al pasado, las calculadoras en linea son demasiado simples"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/freelance-income-planner/images/freelance-income-planner-04.png",
-          "altEn": "No login, no loading — no signup wall, no onboarding carousel, no database, no cookies, clarity without ceremony",
-          "altEs": "Sin login, sin carga — sin muro de registro, sin carrusel de onboarding, sin base de datos, sin cookies, claridad sin ceremonias"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/freelance-income-planner/images/freelance-income-planner-05.png",
-          "altEn": "The Snapshot — sensible defaults pre-filled, math updates as you type, proof the tool works in 30 seconds",
-          "altEs": "La Instantanea — valores predeterminados sensatos, las matematicas se actualizan al escribir, prueba de que la herramienta funciona en 30 segundos"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/freelance-income-planner/images/freelance-income-planner-06.png",
-          "altEn": "The Reality Check — pre-tax logic shows how business expenses reduce taxable income, revealing effective hourly rate of $68/hr on a $100/hr billed rate",
-          "altEs": "La Verificacion de Realidad — la logica pre-impuestos muestra como los gastos de negocio reducen el ingreso gravable, revelando una tarifa efectiva de $68/hr sobre una tarifa facturada de $100/hr"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/freelance-income-planner/images/freelance-income-planner-07.png",
-          "altEn": "Modeling the future — drag the slider to test rate increases from -20% to +50% and instantly see the impact on annual net",
-          "altEs": "Modelando el futuro — arrastra el slider para probar aumentos de tarifa de -20% a +50% y ver al instante el impacto en el neto anual"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/freelance-income-planner/images/freelance-income-planner-08.png",
-          "altEn": "Earn in one currency, live in another — dual-currency engine with 9 combinations showing real purchasing power in your local currency",
-          "altEs": "Gana en una moneda, vive en otra — motor de doble moneda con 9 combinaciones mostrando poder adquisitivo real en tu moneda local"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/freelance-income-planner/images/freelance-income-planner-09.png",
-          "altEn": "Freelancing is seasonal — three-scenario planning with monthly projection charts modeling feast and famine cycles and savings runway",
-          "altEs": "El freelance es estacional — planificacion de tres escenarios con graficos de proyeccion mensual modelando ciclos de abundancia y escasez y pista de ahorros"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/freelance-income-planner/images/freelance-income-planner-10.png",
-          "altEn": "Engineered for reliability — deterministic math validated against 151 edge cases, fully bilingual with automatic number formatting",
-          "altEs": "Disenado para confiabilidad — matematicas deterministas validadas contra 151 casos limite, completamente bilingue con formato numerico automatico"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/freelance-income-planner/images/freelance-income-planner-11.png",
-          "altEn": "Who is this for — hourly freelancers, cross-border workers earning in USD living in MXN/EUR, privacy advocates, and agency owners",
-          "altEs": "Para quien es — freelancers por hora, trabajadores transfronterizos que ganan en USD y viven en MXN/EUR, defensores de la privacidad y duenos de agencias"
-        }
-      ],
-      "videoUrl": "https://cdn.cushlabs.ai/freelance-income-planner/video/freelance-income-planner-brief.mp4",
-      "videoPoster": "https://cdn.cushlabs.ai/freelance-income-planner/video/freelance-income-planner-brief-poster.jpg"
     },
     {
       "id": 1171395937,
@@ -3262,7 +3262,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-08-06T16:46:33Z",
+      "lastPushed": "2026-08-19T19:23:17Z",
       "createdAt": "2026-02-13T19:55:19Z",
       "isFeatured": false,
       "isArchived": false,
@@ -3340,7 +3340,7 @@
       "name": "cushlabs",
       "title": "CushLabs.ai",
       "description": "AI consulting and software development for SMBs — bilingual (EN/ES) site built with Astro + Tailwind CSS",
-      "summary": "> AI consulting and software development for SMBs. Bilingual (EN/ES) business site with automated GitHub portfolio sync and serverless booking.",
+      "summary": "MAINTAINERS / AI ASSISTANTS — source of truth lives in the private operating-system repo:",
       "url": "https://github.com/RCushmaniii/cushlabs",
       "demoUrl": "https://cushlabs.ai",
       "liveUrl": "https://cushlabs.ai",
@@ -3384,16 +3384,16 @@
       "status": null,
       "language": "Astro",
       "languages": {
-        "Astro": 993783,
-        "TypeScript": 391292,
-        "JavaScript": 155760,
+        "Astro": 966837,
+        "TypeScript": 389296,
+        "JavaScript": 170506,
         "HTML": 61067,
         "Python": 6606,
-        "CSS": 4702
+        "CSS": 6568
       },
       "stars": 3,
       "forks": 0,
-      "lastPushed": "2026-08-15T23:12:59Z",
+      "lastPushed": "2026-08-22T17:54:55Z",
       "createdAt": "2026-01-08T03:52:43Z",
       "isFeatured": false,
       "isArchived": false,
@@ -4035,7 +4035,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-08-12T03:28:02Z",
+      "lastPushed": "2026-08-20T20:01:10Z",
       "createdAt": "2026-01-13T22:16:37Z",
       "isFeatured": false,
       "isArchived": false,
@@ -4487,7 +4487,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-08-12T02:03:39Z",
+      "lastPushed": "2026-08-20T14:39:56Z",
       "createdAt": "2025-12-18T20:18:05Z",
       "isFeatured": false,
       "isArchived": false,
@@ -4613,7 +4613,7 @@
         "CSS": 3819
       },
       "stars": 2,
-      "forks": 0,
+      "forks": 1,
       "lastPushed": "2026-08-09T12:37:14Z",
       "createdAt": "2025-10-02T22:40:01Z",
       "isFeatured": false,
