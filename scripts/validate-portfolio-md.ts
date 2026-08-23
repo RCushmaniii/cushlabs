@@ -24,20 +24,27 @@
  *   npx tsx scripts/validate-portfolio-md.ts --fix    # auto-fix duplicate health_status
  */
 
-import { readFileSync, existsSync, readdirSync, statSync, writeFileSync } from 'fs';
-import { join, dirname } from 'path';
-import { fileURLToPath } from 'url';
-import matter from 'gray-matter';
+import {
+  readFileSync,
+  existsSync,
+  readdirSync,
+  statSync,
+  writeFileSync,
+} from "fs";
+import { execFileSync } from "child_process";
+import { join, dirname } from "path";
+import { fileURLToPath } from "url";
+import matter from "gray-matter";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
-const PROJECTS_ROOT = join(__dirname, '..', '..');
-const FIX_MODE = process.argv.includes('--fix');
+const PROJECTS_ROOT = join(__dirname, "..", "..");
+const FIX_MODE = process.argv.includes("--fix");
 
 interface Issue {
   repo: string;
   file: string;
-  level: 'error' | 'warning';
+  level: "error" | "warning";
   message: string;
   fixable: boolean;
 }
@@ -45,16 +52,15 @@ interface Issue {
 const issues: Issue[] = [];
 
 function listRepoDirs(): string[] {
-  return readdirSync(PROJECTS_ROOT)
-    .filter((name) => {
-      if (name.startsWith('.')) return false;
-      const full = join(PROJECTS_ROOT, name);
-      try {
-        return statSync(full).isDirectory();
-      } catch {
-        return false;
-      }
-    });
+  return readdirSync(PROJECTS_ROOT).filter((name) => {
+    if (name.startsWith(".")) return false;
+    const full = join(PROJECTS_ROOT, name);
+    try {
+      return statSync(full).isDirectory();
+    } catch {
+      return false;
+    }
+  });
 }
 
 /**
@@ -71,17 +77,51 @@ function listRepoDirs(): string[] {
  * two names are different files. A convention that only holds on one developer's
  * machine is not a convention.
  */
-function findPortfolioMd(repoDir: string): { path: string; lowercase: boolean } | null {
-  const upper = join(PROJECTS_ROOT, repoDir, 'PORTFOLIO.md');
+function findPortfolioMd(
+  repoDir: string,
+): { path: string; lowercase: boolean } | null {
+  const upper = join(PROJECTS_ROOT, repoDir, "PORTFOLIO.md");
   if (existsSync(upper)) {
-    // On a case-insensitive filesystem existsSync(upper) is true even when the
-    // file on disk is lowercase, so ask the directory what it is really called.
-    const actual = readdirSync(join(PROJECTS_ROOT, repoDir)).find(
-      (f) => f.toLowerCase() === 'portfolio.md',
+    // Two different questions, and the second one is the one that matters.
+    //
+    // existsSync('PORTFOLIO.md') is true on Windows even when the file on disk
+    // is lowercase, so first ask the DIRECTORY what the entry is really called.
+    const onDisk = readdirSync(join(PROJECTS_ROOT, repoDir)).find(
+      (f) => f.toLowerCase() === "portfolio.md",
     );
-    return { path: upper, lowercase: actual !== 'PORTFOLIO.md' };
+
+    // Then ask GIT, because CI does not check out this disk -- it checks out
+    // the index. A case-only rename can land on disk while the index still
+    // holds the old spelling, and git reports the tree CLEAN because Windows
+    // cannot tell the two apart. That exact state was found in
+    // cushlabs-whatsapp on 2026-08-22: disk PORTFOLIO.md, index portfolio.md,
+    // status clean, and a disk-only check called it fine. On Linux CI that
+    // repo would still have produced a lowercase file.
+    let inGit: string | undefined;
+    try {
+      inGit = execFileSync(
+        "git",
+        ["ls-files", "--", "PORTFOLIO.md", "portfolio.md"],
+        {
+          cwd: join(PROJECTS_ROOT, repoDir),
+          encoding: "utf8",
+          stdio: ["ignore", "pipe", "ignore"],
+        },
+      )
+        .split(/\r?\n/)
+        .map((l) => l.trim())
+        .filter(Boolean)[0];
+    } catch {
+      // Not a git repo, or git unavailable. The disk answer is all there is,
+      // and that is reported rather than silently treated as a pass.
+      inGit = undefined;
+    }
+
+    const wrongOnDisk = onDisk !== "PORTFOLIO.md";
+    const wrongInGit = inGit !== undefined && inGit !== "PORTFOLIO.md";
+    return { path: upper, lowercase: wrongOnDisk || wrongInGit };
   }
-  const lower = join(PROJECTS_ROOT, repoDir, 'portfolio.md');
+  const lower = join(PROJECTS_ROOT, repoDir, "portfolio.md");
   if (existsSync(lower)) return { path: lower, lowercase: true };
   return null;
 }
@@ -98,7 +138,7 @@ function findDuplicateTopLevelKeys(content: string): string[] {
   const fm = fmMatch[1];
   const seen = new Set<string>();
   const dupes = new Set<string>();
-  for (const line of fm.split('\n')) {
+  for (const line of fm.split("\n")) {
     // Top-level key = no leading whitespace, ends in colon
     const m = line.match(/^([A-Za-z_][A-Za-z0-9_-]*):\s*(.*)?$/);
     if (!m) continue;
@@ -114,7 +154,7 @@ function findDuplicateTopLevelKeys(content: string): string[] {
  * and any indented lines that belong to it.
  */
 function autoFixDuplicateKey(content: string, key: string): string {
-  const lines = content.split('\n');
+  const lines = content.split("\n");
   const indices: number[] = [];
   for (let i = 0; i < lines.length; i++) {
     if (new RegExp(`^${key}:\\s*$`).test(lines[i])) indices.push(i);
@@ -129,12 +169,12 @@ function autoFixDuplicateKey(content: string, key: string): string {
     end = i;
   }
   lines.splice(start, end - start + 1);
-  return lines.join('\n');
+  return lines.join("\n");
 }
 
 function validateFile(repo: string, filepath: string): void {
   const filename = filepath.split(/[\\/]/).pop()!;
-  let content = readFileSync(filepath, 'utf-8');
+  let content = readFileSync(filepath, "utf-8");
 
   // Pre-check: duplicate top-level keys
   const dupes = findDuplicateTopLevelKeys(content);
@@ -144,13 +184,15 @@ function validateFile(repo: string, filepath: string): void {
         content = autoFixDuplicateKey(content, key);
       }
       writeFileSync(filepath, content);
-      console.log(`  🔧 FIXED ${repo}/${filename}: removed duplicate ${dupes.join(', ')}`);
+      console.log(
+        `  🔧 FIXED ${repo}/${filename}: removed duplicate ${dupes.join(", ")}`,
+      );
     } else {
       issues.push({
         repo,
         file: filename,
-        level: 'error',
-        message: `Duplicate top-level YAML key(s): ${dupes.join(', ')}. Run with --fix to auto-resolve.`,
+        level: "error",
+        message: `Duplicate top-level YAML key(s): ${dupes.join(", ")}. Run with --fix to auto-resolve.`,
         fixable: true,
       });
       return;
@@ -165,8 +207,8 @@ function validateFile(repo: string, filepath: string): void {
       issues.push({
         repo,
         file: filename,
-        level: 'warning',
-        message: 'portfolio_enabled but no thumbnail field set',
+        level: "warning",
+        message: "portfolio_enabled but no thumbnail field set",
         fixable: false,
       });
     }
@@ -174,7 +216,7 @@ function validateFile(repo: string, filepath: string): void {
     issues.push({
       repo,
       file: filename,
-      level: 'error',
+      level: "error",
       message: `YAML parse failed: ${(err as Error).message}`,
       fixable: false,
     });
@@ -182,7 +224,7 @@ function validateFile(repo: string, filepath: string): void {
 }
 
 // ── Main ────────────────────────────────────────────────────────────
-console.log('🔍 Validating PORTFOLIO.md files across all sibling repos...\n');
+console.log("🔍 Validating PORTFOLIO.md files across all sibling repos...\n");
 
 const repos = listRepoDirs();
 let scanned = 0;
@@ -192,12 +234,12 @@ for (const repo of repos) {
   scanned++;
   if (found.lowercase) {
     issues.push({
-      level: 'error',
+      level: "error",
       repo,
-      file: 'portfolio.md',
+      file: "portfolio.md",
       message:
-        'filename must be PORTFOLIO.md (uppercase). ' +
-        'Rename with: git mv portfolio.md tmp.md && git mv tmp.md PORTFOLIO.md',
+        "filename must be PORTFOLIO.md (uppercase). " +
+        "Rename with: git mv portfolio.md tmp.md && git mv tmp.md PORTFOLIO.md",
     });
   }
   validateFile(repo, found.path);
@@ -205,8 +247,8 @@ for (const repo of repos) {
 
 console.log(`\n📊 Scanned ${scanned} PORTFOLIO.md files`);
 
-const errors = issues.filter((i) => i.level === 'error');
-const warnings = issues.filter((i) => i.level === 'warning');
+const errors = issues.filter((i) => i.level === "error");
+const warnings = issues.filter((i) => i.level === "warning");
 
 if (errors.length > 0) {
   console.error(`\n❌ ${errors.length} ERROR(S):\n`);
@@ -223,11 +265,13 @@ if (warnings.length > 0) {
 }
 
 if (errors.length === 0 && warnings.length === 0) {
-  console.log('✅ All PORTFOLIO.md files valid');
+  console.log("✅ All PORTFOLIO.md files valid");
 }
 
 // Fail the build on any error
 if (errors.length > 0) {
-  console.error('\n💥 Validation failed. Fix the errors above (or run with --fix) before regenerating projects.');
+  console.error(
+    "\n💥 Validation failed. Fix the errors above (or run with --fix) before regenerating projects.",
+  );
   process.exit(1);
 }
