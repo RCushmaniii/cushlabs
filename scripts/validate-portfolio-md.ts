@@ -57,11 +57,32 @@ function listRepoDirs(): string[] {
     });
 }
 
-function findPortfolioMd(repoDir: string): string | null {
-  for (const filename of ['PORTFOLIO.md', 'portfolio.md']) {
-    const fp = join(PROJECTS_ROOT, repoDir, filename);
-    if (existsSync(fp)) return fp;
+/**
+ * The filename is PORTFOLIO.md, uppercase, always.
+ *
+ * Lowercase is still FOUND -- generate-projects.ts accepts both, and silently
+ * skipping a repo would be worse than a wrong name -- but it is now an ERROR
+ * rather than a convention nobody enforces. Two of 66 repos had drifted to
+ * lowercase by 2026-08-22 and nothing anywhere said so.
+ *
+ * Case matters more than it looks on Windows. The filesystem is
+ * case-insensitive, so a lowercase file answers to either name locally and the
+ * drift is invisible; CI and any Linux container are case-SENSITIVE, where the
+ * two names are different files. A convention that only holds on one developer's
+ * machine is not a convention.
+ */
+function findPortfolioMd(repoDir: string): { path: string; lowercase: boolean } | null {
+  const upper = join(PROJECTS_ROOT, repoDir, 'PORTFOLIO.md');
+  if (existsSync(upper)) {
+    // On a case-insensitive filesystem existsSync(upper) is true even when the
+    // file on disk is lowercase, so ask the directory what it is really called.
+    const actual = readdirSync(join(PROJECTS_ROOT, repoDir)).find(
+      (f) => f.toLowerCase() === 'portfolio.md',
+    );
+    return { path: upper, lowercase: actual !== 'PORTFOLIO.md' };
   }
+  const lower = join(PROJECTS_ROOT, repoDir, 'portfolio.md');
+  if (existsSync(lower)) return { path: lower, lowercase: true };
   return null;
 }
 
@@ -166,10 +187,20 @@ console.log('🔍 Validating PORTFOLIO.md files across all sibling repos...\n');
 const repos = listRepoDirs();
 let scanned = 0;
 for (const repo of repos) {
-  const fp = findPortfolioMd(repo);
-  if (!fp) continue;
+  const found = findPortfolioMd(repo);
+  if (!found) continue;
   scanned++;
-  validateFile(repo, fp);
+  if (found.lowercase) {
+    issues.push({
+      level: 'error',
+      repo,
+      file: 'portfolio.md',
+      message:
+        'filename must be PORTFOLIO.md (uppercase). ' +
+        'Rename with: git mv portfolio.md tmp.md && git mv tmp.md PORTFOLIO.md',
+    });
+  }
+  validateFile(repo, found.path);
 }
 
 console.log(`\n📊 Scanned ${scanned} PORTFOLIO.md files`);
