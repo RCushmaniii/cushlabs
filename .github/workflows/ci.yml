@@ -29,6 +29,14 @@ jobs:
       # Runs before the build so a lint or type error fails fast. This step is the
       # reason the gate stays green: `npm run check` sat at 26 errors on main for an
       # unknown stretch precisely because nothing here ran it.
+      # Runs before anything else and on every PR: the cheapest moment to stop a
+      # credential is before it is pushed. A live MySQL password sat in this repo's
+      # history from the v1.0.0 redesign until GitGuardian found it on 2026-08-22 —
+      # nine months, in a public repo, with the host still up.
+      # Working tree only; the full-history sweep is `npm run audit:secrets:history`.
+      - name: Secret scan
+        run: npm run audit:secrets
+
       - name: Lint + typecheck
         run: npm run check
       - name: Build
