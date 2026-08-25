@@ -240,6 +240,9 @@ for (const repo of repos) {
       message:
         "filename must be PORTFOLIO.md (uppercase). " +
         "Rename with: git mv portfolio.md tmp.md && git mv tmp.md PORTFOLIO.md",
+      // Required by Issue. Not auto-fixable: renaming a file in a SIBLING repo is that
+      // repo's change to make, and --fix must never reach outside this one.
+      fixable: false,
     });
   }
   validateFile(repo, found.path);
