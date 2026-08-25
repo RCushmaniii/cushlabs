@@ -722,7 +722,7 @@ Before ending any session, verify:
 
 | Canonical file | Owns | Reconciled at |
 | --- | --- | --- |
-| `operating-system/strategy/clients.json` | Who is paying, what they bill, what they cost to serve. **(internal — never quote to a client)** | `1a598672440f` |
+| `operating-system/strategy/clients.json` | Who is paying, what they bill, what they cost to serve. **(internal — never quote to a client)** | `f94ec5e0ec9b` |
 | `operating-system/cushlabs/capability-registry.json` | Every platform approval, entitlement and quota, and whether a client can actually reach it. **(internal — never quote to a client)** | `84f05ba7e7e2` |
 | `operating-system/cushlabs/commercial-terms.json` | Price, trial, cancellation, billing, invoicing and delivery timing. | `28f605b12df6` |
 | `operating-system/cushlabs/claims-policy.json` | The claims ladder and the banned absolutes. | `86104fc2fa46` |
