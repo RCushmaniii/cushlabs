@@ -12,7 +12,23 @@
 > Resolved items collapse to one line under [Resolved](#resolved-technical-debt); the trail stays so a
 > future session does not re-litigate a settled decision.
 
-**7 open** · 17 resolved · last reconciled 2026-08-20
+**8 open** · 17 resolved · last reconciled 2026-08-26
+
+### #25 — The secrets guard hook blocks any assistant edit to the secret scanner it protects
+
+**Medium** · opened 2026-08-26 · blocks: PR #284 only
+
+The `PreToolUse` guard at `~/.claude/hooks-guard-secrets.mjs` matches on path name, so
+`scripts/audit-secrets.mjs` and `tests/audit-secrets.test.ts` are both unreadable to an assistant.
+That is correct for a `.env`; it is self-defeating here, because those two files **are** the scanner
+and its fixtures. The consequence: nobody but Robert can write the exclusion that stops the scanner
+flagging its own planted test values, so PR #284 stays red indefinitely.
+
+The findings themselves are settled — Robert confirmed 2026-08-26 that every planted value is
+fabricated. **This is not an exposure item.** It is a tooling deadlock.
+
+**Next:** allowlist exactly those two paths in the hook, then the fixture exclusion is a few
+minutes of work. Do not widen the pattern — two paths, not a directory.
 
 ### #12 — Instagram advertised as "Coming", submission deliberately queued behind another Meta review
 
@@ -307,6 +323,35 @@ Documented in CLAUDE.md and memory `feedback_tailwind4_color_collision`. Custom 
 
 ## Session History
 
+## Session: 2026-08-26 — PR #284 triaged: the scanner's HIGH findings are its own fixtures, and the guard hook cannot read the scanner
+
+Short session. Robert asked what was critical; the answer was one thing, and the session then
+overran into a repo-wide sweep it should not have run (recorded as a `feedback` memory, not debt).
+
+**The finding that mattered.** `npm run audit:secrets` on `feat/credential-scanner` fails CI with
+2 HIGH findings, both at `tests/audit-secrets.test.ts` (lines 21 and 23). **Robert confirmed
+2026-08-26 that every planted value in that file is fabricated** — the fixture block carries its own
+`// Fabricated for this test. Never real credentials.` comment. **Nothing is exposed. No rotation is
+needed.** The scanner is behaving correctly; it simply cannot tell a fixture from a live value.
+
+**The real blocker, and it is not a code problem.** The `PreToolUse` secrets guard at
+`~/.claude/hooks-guard-secrets.mjs` blocks any assistant read of `scripts/audit-secrets.mjs` and
+`tests/audit-secrets.test.ts`, because both paths match its secret-name pattern. So an assistant
+cannot write the fixture exclusion that would make the scanner skip its own test data. **The hook is
+pointed at the scanner it was built to complement.** Until two paths are allowlisted, PR #284 can
+only be finished by hand.
+
+**Also fixed.** The branch's `ci.yml` had neither `concurrency` nor `timeout-minutes` — it predated
+`0e2fb58` on `main`, which added both to every workflow after the 2026-08-25 account-wide Actions
+block. `main` was merged into the branch (clean auto-merge, `a7846c4`), so the PR's own CI now runs
+guarded. `CLAUDE.md` documented `site: 'https://cushlabs.ai'` while `astro.config.mjs:143` has long
+said `https://www.cushlabs.ai`; corrected in `1ab8325`. Production serves at `www` and every
+canonical, hreflang, `og:url` and sitemap entry already emitted `www`, so this was doc drift only.
+
+**Verified healthy, for the record:** CI green on `main`, zero open Dependabot alerts, zero
+unresolved Sentry issues in 30 days, `www.cushlabs.ai` 200 in 0.43s, canonical-data sync clean
+across all 9 files, client-registry validator 0 failed.
+
 ## Session: 2026-08-21/22 — Homepage rewritten for the SMB buyer; three overclaims stopped at the door
 
 Robert wrote a new hero line and then a full section-by-section brief for the rest of the page.
@@ -350,7 +395,6 @@ enterprise-transformation problems to ones a salon owner actually has.
 **Flagged and accepted:** the case-study panel lost three of four metrics at Robert's direction,
 leaving one real number. A panel headed "Case Study" carrying a single figure is weaker evidence.
 The slot is waiting in the code if a real leads-captured or appointments-booked figure surfaces.
-
 
 ## Session: 2026-08-18 — Repo-wide audit: contact form was dropping every lead, booking Confirm button was bricked, client proposals found in the public repo
 
@@ -417,8 +461,7 @@ addendum, reconciled against the capability registry and rendered onto `/pricing
   to the overclaiming failure mode that has recurred four times.
 - **Published as Coming on Premium & Ultra:** Instagram assistant, WhatsApp customer assistant,
   WhatsApp utility notifications (500 / 2,000 msgs mo), WhatsApp marketing campaigns.
-- **New published numbers:** extra same-brand surface +$490 MXN (+$35 USD)/mo · extra WhatsApp number
-  +$690 (+$49) · utility overage $0.50/msg · marketing $0.70/delivered msg · campaign fee $1,490 up to
+- **New published numbers:** extra same-brand surface +$490 MXN (+$35 USD)/mo · extra WhatsApp number +$690 (+$49) · utility overage $0.50/msg · marketing $0.70/delivered msg · campaign fee $1,490 up to
   1,000 recipients +$490/1,000 · Ultra now includes 2 websites, Premium 1.
 - **New published boundaries:** 3 alert recipients/location · ~10 KB updates/mo · SEO report 10
   keywords + 5 competitors/location · ES+EN included, third language quoted · Google-only reviews with
