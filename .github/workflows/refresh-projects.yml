@@ -19,6 +19,9 @@ concurrency:
 jobs:
   refresh:
     runs-on: ubuntu-latest
+    # Default is 360 minutes. One hung job would eat a fifth of the
+    # monthly allowance before anyone noticed.
+    timeout-minutes: 10
     permissions:
       contents: write
 
