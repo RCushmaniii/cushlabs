@@ -162,7 +162,7 @@ When working on copy or pages for the Facebook Messenger AI service, keep this f
 // astro.config.mjs
 {
   output: 'static',
-  site: 'https://cushlabs.ai',
+  site: 'https://www.cushlabs.ai',
   i18n: {
     defaultLocale: 'en',
     locales: ['en', 'es'],
