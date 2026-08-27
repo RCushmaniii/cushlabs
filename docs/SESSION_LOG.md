@@ -358,7 +358,7 @@ was briefly misreported as missing during this session from a front-end-only rea
 a human**. CORS is browser-enforced and stops nothing arriving by curl, so anyone could create real
 events, with real Meet links, on the real calendar.
 
-**Shipped (PR #REPLACE_PR).** Three checks on `POST /book`, cheapest first:
+**Shipped (PR #286).** Three checks on `POST /book`, cheapest first:
 
 1. **Honeypot** — `company`, rendered off-screen and pulled out of the tab order and the
    accessibility tree, so no human including a screen-reader user can reach it.
