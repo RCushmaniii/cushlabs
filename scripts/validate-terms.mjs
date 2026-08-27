@@ -66,6 +66,42 @@ const RULES = [
   },
 ];
 
+/**
+ * Normalise before matching, because an apostrophe defeated this check.
+ *
+ * On 2026-08-27 the homepage FAQ read "cancel any time with 30 days' notice" in
+ * English and "cancelar cuando quieras avisando con 30 días" in Spanish. Both
+ * contradict `cancellation.notice_period_days: 0`. Both shipped, and this
+ * validator passed on all 126 pages — the banned phrase is "30 days notice",
+ * and the possessive apostrophe made the literal `includes()` miss it.
+ *
+ * A banned-phrase list only catches the exact sentence someone wrote last time.
+ * Stripping apostrophes fixes the English family; word order needs the regex
+ * rules below.
+ */
+const loose = (s) => s.toLowerCase().replace(/['’`]/g, "").replace(/\s+/g, " ");
+
+/**
+ * Claim SHAPES, for the cases a phrase list cannot cover.
+ *
+ * These match the idea rather than the sentence, so a rewrite that keeps the
+ * wrong promise still fails. Keep them narrow enough that correct copy passes:
+ * every pattern here must NOT match the canonical statement it is policing.
+ */
+const REGEX_RULES = [
+  {
+    pattern:
+      /\b30\s*(?:days?|dias)\b[^.!?]{0,40}\b(?:notice|aviso|avisando|anticipacion)\b/,
+    rule: "cancellation",
+    why: `No notice period exists. Use: "${TERMS.cancellation.statement_en}" / "${TERMS.cancellation.statement_es}".`,
+  },
+  {
+    pattern: /\b(?:avisando|avisar|aviso)\b[^.!?]{0,30}\b30\s*(?:dias|días)\b/,
+    rule: "cancellation",
+    why: `No notice period exists. Use: "${TERMS.cancellation.statement_es}".`,
+  },
+];
+
 const pages = walk("dist");
 const hits = [];
 
@@ -73,8 +109,23 @@ for (const file of pages) {
   const rel = path.relative("dist", file).replace(/\\/g, "/");
   const text = textOf(readFileSync(file, "utf8")).toLowerCase();
 
+  const looseText = loose(text);
+
   for (const r of RULES) {
-    if (text.includes(r.phrase.toLowerCase())) hits.push({ rel, ...r });
+    if (looseText.includes(loose(r.phrase))) hits.push({ rel, ...r });
+  }
+
+  // Accent-folded, so "días" and "dias" are the same string to the shape rules.
+  const folded = looseText.normalize("NFD").replace(/[̀-ͯ]/g, "");
+  for (const r of REGEX_RULES) {
+    if (r.pattern.test(folded)) {
+      hits.push({
+        rel,
+        phrase: `/${r.pattern.source}/`,
+        rule: r.rule,
+        why: r.why,
+      });
+    }
   }
 
   // A CFDI must never be promised to a USD buyer — it is a Mexican SAT receipt a US
