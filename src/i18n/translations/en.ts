@@ -336,6 +336,10 @@ export const en = {
     email: "Email",
     phoneNumber: "Phone number",
     phoneHint: "Optional — include country code for WhatsApp.",
+    // Honeypot label. Never seen by a human — the field is off-screen and out
+    // of the accessibility tree — but it has to read like a real field to the
+    // form-fillers it is there to catch.
+    companyHoneypot: "Company",
     notesLabel: "What would you like to discuss?",
     notesPlaceholder: "e.g. We want to automate our customer support...",
     notesHint: "Optional — helps me prepare for our conversation",

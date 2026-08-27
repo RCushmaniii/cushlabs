@@ -12,7 +12,24 @@
 > Resolved items collapse to one line under [Resolved](#resolved-technical-debt); the trail stays so a
 > future session does not re-litigate a settled decision.
 
-**8 open** · 17 resolved · last reconciled 2026-08-26
+**9 open** · 17 resolved · last reconciled 2026-08-27
+
+### #26 — The Camila demo chat is a second unauthenticated path that writes real calendar events
+
+**Medium** · opened 2026-08-27 · blocks: nothing today
+
+`POST /book` is now gated by Turnstile, but `cushlabs-camila-demo` is exempted by
+`isInternalCall()` because it reaches the booking Worker over a service binding with no browser to
+challenge. That exemption is correct and unforgeable from outside — the risk is upstream of it.
+The demo chat itself is a public, unauthenticated endpoint whose Claude tool loop can call
+`create_booking`, so anyone who can talk to Camila can still put an event on Robert's real
+calendar with a real Meet link. Nothing has abused it; the shape is the same one that produced the
+2026-08-15 booking.
+
+**Next:** decide whether demo-originated bookings should hit the real calendar at all. Cheapest
+real fix is a distinct `source`-scoped path that writes to a separate demo calendar; second
+cheapest is a per-session booking cap in `cushlabs-camila-demo` keyed on the chat session, which
+the existing KV limiter there can already carry.
 
 ### #25 — The secrets guard hook blocks any assistant edit to the secret scanner it protects
 
@@ -322,6 +339,59 @@ Documented in CLAUDE.md and memory `feedback_tailwind4_color_collision`. Custom 
 ---
 
 ## Session History
+
+## Session: 2026-08-27 — A stranger booked a real slot on the calendar; the booking endpoint now has a bot gate
+
+**What happened.** A consultation appeared for 2026-08-27 09:00 under "John Cu", guest
+`doheveh885@joystill.com`. Created 2026-08-15 01:49 Guadalajara, 12 days ahead. Robert attended;
+nobody showed.
+
+**Diagnosis: the site's own booking Worker made it, from a real form submission — not a test, not an
+agent.** The event description matches `createBooking()`'s template byte for byte, and
+`creator` is the OAuth credential the Worker holds, which is what every booking looks like. The
+guest domain is a burner: no A record, NameSilo free DNS (`ns{1,2,3}.dnsowl.com`), MX pointing at
+`mail.wallywatts.com` / `mail.wabblywabble.com`. Truncated name, one-word note, invite never
+accepted. A probe or a tire-kicker, with no payload in any field.
+
+**The actual hole.** `POST /book` had rate limiting (D1, 5/hour — that part was already right and
+was briefly misreported as missing during this session from a front-end-only read) but **no proof of
+a human**. CORS is browser-enforced and stops nothing arriving by curl, so anyone could create real
+events, with real Meet links, on the real calendar.
+
+**Shipped (PR #286).** Three checks on `POST /book`, cheapest first:
+
+1. **Honeypot** — `company`, rendered off-screen and pulled out of the tab order and the
+   accessibility tree, so no human including a screen-reader user can reach it.
+2. **Origin / Referer** — removes the zero-effort case. Forgeable, and treated as such.
+3. **Cloudflare Turnstile** — the real gate. Widget `cushlabs-booking` (managed mode, domains
+   `cushlabs.ai`, `www.cushlabs.ai`, `vercel.app`, `localhost`), minted through the
+   Cloudflare API using wrangler's own credential. `TURNSTILE_SECRET_KEY` is a Worker secret;
+   `PUBLIC_TURNSTILE_SITE_KEY` is set on all three Vercel environments.
+
+**Two things that would have broken and did not:**
+
+- **The Lumière demo's in-chat booking.** `cushlabs-camila-demo` reaches this Worker over a
+  service binding with no browser, no Origin and no Turnstile token. It is exempted by
+  `isInternalCall()`, which keys on `url.hostname === "booking"` — the literal host that
+  `bookingFetch()` writes, and one Cloudflare can never route to from the public internet.
+- **Deploy ordering.** The front end ships the token first; the Worker starts requiring it second.
+  Reversed, every booking on the live site fails in the window between the two.
+
+**Also fixed: the phone field was collected and thrown away.** `BookingFormSteps.astro` has read
+`booking-phone` into `formData` since it was written and never put it in the request body, and
+the Worker never read one. Every event on that calendar carries an email and no callback number.
+Both halves fixed together.
+
+**Turnstile fails CLOSED** — a siteverify outage blocks booking rather than reopening the endpoint,
+and the form says so with the WhatsApp fallback rather than dying silently the way debt #19 did.
+
+**Availability was reviewed and deliberately left alone.** Weekdays already open at 09:00
+(`WEEKDAY_MORNING_HOURS=09:00-14:00`, plus `16:00-20:00`; Saturday `09:00-13:00`; Sunday
+blocked; 3.5h minimum lead time). Robert's request was read as confirming that, not changing it.
+
+**Flagged, not fixed:** the Camila demo chat is a second unauthenticated path that can create real
+calendar events (see debt below).
+
 
 ## Session: 2026-08-26 — PR #284 triaged: the scanner's HIGH findings are its own fixtures, and the guard hook cannot read the scanner
 
