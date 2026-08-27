@@ -1,7 +1,7 @@
 ---
 import DatePicker from './DatePicker.astro';
 import { t } from '../../i18n';
-import { API_BASE } from '../../config/api';
+import { API_BASE, TURNSTILE_SITE_KEY } from '../../config/api';
 
 interface Props {
   locale: 'en' | 'es';
@@ -163,6 +163,19 @@ const b = dict.booking;
           <p class="text-sm text-muted mt-2">{b.notesHint}</p>
         </div>
 
+        {/*
+          Honeypot. Positioned off-screen rather than display:none — some
+          form-fillers skip hidden inputs but not off-screen ones — and taken
+          out of the tab order and the accessibility tree so no human, screen
+          reader included, can reach it. Anything in it is a bot.
+        */}
+        <div aria-hidden="true" class="absolute left-[-9999px] top-auto w-px h-px overflow-hidden">
+          <label for="booking-company">{b.companyHoneypot}</label>
+          <input type="text" id="booking-company" name="company" tabindex="-1" autocomplete="off" />
+        </div>
+
+        <div id="turnstile-container" class="flex justify-center"></div>
+
         <div class="flex gap-4 pt-4">
           <button
             type="button"
@@ -294,8 +307,27 @@ const b = dict.booking;
   type="application/json"
   data-booking-config
   is:inline
-  set:html={JSON.stringify({ apiBase: API_BASE, locale })}
+  set:html={JSON.stringify({ apiBase: API_BASE, locale, turnstileSiteKey: TURNSTILE_SITE_KEY })}
 />
+
+{
+  /*
+    Explicit rendering only. The widget lives inside step 2, which is
+    `display: none` until the visitor gets there, and Turnstile does not render
+    reliably into a hidden container — so the script is loaded here and
+    `turnstile.render()` is called when step 2 becomes visible.
+  */
+}
+{
+  TURNSTILE_SITE_KEY && (
+    <script
+      is:inline
+      src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"
+      async
+      defer
+    />
+  )
+}
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
@@ -303,11 +335,13 @@ const b = dict.booking;
     const cfgEl = document.querySelector('[data-booking-config]');
     let API_BASE = '';
     let lang = 'en';
+    let TURNSTILE_SITE_KEY = '';
     if (cfgEl?.textContent) {
       try {
         const cfg = JSON.parse(cfgEl.textContent);
         API_BASE = cfg.apiBase || '';
         lang = cfg.locale || 'en';
+        TURNSTILE_SITE_KEY = cfg.turnstileSiteKey || '';
       } catch { /* use defaults */ }
     }
 
@@ -329,6 +363,14 @@ const b = dict.booking;
       processing: { en: 'Processing...', es: 'Procesando...' },
       confirmAppointment: { en: 'Confirm Appointment', es: 'Confirmar Cita' },
       notProvided: { en: 'Not provided', es: 'No proporcionado' },
+      verifyPending: {
+        en: "Please complete the 'I'm human' check above, then confirm.",
+        es: "Completa la verificación 'No soy un robot' de arriba y confirma.",
+      },
+      verifyUnavailable: {
+        en: "The security check couldn't load, so booking is paused. Message me on WhatsApp and I'll book you directly.",
+        es: 'No se pudo cargar la verificación de seguridad y la reserva está pausada. Escríbeme por WhatsApp y te agendo directamente.',
+      },
     };
     function str(key: string): string {
       return jsStrings[key]?.[lang] || jsStrings[key]?.en || key;
@@ -437,6 +479,60 @@ const b = dict.booking;
         content.classList.remove('active');
       });
       document.querySelector(`.step-content[data-step="${step}"]`)?.classList.add('active');
+
+      // Step 2 is the only place the widget is visible, and it has just been
+      // un-hidden, so this is the first moment Turnstile can measure its own
+      // container.
+      if (step === 2) renderTurnstile();
+    }
+
+    /* --- Turnstile (bot gate on POST /book) --- */
+
+    type TurnstileApi = {
+      render: (el: HTMLElement, opts: Record<string, unknown>) => string;
+      getResponse: (id: string) => string | undefined;
+      reset: (id: string) => void;
+    };
+    const getTurnstile = (): TurnstileApi | null =>
+      (window as unknown as { turnstile?: TurnstileApi }).turnstile ?? null;
+
+    let turnstileWidgetId: string | null = null;
+    let turnstileFailed = false;
+
+    function renderTurnstile() {
+      if (!TURNSTILE_SITE_KEY || turnstileWidgetId !== null) return;
+      const container = document.getElementById('turnstile-container');
+      const ts = getTurnstile();
+      // The script is async, so step 2 can be reached before it lands. Poll
+      // briefly rather than giving up — a missing widget means no token, and
+      // no token means the Worker refuses the booking.
+      if (!container || !ts) {
+        window.setTimeout(renderTurnstile, 250);
+        return;
+      }
+      try {
+        turnstileWidgetId = ts.render(container, {
+          sitekey: TURNSTILE_SITE_KEY,
+          action: 'booking',
+          language: lang === 'es' ? 'es' : 'en',
+          'error-callback': () => {
+            turnstileFailed = true;
+          },
+        });
+      } catch {
+        turnstileFailed = true;
+      }
+    }
+
+    // Tokens are single-use: a rejected or failed booking must not be retried
+    // with the token that was already spent.
+    function resetTurnstile() {
+      const ts = getTurnstile();
+      if (ts && turnstileWidgetId !== null) {
+        try {
+          ts.reset(turnstileWidgetId);
+        } catch { /* widget already gone */ }
+      }
     }
 
     function updateDateDisplay(date: Date | null) {
@@ -562,6 +658,7 @@ const b = dict.booking;
       const emailInput = document.getElementById('booking-email') as HTMLInputElement | null;
       const phoneInput = document.getElementById('booking-phone') as HTMLInputElement | null;
       const notesInput = document.getElementById('booking-notes') as HTMLTextAreaElement | null;
+      const honeypotInput = document.getElementById('booking-company') as HTMLInputElement | null;
 
       if (!selectedDate || !selectedTime) {
         showError(str('errorDateTime'));
@@ -579,6 +676,18 @@ const b = dict.booking;
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value.trim())) {
         showError(str('errorEmail'));
         emailInput.focus();
+        return;
+      }
+
+      // The Worker refuses POST /book without a valid Turnstile token, so a
+      // missing one is caught here — with a sentence that says what to do —
+      // rather than surfacing as a generic failure after the button has already
+      // said "Processing...".
+      const turnstileToken = TURNSTILE_SITE_KEY
+        ? (turnstileWidgetId !== null ? getTurnstile()?.getResponse(turnstileWidgetId) : '') || ''
+        : '';
+      if (TURNSTILE_SITE_KEY && !turnstileToken) {
+        showError(str(turnstileFailed ? 'verifyUnavailable' : 'verifyPending'));
         return;
       }
 
@@ -614,6 +723,12 @@ const b = dict.booking;
             time: selectedTime,
             lang: lang,
             notes: formData.notes || '',
+            // Collected on this form since it was written and never sent, so
+            // every booking so far reached the calendar with no way to call
+            // the person back.
+            phone: formData.phone || '',
+            turnstileToken,
+            company: honeypotInput?.value || '',
           }),
         });
 
@@ -693,6 +808,10 @@ const b = dict.booking;
         (window as unknown as { Sentry?: { captureException?: (e: unknown) => void } })
           .Sentry?.captureException?.(err);
         showError(str('errorGeneric'));
+        // The token that was just sent is spent whether or not the booking
+        // succeeded. Without this reset the retry ships a stale token and the
+        // Worker rejects every attempt after the first.
+        resetTurnstile();
         isBooking = false;
         const resetBtn = document.getElementById('confirm-booking') as HTMLButtonElement | null;
         if (resetBtn) {

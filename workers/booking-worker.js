@@ -39,6 +39,100 @@ import {
   clientKey,
 } from "./lib/rate-limit-d1.js";
 
+/* ------------------------ Bot Protection ------------------------ */
+
+/**
+ * A service-binding call arrives with the hostname the CALLER wrote, and the
+ * only caller is cushlabs-camila-demo, which fetches `https://booking/...`
+ * (see workers/camila-demo.js — a Worker cannot reach another same-account
+ * Worker over its public URL, Cloudflare error 1042).
+ *
+ * "booking" is not a routable hostname, so nothing arriving from the public
+ * internet can carry it: Cloudflare routes by hostname and would never hand
+ * this Worker such a request. That makes it a safe internal marker, and it
+ * matters — the demo bot has no browser, no Origin header and no Turnstile
+ * token, so without this exemption the live Lumière demo's in-chat booking
+ * would start failing the moment this deploys.
+ */
+function isInternalCall(url) {
+  return url.hostname === "booking";
+}
+
+function matchOrigin(origin, allowed) {
+  if (!origin) return false;
+  if (allowed.includes("*") || allowed.includes(origin)) return true;
+  return allowed.some(
+    (pattern) =>
+      pattern.startsWith("*.") &&
+      origin.startsWith("https://") &&
+      origin.endsWith(pattern.slice(1)),
+  );
+}
+
+/**
+ * CORS is enforced by browsers, not by servers — it has never stopped a direct
+ * POST, and on 2026-08-15 one landed: a booking from a disposable address that
+ * created a real calendar event, a real Meet link, and held a 09:00 slot for a
+ * meeting nobody attended.
+ *
+ * This is the cheap half of the fix. Origin is trivially forged by anything
+ * deliberate, so it only removes the zero-effort case; Turnstile below is what
+ * actually has to hold.
+ */
+function originAllowed(request, env) {
+  const allowed = (env.ALLOWED_ORIGINS || "*")
+    .split(",")
+    .map((s) => s.trim())
+    .filter(Boolean);
+  if (allowed.includes("*")) return true;
+
+  const origin = request.headers.get("origin");
+  if (origin) return matchOrigin(origin, allowed);
+
+  // No Origin at all. Fall back to Referer so a privacy extension that strips
+  // Origin does not lock a real visitor out of booking.
+  const referer = request.headers.get("referer");
+  if (!referer) return false;
+  try {
+    return matchOrigin(new URL(referer).origin, allowed);
+  } catch {
+    return false;
+  }
+}
+
+/**
+ * Verifies a Cloudflare Turnstile token. Fails CLOSED: a siteverify outage
+ * blocks bookings rather than reopening the endpoint. That trade is deliberate
+ * — a blocked booking is a visible, recoverable annoyance with a WhatsApp
+ * fallback on the page; a silently reopened one puts strangers on the calendar
+ * again and nobody finds out for twelve days.
+ */
+async function verifyTurnstile(token, secret, remoteip) {
+  if (!token) return { ok: false, reason: "missing-token" };
+
+  const body = new FormData();
+  body.append("secret", secret);
+  body.append("response", token);
+  if (remoteip && remoteip !== "unknown") body.append("remoteip", remoteip);
+
+  try {
+    const res = await fetch(
+      "https://challenges.cloudflare.com/turnstile/v0/siteverify",
+      { method: "POST", body },
+    );
+    const data = await res.json();
+    return data?.success
+      ? { ok: true }
+      : {
+          ok: false,
+          reason: (data?.["error-codes"] || []).join(",") || "rejected",
+        };
+  } catch (err) {
+    console.error("Turnstile siteverify failed:", err?.message || err);
+    return { ok: false, reason: "siteverify-unreachable" };
+  }
+}
+
 /* ------------------------ Token Cache ------------------------ */
 
 let cachedToken = null;
@@ -233,6 +327,63 @@ export default {
         }
 
         const payload = await safeJson(request);
+
+        // Bot gate. Ordered cheapest first: no I/O, then a header read, then a
+        // network round trip. Skipped entirely for the demo Worker's service
+        // binding, which has no browser to challenge.
+        if (!isInternalCall(url)) {
+          // 1. Honeypot. `company` is rendered off-screen and removed from the
+          //    tab order and the accessibility tree, so no human — screen
+          //    reader included — can put anything in it.
+          if (sanitizeInput(payload?.company || "")) {
+            console.warn("Booking rejected: honeypot filled");
+            return json(
+              { ok: false, error: t(lang, "bot_rejected") },
+              403,
+              request,
+              env,
+            );
+          }
+
+          // 2. Origin / Referer.
+          if (!originAllowed(request, env)) {
+            console.warn(
+              `Booking rejected: origin not allowed (${request.headers.get("origin") || "none"})`,
+            );
+            return json(
+              { ok: false, error: t(lang, "bot_rejected") },
+              403,
+              request,
+              env,
+            );
+          }
+
+          // 3. Turnstile. Enforced whenever the secret is configured. It is
+          //    configured in production, so this is the real gate; the guard
+          //    exists so a fresh/local deploy without the secret still boots
+          //    instead of refusing every booking silently — and it says so.
+          if (env.TURNSTILE_SECRET_KEY) {
+            const verdict = await verifyTurnstile(
+              payload?.turnstileToken,
+              env.TURNSTILE_SECRET_KEY,
+              clientIP,
+            );
+            if (!verdict.ok) {
+              console.warn(`Booking rejected: turnstile ${verdict.reason}`);
+              return json(
+                { ok: false, error: t(lang, "bot_rejected") },
+                403,
+                request,
+                env,
+              );
+            }
+          } else {
+            console.warn(
+              "TURNSTILE_SECRET_KEY is not set — POST /book is accepting unverified traffic.",
+            );
+          }
+        }
+
         const result = await createBooking(payload, env, tz, lang);
         return json(
           { ok: true, ...result, message: t(lang, "book_success") },
@@ -408,10 +559,18 @@ async function createBooking(data, env, timeZone, lang) {
       : `AI Strategy Consultation - CushLabs${sourceTag}: ${name}`;
 
   const notes = sanitizeInput(data.notes || "");
+
+  // The booking form has collected a phone number since it was written and
+  // never sent it, and this Worker never read one — so every event on the
+  // calendar carries an email address and no way to call the person back.
+  // Both halves are fixed together; a field the front end sends and the Worker
+  // drops looks identical from the outside to one that was never collected.
+  const phone = sanitizeInput(data.phone || "");
+
   const description =
     lang === "es"
-      ? `Consulta gratuita de estrategia de IA — CushLabs.ai\nNombre: ${name}\nEmail: ${email}${notes ? `\nNotas: ${notes}` : ""}`
-      : `Free AI strategy consultation — CushLabs.ai\nName: ${name}\nEmail: ${email}${notes ? `\nNotes: ${notes}` : ""}`;
+      ? `Consulta gratuita de estrategia de IA — CushLabs.ai\nNombre: ${name}\nEmail: ${email}${phone ? `\nTeléfono: ${phone}` : ""}${notes ? `\nNotas: ${notes}` : ""}`
+      : `Free AI strategy consultation — CushLabs.ai\nName: ${name}\nEmail: ${email}${phone ? `\nPhone: ${phone}` : ""}${notes ? `\nNotes: ${notes}` : ""}`;
 
   const calendarId = env.GOOGLE_CALENDAR_ID || env.CALENDAR_ID;
   const resp = await fetchJSON(
@@ -504,6 +663,13 @@ function t(lang, key) {
       en: "Too many booking requests. Please try again later.",
       es: "Demasiadas solicitudes de reserva. Por favor, inténtalo más tarde.",
     },
+    // Deliberately does not say WHICH check failed. A real visitor whose token
+    // expired needs an action, not a diagnosis, and naming the failing gate
+    // hands a probe a free oracle for tuning its next attempt.
+    bot_rejected: {
+      en: "We couldn't verify this request. Please reload the page and try again.",
+      es: "No pudimos verificar esta solicitud. Recarga la página e inténtalo de nuevo.",
+    },
   };
   return dict[key]?.[lang] || dict[key]?.en || key;
 }
@@ -570,22 +736,14 @@ function corsHeaders(request, env) {
     .map((s) => s.trim())
     .filter(Boolean);
 
+  // Suffix patterns like *.vercel.app cover preview deploys. Same matcher the
+  // POST /book origin gate uses, so the two can never drift into disagreeing
+  // about which origins are ours.
   let allowOrigin = "";
   if (allowed.includes("*")) {
     allowOrigin = "*";
-  } else if (allowed.includes(origin)) {
+  } else if (matchOrigin(origin, allowed)) {
     allowOrigin = origin;
-  } else {
-    // Support suffix patterns like *.vercel.app for preview deploys
-    for (const pattern of allowed) {
-      if (pattern.startsWith("*.")) {
-        const suffix = pattern.slice(1); // e.g. ".vercel.app"
-        if (origin.endsWith(suffix) && origin.startsWith("https://")) {
-          allowOrigin = origin;
-          break;
-        }
-      }
-    }
   }
 
   const base = {

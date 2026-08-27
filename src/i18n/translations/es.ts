@@ -334,6 +334,8 @@ export const es = {
     email: "Correo electrónico",
     phoneNumber: "Número de teléfono",
     phoneHint: "Opcional — incluye código de país para WhatsApp.",
+    // Honeypot. Ver el comentario en en.ts.
+    companyHoneypot: "Empresa",
     notesLabel: "¿Qué te gustaría discutir?",
     notesPlaceholder: "ej. Queremos automatizar nuestro soporte al cliente...",
     notesHint: "Opcional — me ayuda a preparar nuestra conversación",
