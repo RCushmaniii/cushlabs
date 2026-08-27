@@ -157,6 +157,11 @@ Kept for the trail. Newest numbers first.
 
 ## Backlog (Prioritized)
 
+**NEXT UP — approved 2026-08-27, not started.** Swap the Camila demo's `create_booking` tool for a
+WhatsApp `notify_owner` alert; keep the read-only slot lookup. Closes tech debt #26. Feasibility
+and template approval already verified — full detail in the HANDOFF block at the top of the
+2026-08-27 session entry. **Answer the 24-hour-window pricing question before writing code.**
+
 Planned but not started. Bundle related items into single PRs per CLAUDE.md.
 
 ### High priority
@@ -341,6 +346,57 @@ Documented in CLAUDE.md and memory `feedback_tailwind4_color_collision`. Custom 
 ## Session History
 
 ## Session: 2026-08-27 — A stranger booked a real slot on the calendar; the booking endpoint now has a bot gate
+
+### HANDOFF — next session starts here
+
+**Robert approved the build and then restarted his machine. Nothing below is started.**
+
+**Build:** replace the Camila demo's in-chat calendar booking with the WhatsApp owner-alert flow.
+In `workers/camila-demo.js`, swap the `create_booking` tool for a `notify_owner` tool that fires
+a WhatsApp alert instead of writing a real calendar event. **Keep `get_available_slots`** — it is
+read-only and it is what makes the demo feel real. This also **closes tech debt #26**, because
+removing the calendar write closes the second unauthenticated door by construction.
+
+**ANSWER THIS FIRST — Robert's question, and it changes the design, not just the estimate.**
+He believes utility-template cost is exempt or reduced when the alert comes to him and he
+interacts with his own number — the 24-hour customer service window / free in-window utility rule.
+He is probably right *today*. But the capability registry already carries
+`meta-whatsapp-pricing-change-2026-10-01`, which says in-window utility templates **and** service
+messages **start being charged on 2026-10-01** — 35 days out as of this entry. That would end
+exactly the exemption he is counting on. Verify against Meta's live pricing documentation before
+writing any code, then tell him what the real steady-state cost is on both sides of that date.
+
+**Feasibility — already verified against live Meta on 2026-08-27. Do not re-derive it:**
+
+| Fact | Value | How it was checked |
+| --- | --- | --- |
+| Permission | `meta-whatsapp-single-tenant-production` = `approved`, `reachable_by: robert_only` | capability registry |
+| Template | `cliente_necesita_atencion` APPROVED, UTILITY, **es_MX and en_US**, 4 params | live Graph API |
+| WABA (correct one) | **1669695934130784** | live Graph API |
+| Sender | +1 307-284-2785, quality GREEN, display name APPROVED | live Graph API |
+
+**The trap, which has already cost a broken alert once (2026-07-30):** there are TWO WABAs.
+NY English is `2185606682173313` and does **not** carry that template. Always query the WABA that
+owns the SENDER. Re-check any time with, from `cushlabs-whatsapp`:
+`node --env-file=.dev.vars scripts/template-status.mjs 1669695934130784`
+
+**Do not build the send path — reuse it.** `cushlabs-messenger-bot/src/lib/alert.ts` already POSTs
+to a bridge endpoint on the `cushlabs-whatsapp` Worker over a **service binding** (a Worker cannot
+fetch another same-account Worker by its public URL — Cloudflare error 1042; this repo already hit
+that with `env.BOOKING`). `camila-demo` already has a KV `RATE_LIMIT` binding to reuse for dedup.
+
+**Three decisions still open, all needing Robert:**
+
+1. **Dedup.** A stranger on the public demo buzzes Robert's real phone. Proposed default: one alert
+   per visitor session, on the existing KV limiter.
+2. **Cost exposure.** Publicly triggerable billed messages — sizing depends on the pricing answer above.
+3. **Honest demo copy.** The alert reaches Robert, not a real Lumière Medspa owner. The demo must
+   say "in production this arrives on the business owner's phone" rather than imply a real medspa
+   is being notified. Load the `bot-launch-gate` skill for the honest-demo rules before writing copy.
+
+**Not verified:** an actual end-to-end send through the bridge from the demo Worker. Deliberately
+not fired — it would have buzzed Robert's phone unannounced. That is the one live test to run first.
+
 
 **What happened.** A consultation appeared for 2026-08-27 09:00 under "John Cu", guest
 `doheveh885@joystill.com`. Created 2026-08-15 01:49 Guadalajara, 12 days ahead. Robert attended;
