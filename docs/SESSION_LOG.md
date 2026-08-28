@@ -345,6 +345,31 @@ Documented in CLAUDE.md and memory `feedback_tailwind4_color_collision`. Custom 
 
 ## Session History
 
+## Session: 2026-08-27 (later) — The homepage chatbot was quoting a pricing model we no longer sell
+
+**PR:** [#287](https://github.com/RCushmaniii/cushlabs/pull/287) here (merged, live) · [ai-chatbot-saas#95](https://github.com/RCushmaniii/ai-chatbot-saas/pull/95) (merged, deployed, verified).
+
+### The headline
+
+The assistant embedded on this site — the Converso tenant at `soyconverso.com`, mounted by `BaseLayout.astro` — was answering prospects with **"$3,500 USD fixed-price projects"** and two claims `claims-policy.json` explicitly bans ("30 years in IT"; "native-level bilingual developer" applied to Robert). Its knowledge base had never been reconciled against the canonical files. 13 stale chunks were replaced with 48 (24 EN / 24 ES) rewritten from `commercial-terms.json`, `service-reference.md`, `claims-policy.json`, `capability-registry.json` and `ADVERTISED-COMMITMENTS.md`. Full detail lives in that repo's own session log; what matters here is that **this site's chat widget is a claims surface owned by another repo, and nothing was comparing it to the canonical files.**
+
+### Shipped in THIS repo (PR #287)
+
+The homepage FAQ promised a cancellation notice period the contract does not require, in both languages — EN _"cancel any time with 30 days' notice"_, ES _"cancelar cuando quieras avisando con 30 días"_. `commercial-terms.json` has `notice_period_days: 0` and lists that exact promise under `cancellation.never_say`. Both now use the canonical statement. Live and verified on `/` and `/es/`.
+
+**`validate-terms` passed on all 126 pages while both lines were live**, which is the more important finding. It matched banned phrases with a literal `includes()`; the banned string is `"30 days notice"` and the page said `"30 days' notice"` — a possessive apostrophe defeated the gate. The Spanish sentence reordered the words and evaded `"30 días de aviso"` the same way. Matching is now apostrophe- and whitespace-insensitive, plus two accent-folded **shape** rules that catch the notice-period claim regardless of word order in either language. Confirmed the rules fire on both original sentences and stay silent on the canonical statements and on the legitimate _"invoices are due within 30 days of receipt"_ term in `terms.astro`.
+
+### New recurring failure mode — a phrase list only catches last time's sentence
+
+This is the second time a banned-phrase gate reported green over live drift. A gate built from string literals encodes the exact sentence someone wrote before; the next writer paraphrases and walks straight through it. When a claim matters enough to gate, gate the **shape**, not the sentence — and prove the rule fires on the real drift before trusting it.
+
+### Open items raised, not closed
+
+- **PR #284 is still red, and no assistant can fix it.** Confirmed this session: the failing check is `npm run audit:secrets`, flagging its own fixtures at `tests/audit-secrets.test.ts:21,23`. That is [tech debt #25](#25--the-secrets-guard-hook-blocks-any-assistant-edit-to-the-secret-scanner-it-protects) — the guard hook makes the scanner and its fixtures unreadable to an assistant, so only Robert can write the exclusion. No new information; recorded here so the next session does not re-diagnose it.
+- **Dependabot backlog is not mergeable as a batch.** `ai-chatbot-saas` #64/#65 wait on the AI SDK v2→v3 bump, #58 is redundant and needs **closing with a comment, not merging**. `ai-idea-validator` has ten open including `next 15→16` and `typescript 5.9→7.0`. None were merged.
+- **`AI-ASSISTANT-ONBOARDING.md` §2 and `ADVERTISED-COMMITMENTS.md` §4 Theme 3 still advertise Facebook comment→DM**, which the registry holds as `rejected` + `do_not_advertise`. The bot was written to never mention it; these two docs seed generated copy, so it will regenerate from them. **Next:** strike the comment-reply bullets from both and bump the §-reconciliation stamp in the same PR.
+- **`ADVERTISED-COMMITMENTS.md` §5.1 contradicts its own §2.2** — "Free 2-week trial" and "30 days' notice" against §2.2's 1 week and no notice. Same class as the FAQ bug just fixed, in the file the bot repo reads first. **Next:** reconcile §5.1 to `commercial-terms.json` and bump the stamp.
+
 ## Session: 2026-08-27 — A stranger booked a real slot on the calendar; the booking endpoint now has a bot gate
 
 ### HANDOFF — next session starts here
@@ -360,7 +385,7 @@ removing the calendar write closes the second unauthenticated door by constructi
 **ANSWER THIS FIRST — Robert's question, and it changes the design, not just the estimate.**
 He believes utility-template cost is exempt or reduced when the alert comes to him and he
 interacts with his own number — the 24-hour customer service window / free in-window utility rule.
-He is probably right *today*. But the capability registry already carries
+He is probably right _today_. But the capability registry already carries
 `meta-whatsapp-pricing-change-2026-10-01`, which says in-window utility templates **and** service
 messages **start being charged on 2026-10-01** — 35 days out as of this entry. That would end
 exactly the exemption he is counting on. Verify against Meta's live pricing documentation before
@@ -368,12 +393,12 @@ writing any code, then tell him what the real steady-state cost is on both sides
 
 **Feasibility — already verified against live Meta on 2026-08-27. Do not re-derive it:**
 
-| Fact | Value | How it was checked |
-| --- | --- | --- |
-| Permission | `meta-whatsapp-single-tenant-production` = `approved`, `reachable_by: robert_only` | capability registry |
-| Template | `cliente_necesita_atencion` APPROVED, UTILITY, **es_MX and en_US**, 4 params | live Graph API |
-| WABA (correct one) | **1669695934130784** | live Graph API |
-| Sender | +1 307-284-2785, quality GREEN, display name APPROVED | live Graph API |
+| Fact               | Value                                                                              | How it was checked  |
+| ------------------ | ---------------------------------------------------------------------------------- | ------------------- |
+| Permission         | `meta-whatsapp-single-tenant-production` = `approved`, `reachable_by: robert_only` | capability registry |
+| Template           | `cliente_necesita_atencion` APPROVED, UTILITY, **es_MX and en_US**, 4 params       | live Graph API      |
+| WABA (correct one) | **1669695934130784**                                                               | live Graph API      |
+| Sender             | +1 307-284-2785, quality GREEN, display name APPROVED                              | live Graph API      |
 
 **The trap, which has already cost a broken alert once (2026-07-30):** there are TWO WABAs.
 NY English is `2185606682173313` and does **not** carry that template. Always query the WABA that
@@ -396,7 +421,6 @@ that with `env.BOOKING`). `camila-demo` already has a KV `RATE_LIMIT` binding to
 
 **Not verified:** an actual end-to-end send through the bridge from the demo Worker. Deliberately
 not fired — it would have buzzed Robert's phone unannounced. That is the one live test to run first.
-
 
 **What happened.** A consultation appeared for 2026-08-27 09:00 under "John Cu", guest
 `doheveh885@joystill.com`. Created 2026-08-15 01:49 Guadalajara, 12 days ahead. Robert attended;
@@ -447,7 +471,6 @@ blocked; 3.5h minimum lead time). Robert's request was read as confirming that, 
 
 **Flagged, not fixed:** the Camila demo chat is a second unauthenticated path that can create real
 calendar events (see debt below).
-
 
 ## Session: 2026-08-26 — PR #284 triaged: the scanner's HIGH findings are its own fixtures, and the guard hook cannot read the scanner
 
