@@ -41,7 +41,7 @@ The fix has to do three things a canned reply can't:
 
 ## The five-second fix
 
-This is what an AI assistant on your Facebook page does. Trained on your business — your prices, hours, services, and tone — it answers every message in under five seconds, 24/7, in English and Spanish. When someone's ready to book, it captures their details and flags it so you can close.
+This is what an AI assistant on your Facebook page does. Built from your business's own content — your prices, hours, services, and tone — it answers every message in under five seconds, 24/7, in English and Spanish. When someone's ready to book, it captures their details and flags it so you can close.
 
 The 9 PM prospect gets a real answer at 9 PM. You keep your badge. And the leads that used to evaporate overnight are still there in the morning — with a name and a number attached.
 

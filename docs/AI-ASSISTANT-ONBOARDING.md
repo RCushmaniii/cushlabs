@@ -42,7 +42,7 @@ Real errors a prior assistant shipped by NOT reading the docs below:
 
 ## 2. What we DO offer (core services — the atoms inside the tiers)
 
-- **AI Messenger Assistant** — a 24/7, bilingual (EN/es-MX) AI on the client's **Facebook page** (Messenger DMs + replies to comments on posts). Trained on their real products, prices, hours, policies, and tone. Grounded answers only — never invents. _(Basic+)_
+- **AI Messenger Assistant** — a 24/7, bilingual (EN/es-MX) AI on the client's **Facebook page** (Messenger DMs + replies to comments on posts). Answers from their real products, prices, hours, policies, and tone. Grounded answers only — never invents. _(Basic+)_
 - **Google review management** — drafts/manages responses to Google reviews, **owner-approved** before posting. _(Basic+)_
 - **Owner lead alerts** — captures the lead (name/contact/intent, consent-gated) and **pings the owner on WhatsApp** the moment a lead is hot. **This is LIVE (since 2026-07-09).** _(Basic+)_
 - **Fully managed** — CushLabs does setup, training, connection, testing, monitoring, weekly reports, monthly tuning. The client never touches a dashboard. _(All tiers)_

@@ -56,6 +56,6 @@ Here's the strategic part. Many local businesses — especially in Mexico — ha
 
 ## Putting it together
 
-A Messenger sales channel that runs on its own looks like this: instant bilingual answers, smart qualification, the right recommendation, lead capture on every conversation, and a clean handoff when it's time to close. Done by hand, that's a full-time job. Done with an AI assistant trained on your business, it runs 24/7 while you work — or sleep.
+A Messenger sales channel that runs on its own looks like this: instant bilingual answers, smart qualification, the right recommendation, lead capture on every conversation, and a clean handoff when it's time to close. Done by hand, that's a full-time job. Done with an AI assistant built from your business's own content, it runs 24/7 while you work — or sleep.
 
 That's exactly what the [AI Messenger Assistant](/messenger-assistant/) does: a production-ready assistant that turns your Facebook page into a channel that sells, not just answers.

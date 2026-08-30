@@ -28,7 +28,7 @@ export const en = {
     assistants: {
       title: "Intelligent Customer Support AI Chatbot",
       description:
-        "AI trained on YOUR knowledge — answers customers in English and Spanish, captures leads after hours, hands off to humans when needed.",
+        "AI that answers from YOUR knowledge — replies to customers in English and Spanish, captures leads after hours, hands off to humans when needed.",
     },
     intelligence: {
       title: "Competitive Intelligence",

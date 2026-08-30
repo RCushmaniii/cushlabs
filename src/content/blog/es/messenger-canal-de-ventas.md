@@ -56,6 +56,6 @@ Aquí viene la parte estratégica. Muchos negocios locales —sobre todo en Méx
 
 ## Juntándolo todo
 
-Un canal de ventas en Messenger que funciona solo se ve así: respuestas bilingües al instante, calificación inteligente, la recomendación correcta, captura de datos en cada conversación y un traspaso limpio cuando llega el momento de cerrar. Hecho a mano, eso es un trabajo de tiempo completo. Hecho con un asistente de IA entrenado con tu negocio, funciona 24/7 mientras trabajas —o duermes.
+Un canal de ventas en Messenger que funciona solo se ve así: respuestas bilingües al instante, calificación inteligente, la recomendación correcta, captura de datos en cada conversación y un traspaso limpio cuando llega el momento de cerrar. Hecho a mano, eso es un trabajo de tiempo completo. Hecho con un asistente de IA creado con el contenido de tu negocio, funciona 24/7 mientras trabajas —o duermes.
 
 Eso es justo lo que hace el [Asistente de IA para Messenger](/es/messenger-assistant/): un asistente listo para producción que convierte tu página de Facebook en un canal que vende, no solo que contesta.

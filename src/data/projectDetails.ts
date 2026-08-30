@@ -62,7 +62,7 @@ const details: Record<string, ProjectDetailOverride> = {
         "Local and service businesses whose Facebook page is a real sales and inquiry channel",
         "Bilingual markets — businesses serving customers who write in Spanish or English",
         "Owners losing leads after hours or while busy, who can't staff the inbox around the clock",
-        "Businesses that want an assistant trained on their actual content, not a generic template bot",
+        "Businesses that want an assistant built from their actual content, not a generic template bot",
       ],
       notForTitle: "Not a fit for",
       notFor: [
@@ -72,7 +72,7 @@ const details: Record<string, ProjectDetailOverride> = {
       ],
       whatYouGetTitle: "What you get",
       whatYouGet: [
-        "A custom AI Messenger assistant trained on your business's content, live on your Facebook Page",
+        "A custom AI Messenger assistant built from your business's content, live on your Facebook Page",
         "Bilingual English/Spanish handling, with Mexican Professional Spanish for MX audiences",
         "Human handover to your Page inbox whenever you want to take over, with automatic resume",
         "A guided bilingual onboarding survey that captures your voice, boundaries, FAQs, and escalation rules",
@@ -112,7 +112,7 @@ const details: Record<string, ProjectDetailOverride> = {
         "Negocios locales y de servicios cuya página de Facebook es un canal real de ventas y consultas",
         "Mercados bilingües — negocios que atienden a clientes que escriben en español o en inglés",
         "Negocios que pierden prospectos fuera de horario o cuando hay mucho trabajo y no pueden atender la bandeja todo el tiempo",
-        "Negocios que quieren un asistente entrenado con su contenido real, no un bot genérico de plantilla",
+        "Negocios que quieren un asistente creado con su contenido real, no un bot genérico de plantilla",
       ],
       notForTitle: "No es ideal para",
       notFor: [
@@ -122,7 +122,7 @@ const details: Record<string, ProjectDetailOverride> = {
       ],
       whatYouGetTitle: "Lo que recibes",
       whatYouGet: [
-        "Un asistente con IA para Messenger entrenado con el contenido de tu negocio, activo en tu página de Facebook",
+        "Un asistente con IA para Messenger creado con el contenido de tu negocio, activo en tu página de Facebook",
         "Atención bilingüe español/inglés, con español profesional de México para el público mexicano",
         "Transferencia a la bandeja de tu página cuando quieras tomar el control, con retorno automático",
         "Una encuesta de incorporación bilingüe y guiada que captura tu voz, tus límites, tus preguntas frecuentes y tus reglas de escalamiento",

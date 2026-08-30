@@ -28,7 +28,7 @@ export const es = {
     assistants: {
       title: "Chatbot Inteligente de Atención al Cliente",
       description:
-        "IA entrenada con TU conocimiento — responde clientes en inglés y español, captura leads fuera de horario y transfiere a humanos cuando se necesita.",
+        "IA que responde con TU conocimiento — atiende clientes en inglés y español, captura leads fuera de horario y transfiere a humanos cuando se necesita.",
     },
     intelligence: {
       title: "Inteligencia Competitiva",
