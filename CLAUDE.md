@@ -1,5 +1,12 @@
 # CLAUDE.md - CushLabs.ai Repository Guide
 
+## Why this matters before you change anything
+
+cushlabs.ai -- where the capabilities are sold and the prices are published.
+
+**If this breaks:** The front door of the business breaks in public. Every other product is sold through this page, and a wrong price or an unsupportable claim here is a commitment made to a prospect.
+
+Its risk class and revenue proximity are recorded in `operating-system/portfolio/repo-metadata.json`, and are read from there rather than restated here -- the same rule that governs prices, client facts and platform approvals.
 <!-- client-registry-pointer -->
 
 ## Client & revenue state — read the registry, never restate it
