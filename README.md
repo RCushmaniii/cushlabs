@@ -1,5 +1,38 @@
 # CushLabs.ai
 
+> This is where a business owner decides whether to trust us with their customers.
+> Everything else in the fleet is only reachable through it.
+
+## The problem it solves
+
+A prospect arrives knowing they have a problem and not knowing whether AI is the answer,
+or whether the person offering it can be trusted with the customers they already have.
+
+- Most AI vendor sites sell capability. The buyer is not shopping for capability, they are trying to work out who will still be answering the phone in six months.
+- A demo that breaks, a claim that is not true, or a price that has to be asked for all cost the sale before a conversation starts.
+- In this market the same page has to work for a reader in English and a reader in Mexican Spanish, without either feeling like the translation.
+
+## What it does for the business
+
+- Explains what is actually sold, in the words the buyer uses, in both languages.
+- Publishes the prices instead of hiding them behind a form.
+- Puts a working demo in front of the prospect, because a demo they can try beats a claim they have to believe.
+- Routes the ones who are ready into a booked call.
+
+## Who it's for
+
+- **Prospects** deciding whether to hire CushLabs.
+- **CushLabs**, as the front door every other product is sold through.
+
+The prices and commitments shown here are owned by the operating system and the
+advertised-commitments record, never invented in a component.
+
+---
+
+# Technical reference
+
+Everything below is implementation detail. The business case is above.
+
 <!--
   MAINTAINERS / AI ASSISTANTS — source of truth lives in the private operating-system repo:
   - Pricing, clients, billing state:  operating-system/strategy/clients.json
