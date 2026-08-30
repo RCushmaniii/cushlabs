@@ -732,6 +732,7 @@ Before ending any session, verify:
 | `operating-system/cushlabs/voice-dna.json` | Tone authority for all CushLabs content. | `9e778c4a21ec` |
 | `operating-system/cushlabs/icp.json` | Ideal customer profile, segments, objection rebuttals. | `2259c5d825da` |
 | `operating-system/cushlabs/business-profile.json` | Positioning, offers, delivery model. | `80ef7bc8d735` |
+| `operating-system/cushlabs/tech-standard.json` | The sanctioned technology lanes, the gate a new technology must pass, and the baseline every deployed repo must meet. | `913dded097dc` |
 
 If a revision above no longer matches what `operating-system` holds, this repo is reading a
 stale assumption. Re-read the file before acting on anything it covers. To check:
