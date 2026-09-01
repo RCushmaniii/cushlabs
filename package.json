@@ -37,12 +37,12 @@
     "@astrojs/check": "^0.9.10",
     "@astrojs/rss": "^4.0.19",
     "@astrojs/sitemap": "^3.7.3",
-    "@sentry/astro": "^10.70.0",
+    "@sentry/astro": "^10.72.0",
     "@sentry/node": "^10.67.0",
     "@tailwindcss/typography": "^0.5.20",
     "@tailwindcss/vite": "^4.3.3",
     "@vercel/analytics": "^2.0.1",
-    "astro": "^7.2.4",
+    "astro": "^7.2.9",
     "googleapis": "^171.4.0",
     "tailwindcss": "^4.3.3"
   },
@@ -59,10 +59,10 @@
     "nanoid": "^3.3.17"
   },
   "devDependencies": {
-    "@aws-sdk/client-s3": "^3.1116.0",
+    "@aws-sdk/client-s3": "^3.1121.0",
     "@octokit/rest": "^22.0.1",
-    "@types/node": "^26.2.0",
-    "@typescript-eslint/eslint-plugin": "^8.67.0",
+    "@types/node": "^26.4.0",
+    "@typescript-eslint/eslint-plugin": "^8.68.0",
     "@typescript-eslint/parser": "^8.50.0",
     "dotenv": "^17.4.2",
     "eslint": "^9.39.5",
