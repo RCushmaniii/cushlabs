@@ -341,9 +341,9 @@ Published on the pricing page under the **Coming** pill. Basis: Meta's WhatsApp 
 > $0.70 against ~$0.52, with a rule to "show Meta's rate next to ours."
 >
 > **CushLabs is a Meta Tech Provider, and a Tech Provider cannot bill for message usage.** Meta's
-> own partner documentation: *"clients onboarded by Tech Providers must provide their own payment
+> own partner documentation: _"clients onboarded by Tech Providers must provide their own payment
 > method after onboarding is complete. Meta will then bill these clients for API usage, and the
-> Tech Provider will bill for other services."* The client's card sits on the client's own WABA and
+> Tech Provider will bill for other services."_ The client's card sits on the client's own WABA and
 > Meta charges it directly — verified on all three live accounts 2026-08-21. Charging $0.50 on top
 > would have billed the client twice for one message.
 >
@@ -383,7 +383,7 @@ kill FX exposure · this section re-stamped against the then-current Meta card.
 > plan and built a strategic fork out of it — "Twilio BSP vs Tech Provider" — that does not exist.
 > A stale sentence in a canonical doc outranks the truth for anyone who reads it, which is exactly
 > the failure mode §0 is about. Meta publishes new
-cards roughly quarterly; **a stale rate card here becomes a margin error on every campaign.**
+> cards roughly quarterly; **a stale rate card here becomes a margin error on every campaign.**
 
 ---
 
@@ -425,7 +425,7 @@ two demo bots `m.me/cushlabs` and `m.me/nyenglishteacher`).
 ### Theme 1 — "It answers instantly — and correctly"
 
 - Replies in **under 5 seconds, 24/7** — nights, weekends, holidays.
-- Trained on the client's **real products, prices, hours, policies, tone**.
+- Answers from the client's **real products, prices, hours, policies, tone**.
 - **Grounded answers only** — never invents a price or makes up a promise.
 - **Hard facts** (hours, pricing) come back **exact, every time** (→ structured records, see §7).
 
@@ -467,9 +467,16 @@ two demo bots `m.me/cushlabs` and `m.me/nyenglishteacher`).
 ### 5.1 The four guarantees (`Guarantee.astro`)
 
 1. **Free discovery call** — 30 min; honest fit assessment; "no hard sell, ever."
-2. **Free 2-week trial** — no setup fee, no deposit; client pays nothing until it works as agreed.
+2. **Free 1-week trial** — no setup fee, no deposit; client pays nothing until it works as agreed.
 3. **Month-to-month, cancel anytime** — no lock-in; 30 days' notice; no penalty.
 4. **Client owns their data & system** — full documentation, access credentials, code where applicable; fully portable.
+
+> **Reconciled to the live site 2026-08-30.** Item 2 said "Free 2-week trial" — the same drift the
+> 2026-08-05 note in §2.2 caught in the pricing block, surviving here because that reconciliation
+> fixed one section and not the other. `Guarantee.astro` says "one full week" in both languages, and
+> `commercial-terms.json` sets `trial.length_days: 7` with **"2-week trial" in `never_say`**. Trial
+> length appears in more than one section of this file; grep the whole document for it, never just
+> the pricing block.
 
 ### 5.2 FAQ commitments (`FAQ.astro`) — behavioral guarantees the bot embodies
 

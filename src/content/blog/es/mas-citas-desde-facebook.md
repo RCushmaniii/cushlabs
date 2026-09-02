@@ -32,7 +32,7 @@ El objetivo no es contestar _mejor_. Es contestar **de inmediato**, aunque esté
 
 ## Dónde entra la IA
 
-Aquí es donde un asistente con inteligencia artificial cambia el juego. En lugar de contestar tú cada mensaje, un asistente entrenado con **tu negocio** —tus precios, tus horarios, tu forma de hablar— responde en menos de cinco segundos, las 24 horas, en español e inglés. Cuando alguien está listo para agendar, captura sus datos y te avisa para que cierres tú.
+Aquí es donde un asistente con inteligencia artificial cambia el juego. En lugar de contestar tú cada mensaje, un asistente creado a partir de **tu negocio** —tus precios, tus horarios, tu forma de hablar— responde en menos de cinco segundos, las 24 horas, en español e inglés. Cuando alguien está listo para agendar, captura sus datos y te avisa para que cierres tú.
 
 No es un robot genérico que dice "no entendí tu pregunta". Es tu propio conocimiento contestando por ti mientras atiendes, duermes o descansas.
 
