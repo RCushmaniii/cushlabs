@@ -2,13 +2,15 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Container from "../../components/layout/Container.astro";
 
-// Static-rendered. Query params (page_name, page_id, error) are read
-// client-side because the site has no server adapter.
+// Static-rendered. Query params (page_name, page_names, page_count,
+// page_id, page_ids, error) are read client-side because the site has no
+// server adapter. They are set by the Worker's OAuth callback
+// (cushlabs-messenger-bot src/lib/oauth.ts, redirectToConnected).
 ---
 
 <BaseLayout
   title="Connected | CushLabs Messenger Assistant"
-  description="Your Facebook Page is connected to CushLabs Messenger Assistant. Configure intake call and activate your bilingual AI assistant in 5 business days."
+  description="Your Facebook Page is connected to your AI Messenger Assistant. Simple setups launch in days; more complex integrations typically take 2 to 6 weeks."
   noindex={true}
 >
   <section class="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden min-h-[60vh]">
@@ -37,10 +39,15 @@ import Container from "../../components/layout/Container.astro";
           You're connected!
         </h1>
 
-        <p class="text-fluid-lg text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
-          We've authorized CushLabs Messenger Assistant on
-          <strong id="page-name" class="text-gray-900 dark:text-white">your Facebook Page</strong>.
+        <!-- "on" and the page name sit on ONE line with a literal space: split
+             across lines, the compiled HTML rendered "on<strong>Page</strong>". -->
+        <p id="page-sentence" class="text-fluid-lg text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
+          You authorized <strong class="text-gray-900 dark:text-white">CushLabs Messaging Platform</strong>, the Meta app behind your AI Messenger Assistant, on <strong id="page-name" class="text-gray-900 dark:text-white">your Facebook Page</strong><span id="page-sentence-end">.</span>
         </p>
+
+        <!-- Every connected Page, one per row, when the Worker sends the full
+             list. Populated client-side; names go in via textContent only. -->
+        <ul id="page-list" class="inline-flex flex-col items-start gap-2 mb-8 text-fluid-lg font-semibold text-gray-900 dark:text-white text-left" hidden></ul>
 
         <div class="bg-white dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 rounded-xl p-6 mb-10 text-left">
           <h2 class="font-display font-semibold text-lg text-gray-900 dark:text-white mb-4">
@@ -49,7 +56,7 @@ import Container from "../../components/layout/Container.astro";
           <ol class="space-y-3 text-gray-700 dark:text-gray-300">
             <li class="flex gap-3">
               <span class="text-accent-text font-display font-bold">1.</span>
-              <span>You'll receive an onboarding email within 1 business day to schedule your content intake call.</span>
+              <span>We'll email you to schedule your content intake call.</span>
             </li>
             <li class="flex gap-3">
               <span class="text-accent-text font-display font-bold">2.</span>
@@ -57,7 +64,7 @@ import Container from "../../components/layout/Container.astro";
             </li>
             <li class="flex gap-3">
               <span class="text-accent-text font-display font-bold">3.</span>
-              <span>Your assistant goes live on your Page within 5 business days. Free 1-week trial begins.</span>
+              <span>Your assistant goes live on your Page and your free 1-week trial begins. Simple setups launch in days; more complex integrations typically take 2 to 6 weeks.</span>
             </li>
           </ol>
         </div>
@@ -115,8 +122,17 @@ import Container from "../../components/layout/Container.astro";
   <script is:inline>
     (function () {
       const params = new URLSearchParams(window.location.search);
+      // page_name is a prose summary from the Worker that truncates past
+      // three pages ("A, B and 4 others"). page_names carries EVERY connected
+      // page, one per line, so this screen can list them all — a client
+      // watching a demo page get named instead of their own is the failure
+      // this exists to prevent (2026-08-04).
       const pageName = params.get("page_name");
       const pageId = params.get("page_id");
+      const pageNames = (params.get("page_names") || "")
+        .split("\n")
+        .map((s) => s.trim())
+        .filter(Boolean);
       const error = params.get("error");
 
       const loading = document.getElementById("loading-state");
@@ -169,9 +185,27 @@ import Container from "../../components/layout/Container.astro";
         },
       };
 
-      if (!error && (pageName || pageId)) {
-        if (pageName) {
-          document.getElementById("page-name").textContent = pageName;
+      if (!error && (pageName || pageId || pageNames.length)) {
+        const nameEl = document.getElementById("page-name");
+        if (pageNames.length > 1) {
+          nameEl.textContent = "these " + pageNames.length + " Facebook Pages";
+          document.getElementById("page-sentence-end").textContent = ":";
+          document.getElementById("page-sentence").classList.replace("mb-8", "mb-4");
+          const list = document.getElementById("page-list");
+          for (const name of pageNames) {
+            const li = document.createElement("li");
+            li.className = "flex items-center gap-2";
+            li.innerHTML = '<svg class="w-5 h-5 text-green-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>';
+            const label = document.createElement("span");
+            label.textContent = name; // never innerHTML: the value comes from the URL
+            li.appendChild(label);
+            list.appendChild(li);
+          }
+          list.hidden = false;
+        } else if (pageNames.length === 1) {
+          nameEl.textContent = pageNames[0];
+        } else if (pageName) {
+          nameEl.textContent = pageName;
         }
         success.hidden = false;
       } else {

@@ -12,7 +12,29 @@
 > Resolved items collapse to one line under [Resolved](#resolved-technical-debt); the trail stays so a
 > future session does not re-litigate a settled decision.
 
-**9 open** · 17 resolved · last reconciled 2026-08-27
+**10 open** · 17 resolved · last reconciled 2026-09-02
+
+### #27 — A Page can connect and nobody is told; the confirmation cannot list the Pages because the Worker never sends their names
+
+**Medium** · opened 2026-09-02 · blocks: the "we'll email you" promise on the connected page
+
+Two gaps in the same Worker function, `cushlabs-messenger-bot/src/lib/oauth.ts` (Step 5 and
+Step 6 of the OAuth callback), both found while fixing the connected page in PR #296:
+
+1. **No alert on connect.** After storing the page token the callback writes `log.info` and
+   redirects. Nothing emails or WhatsApps Robert. The connected page used to promise "an onboarding
+   email within 1 business day"; that promise is now softened to no timeframe, but even "we'll email
+   you" depends on a human noticing a log line. The live client connected during a call, which is
+   why it has not bitten yet.
+2. **No full page list.** `redirectToConnected` sends `page_name` as a prose summary that
+   truncates past three pages ("A, B and 4 others"), plus `page_count` and `page_ids`. IDs are
+   not names, so the site cannot render the list from them. The site now reads a `page_names`
+   param (every name, one per line, URL-encoded) and falls back to the prose until it arrives.
+
+**Next:** paste the prompt at the end of the 2026-09-02 session entry into a session opened in
+`cushlabs-messenger-bot`. It adds `page_names: names.join("\n")` to the redirect and a WhatsApp
+owner alert on connect using the existing owner-alert send path. Nothing on this site changes
+when it ships; the list renders the moment the param appears.
 
 ### #26 — The Camila demo chat is a second unauthenticated path that writes real calendar events
 
@@ -344,6 +366,65 @@ Documented in CLAUDE.md and memory `feedback_tailwind4_color_collision`. Custom 
 ---
 
 ## Session History
+
+## Session: 2026-09-02 — The screen a client sees right after connecting promised a timeline, an email, and named "4 others"
+
+**PR:** [#296](https://github.com/RCushmaniii/cushlabs/pull/296) here (open) · [#291](https://github.com/RCushmaniii/cushlabs/pull/291) merged at the start of the session (the "trained on" claim and the trial-length drift from the previous session).
+
+### What was wrong
+
+`/messenger-assistant/connected/` and its Spanish twin are the first thing a client sees after
+approving CushLabs in Facebook's consent dialog. Four defects, all on that screen:
+
+1. **"Live within 5 business days"** in step 3, in both meta descriptions, and in step 2 of the
+   connect page one screen earlier. `commercial-terms.json` `delivery_timing.never_say` already bans
+   promising a timeline; this was the same promise with a number on it. Replaced with the canonical
+   `combined_en` / `combined_es` statement, read from the file, not retyped.
+2. **"Onboarding email within 1 business day."** Nothing sends it. The Worker's OAuth callback logs
+   and redirects; no alert reaches a human. Softened to "We'll email you to schedule your content
+   intake call" with no timeframe. The alert is bot-repo work, tech debt #27.
+3. **"on<strong>Page Name</strong>"** with no space. The source had "on" and the `<strong>` on
+   separate lines and Astro's HTML compression ate the newline. Now one line with a literal space
+   and a comment so the next formatter pass does not re-wrap it.
+4. **"Azúcar, CushLabs and 4 others."** The Worker sends `page_name` as a prose summary capped at
+   three names (added 2026-08-04 after a client watched a demo page get named instead of their own),
+   plus `page_count` and `page_ids`. IDs are not names. The page now reads a `page_names` param
+   (one name per line) and renders every Page as a checklist with the count in the sentence; a single
+   page, or today's prose-only Worker, still renders as a sentence. Names are inserted via
+   `textContent` only; an injected `<img onerror>` renders as text.
+
+**Naming.** The sentence said "CushLabs Messenger Assistant". The Meta app the client had just
+approved in Facebook's own dialog is **CushLabs Messaging Platform** (app 848827908228231, per
+`capability-registry.json`), and that is the name they will find under Business Integrations when
+they go looking to revoke it. Both screens now say "CushLabs Messaging Platform, the Meta app behind
+your AI Messenger Assistant", with the product name copied exactly from `brand-kit.md` §07.
+
+### Verified
+
+`npm run check`, full build, `meta-description-gate` (the first drafts of both descriptions were
+194 and 246 characters and failed the 160 cap; trimmed), `validate-terms`, 31 smoke tests, and seven
+query-string cases driven through Chromium against the built HTML (legacy prose, six-page list,
+single page, XSS attempt, ES list, ES prose, error state).
+
+### Recurring failure mode, reinforced
+
+The delivery-timeline promise was removed from the footer, hero, about page and homepage
+description on 2026-07-01 and the phrase went into `never_say`. It survived here because the
+connect flow said "5 business days", not "days, not weeks", and `validate-terms` matches phrases.
+Same lesson as 2026-08-27: a phrase list catches last time's sentence. The gate should match the
+shape "N business days" / "N días hábiles" near "live" / "producción"; not done this session.
+
+### Paste-ready prompt for the bot repo (closes tech debt #27)
+
+```
+In src/lib/oauth.ts, two changes to the OAuth callback, one PR.
+
+1. In the Step 6 redirect (the redirectToConnected call that already sends page_name, page_id, page_count and page_ids), add page_names: names.join("\n") — every connected page name, newline-separated. cushlabs.ai PR #296 already reads this param (split on "\n") and renders every Page as a list; until it arrives the site falls back to the prose page_name. Keep page_name exactly as it is for the fallback. Add a joinPageNames-style unit test asserting the param round-trips through URLSearchParams with a name containing a comma and an ampersand.
+
+2. In Step 5, after the page tokens are stored, send Robert a WhatsApp owner alert that a page connected: page names, page ids, and whether conversation routing was enabled for each. Use the existing owner-alert send path the bot already uses for lead alerts; do not add a new provider. Fire it once per connect, not once per page. If the send fails, log it and still redirect — the alert must never block onboarding. Do not promise the client anything from the bot side; the site copy already says only "we'll email you".
+
+Verify both against the real redirect URL shape in a test, run the full test suite, and open the PR. Do not touch the site.
+```
 
 ## Session: 2026-08-27 (later) — The homepage chatbot was quoting a pricing model we no longer sell
 
