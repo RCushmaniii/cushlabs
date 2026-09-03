@@ -12,7 +12,7 @@
 > Resolved items collapse to one line under [Resolved](#resolved-technical-debt); the trail stays so a
 > future session does not re-litigate a settled decision.
 
-**10 open** · 17 resolved · last reconciled 2026-09-02
+**9 open** · 18 resolved · last reconciled 2026-09-02
 
 ### #27 — A Page can connect and nobody is told; the confirmation cannot list the Pages because the Worker never sends their names
 
@@ -147,18 +147,11 @@ ES privacy names LFPDPPP / derechos ARCO (PR #86); EN still says generic "depend
 
 **Next:** Robert's steer 2026-08-20 is that the framing should be more Mexican. The ES page already names LFPDPPP and derechos ARCO; bring the EN page to the same specificity rather than leaving it on generic "depending on your location", since English-speaking residents of Mexico have the same ARCO rights. Legal text — load the `legal-pages` skill, and note where an actual lawyer is required.
 
-### #8 — Self-portfolio `demoUrl` points at the non-www apex
-
-**Low**
-
-`src/data/projectDetails.ts:146` = `https://cushlabs.ai` → live **307** to `https://www.cushlabs.ai/`. Only redirecting internal link on the site; renders on 4 pages. Ahrefs 3XX warning. One-line fix.
-
-**Next:** one line — `src/data/projectDetails.ts:146` → `https://www.cushlabs.ai/`, which kills the only redirecting internal link on the site (currently a 307). Then run `npm run seo:indexnow` so one submission covers it.
-
 ### Resolved technical debt
 
 Kept for the trail. Newest numbers first.
 
+- **#8 Self-portfolio `demoUrl` pointed at the non-www apex** — Resolved 2026-09-02 (PR #298). `src/data/projectDetails.ts:146` now `https://www.cushlabs.ai/`, which removes the only redirecting internal link on the site (a 307 on 4 pages, Ahrefs 3XX warning). IndexNow submitted after merge.
 - **#19 Booking success announced without verification** — Resolved 2026-08-20 (PR #270). `data.ok` was the entire success test, so a worker replying ok without creating an event still rendered "You're Booked." `eventId` and `meetLink` had been in `BookingResponse` since the worker was written and neither was ever read. Now a missing `eventId` throws instead of claiming success, and the Meet link plus a booking reference render when returned — the join link is built in JS rather than shipping a dead `href="#"`. Verified by driving the real wizard with a mocked API in both directions. Two things found while in there: the summary said **"Central Time (GMT-6)"**, which is ambiguous and wrong for half the year for a US visitor (US Central shifts; Mexico City is UTC−6 year-round) — now "Mexico City time (UTC−6)" in both languages; and `PUBLIC_BOOKING_API_URL` was missing from `.env.example`, so an unset value silently disabled the primary conversion page with no build error.
 - **#18 Imported docs describing a different site** — Resolved 2026-08-20 (PR #271). 16 files deleted, 9 bannered with a `NOT THIS REPO` block naming exactly what is wrong. Inbound references were checked first: every link came from another doc in the same imported cluster or from SESSION_LOG, nothing in code, config or CI. Deleted the quiz system, free-assets router, Supabase migration, Netlify/Hostinger deployment guides, the Next.js/shadcn toolkit, WindsurfRules, and `BOOKING-SYSTEM.md` (which claimed a Cal.com widget). Kept, with banners, the bilingual and SEO docs whose reasoning generalises. Also fixed `docs/templates/readme-instructions.md`, which was seeding every new repo's README with "Node.js 18.17+" while Astro 7 requires >= 22.12. New `npm run audit:docs` flags foreign-stack markers in unbannered docs and `npm run` references to scripts that do not exist — advisory, not a gate, since a legitimate mention of another project is not a defect. 43 flagged docs → 27, every remaining heavy offender bannered.
 - **#10 Hand-written SEO meta maps were a second, unvalidated claims surface** — Resolved 2026-08-20 (PR #269), and the audit found the maps were the smaller half of the problem. Measured on a real build of the 72 project pages (57% of the site's URLs): **50 descriptions were cut off mid-sentence** with an ellipsis, and **18 of 36 SPANISH pages served an ENGLISH description** because the ES chain never consulted `esCard.tagline` despite Spanish copy existing for 30 of 36 projects — it reached for the GitHub blurb, prefixed with the title, to dodge a duplicate-description warning. Both are now zero, as are the 6 over-length and 10 under-length titles (`/projects/cushlabs/` rendered as "CushLabs.ai | CushLabs.ai"). Fixed structurally: `src/lib/meta.ts` composes best-first and trims on a sentence boundary, `tagline` now outranks the GitHub description, and `meta-description-gate.mjs` fails the build when an `/es/` page serves English — verified by injecting one. The remaining concern from the original entry stands and is narrower now: the override entries themselves are still hand-written and unvalidated against what each repo does.
@@ -425,6 +418,25 @@ In src/lib/oauth.ts, two changes to the OAuth callback, one PR.
 
 Verify both against the real redirect URL shape in a test, run the full test suite, and open the PR. Do not touch the site.
 ```
+
+### Later the same day — debt cleanup before closeout (PR #298)
+
+- **Tech debt #8 closed.** One line in `projectDetails.ts`; the site now has zero redirecting
+  internal links.
+- **Retired demo-worker source deleted.** `workers/demo-chat.js` and `wrangler-demo-chat.toml`
+  were left in the repo "for history" when the worker was retired and removed from Cloudflare
+  (2026-06-21 entry). Today's marketing audit (`docs/MARKETING-LEAD-GENERATION-AUDIT-2026-09-02.md`,
+  committed in the same PR) found the file still hard-codes "projects start at $3,500 USD", the exact
+  pricing model reconciled out of the live assistant on 2026-08-27. Verified before deleting: not in
+  the Cloudflare account's worker list, no reference in `package.json`, `.github/`, or any page;
+  the only code mentions are two explanatory comments. Git history keeps the source. The CSP
+  `connect-src` allowance for its `workers.dev` host was removed from `vercel.json` in the same
+  commit.
+- **Dependabot #297 merged** (fast-uri patch, CI green). #292 (minor-and-patch group of 7) was
+  still being rebased by Dependabot at closeout; #293 (eslint-plugin-astro 1→3), #294 (eslint 9→10)
+  and #295 (googleapis 171→176) are majors and were deliberately left. **Next:** merge #292 once
+  its checks are green; take the three majors one at a time, each with a local `npm run check`
+  and, for googleapis, a dry run of `scripts/seo/gsc-submit-urls.mjs`.
 
 ## Session: 2026-08-27 (later) — The homepage chatbot was quoting a pricing model we no longer sell
 
