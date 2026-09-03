@@ -43,7 +43,7 @@
     "@tailwindcss/vite": "^4.3.3",
     "@vercel/analytics": "^2.0.1",
     "astro": "^7.2.4",
-    "googleapis": "^171.4.0",
+    "googleapis": "^176.0.0",
     "tailwindcss": "^4.3.3"
   },
   "overrides": {
