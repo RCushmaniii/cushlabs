@@ -143,7 +143,7 @@ const details: Record<string, ProjectDetailOverride> = {
   },
   cushlabs: {
     slug: "cushlabs",
-    demoUrl: "https://cushlabs.ai",
+    demoUrl: "https://www.cushlabs.ai/",
     thumbnail: "/images/portfolio/cushlabs-thumb.webp",
     videoUrl: "/images/portfolio/cushlabs-brief.mp4",
     videoPoster: "/images/portfolio/cushlabs-brief-poster.webp",
