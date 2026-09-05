@@ -151,8 +151,8 @@ const privacyLabel = isEn ? "Privacy Policy" : "Aviso de privacidad";
     </footer>
 
     <script>
-      import { inject } from "@vercel/analytics";
-      inject();
+      import { initConversionAnalytics } from "../lib/conversion-analytics";
+      initConversionAnalytics();
     </script>
   </body>
 </html>

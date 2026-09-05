@@ -47,6 +47,7 @@ const copy = {
     curUsdLabel: "US & Canada · USD",
     tiers: [
       {
+        id: "basic",
         name: "Basic",
         price: { mxn: "$1,990", usd: "$129" },
         tagline: "For getting started",
@@ -60,6 +61,7 @@ const copy = {
         cta: "Get started",
       },
       {
+        id: "premium",
         name: "Premium",
         price: { mxn: "$3,490", usd: "$229" },
         tagline: "For growing businesses",
@@ -77,6 +79,7 @@ const copy = {
         cta: "Get started",
       },
       {
+        id: "ultra",
         name: "Ultra",
         price: { mxn: "$5,490", usd: "$349" },
         tagline: "For clinics & high-volume businesses",
@@ -126,6 +129,7 @@ const copy = {
     curUsdLabel: "EE.UU. & Canadá · USD",
     tiers: [
       {
+        id: "basic",
         name: "Básico",
         price: { mxn: "$1,990", usd: "$129" },
         tagline: "Para empezar",
@@ -139,6 +143,7 @@ const copy = {
         cta: "Empieza",
       },
       {
+        id: "premium",
         name: "Premium",
         price: { mxn: "$3,490", usd: "$229" },
         tagline: "Para negocios en crecimiento",
@@ -156,6 +161,7 @@ const copy = {
         cta: "Empieza",
       },
       {
+        id: "ultra",
         name: "Ultra",
         price: { mxn: "$5,490", usd: "$349" },
         tagline: "Para clínicas y negocios de alto volumen",
@@ -345,7 +351,11 @@ const t = copy[locale];
             )}
 
             <a
-              href={t.bookHref}
+              href={`${t.bookHref}?plan=${tier.id}&service=managed-ai-services&intent_source=pricing-card`}
+              data-analytics-event="plan_selected"
+              data-analytics-plan={tier.id}
+              data-analytics-service="managed-ai-services"
+              data-analytics-placement="pricing-card"
               class={`block w-full text-center px-6 py-3 rounded-lg font-display font-semibold transition-colors duration-300 ${
                 tier.featured
                   ? "bg-cush-orange text-black hover:bg-cush-orange/90"
