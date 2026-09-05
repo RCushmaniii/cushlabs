@@ -360,6 +360,27 @@ Documented in CLAUDE.md and memory `feedback_tailwind4_color_collision`. Custom 
 
 ## Session History
 
+## Session: 2026-09-05 — Funnel attribution connected pricing, booking, demos, contact, and WhatsApp
+
+**PR:** [#301](https://github.com/RCushmaniii/cushlabs/pull/301)
+
+Implemented the first site-side measurement layer from the September 2 marketing audit. A shared
+Vercel Analytics client now preserves first-touch UTM/referrer/landing-page context for the browser
+session and attaches page, locale, plan, service, and CTA placement to conversion events. The site
+records demo opens, pricing-plan selections, booking CTA clicks, booking starts/completions, contact
+form completions, and WhatsApp clicks without sending names, email addresses, phone numbers, notes,
+or message text to analytics.
+
+Pricing CTAs now carry Basic/Premium/Ultra intent into the EN and ES booking routes, where the
+selected plan is acknowledged before scheduling. Successful Formspree leads also include source,
+campaign, and original landing page so the notification arrives with usable acquisition context.
+
+Corrected the salon outreach playbook's default opener, time-saver opener, and Booksy objection:
+they now advertise Facebook Messenger only, matching the live offer; Instagram remains Coming.
+
+**Verification:** production build PASS (126 pages); meta-description gate PASS (124 checked);
+commercial-terms validation PASS; targeted ESLint PASS; TypeScript PASS; Vitest 31/31 PASS.
+
 ## Session: 2026-09-02 — The screen a client sees right after connecting promised a timeline, an email, and named "4 others"
 
 **PR:** [#296](https://github.com/RCushmaniii/cushlabs/pull/296) here (open) · [#291](https://github.com/RCushmaniii/cushlabs/pull/291) merged at the start of the session (the "trained on" claim and the trial-length drift from the previous session).
