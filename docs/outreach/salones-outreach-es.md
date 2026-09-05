@@ -18,7 +18,7 @@ Pick one; rotate to avoid pattern-matching. Warm, respectful, short. First touch
 
 **A — the missed-message angle (default)**
 
-> Hola 👋 Vi su salón y se ve precioso el trabajo que hacen. Una pregunta rápida: ¿alcanzan a contestar todos los mensajes que les llegan por Instagram y Facebook? A muchos salones se les escapan citas porque los mensajes llegan cuando están atendiendo. Armé un asistente con IA que contesta al instante y agenda por usted. ¿Le muestro cómo funciona? Sin compromiso 🙂
+> Hola 👋 Vi su salón y se ve precioso el trabajo que hacen. Una pregunta rápida: ¿alcanzan a contestar todos los mensajes que les llegan por Facebook? A muchos salones se les escapan citas porque los mensajes llegan cuando están atendiendo. Armé un asistente con IA para Facebook Messenger que contesta al instante y agenda por usted. ¿Le muestro cómo funciona? Sin compromiso 🙂
 
 **B — the after-hours angle**
 
@@ -26,7 +26,7 @@ Pick one; rotate to avoid pattern-matching. Warm, respectful, short. First touch
 
 **C — the time-saver angle**
 
-> Hola 👋 Pregunta honesta: ¿cuántas veces al día contesta lo mismo — precios, horarios, "¿tienen espacio?" — por Instagram? Hay forma de que eso se conteste solo, con la voz de su salón, y usted solo atienda a las clientas listas para agendar. Le paso el link si quiere verlo.
+> Hola 👋 Pregunta honesta: ¿cuántas veces al día contesta lo mismo — precios, horarios, "¿tienen espacio?" — por Facebook? Hay forma de que eso se conteste solo, con la voz de su salón, y usted solo atienda a las clientas listas para agendar. Le paso el link si quiere verlo.
 
 ---
 
@@ -46,7 +46,7 @@ Pick one; rotate to avoid pattern-matching. Warm, respectful, short. First touch
 
 | Si dice…                               | Responde…                                                                                                                                                                           |
 | -------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| "Ya uso Booksy / una app de citas"     | "¡Perfecto, no la quita! Esa app manda recordatorios, pero no contesta los mensajes de sus clientas en Instagram o Facebook. Eso es justo lo que yo hago. Se complementan."         |
+| "Ya uso Booksy / una app de citas"     | "¡Perfecto, no la quita! Esa app manda recordatorios, pero no contesta los mensajes de sus clientas en Facebook. Eso es justo lo que yo hago. Se complementan."                      |
 | "Está muy caro / no tengo presupuesto" | "Le entiendo. Son $1,990 al mes, todo incluido — y con una sola clienta al mes que no se le escape ya se pagó. Por eso le ofrezco una semana gratis: lo prueba sin arriesgar nada." |
 | "No le sé a la tecnología"             | "No se preocupe, yo lo configuro y lo cuido todo. Usted solo atiende a las clientas que le lleguen listas para agendar."                                                            |
 | "¿Suena a robot?"                      | "Para nada — habla con la voz de su salón, en español, natural y cálido. Si quiere le mando un ejemplo."                                                                            |

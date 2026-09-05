@@ -777,6 +777,7 @@ const t = copy[locale];
             {
               t.colTiers.map((_, i) => {
                 const featured = i === 1;
+                const plan = ["basic", "premium", "ultra"][i];
                 return (
                   <td
                     class={`pt-5 px-4 text-center ${
@@ -784,7 +785,11 @@ const t = copy[locale];
                     }`}
                   >
                     <a
-                      href={t.ctaHref}
+                      href={`${t.ctaHref}?plan=${plan}&service=managed-ai-services&intent_source=pricing-comparison`}
+                      data-analytics-event="plan_selected"
+                      data-analytics-plan={plan}
+                      data-analytics-service="managed-ai-services"
+                      data-analytics-placement="pricing-comparison"
                       class={`block w-full text-center px-4 py-2.5 rounded-lg font-display font-semibold text-sm transition-colors duration-300 ${
                         featured
                           ? "bg-cush-orange text-black hover:bg-cush-orange/90"

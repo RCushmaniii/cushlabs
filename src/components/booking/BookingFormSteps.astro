@@ -13,6 +13,15 @@ const b = dict.booking;
 ---
 
 <div class="booking-steps-container max-w-4xl mx-auto">
+  <div
+    class="hidden rounded-2xl border border-cush-orange/30 bg-cush-orange/10 p-5 mb-8"
+    data-plan-context
+    role="status"
+  >
+    <p class="font-display font-semibold text-foreground" data-plan-context-title></p>
+    <p class="mt-1 text-sm text-muted" data-plan-context-body></p>
+  </div>
+
   <!-- Session Info Banner -->
   <div class="rounded-2xl border border-border bg-surface p-6 mb-8">
     <h3 class="text-xl font-display font-bold text-foreground mb-4">
@@ -381,6 +390,31 @@ const b = dict.booking;
     let selectedTime: string | null = null;
     let formData: { name: string; email: string; phone: string; notes: string } = { name: '', email: '', phone: '', notes: '' };
     let isBooking = false;
+    let bookingStartedTracked = false;
+
+    const plan = new URLSearchParams(window.location.search).get('plan');
+    const validPlans = ['basic', 'premium', 'ultra'];
+    if (plan && validPlans.includes(plan)) {
+      const planName = plan === 'basic' && lang === 'es' ? 'Básico' : `${plan.charAt(0).toUpperCase()}${plan.slice(1)}`;
+      const planContext = document.querySelector<HTMLElement>('[data-plan-context]');
+      const planTitle = document.querySelector<HTMLElement>('[data-plan-context-title]');
+      const planBody = document.querySelector<HTMLElement>('[data-plan-context-body]');
+      if (planContext && planTitle && planBody) {
+        planTitle.textContent = lang === 'es'
+          ? `Estás preguntando por el plan ${planName}.`
+          : `You're asking about the ${planName} plan.`;
+        planBody.textContent = lang === 'es'
+          ? 'Conservamos esa selección para que la llamada empiece con el contexto correcto.'
+          : "We've kept that selection so the call starts with the right context.";
+        planContext.classList.remove('hidden');
+      }
+    }
+
+    function trackBookingStarted() {
+      if (bookingStartedTracked) return;
+      bookingStartedTracked = true;
+      window.cushlabsTrack?.('booking_started', { plan: plan || undefined });
+    }
 
     // --- Timezone utilities ---
     function getVisitorTimezone(): string | null {
@@ -545,6 +579,7 @@ const b = dict.booking;
 
     // Listen for date selection from DatePicker
     document.addEventListener('dateSelected', (async (e: Event) => {
+      trackBookingStarted();
       const detail = (e as CustomEvent).detail;
       selectedDate = detail.date;
       selectedTime = null;
@@ -621,6 +656,7 @@ const b = dict.booking;
 
       container.querySelectorAll('.time-slot-btn').forEach((btn) => {
         btn.addEventListener('click', (e) => {
+          trackBookingStarted();
           const target = e.currentTarget as HTMLButtonElement;
           selectedTime = target.dataset.time || null;
 
@@ -742,6 +778,7 @@ const b = dict.booking;
         }
 
         if (data.ok) {
+          window.cushlabsTrack?.('booking_completed', { plan: plan || undefined });
           const dateOptions: Intl.DateTimeFormatOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
           const dateStrFormatted = selectedDate.toLocaleDateString(lang === 'es' ? 'es-MX' : 'en-US', dateOptions);
 
