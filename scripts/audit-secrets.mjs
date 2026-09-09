@@ -30,9 +30,8 @@
  *   npm run audit:secrets -- --history every blob ever committed (slow; finds the buried ones)
  *   npm run audit:secrets -- --json    machine-readable, same redaction contract
  */
-import { readFileSync, readdirSync, statSync, existsSync } from "node:fs";
+import { readFileSync } from "node:fs";
 import { execSync } from "node:child_process";
-import path from "node:path";
 
 const args = process.argv.slice(2);
 const SCAN_HISTORY = args.includes("--history");
@@ -54,7 +53,20 @@ const DETECTORS = [
   },
   {
     id: "generic-credential-assignment",
-    re: /\b((?:api[_-]?key|secret|token|passwd|password|pwd|private[_-]?key|access[_-]?key|auth[_-]?token|client[_-]?secret)[_a-z0-9]*)\s*[:=]\s*["'`]?([^"'`\s,;<>{}]{8,})/i,
+    // The name may carry ANY camelCase or snake_case prefix in front of a strong
+    // credential word — accessToken, refreshToken, csrfToken, webhook_secret.
+    //
+    // The original pattern listed whole names, which failed structurally: camelCase has
+    // no internal word boundary, so \b could only ever match at the identifier start,
+    // and any compound whose PREFIX was not on the list was invisible. accessToken and
+    // refreshToken were missed while authToken was caught, purely because the latter
+    // happened to be spelled out. This repo's own history carries a demo gate token in
+    // exactly the missed shape, and the working-tree scan reported zero findings.
+    //
+    // The key-family deliberately keeps explicit prefixes. A bare "key" suffix matches
+    // cacheKey, sortKey and rowKey, and a gate that cries wolf gets switched off — the
+    // same 50%-false-positive trap this detector was already tuned away from once.
+    re: /\b((?:(?:[A-Za-z_$][\w$]*?)?(?:token|secret|passwd|password|pwd)|(?:api|access|private|secret|signing|encryption|service|client|session|auth)[_-]?keys?)[_a-z0-9]*)\s*[:=]\s*["'`]?([^"'`\s,;<>{}]{8,})/i,
     capture: 2,
     name: 1,
   },
@@ -189,15 +201,28 @@ function scanText(text, where) {
   return out;
 }
 
-function walk(dir, out = []) {
-  for (const entry of readdirSync(dir)) {
-    const p = path.join(dir, entry);
-    const rel = path.relative(".", p).replace(/\\/g, "/");
-    if (SKIP_DIR.test(rel)) continue;
-    if (statSync(p).isDirectory()) walk(p, out);
-    else if (SCANNABLE.test(entry)) out.push(rel);
-  }
-  return out;
+/**
+ * The files that are committed, or that the next `git add` could commit.
+ *
+ * This used to walk the filesystem against a hand-maintained SKIP_DIR list, which asked
+ * the wrong question. The risk this tool reduces is a credential reaching the REPOSITORY,
+ * so the set to scan is exactly what git is willing to take: `-c` cached (tracked),
+ * `-o` others (untracked), `--exclude-standard` dropping whatever .gitignore excludes.
+ *
+ * Not a convenience. Walking the filesystem reported every real credential in the local
+ * .env as HIGH on every run — correct local setup, permanently red gate — and a gate that
+ * fails when nothing is wrong is one that gets bypassed with --no-verify.
+ *
+ * A leftover test fixture is still caught: it is untracked but not ignored, so it stays
+ * in scope and trips the gate loudly, which is the intended behaviour.
+ */
+function committableFiles() {
+  return execSync("git ls-files -co --exclude-standard -z", {
+    encoding: "utf8",
+    maxBuffer: 64 * 1024 * 1024,
+  })
+    .split("\0")
+    .filter((f) => f && SCANNABLE.test(f) && !SKIP_DIR.test(f));
 }
 
 const findings = [];
@@ -233,7 +258,7 @@ if (SCAN_HISTORY) {
     );
   }
 } else {
-  for (const file of walk(".")) {
+  for (const file of committableFiles()) {
     if (EXEMPT_FILE.test(file)) continue;
     let content;
     try {

@@ -8,10 +8,11 @@ dist/
 # portfolio sync diff baseline (working artifact)
 src/data/.projects.snapshot.json
 
-# Canary file the scanner's contract test writes and deletes at run time. Ignored
-# because a crashed run leaves it behind, and it is deliberately full of
-# credential-shaped lines — exactly what must never reach a commit.
-docs/__secret-scan-fixture.md
+# NOTE: the scanner's contract-test fixture (docs/__secret-scan-fixture.md) is
+# deliberately NOT ignored. The working-tree scan enumerates via
+# `git ls-files -co --exclude-standard`, so ignoring the fixture would hide it from the
+# very scanner the test is exercising. Left visible, a fixture surviving a crashed run
+# trips the gate loudly instead of sitting in the tree unnoticed.
 
 # environment
 .env
