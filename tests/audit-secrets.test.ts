@@ -89,6 +89,11 @@ const planted = {
   mysqlPassword: canary(14),
   uriPassword: canary(14),
   apiKey: canary(20),
+  // camelCase, prefix not in the detector's original name list. This shape was
+  // invisible: camelCase has no internal word boundary, so `\b` could only match at
+  // the identifier start, and `accessToken` matched none of the listed names while
+  // `authToken` did. A demo gate token in this repo's history has exactly this shape.
+  accessTokenCamel: canary(20),
 };
 
 const run = () => {
@@ -115,6 +120,7 @@ describe("audit-secrets output contract", () => {
         `MYSQL_PASSWORD=${planted.mysqlPassword}`,
         `DATABASE_URL=postgres://admin:${planted.uriPassword}@db.example.io:5432/app`,
         `api_key = "${planted.apiKey}"`,
+        `accessToken: "${planted.accessTokenCamel}"`,
         "",
       ].join("\n"),
       "utf8",
@@ -138,6 +144,13 @@ describe("audit-secrets output contract", () => {
     expect(output).toMatch(/db-credential-assignment/);
     expect(output).toMatch(/connection-uri-with-inline-password/);
     expect(output).toMatch(/generic-credential-assignment/);
+  });
+
+  it("catches a camelCase name whose prefix is not in the detector list", () => {
+    // The structural gap, asserted. `\b` can only match at a camelCase identifier's
+    // start, so listing whole names left accessToken/refreshToken/sessionKey invisible
+    // while authToken was caught. Reverting to a name list reopens it silently.
+    expect(output).toMatch(/accessToken/);
   });
 
   it("never prints a planted value in full", () => {
