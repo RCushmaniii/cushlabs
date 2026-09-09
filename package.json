@@ -29,6 +29,8 @@
     "seo:gsc:url": "node scripts/seo/gsc-submit-urls.mjs --url",
     "seo:submit": "npm run seo:indexnow && npm run seo:gsc",
     "audit:docs": "node scripts/audit-docs.mjs",
+    "audit:secrets": "node scripts/audit-secrets.mjs",
+    "audit:secrets:history": "node scripts/audit-secrets.mjs --history",
     "sync:terms": "node scripts/sync-terms.mjs",
     "validate:terms": "node scripts/validate-terms.mjs",
     "sync:status": "node ../operating-system/scripts/sync-check.mjs"
