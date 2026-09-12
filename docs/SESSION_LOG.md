@@ -412,6 +412,46 @@ that gets bypassed with `--no-verify`.
 
 ## Session History
 
+## Session: 2026-09-12 — Two Dependabot PRs were failing Vercel builds because the eslint 10 ecosystem is deadlocked upstream
+
+**Closed, not merged:** [#294](https://github.com/RCushmaniii/cushlabs/pull/294) (eslint 9.39.5 → 10.10.0),
+[#293](https://github.com/RCushmaniii/cushlabs/pull/293) (eslint-plugin-astro 1.6.0 → 3.1.0).
+No code changed. `main` was not touched.
+
+Robert forwarded a Vercel "preview deployment failed" email for
+`dependabot/npm_and_yarn/eslint-10.9.1` and asked what it was.
+
+**The diagnosis.** Not a build error in this repo — `npm ci` never completed. The GitHub Actions
+log showed `ERESOLVE`: `eslint-plugin-jsx-a11y@6.10.2` declares
+`peerDependencies: { eslint: "^3 || ^4 || ^5 || ^6 || ^7 || ^8 || ^9" }`, so eslint 10 cannot be
+installed alongside it. 6.10.2 is the **latest published version** on npm — there is no newer
+release to upgrade to. Vercel reports this as a generic "build error", which is what made the
+email look like a site problem.
+
+**The mirror-image PR.** #293 was failing for the opposite reason and the same root cause.
+`eslint-plugin-astro@3.1.0` declares `eslint: ">=10.0.0"` **and** `eslint-plugin-jsx-a11y: ">=6.10.2"`.
+So astro 3.x requires eslint 10, jsx-a11y forbids eslint 10, and jsx-a11y has no version that
+satisfies astro 3.x's eslint floor. The two PRs cannot merge separately and cannot merge together
+either. Both closed with the reasoning recorded on the PR.
+
+**Why closing is safe.** `eslint`, `eslint-plugin-astro`, `eslint-plugin-jsx-a11y` and
+`@typescript-eslint/*` are all devDependencies. None of them enter the Astro build output or the
+deployed bundle. The working combination on `main` — `eslint@9` + `eslint-plugin-astro@1.6.0` —
+is unchanged and lints fine.
+
+**Side effect worth having.** Each of those two branches was consuming one failed Vercel preview
+deployment per Dependabot rebase, against the 100/day Hobby ceiling. Closing them stops that.
+
+**For the next session that sees this reappear:** do not re-diagnose it. Check
+`npm view eslint-plugin-jsx-a11y@latest peerDependencies` first. If the range still stops at `^9`,
+the bump is still blocked and the PR gets closed again. The unblock condition is a jsx-a11y release
+accepting `eslint@^10` — at which point #293 and #294 must land *together*, in one PR, and
+`eslint-plugin-astro@3.x` may require rewriting `eslint.config.js` for the newer
+`typescript-eslint` flat-config API rather than a straight version bump.
+
+The other seven open Dependabot PRs were left alone — they belong to the monthly grouped pass in
+`operating-system/governance/dependency-maintenance.md`, not to this session.
+
 ## Session: 2026-09-08 — The secret scanner shipped after two weeks red, then its own clean report turned out to be a blind spot
 
 **Merged:** [#284](https://github.com/RCushmaniii/cushlabs/pull/284) (`d3187db`),
