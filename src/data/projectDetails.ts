@@ -1229,15 +1229,15 @@ const details: Record<string, ProjectDetailOverride> = {
     demoUrl: "https://marketsignal.cushlabs.ai",
     en: {
       headline:
-        "MarketSignal — Google Reputation & Local Competitive Intelligence",
+        "MarketSignal — Google Review Management & Local Competitive Intelligence",
       subheadline:
-        "Manage your Google reputation and track the competition in one place — AI-drafted replies to unanswered reviews, plus Google Maps rank tracking and one clear action item, delivered weekly to WhatsApp.",
+        "Manage your Google reviews and track the competition in one place — AI-drafted replies to unanswered reviews, plus Google Maps rank tracking and one clear action item, delivered weekly to WhatsApp.",
       overallVerdictTitle: "The Solution",
       overallVerdictBody:
-        "MarketSignal does two jobs for a local business. It manages their Google reputation — detecting unanswered reviews, drafting tone-matched replies per star rating, and posting them live through the Google Business Profile API once the owner approves, so reviews stop sitting unanswered for weeks. And it tracks the competitive picture around them: Google Maps rankings, review velocity, rating trends, and competitor movement, distilled by Claude into a weekly WhatsApp report with one specific, high-impact action item. No dashboards to check, no reports to download — the insight arrives in the conversation thread where Mexican business owners already operate. The architecture is built for phased go-to-market: Phase 1 validates willingness to pay through a manual service model, Phase 2 adds automated collection and WhatsApp delivery, Phase 3 opens self-service onboarding.",
+        "MarketSignal does two jobs for a local business. It manages their Google reviews — detecting the ones still unanswered, drafting tone-matched replies per star rating, and posting them live through the Google Business Profile API once the owner approves, so reviews stop sitting unanswered for weeks. And it tracks the competitive picture around them: Google Maps rankings, review velocity, rating trends, and competitor movement, distilled by Claude into a weekly WhatsApp report with one specific, high-impact action item. No dashboards to check, no reports to download — the insight arrives in the conversation thread where Mexican business owners already operate. The architecture is built for phased go-to-market: Phase 1 validates willingness to pay through a manual service model, Phase 2 adds automated collection and WhatsApp delivery, Phase 3 opens self-service onboarding.",
       whatItDoesWellTitle: "Technical Highlights",
       whatItDoesWell: [
-        "AI reputation manager — detects unanswered Google reviews, drafts tone-matched replies per star rating, and tracks a draft → approve → post lifecycle with live posting through the Google Business Profile API",
+        "AI review manager — detects unanswered Google reviews, drafts tone-matched replies per star rating, and tracks a draft → approve → post lifecycle with live posting through the Google Business Profile API",
         "Append-only snapshot architecture — historical data is never overwritten, enabling re-analysis and audit trails",
         "Claude API integration for natural-language insights with actionable recommendations per location",
         "Multi-org data model with dynamic [orgSlug] routing — scales from day one without migration",
