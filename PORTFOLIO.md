@@ -5,7 +5,7 @@
 portfolio_enabled: true
 portfolio_priority: 21
 portfolio_featured: false
-portfolio_last_reviewed: "2026-04-06"
+portfolio_last_reviewed: "2026-09-13"
 
 title: "CushLabs.ai"
 tagline: "Self-maintaining bilingual portfolio with serverless booking and build-time i18n enforcement"
@@ -43,6 +43,16 @@ demo_video_poster: "/images/portfolio/cushlabs-brief-poster.webp"
 live_url: "https://cushlabs.ai"
 demo_url: "https://cushlabs.ai"
 case_study_url: ""
+
+problem: "Bilingual marketing sites go stale the moment you stop hand-updating them. Portfolio pages die after three or four projects because the maintenance cost multiplies across languages. Third-party booking widgets break design consistency and add a monthly fee."
+
+solution: "A static site that does the dynamic things anyway. The portfolio builds itself from GitHub, so shipping a project publishes it. Booking runs on a serverless Worker instead of a paid widget. EN/ES parity is enforced at build time, so neither language can quietly drift from the other — the build fails instead."
+
+metrics:
+  - "36 portfolio projects synced automatically from GitHub with zero manual data entry"
+  - "0 KB i18n runtime overhead — a 24-line custom system replaces 40KB+ of i18next"
+  - "6 automated pre-deploy checks enforcing bilingual parity, secret scanning and build validation"
+  - "$0/month booking via Cloudflare Workers, replacing a $8-16/month Calendly seat"
 
 problem_solved: |
   Bilingual marketing sites go stale the moment you stop manually updating them. Portfolio pages die after 3-4 projects because maintenance costs multiply across languages. Third-party booking widgets break design consistency and add monthly fees. And static sites — while fast and cheap — traditionally can't handle dynamic features like scheduling without a full backend.
