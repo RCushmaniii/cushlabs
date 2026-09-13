@@ -53,7 +53,7 @@ export const esCardCopy: Record<string, EsCardCopy> = {
     tagline:
       "Plataforma de WhatsApp como Meta Tech Provider — un negocio conecta su propia cuenta en minutos y envía recordatorios de citas que sus clientes sí leen",
   },
-  // Updated 2026-08-07 to surface Google reputation management, a core CushLabs
+  // Updated 2026-08-07 to surface Google review management, a core CushLabs
   // service that was described in the body of the entry but absent from the card.
   "cushlabs-marketsignal": {
     title:

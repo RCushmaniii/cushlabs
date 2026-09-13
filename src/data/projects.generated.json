@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-22T18:10:18.235Z",
+  "generatedAt": "2026-09-13T17:02:00.132Z",
   "count": 36,
   "projects": [
     {
@@ -7,7 +7,7 @@
       "name": "ai-chatbot-saas",
       "title": "Converso AI — Bilingual AI Front Desk & Sales Assistant",
       "description": "Multi-tenant AI chatbot SaaS platform - Ragbot by CushLabs.AI",
-      "summary": "> Multi-tenant SaaS platform for service businesses to deploy a bilingual (EN/ES), on-brand AI assistant that answers questions, qualifies leads, captures booking intent, and escalates high-intent pro",
+      "summary": "> Most website visitors leave without asking the question that would have led to a sale.",
       "url": "https://github.com/RCushmaniii/ai-chatbot-saas",
       "demoUrl": "https://www.soyconverso.com",
       "liveUrl": "",
@@ -44,13 +44,14 @@
       "status": null,
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 1273266,
+        "TypeScript": 1340829,
+        "PLpgSQL": 28977,
         "JavaScript": 12530,
         "CSS": 10362
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-08-17T18:55:17Z",
+      "lastPushed": "2026-09-11T06:18:01Z",
       "createdAt": "2025-12-02T07:09:31Z",
       "isFeatured": true,
       "isArchived": false,
@@ -130,7 +131,7 @@
       "name": "ny-ai-chatbot",
       "title": "NY AI Chatbot",
       "description": "Production-ready AI chatbot with embeddable widget for websites. Features include knowledge base integration, multi-language support, and customizable admin dashboard.",
-      "summary": "**Drop-in AI chatbot widget with RAG intelligence for small business websites.**",
+      "summary": "> A prospective student wants to know if the coaching is right for them, at 11pm,",
       "url": "https://github.com/RCushmaniii/ny-ai-chatbot",
       "demoUrl": "https://chat.nyenglishteacher.com/demo",
       "liveUrl": "https://chat.nyenglishteacher.com/demo",
@@ -177,14 +178,14 @@
       "language": "TypeScript",
       "languages": {
         "TypeScript": 1092740,
+        "PLpgSQL": 21257,
         "JavaScript": 16173,
-        "PLpgSQL": 10195,
         "CSS": 8564,
         "PowerShell": 5924
       },
       "stars": 1,
       "forks": 0,
-      "lastPushed": "2026-08-09T18:09:47Z",
+      "lastPushed": "2026-09-10T23:28:24Z",
       "createdAt": "2025-11-23T00:24:28Z",
       "isFeatured": true,
       "isArchived": false,
@@ -255,7 +256,7 @@
       "name": "cushlabs-messenger-bot",
       "title": "CushLabs Messenger",
       "description": "Multi-tenant Facebook Messenger AI platform — one Cloudflare Worker serving many business Pages via page_id routing, with bilingual (EN/es-MX) Claude assistants, Vectorize RAG, structured business facts, and human handoff.",
-      "summary": "> Multi-tenant Facebook Messenger AI platform — one Cloudflare Worker serving many business Pages with bilingual (EN/es-MX) Claude-powered assistants, RAG knowledge bases, structured business facts, a",
+      "summary": "> The customer who messaged your business at 9pm didn't wait until morning.",
       "url": "https://github.com/RCushmaniii/cushlabs-messenger-bot",
       "demoUrl": "https://m.me/cushlabs",
       "liveUrl": "",
@@ -313,15 +314,15 @@
       "status": "Production",
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 914745,
-        "JavaScript": 260716,
-        "PowerShell": 7945,
+        "TypeScript": 1154996,
+        "JavaScript": 332752,
+        "PowerShell": 8895,
         "CSS": 6629,
         "HTML": 1562
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-08-19T21:43:40Z",
+      "lastPushed": "2026-09-13T16:55:52Z",
       "createdAt": "2026-04-06T23:20:56Z",
       "isFeatured": true,
       "isArchived": false,
@@ -406,7 +407,7 @@
       "name": "cushlabs-ai-voice-agent",
       "title": "AI Voice Agent Platform",
       "description": "Production-ready AI voice agents for lead qualification, appointment booking, and customer conversations — powered by Vapi, Claude, and Google Calendar",
-      "summary": "Production-ready AI voice agents that qualify leads, book appointments, and handle customer conversations — 24/7, with sub-500ms response times.",
+      "summary": "> The phone rings while you are with a customer. It goes to voicemail. That caller",
       "url": "https://github.com/RCushmaniii/cushlabs-ai-voice-agent",
       "demoUrl": "https://voice.cushlabs.ai",
       "liveUrl": "https://voice.cushlabs.ai",
@@ -475,7 +476,7 @@
       },
       "stars": 0,
       "forks": 1,
-      "lastPushed": "2026-08-14T05:56:04Z",
+      "lastPushed": "2026-09-13T01:43:07Z",
       "createdAt": "2026-02-23T01:31:09Z",
       "isFeatured": true,
       "isArchived": false,
@@ -505,7 +506,7 @@
         "24/7 availability with zero hold times",
         "Real-time calendar booking mid-conversation"
       ],
-      "priority": 3,
+      "priority": 4,
       "dateCompleted": "2026-03",
       "slides": [
         {
@@ -566,8 +567,8 @@
       "id": 1196535593,
       "name": "cushlabs-marketsignal",
       "title": "MarketSignal — Google Reputation & Local Competitive Intelligence",
-      "description": "Google reputation management and local competitive intelligence for multi-location businesses in Mexico — AI-drafted review replies via the Google Business Profile API, plus Google Maps rank and competitor tracking delivered weekly over WhatsApp.",
-      "summary": "> AI-powered local competitive intelligence for multi-location businesses.",
+      "description": "Google review management and local competitive intelligence for multi-location businesses in Mexico — AI-drafted review replies via the Google Business Profile API, plus Google Maps rank and competitor tracking delivered weekly over WhatsApp.",
+      "summary": "> Your competitor moved above you in Google Maps three weeks ago and nobody told you.",
       "url": "https://github.com/RCushmaniii/cushlabs-marketsignal",
       "demoUrl": null,
       "liveUrl": "https://marketsignal.cushlabs.ai",
@@ -625,8 +626,8 @@
       "status": null,
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 1616953,
-        "JavaScript": 64230,
+        "TypeScript": 1731140,
+        "JavaScript": 70354,
         "HTML": 29745,
         "CSS": 17107,
         "Shell": 6070,
@@ -634,7 +635,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-08-22T18:08:12Z",
+      "lastPushed": "2026-09-13T01:42:56Z",
       "createdAt": "2026-03-30T19:46:00Z",
       "isFeatured": true,
       "isArchived": false,
@@ -656,7 +657,7 @@
         "WhatsApp delivery achieves higher read rates than email-based report alternatives",
         "Phased architecture validates willingness-to-pay before automation is built"
       ],
-      "priority": 4,
+      "priority": 5,
       "dateCompleted": null,
       "slides": [
         {
@@ -713,7 +714,7 @@
       "name": "ny-eng",
       "title": "NY English Teacher",
       "description": "Professional bilingual (EN/ES) business English coaching platform built with Astro, featuring interactive assessments, lead generation, content management, and booking integration. Optimized for SEO, performance, and conversion.",
-      "summary": "**Executive English coaching platform for professionals who need to command the room.**",
+      "summary": "> A senior executive in Mexico can already speak English. What they want is to stop",
       "url": "https://github.com/RCushmaniii/ny-eng",
       "demoUrl": "https://www.nyenglishteacher.com",
       "liveUrl": "https://www.nyenglishteacher.com",
@@ -767,10 +768,10 @@
       "status": "Production",
       "language": "Astro",
       "languages": {
-        "Astro": 4117176,
-        "TypeScript": 2465968,
+        "Astro": 4190073,
+        "TypeScript": 2482379,
         "HTML": 838639,
-        "JavaScript": 449054,
+        "JavaScript": 490974,
         "Python": 52293,
         "CSS": 40875,
         "MDX": 23889,
@@ -778,7 +779,7 @@
       },
       "stars": 1,
       "forks": 0,
-      "lastPushed": "2026-08-14T20:35:04Z",
+      "lastPushed": "2026-09-13T16:59:02Z",
       "createdAt": "2025-03-23T03:27:14Z",
       "isFeatured": true,
       "isArchived": false,
@@ -786,7 +787,7 @@
       "tagline": "Lead generation website for an English coaching business — replaced 4 roles, runs for $0/month",
       "thumbnail": "https://cdn.cushlabs.ai/ny-eng/images/portfolio/ny-eng-thumb.jpg",
       "problem": "Solo professional service providers burn 10-15 hours per week on manual qualification, scheduling ping-pong, and follow-ups. Their websites look identical to commodity competitors, making it impossible to justify premium pricing while the Spanish-speaking professional market remains underserved.",
-      "solution": "A fully automated lead generation platform that functions as four digital employees — SDR, marketing department, executive assistant, and brand manager — on free-tier infrastructure. Every conversation steers toward booking, every page justifies premium pricing, and the full EN/ES bilingual system doubles the addressable market from a single codebase.",
+      "solution": "A lead generation platform that carries the work of four agency functions — SDR, marketing, executive assistant, and brand manager — on free-tier infrastructure. Every conversation steers toward booking, every page justifies premium pricing, and the full EN/ES bilingual system doubles the addressable market from a single codebase.",
       "keyFeatures": [
         "Complete 4-course A1→C2 English curriculum — Beginner, Intermediate, Advanced, Executive — entirely free, bilingual EN/ES",
         "Executive course alone: 10 units × 3 sections, 8 original React drill components, ~130+ drills, Azure Neural TTS, capstone recorded presentation with direct browser-to-CDN audio upload (Vercel Blob) and 48-hour personal feedback loop",
@@ -807,7 +808,7 @@
         "2x addressable market from a single codebase via bilingual system",
         "10-15 hours/week of administrative and sales work automated away"
       ],
-      "priority": 5,
+      "priority": 6,
       "dateCompleted": "2026-04-27",
       "slides": [
         {
@@ -864,10 +865,10 @@
       "name": "cushlabs-connect",
       "title": "CushLabs Connect — Multi-Tenant WhatsApp Platform",
       "description": "Multi-tenant WhatsApp reminders & confirmations platform — CushLabs as a Meta Tech Provider; businesses connect their own WhatsApp via Embedded Signup. v2 of cushlabs-whatsapp.",
-      "summary": "A multi-tenant WhatsApp messaging platform. CushLabs operates as a Meta **Tech",
+      "summary": "> A clinic loses money every time someone books an appointment and forgets to turn up.",
       "url": "https://github.com/RCushmaniii/cushlabs-connect",
       "demoUrl": null,
-      "liveUrl": "https://connect.cushlabs.ai/",
+      "liveUrl": "https://www.cushlabs.ai/whatsapp/",
       "homepage": null,
       "topics": [
         "cloudflare-workers",
@@ -907,6 +908,7 @@
         "Cloudflare Cron Triggers",
         "WhatsApp Cloud API",
         "Meta Embedded Signup",
+        "Google Calendar API (service account)",
         "React + Vite + Tailwind (admin console)",
         "Clerk (admin auth)",
         "Cloudflare Pages"
@@ -914,14 +916,14 @@
       "status": "Production",
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 427416,
+        "TypeScript": 475791,
         "HTML": 132762,
-        "JavaScript": 16838,
+        "JavaScript": 19000,
         "CSS": 439
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-08-22T18:03:30Z",
+      "lastPushed": "2026-09-13T01:43:01Z",
       "createdAt": "2026-06-13T19:20:38Z",
       "isFeatured": true,
       "isArchived": false,
@@ -936,15 +938,20 @@
         "Businesses connect their own WhatsApp account through Embedded Signup and keep ownership of it",
         "One approved Meta app serves every tenant — onboarding is configuration, not a new deploy or a new review",
         "Reminders and confirmations run unattended on a schedule, so follow-up never depends on anyone remembering",
-        "Built from a system already live in production, so the multi-tenant rewrite started from proven behavior"
+        "Built from a system already live in production, so the multi-tenant rewrite started from proven behavior",
+        "A real business completed Embedded Signup end to end and was sending the same day",
+        "Client credentials renew themselves on a schedule, so a connection never lapses and no client is ever asked to reconnect",
+        "A client's Google Calendar becomes their appointment list, so onboarding is a shared calendar rather than data entry",
+        "Every message is counted against what Meta actually charged for it, per client and per category"
       ],
       "metrics": [
         "Meta App Review cleared in 16 days, approved on the first submission",
         "Both WhatsApp permissions confirmed at Advanced Access on the Graph API, not just the dashboard",
-        "163 automated tests across 7 files",
-        "One Worker and one approved Meta app serve every tenant — zero per-client deployments"
+        "279 automated tests across 19 files",
+        "One Worker and one approved Meta app serve every tenant — zero per-client deployments",
+        "60-day credential expiry solved server-side: the clock resets automatically and the client never sees it"
       ],
-      "priority": 6,
+      "priority": 7,
       "dateCompleted": null,
       "slides": [
         {
@@ -1020,7 +1027,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-08-06T16:46:31Z",
+      "lastPushed": "2026-09-13T10:55:46Z",
       "createdAt": "2026-03-06T18:20:23Z",
       "isFeatured": true,
       "isArchived": false,
@@ -1045,7 +1052,7 @@
         "Dual-mode interface serves both casual explorers and working scientists from one result",
         "Production deployment runs on any camera phone with zero-config minimum setup (OpenAI key only)"
       ],
-      "priority": 6,
+      "priority": 8,
       "dateCompleted": null,
       "slides": [
         {
@@ -1182,7 +1189,7 @@
         "Fully interactive public demo (tracker, desk, 401k) on fictional data — no sign-in, for portfolio review"
       ],
       "metrics": [],
-      "priority": 7,
+      "priority": 9,
       "dateCompleted": null,
       "slides": [
         {
@@ -1234,7 +1241,7 @@
       "name": "cushlabs-OS-dashboard",
       "title": "CushLabs OS Dashboard",
       "description": "Internal ops dashboard — live GitHub portfolio analytics for CushLabs",
-      "summary": "**Live:** [dashboard.cushlabs.ai](https://dashboard.cushlabs.ai)",
+      "summary": "> Knowing the business is busy is not the same as knowing it is working.",
       "url": "https://github.com/RCushmaniii/cushlabs-OS-dashboard",
       "demoUrl": "https://cushlabs-os-dashboard.vercel.app",
       "liveUrl": "https://dashboard.cushlabs.ai",
@@ -1289,13 +1296,13 @@
       "status": "Production",
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 709467,
+        "TypeScript": 737253,
         "JavaScript": 17211,
-        "CSS": 6560
+        "CSS": 7375
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-08-16T01:16:06Z",
+      "lastPushed": "2026-09-01T21:56:25Z",
       "createdAt": "2026-03-17T18:08:51Z",
       "isFeatured": false,
       "isArchived": false,
@@ -1320,7 +1327,7 @@
         "65+ repositories monitored, rolled up into ~24 real applications",
         "Sub-second client-side filtering across all interactive views"
       ],
-      "priority": 8,
+      "priority": 10,
       "dateCompleted": "2026-03",
       "slides": [
         {
@@ -1367,7 +1374,7 @@
       "name": "context-writing-system",
       "title": "AI Writing System",
       "description": "Context-engineering system to lock brand voice, enforce truth, and generate consistent AI-written content at scale.",
-      "summary": "> A context-engineering framework that makes AI write like the founder, not like AI.",
+      "summary": "> Ask any capable model to \"write like me\" and you get something competent and anonymous.",
       "url": "https://github.com/RCushmaniii/context-writing-system",
       "demoUrl": "https://context-writing-system.vercel.app",
       "liveUrl": "https://context-writing-system.vercel.app",
@@ -1411,18 +1418,18 @@
       "status": null,
       "language": "HTML",
       "languages": {
-        "HTML": 271397,
-        "JavaScript": 104858,
-        "CSS": 41745,
+        "HTML": 322865,
+        "JavaScript": 165425,
+        "CSS": 43006,
         "PowerShell": 1981
       },
-      "stars": 2,
+      "stars": 1,
       "forks": 0,
-      "lastPushed": "2026-08-10T09:38:08Z",
+      "lastPushed": "2026-09-13T01:43:09Z",
       "createdAt": "2025-12-20T10:31:00Z",
       "isFeatured": true,
       "isArchived": false,
-      "isPrivate": false,
+      "isPrivate": true,
       "tagline": "Clone your brand voice once — AI writes like you across every channel, no drift",
       "thumbnail": "https://cdn.cushlabs.ai/context-writing-system/images/context-writing-system-thumb.webp",
       "problem": "AI-generated content starts strong but drifts into generic corporate filler within minutes. Teams spend more time editing AI output than they saved generating it — killing hype, restoring voice, and fact-checking hallucinated claims. Every new chat session starts from zero because there's no persistent memory of who you are, what you sell, or what you're allowed to say.\n",
@@ -1440,7 +1447,7 @@
         "One voice identity stays consistent across every channel",
         "First drafts arrive review-ready instead of rewrite-ready"
       ],
-      "priority": 9,
+      "priority": 11,
       "dateCompleted": null,
       "slides": [
         {
@@ -1507,11 +1514,11 @@
       "name": "cushlabs-scrollytelling",
       "title": "CushLabs Scrollytelling",
       "description": "Cinematic scrollytelling presentations by CushLabs — bilingual, narrated, scroll-driven marketing sites that make audiences lean in.",
-      "summary": "> Cinematic, bilingual scrollytelling pitch decks that feel like cinema — not slides.",
+      "summary": "> Telling a prospect the work is good is weak. Showing them what it looks like,",
       "url": "https://github.com/RCushmaniii/cushlabs-scrollytelling",
       "demoUrl": "https://scrollytelling.cushlabs.ai",
       "liveUrl": "https://scrollytelling.cushlabs.ai",
-      "homepage": "https://cushlabs-scrollytelling.vercel.app",
+      "homepage": "https://scrollytelling.cushlabs.ai",
       "topics": [
         "astro",
         "bilingual",
@@ -1561,7 +1568,7 @@
       },
       "stars": 0,
       "forks": 1,
-      "lastPushed": "2026-08-06T16:46:46Z",
+      "lastPushed": "2026-09-12T02:28:51Z",
       "createdAt": "2026-03-06T17:57:40Z",
       "isFeatured": false,
       "isArchived": false,
@@ -1578,7 +1585,7 @@
         "Mobile-responsive with scroll-snap carousels and touch support"
       ],
       "metrics": [],
-      "priority": 10,
+      "priority": 12,
       "dateCompleted": "2026-03",
       "slides": [
         {
@@ -1642,9 +1649,9 @@
       "description": "AI-powered watermark removal tool for images, PDFs, and PPTX files. Drop a file, get a clean version.",
       "summary": "> AI-powered watermark removal for images, PDFs, and PPTX files. Layered detection pipeline with neural inpainting — drop a file, get a clean version.",
       "url": "https://github.com/RCushmaniii/cushlabs-ai-unwatermark",
-      "demoUrl": null,
+      "demoUrl": "https://unwatermark.cushlabs.ai",
       "liveUrl": "https://unwatermark.cushlabs.ai",
-      "homepage": null,
+      "homepage": "https://unwatermark.cushlabs.ai",
       "topics": [
         "ai",
         "automation",
@@ -1717,7 +1724,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-08-06T03:28:14Z",
+      "lastPushed": "2026-09-12T02:25:17Z",
       "createdAt": "2026-03-09T19:14:08Z",
       "isFeatured": false,
       "isArchived": false,
@@ -1741,7 +1748,7 @@
         "Orchestrates 4+ ML models with cost-aware fallback routing",
         "Zero image-editing skill required — simple drag-and-drop web interface"
       ],
-      "priority": 11,
+      "priority": 13,
       "dateCompleted": null,
       "slides": [
         {
@@ -1830,7 +1837,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-08-12T15:38:13Z",
+      "lastPushed": "2026-09-12T02:39:09Z",
       "createdAt": "2025-11-05T18:11:38Z",
       "isFeatured": false,
       "isArchived": false,
@@ -1852,7 +1859,7 @@
         "Native Spanish support — not machine-translated afterthoughts",
         "Zero data retention — resume text is never persisted"
       ],
-      "priority": 12,
+      "priority": 14,
       "dateCompleted": null,
       "slides": [
         {
@@ -1954,7 +1961,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-08-06T16:46:30Z",
+      "lastPushed": "2026-09-12T02:25:27Z",
       "createdAt": "2026-03-04T22:07:57Z",
       "isFeatured": false,
       "isArchived": false,
@@ -1980,7 +1987,7 @@
         "High-impact persuasion site shipped with no React, build system, or CMS",
         "Image pipeline cut total payload from 16.8MB to 1.3MB (92% reduction)"
       ],
-      "priority": 13,
+      "priority": 15,
       "dateCompleted": null,
       "slides": [
         {
@@ -2046,7 +2053,7 @@
       "url": "https://github.com/RCushmaniii/ai-idea-validator",
       "demoUrl": "https://ai-idea-validator.netlify.app/",
       "liveUrl": "https://ai-idea-validator.netlify.app/",
-      "homepage": "",
+      "homepage": "https://ai-idea-validator.netlify.app/",
       "topics": [
         "framer-motion",
         "i18n",
@@ -2093,13 +2100,13 @@
       "status": null,
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 312002,
-        "JavaScript": 11295,
+        "TypeScript": 341385,
+        "JavaScript": 26671,
         "CSS": 5180
       },
       "stars": 1,
       "forks": 0,
-      "lastPushed": "2026-08-06T03:24:03Z",
+      "lastPushed": "2026-09-12T02:41:16Z",
       "createdAt": "2026-01-25T01:59:32Z",
       "isFeatured": false,
       "isArchived": false,
@@ -2122,7 +2129,7 @@
         "Production-grade Next.js 15 app with server-side AI that keeps OpenAI keys off the client",
         "Zero-storage privacy architecture — no accounts, databases, cookies, or analytics"
       ],
-      "priority": 14,
+      "priority": 16,
       "dateCompleted": "2026-02",
       "slides": [
         {
@@ -2206,7 +2213,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-08-18T21:48:13Z",
+      "lastPushed": "2026-08-30T03:16:08Z",
       "createdAt": "2026-03-08T19:31:57Z",
       "isFeatured": false,
       "isArchived": false,
@@ -2228,7 +2235,7 @@
         "Client-ready Markdown and PDF deliverables that need no extra formatting",
         "Email sequences, ad campaigns, and 30-day content calendars generated on demand"
       ],
-      "priority": 15,
+      "priority": 17,
       "dateCompleted": null,
       "slides": [
         {
@@ -2358,7 +2365,7 @@
       },
       "stars": 0,
       "forks": 1,
-      "lastPushed": "2026-08-19T15:02:56Z",
+      "lastPushed": "2026-09-12T02:40:31Z",
       "createdAt": "2026-02-13T18:42:29Z",
       "isFeatured": false,
       "isArchived": false,
@@ -2379,7 +2386,7 @@
         "6 decision presets + 5 growth scenario presets",
         "Full state shareable via URL — no backend required"
       ],
-      "priority": 16,
+      "priority": 18,
       "dateCompleted": "2026-02",
       "slides": [
         {
@@ -2497,7 +2504,7 @@
       },
       "stars": 1,
       "forks": 1,
-      "lastPushed": "2026-08-06T16:45:56Z",
+      "lastPushed": "2026-09-12T02:33:28Z",
       "createdAt": "2026-01-12T02:37:39Z",
       "isFeatured": false,
       "isArchived": false,
@@ -2519,7 +2526,7 @@
         "12 universal folder categories",
         "10 free scans per user (backend-enforced)"
       ],
-      "priority": 17,
+      "priority": 19,
       "dateCompleted": "2026-02",
       "slides": [
         {
@@ -2638,7 +2645,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-08-20T14:25:56Z",
+      "lastPushed": "2026-09-12T02:30:51Z",
       "createdAt": "2025-12-11T17:38:35Z",
       "isFeatured": false,
       "isArchived": false,
@@ -2660,7 +2667,7 @@
         "9 currency pair combinations (USD/MXN/EUR)",
         "Zero data transmitted — 100% client-side computation"
       ],
-      "priority": 18,
+      "priority": 20,
       "dateCompleted": "2026-02",
       "slides": [
         {
@@ -2764,7 +2771,7 @@
       "languages": {
         "Python": 742403,
         "TypeScript": 615255,
-        "PLpgSQL": 54863,
+        "PLpgSQL": 126082,
         "Batchfile": 4338,
         "JavaScript": 4239,
         "CSS": 2874,
@@ -2773,7 +2780,7 @@
       },
       "stars": 1,
       "forks": 0,
-      "lastPushed": "2026-08-12T07:56:25Z",
+      "lastPushed": "2026-09-12T02:32:08Z",
       "createdAt": "2025-12-16T02:09:11Z",
       "isFeatured": false,
       "isArchived": false,
@@ -2789,7 +2796,7 @@
         "Tier-based access system ready for SaaS monetization"
       ],
       "metrics": [],
-      "priority": 18,
+      "priority": 21,
       "dateCompleted": null,
       "slides": [
         {
@@ -2896,7 +2903,7 @@
       },
       "stars": 1,
       "forks": 1,
-      "lastPushed": "2026-08-09T05:18:37Z",
+      "lastPushed": "2026-09-11T16:12:11Z",
       "createdAt": "2026-03-03T07:21:12Z",
       "isFeatured": false,
       "isArchived": false,
@@ -2918,7 +2925,7 @@
         "Bilingual presentation teaches both the correct answer and exam-day vocabulary",
         "Process guides remove the 'what do I even bring?' uncertainty before the exam"
       ],
-      "priority": 19,
+      "priority": 22,
       "dateCompleted": null,
       "slides": [
         {
@@ -2996,14 +3003,16 @@
       "stack": [
         "Python",
         "PyQt6",
+        "TypeScript",
         "Finnhub API",
-        "Twilio/WhatsApp",
+        "WhatsApp Cloud API",
+        "Cloudflare Workers",
         "Vercel Serverless"
       ],
       "status": "Production",
       "language": "Python",
       "languages": {
-        "Python": 552777,
+        "Python": 562460,
         "TypeScript": 20525,
         "PowerShell": 4838,
         "Inno Setup": 3850,
@@ -3011,7 +3020,7 @@
       },
       "stars": 1,
       "forks": 0,
-      "lastPushed": "2026-08-06T03:26:59Z",
+      "lastPushed": "2026-09-12T02:29:56Z",
       "createdAt": "2025-10-23T22:24:30Z",
       "isFeatured": false,
       "isArchived": false,
@@ -3022,7 +3031,8 @@
       "solution": "A professional Windows desktop application that monitors stock prices in real-time and sends instant alerts via both Windows toast notifications and WhatsApp messages when prices cross user-defined thresholds. It runs silently in the system tray with zero subscription fees.",
       "keyFeatures": [
         "Real-time price monitoring for up to 15 stocks with configurable intervals and automatic market hours detection",
-        "Multi-channel alerts: Windows toast notifications with audio plus WhatsApp mobile messages via Twilio",
+        "Multi-channel alerts: Windows toast notifications with audio plus WhatsApp mobile messages via Meta's WhatsApp Cloud API",
+        "Cloud monitor on Cloudflare Workers checks prices every 5 minutes during market hours — alerts arrive whether or not the PC is running",
         "Smart consolidated notifications — multiple alerts combined into a single notification per check cycle",
         "Bilingual interface (EN/ES) with multi-currency display toggling between USD and MXN with live exchange rates",
         "Background service runs silently in system tray — alerts work even when UI is closed, auto-starts with Windows"
@@ -3032,7 +3042,7 @@
         "15 stocks monitored simultaneously on free tier",
         "60 API calls/minute rate-limited token bucket for optimal Finnhub usage"
       ],
-      "priority": 20,
+      "priority": 23,
       "dateCompleted": "2026-02",
       "slides": [
         {
@@ -3149,7 +3159,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-07-13T06:28:30Z",
+      "lastPushed": "2026-08-23T01:01:02Z",
       "createdAt": "2026-06-06T19:37:00Z",
       "isFeatured": false,
       "isArchived": false,
@@ -3170,7 +3180,7 @@
         "~5-minute turnaround per new pack — raw AI sheet to installable",
         "100% automated carving — zero manual masking"
       ],
-      "priority": 20,
+      "priority": 24,
       "dateCompleted": null,
       "slides": [
         {
@@ -3262,7 +3272,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-08-19T19:23:17Z",
+      "lastPushed": "2026-09-12T02:37:39Z",
       "createdAt": "2026-02-13T19:55:19Z",
       "isFeatured": false,
       "isArchived": false,
@@ -3283,7 +3293,7 @@
         "4 chart types: waterfall, stacked bar, line with crossover, comparison table",
         "Full state shareable via URL — zero backend, zero data exposure"
       ],
-      "priority": 21,
+      "priority": 25,
       "dateCompleted": "2026-02",
       "slides": [
         {
@@ -3340,7 +3350,7 @@
       "name": "cushlabs",
       "title": "CushLabs.ai",
       "description": "AI consulting and software development for SMBs — bilingual (EN/ES) site built with Astro + Tailwind CSS",
-      "summary": "MAINTAINERS / AI ASSISTANTS — source of truth lives in the private operating-system repo:",
+      "summary": "> This is where a business owner decides whether to trust us with their customers.",
       "url": "https://github.com/RCushmaniii/cushlabs",
       "demoUrl": "https://cushlabs.ai",
       "liveUrl": "https://cushlabs.ai",
@@ -3384,16 +3394,16 @@
       "status": null,
       "language": "Astro",
       "languages": {
-        "Astro": 966925,
-        "TypeScript": 389296,
-        "JavaScript": 170506,
+        "Astro": 983371,
+        "TypeScript": 405554,
+        "JavaScript": 168443,
         "HTML": 61067,
         "Python": 6606,
         "CSS": 6568
       },
       "stars": 3,
       "forks": 0,
-      "lastPushed": "2026-08-22T18:03:17Z",
+      "lastPushed": "2026-09-13T16:59:05Z",
       "createdAt": "2026-01-08T03:52:43Z",
       "isFeatured": false,
       "isArchived": false,
@@ -3411,7 +3421,7 @@
         "100% EN/ES content parity enforced at build time — no language drift"
       ],
       "metrics": [],
-      "priority": 22,
+      "priority": 26,
       "dateCompleted": null,
       "slides": [
         {
@@ -3525,7 +3535,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-08-06T16:46:28Z",
+      "lastPushed": "2026-09-12T02:31:20Z",
       "createdAt": "2026-01-05T15:06:48Z",
       "isFeatured": false,
       "isArchived": false,
@@ -3549,7 +3559,7 @@
         "Featured showcase highlighting the 6 strongest projects with detailed breakdowns",
         "Filtered views shareable via URL — bookmarkable category and sort combinations"
       ],
-      "priority": 23,
+      "priority": 27,
       "dateCompleted": null,
       "slides": [
         {
@@ -3670,7 +3680,7 @@
       },
       "stars": 1,
       "forks": 0,
-      "lastPushed": "2026-08-11T23:03:15Z",
+      "lastPushed": "2026-09-12T02:29:32Z",
       "createdAt": "2025-09-23T19:15:28Z",
       "isFeatured": false,
       "isArchived": false,
@@ -3692,7 +3702,7 @@
         "Client-side dictionary architecture handling 370K entries with O(1) performance",
         "Full E2E coverage across features, dark mode, and English/Spanish locales"
       ],
-      "priority": 24,
+      "priority": 28,
       "dateCompleted": "2025-09",
       "slides": [
         {
@@ -3788,7 +3798,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-08-11T22:31:57Z",
+      "lastPushed": "2026-09-12T02:37:16Z",
       "createdAt": "2026-01-04T03:47:35Z",
       "isFeatured": false,
       "isArchived": false,
@@ -3810,7 +3820,7 @@
         "Six-iteration UX refinement process documented end-to-end",
         "Zero i18n framework dependencies for full bilingual support"
       ],
-      "priority": 25,
+      "priority": 29,
       "dateCompleted": "2025-10",
       "slides": [
         {
@@ -3934,7 +3944,7 @@
         "Installable as a native-feeling PWA on Android and iOS",
         "Clean architecture with minimal dependencies and no database requirement"
       ],
-      "priority": 26,
+      "priority": 30,
       "dateCompleted": null,
       "slides": [
         {
@@ -4035,7 +4045,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-08-20T20:01:10Z",
+      "lastPushed": "2026-09-12T02:40:04Z",
       "createdAt": "2026-01-13T22:16:37Z",
       "isFeatured": false,
       "isArchived": false,
@@ -4057,7 +4067,7 @@
         "0.3s FCP, 0.4s LCP, 0ms TBT — zero layout shift",
         "Auto-generated sitemap with hreflang alternates for 30+ locale-specific URLs"
       ],
-      "priority": 27,
+      "priority": 31,
       "dateCompleted": "2026-02",
       "slides": [
         {
@@ -4159,7 +4169,7 @@
       },
       "stars": 1,
       "forks": 0,
-      "lastPushed": "2026-08-12T08:10:39Z",
+      "lastPushed": "2026-09-12T02:38:28Z",
       "createdAt": "2026-01-23T00:50:02Z",
       "isFeatured": false,
       "isArchived": false,
@@ -4181,7 +4191,7 @@
         "100% static — $0 server cost",
         "Sub-second page loads via CDN"
       ],
-      "priority": 28,
+      "priority": 32,
       "dateCompleted": "2026-02",
       "slides": [
         {
@@ -4247,7 +4257,7 @@
       "url": "https://github.com/RCushmaniii/mazebreak-trello",
       "demoUrl": "https://mazebreak-trello.vercel.app/#demo",
       "liveUrl": "https://mazebreak-trello.vercel.app/",
-      "homepage": null,
+      "homepage": "https://mazebreak-trello.vercel.app/",
       "topics": [
         "game-development",
         "nodejs",
@@ -4287,7 +4297,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-08-06T16:46:51Z",
+      "lastPushed": "2026-09-12T02:36:31Z",
       "createdAt": "2026-02-17T04:40:23Z",
       "isFeatured": false,
       "isArchived": false,
@@ -4303,7 +4313,7 @@
         "Every card auto-generated with a 9-item Definition of Done quality gate",
         "Encoded dependency chains replace tribal knowledge with enforced execution order"
       ],
-      "priority": 29,
+      "priority": 33,
       "dateCompleted": null,
       "slides": [
         {
@@ -4381,7 +4391,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-08-12T00:17:04Z",
+      "lastPushed": "2026-09-12T02:36:09Z",
       "createdAt": "2026-02-10T04:11:19Z",
       "isFeatured": false,
       "isArchived": false,
@@ -4397,7 +4407,7 @@
         "Entire app, including all GDD content, ships in a 357 KB gzipped bundle",
         "Markdown-to-deploy in under 60 seconds via Git push and Vercel auto-deploy"
       ],
-      "priority": 30,
+      "priority": 34,
       "dateCompleted": null,
       "slides": [
         {
@@ -4487,7 +4497,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-08-20T14:39:56Z",
+      "lastPushed": "2026-09-12T02:35:35Z",
       "createdAt": "2025-12-18T20:18:05Z",
       "isFeatured": false,
       "isArchived": false,
@@ -4508,7 +4518,7 @@
         "Zero database dependencies — file-based MDX content",
         "End-to-end contact form with validation and email delivery"
       ],
-      "priority": 31,
+      "priority": 35,
       "dateCompleted": "2025-12",
       "slides": [
         {
@@ -4614,7 +4624,7 @@
       },
       "stars": 2,
       "forks": 1,
-      "lastPushed": "2026-08-09T12:37:14Z",
+      "lastPushed": "2026-09-12T02:34:03Z",
       "createdAt": "2025-10-02T22:40:01Z",
       "isFeatured": false,
       "isArchived": false,
@@ -4636,7 +4646,7 @@
         "1-2 days of setup time eliminated per project",
         "All dependencies pinned to stable Feb 2026 versions"
       ],
-      "priority": 32,
+      "priority": 36,
       "dateCompleted": "2026-02",
       "slides": [
         {
