@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-13T16:58:39.996Z",
+  "generatedAt": "2026-09-13T17:02:00.132Z",
   "count": 36,
   "projects": [
     {
@@ -779,7 +779,7 @@
       },
       "stars": 1,
       "forks": 0,
-      "lastPushed": "2026-09-13T01:39:36Z",
+      "lastPushed": "2026-09-13T16:59:02Z",
       "createdAt": "2025-03-23T03:27:14Z",
       "isFeatured": true,
       "isArchived": false,
@@ -1518,7 +1518,7 @@
       "url": "https://github.com/RCushmaniii/cushlabs-scrollytelling",
       "demoUrl": "https://scrollytelling.cushlabs.ai",
       "liveUrl": "https://scrollytelling.cushlabs.ai",
-      "homepage": "https://cushlabs-scrollytelling.vercel.app",
+      "homepage": "https://scrollytelling.cushlabs.ai",
       "topics": [
         "astro",
         "bilingual",
@@ -1649,9 +1649,9 @@
       "description": "AI-powered watermark removal tool for images, PDFs, and PPTX files. Drop a file, get a clean version.",
       "summary": "> AI-powered watermark removal for images, PDFs, and PPTX files. Layered detection pipeline with neural inpainting — drop a file, get a clean version.",
       "url": "https://github.com/RCushmaniii/cushlabs-ai-unwatermark",
-      "demoUrl": null,
+      "demoUrl": "https://unwatermark.cushlabs.ai",
       "liveUrl": "https://unwatermark.cushlabs.ai",
-      "homepage": null,
+      "homepage": "https://unwatermark.cushlabs.ai",
       "topics": [
         "ai",
         "automation",
@@ -2053,7 +2053,7 @@
       "url": "https://github.com/RCushmaniii/ai-idea-validator",
       "demoUrl": "https://ai-idea-validator.netlify.app/",
       "liveUrl": "https://ai-idea-validator.netlify.app/",
-      "homepage": "",
+      "homepage": "https://ai-idea-validator.netlify.app/",
       "topics": [
         "framer-motion",
         "i18n",
@@ -3003,8 +3003,10 @@
       "stack": [
         "Python",
         "PyQt6",
+        "TypeScript",
         "Finnhub API",
-        "Twilio/WhatsApp",
+        "WhatsApp Cloud API",
+        "Cloudflare Workers",
         "Vercel Serverless"
       ],
       "status": "Production",
@@ -3029,7 +3031,8 @@
       "solution": "A professional Windows desktop application that monitors stock prices in real-time and sends instant alerts via both Windows toast notifications and WhatsApp messages when prices cross user-defined thresholds. It runs silently in the system tray with zero subscription fees.",
       "keyFeatures": [
         "Real-time price monitoring for up to 15 stocks with configurable intervals and automatic market hours detection",
-        "Multi-channel alerts: Windows toast notifications with audio plus WhatsApp mobile messages via Twilio",
+        "Multi-channel alerts: Windows toast notifications with audio plus WhatsApp mobile messages via Meta's WhatsApp Cloud API",
+        "Cloud monitor on Cloudflare Workers checks prices every 5 minutes during market hours — alerts arrive whether or not the PC is running",
         "Smart consolidated notifications — multiple alerts combined into a single notification per check cycle",
         "Bilingual interface (EN/ES) with multi-currency display toggling between USD and MXN with live exchange rates",
         "Background service runs silently in system tray — alerts work even when UI is closed, auto-starts with Windows"
@@ -3400,7 +3403,7 @@
       },
       "stars": 3,
       "forks": 0,
-      "lastPushed": "2026-09-13T01:42:54Z",
+      "lastPushed": "2026-09-13T16:59:05Z",
       "createdAt": "2026-01-08T03:52:43Z",
       "isFeatured": false,
       "isArchived": false,
@@ -4254,7 +4257,7 @@
       "url": "https://github.com/RCushmaniii/mazebreak-trello",
       "demoUrl": "https://mazebreak-trello.vercel.app/#demo",
       "liveUrl": "https://mazebreak-trello.vercel.app/",
-      "homepage": null,
+      "homepage": "https://mazebreak-trello.vercel.app/",
       "topics": [
         "game-development",
         "nodejs",
