@@ -1286,15 +1286,15 @@ const details: Record<string, ProjectDetailOverride> = {
     },
     es: {
       headline:
-        "MarketSignal — Reputación en Google e Inteligencia Competitiva Local",
+        "MarketSignal — Gestión de Reseñas de Google e Inteligencia Competitiva Local",
       subheadline:
-        "Administra tu reputación en Google y vigila a la competencia en un solo lugar — respuestas a reseñas sin contestar redactadas con IA, más monitoreo de rankings en Google Maps y una acción clara por semana, directo a tu WhatsApp.",
+        "Gestiona tus reseñas de Google y vigila a la competencia en un solo lugar — respuestas a reseñas sin contestar redactadas con IA, más monitoreo de rankings en Google Maps y una acción clara por semana, directo a tu WhatsApp.",
       overallVerdictTitle: "La Solución",
       overallVerdictBody:
-        "MarketSignal hace dos trabajos para un negocio local. Administra su reputación en Google — detecta reseñas sin contestar, redacta respuestas con el tono adecuado según la calificación y las publica en vivo a través de la API de Google Business Profile una vez que el dueño las aprueba, para que las reseñas dejen de quedarse sin respuesta durante semanas. Y monitorea el panorama competitivo a su alrededor: rankings en Google Maps, velocidad de reseñas, tendencias de calificación y movimientos de la competencia, que Claude destila en un reporte semanal por WhatsApp con una acción específica y de alto impacto. Sin dashboards que revisar, sin reportes que descargar — el insight llega en el hilo de conversación donde los dueños de negocio en México ya operan. La arquitectura está construida para go-to-market por fases: Fase 1 valida disposición a pagar con un modelo de servicio manual, Fase 2 agrega recolección automatizada y entrega por WhatsApp, Fase 3 abre onboarding autoservicio.",
+        "MarketSignal hace dos trabajos para un negocio local. Gestiona sus reseñas de Google — detecta las que siguen sin contestar, redacta respuestas con el tono adecuado según la calificación y las publica en vivo a través de la API de Google Business Profile una vez que el dueño las aprueba, para que las reseñas dejen de quedarse sin respuesta durante semanas. Y monitorea el panorama competitivo a su alrededor: rankings en Google Maps, velocidad de reseñas, tendencias de calificación y movimientos de la competencia, que Claude destila en un reporte semanal por WhatsApp con una acción específica y de alto impacto. Sin dashboards que revisar, sin reportes que descargar — el insight llega en el hilo de conversación donde los dueños de negocio en México ya operan. La arquitectura está construida para go-to-market por fases: Fase 1 valida disposición a pagar con un modelo de servicio manual, Fase 2 agrega recolección automatizada y entrega por WhatsApp, Fase 3 abre onboarding autoservicio.",
       whatItDoesWellTitle: "Destacados Técnicos",
       whatItDoesWell: [
-        "Gestor de reputación con IA — detecta reseñas de Google sin contestar, redacta respuestas con el tono adecuado según la calificación y maneja el ciclo borrador → aprobación → publicación, publicando en vivo con la API de Google Business Profile",
+        "Gestión de reseñas con IA — detecta reseñas de Google sin contestar, redacta respuestas con el tono adecuado según la calificación y maneja el ciclo borrador → aprobación → publicación, publicando en vivo con la API de Google Business Profile",
         "Arquitectura de snapshots append-only — los datos históricos nunca se sobreescriben, habilitando re-análisis y trazabilidad",
         "Integración con API de Claude para insights en lenguaje natural con recomendaciones accionables por ubicación",
         "Modelo de datos multi-org con ruteo dinámico [orgSlug] — escala desde el día uno sin migración",

@@ -57,9 +57,9 @@ export const esCardCopy: Record<string, EsCardCopy> = {
   // service that was described in the body of the entry but absent from the card.
   "cushlabs-marketsignal": {
     title:
-      "MarketSignal — Reputación en Google e Inteligencia Competitiva Local",
+      "MarketSignal — Gestión de Reseñas de Google e Inteligencia Competitiva Local",
     tagline:
-      "Gestión de reputación en Google y monitoreo de competidores — respuestas a reseñas redactadas con IA y una acción clave por semana, directo a tu WhatsApp",
+      "Gestión de reseñas de Google y monitoreo de competidores — respuestas redactadas con IA y una acción clave por semana, directo a tu WhatsApp",
   },
   "cushlabs-sticker-gen": {
     tagline:
