@@ -29,9 +29,11 @@ const __dirname = dirname(__filename);
 const PROJECTS_ROOT = join(__dirname, '..', '..'); // Parent of cushlabs repo
 const SELF_REPO = 'cushlabs';
 
-const REPO_ALIASES: Record<string, string> = {
-  'stock-alert': 'ai-stock-alert',
-};
+// Maps a GitHub repo name to a differently-named local clone directory.
+// Empty on purpose: every local clone is now named for its GitHub repo. A
+// mismatch here is what let generate-projects.ts and these scripts read two
+// different clones of the same repo and disagree about its contents.
+const REPO_ALIASES: Record<string, string> = {};
 
 function getLocalDir(repo: string): string {
   const alias = REPO_ALIASES[repo] || repo;
