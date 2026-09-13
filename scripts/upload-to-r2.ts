@@ -70,9 +70,11 @@ function getMimeType(filepath: string): string {
 }
 
 // ── Repo name aliases (local clone name differs from GitHub repo name) ──
-const REPO_ALIASES: Record<string, string> = {
-  'stock-alert': 'ai-stock-alert',
-};
+// Maps a GitHub repo name to a differently-named local clone directory.
+// Empty on purpose: every local clone is now named for its GitHub repo. A
+// mismatch here is what let generate-projects.ts and these scripts read two
+// different clones of the same repo and disagree about its contents.
+const REPO_ALIASES: Record<string, string> = {};
 
 // ── Helpers ─────────────────────────────────────────────────────────
 interface UploadTask {
