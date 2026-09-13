@@ -538,10 +538,10 @@ const details: Record<string, ProjectDetailOverride> = {
     en: {
       headline: "NY English Teacher",
       subheadline:
-        "A fully automated lead generation platform that replaces four roles — SDR, marketing, executive assistant, and brand manager — on $0/month infrastructure for a premium coaching business.",
+        "A lead generation and booking platform for a premium coaching business — carrying the work of four agency functions on $0/month infrastructure. SDR, marketing, executive assistant, brand manager.",
       overallVerdictTitle: "The Solution",
       overallVerdictBody:
-        "NY English Teacher is a production lead generation and client conversion platform built for a solo-operated premium coaching business in Guadalajara, Mexico. The platform replaces four roles that a traditional agency would staff with humans using automated systems that run on free-tier infrastructure. Four diagnostic quizzes pre-qualify leads with mapped communication gaps. A 3-step booking flow via Cloudflare Workers creates confirmed Google Meet sessions in under 60 seconds. A full EN/ES bilingual mirror with localized routing doubles the addressable market from a single codebase. And premium positioning is hard-coded into the UX with named executive testimonials from Driscoll's, CEVA Logistics, and more — no discount codes, no starter tier.",
+        "NY English Teacher is a production lead generation and client conversion platform built for a solo-operated premium coaching business in Guadalajara, Mexico. The platform carries work a traditional agency would staff across four roles, using automated systems that run on free-tier infrastructure. Four diagnostic quizzes pre-qualify leads with mapped communication gaps. A 3-step booking flow via Cloudflare Workers creates confirmed Google Meet sessions in under 60 seconds. A full EN/ES bilingual mirror with localized routing doubles the addressable market from a single codebase. And premium positioning is hard-coded into the UX with named executive testimonials from Driscoll's, CEVA Logistics, and more — no discount codes, no starter tier.",
       whatItDoesWellTitle: "Technical Highlights",
       whatItDoesWell: [
         "Static-first architecture: Astro 5.5 pre-renders every page to static HTML — zero database queries, zero runtime errors, Lighthouse 100",
@@ -589,10 +589,10 @@ const details: Record<string, ProjectDetailOverride> = {
     es: {
       headline: "NY English Teacher",
       subheadline:
-        "Una plataforma de generación de leads completamente automatizada que reemplaza cuatro roles — SDR, marketing, asistente ejecutiva y brand manager — con $0/mes de infraestructura para un negocio de coaching premium.",
+        "Una plataforma de generación de leads y reservas para coaching premium: cubre el trabajo de cuatro funciones de agencia con $0/mes de infraestructura. SDR, marketing, asistente ejecutiva y brand manager.",
       overallVerdictTitle: "La Solución",
       overallVerdictBody:
-        "NY English Teacher es una plataforma de generación de leads y conversión de clientes en producción, construida para un negocio de coaching premium operado por una sola persona en Guadalajara, México. La plataforma reemplaza cuatro roles que una agencia tradicional staffearia con humanos usando sistemas automatizados que corren en infraestructura de tier gratuito. Cuatro quizzes diagnósticos precalifican leads con brechas de comunicación mapeadas. Un flujo de reservas de 3 pasos vía Cloudflare Workers crea sesiones confirmadas de Google Meet en menos de 60 segundos. Un espejo bilingüe completo EN/ES con enrutamiento localizado duplica el mercado alcanzable desde una sola base de código. Y el posicionamiento premium está integrado en la UX con testimonios ejecutivos reales de Driscoll's, CEVA Logistics y más — sin códigos de descuento, sin tier de entrada.",
+        "NY English Teacher es una plataforma de generación de leads y conversión de clientes en producción, construida para un negocio de coaching premium operado por una sola persona en Guadalajara, México. La plataforma cubre el trabajo que una agencia tradicional repartiría entre cuatro roles, con sistemas automatizados que corren en infraestructura de nivel gratuito. Cuatro quizzes diagnósticos precalifican leads con brechas de comunicación mapeadas. Un flujo de reservas de 3 pasos vía Cloudflare Workers crea sesiones confirmadas de Google Meet en menos de 60 segundos. Un espejo bilingüe completo EN/ES con enrutamiento localizado duplica el mercado alcanzable desde una sola base de código. Y el posicionamiento premium está integrado en la UX con testimonios ejecutivos reales de Driscoll's, CEVA Logistics y más — sin códigos de descuento, sin plan de entrada.",
       whatItDoesWellTitle: "Destacados Técnicos",
       whatItDoesWell: [
         "Arquitectura static-first: Astro 5.5 pre-renderiza cada pagina a HTML estático — cero consultas a base de datos, cero errores runtime, Lighthouse 100",
