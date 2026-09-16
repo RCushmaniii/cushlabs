@@ -12,7 +12,44 @@
 > Resolved items collapse to one line under [Resolved](#resolved-technical-debt); the trail stays so a
 > future session does not re-litigate a settled decision.
 
-**9 open** · 19 resolved · last reconciled 2026-09-08
+**11 open** · 19 resolved · last reconciled 2026-09-15
+
+### #29 — The homepage advertises booking on three channels; only one of them books
+
+**High** · opened 2026-09-15 · blocks: nothing today, credibility the first time a prospect tests it
+
+The hero now reads "AI agents that answer questions, capture leads, and **book appointments** —
+on Messenger, your website, and by phone." Booking appears nowhere in
+`docs/strategy/ADVERTISED-COMMITMENTS.md` §4 List 1: Theme 3 is "captures the lead (name, contact,
+intent) with consent" and hands off. On Messenger and on the website the assistant **links** to the
+booking page. Only the AI Voice Agent books directly.
+
+The concrete failure: a prospect reads that line, opens the live demo one section below it, asks
+the bot to book, and is told it cannot. §4 asserts every List 1 bullet is live in production today,
+so this is the marketing↔bot contract drifting, not a wording preference. Robert was shown the
+objection twice and shipped it deliberately (PR #318); the reasoning is recorded in the decision
+log and in a comment beside the string.
+
+**Next:** this closes in `cushlabs-messenger-bot`, not here — either ship in-chat booking into
+List 1, or amend §4 to describe what the homepage now promises. Do **not** close it by quietly
+reverting `Hero.astro`.
+
+### #28 — The pain-point cards carry a hover state but are not clickable
+
+**Low** · opened 2026-09-15 · blocks: nothing; a small polish inconsistency on the homepage
+
+`src/components/home2/PainPoints.astro` renders six plain `<div>` cards that still have
+`hover:border-cush-orange/50`, `hover:shadow-lg` and a `group-hover` orange icon tile. They
+contain no link, button or handler, so the hover promises a click that does not exist.
+
+This is the same false affordance removed from `WhyMe.astro` in PR #318, under Robert's own rule:
+"if these cards are not clickable, I would not use this strong hover treatment at all." It was left
+in place only because that session's ask was the icons. Two adjacent sections now behave
+differently for the same reason, which is worse than either choice alone.
+
+**Next:** delete the three hover/group-hover classes from the card `<div>` and the icon tile in
+`PainPoints.astro`, matching the treatment now in `WhyMe.astro`. One-line change, EN and ES share
+the component.
 
 ### #27 — A Page can connect and nobody is told; the confirmation cannot list the Pages because the Worker never sends their names
 
@@ -411,6 +448,56 @@ that gets bypassed with `--no-verify`.
 ---
 
 ## Session History
+
+## Session: 2026-09-15 — The type system changed, and the homepage stopped reading as seven separate pages
+
+### Accomplished
+
+- **Manrope + Inter replaced Space Grotesk + Source Serif 4** (PR #318). Decided by building three
+  variants on a throwaway branch and comparing them rendered — the old system, Space Grotesk +
+  Inter, and Manrope + Inter — rather than by argument. `operating-system/cushlabs/brand-kit.md`
+  rewritten first and three consumer repos re-stamped; the site change is two `@theme` values.
+- **Seven-section homepage continuity pass** (PR #318): hero→demo fade + 48px overlap on a shared
+  warm neutral; the 256px dead zone between SocialProof and SolutionOverview cut to 48px; the
+  alternating How It Works timeline rebuilt as three columns (1100px → 576px); Guarantee headline
+  made to match the actual trial terms; FAQ and portfolio hierarchy.
+- **Per-pain icons** (PR #319) — all six cards had rendered the same hardcoded warning triangle.
+- Two **real bugs** found by measuring rather than looking: `.home-sub` carried `mb-8` whose
+  computed `margin-bottom` was **0px** (Astro's scoped `margin` shorthand outranks the Tailwind
+  class), and the closing CTA's microcopy measured **~4.0:1** contrast — below the 4.5:1 AA floor.
+- Hover removed from `WhyMe.astro`: those cards are plain `<div>`s, so it was a false affordance.
+
+### Decisions Made
+
+- **Manrope + Inter, 55/45:** the brand already carries its identity in the accent, the chevron mark
+  and the dark photography, so the type does not also need to. Full reasoning in the decision log.
+- **Three defects in the circulating typography document were rejected, each verified:** its
+  unprefixed `--text-*` entries collide with Tailwind 4's font-size namespace and would resize
+  every page while the build stayed green; its `#FF5B35` is not the accent (`#ff6a3d` is, and the
+  mark was recoloured to match); its discrete weight list makes a request for 750 snap to 700.
+- **"book appointments" shipped over a twice-raised objection** — Robert's call. See debt #29.
+- **The quarterly client quota was removed** from the closing CTA: an internal capacity decision
+  that raises "is he booked up?" at the exact moment the page should be lowering friction.
+
+### Immediate Next Steps
+
+Ordered by the operating ladder — **don't break what pays** puts #29 on top: it is the only item
+that can cost a live prospect's trust.
+
+- [ ] Close debt #29 in `cushlabs-messenger-bot` — ship in-chat booking into List 1, or amend
+      ADVERTISED-COMMITMENTS §4 to match what the homepage now promises.
+- [ ] Close debt #28 — strip the false hover from `PainPoints.astro` (one-line, tidiness).
+
+### Technical Debt
+
+- New: **#29** (booking advertised ahead of the product, High) and **#28** (false hover on
+  pain-point cards, Low).
+
+### Open Questions / Blockers
+
+- None. Both PRs merged, production verified in EN and ES.
+
+---
 
 ## Session: 2026-09-12 — Two Dependabot PRs were failing Vercel builds because the eslint 10 ecosystem is deadlocked upstream
 
