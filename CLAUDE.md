@@ -734,7 +734,7 @@ Before ending any session, verify:
 | `operating-system/cushlabs/capability-registry.json` | Every platform approval, entitlement and quota, and whether a client can actually reach it. **(internal — never quote to a client)** | `9bd4b97932ea` |
 | `operating-system/cushlabs/commercial-terms.json` | Price, trial, cancellation, billing, invoicing and delivery timing. | `28f605b12df6` |
 | `operating-system/cushlabs/claims-policy.json` | The claims ladder and the banned absolutes. | `86104fc2fa46` |
-| `operating-system/cushlabs/brand-kit.md` | Color, type, logo, product naming, currency, and the precedence table that settles conflicts. | `d7db2b8af26a` |
+| `operating-system/cushlabs/brand-kit.md` | Color, type, logo, product naming, currency, and the precedence table that settles conflicts. | `cbf7b96dada0` |
 | `operating-system/cushlabs/service-reference.md` | The client-facing bilingual what-your-plan-includes document. | `4dcd6607b0af` |
 | `operating-system/cushlabs/voice-dna.json` | Tone authority for all CushLabs content. | `9e778c4a21ec` |
 | `operating-system/cushlabs/icp.json` | Ideal customer profile, segments, objection rebuttals. | `2259c5d825da` |
