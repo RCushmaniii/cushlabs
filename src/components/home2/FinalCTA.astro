@@ -13,16 +13,14 @@ const content = {
     body: "Tell me where customers are waiting, where your team is losing time, or what you wish could happen automatically. In a free 30-minute call, I'll show you where AI can realistically help.\n\nNo commitment. No technical jargon. Just a practical conversation about your business.",
     cta: 'Book a Free 30-Min Call',
     ctaLink: '/consultation/',
-    footer: 'I respond within 24 hours · Flexible hours for US & Mexico',
-    scarcity: 'I take on 3 new clients per quarter — to make sure each one gets my full attention.'
+    footer: 'I respond within 24 hours · Flexible hours for US & Mexico'
   },
   es: {
     heading: 'Pongamos la IA a Trabajar | en Tu Negocio.',
     body: "Cuéntame dónde están esperando tus clientes, dónde se te va el tiempo o qué te gustaría que pasara solo. En una llamada gratis de 30 minutos te muestro dónde la IA puede ayudarte de verdad.\n\nSin compromiso. Sin jerga técnica. Solo una conversación práctica sobre tu negocio.",
     cta: 'Agenda una Llamada Gratis de 30 Min',
     ctaLink: '/es/reservar/',
-    footer: 'Respondo en menos de 24 horas · Horarios flexibles para EE.UU. y México',
-    scarcity: 'Solo acepto 3 clientes nuevos por trimestre — para garantizarte atención directa.'
+    footer: 'Respondo en menos de 24 horas · Horarios flexibles para EE.UU. y México'
   }
 };
 
@@ -53,14 +51,13 @@ const t = content[locale];
           </svg>
         </a>
 
-        <div class="flex flex-col items-center gap-3">
+        <div class="flex flex-col items-center">
           <div class="flex items-center gap-2 text-sm text-gray-300 tracking-wide font-medium">
             <svg class="w-4 h-4 text-accent-text" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
             {t.footer}
           </div>
-          <p class="text-sm text-gray-400">{t.scarcity}</p>
         </div>
       </div>
     </div>
