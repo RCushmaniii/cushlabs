@@ -9,7 +9,21 @@ const { locale } = Astro.props;
 
 const content = {
   en: {
-    badge: 'AI for Small Business · English + Spanish · Guadalajara → U.S.',
+    // The badge is now the single home of the two facts the hero repeated three times
+    // (badge + subheadline + trust strip): bilingual, and always-on. Consolidated here
+    // 2026-09-15 rather than deleted, because it sits above the headline in a pulsing
+    // pill — the most prominent position in the hero.
+    //
+    // "Guadalajara → U.S." is OUT. It was ambiguous on first read (based in Guadalajara?
+    // serving the U.S.? both?) and an ambiguous badge costs more than the geo signal it
+    // bought. The geo signal is not lost: BaseLayout.astro emits addressLocality
+    // "Guadalajara" in LocalBusiness schema, and /about/ states the base in prose on both
+    // locales. Do not re-add it here to "help SEO" — a decorative pill is not where that
+    // ranking comes from.
+    //
+    // "24/7" is an approved claim: ADVERTISED-COMMITMENTS §4 Theme 1, "Replies in under
+    // 5 seconds, 24/7 — nights, weekends, holidays."
+    badge: 'AI for Small Business · English + Spanish · 24/7',
     // Robert's line, 2026-08-21. Reader-first: the sentence opens on THEM, not on the
     // product, which is the one thing the previous headline gave away.
     //
@@ -38,8 +52,15 @@ const content = {
     // "alert you", not "answer on WhatsApp". Different claim, and this one is true.
     //
     // Booking: the assistant LINKS to the booking page, it does not book in chat
-    // (confirmed by Robert 2026-08-21). The voice agent does book directly, so "send
-    // customers straight to your calendar" is true of both without overstating either.
+    // (confirmed by Robert 2026-08-21). The voice agent does book directly, so "get
+    // customers to your calendar" is true of both without overstating either.
+    //
+    // REJECTED 2026-09-15 — do not shorten this to "book appointments." An outside review
+    // proposed it as faster to parse, and it is, but booking appears NOWHERE in
+    // ADVERTISED-COMMITMENTS §4 List 1: Theme 3 is "captures the lead (name, contact,
+    // intent) with consent" and hands off. Attached to "Messenger, your website, and by
+    // phone" that phrasing advertises a capability two of those three channels do not
+    // have, and §4 asserts every List 1 bullet is live in production today.
     //
     // "Comments" was in the draft and is out: not in List 1's four themes.
     //
@@ -47,12 +68,18 @@ const content = {
     // live would contradict our own pricing page one click away, which reads as bait
     // rather than ambition — and the first paying client asked for Instagram four hours
     // into day one, so she is exactly who would find it.
+    // 20 words. The website-hero skill caps a subheadline at 24; the previous line was 28
+    // and rendered four lines on a laptop. "I build" is dropped because the headline one
+    // line above already says "I" — the solo-founder signal is not lost. The trailing
+    // "English and Spanish, 24/7" moved up into the badge.
     subheadline1:
-      'I build AI agents that answer questions, capture leads, and send customers straight to your calendar — on Messenger, your website, and by phone. English and Spanish, 24/7.',
-    subheadline2: '',
+      'AI agents that answer questions, capture leads, and get customers to your calendar — on Messenger, your website, and by phone.',
+    // THREE items, not four — the website-hero skill's output contract specifies three,
+    // and four wrapped to two rows at laptop width. "English + Spanish" was the one cut:
+    // it is the item that was already stated twice above it, and it still leads the badge.
+    // Anything added here makes it four again; cut something before you add.
     trustStrip: [
       '35+ Projects Delivered',
-      'English + Spanish',
       // "1-week", not "7-day", to match /pricing/ and ADVERTISED-COMMITMENTS verbatim.
       'Free 1-Week Trial',
       'Launch in Days or Weeks — Not Months',
@@ -63,7 +90,7 @@ const content = {
     scrollHint: 'Scroll to explore',
   },
   es: {
-    badge: 'IA para Pequeños Negocios · Español + Inglés · Guadalajara → EE. UU.',
+    badge: 'IA para Pequeños Negocios · Español + Inglés · 24/7',
 
     // "Poner la IA a trabajar" es deliberado y NO se debe traducir a algo más literal:
     // presenta la IA como un trabajador práctico y no como tecnología abstracta, que es
@@ -72,11 +99,9 @@ const content = {
     // Las restricciones de canales están explicadas en la versión EN.
     headline: 'Tú Manejas Tu Negocio. | Yo Pongo la IA a Trabajar Respondiendo a Tus Clientes.',
     subheadline1:
-      'Creo agentes de IA que contestan preguntas, captan prospectos y llevan a tus clientes directo a tu calendario — en Messenger, tu sitio web y por teléfono. Español e inglés, 24/7.',
-    subheadline2: '',
+      'Agentes de IA que contestan preguntas, captan prospectos y llevan a tus clientes a tu calendario — en Messenger, tu sitio web y por teléfono.',
     trustStrip: [
       'Más de 35 Proyectos Entregados',
-      'Español + Inglés',
       // "1 semana", no "7 días", para que coincida con /es/precios/ palabra por palabra.
       'Prueba Gratis de 1 Semana',
       'Listo en Días o Semanas — No Meses',
@@ -113,9 +138,11 @@ const t = content[locale];
       </h1>
 
       <!-- Subheadline -->
-      <div class="home-sub mb-8 animate-fade-in-up" style="animation-delay: 0.1s;">
-        <p class="mb-2 font-medium text-white">{t.subheadline1}</p>
-        <p>{t.subheadline2}</p>
+      {/* Bottom spacing lives in the .home-sub rule below, NOT in a Tailwind mb-*
+          class — the scoped `margin` shorthand outranks it and silently zeroes it out.
+          A mb-8 here looks like it works and does nothing. Measured, 2026-09-15. */}
+      <div class="home-sub animate-fade-in-up" style="animation-delay: 0.1s;">
+        <p class="font-medium text-white">{t.subheadline1}</p>
       </div>
 
       <!-- Trust Strip -->
@@ -196,12 +223,14 @@ const t = content[locale];
      wedge) at home at night, reaching for her phone to find the AI assistant already
      answered a customer's Messenger question and offered to book.
 
-     NOTE 2026-08-21: this photo was chosen to illustrate the OLD headline's "day,
-     night, and weekends" phrase, which the new headline drops. It still earns its
-     place — the subheadline's "while you're with a customer, closing up, or asleep"
-     carries the same idea, and the image now does that work visually instead of the
-     headline doing it in words. If the subheadline ever loses that clause, revisit
-     the photo too, or it becomes a night shot illustrating nothing.
+     NOTE 2026-08-21, corrected 2026-09-15: this photo was chosen to illustrate the OLD
+     headline's "day, night, and weekends" phrase, which the current headline drops. The
+     note used to claim the subheadline carried the idea with "while you're with a
+     customer, closing up, or asleep" — that clause was already gone when the note was
+     written, so it was wrong on the day it shipped. What carries the always-on idea now
+     is "24/7" in the badge, still above the headline and still above the fold. If 24/7
+     ever leaves the hero entirely, revisit this photo or it becomes a night shot
+     illustrating nothing.
 
      Subject sits left-of-center in
      the source photo, so background-position is biased LEFT (low %) to keep her and
@@ -263,7 +292,10 @@ const t = content[locale];
     color: rgba(255, 255, 255, 0.92);
     font-size: clamp(16px, 2.2vw, 19px);
     max-width: 52ch;
-    margin: 0 auto;
+    /* The bottom value is load-bearing: it is the only gap between the paragraph and
+       the proof row. It was 0 until 2026-09-15 because a Tailwind mb-8 on the element
+       was being overridden by this shorthand, which is why the hero read as crowded. */
+    margin: 0 auto 28px;
     line-height: 1.6;
     text-shadow: 0 1px 14px rgba(0, 0, 0, 0.55);
   }
