@@ -11,7 +11,12 @@ const content = {
   en: {
     eyebrow: 'LIVE DEMO',
     heading: 'Try It Right Now',
-    body: "This is a real AI assistant, like the ones I build for small businesses. Ask about services, pricing, or how it works. You can write in English or Spanish.",
+    body: 'This is the same kind of AI assistant I build for small businesses. Ask about services, pricing, or how it works — in English or Spanish.',
+    // Demoted from a solid orange button to a text link, 2026-09-15. In a section
+    // called "Try It Right Now" the demo IS the action; a second full-weight orange
+    // button next to it made the reader choose between two primaries, and the one
+    // that won was the one that isn't the point of the section.
+    secondaryPrefix: 'Prefer to talk?',
     ctaLabel: 'Book a Free 30-Min Call',
     ctaLink: '/consultation/',
     note: 'Every assistant is trained around your business, your services, and the way you want to communicate.',
@@ -22,7 +27,8 @@ const content = {
   es: {
     eyebrow: 'DEMO EN VIVO',
     heading: 'Pruébalo Ahora Mismo',
-    body: "Este es un asistente de IA real, como los que construyo para pequeños negocios. Pregúntale sobre servicios, precios o cómo funciona. Puedes escribirle en español o en inglés.",
+    body: 'Este es el mismo tipo de asistente de IA que construyo para pequeños negocios. Pregúntale sobre servicios, precios o cómo funciona — en español o en inglés.',
+    secondaryPrefix: '¿Prefieres hablar?',
     ctaLabel: 'Agenda una Llamada Gratis de 30 Min',
     ctaLink: '/es/reservar/',
     note: 'Cada asistente se entrena con tu negocio, tus servicios y la forma en que quieres comunicarte.',
@@ -35,34 +41,56 @@ const content = {
 const t = content[locale];
 ---
 
-<section id="demo" aria-label="Live chatbot demo" class="scroll-mt-24 py-20 md:py-28 bg-surface/40">
-  <Container size="lg">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+{/* This section is deliberately pulled UP over the hero and given a rounded top edge,
+    so it reads as a sheet emerging from the photograph rather than a separate page
+    starting underneath it. Three pieces make that work and they only work together:
 
-      <!-- Left: Context + CTA -->
-      <div class="order-2 lg:order-1 lg:sticky lg:top-24">
+      1. `.home-hero__fade` in Hero.astro dissolves the bottom 160px of the photo into
+         this section's exact colour,
+      2. `-mt-12` lifts this sheet 48px over that faded band,
+      3. `rounded-t-[2.5rem]` gives the emerging edge a shape.
+
+    Change one and check the other two. Removing the negative margin while leaving the
+    fade in place, in particular, leaves a 160px band fading into nothing.
+
+    The colour is `bg-demo-surface` (#f8f7f5 light / #0d0d0d dark), shared with the
+    fade — see the note in global.css. Do NOT set this back to plain white: a warm,
+    dark hero photo handing off to #ffffff was the seam this fixes. */}
+<section
+  id="demo"
+  aria-label="Live chatbot demo"
+  class="scroll-mt-24 relative z-10 -mt-12 rounded-t-[2.5rem] bg-demo-surface pt-14 pb-20 md:pt-16 md:pb-28"
+>
+  <Container size="lg">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center">
+
+      <!-- Left: Context + secondary CTA -->
+      <div class="order-2 lg:order-1">
         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cush-orange/10 border border-cush-orange/20 mb-5">
           <div class="w-2 h-2 rounded-full bg-cush-orange animate-pulse"></div>
           <span class="font-display text-xs font-semibold tracking-widest text-accent-text uppercase">{t.eyebrow}</span>
         </div>
 
-        <h2 class="font-display text-fluid-3xl font-bold text-gray-900 dark:text-white mb-5 leading-tight">
+        <h2 class="font-display text-fluid-3xl font-bold text-gray-900 dark:text-white mb-4 leading-tight">
           {t.heading}
         </h2>
 
-        <p class="font-body text-fluid-base text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
+        <p class="font-body text-fluid-base text-gray-600 dark:text-gray-300 mb-6 leading-relaxed max-w-prose">
           {t.body}
         </p>
 
-        <a
-          href={t.ctaLink}
-          class="group inline-flex items-center gap-2 px-7 py-3.5 bg-cush-orange text-black font-display font-semibold rounded-lg hover:bg-cush-orange/90 transition-all duration-300 shadow-lg shadow-cush-orange/20 text-base mb-4"
-        >
-          {t.ctaLabel}
-          <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-          </svg>
-        </a>
+        <p class="font-body text-sm text-muted mb-6">
+          {t.secondaryPrefix}{' '}
+          <a
+            href={t.ctaLink}
+            data-analytics-event="booking_cta_clicked"
+            data-analytics-placement="homepage-demo"
+            class="group font-display font-semibold text-accent-text underline underline-offset-4 decoration-cush-orange/40 hover:decoration-cush-orange transition-colors"
+          >
+            {t.ctaLabel}
+            <span class="inline-block transition-transform group-hover:translate-x-0.5" aria-hidden="true">&rarr;</span>
+          </a>
+        </p>
 
         <p class="font-body text-sm text-muted italic block">
           {t.note}
@@ -73,14 +101,20 @@ const t = content[locale];
            assistant (a fixed-position overlay), rather than embedding a chat in
            the page flow — so opening it never moves the page. -->
       <div class="order-1 lg:order-2">
-        <div
-          class="rounded-2xl overflow-hidden shadow-2xl shadow-black/10 dark:shadow-black/40 border border-border w-full"
-          style="height: 520px;"
-        >
+        {/* The orange top rule is the one motif carried down from the hero, and it is
+            the section's only decoration on purpose — it ties the card to the badge
+            and the CTA above without becoming ornament. Height was 520px, which left
+            a large hollow around the centred content; 440px sits the button closer to
+            the title it belongs to. */}
+        <div class="demo-card relative rounded-2xl overflow-hidden border border-black/10 dark:border-white/10 w-full">
+          <span class="demo-card__rule" aria-hidden="true"></span>
           <button
             type="button"
             data-open-chat
-            class="group w-full h-full flex flex-col items-center justify-center gap-4 px-8 text-center bg-white dark:bg-cush-gray-900 cursor-pointer"
+            data-analytics-event="demo_opened"
+            data-analytics-placement="homepage-demo-card"
+            class="group w-full flex flex-col items-center justify-center gap-4 px-8 py-16 text-center bg-white dark:bg-cush-gray-900 cursor-pointer"
+            style="min-height: 440px;"
           >
             <span class="flex items-center justify-center w-16 h-16 rounded-full bg-cush-orange/10 text-accent-text transition-transform group-hover:scale-105">
               <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -97,3 +131,41 @@ const t = content[locale];
     </div>
   </Container>
 </section>
+
+<style>
+  /* A wide, soft, warm-tinted shadow rather than Tailwind's shadow-2xl, which is a
+     neutral grey drop and reads as flat on the warm section colour. */
+  .demo-card {
+    box-shadow:
+      0 1px 2px rgba(20, 17, 13, 0.04),
+      0 24px 60px -20px rgba(20, 17, 13, 0.22),
+      0 0 0 1px var(--color-orange-soft);
+  }
+
+  :global(.dark) .demo-card {
+    box-shadow:
+      0 1px 2px rgba(0, 0, 0, 0.5),
+      0 24px 60px -20px rgba(0, 0, 0, 0.7),
+      0 0 0 1px var(--color-orange-soft);
+  }
+
+  .demo-card__rule {
+    position: absolute;
+    inset-inline: 0;
+    top: 0;
+    height: 3px;
+    z-index: 1;
+    background: linear-gradient(
+      to right,
+      transparent 0%,
+      var(--color-cush-orange) 50%,
+      transparent 100%
+    );
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .demo-card * {
+      transition: none !important;
+    }
+  }
+</style>

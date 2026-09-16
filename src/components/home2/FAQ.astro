@@ -9,7 +9,7 @@ const { locale } = Astro.props;
 
 const content = {
   en: {
-    heading: 'Common Questions',
+    heading: 'Questions Before You Get Started?',
     faqs: [
       {
         q: "How much does it cost?",
@@ -44,7 +44,7 @@ const content = {
     ctaLink: "/faq/"
   },
   es: {
-    heading: 'Preguntas Frecuentes',
+    heading: '¿Dudas Antes de Empezar?',
     faqs: [
       {
         q: "¿Cuánto cuesta?",
@@ -99,7 +99,7 @@ const faqSchema = {
 
 <script type="application/ld+json" is:inline set:html={JSON.stringify(faqSchema)} />
 
-<section aria-labelledby="faq-heading" class="py-20 md:py-32 bg-gray-50 dark:bg-gray-900/30">
+<section aria-labelledby="faq-heading" class="pt-16 pb-16 md:pt-20 md:pb-24 bg-gray-50 dark:bg-gray-900/30">
   <Container size="md">
     <div class="text-center mb-16">
       <h2 id="faq-heading" class="font-display font-bold text-3xl md:text-4xl text-gray-900 dark:text-white leading-tight">
@@ -137,7 +137,7 @@ const faqSchema = {
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
         </svg>
       </a>
-      <a href={t.ctaLink} class="inline-flex items-center gap-2 text-accent-text font-medium hover:underline text-lg transition-colors duration-300 hover:text-accent-text/80">
+      <a href={t.ctaLink} class="mt-2 inline-flex items-center gap-2 font-body text-sm text-muted hover:text-accent-text underline underline-offset-4 decoration-transparent hover:decoration-cush-orange/50 transition-colors">
         {t.cta}
       </a>
     </div>

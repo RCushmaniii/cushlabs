@@ -9,7 +9,21 @@ const { locale } = Astro.props;
 
 const content = {
   en: {
-    badge: 'AI for Small Business · English + Spanish · Guadalajara → U.S.',
+    // The badge is now the single home of the two facts the hero repeated three times
+    // (badge + subheadline + trust strip): bilingual, and always-on. Consolidated here
+    // 2026-09-15 rather than deleted, because it sits above the headline in a pulsing
+    // pill — the most prominent position in the hero.
+    //
+    // "Guadalajara → U.S." is OUT. It was ambiguous on first read (based in Guadalajara?
+    // serving the U.S.? both?) and an ambiguous badge costs more than the geo signal it
+    // bought. The geo signal is not lost: BaseLayout.astro emits addressLocality
+    // "Guadalajara" in LocalBusiness schema, and /about/ states the base in prose on both
+    // locales. Do not re-add it here to "help SEO" — a decorative pill is not where that
+    // ranking comes from.
+    //
+    // "24/7" is an approved claim: ADVERTISED-COMMITMENTS §4 Theme 1, "Replies in under
+    // 5 seconds, 24/7 — nights, weekends, holidays."
+    badge: 'AI for Small Business · English + Spanish · 24/7',
     // Robert's line, 2026-08-21. Reader-first: the sentence opens on THEM, not on the
     // product, which is the one thing the previous headline gave away.
     //
@@ -37,9 +51,22 @@ const content = {
     // WhatsApp messages Robert when a lead is hot — which is why the line below says
     // "alert you", not "answer on WhatsApp". Different claim, and this one is true.
     //
-    // Booking: the assistant LINKS to the booking page, it does not book in chat
-    // (confirmed by Robert 2026-08-21). The voice agent does book directly, so "send
-    // customers straight to your calendar" is true of both without overstating either.
+    // Booking: "book appointments" is DELIBERATE — Robert's explicit decision, 2026-09-15,
+    // taken after the accuracy objection below was put to him twice. Do not quietly
+    // revert it.
+    //
+    // The objection is kept because it is still an accurate description of the product.
+    // Booking appears NOWHERE in ADVERTISED-COMMITMENTS §4 List 1: Theme 3 is "captures
+    // the lead (name, contact, intent) with consent" and hands off. On Messenger and on
+    // the website the assistant LINKS to the booking page; it does not book in chat
+    // (confirmed by Robert 2026-08-21). Only the AI Voice Agent books directly. Of the
+    // three channels this sentence names, one books and two hand off.
+    //
+    // What that means in practice: a prospect who reads this line and then opens the live
+    // demo one section below can ask the bot to book and be told it cannot. That is a
+    // marketing↔bot contract gap, and it closes in cushlabs-messenger-bot — either by
+    // shipping in-chat booking into List 1, or by updating §4 to describe what this page
+    // now promises. It does not close by editing this file.
     //
     // "Comments" was in the draft and is out: not in List 1's four themes.
     //
@@ -47,12 +74,18 @@ const content = {
     // live would contradict our own pricing page one click away, which reads as bait
     // rather than ambition — and the first paying client asked for Instagram four hours
     // into day one, so she is exactly who would find it.
+    // 18 words. The website-hero skill caps a subheadline at 24; the original was 28 and
+    // rendered four lines on a laptop. "I build" is dropped because the headline one
+    // line above already says "I" — the solo-founder signal is not lost. The trailing
+    // "English and Spanish, 24/7" moved up into the badge.
     subheadline1:
-      'I build AI agents that answer questions, capture leads, and send customers straight to your calendar — on Messenger, your website, and by phone. English and Spanish, 24/7.',
-    subheadline2: '',
+      'AI agents that answer questions, capture leads, and book appointments — on Messenger, your website, and by phone.',
+    // THREE items, not four — the website-hero skill's output contract specifies three,
+    // and four wrapped to two rows at laptop width. "English + Spanish" was the one cut:
+    // it is the item that was already stated twice above it, and it still leads the badge.
+    // Anything added here makes it four again; cut something before you add.
     trustStrip: [
       '35+ Projects Delivered',
-      'English + Spanish',
       // "1-week", not "7-day", to match /pricing/ and ADVERTISED-COMMITMENTS verbatim.
       'Free 1-Week Trial',
       'Launch in Days or Weeks — Not Months',
@@ -63,7 +96,7 @@ const content = {
     scrollHint: 'Scroll to explore',
   },
   es: {
-    badge: 'IA para Pequeños Negocios · Español + Inglés · Guadalajara → EE. UU.',
+    badge: 'IA para Pequeños Negocios · Español + Inglés · 24/7',
 
     // "Poner la IA a trabajar" es deliberado y NO se debe traducir a algo más literal:
     // presenta la IA como un trabajador práctico y no como tecnología abstracta, que es
@@ -71,12 +104,11 @@ const content = {
     // "prospectos" y no "leads" en prosa, "agendar" y no "reservar".
     // Las restricciones de canales están explicadas en la versión EN.
     headline: 'Tú Manejas Tu Negocio. | Yo Pongo la IA a Trabajar Respondiendo a Tus Clientes.',
+    // "agendan citas", no "reservan citas" — registro MX, consistente con /es/reservar/.
     subheadline1:
-      'Creo agentes de IA que contestan preguntas, captan prospectos y llevan a tus clientes directo a tu calendario — en Messenger, tu sitio web y por teléfono. Español e inglés, 24/7.',
-    subheadline2: '',
+      'Agentes de IA que contestan preguntas, captan prospectos y agendan citas — en Messenger, tu sitio web y por teléfono.',
     trustStrip: [
       'Más de 35 Proyectos Entregados',
-      'Español + Inglés',
       // "1 semana", no "7 días", para que coincida con /es/precios/ palabra por palabra.
       'Prueba Gratis de 1 Semana',
       'Listo en Días o Semanas — No Meses',
@@ -92,6 +124,13 @@ const t = content[locale];
 ---
 
 <section aria-labelledby="hero-heading" class="home-hero relative flex items-center text-slate-50">
+  {/* The hand-off to the demo section. The photo used to end on a hard edge against
+      white, which read as two different websites stacked. This fades the bottom 160px
+      into the exact colour the next section is painted in — they share
+      --color-demo-surface, so the seam cannot drift.
+      aria-hidden + pointer-events-none: decorative, and it must not eat clicks on the
+      scroll chevron that sits inside it. */}
+  <div class="home-hero__fade" aria-hidden="true"></div>
   <Container size="lg">
     <div class="text-center max-w-4xl mx-auto">
       <!-- Trust Badge -->
@@ -113,9 +152,11 @@ const t = content[locale];
       </h1>
 
       <!-- Subheadline -->
-      <div class="home-sub mb-8 animate-fade-in-up" style="animation-delay: 0.1s;">
-        <p class="mb-2 font-medium text-white">{t.subheadline1}</p>
-        <p>{t.subheadline2}</p>
+      {/* Bottom spacing lives in the .home-sub rule below, NOT in a Tailwind mb-*
+          class — the scoped `margin` shorthand outranks it and silently zeroes it out.
+          A mb-8 here looks like it works and does nothing. Measured, 2026-09-15. */}
+      <div class="home-sub animate-fade-in-up" style="animation-delay: 0.1s;">
+        <p class="font-medium text-white">{t.subheadline1}</p>
       </div>
 
       <!-- Trust Strip -->
@@ -172,18 +213,13 @@ const t = content[locale];
     </div>
   </Container>
 
-  <!-- Scroll chevron — guides visitors into the funnel (the live demo is the next section) -->
-  <a
-    href="#demo"
-    class="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-1.5 text-white/60 hover:text-accent-text transition-colors group animate-fade-in"
-    style="animation-delay: 0.6s;"
-    aria-label={t.scrollHint}
-  >
-    <span class="text-xs font-display font-medium tracking-wider uppercase opacity-80 group-hover:opacity-100 transition-opacity">{t.scrollHint}</span>
-    <svg class="w-6 h-6 animate-bounce-subtle" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-    </svg>
-  </a>
+  {/* The "SCROLL TO EXPLORE" chevron was REMOVED 2026-09-15 when the demo section
+      began overlapping the hero's bottom 48px — it sat at bottom-6 and is ~40px tall,
+      so the overlap cut it in half, and raising it pushed it into the CTA buttons
+      (the hero text column already ends ~112px from the bottom at 1440x900). The
+      bottom fade plus the rounded sheet lifting off the photograph is now the scroll
+      affordance. `t.scrollHint` is kept in the content object: it is still the
+      accessible name for the hero region's hand-off and costs nothing to hold. */}
 </section>
 
 <style>
@@ -196,12 +232,14 @@ const t = content[locale];
      wedge) at home at night, reaching for her phone to find the AI assistant already
      answered a customer's Messenger question and offered to book.
 
-     NOTE 2026-08-21: this photo was chosen to illustrate the OLD headline's "day,
-     night, and weekends" phrase, which the new headline drops. It still earns its
-     place — the subheadline's "while you're with a customer, closing up, or asleep"
-     carries the same idea, and the image now does that work visually instead of the
-     headline doing it in words. If the subheadline ever loses that clause, revisit
-     the photo too, or it becomes a night shot illustrating nothing.
+     NOTE 2026-08-21, corrected 2026-09-15: this photo was chosen to illustrate the OLD
+     headline's "day, night, and weekends" phrase, which the current headline drops. The
+     note used to claim the subheadline carried the idea with "while you're with a
+     customer, closing up, or asleep" — that clause was already gone when the note was
+     written, so it was wrong on the day it shipped. What carries the always-on idea now
+     is "24/7" in the badge, still above the headline and still above the fold. If 24/7
+     ever leaves the hero entirely, revisit this photo or it becomes a night shot
+     illustrating nothing.
 
      Subject sits left-of-center in
      the source photo, so background-position is biased LEFT (low %) to keep her and
@@ -209,6 +247,21 @@ const t = content[locale];
      before shipping, same as the other three heroes.
      -v1 suffix is load-bearing: vercel.json serves /images/(.*) as immutable for a
      year, so any replacement needs a NEW FILENAME, not an overwrite. */
+  .home-hero__fade {
+    position: absolute;
+    inset-inline: 0;
+    bottom: 0;
+    height: 160px;
+    pointer-events: none;
+    z-index: 1;
+    background: linear-gradient(
+      to bottom,
+      rgba(var(--demo-surface) / 0) 0%,
+      rgba(var(--demo-surface) / 0.55) 62%,
+      rgb(var(--demo-surface)) 100%
+    );
+  }
+
   .home-hero {
     min-height: 100svh;
     background-color: #14110d;
@@ -263,7 +316,10 @@ const t = content[locale];
     color: rgba(255, 255, 255, 0.92);
     font-size: clamp(16px, 2.2vw, 19px);
     max-width: 52ch;
-    margin: 0 auto;
+    /* The bottom value is load-bearing: it is the only gap between the paragraph and
+       the proof row. It was 0 until 2026-09-15 because a Tailwind mb-8 on the element
+       was being overridden by this shorthand, which is why the hero read as crowded. */
+    margin: 0 auto 28px;
     line-height: 1.6;
     text-shadow: 0 1px 14px rgba(0, 0, 0, 0.55);
   }
