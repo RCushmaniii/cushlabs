@@ -51,16 +51,22 @@ const content = {
     // WhatsApp messages Robert when a lead is hot — which is why the line below says
     // "alert you", not "answer on WhatsApp". Different claim, and this one is true.
     //
-    // Booking: the assistant LINKS to the booking page, it does not book in chat
-    // (confirmed by Robert 2026-08-21). The voice agent does book directly, so "get
-    // customers to your calendar" is true of both without overstating either.
+    // Booking: "book appointments" is DELIBERATE — Robert's explicit decision, 2026-09-15,
+    // taken after the accuracy objection below was put to him twice. Do not quietly
+    // revert it.
     //
-    // REJECTED 2026-09-15 — do not shorten this to "book appointments." An outside review
-    // proposed it as faster to parse, and it is, but booking appears NOWHERE in
-    // ADVERTISED-COMMITMENTS §4 List 1: Theme 3 is "captures the lead (name, contact,
-    // intent) with consent" and hands off. Attached to "Messenger, your website, and by
-    // phone" that phrasing advertises a capability two of those three channels do not
-    // have, and §4 asserts every List 1 bullet is live in production today.
+    // The objection is kept because it is still an accurate description of the product.
+    // Booking appears NOWHERE in ADVERTISED-COMMITMENTS §4 List 1: Theme 3 is "captures
+    // the lead (name, contact, intent) with consent" and hands off. On Messenger and on
+    // the website the assistant LINKS to the booking page; it does not book in chat
+    // (confirmed by Robert 2026-08-21). Only the AI Voice Agent books directly. Of the
+    // three channels this sentence names, one books and two hand off.
+    //
+    // What that means in practice: a prospect who reads this line and then opens the live
+    // demo one section below can ask the bot to book and be told it cannot. That is a
+    // marketing↔bot contract gap, and it closes in cushlabs-messenger-bot — either by
+    // shipping in-chat booking into List 1, or by updating §4 to describe what this page
+    // now promises. It does not close by editing this file.
     //
     // "Comments" was in the draft and is out: not in List 1's four themes.
     //
@@ -68,12 +74,12 @@ const content = {
     // live would contradict our own pricing page one click away, which reads as bait
     // rather than ambition — and the first paying client asked for Instagram four hours
     // into day one, so she is exactly who would find it.
-    // 20 words. The website-hero skill caps a subheadline at 24; the previous line was 28
-    // and rendered four lines on a laptop. "I build" is dropped because the headline one
+    // 18 words. The website-hero skill caps a subheadline at 24; the original was 28 and
+    // rendered four lines on a laptop. "I build" is dropped because the headline one
     // line above already says "I" — the solo-founder signal is not lost. The trailing
     // "English and Spanish, 24/7" moved up into the badge.
     subheadline1:
-      'AI agents that answer questions, capture leads, and get customers to your calendar — on Messenger, your website, and by phone.',
+      'AI agents that answer questions, capture leads, and book appointments — on Messenger, your website, and by phone.',
     // THREE items, not four — the website-hero skill's output contract specifies three,
     // and four wrapped to two rows at laptop width. "English + Spanish" was the one cut:
     // it is the item that was already stated twice above it, and it still leads the badge.
@@ -98,8 +104,9 @@ const content = {
     // "prospectos" y no "leads" en prosa, "agendar" y no "reservar".
     // Las restricciones de canales están explicadas en la versión EN.
     headline: 'Tú Manejas Tu Negocio. | Yo Pongo la IA a Trabajar Respondiendo a Tus Clientes.',
+    // "agendan citas", no "reservan citas" — registro MX, consistente con /es/reservar/.
     subheadline1:
-      'Agentes de IA que contestan preguntas, captan prospectos y llevan a tus clientes a tu calendario — en Messenger, tu sitio web y por teléfono.',
+      'Agentes de IA que contestan preguntas, captan prospectos y agendan citas — en Messenger, tu sitio web y por teléfono.',
     trustStrip: [
       'Más de 35 Proyectos Entregados',
       // "1 semana", no "7 días", para que coincida con /es/precios/ palabra por palabra.
