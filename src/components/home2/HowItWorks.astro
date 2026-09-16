@@ -15,25 +15,30 @@ const content = {
     heading: 'How It Works — From Idea to Working AI',
     steps: [
       {
-        title: 'Step 1: Understand Your Business',
+        num: '01',
+        title: 'Understand Your Business',
         // "where AI can realistically help — and where it can't" is doing real work here.
         // voice-dna's comfort zones include "decision clarity and tradeoffs" and its
         // never_do forbids overselling; naming the limit is what makes the rest credible.
+        // This step was NOT shortened with the other two for that reason.
         desc: "We start with a free 30-minute call. You show me what's taking your time, where customers are getting lost, and what you'd like to improve. I'll tell you where AI can realistically help — and where it can't."
       },
       {
-        title: 'Step 2: Build & Train',
-        desc: 'I build the system around your actual business: your services, pricing, policies, customers, language, and workflow. You review it and see it working before launch.'
+        num: '02',
+        title: 'Build & Train',
+        desc: 'I build around your actual services, pricing, policies, customers, language, and workflow. You review the system and see it working before launch.'
       },
       {
-        title: 'Step 3: Launch & Improve',
+        num: '03',
+        title: 'Launch & Improve',
         // "deflection rate" is gone. It is a support-industry metric that means nothing
         // to a salon or clinic owner, and using it signalled that this page was written
         // for someone else.
-        desc: 'We test it with real conversations, launch it, and measure what happens — response times, leads captured, appointments booked, and hours saved.'
+        desc: 'We test with real conversations, launch, and measure response times, leads captured, appointments booked, and hours saved.'
       }
     ],
-    addon: 'Want ongoing optimization? I offer monthly retainers to keep your systems sharp as your business evolves.'
+    addonTitle: 'Ongoing support available',
+    addonBody: 'Monthly optimization and maintenance are available as your business evolves.'
   },
   es: {
     // Ver las notas en la versión EN: el encabezado ya no promete un plazo, y
@@ -41,61 +46,67 @@ const content = {
     heading: 'Cómo Funciona — De la Idea a la IA Funcionando',
     steps: [
       {
-        title: 'Paso 1: Entender Tu Negocio',
+        num: '01',
+        title: 'Entender Tu Negocio',
         desc: 'Empezamos con una llamada gratuita de 30 minutos. Me muestras qué te está quitando tiempo, dónde se te pierden clientes y qué te gustaría mejorar. Te digo dónde la IA puede ayudarte de verdad — y dónde no.'
       },
       {
-        title: 'Paso 2: Construir y Entrenar',
-        desc: 'Construyo el sistema alrededor de tu negocio real: tus servicios, precios, políticas, clientes, lenguaje y forma de trabajar. Lo revisas y lo ves funcionando antes de lanzarlo.'
+        num: '02',
+        title: 'Construir y Entrenar',
+        desc: 'Construyo alrededor de tus servicios, precios, políticas, clientes, lenguaje y forma de trabajar. Revisas el sistema y lo ves funcionando antes de lanzarlo.'
       },
       {
-        title: 'Paso 3: Lanzar y Mejorar',
-        desc: 'Lo probamos con conversaciones reales, lo lanzamos y medimos qué pasa — tiempos de respuesta, prospectos captados, citas agendadas y horas ahorradas.'
+        num: '03',
+        title: 'Lanzar y Mejorar',
+        desc: 'Probamos con conversaciones reales, lanzamos y medimos tiempos de respuesta, prospectos captados, citas agendadas y horas ahorradas.'
       }
     ],
-    addon: '¿Quieres optimización continua? Ofrezco planes mensuales para mantener tus sistemas afinados mientras tu negocio evoluciona.'
+    addonTitle: 'Soporte continuo disponible',
+    addonBody: 'Optimización y mantenimiento mensuales, conforme tu negocio evoluciona.'
   }
 };
 
 const t = content[locale];
 ---
 
-<section aria-labelledby="how-it-works-heading" class="py-20 md:py-32 bg-white dark:bg-black relative">
-  <Container size="md">
-    <div class="text-center mb-16">
-      <h2 id="how-it-works-heading" class="font-display font-bold text-3xl md:text-4xl text-gray-900 dark:text-white leading-tight">
+{/* Top padding trimmed 2026-09-15 to close the gap under SolutionOverview above —
+    the two stacked to 256px. Check that section before restoring py-32 here. */}
+<section aria-labelledby="how-it-works-heading" class="pt-14 pb-16 md:pt-16 md:pb-20 bg-white dark:bg-black relative">
+  <Container size="lg">
+    <div class="text-center mb-12">
+      <h2 id="how-it-works-heading" class="font-display font-bold text-3xl md:text-4xl text-gray-900 dark:text-white leading-tight text-balance">
         {t.heading}
       </h2>
     </div>
 
-    <!-- Timeline/Steps Layout -->
-    <div class="relative space-y-12 before:absolute before:inset-0 before:ml-5 md:before:ml-[50%] before:-translate-x-px md:before:translate-x-0 before:h-full before:w-0.5 before:bg-linear-to-b before:from-transparent before:via-gray-200 dark:before:via-gray-800 before:to-transparent">
-      {t.steps.map((step, index) => (
-        <div class={`relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group border md:border-none border-gray-100 dark:border-gray-800 rounded-xl p-6 md:p-0 ${index % 2 === 0 ? 'md:pr-[50%]' : 'md:pl-[50%]'}`}>
-          <!-- Marker -->
-          <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white dark:border-black bg-cush-orange/20 text-accent-text font-bold font-display shadow-xs group-hover:bg-cush-orange group-hover:text-black transition-colors duration-300 z-10 
-            absolute left-0 top-6 md:static md:left-auto md:top-auto
-            md:absolute md:left-1/2 md:-translate-x-1/2">
-            {index + 1}
-          </div>
-          
-          <!-- Content Box -->
-          <div class={`w-full md:w-[calc(100%-3rem)] pl-12 md:pl-0 ${index % 2 === 0 ? 'md:pr-12 lg:pr-16 md:text-right' : 'md:pl-12 lg:pl-16 md:text-left'}`}>
-            <h3 class="font-display font-semibold text-xl text-gray-900 dark:text-white mb-2">{step.title}</h3>
-            <p class="text-gray-600 dark:text-gray-400 leading-relaxed text-base">{step.desc}</p>
-          </div>
-        </div>
-      ))}
-    </div>
+    {/* THREE COLUMNS, replacing the alternating left/right timeline (2026-09-15).
+        The timeline put step 1 left, step 2 right and step 3 left with a centre rule,
+        which left roughly half the section empty, bounced the eye across the page, and
+        — because the odd steps were right-aligned toward the rule and the even one was
+        left-aligned — mixed two text alignments in one list. Three columns read in one
+        pass and cut the section's height by more than half.
 
-    <!-- Optional Add-On Badge -->
-    <div class="mt-20 flex justify-center">
-      <div class="inline-flex items-center gap-3 px-6 py-4 bg-gray-50 dark:bg-gray-900/50 border border-gray-200 dark:border-gray-800 rounded-full text-sm font-medium text-gray-700 dark:text-gray-300">
-        <svg class="w-5 h-5 text-accent-text animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-        </svg>
-        <span>{t.addon}</span>
-      </div>
+        The rule above each number is a track, not decoration: it is the only thing
+        left carrying "these happen in order" now that the vertical line is gone. On
+        mobile the columns stack and each keeps its own rule, which still reads as a
+        sequence because the numerals are right there. */}
+    <ol class="grid gap-10 md:grid-cols-3 md:gap-8 lg:gap-12 list-none p-0 m-0">
+      {t.steps.map((step) => (
+        <li class="group">
+          <div class="h-0.5 w-full bg-linear-to-r from-cush-orange/60 to-cush-orange/5 mb-5"></div>
+          <div class="font-display font-bold text-3xl text-accent-text leading-none mb-3">{step.num}</div>
+          <h3 class="font-display font-semibold text-xl text-gray-900 dark:text-white mb-2 text-balance">{step.title}</h3>
+          <p class="font-body text-gray-600 dark:text-gray-400 leading-relaxed text-base">{step.desc}</p>
+        </li>
+      ))}
+    </ol>
+
+    {/* Was a full-width pill with a pulsing lightning bolt, floating 80px below the
+        steps — it read as a system notification rather than part of the process. Now
+        it is quiet, close, and aligned to the same left edge as the columns above. */}
+    <div class="mt-10 pt-6 border-t border-black/[0.07] dark:border-white/10">
+      <p class="font-display text-sm font-semibold text-gray-900 dark:text-white mb-1">{t.addonTitle}</p>
+      <p class="font-body text-sm text-muted max-w-prose">{t.addonBody}</p>
     </div>
   </Container>
 </section>

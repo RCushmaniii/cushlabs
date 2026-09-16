@@ -124,6 +124,13 @@ const t = content[locale];
 ---
 
 <section aria-labelledby="hero-heading" class="home-hero relative flex items-center text-slate-50">
+  {/* The hand-off to the demo section. The photo used to end on a hard edge against
+      white, which read as two different websites stacked. This fades the bottom 160px
+      into the exact colour the next section is painted in — they share
+      --color-demo-surface, so the seam cannot drift.
+      aria-hidden + pointer-events-none: decorative, and it must not eat clicks on the
+      scroll chevron that sits inside it. */}
+  <div class="home-hero__fade" aria-hidden="true"></div>
   <Container size="lg">
     <div class="text-center max-w-4xl mx-auto">
       <!-- Trust Badge -->
@@ -206,18 +213,13 @@ const t = content[locale];
     </div>
   </Container>
 
-  <!-- Scroll chevron — guides visitors into the funnel (the live demo is the next section) -->
-  <a
-    href="#demo"
-    class="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-1.5 text-white/60 hover:text-accent-text transition-colors group animate-fade-in"
-    style="animation-delay: 0.6s;"
-    aria-label={t.scrollHint}
-  >
-    <span class="text-xs font-display font-medium tracking-wider uppercase opacity-80 group-hover:opacity-100 transition-opacity">{t.scrollHint}</span>
-    <svg class="w-6 h-6 animate-bounce-subtle" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-    </svg>
-  </a>
+  {/* The "SCROLL TO EXPLORE" chevron was REMOVED 2026-09-15 when the demo section
+      began overlapping the hero's bottom 48px — it sat at bottom-6 and is ~40px tall,
+      so the overlap cut it in half, and raising it pushed it into the CTA buttons
+      (the hero text column already ends ~112px from the bottom at 1440x900). The
+      bottom fade plus the rounded sheet lifting off the photograph is now the scroll
+      affordance. `t.scrollHint` is kept in the content object: it is still the
+      accessible name for the hero region's hand-off and costs nothing to hold. */}
 </section>
 
 <style>
@@ -245,6 +247,21 @@ const t = content[locale];
      before shipping, same as the other three heroes.
      -v1 suffix is load-bearing: vercel.json serves /images/(.*) as immutable for a
      year, so any replacement needs a NEW FILENAME, not an overwrite. */
+  .home-hero__fade {
+    position: absolute;
+    inset-inline: 0;
+    bottom: 0;
+    height: 160px;
+    pointer-events: none;
+    z-index: 1;
+    background: linear-gradient(
+      to bottom,
+      rgba(var(--demo-surface) / 0) 0%,
+      rgba(var(--demo-surface) / 0.55) 62%,
+      rgb(var(--demo-surface)) 100%
+    );
+  }
+
   .home-hero {
     min-height: 100svh;
     background-color: #14110d;

@@ -63,6 +63,12 @@
      it is only unsafe as text on a light surface, where it measures 2.85:1 against
      white and fails AA at every size. See scripts/audit-contrast.mjs. */
   --color-accent-text: rgb(var(--accent-text));
+
+  /* The warm neutral the demo section sits on and the hero fades INTO. Both read it
+     from here — if they ever disagree, the fade shows a visible seam against the
+     section below it. Safe name: nothing built-in is called `demo-surface`, unlike
+     `base`/`sm`/`lg` (see the note above and --text-fluid-* below). */
+  --color-demo-surface: rgb(var(--demo-surface));
 }
 
 /* ── CSS custom properties for light/dark theming ── */
@@ -72,6 +78,10 @@
   --muted: 75 85 99;
   --surface: 245 245 245;
   --border: 229 231 235;
+
+  /* #f8f7f5 — warm, not the pure white the hero used to hand off to. The dark,
+     warm hero photo dropping straight into #ffffff was the visible seam. */
+  --demo-surface: 248 247 245;
 
   /* #ba4d2d — the brand orange walked toward black along its own hue, stopping at the
      first value that clears 4.5:1 on every light surface this site uses:
@@ -108,6 +118,9 @@
   --muted: 170 170 170;
   --surface: 20 20 20;
   --border: 26 26 26;
+
+  /* #0d0d0d — in dark mode the hero fades into near-black instead of warm paper. */
+  --demo-surface: 13 13 13;
 
   /* On dark surfaces the full-strength brand orange is the accessible choice:
      7.38:1 on black, 6.96:1 on #0a0a0a, 6.48:1 on #141414. */

@@ -85,7 +85,13 @@ const content = {
 const t = content[locale];
 ---
 
-<section aria-labelledby="social-proof-heading" class="py-20 md:py-32">
+{/* Bottom padding is INTENTIONALLY much smaller than the top. This section and
+    SolutionOverview below it both carried py-32, stacking 128px + 128px = 256px of
+    empty field between the proof and the thing the proof is evidence for. The reading
+    order is meant to be "here are the results → therefore, here is what I build", and
+    256px of nothing breaks that into two unrelated sections. Measured and cut
+    2026-09-15. If you restore symmetrical padding here, check what is below first. */}
+<section aria-labelledby="social-proof-heading" class="pt-20 pb-10 md:pt-32 md:pb-12">
   <Container size="lg">
     <div class="text-center max-w-2xl mx-auto mb-16">
       <h2 id="social-proof-heading" class="font-display font-bold text-3xl md:text-4xl text-gray-900 dark:text-white leading-tight">
