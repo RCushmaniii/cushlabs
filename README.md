@@ -230,13 +230,15 @@ A GitHub Actions workflow refreshes portfolio data weekly with smart diffing —
 
 ## Design System
 
-| Token         | Value          | Usage                  |
-| ------------- | -------------- | ---------------------- |
-| `cush-orange` | `#FF6A3D`      | Primary accent         |
-| Display font  | Space Grotesk  | Headings, nav, buttons |
-| Body font     | Source Serif 4 | Paragraphs, content    |
+| Token         | Value     | Usage                  |
+| ------------- | --------- | ---------------------- |
+| `cush-orange` | `#FF6A3D` | Primary accent         |
+| Display font  | Manrope   | Headings, nav, buttons |
+| Body font     | Inter     | Paragraphs, content    |
 
-Full brand documentation in [`docs/BRAND-DESIGN-SYSTEM.md`](docs/BRAND-DESIGN-SYSTEM.md).
+Canonical brand documentation is `operating-system/cushlabs/brand-kit.md`, reached through
+[`docs/BRAND-KIT.md`](docs/BRAND-KIT.md). [`docs/BRAND-DESIGN-SYSTEM.md`](docs/BRAND-DESIGN-SYSTEM.md)
+covers this site's implementation only.
 
 ## Results
 

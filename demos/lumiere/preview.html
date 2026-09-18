@@ -2,7 +2,8 @@
 <style>
   /* No external font import — gated demo pages stay self-contained (CSP-safe,
      matching demos/azucar). Brand fonts are used when locally available; the
-     stacks fall back cleanly to system-ui / Georgia otherwise. */
+     stacks fall back cleanly to system-ui otherwise. Manrope + Inter since
+     2026-09-15; the serif body was retired with Source Serif 4. */
   :root {
     --bg: #f6f3f0;
     --surface: #ffffff;
@@ -15,8 +16,8 @@
     --line: #e8e1d9;
     --shadow: 24px 24px 60px rgba(22, 19, 15, 0.08);
     --glow: rgba(255, 106, 61, 0.18);
-    --font-display: "Space Grotesk", system-ui, sans-serif;
-    --font-body: "Source Serif 4", Georgia, "Times New Roman", serif;
+    --font-display: "Manrope", system-ui, sans-serif;
+    --font-body: "Inter", system-ui, sans-serif;
     color-scheme: light;
   }
   @media (prefers-color-scheme: dark) {

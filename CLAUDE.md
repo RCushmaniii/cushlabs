@@ -611,8 +611,19 @@ don't get re-proposed. `#ff6a3d` below is canonical and the mark was recoloured 
 
 ## Fonts
 
-- **Display:** Space Grotesk (500, 600, 700)
-- **Body:** Source Serif 4 (300, 400, 500)
+**Canonical in `operating-system/cushlabs/brand-kit.md` § Typography — do not restate the spec
+here.** This section carried Space Grotesk + Source Serif 4 for three days after the brand moved to
+Manrope + Inter on 2026-09-15, which is exactly the drift the brand-kit pointer above exists to
+prevent. What this repo owns is the wiring, and there are only three places:
+
+- `--font-display` / `--font-body` in the `@theme` block of `src/styles/global.css`
+- the Google Fonts `<link>` in `src/layouts/BaseLayout.astro`
+- the same `<link>` in `src/layouts/LandingLayout.astro` (`/salons`, `/salones`)
+
+**All three must change together.** When LandingLayout was left behind, it requested one family
+while `global.css` named another, so both landing pages silently rendered in the system UI font.
+Load variable ranges (`Manrope:wght@500..800`), never a discrete weight list — a discrete list snaps
+a 750 request to 700 without warning.
 
 ---
 
@@ -727,19 +738,19 @@ Before ending any session, verify:
 > A doc here asserting a price, a client count, a trial length or an approval status is a bug,
 > even when it happens to be correct today. Link to the file instead.
 
-| Canonical file | Owns | Reconciled at |
-| --- | --- | --- |
-| `operating-system/cushlabs/operating-vision.json` | How the business is run - the operations vision, the six operating principles, and the precedence order that settles conflicts between them. | `eea191dbd2c5` |
-| `operating-system/strategy/clients.json` | Who is paying, what they bill, what they cost to serve. **(internal — never quote to a client)** | `f94ec5e0ec9b` |
-| `operating-system/cushlabs/capability-registry.json` | Every platform approval, entitlement and quota, and whether a client can actually reach it. **(internal — never quote to a client)** | `60014b3ae9a2` |
-| `operating-system/cushlabs/commercial-terms.json` | Price, trial, cancellation, billing, invoicing and delivery timing. | `28f605b12df6` |
-| `operating-system/cushlabs/claims-policy.json` | The claims ladder and the banned absolutes. | `86104fc2fa46` |
-| `operating-system/cushlabs/brand-kit.md` | Color, type, logo, product naming, currency, and the precedence table that settles conflicts. | `cbf7b96dada0` |
-| `operating-system/cushlabs/service-reference.md` | The client-facing bilingual what-your-plan-includes document. | `4dcd6607b0af` |
-| `operating-system/cushlabs/voice-dna.json` | Tone authority for all CushLabs content. | `9e778c4a21ec` |
-| `operating-system/cushlabs/icp.json` | Ideal customer profile, segments, objection rebuttals. | `2259c5d825da` |
-| `operating-system/cushlabs/business-profile.json` | Positioning, offers, delivery model. | `80ef7bc8d735` |
-| `operating-system/cushlabs/tech-standard.json` | The sanctioned technology lanes, the gate a new technology must pass, and the baseline every deployed repo must meet. | `913dded097dc` |
+| Canonical file                                       | Owns                                                                                                                                         | Reconciled at  |
+| ---------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- | -------------- |
+| `operating-system/cushlabs/operating-vision.json`    | How the business is run - the operations vision, the six operating principles, and the precedence order that settles conflicts between them. | `eea191dbd2c5` |
+| `operating-system/strategy/clients.json`             | Who is paying, what they bill, what they cost to serve. **(internal — never quote to a client)**                                             | `f94ec5e0ec9b` |
+| `operating-system/cushlabs/capability-registry.json` | Every platform approval, entitlement and quota, and whether a client can actually reach it. **(internal — never quote to a client)**         | `60014b3ae9a2` |
+| `operating-system/cushlabs/commercial-terms.json`    | Price, trial, cancellation, billing, invoicing and delivery timing.                                                                          | `28f605b12df6` |
+| `operating-system/cushlabs/claims-policy.json`       | The claims ladder and the banned absolutes.                                                                                                  | `86104fc2fa46` |
+| `operating-system/cushlabs/brand-kit.md`             | Color, type, logo, product naming, currency, and the precedence table that settles conflicts.                                                | `cbf7b96dada0` |
+| `operating-system/cushlabs/service-reference.md`     | The client-facing bilingual what-your-plan-includes document.                                                                                | `4dcd6607b0af` |
+| `operating-system/cushlabs/voice-dna.json`           | Tone authority for all CushLabs content.                                                                                                     | `9e778c4a21ec` |
+| `operating-system/cushlabs/icp.json`                 | Ideal customer profile, segments, objection rebuttals.                                                                                       | `2259c5d825da` |
+| `operating-system/cushlabs/business-profile.json`    | Positioning, offers, delivery model.                                                                                                         | `80ef7bc8d735` |
+| `operating-system/cushlabs/tech-standard.json`       | The sanctioned technology lanes, the gate a new technology must pass, and the baseline every deployed repo must meet.                        | `913dded097dc` |
 
 If a revision above no longer matches what `operating-system` holds, this repo is reading a
 stale assumption. Re-read the file before acting on anything it covers. To check:
