@@ -445,10 +445,14 @@ export default {
 
 ## Global CSS (Portable)
 
-Drop this into any new repo's global stylesheet:
+> Tailwind 3 syntax, like the config block above. On Tailwind 4 there are no `@tailwind`
+> directives and the font tokens go in an `@theme` block — see `src/styles/global.css` for how
+> this site actually does it.
+
+Drop this into a Tailwind 3 repo's global stylesheet:
 
 ```css
-@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;1,8..60,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@500..800&family=Inter:ital,wght@0,400..700;1,400..700&display=swap");
 
 @tailwind base;
 @tailwind components;
