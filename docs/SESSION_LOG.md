@@ -313,6 +313,29 @@ Directional ideas with a longer horizon than the Backlog. Themes, not tickets �
 
 Patterns that have bitten this project before. Re-read before shipping any change to the listed surfaces.
 
+### 0b. A capacity or cost model that prices a client at a flat tier and forgets the location fee
+
+**What happened, 2026-09-19.** An assistant-reply capacity model was built as flat per-tier numbers
+— Basic 750, Premium 1,500, Ultra 2,500 — with no term for additional locations. **Two separate
+sessions then independently concluded that Azúcar was 60% over her Basic ceiling** and flagged it as
+something to act on. One of them wrote that number into `clients.json`, where a wrong fact does real
+damage because later sessions trust it.
+
+Both were wrong the same way. She bills **Basic $1,990 + 2 extra locations × $690 = $3,370**. Each
+extra location is revenue and carries its own AI load, so her real threshold is 790 + 550 = **1,340
+replies**. Her 1,205-reply peak is **90% of it — inside, at 86.5% margin.** There was never anything
+to act on.
+
+**Rule.** Any per-client cost, margin or capacity model must be computed from **what that client
+actually pays**, never from their nominal tier. Most of the target market is multi-location, so a
+flat-tier model will manufacture false alarms on the majority of clients. Prefer a rule that
+self-adjusts — the one adopted here is *"a tenant's AI cost should not exceed ~15% of what that
+tenant pays"* — over any table of per-tier numbers, and if numbers are published internally, mark
+them explicitly as the rule expressed at one configuration rather than as the rule.
+
+**Corollary.** Robert caught this one. Two AI sessions agreeing did not make it true; they shared a
+starting assumption and therefore shared its error. Agreement between sessions is not verification.
+
 ### 0. A CSP that blocks your own endpoint, hidden by a catch block that says nothing
 
 **What happened, twice.** The booking worker's domain was missing from `connect-src`; the symptom was
@@ -448,6 +471,68 @@ that gets bypassed with `--no-verify`.
 ---
 
 ## Session History
+
+## Session: 2026-09-19 — Instagram went live without an approval, WhatsApp stopped being resold, and two capacity models were wrong
+
+### Accomplished
+
+- **Finished the Manrope + Inter swap** (PRs #321, #322). PR #318 changed `global.css` and
+  `BaseLayout`, but missed `LandingLayout` — which imports `global.css`, so it asked for Manrope
+  while loading Space Grotesk. Neither family resolved and **`/salons` and `/salones` rendered in
+  the system UI font for three days.** Also fixed a hardcoded font in `BookingFormSteps`, the three
+  Lumière demo pages (which named the right fonts but loaded none at all), four docs, and deleted
+  four dead pre-Astro files still carrying the old font link. `grep -rl "Space Grotesk" dist/`
+  returns nothing.
+- **Instagram moved from "Coming" to live on Premium and Ultra** (PR #323, registry PR #145). Not
+  via App Review — via business-portfolio partner sharing, where the client manually grants the
+  permissions in their own Business Suite. **Eight surfaces carried the claim, not the three the
+  handoff named.** The FAQ and both salon pages bundled Instagram with WhatsApp in one sentence, so
+  they were split rather than replaced — WhatsApp stays held.
+- **Six Guadalajara local-SEO posts** (PR #324), three ES drafts reviewed and three EN counterparts
+  written, as reciprocal cornerstone pairs. Submitted to IndexNow (200 OK) and GSC (0 errors), and
+  FAQPage JSON-LD plus the EN↔ES hreflang pair verified on the **production** HTML, not the build.
+- **WhatsApp repositioned around Tech Provider billing** (PR #325). Who bills what, WABA ownership,
+  and the template-category advisory, EN+ES. The internal spec was reconciled in
+  operating-system PR #146.
+- **Held WhatsApp research captured** in `docs/strategy/WHATSAPP-MARKETING-HELD-MATERIAL.md` with a
+  written release trigger, rather than left in a chat transcript.
+
+### Decisions
+
+- **Instagram comments are advertised**, on Robert's call, against an internal spec that said they
+  were out. The mechanism is a per-account grant from the client, not an app entitlement CushLabs
+  holds — which is why the app's privilege list reads REJECTED and the capability still works. The
+  accepted risk is written into `tier-feature-spec.md` §0 item 3, including the partial-failure
+  path: if comment replies fail for a client while DMs work, narrow to DMs rather than pulling
+  Instagram.
+- **No reply limits published.** The pricing FAQ already promises "we don't meter or bill you per
+  message… no surprise charges", in both languages. Publishing a per-tier ceiling would reverse a
+  live promise on the same page and likely spend one of the ≤2 level changes allowed per year. The
+  promise is also a differentiator a message-reselling competitor cannot make.
+- **The $1,250 capacity pack was proposed and killed.** New price, would have needed a
+  `commercial-terms.json` entry first, and contradicted the promise above.
+- **Free Entry Point and the October 1 change are held**, not rejected. Both explain the pricing
+  mechanics of a product still under the Coming pill. Release trigger is in the held-material file.
+
+### Tech debt identified
+
+- `docs/SITE-AUDIT-2026-03-03.md` and `BLOG-HYBRID-ARCHITECTURE-PROPOSAL.md` still name retired
+  fonts. Left as dated historical record; harmless but they will keep appearing in brand greps.
+- Meta's rate card returned **two conflicting effective dates** on 2026-09-19. The site now links
+  Meta's card instead of printing figures, and `tier-feature-spec.md` §3 is flagged unverified.
+  Someone has to open the MXN card and re-stamp it.
+- The 80%-of-threshold margin alert is unbuilt and belongs in `cushlabs-cost-control`, which holds
+  per-client revenue.
+
+### Flagged, not this repo's to fix
+
+- **Azúcar's Instagram promise came due and nobody noticed.** Her record gated delivery on an App
+  Review that partner sharing made unnecessary. She was promised Instagram free on her Basic bundle
+  "when it ships". It shipped 2026-09-18. Needs only her own sharing step — and a conversation.
+- `cushlabs-messenger-bot` card renderers still use Space Grotesk and its `fonts/` directory has
+  neither new font.
+- ~94% of AI replies route to Sonnet; Haiku is 2.1× cheaper. Largest untested margin lever.
+
 
 ## Session: 2026-09-15 — The type system changed, and the homepage stopped reading as seven separate pages
 
