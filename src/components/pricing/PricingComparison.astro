@@ -150,15 +150,26 @@ const copy: Record<
         label: "WhatsApp — messages your business sends to customers",
         rows: [
           {
+            // NO MESSAGE ALLOWANCE HERE, EVER. This row read "Up to 500 / mo" and
+            // "Up to 2,000 / mo" until 2026-09-19. CushLabs is a Meta Tech Provider
+            // and cannot allot messages it does not sell — Meta bills the client
+            // directly on the client's own account. An allowance also implies an
+            // overage that cannot exist. Explicitly banned by
+            // cushlabs-connect/docs/WHATSAPP_MARKETING_CLAIMS.md: "Any specific
+            // message allowance... No policy exists yet."
             label: "Utility notifications — appointment reminders, confirmations, order updates (opted-in customers only)",
-            cells: [false, { soon: "Up to 500 / mo" }, { soon: "Up to 2,000 / mo" }],
+            cells: [false, true, true],
           },
           {
-            label: "Additional utility messages",
+            // NOT a feature and never "coming" — it is how the Tech Provider model
+            // works. Meta bills the client on the client's own account, always.
+            // Badging a billing fact as unbuilt read as if CushLabs might one day
+            // bill for delivery instead, which is the opposite of the promise.
+            label: "Who pays for message delivery",
             cells: [
               "—",
-              { soon: { mxn: "Billed by Meta at their rate", usd: "Billed by Meta" } },
-              { soon: { mxn: "Billed by Meta at their rate", usd: "Billed by Meta" } },
+              { mxn: "Meta bills you directly, at their rate", usd: "Meta bills you directly" },
+              { mxn: "Meta bills you directly, at their rate", usd: "Meta bills you directly" },
             ],
           },
           {
@@ -270,7 +281,7 @@ const copy: Record<
     faqs: [
       {
         q: "There are four different things here called \"WhatsApp.\" Which is which?",
-        a: "The direction of the message is what separates them. (1) Owner alerts — we message YOU when a conversation shows real buying intent; live today on every plan. (2) WhatsApp assistant — the AI answers YOUR customers on your business number; coming, Premium and up. (3) Utility notifications — messages your business sends to customers who opted in: appointment reminders, confirmations, order updates; coming, Premium and Ultra. (4) Marketing campaigns — promotions to your consented list; coming, as a per-campaign add-on. In short: #1 alerts you, #2 answers them, #3 reminds them, #4 promotes to them.",
+        a: "The direction of the message is what separates them. (1) Owner alerts — we message YOU when a conversation shows real buying intent; live today on every plan. (2) WhatsApp assistant — the AI answers YOUR customers on your business number; coming, Premium and up. (3) Utility notifications — messages your business sends to customers who opted in: appointment reminders, confirmations, order updates; live today, Premium and Ultra, and Meta bills you directly for delivery at their rate. (4) Marketing campaigns — promotions to your consented list; coming, as a per-campaign add-on. In short: #1 alerts you, #2 answers them, #3 reminds them, #4 promotes to them.",
       },
       {
         q: "What does \"Coming\" mean — and will my price go up when it arrives?",
@@ -418,15 +429,16 @@ const copy: Record<
         label: "WhatsApp — mensajes que tu negocio envía a sus clientes",
         rows: [
           {
+            // SIN CUPO DE MENSAJES, NUNCA. Ver la nota en la fila equivalente en inglés.
             label: "Notificaciones — recordatorios de cita, confirmaciones y avisos de pedido (solo a clientes que lo autorizaron)",
-            cells: [false, { soon: "Hasta 500 / mes" }, { soon: "Hasta 2,000 / mes" }],
+            cells: [false, { soon: true }, { soon: true }],
           },
           {
-            label: "Mensajes adicionales",
+            label: "Quién cobra la entrega de los mensajes",
             cells: [
               "—",
-              { soon: { mxn: "Meta te lo factura a su tarifa", usd: "Lo factura Meta" } },
-              { soon: { mxn: "Meta te lo factura a su tarifa", usd: "Lo factura Meta" } },
+              { soon: { mxn: "Meta te cobra directo, a su tarifa", usd: "Meta te cobra directo" } },
+              { soon: { mxn: "Meta te cobra directo, a su tarifa", usd: "Meta te cobra directo" } },
             ],
           },
           {
