@@ -41,7 +41,7 @@ const steps = [
   {
     n: "1",
     title: "Connect your WhatsApp Business",
-    desc: "On a 20-minute call, through Meta's official signup. The account is created in your business's name — you keep the number, we never replace it.",
+    desc: "On a 20-minute call, through Meta's official signup. The account is created in your business's name — you keep the number, we never replace it. You add your own payment card to it on the same call, because Meta bills you directly and won't let us do that part for you.",
   },
   {
     n: "2",
@@ -59,6 +59,7 @@ const benefits = [
   { title: "Fewer no-shows", desc: "Reminders that send themselves, so your calendar stays full without anyone chasing it." },
   { title: "The account stays yours", desc: "Your number, your WhatsApp Business account, your contacts — in your business's name from day one. Leave whenever you like and you take all of it with you." },
   { title: "No markup on messages", desc: "Meta bills you directly, at Meta's published rate. We never add anything on top, and you can see the charges yourself because the account is yours." },
+  { title: "We keep your reminders in the cheap category", desc: "Meta charges far more for a promotional message than a transactional one, and it decides which is which by reading the message — one sales line in a reminder re-prices the whole thing. We write yours to stay transactional, and we watch for Meta re-classifying a template you already use, so it never shows up as a surprise on your bill." },
   { title: "In their language", desc: "Natural Mexican Spanish, not robotic translation." },
   { title: "Permission-based", desc: "Double opt-in and instant opt-out. No spam." },
   { title: "Nothing to install", desc: "It runs on WhatsApp. Your customers download nothing." },
@@ -66,7 +67,7 @@ const benefits = [
 
 const trust = [
   "Authorized Meta Tech Provider, working with Meta directly",
-  "Your connection renews itself — you never have to reconnect",
+  "We monitor your connection and act before it can expire — no surprise outages",
   "Credentials stored encrypted",
   "Built-in consent and opt-out",
   "Infrastructure hosted on Cloudflare",
@@ -230,6 +231,36 @@ const trust = [
         </p>
         <p class="mt-5 text-fluid-lg text-gray-600 dark:text-gray-300 leading-relaxed">
           Meta charges for message delivery, billed to your own account at Meta's rate. We tell you what to expect before you commit — not on your first invoice.
+        </p>
+      </div>
+    </Container>
+  </section>
+
+  <!-- Already using the free WhatsApp Business app. The most common objection in
+       Mexico, and the page used to be silent on it. Facts supplied by the
+       cushlabs-connect session 2026-09-19; that repo owns the onboarding and
+       docs/WHATSAPP_MARKETING_CLAIMS.md is the source of truth for what may be
+       said here. Do NOT soften any of this: a client discovering mid-setup that
+       their chat history is gone is the worst possible moment to find out, and
+       saying it up front is the reason they trust the rest of the page. -->
+  <section class="py-16 md:py-24">
+    <Container size="md">
+      <div class="max-w-2xl mx-auto">
+        <p class="font-display text-sm font-semibold uppercase tracking-wider text-accent-text mb-4">Before you decide</p>
+        <h2 class="font-display text-fluid-3xl font-bold text-gray-900 dark:text-white mb-6 tracking-tight">
+          Already using the WhatsApp Business app?
+        </h2>
+        <p class="text-fluid-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+          Most businesses we talk to are, so here is exactly what happens — before you book a call, not during it.
+        </p>
+        <ul class="mt-6 space-y-4 text-fluid-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+          <li><strong class="text-gray-900 dark:text-white">The number stays yours.</strong> The number, the account and your customers belong to your business, from day one and afterwards.</li>
+          <li><strong class="text-gray-900 dark:text-white">The app on that number stops working, and its chat history is deleted.</strong> Back up your conversations before we start. This is Meta's behaviour, not ours, and it is the part people are not told often enough.</li>
+          <li><strong class="text-gray-900 dark:text-white">After connecting, that number is answered in your CushLabs console</strong> rather than on the phone app.</li>
+          <li><strong class="text-gray-900 dark:text-white">It is reversible.</strong> We can hand the number back and you reinstall the app — but the old conversations do not come back.</li>
+        </ul>
+        <p class="mt-6 text-fluid-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+          If keeping the app on that number matters to you, say so on the call. That option is coming, and it is not available today — we would rather tell you that now than work around it later.
         </p>
       </div>
     </Container>
