@@ -158,14 +158,18 @@ const copy: Record<
             // cushlabs-connect/docs/WHATSAPP_MARKETING_CLAIMS.md: "Any specific
             // message allowance... No policy exists yet."
             label: "Utility notifications — appointment reminders, confirmations, order updates (opted-in customers only)",
-            cells: [false, { soon: true }, { soon: true }],
+            cells: [false, true, true],
           },
           {
+            // NOT a feature and never "coming" — it is how the Tech Provider model
+            // works. Meta bills the client on the client's own account, always.
+            // Badging a billing fact as unbuilt read as if CushLabs might one day
+            // bill for delivery instead, which is the opposite of the promise.
             label: "Who pays for message delivery",
             cells: [
               "—",
-              { soon: { mxn: "Meta bills you directly, at their rate", usd: "Meta bills you directly" } },
-              { soon: { mxn: "Meta bills you directly, at their rate", usd: "Meta bills you directly" } },
+              { mxn: "Meta bills you directly, at their rate", usd: "Meta bills you directly" },
+              { mxn: "Meta bills you directly, at their rate", usd: "Meta bills you directly" },
             ],
           },
           {
@@ -277,7 +281,7 @@ const copy: Record<
     faqs: [
       {
         q: "There are four different things here called \"WhatsApp.\" Which is which?",
-        a: "The direction of the message is what separates them. (1) Owner alerts — we message YOU when a conversation shows real buying intent; live today on every plan. (2) WhatsApp assistant — the AI answers YOUR customers on your business number; coming, Premium and up. (3) Utility notifications — messages your business sends to customers who opted in: appointment reminders, confirmations, order updates; coming, Premium and Ultra. (4) Marketing campaigns — promotions to your consented list; coming, as a per-campaign add-on. In short: #1 alerts you, #2 answers them, #3 reminds them, #4 promotes to them.",
+        a: "The direction of the message is what separates them. (1) Owner alerts — we message YOU when a conversation shows real buying intent; live today on every plan. (2) WhatsApp assistant — the AI answers YOUR customers on your business number; coming, Premium and up. (3) Utility notifications — messages your business sends to customers who opted in: appointment reminders, confirmations, order updates; live today, Premium and Ultra, and Meta bills you directly for delivery at their rate. (4) Marketing campaigns — promotions to your consented list; coming, as a per-campaign add-on. In short: #1 alerts you, #2 answers them, #3 reminds them, #4 promotes to them.",
       },
       {
         q: "What does \"Coming\" mean — and will my price go up when it arrives?",
