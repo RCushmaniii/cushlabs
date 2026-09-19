@@ -174,14 +174,14 @@ const copy: Record<
           },
           {
             label: "Marketing campaigns — promotions to your consented list, written, sent and reported",
-            cells: [false, { soon: "Add-on" }, { soon: "Add-on" }],
+            cells: [false, "Add-on", "Add-on"],
           },
           {
             label: "Campaign price",
             cells: [
               "—",
-              { soon: { mxn: "$1,490 + IVA up to 1,000 recipients (+$490 per 1,000 more) — Meta bills delivery separately", usd: "Quoted per campaign" } },
-              { soon: { mxn: "$1,490 + IVA up to 1,000 recipients (+$490 per 1,000 more) — Meta bills delivery separately", usd: "Quoted per campaign" } },
+              { mxn: "$1,490 + IVA up to 1,000 recipients (+$490 per 1,000 more) — Meta bills delivery separately", usd: "Quoted per campaign" },
+              { mxn: "$1,490 + IVA up to 1,000 recipients (+$490 per 1,000 more) — Meta bills delivery separately", usd: "Quoted per campaign" },
             ],
           },
         ],
@@ -281,7 +281,7 @@ const copy: Record<
     faqs: [
       {
         q: "There are four different things here called \"WhatsApp.\" Which is which?",
-        a: "The direction of the message is what separates them. (1) Owner alerts — we message YOU when a conversation shows real buying intent; live today on every plan. (2) WhatsApp assistant — the AI answers YOUR customers on your business number; coming, Premium and up. (3) Utility notifications — messages your business sends to customers who opted in: appointment reminders, confirmations, order updates; live today, Premium and Ultra, and Meta bills you directly for delivery at their rate. (4) Marketing campaigns — promotions to your consented list; coming, as a per-campaign add-on. In short: #1 alerts you, #2 answers them, #3 reminds them, #4 promotes to them.",
+        a: "The direction of the message is what separates them. (1) Owner alerts — we message YOU when a conversation shows real buying intent; live today on every plan. (2) WhatsApp assistant — the AI answers YOUR customers on your business number; coming, Premium and up. (3) Utility notifications — messages your business sends to customers who opted in: appointment reminders, confirmations, order updates; live today, Premium and Ultra, and Meta bills you directly for delivery at their rate. (4) Marketing campaigns — promotions to your consented list; live today as a per-campaign add-on on Premium and Ultra, and Meta bills you directly for delivery at the marketing rate, which is higher than utility. In short: #1 alerts you, #2 answers them, #3 reminds them, #4 promotes to them.",
       },
       {
         q: "What does \"Coming\" mean — and will my price go up when it arrives?",
@@ -431,26 +431,26 @@ const copy: Record<
           {
             // SIN CUPO DE MENSAJES, NUNCA. Ver la nota en la fila equivalente en inglés.
             label: "Notificaciones — recordatorios de cita, confirmaciones y avisos de pedido (solo a clientes que lo autorizaron)",
-            cells: [false, { soon: true }, { soon: true }],
+            cells: [false, true, true],
           },
           {
             label: "Quién cobra la entrega de los mensajes",
             cells: [
               "—",
-              { soon: { mxn: "Meta te cobra directo, a su tarifa", usd: "Meta te cobra directo" } },
-              { soon: { mxn: "Meta te cobra directo, a su tarifa", usd: "Meta te cobra directo" } },
+              { mxn: "Meta te cobra directo, a su tarifa", usd: "Meta te cobra directo" },
+              { mxn: "Meta te cobra directo, a su tarifa", usd: "Meta te cobra directo" },
             ],
           },
           {
             label: "Campañas de marketing — promociones a tu lista con consentimiento: redactadas, enviadas y reportadas",
-            cells: [false, { soon: "Complemento" }, { soon: "Complemento" }],
+            cells: [false, "Complemento", "Complemento"],
           },
           {
             label: "Precio por campaña",
             cells: [
               "—",
-              { soon: { mxn: "$1,490 + IVA hasta 1,000 destinatarios (+$490 por cada 1,000 más) — Meta factura el envío por separado", usd: "Se cotiza por campaña" } },
-              { soon: { mxn: "$1,490 + IVA hasta 1,000 destinatarios (+$490 por cada 1,000 más) — Meta factura el envío por separado", usd: "Se cotiza por campaña" } },
+              { mxn: "$1,490 + IVA hasta 1,000 destinatarios (+$490 por cada 1,000 más) — Meta factura el envío por separado", usd: "Se cotiza por campaña" },
+              { mxn: "$1,490 + IVA hasta 1,000 destinatarios (+$490 por cada 1,000 más) — Meta factura el envío por separado", usd: "Se cotiza por campaña" },
             ],
           },
         ],
