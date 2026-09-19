@@ -150,15 +150,22 @@ const copy: Record<
         label: "WhatsApp — messages your business sends to customers",
         rows: [
           {
+            // NO MESSAGE ALLOWANCE HERE, EVER. This row read "Up to 500 / mo" and
+            // "Up to 2,000 / mo" until 2026-09-19. CushLabs is a Meta Tech Provider
+            // and cannot allot messages it does not sell — Meta bills the client
+            // directly on the client's own account. An allowance also implies an
+            // overage that cannot exist. Explicitly banned by
+            // cushlabs-connect/docs/WHATSAPP_MARKETING_CLAIMS.md: "Any specific
+            // message allowance... No policy exists yet."
             label: "Utility notifications — appointment reminders, confirmations, order updates (opted-in customers only)",
-            cells: [false, { soon: "Up to 500 / mo" }, { soon: "Up to 2,000 / mo" }],
+            cells: [false, { soon: true }, { soon: true }],
           },
           {
-            label: "Additional utility messages",
+            label: "Who pays for message delivery",
             cells: [
               "—",
-              { soon: { mxn: "Billed by Meta at their rate", usd: "Billed by Meta" } },
-              { soon: { mxn: "Billed by Meta at their rate", usd: "Billed by Meta" } },
+              { soon: { mxn: "Meta bills you directly, at their rate", usd: "Meta bills you directly" } },
+              { soon: { mxn: "Meta bills you directly, at their rate", usd: "Meta bills you directly" } },
             ],
           },
           {
@@ -418,15 +425,16 @@ const copy: Record<
         label: "WhatsApp — mensajes que tu negocio envía a sus clientes",
         rows: [
           {
+            // SIN CUPO DE MENSAJES, NUNCA. Ver la nota en la fila equivalente en inglés.
             label: "Notificaciones — recordatorios de cita, confirmaciones y avisos de pedido (solo a clientes que lo autorizaron)",
-            cells: [false, { soon: "Hasta 500 / mes" }, { soon: "Hasta 2,000 / mes" }],
+            cells: [false, { soon: true }, { soon: true }],
           },
           {
-            label: "Mensajes adicionales",
+            label: "Quién cobra la entrega de los mensajes",
             cells: [
               "—",
-              { soon: { mxn: "Meta te lo factura a su tarifa", usd: "Lo factura Meta" } },
-              { soon: { mxn: "Meta te lo factura a su tarifa", usd: "Lo factura Meta" } },
+              { soon: { mxn: "Meta te cobra directo, a su tarifa", usd: "Meta te cobra directo" } },
+              { soon: { mxn: "Meta te cobra directo, a su tarifa", usd: "Meta te cobra directo" } },
             ],
           },
           {

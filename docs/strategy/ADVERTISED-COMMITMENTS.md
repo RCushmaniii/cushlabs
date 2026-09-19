@@ -395,13 +395,25 @@ the client keeps ownership of every page, number, profile and domain.
 Published on the pricing page under the **Coming** pill. Basis: Meta's WhatsApp rate card
 **effective 2026-07-01**, Mexico recipients, read 2026-08-14, FX reference $17.05 MXN/USD.
 
-| Item                          | Client price (+IVA)                                | Who bills the message  |
-| ----------------------------- | -------------------------------------------------- | ---------------------- |
-| Utility capacity — Premium    | up to 500 messages/mo                              | Meta, to the client    |
-| Utility capacity — Ultra      | up to 2,000 messages/mo                            | Meta, to the client    |
-| Messages beyond that capacity | —                                                  | Meta, to the client    |
-| Marketing message delivery    | —                                                  | Meta, to the client    |
-| Campaign service fee          | **$1,490** up to 1,000 recipients, +$490 per 1,000 | n/a — this is our work |
+| Item                       | Client price (+IVA)                                | Who bills the message  |
+| -------------------------- | -------------------------------------------------- | ---------------------- |
+| Utility notifications      | —                                                  | Meta, to the client    |
+| Marketing message delivery | —                                                  | Meta, to the client    |
+| Campaign service fee       | **$1,490** up to 1,000 recipients, +$490 per 1,000 | n/a — this is our work |
+
+> **NO MESSAGE ALLOWANCE MAY BE PUBLISHED, 2026-09-19.** This table carried
+> "Utility capacity — Premium: up to 500 messages/mo" and "Ultra: up to 2,000 messages/mo", and
+> those numbers were live on the pricing cards and the comparison matrix in both languages.
+> **They were wrong in principle, not just in value.** A Tech Provider cannot allot messages it
+> does not sell — Meta bills the client directly on the client's own account — and an allowance
+> implies an overage that cannot exist. `cushlabs-connect/docs/WHATSAPP_MARKETING_CLAIMS.md` bans
+> it outright: _"Any specific message allowance: 'up to 500 reminders', '1,000 messages included'.
+> No policy exists yet."_
+>
+> **How it survived:** the 2026-08-22 correction removed the per-message _prices_ and the overage
+> rates, and everyone who checked afterwards — including a 2026-09-19 sweep that reported this
+> repo "already clean on the removal list" — searched for prices and overage. The allowance is
+> neither. **Search for the capacity too.**
 
 > **CORRECTED 2026-08-22 — the per-message resale lines are gone, and they were never chargeable.**
 > This table used to sell utility overage at $0.50 MXN/msg against Meta's ~$0.145, and marketing at
