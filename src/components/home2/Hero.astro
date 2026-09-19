@@ -43,9 +43,17 @@ const content = {
 
     // CHANNELS ARE A CLAIMS SURFACE. Only name what is live TODAY.
     //
-    // Instagram: ADVERTISED-COMMITMENTS §2.4 — "must not advertise IG as an available
-    // channel on any client-facing surface until that approval lands." The registry has
-    // `meta-instagram-messaging-permissions` as not_submitted; there is no pending review.
+    // Instagram: LIVE on Premium and Ultra since 2026-09-18, via partner sharing —
+    // the client shares their Instagram account into the CushLabs business portfolio
+    // during setup, the same "Asignar socio" step they already take for their Facebook
+    // Page. ADVERTISED-COMMITMENTS §2.4 was rewritten in the same PR; it previously
+    // said IG must not be advertised at all.
+    //
+    // This is NOT an App Review approval. `meta-instagram-messaging-permissions` is
+    // still `not_submitted` in the registry and every instagram_* permission reads
+    // REJECTED / access_level none on all three CushLabs apps (verified against live
+    // Meta 2026-09-18). What is sold is a hand-onboarded connection, never self-serve.
+    // If this headline ever names Instagram, it must not imply it works on signup.
     //
     // WhatsApp: List 2 (held) as a CUSTOMER channel. What is live is the OWNER alert —
     // WhatsApp messages Robert when a lead is hot — which is why the line below says

@@ -8,9 +8,12 @@
 > **Owner:** the marketing repo (`cushlabs`). **Audience:** humans doing GTM/pricing work **and**
 > the AI assistant building the bot in the sibling repo (`cushlabs-messenger-bot`).
 >
-> **Last reconciled against the live components:** 2026-08-15 (Tier & Feature Spec v1.2 —
-> Instagram/WhatsApp published as "Coming" on Premium & Ultra, the Surfaces Rule and its $490/$690
-> fees, WhatsApp message economics, and the correction of the Instagram approval status in §2.4).
+> **Last reconciled against the live components:** 2026-09-18 (Instagram moved from "Coming" to a
+> live Premium/Ultra feature via partner sharing — §2.4; WhatsApp as a customer channel stays
+> "Coming"; the comparison-matrix label narrowed to comments and DMs). Previously 2026-08-15 (Tier
+> & Feature Spec v1.2 — Instagram/WhatsApp published as "Coming" on Premium & Ultra, the Surfaces
+> Rule and its $490/$690 fees, WhatsApp message economics, and the correction of the Instagram
+> approval status in §2.4).
 > This stamp read `2026-07-08` until 2026-08-14 while the body below carried four August
 > reconciliations — the bot-repo assistant reads this line first to decide whether to trust the
 > file, so a stale stamp on current content is its own failure mode. **Bump this line in the same
@@ -143,10 +146,44 @@ America; USD = US + Canada. Rationale: `operating-system/strategy/from-marketing
 
 ### 2.4 What is deliberately NOT priced or listed yet
 
-- **Instagram** channel is intentionally **absent** from the pricing tiers "until Meta approves; they
-  layer into these tiers at no price change" (comment in `PricingSection.astro`). The bot must not
-  advertise IG as an available channel on any client-facing surface until that approval lands and this
-  doc is updated.
+> **SUPERSEDED IN PART, 2026-09-18 — Instagram is now advertised. Robert's decision.**
+>
+> Instagram is **live on Premium and Ultra** and appears in `features`, not `soon`. What changed is
+> not App Review — it is **partner sharing**. The client shares their Instagram account into the
+> CushLabs business portfolio (`727942370887684`) and grants Messages and Community activity. That
+> is the same "Asignar socio" step they already complete for their Facebook Page, it takes a few
+> minutes in their own Business Suite, and it has already delivered Page permissions for a client,
+> including two that Meta had rejected.
+>
+> **What is advertisable:** public comment replies, private replies, and DM conversation inside the
+> 24-hour window. Verified in production on @cushlabs.ai — 10 DMs in 7 days, zero errors. Story
+> replies and mentions are **not** verified and were removed from the comparison matrix label.
+>
+> **What must stay true in every surface that mentions it:** there is **no self-serve path**. Nobody
+> gets Instagram by signing up and clicking Connect. Every Instagram client is hand-onboarded. The
+> site survives this only because every CTA books a consultation and the pricing sub-heading already
+> says everything is set up for you. **If a self-serve signup ever ships, this section and every
+> surface below revert.**
+>
+> **What did NOT change.** `meta-instagram-messaging-permissions` is still `status: not_submitted`,
+> `reachable_by: none` in the capability registry, and Advanced Access has not been applied for.
+> Verified against live Meta on 2026-09-18: on all three CushLabs apps — Messaging Platform
+> (`848827908228231`), Page Assistant (`1478493230499109`) and Connect (`1670575657528474`) — every
+> `instagram_*` permission reads `REJECTED` at `access_level: none`. The Facebook equivalent works
+> because `pages_messaging` is approved at **advanced**; Instagram has no approved permission to
+> ride on. Partner sharing supplies the asset, not the permission. **This distinction is the reason
+> the claim is scoped to hand-onboarded clients and not to the product generally.**
+>
+> **The operational cost nobody should discover later:** Instagram user tokens expire **every 60
+> days, per client**, and need refreshing. Facebook Page tokens never expire. Every Instagram client
+> adds a recurring renewal obligation.
+>
+> The bundling decision, the tier placement and the founding-cohort clause below all still stand and
+> were not reopened. The paragraphs below are kept as the reasoning that produced them.
+
+- **Instagram** was intentionally **absent** from the pricing tiers "until Meta approves; they
+  layer into these tiers at no price change" (comment in `PricingSection.astro`). That bar was
+  lifted on 2026-09-18 by the partner-sharing path described above, not by an approval.
 
   **DECIDED AND REASONED, 2026-08-04 — Instagram BUNDLES. It is never an add-on, never a surcharge.**
 
@@ -183,10 +220,18 @@ America; USD = US + Canada. Rationale: `operating-system/strategy/from-marketing
   uncomfortable on a $1,990 plan. **Measure it in D1 before committing publicly to unlimited.** The
   safe form is a fair-use ceiling on total conversations — never a per-channel charge.
 
-  **What may be said to a client today:** that Instagram is part of what the messaging tier becomes,
-  that it needs Meta's approval first, that it will be switched on **with no increase in the plan's
-  monthly price** when it lands (say exactly that — see the cost-language rule under the WhatsApp
-  entry below for why "no extra cost" is banned), and **no date**.
+  **What may be said to a client today — REPLACED 2026-09-18.** Instagram is included on Premium
+  and Ultra and is switched on during setup, **with no increase in the plan's monthly price** (say
+  exactly that — see the cost-language rule under the WhatsApp entry below for why "no extra cost"
+  is banned). Say plainly that it needs one step from them: sharing their Instagram account with
+  CushLabs in their own Business Suite, the same step they already do for their Facebook Page.
+  **Do not describe it as automatic or instant, and do not imply it turns on by itself when they
+  sign up.** Scope it to answering comments and DMs — not story replies, not mentions.
+
+  > The previous wording read: "that Instagram is part of what the messaging tier becomes, that it
+  > needs Meta's approval first, that it will be switched on with no increase in the plan's monthly
+  > price when it lands, and **no date**." That was correct while the only route was App Review. It
+  > is kept here because the "no date" discipline still governs **WhatsApp**, which has not moved.
 
   > **CORRECTION, 2026-08-15 — this bullet said the wrong thing for eleven days.** It read:
   > "`instagram_manage_messages` requires an App Review, and the 2026-07-19 submission was rejected
