@@ -94,13 +94,20 @@ Always use orange selection highlighting:
 
 | Role | Font | Weights | Fallback |
 |------|------|---------|----------|
-| **Display** (headings, nav, buttons) | Space Grotesk | 500, 600, 700 | `sans-serif` |
-| **Body** (paragraphs, content) | Source Serif 4 | 300, 400, 500 | `Georgia, serif` |
+| **Display** (headings, nav, buttons) | Manrope | 500-800, ship at 700 | `system-ui, sans-serif` |
+| **Body** (paragraphs, content) | Inter | 400-700 | `system-ui, sans-serif` |
+
+Adopted 2026-09-15, replacing Space Grotesk + Source Serif 4. The spec is canonical in
+`operating-system/cushlabs/brand-kit.md` § Typography; this table is the implementation shorthand
+and defers to it on any disagreement.
 
 ### Google Fonts Import
 
+Variable ranges, never a discrete weight list — a discrete list snaps a 750 request silently to 700,
+so the spec describes something the browser never rendered.
+
 ```
-https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;1,8..60,400&display=swap
+https://fonts.googleapis.com/css2?family=Manrope:wght@500..800&family=Inter:ital,wght@0,400..700;1,400..700&display=swap
 ```
 
 ### Type Scale
@@ -116,7 +123,14 @@ https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=S
 
 ### Design Principle
 
-The **Serif + Sans contrast** is core to the CushLabs look: modern geometric headings (Space Grotesk) paired with warm, readable body text (Source Serif 4). Never use the body font for headings or vice versa.
+**Manrope for brand expression, Inter for information.** The system intentionally avoids serif
+contrast in primary brand communications. The brand already carries its identity in the accent, the
+chevron mark and the dark photography, so the type does not also need to. Never use the body font
+for headings or vice versa.
+
+This replaces the previous principle, which held that a serif/sans contrast was itself the CushLabs
+look. Space Grotesk was not judged weaker — it was judged to be adding a second layer of personality
+the brand does not need.
 
 ---
 
@@ -386,7 +400,11 @@ bg-gradient-to-r from-foreground to-muted                   (text gradients)
 
 ## Tailwind Config (Portable)
 
-Drop this into any new repo's `tailwind.config.mjs`:
+> **This block is Tailwind 3 syntax and does NOT describe cushlabs.ai.** This site is on Tailwind 4
+> with CSS-first config — there is no `tailwind.config.*` here, and the tokens live in the `@theme`
+> block of `src/styles/global.css`. Keep it only for a new repo still on Tailwind 3.
+
+Drop this into a Tailwind 3 repo's `tailwind.config.mjs`:
 
 ```javascript
 /** @type {import('tailwindcss').Config} */
@@ -414,8 +432,8 @@ export default {
         },
       },
       fontFamily: {
-        display: ['Space Grotesk', 'sans-serif'],
-        body: ['Source Serif 4', 'Georgia', 'serif'],
+        display: ['Manrope', 'system-ui', 'sans-serif'],
+        body: ['Inter', 'system-ui', 'sans-serif'],
       },
     },
   },

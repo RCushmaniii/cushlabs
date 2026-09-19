@@ -29,7 +29,7 @@ Visual walkthrough slides for presenting the CushLabs.ai system in interviews. L
 
 ### Slide 3 — Premium Design Behavior
 ![Premium Design is About Behavior, Not Just Colors](/images/portfolio/cushlabs-03.png)
-*Zero-flash theme toggling (pre-paint script), time-based theming (7am–7pm logic), SVG fractalNoise texture at 1.5% opacity, micro-interactions (card lift, thumbnail zoom), and typography pairing (Space Grotesk display + Source Serif 4 body).*
+*Zero-flash theme toggling (pre-paint script), time-based theming (7am–7pm logic), SVG fractalNoise texture at 1.5% opacity, micro-interactions (card lift, thumbnail zoom), and typography pairing (Manrope display + Inter body, adopted 2026-09-15).*
 
 ### Slide 4 — Enterprise SEO Stack
 ![Engineering Visibility: The Enterprise SEO Stack](/images/portfolio/cushlabs-04.png)
@@ -136,7 +136,7 @@ Visual walkthrough slides for presenting the CushLabs.ai system in interviews. L
 
 ### 10. Typography & Brand System
 
-- **Space Grotesk** (display) + **Source Serif 4** (body)
+- **Manrope** (display) + **Inter** (body) — since 2026-09-15
 - CSS custom properties for semantic theming (`--bg`, `--fg`, `--muted`, `--surface`, `--border`)
 - Brand orange `#FF6A3D` used consistently for CTAs, active states, tags, borders
 
@@ -406,7 +406,7 @@ Any FAIL exits with code 1, blocking the deploy. The audit catches everything fr
 | Calendar | Google Calendar API (OAuth2) |
 | Contact Form | Formspree |
 | Portfolio Sync | GitHub Actions + Octokit |
-| Fonts | Space Grotesk (display) + Source Serif 4 (body) |
+| Fonts | Manrope (display) + Inter (body) |
 | i18n | Custom 24-line TypeScript system |
 
 ---
