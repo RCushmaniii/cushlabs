@@ -168,21 +168,19 @@ const copy: Record<
             label: "Who pays for message delivery",
             cells: [
               "—",
-              { mxn: "Meta bills you directly, at their rate", usd: "Meta bills you directly" },
-              { mxn: "Meta bills you directly, at their rate", usd: "Meta bills you directly" },
+              { mxn: "Meta bills you directly, at their rate — promotions cost more than reminders", usd: "Meta bills you directly, at their rate" },
+              { mxn: "Meta bills you directly, at their rate — promotions cost more than reminders", usd: "Meta bills you directly, at their rate" },
             ],
           },
           {
-            label: "Marketing campaigns — promotions to your consented list, written, sent and reported",
-            cells: [false, "Add-on", "Add-on"],
-          },
-          {
-            label: "Campaign price",
-            cells: [
-              "—",
-              { mxn: "$1,490 + IVA up to 1,000 recipients (+$490 per 1,000 more) — Meta bills delivery separately", usd: "Quoted per campaign" },
-              { mxn: "$1,490 + IVA up to 1,000 recipients (+$490 per 1,000 more) — Meta bills delivery separately", usd: "Quoted per campaign" },
-            ],
+            // Included, not an add-on. A promotional message is the same API call
+            // as a reminder — same endpoint, same template approval, only Meta's
+            // category label and rate differ. Charging separately for one and not
+            // the other made no sense to a buyer, and it reintroduced a CushLabs
+            // per-use fee on the same page that promises we never add anything on
+            // top. Removed 2026-09-19 with the $1,490 per-campaign row.
+            label: "Marketing messages — promotions to your consented list, written and sent",
+            cells: [false, true, true],
           },
         ],
       },
@@ -281,7 +279,7 @@ const copy: Record<
     faqs: [
       {
         q: "There are four different things here called \"WhatsApp.\" Which is which?",
-        a: "The direction of the message is what separates them. (1) Owner alerts — we message YOU when a conversation shows real buying intent; live today on every plan. (2) WhatsApp assistant — the AI answers YOUR customers on your business number; coming, Premium and up. (3) Utility notifications — messages your business sends to customers who opted in: appointment reminders, confirmations, order updates; live today, Premium and Ultra, and Meta bills you directly for delivery at their rate. (4) Marketing campaigns — promotions to your consented list; live today as a per-campaign add-on on Premium and Ultra, and Meta bills you directly for delivery at the marketing rate, which is higher than utility. In short: #1 alerts you, #2 answers them, #3 reminds them, #4 promotes to them.",
+        a: "The direction of the message is what separates them. (1) Owner alerts — we message YOU when a conversation shows real buying intent; live today on every plan. (2) WhatsApp assistant — the AI answers YOUR customers on your business number; coming, Premium and up. (3) Utility notifications — messages your business sends to customers who opted in: appointment reminders, confirmations, order updates; live today, Premium and Ultra, and Meta bills you directly for delivery at their rate. (4) Marketing messages — promotions to your consented list; live today on Premium and Ultra at no extra charge from us, and Meta bills you directly for delivery at its marketing rate, which is higher than the reminder rate. In short: #1 alerts you, #2 answers them, #3 reminds them, #4 promotes to them.",
       },
       {
         q: "What does \"Coming\" mean — and will my price go up when it arrives?",
@@ -324,8 +322,8 @@ const copy: Record<
         a: "MXN prices are plus IVA, like any business service in Mexico. Every payment comes with a CFDI invoice with the IVA itemized, so it's deductible and your accounting stays clean from day one.",
       },
       {
-        q: "What will a WhatsApp campaign cost me?",
-        a: "$1,490 MXN + IVA per campaign for up to 1,000 recipients, plus $490 for each additional 1,000. That covers writing the campaign, getting the template approved by Meta, sending it and reporting back on it. Meta charges separately for delivering each message, and that goes on your own WhatsApp account at Meta's published rate — we never add anything on top of it. The account is in your name, so you can see exactly what Meta charged.",
+        q: "What does it cost to send a promotion to my customers?",
+        a: "Nothing extra from us. Writing it, getting Meta to approve the template and sending it are part of your plan, the same as your appointment reminders. The only cost is Meta's, for delivering each message, and that goes on your own WhatsApp account at Meta's published rate — promotional messages cost more per message than reminders do. The account is in your name, so you can see exactly what Meta charged. We never add anything on top.",
       },
       {
         q: "Do you manage my Facebook recommendations or TripAdvisor reviews too?",
@@ -437,21 +435,13 @@ const copy: Record<
             label: "Quién cobra la entrega de los mensajes",
             cells: [
               "—",
-              { mxn: "Meta te cobra directo, a su tarifa", usd: "Meta te cobra directo" },
-              { mxn: "Meta te cobra directo, a su tarifa", usd: "Meta te cobra directo" },
+              { mxn: "Meta te cobra directo, a su tarifa — las promociones cuestan más que los recordatorios", usd: "Meta te cobra directo, a su tarifa" },
+              { mxn: "Meta te cobra directo, a su tarifa — las promociones cuestan más que los recordatorios", usd: "Meta te cobra directo, a su tarifa" },
             ],
           },
           {
-            label: "Campañas de marketing — promociones a tu lista con consentimiento: redactadas, enviadas y reportadas",
-            cells: [false, "Complemento", "Complemento"],
-          },
-          {
-            label: "Precio por campaña",
-            cells: [
-              "—",
-              { mxn: "$1,490 + IVA hasta 1,000 destinatarios (+$490 por cada 1,000 más) — Meta factura el envío por separado", usd: "Se cotiza por campaña" },
-              { mxn: "$1,490 + IVA hasta 1,000 destinatarios (+$490 por cada 1,000 más) — Meta factura el envío por separado", usd: "Se cotiza por campaña" },
-            ],
+            label: "Mensajes de marketing — promociones a tu lista con consentimiento, redactadas y enviadas",
+            cells: [false, true, true],
           },
         ],
       },
@@ -553,7 +543,7 @@ const copy: Record<
     faqs: [
       {
         q: "Aquí hay cuatro cosas distintas que se llaman \"WhatsApp\". ¿Cuál es cuál?",
-        a: "Lo que las separa es la dirección del mensaje. (1) Alertas al dueño — nosotros TE escribimos a ti cuando una conversación muestra intención real de compra; activo hoy en todos los planes. (2) Asistente de WhatsApp — la IA responde a TUS clientes en tu número de negocio; en camino, Premium y superiores. (3) Notificaciones — mensajes que tu negocio envía a clientes que lo autorizaron: recordatorios de cita, confirmaciones, avisos de pedido; activo hoy en Premium y Ultra, y Meta te factura el envío directamente a su tarifa. (4) Campañas — promociones a tu lista con consentimiento; activo hoy como complemento por campaña en Premium y Ultra, y Meta te factura el envío a la tarifa de marketing, que es más alta que la de utilidad. En corto: la 1 te avisa, la 2 les responde, la 3 les recuerda, la 4 les promociona.",
+        a: "Lo que las separa es la dirección del mensaje. (1) Alertas al dueño — nosotros TE escribimos a ti cuando una conversación muestra intención real de compra; activo hoy en todos los planes. (2) Asistente de WhatsApp — la IA responde a TUS clientes en tu número de negocio; en camino, Premium y superiores. (3) Notificaciones — mensajes que tu negocio envía a clientes que lo autorizaron: recordatorios de cita, confirmaciones, avisos de pedido; activo hoy en Premium y Ultra, y Meta te factura el envío directamente a su tarifa. (4) Mensajes de marketing — promociones a tu lista con consentimiento; activo hoy en Premium y Ultra sin cargo extra de nuestra parte, y Meta te factura el envío a su tarifa de marketing, que es más alta que la de los recordatorios. En corto: la 1 te avisa, la 2 les responde, la 3 les recuerda, la 4 les promociona.",
       },
       {
         q: "¿Qué significa \"En camino\" y me va a subir el precio cuando llegue?",
@@ -596,8 +586,8 @@ const copy: Record<
         a: "Los precios en MXN son más IVA, como cualquier servicio empresarial en México. Cada pago incluye tu factura (CFDI) con el IVA desglosado, así que es deducible y tu contabilidad queda en orden desde el primer día.",
       },
       {
-        q: "¿Cuánto me costaría una campaña de WhatsApp?",
-        a: "$1,490 MXN + IVA por campaña hasta 1,000 destinatarios, más $490 por cada 1,000 adicionales. Eso cubre redactar la campaña, conseguir que Meta apruebe la plantilla, enviarla y entregarte el reporte. Meta cobra aparte por entregar cada mensaje: eso se carga a tu propia cuenta de WhatsApp, a la tarifa que Meta publica, y nosotros no le agregamos nada encima. La cuenta está a nombre de tu negocio, así que puedes ver exactamente cuánto cobró Meta.",
+        q: "¿Cuánto me cuesta mandarles una promoción a mis clientes?",
+        a: "Nada extra de nuestra parte. Redactarla, conseguir que Meta apruebe la plantilla y enviarla ya vienen en tu plan, igual que tus recordatorios de cita. El único costo es el de Meta por entregar cada mensaje, y se carga a tu propia cuenta de WhatsApp a la tarifa que Meta publica — los mensajes promocionales cuestan más por mensaje que los recordatorios. La cuenta está a nombre de tu negocio, así que puedes ver exactamente cuánto cobró Meta. Nosotros no le agregamos nada encima.",
       },
       {
         q: "¿También atienden mis recomendaciones de Facebook o mis reseñas de TripAdvisor?",
