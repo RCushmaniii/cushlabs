@@ -101,8 +101,13 @@ const copy: Record<
           { label: "AI assistant on Facebook Messenger (24/7)", cells: [true, true, true] },
           { label: "Website chatbot — the same assistant on your site", cells: [false, true, true] },
           {
-            label: "Instagram assistant — DMs, story replies and mentions",
-            cells: [false, { soon: true }, { soon: true }],
+            // Live 2026-09-18 via partner sharing, Premium and Ultra. Narrowed from
+            // "DMs, story replies and mentions" — what is verified in production is
+            // public comment replies, private replies and DM conversation inside the
+            // 24-hour window. Story replies and mentions were never tested; do not
+            // put them back without evidence.
+            label: "Instagram assistant — comments and DMs",
+            cells: [false, true, true],
           },
           {
             label: "WhatsApp assistant — the AI answers your customers on your business number",
@@ -359,8 +364,10 @@ const copy: Record<
           { label: "Asistente con IA en Facebook Messenger (24/7)", cells: [true, true, true] },
           { label: "Chatbot en tu sitio web — el mismo asistente en tu página", cells: [false, true, true] },
           {
-            label: "Asistente de Instagram — mensajes directos, respuestas a historias y menciones",
-            cells: [false, { soon: true }, { soon: true }],
+            // Ver la nota en la fila equivalente en inglés: alcance reducido a lo
+            // que está verificado en producción.
+            label: "Asistente de Instagram — comentarios y mensajes directos",
+            cells: [false, true, true],
           },
           {
             label: "Asistente de WhatsApp — la IA responde a tus clientes en tu número de negocio",

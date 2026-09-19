@@ -10,6 +10,25 @@
 // also carry a "Coming" cell in PricingComparison.astro, and must never
 // appear in a written commitment to a client until it ships.
 //
+// INSTAGRAM MOVED soon -> features ON 2026-09-18. Robert's call. What makes it
+// sayable is partner sharing ("Asignar socio"): the client shares their
+// Instagram account into the CushLabs business portfolio and grants Messages
+// and Community activity, which is the same step they already take for their
+// Facebook Page. It is NOT App Review — `meta-instagram-messaging-permissions`
+// is still `not_submitted` in the capability registry, and Advanced Access has
+// not been applied for.
+//
+// So the wording carries "connected with you during setup" and must keep doing
+// so. There is NO self-serve path: nobody gets Instagram by signing up and
+// clicking Connect. That is survivable here only because every CTA on this page
+// books a consultation and the sub-heading already says everything is set up
+// for you — if a self-serve signup ever ships, this line becomes a lie and has
+// to move back. Operationally, Instagram user tokens expire every 60 days per
+// client; Facebook Page tokens never do.
+//
+// WhatsApp as a CUSTOMER channel stays in `soon`. Only Instagram moved. The
+// live WhatsApp feature is the OWNER alert, which is a different claim.
+//
 // Currency: a market toggle (MXN ⇄ USD) decoupled from the EN/ES language
 // switch. MXN = Mexico + Central/South America; USD = US + Canada. USD prices
 // are independently anchored marketing numbers (seeded from the FX rate once,
@@ -69,10 +88,10 @@ const copy = {
         features: [
           "Everything in Basic",
           "Website chatbot",
+          "Instagram assistant — comments and DMs, connected with you during setup",
           "Weekly local SEO & competitor report",
         ],
         soon: [
-          "Instagram assistant",
           "WhatsApp assistant on your business number",
           "WhatsApp notifications — 500 messages/mo",
         ],
@@ -94,7 +113,6 @@ const copy = {
           "Industry tuning (e.g. healthcare)",
         ],
         soon: [
-          "Instagram assistant",
           "WhatsApp assistant on your business number",
           "WhatsApp notifications — 2,000 messages/mo",
         ],
@@ -151,10 +169,10 @@ const copy = {
         features: [
           "Todo lo de Básico",
           "Chatbot para tu sitio web",
+          "Asistente de Instagram — comentarios y mensajes directos, lo conectamos contigo en la configuración",
           "Reporte semanal de SEO local y competencia",
         ],
         soon: [
-          "Asistente de Instagram",
           "Asistente de WhatsApp en tu número de negocio",
           "Notificaciones de WhatsApp — 500 mensajes/mes",
         ],
@@ -176,7 +194,6 @@ const copy = {
           "Personalización por industria (p. ej. salud)",
         ],
         soon: [
-          "Asistente de Instagram",
           "Asistente de WhatsApp en tu número de negocio",
           "Notificaciones de WhatsApp — 2,000 mensajes/mes",
         ],

@@ -14,9 +14,15 @@
  *     Messenger (English set; Facebook serves the Spanish set automatically to
  *     visitors whose Facebook is in Spanish). Keep in sync with
  *     cushlabs-messenger-bot/scripts/set-messenger-profile.ts.
- *   - WhatsApp and Instagram as CUSTOMER channels are List 2 and must never be
- *     added here. The WhatsApp owner ALERT is live but is not a demo you can
- *     click, so it belongs on the feature pages, not in this file.
+ *   - WhatsApp as a CUSTOMER channel is List 2 and must never be added here.
+ *     The WhatsApp owner ALERT is live but is not a demo you can click, so it
+ *     belongs on the feature pages, not in this file.
+ *   - Instagram moved to List 1 on 2026-09-18 (partner sharing, Premium and
+ *     Ultra) and so is no longer barred from this file on claims grounds. It is
+ *     still absent for a different reason: every entry here is a tappable
+ *     Messenger ice breaker set, and Instagram has no equivalent. Adding an IG
+ *     entry means first defining what a visitor would actually tap. Do not
+ *     improvise one.
  *
  * NOT IN THIS FILE, ON PURPOSE — the per-prospect demo microsites under
  * `demos/<company>/` (Azúcar, Lumière, La Tiendita). Those are token-gated by
