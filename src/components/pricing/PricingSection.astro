@@ -36,8 +36,13 @@
 // this card has to say it again. Operationally, Instagram per-client
 // credentials expire every 60 days; Facebook Page ones never do.
 //
-// WhatsApp as a CUSTOMER channel stays in `soon`. Only Instagram moved. The
-// live WhatsApp feature is the OWNER alert, which is a different claim.
+// UPDATED 2026-09-19. WhatsApp to CUSTOMERS is LIVE on Premium and Ultra —
+// reminders, confirmations and promotions, sent from the client's own number,
+// with Meta billing the client directly for delivery. This comment previously
+// said WhatsApp-as-a-customer-channel "stays in soon", which stopped being true
+// when the pricing table was corrected and left these cards contradicting it.
+// What remains in `soon` is ONLY the WhatsApp ASSISTANT — the AI answering the
+// client's customers inbound — which runs in observe mode.
 //
 // Currency: a market toggle (MXN ⇄ USD) decoupled from the EN/ES language
 // switch. MXN = Mexico + Central/South America; USD = US + Canada. USD prices
@@ -99,12 +104,10 @@ const copy = {
           "Everything in Basic",
           "Website chatbot",
           "Instagram assistant — comments and DMs",
+          "WhatsApp reminders, confirmations and promotions to your customers",
           "Weekly local SEO & competitor report",
         ],
-        soon: [
-          "WhatsApp assistant on your business number",
-          "WhatsApp notifications to your customers",
-        ],
+        soon: ["WhatsApp assistant on your business number"],
         cta: "Get started",
       },
       {
@@ -122,10 +125,7 @@ const copy = {
           "Priority support",
           "Industry tuning (e.g. healthcare)",
         ],
-        soon: [
-          "WhatsApp assistant on your business number",
-          "WhatsApp notifications to your customers",
-        ],
+        soon: ["WhatsApp assistant on your business number"],
         cta: "Get started",
       },
     ],
@@ -180,12 +180,10 @@ const copy = {
           "Todo lo de Básico",
           "Chatbot para tu sitio web",
           "Asistente de Instagram — comentarios y mensajes directos",
+          "Recordatorios, confirmaciones y promociones por WhatsApp a tus clientes",
           "Reporte semanal de SEO local y competencia",
         ],
-        soon: [
-          "Asistente de WhatsApp en tu número de negocio",
-          "Notificaciones de WhatsApp a tus clientes",
-        ],
+        soon: ["Asistente de WhatsApp en tu número de negocio"],
         cta: "Empieza",
       },
       {
@@ -203,10 +201,7 @@ const copy = {
           "Soporte prioritario",
           "Personalización por industria (p. ej. salud)",
         ],
-        soon: [
-          "Asistente de WhatsApp en tu número de negocio",
-          "Notificaciones de WhatsApp a tus clientes",
-        ],
+        soon: ["Asistente de WhatsApp en tu número de negocio"],
         cta: "Empieza",
       },
     ],
