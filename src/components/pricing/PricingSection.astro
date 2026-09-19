@@ -18,13 +18,23 @@
 // is still `not_submitted` in the capability registry, and Advanced Access has
 // not been applied for.
 //
-// So the wording carries "connected with you during setup" and must keep doing
-// so. There is NO self-serve path: nobody gets Instagram by signing up and
-// clicking Connect. That is survivable here only because every CTA on this page
-// books a consultation and the sub-heading already says everything is set up
-// for you — if a self-serve signup ever ships, this line becomes a lie and has
-// to move back. Operationally, Instagram user tokens expire every 60 days per
-// client; Facebook Page tokens never do.
+// There is NO self-serve path: nobody gets Instagram by signing up and clicking
+// Connect. Every Instagram client is hand-onboarded.
+//
+// THE CARD NO LONGER STATES THAT, AND THAT IS DELIBERATE. This line read
+// "Instagram assistant — comments and DMs, connected with you during setup"
+// until 2026-09-19, when Robert cut the qualifier: a pricing card is scanned,
+// not read, and setup mechanics on it confuse more buyers than they protect.
+// The constraint did NOT go away — it moved to where someone actually reads
+// prose, and it must keep living in ALL of these:
+//   - the sub-heading above, "Everything set up and managed for you"
+//   - every CTA on this page, which books a consultation rather than a signup
+//   - the home FAQ channels answer, EN and ES
+//   - /salons/ and /salones/, which spell out the sharing step
+//   - ADVERTISED-COMMITMENTS §2.4, "do not describe it as automatic or instant"
+// If a self-serve signup ever ships, or if those surfaces stop carrying it,
+// this card has to say it again. Operationally, Instagram per-client
+// credentials expire every 60 days; Facebook Page ones never do.
 //
 // WhatsApp as a CUSTOMER channel stays in `soon`. Only Instagram moved. The
 // live WhatsApp feature is the OWNER alert, which is a different claim.
@@ -88,7 +98,7 @@ const copy = {
         features: [
           "Everything in Basic",
           "Website chatbot",
-          "Instagram assistant — comments and DMs, connected with you during setup",
+          "Instagram assistant — comments and DMs",
           "Weekly local SEO & competitor report",
         ],
         soon: [
@@ -169,7 +179,7 @@ const copy = {
         features: [
           "Todo lo de Básico",
           "Chatbot para tu sitio web",
-          "Asistente de Instagram — comentarios y mensajes directos, lo conectamos contigo en la configuración",
+          "Asistente de Instagram — comentarios y mensajes directos",
           "Reporte semanal de SEO local y competencia",
         ],
         soon: [

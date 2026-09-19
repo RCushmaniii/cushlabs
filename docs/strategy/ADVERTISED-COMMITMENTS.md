@@ -8,7 +8,12 @@
 > **Owner:** the marketing repo (`cushlabs`). **Audience:** humans doing GTM/pricing work **and**
 > the AI assistant building the bot in the sibling repo (`cushlabs-messenger-bot`).
 >
-> **Last reconciled against the live components:** 2026-09-18 (Instagram moved from "Coming" to a
+> **Last reconciled against the live components:** 2026-09-19 (WhatsApp Tech Provider billing said
+> plainly on the pricing FAQ — who bills what, WABA ownership, template-category advisory, all
+> EN+ES; the rate basis in §2.6 marked unverified and the site set to link Meta's card rather than
+> print figures; the held WhatsApp material moved out of chat into
+> `WHATSAPP-MARKETING-HELD-MATERIAL.md`; no reply limits published, per Robert 2026-09-19).
+> Previously 2026-09-18 (Instagram moved from "Coming" to a
 > live Premium/Ultra feature via partner sharing — §2.4; WhatsApp as a customer channel stays
 > "Coming"; the comparison-matrix label narrowed to comments and DMs). Previously 2026-08-15 (Tier
 > & Feature Spec v1.2 — Instagram/WhatsApp published as "Coming" on Premium & Ultra, the Surfaces
@@ -369,6 +374,23 @@ implied · the free trial starts **at go-live, not at signature** · price prote
 the client keeps ownership of every page, number, profile and domain.
 
 ### 2.6 WhatsApp message economics (added 2026-08-15 — DO NOT quote these until the channel ships)
+
+> **Companion file, added 2026-09-19:**
+> [`WHATSAPP-MARKETING-HELD-MATERIAL.md`](./WHATSAPP-MARKETING-HELD-MATERIAL.md). It holds the
+> WhatsApp research that is **verified but deliberately unpublished** — the 72-hour Free Entry
+> Point window, the October 1 service-message change and its client framing, Meta's own
+> Business-Agent cost comparison, the template-categorization enforcement ladder, and the full
+> never-say list. The release trigger is written at the top of that file: publish on the day the
+> WhatsApp customer assistant leaves the Coming pill, not before.
+>
+> It exists because that material was researched, decided on, and then held — and research that
+> lives only in a chat transcript gets redone or half-remembered. **This section still governs.**
+> That file is source material, never approved copy.
+>
+> **The rate basis below is no longer verified.** A 2026-09-19 check returned two different
+> effective dates for Meta's current card, so the site now **links** Meta's rate card instead of
+> printing figures. Do not re-stamp the line below from memory — see
+> `operating-system/cushlabs/tier-feature-spec.md` §3.
 
 Published on the pricing page under the **Coming** pill. Basis: Meta's WhatsApp rate card
 **effective 2026-07-01**, Mexico recipients, read 2026-08-14, FX reference $17.05 MXN/USD.
