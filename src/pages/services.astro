@@ -29,11 +29,16 @@ const meta = {
   
   <ScenarioQualifier locale={locale} />
   
+  {/* Ordered as the tier ladder a buyer climbs: Basic, then Premium, then
+      Ultra. Voice is LAST deliberately — it is de-prioritized for sales, and it
+      previously sat above WhatsApp, which is the thing we actually want people
+      to upgrade for. Its own /voice-agent/ page and anchor are unchanged, so any
+      existing inbound link or ad still lands. */}
   <ServiceBlock locale={locale} id="messenger-ai" />
-  <ServiceBlock locale={locale} id="intelligence" isAlternate={true} />
-  <ServiceBlock locale={locale} id="support-assistants" />
-  <ServiceBlock locale={locale} id="voice-agent" isAlternate={true} />
+  <ServiceBlock locale={locale} id="support-assistants" isAlternate={true} />
   <ServiceBlock locale={locale} id="whatsapp" />
+  <ServiceBlock locale={locale} id="intelligence" isAlternate={true} />
+  <ServiceBlock locale={locale} id="voice-agent" />
 
   <HowIWork locale={locale} />
   
