@@ -27,8 +27,7 @@ const data = {
         { title: "Lead capture and qualification", desc: "After-hours visitors get engaged immediately. Contact info captured, intent qualified, routed to your sales process" },
         { title: "Weekly performance report", desc: "What customers are asking, where they get stuck, what content is missing, and how the assistant is performing" },
         { title: "Monthly tuning", desc: "I refine the assistant as your business evolves — new products, new pricing, new seasons" },
-        { title: "Instagram — comments and DMs", desc: "The assistant replies publicly to a comment and follows up in a direct message, on your own Instagram account. Premium and Ultra" },
-        { title: "Deployed where your customers already are", desc: "Facebook Messenger on every plan; your website and Instagram from Premium. Full operational documentation so your team can manage it" }
+        { title: "Deployed where your customers already are", desc: "Facebook Messenger on every plan; your website and Instagram from Premium — the Instagram mechanic is explained in full on its own page. Complete operational documentation so your team can manage it" }
       ],
       notIncluded: [
         "Integration with custom CRMs or ERPs (scoped separately if needed)",
@@ -57,8 +56,7 @@ const data = {
         { title: "Captura y calificación de leads", desc: "Los visitantes fuera de horario reciben atención de inmediato. Se captura su información de contacto, se califica su intención y se enruta a tu proceso de ventas" },
         { title: "Reporte semanal de desempeño", desc: "Qué preguntan los clientes, dónde se atoran, qué contenido falta y cómo está desempeñándose el asistente" },
         { title: "Ajuste mensual", desc: "Refino el asistente conforme tu negocio evoluciona — nuevos productos, nuevos precios, nuevas temporadas" },
-        { title: "Instagram — comentarios y mensajes directos", desc: "El asistente responde públicamente al comentario y da seguimiento por mensaje directo, en tu propia cuenta de Instagram. Premium y Ultra" },
-        { title: "Instalado donde ya están tus clientes", desc: "Facebook Messenger en todos los planes; tu sitio web e Instagram desde Premium. Documentación operativa completa para que tu equipo pueda gestionarlo" }
+        { title: "Instalado donde ya están tus clientes", desc: "Facebook Messenger en todos los planes; tu sitio web e Instagram desde Premium — cómo funciona Instagram se explica completo en su propia página. Documentación operativa completa para que tu equipo pueda gestionarlo" }
       ],
       notIncluded: [
         "Integración con CRMs/ERPs personalizados (se cotiza aparte)",
@@ -77,7 +75,9 @@ const data = {
   },
   'messenger-ai': {
     learnMoreUrl: { en: '/messenger-assistant/', es: '/es/messenger-assistant/' },
-    learnMoreLabel: { en: 'Full service details →', es: 'Ver detalles completos →' },
+    learnMoreLabel: { en: 'Full Facebook Messenger details →', es: 'Ver detalles de Facebook Messenger →' },
+    learnMore2Url: { en: '/instagram/', es: '/es/instagram/' },
+    learnMore2Label: { en: 'Full Instagram details →', es: 'Ver detalles de Instagram →' },
     en: {
       heading: "An AI Assistant on Facebook and Instagram That Sells While You Sleep",
       subheading: "Every message answered in seconds. Every comment turned into a conversation. Every question handled in their language — in your voice — 24 hours a day.",
@@ -343,6 +343,12 @@ const liveUrl = entry.liveUrl;
 const liveLabel = entry.liveLabel?.[locale];
 const learnMoreUrl = entry.learnMoreUrl?.[locale];
 const learnMoreLabel = entry.learnMoreLabel?.[locale];
+// A block can point at a SECOND deep-dive page. Added for the Facebook +
+// Instagram section, which describes two channels but could only link to one —
+// so the most specific page on the site was unreachable from the place people
+// actually decide.
+const learnMore2Url = entry.learnMore2Url?.[locale];
+const learnMore2Label = entry.learnMore2Label?.[locale];
 const primaryCtaLabel = entry.primaryCtaLabel?.[locale] ?? (locale === 'en' ? 'Book a Free 30-Min Call' : 'Agenda una Llamada Gratis de 30 Min');
 const primaryCtaHref = entry.primaryCtaHref?.[locale] ?? (locale === 'en' ? '/consultation/' : '/es/reservar/');
 
@@ -432,6 +438,11 @@ const bgClass = isAlternate ? 'bg-gray-50 dark:bg-gray-900/30' : 'bg-white dark:
             {learnMoreUrl && learnMoreLabel && (
               <a href={learnMoreUrl} class="block w-full text-center px-6 py-3 text-gray-400 font-display font-medium text-sm hover:text-accent-text transition-colors duration-300 underline underline-offset-4 decoration-gray-600 hover:decoration-cush-orange">
                 {learnMoreLabel}
+              </a>
+            )}
+            {learnMore2Url && learnMore2Label && (
+              <a href={learnMore2Url} class="block w-full text-center px-6 py-3 text-gray-400 font-display font-medium text-sm hover:text-accent-text transition-colors duration-300 underline underline-offset-4 decoration-gray-600 hover:decoration-cush-orange">
+                {learnMore2Label}
               </a>
             )}
           </div>
