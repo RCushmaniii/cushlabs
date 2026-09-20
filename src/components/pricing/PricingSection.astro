@@ -220,6 +220,9 @@ const copy = {
 } as const;
 
 const t = copy[locale];
+// True only while some tier still lists a coming feature. Drives whether the
+// "Coming" legend below the cards renders at all.
+const hasSoon = t.tiers.some((tier: any) => Array.isArray(tier.soon) && tier.soon.length > 0);
 ---
 
 <section
@@ -409,16 +412,21 @@ const t = copy[locale];
       )
     }
 
-    <!-- What the "Coming" pill on the Premium/Ultra cards commits to -->
-    <p
-      class="mx-auto mt-10 max-w-2xl text-center text-sm leading-relaxed text-gray-500 dark:text-gray-400"
-    >
-      <span
-        class="mr-2 inline-block rounded-full border border-dashed border-gray-400 px-2.5 py-0.5 align-middle font-display text-[11px] font-semibold uppercase tracking-wide text-gray-500 dark:border-gray-500 dark:text-gray-400"
-        >{t.soonLabel}</span
-      >
-      {t.soonNote}
-    </p>
+    {/* The "Coming" legend renders ONLY while some tier still has a         entry. Every coming feature was removed on 2026-09-19, so today it
+        renders nothing — a paragraph explaining a badge that appears nowhere on
+        the page reads as a leftover, which is exactly what it was. Kept
+        conditional rather than deleted: if a coming feature ever returns to a
+        card, its explanation returns with it automatically. */}
+    {
+      hasSoon && (
+        <p class="mx-auto mt-10 max-w-2xl text-center text-sm leading-relaxed text-gray-500 dark:text-gray-400">
+          <span class="mr-2 inline-block rounded-full border border-dashed border-gray-400 px-2.5 py-0.5 align-middle font-display text-[11px] font-semibold uppercase tracking-wide text-gray-500 dark:border-gray-500 dark:text-gray-400">
+            {t.soonLabel}
+          </span>
+          {t.soonNote}
+        </p>
+      )
+    }
 
     <!-- Multi-location -->
     <p
