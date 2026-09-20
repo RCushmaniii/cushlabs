@@ -1,0 +1,330 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Container from "../components/layout/Container.astro";
+import FinalCTA from "../components/services2/FinalCTA.astro";
+
+const locale = "en" as const;
+
+// Instagram is a PREMIUM capability. Every price on this page points at the
+// Premium tier and nowhere else — /pricing/ owns the numbers, this page owns the
+// explanation. If the tier or the price changes, it changes there first.
+//
+// TWO CLAIMS THIS PAGE MUST NEVER MAKE, both learned the hard way on 2026-09-19:
+//
+// 1. No audience statistic. Facebook is still larger than Instagram in Mexico
+//    (93.5M vs 53.6M users), so "Instagram is where everyone is" is false here,
+//    and a growth percentage ages badly and invites a source request. Sell the
+//    mechanic, not the platform's size.
+// 2. Never promise a DM to everyone who comments. Meta allows ONE private reply
+//    per comment, inside a limited window. The copy says the assistant "follows
+//    up with a direct message" — never "always DMs" and never a volume promise.
+
+const steps = [
+  {
+    n: "01",
+    title: "Someone comments on your post",
+    desc: "“How much?” “Do you have it in my size?” “Are you open Sunday?” — the questions that arrive when you are with a customer, driving, or asleep.",
+  },
+  {
+    n: "02",
+    title: "The assistant replies in public, in seconds",
+    desc: "A short, human reply under the comment, in your voice and their language. The post keeps looking alive to everyone else scrolling it, which is the part that compounds.",
+  },
+  {
+    n: "03",
+    title: "Then it follows up in a direct message",
+    desc: "The real answer — price, availability, the booking link — lands in their DMs instead of sitting in public where anyone can screenshot it.",
+  },
+  {
+    n: "04",
+    title: "And it keeps the conversation going",
+    desc: "If they reply, the same assistant answers from your actual prices, hours and policies. When it needs you, it hands the thread over with the full context.",
+  },
+];
+
+const included = [
+  { title: "Comment replies on your posts and Reels", desc: "Answered in seconds, in your voice, in the language the customer wrote in" },
+  { title: "Direct message follow-up", desc: "Moves the real answer — pricing, availability, next step — off the public feed and into a private conversation" },
+  { title: "Instagram DMs answered too", desc: "Not just comments. Someone who messages your account directly gets the same assistant" },
+  { title: "Built from your business", desc: "Your products, prices, hours and policies. It answers from what you actually sell, and it does not invent a price" },
+  { title: "Bilingual (EN/ES)", desc: "Switches automatically based on what the customer writes — no setting to toggle" },
+  { title: "Human handoff", desc: "Escalates to you with the whole thread when the conversation genuinely needs a person" },
+  { title: "The same assistant you already have", desc: "One brain across Messenger, Instagram and your website. Update it once and every channel changes" },
+  { title: "Weekly report", desc: "What people are asking under your posts, what converted, what content is missing" },
+];
+
+const notIncluded = [
+  "Posting to Instagram, writing captions, or running your content calendar — the assistant answers, it does not publish",
+  "Paid Instagram ad management",
+  "A guaranteed DM to every single commenter — Instagram limits private replies to one per comment, inside a set window, and we work inside that rather than pretending it does not exist",
+  "Recovering conversations that happened before setup",
+];
+
+const bestFor = [
+  "Retail, boutique and product businesses where posts collect “how much?” comments",
+  "Anyone whose Instagram is busier than their Facebook Page",
+  "Businesses running promotions or launches that spike comment volume",
+  "Owners who already answer DMs at 10pm and want that hour back",
+];
+---
+
+<BaseLayout
+  title="Instagram AI Assistant — Comment Replies & DMs | CushLabs.ai"
+  description="An AI assistant that answers Instagram comments in public and follows up in DMs, in your voice and your customer's language. Included in the Premium plan."
+>
+  <section class="ig-hero relative flex items-center text-slate-50">
+    <Container size="md">
+      <div class="max-w-3xl mx-auto text-center py-24 flex flex-col items-center">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-white text-sm font-semibold mb-8 backdrop-blur-sm">
+          <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+          Live on Premium &middot; Bilingual EN/ES
+        </div>
+
+        <h1 class="ig-h1 font-display font-bold text-white">
+          Your Instagram Comments Are Sales. Someone Has to Answer Them.
+        </h1>
+
+        <p class="ig-sub">
+          An AI assistant that replies to comments in public and follows up in DMs
+          &mdash; in your voice, in their language, in seconds.
+        </p>
+
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a
+            href="/consultation/"
+            class="group inline-flex items-center gap-2 px-8 py-4 bg-cush-orange text-black font-display font-semibold rounded-lg hover:bg-cush-orange/90 transition-all duration-300 shadow-lg shadow-cush-orange/25 hover:shadow-xl hover:shadow-cush-orange/30 text-lg"
+          >
+            Book a Free 30-Min Call
+            <svg class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+          <a href="/pricing/" class="font-display font-medium text-slate-300 hover:text-white underline underline-offset-4 decoration-white/30 hover:decoration-cush-orange transition-all">
+            See plans &amp; pricing &rarr;
+          </a>
+        </div>
+      </div>
+    </Container>
+  </section>
+
+  <!-- The problem -->
+  <section class="py-20 md:py-28">
+    <Container size="lg">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="font-display font-bold text-3xl md:text-4xl text-gray-900 dark:text-white mb-8 leading-tight tracking-tight">
+          The comment you didn't answer is the sale you didn't make.
+        </h2>
+        <div class="space-y-5 text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+          <p>
+            Someone comments <span class="font-semibold text-gray-900 dark:text-white">&ldquo;how much?&rdquo;</span>{" "}
+            under a post. You see it four hours later, if you catch it at all. By
+            then they have scrolled past, or bought from whoever answered first.
+          </p>
+          <p>
+            And when you do answer, you answer in public &mdash; so your price now
+            sits under the post where anyone can screenshot it, compare it, or use
+            it against you.
+          </p>
+          <p>
+            Meanwhile the post itself looks abandoned. Comments with no reply tell
+            every other person scrolling that nobody is home.
+          </p>
+          <p class="text-gray-900 dark:text-white font-semibold">
+            The fix is not answering faster. It's not having to.
+          </p>
+        </div>
+      </div>
+    </Container>
+  </section>
+
+  <!-- How it works -->
+  <section class="py-20 md:py-28 bg-gray-50 dark:bg-gray-900/30 border-y border-gray-100 dark:border-gray-800">
+    <Container size="lg">
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <h2 class="font-display font-bold text-3xl md:text-4xl text-gray-900 dark:text-white mb-4 leading-tight tracking-tight">
+          Public reply. Private follow-up.
+        </h2>
+        <p class="text-lg text-gray-600 dark:text-gray-300">
+          Two moves, and the second one is the one most businesses never make.
+        </p>
+      </div>
+
+      <div class="grid gap-6 md:grid-cols-2 max-w-4xl mx-auto">
+        {steps.map(step => (
+          <div class="p-7 rounded-xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800">
+            <div class="font-display font-bold text-cush-orange text-sm mb-3">{step.n}</div>
+            <h3 class="font-display font-semibold text-xl text-gray-900 dark:text-white mb-3">{step.title}</h3>
+            <p class="text-gray-600 dark:text-gray-300 leading-relaxed">{step.desc}</p>
+          </div>
+        ))}
+      </div>
+
+      <p class="text-center text-gray-600 dark:text-gray-400 mt-10 max-w-2xl mx-auto">
+        It runs on your own Instagram account, through Meta's official business
+        tools. You share access during setup &mdash; the same step you already
+        take for your Facebook Page &mdash; and you can withdraw it whenever you want.
+      </p>
+    </Container>
+  </section>
+
+  <!-- What's included -->
+  <section class="py-20 md:py-28">
+    <Container size="lg">
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <h2 class="font-display font-bold text-3xl md:text-4xl text-gray-900 dark:text-white mb-4 leading-tight tracking-tight">
+          What you get
+        </h2>
+      </div>
+      <div class="grid gap-5 md:grid-cols-2 max-w-4xl mx-auto">
+        {included.map(item => (
+          <div class="flex gap-4">
+            <svg class="w-6 h-6 shrink-0 text-cush-orange mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            <div>
+              <h3 class="font-display font-semibold text-gray-900 dark:text-white mb-1">{item.title}</h3>
+              <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">{item.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </Container>
+  </section>
+
+  <!-- Scope + fit -->
+  <section class="py-20 md:py-28 bg-gray-50 dark:bg-gray-900/30 border-y border-gray-100 dark:border-gray-800">
+    <Container size="lg">
+      <div class="grid gap-12 md:grid-cols-2 max-w-4xl mx-auto">
+        <div>
+          <h2 class="font-display font-bold text-2xl text-gray-900 dark:text-white mb-6">
+            What it doesn't do
+          </h2>
+          <ul class="space-y-4">
+            {notIncluded.map(item => (
+              <li class="flex gap-3 text-gray-600 dark:text-gray-300 leading-relaxed">
+                <span class="text-gray-400 shrink-0 mt-1">&mdash;</span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <h2 class="font-display font-bold text-2xl text-gray-900 dark:text-white mb-6">
+            Best for
+          </h2>
+          <ul class="space-y-4">
+            {bestFor.map(item => (
+              <li class="flex gap-3 text-gray-600 dark:text-gray-300 leading-relaxed">
+                <svg class="w-5 h-5 shrink-0 text-cush-orange mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </Container>
+  </section>
+
+  <!-- Investment -->
+  <section class="py-20 md:py-28">
+    <Container size="md">
+      <div class="max-w-2xl mx-auto p-8 md:p-10 rounded-2xl bg-gray-900 dark:bg-gray-950 text-white border border-gray-800">
+        <div class="font-display font-semibold text-xs tracking-widest text-gray-400 mb-4">INVESTMENT</div>
+        <p class="text-lg leading-relaxed text-gray-200 mb-6">
+          Included in the <span class="font-bold text-white">Premium plan &mdash; $3,490 MXN/mo + IVA</span>,
+          alongside your website chatbot, WhatsApp reminders and the weekly local
+          SEO report. Fully managed: setup, training, weekly reports and monthly
+          tuning. No setup fee. No contract.
+        </p>
+        <p class="text-sm text-cush-orange italic mb-8">Free 1-week trial. Cancel anytime.</p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a
+            href="/consultation/"
+            class="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-cush-orange text-black font-display font-semibold rounded-lg hover:bg-cush-orange/90 transition-all"
+          >
+            Book a Free 30-Min Call
+          </a>
+          <a
+            href="/pricing/"
+            class="inline-flex items-center justify-center gap-2 px-7 py-3.5 border border-gray-700 text-gray-200 font-display font-semibold rounded-lg hover:border-cush-orange hover:text-white transition-all"
+          >
+            Compare all plans &rarr;
+          </a>
+        </div>
+      </div>
+    </Container>
+  </section>
+
+  <FinalCTA locale={locale} />
+</BaseLayout>
+
+<style>
+  /* Same hero treatment as /messenger-assistant/ and /whatsapp/. The photo
+     carries the pitch, the dark gradient keeps white text legible over it. The
+     -v1 suffix is deliberate: vercel.json serves /images/(.*) as immutable for a
+     year, so a replaced image needs a NEW filename or the old bytes are served
+     forever.
+
+     v2, 2026-09-19: 16:9 (1672x941), SUBJECT CENTRED in the upper half, with the
+     counter below her soft and mid-dark. The headline is centre-aligned over the
+     image, so every position here is 50% horizontally — the subject and the text
+     share the middle of the frame by design, and a phone crop that keeps the
+     middle third still keeps her whole. v1 put the subject in the left third,
+     which is why it fell apart on a phone; do not bring those numbers back. */
+  .ig-hero {
+    min-height: 100svh;
+    background-color: #14161f;
+    background-image:
+      linear-gradient(
+        to bottom,
+        rgba(10, 12, 18, 0.66) 0%,
+        rgba(10, 12, 18, 0.64) 45%,
+        rgba(10, 12, 18, 0.84) 100%
+      ),
+      url("/images/instagram-hero-v2.webp");
+    background-size: cover;
+    background-position: 50% 30%;
+    background-repeat: no-repeat;
+  }
+
+  @media (max-aspect-ratio: 1 / 1) {
+    .ig-hero {
+      min-height: 82svh;
+      background-position: 50% 28%;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .ig-hero {
+      min-height: 88svh;
+      background-position: 50% 26%;
+      background-image:
+        linear-gradient(
+          to bottom,
+          rgba(10, 12, 18, 0.72) 0%,
+          rgba(10, 12, 18, 0.7) 45%,
+          rgba(10, 12, 18, 0.88) 100%
+        ),
+        url("/images/instagram-hero-v2.webp");
+    }
+  }
+
+  .ig-h1 {
+    font-size: clamp(2.1rem, 5.2vw, 3.6rem);
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.25rem;
+    text-wrap: balance;
+  }
+
+  .ig-sub {
+    font-size: clamp(1.05rem, 2vw, 1.3rem);
+    line-height: 1.6;
+    color: rgb(203 213 225);
+    max-width: 40rem;
+    margin-bottom: 2.25rem;
+    text-wrap: pretty;
+  }
+</style>

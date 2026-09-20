@@ -1,0 +1,315 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Container from "../../components/layout/Container.astro";
+import FinalCTA from "../../components/services2/FinalCTA.astro";
+
+const locale = "es" as const;
+
+// Spanish twin of /instagram/. Same two prohibitions apply and they are not
+// stylistic: no audience statistic (Facebook is still larger than Instagram in
+// Mexico, so a dominance claim is false here), and never promise a direct
+// message to every commenter (Meta allows one private reply per comment, inside
+// a limited window). es-MX throughout, tú form, per the CushLabs register.
+
+const steps = [
+  {
+    n: "01",
+    title: "Alguien comenta en tu publicación",
+    desc: "“¿Cuánto cuesta?” “¿Lo tienes en mi talla?” “¿Abren el domingo?” — las preguntas que llegan justo cuando estás atendiendo, manejando o dormido.",
+  },
+  {
+    n: "02",
+    title: "El asistente responde en público, en segundos",
+    desc: "Una respuesta corta y natural debajo del comentario, con tu voz y en el idioma del cliente. La publicación se ve viva para todos los demás que la están viendo, y eso es lo que se acumula.",
+  },
+  {
+    n: "03",
+    title: "Y luego da seguimiento por mensaje directo",
+    desc: "La respuesta de verdad — precio, disponibilidad, el enlace para agendar — llega a su bandeja en vez de quedarse en público, donde cualquiera le puede tomar captura.",
+  },
+  {
+    n: "04",
+    title: "Y mantiene la conversación",
+    desc: "Si contestan, el mismo asistente responde con tus precios, horarios y políticas reales. Cuando te necesita, te pasa la conversación completa con todo el contexto.",
+  },
+];
+
+const included = [
+  { title: "Respuestas a comentarios en publicaciones y Reels", desc: "Contestados en segundos, con tu voz, en el idioma en que te escribieron" },
+  { title: "Seguimiento por mensaje directo", desc: "Lleva la respuesta de verdad — precio, disponibilidad, siguiente paso — fuera del muro público y a una conversación privada" },
+  { title: "También contesta tus mensajes directos", desc: "No solo comentarios. Quien te escriba directo a la cuenta recibe al mismo asistente" },
+  { title: "Hecho con tu negocio", desc: "Tus productos, precios, horarios y políticas. Responde con lo que realmente vendes, y no se inventa un precio" },
+  { title: "Bilingüe (EN/ES)", desc: "Cambia solo, según el idioma en que te escriba el cliente — no hay nada que configurar" },
+  { title: "Transferencia a una persona", desc: "Te pasa la conversación completa cuando de verdad se necesita un humano" },
+  { title: "Es el mismo asistente que ya tienes", desc: "Un solo cerebro en Messenger, Instagram y tu sitio web. Lo actualizas una vez y cambia en todos lados" },
+  { title: "Reporte semanal", desc: "Qué te están preguntando debajo de tus publicaciones, qué convirtió y qué contenido te falta" },
+];
+
+const notIncluded = [
+  "Publicar en Instagram, redactar tus captions o llevarte el calendario de contenido — el asistente responde, no publica",
+  "Gestión de anuncios pagados en Instagram",
+  "Un mensaje directo garantizado a cada persona que comenta — Instagram limita las respuestas privadas a una por comentario y dentro de una ventana de tiempo; trabajamos dentro de eso en vez de fingir que no existe",
+  "Recuperar conversaciones que pasaron antes de la configuración",
+];
+
+const bestFor = [
+  "Tiendas, boutiques y marcas de producto donde las publicaciones se llenan de “¿cuánto cuesta?”",
+  "Negocios con más movimiento en Instagram que en su página de Facebook",
+  "Negocios con promociones o lanzamientos que disparan los comentarios",
+  "Dueños que ya contestan mensajes a las 10 de la noche y quieren recuperar esa hora",
+];
+---
+
+<BaseLayout
+  title="Asistente de IA para Instagram — Comentarios y Mensajes | CushLabs"
+  description="Un asistente de IA que responde los comentarios de tu Instagram en público y da seguimiento por mensaje directo, con tu voz y en su idioma. Incluido en Premium."
+>
+  <section class="ig-hero relative flex items-center text-slate-50">
+    <Container size="md">
+      <div class="max-w-3xl mx-auto text-center py-24 flex flex-col items-center">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-white text-sm font-semibold mb-8 backdrop-blur-sm">
+          <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+          Disponible en Premium &middot; Biling&uuml;e EN/ES
+        </div>
+
+        <h1 class="ig-h1 font-display font-bold text-white">
+          Los comentarios de tu Instagram son ventas. Alguien tiene que contestarlos.
+        </h1>
+
+        <p class="ig-sub">
+          Un asistente de IA que responde los comentarios en p&uacute;blico y da
+          seguimiento por mensaje directo &mdash; con tu voz, en su idioma, en segundos.
+        </p>
+
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a
+            href="/es/reservar/"
+            class="group inline-flex items-center gap-2 px-8 py-4 bg-cush-orange text-black font-display font-semibold rounded-lg hover:bg-cush-orange/90 transition-all duration-300 shadow-lg shadow-cush-orange/25 hover:shadow-xl hover:shadow-cush-orange/30 text-lg"
+          >
+            Agenda una llamada gratis de 30 min
+            <svg class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+          <a href="/es/precios/" class="font-display font-medium text-slate-300 hover:text-white underline underline-offset-4 decoration-white/30 hover:decoration-cush-orange transition-all">
+            Ver planes y precios &rarr;
+          </a>
+        </div>
+      </div>
+    </Container>
+  </section>
+
+  <!-- El problema -->
+  <section class="py-20 md:py-28">
+    <Container size="lg">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="font-display font-bold text-3xl md:text-4xl text-gray-900 dark:text-white mb-8 leading-tight tracking-tight">
+          El comentario que no contestaste es la venta que no hiciste.
+        </h2>
+        <div class="space-y-5 text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+          <p>
+            Alguien comenta <span class="font-semibold text-gray-900 dark:text-white">&ldquo;&iquest;cu&aacute;nto cuesta?&rdquo;</span>{" "}
+            debajo de una publicaci&oacute;n. Lo ves cuatro horas despu&eacute;s, si es que lo
+            ves. Para entonces ya se fue, o ya le compr&oacute; a quien contest&oacute; primero.
+          </p>
+          <p>
+            Y cuando s&iacute; contestas, contestas en p&uacute;blico &mdash; as&iacute; que tu precio
+            queda debajo de la publicaci&oacute;n, donde cualquiera le puede tomar captura,
+            compararlo o usarlo en tu contra.
+          </p>
+          <p>
+            Mientras tanto la publicaci&oacute;n se ve abandonada. Un comentario sin
+            respuesta le dice a todos los dem&aacute;s que ah&iacute; no hay nadie.
+          </p>
+          <p class="text-gray-900 dark:text-white font-semibold">
+            La soluci&oacute;n no es contestar m&aacute;s r&aacute;pido. Es no tener que hacerlo.
+          </p>
+        </div>
+      </div>
+    </Container>
+  </section>
+
+  <!-- Cómo funciona -->
+  <section class="py-20 md:py-28 bg-gray-50 dark:bg-gray-900/30 border-y border-gray-100 dark:border-gray-800">
+    <Container size="lg">
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <h2 class="font-display font-bold text-3xl md:text-4xl text-gray-900 dark:text-white mb-4 leading-tight tracking-tight">
+          Respuesta p&uacute;blica. Seguimiento privado.
+        </h2>
+        <p class="text-lg text-gray-600 dark:text-gray-300">
+          Dos movimientos, y el segundo es el que casi nadie hace.
+        </p>
+      </div>
+
+      <div class="grid gap-6 md:grid-cols-2 max-w-4xl mx-auto">
+        {steps.map(step => (
+          <div class="p-7 rounded-xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800">
+            <div class="font-display font-bold text-cush-orange text-sm mb-3">{step.n}</div>
+            <h3 class="font-display font-semibold text-xl text-gray-900 dark:text-white mb-3">{step.title}</h3>
+            <p class="text-gray-600 dark:text-gray-300 leading-relaxed">{step.desc}</p>
+          </div>
+        ))}
+      </div>
+
+      <p class="text-center text-gray-600 dark:text-gray-400 mt-10 max-w-2xl mx-auto">
+        Corre en tu propia cuenta de Instagram, con las herramientas oficiales de
+        Meta para negocios. Nos compartes el acceso en la configuraci&oacute;n &mdash; el
+        mismo paso que ya haces con tu p&aacute;gina de Facebook &mdash; y lo puedes
+        retirar cuando quieras.
+      </p>
+    </Container>
+  </section>
+
+  <!-- Qué incluye -->
+  <section class="py-20 md:py-28">
+    <Container size="lg">
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <h2 class="font-display font-bold text-3xl md:text-4xl text-gray-900 dark:text-white mb-4 leading-tight tracking-tight">
+          Qu&eacute; incluye
+        </h2>
+      </div>
+      <div class="grid gap-5 md:grid-cols-2 max-w-4xl mx-auto">
+        {included.map(item => (
+          <div class="flex gap-4">
+            <svg class="w-6 h-6 shrink-0 text-cush-orange mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            <div>
+              <h3 class="font-display font-semibold text-gray-900 dark:text-white mb-1">{item.title}</h3>
+              <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">{item.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </Container>
+  </section>
+
+  <!-- Alcance -->
+  <section class="py-20 md:py-28 bg-gray-50 dark:bg-gray-900/30 border-y border-gray-100 dark:border-gray-800">
+    <Container size="lg">
+      <div class="grid gap-12 md:grid-cols-2 max-w-4xl mx-auto">
+        <div>
+          <h2 class="font-display font-bold text-2xl text-gray-900 dark:text-white mb-6">
+            Qu&eacute; no hace
+          </h2>
+          <ul class="space-y-4">
+            {notIncluded.map(item => (
+              <li class="flex gap-3 text-gray-600 dark:text-gray-300 leading-relaxed">
+                <span class="text-gray-400 shrink-0 mt-1">&mdash;</span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <h2 class="font-display font-bold text-2xl text-gray-900 dark:text-white mb-6">
+            Para qui&eacute;n es
+          </h2>
+          <ul class="space-y-4">
+            {bestFor.map(item => (
+              <li class="flex gap-3 text-gray-600 dark:text-gray-300 leading-relaxed">
+                <svg class="w-5 h-5 shrink-0 text-cush-orange mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </Container>
+  </section>
+
+  <!-- Inversión -->
+  <section class="py-20 md:py-28">
+    <Container size="md">
+      <div class="max-w-2xl mx-auto p-8 md:p-10 rounded-2xl bg-gray-900 dark:bg-gray-950 text-white border border-gray-800">
+        <div class="font-display font-semibold text-xs tracking-widest text-gray-400 mb-4">INVERSI&Oacute;N</div>
+        <p class="text-lg leading-relaxed text-gray-200 mb-6">
+          Incluido en el <span class="font-bold text-white">plan Premium &mdash; $3,490 MXN/mes + IVA</span>,
+          junto con el chatbot de tu sitio web, los recordatorios por WhatsApp y el
+          reporte semanal de SEO local. Totalmente gestionado: configuraci&oacute;n,
+          entrenamiento, reportes semanales y ajuste mensual. Sin cuota de
+          instalaci&oacute;n. Sin contrato.
+        </p>
+        <p class="text-sm text-cush-orange italic mb-8">Prueba gratis de 1 semana. Cancela cuando quieras.</p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a
+            href="/es/reservar/"
+            class="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-cush-orange text-black font-display font-semibold rounded-lg hover:bg-cush-orange/90 transition-all"
+          >
+            Agenda una llamada gratis
+          </a>
+          <a
+            href="/es/precios/"
+            class="inline-flex items-center justify-center gap-2 px-7 py-3.5 border border-gray-700 text-gray-200 font-display font-semibold rounded-lg hover:border-cush-orange hover:text-white transition-all"
+          >
+            Comparar todos los planes &rarr;
+          </a>
+        </div>
+      </div>
+    </Container>
+  </section>
+
+  <FinalCTA locale={locale} />
+</BaseLayout>
+
+<style>
+  /* Ver /instagram/ para el razonamiento completo del héroe. El sufijo -v1 es
+     deliberado: vercel.json sirve /images/(.*) como inmutable por un año, así
+     que una imagen reemplazada necesita un nombre NUEVO. */
+  .ig-hero {
+    min-height: 100svh;
+    background-color: #14161f;
+    background-image:
+      linear-gradient(
+        to bottom,
+        rgba(10, 12, 18, 0.66) 0%,
+        rgba(10, 12, 18, 0.64) 45%,
+        rgba(10, 12, 18, 0.84) 100%
+      ),
+      url("/images/instagram-hero-v2.webp");
+    background-size: cover;
+    background-position: 50% 30%;
+    background-repeat: no-repeat;
+  }
+
+  @media (max-aspect-ratio: 1 / 1) {
+    .ig-hero {
+      min-height: 82svh;
+      background-position: 50% 28%;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .ig-hero {
+      min-height: 88svh;
+      background-position: 50% 26%;
+      background-image:
+        linear-gradient(
+          to bottom,
+          rgba(10, 12, 18, 0.72) 0%,
+          rgba(10, 12, 18, 0.7) 45%,
+          rgba(10, 12, 18, 0.88) 100%
+        ),
+        url("/images/instagram-hero-v2.webp");
+    }
+  }
+
+  .ig-h1 {
+    font-size: clamp(2.1rem, 5.2vw, 3.6rem);
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.25rem;
+    text-wrap: balance;
+  }
+
+  .ig-sub {
+    font-size: clamp(1.05rem, 2vw, 1.3rem);
+    line-height: 1.6;
+    color: rgb(203 213 225);
+    max-width: 40rem;
+    margin-bottom: 2.25rem;
+    text-wrap: pretty;
+  }
+</style>

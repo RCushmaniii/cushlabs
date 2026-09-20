@@ -87,10 +87,10 @@ const copy = {
         tagline: "For getting started",
         featured: false,
         features: [
-          "AI assistant on Facebook Messenger (24/7)",
-          "Google review management — approve a reply and it posts to Google automatically",
-          "Lead capture + owner notifications (instant WhatsApp alerts)",
-          "Fully managed: setup, training, ongoing support",
+          "AI assistant on Facebook Messenger, 24/7 — the 10pm question gets answered before they book elsewhere",
+          "Google reviews answered — you approve the reply, it posts itself, nothing sits ignored",
+          "Every lead captured, with an instant WhatsApp alert to you — you hear about it while it's still warm",
+          "Fully managed — you never have to run the software yourself",
         ],
         cta: "Get started",
       },
@@ -98,16 +98,15 @@ const copy = {
         id: "premium",
         name: "Premium",
         price: { mxn: "$3,490", usd: "$229" },
-        tagline: "For growing businesses",
+        tagline: "For businesses their customers reach everywhere",
         featured: true,
         features: [
           "Everything in Basic",
-          "Website chatbot",
-          "Instagram assistant — comments and DMs",
-          "WhatsApp reminders, confirmations and promotions to your customers",
+          "Instagram — the same assistant answers comments in public, then follows up in DMs",
+          "Website chatbot — the visitor who would have bounced gets an answer instead",
+          "WhatsApp reminders and confirmations from your own number — fewer no-shows, no chasing",
           "Weekly local SEO & competitor report",
         ],
-        soon: ["WhatsApp assistant on your business number"],
         cta: "Get started",
       },
       {
@@ -119,13 +118,12 @@ const copy = {
         features: [
           "Everything in Premium",
           {
-            mxn: "AI Voice Agent — 300 answered min per location/mo ($8.50 MXN/min overage)",
-            usd: "AI Voice Agent — 300 answered min per location/mo ($0.59 USD/min overage)",
+            mxn: "AI Voice Agent — your phone stops ringing out while you're with a client. 300 answered min per location/mo, then $8.50 MXN/min",
+            usd: "AI Voice Agent — your phone stops ringing out while you're with a client. 300 answered min per location/mo, then $0.59 USD/min",
           },
-          "Priority support",
-          "Industry tuning (e.g. healthcare)",
+          "Priority support — you go to the front of the queue when something matters",
+          "Tuned to your industry — it uses your trade's vocabulary, not generic business language",
         ],
-        soon: ["WhatsApp assistant on your business number"],
         cta: "Get started",
       },
     ],
@@ -163,10 +161,10 @@ const copy = {
         tagline: "Para empezar",
         featured: false,
         features: [
-          "Asistente con IA en Facebook Messenger (24/7)",
-          "Gestión de reseñas de Google — apruebas la respuesta y se publica en Google automáticamente",
-          "Captura de leads + avisos al dueño (alertas por WhatsApp al instante)",
-          "Todo gestionado: configuración, entrenamiento y soporte",
+          "Asistente con IA en Facebook Messenger, 24/7 — la pregunta de las 10 de la noche se contesta antes de que reserven con otro",
+          "Reseñas de Google contestadas — apruebas la respuesta y se publica sola, nada se queda sin atender",
+          "Cada prospecto capturado, con alerta al instante por WhatsApp — te enteras mientras todavía está caliente",
+          "Todo gestionado — nunca tienes que operar el software tú",
         ],
         cta: "Empieza",
       },
@@ -174,16 +172,15 @@ const copy = {
         id: "premium",
         name: "Premium",
         price: { mxn: "$3,490", usd: "$229" },
-        tagline: "Para negocios en crecimiento",
+        tagline: "Para negocios a los que les escriben por todos lados",
         featured: true,
         features: [
           "Todo lo de Básico",
-          "Chatbot para tu sitio web",
-          "Asistente de Instagram — comentarios y mensajes directos",
-          "Recordatorios, confirmaciones y promociones por WhatsApp a tus clientes",
+          "Instagram — el mismo asistente responde el comentario en público y luego da seguimiento por mensaje directo",
+          "Chatbot para tu sitio web — quien se iba a ir sin preguntar, recibe respuesta",
+          "Recordatorios y confirmaciones por WhatsApp desde tu propio número — menos inasistencias, sin andar persiguiendo a nadie",
           "Reporte semanal de SEO local y competencia",
         ],
-        soon: ["Asistente de WhatsApp en tu número de negocio"],
         cta: "Empieza",
       },
       {
@@ -195,13 +192,12 @@ const copy = {
         features: [
           "Todo lo de Premium",
           {
-            mxn: "Agente de Voz con IA — 300 minutos contestados por sucursal/mes (excedente $8.50 MXN/min)",
-            usd: "Agente de Voz con IA — 300 minutos contestados por sucursal/mes (excedente $0.59 USD/min)",
+            mxn: "Agente de Voz con IA — tu teléfono deja de sonar sin que nadie conteste. 300 minutos contestados por sucursal/mes, después $8.50 MXN/min",
+            usd: "Agente de Voz con IA — tu teléfono deja de sonar sin que nadie conteste. 300 minutos contestados por sucursal/mes, después $0.59 USD/min",
           },
-          "Soporte prioritario",
-          "Personalización por industria (p. ej. salud)",
+          "Soporte prioritario — pasas al frente de la fila cuando algo urge",
+          "Ajustado a tu industria — usa el vocabulario de tu giro, no lenguaje corporativo genérico",
         ],
-        soon: ["Asistente de WhatsApp en tu número de negocio"],
         cta: "Empieza",
       },
     ],
@@ -224,6 +220,9 @@ const copy = {
 } as const;
 
 const t = copy[locale];
+// True only while some tier still lists a coming feature. Drives whether the
+// "Coming" legend below the cards renders at all.
+const hasSoon = t.tiers.some((tier: any) => Array.isArray(tier.soon) && tier.soon.length > 0);
 ---
 
 <section
@@ -413,16 +412,21 @@ const t = copy[locale];
       )
     }
 
-    <!-- What the "Coming" pill on the Premium/Ultra cards commits to -->
-    <p
-      class="mx-auto mt-10 max-w-2xl text-center text-sm leading-relaxed text-gray-500 dark:text-gray-400"
-    >
-      <span
-        class="mr-2 inline-block rounded-full border border-dashed border-gray-400 px-2.5 py-0.5 align-middle font-display text-[11px] font-semibold uppercase tracking-wide text-gray-500 dark:border-gray-500 dark:text-gray-400"
-        >{t.soonLabel}</span
-      >
-      {t.soonNote}
-    </p>
+    {/* The "Coming" legend renders ONLY while some tier still has a         entry. Every coming feature was removed on 2026-09-19, so today it
+        renders nothing — a paragraph explaining a badge that appears nowhere on
+        the page reads as a leftover, which is exactly what it was. Kept
+        conditional rather than deleted: if a coming feature ever returns to a
+        card, its explanation returns with it automatically. */}
+    {
+      hasSoon && (
+        <p class="mx-auto mt-10 max-w-2xl text-center text-sm leading-relaxed text-gray-500 dark:text-gray-400">
+          <span class="mr-2 inline-block rounded-full border border-dashed border-gray-400 px-2.5 py-0.5 align-middle font-display text-[11px] font-semibold uppercase tracking-wide text-gray-500 dark:border-gray-500 dark:text-gray-400">
+            {t.soonLabel}
+          </span>
+          {t.soonNote}
+        </p>
+      )
+    }
 
     <!-- Multi-location -->
     <p
