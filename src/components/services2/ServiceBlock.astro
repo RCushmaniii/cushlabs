@@ -267,10 +267,22 @@ const data = {
     }
   },
   'whatsapp': {
-    // CLAIMS BOUNDARY (docs/strategy/ADVERTISED-COMMITMENTS.md §"WhatsApp — approval gate cleared"):
-    // WhatsApp is not on the pricing cards. Never let `investment` imply it's part of
-    // Basic/Premium/Ultra, and keep the primary CTA as "Get in touch" (not "Book a Discovery
-    // Call" → /consultation/) — self-serve signup isn't open yet. Mirrors src/pages/whatsapp.astro.
+    // CLAIMS BOUNDARY (docs/strategy/ADVERTISED-COMMITMENTS.md).
+    //
+    // REVERSED 2026-09-19/20. This comment used to read "WhatsApp is not on the pricing
+    // cards. Never let `investment` imply it's part of Basic/Premium/Ultra." That is no
+    // longer the model: everything CushLabs sells is bundled into Basic / Premium / Ultra,
+    // and WhatsApp utility notifications are a PREMIUM feature (PRs #333, #334). The
+    // `notIncluded` list here still carried "Included in the Basic/Premium/Ultra plans —
+    // this is a separate add-on with its own price" while `investment` directly above it
+    // said "Premium — $3,490", so the same block argued with itself on a live sales page.
+    // The stale line is deleted in both languages.
+    //
+    // STILL TRUE, and the reason the CTA stays "Get in touch" rather than
+    // "Book a Discovery Call" → /consultation/: self-serve signup is not open. Setup is a
+    // guided call. `meta-connect-whatsapp-advanced-access` reads reachable_by robert_only
+    // because no unrelated person has completed onboarding unaided. Mirrors
+    // src/pages/whatsapp.astro. Do not soften the self-serve line in `notIncluded`.
     learnMoreUrl: { en: '/whatsapp/', es: '/es/whatsapp/' },
     learnMoreLabel: { en: 'Full service details →', es: 'Ver detalles completos →' },
     primaryCtaLabel: { en: 'Get in Touch', es: 'Escríbenos' },
@@ -290,7 +302,6 @@ const data = {
       ],
       notIncluded: [
         "Self-serve signup — we set it up with you on a call instead, by design, so nobody is left alone with Meta's dialogs",
-        "Included in the Basic/Premium/Ultra plans — this is a separate add-on with its own price",
         "WhatsApp as a customer-chat channel — this is appointment reminders only, not a general inbox",
       ],
       timeline: "Live. We connect your WhatsApp with you on one call, and you leave it with reminders running.",
@@ -318,7 +329,6 @@ const data = {
       ],
       notIncluded: [
         "Registro autoservicio — lo configuramos contigo en una llamada, a propósito, para que nadie se quede solo con los cuadros de diálogo de Meta",
-        "Incluido en los planes Basic/Premium/Ultra — es un complemento aparte con su propio precio",
         "WhatsApp como canal de chat con clientes — esto es solo recordatorios de citas, no una bandeja general",
       ],
       timeline: "Disponible. Conectamos tu WhatsApp contigo en una llamada y sales de ahí con los recordatorios funcionando.",
