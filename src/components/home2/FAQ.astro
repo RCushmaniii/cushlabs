@@ -20,8 +20,8 @@ const content = {
         a: "Simple setups go live within days of your completed intake form. More complex builds — custom integrations, document processing — typically take 2 to 6 weeks. I'll tell you which one you are on the discovery call, before you pay anything."
       },
       {
-        q: "Will it work with the Facebook, WhatsApp, or Instagram I already use?",
-        a: "Facebook Messenger, yes — on the same Page you already have, and that's where most clients start. Your website too. Instagram is live on Premium and Ultra: you share your Instagram account with us during setup, the same step you already take for your Facebook Page, and the assistant answers comments and DMs from then on. WhatsApp is live on Premium and Ultra: we connect your number with you on a call, and from then on reminders and confirmations go out on their own. Meta bills you directly for delivering them, on your own account at their rate, and we never add anything on top. I'll tell you exactly what's live the day you ask, not after you've signed up."
+        q: "Will it work with the Facebook, WhatsApp, or Instagram accounts I already use?",
+        a: "Yes. The assistant works with your existing Facebook Page and Instagram account, so your customers keep contacting you the way they already do.\n\nWhatsApp works differently, on purpose. I use it for appointment confirmations, reminders, and instant lead alerts to you, all from your own number. I don't run an AI chat inbox there. Meta charges the business for each message it sends on WhatsApp, and a chat inbox sends many per conversation. A reminder is one message. I'd rather keep your costs small and predictable, and your number in good standing.\n\nYour customers still get answers on Messenger, Instagram, your website, and the phone."
       },
       {
         q: "What happens if the AI doesn't know the answer?",
@@ -56,7 +56,7 @@ const content = {
       },
       {
         q: "¿Funciona con el Facebook, WhatsApp o Instagram que ya uso?",
-        a: "Facebook Messenger sí — en la misma página que ya tienes, y ahí es donde empiezan la mayoría de mis clientes. Tu sitio web también. Instagram ya está en vivo en Premium y Ultra: nos compartes tu cuenta de Instagram en la configuración, el mismo paso que ya haces con tu página de Facebook, y de ahí en adelante el asistente responde comentarios y mensajes directos. WhatsApp ya está en vivo en Premium y Ultra: conectamos tu número contigo en una llamada y de ahí en adelante los recordatorios y las confirmaciones salen solos. Meta te factura el envío directamente, a tu propia cuenta y a su tarifa, y nosotros no le agregamos nada encima. Te digo exactamente qué está en vivo el día que preguntes, no después de que te inscribas."
+        a: "Sí. El asistente funciona con la página de Facebook y la cuenta de Instagram que ya tienes, así que tus clientes te siguen escribiendo como siempre.\n\nWhatsApp funciona distinto, a propósito. Ahí lo uso para confirmaciones de cita, recordatorios y avisos al instante para ti, todo desde tu propio número. No pongo un buzón de chat con IA. Meta le cobra al negocio cada mensaje que manda por WhatsApp, y un buzón de chat manda muchos por conversación. Un recordatorio es un solo mensaje. Prefiero mantener tu costo bajo y predecible, y tu número en buen estado.\n\nTus clientes igual reciben respuesta en Messenger, Instagram, tu sitio web y el teléfono."
       },
       {
         q: "¿Qué pasa si la IA no sabe la respuesta?",
@@ -120,7 +120,10 @@ const faqSchema = {
               </svg>
             </span>
           </summary>
-          <div class="p-6 pt-0 text-gray-600 dark:text-gray-400 leading-relaxed border-t border-gray-100 dark:border-gray-800">
+          {/* whitespace-pre-line so an answer can hold paragraphs. A blank line
+              in the copy becomes a real break instead of collapsing — the WhatsApp
+              answer is three distinct thoughts and reads as a wall without it. */}
+          <div class="p-6 pt-0 text-gray-600 dark:text-gray-400 leading-relaxed border-t border-gray-100 dark:border-gray-800 whitespace-pre-line">
             {faq.a}
           </div>
         </details>
