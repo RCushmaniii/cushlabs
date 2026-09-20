@@ -267,10 +267,12 @@ const bestFor = [
      year, so a replaced image needs a NEW filename or the old bytes are served
      forever.
 
-     The photo is 3:2 (1536x1024) and the SUBJECT SITS ON THE LEFT THIRD, which
-     is why every background-position here is a LOW horizontal percentage. The
-     other hero images on this site put their subject on the right and use 78-80%;
-     copying those numbers onto this photo crops the woman straight out of frame. */
+     v2, 2026-09-19: 16:9 (1672x941), SUBJECT CENTRED in the upper half, with the
+     counter below her soft and mid-dark. The headline is centre-aligned over the
+     image, so every position here is 50% horizontally — the subject and the text
+     share the middle of the frame by design, and a phone crop that keeps the
+     middle third still keeps her whole. v1 put the subject in the left third,
+     which is why it fell apart on a phone; do not bring those numbers back. */
   .ig-hero {
     min-height: 100svh;
     background-color: #14161f;
@@ -281,23 +283,23 @@ const bestFor = [
         rgba(10, 12, 18, 0.64) 45%,
         rgba(10, 12, 18, 0.84) 100%
       ),
-      url("/images/instagram-hero-v1.webp");
+      url("/images/instagram-hero-v2.webp");
     background-size: cover;
-    background-position: 32% 38%;
+    background-position: 50% 30%;
     background-repeat: no-repeat;
   }
 
   @media (max-aspect-ratio: 1 / 1) {
     .ig-hero {
       min-height: 82svh;
-      background-position: 36% 32%;
+      background-position: 50% 28%;
     }
   }
 
   @media (max-width: 640px) {
     .ig-hero {
       min-height: 88svh;
-      background-position: 34% 30%;
+      background-position: 50% 26%;
       background-image:
         linear-gradient(
           to bottom,
@@ -305,7 +307,7 @@ const bestFor = [
           rgba(10, 12, 18, 0.7) 45%,
           rgba(10, 12, 18, 0.88) 100%
         ),
-        url("/images/instagram-hero-v1.webp");
+        url("/images/instagram-hero-v2.webp");
     }
   }
 
