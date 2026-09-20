@@ -5,7 +5,7 @@
   "license": "SEE LICENSE IN LICENSE",
   "scripts": {
     "dev": "astro dev",
-    "build": "npm run sync:terms && npm run generate-projects && node scripts/validate-blog-translations.mjs && node scripts/generate-og-images.mjs && astro build && node scripts/seo/meta-description-gate.mjs && node scripts/validate-terms.mjs",
+    "build": "npm run sync:terms && npm run generate-projects && node scripts/validate-blog-translations.mjs && node scripts/generate-og-images.mjs && astro build && node scripts/seo/meta-description-gate.mjs && node scripts/validate-terms.mjs && node scripts/validate-feature-tiers.mjs",
     "start": "astro preview",
     "lint": "eslint .",
     "typecheck": "astro sync && tsc --noEmit",
@@ -33,7 +33,8 @@
     "audit:secrets:history": "node scripts/audit-secrets.mjs --history",
     "sync:terms": "node scripts/sync-terms.mjs",
     "validate:terms": "node scripts/validate-terms.mjs",
-    "sync:status": "node ../operating-system/scripts/sync-check.mjs"
+    "sync:status": "node ../operating-system/scripts/sync-check.mjs",
+    "validate:feature-tiers": "node scripts/validate-feature-tiers.mjs"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.10",
