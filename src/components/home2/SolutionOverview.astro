@@ -29,8 +29,8 @@ interface LocaleContent {
 
 const content: Record<'en' | 'es', LocaleContent> = {
   en: {
-    heading: 'Put AI to Work Where Your Business Needs It Most.',
-    body: "Start with one problem. Add more as your business grows. I build practical AI systems around the work that's taking your time or costing you customers.",
+    heading: 'One Assistant. More Channels as You Grow.',
+    body: "It's one assistant, not five disconnected tools. I build it around your services, prices, policies, and the way you talk to customers. Start with the channel costing you the most time or missed customers, then add more when you're ready. Update it once, and Messenger, Instagram, and your website all change.",
     pillars: [
       {
         title: "AI Messaging Assistant",
@@ -39,6 +39,18 @@ const content: Record<'en' | 'es', LocaleContent> = {
         href: "/messenger-assistant/",
         linkLabel: "See the live demo",
         badge: "Live now"
+      },
+      {
+        title: "Google Review Replies",
+        desc: "Drafts a thoughtful reply to every Google review. Nothing posts without your approval, and nothing sits unanswered.",
+        icon: "M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.196-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z",
+      },
+      {
+        title: "Instagram & Website",
+        desc: "The same assistant works on Instagram and your website. It replies to Instagram comments in public, continues the conversation in DMs, and helps website visitors get answers before they leave.",
+        icon: "M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z",
+        href: "/instagram/",
+        linkLabel: "See how it works"
       },
       {
         title: "WhatsApp Follow-Up & Reminders",
@@ -53,15 +65,8 @@ const content: Record<'en' | 'es', LocaleContent> = {
         // anything is unfinished; that is a sales model, not a coming feature.
       },
       {
-        title: "Every Channel Your Customers Use",
-        desc: "The same assistant on your website and on Instagram — answering comments in public and following up in DMs, on your own account.",
-        icon: "M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z",
-        href: "/instagram/",
-        linkLabel: "See how it works"
-      },
-      {
-        title: "Business Intelligence & Automation",
-        desc: "Monitors competitors, automates repetitive work, and turns your data into clear actions — one email a week, not another dashboard.",
+        title: "Weekly Local SEO & Competitor Report",
+        desc: "Shows you the changes that matter in local search and among your competitors, and what to do about them. One clear email a week, not another dashboard.",
         icon: "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z",
         href: "/competitive-intelligence/",
         linkLabel: "See how it works"
@@ -79,8 +84,8 @@ const content: Record<'en' | 'es', LocaleContent> = {
     ctaLink: '/services/'
   },
   es: {
-    heading: 'Pon la IA a Trabajar Donde Tu Negocio Más lo Necesita.',
-    body: "Empieza con un problema. Agrega más conforme tu negocio crece. Construyo sistemas de IA prácticos alrededor del trabajo que te quita tiempo o te cuesta clientes.",
+    heading: 'Un Solo Asistente. Más Canales Conforme Creces.',
+    body: "Es un solo asistente, no cinco herramientas sueltas. Lo construyo con tus servicios, tus precios, tus políticas y la forma en que le hablas a tus clientes. Empieza por el canal que más tiempo o más clientes te está costando, y agrega los demás cuando quieras. Lo actualizas una vez y cambia en Messenger, Instagram y tu sitio web.",
     pillars: [
       {
         title: "Asistente de Mensajería con IA",
@@ -91,6 +96,18 @@ const content: Record<'en' | 'es', LocaleContent> = {
         badge: "En vivo"
       },
       {
+        title: "Respuestas a Reseñas de Google",
+        desc: "Redacta una respuesta bien pensada para cada reseña de Google. Nada se publica sin que tú lo apruebes, y nada se queda sin contestar.",
+        icon: "M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.196-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z",
+      },
+      {
+        title: "Instagram y Sitio Web",
+        desc: "El mismo asistente trabaja en Instagram y en tu sitio web. Responde los comentarios de Instagram en público, sigue la conversación por mensaje directo y le da respuesta a quien visita tu sitio antes de que se vaya.",
+        icon: "M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z",
+        href: "/es/instagram/",
+        linkLabel: "Ver cómo funciona"
+      },
+      {
         title: "Seguimiento y Recordatorios por WhatsApp",
         desc: "Confirma citas, manda recordatorios y da seguimiento — en el canal que tus clientes sí abren. Menos inasistencias.",
         icon: "M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.29.173-1.414-.074-.124-.272-.198-.57-.347z",
@@ -98,14 +115,7 @@ const content: Record<'en' | 'es', LocaleContent> = {
         linkLabel: "Ver cómo funciona",
       },
       {
-        title: "Todos los Canales que Usan tus Clientes",
-        desc: "El mismo asistente en tu sitio web y en Instagram — responde el comentario en público y da seguimiento por mensaje directo, en tu propia cuenta.",
-        icon: "M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z",
-        href: "/es/instagram/",
-        linkLabel: "Ver cómo funciona"
-      },
-      {
-        title: "Inteligencia de Negocio y Automatización",
+        title: "Reporte Semanal de SEO Local y Competencia",
         desc: "Monitorea competidores, automatiza tareas repetitivas y convierte tus datos en acciones claras — un correo a la semana, no otro tablero.",
         icon: "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z",
         href: "/es/competitive-intelligence/",
