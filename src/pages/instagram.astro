@@ -265,7 +265,12 @@ const bestFor = [
      carries the pitch, the dark gradient keeps white text legible over it. The
      -v1 suffix is deliberate: vercel.json serves /images/(.*) as immutable for a
      year, so a replaced image needs a NEW filename or the old bytes are served
-     forever. */
+     forever.
+
+     The photo is 3:2 (1536x1024) and the SUBJECT SITS ON THE LEFT THIRD, which
+     is why every background-position here is a LOW horizontal percentage. The
+     other hero images on this site put their subject on the right and use 78-80%;
+     copying those numbers onto this photo crops the woman straight out of frame. */
   .ig-hero {
     min-height: 100svh;
     background-color: #14161f;
@@ -278,21 +283,21 @@ const bestFor = [
       ),
       url("/images/instagram-hero-v1.webp");
     background-size: cover;
-    background-position: 78% 30%;
+    background-position: 32% 38%;
     background-repeat: no-repeat;
   }
 
   @media (max-aspect-ratio: 1 / 1) {
     .ig-hero {
       min-height: 82svh;
-      background-position: 46% 28%;
+      background-position: 36% 32%;
     }
   }
 
   @media (max-width: 640px) {
     .ig-hero {
       min-height: 88svh;
-      background-position: 48% 26%;
+      background-position: 34% 30%;
       background-image:
         linear-gradient(
           to bottom,
