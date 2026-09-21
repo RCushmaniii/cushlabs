@@ -18,14 +18,27 @@ const description = "Asistente de IA para Facebook Messenger, inteligencia compe
 <BaseLayout title={title} description={description}>
   <Hero locale={locale} />
   <ScenarioQualifier locale={locale} />
+
+  {/* ESTRUCTURA ANTES QUE DETALLE — movido aquí el 2026-09-20. Debe quedarse
+      arriba de los ServiceBlock. Ver la nota completa en services.astro: si el
+      visitante conoce los tres planes primero, cada sección de abajo se lee como
+      "esto viene en un plan" y no como "otra cosa que puedo comprar". */}
+  <PricingSection locale={locale} headingTag="h2" showCurrency={false} />
+
+  {/* ORDEN CORREGIDO 2026-09-20 — esta página se había quedado atrás. El orden
+      en inglés se cambió a propósito para que Voz quede AL FINAL: está
+      despriorizado en ventas y estaba apareciendo arriba de WhatsApp, que es
+      justo el motivo por el que queremos que alguien suba a Premium. La versión
+      en español conservó el orden viejo, así que los dos idiomas mostraban
+      prioridades distintas. Ahora coinciden. */}
   <ServiceBlock locale={locale} id="messenger-ai" />
-  <ServiceBlock locale={locale} id="intelligence" isAlternate={true} />
-  <ServiceBlock locale={locale} id="support-assistants" />
-  <ServiceBlock locale={locale} id="voice-agent" isAlternate={true} />
+  <ServiceBlock locale={locale} id="support-assistants" isAlternate={true} />
   <ServiceBlock locale={locale} id="whatsapp" />
+  <ServiceBlock locale={locale} id="intelligence" isAlternate={true} />
+  <ServiceBlock locale={locale} id="voice-agent" />
+
   <HowIWork locale={locale} />
   <WhoItIsFor locale={locale} />
-  <PricingSection locale={locale} headingTag="h2" showCurrency={false} />
   <FAQ locale={locale} />
   <FinalCTA locale={locale} />
 </BaseLayout>

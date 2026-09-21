@@ -28,7 +28,23 @@ const meta = {
   <Hero locale={locale} />
   
   <ScenarioQualifier locale={locale} />
-  
+
+  {/* STRUCTURE BEFORE DETAIL — moved here 2026-09-20, and it must stay above the
+      ServiceBlocks.
+
+      This section used to sit eighth of ten, after all five service blocks. The
+      effect was that a visitor met five features, each with its own price line,
+      before learning that plans exist at all — so the page read as an a-la-carte
+      menu and every block looked like its own SKU. Anyone arriving from an ad
+      into a specific service anchor never reached the tiers at all.
+
+      Everything CushLabs sells is bundled into Basic / Premium / Ultra. Showing
+      the three plans first makes every section below read as "here is what is
+      inside a plan" rather than "here is another thing to buy". Do not move it
+      back down to group it with the FAQ — it is placed for the reading order,
+      not for tidiness. */}
+  <PricingSection locale={locale} headingTag="h2" showCurrency={false} />
+
   {/* Ordered as the tier ladder a buyer climbs: Basic, then Premium, then
       Ultra. Voice is LAST deliberately — it is de-prioritized for sales, and it
       previously sat above WhatsApp, which is the thing we actually want people
@@ -43,9 +59,7 @@ const meta = {
   <HowIWork locale={locale} />
   
   <WhoItIsFor locale={locale} />
-  
-  <PricingSection locale={locale} headingTag="h2" showCurrency={false} />
-  
+
   <FAQ locale={locale} />
   
   <FinalCTA locale={locale} />
