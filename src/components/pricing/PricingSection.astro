@@ -288,8 +288,15 @@ const hasSoon = t.tiers.some((tier: any) => Array.isArray(tier.soon) && tier.soo
     <div class="grid gap-6 md:grid-cols-3 items-start">
       {
         t.tiers.map((tier) => (
+          // Each card is individually linkable: /pricing/#premium, /es/precios/#premium.
+          // Added 2026-09-20 — before this there was no way to point anyone at a single
+          // tier, which meant an ad or a sales email could only ever say "scroll to the
+          // middle card". `tier.id` is already "basic" | "premium" | "ultra" and is the
+          // same in both languages on purpose, so one link works for either locale.
+          // scroll-mt clears the sticky header; without it the anchor lands under it.
           <div
-            class={`relative rounded-2xl p-8 flex flex-col h-full ${
+            id={tier.id}
+            class={`relative scroll-mt-28 rounded-2xl p-8 flex flex-col h-full ${
               tier.featured
                 ? "border-2 border-cush-orange bg-white dark:bg-gray-800/60 shadow-xl md:-mt-4 md:mb-4"
                 : "border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-800/30"
