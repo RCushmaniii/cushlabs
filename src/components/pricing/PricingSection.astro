@@ -99,6 +99,7 @@ const copy = {
         name: "Premium",
         price: { mxn: "$3,490", usd: "$229" },
         tagline: "For businesses their customers reach everywhere",
+        deepDive: { href: "/premium/", label: "Why most businesses pick Premium →" },
         featured: true,
         features: [
           "Everything in Basic",
@@ -173,6 +174,7 @@ const copy = {
         name: "Premium",
         price: { mxn: "$3,490", usd: "$229" },
         tagline: "Para negocios a los que les escriben por todos lados",
+        deepDive: { href: "/es/premium/", label: "Por qué la mayoría elige Premium →" },
         featured: true,
         features: [
           "Todo lo de Básico",
@@ -392,6 +394,18 @@ const hasSoon = t.tiers.some((tier: any) => Array.isArray(tier.soon) && tier.soo
             >
               {tier.cta}
             </a>
+
+            {/* The one tier with a page arguing its own case. A comparison table is
+                where someone compares; this is where they decide. Secondary on
+                purpose — it must never outweigh the booking CTA above it. */}
+            {tier.deepDive && (
+              <a
+                href={tier.deepDive.href}
+                class="mt-3 block w-full text-center text-sm font-display font-medium text-gray-500 dark:text-gray-400 underline underline-offset-4 decoration-gray-300 dark:decoration-gray-600 hover:text-accent-text hover:decoration-cush-orange transition-colors"
+              >
+                {tier.deepDive.label}
+              </a>
+            )}
           </div>
         ))
       }

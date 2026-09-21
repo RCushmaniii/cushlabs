@@ -1,0 +1,406 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Container from "../../components/layout/Container.astro";
+import FinalCTA from "../../components/services2/FinalCTA.astro";
+
+const locale = "es" as const;
+
+// Espejo en español de /premium/. Mismas reglas: /pricing/ es dueño de los
+// números, cada función nombrada aquí es Premium o Basic (validate-feature-tiers
+// lo revisa en cada build), y claims-policy.json prohíbe absolutos y golpes
+// comparativos. Registro es-MX, tuteo, como todo lo de CushLabs.
+//
+// La frase de cancelación y la etiqueta de la prueba son las canónicas de
+// commercial-terms.json — no se reescriben aquí aunque suenen repetidas.
+
+const includes = [
+  {
+    title: "Instagram — respondido en público, cerrado en privado",
+    desc: "Alguien comenta “¿cuánto cuesta?” debajo de una publicación. El asistente responde en público para que la publicación se vea viva, y luego da seguimiento por mensaje directo, que es donde va la respuesta de verdad — fuera del muro, donde nadie le puede tomar captura a tu precio.",
+  },
+  {
+    title: "Tu sitio web deja de perder a quien casi pregunta",
+    desc: "Quien está leyendo tu página a las 11 de la noche recibe una respuesta en vez de un formulario de contacto. El mismo asistente, tus mismos precios, tus mismas políticas — nada más que ahí donde ya está esa persona.",
+  },
+  {
+    title: "Recordatorios y confirmaciones por WhatsApp, desde tu propio número",
+    desc: "Las confirmaciones de cita y los recordatorios salen solos, en el canal que tus clientes sí abren. Menos inasistencias, y nadie de tu equipo persiguiendo a nadie.",
+  },
+  {
+    title: "Un correo a la semana con lo que cambió tu competencia",
+    desc: "La búsqueda local se mueve y te enteras por un correo semanal, no por un mes flojo. Qué cambió, qué significa y qué hacer al respecto — no otro tablero al que tengas que entrar.",
+  },
+];
+
+const basicToo = [
+  "El asistente de Facebook Messenger, contestando 24/7",
+  "Respuestas a reseñas de Google — tú apruebas y se publica solo",
+  "Cada prospecto capturado, con alerta al instante por WhatsApp",
+  "Todo gestionado: configuración, entrenamiento, reportes semanales y ajuste mensual",
+];
+
+const forYou = [
+  "Tus clientes te buscan por más de un canal y tú eres el cuello de botella en todos",
+  "Tus publicaciones de Instagram juntan preguntas que contestas horas después, en público",
+  "Las inasistencias te dejan huecos en una agenda que no te puedes dar el lujo de dejar vacía",
+  "Ya tienes Basic y los mensajes están llegando por donde no alcanza",
+];
+
+const notForYou = [
+  "Un solo canal de verdad te alcanza — Basic es la respuesta honesta, y cuesta menos",
+  "Buscas que alguien te escriba las publicaciones y te lleve el calendario de contenido",
+  "Buscas que te manejen los anuncios pagados — esto no es eso",
+  "Necesitas software de gestión: agenda, expediente clínico, facturación",
+];
+
+const faqs = [
+  {
+    q: "¿Por qué cuesta $1,500 más que Basic?",
+    a: "Tres canales más y un reporte semanal de inteligencia, todo sobre el mismo asistente. Basic contesta Facebook Messenger. Premium contesta los comentarios y mensajes de Instagram, tu sitio web, y manda recordatorios por WhatsApp desde tu propio número — más el reporte de búsqueda local y competencia cada lunes. Si de verdad tus clientes están en un solo canal, Basic es la respuesta correcta y te lo voy a decir en la llamada.",
+  },
+  {
+    q: "¿Qué me cobra Meta aparte?",
+    a: "En WhatsApp, Meta te factura directo a tu propia cuenta y a la tarifa que publica. Yo no le agrego nada encima, y estructuralmente no podría: bajo el modelo de Tech Provider de Meta la cuenta es tuya y la relación de cobro es entre tú y Meta. La puedes abrir y ver exactamente qué te cobraron. Un recordatorio es un solo mensaje; a la tarifa de utilidad de Meta, una clínica que manda algunos cientos al mes gasta cientos de pesos, no miles.",
+  },
+  {
+    q: "¿Qué tan rápido queda funcionando?",
+    a: "Las configuraciones simples se lanzan en días; las integraciones más complejas suelen tomar de 2 a 6 semanas. En la primera llamada te doy una fecha realista, no un número hecho para cerrarte.",
+  },
+  {
+    q: "¿Qué pasa cuando no sabe la respuesta?",
+    a: "No adivina. El asistente contesta con contenido que tú aprobaste, y cuando una pregunta se sale de ahí toma los datos del cliente y te avisa en vez de inventar algo. Responder solo con base en lo aprobado y pasarte la conversación es el diseño, no una opción que se configura.",
+  },
+  {
+    q: "¿Qué tal está el español?",
+    a: "Es español mexicano escrito para clientes mexicanos, no inglés pasado por un traductor, y cambia de idioma a media conversación si tu cliente lo hace. Lee la versión en inglés de esta página y compárala — ese mismo estándar es el que van a recibir tus clientes.",
+  },
+  {
+    q: "¿Y si me quiero ir?",
+    a: "Cancela cuando quieras: aplica al terminar el mes que ya pagaste, y no queda nada más por saldar. Tu página de Facebook, tu cuenta de Instagram, tu cuenta de WhatsApp Business y los datos de tus clientes están a tu nombre todo el tiempo, así que irte significa apagar esto, no pedirme que te devuelva algo.",
+  },
+  {
+    q: "Ya tengo Basic. ¿Qué cambia en la práctica?",
+    a: "Tu asistente deja de ser un asistente de Messenger y se vuelve el que tus clientes se encuentran en todos lados — el mismo cerebro, las mismas respuestas, también en Instagram y en tu sitio web. Empiezan a salir los recordatorios por WhatsApp. Y empieza a llegar el reporte de competencia. Nada de lo que ya tienes se reconstruye ni se vuelve a entrenar.",
+  },
+];
+---
+
+<BaseLayout
+  title="Plan Premium — Todos los Canales Contestados | CushLabs"
+  description="Comentarios y mensajes de Instagram, tu sitio web, recordatorios por WhatsApp desde tu propio número y un reporte semanal de competencia. $3,490 MXN/mes + IVA."
+>
+  <!-- ══ HÉROE ══ -->
+  <section class="pr-hero relative flex items-center text-slate-50">
+    <Container size="md">
+      <div class="max-w-3xl mx-auto text-center py-24 flex flex-col items-center">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-white text-sm font-semibold mb-8 backdrop-blur-sm">
+          <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+          Premium &middot; el plan que eligen la mayor&iacute;a
+        </div>
+
+        <h1 class="pr-h1 font-display font-bold text-white">
+          Donde sea que te escriban tus clientes, alguien contesta.
+        </h1>
+
+        <p class="pr-sub">
+          Premium pone al mismo asistente en Instagram, en tu sitio web y en Facebook
+          Messenger, y manda recordatorios por WhatsApp desde tu propio n&uacute;mero.
+        </p>
+
+        <ul class="mb-9 space-y-2 text-slate-200 text-left">
+          <li class="flex gap-3">
+            <span class="text-cush-orange">&#10003;</span>
+            Comentarios de Instagram contestados en p&uacute;blico y seguidos por mensaje directo
+          </li>
+          <li class="flex gap-3">
+            <span class="text-cush-orange">&#10003;</span>
+            Recordatorios por WhatsApp desde tu n&uacute;mero &mdash; menos inasistencias
+          </li>
+          <li class="flex gap-3">
+            <span class="text-cush-orange">&#10003;</span>
+            Un correo a la semana con lo que cambi&oacute; tu competencia
+          </li>
+        </ul>
+
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a
+            href="/es/reservar/"
+            class="group inline-flex items-center gap-2 px-8 py-4 bg-cush-orange text-black font-display font-semibold rounded-lg hover:bg-cush-orange/90 transition-all duration-300 shadow-lg shadow-cush-orange/25 hover:shadow-xl hover:shadow-cush-orange/30 text-lg"
+          >
+            Agenda una llamada gratis de 30 min
+            <svg class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+          <a href="/es/precios/" class="font-display font-medium text-slate-300 hover:text-white underline underline-offset-4 decoration-white/30 hover:decoration-cush-orange transition-all">
+            Compara los tres planes &rarr;
+          </a>
+        </div>
+
+        <p class="mt-6 text-sm text-slate-300">
+          Prueba gratis de 1 semana, desde el d&iacute;a que entra en l&iacute;nea &middot; sin cuota de instalaci&oacute;n &middot; sin contrato
+        </p>
+      </div>
+    </Container>
+  </section>
+
+  <!-- ══ BARRA DE CONFIANZA ══ -->
+  <section class="py-6 bg-gray-900 text-gray-300 border-y border-gray-800">
+    <Container size="lg">
+      <p class="text-center text-sm">
+        M&aacute;s de 35 proyectos entregados &middot; liderazgo de TI Fortune 500 en Praxair/Linde
+        &middot; biling&uuml;e EN/ES de principio a fin &middot; trabajas directo con quien lo construye
+      </p>
+    </Container>
+  </section>
+
+  <!-- ══ PRUEBA ══ -->
+  <section class="py-20 md:py-28">
+    <Container size="lg">
+      <div class="max-w-3xl mx-auto">
+        <div class="font-display font-semibold text-xs tracking-widest text-cush-orange mb-4">
+          PRIMERO LO CORR&Iacute; EN MI PROPIO NEGOCIO
+        </div>
+        <h2 class="font-display font-bold text-3xl md:text-4xl text-gray-900 dark:text-white mb-6 leading-tight tracking-tight">
+          Lo us&eacute; con mis propios clientes antes de ofrec&eacute;rtelo.
+        </h2>
+        <p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+          NY English Teacher es mi negocio de coaching. Su asistente contesta en
+          ingl&eacute;s y en espa&ntilde;ol, califica cada consulta antes de que llegue a m&iacute; y
+          agenda sesiones mientras duermo. Ten&iacute;a que funcionar ah&iacute; primero &mdash; con mis
+          propios ingresos y mis propios clientes &mdash; antes de ser algo que yo
+          estuviera dispuesto a vender.
+        </p>
+      </div>
+    </Container>
+  </section>
+
+  <!-- ══ EL PROBLEMA ══ -->
+  <section class="py-20 md:py-28 bg-gray-50 dark:bg-gray-900/30 border-y border-gray-100 dark:border-gray-800">
+    <Container size="lg">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="font-display font-bold text-3xl md:text-4xl text-gray-900 dark:text-white mb-8 leading-tight tracking-tight">
+          Un canal nunca fue el problema. Todos al mismo tiempo, s&iacute;.
+        </h2>
+        <div class="space-y-5 text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+          <p>
+            Un comentario en Instagram. Un mensaje en Messenger. Alguien en tu sitio
+            web a las 11 de la noche. Un cliente al que hay que recordarle lo del
+            jueves. Cada uno son treinta segundos de trabajo, y juntos son un segundo
+            empleo al que nunca te postulaste.
+          </p>
+          <p>
+            Entonces el comentario espera cuatro horas. Quien estaba en tu sitio se
+            va. El recordatorio no sale, y el jueves te queda con un hueco.
+          </p>
+          <p class="text-gray-900 dark:text-white font-semibold">
+            Nada de eso es falta de disciplina. Simplemente hay m&aacute;s bandeja de
+            entrada que t&uacute;.
+          </p>
+        </div>
+      </div>
+    </Container>
+  </section>
+
+  <!-- ══ QUÉ AGREGA ══ -->
+  <section class="py-20 md:py-28">
+    <Container size="lg">
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <h2 class="font-display font-bold text-3xl md:text-4xl text-gray-900 dark:text-white mb-4 leading-tight tracking-tight">
+          Qu&eacute; agrega Premium
+        </h2>
+        <p class="text-lg text-gray-600 dark:text-gray-300">
+          Todo lo de Basic sigue corriendo. Estos cuatro empiezan.
+        </p>
+      </div>
+
+      <div class="grid gap-6 md:grid-cols-2 max-w-4xl mx-auto">
+        {includes.map((item, i) => (
+          <div class="p-7 rounded-xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800">
+            <div class="font-display font-bold text-cush-orange text-sm mb-3">
+              {String(i + 1).padStart(2, "0")}
+            </div>
+            <h3 class="font-display font-semibold text-xl text-gray-900 dark:text-white mb-3">{item.title}</h3>
+            <p class="text-gray-600 dark:text-gray-300 leading-relaxed">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="max-w-4xl mx-auto mt-10 p-7 rounded-xl bg-gray-50 dark:bg-gray-900/40 border border-gray-200 dark:border-gray-800">
+        <h3 class="font-display font-semibold text-lg text-gray-900 dark:text-white mb-4">
+          Y todo lo que Basic ya hace
+        </h3>
+        <ul class="grid gap-3 sm:grid-cols-2">
+          {basicToo.map(item => (
+            <li class="flex gap-3 text-gray-600 dark:text-gray-300">
+              <svg class="w-5 h-5 shrink-0 text-cush-orange mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </Container>
+  </section>
+
+  <!-- ══ POR QUÉ EMBONA ══ -->
+  <section class="py-20 md:py-28 bg-gray-50 dark:bg-gray-900/30 border-y border-gray-100 dark:border-gray-800">
+    <Container size="lg">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="font-display font-bold text-3xl md:text-4xl text-gray-900 dark:text-white mb-8 leading-tight tracking-tight">
+          Cuatro canales, un solo cerebro, una sola cuenta.
+        </h2>
+        <div class="space-y-5 text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+          <p>
+            <span class="font-semibold text-gray-900 dark:text-white">Es un asistente, no cuatro herramientas.</span>
+            Cambias un precio una vez y Messenger, Instagram y tu sitio web dicen el
+            nuevo. No existe una versi&oacute;n de tu negocio que solo sea correcta en
+            algunos canales.
+          </p>
+          <p>
+            <span class="font-semibold text-gray-900 dark:text-white">Todo queda a tu nombre.</span>
+            Tu p&aacute;gina, tu cuenta de Instagram, tu cuenta de WhatsApp Business, los
+            datos de tus clientes. No una subcuenta que yo controlo &mdash; que es
+            justamente por lo que te puedes ir sin pedirme nada de vuelta.
+          </p>
+          <p>
+            <span class="font-semibold text-gray-900 dark:text-white">Meta te factura directo el env&iacute;o de WhatsApp, a su tarifa.</span>
+            Yo no le agrego nada. Eso no es generosidad, as&iacute; funciona el modelo de
+            Tech Provider: la cuenta es tuya, entonces el cargo es tuyo, y lo puedes
+            leer t&uacute; mismo.
+          </p>
+          <p>
+            <span class="font-semibold text-gray-900 dark:text-white">Es gestionado, no entregado.</span>
+            Configuraci&oacute;n, entrenamiento, pruebas, el reporte semanal, el ajuste
+            mensual. Nunca tienes que aprender otro software para sacarle provecho a
+            este.
+          </p>
+        </div>
+      </div>
+    </Container>
+  </section>
+
+  <!-- ══ PARA QUIÉN ══ -->
+  <section class="py-20 md:py-28">
+    <Container size="lg">
+      <div class="grid gap-12 md:grid-cols-2 max-w-4xl mx-auto">
+        <div>
+          <h2 class="font-display font-bold text-2xl text-gray-900 dark:text-white mb-6">
+            Premium es para ti si
+          </h2>
+          <ul class="space-y-4">
+            {forYou.map(item => (
+              <li class="flex gap-3 text-gray-600 dark:text-gray-300 leading-relaxed">
+                <svg class="w-5 h-5 shrink-0 text-cush-orange mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <h2 class="font-display font-bold text-2xl text-gray-900 dark:text-white mb-6">
+            No lo es, si
+          </h2>
+          <ul class="space-y-4">
+            {notForYou.map(item => (
+              <li class="flex gap-3 text-gray-600 dark:text-gray-300 leading-relaxed">
+                <span class="text-gray-400 shrink-0 mt-1">&mdash;</span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </Container>
+  </section>
+
+  <!-- ══ PRECIO ══ -->
+  <section class="py-20 md:py-28 bg-gray-50 dark:bg-gray-900/30 border-y border-gray-100 dark:border-gray-800">
+    <Container size="md">
+      <div class="max-w-2xl mx-auto p-8 md:p-10 rounded-2xl bg-gray-900 dark:bg-gray-950 text-white border border-gray-800 text-center">
+        <div class="font-display font-semibold text-xs tracking-widest text-gray-400 mb-4">PREMIUM</div>
+        <div class="font-display font-bold text-5xl mb-2">
+          $3,490 <span class="text-xl font-medium text-gray-400">MXN/mes + IVA</span>
+        </div>
+        <p class="text-gray-300 mb-8">
+          Dos sucursales incluidas. Meta te factura aparte el env&iacute;o de WhatsApp, a
+          tu propia cuenta y a su tarifa.
+        </p>
+        <div class="space-y-2 text-gray-300 mb-8 text-left max-w-sm mx-auto">
+          <p class="flex gap-3"><span class="text-cush-orange">&#10003;</span> Prueba gratis de 1 semana, desde el d&iacute;a que entra en l&iacute;nea</p>
+          <p class="flex gap-3"><span class="text-cush-orange">&#10003;</span> Sin cuota de instalaci&oacute;n, sin dep&oacute;sito</p>
+          <p class="flex gap-3"><span class="text-cush-orange">&#10003;</span> Cancela cuando quieras, aplica al terminar el mes que ya pagaste</p>
+        </div>
+        <a
+          href="/es/reservar/"
+          class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-cush-orange text-black font-display font-semibold rounded-lg hover:bg-cush-orange/90 transition-all text-lg"
+        >
+          Agenda una llamada gratis de 30 min
+        </a>
+        <p class="mt-4 text-sm text-gray-400">
+          Treinta minutos. Si Premium es m&aacute;s de lo que necesitas, te lo digo en la llamada.
+        </p>
+      </div>
+    </Container>
+  </section>
+
+  <!-- ══ OBJECIONES ══ -->
+  <section class="py-20 md:py-28">
+    <Container size="md">
+      <h2 class="font-display font-bold text-3xl md:text-4xl text-gray-900 dark:text-white mb-10 text-center leading-tight tracking-tight">
+        Las preguntas que la gente s&iacute; hace
+      </h2>
+      <div class="space-y-4 max-w-3xl mx-auto">
+        {faqs.map(faq => (
+          <details class="group rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900">
+            <summary class="flex cursor-pointer items-center justify-between gap-4 p-6 font-display font-semibold text-gray-900 dark:text-white">
+              {faq.q}
+              <span class="shrink-0 text-cush-orange transition-transform group-open:rotate-45 text-2xl leading-none">+</span>
+            </summary>
+            <div class="px-6 pb-6 text-gray-600 dark:text-gray-400 leading-relaxed whitespace-pre-line">
+              {faq.a}
+            </div>
+          </details>
+        ))}
+      </div>
+    </Container>
+  </section>
+
+  <FinalCTA locale={locale} />
+</BaseLayout>
+
+<style>
+  .pr-hero {
+    min-height: 92svh;
+    background-color: #14161f;
+    background-image: linear-gradient(
+      to bottom,
+      rgba(10, 12, 18, 0.72) 0%,
+      rgba(10, 12, 18, 0.7) 45%,
+      rgba(10, 12, 18, 0.9) 100%
+    );
+    background-size: cover;
+    background-position: 50% 30%;
+    background-repeat: no-repeat;
+  }
+
+  .pr-h1 {
+    font-size: clamp(2.1rem, 5.2vw, 3.6rem);
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.25rem;
+    text-wrap: balance;
+  }
+
+  .pr-sub {
+    font-size: clamp(1.05rem, 2vw, 1.3rem);
+    line-height: 1.6;
+    color: rgb(203 213 225);
+    max-width: 40rem;
+    margin-bottom: 2rem;
+    text-wrap: pretty;
+  }
+</style>
