@@ -95,7 +95,7 @@ const faqs = [
       <div class="max-w-3xl mx-auto text-center py-24 flex flex-col items-center">
         <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-white text-sm font-semibold mb-8 backdrop-blur-sm">
           <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
-          Premium &middot; el plan que eligen la mayor&iacute;a
+          Premium &middot; cuatro canales, un asistente
         </div>
 
         <h1 class="pr-h1 font-display font-bold text-white">
@@ -157,14 +157,14 @@ const faqs = [
   <!-- ══ PRUEBA ══ -->
   <section class="py-20 md:py-28">
     <Container size="lg">
-      <div class="max-w-3xl mx-auto">
+      <div class="max-w-3xl mx-auto rounded-2xl border-l-4 border-cush-orange bg-gray-50 dark:bg-gray-900/50 p-8 md:p-12 shadow-sm">
         <div class="font-display font-semibold text-xs tracking-widest text-cush-orange mb-4">
           PRIMERO LO CORR&Iacute; EN MI PROPIO NEGOCIO
         </div>
-        <h2 class="font-display font-bold text-3xl md:text-4xl text-gray-900 dark:text-white mb-6 leading-tight tracking-tight">
+        <h2 class="font-display font-bold text-3xl md:text-[2.75rem] text-gray-900 dark:text-white mb-6 leading-[1.1] tracking-tight">
           Lo us&eacute; con mis propios clientes antes de ofrec&eacute;rtelo.
         </h2>
-        <p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+        <p class="text-lg md:text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
           NY English Teacher es mi negocio de coaching. Su asistente contesta en
           ingl&eacute;s y en espa&ntilde;ol, califica cada consulta antes de que llegue a m&iacute; y
           agenda sesiones mientras duermo. Ten&iacute;a que funcionar ah&iacute; primero &mdash; con mis
@@ -373,18 +373,35 @@ const faqs = [
 </BaseLayout>
 
 <style>
+  /* The photo is already a low-key night scene — the overlay that keeps white
+     text legible over a bright shop interior would crush this one to black. So
+     it is roughly half the opacity used on /instagram/, and it is NOT a mistake
+     that these two heroes differ.
+
+     Focal point is 50% horizontally because the phone sits centre-low and the
+     headline sits over the dark upper half deliberately. A phone crop keeps the
+     middle third, which keeps the phone. */
   .pr-hero {
     min-height: 92svh;
-    background-color: #14161f;
-    background-image: linear-gradient(
-      to bottom,
-      rgba(10, 12, 18, 0.72) 0%,
-      rgba(10, 12, 18, 0.7) 45%,
-      rgba(10, 12, 18, 0.9) 100%
-    );
+    background-color: #0d0f16;
+    background-image:
+      linear-gradient(
+        to bottom,
+        rgba(8, 10, 16, 0.55) 0%,
+        rgba(8, 10, 16, 0.38) 45%,
+        rgba(8, 10, 16, 0.72) 100%
+      ),
+      url("/images/premium-hero-v1.webp");
     background-size: cover;
-    background-position: 50% 30%;
+    background-position: 50% 42%;
     background-repeat: no-repeat;
+  }
+
+  @media (max-aspect-ratio: 1 / 1) {
+    .pr-hero {
+      min-height: 86svh;
+      background-position: 50% 52%;
+    }
   }
 
   .pr-h1 {
