@@ -6,6 +6,8 @@ categories:
   - "small-business"
   - "automation"
 readingTime: "7 min de lectura"
+featuredImage: "../../../assets/blog/what-whatsapp-actually-costs-in-mexico.webp"
+imageAlt: "Una doctora en el escritorio de su consultorio lee un mensaje corto en el celular mientras una paciente espera en recepción. Un mensaje, mandado una vez — la forma de WhatsApp que un negocio sí puede pagar."
 translations:
   en: "what-whatsapp-actually-costs-in-mexico"
 seo:
