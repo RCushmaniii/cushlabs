@@ -3,141 +3,149 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import Container from "../../components/layout/Container.astro";
 import FinalCTA from "../../components/services2/FinalCTA.astro";
 
-const locale = "es" as const;
+const locale = "en" as const;
 
-// Spanish twin of /instagram/. Same two prohibitions apply and they are not
-// stylistic: no audience statistic (Facebook is still larger than Instagram in
-// Mexico, so a dominance claim is false here), and never promise a direct
-// message to every commenter (Meta allows one private reply per comment, inside
-// a limited window). es-MX throughout, tú form, per the CushLabs register.
+// Instagram is a PREMIUM capability. Every price on this page points at the
+// Premium tier and nowhere else — /pricing/ owns the numbers, this page owns the
+// explanation. If the tier or the price changes, it changes there first.
+//
+// TWO CLAIMS THIS PAGE MUST NEVER MAKE, both learned the hard way on 2026-09-19:
+//
+// 1. No audience statistic. Facebook is still larger than Instagram in Mexico
+//    (93.5M vs 53.6M users), so "Instagram is where everyone is" is false here,
+//    and a growth percentage ages badly and invites a source request. Sell the
+//    mechanic, not the platform's size.
+// 2. Never promise a DM to everyone who comments. Meta allows ONE private reply
+//    per comment, inside a limited window. The copy says the assistant "follows
+//    up with a direct message" — never "always DMs" and never a volume promise.
 
 const steps = [
   {
     n: "01",
-    title: "Alguien comenta en tu publicación",
-    desc: "“¿Cuánto cuesta?” “¿Lo tienes en mi talla?” “¿Abren el domingo?” — las preguntas que llegan justo cuando estás atendiendo, manejando o dormido.",
+    title: "Someone comments on your post",
+    desc: "“How much?” “Do you have it in my size?” “Are you open Sunday?” — the questions that arrive when you are with a customer, driving, or asleep.",
   },
   {
     n: "02",
-    title: "El asistente responde en público, en segundos",
-    desc: "Una respuesta corta y natural debajo del comentario, con tu voz y en el idioma del cliente. La publicación se ve viva para todos los demás que la están viendo, y eso es lo que se acumula.",
+    title: "The assistant replies in public, in seconds",
+    desc: "A short, human reply under the comment, in your voice and their language. The post keeps looking alive to everyone else scrolling it, which is the part that compounds.",
   },
   {
     n: "03",
-    title: "Y luego da seguimiento por mensaje directo",
-    desc: "La respuesta de verdad — precio, disponibilidad, el enlace para agendar — llega a su bandeja en vez de quedarse en público, donde cualquiera le puede tomar captura.",
+    title: "Then it follows up in a direct message",
+    desc: "The real answer — price, availability, the booking link — lands in their DMs instead of sitting in public where anyone can screenshot it.",
   },
   {
     n: "04",
-    title: "Y mantiene la conversación",
-    desc: "Si contestan, el mismo asistente responde con tus precios, horarios y políticas reales. Cuando te necesita, te pasa la conversación completa con todo el contexto.",
+    title: "And it keeps the conversation going",
+    desc: "If they reply, the same assistant answers from your actual prices, hours and policies. When it needs you, it hands the thread over with the full context.",
   },
 ];
 
 const included = [
-  { title: "Respuestas a comentarios en publicaciones y Reels", desc: "Contestados en segundos, con tu voz, en el idioma en que te escribieron" },
-  { title: "Seguimiento por mensaje directo", desc: "Lleva la respuesta de verdad — precio, disponibilidad, siguiente paso — fuera del muro público y a una conversación privada" },
-  { title: "También contesta tus mensajes directos", desc: "No solo comentarios. Quien te escriba directo a la cuenta recibe al mismo asistente" },
-  { title: "Hecho con tu negocio", desc: "Tus productos, precios, horarios y políticas. Responde con lo que realmente vendes, y no se inventa un precio" },
-  { title: "Bilingüe (EN/ES)", desc: "Cambia solo, según el idioma en que te escriba el cliente — no hay nada que configurar" },
-  { title: "Transferencia a una persona", desc: "Te pasa la conversación completa cuando de verdad se necesita un humano" },
-  { title: "Es el mismo asistente que ya tienes", desc: "Un solo cerebro en Messenger, Instagram y tu sitio web. Lo actualizas una vez y cambia en todos lados" },
-  { title: "Reporte semanal", desc: "Qué te están preguntando debajo de tus publicaciones, qué convirtió y qué contenido te falta" },
+  { title: "Comment replies on your posts and Reels", desc: "Answered in seconds, in your voice, in the language the customer wrote in" },
+  { title: "Direct message follow-up", desc: "Moves the real answer — pricing, availability, next step — off the public feed and into a private conversation" },
+  { title: "Instagram DMs answered too", desc: "Not just comments. Someone who messages your account directly gets the same assistant" },
+  { title: "Built from your business", desc: "Your products, prices, hours and policies. It answers from what you actually sell, and it does not invent a price" },
+  { title: "Bilingual (EN/ES)", desc: "Switches automatically based on what the customer writes — no setting to toggle" },
+  { title: "Human handoff", desc: "Escalates to you with the whole thread when the conversation genuinely needs a person" },
+  { title: "The same assistant you already have", desc: "One brain across Messenger, Instagram and your website. Update it once and every channel changes" },
+  { title: "Weekly report", desc: "What people are asking under your posts, what converted, what content is missing" },
 ];
 
 const notIncluded = [
-  "Publicar en Instagram, redactar tus captions o llevarte el calendario de contenido — el asistente responde, no publica",
-  "Gestión de anuncios pagados en Instagram",
-  "Un mensaje directo garantizado a cada persona que comenta — Instagram limita las respuestas privadas a una por comentario y dentro de una ventana de tiempo; trabajamos dentro de eso en vez de fingir que no existe",
-  "Recuperar conversaciones que pasaron antes de la configuración",
+  "Posting to Instagram, writing captions, or running your content calendar — the assistant answers, it does not publish",
+  "Paid Instagram ad management",
+  "A guaranteed DM to every single commenter — Instagram limits private replies to one per comment, inside a set window, and we work inside that rather than pretending it does not exist",
+  "Recovering conversations that happened before setup",
 ];
 
 const bestFor = [
-  "Tiendas, boutiques y marcas de producto donde las publicaciones se llenan de “¿cuánto cuesta?”",
-  "Negocios con más movimiento en Instagram que en su página de Facebook",
-  "Negocios con promociones o lanzamientos que disparan los comentarios",
-  "Dueños que ya contestan mensajes a las 10 de la noche y quieren recuperar esa hora",
+  "Retail, boutique and product businesses where posts collect “how much?” comments",
+  "Anyone whose Instagram is busier than their Facebook Page",
+  "Businesses running promotions or launches that spike comment volume",
+  "Owners who already answer DMs at 10pm and want that hour back",
 ];
 ---
 
 <BaseLayout
-  title="Asistente de IA para Instagram — Comentarios y Mensajes | CushLabs"
-  description="Un asistente de IA que responde los comentarios de tu Instagram en público y da seguimiento por mensaje directo, con tu voz y en su idioma. Incluido en Premium."
+  title="Instagram AI Assistant — Comment Replies & DMs | CushLabs.ai"
+  description="An AI assistant that answers Instagram comments in public and follows up in DMs, in your voice and your customer's language. Included in the Premium plan."
 >
   <section class="ig-hero relative flex items-center text-slate-50">
     <Container size="md">
       <div class="max-w-3xl mx-auto text-center py-24 flex flex-col items-center">
         <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-white text-sm font-semibold mb-8 backdrop-blur-sm">
           <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
-          Disponible en Premium &middot; Biling&uuml;e EN/ES
+          Live on Premium &middot; Bilingual EN/ES
         </div>
 
         <h1 class="ig-h1 font-display font-bold text-white">
-          Los comentarios de tu Instagram son ventas. Alguien tiene que contestarlos.
+          Your Instagram Comments Are Sales. Someone Has to Answer Them.
         </h1>
 
         <p class="ig-sub">
-          Un asistente de IA que responde los comentarios en p&uacute;blico y da
-          seguimiento por mensaje directo &mdash; con tu voz, en su idioma, en segundos.
+          An AI assistant that replies to comments in public and follows up in DMs
+          &mdash; in your voice, in their language, in seconds.
         </p>
 
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
-            href="/es/reservar/"
+            href="/consultation/"
             class="group inline-flex items-center gap-2 px-8 py-4 bg-cush-orange text-black font-display font-semibold rounded-lg hover:bg-cush-orange/90 transition-all duration-300 shadow-lg shadow-cush-orange/25 hover:shadow-xl hover:shadow-cush-orange/30 text-lg"
           >
-            Agenda una llamada gratis de 30 min
+            Book a Free 30-Min Call
             <svg class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
           </a>
-          <a href="/es/precios/" class="font-display font-medium text-slate-300 hover:text-white underline underline-offset-4 decoration-white/30 hover:decoration-cush-orange transition-all">
-            Ver planes y precios &rarr;
+          <a href="/pricing/" class="font-display font-medium text-slate-300 hover:text-white underline underline-offset-4 decoration-white/30 hover:decoration-cush-orange transition-all">
+            See plans &amp; pricing &rarr;
           </a>
         </div>
       </div>
     </Container>
   </section>
 
-  <!-- El problema -->
+  <!-- The problem -->
   <section class="py-20 md:py-28">
     <Container size="lg">
       <div class="max-w-3xl mx-auto">
         <h2 class="font-display font-bold text-3xl md:text-4xl text-gray-900 dark:text-white mb-8 leading-tight tracking-tight">
-          El comentario que no contestaste es la venta que no hiciste.
+          The comment you didn't answer is the sale you didn't make.
         </h2>
         <div class="space-y-5 text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
           <p>
-            Alguien comenta <span class="font-semibold text-gray-900 dark:text-white">&ldquo;&iquest;cu&aacute;nto cuesta?&rdquo;</span>{" "}
-            debajo de una publicaci&oacute;n. Lo ves cuatro horas despu&eacute;s, si es que lo
-            ves. Para entonces ya se fue, o ya le compr&oacute; a quien contest&oacute; primero.
+            Someone comments <span class="font-semibold text-gray-900 dark:text-white">&ldquo;how much?&rdquo;</span>{" "}
+            under a post. You see it four hours later, if you catch it at all. By
+            then they have scrolled past, or bought from whoever answered first.
           </p>
           <p>
-            Y cuando s&iacute; contestas, contestas en p&uacute;blico &mdash; as&iacute; que tu precio
-            queda debajo de la publicaci&oacute;n, donde cualquiera le puede tomar captura,
-            compararlo o usarlo en tu contra.
+            And when you do answer, you answer in public &mdash; so your price now
+            sits under the post where anyone can screenshot it, compare it, or use
+            it against you.
           </p>
           <p>
-            Mientras tanto la publicaci&oacute;n se ve abandonada. Un comentario sin
-            respuesta le dice a todos los dem&aacute;s que ah&iacute; no hay nadie.
+            Meanwhile the post itself looks abandoned. Comments with no reply tell
+            every other person scrolling that nobody is home.
           </p>
           <p class="text-gray-900 dark:text-white font-semibold">
-            La soluci&oacute;n no es contestar m&aacute;s r&aacute;pido. Es no tener que hacerlo.
+            The fix is not answering faster. It's not having to.
           </p>
         </div>
       </div>
     </Container>
   </section>
 
-  <!-- Cómo funciona -->
+  <!-- How it works -->
   <section class="py-20 md:py-28 bg-gray-50 dark:bg-gray-900/30 border-y border-gray-100 dark:border-gray-800">
     <Container size="lg">
       <div class="text-center max-w-3xl mx-auto mb-14">
         <h2 class="font-display font-bold text-3xl md:text-4xl text-gray-900 dark:text-white mb-4 leading-tight tracking-tight">
-          Respuesta p&uacute;blica. Seguimiento privado.
+          Public reply. Private follow-up.
         </h2>
         <p class="text-lg text-gray-600 dark:text-gray-300">
-          Dos movimientos, y el segundo es el que casi nadie hace.
+          Two moves, and the second one is the one most businesses never make.
         </p>
       </div>
 
@@ -152,20 +160,19 @@ const bestFor = [
       </div>
 
       <p class="text-center text-gray-600 dark:text-gray-400 mt-10 max-w-2xl mx-auto">
-        Corre en tu propia cuenta de Instagram, con las herramientas oficiales de
-        Meta para negocios. Nos compartes el acceso en la configuraci&oacute;n &mdash; el
-        mismo paso que ya haces con tu p&aacute;gina de Facebook &mdash; y lo puedes
-        retirar cuando quieras.
+        It runs on your own Instagram account, through Meta's official business
+        tools. You share access during setup &mdash; the same step you already
+        take for your Facebook Page &mdash; and you can withdraw it whenever you want.
       </p>
     </Container>
   </section>
 
-  <!-- Qué incluye -->
+  <!-- What's included -->
   <section class="py-20 md:py-28">
     <Container size="lg">
       <div class="text-center max-w-3xl mx-auto mb-14">
         <h2 class="font-display font-bold text-3xl md:text-4xl text-gray-900 dark:text-white mb-4 leading-tight tracking-tight">
-          Qu&eacute; incluye
+          What you get
         </h2>
       </div>
       <div class="grid gap-5 md:grid-cols-2 max-w-4xl mx-auto">
@@ -184,13 +191,13 @@ const bestFor = [
     </Container>
   </section>
 
-  <!-- Alcance -->
+  <!-- Scope + fit -->
   <section class="py-20 md:py-28 bg-gray-50 dark:bg-gray-900/30 border-y border-gray-100 dark:border-gray-800">
     <Container size="lg">
       <div class="grid gap-12 md:grid-cols-2 max-w-4xl mx-auto">
         <div>
           <h2 class="font-display font-bold text-2xl text-gray-900 dark:text-white mb-6">
-            Qu&eacute; no hace
+            What it doesn't do
           </h2>
           <ul class="space-y-4">
             {notIncluded.map(item => (
@@ -203,7 +210,7 @@ const bestFor = [
         </div>
         <div>
           <h2 class="font-display font-bold text-2xl text-gray-900 dark:text-white mb-6">
-            Para qui&eacute;n es
+            Best for
           </h2>
           <ul class="space-y-4">
             {bestFor.map(item => (
@@ -220,31 +227,30 @@ const bestFor = [
     </Container>
   </section>
 
-  <!-- Inversión -->
+  <!-- Investment -->
   <section class="py-20 md:py-28">
     <Container size="md">
       <div class="max-w-2xl mx-auto p-8 md:p-10 rounded-2xl bg-gray-900 dark:bg-gray-950 text-white border border-gray-800">
-        <div class="font-display font-semibold text-xs tracking-widest text-gray-400 mb-4">INVERSI&Oacute;N</div>
+        <div class="font-display font-semibold text-xs tracking-widest text-gray-400 mb-4">INVESTMENT</div>
         <p class="text-lg leading-relaxed text-gray-200 mb-6">
-          Incluido en el <span class="font-bold text-white">plan Premium &mdash; $3,490 MXN/mes + IVA</span>,
-          junto con el chatbot de tu sitio web, los recordatorios por WhatsApp y el
-          reporte semanal de SEO local. Totalmente gestionado: configuraci&oacute;n,
-          entrenamiento, reportes semanales y ajuste mensual. Sin cuota de
-          instalaci&oacute;n. Sin contrato.
+          Included in the <span class="font-bold text-white">Premium plan &mdash; $3,490 MXN/mo + IVA</span>,
+          alongside your website chatbot, WhatsApp reminders and the weekly local
+          SEO report. Fully managed: setup, training, weekly reports and monthly
+          tuning. No setup fee. No contract.
         </p>
-        <p class="text-sm text-cush-orange italic mb-8">Prueba gratis de 1 semana. Cancela cuando quieras.</p>
+        <p class="text-sm text-cush-orange italic mb-8">Free 1-week trial. Cancel anytime.</p>
         <div class="flex flex-col sm:flex-row gap-4">
           <a
-            href="/es/reservar/"
+            href="/consultation/"
             class="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-cush-orange text-black font-display font-semibold rounded-lg hover:bg-cush-orange/90 transition-all"
           >
-            Agenda una llamada gratis
+            Book a Free 30-Min Call
           </a>
           <a
-            href="/es/services/premium/"
+            href="/services/premium/"
             class="inline-flex items-center justify-center gap-2 px-7 py-3.5 border border-gray-700 text-gray-200 font-display font-semibold rounded-lg hover:border-cush-orange hover:text-white transition-all"
           >
-            Qu&eacute; m&aacute;s trae Premium &rarr;
+            What else is in Premium &rarr;
           </a>
         </div>
       </div>
@@ -255,9 +261,18 @@ const bestFor = [
 </BaseLayout>
 
 <style>
-  /* Ver /instagram/ para el razonamiento completo del héroe. El sufijo -v1 es
-     deliberado: vercel.json sirve /images/(.*) como inmutable por un año, así
-     que una imagen reemplazada necesita un nombre NUEVO. */
+  /* Same hero treatment as /messenger-assistant/ and /whatsapp/. The photo
+     carries the pitch, the dark gradient keeps white text legible over it. The
+     -v1 suffix is deliberate: vercel.json serves /images/(.*) as immutable for a
+     year, so a replaced image needs a NEW filename or the old bytes are served
+     forever.
+
+     v2, 2026-09-19: 16:9 (1672x941), SUBJECT CENTRED in the upper half, with the
+     counter below her soft and mid-dark. The headline is centre-aligned over the
+     image, so every position here is 50% horizontally — the subject and the text
+     share the middle of the frame by design, and a phone crop that keeps the
+     middle third still keeps her whole. v1 put the subject in the left third,
+     which is why it fell apart on a phone; do not bring those numbers back. */
   .ig-hero {
     min-height: 100svh;
     background-color: #14161f;

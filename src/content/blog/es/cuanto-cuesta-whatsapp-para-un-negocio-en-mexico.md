@@ -99,6 +99,6 @@ La conversación pasa en Messenger, en Instagram y en el sitio web, donde un bot
 
 Ese reparto no es una concesión. Es para lo que de verdad sirve cada canal.
 
-Si quieres ver cómo embona todo — recordatorios en WhatsApp, conversación en todo lo demás, un solo asistente detrás — esa combinación es el [plan Premium](/es/services/premium/). Cómo funciona la parte de WhatsApp está en la [página de recordatorios por WhatsApp](/es/whatsapp/).
+Si quieres ver cómo embona todo — recordatorios en WhatsApp, conversación en todo lo demás, un solo asistente detrás — esa combinación es el [plan Premium](/es/services/premium/). Cómo funciona la parte de WhatsApp está en la [página de recordatorios por WhatsApp](/es/services/whatsapp/).
 
 Y si resulta que tus clientes de verdad están en un solo canal, te lo voy a decir en la llamada. Pagar por cuatro cuando necesitas uno es su propia forma de salir caro.

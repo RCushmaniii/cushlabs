@@ -76,6 +76,146 @@
       "source": "/es/projects/cushlabs-messenger/",
       "destination": "/es/projects/cushlabs-messenger-bot/",
       "permanent": true
+    },
+    {
+      "source": "/messenger-assistant",
+      "destination": "/services/messenger-assistant/",
+      "permanent": true
+    },
+    {
+      "source": "/messenger-assistant/",
+      "destination": "/services/messenger-assistant/",
+      "permanent": true
+    },
+    {
+      "source": "/es/messenger-assistant",
+      "destination": "/es/services/messenger-assistant/",
+      "permanent": true
+    },
+    {
+      "source": "/es/messenger-assistant/",
+      "destination": "/es/services/messenger-assistant/",
+      "permanent": true
+    },
+    {
+      "source": "/whatsapp",
+      "destination": "/services/whatsapp/",
+      "permanent": true
+    },
+    {
+      "source": "/whatsapp/",
+      "destination": "/services/whatsapp/",
+      "permanent": true
+    },
+    {
+      "source": "/es/whatsapp",
+      "destination": "/es/services/whatsapp/",
+      "permanent": true
+    },
+    {
+      "source": "/es/whatsapp/",
+      "destination": "/es/services/whatsapp/",
+      "permanent": true
+    },
+    {
+      "source": "/instagram",
+      "destination": "/services/instagram/",
+      "permanent": true
+    },
+    {
+      "source": "/instagram/",
+      "destination": "/services/instagram/",
+      "permanent": true
+    },
+    {
+      "source": "/es/instagram",
+      "destination": "/es/services/instagram/",
+      "permanent": true
+    },
+    {
+      "source": "/es/instagram/",
+      "destination": "/es/services/instagram/",
+      "permanent": true
+    },
+    {
+      "source": "/voice-agent",
+      "destination": "/services/voice-agent/",
+      "permanent": true
+    },
+    {
+      "source": "/voice-agent/",
+      "destination": "/services/voice-agent/",
+      "permanent": true
+    },
+    {
+      "source": "/es/voice-agent",
+      "destination": "/es/services/voice-agent/",
+      "permanent": true
+    },
+    {
+      "source": "/es/voice-agent/",
+      "destination": "/es/services/voice-agent/",
+      "permanent": true
+    },
+    {
+      "source": "/website-chatbot",
+      "destination": "/services/website-chatbot/",
+      "permanent": true
+    },
+    {
+      "source": "/website-chatbot/",
+      "destination": "/services/website-chatbot/",
+      "permanent": true
+    },
+    {
+      "source": "/es/website-chatbot",
+      "destination": "/es/services/website-chatbot/",
+      "permanent": true
+    },
+    {
+      "source": "/es/website-chatbot/",
+      "destination": "/es/services/website-chatbot/",
+      "permanent": true
+    },
+    {
+      "source": "/competitive-intelligence",
+      "destination": "/services/competitive-intelligence/",
+      "permanent": true
+    },
+    {
+      "source": "/competitive-intelligence/",
+      "destination": "/services/competitive-intelligence/",
+      "permanent": true
+    },
+    {
+      "source": "/es/competitive-intelligence",
+      "destination": "/es/services/competitive-intelligence/",
+      "permanent": true
+    },
+    {
+      "source": "/es/competitive-intelligence/",
+      "destination": "/es/services/competitive-intelligence/",
+      "permanent": true
+    },
+    {
+      "source": "/premium",
+      "destination": "/services/premium/",
+      "permanent": true
+    },
+    {
+      "source": "/premium/",
+      "destination": "/services/premium/",
+      "permanent": true
+    },
+    {
+      "source": "/es/premium",
+      "destination": "/es/services/premium/",
+      "permanent": true
+    },
+    {
+      "source": "/es/premium/",
+      "destination": "/es/services/premium/",
+      "permanent": true
     }
   ],
   "rewrites": [

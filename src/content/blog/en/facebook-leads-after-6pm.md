@@ -45,4 +45,4 @@ This is what an AI assistant on your Facebook page does. Built from your busines
 
 The 9 PM prospect gets a real answer at 9 PM. You keep your badge. And the leads that used to evaporate overnight are still there in the morning — with a name and a number attached.
 
-Curious what that looks like in practice? See the [AI Messenger Assistant](/messenger-assistant/) — it's answering real customers in production right now.
+Curious what that looks like in practice? See the [AI Messenger Assistant](/services/messenger-assistant/) — it's answering real customers in production right now.

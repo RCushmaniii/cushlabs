@@ -77,4 +77,4 @@ Run your own numbers. For a fraction of a front-desk salary, an AI assistant cov
 
 That's the whole idea: use AI for the repetitive, time-sensitive conversations that never stop coming, and use people for the high-touch, high-value moments that earn loyalty and close the deal. The businesses that win pick the right person — or the right technology — for each job.
 
-Want to see what that looks like for your business? Meet the [AI Messenger Assistant](/messenger-assistant/) that's already handling real customers in production.
+Want to see what that looks like for your business? Meet the [AI Messenger Assistant](/services/messenger-assistant/) that's already handling real customers in production.

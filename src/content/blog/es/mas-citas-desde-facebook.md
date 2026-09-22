@@ -40,4 +40,4 @@ No es un robot genérico que dice "no entendí tu pregunta". Es tu propio conoci
 
 Ya tienes la demanda. Lo que te falta es no dejarla enfriar. Contesta en segundos, captura el contacto y automatiza lo repetitivo —y las citas que hoy se te escapan empiezan a quedarse contigo.
 
-¿Quieres ver cómo se siente en la práctica? Conoce el [Asistente de IA para Messenger](/es/messenger-assistant/) que ya atiende clientes reales en producción.
+¿Quieres ver cómo se siente en la práctica? Conoce el [Asistente de IA para Messenger](/es/services/messenger-assistant/) que ya atiende clientes reales en producción.
