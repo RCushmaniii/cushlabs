@@ -12,7 +12,32 @@
 > Resolved items collapse to one line under [Resolved](#resolved-technical-debt); the trail stays so a
 > future session does not re-litigate a settled decision.
 
-**11 open** · 19 resolved · last reconciled 2026-09-15
+**12 open** · 19 resolved · last reconciled 2026-09-22
+
+### #30 — The homepage assistant's knowledge base has two write paths and one silently erases the other
+
+**Medium** · opened 2026-09-22 · blocks: nothing today; erases a future edit without warning
+
+The floating chat widget this repo mounts (`src/layouts/BaseLayout.astro:293`) is an iframe on
+`soyconverso.com/embed/chat`. Its persona and all 48 knowledge chunks (24 EN / 24 ES) live in
+`ai-chatbot-saas/scripts/provision-cushlabs-demo.ts`, which upserts them on fixed UUIDs — the path
+used by `ai-chatbot-saas` commit `36e9406` on 2026-08-27 to replace 13 stale chunks with the
+current 48.
+
+Converso **also** ships a working admin UI at `/admin` that writes to the same rows. It is reachable
+(see Recurring Failure Modes #10), and an edit made there is live immediately. The next run of the
+provisioning script overwrites it with no diff, no warning and no record that a UI edit ever existed.
+Neither the script header nor the admin UI says so.
+
+**Decision, 2026-09-22:** the script is canonical. The admin UI is read-only by convention — useful
+for inspecting what is deployed, never for editing. This keeps the knowledge base in git,
+code-reviewed, EN/ES parity-enforced, and reconciled against the canonical `operating-system` files
+the script header names.
+
+**Next:** that convention has to be written where the next editor will see it, and that is the other
+repo. Hand `ai-chatbot-saas` the handoff prompt recorded in this session's history entry: add the
+two-write-path warning to the provisioning script header, and a banner on the admin knowledge tab
+saying edits there are overwritten on the next reprovision. Close this entry when that PR merges.
 
 ### #29 — The homepage advertises booking on three channels; only one of them books
 
@@ -236,6 +261,16 @@ _(none open)_
 
 ### Medium priority
 
+- **Teach the homepage assistant the September site restructure** — its knowledge base was last
+  reconciled 2026-08-27, before the six capability pages moved under `/services/` (PR #341), before
+  `/pricing/` gained individually linkable tiers (PR #337), and before the premium tier page
+  (PR #339) and the WhatsApp-cost post (PR #340). Nothing is broken — its only two outbound URLs
+  (`/consultation/`, `/es/reservar/`) still resolve — but the bot cannot send a prospect to
+  `/services/whatsapp/` or `/pricing/#premium` because it does not know those pages exist. The work
+  is 48 chunks in `ai-chatbot-saas/scripts/provision-cushlabs-demo.ts`, EN/ES parity enforced,
+  re-reconciled against the canonical files its header names, then reprovisioned and re-stamped.
+  **Belongs in `ai-chatbot-saas`, not here.** Do [tech debt #30](#30--the-homepage-assistants-knowledge-base-has-two-write-paths-and-one-silently-erases-the-other)
+  in the same PR — the warning header and the chunk refresh touch the same file.
 - **Rotate `CF_AI_TOKEN` in `cushlabs-messenger-bot/.dev.vars`, then re-ingest the corrected RAG
   corpus** — the bot-content reconciliation shipped same night (bot PR #270, live KV + QA-gated),
   but the token is dead at Cloudflare (invalid since ≤2026-08-13, last ingest 2026-07-02), so the
@@ -312,6 +347,38 @@ Directional ideas with a longer horizon than the Backlog. Themes, not tickets �
 ## Recurring Failure Modes
 
 Patterns that have bitten this project before. Re-read before shipping any change to the listed surfaces.
+
+### 10. A 404 from a protected route is an auth gate, not a missing deployment
+
+**What happened, 2026-09-22.** A session investigating how to keep the homepage assistant up to date
+found `https://www.soyconverso.com/admin` returning **404 signed out, with no redirect**, and
+concluded the production build might not be serving the route at all — which would have meant the
+assistant answering prospects on this site had no reachable way to be updated. It also concluded that
+the assistant's answers "aren't in any repo" and could only be edited through Converso's admin UI.
+
+Both were wrong, and two cheap reads settled it.
+
+1. **The response headers name the cause.** `X-Clerk-Auth-Reason: protect-rewrite` and
+   `X-Matched-Path: /_not-found`. `ai-chatbot-saas/proxy.ts:114` calls `await auth.protect()`, and
+   Clerk rewrites a signed-out page request to 404 **by design**, so the response cannot leak whether
+   the route exists. The route is deployed and works. `/chat` 404s identically for the same reason.
+2. **The answers are in a repo, and git already said so.**
+   `ai-chatbot-saas/scripts/provision-cushlabs-demo.ts` holds the persona and all 48 chunks and
+   upserts them idempotently. Commit `36e9406` — "resync the homepage assistant to the canonical
+   business data (#95)" — is this repo's own 2026-08-27 session doing exactly that, and it is written
+   up at [Session: 2026-08-27 (later)](#session-2026-08-27-later--the-homepage-chatbot-was-quoting-a-pricing-model-we-no-longer-sell).
+
+**Rules.**
+
+1. **Never read a bare status code as a deployment fact.** Fetch the headers. Clerk, NextAuth,
+   Vercel deployment protection and Cloudflare Access all deliberately return 404 or 401 for routes
+   that exist, and every one of them says so in a response header.
+2. **Before concluding a surface is unmaintainable, grep the repo that owns it for the last time it
+   was maintained.** The commit that updated this knowledge base was three weeks old, in the repo
+   already identified as the owner, and named its own purpose in the subject line.
+3. **A cross-repo claim about this site's chat widget belongs in this log.** The widget is a claims
+   surface `BaseLayout.astro` mounts on all 126 pages; where its content lives is this repo's
+   business even though the file is not.
 
 ### 0b. A capacity or cost model that prices a client at a flat tier and forgets the location fee
 
@@ -471,6 +538,65 @@ that gets bypassed with `--no-verify`.
 ---
 
 ## Session History
+
+## Session: 2026-09-22 — The homepage assistant is maintainable, and the report saying otherwise was wrong twice
+
+### Nothing shipped to the site. This session resolved a false alarm and recorded the answer.
+
+A report arrived claiming the floating chat widget on `cushlabs.ai` might be unmaintainable: that
+its answers "aren't in any repo" and lived only in Converso's admin UI, and that
+`https://www.soyconverso.com/admin` returning 404 signed out might mean the production build was not
+serving that route. If true, the assistant talking to prospects on every page of this site could not
+be corrected.
+
+**Both claims were wrong.** Verified read-only, nothing changed:
+
+- **The iframe wiring is correct as described.** `src/layouts/BaseLayout.astro:293` sets
+  `DEMO_URL = 'https://www.soyconverso.com/embed/chat'`; `vercel.json:289` allows that origin in CSP
+  `frame-src`. This repo holds no prompt, no knowledge, no model call.
+- **The answers are in a repo.** `ai-chatbot-saas/scripts/provision-cushlabs-demo.ts` (1,227 lines)
+  holds the persona and all 48 knowledge chunks — 24 EN / 24 ES, parity enforced — and upserts them
+  on fixed UUIDs. Its header names the five canonical sources it must never contradict and is
+  stamped `Reconciled: 2026-08-27`. Commit `36e9406` is that reconciliation.
+- **The 404 is Clerk's auth gate.** `X-Clerk-Auth-Reason: protect-rewrite`,
+  `X-Matched-Path: /_not-found`, from `await auth.protect()` at `proxy.ts:114`. The route is
+  deployed. `ADMIN_EMAIL` is set in the production environment (name confirmed, value not read), and
+  `app/(chat)/admin/page.tsx` gates on an exact email match, so the admin dashboard is reachable by
+  signing in at `https://www.soyconverso.com/sign-in`.
+- **No broken links in the knowledge base.** Its only two outbound site URLs — `/consultation/` and
+  `/es/reservar/` — both still resolve after the `/services/` restructure.
+
+### What the investigation actually found
+
+**Two write paths point at one knowledge base, and one erases the other silently.** The admin UI
+writes to the same rows the provisioning script upserts. A UI edit is live immediately and gone on
+the next reprovision, with no diff and no warning. Opened as
+[tech debt #30](#30--the-homepage-assistants-knowledge-base-has-two-write-paths-and-one-silently-erases-the-other).
+**Robert's decision, this session: the script is canonical; the admin UI is for inspection only.**
+
+**The assistant does not know about the September site restructure.** The knowledge base was last
+reconciled 2026-08-27. Since then this repo shipped six capability pages under `/services/`
+(PR #341), a `/pricing/` page with individually linkable tiers (PR #337), the premium tier page
+(PR #339) and the WhatsApp-cost post (PR #340). Nothing is broken — the bot simply cannot send a
+prospect to `/services/whatsapp/` or `/pricing/#premium`, because those pages did not exist when it
+was last taught. That is lost conversion, not a defect, and it is a backlog item rather than debt.
+
+### Handoff to `ai-chatbot-saas` — not started
+
+Per the standing rule that a cushlabs session stays in the marketing repo, both pieces of bot-repo
+work were handed over as a prompt rather than executed here:
+
+1. Add the two-write-path warning to the `provision-cushlabs-demo.ts` header, in the same voice as
+   the claims-surface warning already there, and a banner on the admin knowledge tab stating that
+   edits made there are overwritten by the next reprovision.
+2. Optional, larger: refresh the 48 chunks to teach the assistant the six `/services/` pages and the
+   deep-linkable pricing anchors, re-reconciled against the canonical files and re-stamped.
+
+### New recurring failure mode
+
+[#10 — A 404 from a protected route is an auth gate, not a missing deployment](#10-a-404-from-a-protected-route-is-an-auth-gate-not-a-missing-deployment).
+Read the response headers before concluding anything from a status code, and grep the owning repo
+for the last time a surface was maintained before declaring it unmaintainable.
 
 ## Session: 2026-09-21 — The capability pages moved under /services/, and the move nearly broke client onboarding
 
