@@ -1,0 +1,438 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Container from "../components/layout/Container.astro";
+import FinalCTA from "../components/services2/FinalCTA.astro";
+
+const locale = "en" as const;
+
+// THE FIRST TIER PAGE. Capability pages (/instagram/, /whatsapp/, …) answer
+// "what is this and does it work". This answers the only question that closes a
+// sale: "which one do I buy". Until now that was answered solely by a comparison
+// table — and a table is where someone compares, not where they decide.
+//
+// RULES THIS PAGE LIVES UNDER, all of them load-bearing:
+//
+// 1. /pricing/ owns the numbers. $3,490 appears here because it is the Premium
+//    price in commercial-terms.json; if that changes, it changes THERE first and
+//    validate-terms.mjs will fail this page until it follows.
+// 2. Every feature named here is Premium or Basic. validate-feature-tiers.mjs
+//    checks that on every build, because four pages got this wrong on
+//    2026-09-19 by growing to cover a channel and keeping the old price.
+// 3. claims-policy.json bans absolutes ("no hallucinations", "guaranteed ROI",
+//    "eliminates all manual work") and comparative swipes ("unlike other
+//    agencies", "competitors can't"). The differentiators below are structural
+//    facts about the Tech Provider model, which is why they can be stated
+//    without naming anyone.
+// 4. No invented metrics. Every number is from an authority row or is the
+//    client's own cost, never a result we promise.
+
+const includes = [
+  {
+    title: "Instagram — answered in public, closed in private",
+    desc: "Someone comments “how much?” under a post. The assistant replies publicly so the post looks alive, then follows up in a direct message where the real answer belongs — off the feed, where nobody can screenshot your price.",
+  },
+  {
+    title: "Your website stops losing the visitor who almost asked",
+    desc: "The person reading your page at 11pm gets an answer instead of a contact form. Same assistant, same prices, same policies — it just meets them where they already are.",
+  },
+  {
+    title: "WhatsApp reminders and confirmations, from your own number",
+    desc: "Appointment confirmations and reminders go out on their own, on the channel your customers actually open. Fewer no-shows, and nobody on your team chasing anybody.",
+  },
+  {
+    title: "One email a week on what your competitors changed",
+    desc: "Local search moves and you find out from a weekly email, not from a quiet month. What changed, what it means, and what to do about it — not another dashboard to log into.",
+  },
+];
+
+const basicToo = [
+  "The Facebook Messenger assistant, answering 24/7",
+  "Google review replies — you approve, it posts itself",
+  "Every lead captured, with an instant WhatsApp alert to you",
+  "Fully managed: setup, training, weekly reports, monthly tuning",
+];
+
+const forYou = [
+  "Customers reach you on more than one channel and you are the bottleneck on all of them",
+  "Your Instagram posts collect questions you answer hours later, in public",
+  "No-shows leave holes in a calendar you cannot afford to leave empty",
+  "You already have Basic and the messages are arriving somewhere it does not reach",
+];
+
+const notForYou = [
+  "One channel is genuinely enough — Basic is the honest answer, and it costs less",
+  "You want someone to write your posts and run your content calendar",
+  "You want ads managed — that is not what this is",
+  "You need practice-management software: an agenda, a medical record, invoicing",
+];
+
+const faqs = [
+  {
+    q: "Why is it $1,500 more than Basic?",
+    a: "Three more channels and a weekly intelligence report, all running on the same assistant. Basic answers Facebook Messenger. Premium answers Instagram comments and DMs, your website, and sends WhatsApp reminders from your own number — plus the local search and competitor report every Monday. If one channel is genuinely where your customers are, Basic is the right answer and I will say so on the call.",
+  },
+  {
+    q: "What does Meta charge me on top?",
+    a: "For WhatsApp, Meta bills you directly on your own account at their published rate. I never add anything on top, and I structurally cannot — under Meta's Tech Provider model the account is yours and the billing relationship is between you and Meta. You can open it and see exactly what was charged. A reminder is one message; at Meta's utility rate a clinic sending several hundred a month is spending in the low hundreds of pesos.",
+  },
+  {
+    q: "How fast does it go live?",
+    a: "Simple setups launch in days; more complex integrations typically take two to six weeks. You will get a realistic date on the first call, not a number designed to close you.",
+  },
+  {
+    q: "What happens when it doesn't know the answer?",
+    a: "It does not guess. The assistant answers from content you have approved, and when a question falls outside that it takes the customer's details and alerts you instead of inventing something. Grounded answers and a human handoff are the design, not a setting.",
+  },
+  {
+    q: "Is the Spanish any good?",
+    a: "It is Mexican Spanish written for Mexican customers, not English run through a translator, and it switches mid-conversation when your customer does. Read the Spanish version of this page and judge it yourself — that is the same standard your customers will get.",
+  },
+  {
+    q: "What if I want to leave?",
+    a: "Cancel whenever you want: it takes effect at the end of the month you have already paid for, and there is nothing else to settle. Your Facebook Page, your Instagram account, your WhatsApp Business Account and your customer data are in your name the whole time, so leaving means switching them off, not getting them back.",
+  },
+  {
+    q: "I already have Basic. What actually changes?",
+    a: "Your assistant stops being a Messenger assistant and becomes the one your customers meet everywhere — the same brain, the same answers, on Instagram and your website too. Reminders start going out on WhatsApp. And the competitor report starts arriving. Nothing you have is rebuilt or relearned.",
+  },
+];
+---
+
+<BaseLayout
+  title="Premium Plan — Every Channel Answered | CushLabs.ai"
+  description="Instagram comments and DMs, your website, WhatsApp reminders from your own number, and a weekly competitor report. One managed assistant, $3,490 MXN/mo + IVA."
+>
+  <!-- ══ HERO ══ -->
+  <section class="pr-hero relative flex items-center text-slate-50">
+    <Container size="md">
+      <div class="max-w-3xl mx-auto text-center py-24 flex flex-col items-center">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-white text-sm font-semibold mb-8 backdrop-blur-sm">
+          <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+          Premium &middot; four channels, one assistant
+        </div>
+
+        <h1 class="pr-h1 font-display font-bold text-white">
+          Everywhere Your Customers Write, Someone Answers.
+        </h1>
+
+        <p class="pr-sub">
+          Premium puts the same assistant on Instagram, your website and Facebook
+          Messenger, and sends WhatsApp reminders from your own number.
+        </p>
+
+        <ul class="mb-9 space-y-2 text-slate-200 text-left">
+          <li class="flex gap-3">
+            <span class="text-cush-orange">&#10003;</span>
+            Instagram comments answered in public, then followed up in DMs
+          </li>
+          <li class="flex gap-3">
+            <span class="text-cush-orange">&#10003;</span>
+            WhatsApp reminders from your own number &mdash; fewer no-shows
+          </li>
+          <li class="flex gap-3">
+            <span class="text-cush-orange">&#10003;</span>
+            One weekly email on what your competitors changed
+          </li>
+        </ul>
+
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a
+            href="/consultation/"
+            class="group inline-flex items-center gap-2 px-8 py-4 bg-cush-orange text-black font-display font-semibold rounded-lg hover:bg-cush-orange/90 transition-all duration-300 shadow-lg shadow-cush-orange/25 hover:shadow-xl hover:shadow-cush-orange/30 text-lg"
+          >
+            Book a Free 30-Min Call
+            <svg class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+          <a href="/pricing/" class="font-display font-medium text-slate-300 hover:text-white underline underline-offset-4 decoration-white/30 hover:decoration-cush-orange transition-all">
+            Compare all three plans &rarr;
+          </a>
+        </div>
+
+        <p class="mt-6 text-sm text-slate-300">
+          Free 1-week trial, starting the day it goes live &middot; no setup fee &middot; no contract
+        </p>
+      </div>
+    </Container>
+  </section>
+
+  <!-- ══ TRUST BAR ══ -->
+  <section class="py-6 bg-gray-900 text-gray-300 border-y border-gray-800">
+    <Container size="lg">
+      <p class="text-center text-sm">
+        35+ projects delivered &middot; Fortune 500 IT leadership at Praxair/Linde
+        &middot; bilingual EN/ES throughout &middot; you work directly with the person who builds it
+      </p>
+    </Container>
+  </section>
+
+  <!-- ══ PROOF ══ -->
+  <section class="py-20 md:py-28">
+    <Container size="lg">
+      <div class="max-w-3xl mx-auto rounded-2xl border-l-4 border-cush-orange bg-gray-50 dark:bg-gray-900/50 p-8 md:p-12 shadow-sm">
+        <div class="font-display font-semibold text-xs tracking-widest text-cush-orange mb-4">
+          BUILT ON MY OWN BUSINESS FIRST
+        </div>
+        <h2 class="font-display font-bold text-3xl md:text-[2.75rem] text-gray-900 dark:text-white mb-6 leading-[1.1] tracking-tight">
+          I ran this on my own customers before I offered it to yours.
+        </h2>
+        <p class="text-lg md:text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
+          NY English Teacher is my coaching business. Its assistant answers in
+          English and Spanish, qualifies every enquiry before it reaches me, and
+          books sessions while I am asleep. It had to work there first &mdash; on my
+          own revenue, with my own customers &mdash; before it was something I was
+          willing to sell.
+        </p>
+      </div>
+    </Container>
+  </section>
+
+  <!-- ══ THE PROBLEM ══ -->
+  <section class="py-20 md:py-28 bg-gray-50 dark:bg-gray-900/30 border-y border-gray-100 dark:border-gray-800">
+    <Container size="lg">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="font-display font-bold text-3xl md:text-4xl text-gray-900 dark:text-white mb-8 leading-tight tracking-tight">
+          One channel was never the problem. All of them at once is.
+        </h2>
+        <div class="space-y-5 text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+          <p>
+            A comment on Instagram. A message on Messenger. Someone on your website
+            at 11pm. A customer who needs reminding about Thursday. Each one is
+            thirty seconds of work, and together they are a second job you never
+            applied for.
+          </p>
+          <p>
+            So the comment waits four hours. The website visitor leaves. The
+            reminder does not get sent, and Thursday has a hole in it.
+          </p>
+          <p class="text-gray-900 dark:text-white font-semibold">
+            None of that is a discipline problem. There is just more inbox than there
+            is you.
+          </p>
+        </div>
+      </div>
+    </Container>
+  </section>
+
+  <!-- ══ WHAT PREMIUM IS ══ -->
+  <section class="py-20 md:py-28">
+    <Container size="lg">
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <h2 class="font-display font-bold text-3xl md:text-4xl text-gray-900 dark:text-white mb-4 leading-tight tracking-tight">
+          What Premium adds
+        </h2>
+        <p class="text-lg text-gray-600 dark:text-gray-300">
+          Everything in Basic keeps running. These four start.
+        </p>
+      </div>
+
+      <div class="grid gap-6 md:grid-cols-2 max-w-4xl mx-auto">
+        {includes.map((item, i) => (
+          <div class="p-7 rounded-xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800">
+            <div class="font-display font-bold text-cush-orange text-sm mb-3">
+              {String(i + 1).padStart(2, "0")}
+            </div>
+            <h3 class="font-display font-semibold text-xl text-gray-900 dark:text-white mb-3">{item.title}</h3>
+            <p class="text-gray-600 dark:text-gray-300 leading-relaxed">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="max-w-4xl mx-auto mt-10 p-7 rounded-xl bg-gray-50 dark:bg-gray-900/40 border border-gray-200 dark:border-gray-800">
+        <h3 class="font-display font-semibold text-lg text-gray-900 dark:text-white mb-4">
+          And everything Basic already does
+        </h3>
+        <ul class="grid gap-3 sm:grid-cols-2">
+          {basicToo.map(item => (
+            <li class="flex gap-3 text-gray-600 dark:text-gray-300">
+              <svg class="w-5 h-5 shrink-0 text-cush-orange mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </Container>
+  </section>
+
+  <!-- ══ WHY IT HOLDS TOGETHER ══ -->
+  <section class="py-20 md:py-28 bg-gray-50 dark:bg-gray-900/30 border-y border-gray-100 dark:border-gray-800">
+    <Container size="lg">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="font-display font-bold text-3xl md:text-4xl text-gray-900 dark:text-white mb-8 leading-tight tracking-tight">
+          Four channels, one brain, one bill.
+        </h2>
+        <div class="space-y-5 text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+          <p>
+            <span class="font-semibold text-gray-900 dark:text-white">It is one assistant, not four tools.</span>
+            Change a price once and Messenger, Instagram and your website all say the
+            new one. There is no version of your business that is only correct on some
+            channels.
+          </p>
+          <p>
+            <span class="font-semibold text-gray-900 dark:text-white">Everything stays in your name.</span>
+            Your Page, your Instagram account, your WhatsApp Business Account, your
+            customer data. Not a sub-account I control &mdash; which is also why you can
+            leave without asking me for anything back.
+          </p>
+          <p>
+            <span class="font-semibold text-gray-900 dark:text-white">Meta bills you directly for WhatsApp delivery, at Meta's rate.</span>
+            I add nothing on top. That is not generosity, it is how the Tech Provider
+            model works: the account is yours, so the charge is yours, and you can
+            read it yourself.
+          </p>
+          <p>
+            <span class="font-semibold text-gray-900 dark:text-white">It is managed, not handed to you.</span>
+            Setup, training, testing, the weekly report, the monthly tuning. You never
+            have to learn another piece of software to get the value out of this one.
+          </p>
+        </div>
+      </div>
+    </Container>
+  </section>
+
+  <!-- ══ FIT ══ -->
+  <section class="py-20 md:py-28">
+    <Container size="lg">
+      <div class="grid gap-12 md:grid-cols-2 max-w-4xl mx-auto">
+        <div>
+          <h2 class="font-display font-bold text-2xl text-gray-900 dark:text-white mb-6">
+            Premium is for you if
+          </h2>
+          <ul class="space-y-4">
+            {forYou.map(item => (
+              <li class="flex gap-3 text-gray-600 dark:text-gray-300 leading-relaxed">
+                <svg class="w-5 h-5 shrink-0 text-cush-orange mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <h2 class="font-display font-bold text-2xl text-gray-900 dark:text-white mb-6">
+            It is not, if
+          </h2>
+          <ul class="space-y-4">
+            {notForYou.map(item => (
+              <li class="flex gap-3 text-gray-600 dark:text-gray-300 leading-relaxed">
+                <span class="text-gray-400 shrink-0 mt-1">&mdash;</span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </Container>
+  </section>
+
+  <!-- ══ PRICE ══ -->
+  <section class="py-20 md:py-28 bg-gray-50 dark:bg-gray-900/30 border-y border-gray-100 dark:border-gray-800">
+    <Container size="md">
+      <div class="max-w-2xl mx-auto p-8 md:p-10 rounded-2xl bg-gray-900 dark:bg-gray-950 text-white border border-gray-800 text-center">
+        <div class="font-display font-semibold text-xs tracking-widest text-gray-400 mb-4">PREMIUM</div>
+        <div class="font-display font-bold text-5xl mb-2">
+          $3,490 <span class="text-xl font-medium text-gray-400">MXN/mo + IVA</span>
+        </div>
+        <p class="text-gray-300 mb-8">
+          Two locations included. Meta bills you separately for WhatsApp delivery, on
+          your own account, at Meta's rate.
+        </p>
+        <div class="space-y-2 text-gray-300 mb-8 text-left max-w-sm mx-auto">
+          <p class="flex gap-3"><span class="text-cush-orange">&#10003;</span> Free 1-week trial, from the day it goes live</p>
+          <p class="flex gap-3"><span class="text-cush-orange">&#10003;</span> No setup fee, no deposit</p>
+          <p class="flex gap-3"><span class="text-cush-orange">&#10003;</span> Cancel anytime, effective end of the paid month</p>
+        </div>
+        <a
+          href="/consultation/"
+          class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-cush-orange text-black font-display font-semibold rounded-lg hover:bg-cush-orange/90 transition-all text-lg"
+        >
+          Book a Free 30-Min Call
+        </a>
+        <p class="mt-4 text-sm text-gray-400">
+          Thirty minutes. If Premium is more than you need, I will tell you on the call.
+        </p>
+      </div>
+    </Container>
+  </section>
+
+  <!-- ══ OBJECTIONS ══ -->
+  <section class="py-20 md:py-28">
+    <Container size="md">
+      <h2 class="font-display font-bold text-3xl md:text-4xl text-gray-900 dark:text-white mb-10 text-center leading-tight tracking-tight">
+        The questions people actually ask
+      </h2>
+      <div class="space-y-4 max-w-3xl mx-auto">
+        {faqs.map(faq => (
+          <details class="group rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900">
+            <summary class="flex cursor-pointer items-center justify-between gap-4 p-6 font-display font-semibold text-gray-900 dark:text-white">
+              {faq.q}
+              <span class="shrink-0 text-cush-orange transition-transform group-open:rotate-45 text-2xl leading-none">+</span>
+            </summary>
+            <div class="px-6 pb-6 text-gray-600 dark:text-gray-400 leading-relaxed whitespace-pre-line">
+              {faq.a}
+            </div>
+          </details>
+        ))}
+      </div>
+    </Container>
+  </section>
+
+  <FinalCTA locale={locale} />
+</BaseLayout>
+
+<style>
+  /* Reuses the hero treatment the rest of the site uses. No image yet: the
+     gradient over the dark base renders as an intentional dark hero rather than
+     a broken one, which is how /instagram/ shipped before its photo arrived. */
+  /* The photo is already a low-key night scene — the overlay that keeps white
+     text legible over a bright shop interior would crush this one to black. So
+     it is roughly half the opacity used on /instagram/, and it is NOT a mistake
+     that these two heroes differ.
+
+     Focal point is 50% horizontally because the phone sits centre-low and the
+     headline sits over the dark upper half deliberately. A phone crop keeps the
+     middle third, which keeps the phone. */
+  .pr-hero {
+    min-height: 92svh;
+    background-color: #0d0f16;
+    background-image:
+      linear-gradient(
+        to bottom,
+        rgba(8, 10, 16, 0.55) 0%,
+        rgba(8, 10, 16, 0.38) 45%,
+        rgba(8, 10, 16, 0.72) 100%
+      ),
+      url("/images/premium-hero-v1.webp");
+    background-size: cover;
+    background-position: 50% 42%;
+    background-repeat: no-repeat;
+  }
+
+  @media (max-aspect-ratio: 1 / 1) {
+    .pr-hero {
+      min-height: 86svh;
+      background-position: 50% 52%;
+    }
+  }
+
+  .pr-h1 {
+    font-size: clamp(2.1rem, 5.2vw, 3.6rem);
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.25rem;
+    text-wrap: balance;
+  }
+
+  .pr-sub {
+    font-size: clamp(1.05rem, 2vw, 1.3rem);
+    line-height: 1.6;
+    color: rgb(203 213 225);
+    max-width: 40rem;
+    margin-bottom: 2rem;
+    text-wrap: pretty;
+  }
+</style>
