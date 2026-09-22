@@ -472,6 +472,66 @@ that gets bypassed with `--no-verify`.
 
 ## Session History
 
+## Session: 2026-09-21 — The capability pages moved under /services/, and the move nearly broke client onboarding
+
+### Accomplished
+
+- **Six capability pages moved from the site root to `/services/`**, both languages (PR #341),
+  joining `/services/premium/`. 28 exact-match redirects, 43 total. 17 files had internal
+  references rewritten; the twelve moved files had their relative imports re-rooted.
+- **Tier cards are individually linkable** (PR #337, open) — `/pricing/#basic|#premium|#ultra`
+  in both languages. Before this there was no way to point an ad, a proposal or an email at a
+  single plan.
+- **`/premium/` stopped being a 404.** It shipped in #338, moved to `/services/premium/` without
+  a redirect, and had been dead since. Nothing in the repo linked to it, but it was briefly live.
+
+### The finding that mattered
+
+**`src/pages/messenger-assistant/` is not only a page — it is a directory holding the live
+Facebook OAuth flow.** `connect.astro` hands off to `messenger.cushlabs.ai/oauth/start`;
+`connected.astro` is where the Worker returns the client after Facebook, and **that URL is
+hardcoded in `cushlabs-messenger-bot` (`src/lib/oauth.ts`, `redirectToConnected`)**.
+
+Moving it would have broken the visible end of client onboarding and surfaced only the next
+time a real client connected a Page. Both files stayed put, and every redirect added is
+exact-match — `/messenger-assistant/:path*` would have swallowed them.
+
+Checked against live Meta first: app `848827908228231` registers exactly one OAuth redirect URI
+and it is on `messenger.cushlabs.ai`, not this site. **Meta was never the exposure. The Worker's
+own redirect was.**
+
+### Tech debt identified
+
+- **`audit:predeploy` fails on `main` and has been for some time** — ~560 favicon
+  trailing-slash warnings plus two orphan pages (`/salons/`, `/salones/`, deliberate ad landing
+  pages). Verified against a clean `main`, so it is not a regression from this work. A gate that
+  always fails is a gate nobody can read; it needs an allowlist for asset hrefs and an
+  orphan-exempt list.
+
+### Recurring failure mode observed, not yet a rule
+
+**Two Claude sessions worked this repo simultaneously and the working tree was switched to
+another session's branch mid-task.** Nothing was lost — the work was already pushed — but a
+report of "no tier pages exist" was false the moment it was made, because `/premium/` existed
+on an unmerged branch. When concurrent sessions are possible, `git fetch` and check branches
+before asserting what does or does not exist in a repo.
+
+### Open Items
+
+1. **PR #337 and PR #341 are open with green CI.** Both are complete and reviewed-ready; neither
+   is merged. `https://github.com/RCushmaniii/cushlabs/pull/337` ·
+   `https://github.com/RCushmaniii/cushlabs/pull/341`
+2. **Ultra tier page is blocked on one question** — what makes someone buy Ultra rather than
+   Premium, given Voice is deliberately de-prioritised in sales? Basic can be written without
+   input; Ultra cannot.
+3. **Is marketing-template authoring a service sold today?** Robert said CushLabs can create
+   utility *and* marketing templates. Every WhatsApp surface currently says reminders-only.
+4. **Services dropdown** — explicitly sequenced to follow the page move, which is now done.
+5. **The per-service "Included in: Basic · Premium · Ultra" rewrite** on Services. Direction
+   agreed; the price lines carry real upgrade arguments, so it needs deliberate rewriting
+   through the copywriting skill rather than a pattern replace.
+6. **`audit:predeploy` is red on main** — see tech debt above.
+
 ## Session: 2026-09-19 — Instagram went live without an approval, WhatsApp stopped being resold, and two capacity models were wrong
 
 ### Accomplished
