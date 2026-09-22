@@ -12,7 +12,7 @@ const { locale, id, isAlternate = false } = Astro.props;
 // This component handles the rendering logic for all 5 services by selecting the right ID.
 const data = {
   'support-assistants': {
-    learnMoreUrl: { en: '/website-chatbot/', es: '/es/website-chatbot/' },
+    learnMoreUrl: { en: '/services/website-chatbot/', es: '/es/services/website-chatbot/' },
     learnMoreLabel: { en: 'Full service details →', es: 'Ver detalles completos →' },
     en: {
       heading: "Intelligent Customer Support AI Chatbot",
@@ -74,9 +74,9 @@ const data = {
     }
   },
   'messenger-ai': {
-    learnMoreUrl: { en: '/messenger-assistant/', es: '/es/messenger-assistant/' },
+    learnMoreUrl: { en: '/services/messenger-assistant/', es: '/es/services/messenger-assistant/' },
     learnMoreLabel: { en: 'How it works on Facebook →', es: 'Cómo funciona en Facebook →' },
-    learnMore2Url: { en: '/instagram/', es: '/es/instagram/' },
+    learnMore2Url: { en: '/services/instagram/', es: '/es/services/instagram/' },
     learnMore2Label: { en: 'How it works on Instagram →', es: 'Cómo funciona en Instagram →' },
     en: {
       heading: "An AI Assistant on Facebook and Instagram That Sells While You Sleep",
@@ -145,7 +145,7 @@ const data = {
     // Full detail (all 7 included items, full problem narrative, comparison table,
     // MarketSignal live link) now lives on /competitive-intelligence/ — this teaser
     // stays short on purpose. Don't re-expand it; add detail to the dedicated page instead.
-    learnMoreUrl: { en: '/competitive-intelligence/', es: '/es/competitive-intelligence/' },
+    learnMoreUrl: { en: '/services/competitive-intelligence/', es: '/es/services/competitive-intelligence/' },
     learnMoreLabel: { en: 'Full service details →', es: 'Ver detalles completos →' },
     liveUrl: 'https://marketsignal.cushlabs.ai',
     liveLabel: { en: 'See MarketSignal Live →', es: 'Ver MarketSignal en Vivo →' },
@@ -205,7 +205,7 @@ const data = {
   'voice-agent': {
     liveUrl: 'https://voice.cushlabs.ai',
     liveLabel: { en: 'Hear the Demo Agents →', es: 'Escuchar los Agentes Demo →' },
-    learnMoreUrl: { en: '/voice-agent/', es: '/es/voice-agent/' },
+    learnMoreUrl: { en: '/services/voice-agent/', es: '/es/services/voice-agent/' },
     learnMoreLabel: { en: 'Full service details →', es: 'Ver detalles completos →' },
     en: {
       heading: "AI Voice Agent That Answers Your Phone Like Your Best Employee",
@@ -287,7 +287,7 @@ const data = {
     // guided call. `meta-connect-whatsapp-advanced-access` reads reachable_by robert_only
     // because no unrelated person has completed onboarding unaided. Mirrors
     // src/pages/whatsapp.astro. Do not soften the self-serve line in `notIncluded`.
-    learnMoreUrl: { en: '/whatsapp/', es: '/es/whatsapp/' },
+    learnMoreUrl: { en: '/services/whatsapp/', es: '/es/services/whatsapp/' },
     learnMoreLabel: { en: 'Full service details →', es: 'Ver detalles completos →' },
     primaryCtaLabel: { en: 'Get in Touch', es: 'Escríbenos' },
     primaryCtaHref: { en: '/contact/', es: '/es/contact/' },

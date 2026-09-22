@@ -54,4 +54,4 @@ En CushLabs preferimos ser honestos: no todos necesitan lo mismo. Por eso empeza
 
 No dejes que "necesito una página web" te frene ni te vacíe la cartera. Para la mayoría de los negocios locales, tu página de Facebook ya es tu tienda. Lo que falta no es una web: es asegurarte de que cada mensaje se convierta en cliente.
 
-¿Quieres ver cómo se siente en la práctica? Conoce el [Asistente de IA para Messenger](/es/messenger-assistant/) que ya atiende clientes reales en producción, contesta en segundos y te avisa cuando alguien está listo para comprar.
+¿Quieres ver cómo se siente en la práctica? Conoce el [Asistente de IA para Messenger](/es/services/messenger-assistant/) que ya atiende clientes reales en producción, contesta en segundos y te avisa cuando alguien está listo para comprar.

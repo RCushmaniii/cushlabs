@@ -77,4 +77,4 @@ Saca tus propias cuentas. Por una fracción del sueldo de una recepción, un asi
 
 Esa es toda la idea: usa la IA para las conversaciones repetitivas y urgentes que no paran de llegar, y usa a las personas para los momentos de mayor valor y trato humano que ganan lealtad y cierran la venta. Los negocios que ganan eligen a la persona correcta —o la tecnología correcta— para cada trabajo.
 
-¿Quieres ver cómo se ve en tu negocio? Conoce el [Asistente de IA para Messenger](/es/messenger-assistant/) que ya atiende clientes reales en producción.
+¿Quieres ver cómo se ve en tu negocio? Conoce el [Asistente de IA para Messenger](/es/services/messenger-assistant/) que ya atiende clientes reales en producción.

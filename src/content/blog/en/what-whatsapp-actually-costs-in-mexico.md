@@ -99,6 +99,6 @@ The conversation happens on Messenger, Instagram and the website, where a bot is
 
 That split is not a compromise. It is what each channel is actually good at.
 
-If you want to see how it fits together — reminders on WhatsApp, conversation everywhere else, one assistant behind all of it — that combination is the [Premium plan](/services/premium/). The mechanics of the WhatsApp side are on the [WhatsApp reminders page](/whatsapp/).
+If you want to see how it fits together — reminders on WhatsApp, conversation everywhere else, one assistant behind all of it — that combination is the [Premium plan](/services/premium/). The mechanics of the WhatsApp side are on the [WhatsApp reminders page](/services/whatsapp/).
 
 And if it turns out one channel is genuinely where your customers are, you will hear that from me on the call. Paying for four when you need one is its own kind of expensive.
