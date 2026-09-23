@@ -12,7 +12,7 @@
 > Resolved items collapse to one line under [Resolved](#resolved-technical-debt); the trail stays so a
 > future session does not re-litigate a settled decision.
 
-**16 open** · 19 resolved · last reconciled 2026-09-23
+**17 open** · 19 resolved · last reconciled 2026-09-23
 
 ### #31 — The homepage chat widget answers prospects and records nothing at all
 
@@ -102,24 +102,65 @@ nothing on screen to tell them they are looking at the wrong tenant rather than 
 **Next:** render the signed-in business name and email in the admin header; replace both hardcoded
 defaults with empty fields and a placeholder attribute.
 
-### #35 — Production database holds eight test tenants and duplicate rows the provisioning script created
+### #35 — Signing in silently creates a whole new empty business, and nothing says so
 
-**Low** · opened 2026-09-23 · blocks: nothing; erodes trust in every count read from this database
+**Medium** · opened 2026-09-23 · raised from Low the same day · blocks: nothing; erodes trust in
+every count read from this database, and silently strands any new signup
 
-Live counts on 2026-09-23: 11 businesses, of which 8 are fixtures — "Ada Lovelace's Business",
-"Ada's Test Business", "Babbage Test Co", "Charles Babbage's Business" (×2), "Marie Curie's
-Business" (×3), "john gault's Business". Six `guest-…` users are duplicated. And
+Live counts on 2026-09-23: 11 businesses, of which 8 carry a person's name — "Ada Lovelace's
+Business", "Charles Babbage's Business" (×2), "Marie Curie's Business" (×3), "Robert Cushman's
+Business", "john gault's Business". **They are not leftover fixtures someone forgot to delete.**
+`lib/auth.ts` `getAuthUser()` creates one on demand: when a Clerk user has no row in `User`, it
+inserts the user, a `Business` named `${name}'s Business`, an owner `Membership`, a `Bot` called
+"Mi Chatbot" and a free-plan `Subscription` — silently, on first page load, with no onboarding and
+no notice.
+
+That is the whole explanation for the 2026-09-23 confusion. Robert did not land in someone else's
+account or a stale fixture; **signing in created him a brand-new empty business and dropped him into
+it**, while the assistant he wanted to manage stayed in the tenant only `demo-bot@cushlabs.ai` owns.
+Every "…'s Business" row in that list is somebody who signed in once.
+
+Two further defects in the same function: the membership lookup is a `LEFT JOIN` with `LIMIT 1` and
+**no `ORDER BY`**, so a user belonging to more than one business gets an arbitrary one — which is
+also why there is no "which accounts do I have access to" screen to build against yet. And
 `demo-bot@cushlabs.ai` holds **7 identical Membership rows** for the CushLabs business, because the
 membership insert in `scripts/provision-cushlabs-demo.ts` has no conflict target while the rest of
-the script is a careful upsert.
+the script is a careful upsert. Six `guest-…` users are duplicated for the same class of reason.
 
 `getBusinessPersona()` survives those 7 duplicates only because it ends in `.limit(1)` over an
 unordered join. That is luck, not design; it would return an arbitrary row if the duplicates ever
 disagreed.
 
-**Next:** give Membership a unique constraint on (businessId, userId) and make the script's insert
-idempotent; then delete the fixture tenants in one reviewed migration, after confirming none is
-referenced by a live deployment's env vars.
+**Next:** three things, in this order. (1) Decide what signing in should actually do — auto-creating
+a business is a defensible default for a self-serve product and a trap for an operator console, and
+it must at minimum announce itself instead of happening silently. (2) Give Membership a unique
+constraint on (businessId, userId), make the provisioning script's insert idempotent, and give
+`getAuthUser` a deterministic `ORDER BY` so one user's business does not change between requests.
+(3) Only then delete the auto-created tenants, in one reviewed migration, after confirming none is
+referenced by a live deployment's env vars — and note that deleting them without fixing (1) just
+recreates them on the next sign-in.
+
+### #36 — The admin API is soundly built; the gap is that the UI never says anything
+
+**Informational** · opened 2026-09-23 · not a defect; recorded to stop the next session re-auditing it
+
+All 25 routes under `app/api/admin/` were checked on 2026-09-23. Every one calls
+`requirePermission(<permission>)` from `lib/auth.ts`, which resolves the Clerk session, returns 401
+without one, checks a real role-based permission and returns 403 without it — then scopes its query
+by `user.businessId` or `user.id`. A sweep for unscoped "most recent row" reads found exactly one,
+`/api/embed/settings`, fixed in `ai-chatbot-saas` PR #101; `/api/plans` is a global plan catalogue
+and is correctly unscoped.
+
+This matters because the product read as neglected end to end, and it is not. **The authorization
+and tenant-isolation layer is the well-built part.** What is missing sits entirely in the UI and in
+the public embed surface: no header, no signed-in identity, no indication of which account is being
+edited, no list of what a login can reach, and until PR #101 no conversation logging and a
+cross-brand persona fallback. Those read as rot from the outside while the layer underneath is fine.
+
+The practical consequence for planning: the operator-console work ported from
+`cushlabs-messenger-bot/admin` is **presentation on top of a sound API**, not a rewrite.
+
+**Next:** nothing to fix here. Re-read this before estimating any `ai-chatbot-saas` admin work.
 
 ### #29 — The homepage advertises booking on three channels; only one of them books
 
@@ -719,7 +760,7 @@ Marie Curie ×3, john gault). Six duplicate `guest-…` users. Seven identical M
 `demo-bot@cushlabs.ai` → CushLabs, because that one insert in the provisioning script has no
 conflict target while everything around it is a careful upsert; `getBusinessPersona()` survives on a
 `.limit(1)` over an unordered join. Filed as
-[#35](#35--production-database-holds-eight-test-tenants-and-duplicate-rows-the-provisioning-script-created).
+[#35](#35--signing-in-silently-creates-a-whole-new-empty-business-and-nothing-says-so).
 
 ### Recommended order, by the operating-vision precedence
 
@@ -727,6 +768,65 @@ Revenue proximity first, tidiness last: **#31** (see the leads at all) → **#32
 leak) → **#34** (make the dashboard say whose account it is) → **#33** (decide whether the CushLabs
 tenant gets a real login) → **#35** (clean the database) → the knowledge-refresh backlog item.
 All of it lands in `ai-chatbot-saas`, none of it in this repo.
+
+### Later the same day — the fixes shipped, and the real cause of the confusion surfaced
+
+**[ai-chatbot-saas#101](https://github.com/RCushmaniii/ai-chatbot-saas/pull/101)** — closes
+[#31](#31--the-homepage-chat-widget-answers-prospects-and-records-nothing-at-all),
+[#32](#32--if-the-persona-lookup-ever-returns-null-the-cushlabsai-widget-introduces-itself-as-new-york-english-teacher)
+and [#34](#34--the-admin-dashboard-never-says-which-account-it-is-editing-and-ships-another-businesss-name-as-placeholder-data).
+The widget now sends businessId, botId, a localStorage-persisted visitorId, a per-load sessionId and
+the server-assigned conversationId; the route's logging guard uses the same effective ids the answer
+path uses; a missing persona returns a neutral bilingual reply and reports to Sentry instead of
+falling back to the New York English Teacher prompt; the admin header names the business, email and
+role and warns explicitly when the signed-in business is not the one serving this deployment's
+widget; both hardcoded NYET defaults are gone.
+
+**A fourth defect was found while in there and fixed in the same PR.**
+`/api/embed/settings` selected the most recently updated `bot_settings` row **across the entire
+table with no tenant predicate** — the public widget would render another business's name, icon and
+starter questions the moment that business saved settings. Unnoticed because production holds
+exactly one such row.
+
+Typecheck, lint and build clean; 11/11 Playwright. **The three new contract tests were run against
+the pre-fix widget and all three failed**, then passed after — per Recurring Failure Modes #9, a
+clean report from a detector written in the same session is not evidence until it has been shown to
+fire.
+
+### The cause of the whole week, found in `lib/auth.ts`
+
+`getAuthUser()` **creates a business on demand.** A Clerk user with no `User` row gets a user, a
+`Business` named `${name}'s Business`, an owner membership, a bot called "Mi Chatbot" and a
+free-plan subscription — silently, on first page load. "Robert Cushman's Business" was not a stale
+fixture and not somebody else's account. **Signing in created it, and dropped him into it.** Every
+"…'s Business" row in that database is one person who signed in once. Debt
+[#35](#35--signing-in-silently-creates-a-whole-new-empty-business-and-nothing-says-so) was rewritten
+from "leftover test tenants" to what is actually happening, and raised from Low to Medium.
+
+### The admin API is the well-built part
+
+All 25 routes under `app/api/admin/` were checked: every one calls `requirePermission()` — real
+Clerk session, real role check, 401 and 403 where they belong — and scopes by `user.businessId` or
+`user.id`. The sweep for unscoped "latest row" reads found exactly one, the embed settings route
+fixed above. Recorded as
+[#36](#36--the-admin-api-is-soundly-built-the-gap-is-that-the-ui-never-says-anything) so the next
+session does not re-audit it, and because it changes the shape of the console work: **presentation
+on top of a sound API, not a rewrite.**
+
+### Read across from `cushlabs-messenger-bot/admin`
+
+That console solves, already, every gap Robert named: Clerk `<SignedIn>`/`<SignedOut>` with a
+`<UserButton>` in a sticky top bar; a server-side authorization probe whose 403 screen **prints the
+email Clerk actually reported** — the one feature that would have ended this week's confusion in ten
+seconds; a landing view listing every Page the login can reach; hash-routing so screens are
+deep-linkable and Back works; and a four-state status vocabulary that names the broken states in full
+sentences, with an unrecognised status rendered loudly because a blank pill "would read as 'no
+problem here' — the exact false reassurance the column exists to remove."
+
+Its `TopBar`, `Brand` and theme components are plain Tailwind plus `@clerk/clerk-react`, and
+`ai-chatbot-saas` already has Tailwind, shadcn and `@clerk/nextjs`, which exports the same
+primitives. The one piece that does not port is the `authedFetch` + Worker probe — and only because
+Next.js resolves the user server-side already, which makes it simpler rather than harder.
 
 ### Nothing shipped to the site
 
