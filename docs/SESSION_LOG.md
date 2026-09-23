@@ -24,8 +24,9 @@ The floating chat widget this repo mounts (`src/layouts/BaseLayout.astro:293`) i
 used by `ai-chatbot-saas` commit `36e9406` on 2026-08-27 to replace 13 stale chunks with the
 current 48.
 
-Converso **also** ships a working admin UI at `/admin` that writes to the same rows. It is reachable
-(see Recurring Failure Modes #10), and an edit made there is live immediately. The next run of the
+Converso **also** ships a working admin UI at `/admin` that writes to the same rows. **Robert signed
+in and confirmed it opens on 2026-09-23**, so this hazard is live and not theoretical. An edit made
+there is live immediately. The next run of the
 provisioning script overwrites it with no diff, no warning and no record that a UI edit ever existed.
 Neither the script header nor the admin UI says so.
 
@@ -561,8 +562,9 @@ be corrected.
 - **The 404 is Clerk's auth gate.** `X-Clerk-Auth-Reason: protect-rewrite`,
   `X-Matched-Path: /_not-found`, from `await auth.protect()` at `proxy.ts:114`. The route is
   deployed. `ADMIN_EMAIL` is set in the production environment (name confirmed, value not read), and
-  `app/(chat)/admin/page.tsx` gates on an exact email match, so the admin dashboard is reachable by
-  signing in at `https://www.soyconverso.com/sign-in`.
+  `app/(chat)/admin/page.tsx` gates on an exact email match. **Robert signed in on 2026-09-23 and
+  confirmed `/admin` opens** — the one thing this session could not verify itself, since reading
+  `ADMIN_EMAIL`'s value was deliberately avoided.
 - **No broken links in the knowledge base.** Its only two outbound site URLs — `/consultation/` and
   `/es/reservar/` — both still resolve after the `/services/` restructure.
 
