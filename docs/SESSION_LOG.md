@@ -12,9 +12,9 @@
 > Resolved items collapse to one line under [Resolved](#resolved-technical-debt); the trail stays so a
 > future session does not re-litigate a settled decision.
 
-**17 open** · 19 resolved · last reconciled 2026-09-23
+**15 open** · 22 resolved · last reconciled 2026-09-23
 
-### #31 — The homepage chat widget answers prospects and records nothing at all
+### ~~#31~~ — The homepage chat widget answers prospects and records nothing at all — **RESOLVED 2026-09-23**
 
 **High** · opened 2026-09-23 · costs: every lead the assistant has ever talked to
 
@@ -40,7 +40,7 @@ and a per-load `sessionId`. Do not "fix" it by loosening the guard to `effective
 without a visitor and session id every message becomes its own orphan conversation. Included in the
 handoff prompt recorded in the 2026-09-23 session entry.
 
-### #32 — If the persona lookup ever returns null, the cushlabs.ai widget introduces itself as New York English Teacher
+### ~~#32~~ — **RESOLVED 2026-09-23** — If the persona lookup ever returns null, the cushlabs.ai widget introduces itself as New York English Teacher
 
 **High** · opened 2026-09-23 · blocks: nothing today; brand damage on the front door the day it fires
 
@@ -84,7 +84,7 @@ manages the live assistant, which then genuinely creates the overwrite hazard an
 (b) Keep the tenant script-owned and put the explanation in the admin UI instead. Either way the
 dashboard must show **which business it is editing** — see #34.
 
-### #34 — The admin dashboard never says which account it is editing, and ships another business's name as placeholder data
+### ~~#34~~ — **RESOLVED 2026-09-23** — The admin dashboard never says which account it is editing, and ships another business's name as placeholder data
 
 **Medium** · opened 2026-09-23 · blocks: trusting anything the dashboard shows
 
@@ -161,6 +161,26 @@ The practical consequence for planning: the operator-console work ported from
 `cushlabs-messenger-bot/admin` is **presentation on top of a sound API**, not a rewrite.
 
 **Next:** nothing to fix here. Re-read this before estimating any `ai-chatbot-saas` admin work.
+
+### #37 — No repo has required status checks, so `gh pr merge --auto` merges immediately
+
+**Medium** · opened 2026-09-23 · blocks: nothing today; removes the safety net every merge assumes
+
+Observed three times on 2026-09-23 in `ai-chatbot-saas`. `gh pr merge --squash --auto` is meant to
+hold a PR until its checks go green. With no branch protection rule and no required status checks
+configured, GitHub has nothing to wait for, so the flag degrades to an immediate merge — PRs #102
+and #103 were both merged while their Playwright job was still running. Both happened to pass, which
+is luck, not process.
+
+The practical effect is that **CI on a PR is advisory.** Every "merged once CI was green" in this log
+describes a human or an assistant choosing to wait, not a gate enforcing it. That is fine while
+someone is watching and worthless the moment nobody is.
+
+**Next:** decide the policy before configuring it — a required check on a repo whose test job takes
+14 minutes changes how merging feels, and Vercel's Hobby deployment budget is already a constraint.
+Minimum worth having: require `build` (49s) on `main` for the deployed repos, leave the long
+Playwright job advisory, and never require a check that a fork PR cannot run. Applies fleet-wide, not
+just to this repo — check before assuming any repo gates anything.
 
 ### #29 — The homepage advertises booking on three channels; only one of them books
 
@@ -828,9 +848,85 @@ Its `TopBar`, `Brand` and theme components are plain Tailwind plus `@clerk/clerk
 primitives. The one piece that does not port is the `authedFetch` + Worker probe — and only because
 Next.js resolves the user server-side already, which makes it simpler rather than harder.
 
+### Evening — three PRs merged, and the bot would not quote its own price
+
+**[#101](https://github.com/RCushmaniii/ai-chatbot-saas/pull/101)** conversation logging, the persona
+fallback and the admin header · **[#102](https://github.com/RCushmaniii/ai-chatbot-saas/pull/102)**
+the operator console shell · **[#103](https://github.com/RCushmaniii/ai-chatbot-saas/pull/103)** the
+retrieval defect below. All merged and deployed. Tech debt #31, #32 and #34 closed.
+
+**#101 was verified against production, not assumed.** One real message to the live endpoint
+returned a `conversationId` — **the first one ever** — and the database now holds a
+`WidgetConversation` with both messages, correctly scoped. Those verification rows carry
+`visitor_id = VERIFY-claude-20260923` so they are distinguishable from a real prospect.
+
+### The bot refused to quote its own price when you named the company
+
+Asking the live assistant **"What does CushLabs cost?"** produced *"I can't provide specific pricing
+details here… book a free call"* while the complete price list sat in the database. Measured against
+the live embeddings:
+
+| Question | Pricing chunk |
+| --- | --- |
+| "How much does it cost?" | rank 1, 0.461 ✅ |
+| "¿Cuánto cuesta?" | rank 1, 0.557 ✅ |
+| **"What does CushLabs cost?"** | **not in the top six** ❌ |
+
+All five chunks retrieved for the brand-named query were brand-overview text. The persona then did
+exactly what it is told to do — nothing relevant in context, so don't guess, offer a call. **The
+answer was correct behaviour on top of a failed retrieval**, which is the shape that hides longest.
+
+**The cause is structural.** Only the title and the retrieval questions are embedded, never the
+prose. The overview chunk's questions are full of "CushLabs"; the pricing chunk's contained the token
+nowhere at all. The brand name in a query therefore pulled hard toward whichever chunk was *about*
+the brand, and topic words could not out-vote it. This is the worst phrasing to lose, because the
+widget lives on cushlabs.ai and **naming the company whose site you are standing on is the most
+natural way to ask.**
+
+### Two approaches were measured, and the obvious one was rejected
+
+Folding brand phrasings into the existing question list was tried first and rejected **on its
+numbers**: seven variants added to a thirteen-item list drag the centroid toward the brand token, and
+"How much does it cost?" — the phrasing that already worked — fell from 0.461 to **0.412**, while
+"How much is CushLabs?" still only reached rank 3. Trading the question that works for the question
+that does not is not a fix.
+
+The shipped approach gives the brand phrasings their **own vector**: two rows, same content,
+different embeddings, de-duplicated by content at read time so an alias never costs a context slot.
+The generic vector keeps its exact previous value. Every brand-named query now ranks 1 by a wide
+margin (0.737–0.786 against overview chunks at 0.601–0.699) and the plain phrasings are untouched.
+
+Verified on the **live** bot after reprovisioning: both "What does CushLabs cost?" and "¿Cuánto
+cuesta CushLabs?" return all three plans with correct MXN and USD figures, + IVA, and the 2-location
+policy. Regression checked in the same pass — "How much does it cost?" still answers with pricing,
+"What is CushLabs?" still returns the overview rather than the price list.
+
+**No claim text was changed.** The diff on the knowledge content array is a single indentation change
+to a field reference. This changed only how chunks are *found*.
+
+### A reprovision used to empty the live bot for as long as it ran
+
+Found while reading the script before running it. Step 8 deleted all 48 chunks and only then began
+embedding them one at a time — leaving the assistant on every page of cushlabs.ai with **no knowledge
+base at all** for the length of 48 sequential OpenAI round trips, answering "I'm not certain, let's
+book a call" to everything. A failure partway through left it permanently half-populated with no
+error state anyone would notice, because a bot with 20 chunks still answers; only the missing 28
+topics fall back, and that is indistinguishable from caution.
+
+Now everything is embedded first, a count check refuses to proceed on a partial result, and the
+delete and inserts run in one transaction. Readers see the old base or the new one, never neither.
+
+### And the merge gate does not exist
+
+`gh pr merge --auto` merged #102 and #103 **immediately, with their Playwright jobs still running**.
+Checked directly: `gh api repos/…/branches/main/protection` returns *Branch not protected* for both
+`ai-chatbot-saas` and `cushlabs`. With no required status checks there is nothing for `--auto` to
+wait on. Both jobs passed, which is luck rather than process. Recorded as
+[#37](#37--no-repo-has-required-status-checks-so-gh-pr-merge---auto-merges-immediately).
+
 ### Nothing shipped to the site
 
-Docs only, both days. No deployments consumed.
+Docs only in this repo, all three days. No cushlabs.ai deployments consumed.
 
 ## Session: 2026-09-22 — The homepage assistant is maintainable, and the report saying otherwise was wrong twice
 
