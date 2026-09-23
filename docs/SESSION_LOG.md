@@ -12,7 +12,7 @@
 > Resolved items collapse to one line under [Resolved](#resolved-technical-debt); the trail stays so a
 > future session does not re-litigate a settled decision.
 
-**15 open** · 22 resolved · last reconciled 2026-09-23
+**16 open** · 23 resolved · last reconciled 2026-09-23
 
 ### ~~#31~~ — The homepage chat widget answers prospects and records nothing at all — **RESOLVED 2026-09-23**
 
@@ -59,7 +59,7 @@ answering, in the wrong brand, on cushlabs.ai.
 business's identity — return a neutral "this assistant is not configured" reply and report it to
 Sentry. A cross-tenant identity leak must never be a silent default.
 
-### #33 — The CushLabs tenant has no login; the admin UI cannot reach the bot it is supposed to manage
+### ~~#33~~ — **RESOLVED 2026-09-23** — The CushLabs tenant has no login; the admin UI cannot reach the bot it is supposed to manage
 
 **Medium** · opened 2026-09-23 · blocks: any UI-based edit of the homepage assistant
 
@@ -181,6 +181,41 @@ someone is watching and worthless the moment nobody is.
 Minimum worth having: require `build` (49s) on `main` for the deployed repos, leave the long
 Playwright job advisory, and never require a check that a fork PR cannot run. Applies fleet-wide, not
 just to this repo — check before assuming any repo gates anything.
+
+### #38 — `website_content` has no tenant column, and an orphaned route reads it unscoped
+
+**Medium** · opened 2026-09-23 · **awaiting a decision, not a patch**
+
+`website_content` holds **3,901 rows** of scraped New York English Teacher pages and has **no
+`business_id` column at all**. `app/(chat)/api/knowledge/search/route.ts` queries it with no tenant
+filter and no authorization check inside the handler — only the global Clerk sign-in gate — so any
+signed-in user of this product can retrieve another business's website content.
+
+Tempering it honestly: a repo-wide grep found **no callers**. Nothing in the app invokes that
+endpoint. It is an orphaned route, not an active leak. But it is deployed, reachable, and in a
+product sold to clients "tenant A's assistant answering from tenant B's site" is the wrong thing to
+leave lying around.
+
+**Next:** Robert decides. Deleting the route removes the exposure and leaves the NYET data
+untouched — the recommendation, since nothing calls it. If NYET is still served from this
+deployment, the fix is a `business_id` column and a scoped query instead. Do not delete the
+`website_content` table either way; it is the only copy of that corpus.
+
+### #39 — 152,813 orphaned guest user rows, dormant since February
+
+**Low** · opened 2026-09-23 · blocks: nothing; distorts any count taken from `"User"`
+
+The `User` table holds **152,820 rows, of which 152,813 are `guest-…` accounts** with no Clerk link,
+against 378 `Chat` rows and, until today, zero widget conversations. Only **seven** are real people.
+
+They span **2025-11-17 to 2026-02-17 and stop dead** — nothing has created one in the seven months
+since. This is historical bloat from a guest-auth pattern that is no longer running, not a live leak,
+and it is explicitly **not** urgent. It is recorded because a count of `"User"` is currently
+meaningless and any future dashboard that reports "users" will report 152,820 of them.
+
+**Next:** when something else already touches this database, delete guest rows with no `Chat` and no
+`Membership`. Confirm first that nothing creates them any more — the seven-month gap is evidence, not
+proof, and the code path that created them has not been located.
 
 ### #29 — The homepage advertises booking on three channels; only one of them books
 
@@ -492,6 +527,42 @@ Directional ideas with a longer horizon than the Backlog. Themes, not tickets �
 ## Recurring Failure Modes
 
 Patterns that have bitten this project before. Re-read before shipping any change to the listed surfaces.
+
+### 12. A measurement expires when the thing it measured changes — and a stale one shipped into the product UI
+
+**What happened, 2026-09-23.** An assistant told Robert that sitemap-scraped pages "retrieve less
+reliably than written answers," used it to steer him away from ingestion, and **shipped the claim as
+help text inside the admin console**. He pushed back from experience: NY English Teacher runs on
+exactly that mechanism and works.
+
+He was right, and one measurement settled it. Embedding the same pricing content as prose and scoring
+it against real questions: **0.609** for "What does CushLabs cost?" (rank 1), 0.598 in Spanish, 0.367
+for "How much does it cost?" — all above the 0.3 retrieval threshold. This repo's own
+`website_content` table holds **3,901 rows** built that way for a site where it works.
+
+The claim came from an August note in the bot repo measuring prose at 0.376 — **against a 0.4
+threshold that has since been lowered to 0.3.** The number was never re-taken after the threshold
+moved. A measurement that was true became a conclusion that was false, and nothing marked it as
+expired.
+
+Worse, it inverted the real cause. The brand-name retrieval failure fixed the same day
+(`ai-chatbot-saas` #103) was **caused by the question-embedding design, not by prose** — prose
+contains the brand name naturally and would never have had it. The optimisation was blamed for
+nothing and credited for the bug it created.
+
+**Rules.**
+
+1. **A recorded measurement is only valid against the configuration it was taken under.** Write the
+   threshold, the model and the date next to the number, and re-take it before reusing the
+   conclusion. A bare score in a comment is a trap for the next reader.
+2. **Do not ship an unmeasured performance claim into product copy.** Help text is read as fact by
+   the operator and cannot be retracted from someone's memory. If it is worth telling a user, it is
+   worth re-measuring first.
+3. **When the user contradicts you from operational experience, that is evidence, not friction.** He
+   had a working 3,901-chunk system; the correct next move was one query, not a better-argued
+   restatement.
+4. **Name what the fix actually changed.** "Retrieval was broken, now it works" hid that a clever
+   optimisation had caused it.
 
 ### 11. "The variable is set, therefore the person can reach it" — an entitlement check that skipped the mapping
 
@@ -923,6 +994,60 @@ Checked directly: `gh api repos/…/branches/main/protection` returns *Branch no
 `ai-chatbot-saas` and `cushlabs`. With no required status checks there is nothing for `--auto` to
 wait on. Both jobs passed, which is luck rather than process. Recorded as
 [#37](#37--no-repo-has-required-status-checks-so-gh-pr-merge---auto-merges-immediately).
+
+### Night — the owner can administer his own bot, and a dashboard that never worked
+
+**[#104](https://github.com/RCushmaniii/ai-chatbot-saas/pull/104)** persona determinism ·
+**[#105](https://github.com/RCushmaniii/ai-chatbot-saas/pull/105)** the knowledge stats endpoint.
+Both merged and deployed. Tech debt #33 closed.
+
+**Access moved, in the order that matters.** `rcushmaniii@gmail.com` is now an owner of the
+**CushLabs** tenant — 66 knowledge rows — and the empty business auto-created for him on 2026-02-05
+is gone. Membership was ADDED before the old one was revoked, because `getAuthUser` resolves through
+a LEFT JOIN and removing his only membership first would have left him with a null business and a
+broken `/admin`.
+
+**#104 had to ship first and did.** Adding a second owner to a business was unsafe until it did:
+`getBusinessPersona` picked between a business's owners with an unordered `LIMIT 1`, so the live
+assistant's identity would have become a coin flip re-tossed every request the moment a second owner
+saved anything. Verified immediately after the grant — the live bot still answers as CushLabs with
+correct pricing, with two owners on the tenant.
+
+**The first delete attempt aborted on a foreign key** (`TrainingSuggestion` → `SitemapScan`, wrong
+order) and rolled the membership changes back with it. Confirmed the rollback was clean before
+retrying. Recorded because that is the transaction guard working, not a mishap.
+
+**Correction to yesterday's "totally empty" claim.** The retired business held **181
+TrainingSuggestion and 142 SitemapScan rows**. The emptiness check covered knowledge, conversations
+and contacts — which is what was claimed to be checked — but it was called empty and it was not. Those
+323 rows are deleted and regenerable.
+
+### The dashboard button that has never worked for anyone
+
+`/api/admin/knowledge/stats` counted `website_content WHERE business_id = …`, and that table **has
+no `business_id` column**. Reproduced live: `42703 column "business_id" does not exist`. Postgres
+raises, the catch swallows it, every caller gets a 500. **"Load Knowledge Base Stats" has shown an em
+dash for every user of this product since it shipped.**
+
+This is the direct explanation for the 2026-09-23 impression that the product was dead. The dashes
+were never about an empty account; nothing was ever counted for anyone. **A failure that renders as a
+plausible zero is worse than an error message, because nobody files a bug about an empty state.** Now
+counted from `KnowledgeChunk` and `Document_Knowledge`, split by content-source type; verified live
+at 0 scraped / 66 manual.
+
+### The disagreement about scraping, and who was right
+
+Robert pushed back on being steered away from sitemap ingestion. **He was right**, and the correction
+is recorded as Recurring Failure Modes #12: a stale measurement, taken against a retrieval threshold
+that has since changed, was carried forward as a conclusion and **shipped as help text inside the
+admin console**. Prose-embedded pricing content ranks 1 at 0.609. The claim is pulled from the product
+and replaced with what the measurement supports.
+
+Two consequences worth keeping. **The brand-name bug fixed in #103 was caused by the
+question-embedding design, not by prose.** And the ingestion architecture is confirmed sound: the
+admin ingest route writes to its own `website` ContentSource and deletes only by `source_id`, so
+scraping cushlabs.ai **cannot** disturb the 48 curated chunks. That is the two-class model from the
+`bot-launch-gate` skill, already built.
 
 ### Nothing shipped to the site
 
