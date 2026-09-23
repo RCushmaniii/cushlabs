@@ -12,33 +12,114 @@
 > Resolved items collapse to one line under [Resolved](#resolved-technical-debt); the trail stays so a
 > future session does not re-litigate a settled decision.
 
-**12 open** · 19 resolved · last reconciled 2026-09-22
+**16 open** · 19 resolved · last reconciled 2026-09-23
 
-### #30 — The homepage assistant's knowledge base has two write paths and one silently erases the other
+### #31 — The homepage chat widget answers prospects and records nothing at all
 
-**Medium** · opened 2026-09-22 · blocks: nothing today; erases a future edit without warning
+**High** · opened 2026-09-23 · costs: every lead the assistant has ever talked to
 
-The floating chat widget this repo mounts (`src/layouts/BaseLayout.astro:293`) is an iframe on
-`soyconverso.com/embed/chat`. Its persona and all 48 knowledge chunks (24 EN / 24 ES) live in
-`ai-chatbot-saas/scripts/provision-cushlabs-demo.ts`, which upserts them on fixed UUIDs — the path
-used by `ai-chatbot-saas` commit `36e9406` on 2026-08-27 to replace 13 stale chunks with the
-current 48.
+`app/embed/chat/page.tsx:126` posts a body containing exactly two fields — `chatId` and `message`.
+The route's logging block at `app/api/embed/chat/route.ts:112` is guarded by
+`if (businessId && visitorId && sessionId)`, and none of those three is ever sent. The **answer**
+path is fine, because line 69 falls back to `process.env.DEFAULT_BUSINESS_ID` for the persona and
+the knowledge search. The **recording** path uses the raw body value and is therefore dead code in
+production.
 
-Converso **also** ships a working admin UI at `/admin` that writes to the same rows. **Robert signed
-in and confirmed it opens on 2026-09-23**, so this hazard is live and not theoretical. An edit made
-there is live immediately. The next run of the
-provisioning script overwrites it with no diff, no warning and no record that a UI edit ever existed.
-Neither the script header nor the admin UI says so.
+Verified against the live database on 2026-09-23: `WidgetConversation` is empty for every tenant,
+`WidgetMessage` has zero rows in the last 30 days, and `Contact` has zero rows for every tenant.
+The widget has been live on all 126 pages of this site since PR #104.
 
-**Decision, 2026-09-22:** the script is canonical. The admin UI is read-only by convention — useful
-for inspecting what is deployed, never for editing. This keeps the knowledge base in git,
-code-reviewed, EN/ES parity-enforced, and reconciled against the canonical `operating-system` files
-the script header names.
+This means there is **no transcript, no lead capture, no volume count and no way to know whether a
+prospect ever used it** — and no way to tell a real conversation from zero traffic, because both
+look identical from here. Every claim about how the site's chat is performing is currently
+unanswerable.
 
-**Next:** that convention has to be written where the next editor will see it, and that is the other
-repo. Hand `ai-chatbot-saas` the handoff prompt recorded in this session's history entry: add the
-two-write-path warning to the provisioning script header, and a banner on the admin knowledge tab
-saying edits there are overwritten on the next reprovision. Close this entry when that PR merges.
+**Next:** in `ai-chatbot-saas`, have `app/embed/chat/page.tsx` send `businessId` (from
+`/api/embed/settings`, which it already fetches), plus a `visitorId` persisted in `localStorage`
+and a per-load `sessionId`. Do not "fix" it by loosening the guard to `effectiveBusinessId` alone —
+without a visitor and session id every message becomes its own orphan conversation. Included in the
+handoff prompt recorded in the 2026-09-23 session entry.
+
+### #32 — If the persona lookup ever returns null, the cushlabs.ai widget introduces itself as New York English Teacher
+
+**High** · opened 2026-09-23 · blocks: nothing today; brand damage on the front door the day it fires
+
+`app/api/embed/chat/route.ts:241` reads
+`(await getBusinessPersona(effectiveBusinessId)) ?? regularPrompt`. `regularPrompt`
+(`lib/ai/prompts.ts:35`) begins *"I am an AI assistant for New York English Teacher
+(nyenglishteacher.com), a professional English coaching service run by Robert Cushman"* and goes on
+to hand out `nyenglishteacher.com/en/book/` as the booking link.
+
+It resolves correctly today — the CushLabs tenant has a `bot_settings` row with an 8,123-character
+persona. But the lookup returns null the moment `DEFAULT_BUSINESS_ID` is unset or wrong on a
+deployment, or the `bot_settings` row is missing, and the failure is **silent**: the widget keeps
+answering, in the wrong brand, on cushlabs.ai.
+
+**Next:** in `ai-chatbot-saas`, make a missing persona fail loudly rather than fall back to another
+business's identity — return a neutral "this assistant is not configured" reply and report it to
+Sentry. A cross-tenant identity leak must never be a silent default.
+
+### #33 — The CushLabs tenant has no login; the admin UI cannot reach the bot it is supposed to manage
+
+**Medium** · opened 2026-09-23 · blocks: any UI-based edit of the homepage assistant
+
+Verified against the live database. The homepage widget is served by the `CushLabs` business
+(`c051ab50-…-0002`), whose sole owner is the user `demo-bot@cushlabs.ai` — **`clerk_user_id` is
+null, so no one can sign in as it.** Robert's own login (`rcushmaniii@gmail.com`) is an owner of a
+different business, "Robert Cushman's Business", which holds **0 knowledge chunks and no
+`bot_settings` row.**
+
+So signing in and opening `/admin` shows a real, working dashboard for an **empty, unrelated
+tenant**. That is why the stats read "—" and the sitemap field showed its hardcoded placeholder.
+Nothing there touches the assistant on this site.
+
+**This supersedes the "two write paths" hazard recorded on 2026-09-22, which was wrong.** There is
+exactly one write path to the CushLabs assistant — `scripts/provision-cushlabs-demo.ts` — and the
+admin UI is not a second one. The write-up that claimed otherwise inferred the UI's reach from
+`ADMIN_EMAIL` being set, and never checked which business the login actually maps to. See
+Recurring Failure Modes #11.
+
+**Next:** decide one of two. (a) Attach a real Clerk login to the CushLabs tenant so the admin UI
+manages the live assistant, which then genuinely creates the overwrite hazard and needs the banner.
+(b) Keep the tenant script-owned and put the explanation in the admin UI instead. Either way the
+dashboard must show **which business it is editing** — see #34.
+
+### #34 — The admin dashboard never says which account it is editing, and ships another business's name as placeholder data
+
+**Medium** · opened 2026-09-23 · blocks: trusting anything the dashboard shows
+
+`app/(chat)/admin/page.tsx` renders the heading "Admin Dashboard" with no business name, no email
+and no tenant switcher, in a product that is multi-tenant by design. Two components also carry
+hardcoded New York English Teacher defaults:
+`components/admin-website-scraping.tsx:19` pre-fills the sitemap field with
+`https://www.nyenglishteacher.com/sitemap-0.xml`, and `components/admin-system-instructions.tsx:18`
+defaults the persona to the NY English Teacher assistant.
+
+The combination is what made the dashboard read as broken on first sight: an operator sees another
+business's domain in an input, no indication of whose account they are in, and empty stats, with
+nothing on screen to tell them they are looking at the wrong tenant rather than at a dead product.
+
+**Next:** render the signed-in business name and email in the admin header; replace both hardcoded
+defaults with empty fields and a placeholder attribute.
+
+### #35 — Production database holds eight test tenants and duplicate rows the provisioning script created
+
+**Low** · opened 2026-09-23 · blocks: nothing; erodes trust in every count read from this database
+
+Live counts on 2026-09-23: 11 businesses, of which 8 are fixtures — "Ada Lovelace's Business",
+"Ada's Test Business", "Babbage Test Co", "Charles Babbage's Business" (×2), "Marie Curie's
+Business" (×3), "john gault's Business". Six `guest-…` users are duplicated. And
+`demo-bot@cushlabs.ai` holds **7 identical Membership rows** for the CushLabs business, because the
+membership insert in `scripts/provision-cushlabs-demo.ts` has no conflict target while the rest of
+the script is a careful upsert.
+
+`getBusinessPersona()` survives those 7 duplicates only because it ends in `.limit(1)` over an
+unordered join. That is luck, not design; it would return an arbitrary row if the duplicates ever
+disagreed.
+
+**Next:** give Membership a unique constraint on (businessId, userId) and make the script's insert
+idempotent; then delete the fixture tenants in one reviewed migration, after confirming none is
+referenced by a live deployment's env vars.
 
 ### #29 — The homepage advertises booking on three channels; only one of them books
 
@@ -270,8 +351,10 @@ _(none open)_
   `/services/whatsapp/` or `/pricing/#premium` because it does not know those pages exist. The work
   is 48 chunks in `ai-chatbot-saas/scripts/provision-cushlabs-demo.ts`, EN/ES parity enforced,
   re-reconciled against the canonical files its header names, then reprovisioned and re-stamped.
-  **Belongs in `ai-chatbot-saas`, not here.** Do [tech debt #30](#30--the-homepage-assistants-knowledge-base-has-two-write-paths-and-one-silently-erases-the-other)
-  in the same PR — the warning header and the chunk refresh touch the same file.
+  **Belongs in `ai-chatbot-saas`, not here**, and it ranks below the 2026-09-23 findings: fix
+  [#31](#31--the-homepage-chat-widget-answers-prospects-and-records-nothing-at-all) and
+  [#32](#32--if-the-persona-lookup-ever-returns-null-the-cushlabsai-widget-introduces-itself-as-new-york-english-teacher)
+  first. Teaching the bot better answers is worth less than being able to see that it answered.
 - **Rotate `CF_AI_TOKEN` in `cushlabs-messenger-bot/.dev.vars`, then re-ingest the corrected RAG
   corpus** — the bot-content reconciliation shipped same night (bot PR #270, live KV + QA-gated),
   but the token is dead at Cloudflare (invalid since ≤2026-08-13, last ingest 2026-07-02), so the
@@ -348,6 +431,39 @@ Directional ideas with a longer horizon than the Backlog. Themes, not tickets �
 ## Recurring Failure Modes
 
 Patterns that have bitten this project before. Re-read before shipping any change to the listed surfaces.
+
+### 11. "The variable is set, therefore the person can reach it" — an entitlement check that skipped the mapping
+
+**What happened, 2026-09-23.** The day before, this log recorded that Converso's admin UI was a
+second write path to the homepage assistant's knowledge base, able to silently overwrite it. That
+was filed as tech debt #30 at 90% confidence, and the named 10% was *"I confirmed `ADMIN_EMAIL`
+exists but did not read its value."*
+
+**The uncertainty was named in the wrong place, so naming it bought nothing.** The question was
+never whether Robert's email matched `ADMIN_EMAIL` — it did, and `/admin` opened exactly as
+predicted. The question was **which business that login maps to**, and that was never asked. One
+query answered it: `rcushmaniii@gmail.com` owns "Robert Cushman's Business" (0 chunks, no
+`bot_settings` row), while the CushLabs tenant's only owner, `demo-bot@cushlabs.ai`, has a null
+`clerk_user_id` and cannot be signed into by anyone. The admin UI could not touch the assistant, so
+the hazard did not exist.
+
+Worse, the confirmation **looked** like verification. "Robert signed in and /admin opened" was
+committed as proof the hazard was live. It proved only that a page rendered.
+
+**Rules.**
+
+1. **Access is a mapping, not a flag.** "Can this person reach it" is never answered by the
+   existence of a variable, a role, or a successful page load. Follow the join all the way to the
+   row: which tenant, which business id, which owner. In a multi-tenant product, a dashboard that
+   opens is not a dashboard that is pointed at your data.
+2. **State the uncertainty at the level of the claim.** A confidence note attached to a detail the
+   claim does not rest on reads as rigor and defends nothing. Ask what single fact would flip the
+   conclusion, and name *that*.
+3. **When a database can answer it, ask the database.** This was one read-only query against the
+   production database and it replaced a day of inference. It was available the whole time.
+4. **A screenshot confirms rendering, not identity.** Before treating "it opened" as verification,
+   ask what the screen would look like if the premise were false. Here it would look identical —
+   which is exactly what happened.
 
 ### 10. A 404 from a protected route is an auth gate, not a missing deployment
 
@@ -540,6 +656,82 @@ that gets bypassed with `--no-verify`.
 
 ## Session History
 
+## Session: 2026-09-23 — The admin dashboard was a different, empty account, and the site's chat has never recorded a single conversation
+
+### What triggered it
+
+Robert opened the Converso admin dashboard that yesterday's entry said was reachable, and it did not
+look like his product: another business's domain pre-filled in the sitemap field, empty stats, and
+nothing anywhere on screen naming which account he was in. His read was that the product was old and
+neglected. He was right about the symptom and the cause was worse than cosmetic.
+
+One read-only query against the production database settled all of it.
+
+### The retraction
+
+**Tech debt #30 — "the knowledge base has two write paths and one silently erases the other" — was
+wrong, and is withdrawn.** The admin UI cannot reach the CushLabs assistant at all:
+
+- The homepage widget is served by the `CushLabs` business, whose only owner is the user
+  `demo-bot@cushlabs.ai`, whose `clerk_user_id` is **null**. Nobody can sign in as it.
+- `rcushmaniii@gmail.com` owns a **different** business — "Robert Cushman's Business" — holding
+  **0 knowledge chunks and no `bot_settings` row.** That empty tenant is what the dashboard was
+  showing.
+- The `nyenglishteacher.com` sitemap Robert saw is a hardcoded `useState` default at
+  `components/admin-website-scraping.tsx:19`, not stored data.
+
+So there is exactly one write path to the assistant, `scripts/provision-cushlabs-demo.ts`, and the
+warning-banner handoff drafted yesterday was withdrawn before it was sent. Recorded as
+[#33](#33--the-cushlabs-tenant-has-no-login-the-admin-ui-cannot-reach-the-bot-it-is-supposed-to-manage)
+and [#34](#34--the-admin-dashboard-never-says-which-account-it-is-editing-and-ships-another-businesss-name-as-placeholder-data),
+with the reasoning failure as Recurring Failure Modes #11.
+
+### The finding that actually costs money
+
+**The chat widget on all 126 pages of this site has never recorded one conversation, one message or
+one contact.** `app/embed/chat/page.tsx:126` posts a body of exactly `{ chatId, message }`. The
+logging block at `app/api/embed/chat/route.ts:112` is guarded by
+`if (businessId && visitorId && sessionId)` — none of the three is ever sent, so it has never run.
+The answer path is unaffected because line 69 falls back to `DEFAULT_BUSINESS_ID`, which is why the
+bot has always replied correctly.
+
+Confirmed live: `WidgetConversation` empty for every tenant, `WidgetMessage` zero rows in 30 days,
+`Contact` zero rows for every tenant.
+
+The consequence is not just missing analytics. **Zero traffic and heavy traffic are indistinguishable
+from here** — there is no way to know whether a prospect has ever used the assistant on this site,
+what they asked, or what it told them. A claims surface with no transcript cannot be audited after
+the fact, which is the same class of gap as the 2026-08-27 pricing drift, one layer further down.
+Filed as [#31](#31--the-homepage-chat-widget-answers-prospects-and-records-nothing-at-all).
+
+### And a live brand landmine
+
+`app/api/embed/chat/route.ts:241` falls back to `regularPrompt` when no persona is found, and
+`regularPrompt` (`lib/ai/prompts.ts:35`) is still the **New York English Teacher** assistant, booking
+link included. It resolves correctly today. It fails silently and in the wrong brand the moment
+`DEFAULT_BUSINESS_ID` is unset on a deployment. Filed as
+[#32](#32--if-the-persona-lookup-ever-returns-null-the-cushlabsai-widget-introduces-itself-as-new-york-english-teacher).
+
+### Housekeeping found on the way
+
+11 businesses in the production database, 8 of them test fixtures (Ada Lovelace, Charles Babbage ×2,
+Marie Curie ×3, john gault). Six duplicate `guest-…` users. Seven identical Membership rows for
+`demo-bot@cushlabs.ai` → CushLabs, because that one insert in the provisioning script has no
+conflict target while everything around it is a careful upsert; `getBusinessPersona()` survives on a
+`.limit(1)` over an unordered join. Filed as
+[#35](#35--production-database-holds-eight-test-tenants-and-duplicate-rows-the-provisioning-script-created).
+
+### Recommended order, by the operating-vision precedence
+
+Revenue proximity first, tidiness last: **#31** (see the leads at all) → **#32** (stop the identity
+leak) → **#34** (make the dashboard say whose account it is) → **#33** (decide whether the CushLabs
+tenant gets a real login) → **#35** (clean the database) → the knowledge-refresh backlog item.
+All of it lands in `ai-chatbot-saas`, none of it in this repo.
+
+### Nothing shipped to the site
+
+Docs only, both days. No deployments consumed.
+
 ## Session: 2026-09-22 — The homepage assistant is maintainable, and the report saying otherwise was wrong twice
 
 ### Nothing shipped to the site. This session resolved a false alarm and recorded the answer.
@@ -573,8 +765,11 @@ be corrected.
 **Two write paths point at one knowledge base, and one erases the other silently.** The admin UI
 writes to the same rows the provisioning script upserts. A UI edit is live immediately and gone on
 the next reprovision, with no diff and no warning. Opened as
-[tech debt #30](#30--the-homepage-assistants-knowledge-base-has-two-write-paths-and-one-silently-erases-the-other).
-**Robert's decision, this session: the script is canonical; the admin UI is for inspection only.**
+tech debt #30. **RETRACTED 2026-09-23 — this was wrong.** The admin UI cannot reach the CushLabs
+tenant at all, so there was never a second write path; see
+[#33](#33--the-cushlabs-tenant-has-no-login-the-admin-ui-cannot-reach-the-bot-it-is-supposed-to-manage)
+and Recurring Failure Modes #11. The conclusion that the script is canonical survives, for a
+different reason: it is the only editor that exists.
 
 **The assistant does not know about the September site restructure.** The knowledge base was last
 reconciled 2026-08-27. Since then this repo shipped six capability pages under `/services/`
@@ -588,9 +783,9 @@ was last taught. That is lost conversion, not a defect, and it is a backlog item
 Per the standing rule that a cushlabs session stays in the marketing repo, both pieces of bot-repo
 work were handed over as a prompt rather than executed here:
 
-1. Add the two-write-path warning to the `provision-cushlabs-demo.ts` header, in the same voice as
-   the claims-surface warning already there, and a banner on the admin knowledge tab stating that
-   edits made there are overwritten by the next reprovision.
+1. ~~Add the two-write-path warning to the `provision-cushlabs-demo.ts` header, and a banner on the
+   admin knowledge tab.~~ **Withdrawn 2026-09-23 before it was sent** — the premise was false. The
+   replacement handoff is in the 2026-09-23 entry and covers debt #31 through #35.
 2. Optional, larger: refresh the 48 chunks to teach the assistant the six `/services/` pages and the
    deep-linkable pricing anchors, re-reconciled against the canonical files and re-stamped.
 
