@@ -12,7 +12,7 @@
 > Resolved items collapse to one line under [Resolved](#resolved-technical-debt); the trail stays so a
 > future session does not re-litigate a settled decision.
 
-**16 open** · 23 resolved · last reconciled 2026-09-23
+**17 open** · 23 resolved · last reconciled 2026-09-25
 
 ### ~~#31~~ — The homepage chat widget answers prospects and records nothing at all — **RESOLVED 2026-09-23**
 
@@ -182,7 +182,7 @@ Minimum worth having: require `build` (49s) on `main` for the deployed repos, le
 Playwright job advisory, and never require a check that a fork PR cannot run. Applies fleet-wide, not
 just to this repo — check before assuming any repo gates anything.
 
-### #38 — `website_content` has no tenant column, and an orphaned route reads it unscoped
+### ~~#38~~ — **RESOLVED 2026-09-25** — `website_content` has no tenant column, and an orphaned route reads it unscoped
 
 **Medium** · opened 2026-09-23 · **awaiting a decision, not a patch**
 
@@ -216,6 +216,36 @@ meaningless and any future dashboard that reports "users" will report 152,820 of
 **Next:** when something else already touches this database, delete guest rows with no `Chat` and no
 `Membership`. Confirm first that nothing creates them any more — the seven-month gap is evidence, not
 proof, and the code path that created them has not been located.
+
+### #40 — Two production apps shared one database for eight months
+
+**High** · opened 2026-09-25 · **largely resolved the same day**, remainder tracked below
+
+`ai-chatbot-saas` (Converso, which serves this site's chat widget) is a **clone**
+of `ny-ai-chatbot` — identical commit SHAs through `a4b9a23`, diverged
+2025-12-02. When the Converso Vercel project was created on 2026-01-24 it was
+pointed at New York English Teacher's existing Neon database rather than being
+given its own. Nobody decided to share a database; a clone inherited a connection
+pointer, it worked, and nothing surfaced it for eight months.
+
+**What it cost this site and a client, while it lasted.** chat.nyenglishteacher.com
+served **CushLabs' welcome message** to its own visitors, because NYET reads
+`bot_settings` unscoped and the only row was CushLabs'. Converso's daily crons
+ran `DELETE` statements inside a client's production database. Every pull
+request's Playwright run wrote users and chats there. And one `drizzle-kit push`
+from either repo offered to drop the other's tables.
+
+**Resolved 2026-09-25.** Converso has its own Neon project; data was copied,
+never moved; production and Preview both switched; both repos carry a guard that
+refuses a schema push while the other app's tables are present. Verified by
+sending a live message and counting both databases, and by exercising NYET's own
+chat afterwards.
+
+**Next, and why it is not finished:** the old database still holds Converso's
+tables as the rollback copy, and NYET's guard keys on exactly those tables — so
+removing them also disarms the guard. Do both together, deliberately, once the
+new database has run clean for a while. Full account in
+`ai-chatbot-saas/docs/DATABASE-SPLIT-2026-09-25.md`.
 
 ### #29 — The homepage advertises booking on three channels; only one of them books
 
@@ -785,6 +815,75 @@ that gets bypassed with `--no-verify`.
 2. **After ANY `generate-projects` run, diff the project list before committing** — `REMOVED` and `ADDED` both matter. The dangerous half of that diff is what got added while you were looking at what got removed.
 
 ---
+
+
+## Session: 2026-09-24/25 — The chat widget was living in a client's database
+
+Almost none of this is in this repo's code, and all of it decides what this site
+tells a prospect. The widget on all 126 pages is served by `ai-chatbot-saas`, and
+that app turned out to be running on New York English Teacher's database.
+
+### What was found, in the order it mattered
+
+**Two production apps, one database.** Converso is a clone of `ny-ai-chatbot`
+and was pointed at its database when the Vercel project was created on
+2026-01-24. The concrete damage: **chat.nyenglishteacher.com was greeting its own
+visitors with CushLabs' welcome message**, Converso's crons were issuing DELETEs
+inside a client's production data, and CI was writing test users there on every
+PR. Recorded as [#40](#40--two-production-apps-shared-one-database-for-eight-months).
+Split and verified the same day.
+
+**The retraining pipeline had never seen a real page change.** The sitemap
+scanner used a bare `<loc>` regex, which cannot tell a sitemap *index* from a
+sitemap — it reported `pages_found: 1` for cushlabs.ai's 133 pages, the "page"
+being `sitemap-0.xml`. It had also left a pending suggestion in the admin UI,
+one click from scraping XML into the assistant's knowledge.
+
+**The admin ingest button could not index this site.** Capped at 20 pages against
+133, then reported "Ingestion complete!". Now resumable and honest about what is
+left — which is what makes it usable as the site grows.
+
+**A fresh database could not be built from the migrations.** Proven by replaying
+them against an empty database, where they failed on an enum cast. Fixed, and the
+replay now reproduces production exactly.
+
+### What changed on THIS site
+
+[PR #342](https://github.com/RCushmaniii/cushlabs/pull/342) — **PayPal on the USD
+surfaces.** `commercial-terms.json` gained
+`methods_live: ["bank transfer", "PayPal"]`, so the pricing footnote (EN and ES),
+the salons FAQ and trust strip, and both terms pages now say so. **MXN surfaces
+deliberately unchanged** — PayPal is the US rail; in Mexico bank transfer means
+SPEI, which is free and is how the paying client settles. Advertising PayPal to
+the peso market would push them toward the worse option.
+
+**Card is still not live in any currency**, and is not claimed anywhere. The
+request that prompted this described a "hosted Stripe/PayPal page"; only the
+PayPal half exists, and the verified Stripe Mexico *account* is not the same
+thing as checkout being live — `commercial-terms.json` says so explicitly.
+
+**The guardrail had been checking a stale answer.** `src/data/commercialTerms.json`
+is a synced copy that `validate:terms` enforces against, and it had not been
+synced since PayPal was added. Ran `sync:terms` first; 140 pages now check clean.
+
+### The assistant was arguing with this website
+
+Its persona carried a hard rule — *"Payment is bank transfer only… Never mention
+paying by card, OXXO, or any payment method other than bank transfer"* — so the
+widget embedded on the page offering PayPal was **telling US prospects PayPal was
+unavailable**. Fixed in `ai-chatbot-saas` and verified live in both languages.
+
+**And the Spanish widget was half-translated.** On `/es/` the frame rendered in
+Spanish while the four question chips and the placeholder stayed English, because
+tenant-configured copy overrides the widget's bilingual defaults. Copy is now
+stored and selected per language, and a missing translation drops the field
+rather than substituting the other language.
+
+### Time-critical, from the capability registry
+
+`meta-whatsapp-pricing-change-2026-10-01` is **6 days out** as of 2026-09-25.
+In-window utility templates and service messages start being charged. This is the
+cost question the WhatsApp demo-swap decision has been waiting on.
 
 ## Session History
 

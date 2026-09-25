@@ -66,9 +66,12 @@
   "billing": {
     "cadence": "monthly",
     "timing": "in advance",
-    "methods_live": ["bank transfer"],
+    "methods_live": ["bank transfer", "PayPal"],
     "methods_not_live": ["card"],
-    "card_note": "Card processing is NOT live in any currency. Confirmed 2026-08-06. Any surface saying 'pay by card' is wrong.",
+    "paypal_note": "Added 2026-09-25, Robert's decision, to unblock the US market. Bank transfer means SPEI in Mexico, which is free and is how the one paying client settles today; asking a US small business to wire money to Mexico is where a $129/mo deal dies instead. PayPal is the US rail because it supports recurring billing natively and US buyers already trust it. WHAT IT COSTS DEPENDS ENTIRELY ON WHERE IT SETTLES, and that is the whole question: a US-registered PayPal paying out USD to a US bank account is a domestic transaction with no currency conversion at all, while a Mexico-registered one collecting the same dollars stacks a cross-border fee and an FX spread on top. Robert holds a US bank account, so the domestic path is available and is the one to use. Confirm which registration the PayPal account actually has before quoting any margin; the rate itself is not recorded here because it moves.",
+    "zelle_note": "Available and free, not yet formally adopted as a method. Robert holds a US bank account, so Zelle is US-bank-to-US-bank at zero cost — materially cheaper than PayPal for the first few clients. Its limits are real and decide when it stops being the answer: no recurring billing, so every month is manual; per-day caps set by the bank; and some US businesses' payables processes will not pay a vendor by Zelle at all and will want an invoice. Fine at one to three clients, wrong at ten.",
+    "card_note": "Card processing is NOT live in any currency. Confirmed 2026-08-06, still true 2026-09-25. Any surface saying 'pay by card' is wrong. The Stripe Mexico ACCOUNT is verified (capability-registry: stripe-mx-account-verification) and that is not the same thing as checkout being live — do not read the approval as a working rail.",
+    "us_cost_warning": "COLLECT US DOLLARS INTO THE US ACCOUNT, NOT THROUGH MEXICO. A US card charged through Stripe Mexico stacks international and conversion surcharges on the domestic rate — tier-feature-spec.md 4.2 records international cards adding 0.5% and required currency conversion a further 2% over a 4.35-4.45% base, so roughly 7% all-in on a USD subscription. Routing the same dollars into the US account instead avoids the conversion entirely: Zelle is free, and a US-registered PayPal is charged at domestic rates. The choice of receiving account, not the choice of processor, is what decides the cost. The tax and reporting consequences of US-sourced business income for a Mexican tax resident are an accountant's question and are deliberately not answered here.",
     "prepay_discounts": { "quarterly_pct": 5, "annual_pct": 10 }
   },
 
