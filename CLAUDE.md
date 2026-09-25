@@ -743,7 +743,7 @@ Before ending any session, verify:
 | `operating-system/cushlabs/operating-vision.json` | How the business is run - the operations vision, the six operating principles, and the precedence order that settles conflicts between them. | `eea191dbd2c5` |
 | `operating-system/strategy/clients.json` | Who is paying, what they bill, what they cost to serve. **(internal — never quote to a client)** | `1a63031453e1` |
 | `operating-system/cushlabs/capability-registry.json` | Every platform approval, entitlement and quota, and whether a client can actually reach it. **(internal — never quote to a client)** | `13b96e18fdda` |
-| `operating-system/cushlabs/commercial-terms.json` | Price, trial, cancellation, billing, invoicing and delivery timing. | `28f605b12df6` |
+| `operating-system/cushlabs/commercial-terms.json` | Price, trial, cancellation, billing, invoicing and delivery timing. | `24aadc8e41d0` |
 | `operating-system/cushlabs/claims-policy.json` | The claims ladder and the banned absolutes. | `86104fc2fa46` |
 | `operating-system/cushlabs/brand-kit.md` | Color, type, logo, product naming, currency, and the precedence table that settles conflicts. | `9cb0b0c58978` |
 | `operating-system/cushlabs/service-reference.md` | The client-facing bilingual what-your-plan-includes document. | `4dcd6607b0af` |
