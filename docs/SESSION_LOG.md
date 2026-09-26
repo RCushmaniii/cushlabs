@@ -558,6 +558,37 @@ Directional ideas with a longer horizon than the Backlog. Themes, not tickets �
 
 Patterns that have bitten this project before. Re-read before shipping any change to the listed surfaces.
 
+### 13. A page that does not contain your string is not the same as a page that is not your page
+
+**What happened, 2026-09-25.** After merging the PayPal copy, `curl` against
+`https://www.cushlabs.ai/pricing/` did not contain "PayPal". That was reported as "not
+live", twice, and produced two wrong diagnoses before the real one: first "the build is
+hung" (it was already READY — a stale API read), then "Cloudflare is serving a stale
+cache" (`cf-cache-status: DYNAMIC` means it was not cached, and that header was in a
+response already fetched). A Cloudflare purge was run on the wrong theory.
+
+The actual cause: **every request was being answered with a `403 Vercel Security
+Checkpoint` page.** The word was missing because the page was a bot challenge, not the
+pricing page. The evidence was sitting there the whole time — 33,992 bytes against the
+deployment's 103,698 — and went unread for several rounds because each round tested
+*absence of the string* rather than *identity of the page*.
+
+Then the same class of error again: the toggle screenshot showed "Pay by bank transfer"
+and looked like the change had not landed. It had. The screenshot was the **MXN** view,
+and the change was deliberately USD-only.
+
+**Rules.**
+
+1. **Assert what the response IS before concluding what it lacks.** Check the status code
+   and the `<title>` first. A grep for a missing string is the last step, not the first.
+2. **`cushlabs.ai` cannot be verified from the command line.** It sits behind Cloudflare
+   proxying to Vercel, and Vercel challenges that traffic with a JavaScript check that no
+   `curl` passes, whatever User-Agent it sends. **Verify against the Vercel deployment URL
+   instead** — it answers normally — or against `dist/` after a local build. This also
+   means no uptime monitor can see the live site.
+3. **A bilingual, two-currency page has four states.** Before calling a copy change
+   missing, confirm which language and which currency toggle is being looked at.
+
 ### 12. A measurement expires when the thing it measured changes — and a stale one shipped into the product UI
 
 **What happened, 2026-09-23.** An assistant told Robert that sitemap-scraped pages "retrieve less
@@ -1148,9 +1179,46 @@ admin ingest route writes to its own `website` ContentSource and deletes only by
 scraping cushlabs.ai **cannot** disturb the 48 curated chunks. That is the two-class model from the
 `bot-launch-gate` skill, already built.
 
-### Nothing shipped to the site
+### Later on the 25th — PayPal, and the currency a visitor lands on
 
-Docs only in this repo, all three days. No cushlabs.ai deployments consumed.
+[PR #342](https://github.com/RCushmaniii/cushlabs/pull/342) put PayPal on the USD
+surfaces. [PR #343](https://github.com/RCushmaniii/cushlabs/pull/343) then fixed the
+thing that made it pointless: **the currency toggle opened on MXN for everyone**, so an
+English-speaking US visitor landed on peso prices, an IVA note, a CFDI they will never
+receive, and a payment line reading "Pay by bank transfer" — the PayPal copy was
+invisible to the only market it was written for.
+
+The default is now decided at build time from the page locale, not only in the client
+script, because a JavaScript-only swap paints peso prices first and that is the whole
+first impression on a slow connection. `aria-pressed` follows the same value. An
+explicit click still wins on later visits.
+
+Verified in `dist/`: the English page ships with the USD spans visible and the footnote
+reading "bank transfer or PayPal"; the Spanish page ships MXN-visible.
+
+### A hosting question worth a proper session
+
+Robert asked whether Cloudflare should host the site instead of Vercel. The analysis, so
+it is not re-derived: the site is `output: "static"`, 140 prebuilt pages, no SSR adapter
+— so it ports cleanly. The real arguments are not performance but the **100-deploy/day
+Hobby cap** (already recorded as having blocked a production deploy), **one concurrent
+build** (`cushlabs` sat queued behind `ai-chatbot-saas` this session), and the **Vercel
+bot challenge on the live domain**, which makes automated verification impossible.
+
+What would have to port: 43 redirects and 1 rewrite from `vercel.json` → `_redirects`;
+4 header rules including the CSP → `_headers`; `api/demo.ts` → a Pages Function;
+`@vercel/analytics`; and the `ignoreCommand` docs-only build skip, which has no direct
+equivalent.
+
+**Recommendation: yes, but as its own session.** Confidence in a clean migration 75% —
+the 25% is the CSP and the 43 redirects, where nothing in the test suite catches a header
+rule that silently stops a required domain loading. That is the exact shape of the bug
+that once broke the booking page. Cut over on a preview domain, diff headers and a sample
+of redirects, then move DNS.
+
+### Nothing else shipped to the site
+
+Docs only in this repo across the 24th; the 25th shipped PRs #342 and #343.
 
 ## Session: 2026-09-22 — The homepage assistant is maintainable, and the report saying otherwise was wrong twice
 
