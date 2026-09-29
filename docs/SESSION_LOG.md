@@ -918,6 +918,30 @@ cost question the WhatsApp demo-swap decision has been waiting on.
 
 ## Session History
 
+## Session: 2026-09-29 — Portfolio demo links pointed at vercel.app, and bookings had no attendance confirmation
+
+### Portfolio links
+Six projects linked to temporary `*.vercel.app` / `*.netlify.app` addresses although a production
+domain existed (the gallery login fails on vercel.app because Clerk is bound to gallery.cushlabs.ai).
+Fixed at the source — PORTFOLIO.md `demo_url`, GitHub homepage field, `projectDetails.ts`
+overrides — then regenerated. Commit b81d6b8. `aifilesense.com` and `aiideavalidator.com` no longer
+resolve; Robert confirmed both are retired, so those projects keep their temporary addresses.
+
+### Booking confirmation (both booking Workers)
+A NY English consultation no-show had no warning. New `workers/lib/booking-confirm.js` (shared
+verbatim with `ny-eng/lib/`): every booking is stored in D1 with a random token; a 30-min cron emails
+anyone whose meeting is 2-26h away via **Brevo** with Confirm / Cancel links. Confirm prefixes the
+calendar title with ✅; Cancel deletes the event (frees the slot, Google notifies the attendee). Both
+links are two-step (GET shows a button, POST acts) so mail link-scanners cannot act. Verified live
+end to end on nyenglishteacher.com. Commits 06cc00b, 41ecba0.
+
+**Gotchas recorded:** Brevo's "authorised IPs" block must stay OFF — Workers have no fixed IP. The
+`BREVO_SMTP_KEY` in .env is SMTP-only; the Worker needs a v3 API key (`BREVO_API_KEY` secret).
+
+### Next
+- Part 2: WhatsApp reminders for consultations via cushlabs-whatsapp (needs opt-in checkbox + Meta template).
+- Part 3: morning WhatsApp summary to Robert of who has / hasn't confirmed.
+
 ## Session: 2026-09-23 — The admin dashboard was a different, empty account, and the site's chat has never recorded a single conversation
 
 ### What triggered it
