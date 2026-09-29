@@ -1012,7 +1012,7 @@ const details: Record<string, ProjectDetailOverride> = {
   },
   "ny-ai-chatbot": {
     slug: "ny-ai-chatbot",
-    demoUrl: "https://ny-ai-chatbot.vercel.app",
+    demoUrl: "https://chat.nyenglishteacher.com/demo",
     en: {
       headline: "NY AI Chatbot — The Revenue-First Conversational Engine",
       subheadline:
@@ -1344,7 +1344,7 @@ const details: Record<string, ProjectDetailOverride> = {
   },
   "context-writing-system": {
     slug: "context-writing-system",
-    demoUrl: "https://context-writing-system.vercel.app",
+    demoUrl: "https://context.cushlabs.ai",
     en: {
       headline:
         "AI Writing System — Clone Your Brand Voice Once, Write Everywhere",
