@@ -12,6 +12,11 @@ binding = "DB"
 database_name = "cushlabs-booking"
 database_id = "9a3ee9e6-77f5-4ff2-b0e2-49da7456d523"
 
+# Every 30 min: email the day-before "please confirm" message to anyone whose
+# consultation starts in 2-26h (workers/lib/booking-confirm.js).
+[triggers]
+crons = ["*/30 * * * *"]
+
 [observability]
 enabled = true
 
@@ -27,3 +32,11 @@ SATURDAY_HOURS = "09:00-13:00"
 TIMEZONE = "America/Mexico_City"
 WEEKDAY_AFTERNOON_HOURS = "16:00-20:00"
 WEEKDAY_MORNING_HOURS = "09:00-14:00"
+# Attendance confirmation emails (workers/lib/booking-confirm.js). Needs the
+# RESEND_API_KEY secret too. CONFIRM_FROM_EMAIL stays unset until cushlabs.ai is
+# verified in Resend — with it unset, bookings are still recorded but no email
+# is sent, and the cron log says which var is missing.
+CONFIRM_BRAND = "CushLabs.ai"
+PUBLIC_WORKER_URL = "https://cushlabs-booking.rcushmaniii.workers.dev"
+REBOOK_URL = "https://www.cushlabs.ai/consultation"
+# CONFIRM_FROM_EMAIL = "Robert Cushman | CushLabs.ai <robert@cushlabs.ai>"
