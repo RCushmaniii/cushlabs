@@ -139,13 +139,13 @@ describe("booking confirmation", () => {
 
     const g = req("GET", "/confirm", token);
     const getRes = await handleConfirmationRoutes(g.request, env, g.url, g.path, deps);
-    expect(await getRes.text()).toContain('method="POST"');
+    expect(await getRes!.text()).toContain('method="POST"');
     let row = (await env.DB.prepare("SELECT status FROM bookings").first()) as { status: string };
     expect(row.status).toBe("booked"); // a link scanner opening the URL changes nothing
 
     const p = req("POST", "/confirm", token);
     const postRes = await handleConfirmationRoutes(p.request, env, p.url, p.path, deps);
-    expect(await postRes.text()).toContain("¡Confirmado!");
+    expect(await postRes!.text()).toContain("¡Confirmado!");
     row = (await env.DB.prepare("SELECT status FROM bookings").first()) as { status: string };
     expect(row.status).toBe("confirmed");
     const patch = fetchMock.mock.calls.find(([, init]) => init?.method === "PATCH");
@@ -158,7 +158,7 @@ describe("booking confirmation", () => {
     const token = await tokenFor(env);
     const p = req("POST", "/cancel", token);
     const res = await handleConfirmationRoutes(p.request, env, p.url, p.path, deps);
-    expect(await res.text()).toContain("Meeting cancelled");
+    expect(await res!.text()).toContain("Meeting cancelled");
     const del = fetchMock.mock.calls.find(([, init]) => init?.method === "DELETE");
     expect(String(del![0])).toContain("/events/ev9?sendUpdates=all");
     const row = (await env.DB.prepare("SELECT status FROM bookings").first()) as { status: string };
@@ -170,7 +170,7 @@ describe("booking confirmation", () => {
     for (const t of ["", "nope", "f".repeat(32)]) {
       const g = req("GET", "/confirm", t);
       const res = await handleConfirmationRoutes(g.request, env, g.url, g.path, deps);
-      expect(res.status).toBe(200);
+      expect(res!.status).toBe(200);
     }
     expect(fetchMock).not.toHaveBeenCalled();
   });
