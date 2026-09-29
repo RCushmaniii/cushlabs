@@ -32,11 +32,11 @@ SATURDAY_HOURS = "09:00-13:00"
 TIMEZONE = "America/Mexico_City"
 WEEKDAY_AFTERNOON_HOURS = "16:00-20:00"
 WEEKDAY_MORNING_HOURS = "09:00-14:00"
-# Attendance confirmation emails (workers/lib/booking-confirm.js). Needs the
-# RESEND_API_KEY secret too. CONFIRM_FROM_EMAIL stays unset until cushlabs.ai is
-# verified in Resend — with it unset, bookings are still recorded but no email
-# is sent, and the cron log says which var is missing.
+# Attendance confirmation emails (workers/lib/booking-confirm.js), sent through
+# Brevo — cushlabs.ai is authenticated there (SPF + DKIM). Needs the
+# BREVO_API_KEY secret: a v3 API key (xkeysib-), not the SMTP key in .env.
 CONFIRM_BRAND = "CushLabs.ai"
+CONFIRM_FROM_EMAIL = "Robert Cushman | CushLabs.ai <info@cushlabs.ai>"
 PUBLIC_WORKER_URL = "https://cushlabs-booking.rcushmaniii.workers.dev"
-REBOOK_URL = "https://www.cushlabs.ai/consultation"
-# CONFIRM_FROM_EMAIL = "Robert Cushman | CushLabs.ai <robert@cushlabs.ai>"
+REBOOK_URL = "https://www.cushlabs.ai/consultation/"
+REBOOK_URL_ES = "https://www.cushlabs.ai/es/reservar/"

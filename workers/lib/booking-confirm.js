@@ -8,7 +8,7 @@
  *
  * Flow:
  *   POST /book succeeds     -> recordBooking() stores a row with a random token
- *   cron (every 30 min)     -> sendDueConfirmations() emails anyone whose
+ *   cron (every 30 min)     -> sendDueConfirmations() emails (via Brevo) anyone whose
  *                              meeting starts in 2-26h and has not been asked
  *   GET  /confirm?t=TOKEN   -> page with a "Yes, I'll be there" button
  *   POST /confirm           -> marks confirmed, prefixes the calendar title ✅
@@ -29,7 +29,7 @@ const WINDOW_MAX_HOURS = 26; // "the day before", with slack for the 30-min cron
 
 /** Env vars this module reads. Missing ones disable sending, loudly. */
 export const REQUIRED_VARS = [
-  "RESEND_API_KEY", // secret
+  "BREVO_API_KEY", // secret — a Brevo v3 API key (xkeysib-), NOT the SMTP key
   "CONFIRM_FROM_EMAIL", // e.g. NY English Teacher <robert@nyenglishteacher.com>
   "CONFIRM_BRAND", // e.g. NY English Teacher
   "PUBLIC_WORKER_URL", // this Worker's public base URL, for links in the email
@@ -223,9 +223,15 @@ ${row.meet_link ? `<p>${tx("meet", lang)} <a href="${esc(row.meet_link)}">${esc(
 
 /* ---------------------------------- cron ---------------------------------- */
 
+/** "Name <addr@x>" -> { name, email }; a bare address -> { email }. */
+export function parseSender(from) {
+  const m = /^\s*(.*?)\s*<([^>]+)>\s*$/.exec(from || "");
+  return m ? { name: m[1].replace(/^"|"$/g, ""), email: m[2] } : { email: String(from).trim() };
+}
+
 /**
  * Email everyone whose meeting starts in 2-26 hours and has not been asked.
- * `asked_at` is set only after Resend accepts the message, so a failed send
+ * `asked_at` is set only after Brevo accepts the message, so a failed send
  * retries on the next tick until the meeting is inside the 2-hour floor.
  */
 export async function sendDueConfirmations(env, now = new Date()) {
@@ -250,18 +256,20 @@ export async function sendDueConfirmations(env, now = new Date()) {
   let failed = 0;
   for (const row of results) {
     const email = buildConfirmationEmail(row, env);
-    const resp = await fetch("https://api.resend.com/emails", {
+    const resp = await fetch("https://api.brevo.com/v3/smtp/email", {
       method: "POST",
       headers: {
-        Authorization: `Bearer ${env.RESEND_API_KEY}`,
+        "api-key": env.BREVO_API_KEY,
         "Content-Type": "application/json",
+        accept: "application/json",
       },
       body: JSON.stringify({
-        from: env.CONFIRM_FROM_EMAIL,
-        to: [row.email],
+        sender: parseSender(env.CONFIRM_FROM_EMAIL),
+        to: [{ email: row.email, name: row.name }],
         subject: email.subject,
-        html: email.html,
-        text: email.text,
+        htmlContent: email.html,
+        textContent: email.text,
+        tags: ["booking-confirmation"],
       }),
     });
     if (resp.ok) {

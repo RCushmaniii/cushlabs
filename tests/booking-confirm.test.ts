@@ -41,7 +41,7 @@ const HOUR = 3600e3;
 function makeEnv(overrides: Record<string, unknown> = {}) {
   return {
     DB: fakeD1(),
-    RESEND_API_KEY: "re_test",
+    BREVO_API_KEY: "xkeysib-test",
     CONFIRM_FROM_EMAIL: "NY English Teacher <robert@nyenglishteacher.com>",
     CONFIRM_BRAND: "NY English Teacher",
     PUBLIC_WORKER_URL: "https://booking.example.dev",
@@ -78,7 +78,7 @@ describe("booking confirmation", () => {
 
   beforeEach(() => {
     fetchMock = vi.fn(async (url: string, init?: RequestInit) => {
-      if (String(url).includes("api.resend.com")) return new Response('{"id":"x"}', { status: 200 });
+      if (String(url).includes("api.brevo.com")) return new Response('{"id":"x"}', { status: 200 });
       if (!init?.method || init.method === "GET")
         return new Response(JSON.stringify({ summary: "NY English Consultation: Diego" }), { status: 200 });
       return new Response(init.method === "DELETE" ? null : "{}", { status: init.method === "DELETE" ? 204 : 200 });
@@ -107,13 +107,14 @@ describe("booking confirmation", () => {
     // Never twice.
     expect(await sendDueConfirmations(env, later)).toMatchObject({ sent: 0 });
 
-    const resendCalls = fetchMock.mock.calls.filter(([u]) => String(u).includes("resend"));
-    expect(resendCalls).toHaveLength(1);
-    const body = JSON.parse(String(resendCalls[0][1].body));
-    expect(body.to).toEqual(["diego@example.com"]);
+    const emailCalls = fetchMock.mock.calls.filter(([u]) => String(u).includes("brevo"));
+    expect(emailCalls).toHaveLength(1);
+    const body = JSON.parse(String(emailCalls[0][1].body));
+    expect(body.to).toEqual([{ email: "diego@example.com", name: "Diego Olivera" }]);
+    expect(body.sender).toEqual({ name: "NY English Teacher", email: "robert@nyenglishteacher.com" });
     expect(body.subject).toContain("¿Confirmas");
-    expect(body.html).toContain("/confirm?t=");
-    expect(body.html).toContain("/cancel?t=");
+    expect(body.htmlContent).toContain("/confirm?t=");
+    expect(body.htmlContent).toContain("/cancel?t=");
   });
 
   it("retries a failed send on the next run", async () => {
