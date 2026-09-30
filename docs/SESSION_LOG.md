@@ -949,6 +949,11 @@ end to end on nyenglishteacher.com. Commits 06cc00b, 41ecba0.
 - Templates approved on both WABAs 2026-09-30. Verified live: reminder delivered, WhatsApp confirm put
   ✅ on the calendar, 08:00 summary delivered. Commits e0293f7, 22a0a0e.
 
+**2026-09-30 — one summary, not two:** cushlabs-booking now sends a single combined 08:00 summary
+(lines tagged NYE / CushLabs), reading ny-eng's list over the `PEER_BOOKING` binding at
+`/internal/todays-bookings` (secret-gated); ny-eng has `DAILY_SUMMARY = "off"`. Full guide:
+`docs/BOOKING-CONFIRMATIONS.md`.
+
 **Gotcha recorded:** a Worker cannot fetch() another *.workers.dev Worker on the same account
 (Cloudflare error 1042). The booking Workers reach cushlabs-whatsapp through the `WA_GATEWAY` service
 binding.

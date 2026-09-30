@@ -657,6 +657,9 @@ a 750 request to 700 without warning.
   something works.
 - `docs/SESSION_LOG.md` - **Living session log + tech debt + roadmap. READ THIS FIRST when starting work; update at the end of every substantive session.**
 - `docs/AI-ASSISTANT-ONBOARDING.md` - What CushLabs sells. Read before any pricing or sales work.
+- `docs/BOOKING-CONFIRMATIONS.md` - How consultation bookings get confirm emails, WhatsApp reminders and
+  Robert's 08:00 summary (shared with ny-eng). Read before touching the booking form or
+  `workers/booking-worker.js`.
 
 **This repo's actual i18n system** is `src/i18n/index.ts` + `translations/{en,es}.ts` with a `t(locale)`
 dictionary, and English is **unprefixed** (`prefixDefaultLocale: false`). Any doc describing

@@ -405,7 +405,50 @@ const STATUS_ICON = { confirmed: "✅", booked: "⏳", cancelled: "❌" };
  * Nothing is sent on a day with no consultations; the day is still recorded so
  * the check does not repeat. Needs OPERATOR_WA plus the WhatsApp vars.
  */
+/** This Worker's consultations on the local calendar day that `now` falls in. */
+export async function todaysBookings(env, now = new Date()) {
+  const tz = env.TIMEZONE || "America/Mexico_City";
+  const { day } = localParts(now, tz);
+  await ensureBookingsTable(env.DB);
+  const lo = new Date(now.getTime() - 36 * 3600e3).toISOString();
+  const hi = new Date(now.getTime() + 36 * 3600e3).toISOString();
+  const { results = [] } = await env.DB.prepare(
+    `SELECT name, starts_at, status FROM bookings WHERE starts_at >= ? AND starts_at <= ? ORDER BY starts_at`,
+  )
+    .bind(lo, hi)
+    .all();
+  return results.filter((r) => localParts(new Date(r.starts_at), tz).day === day);
+}
+
+/**
+ * The peer booking Worker's rows for today, over the PEER_BOOKING service
+ * binding. Returns null when there is no peer, or it could not be read — the
+ * summary then says so rather than silently leaving that site out.
+ */
+async function peerBookings(env, now) {
+  if (!env.PEER_BOOKING || !env.SUMMARY_SECRET) return null;
+  try {
+    const at = encodeURIComponent(now.toISOString());
+    const resp = await env.PEER_BOOKING.fetch(`https://peer/internal/todays-bookings?at=${at}`, {
+      headers: { "x-summary-secret": env.SUMMARY_SECRET },
+    });
+    if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+    const { bookings } = await resp.json();
+    return Array.isArray(bookings) ? bookings : null;
+  } catch (err) {
+    console.error(`Peer summary rows unavailable: ${err?.message || err}`);
+    return null;
+  }
+}
+
+/**
+ * One WhatsApp to Robert at 08:00 covering BOTH sites. The Worker that owns the
+ * summary (cushlabs-booking: DAILY_SUMMARY unset) reads its own rows plus the
+ * peer's (ny-eng: DAILY_SUMMARY = "off", serves /internal/todays-bookings) and
+ * labels each line with its site (SUMMARY_LABEL / PEER_LABEL).
+ */
 export async function sendDailySummary(env, now = new Date()) {
+  if (env.DAILY_SUMMARY === "off") return { skipped: "sent by peer" };
   if (!whatsappReady(env) || !env.OPERATOR_WA) return { skipped: "not configured" };
   const tz = env.TIMEZONE || "America/Mexico_City";
   const { day, hour } = localParts(now, tz);
@@ -414,26 +457,28 @@ export async function sendDailySummary(env, now = new Date()) {
   const done = await env.DB.prepare(`SELECT day FROM daily_summaries WHERE day = ?`).bind(day).first();
   if (done) return { skipped: "already sent" };
 
-  const lo = new Date(now.getTime() - 36 * 3600e3).toISOString();
-  const hi = new Date(now.getTime() + 36 * 3600e3).toISOString();
-  const { results = [] } = await env.DB.prepare(
-    `SELECT name, starts_at, status FROM bookings WHERE starts_at >= ? AND starts_at <= ? ORDER BY starts_at`,
-  )
-    .bind(lo, hi)
-    .all();
-  const today = results.filter((r) => localParts(new Date(r.starts_at), tz).day === day);
+  const own = (await todaysBookings(env, now)).map((r) => ({ ...r, label: env.SUMMARY_LABEL }));
+  const peerRows = env.PEER_BOOKING ? await peerBookings(env, now) : [];
+  const peer = (peerRows || []).map((r) => ({ ...r, label: env.PEER_LABEL }));
+  const today = [...own, ...peer].sort((a, b) => a.starts_at.localeCompare(b.starts_at));
+  const peerMissing = env.PEER_BOOKING && peerRows === null;
 
-  if (today.length) {
+  if (today.length || peerMissing) {
     const time = new Intl.DateTimeFormat("en-US", { timeZone: tz, hour: "numeric", minute: "2-digit" });
-    const list = today
-      .map((r) => `${time.format(new Date(r.starts_at))} ${String(r.name).replace(/\s+/g, " ").trim()} ${STATUS_ICON[r.status] || "⏳"}`)
-      .join(" · ")
-      .slice(0, 900);
+    let list = today
+      .map((r) => {
+        const name = String(r.name).replace(/\s+/g, " ").trim();
+        const tag = r.label ? ` (${r.label})` : "";
+        return `${time.format(new Date(r.starts_at))} ${name}${tag} ${STATUS_ICON[r.status] || "⏳"}`;
+      })
+      .join(" · ");
+    if (peerMissing) list = `${list ? list + " · " : ""}(${env.PEER_LABEL || "other site"} list unavailable)`;
+    const sites = env.SUMMARY_SITES || env.CONFIRM_BRAND || "your site";
     const ok = await sendWhatsAppTemplate(env, {
       to: env.OPERATOR_WA,
       template: "consultation_daily_summary",
       lang: "en_US",
-      params: [String(today.length), env.CONFIRM_BRAND || "your site", list],
+      params: [String(today.length), sites, list.slice(0, 900)],
       sender: "cushlabs",
     });
     if (!ok) return { sent: 0, failed: 1 };
@@ -475,6 +520,19 @@ async function readToken(request, url) {
  * `deps.calendarId` come from the host Worker, which already owns Google auth.
  */
 export async function handleConfirmationRoutes(request, env, url, path, deps) {
+  // Peer read for the combined morning summary. Secret-gated: it lists names.
+  if (path === "/internal/todays-bookings" && request.method === "GET") {
+    const provided = request.headers.get("x-summary-secret") || "";
+    if (!env.SUMMARY_SECRET || provided !== env.SUMMARY_SECRET) {
+      return new Response("Not found", { status: 404 });
+    }
+    // `at` lets the summary sender define "today", so both Workers agree on it.
+    const at = new Date(url.searchParams.get("at") || Date.now());
+    const bookings = await todaysBookings(env, isNaN(at.getTime()) ? new Date() : at);
+    return new Response(JSON.stringify({ bookings }), {
+      headers: { "Content-Type": "application/json", "Cache-Control": "no-store" },
+    });
+  }
   if (path !== "/confirm" && path !== "/cancel") return null;
   if (request.method !== "GET" && request.method !== "POST") return null;
 

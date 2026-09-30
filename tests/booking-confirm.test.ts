@@ -284,3 +284,66 @@ describe("WhatsApp reminder and morning summary", () => {
     expect(waCalls()).toHaveLength(0);
   });
 });
+
+describe("combined morning summary (both sites in one message)", () => {
+  let fetchMock: ReturnType<typeof vi.fn>;
+  beforeEach(() => {
+    fetchMock = vi.fn(async () => new Response('{"ok":true}', { status: 200 }));
+    vi.stubGlobal("fetch", fetchMock);
+  });
+  afterEach(() => vi.unstubAllGlobals());
+
+  const WA = { WA_GATEWAY_URL: "https://wa.example.dev", WA_GATEWAY_SECRET: "s", WA_SENDER: "cushlabs", OPERATOR_WA: "+52 33 1559 0572" };
+  const sentBodies = () =>
+    fetchMock.mock.calls.filter(([u]) => String(u).includes("wa.example.dev")).map(([, init]) => JSON.parse(String((init as RequestInit).body)));
+
+  async function peerWorker() {
+    const peerEnv = makeEnv({ SUMMARY_SECRET: "peer-secret" });
+    await recordBooking(peerEnv, { eventId: "p1", startsAt: "2026-10-01T16:00:00Z", name: "Diego", email: "d@example.com", lang: "es" }); // 10:00 local
+    return {
+      fetch: async (url: string, init?: RequestInit) => {
+        const u = new URL(url);
+        const request = new Request(u, init);
+        return (await handleConfirmationRoutes(request, peerEnv, u, u.pathname, deps)) ?? new Response("nf", { status: 404 });
+      },
+    };
+  }
+
+  it("merges both sites' consultations into one message, sorted by time and tagged by site", async () => {
+    const env = makeEnv({
+      ...WA,
+      CONFIRM_BRAND: "CushLabs.ai",
+      SUMMARY_LABEL: "CushLabs",
+      PEER_LABEL: "NYE",
+      SUMMARY_SITES: "NY English Teacher + CushLabs.ai",
+      SUMMARY_SECRET: "peer-secret",
+      PEER_BOOKING: await peerWorker(),
+    });
+    await recordBooking(env, { eventId: "c1", startsAt: "2026-10-01T19:30:00Z", name: "Ana", email: "a@example.com", lang: "en" }); // 13:30 local
+    const r = await sendDailySummary(env, new Date("2026-10-01T14:00:00Z"));
+    expect(r).toMatchObject({ sent: 1, count: 2 });
+    const [body] = sentBodies();
+    expect(body.params).toEqual(["2", "NY English Teacher + CushLabs.ai", "10:00 AM Diego (NYE) ⏳ · 1:30 PM Ana (CushLabs) ⏳"]);
+  });
+
+  it("still sends, and says so, when the other site cannot be read", async () => {
+    const env = makeEnv({ ...WA, SUMMARY_LABEL: "CushLabs", PEER_LABEL: "NYE", SUMMARY_SECRET: "wrong", PEER_BOOKING: await peerWorker() });
+    await recordBooking(env, { eventId: "c1", startsAt: "2026-10-01T19:30:00Z", name: "Ana", email: "a@example.com", lang: "en" });
+    await sendDailySummary(env, new Date("2026-10-01T14:00:00Z"));
+    expect(sentBodies()[0].params[2]).toBe("1:30 PM Ana (CushLabs) ⏳ · (NYE list unavailable)");
+  });
+
+  it("the peer that hands off the summary never sends one itself", async () => {
+    const env = makeEnv({ ...WA, DAILY_SUMMARY: "off" });
+    await recordBooking(env, { eventId: "x", startsAt: "2026-10-01T19:30:00Z", name: "A", email: "a@example.com", lang: "en" });
+    expect(await sendDailySummary(env, new Date("2026-10-01T14:00:00Z"))).toEqual({ skipped: "sent by peer" });
+    expect(sentBodies()).toHaveLength(0);
+  });
+
+  it("the internal list refuses callers without the secret", async () => {
+    const env = makeEnv({ SUMMARY_SECRET: "peer-secret" });
+    const u = new URL("https://x/internal/todays-bookings");
+    const res = await handleConfirmationRoutes(new Request(u), env, u, u.pathname, deps);
+    expect(res!.status).toBe(404);
+  });
+});

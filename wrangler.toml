@@ -23,6 +23,11 @@ crons = ["*/30 * * * *"]
 binding = "WA_GATEWAY"
 service = "cushlabs-whatsapp"
 
+# The NY English booking Worker, read for the combined 08:00 summary.
+[[services]]
+binding = "PEER_BOOKING"
+service = "plain-mode-42c4"
+
 [observability]
 enabled = true
 
@@ -50,3 +55,8 @@ REBOOK_URL_ES = "https://www.cushlabs.ai/es/reservar/"
 # Secrets: WA_GATEWAY_SECRET (= its TEST_SEND_SECRET), OPERATOR_WA (Robert's number).
 WA_GATEWAY_URL = "https://cushlabs-whatsapp.rcushmaniii.workers.dev"
 WA_SENDER = "cushlabs"
+# One combined 08:00 summary for both sites is sent from HERE (ny-eng has
+# DAILY_SUMMARY = "off"). Secret: SUMMARY_SECRET, the same value on both Workers.
+SUMMARY_LABEL = "CushLabs"
+PEER_LABEL = "NYE"
+SUMMARY_SITES = "NY English Teacher + CushLabs.ai"
