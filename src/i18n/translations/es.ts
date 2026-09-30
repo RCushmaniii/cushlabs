@@ -334,6 +334,7 @@ export const es = {
     email: "Correo electrónico",
     phoneNumber: "Número de teléfono",
     phoneHint: "Opcional — incluye código de país para WhatsApp.",
+    whatsappOptIn: "Envíame un recordatorio por WhatsApp un día antes.",
     // Honeypot. Ver el comentario en en.ts.
     companyHoneypot: "Empresa",
     notesLabel: "¿Qué te gustaría discutir?",

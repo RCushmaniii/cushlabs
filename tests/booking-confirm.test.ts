@@ -7,6 +7,7 @@ import {
   handleConfirmationRoutes,
   buildConfirmationEmail,
   missingVars,
+  sendDailySummary,
 } from "../workers/lib/booking-confirm.js";
 
 /** Minimal D1 stand-in over node:sqlite — same prepare/bind/run/all/first shape. */
@@ -188,5 +189,87 @@ describe("booking confirmation", () => {
       env,
     );
     expect(email.html).not.toContain("<script>");
+  });
+});
+
+describe("WhatsApp reminder and morning summary", () => {
+  let fetchMock: ReturnType<typeof vi.fn>;
+  beforeEach(() => {
+    fetchMock = vi.fn(async () => new Response('{"ok":true}', { status: 200 }));
+    vi.stubGlobal("fetch", fetchMock);
+  });
+  afterEach(() => vi.unstubAllGlobals());
+
+  const WA = {
+    WA_GATEWAY_URL: "https://wa.example.dev/",
+    WA_GATEWAY_SECRET: "s3cret",
+    WA_SENDER: "nye",
+    OPERATOR_WA: "+52 33 1559 0572",
+  };
+  const waCalls = () =>
+    fetchMock.mock.calls
+      .filter(([u]) => String(u).includes("wa.example.dev"))
+      .map(([u, init]) => ({ url: String(u), headers: (init as RequestInit).headers as Record<string, string>, body: JSON.parse(String((init as RequestInit).body)) }));
+
+  it("sends the WhatsApp template only to bookings that opted in with a phone", async () => {
+    const env = makeEnv(WA);
+    const now = new Date("2026-10-01T12:00:00Z");
+    const startsAt = new Date(now.getTime() + 20 * HOUR).toISOString();
+    await recordBooking(env, { eventId: "a", startsAt, name: "Diego Olivera", email: "d@example.com", lang: "es", phone: "33 1234 5678", whatsappOptIn: true });
+    await recordBooking(env, { eventId: "b", startsAt, name: "No Phone", email: "n@example.com", lang: "es", whatsappOptIn: true });
+    await recordBooking(env, { eventId: "c", startsAt, name: "No OptIn", email: "o@example.com", lang: "en", phone: "5551234567", whatsappOptIn: false });
+
+    const r = await sendDueConfirmations(env, now);
+    expect(r.whatsapp).toMatchObject({ sent: 1, failed: 0 });
+    const calls = waCalls();
+    expect(calls).toHaveLength(1);
+    expect(calls[0].url).toBe("https://wa.example.dev/api/test-send-template");
+    expect(calls[0].headers["x-test-secret"]).toBe("s3cret");
+    const token = ((await env.DB.prepare("SELECT token FROM bookings WHERE event_id = 'a'").first()) as { token: string }).token;
+    expect(calls[0].body).toMatchObject({
+      to: "33 1234 5678",
+      template: "consultation_reminder",
+      lang: "es_MX",
+      sender: "nye",
+      buttonParams: [token, token],
+    });
+    expect(calls[0].body.params[0]).toBe("Diego");
+
+    // Never twice.
+    await sendDueConfirmations(env, now);
+    expect(waCalls()).toHaveLength(1);
+  });
+
+  it("skips WhatsApp entirely when the gateway is not configured", async () => {
+    const env = makeEnv();
+    const now = new Date("2026-10-01T12:00:00Z");
+    await recordBooking(env, { eventId: "a", startsAt: new Date(now.getTime() + 20 * HOUR).toISOString(), name: "A", email: "a@example.com", lang: "es", phone: "3312345678", whatsappOptIn: true });
+    const r = await sendDueConfirmations(env, now);
+    expect(r.whatsapp).toEqual({ skipped: "not configured" });
+  });
+
+  it("sends Robert one summary of today's consultations at 08:00 local, once", async () => {
+    const env = makeEnv(WA);
+    // 2026-10-01 is CST (UTC-6, no DST): 13:30 local = 19:30Z, 17:00 local = 23:00Z.
+    await recordBooking(env, { eventId: "a", startsAt: "2026-10-01T19:30:00Z", name: "Diego  Olivera", email: "d@example.com", lang: "es" });
+    await recordBooking(env, { eventId: "b", startsAt: "2026-10-01T23:00:00Z", name: "Ana", email: "a@example.com", lang: "en" });
+    await recordBooking(env, { eventId: "c", startsAt: "2026-10-02T19:30:00Z", name: "Tomorrow", email: "t@example.com", lang: "en" });
+    await env.DB.prepare("UPDATE bookings SET status = 'confirmed' WHERE event_id = 'b'").run();
+
+    expect(await sendDailySummary(env, new Date("2026-10-01T13:30:00Z"))).toEqual({ skipped: "too early" }); // 07:30 local
+    const r = await sendDailySummary(env, new Date("2026-10-01T14:00:00Z")); // 08:00 local
+    expect(r).toMatchObject({ sent: 1, count: 2 });
+    const [call] = waCalls();
+    expect(call.body).toMatchObject({ to: "+52 33 1559 0572", template: "consultation_daily_summary", lang: "en_US", sender: "cushlabs" });
+    expect(call.body.params).toEqual(["2", "NY English Teacher", "1:30 PM Diego Olivera ⏳ · 5:00 PM Ana ✅"]);
+
+    expect(await sendDailySummary(env, new Date("2026-10-01T14:30:00Z"))).toEqual({ skipped: "already sent" });
+    expect(waCalls()).toHaveLength(1);
+  });
+
+  it("sends nothing on a day with no consultations", async () => {
+    const env = makeEnv(WA);
+    expect(await sendDailySummary(env, new Date("2026-10-01T14:00:00Z"))).toEqual({ sent: 0, count: 0 });
+    expect(waCalls()).toHaveLength(0);
   });
 });

@@ -16,6 +16,15 @@
  *   POST /cancel            -> deletes the calendar event (frees the slot,
  *                              Google emails the attendee the cancellation)
  *
+ * WhatsApp (optional, per booking): if the booker ticked the WhatsApp opt-in
+ * and gave a phone, the same cron also sends the approved template
+ * `consultation_reminder` through the cushlabs-whatsapp gateway. Its two URL
+ * buttons open these same /confirm and /cancel pages (the token is the URL
+ * suffix), so confirming works identically from email or WhatsApp.
+ *
+ * Morning summary: at 08:00 local, sendDailySummary() sends Robert one WhatsApp
+ * (`consultation_daily_summary`) listing today's consultations with ✅/⏳/❌.
+ *
  * Confirm and cancel are two-step (GET shows a button, POST acts) on purpose:
  * mail providers and corporate link scanners open every link in an email, and
  * a GET that acted would confirm — or cancel — meetings nobody clicked.
@@ -34,6 +43,13 @@ export const REQUIRED_VARS = [
   "CONFIRM_BRAND", // e.g. NY English Teacher
   "PUBLIC_WORKER_URL", // this Worker's public base URL, for links in the email
   "REBOOK_URL", // booking page, for people who cancel (REBOOK_URL_ES optional)
+];
+
+/** WhatsApp is optional; these enable it (reminders and the morning summary). */
+export const WHATSAPP_VARS = [
+  "WA_GATEWAY_URL", // cushlabs-whatsapp base URL
+  "WA_GATEWAY_SECRET", // secret — cushlabs-whatsapp TEST_SEND_SECRET
+  "WA_SENDER", // "nye" or "cushlabs" — which WhatsApp number sends reminders
 ];
 
 export function missingVars(env) {
@@ -64,6 +80,22 @@ export async function ensureBookingsTable(db) {
       `CREATE INDEX IF NOT EXISTS bookings_due ON bookings (status, asked_at, starts_at)`,
     )
     .run();
+  await db
+    .prepare(
+      `CREATE TABLE IF NOT EXISTS daily_summaries (day TEXT PRIMARY KEY, count INTEGER NOT NULL, sent_at TEXT NOT NULL)`,
+    )
+    .run();
+  // Columns added after the table first shipped (2026-09-29). ALTER has no
+  // IF NOT EXISTS in SQLite, so read the column list and add what is missing.
+  const { results: cols = [] } = await db.prepare(`PRAGMA table_info(bookings)`).all();
+  const have = new Set(cols.map((c) => c.name));
+  for (const [name, type] of [
+    ["phone", "TEXT"],
+    ["wa_opt_in", "INTEGER NOT NULL DEFAULT 0"],
+    ["wa_sent_at", "TEXT"],
+  ]) {
+    if (!have.has(name)) await db.prepare(`ALTER TABLE bookings ADD COLUMN ${name} ${type}`).run();
+  }
 }
 
 function newToken() {
@@ -82,8 +114,8 @@ export async function recordBooking(env, booking) {
     await ensureBookingsTable(env.DB);
     const token = newToken();
     await env.DB.prepare(
-      `INSERT INTO bookings (token, event_id, name, email, lang, starts_at, meet_link, created_at)
-       VALUES (?, ?, ?, ?, ?, ?, ?, ?)`,
+      `INSERT INTO bookings (token, event_id, name, email, lang, starts_at, meet_link, created_at, phone, wa_opt_in)
+       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
     )
       .bind(
         token,
@@ -94,6 +126,8 @@ export async function recordBooking(env, booking) {
         new Date(booking.startsAt).toISOString(),
         booking.meetLink || null,
         new Date().toISOString(),
+        booking.phone || null,
+        booking.phone && booking.whatsappOptIn ? 1 : 0,
       )
       .run();
     return token;
@@ -284,7 +318,124 @@ export async function sendDueConfirmations(env, now = new Date()) {
       );
     }
   }
+  const whatsapp = await sendDueWhatsApp(env, from, to);
+  return { sent, failed, due: results.length, whatsapp };
+}
+
+/* -------------------------------- WhatsApp -------------------------------- */
+
+function whatsappReady(env) {
+  return WHATSAPP_VARS.every((k) => env[k]);
+}
+
+async function sendWhatsAppTemplate(env, body) {
+  const resp = await fetch(`${env.WA_GATEWAY_URL.replace(/\/+$/, "")}/api/test-send-template`, {
+    method: "POST",
+    headers: { "x-test-secret": env.WA_GATEWAY_SECRET, "Content-Type": "application/json" },
+    body: JSON.stringify(body),
+  });
+  if (!resp.ok) {
+    console.error(`WhatsApp send ${body.template} failed: ${resp.status} ${(await resp.text()).slice(0, 300)}`);
+  }
+  return resp.ok;
+}
+
+async function sendDueWhatsApp(env, fromIso, toIso) {
+  if (!whatsappReady(env)) return { skipped: "not configured" };
+  const { results = [] } = await env.DB.prepare(
+    `SELECT * FROM bookings
+     WHERE status = 'booked' AND wa_opt_in = 1 AND phone IS NOT NULL AND wa_sent_at IS NULL
+       AND starts_at >= ? AND starts_at <= ?
+     ORDER BY starts_at LIMIT 50`,
+  )
+    .bind(fromIso, toIso)
+    .all();
+  let sent = 0;
+  let failed = 0;
+  const tz = env.TIMEZONE || "America/Mexico_City";
+  for (const row of results) {
+    const ok = await sendWhatsAppTemplate(env, {
+      to: row.phone,
+      template: "consultation_reminder",
+      lang: row.lang === "es" ? "es_MX" : "en_US",
+      params: [String(row.name).trim().split(/\s+/)[0], formatWhen(row.starts_at, row.lang, tz)],
+      buttonParams: [row.token, row.token],
+      sender: env.WA_SENDER,
+    });
+    if (ok) {
+      await env.DB.prepare(`UPDATE bookings SET wa_sent_at = ? WHERE token = ?`)
+        .bind(new Date().toISOString(), row.token)
+        .run();
+      sent++;
+    } else failed++;
+  }
   return { sent, failed, due: results.length };
+}
+
+/* ----------------------------- morning summary ----------------------------- */
+
+const SUMMARY_HOUR = 8;
+
+function localParts(date, timeZone) {
+  const parts = Object.fromEntries(
+    new Intl.DateTimeFormat("en-CA", {
+      timeZone,
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+      hour: "2-digit",
+      hourCycle: "h23",
+    })
+      .formatToParts(date)
+      .map((p) => [p.type, p.value]),
+  );
+  return { day: `${parts.year}-${parts.month}-${parts.day}`, hour: Number(parts.hour) };
+}
+
+const STATUS_ICON = { confirmed: "✅", booked: "⏳", cancelled: "❌" };
+
+/**
+ * Once a day, at or after 08:00 local, send Robert today's consultations.
+ * Nothing is sent on a day with no consultations; the day is still recorded so
+ * the check does not repeat. Needs OPERATOR_WA plus the WhatsApp vars.
+ */
+export async function sendDailySummary(env, now = new Date()) {
+  if (!whatsappReady(env) || !env.OPERATOR_WA) return { skipped: "not configured" };
+  const tz = env.TIMEZONE || "America/Mexico_City";
+  const { day, hour } = localParts(now, tz);
+  if (hour < SUMMARY_HOUR) return { skipped: "too early" };
+  await ensureBookingsTable(env.DB);
+  const done = await env.DB.prepare(`SELECT day FROM daily_summaries WHERE day = ?`).bind(day).first();
+  if (done) return { skipped: "already sent" };
+
+  const lo = new Date(now.getTime() - 36 * 3600e3).toISOString();
+  const hi = new Date(now.getTime() + 36 * 3600e3).toISOString();
+  const { results = [] } = await env.DB.prepare(
+    `SELECT name, starts_at, status FROM bookings WHERE starts_at >= ? AND starts_at <= ? ORDER BY starts_at`,
+  )
+    .bind(lo, hi)
+    .all();
+  const today = results.filter((r) => localParts(new Date(r.starts_at), tz).day === day);
+
+  if (today.length) {
+    const time = new Intl.DateTimeFormat("en-US", { timeZone: tz, hour: "numeric", minute: "2-digit" });
+    const list = today
+      .map((r) => `${time.format(new Date(r.starts_at))} ${String(r.name).replace(/\s+/g, " ").trim()} ${STATUS_ICON[r.status] || "⏳"}`)
+      .join(" · ")
+      .slice(0, 900);
+    const ok = await sendWhatsAppTemplate(env, {
+      to: env.OPERATOR_WA,
+      template: "consultation_daily_summary",
+      lang: "en_US",
+      params: [String(today.length), env.CONFIRM_BRAND || "your site", list],
+      sender: "cushlabs",
+    });
+    if (!ok) return { sent: 0, failed: 1 };
+  }
+  await env.DB.prepare(`INSERT OR IGNORE INTO daily_summaries (day, count, sent_at) VALUES (?, ?, ?)`)
+    .bind(day, today.length, new Date().toISOString())
+    .run();
+  return { sent: today.length ? 1 : 0, count: today.length };
 }
 
 /* --------------------------------- routes --------------------------------- */

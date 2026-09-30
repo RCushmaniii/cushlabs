@@ -156,6 +156,10 @@ const b = dict.booking;
             class="w-full rounded-xl border border-border bg-canvas/40 px-4 py-3 text-sm text-foreground placeholder:text-muted focus:outline-hidden focus:ring-2 focus:ring-cush-orange/40"
           />
           <p class="text-sm text-muted mt-2">{b.phoneHint}</p>
+          <label class="mt-3 flex items-start gap-2 text-sm text-foreground cursor-pointer">
+            <input type="checkbox" id="booking-whatsapp-optin" name="whatsappOptIn" class="mt-0.5 h-4 w-4 accent-cush-orange" />
+            <span>{b.whatsappOptIn}</span>
+          </label>
         </div>
 
         <div>
@@ -763,6 +767,12 @@ const b = dict.booking;
             // every booking so far reached the calendar with no way to call
             // the person back.
             phone: formData.phone || '',
+            // Explicit WhatsApp opt-in (Meta requires it before a business-
+            // initiated message). Meaningless without a phone, so it is only
+            // sent true when one was given.
+            whatsappOptIn:
+              !!formData.phone &&
+              !!(document.getElementById('booking-whatsapp-optin') as HTMLInputElement | null)?.checked,
             turnstileToken,
             company: honeypotInput?.value || '',
           }),
