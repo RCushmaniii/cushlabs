@@ -329,11 +329,17 @@ function whatsappReady(env) {
 }
 
 async function sendWhatsAppTemplate(env, body) {
-  const resp = await fetch(`${env.WA_GATEWAY_URL.replace(/\/+$/, "")}/api/test-send-template`, {
+  const url = `${env.WA_GATEWAY_URL.replace(/\/+$/, "")}/api/test-send-template`;
+  const init = {
     method: "POST",
     headers: { "x-test-secret": env.WA_GATEWAY_SECRET, "Content-Type": "application/json" },
     body: JSON.stringify(body),
-  });
+  };
+  // In production the call MUST go through the WA_GATEWAY service binding:
+  // Cloudflare refuses a Worker's fetch() to another *.workers.dev Worker on
+  // the same account (error 1042, first seen live 2026-09-29). The plain
+  // fetch is only the fallback for tests and local runs.
+  const resp = env.WA_GATEWAY ? await env.WA_GATEWAY.fetch(url, init) : await fetch(url, init);
   if (!resp.ok) {
     console.error(`WhatsApp send ${body.template} failed: ${resp.status} ${(await resp.text()).slice(0, 300)}`);
   }

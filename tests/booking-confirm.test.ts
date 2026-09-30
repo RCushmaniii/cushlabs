@@ -240,6 +240,17 @@ describe("WhatsApp reminder and morning summary", () => {
     expect(waCalls()).toHaveLength(1);
   });
 
+  it("uses the WA_GATEWAY service binding instead of a public fetch when bound", async () => {
+    const bound = vi.fn(async () => new Response("{}", { status: 200 }));
+    const env = makeEnv({ ...WA, WA_GATEWAY: { fetch: bound } });
+    const now = new Date("2026-10-01T12:00:00Z");
+    await recordBooking(env, { eventId: "a", startsAt: new Date(now.getTime() + 20 * HOUR).toISOString(), name: "A", email: "a@example.com", lang: "es", phone: "3312345678", whatsappOptIn: true });
+    const r = await sendDueConfirmations(env, now);
+    expect(r.whatsapp).toMatchObject({ sent: 1 });
+    expect(bound).toHaveBeenCalledTimes(1);
+    expect(waCalls()).toHaveLength(0);
+  });
+
   it("skips WhatsApp entirely when the gateway is not configured", async () => {
     const env = makeEnv();
     const now = new Date("2026-10-01T12:00:00Z");

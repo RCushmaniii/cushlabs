@@ -17,6 +17,12 @@ database_id = "9a3ee9e6-77f5-4ff2-b0e2-49da7456d523"
 [triggers]
 crons = ["*/30 * * * *"]
 
+# Direct binding to cushlabs-whatsapp. Required: Cloudflare blocks one Worker
+# fetching another *.workers.dev URL on the same account (error 1042).
+[[services]]
+binding = "WA_GATEWAY"
+service = "cushlabs-whatsapp"
+
 [observability]
 enabled = true
 
