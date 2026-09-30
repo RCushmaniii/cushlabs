@@ -12,7 +12,7 @@
 > Resolved items collapse to one line under [Resolved](#resolved-technical-debt); the trail stays so a
 > future session does not re-litigate a settled decision.
 
-**17 open** · 23 resolved · last reconciled 2026-09-25
+**16 open** · 24 resolved · last reconciled 2026-09-30
 
 ### ~~#31~~ — The homepage chat widget answers prospects and records nothing at all — **RESOLVED 2026-09-23**
 
@@ -267,23 +267,6 @@ log and in a comment beside the string.
 List 1, or amend §4 to describe what the homepage now promises. Do **not** close it by quietly
 reverting `Hero.astro`.
 
-### #28 — The pain-point cards carry a hover state but are not clickable
-
-**Low** · opened 2026-09-15 · blocks: nothing; a small polish inconsistency on the homepage
-
-`src/components/home2/PainPoints.astro` renders six plain `<div>` cards that still have
-`hover:border-cush-orange/50`, `hover:shadow-lg` and a `group-hover` orange icon tile. They
-contain no link, button or handler, so the hover promises a click that does not exist.
-
-This is the same false affordance removed from `WhyMe.astro` in PR #318, under Robert's own rule:
-"if these cards are not clickable, I would not use this strong hover treatment at all." It was left
-in place only because that session's ask was the icons. Two adjacent sections now behave
-differently for the same reason, which is worse than either choice alone.
-
-**Next:** delete the three hover/group-hover classes from the card `<div>` and the icon tile in
-`PainPoints.astro`, matching the treatment now in `WhyMe.astro`. One-line change, EN and ES share
-the component.
-
 ### #27 — A Page can connect and nobody is told; the confirmation cannot list the Pages because the Worker never sends their names
 
 **Medium** · opened 2026-09-02 · blocks: the "we'll email you" promise on the connected page
@@ -434,6 +417,7 @@ ES privacy names LFPDPPP / derechos ARCO (PR #86); EN still says generic "depend
 
 Kept for the trail. Newest numbers first.
 
+- **#28 Pain-point cards had a hover state but no click** — Resolved 2026-09-30. Removed the border/shadow hover and the `group-hover` icon fill from the card and icon tile in `src/components/home2/PainPoints.astro`, matching `WhyMe.astro` (PR #318). One component serves EN and ES. (The *other* #28, the `SUPABASE_SECRET` history item, is unrelated and still open.)
 - **#8 Self-portfolio `demoUrl` pointed at the non-www apex** — Resolved 2026-09-02 (PR #300). `src/data/projectDetails.ts:146` now `https://www.cushlabs.ai/`, which removes the only redirecting internal link on the site (a 307 on 4 pages, Ahrefs 3XX warning). IndexNow submitted after merge.
 - **#19 Booking success announced without verification** — Resolved 2026-08-20 (PR #270). `data.ok` was the entire success test, so a worker replying ok without creating an event still rendered "You're Booked." `eventId` and `meetLink` had been in `BookingResponse` since the worker was written and neither was ever read. Now a missing `eventId` throws instead of claiming success, and the Meet link plus a booking reference render when returned — the join link is built in JS rather than shipping a dead `href="#"`. Verified by driving the real wizard with a mocked API in both directions. Two things found while in there: the summary said **"Central Time (GMT-6)"**, which is ambiguous and wrong for half the year for a US visitor (US Central shifts; Mexico City is UTC−6 year-round) — now "Mexico City time (UTC−6)" in both languages; and `PUBLIC_BOOKING_API_URL` was missing from `.env.example`, so an unset value silently disabled the primary conversion page with no build error.
 - **#18 Imported docs describing a different site** — Resolved 2026-08-20 (PR #271). 16 files deleted, 9 bannered with a `NOT THIS REPO` block naming exactly what is wrong. Inbound references were checked first: every link came from another doc in the same imported cluster or from SESSION_LOG, nothing in code, config or CI. Deleted the quiz system, free-assets router, Supabase migration, Netlify/Hostinger deployment guides, the Next.js/shadcn toolkit, WindsurfRules, and `BOOKING-SYSTEM.md` (which claimed a Cal.com widget). Kept, with banners, the bilingual and SEO docs whose reasoning generalises. Also fixed `docs/templates/readme-instructions.md`, which was seeding every new repo's README with "Node.js 18.17+" while Astro 7 requires >= 22.12. New `npm run audit:docs` flags foreign-stack markers in unbannered docs and `npm run` references to scripts that do not exist — advisory, not a gate, since a legitimate mention of another project is not a defect. 43 flagged docs → 27, every remaining heavy offender bannered.
@@ -499,8 +483,8 @@ _(none open)_
   alert). Remaining open Dependabot PRs: #128, #198, #217, #218, #219, #220 — #218 (TypeScript 5→7)
   and #220 (ESLint 9→10) are majors and need a build check, not a blind merge.
 - **Ahrefs 2026-07-25 crawl fixes — one item left** (tech debt #8).
-  1. `src/data/projectDetails.ts:146` → `https://www.cushlabs.ai/` (kills the 3XX warning).
-     Still open as of 2026-08-05.
+  1. ~~`src/data/projectDetails.ts:146` → `https://www.cushlabs.ai/`~~ — **done 2026-09-02** (PR #300,
+     see resolved tech debt #8). This line kept saying "still open" for four weeks after it shipped.
   2. ~~`PORTFOLIO.md` exclusions for `cushlabs-ai-dispatch` / `cushlabs-stickers-releases`~~ —
      **done 2026-08-05.** Both sibling repos committed, `cushlabs-ai-dispatch` migrated
      `master` → `main`, and the generator's default flipped to opt-in (tech debt #7, #9).

@@ -103,9 +103,9 @@ const t = content[locale];
 
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-16">
       {t.pains.map((pain, i) => (
-        <div class="group p-6 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/50 hover:border-cush-orange/50 hover:shadow-lg hover:shadow-cush-orange/5 transition-all duration-300">
-          <div class="w-12 h-12 rounded-lg bg-cush-orange/10 flex items-center justify-center mb-5 group-hover:bg-cush-orange group-hover:text-black dark:text-white text-gray-900 transition-colors duration-300">
-            <svg class="w-6 h-6 text-accent-text group-hover:text-black transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div class="p-6 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/50">
+          <div class="w-12 h-12 rounded-lg bg-cush-orange/10 flex items-center justify-center mb-5 dark:text-white text-gray-900">
+            <svg class="w-6 h-6 text-accent-text" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={PAIN_ICONS[i]} />
             </svg>
           </div>
