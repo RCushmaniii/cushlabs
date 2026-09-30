@@ -938,9 +938,20 @@ end to end on nyenglishteacher.com. Commits 06cc00b, 41ecba0.
 **Gotchas recorded:** Brevo's "authorised IPs" block must stay OFF — Workers have no fixed IP. The
 `BREVO_SMTP_KEY` in .env is SMTP-only; the Worker needs a v3 API key (`BREVO_API_KEY` secret).
 
-### Next
-- Part 2: WhatsApp reminders for consultations via cushlabs-whatsapp (needs opt-in checkbox + Meta template).
-- Part 3: morning WhatsApp summary to Robert of who has / hasn't confirmed.
+### WhatsApp reminder + morning summary (same day, parts 2 and 3)
+- Booking forms (cushlabs + ny-eng, EN/ES) gained a WhatsApp opt-in checkbox. ny-eng's form had been
+  collecting a phone and never sending it to /book — fixed.
+- Opted-in bookings get the Meta template `consultation_reminder` the day before, sent through
+  cushlabs-whatsapp's `/api/test-send-template` (new `buttonParams`). Its URL buttons open the same
+  /confirm and /cancel pages, so no inbound WhatsApp handling is needed.
+- 08:00 local: each booking Worker sends Robert `consultation_daily_summary` (✅/⏳/❌ per consultation),
+  skipped on days with none.
+- Templates approved on both WABAs 2026-09-30. Verified live: reminder delivered, WhatsApp confirm put
+  ✅ on the calendar, 08:00 summary delivered. Commits e0293f7, 22a0a0e.
+
+**Gotcha recorded:** a Worker cannot fetch() another *.workers.dev Worker on the same account
+(Cloudflare error 1042). The booking Workers reach cushlabs-whatsapp through the `WA_GATEWAY` service
+binding.
 
 ## Session: 2026-09-23 — The admin dashboard was a different, empty account, and the site's chat has never recorded a single conversation
 
