@@ -52,11 +52,13 @@ PUBLIC_WORKER_URL = "https://cushlabs-booking.rcushmaniii.workers.dev"
 REBOOK_URL = "https://www.cushlabs.ai/consultation/"
 REBOOK_URL_ES = "https://www.cushlabs.ai/es/reservar/"
 # WhatsApp reminders (opt-in) + Robert's 08:00 summary, via cushlabs-whatsapp.
-# Secrets: WA_GATEWAY_SECRET (= its TEST_SEND_SECRET), OPERATOR_WA (Robert's number).
+# Needs two Worker secrets, WA_GATEWAY_SECRET (the same value as its
+# TEST_SEND_SECRET) and OPERATOR_WA (Robert's number).
 WA_GATEWAY_URL = "https://cushlabs-whatsapp.rcushmaniii.workers.dev"
 WA_SENDER = "cushlabs"
 # One combined 08:00 summary for both sites is sent from HERE (ny-eng has
-# DAILY_SUMMARY = "off"). Secret: SUMMARY_SECRET, the same value on both Workers.
+# DAILY_SUMMARY = "off"). Both Workers hold the SUMMARY_SECRET secret with the
+# same value.
 SUMMARY_LABEL = "CushLabs"
 PEER_LABEL = "NYE"
 SUMMARY_SITES = "NY English Teacher + CushLabs.ai"
