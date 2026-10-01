@@ -902,6 +902,42 @@ cost question the WhatsApp demo-swap decision has been waiting on.
 
 ## Session History
 
+## Session: 2026-10-01 — Services-page trust fixes and the first small-business testimonial
+
+Triggered by an outside copy review of the homepage and /services/. Every critical claim in it was
+checked against the code first; all were real.
+
+- **Testimonial:** the homepage now leads with Azucena Carrillo (Azúcar Trajes de Baño), a
+  small-business client, who approved that name on 2026-09-30. Given in English; the Spanish is a
+  translation. Julio Aldana's LinkedIn quote is cut to its one-line closer underneath.
+- **Currency:** English service pages showed MXN while /pricing/ opens English on USD (PR #343).
+  English pages now read USD first with the Mexico price labelled, e.g. "$229 USD/mo ($3,490 MXN +
+  IVA in Mexico)". Spanish pages unchanged. JSON-LD on English pages switched to USD.
+- **Missed-call math** was off about 4x (3–5 calls a day at $500 is per *week*, not per month) in
+  four places, EN and ES. Replaced with "even one $500 customer a week ≈ $2,000 a month".
+- **"Callers don't know it's AI"** removed, EN and ES. The replacement says the agent answers plainly
+  when asked — verified against `cushlabs-ai-voice-agent/scripts/update-all-assistants.js:79`, which
+  discloses on request, not proactively. Do not upgrade the copy to "always tells callers" unless the
+  prompt changes.
+- **Self-contradictions removed:** reviews as a "separate add-on" (Basic includes review management);
+  "single Facebook page (scoped separately)" against two included locations (now states the $49 /
+  $690 MXN extra-location price from commercial-terms); "AI product photos / bundle for a better
+  rate"; voice minutes now say "per location" everywhere.
+- **Audience and voice:** services hero is no longer fear-led; "Is this a good fit?" rewritten from
+  5–200-employee / SOP / SAP buyers to clinics, salons and service businesses; WhatsApp block "we" →
+  "I"; "Why most businesses pick Premium" → "Why I recommend Premium"; the badge claim softened (Meta
+  judges responsiveness over time); hero trust item "No More Repeating Yourself" → "No Long-Term
+  Contract".
+- **Not changed, deliberately:** the homepage headline. The review's pick ("Every Customer Gets an
+  Answer") implies a guarantee, which voice-dna `never_do` forbids — reasoning is in the comment above
+  `headline` in `src/components/home2/Hero.astro`.
+- **Also:** `tsconfig.json` now extends `astro/tsconfigs/strict` (package path) instead of a relative
+  `node_modules` path, which VS Code was reporting as unreadable.
+
+**Left open:** receptionist salary figures disagree between surfaces (EN voice page $18–25k MXN, ES
+service block $8–15k MXN). The review's larger rewrites — a tier strip replacing "What I Build",
+"Why Work With Me" cut to four cards, merging the two chatbot sections — were not attempted.
+
 ## Session: 2026-09-29 — Portfolio demo links pointed at vercel.app, and bookings had no attendance confirmation
 
 ### Portfolio links
