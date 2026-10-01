@@ -17,6 +17,7 @@ const content = {
       name: "Azucena Carrillo",
       initials: "AC",
       title: "Azúcar Trajes de Baño",
+      url: "https://www.facebook.com/azucarenguadalajara/",
       source: "Client",
     },
     secondary: {
@@ -52,6 +53,7 @@ const content = {
       name: "Azucena Carrillo",
       initials: "AC",
       title: "Azúcar Trajes de Baño",
+      url: "https://www.facebook.com/azucarenguadalajara/",
       source: "Cliente",
     },
     secondary: {
@@ -116,7 +118,7 @@ const t = content[locale];
           </div>
           <div>
             <div class="font-display font-semibold text-sm text-gray-900 dark:text-white">{t.testimonial.name}</div>
-            <div class="text-xs text-gray-500 dark:text-gray-400">{t.testimonial.title}</div>
+            <a href={t.testimonial.url} target="_blank" rel="noopener noreferrer" class="block text-xs text-gray-500 dark:text-gray-400 underline decoration-dotted underline-offset-2 hover:text-accent-text">{t.testimonial.title}</a>
             <div class="text-xs text-accent-text">{t.testimonial.source}</div>
           </div>
         </div>

@@ -493,6 +493,10 @@ _(none open)_
      confidentiality fix, not an SEO one, and it should not wait on a portfolio-data regen.
   4. `npm run seo:indexnow` — run after item 1 lands, so one submission covers everything.
 
+- **Azúcar case study** — the homepage testimonial (2026-10-01) links her Facebook page. Promote it
+  to a full case study once there are real numbers to show (messages answered, leads captured,
+  after-hours share). Ask Azucena before publishing any figure.
+
 ### Low priority
 
 - ~~**Triage portfolio sync issue #109**~~ — **closed 2026-08-06.** The issue itself was closed
