@@ -420,6 +420,12 @@ const b = dict.booking;
       window.cushlabsTrack?.('booking_started', { plan: plan || undefined });
     }
 
+    // The day the visitor clicked, as YYYY-MM-DD. The picker builds local-midnight
+    // Dates, so toISOString() (UTC) rolled the date back a day for anyone east of
+    // UTC: a visitor in Madrid who clicked Oct 5 was shown, and booked, Oct 4.
+    function calendarDate(d: Date): string {
+      return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+    }
     // --- Timezone utilities ---
     function getVisitorTimezone(): string | null {
       try {
@@ -606,7 +612,7 @@ const b = dict.booking;
       }
 
       try {
-        const dateStr = date.toISOString().split('T')[0];
+        const dateStr = calendarDate(date);
         const response = await fetch(`${API_BASE}/slots/${dateStr}?lang=${lang}`);
         if (!response.ok) throw new Error(`slots request failed: ${response.status}`);
         const data = await response.json();
@@ -630,7 +636,7 @@ const b = dict.booking;
       const container = document.getElementById('time-slots-container');
       if (!container || !selectedDate) return;
 
-      const dateStr = selectedDate.toISOString().split('T')[0];
+      const dateStr = calendarDate(selectedDate);
 
       container.innerHTML = slots.map((time) => {
         if (showDualTime && visitorTz) {
@@ -751,7 +757,7 @@ const b = dict.booking;
       };
 
       try {
-        const dateStr = selectedDate.toISOString().split('T')[0];
+        const dateStr = calendarDate(selectedDate);
 
         const response = await fetch(`${API_BASE}/book`, {
           method: 'POST',
