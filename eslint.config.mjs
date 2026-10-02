@@ -141,6 +141,7 @@ export default [
   {
     ignores: [
       "dist/",
+      ".e2e-dist/",
       ".astro/",
       "node_modules/",
       "public/",

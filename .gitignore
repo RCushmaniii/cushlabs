@@ -68,3 +68,6 @@ nul
 # Lumière is exempt: it is a fictitious showcase with no real client in it.
 demos/*/proposal.html
 !demos/lumiere/proposal.html
+
+# Test build for scripts/test-booking-e2e.mjs
+.e2e-dist/
