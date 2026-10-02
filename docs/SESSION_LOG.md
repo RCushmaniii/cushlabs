@@ -948,8 +948,9 @@ pricing; WhyMe testing card de-jargoned; the guarantee now says what "agreed" me
 cost set to $18–25k MXN everywhere (PR #349). Deliberately unchanged: the WhatsApp CTA stays
 "Get in touch" (see the comment above `primaryCtaLabel`).
 
-**Left open:** whether "2 locations" means 2 Facebook Pages (Messenger copy says "One Page");
-whether reminder templates can be English as well as Spanish. The review's larger rewrites — a tier strip replacing "What I Build",
+**Answered by Robert the same day:** every plan is one Facebook Page covering up to two locations
+(copy now says so), and WhatsApp reminder templates run in English as well as Spanish (copy no
+longer says Spanish only). **Left open:** the review's larger rewrites — a tier strip replacing "What I Build",
 "Why Work With Me" cut to four cards, merging the two chatbot sections — were not attempted.
 
 ## Session: 2026-09-29 — Portfolio demo links pointed at vercel.app, and bookings had no attendance confirmation
