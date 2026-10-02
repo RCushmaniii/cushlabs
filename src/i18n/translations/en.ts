@@ -247,7 +247,7 @@ export const en = {
   consultation: {
     title: "Free AI Consultation",
     description:
-      "Book a free 15-minute call to discuss your project. No pitch, no pressure — just honest advice on how AI can help your business.",
+      "Book a free 30-minute call to discuss your project. No pitch, no pressure — just honest advice on how AI can help your business.",
     kicker: "Free call",
     headline: "Book a free call",
     subheadline:
@@ -329,6 +329,7 @@ export const en = {
       "Time slots are (GMT-06:00) Central Standard Time - Mexico City",
     selectDateTime: "Select a date & time",
     selectTime: "Select a time",
+    changeTime: "Change",
     selectedDate: "Selected Date",
     selectDateBelow: "Select a date below",
     addDetails: "Tell me a bit about you",

@@ -21,6 +21,10 @@
  *     SATURDAY_HOURS            (default: 09:00-13:00)
  *     ALLOWED_ORIGINS           (comma-separated, supports *.suffix patterns, e.g. "https://cushlabs.ai,https://www.cushlabs.ai,*.vercel.app")
  *     TIMEZONE                  (default: America/Mexico_City)
+ *     MIN_NOTICE_HOURS          (default: 12 — earliest bookable slot from now)
+ *     BUFFER_MINUTES            (default: 15 — free gap kept before/after every busy event)
+ *     OPERATOR_SECOND_TZ        (default: America/New_York — Robert's second clock, shown in
+ *                                the calendar event and the 08:00 WhatsApp summary)
  *     DEBUG_ENABLED             (set to "true" to enable /debug endpoint)
  *     DEBUG_KEY                 (optional auth key for /debug)
  *     RATE_LIMIT_MAX            (default: 5 bookings per window)
@@ -45,6 +49,7 @@ import {
   handleConfirmationRoutes,
   recordBooking,
   sendDailySummary,
+  validTimeZone,
   sendDueConfirmations,
 } from "./lib/booking-confirm.js";
 
@@ -419,6 +424,20 @@ export default {
           }
         }
 
+        // Re-check the slot against the calendar right now. The slot list is
+        // cached for 5 minutes, so two visitors can be shown the same opening;
+        // without this both bookings would land on the calendar.
+        const fresh = await getAvailableSlots(payload?.date, env, tz);
+        if (!fresh.slots.includes(payload?.time)) {
+          slotsCache.delete(payload?.date);
+          return json(
+            { ok: false, code: "slot_taken", error: t(lang, "slot_taken") },
+            409,
+            request,
+            env,
+          );
+        }
+
         const { startsAt, ...result } = await createBooking(
           payload,
           env,
@@ -434,7 +453,9 @@ export default {
           meetLink: result.meetLink,
           phone: sanitizeInput(payload.phone || ""),
           whatsappOptIn: payload.whatsappOptIn === true,
+          bookerTz: payload.timeZone,
         });
+        slotsCache.delete(payload.date);
         return json(
           { ok: true, ...result, message: t(lang, "book_success") },
           200,
@@ -529,7 +550,11 @@ async function getAvailableSlots(dateStr, env, timeZone) {
   }
 
   const nowUTC = new Date();
-  const minBookingTime = new Date(nowUTC.getTime() + 210 * 60 * 1000);
+  const noticeHours = Number(env.MIN_NOTICE_HOURS ?? 12);
+  const minBookingTime = new Date(nowUTC.getTime() + noticeHours * 60 * 60 * 1000);
+  // Keep a gap around every busy block (other consultations included) so calls
+  // never run back to back.
+  const bufferMs = Number(env.BUFFER_MINUTES ?? 15) * 60 * 1000;
 
   const availableSlots = allSlots.filter((time) => {
     const [h, m] = time.split(":").map(Number);
@@ -538,7 +563,9 @@ async function getAvailableSlots(dateStr, env, timeZone) {
 
     if (slotStart < minBookingTime) return false;
 
-    return !busy.some((b) => overlaps(slotStart, slotEnd, b.start, b.end));
+    return !busy.some((b) =>
+      overlaps(slotStart, slotEnd, new Date(b.start.getTime() - bufferMs), new Date(b.end.getTime() + bufferMs)),
+    );
   });
 
   return {
@@ -617,10 +644,15 @@ async function createBooking(data, env, timeZone, lang) {
   // drops looks identical from the outside to one that was never collected.
   const phone = sanitizeInput(data.phone || "");
 
+  // The meeting time on every clock that matters, at the top of the event.
+  // Google shows the event in whatever zone Robert's calendar is set to, which
+  // stays "Mexico City" when he travels — so the description never relies on it.
+  const whenLine = clockLine(new Date(`${date}T${time}:00-06:00`), env, data.timeZone);
+
   const description =
     lang === "es"
-      ? `Consulta gratuita de estrategia de IA — CushLabs.ai\nNombre: ${name}\nEmail: ${email}${phone ? `\nTeléfono: ${phone}` : ""}${notes ? `\nNotas: ${notes}` : ""}`
-      : `Free AI strategy consultation — CushLabs.ai\nName: ${name}\nEmail: ${email}${phone ? `\nPhone: ${phone}` : ""}${notes ? `\nNotes: ${notes}` : ""}`;
+      ? `Consulta gratuita de estrategia de IA — CushLabs.ai\n${whenLine}\nNombre: ${name}\nEmail: ${email}${phone ? `\nTeléfono: ${phone}` : ""}${notes ? `\nNotas: ${notes}` : ""}`
+      : `Free AI strategy consultation — CushLabs.ai\n${whenLine}\nName: ${name}\nEmail: ${email}${phone ? `\nPhone: ${phone}` : ""}${notes ? `\nNotes: ${notes}` : ""}`;
 
   const calendarId = env.GOOGLE_CALENDAR_ID || env.CALENDAR_ID;
   const resp = await fetchJSON(
@@ -705,6 +737,10 @@ function t(lang, key) {
       en: "Your consultation is confirmed.",
       es: "Tu consulta ha sido confirmada.",
     },
+    slot_taken: {
+      en: "Someone just booked that time. Please pick another.",
+      es: "Alguien acaba de reservar ese horario. Elige otro, por favor.",
+    },
     missing_fields: {
       en: "Missing required fields: name, email, date, time",
       es: "Faltan campos obligatorios: nombre, email, fecha, hora",
@@ -722,6 +758,19 @@ function t(lang, key) {
     },
   };
   return dict[key]?.[lang] || dict[key]?.en || key;
+}
+
+/** "When: 10:00 AM CDMX · 12:00 PM EDT · booker: 9:00 AM PDT" — DST from Intl, never hardcoded. */
+function clockLine(at, env, bookerTz) {
+  const fmt = (tz) =>
+    new Intl.DateTimeFormat("en-US", { timeZone: tz, hour: "numeric", minute: "2-digit", timeZoneName: "short" }).format(at);
+  const mx = new Intl.DateTimeFormat("en-US", { timeZone: "America/Mexico_City", hour: "numeric", minute: "2-digit" }).format(at);
+  const parts = [`${mx} CDMX`];
+  const second = validTimeZone(env.OPERATOR_SECOND_TZ || "America/New_York");
+  if (second) parts.push(fmt(second));
+  const theirs = validTimeZone(bookerTz);
+  if (theirs && theirs !== "America/Mexico_City" && theirs !== second) parts.push(`booker: ${fmt(theirs)} (${theirs})`);
+  return `When: ${parts.join(" · ")}`;
 }
 
 function toISO(dateStr, hhmm) {

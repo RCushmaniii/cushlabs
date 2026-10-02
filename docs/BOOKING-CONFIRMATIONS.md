@@ -14,8 +14,28 @@ booked on **cushlabs.ai** (`/consultation/`, `/es/reservar/`) and **nyenglishtea
 | Taps **Cancel or reschedule** | A page with one button; pressing it deletes the calendar event (the slot reopens, Google emails the booker the cancellation) and shows a link to book another time. |
 
 Robert gets **one WhatsApp at 08:00 (Mexico City)** listing the day's consultations on both sites:
-`10:00 AM Diego (NYE) ⏳ · 1:30 PM Ana (CushLabs) ✅` — ✅ confirmed, ⏳ not confirmed yet, ❌ cancelled.
-Nothing is sent on a day with no consultations.
+`10:00 AM CDMX / 12:00 PM EDT Diego (NYE) ⏳ · 1:30 PM CDMX / 3:30 PM EDT Ana (CushLabs) ✅` — ✅
+confirmed, ⏳ not confirmed yet, ❌ cancelled. Nothing is sent on a day with no consultations.
+
+### Time zones (added 2026-10-02)
+
+Robert splits his time between Mexico City and the US East Coast, and a booking once looked like the
+wrong time. Every time he or a booker reads is now on the right clock:
+
+| Who reads it | What they see |
+| --- | --- |
+| Robert, 08:00 WhatsApp | Each consultation on **both** clocks: `CDMX / EDT` (or `EST` in US winter). Second clock = `OPERATOR_SECOND_TZ`, default `America/New_York`. |
+| Robert, calendar event | First line of the description: `When: 10:00 AM CDMX · 12:00 PM EDT · booker: 9:00 AM PDT (America/Los_Angeles)`. |
+| Booker, form + reminders | Their own clock first, Mexico City alongside: "Monday, October 5 at 12:00 PM (your time; 10:00 AM Mexico City time)". The form sends the browser's zone as `timeZone`; it is stored in `bookings.booker_tz`. |
+
+Daylight saving is never hardcoded: every conversion asks `Intl` for the offset at that instant.
+Mexico City itself has had no DST since 2022, so the slot grid stays a fixed UTC−6.
+
+**The one thing code cannot fix:** Google Calendar shows events in the zone set on Robert's
+calendar, which is `America/Mexico_City`. When he is in the US, the app keeps showing Mexico City
+times unless *Settings → General → Time zone* has "Ask to update my primary time zone to current
+location" turned on (or he switches it by hand). The `When:` line exists so the event is right
+either way.
 
 ## How it fits together
 
@@ -70,6 +90,8 @@ from the repo folder and are never committed.
 | `CONFIRM_BRAND` | var | `CushLabs.ai` | `NY English Teacher` |
 | `PUBLIC_WORKER_URL` | var | its workers.dev URL (links in emails) | same |
 | `REBOOK_URL` / `REBOOK_URL_ES` | var | booking pages | booking pages |
+| `OPERATOR_SECOND_TZ` | var, optional | default `America/New_York` (second clock in the summary + event) | not used |
+| `MIN_NOTICE_HOURS` / `BUFFER_MINUTES` | var, optional | defaults `12` / `15` (cushlabs-booking slot rules) | not used |
 | `WA_GATEWAY` | service binding | → `cushlabs-whatsapp` | → `cushlabs-whatsapp` |
 | `WA_GATEWAY_URL` | var | cushlabs-whatsapp URL (fallback / tests) | same |
 | `WA_GATEWAY_SECRET` | secret | = cushlabs-whatsapp `TEST_SEND_SECRET` | same |

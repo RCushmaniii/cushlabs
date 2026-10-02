@@ -8,6 +8,8 @@ import {
   buildConfirmationEmail,
   missingVars,
   sendDailySummary,
+  formatWhen,
+  validTimeZone,
 } from "../workers/lib/booking-confirm.js";
 
 /** Minimal D1 stand-in over node:sqlite — same prepare/bind/run/all/first shape. */
@@ -272,7 +274,7 @@ describe("WhatsApp reminder and morning summary", () => {
     expect(r).toMatchObject({ sent: 1, count: 2 });
     const [call] = waCalls();
     expect(call.body).toMatchObject({ to: "+52 33 1559 0572", template: "consultation_daily_summary", lang: "en_US", sender: "cushlabs" });
-    expect(call.body.params).toEqual(["2", "NY English Teacher", "1:30 PM Diego Olivera ⏳ · 5:00 PM Ana ✅"]);
+    expect(call.body.params).toEqual(["2", "NY English Teacher", "1:30 PM CDMX / 3:30 PM EDT Diego Olivera ⏳ · 5:00 PM CDMX / 7:00 PM EDT Ana ✅"]);
 
     expect(await sendDailySummary(env, new Date("2026-10-01T14:30:00Z"))).toEqual({ skipped: "already sent" });
     expect(waCalls()).toHaveLength(1);
@@ -323,14 +325,14 @@ describe("combined morning summary (both sites in one message)", () => {
     const r = await sendDailySummary(env, new Date("2026-10-01T14:00:00Z"));
     expect(r).toMatchObject({ sent: 1, count: 2 });
     const [body] = sentBodies();
-    expect(body.params).toEqual(["2", "NY English Teacher + CushLabs.ai", "10:00 AM Diego (NYE) ⏳ · 1:30 PM Ana (CushLabs) ⏳"]);
+    expect(body.params).toEqual(["2", "NY English Teacher + CushLabs.ai", "10:00 AM CDMX / 12:00 PM EDT Diego (NYE) ⏳ · 1:30 PM CDMX / 3:30 PM EDT Ana (CushLabs) ⏳"]);
   });
 
   it("still sends, and says so, when the other site cannot be read", async () => {
     const env = makeEnv({ ...WA, SUMMARY_LABEL: "CushLabs", PEER_LABEL: "NYE", SUMMARY_SECRET: "wrong", PEER_BOOKING: await peerWorker() });
     await recordBooking(env, { eventId: "c1", startsAt: "2026-10-01T19:30:00Z", name: "Ana", email: "a@example.com", lang: "en" });
     await sendDailySummary(env, new Date("2026-10-01T14:00:00Z"));
-    expect(sentBodies()[0].params[2]).toBe("1:30 PM Ana (CushLabs) ⏳ · (NYE list unavailable)");
+    expect(sentBodies()[0].params[2]).toBe("1:30 PM CDMX / 3:30 PM EDT Ana (CushLabs) ⏳ · (NYE list unavailable)");
   });
 
   it("the peer that hands off the summary never sends one itself", async () => {
@@ -345,5 +347,32 @@ describe("combined morning summary (both sites in one message)", () => {
     const u = new URL("https://x/internal/todays-bookings");
     const res = await handleConfirmationRoutes(new Request(u), env, u, u.pathname, deps);
     expect(res!.status).toBe(404);
+  });
+});
+
+describe("time zones (2026-10-02: a booking showed the wrong time for someone not in Mexico City)", () => {
+  const MX = "America/Mexico_City";
+  // 10:00 AM Mexico City on Mon 5 Oct 2026 (US on daylight time) and Mon 7 Dec 2026 (US on standard time).
+  const october = "2026-10-05T16:00:00.000Z";
+  const december = "2026-12-07T16:00:00.000Z";
+
+  it("keeps the old wording when the booker is on Mexico City time or gave no zone", () => {
+    expect(formatWhen(october, "en", MX)).toBe("Monday, October 5 at 10:00 AM (Mexico City time)");
+    expect(formatWhen(october, "en", MX, "America/Monterrey")).toBe("Monday, October 5 at 10:00 AM (Mexico City time)");
+  });
+
+  it("leads with the booker's own clock and follows US daylight saving", () => {
+    expect(formatWhen(october, "en", MX, "America/New_York")).toBe(
+      "Monday, October 5 at 12:00 PM (your time; 10:00 AM Mexico City time)",
+    );
+    expect(formatWhen(december, "en", MX, "America/New_York")).toBe(
+      "Monday, December 7 at 11:00 AM (your time; 10:00 AM Mexico City time)",
+    );
+  });
+
+  it("ignores a zone the runtime does not recognise", () => {
+    expect(validTimeZone("Not/AZone")).toBeNull();
+    expect(validTimeZone("<script>")).toBeNull();
+    expect(formatWhen(october, "en", MX, "Not/AZone")).toBe("Monday, October 5 at 10:00 AM (Mexico City time)");
   });
 });

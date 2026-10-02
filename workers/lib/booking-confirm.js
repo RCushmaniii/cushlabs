@@ -93,6 +93,10 @@ export async function ensureBookingsTable(db) {
     ["phone", "TEXT"],
     ["wa_opt_in", "INTEGER NOT NULL DEFAULT 0"],
     ["wa_sent_at", "TEXT"],
+    // The booker's IANA time zone (from their browser), so their reminders show
+    // their own clock. Null for rows from before 2026-10-02 and from forms that
+    // don't send it — those fall back to the business time zone.
+    ["booker_tz", "TEXT"],
   ]) {
     if (!have.has(name)) await db.prepare(`ALTER TABLE bookings ADD COLUMN ${name} ${type}`).run();
   }
@@ -114,8 +118,8 @@ export async function recordBooking(env, booking) {
     await ensureBookingsTable(env.DB);
     const token = newToken();
     await env.DB.prepare(
-      `INSERT INTO bookings (token, event_id, name, email, lang, starts_at, meet_link, created_at, phone, wa_opt_in)
-       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+      `INSERT INTO bookings (token, event_id, name, email, lang, starts_at, meet_link, created_at, phone, wa_opt_in, booker_tz)
+       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
     )
       .bind(
         token,
@@ -128,6 +132,7 @@ export async function recordBooking(env, booking) {
         new Date().toISOString(),
         booking.phone || null,
         booking.phone && booking.whatsappOptIn ? 1 : 0,
+        validTimeZone(booking.bookerTz),
       )
       .run();
     return token;
@@ -139,19 +144,65 @@ export async function recordBooking(env, booking) {
 
 /* ------------------------------ time and text ------------------------------ */
 
-export function formatWhen(iso, lang, timeZone) {
+/** An IANA zone name the runtime recognises, or null. Never trust the browser's string blindly. */
+export function validTimeZone(tz) {
+  if (typeof tz !== "string" || !tz || tz.length > 64) return null;
+  try {
+    new Intl.DateTimeFormat("en-US", { timeZone: tz });
+    return tz;
+  } catch {
+    return null;
+  }
+}
+
+/** Minutes from UTC of `timeZone` at instant `d` (DST-aware: it asks Intl, never a fixed table). */
+function offsetAt(d, timeZone) {
+  const p = Object.fromEntries(
+    new Intl.DateTimeFormat("en-US", {
+      timeZone,
+      hourCycle: "h23",
+      year: "numeric",
+      month: "numeric",
+      day: "numeric",
+      hour: "numeric",
+      minute: "numeric",
+    })
+      .formatToParts(d)
+      .map((x) => [x.type, x.value]),
+  );
+  return (Date.UTC(p.year, p.month - 1, p.day, p.hour, p.minute) - Math.floor(d.getTime() / 60000) * 60000) / 60000;
+}
+
+/**
+ * The meeting time as the booker should read it. When the booker gave us a
+ * time zone that differs from the business's at that moment, lead with their
+ * clock and keep Mexico City alongside — a US booker reading only "Mexico City
+ * time" has to do the arithmetic, and getting it wrong is a no-show.
+ *
+ * @param {string} iso
+ * @param {string} lang
+ * @param {string} timeZone
+ * @param {string | null} [bookerTz]
+ */
+export function formatWhen(iso, lang, timeZone, bookerTz = null) {
   const d = new Date(iso);
   const locale = lang === "es" ? "es-MX" : "en-US";
-  const when = new Intl.DateTimeFormat(locale, {
-    timeZone,
-    weekday: "long",
-    day: "numeric",
-    month: "long",
-    hour: "numeric",
-    minute: "2-digit",
-  }).format(d);
   const zone = lang === "es" ? "hora del centro de México" : "Mexico City time";
-  return `${when} (${zone})`;
+  const full = (tz) =>
+    new Intl.DateTimeFormat(locale, {
+      timeZone: tz,
+      weekday: "long",
+      day: "numeric",
+      month: "long",
+      hour: "numeric",
+      minute: "2-digit",
+    }).format(d);
+  const theirs = validTimeZone(bookerTz);
+  if (!theirs || offsetAt(d, theirs) === offsetAt(d, timeZone)) return `${full(timeZone)} (${zone})`;
+  const bizTime = new Intl.DateTimeFormat(locale, { timeZone, hour: "numeric", minute: "2-digit" }).format(d);
+  return lang === "es"
+    ? `${full(theirs)} (tu hora; ${bizTime} ${zone})`
+    : `${full(theirs)} (your time; ${bizTime} ${zone})`;
 }
 
 const TEXT = {
@@ -221,7 +272,7 @@ function button(href, label, primary) {
 export function buildConfirmationEmail(row, env) {
   const lang = row.lang;
   const tz = env.TIMEZONE || "America/Mexico_City";
-  const when = esc(formatWhen(row.starts_at, lang, tz));
+  const when = esc(formatWhen(row.starts_at, lang, tz, row.booker_tz));
   const base = env.PUBLIC_WORKER_URL.replace(/\/+$/, "");
   const confirmUrl = `${base}/confirm?t=${row.token}`;
   const cancelUrl = `${base}/cancel?t=${row.token}`;
@@ -364,7 +415,7 @@ async function sendDueWhatsApp(env, fromIso, toIso) {
       to: row.phone,
       template: "consultation_reminder",
       lang: row.lang === "es" ? "es_MX" : "en_US",
-      params: [String(row.name).trim().split(/\s+/)[0], formatWhen(row.starts_at, row.lang, tz)],
+      params: [String(row.name).trim().split(/\s+/)[0], formatWhen(row.starts_at, row.lang, tz, row.booker_tz)],
       buttonParams: [row.token, row.token],
       sender: env.WA_SENDER,
     });
@@ -464,12 +515,21 @@ export async function sendDailySummary(env, now = new Date()) {
   const peerMissing = env.PEER_BOOKING && peerRows === null;
 
   if (today.length || peerMissing) {
+    // Robert splits his time between Mexico City and the US East Coast, so every
+    // time is given on both clocks. OPERATOR_SECOND_TZ overrides the second one;
+    // Intl handles US daylight saving, so the gap is 2 h in summer and 1 h in winter.
     const time = new Intl.DateTimeFormat("en-US", { timeZone: tz, hour: "numeric", minute: "2-digit" });
+    const secondTz = validTimeZone(env.OPERATOR_SECOND_TZ || "America/New_York");
+    const second = secondTz
+      ? new Intl.DateTimeFormat("en-US", { timeZone: secondTz, hour: "numeric", minute: "2-digit", timeZoneName: "short" })
+      : null;
     let list = today
       .map((r) => {
         const name = String(r.name).replace(/\s+/g, " ").trim();
         const tag = r.label ? ` (${r.label})` : "";
-        return `${time.format(new Date(r.starts_at))} ${name}${tag} ${STATUS_ICON[r.status] || "⏳"}`;
+        const at = new Date(r.starts_at);
+        const clock = second ? `${time.format(at)} CDMX / ${second.format(at)}` : time.format(at);
+        return `${clock} ${name}${tag} ${STATUS_ICON[r.status] || "⏳"}`;
       })
       .join(" · ");
     if (peerMissing) list = `${list ? list + " · " : ""}(${env.PEER_LABEL || "other site"} list unavailable)`;
@@ -550,7 +610,7 @@ export async function handleConfirmationRoutes(request, env, url, path, deps) {
 
   const lang = row.lang;
   const tz = env.TIMEZONE || "America/Mexico_City";
-  const when = esc(formatWhen(row.starts_at, lang, tz));
+  const when = esc(formatWhen(row.starts_at, lang, tz, row.booker_tz));
   const rebookUrl = (lang === "es" && env.REBOOK_URL_ES) || env.REBOOK_URL;
   const rebook = rebookUrl
     ? `<p><a href="${esc(rebookUrl)}" style="color:#1d4ed8;font-weight:600">${tx("rebook", lang)}</a></p>`

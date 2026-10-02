@@ -243,7 +243,7 @@ export const es = {
   consultation: {
     title: "Consulta Gratis de IA",
     description:
-      "Agenda una llamada gratuita de 15 minutos para hablar de tu proyecto. Sin pitch, sin presión — solo consejos honestos sobre cómo la IA puede ayudar.",
+      "Agenda una llamada gratuita de 30 minutos para hablar de tu proyecto. Sin pitch, sin presión — solo consejos honestos sobre cómo la IA puede ayudar.",
     kicker: "Llamada gratis",
     headline: "Agenda una llamada gratis",
     subheadline:
@@ -327,6 +327,7 @@ export const es = {
       "Los horarios son (GMT-06:00) Hora Central - Ciudad de México",
     selectDateTime: "Selecciona una fecha y hora",
     selectTime: "Selecciona una hora",
+    changeTime: "Cambiar",
     selectedDate: "Fecha Seleccionada",
     selectDateBelow: "Selecciona una fecha abajo",
     addDetails: "Cuéntame un poco de ti",

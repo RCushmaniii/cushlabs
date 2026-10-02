@@ -42,6 +42,8 @@ const STRINGS = {
     note: "Illustrative demo. Products, copy, and prices are customized with your business's own.",
     cta: "Get this for my business",
     plans: "See plans and prices",
+    voiceQ: "Do your customers still call?",
+    voiceLink: "Hear the AI voice agent answer",
     footBrand: "CushLabs AI Services",
     footMid: "AI Assistant on Messenger · Bilingual 24/7",
     footLoc: "Guadalajara, Mexico",
@@ -64,6 +66,8 @@ const STRINGS = {
     note: "Demo con fines ilustrativos. Los productos, textos y precios se personalizan con los de tu negocio.",
     cta: "Lo quiero para mi negocio",
     plans: "Ver planes y precios",
+    voiceQ: "¿Tus clientes todavía llaman?",
+    voiceLink: "Escucha al agente de voz con IA",
     footBrand: "CushLabs AI Services",
     footMid: "Asistente de IA en Messenger · Español 24/7",
     footLoc: "Guadalajara, México",
@@ -196,7 +200,7 @@ const CATALOG = [
     },
   },
   {
-    id: "restaurant", icon: "plate", biz: "Terraza Jalisco", av: "TJ",
+    id: "restaurant", calls: true, icon: "plate", biz: "Terraza Jalisco", av: "TJ",
     art: "linear-gradient(140deg,#e0785f,#a83b2f)", avbg: "#a83b2f",
     en: {
       chip: "Restaurant",
@@ -226,7 +230,7 @@ const CATALOG = [
     },
   },
   {
-    id: "dental", icon: "tooth", biz: "Clínica Dental Sonríe", av: "DS",
+    id: "dental", calls: true, icon: "tooth", biz: "Clínica Dental Sonríe", av: "DS",
     art: "linear-gradient(140deg,#5ea9e6,#2f6bb0)", avbg: "#2f6bb0",
     en: {
       chip: "Dental clinic",
@@ -256,7 +260,7 @@ const CATALOG = [
     },
   },
   {
-    id: "orthodontics", icon: "ortho", biz: "Ortodoncia Estudio 32", av: "E32",
+    id: "orthodontics", calls: true, icon: "ortho", biz: "Ortodoncia Estudio 32", av: "E32",
     art: "linear-gradient(140deg,#7db7c9,#3c7f96)", avbg: "#3c7f96",
     en: {
       chip: "Orthodontics",
@@ -286,7 +290,7 @@ const CATALOG = [
     },
   },
   {
-    id: "spa", icon: "spa", biz: "Spa Serena", av: "SS",
+    id: "spa", calls: true, icon: "spa", biz: "Spa Serena", av: "SS",
     art: "linear-gradient(140deg,#7fc9a6,#3f9576)", avbg: "#3f9576",
     en: {
       chip: "Spa",
@@ -316,7 +320,7 @@ const CATALOG = [
     },
   },
   {
-    id: "salon", icon: "scissors", biz: "Estética Bella", av: "EB",
+    id: "salon", calls: true, icon: "scissors", biz: "Estética Bella", av: "EB",
     art: "linear-gradient(140deg,#e0a3c8,#a44f86)", avbg: "#a44f86",
     en: {
       chip: "Beauty salon",
@@ -378,7 +382,7 @@ const CATALOG = [
 ];
 
 const industries = CATALOG.map((c) => ({
-  id: c.id, icon: c.icon, biz: c.biz, av: c.av, art: c.art, avbg: c.avbg,
+  id: c.id, calls: !!c.calls, icon: c.icon, biz: c.biz, av: c.av, art: c.art, avbg: c.avbg,
   ...c[locale],
 }));
 ---
@@ -458,6 +462,12 @@ const industries = CATALOG.map((c) => ({
           >{S.cta} <span aria-hidden="true">→</span></a>
           <a class="plans" href={plansPath} data-analytics-event="plans_clicked" data-analytics-placement="demos-industry">{S.plans}</a>
         </div>
+        {/* Voice is offered only where the business lives on the phone — clinics,
+            salons, restaurants (the voice page's own "best for"). Toggled per chip. */}
+        <p class="voice" id="clmd-voice" hidden={!industries[0].calls}>
+          {S.voiceQ}{" "}
+          <a href="https://voice.cushlabs.ai" target="_blank" rel="noopener noreferrer" data-analytics-event="voice_demo_opened" data-analytics-placement="demos-industry">{S.voiceLink} <span aria-hidden="true">→</span></a>
+        </p>
         <p class="note">{S.note}</p>
       </div>
     </div>
@@ -603,8 +613,11 @@ const industries = CATALOG.map((c) => ({
     .clmd .read { display: flex; flex-direction: column; }
     .clmd .read .ask { order: 1; margin-top: 18px; }
     .clmd .read .facts { order: 2; }
+    .clmd .read .voice { order: 2; }
     .clmd .read .note { order: 3; }
   }
+  .clmd .voice { margin-top: 14px; font-size: 14px; color: var(--ink-soft); }
+  .clmd .voice a { color: var(--ink); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
   .clmd .note { margin-top: 22px; font-size: 12.5px; color: var(--ink-faint); border-top: 1px solid var(--line); padding-top: 14px; max-width: 46ch; }
 
   .clmd .foot { margin-top: 44px; padding-top: 18px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 8px 18px; align-items: baseline; font-size: 12.5px; color: var(--ink-faint); }
@@ -671,6 +684,8 @@ const industries = CATALOG.map((c) => ({
       chipsEl.querySelectorAll(".chip").forEach((c) =>
         c.setAttribute("aria-selected", c.dataset.industry === v.id ? "true" : "false"));
       render(v);
+      const voiceEl = q("#clmd-voice");
+      if (voiceEl) voiceEl.hidden = !v.calls;
       if (ctaEl) {
         const u = new URL(ctaEl.href, location.origin);
         u.searchParams.set("industry", v.id);

@@ -7,114 +7,66 @@ const locale = (Astro.currentLocale === "es" ? "es" : "en") as "en" | "es";
 const dict = t(locale);
 ---
 
+{/*
+  Calendar first (2026-10-02). The page used to open on a hero, a "Book now"
+  button, three info boxes and a session banner before any calendar. Now: who
+  and what on the left, the calendar on the right; on phones the short intro,
+  then the calendar, then the details. Mirror every change in es/reservar.astro.
+*/}
 <BaseLayout
   title={`${dict.consultation.title} | CushLabs.ai`}
   description={dict.consultation.description}
 >
-  <div class="pb-24">
-    <section class="relative overflow-hidden border-b border-border">
-      <div class="absolute inset-0 -z-10">
-        <div
-          class="absolute inset-0 bg-linear-to-br from-cush-orange/15 via-transparent to-transparent"
-        >
-        </div>
-        <div
-          class="absolute -left-24 top-16 h-64 w-64 rounded-full bg-cush-orange/10 blur-3xl"
-        >
-        </div>
-      </div>
-
-      <div class="mx-auto max-w-7xl px-4 py-14 md:py-18">
-        <div class="max-w-3xl">
-          <p
-            class="inline-flex items-center rounded-full border border-border bg-surface px-3 py-1 text-xs font-display font-semibold uppercase tracking-wider text-muted"
-          >
-            {dict.consultation.kicker}
-          </p>
-          <h1
-            class="mt-4 font-display text-4xl font-bold text-foreground tracking-tight md:text-6xl"
-          >
-            {dict.consultation.headline}
-          </h1>
-          <p class="mt-4 max-w-2xl text-lg text-muted">
-            {dict.consultation.subheadline}
-          </p>
-
-          <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-            <a
-              href="#schedule"
-              class="inline-flex items-center justify-center gap-2 rounded-xl bg-cush-orange px-6 py-3 text-sm font-display font-semibold text-black hover:opacity-90 transition-opacity glow-orange"
-            >
-              {dict.consultation.primaryCta}
-              <span aria-hidden="true">→</span>
-            </a>
-            <a
-              href={locale === "es" ? "/es/portfolio/" : "/portfolio/"}
-              class="inline-flex items-center justify-center gap-2 rounded-xl border border-border bg-surface px-6 py-3 text-sm font-display font-semibold text-foreground hover:border-cush-orange hover:text-accent-text transition-colors"
-            >
-              {dict.consultation.secondaryCta}
-            </a>
+  <section class="mx-auto max-w-6xl px-4 pt-10 pb-24 md:pt-14">
+    <div class="grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,320px)_minmax(0,1fr)] lg:gap-12">
+      <div class="lg:col-start-1 lg:row-start-1">
+        <div class="flex items-center gap-3">
+          <img
+            src="/images/about/robert-about.webp"
+            alt="Robert Cushman"
+            width="56"
+            height="56"
+            class="h-14 w-14 rounded-full object-cover border border-border"
+          />
+          <div>
+            <p class="font-display font-semibold text-foreground">Robert Cushman</p>
+            <p class="text-sm text-muted">CushLabs.ai</p>
           </div>
-
-          <dl class="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-3">
-            <div class="rounded-2xl border border-border bg-surface p-4">
-              <dt
-                class="text-xs font-display font-semibold uppercase tracking-wider text-muted"
-              >
-                {dict.consultation.detail1Label}
-              </dt>
-              <dd
-                class="mt-2 text-sm font-display font-semibold text-foreground"
-              >
-                {dict.consultation.detail1Value}
-              </dd>
-            </div>
-            <div class="rounded-2xl border border-border bg-surface p-4">
-              <dt
-                class="text-xs font-display font-semibold uppercase tracking-wider text-muted"
-              >
-                {dict.consultation.detail2Label}
-              </dt>
-              <dd
-                class="mt-2 text-sm font-display font-semibold text-foreground"
-              >
-                {dict.consultation.detail2Value}
-              </dd>
-            </div>
-            <div class="rounded-2xl border border-border bg-surface p-4">
-              <dt
-                class="text-xs font-display font-semibold uppercase tracking-wider text-muted"
-              >
-                {dict.consultation.detail3Label}
-              </dt>
-              <dd
-                class="mt-2 text-sm font-display font-semibold text-foreground"
-              >
-                {dict.consultation.detail3Value}
-              </dd>
-            </div>
-          </dl>
         </div>
+        <h1 class="mt-6 font-display text-3xl font-bold tracking-tight text-foreground md:text-4xl">
+          {dict.consultation.headline}
+        </h1>
+        <p class="mt-3 text-muted">{dict.consultation.subheadline}</p>
+        <ul class="mt-5 space-y-2 text-sm font-display font-semibold text-foreground">
+          <li class="flex items-center gap-2">
+            <svg class="h-5 w-5 text-accent-text" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            {dict.consultation.detail1Value}
+          </li>
+          <li class="flex items-center gap-2">
+            <svg class="h-5 w-5 text-accent-text" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+            {dict.consultation.detail2Value}
+          </li>
+        </ul>
       </div>
-    </section>
 
-    <section id="schedule" class="mx-auto max-w-7xl px-4 pt-10">
-      <BookingFormSteps locale={locale} />
+      <div id="schedule" class="lg:col-start-2 lg:row-start-1 lg:row-span-2">
+        <BookingFormSteps locale={locale} />
+      </div>
 
-      <div class="mt-8 grid grid-cols-1 gap-4 md:grid-cols-2 max-w-4xl mx-auto">
-        <div class="rounded-2xl border border-border bg-surface p-6">
-          <h3 class="font-display text-lg font-bold text-foreground">
+      <div class="space-y-4 lg:col-start-1 lg:row-start-2">
+        <div class="rounded-2xl border border-border bg-surface p-5">
+          <h2 class="font-display text-base font-bold text-foreground">
             {dict.consultation.whatWeCoverTitle}
-          </h3>
-          <p class="mt-2 text-muted">{dict.consultation.whatWeCoverBody}</p>
+          </h2>
+          <p class="mt-2 text-sm text-muted">{dict.consultation.whatWeCoverBody}</p>
         </div>
-        <div class="rounded-2xl border border-border bg-surface p-6">
-          <h3 class="font-display text-lg font-bold text-foreground">
+        <div class="rounded-2xl border border-border bg-surface p-5">
+          <h2 class="font-display text-base font-bold text-foreground">
             {dict.consultation.afterCallTitle}
-          </h3>
-          <p class="mt-2 text-muted">{dict.consultation.afterCallBody}</p>
+          </h2>
+          <p class="mt-2 text-sm text-muted">{dict.consultation.afterCallBody}</p>
         </div>
       </div>
-    </section>
-  </div>
+    </div>
+  </section>
 </BaseLayout>
