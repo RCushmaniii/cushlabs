@@ -950,7 +950,11 @@ cost set to $18–25k MXN everywhere (PR #349). Deliberately unchanged: the What
 
 **Answered by Robert the same day:** every plan is one Facebook Page covering up to two locations
 (copy now says so), and WhatsApp reminder templates run in English as well as Spanish (copy no
-longer says Spanish only). **Left open:** the review's larger rewrites — a tier strip replacing "What I Build",
+longer says Spanish only). **Homepage "What I Build" replaced** with three plan cards (Basic /
+Premium / Ultra), prices imported from `commercialTerms.json`, each card linking to its `/pricing/#tier`
+anchor. Prices sit BELOW each card's bullets — at the top, `validate-feature-tiers` (correctly)
+paired Premium's bullets with Ultra's price. Checked 320–1024px EN + ES, no overflow.
+**Left open:** the review's other larger rewrites — a tier strip replacing "What I Build",
 "Why Work With Me" cut to four cards, merging the two chatbot sections — were not attempted.
 
 ## Session: 2026-09-29 — Portfolio demo links pointed at vercel.app, and bookings had no attendance confirmation
