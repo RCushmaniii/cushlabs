@@ -82,6 +82,8 @@ function pageContext(attribution: Record<string, string>): AnalyticsProperties {
     plan: clean(params.get("plan")),
     service: clean(params.get("service")),
     intent_source: clean(params.get("intent_source")),
+    // Set by /demos/ industry links and its CTA, so booking events can be split by industry.
+    industry: clean(params.get("industry"), 40),
   };
 }
 
