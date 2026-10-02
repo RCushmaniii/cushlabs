@@ -45,3 +45,8 @@ jobs:
           NEXT_TELEMETRY_DISABLED: 1
       - name: Smoke tests
         run: npm test
+      # The booking form in a real browser, against a fake booking API (nothing
+      # reaches the calendar). Covers Mexico City / New York / Madrid visitors,
+      # the step-2 summary, slot_taken, and the phone layout. Added 2026-10-02.
+      - name: Booking form browser checks
+        run: npx playwright install --with-deps chromium && npm run test:booking-e2e

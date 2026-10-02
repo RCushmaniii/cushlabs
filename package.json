@@ -10,6 +10,7 @@
     "lint": "eslint .",
     "typecheck": "astro sync && tsc --noEmit",
     "test": "vitest run",
+    "test:booking-e2e": "node scripts/test-booking-e2e.mjs",
     "check": "npm run lint && npm run typecheck",
     "astro:check": "astro check",
     "preview": "astro preview",

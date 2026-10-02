@@ -936,7 +936,13 @@ City time only too. Full design in `docs/BOOKING-CONFIRMATIONS.md` → "Time zon
 - **Demos:** voice card kept (Robert's call), retargeted: tagline names clinics, salons, restaurants;
   a "Do your customers still call?" link shows only on dental, orthodontics, spa, salon, restaurant.
 - **Not code:** Robert should turn on Google Calendar's "Ask to update my primary time zone to
-  current location". Until then the event's `When:` line is the reliable read.
+  current location". Until then the event's `When:` line is the reliable read. **Done by Robert
+  the same day:** primary Eastern, secondary Mexico City, auto-update on.
+- **Test harness:** `tests/booking-worker.test.ts` runs the Worker against an in-memory Google
+  (notice, buffer, Sunday, live re-check, double booking, DST, bad zones, origin gate) and
+  `npm run test:booking-e2e` drives the real built form in Chromium as Mexico City / New York /
+  Madrid visitors against a fake API (also in CI). Both were shown to fail when the buffer, the
+  re-check, or the off-by-one-day fix were deliberately reverted.
 
 ## Session: 2026-10-02 — /demos/ finally asks for something, and the booking form booked the wrong day east of UTC
 
