@@ -92,7 +92,10 @@ const S = STRINGS[locale];
             )}
 
             <a
-              href={d.href}
+              href={d.ownBot ? `${d.href}?ref=demos-page` : d.href}
+              data-analytics-event="live_demo_opened"
+              data-analytics-label={d.name}
+              data-analytics-placement="demos-strip"
               target="_blank"
               rel="noopener noreferrer"
               class="mt-6 block rounded-lg bg-cush-orange px-5 py-3 text-center font-display text-sm font-semibold text-black transition-opacity duration-300 hover:opacity-90"

@@ -40,6 +40,8 @@ const STRINGS = {
       ["The important stuff reaches you", " — it hands off to a person the moment a customer asks."],
     ],
     note: "Illustrative demo. Products, copy, and prices are customized with your business's own.",
+    cta: "Get this for my business",
+    plans: "See plans and prices",
     footBrand: "CushLabs AI Services",
     footMid: "AI Assistant on Messenger · Bilingual 24/7",
     footLoc: "Guadalajara, Mexico",
@@ -60,17 +62,21 @@ const STRINGS = {
       ["Lo importante llega a ti", " — pasa la conversación a una persona en cuanto el cliente lo pide."],
     ],
     note: "Demo con fines ilustrativos. Los productos, textos y precios se personalizan con los de tu negocio.",
+    cta: "Lo quiero para mi negocio",
+    plans: "Ver planes y precios",
     footBrand: "CushLabs AI Services",
     footMid: "Asistente de IA en Messenger · Español 24/7",
     footLoc: "Guadalajara, México",
   },
 } as const;
 const S = STRINGS[locale];
+const bookingPath = locale === "es" ? "/es/reservar/" : "/consultation/";
+const plansPath = locale === "es" ? "/es/precios/" : "/pricing/";
 
 // Shared (locale-independent) + localized industry content.
 const CATALOG = [
   {
-    id: "ropa", icon: "dress", biz: "Boutique Marbella", av: "BM",
+    id: "boutique", icon: "dress", biz: "Boutique Marbella", av: "BM",
     art: "linear-gradient(140deg,#e8a0a8,#b46b8e)", avbg: "#b46b8e",
     en: {
       chip: "Clothing boutique",
@@ -100,7 +106,7 @@ const CATALOG = [
     },
   },
   {
-    id: "swim", icon: "swim", biz: "Sol & Mar Swim", av: "SM",
+    id: "swimwear", icon: "swim", biz: "Sol & Mar Swim", av: "SM",
     art: "linear-gradient(140deg,#4bc4d6,#1f7fb0)", avbg: "#1f7fb0",
     en: {
       chip: "Swimwear",
@@ -130,7 +136,7 @@ const CATALOG = [
     },
   },
   {
-    id: "cafe-dist", icon: "beans", biz: "Café de Altura MX", av: "CA",
+    id: "coffee-distributor", icon: "beans", biz: "Café de Altura MX", av: "CA",
     art: "linear-gradient(140deg,#c79a5b,#7d5230)", avbg: "#7d5230",
     en: {
       chip: "Coffee distributor",
@@ -160,7 +166,7 @@ const CATALOG = [
     },
   },
   {
-    id: "cafeteria", icon: "cup", biz: "La Esquina Café", av: "LE",
+    id: "coffee-shop", icon: "cup", biz: "La Esquina Café", av: "LE",
     art: "linear-gradient(140deg,#d8a566,#9c6534)", avbg: "#9c6534",
     en: {
       chip: "Coffee shop",
@@ -190,7 +196,7 @@ const CATALOG = [
     },
   },
   {
-    id: "rest", icon: "plate", biz: "Terraza Jalisco", av: "TJ",
+    id: "restaurant", icon: "plate", biz: "Terraza Jalisco", av: "TJ",
     art: "linear-gradient(140deg,#e0785f,#a83b2f)", avbg: "#a83b2f",
     en: {
       chip: "Restaurant",
@@ -250,7 +256,7 @@ const CATALOG = [
     },
   },
   {
-    id: "ortho", icon: "ortho", biz: "Ortodoncia Estudio 32", av: "E32",
+    id: "orthodontics", icon: "ortho", biz: "Ortodoncia Estudio 32", av: "E32",
     art: "linear-gradient(140deg,#7db7c9,#3c7f96)", avbg: "#3c7f96",
     en: {
       chip: "Orthodontics",
@@ -440,6 +446,18 @@ const industries = CATALOG.map((c) => ({
             </li>
           ))}
         </ul>
+        {/* The page's only ask. `industry` rides along to the booking page so the
+            booking events in Vercel Analytics say which industry produced the call;
+            the script below rewrites it whenever a chip changes. */}
+        <div class="ask">
+          <a
+            id="clmd-cta"
+            class="cta"
+            href={`${bookingPath}?intent_source=demos&industry=${industries[0].id}`}
+            data-analytics-placement="demos-industry"
+          >{S.cta} <span aria-hidden="true">→</span></a>
+          <a class="plans" href={plansPath} data-analytics-event="plans_clicked" data-analytics-placement="demos-industry">{S.plans}</a>
+        </div>
         <p class="note">{S.note}</p>
       </div>
     </div>
@@ -509,6 +527,8 @@ const industries = CATALOG.map((c) => ({
 
   .clmd .chips-label { margin: 30px 0 10px; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-faint); font-weight: 700; }
   .clmd .chips { display: flex; gap: 9px; overflow-x: auto; padding: 4px 2px 12px; scrollbar-width: thin; }
+  /* Desktop shows every industry at once; a sideways scroll hid half of them. */
+  @media (min-width: 721px) { .clmd .chips { flex-wrap: wrap; overflow-x: visible; } }
   .clmd .chips::-webkit-scrollbar { height: 6px; }
   .clmd .chips::-webkit-scrollbar-thumb { background: var(--line); border-radius: 99px; }
   .clmd .chip { appearance: none; cursor: pointer; white-space: nowrap; flex: 0 0 auto; display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--line); background: var(--panel); color: var(--ink-soft); padding: 9px 14px 9px 11px; border-radius: 999px; font-size: 13.5px; font-weight: 600; transition: color .15s, border-color .15s, background .15s; }
@@ -570,6 +590,21 @@ const industries = CATALOG.map((c) => ({
   .clmd .facts .dot { flex: 0 0 auto; margin-top: 3px; width: 18px; height: 18px; border-radius: 6px; background: color-mix(in srgb, var(--accent) 16%, transparent); display: grid; place-items: center; }
   .clmd .facts .dot svg { width: 12px; height: 12px; color: var(--accent); }
   .clmd .facts li b { font-weight: 700; }
+  .clmd { scroll-margin-top: 80px; }
+  .clmd .ask { margin-top: 24px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; }
+  .clmd .ask .cta { display: inline-flex; align-items: center; gap: 8px; background: var(--accent); color: var(--accent-ink); font-weight: 700; font-size: 15px; padding: 12px 20px; border-radius: 12px; text-decoration: none; transition: opacity .15s; }
+  .clmd .ask .cta:hover { opacity: .9; }
+  .clmd .ask .plans { color: var(--ink-soft); font-size: 14px; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+  .clmd .ask .plans:hover { color: var(--ink); }
+  .clmd .ask a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  /* Phones stack the copy under a tall mockup; lift the ask above the fact list
+     so it isn't a second screen further down. */
+  @media (max-width: 720px) {
+    .clmd .read { display: flex; flex-direction: column; }
+    .clmd .read .ask { order: 1; margin-top: 18px; }
+    .clmd .read .facts { order: 2; }
+    .clmd .read .note { order: 3; }
+  }
   .clmd .note { margin-top: 22px; font-size: 12.5px; color: var(--ink-faint); border-top: 1px solid var(--line); padding-top: 14px; max-width: 46ch; }
 
   .clmd .foot { margin-top: 44px; padding-top: 18px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 8px 18px; align-items: baseline; font-size: 12.5px; color: var(--ink-faint); }
@@ -629,21 +664,55 @@ const industries = CATALOG.map((c) => ({
       threadEl.scrollTop = threadEl.scrollHeight;
     }
 
-    industries.forEach((v, i) => {
+    // `?industry=<id>` opens that industry — the link every outreach message,
+    // QR card and clip points at. The ids are printed on cards: never rename one.
+    const ctaEl = q("#clmd-cta");
+    function select(v, how) {
+      chipsEl.querySelectorAll(".chip").forEach((c) =>
+        c.setAttribute("aria-selected", c.dataset.industry === v.id ? "true" : "false"));
+      render(v);
+      if (ctaEl) {
+        const u = new URL(ctaEl.href, location.origin);
+        u.searchParams.set("industry", v.id);
+        ctaEl.href = u.pathname + u.search;
+      }
+      // Keep the address bar shareable, and let analytics read the industry from it.
+      const page = new URL(location.href);
+      page.searchParams.set("industry", v.id);
+      history.replaceState(history.state, "", page.pathname + page.search + page.hash);
+      // The analytics module is deferred, so on a deep-linked load it isn't
+      // ready yet; it always is by DOMContentLoaded.
+      const send = () => window.cushlabsTrack?.("demo_industry_selected", { industry: v.id, how });
+      if (window.cushlabsTrack) send();
+      else document.addEventListener("DOMContentLoaded", send, { once: true });
+    }
+
+    industries.forEach((v) => {
       const b = document.createElement("button");
       b.className = "chip";
       b.type = "button";
+      b.dataset.industry = v.id;
       b.setAttribute("role", "tab");
-      b.setAttribute("aria-selected", i === 0 ? "true" : "false");
+      b.setAttribute("aria-selected", "false");
       b.innerHTML = icon(v.icon, "ic") + "<span>" + esc(v.chip) + "</span>";
-      b.addEventListener("click", () => {
-        chipsEl.querySelectorAll(".chip").forEach((c) => c.setAttribute("aria-selected", "false"));
-        b.setAttribute("aria-selected", "true");
-        render(v);
-      });
+      b.addEventListener("click", () => select(v, "chip"));
       chipsEl.appendChild(b);
     });
 
-    render(industries[0]);
+    const wanted = new URLSearchParams(location.search).get("industry");
+    const linked = industries.find((v) => v.id === wanted);
+    if (linked) {
+      select(linked, "link");
+      // A prospect who arrives from an industry link came for this section,
+      // not for the live-demo strip above it.
+      // Instant and after `load`: the site's smooth scrolling gets cut off by
+      // late layout (fonts, images) and strands the visitor near the top.
+      const jump = () => root.scrollIntoView({ block: "start", behavior: "instant" });
+      if (document.readyState === "complete") jump();
+      else window.addEventListener("load", jump, { once: true });
+    } else {
+      chipsEl.querySelector(".chip")?.setAttribute("aria-selected", "true");
+      render(industries[0]);
+    }
   })();
 </script>

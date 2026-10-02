@@ -45,6 +45,12 @@ export interface LiveDemo {
   questions?: string[];
   href: string;
   cta: string;
+  /**
+   * True only for CushLabs' OWN Messenger bot: links to it get `?ref=<placement>`
+   * so its webhook can tell a demo visitor from an organic message. Never set it
+   * on a client's bot — demo traffic must not land in a client's lead data.
+   */
+  ownBot?: boolean;
 }
 
 /** The two production Facebook Messenger assistants. The demo IS production. */
@@ -63,6 +69,7 @@ export const messengerDemos: Record<Locale, LiveDemo[]> = {
         "I have a salon — how can you help me?",
       ],
       href: "https://m.me/cushlabs",
+      ownBot: true,
       cta: "Message CushLabs",
     },
     {
@@ -95,6 +102,7 @@ export const messengerDemos: Record<Locale, LiveDemo[]> = {
         "Tengo un salón — ¿cómo me pueden ayudar?",
       ],
       href: "https://m.me/cushlabs",
+      ownBot: true,
       cta: "Escribir a CushLabs",
     },
     {

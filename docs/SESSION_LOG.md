@@ -449,7 +449,14 @@ Planned but not started. Bundle related items into single PRs per CLAUDE.md.
 
 ### High priority
 
-_(none open)_
+- **Booking page: put the calendar first** (from the 2026-10-02 review). Today the hero, a "Book
+  now" button, three info boxes and a session banner all sit above the calendar. Two-column layout:
+  who/what/duration on the left, calendar on the right; hero removed. EN + ES.
+- **Booking page: show the chosen time on step 2** with a "Change" link — it currently disappears.
+- **Booking worker: buffer + notice.** Weekdays offer ~18 back-to-back slots with 3.5 h notice and
+  no gap between calls. Add a 15-min buffer and 12 h minimum notice (worker config, not the site).
+- **Messenger bot: read `ref=demos-page`** in `cushlabs-messenger-bot` — greet demo visitors
+  ("you just tried the demo — want one for your business?") and record the source with the lead.
 
 ### Medium priority
 
@@ -905,6 +912,32 @@ In-window utility templates and service messages start being charged. This is th
 cost question the WhatsApp demo-swap decision has been waiting on.
 
 ## Session History
+
+## Session: 2026-10-02 — /demos/ finally asks for something, and the booking form booked the wrong day east of UTC
+
+Triggered by two outside reviews (the demos page, the booking page). Both checked against the code first.
+
+- **Industry deep links.** `/demos/?industry=<id>` (and `/es/demos/?industry=<id>`) opens that
+  industry and jumps to it. Ids were renamed to stable, readable slugs because they will be printed on
+  QR cards — **never rename one again**: `boutique, swimwear, coffee-distributor, coffee-shop,
+  restaurant, dental, orthodontics, spa, salon, hotel`.
+- **The page's first ask.** "Get this for my business →" / "Lo quiero para mi negocio →" under the
+  industry copy, linking to the booking page with `intent_source=demos&industry=<id>`, plus a
+  "See plans and prices" link. No price restated. On phones the button sits above the fact list.
+- **Measurement.** New Vercel Analytics events `demo_industry_selected` (with `how: chip|link`),
+  `live_demo_opened`, `plans_clicked`; `industry` added to the shared analytics context, so
+  `booking_started` / `booking_completed` now carry it.
+- **Messenger ref.** Links to CushLabs' own bot get `?ref=demos-page` (`ownBot` flag in
+  `liveDemos.ts`). Never on a client's bot. The bot does not read it yet — see Backlog.
+- Industry chips wrap on desktop instead of scrolling sideways.
+- **Bug fixed — booking date off by one east of UTC.** `BookingFormSteps.astro` turned the picked day
+  into `YYYY-MM-DD` with `toISOString()` (UTC). Local midnight in Madrid is the previous day in UTC, so
+  a visitor in Europe or Asia who clicked Oct 5 was shown and booked Oct 4. Now uses the local date.
+- **Booking review — what was already true:** visitor time zone is detected and dual times shown;
+  confirm + cancel/reschedule email and WhatsApp reminders exist (2026-09-29); slots check both
+  Google calendars live; `landing_page` is first page of the visit **by design**, not a bug.
+  Rejected: the suggested "25+ yrs enterprise IT" trust line (breaks the biographical rule) and
+  moving to Cal.com/Calendly (would discard the WhatsApp reminders and shared 08:00 summary).
 
 ## Session: 2026-10-01 — Services-page trust fixes and the first small-business testimonial
 
