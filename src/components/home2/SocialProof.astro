@@ -36,15 +36,6 @@ const content = {
         { value: "Auto", label: "Lead Qualification", desc: "Scored before it reaches a human" },
       ],
     },
-    credibility: {
-      label: "Experience You Can Count On",
-      stats: [
-        { value: "35+", label: "Projects Delivered" },
-        { value: "EN + ES", label: "English + Spanish" },
-        { value: "Live", label: "Real Production Systems" },
-        { value: "Direct", label: "Support From the Builder" },
-      ],
-    },
   },
   es: {
     heading: 'No Tienes que Creerme a Mí.',
@@ -70,15 +61,6 @@ const content = {
         { value: "24/7", label: "Respuesta a Prospectos", desc: "Noches, fines de semana y días festivos" },
         { value: "ES/EN", label: "Bilingüe de Principio a Fin", desc: "Cada conversación, en cualquier idioma" },
         { value: "Auto", label: "Calificación de Prospectos", desc: "Evaluado antes de llegar a una persona" },
-      ],
-    },
-    credibility: {
-      label: "Experiencia en la Que Puedes Confiar",
-      stats: [
-        { value: "35+", label: "Proyectos entregados" },
-        { value: "ES + EN", label: "Español + Inglés" },
-        { value: "En vivo", label: "Sistemas reales en producción" },
-        { value: "Directo", label: "Soporte de quien lo construye" },
       ],
     },
   },
@@ -150,24 +132,6 @@ const t = content[locale];
                 <div class="font-display font-bold text-2xl text-accent-text">{m.value}</div>
                 <div class="text-xs font-semibold text-gray-800 dark:text-gray-200">{m.label}</div>
                 <div class="text-xs text-gray-500 dark:text-gray-400">{m.desc}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <!-- Credibility strip -->
-        <div class="p-6 rounded-2xl border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900/50">
-          <div class="flex items-center gap-2 mb-4">
-            <svg class="w-4 h-4 text-accent-text" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-            <span class="text-xs font-display font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wider">{t.credibility.label}</span>
-          </div>
-          <div class="grid grid-cols-4 gap-3">
-            {t.credibility.stats.map((s) => (
-              <div class="text-center">
-                <div class="font-display font-bold text-lg text-gray-900 dark:text-white">{s.value}</div>
-                <div class="text-xs text-gray-500 dark:text-gray-400 leading-tight">{s.label}</div>
               </div>
             ))}
           </div>

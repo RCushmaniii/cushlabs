@@ -938,8 +938,18 @@ checked against the code first; all were real.
 - **Also:** `tsconfig.json` now extends `astro/tsconfigs/strict` (package path) instead of a relative
   `node_modules` path, which VS Code was reporting as unreadable.
 
-**Left open:** receptionist salary figures disagree between surfaces (EN voice page $18–25k MXN, ES
-service block $8–15k MXN). The review's larger rewrites — a tier strip replacing "What I Build",
+**Second pass, same day (re-review):** the /services/ hub still carried "Callers don't know it's AI"
+in the voice ServiceBlock (different wording from the voice page, so the first grep missed it) —
+fixed. Messenger block's "15 minutes / under 5 seconds — always" softened; the duplicate
+"Customer Support AI Chatbot" block removed from the hub (its own page stays); services subhead now
+names the channels; first pain card points to Messenger (Basic); WhatsApp block gained the trial
+line; homepage stat tiles removed, the lone "Live now" badge removed, Review Replies card linked to
+pricing; WhyMe testing card de-jargoned; the guarantee now says what "agreed" means. Receptionist
+cost set to $18–25k MXN everywhere (PR #349). Deliberately unchanged: the WhatsApp CTA stays
+"Get in touch" (see the comment above `primaryCtaLabel`).
+
+**Left open:** whether "2 locations" means 2 Facebook Pages (Messenger copy says "One Page");
+whether reminder templates can be English as well as Spanish. The review's larger rewrites — a tier strip replacing "What I Build",
 "Why Work With Me" cut to four cards, merging the two chatbot sections — were not attempted.
 
 ## Session: 2026-09-29 — Portfolio demo links pointed at vercel.app, and bookings had no attendance confirmation
