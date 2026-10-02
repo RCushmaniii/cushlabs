@@ -449,12 +449,12 @@ Planned but not started. Bundle related items into single PRs per CLAUDE.md.
 
 ### High priority
 
-- **Booking page: put the calendar first** (from the 2026-10-02 review). Today the hero, a "Book
-  now" button, three info boxes and a session banner all sit above the calendar. Two-column layout:
-  who/what/duration on the left, calendar on the right; hero removed. EN + ES.
-- **Booking page: show the chosen time on step 2** with a "Change" link — it currently disappears.
-- **Booking worker: buffer + notice.** Weekdays offer ~18 back-to-back slots with 3.5 h notice and
-  no gap between calls. Add a 15-min buffer and 12 h minimum notice (worker config, not the site).
+- ~~Booking page: calendar first / chosen time on step 2 / buffer + notice~~ — shipped 2026-10-02
+  (second session that day).
+- **Booking: topic quick-picks.** Replace the free-text notes prompt with chips matching the three
+  plans (+ "Not sure yet" / "Other"). Not voice-specific — voice is not pitched on the booking page.
+- **Booking: grey out days with no openings**, not just Sundays. Needs a range endpoint on the
+  worker (one call per month) — calling `/slots` per day would burn the rate limit.
 - **Messenger bot: read `ref=demos-page`** in `cushlabs-messenger-bot` — greet demo visitors
   ("you just tried the demo — want one for your business?") and record the source with the lead.
 
@@ -912,6 +912,31 @@ In-window utility templates and service messages start being charged. This is th
 cost question the WhatsApp demo-swap decision has been waiting on.
 
 ## Session History
+
+## Session: 2026-10-02 (later) — A booking showed the wrong time, and the calendar was below the fold
+
+Robert received a consultation that "wasn't at the right time." Investigated against his live Google
+Calendar: events are created correctly (`timeZone: America/Mexico_City`), but **his primary calendar
+is set to Mexico City**, so when he is on the US East Coast Google keeps showing Mexico City times, and
+the 08:00 WhatsApp summary printed Mexico City only. A booker outside Mexico got reminders in Mexico
+City time only too. Full design in `docs/BOOKING-CONFIRMATIONS.md` → "Time zones".
+
+- **Robert's clocks:** 08:00 summary and every new calendar event show `CDMX / EDT` (EST in winter),
+  DST via `Intl`, second zone = `OPERATOR_SECOND_TZ`.
+- **Booker's clock:** the form sends its IANA zone; stored as `bookings.booker_tz`; reminder email,
+  WhatsApp and cancel page lead with the booker's time. Shared lib copied to ny-eng unchanged in
+  behaviour (its form does not send a zone yet, so it keeps Mexico City wording).
+- **Worker:** 12 h minimum notice (was 3.5 h), 15-min buffer around every busy block, and `/book` now
+  re-checks the slot live — the 5-minute slot cache let two visitors book the same opening.
+  Returns `409 slot_taken`; the form says so and refreshes the times.
+- **Page:** hero removed, two-column (who/what left, calendar right; phones: intro → calendar →
+  details), chosen slot shown on step 2 with "Change", Sundays greyed, opens on the first day with
+  free times, 12-hour times in English, WhatsApp opt-in appears once a phone is typed, Turnstile
+  `interaction-only`. Meta description said "15-minute call"; the call is 30 — fixed EN + ES.
+- **Demos:** voice card kept (Robert's call), retargeted: tagline names clinics, salons, restaurants;
+  a "Do your customers still call?" link shows only on dental, orthodontics, spa, salon, restaurant.
+- **Not code:** Robert should turn on Google Calendar's "Ask to update my primary time zone to
+  current location". Until then the event's `When:` line is the reliable read.
 
 ## Session: 2026-10-02 — /demos/ finally asks for something, and the booking form booked the wrong day east of UTC
 

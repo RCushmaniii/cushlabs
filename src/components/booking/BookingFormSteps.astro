@@ -12,7 +12,7 @@ const dict = t(locale);
 const b = dict.booking;
 ---
 
-<div class="booking-steps-container max-w-4xl mx-auto">
+<div class="booking-steps-container w-full">
   <div
     class="hidden rounded-2xl border border-cush-orange/30 bg-cush-orange/10 p-5 mb-8"
     data-plan-context
@@ -20,33 +20,6 @@ const b = dict.booking;
   >
     <p class="font-display font-semibold text-foreground" data-plan-context-title></p>
     <p class="mt-1 text-sm text-muted" data-plan-context-body></p>
-  </div>
-
-  <!-- Session Info Banner -->
-  <div class="rounded-2xl border border-border bg-surface p-6 mb-8">
-    <h3 class="text-xl font-display font-bold text-foreground mb-4">
-      {b.sessionTitle}
-    </h3>
-    <div class="space-y-3">
-      <div class="flex items-start gap-3">
-        <svg class="w-6 h-6 text-accent-text shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-        </svg>
-        <p class="text-muted">{b.sessionDuration}</p>
-      </div>
-      <div class="flex items-start gap-3">
-        <svg class="w-6 h-6 text-accent-text shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
-        </svg>
-        <p class="text-muted">{b.sessionMeet}</p>
-      </div>
-      <div class="flex items-start gap-3">
-        <svg class="w-6 h-6 text-accent-text shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-        </svg>
-        <p class="text-muted" id="timezone-info-text">{b.sessionTimezone}</p>
-      </div>
-    </div>
   </div>
 
   <!-- Progress Steps -->
@@ -74,23 +47,17 @@ const b = dict.booking;
         {b.selectDateTime}
       </h2>
 
-      <!-- Selected Date Display -->
-      <div class="rounded-xl border-2 border-cush-orange/30 bg-cush-orange/5 p-4 mb-6">
-        <p class="text-sm text-muted mb-1">{b.selectedDate}</p>
-        <p class="text-2xl font-display font-bold text-foreground" id="selected-date-display-top">
-          {b.selectDateBelow}
-        </p>
-      </div>
-
       <div class="grid md:grid-cols-2 gap-8">
         <div>
           <DatePicker locale={locale} />
         </div>
 
         <div>
-          <h3 class="text-lg font-display font-semibold text-foreground mb-4">
+          <h3 class="text-lg font-display font-semibold text-foreground" id="selected-date-display-top">
             {b.selectTime}
           </h3>
+          {/* Filled by the script with the visitor's own zone, e.g. "Times shown in your local time (EDT)". */}
+          <p class="text-sm text-muted mt-1 mb-4" id="timezone-info-text">{b.sessionTimezone}</p>
           <div id="time-slots-container" class="grid grid-cols-2 sm:grid-cols-3 gap-2">
           </div>
         </div>
@@ -101,9 +68,20 @@ const b = dict.booking;
   <!-- Step 2: Your Details -->
   <div class="step-content" data-step="2">
     <div class="rounded-2xl border border-border bg-surface p-6">
-      <h2 class="text-2xl font-display font-bold text-foreground mb-6">
+      <h2 class="text-2xl font-display font-bold text-foreground mb-4">
         {b.addDetails}
       </h2>
+
+      {/* The slot they picked used to vanish on this step. */}
+      <div class="mb-6 flex flex-wrap items-center gap-x-3 gap-y-1 rounded-xl border border-cush-orange/30 bg-cush-orange/5 px-4 py-3 max-w-md mx-auto">
+        <svg class="w-5 h-5 text-accent-text shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+        </svg>
+        <p class="font-display font-semibold text-foreground" id="step2-when"></p>
+        <button type="button" id="step2-change" class="text-sm font-semibold text-accent-text underline underline-offset-2 hover:opacity-80">
+          {b.changeTime}
+        </button>
+      </div>
 
       <!-- Error Message -->
       <div
@@ -156,7 +134,7 @@ const b = dict.booking;
             class="w-full rounded-xl border border-border bg-canvas/40 px-4 py-3 text-sm text-foreground placeholder:text-muted focus:outline-hidden focus:ring-2 focus:ring-cush-orange/40"
           />
           <p class="text-sm text-muted mt-2">{b.phoneHint}</p>
-          <label class="mt-3 flex items-start gap-2 text-sm text-foreground cursor-pointer">
+          <label id="booking-whatsapp-optin-row" class="mt-3 flex items-start gap-2 text-sm text-foreground cursor-pointer" hidden>
             <input type="checkbox" id="booking-whatsapp-optin" name="whatsappOptIn" class="mt-0.5 h-4 w-4 accent-cush-orange" />
             <span>{b.whatsappOptIn}</span>
           </label>
@@ -423,6 +401,14 @@ const b = dict.booking;
     // The day the visitor clicked, as YYYY-MM-DD. The picker builds local-midnight
     // Dates, so toISOString() (UTC) rolled the date back a day for anyone east of
     // UTC: a visitor in Madrid who clicked Oct 5 was shown, and booked, Oct 4.
+    // A Mexico City "HH:MM" slot as the reader expects it: "7:00 PM" in English,
+    // "19:00" in Spanish (24-hour is the norm in Mexico).
+    function clock(hhmm: string): string {
+      if (lang === 'es') return hhmm;
+      const [h, m] = hhmm.split(':').map(Number);
+      return new Date(2000, 0, 1, h, m).toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' });
+    }
+
     function calendarDate(d: Date): string {
       return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
     }
@@ -507,6 +493,7 @@ const b = dict.booking;
       selectedDate = new Date(now);
       selectedDate.setHours(0, 0, 0, 0);
     }
+    if (selectedDate.getDay() === 0) selectedDate.setDate(selectedDate.getDate() + 1);
 
     function showStep(step: number) {
       currentStep = step;
@@ -558,6 +545,8 @@ const b = dict.booking;
         turnstileWidgetId = ts.render(container, {
           sitekey: TURNSTILE_SITE_KEY,
           action: 'booking',
+          // Invisible unless Cloudflare actually needs the visitor to do something.
+          appearance: 'interaction-only',
           language: lang === 'es' ? 'es' : 'en',
           'error-callback': () => {
             turnstileFailed = true;
@@ -582,15 +571,16 @@ const b = dict.booking;
     function updateDateDisplay(date: Date | null) {
       const displayTop = document.getElementById('selected-date-display-top');
       if (displayTop && date) {
-        const options: Intl.DateTimeFormatOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        const options: Intl.DateTimeFormatOptions = { weekday: 'long', month: 'long', day: 'numeric' };
         displayTop.textContent = date.toLocaleDateString(lang === 'es' ? 'es-MX' : 'en-US', options);
       }
     }
 
     // Listen for date selection from DatePicker
     document.addEventListener('dateSelected', (async (e: Event) => {
-      trackBookingStarted();
       const detail = (e as CustomEvent).detail;
+      // The page moving itself to the first open day is not the visitor starting.
+      if (!detail.auto) trackBookingStarted();
       selectedDate = detail.date;
       selectedTime = null;
       updateDateDisplay(selectedDate);
@@ -649,7 +639,7 @@ const b = dict.booking;
               data-local-time="${localTime}"
             >
               <span class="block text-base">${localTime}</span>
-              <span class="block text-xs opacity-60">${time} ${lang === 'es' ? 'CDMX' : 'Mexico City'}</span>
+              <span class="block text-xs opacity-60">${clock(time)} ${lang === 'es' ? 'CDMX' : 'Mexico City'}</span>
             </button>
           `;
         }
@@ -659,7 +649,7 @@ const b = dict.booking;
             class="time-slot-btn px-4 py-3 border-2 border-border rounded-xl hover:border-cush-orange transition-all font-display font-semibold text-foreground"
             data-time="${time}"
           >
-            ${time}
+            ${clock(time)}
           </button>
         `;
       }).join('');
@@ -669,6 +659,7 @@ const b = dict.booking;
           trackBookingStarted();
           const target = e.currentTarget as HTMLButtonElement;
           selectedTime = target.dataset.time || null;
+          setStep2When();
 
           container.querySelectorAll('.time-slot-btn').forEach((b) => {
             b.classList.remove('border-cush-orange', 'bg-cush-orange', 'text-black');
@@ -692,8 +683,27 @@ const b = dict.booking;
       setTimeout(() => errorDiv.classList.add('hidden'), 5000);
     }
 
+    // The chosen slot, in the visitor's own clock, shown at the top of step 2.
+    function setStep2When() {
+      const el = document.getElementById('step2-when');
+      if (!el || !selectedDate || !selectedTime) return;
+      const day = selectedDate.toLocaleDateString(lang === 'es' ? 'es-MX' : 'en-US', { weekday: 'short', month: 'short', day: 'numeric' });
+      const time = showDualTime && visitorTz
+        ? `${convertMexicoCityToLocal(calendarDate(selectedDate), selectedTime, visitorTz)} (${getShortTzName(visitorTz)})`
+        : clock(selectedTime);
+      el.textContent = `${day} · ${time}`;
+    }
+
     // Back button
     document.getElementById('back-to-step1')?.addEventListener('click', () => showStep(1));
+    document.getElementById('step2-change')?.addEventListener('click', () => showStep(1));
+
+    // WhatsApp reminder opt-in appears once a phone number is typed.
+    const phoneField = document.getElementById('booking-phone') as HTMLInputElement | null;
+    const optInRow = document.getElementById('booking-whatsapp-optin-row');
+    phoneField?.addEventListener('input', () => {
+      if (optInRow) optInRow.hidden = phoneField.value.trim() === '';
+    });
 
     // Confirm booking
     document.getElementById('confirm-booking')?.addEventListener('click', async (e) => {
@@ -769,6 +779,9 @@ const b = dict.booking;
             time: selectedTime,
             lang: lang,
             notes: formData.notes || '',
+            // The visitor's IANA zone, so their reminders read in their own
+            // clock and Robert's event lists it. Validated by the Worker.
+            timeZone: visitorTz || '',
             // Collected on this form since it was written and never sent, so
             // every booking so far reached the calendar with no way to call
             // the person back.
@@ -811,11 +824,11 @@ const b = dict.booking;
               const tzNote = document.getElementById('summary-timezone');
               if (tzNote) {
                 tzNote.textContent = lang === 'es'
-                  ? `${selectedTime} hora de Ciudad de México`
-                  : `${selectedTime} Mexico City time`;
+                  ? `${clock(selectedTime!)} hora de Ciudad de México`
+                  : `${clock(selectedTime!)} Mexico City time`;
               }
             } else {
-              summaryDatetime.textContent = `${dateStrFormatted} - ${selectedTime}`;
+              summaryDatetime.textContent = `${dateStrFormatted} - ${clock(selectedTime!)}`;
             }
           }
           if (summaryName) summaryName.textContent = formData.name;
@@ -854,13 +867,21 @@ const b = dict.booking;
             document.querySelector('.booking-steps-container')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
           }, 100);
         } else {
-          throw new Error(data.error || 'Booking failed');
+          const failure = new Error(data.error || 'Booking failed') as Error & { code?: string };
+          failure.code = data.code;
+          throw failure;
         }
       } catch (err) {
-        console.error('[booking] booking request failed', err);
-        (window as unknown as { Sentry?: { captureException?: (e: unknown) => void } })
-          .Sentry?.captureException?.(err);
-        showError(str('errorGeneric'));
+        if ((err as { code?: string })?.code === 'slot_taken') {
+          // Not a fault: someone else got there first. Say so and refresh the times.
+          showError((err as Error).message);
+          if (selectedDate) fetchAvailableSlots(selectedDate);
+        } else {
+          console.error('[booking] booking request failed', err);
+          (window as unknown as { Sentry?: { captureException?: (e: unknown) => void } })
+            .Sentry?.captureException?.(err);
+          showError(str('errorGeneric'));
+        }
         // The token that was just sent is spent whether or not the booking
         // succeeded. Without this reset the retry ships a stale token and the
         // Worker rejects every attempt after the first.
@@ -877,9 +898,40 @@ const b = dict.booking;
       }
     });
 
+    // Open on the first day that actually has a free time, instead of a
+    // "No available times" day the visitor has to click past.
+    async function openFirstAvailableDay() {
+      const start = new Date(selectedDate!);
+      if (API_BASE) {
+        for (let i = 0; i < 14; i++) {
+          const d = new Date(start);
+          d.setDate(start.getDate() + i);
+          if (d.getDay() === 0) continue; // closed Sundays
+          try {
+            const r = await fetch(`${API_BASE}/slots/${calendarDate(d)}?lang=${lang}`);
+            const data = r.ok ? await r.json() : null;
+            if (!data?.ok) break;
+            if (data.slots?.length) {
+              if (i === 0) break;
+              const picker = (window as unknown as { cushlabsDatePicker?: { selectDate: (d: Date, auto?: boolean) => void } }).cushlabsDatePicker;
+              if (picker) {
+                picker.selectDate(d, true);
+                return;
+              }
+              break;
+            }
+          } catch {
+            break;
+          }
+        }
+      }
+      updateDateDisplay(selectedDate);
+      fetchAvailableSlots(selectedDate!);
+    }
+
     // Initialize
     updateDateDisplay(selectedDate);
-    fetchAvailableSlots(selectedDate!);
+    openFirstAvailableDay();
   });
 </script>
 

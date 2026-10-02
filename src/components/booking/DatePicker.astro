@@ -70,6 +70,8 @@ const days = locale === 'es'
         this.selectedDate = new Date(now);
         this.selectedDate.setHours(0, 0, 0, 0);
       }
+      // Sundays are closed; never open on one.
+      if (this.selectedDate.getDay() === 0) this.selectedDate.setDate(this.selectedDate.getDate() + 1);
 
       this.months = months;
       this.init();
@@ -124,6 +126,8 @@ const days = locale === 'es'
       for (let day = 1; day <= daysInMonth; day++) {
         const dayDate = new Date(year, month, day);
         const isPast = dayDate < today && dayDate.toDateString() !== today.toDateString();
+        // Closed days look closed instead of answering "No available times" on click.
+        const isClosed = dayDate.getDay() === 0;
         const isToday = dayDate.toDateString() === today.toDateString();
         const isSelected = this.selectedDate && dayDate.toDateString() === this.selectedDate.toDateString();
 
@@ -148,7 +152,7 @@ const days = locale === 'es'
 
         let classes = 'p-2 text-center rounded-xl transition-all text-sm font-display font-semibold';
 
-        if (isPast) {
+        if (isPast || isClosed) {
           classes += ' text-muted/40 cursor-not-allowed';
         } else if (isSelected) {
           classes += ' bg-cush-orange text-black cursor-pointer';
@@ -162,7 +166,7 @@ const days = locale === 'es'
 
         dayCell.className = classes;
 
-        if (!isPast) {
+        if (!isPast && !isClosed) {
           dayCell.addEventListener('click', () => {
             this.selectDate(dayDate);
           });
@@ -174,12 +178,14 @@ const days = locale === 'es'
       }
     }
 
-    selectDate(date) {
+    // `auto` = the page chose this day (first open day), not the visitor.
+    selectDate(date, auto = false) {
       this.selectedDate = date;
+      this.currentDate = new Date(date.getFullYear(), date.getMonth(), 1);
       this.render();
 
       const event = new CustomEvent('dateSelected', {
-        detail: { date },
+        detail: { date, auto },
         bubbles: true,
       });
       document.dispatchEvent(event);
@@ -188,10 +194,10 @@ const days = locale === 'es'
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
-      new DatePicker();
+      window.cushlabsDatePicker = new DatePicker();
     });
   } else {
-    new DatePicker();
+    window.cushlabsDatePicker = new DatePicker();
   }
 </script>
 
