@@ -44,6 +44,8 @@ const STRINGS = {
     plans: "See plans and prices",
     voiceQ: "Do your customers still call?",
     voiceLink: "Hear the AI voice agent answer",
+    watch: "Watch the 20-second video",
+    closeVideo: "Close video",
     footBrand: "CushLabs AI Services",
     footMid: "AI Assistant on Messenger · Bilingual 24/7",
     footLoc: "Guadalajara, Mexico",
@@ -68,6 +70,8 @@ const STRINGS = {
     plans: "Ver planes y precios",
     voiceQ: "¿Tus clientes todavía llaman?",
     voiceLink: "Escucha al agente de voz con IA",
+    watch: "Ver el video de 20 segundos",
+    closeVideo: "Cerrar video",
     footBrand: "CushLabs AI Services",
     footMid: "Asistente de IA en Messenger · Español 24/7",
     footLoc: "Guadalajara, México",
@@ -76,6 +80,11 @@ const STRINGS = {
 const S = STRINGS[locale];
 const bookingPath = locale === "es" ? "/es/reservar/" : "/consultation/";
 const plansPath = locale === "es" ? "/es/precios/" : "/pricing/";
+// One vertical video per industry and language, hosted on the R2 CDN
+// (bucket cushlabs-assets, demos/videos/<id>-<locale>.mp4 + .jpg poster).
+// Built from the same CATALOG copy as this component; source and re-render
+// steps live outside the repo (Robert's Videos/CushLabs demos/_source).
+const VIDEO_BASE = "https://cdn.cushlabs.ai/demos/videos";
 
 // Shared (locale-independent) + localized industry content.
 const CATALOG = [
@@ -461,6 +470,10 @@ const industries = CATALOG.map((c) => ({
             data-analytics-placement="demos-industry"
           >{S.cta} <span aria-hidden="true">→</span></a>
           <a class="plans" href={plansPath} data-analytics-event="plans_clicked" data-analytics-placement="demos-industry">{S.plans}</a>
+          <button type="button" class="watch" id="clmd-watch">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5-11-6.5Z"></path></svg>
+            {S.watch}
+          </button>
         </div>
         {/* Voice is offered only where the business lives on the phone — clinics,
             salons, restaurants (the voice page's own "best for"). Toggled per chip. */}
@@ -471,6 +484,14 @@ const industries = CATALOG.map((c) => ({
         <p class="note">{S.note}</p>
       </div>
     </div>
+
+    {/* Native <dialog>: Esc, focus trapping and the backdrop come with it. The
+        video source is set on open, so the page never downloads a video nobody
+        asked for. */}
+    <dialog class="vid" id="clmd-video" aria-label={S.watch}>
+      <button type="button" class="vid-close" id="clmd-video-close" aria-label={S.closeVideo}>×</button>
+      <video id="clmd-video-el" controls playsinline preload="none"></video>
+    </dialog>
 
     <div class="foot">
       <b>{S.footBrand}</b>
@@ -617,6 +638,16 @@ const industries = CATALOG.map((c) => ({
     .clmd .read .note { order: 3; }
   }
   .clmd .voice { margin-top: 14px; font-size: 14px; color: var(--ink-soft); }
+  .clmd .ask .watch { appearance: none; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--line); background: var(--panel); color: var(--ink); font: inherit; font-size: 14px; font-weight: 600; padding: 9px 14px; border-radius: 999px; }
+  .clmd .ask .watch svg { width: 16px; height: 16px; color: var(--accent); }
+  .clmd .ask .watch:hover { border-color: var(--ink-faint); }
+  .clmd .ask .watch:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  /* position/inset/margin restated: the component's resets otherwise pin the
+     modal to the top-left corner instead of the viewport centre. */
+  .clmd dialog.vid { position: fixed; inset: 0; margin: auto; height: fit-content; padding: 0; border: 0; background: transparent; width: min(92vw, 420px); max-width: none; overflow: visible; }
+  .clmd dialog.vid::backdrop { background: rgb(0 0 0 / .8); }
+  .clmd dialog.vid video { display: block; width: 100%; max-height: 86vh; aspect-ratio: 9 / 16; border-radius: 18px; background: #000; }
+  .clmd .vid-close { position: absolute; top: -14px; right: -14px; width: 36px; height: 36px; border-radius: 999px; border: 0; background: #fff; color: #111; font-size: 22px; line-height: 1; cursor: pointer; box-shadow: 0 2px 8px rgb(0 0 0 / .3); }
   .clmd .voice a { color: var(--ink); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
   .clmd .note { margin-top: 22px; font-size: 12.5px; color: var(--ink-faint); border-top: 1px solid var(--line); padding-top: 14px; max-width: 46ch; }
 
@@ -628,7 +659,7 @@ const industries = CATALOG.map((c) => ({
   }
 </style>
 
-<script define:vars={{ industries }}>
+<script define:vars={{ industries, VIDEO_BASE }}>
   (function () {
     const IC = {
       dress: '<path d="M8 3h8l-1.2 3.5L16 9l-1.5 1 1.5 8a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2l1.5-8L8 9l1.2-2.5L8 3Z"/>',
@@ -680,10 +711,29 @@ const industries = CATALOG.map((c) => ({
     // `?industry=<id>` opens that industry — the link every outreach message,
     // QR card and clip points at. The ids are printed on cards: never rename one.
     const ctaEl = q("#clmd-cta");
+    let current = industries[0];
+
+    // Industry video: source set on open, paused and unloaded on close.
+    const dlg = q("#clmd-video");
+    const vid = q("#clmd-video-el");
+    const lang = document.documentElement.lang.startsWith("es") ? "es" : "en";
+    q("#clmd-watch")?.addEventListener("click", () => {
+      if (!dlg || !vid) return;
+      vid.poster = `${VIDEO_BASE}/${current.id}-${lang}.jpg`;
+      vid.src = `${VIDEO_BASE}/${current.id}-${lang}.mp4`;
+      dlg.showModal();
+      vid.play().catch(() => {}); // autoplay may be refused; the controls are there
+      window.cushlabsTrack?.("demo_video_played", { industry: current.id });
+    });
+    const closeVideo = () => dlg?.close();
+    q("#clmd-video-close")?.addEventListener("click", closeVideo);
+    dlg?.addEventListener("click", (e) => { if (e.target === dlg) closeVideo(); }); // backdrop
+    dlg?.addEventListener("close", () => { vid?.pause(); vid?.removeAttribute("src"); vid?.load(); });
     function select(v, how) {
       chipsEl.querySelectorAll(".chip").forEach((c) =>
         c.setAttribute("aria-selected", c.dataset.industry === v.id ? "true" : "false"));
       render(v);
+      current = v;
       const voiceEl = q("#clmd-voice");
       if (voiceEl) voiceEl.hidden = !v.calls;
       if (ctaEl) {
