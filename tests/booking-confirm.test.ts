@@ -94,6 +94,24 @@ describe("booking confirmation", () => {
     expect(body.htmlContent).toContain("/cancel?t=");
   });
 
+  it("skips the email step for a WhatsApp booking with no email, instead of retrying a failed send", async () => {
+    const env = makeEnv();
+    const now = new Date("2026-10-01T12:00:00Z");
+    await recordBooking(env, {
+      eventId: "ev-wa",
+      startsAt: new Date(now.getTime() + 24 * HOUR).toISOString(),
+      name: "Ana",
+      email: "",
+      lang: "es",
+      phone: "5213312345678",
+      whatsappOptIn: true,
+    });
+    expect(await sendDueConfirmations(env, now)).toMatchObject({ sent: 0, failed: 0, due: 1 });
+    expect(fetchMock.mock.calls.filter(([u]) => String(u).includes("brevo"))).toHaveLength(0);
+    // Marked done, so the next cron tick does not pick it up again.
+    expect(await sendDueConfirmations(env, now)).toMatchObject({ due: 0 });
+  });
+
   it("retries a failed send on the next run", async () => {
     const env = makeEnv();
     const now = new Date("2026-10-01T12:00:00Z");

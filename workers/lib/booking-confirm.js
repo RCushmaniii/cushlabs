@@ -340,6 +340,15 @@ export async function sendDueConfirmations(env, now = new Date()) {
   let sent = 0;
   let failed = 0;
   for (const row of results) {
+    // WhatsApp bookings may have no email (2026-10-05). Mark the email step done
+    // instead of retrying a send Brevo will reject on every cron tick; the
+    // WhatsApp reminder below is tracked separately (wa_sent_at).
+    if (!row.email) {
+      await env.DB.prepare(`UPDATE bookings SET asked_at = ? WHERE token = ?`)
+        .bind(new Date().toISOString(), row.token)
+        .run();
+      continue;
+    }
     const email = buildConfirmationEmail(row, env);
     const resp = await fetch("https://api.brevo.com/v3/smtp/email", {
       method: "POST",
