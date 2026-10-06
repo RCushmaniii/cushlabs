@@ -913,6 +913,20 @@ cost question the WhatsApp demo-swap decision has been waiting on.
 
 ## Session History
 
+## Session: 2026-10-06 — Industry demo videos paired with /demos/
+
+- **20 vertical demo videos** (10 industries × ES/EN, ~22 s, 1080×1920, H.264) on the R2 CDN at
+  `https://cdn.cushlabs.ai/demos/videos/<industry-id>-<es|en>.mp4` with a `.jpg` poster beside each.
+  English versions show prices as "$350 MXN". Source/template and re-render script live outside the
+  repo: `C:\Users\rcush\Videos\CushLabs demos\_source\`. The ids are the same printed-on-QR slugs.
+- **/demos/ (EN + ES):** "Watch the 20-second video" / "Ver el video de 20 segundos" next to the
+  industry CTA opens that industry's video in a native `<dialog>`; source set only on open (no page
+  weight), unloaded on close. Event `demo_video_played` with `industry`. CSP already allowed
+  `media-src https://cdn.cushlabs.ai`.
+- Verified in real Chrome (Playwright `channel: "chrome"`): loads, plays, centred, Esc closes and
+  stops. The Claude-in-Chrome tab cannot play ANY CDN video (existing portfolio videos included) —
+  don't treat that as a site bug.
+
 ## Session: 2026-10-02 (later) — A booking showed the wrong time, and the calendar was below the fold
 
 Robert received a consultation that "wasn't at the right time." Investigated against his live Google
