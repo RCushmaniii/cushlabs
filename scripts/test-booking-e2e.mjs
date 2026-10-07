@@ -262,15 +262,17 @@ await scenario("Slot taken by someone else: the form says so and refreshes the t
   await context.close();
 });
 
-await scenario("Phone (390px): calendar on the first screen, nothing wider than the screen", async () => {
+await scenario("Phone (390px): EN calendar / ES WhatsApp booking on the first screen, nothing wider than the screen", async () => {
   for (const path of ["/consultation/", "/es/reservar/"]) {
     const { page, context } = await open(path, {
       timezoneId: "America/Mexico_City",
       locale: path.startsWith("/es") ? "es-MX" : "en-US",
       viewport: { width: 390, height: 844 },
     });
-    const top = await page.locator("#calendar-days").evaluate((el) => el.getBoundingClientRect().top);
-    if (top > 844) throw new Error(`${path}: calendar starts at ${Math.round(top)}px, below the first screen`);
+    // Spanish leads with WhatsApp booking on phones (Robert, 2026-10-06); English with the calendar.
+    const first = path.startsWith("/es") ? 'a[href^="https://wa.me/13072842785"]' : "#calendar-days";
+    const top = await page.locator(first).first().evaluate((el) => el.getBoundingClientRect().top);
+    if (top > 844) throw new Error(`${path}: ${first} starts at ${Math.round(top)}px, below the first screen`);
     const overflow = await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth);
     expect(overflow, false, `${path}: horizontal overflow`);
     await context.close();

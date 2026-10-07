@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import BookingFormSteps from "../components/booking/BookingFormSteps.astro";
+import WhatsAppBookingCta from "../components/booking/WhatsAppBookingCta.astro";
 import { t } from "../i18n";
 
 const locale = (Astro.currentLocale === "es" ? "es" : "en") as "en" | "es";
@@ -54,6 +55,7 @@ const dict = t(locale);
       </div>
 
       <div class="space-y-4 lg:col-start-1 lg:row-start-2">
+        <WhatsAppBookingCta locale="en" />
         <div class="rounded-2xl border border-border bg-surface p-5">
           <h2 class="font-display text-base font-bold text-foreground">
             {dict.consultation.whatWeCoverTitle}
