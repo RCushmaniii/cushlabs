@@ -255,3 +255,51 @@ describe("booking", () => {
     expect(google.inserted).toHaveLength(0);
   });
 });
+
+describe("WhatsApp booking path (cushlabs-whatsapp over the CUSHLABS_BOOKING binding)", () => {
+  async function bookInternal(env: unknown, body: Record<string, unknown>) {
+    const res = await worker.fetch(
+      new Request("https://booking/book?lang=es", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name: "Ana López", date: "2026-10-05", time: "10:00", lang: "es", channel: "whatsapp", ...body }),
+      }),
+      env,
+    );
+    return { status: res.status, data: await res.json() };
+  }
+
+  it("books without an email: no attendee, marked WhatsApp, phone kept", async () => {
+    const env = makeEnv();
+    const { status, data } = await bookInternal(env, { phone: "5213312345678", whatsappOptIn: true });
+    expect(status, JSON.stringify(data)).toBe(200);
+    const ev = google.inserted[0];
+    expect(ev.attendees).toEqual([]);
+    expect(ev.description).toContain("Reservado por WhatsApp");
+    expect(ev.description).toContain("Teléfono: 5213312345678");
+    expect(ev.description).not.toContain("Email:");
+    const row = await env.DB.prepare("SELECT email, phone, wa_opt_in FROM bookings").first();
+    expect(row).toEqual({ email: "", phone: "5213312345678", wa_opt_in: 1 });
+  });
+
+  it("the public web form still requires an email", async () => {
+    const { status } = await book(makeEnv(), { date: "2026-10-05", time: "10:00", email: "" });
+    expect(status).toBe(500);
+    expect(google.inserted).toHaveLength(0);
+  });
+
+  it("the demo bot's internal path still requires an email (only channel=whatsapp relaxes it)", async () => {
+    const { status } = await bookInternal(makeEnv(), { channel: undefined, phone: "5213312345678" });
+    expect(status).toBe(500);
+    expect(google.inserted).toHaveLength(0);
+  });
+
+  it("rate-limits WhatsApp bookings per phone, not as one shared caller", async () => {
+    const env = makeEnv();
+    const times = ["09:00", "10:00", "11:00", "12:00", "13:00", "16:00"];
+    const statuses: number[] = [];
+    for (const time of times) statuses.push((await bookInternal(env, { phone: "5213311111111", time })).status);
+    expect(statuses).toEqual([200, 200, 200, 200, 200, 429]);
+    expect((await bookInternal(env, { phone: "5213322222222", time: "17:00" })).status).toBe(200);
+  });
+});
