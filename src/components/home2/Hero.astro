@@ -142,7 +142,7 @@ const t = content[locale];
   <Container size="lg">
     <div class="text-center max-w-4xl mx-auto">
       <!-- Trust Badge -->
-      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm mb-5 animate-fade-in">
+      <div class="home-badge inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm mb-5 animate-fade-in">
         <span class="w-2 h-2 rounded-full bg-cush-orange animate-pulse"></span>
         <span class="font-display text-sm font-semibold tracking-wide text-white">{t.badge}</span>
       </div>
@@ -168,7 +168,7 @@ const t = content[locale];
       </div>
 
       <!-- Trust Strip -->
-      <div class="flex flex-wrap justify-center gap-x-6 gap-y-3 mb-10 animate-fade-in-up" style="animation-delay: 0.2s;">
+      <div class="home-trust flex flex-wrap justify-center gap-x-6 gap-y-3 mb-10 animate-fade-in-up" style="animation-delay: 0.2s;">
         {t.trustStrip.map((item) => (
           <div class="flex items-center gap-2 font-display text-sm font-medium text-slate-200">
             <svg class="w-4 h-4 text-accent-text" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -185,7 +185,7 @@ const t = content[locale];
           pointed "Try the Live Demo" at the booking page. Demo-first lowers the
           commitment of the first click: trying something costs nothing, booking a call
           costs a calendar slot and a conversation. */}
-      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up" style="animation-delay: 0.3s;">
+      <div class="home-ctas flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up" style="animation-delay: 0.3s;">
         <button
           type="button"
           data-open-chat
@@ -363,5 +363,68 @@ const t = content[locale];
 
   .animate-bounce-subtle {
     animation: bounce-subtle 2s ease-in-out infinite;
+  }
+  /* Phone layout (2026-10-07, Robert: "my home page mobile is ugly"). Layout only —
+     the copy above has claim decisions behind every word, so nothing here changes
+     wording. What was wrong at 390px: the badge wrapped to two lines, a four-line
+     30px headline, a heavy 19px paragraph, the trust ticks stacked down the middle
+     with ragged indents, two buttons of different widths (the second wrapping), and
+     the vertically centred block pushing the buttons under the floating chat bubble.
+     Desktop is untouched. */
+  @media (max-width: 640px) {
+    /* Last in the sheet on purpose: the base .home-h1/.home-sub rules and the
+       96svh min-height above would otherwise win on source order. */
+    .home-hero {
+      align-items: flex-start;
+      min-height: 0;
+      padding-top: 28px;
+      padding-bottom: 120px; /* clears the fixed chat bubble; the demo sheet overlaps the last 48px */
+    }
+    .home-badge {
+      padding: 6px 12px;
+      margin-bottom: 18px;
+    }
+    .home-badge span:last-child {
+      font-size: 11.5px;
+      white-space: nowrap;
+      letter-spacing: 0.01em;
+    }
+    .home-h1 {
+      font-size: 27px;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      margin-bottom: 14px;
+    }
+    .home-sub {
+      font-size: 15px;
+      line-height: 1.55;
+      margin-bottom: 20px;
+    }
+    .home-sub p {
+      font-weight: 400;
+      color: rgb(255 255 255 / 0.86);
+    }
+    .home-trust {
+      column-gap: 14px;
+      row-gap: 6px;
+      margin-bottom: 26px;
+    }
+    .home-trust > div {
+      font-size: 13px;
+      gap: 6px;
+    }
+    .home-ctas {
+      gap: 12px;
+    }
+    .home-ctas > * {
+      width: 100%;
+      justify-content: center;
+      padding-top: 14px;
+      padding-bottom: 14px;
+      font-size: 15.5px;
+      white-space: nowrap;
+      padding-left: 16px;
+      padding-right: 16px;
+    }
   }
 </style>
