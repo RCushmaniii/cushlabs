@@ -4,6 +4,13 @@ import { DatabaseSync } from "node:sqlite";
 export function fakeD1() {
   const db = new DatabaseSync(":memory:");
   return {
+    // The rate limiter writes through batch(); without it the limiter fails open
+    // and a limit test passes for the wrong reason.
+    async batch(stmts: { run: () => Promise<unknown> }[]) {
+      const out = [];
+      for (const s of stmts) out.push(await s.run());
+      return out;
+    },
     prepare(sql: string) {
       let args: unknown[] = [];
       const stmt = {

@@ -347,12 +347,16 @@ export default {
           request.headers.get("X-Forwarded-For")?.split(",")[0]?.trim() ||
           "unknown";
 
-        const rateCheck = await checkRateLimit(
-          env.DB,
-          `book:${clientKey(clientIP)}`,
-          maxRequests,
-          windowMs,
-        );
+        // WhatsApp bookings (cushlabs-whatsapp's booking Flow, over the
+        // CUSHLABS_BOOKING service binding) all arrive from one internal caller,
+        // so an IP bucket would let five strangers lock everyone else out for an
+        // hour. Key them by the booker's phone instead.
+        const payload = await safeJson(request);
+        const viaWhatsApp = isInternalCall(url) && payload?.channel === "whatsapp";
+        const rateKey = viaWhatsApp
+          ? `book:wa:${clientKey(String(payload?.phone || "unknown"))}`
+          : `book:${clientKey(clientIP)}`;
+        const rateCheck = await checkRateLimit(env.DB, rateKey, maxRequests, windowMs);
         if (!rateCheck.allowed) {
           return json(
             {
@@ -365,8 +369,6 @@ export default {
             env,
           );
         }
-
-        const payload = await safeJson(request);
 
         // Bot gate. Ordered cheapest first: no I/O, then a header read, then a
         // network round trip. Skipped entirely for the demo Worker's service
@@ -439,7 +441,7 @@ export default {
         }
 
         const { startsAt, ...result } = await createBooking(
-          payload,
+          { ...payload, viaWhatsApp },
           env,
           tz,
           lang,
@@ -593,14 +595,18 @@ function sanitizeInput(str) {
 
 async function createBooking(data, env, timeZone, lang) {
   const { name: rawName, email: rawEmail, date, time } = data || {};
-  if (!rawName || !rawEmail || !date || !time)
+  // Email is optional only for WhatsApp bookings: the person is reachable on
+  // WhatsApp and the Meet link goes there. The web form and the demo bot still
+  // require it — without it they have no way to deliver the invite.
+  const viaWhatsApp = data?.viaWhatsApp === true;
+  if (!rawName || (!rawEmail && !viaWhatsApp) || !date || !time)
     throw new Error(t(lang, "missing_fields"));
 
   const name = sanitizeInput(rawName);
-  const email = sanitizeInput(rawEmail).toLowerCase();
+  const email = sanitizeInput(rawEmail || "").toLowerCase();
 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
-  if (!emailRegex.test(email)) {
+  if (email && !emailRegex.test(email)) {
     throw new Error(lang === "es" ? "Email inválido" : "Invalid email");
   }
 
@@ -649,10 +655,12 @@ async function createBooking(data, env, timeZone, lang) {
   // stays "Mexico City" when he travels — so the description never relies on it.
   const whenLine = clockLine(new Date(`${date}T${time}:00-06:00`), env, data.timeZone);
 
+  const via = viaWhatsApp ? (lang === "es" ? "\nReservado por WhatsApp" : "\nBooked via WhatsApp") : "";
+  const emailLine = email ? `\nEmail: ${email}` : "";
   const description =
     lang === "es"
-      ? `Consulta gratuita de estrategia de IA — CushLabs.ai\n${whenLine}\nNombre: ${name}\nEmail: ${email}${phone ? `\nTeléfono: ${phone}` : ""}${notes ? `\nNotas: ${notes}` : ""}`
-      : `Free AI strategy consultation — CushLabs.ai\n${whenLine}\nName: ${name}\nEmail: ${email}${phone ? `\nPhone: ${phone}` : ""}${notes ? `\nNotes: ${notes}` : ""}`;
+      ? `Consulta gratuita de estrategia de IA — CushLabs.ai${via}\n${whenLine}\nNombre: ${name}${emailLine}${phone ? `\nTeléfono: ${phone}` : ""}${notes ? `\nNotas: ${notes}` : ""}`
+      : `Free AI strategy consultation — CushLabs.ai${via}\n${whenLine}\nName: ${name}${emailLine}${phone ? `\nPhone: ${phone}` : ""}${notes ? `\nNotes: ${notes}` : ""}`;
 
   const calendarId = env.GOOGLE_CALENDAR_ID || env.CALENDAR_ID;
   const resp = await fetchJSON(
@@ -668,7 +676,7 @@ async function createBooking(data, env, timeZone, lang) {
         description,
         start: { dateTime: startDateTime, timeZone },
         end: { dateTime: endDateTime, timeZone },
-        attendees: [{ email }],
+        attendees: email ? [{ email }] : [],
         conferenceData: {
           createRequest: {
             requestId: `cushlabs-${Date.now()}-${Math.random().toString(36).substring(7)}`,
