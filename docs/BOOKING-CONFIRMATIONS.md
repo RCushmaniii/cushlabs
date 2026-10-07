@@ -37,6 +37,17 @@ times unless *Settings → General → Time zone* has "Ask to update my primary 
 location" turned on (or he switches it by hand). The `When:` line exists so the event is right
 either way.
 
+## Booking on WhatsApp (added 2026-10-06)
+
+Both businesses can also be booked without the web form. A message like "Quiero agendar una
+consulta" to the CushLabs number (+1 307 284 2785) or the NY English number (+1 585 565 6180) gets a
+WhatsApp Flow (day → time → details) from cushlabs-whatsapp, which books through **this same
+booking Worker** over a service binding (`CUSHLABS_BOOKING` / `NYE_BOOKING`, hostname `booking`,
+`channel: "whatsapp"`: email optional, rate-limited per phone, event marked "Reservado por
+WhatsApp"). The booking then gets the same reminders, confirm/cancel links and 08:00 summary as a
+web booking. The cushlabs.ai and nyenglishteacher.com booking pages link to it ("Agendar por
+WhatsApp"). Design and setup: `cushlabs-whatsapp/docs/BOOKING-FLOW.md`.
+
 ## How it fits together
 
 ```
@@ -69,9 +80,10 @@ cron every 30 min (each booking Worker)
   scanners open every link in an email. A link that acted on GET would confirm or cancel meetings
   nobody clicked.
 - **WhatsApp buttons are URL buttons, not quick replies.** They open the same `/confirm` and `/cancel`
-  pages as the email, so there is one code path. Quick replies would need inbound handling, which the
-  CushLabs WhatsApp number deliberately does not have, and a booker is not a row in cushlabs-whatsapp's
-  `students` table, so a tap would have nothing to match.
+  pages as the email, so there is one code path. Quick replies would need inbound matching, and a
+  booker is not a row in cushlabs-whatsapp's `students` table, so a tap would have nothing to match.
+  (Since 2026-10-06 the CushLabs number DOES deliver inbound to cushlabs-whatsapp — only to answer
+  booking requests with the WhatsApp booking Flow; see "Booking on WhatsApp" below.)
 - **Explicit WhatsApp opt-in, unchecked by default.** Meta requires opt-in before a business-initiated
   message. No phone → no WhatsApp, whatever the checkbox says.
 - **Email through Brevo**, the service both domains are authenticated with (SPF + DKIM).

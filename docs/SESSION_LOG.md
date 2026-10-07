@@ -913,6 +913,24 @@ cost question the WhatsApp demo-swap decision has been waiting on.
 
 ## Session History
 
+## Session: 2026-10-06 (night) — CushLabs consultations can be booked inside WhatsApp
+
+- **Live and proven end to end by Robert:** "Quiero agendar una consulta" to the CushLabs number
+  (+1 307 284 2785) → booking Flow → event "Reservado por WhatsApp" with the CDMX/EDT When line →
+  confirmation from the CushLabs number → row in `cushlabs-booking` D1 → cancelled via `/cancel`.
+- **This repo:** booking Worker WhatsApp path (`channel: "whatsapp"` over the service binding: email
+  optional, per-phone rate limit; web form and demo bot still require email) — PR #363; "Agendar por
+  WhatsApp" card on `/es/reservar/` (in the intro, before the calendar on phones) and
+  `/consultation/` (after the calendar) — PR #364; e2e phone check now expects WhatsApp first on ES.
+- **Elsewhere:** cushlabs-whatsapp is brand-aware (PRs #138, #139); the CushLabs WABA was subscribed
+  to the CushLabs Reminders app so its inbound reaches that Worker — **reverses the earlier "the
+  CushLabs number has no inbound" decision**, for booking requests only. Connect still records and
+  relays every message to Robert (observe mode). One Flows key on both numbers. Full map:
+  `docs/BOOKING-CONFIRMATIONS.md` → "Booking on WhatsApp".
+- **Positioning watch-out:** this is Robert's own booking, not a WhatsApp product (registry:
+  `robert_only`; AI-on-WhatsApp still not offered). A prospect may ask for "this for my business" —
+  answer from `docs/AI-ASSISTANT-ONBOARDING.md`, don't improvise.
+
 ## Session: 2026-10-06 — Industry demo videos paired with /demos/
 
 - **20 vertical demo videos** (10 industries × ES/EN, ~22 s, 1080×1920, H.264) on the R2 CDN at
