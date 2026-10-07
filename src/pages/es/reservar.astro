@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import BookingFormSteps from "../../components/booking/BookingFormSteps.astro";
+import WhatsAppBookingCta from "../../components/booking/WhatsAppBookingCta.astro";
 import { t } from "../../i18n";
 
 const locale = "es" as const;
@@ -47,6 +48,9 @@ const dict = t(locale);
             {dict.consultation.detail2Value}
           </li>
         </ul>
+        {/* Spanish: WhatsApp booking sits in the intro so phones see it before the
+            calendar (Robert, 2026-10-06). The English page keeps it after. */}
+        <div class="mt-6"><WhatsAppBookingCta locale="es" /></div>
       </div>
 
       <div id="schedule" class="lg:col-start-2 lg:row-start-1 lg:row-span-2">
