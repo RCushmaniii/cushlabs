@@ -323,6 +323,41 @@ await scenario("Phone (390px): EN calendar / ES WhatsApp booking on the first sc
     if (top > 844) throw new Error(`${path}: ${first} starts at ${Math.round(top)}px, below the first screen`);
     const overflow = await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth);
     expect(overflow, false, `${path}: horizontal overflow`);
+    // The floating chat button must not sit on Confirm Appointment on step 2.
+    expect(await page.locator("#cl-chat-btn").isVisible(), true, `${path}: chat button shown on step 1`);
+    await page.locator(".time-slot-btn").first().click();
+    await page.waitForSelector('.step-content[data-step="2"].active');
+    expect(await page.locator("#cl-chat-btn").isVisible(), false, `${path}: chat button hidden on step 2`);
+    await page.click("#step2-change");
+    expect(await page.locator("#cl-chat-btn").isVisible(), true, `${path}: chat button back on step 1`);
+    await context.close();
+  }
+});
+
+await scenario("Tablet (820px): every time fits on one line", async () => {
+  for (const path of ["/consultation/", "/es/reservar/"]) {
+    const { page, context } = await open(path, {
+      timezoneId: "America/New_York", // two lines of text per button: the tightest case
+      locale: path.startsWith("/es") ? "es-MX" : "en-US",
+      viewport: { width: 820, height: 1180 },
+    });
+    // Count rendered lines per text node: a Range gives one rect per line box.
+    const wrapped = await page.$$eval(".time-slot-btn", (btns) =>
+      btns.flatMap((btn) => {
+        const walker = document.createTreeWalker(btn, NodeFilter.SHOW_TEXT);
+        const out = [];
+        for (let n = walker.nextNode(); n; n = walker.nextNode()) {
+          if (!n.textContent.trim()) continue;
+          const range = document.createRange();
+          range.selectNodeContents(n);
+          const tops = new Set([...range.getClientRects()].map((r) => Math.round(r.top)));
+          if (tops.size > 1) out.push(n.textContent.trim());
+        }
+        return out;
+      }),
+    );
+    expect(wrapped, [], `${path}: time labels broken over two lines`);
+    expect(await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth), false, `${path}: horizontal overflow`);
     await context.close();
   }
 });
