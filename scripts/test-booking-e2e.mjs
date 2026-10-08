@@ -11,7 +11,7 @@
  *
  * What is real: the built pages, the form's JavaScript, Chromium, and the visitor's
  * time zone and language (each scenario runs in its own emulated zone).
- * What is fake: the booking Worker (/slots, /book) and the Turnstile widget. The
+ * What is fake: the booking Worker (/slots, /availability, /book) and the Turnstile widget. The
  * Worker itself is covered separately in tests/booking-worker.test.ts. No request
  * leaves this machine, so nothing reaches Robert's calendar.
  *
@@ -85,9 +85,18 @@ const DEFAULT_SLOTS = {
   "2026-10-03": ["09:00", "09:30", "12:30"],
   "2026-10-04": [],
   "2026-10-05": ["09:00", "10:00", "16:00"],
+  "2026-10-06": [], // booked solid: greyed out on the calendar
 };
 
-async function open(path, { timezoneId, locale, viewport = { width: 1280, height: 900 }, bookReply }) {
+/** What the fake /availability/2026-10 answers: every non-Sunday day the fake /slots would fill. */
+function openDaysIn(month) {
+  const count = new Date(Date.UTC(Number(month.slice(0, 4)), Number(month.slice(5)), 0)).getUTCDate();
+  return Array.from({ length: count }, (_, i) => `${month}-${String(i + 1).padStart(2, "0")}`).filter(
+    (d) => new Date(`${d}T00:00:00Z`).getUTCDay() !== 0 && (DEFAULT_SLOTS[d] ?? ["09:00"]).length > 0,
+  );
+}
+
+async function open(path, { timezoneId, locale, viewport = { width: 1280, height: 900 }, bookReply, availability = true }) {
   const context = await browser.newContext({ timezoneId, locale, viewport });
   await context.clock.setFixedTime(NOW);
   const page = await context.newPage();
@@ -100,6 +109,12 @@ async function open(path, { timezoneId, locale, viewport = { width: 1280, height
     if (url.startsWith(SITE)) return route.continue();
     if (url.startsWith("https://challenges.cloudflare.com/")) {
       return route.fulfill({ contentType: "text/javascript", body: TURNSTILE_STUB });
+    }
+    if (url.startsWith(`${API}/availability/`)) {
+      // availability:false = the month lookup is down; the page must still work.
+      if (!availability) return route.fulfill({ status: 500, json: { ok: false } });
+      const month = new URL(url).pathname.split("/").pop();
+      return route.fulfill({ json: { ok: true, days: openDaysIn(month) } });
     }
     if (url.startsWith(`${API}/slots/`)) {
       const date = new URL(url).pathname.split("/").pop();
@@ -238,6 +253,39 @@ await scenario("Madrid visitor (ES): clicking Monday 5 asks for and books Monday
   await page.waitForSelector('.step-content[data-step="3"].active');
   expect(api.bookings[0].date, "2026-10-05", "booked the day that was clicked");
   expect(api.bookings[0].timeZone, "Europe/Madrid", "visitor zone sent");
+  await context.close();
+});
+
+await scenario("Booked-solid days are greyed out; a pricing-card visitor's plan is pre-picked and sent", async () => {
+  const { page, context, api, errors } = await open("/consultation/?plan=premium", { timezoneId: "America/Mexico_City", locale: "en-US" });
+
+  const full = page.locator('#calendar-days button[aria-label="Tuesday, October 6, 2026, fully booked"]');
+  expect(await full.isDisabled(), true, "booked-solid Tuesday is disabled");
+  const openDay = page.locator('#calendar-days button[aria-label="Wednesday, October 7, 2026"]');
+  expect(await openDay.isDisabled(), false, "a day with times stays clickable");
+
+  await page.click('.time-slot-btn[data-time="09:00"]');
+  await page.waitForSelector('.step-content[data-step="2"].active');
+  expect(await page.locator('.topic-chip[aria-pressed="true"]').allInnerTexts(), ["Premium plan"], "plan from the pricing card is pre-picked");
+  await page.click('.topic-chip[data-topic="unsure"]');
+  expect(await page.locator('.topic-chip[aria-pressed="true"]').allInnerTexts(), ["Not sure yet"], "one topic at a time");
+  await fillAndConfirm(page);
+  await page.waitForSelector('.step-content[data-step="3"].active');
+  expect(api.bookings[0].topic, "unsure", "topic sent with the booking");
+  expect(errors, [], "no page errors");
+  await context.close();
+});
+
+await scenario("Month lookup down: still opens on the first open day, nothing but Sunday greyed (ES)", async () => {
+  const { page, context, api } = await open("/es/reservar/", { timezoneId: "America/Mexico_City", locale: "es-MX", availability: false });
+  expectContains(await text(page, "#selected-date-display-top"), "3 de octubre", "falls back to asking day by day");
+  const tuesday = page.locator('#calendar-days button[aria-label="martes, 6 de octubre de 2026"]');
+  expect(await tuesday.isDisabled(), false, "nothing greyed when the lookup failed");
+  await page.click('.time-slot-btn[data-time="09:00"]');
+  await page.waitForSelector('.step-content[data-step="2"].active');
+  await fillAndConfirm(page);
+  await page.waitForSelector('.step-content[data-step="3"].active');
+  expect(api.bookings[0].topic, "", "no topic picked: sent empty");
   await context.close();
 });
 

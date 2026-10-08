@@ -984,9 +984,13 @@ const b = dict.booking;
     async function openFirstAvailableDay() {
       const start = new Date(selectedDate!);
       const startKey = calendarDate(start);
+      let known = true;
       for (let i = 0; i < 2; i++) {
         const days = await loadOpenDays(monthOf(new Date(start.getFullYear(), start.getMonth() + i, 1)));
-        if (!days) break;
+        if (!days) {
+          known = false;
+          break;
+        }
         const first = days.find((d) => d >= startKey);
         if (!first) continue;
         if (first !== startKey && picker()) {
@@ -995,6 +999,28 @@ const b = dict.booking;
           return;
         }
         break;
+      }
+      // The month list could not be read: walk the days one /slots call at a time.
+      if (!known && API_BASE) {
+        for (let i = 0; i < 14; i++) {
+          const d = new Date(start);
+          d.setDate(start.getDate() + i);
+          if (d.getDay() === 0) continue; // closed Sundays
+          try {
+            const r = await fetch(`${API_BASE}/slots/${calendarDate(d)}?lang=${lang}`);
+            const data = r.ok ? await r.json() : null;
+            if (!data?.ok) break;
+            if (data.slots?.length) {
+              if (i > 0) {
+                picker()?.selectDate(d, true);
+                if (picker()) return;
+              }
+              break;
+            }
+          } catch {
+            break;
+          }
+        }
       }
       updateDateDisplay(selectedDate);
       fetchAvailableSlots(selectedDate!);
