@@ -58,7 +58,9 @@ const b = dict.booking;
           </h3>
           {/* Filled by the script with the visitor's own zone, e.g. "Times shown in your local time (EDT)". */}
           <p class="text-sm text-muted mt-1 mb-4" id="timezone-info-text">{b.sessionTimezone}</p>
-          <div id="time-slots-container" class="grid grid-cols-2 sm:grid-cols-3 gap-2">
+          {/* 3 across only when the column is wide (xl). On a tablet the column is
+              narrow, and 3 across broke every time onto two lines ("9:00" / "AM"). */}
+          <div id="time-slots-container" class="grid grid-cols-2 xl:grid-cols-3 gap-2">
           </div>
         </div>
       </div>
@@ -564,6 +566,10 @@ const b = dict.booking;
       // un-hidden, so this is the first moment Turnstile can measure its own
       // container.
       if (step === 2) renderTurnstile();
+
+      // Phones: the floating chat button (BaseLayout) can sit on top of
+      // Confirm Appointment, so it steps aside while the details form is open.
+      document.documentElement.classList.toggle('booking-details-open', step === 2);
     }
 
     /* --- Turnstile (bot gate on POST /book) --- */
@@ -683,7 +689,7 @@ const b = dict.booking;
           return `
             <button
               type="button"
-              class="time-slot-btn px-4 py-3 border-2 border-border rounded-xl hover:border-cush-orange transition-all font-display font-semibold text-foreground"
+              class="time-slot-btn whitespace-nowrap px-4 py-3 border-2 border-border rounded-xl hover:border-cush-orange transition-all font-display font-semibold text-foreground"
               data-time="${time}"
               data-local-time="${localTime}"
             >
@@ -695,7 +701,7 @@ const b = dict.booking;
         return `
           <button
             type="button"
-            class="time-slot-btn px-4 py-3 border-2 border-border rounded-xl hover:border-cush-orange transition-all font-display font-semibold text-foreground"
+            class="time-slot-btn whitespace-nowrap px-4 py-3 border-2 border-border rounded-xl hover:border-cush-orange transition-all font-display font-semibold text-foreground"
             data-time="${time}"
           >
             ${clock(time)}
@@ -1093,6 +1099,12 @@ const b = dict.booking;
     to {
       opacity: 1;
       transform: translateY(0);
+    }
+  }
+
+  @media (max-width: 767px) {
+    :global(html.booking-details-open #cl-chat-btn) {
+      display: none !important;
     }
   }
 
