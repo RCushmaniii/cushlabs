@@ -5,7 +5,8 @@
  *
  * Endpoints:
  *   GET  /slots/:date?lang=en|es
- *   POST /book           { name, email, date: 'YYYY-MM-DD', time: 'HH:MM', lang? }
+ *   GET  /availability/:month    (YYYY-MM) → the days that still have an opening
+ *   POST /book           { name, email, date: 'YYYY-MM-DD', time: 'HH:MM', lang?, topic? }
  *
  * Environment Variables:
  *   Required:
@@ -166,6 +167,13 @@ function getCachedSlots(dateStr) {
   return null;
 }
 
+/** A day's slots changed: drop it and the month list it belongs to. */
+function forgetDay(dateStr) {
+  if (typeof dateStr !== "string") return;
+  slotsCache.delete(dateStr);
+  slotsCache.delete(`month:${dateStr.slice(0, 7)}`);
+}
+
 function setCachedSlots(dateStr, data) {
   if (slotsCache.size > 30) {
     const oldest = Array.from(slotsCache.entries())
@@ -223,7 +231,7 @@ export default {
           {
             ok: rateLimit.ok,
             service: "CushLabs Booking API v1",
-            endpoints: ["/slots/:date", "/book"],
+            endpoints: ["/slots/:date", "/availability/:month", "/book"],
             rateLimit,
           },
           rateLimit.ok ? 200 : 503,
@@ -279,6 +287,39 @@ export default {
           request,
           env,
         );
+      }
+
+      // Open days: GET /availability/2026-10. The booking calendar greys out
+      // every day not listed. One Google call per month — asking /slots for
+      // each day would burn the visitor's rate-limit budget on a single view.
+      if (request.method === "GET" && path.startsWith("/availability/")) {
+        const monthStr = path.split("/availability/")[1];
+        const cacheKey = `month:${monthStr}`;
+        const cachedResult = getCachedSlots(cacheKey);
+        if (cachedResult) {
+          return json({ ok: true, days: cachedResult.days, cached: true }, 200, request, env);
+        }
+        // Shares the /slots bucket: both are cache misses that cost Google quota.
+        const monthCheck = await checkRateLimit(
+          env.DB,
+          `slots:${clientKey(
+            request.headers.get("CF-Connecting-IP") ||
+              request.headers.get("X-Forwarded-For")?.split(",")[0]?.trim(),
+          )}`,
+          parseInt(env.SLOTS_RATE_LIMIT_MAX || "60"),
+          3600000,
+        );
+        if (!monthCheck.allowed) {
+          return json(
+            { ok: false, error: t(lang, "rate_limited"), retryAfter: monthCheck.resetIn },
+            429,
+            request,
+            env,
+          );
+        }
+        const result = await getMonthAvailability(monthStr, env, tz);
+        setCachedSlots(cacheKey, result);
+        return json({ ok: true, days: result.days, cached: false }, 200, request, env);
       }
 
       // Slots: GET /slots/2025-10-15
@@ -431,7 +472,7 @@ export default {
         // without this both bookings would land on the calendar.
         const fresh = await getAvailableSlots(payload?.date, env, tz);
         if (!fresh.slots.includes(payload?.time)) {
-          slotsCache.delete(payload?.date);
+          forgetDay(payload?.date);
           return json(
             { ok: false, code: "slot_taken", error: t(lang, "slot_taken") },
             409,
@@ -456,8 +497,10 @@ export default {
           phone: sanitizeInput(payload.phone || ""),
           whatsappOptIn: payload.whatsappOptIn === true,
           bookerTz: payload.timeZone,
+          // English on purpose: it is read by Robert in the 08:00 summary.
+          topic: topicLabel(payload.topic, "en"),
         });
-        slotsCache.delete(payload.date);
+        forgetDay(payload.date);
         return json(
           { ok: true, ...result, message: t(lang, "book_success") },
           200,
@@ -485,35 +528,70 @@ async function getAvailableSlots(dateStr, env, timeZone) {
   if (!/^\d{4}-\d{2}-\d{2}$/.test(dateStr))
     throw new Error("Invalid date format. Use YYYY-MM-DD");
 
-  const d = new Date(`${dateStr}T00:00:00`);
-  const dow = d.getUTCDay();
-
-  // Sunday blocked
-  if (dow === 0) return { slots: [], debug: { reason: "Sunday is blocked" } };
-
-  let timeBlocks = [];
-
-  if (dow === 6) {
-    const satHours = env.SATURDAY_HOURS || "09:00-13:00";
-    timeBlocks = [satHours];
-  } else {
-    const morningHours = env.WEEKDAY_MORNING_HOURS || "09:00-14:00";
-    const afternoonHours = env.WEEKDAY_AFTERNOON_HOURS || "16:00-20:00";
-    timeBlocks = [morningHours, afternoonHours];
-  }
-
-  const accessToken = await getAccessToken(env);
+  const timeBlocks = dayBlocks(dateStr, env);
+  if (!timeBlocks.length) return { slots: [], debug: { reason: "Sunday is blocked" } };
 
   const allTimes = timeBlocks.flatMap((block) => block.split("-"));
-  const earliestStart = allTimes[0];
-  const latestEnd = allTimes[allTimes.length - 1];
+  const timeMin = toISO(dateStr, allTimes[0], timeZone);
+  const timeMax = toISO(dateStr, allTimes[allTimes.length - 1], timeZone);
 
-  const timeMin = toISO(dateStr, earliestStart, timeZone);
-  const timeMax = toISO(dateStr, latestEnd, timeZone);
+  const { busy, personalBusy, workBusy } = await fetchBusy(timeMin, timeMax, env);
 
-  // Fetch busy times from BOTH calendars to avoid double-bookings:
-  //   GOOGLE_CALENDAR_ID = rcushmaniii@gmail.com (bookings created here)
-  //   PERSONAL_CALENDAR_ID = shared work calendar (checked for conflicts only)
+  return {
+    slots: openSlots(dateStr, timeBlocks, busy, env),
+    debug: {
+      personalBusy,
+      workBusy,
+      allBusy: [...personalBusy, ...workBusy],
+      busyParsed: busy.map((b) => ({
+        start: b.start.toISOString(),
+        end: b.end.toISOString(),
+      })),
+    },
+  };
+}
+
+/** Every day of a month (YYYY-MM) that has at least one bookable slot. */
+async function getMonthAvailability(monthStr, env, timeZone) {
+  if (!/^\d{4}-(0[1-9]|1[0-2])$/.test(monthStr))
+    throw new Error("Invalid month format. Use YYYY-MM");
+
+  const [y, m] = monthStr.split("-").map(Number);
+  const count = new Date(Date.UTC(y, m, 0)).getUTCDate();
+  const dates = Array.from({ length: count }, (_, i) => `${monthStr}-${pad(i + 1)}`);
+  const nextMonth = m === 12 ? `${y + 1}-01-01` : `${y}-${pad(m + 1)}-01`;
+
+  // A month that is already over needs no calendar call.
+  if (new Date(toISO(nextMonth, "00:00", timeZone)) <= new Date()) return { days: [] };
+
+  const { busy } = await fetchBusy(
+    toISO(dates[0], "00:00", timeZone),
+    toISO(nextMonth, "00:00", timeZone),
+    env,
+  );
+  return {
+    days: dates.filter((d) => openSlots(d, dayBlocks(d, env), busy, env).length > 0),
+  };
+}
+
+/** Opening hours for a date, e.g. ["09:00-14:00", "16:00-20:00"]. Sunday: none. */
+function dayBlocks(dateStr, env) {
+  const dow = new Date(`${dateStr}T00:00:00Z`).getUTCDay();
+  if (dow === 0) return [];
+  if (dow === 6) return [env.SATURDAY_HOURS || "09:00-13:00"];
+  return [
+    env.WEEKDAY_MORNING_HOURS || "09:00-14:00",
+    env.WEEKDAY_AFTERNOON_HOURS || "16:00-20:00",
+  ];
+}
+
+/**
+ * Busy times from BOTH calendars, to avoid double-bookings:
+ *   GOOGLE_CALENDAR_ID = rcushmaniii@gmail.com (bookings created here)
+ *   PERSONAL_CALENDAR_ID = shared work calendar (checked for conflicts only)
+ */
+async function fetchBusy(timeMin, timeMax, env) {
+  const accessToken = await getAccessToken(env);
   const personalCalendar =
     env.PERSONAL_CALENDAR_ID || env.GOOGLE_CALENDAR_ID || env.CALENDAR_ID;
   const workCalendar = env.GOOGLE_CALENDAR_ID || env.CALENDAR_ID;
@@ -534,31 +612,29 @@ async function getAvailableSlots(dateStr, env, timeZone) {
     },
   );
 
-  // Combine busy times from both calendars
   const personalBusy = freeBusy?.calendars?.[personalCalendar]?.busy || [];
   const workBusy = freeBusy?.calendars?.[workCalendar]?.busy || [];
-  const allBusy = [...personalBusy, ...workBusy];
-
-  const busy = allBusy.map((b) => ({
+  const busy = [...personalBusy, ...workBusy].map((b) => ({
     start: new Date(b.start),
     end: new Date(b.end),
   }));
+  return { busy, personalBusy, workBusy };
+}
 
-  const allSlots = [];
-  for (const block of timeBlocks) {
+/** The slots on `dateStr` that clear the notice window and every busy block. */
+function openSlots(dateStr, timeBlocks, busy, env) {
+  const allSlots = timeBlocks.flatMap((block) => {
     const [startTime, endTime] = block.split("-");
-    const blockSlots = generateSlots(startTime, endTime, 30);
-    allSlots.push(...blockSlots);
-  }
+    return generateSlots(startTime, endTime, 30);
+  });
 
-  const nowUTC = new Date();
   const noticeHours = Number(env.MIN_NOTICE_HOURS ?? 12);
-  const minBookingTime = new Date(nowUTC.getTime() + noticeHours * 60 * 60 * 1000);
+  const minBookingTime = new Date(Date.now() + noticeHours * 60 * 60 * 1000);
   // Keep a gap around every busy block (other consultations included) so calls
   // never run back to back.
   const bufferMs = Number(env.BUFFER_MINUTES ?? 15) * 60 * 1000;
 
-  const availableSlots = allSlots.filter((time) => {
+  return allSlots.filter((time) => {
     const [h, m] = time.split(":").map(Number);
     const slotStart = new Date(`${dateStr}T${pad(h)}:${pad(m)}:00-06:00`);
     const slotEnd = new Date(slotStart.getTime() + 30 * 60 * 1000);
@@ -569,19 +645,6 @@ async function getAvailableSlots(dateStr, env, timeZone) {
       overlaps(slotStart, slotEnd, new Date(b.start.getTime() - bufferMs), new Date(b.end.getTime() + bufferMs)),
     );
   });
-
-  return {
-    slots: availableSlots,
-    debug: {
-      personalBusy,
-      workBusy,
-      allBusy,
-      busyParsed: busy.map((b) => ({
-        start: b.start.toISOString(),
-        end: b.end.toISOString(),
-      })),
-    },
-  };
 }
 
 function sanitizeInput(str) {
@@ -636,10 +699,14 @@ async function createBooking(data, env, timeZone, lang) {
   // the cushlabs.ai form's title is unchanged.
   const source = sanitizeInput(data.source || "");
   const sourceTag = source ? ` (${source})` : "";
+  // What the booker said the call is about (the buttons above the notes box).
+  // In the title so it shows on the calendar grid without opening the event.
+  const topic = topicLabel(data.topic, lang);
+  const topicTag = topic ? ` (${topic})` : "";
   const summary =
     lang === "es"
-      ? `Consulta de Estrategia de IA - CushLabs${sourceTag}: ${name}`
-      : `AI Strategy Consultation - CushLabs${sourceTag}: ${name}`;
+      ? `Consulta de Estrategia de IA - CushLabs${sourceTag}: ${name}${topicTag}`
+      : `AI Strategy Consultation - CushLabs${sourceTag}: ${name}${topicTag}`;
 
   const notes = sanitizeInput(data.notes || "");
 
@@ -659,8 +726,8 @@ async function createBooking(data, env, timeZone, lang) {
   const emailLine = email ? `\nEmail: ${email}` : "";
   const description =
     lang === "es"
-      ? `Consulta gratuita de estrategia de IA — CushLabs.ai${via}\n${whenLine}\nNombre: ${name}${emailLine}${phone ? `\nTeléfono: ${phone}` : ""}${notes ? `\nNotas: ${notes}` : ""}`
-      : `Free AI strategy consultation — CushLabs.ai${via}\n${whenLine}\nName: ${name}${emailLine}${phone ? `\nPhone: ${phone}` : ""}${notes ? `\nNotes: ${notes}` : ""}`;
+      ? `Consulta gratuita de estrategia de IA — CushLabs.ai${via}\n${whenLine}\nNombre: ${name}${emailLine}${phone ? `\nTeléfono: ${phone}` : ""}${topic ? `\nTema: ${topic}` : ""}${notes ? `\nNotas: ${notes}` : ""}`
+      : `Free AI strategy consultation — CushLabs.ai${via}\n${whenLine}\nName: ${name}${emailLine}${phone ? `\nPhone: ${phone}` : ""}${topic ? `\nTopic: ${topic}` : ""}${notes ? `\nNotes: ${notes}` : ""}`;
 
   const calendarId = env.GOOGLE_CALENDAR_ID || env.CALENDAR_ID;
   const resp = await fetchJSON(
@@ -766,6 +833,25 @@ function t(lang, key) {
     },
   };
   return dict[key]?.[lang] || dict[key]?.en || key;
+}
+
+/* The topic buttons on the booking form. Anything else is dropped, so a forged
+   value can never reach the calendar title. */
+const TOPICS = {
+  basic: { en: "Basic plan", es: "Plan Básico" },
+  premium: { en: "Premium plan", es: "Plan Premium" },
+  ultra: { en: "Ultra plan", es: "Plan Ultra" },
+  unsure: { en: "Not sure yet", es: "Aún no sabe" },
+  other: { en: "Other", es: "Otro" },
+};
+
+function topicKey(raw) {
+  return typeof raw === "string" && Object.hasOwn(TOPICS, raw) ? raw : null;
+}
+
+function topicLabel(raw, lang) {
+  const key = topicKey(raw);
+  return key ? TOPICS[key][lang === "es" ? "es" : "en"] : "";
 }
 
 /** "When: 10:00 AM CDMX · 12:00 PM EDT · booker: 9:00 AM PDT" — DST from Intl, never hardcoded. */

@@ -451,12 +451,10 @@ Planned but not started. Bundle related items into single PRs per CLAUDE.md.
 
 - ~~Booking page: calendar first / chosen time on step 2 / buffer + notice~~ — shipped 2026-10-02
   (second session that day).
-- **Booking: topic quick-picks.** Replace the free-text notes prompt with chips matching the three
-  plans (+ "Not sure yet" / "Other"). Not voice-specific — voice is not pitched on the booking page.
-- **Booking: grey out days with no openings**, not just Sundays. Needs a range endpoint on the
-  worker (one call per month) — calling `/slots` per day would burn the rate limit.
-- **Messenger bot: read `ref=demos-page`** in `cushlabs-messenger-bot` — greet demo visitors
-  ("you just tried the demo — want one for your business?") and record the source with the lead.
+- ~~Booking: topic quick-picks~~ and ~~grey out days with no openings~~ — built 2026-10-08 (see
+  that session entry).
+- ~~Messenger bot: read `ref=demos-page`~~ — built 2026-10-08 as cushlabs-messenger-bot PR #492;
+  merges (= deploys) in a 09:00–11:00 window with Robert present.
 
 ### Medium priority
 
@@ -912,6 +910,26 @@ In-window utility templates and service messages start being charged. This is th
 cost question the WhatsApp demo-swap decision has been waiting on.
 
 ## Session History
+
+## Session: 2026-10-08 — Booking topic buttons, booked-solid days greyed out
+
+- **Topic buttons** above the notes box on `/consultation/` and `/es/reservar/`: Basic / Premium /
+  Ultra plan, Not sure yet, Something else. Optional, one at a time; `?plan=` from a pricing card
+  pre-selects it (the plan was previously shown on the page but never sent to the Worker). The
+  Worker whitelists the key (`TOPICS` in `workers/booking-worker.js`) and puts the label in the
+  event title, the description (`Topic:` / `Tema:`) and a new `bookings.topic` column, which the
+  08:00 summary prints as `Ana (CushLabs · Premium plan)`.
+- **Greyed-out days:** new `GET /availability/YYYY-MM` returns every day with at least one opening,
+  from ONE freeBusy call for the month (shares the `/slots` rate-limit bucket, 5-min cache dropped
+  on every booking). The date picker greys and disables the rest; if the call fails nothing is
+  greyed (fails open). The "open on the first free day" logic now uses it instead of up to 14
+  `/slots` calls.
+- `cushlabs-booking` Worker deployed 2026-10-08 (version `4b916b77`), verified live.
+- `workers/lib/booking-confirm.js` changed (topic column + summary) — the ny-eng copy must be
+  synced to stay identical.
+- Messenger bot demos-page greeting: cushlabs-messenger-bot PR #492, waiting for the deploy window.
+  `messaging_referrals` is not subscribed (app or Page); new visitors work without it, existing
+  threads need it.
 
 ## Session: 2026-10-06 (night) — CushLabs consultations can be booked inside WhatsApp
 

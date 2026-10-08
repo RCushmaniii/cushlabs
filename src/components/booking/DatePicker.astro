@@ -14,6 +14,9 @@ const months = locale === 'es'
 const days = locale === 'es'
   ? ['Do', 'Lu', 'Ma', 'Mi', 'Ju', 'Vi', 'Sa']
   : ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
+
+// Appended to a booked-solid day's screen-reader label.
+const fullLabel = locale === 'es' ? 'sin horarios disponibles' : 'fully booked';
 ---
 
 <div class="date-picker-container" data-locale={locale}>
@@ -54,7 +57,7 @@ const days = locale === 'es'
   </div>
 </div>
 
-<script define:vars={{ months, locale }}>
+<script define:vars={{ months, locale, fullLabel }}>
   class DatePicker {
     constructor() {
       this.currentDate = new Date();
@@ -74,6 +77,10 @@ const days = locale === 'es'
       if (this.selectedDate.getDay() === 0) this.selectedDate.setDate(this.selectedDate.getDate() + 1);
 
       this.months = months;
+      // 'YYYY-MM' -> Set of 'YYYY-MM-DD' days that still have an opening, filled
+      // by BookingFormSteps from the booking API. A month not in here is drawn
+      // as before (every non-Sunday open), so a failed lookup never locks anyone out.
+      this.openDays = new Map();
       this.init();
     }
 
@@ -115,6 +122,12 @@ const days = locale === 'es'
       const container = document.getElementById('calendar-days');
       if (!container) return;
 
+      const monthKey = `${year}-${String(month + 1).padStart(2, '0')}`;
+      const openInMonth = this.openDays.get(monthKey);
+      if (!openInMonth) {
+        document.dispatchEvent(new CustomEvent('monthShown', { detail: { month: monthKey } }));
+      }
+
       container.innerHTML = '';
 
       for (let i = 0; i < firstDay; i++) {
@@ -128,6 +141,9 @@ const days = locale === 'es'
         const isPast = dayDate < today && dayDate.toDateString() !== today.toDateString();
         // Closed days look closed instead of answering "No available times" on click.
         const isClosed = dayDate.getDay() === 0;
+        // Booked solid: grey, like a closed day, instead of "No available times" on click.
+        const dayKey = `${monthKey}-${String(day).padStart(2, '0')}`;
+        const isFull = !isPast && !isClosed && Boolean(openInMonth) && !openInMonth.has(dayKey);
         const isToday = dayDate.toDateString() === today.toDateString();
         const isSelected = this.selectedDate && dayDate.toDateString() === this.selectedDate.toDateString();
 
@@ -137,22 +153,20 @@ const days = locale === 'es'
 
         // The bare number is the entire accessible name otherwise — "14, button",
         // with no month or year to place it.
-        dayCell.setAttribute(
-          'aria-label',
-          dayDate.toLocaleDateString(locale === 'es' ? 'es-MX' : 'en-US', {
-            weekday: 'long',
-            day: 'numeric',
-            month: 'long',
-            year: 'numeric',
-          })
-        );
+        const dayName = dayDate.toLocaleDateString(locale === 'es' ? 'es-MX' : 'en-US', {
+          weekday: 'long',
+          day: 'numeric',
+          month: 'long',
+          year: 'numeric',
+        });
+        dayCell.setAttribute('aria-label', isFull ? `${dayName}, ${fullLabel}` : dayName);
         // Selection is otherwise conveyed by background colour alone.
         dayCell.setAttribute('aria-pressed', String(Boolean(isSelected)));
         if (isToday) dayCell.setAttribute('aria-current', 'date');
 
         let classes = 'p-2 text-center rounded-xl transition-all text-sm font-display font-semibold';
 
-        if (isPast || isClosed) {
+        if (isPast || isClosed || isFull) {
           classes += ' text-muted/40 cursor-not-allowed';
         } else if (isSelected) {
           classes += ' bg-cush-orange text-black cursor-pointer';
@@ -166,7 +180,7 @@ const days = locale === 'es'
 
         dayCell.className = classes;
 
-        if (!isPast && !isClosed) {
+        if (!isPast && !isClosed && !isFull) {
           dayCell.addEventListener('click', () => {
             this.selectDate(dayDate);
           });
@@ -176,6 +190,12 @@ const days = locale === 'es'
 
         container.appendChild(dayCell);
       }
+    }
+
+    setOpenDays(monthKey, days) {
+      this.openDays.set(monthKey, new Set(days));
+      const shown = `${this.currentDate.getFullYear()}-${String(this.currentDate.getMonth() + 1).padStart(2, '0')}`;
+      if (shown === monthKey) this.render();
     }
 
     // `auto` = the page chose this day (first open day), not the visitor.

@@ -97,6 +97,9 @@ export async function ensureBookingsTable(db) {
     // their own clock. Null for rows from before 2026-10-02 and from forms that
     // don't send it — those fall back to the business time zone.
     ["booker_tz", "TEXT"],
+    // What the booker said the call is about, as Robert reads it ("Premium
+    // plan"), shown in the 08:00 summary. Added 2026-10-08; null when not given.
+    ["topic", "TEXT"],
   ]) {
     if (!have.has(name)) await db.prepare(`ALTER TABLE bookings ADD COLUMN ${name} ${type}`).run();
   }
@@ -118,8 +121,8 @@ export async function recordBooking(env, booking) {
     await ensureBookingsTable(env.DB);
     const token = newToken();
     await env.DB.prepare(
-      `INSERT INTO bookings (token, event_id, name, email, lang, starts_at, meet_link, created_at, phone, wa_opt_in, booker_tz)
-       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+      `INSERT INTO bookings (token, event_id, name, email, lang, starts_at, meet_link, created_at, phone, wa_opt_in, booker_tz, topic)
+       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
     )
       .bind(
         token,
@@ -133,6 +136,7 @@ export async function recordBooking(env, booking) {
         booking.phone || null,
         booking.phone && booking.whatsappOptIn ? 1 : 0,
         validTimeZone(booking.bookerTz),
+        booking.topic || null,
       )
       .run();
     return token;
@@ -473,7 +477,7 @@ export async function todaysBookings(env, now = new Date()) {
   const lo = new Date(now.getTime() - 36 * 3600e3).toISOString();
   const hi = new Date(now.getTime() + 36 * 3600e3).toISOString();
   const { results = [] } = await env.DB.prepare(
-    `SELECT name, starts_at, status FROM bookings WHERE starts_at >= ? AND starts_at <= ? ORDER BY starts_at`,
+    `SELECT name, starts_at, status, topic FROM bookings WHERE starts_at >= ? AND starts_at <= ? ORDER BY starts_at`,
   )
     .bind(lo, hi)
     .all();
@@ -535,7 +539,8 @@ export async function sendDailySummary(env, now = new Date()) {
     let list = today
       .map((r) => {
         const name = String(r.name).replace(/\s+/g, " ").trim();
-        const tag = r.label ? ` (${r.label})` : "";
+        const about = [r.label, r.topic].filter(Boolean).join(" · ");
+        const tag = about ? ` (${about})` : "";
         const at = new Date(r.starts_at);
         const clock = second ? `${time.format(at)} CDMX / ${second.format(at)}` : time.format(at);
         return `${clock} ${name}${tag} ${STATUS_ICON[r.status] || "⏳"}`;
