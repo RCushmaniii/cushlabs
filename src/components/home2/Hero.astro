@@ -378,35 +378,11 @@ const t = content[locale];
   @media (max-width: 640px) {
     /* Last in the sheet on purpose: the base .home-h1/.home-sub rules and the
        96svh min-height above would otherwise win on source order. */
-    /* The photo shows on phones too (Robert, 2026-10-07: "why not use the image like
-       on desktop"). The top ~175px is an untinted window onto her face; the tint
-       ramps in behind the badge so the text below stays readable, helped by a soft
-       text-shadow. Measured at 390x844: both CTAs end above the chat bubble (ES,
-       the longest copy, ends at y=735; the bubble starts ~764). If the copy grows,
-       re-measure before shipping. */
     .home-hero {
       align-items: flex-start;
       min-height: 0;
-      /* The photo window shrinks on short phones: 175px at 844px tall, down to
-         64px at ~740px, so the buttons stay above the fold and clear of the bubble. */
-      padding-top: clamp(64px, calc(100svh - 670px), 175px);
+      padding-top: 28px;
       padding-bottom: 120px; /* clears the fixed chat bubble; the demo sheet overlaps the last 48px */
-      background-image:
-        linear-gradient(
-          to bottom,
-          rgba(20, 17, 13, 0) 0%,
-          rgba(20, 17, 13, 0.12) 14%,
-          rgba(20, 17, 13, 0.7) 28%,
-          rgba(20, 17, 13, 0.86) 50%,
-          rgba(20, 17, 13, 0.93) 100%
-        ),
-        url("/images/home-hero-v1.webp");
-      background-position: 34% 4%;
-    }
-    .home-hero h1,
-    .home-sub,
-    .home-trust {
-      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
     }
     .home-badge {
       padding: 6px 12px;
