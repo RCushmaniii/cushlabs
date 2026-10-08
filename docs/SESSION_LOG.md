@@ -480,7 +480,7 @@ Planned but not started. Bundle related items into single PRs per CLAUDE.md.
   `salons.astro:96`/`:317` promise a **CFDI** to a USD/US audience, and `salons.astro:7`'s header
   comment still says "card/invoice billing", contradicting its own body. Confirm whether a US client
   receives a CFDI or a plain invoice, then fix via the `copywriting` skill (published copy).
-- **Triage stale open PRs** — ~~**#224**~~ **no longer open** (verified against `gh pr list`
+- ~~**Triage stale open PRs**~~ — **done 2026-10-08 (PR #372), zero open.** History kept below — ~~**#224**~~ **no longer open** (verified against `gh pr list`
   2026-08-19; this line asserted it needed review for an unknown stretch after it had already been
   closed or merged). ~~**#204**~~ **closed 2026-08-12** — superseded by #207 two days after it
   opened, which shipped a safer live-only version with more features; nothing on the branch was
@@ -927,9 +927,23 @@ cost question the WhatsApp demo-swap decision has been waiting on.
 - `cushlabs-booking` Worker deployed 2026-10-08 (version `4b916b77`), verified live.
 - `workers/lib/booking-confirm.js` changed (topic column + summary) — the ny-eng copy must be
   synced to stay identical.
-- Messenger bot demos-page greeting: cushlabs-messenger-bot PR #492, waiting for the deploy window.
-  `messaging_referrals` is not subscribed (app or Page); new visitors work without it, existing
-  threads need it.
+- PR #370 merged (topics + full days). The first CI run caught a real gap: with the month lookup
+  down, the page opened on a day with no times. Fixed by falling back to the old day-by-day search;
+  e2e now covers topics, full days and the lookup-down case.
+- PR #371: tablet time grid is 2 across until `xl` (3 across broke "9:00 / AM" over two lines in
+  the narrow tablet column); the floating chat button is hidden on phones while step 2 is open
+  (it could cover Confirm Appointment at one scroll position). Both in e2e; the tablet check was
+  shown to fail on the old layout.
+- PR #372: the 11 open Dependabot PRs folded into one tested change and the originals closed —
+  **this repo has zero open PRs.** `qs` / gray-matter's `js-yaml` are pinned in `overrides`, not
+  dependencies (a direct `npm install qs@…` fails with EOVERRIDE). googleapis 171→178 only feeds
+  `scripts/seo/`.
+- Messenger bot demos-page greeting: cushlabs-messenger-bot PR #492 merged and deployed 2026-10-08
+  (Robert approved releasing outside the 09:00–11:00 freeze window). `messaging_referrals` is now
+  subscribed at the app level (by Robert, Meta dashboard → Use cases → Messenger → Webhooks → Page)
+  and on the CushLabs Page (via the bot's `POST /admin/webhook-subscribe`). The app-level row was
+  left on v26.0 while the other fields are v25.0 — Meta asks for one version per object.
+- ny-eng `lib/booking-confirm.js` re-synced (ny-eng PR #295).
 
 ## Session: 2026-10-06 (night) — CushLabs consultations can be booked inside WhatsApp
 
