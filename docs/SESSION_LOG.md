@@ -470,12 +470,17 @@ Planned but not started. Bundle related items into single PRs per CLAUDE.md.
   [#31](#31--the-homepage-chat-widget-answers-prospects-and-records-nothing-at-all) and
   [#32](#32--if-the-persona-lookup-ever-returns-null-the-cushlabsai-widget-introduces-itself-as-new-york-english-teacher)
   first. Teaching the bot better answers is worth less than being able to see that it answered.
-- **Rotate `CF_AI_TOKEN` in `cushlabs-messenger-bot/.dev.vars`, then re-ingest the corrected RAG
-  corpus** — the bot-content reconciliation shipped same night (bot PR #270, live KV + QA-gated),
+- ~~**Rotate `CF_AI_TOKEN` …, then re-ingest the corrected RAG corpus**~~ — **already done
+  2026-08-14 in the bot repo** (re-ingested with wrangler's OAuth `ai (write)` scope, no rotation
+  needed; QA 34/34 — bot `docs/SESSION_LOG.md`). This line stayed open here for ~8 weeks; found
+  2026-10-08. Original text: — the bot-content reconciliation shipped same night (bot PR #270, live KV + QA-gated),
   but the token is dead at Cloudflare (invalid since ≤2026-08-13, last ingest 2026-07-02), so the
   corrected prose can't be embedded and stale "2-week / SPEI-OXXO / sin costo extra" chunks remain
   retrievable. Steps + verification: bot repo `docs/SESSION_LOG.md` Open Items #15.
-- **Confirm CFDI on the USD surfaces** (remainder of tech debt #11). The card question is settled —
+- ~~**Confirm CFDI on the USD surfaces**~~ — **already done; verified 2026-10-08.** Robert: no CFDI
+  for US clients, PayPal is the default. Every USD surface (`PricingSection` usd strings,
+  `/salons/`, `/terms/`) already says "bank transfer or PayPal · itemized invoice"; CFDI appears
+  only on MXN surfaces. Original text: The card question is settled —
   card is not live, docs corrected 2026-08-06. Left over: `PricingSection.astro:156` and
   `salons.astro:96`/`:317` promise a **CFDI** to a USD/US audience, and `salons.astro:7`'s header
   comment still says "card/invoice billing", contradicting its own body. Confirm whether a US client
