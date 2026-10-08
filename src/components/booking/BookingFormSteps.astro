@@ -140,6 +140,32 @@ const b = dict.booking;
           </label>
         </div>
 
+        {/* One tap instead of writing. Keys must match TOPICS in workers/booking-worker.js. */}
+        <div role="group" aria-labelledby="booking-topic-label">
+          <p id="booking-topic-label" class="block text-sm font-display font-semibold text-foreground mb-2">
+            {b.topicLabel}
+          </p>
+          <div class="flex flex-wrap gap-2">
+            {[
+              ['basic', b.topicBasic],
+              ['premium', b.topicPremium],
+              ['ultra', b.topicUltra],
+              ['unsure', b.topicUnsure],
+              ['other', b.topicOther],
+            ].map(([key, label]) => (
+              <button
+                type="button"
+                class="topic-chip rounded-full border-2 border-border px-4 py-2 text-sm font-display font-semibold text-foreground hover:border-cush-orange transition-colors"
+                data-topic={key}
+                aria-pressed="false"
+              >
+                {label}
+              </button>
+            ))}
+          </div>
+          <p class="text-sm text-muted mt-2">{b.topicHint}</p>
+        </div>
+
         <div>
           <label for="booking-notes" class="block text-sm font-display font-semibold text-foreground mb-2">
             {b.notesLabel}
@@ -391,6 +417,29 @@ const b = dict.booking;
         planContext.classList.remove('hidden');
       }
     }
+
+    // Topic buttons: one at a time, tap again to clear. A visitor who came from
+    // a pricing card already has that plan picked.
+    let topic: string | null = plan && validPlans.includes(plan) ? plan : null;
+    const chips = document.querySelectorAll<HTMLButtonElement>('.topic-chip');
+    function paintChips() {
+      chips.forEach((chip) => {
+        const on = chip.dataset.topic === topic;
+        chip.setAttribute('aria-pressed', String(on));
+        chip.classList.toggle('bg-cush-orange', on);
+        chip.classList.toggle('border-cush-orange', on);
+        chip.classList.toggle('text-black', on);
+        chip.classList.toggle('border-border', !on);
+        chip.classList.toggle('text-foreground', !on);
+      });
+    }
+    chips.forEach((chip) =>
+      chip.addEventListener('click', () => {
+        topic = topic === chip.dataset.topic ? null : chip.dataset.topic || null;
+        paintChips();
+      }),
+    );
+    paintChips();
 
     function trackBookingStarted() {
       if (bookingStartedTracked) return;
@@ -779,6 +828,7 @@ const b = dict.booking;
             time: selectedTime,
             lang: lang,
             notes: formData.notes || '',
+            topic: topic || '',
             // The visitor's IANA zone, so their reminders read in their own
             // clock and Robert's event lists it. Validated by the Worker.
             timeZone: visitorTz || '',
@@ -898,11 +948,60 @@ const b = dict.booking;
       }
     });
 
+    /* --- Open days (greys out booked-solid days on the calendar) --- */
+
+    type Picker = {
+      selectDate: (d: Date, auto?: boolean) => void;
+      setOpenDays: (month: string, days: string[]) => void;
+    };
+    const picker = () => (window as unknown as { cushlabsDatePicker?: Picker }).cushlabsDatePicker;
+    const monthOf = (d: Date) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}`;
+
+    // One request per month, ever, per page view. null = the API could not say,
+    // and the calendar then stays as it was (no day greyed out) — never fail closed.
+    const openDayRequests = new Map<string, Promise<string[] | null>>();
+    function loadOpenDays(month: string): Promise<string[] | null> {
+      if (!API_BASE) return Promise.resolve(null);
+      let req = openDayRequests.get(month);
+      if (!req) {
+        req = fetch(`${API_BASE}/availability/${month}?lang=${lang}`)
+          .then((r) => (r.ok ? r.json() : null))
+          .then((d) => (d?.ok && Array.isArray(d.days) ? (d.days as string[]) : null))
+          .catch(() => null);
+        openDayRequests.set(month, req);
+        req.then((days) => {
+          if (days) picker()?.setOpenDays(month, days);
+        });
+      }
+      return req;
+    }
+    document.addEventListener('monthShown', ((e: CustomEvent) => {
+      loadOpenDays(e.detail.month);
+    }) as EventListener);
+
     // Open on the first day that actually has a free time, instead of a
     // "No available times" day the visitor has to click past.
     async function openFirstAvailableDay() {
       const start = new Date(selectedDate!);
-      if (API_BASE) {
+      const startKey = calendarDate(start);
+      let known = true;
+      for (let i = 0; i < 2; i++) {
+        const days = await loadOpenDays(monthOf(new Date(start.getFullYear(), start.getMonth() + i, 1)));
+        if (!days) {
+          known = false;
+          break;
+        }
+        const first = days.find((d) => d >= startKey);
+        if (!first) continue;
+        if (first !== startKey && picker()) {
+          const [y, m, d] = first.split('-').map(Number);
+          picker()!.selectDate(new Date(y, m - 1, d), true);
+          return;
+        }
+        break;
+      }
+      // The month list could not be read: walk the days one /slots call at a time.
+      if (!known && API_BASE) {
         for (let i = 0; i < 14; i++) {
           const d = new Date(start);
           d.setDate(start.getDate() + i);
@@ -912,11 +1011,9 @@ const b = dict.booking;
             const data = r.ok ? await r.json() : null;
             if (!data?.ok) break;
             if (data.slots?.length) {
-              if (i === 0) break;
-              const picker = (window as unknown as { cushlabsDatePicker?: { selectDate: (d: Date, auto?: boolean) => void } }).cushlabsDatePicker;
-              if (picker) {
-                picker.selectDate(d, true);
-                return;
+              if (i > 0) {
+                picker()?.selectDate(d, true);
+                if (picker()) return;
               }
               break;
             }

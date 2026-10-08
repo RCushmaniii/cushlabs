@@ -342,7 +342,14 @@ export const en = {
     // of the accessibility tree — but it has to read like a real field to the
     // form-fillers it is there to catch.
     companyHoneypot: "Company",
-    notesLabel: "What would you like to discuss?",
+    topicLabel: "What's the call mainly about?",
+    topicHint: "Optional — tap one.",
+    topicBasic: "Basic plan",
+    topicPremium: "Premium plan",
+    topicUltra: "Ultra plan",
+    topicUnsure: "Not sure yet",
+    topicOther: "Something else",
+    notesLabel: "Anything else I should know?",
     notesPlaceholder: "e.g. We want to automate our customer support...",
     notesHint: "Optional — helps me prepare for our conversation",
     confirmAppointment: "Confirm Appointment",

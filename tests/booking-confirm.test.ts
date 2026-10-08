@@ -320,6 +320,13 @@ describe("combined morning summary (both sites in one message)", () => {
     expect(body.params).toEqual(["2", "NY English Teacher + CushLabs.ai", "10:00 AM CDMX / 12:00 PM EDT Diego (NYE) ⏳ · 1:30 PM CDMX / 3:30 PM EDT Ana (CushLabs) ⏳"]);
   });
 
+  it("shows what each booker said the call is about, next to the site", async () => {
+    const env = makeEnv({ ...WA, SUMMARY_LABEL: "CushLabs" });
+    await recordBooking(env, { eventId: "c1", startsAt: "2026-10-01T19:30:00Z", name: "Ana", email: "a@example.com", lang: "en", topic: "Premium plan" });
+    await sendDailySummary(env, new Date("2026-10-01T14:00:00Z"));
+    expect(sentBodies()[0].params[2]).toBe("1:30 PM CDMX / 3:30 PM EDT Ana (CushLabs · Premium plan) ⏳");
+  });
+
   it("still sends, and says so, when the other site cannot be read", async () => {
     const env = makeEnv({ ...WA, SUMMARY_LABEL: "CushLabs", PEER_LABEL: "NYE", SUMMARY_SECRET: "wrong", PEER_BOOKING: await peerWorker() });
     await recordBooking(env, { eventId: "c1", startsAt: "2026-10-01T19:30:00Z", name: "Ana", email: "a@example.com", lang: "en" });

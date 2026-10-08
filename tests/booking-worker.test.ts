@@ -175,6 +175,106 @@ describe("slot rules", () => {
   });
 });
 
+async function openDays(env: unknown, month: string): Promise<string[]> {
+  const res = await worker.fetch(
+    new Request(`https://booking.test/availability/${month}?lang=en`, {
+      headers: { Origin: "https://www.cushlabs.ai" },
+    }),
+    env,
+  );
+  const data = await res.json();
+  expect(data.ok).toBe(true);
+  return data.days;
+}
+
+describe("open days for the calendar (/availability/:month)", () => {
+  it("lists every day with an opening: not today (notice), not Sundays", async () => {
+    const days = await openDays(makeEnv(), "2026-10");
+    expect(days[0]).toBe("2026-10-03"); // Saturday; today (Fri 2nd) is inside the 12 h notice
+    expect(days).not.toContain("2026-10-02");
+    expect(days).not.toContain("2026-10-04"); // Sunday
+    expect(days).toContain("2026-10-05");
+    expect(days.at(-1)).toBe("2026-10-31");
+  });
+
+  it("leaves out a day that is booked solid, using one calendar lookup for the month", async () => {
+    google.busy.push({ start: mx("2026-10-06", "08:00"), end: mx("2026-10-06", "21:00") });
+    const days = await openDays(makeEnv(), "2026-10");
+    expect(days).toContain("2026-10-05");
+    expect(days).not.toContain("2026-10-06");
+    const freeBusyCalls = google.fetchMock.mock.calls.filter(([u]) => String(u).includes("/freeBusy"));
+    expect(freeBusyCalls).toHaveLength(1);
+  });
+
+  it("agrees with /slots: a day it lists has times, a day it drops has none", async () => {
+    google.busy.push({ start: mx("2026-10-06", "08:00"), end: mx("2026-10-06", "21:00") });
+    expect(await slots(makeEnv(), "2026-10-06")).toEqual([]);
+    expect((await slots(makeEnv(), "2026-10-07")).length).toBeGreaterThan(0);
+  });
+
+  it("drops a day from its cached list as soon as its last slot is booked", async () => {
+    const env = makeEnv();
+    // Fill Saturday 3 Oct (09:00-13:00) except 09:00 (the 15-min buffer is
+    // why the busy block starts at 09:45), then book 09:00.
+    google.busy.push({ start: mx("2026-10-03", "09:45"), end: mx("2026-10-03", "13:00") });
+    expect(await openDays(env, "2026-10")).toContain("2026-10-03");
+    expect((await book(env, { date: "2026-10-03", time: "09:00" })).status).toBe(200);
+    expect(await openDays(env, "2026-10")).not.toContain("2026-10-03");
+  });
+
+  it("answers a month that is over without asking Google", async () => {
+    expect(await openDays(makeEnv(), "2026-09")).toEqual([]);
+    expect(google.fetchMock.mock.calls.some(([u]) => String(u).includes("/freeBusy"))).toBe(false);
+  });
+
+  it("rejects a malformed month", async () => {
+    const res = await worker.fetch(new Request("https://booking.test/availability/2026-13"), makeEnv());
+    expect(res.status).toBe(500);
+  });
+});
+
+describe("booking topic (the buttons above the notes box)", () => {
+  it("puts the topic in the event title and description, and stores it for the summary", async () => {
+    const env = makeEnv();
+    await book(env, { date: "2026-10-05", time: "10:00", topic: "premium", notes: "Two locations" });
+    const ev = google.inserted[0];
+    expect(ev.summary).toBe("AI Strategy Consultation - CushLabs: Test Person (Premium plan)");
+    expect(ev.description).toContain("\nTopic: Premium plan\nNotes: Two locations");
+    const row = await env.DB.prepare("SELECT topic FROM bookings").first();
+    expect(row).toEqual({ topic: "Premium plan" });
+  });
+
+  it("writes the Spanish label on a Spanish booking, but stores English for Robert", async () => {
+    const env = makeEnv();
+    // The form sends the language as ?lang=, which the book() helper fixes to en.
+    await worker.fetch(
+      new Request("https://booking.test/book?lang=es", {
+        method: "POST",
+        headers: { Origin: "https://www.cushlabs.ai", "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: "Test Person",
+          email: "test@example.com",
+          turnstileToken: "token",
+          date: "2026-10-05",
+          time: "10:00",
+          topic: "unsure",
+        }),
+      }),
+      env,
+    );
+    expect(google.inserted[0].summary).toBe("Consulta de Estrategia de IA - CushLabs: Test Person (Aún no sabe)");
+    expect(await env.DB.prepare("SELECT topic FROM bookings").first()).toEqual({ topic: "Not sure yet" });
+  });
+
+  it("ignores a topic that is not one of the buttons", async () => {
+    const env = makeEnv();
+    await book(env, { date: "2026-10-05", time: "10:00", topic: "<script>" });
+    expect(google.inserted[0].summary).toBe("AI Strategy Consultation - CushLabs: Test Person");
+    expect(google.inserted[0].description).not.toContain("Topic:");
+    expect(await env.DB.prepare("SELECT topic FROM bookings").first()).toEqual({ topic: null });
+  });
+});
+
 describe("booking", () => {
   it("creates the event on Mexico City time with every clock in the description", async () => {
     const env = makeEnv();
