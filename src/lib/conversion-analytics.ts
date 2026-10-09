@@ -105,6 +105,19 @@ function decorateBookingLinks(attribution: Record<string, string>) {
   });
 }
 
+/** The Messenger Page username an m.me link opens, or undefined for any other link. */
+export function messengerBotFor(element: Element): string | undefined {
+  if (!(element instanceof HTMLAnchorElement)) return undefined;
+  let url: URL;
+  try {
+    url = new URL(element.href, window.location.origin);
+  } catch {
+    return undefined;
+  }
+  if (url.hostname !== "m.me" && url.hostname !== "www.m.me") return undefined;
+  return clean(url.pathname.split("/").filter(Boolean)[0]?.toLowerCase(), 60) ?? "unknown";
+}
+
 export function initConversionAnalytics() {
   inject();
 
@@ -126,6 +139,20 @@ export function initConversionAnalytics() {
       ? event.target.closest<HTMLElement>("[data-analytics-event], a[href]")
       : null;
     if (!target) return;
+
+    // Every Messenger demo link (m.me/<page>) fires messenger_demo_opened, whatever
+    // else the link is tagged with — the /demos/ strip also sends live_demo_opened,
+    // and m.me links inside blog posts carry no tag at all. One event name across
+    // every placement is what makes "how many people opened a Messenger demo"
+    // answerable. `bot` is the Page username: cushlabs or nyenglishteacher today.
+    const messengerBot = messengerBotFor(target);
+    if (messengerBot) {
+      window.cushlabsTrack?.("messenger_demo_opened", {
+        bot: messengerBot,
+        label: clean(target.dataset.analyticsLabel ?? target.textContent),
+        placement: clean(target.dataset.analyticsPlacement),
+      });
+    }
 
     const explicitEvent = target.dataset.analyticsEvent;
     if (explicitEvent) {

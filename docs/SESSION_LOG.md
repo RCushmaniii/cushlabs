@@ -916,6 +916,35 @@ cost question the WhatsApp demo-swap decision has been waiting on.
 
 ## Session History
 
+## Session: 2026-10-09 — Marketing batch: risky claims out, new homepage hero, blog internal links, Messenger demo tracking
+
+**Branch:** `feat/marketing-batch-2026-10-09` (PR open, not merged — Robert reviews).
+
+- **Claims removed or rewritten, EN + ES:** "can't invent a price" (FAQ, Messenger themes, Instagram,
+  website chatbot) → "answers only from the information you approve; hands the customer to you when
+  unsure"; /salons/ + /salones/ "never lose another client" / "never sleeps" / "pays for itself several
+  times over" / "8 in 10 clients"; ES voice "nunca manda a un cliente al buzón"; ES Guarantee "se paga
+  solo" and "código si aplica"; /about/ "clean code, you keep everything" + the unverifiable stats row
+  (AI-native, 500+ LinkedIn, 100% Bilingual, 2 Markets); "35+ projects delivered" (hero + Premium trust
+  bar); "live in weeks" on /services/messenger-assistant/; voice "150–250 minutes/month" and
+  "Calendly / your booking system" (the voice repo only integrates Google Calendar); WhyMe "You Can See
+  It Working" dashboard implication and the two comparative digs; ES pain card that listed WhatsApp as
+  an inbox. ADVERTISED-COMMITMENTS §4 Theme 1, §5.1 #4 and §5.2 reworded in the same change.
+- **Messenger booking overclaim (debt #29) closed on the marketing side:** every Messenger/Instagram
+  surface now says it captures the lead, sends the booking link and alerts the owner. Only the voice
+  agent "books". The debt stays open for the bot-side decision.
+- **Homepage hero:** Robert's approved copy. ES primary CTA is WhatsApp booking
+  (`whatsapp_booking_clicked`, placement `homepage-hero`), calendar call secondary, demo a text link.
+  Shared deep link moved to `src/lib/whatsapp-booking.ts`.
+- **SEO:** RelatedReading links to the 8 unindexed posts from /services/whatsapp/ (in-body),
+  messenger-assistant, instagram and /demos/ (EN + ES). Competitor page retitled "Track Your Competitors
+  on Google Maps". No internal link, hreflang or sitemap entry points at /es/instagram/ — the canonical
+  fix left is a GSC re-inspection of /es/services/instagram/.
+- **Analytics:** every m.me click fires `messenger_demo_opened` with `bot` (cushlabs / nyenglishteacher).
+- **Flagged, not changed:** the Premium weekly report is "one email a week" on /services/premium/ but
+  "a WhatsApp message every Monday" on /services/competitive-intelligence/ — one of them is wrong.
+  Voice "texts you a summary" / ES "por WhatsApp" not verified against the voice repo.
+
 ## Session: 2026-10-08 — Booking topic buttons, booked-solid days greyed out
 
 - **Topic buttons** above the notes box on `/consultation/` and `/es/reservar/`: Basic / Premium /

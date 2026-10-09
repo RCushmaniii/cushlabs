@@ -8,12 +8,12 @@ const locale = "es" as const;
 const included = [
   { title: "Voz y personalidad personalizada", desc: "Voz natural que coincide con tu marca — profesional, cálida, bilingüe. No un menú robótico de IVR" },
   { title: "Conoce tu negocio", desc: "Responde con tus servicios, precios, horarios, ubicaciones y FAQs — da respuestas precisas, no scripts genéricos" },
-  { title: "Agendado de citas", desc: "Agenda directamente en tu calendario (Google Calendar, Calendly, o tu sistema de reservas)" },
+  { title: "Agendado de citas", desc: "Agenda directamente en tu Google Calendar. Si usas otro sistema de citas, toma los datos de quien llama para que tú confirmes" },
   { title: "Captura y enrutamiento de leads", desc: "Captura nombre, número, intención y urgencia — te envía un resumen por texto al instante" },
   { title: "Transferencia con contexto", desc: "Cuando una llamada te necesita, transfiere con un resumen de lo que quiere la persona — sin entregas en frío" },
   { title: "Bilingüe (EN/ES)", desc: "Maneja llamadas en inglés y español, cambiando naturalmente según el que llama" },
   { title: "Reporte mensual de llamadas", desc: "Volumen, preguntas frecuentes, citas agendadas, estadísticas de recuperación de llamadas perdidas" },
-  { title: "Hasta 300 minutos contestados incluidos", desc: "Excedente a $8.50 MXN/min. La mayoría de negocios pequeños usan 150–250 minutos al mes" },
+  { title: "Hasta 300 minutos contestados incluidos", desc: "Excedente a $8.50 MXN/min. Te aviso antes de que te acerques al tope" },
 ];
 
 const notIncluded = [
@@ -53,7 +53,7 @@ const bestFor = [
         </h1>
 
         <p class="va-sub">
-          Un agente de voz con IA disponible 24/7 que contesta el teléfono de tu negocio con voz natural — agenda citas, captura leads y nunca manda a un cliente al buzón.
+          Un agente de voz con IA disponible 24/7 que contesta el teléfono de tu negocio con voz natural — agenda citas, captura prospectos y contesta cuando tú no puedes.
         </p>
 
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -152,7 +152,7 @@ const bestFor = [
                 { title: "Dejas de perder leads fuera de horario.", body: "Quien llama a las 9 PM recibe una conversación real — respuestas, agendado, devolución de llamada — no tu mensaje de buzón." },
                 { title: "Dejas de contestar las mismas preguntas.", body: "Horarios, precios, servicios, direcciones — tu agente lo maneja todo. Solo escuchas de quien llama cuando está listo para reservar o comprar." },
                 { title: "Habla su idioma.", body: "¿Cliente en español? Español. ¿En inglés? Inglés. Detección automática, fluido en ambos, en cada llamada." },
-                { title: "Agenda citas mientras trabajas.", body: "Directo a tu Google Calendar, Calendly o sistema de reservas. El cliente cuelga con cita confirmada. Tú ves la entrada en tu teléfono." },
+                { title: "Agenda citas mientras trabajas.", body: "Directo a tu Google Calendar. El cliente cuelga con su cita confirmada y tú ves la entrada en tu teléfono. Si usas otro sistema de citas, toma sus datos para que tú confirmes." },
                 { title: "Sabe cuándo llamarte.", body: "Cuando una llamada te necesita realmente, transfiere con un resumen — qué quiere, qué se ha hablado, qué necesita escuchar. Sin entregas en frío." },
               ].map(item => (
                 <div class="flex gap-4">

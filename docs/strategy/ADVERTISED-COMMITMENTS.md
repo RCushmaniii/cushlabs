@@ -522,8 +522,11 @@ two demo bots `m.me/cushlabs` and `m.me/nyenglishteacher`).
 
 - Replies in **under 5 seconds, 24/7** — nights, weekends, holidays.
 - Answers from the client's **real products, prices, hours, policies, tone**.
-- **Grounded answers only** — never invents a price or makes up a promise.
-- **Hard facts** (hours, pricing) come back **exact, every time** (→ structured records, see §7).
+- **Answers only from the information the client approves** — when it isn't sure, it hands the customer to the owner.
+- **Hard facts** (hours, pricing) come **straight from the approved record, word for word** (→ structured records, see §7).
+- _Reworded 2026-10-09 (`feat/marketing-batch-2026-10-09`): "never invents a price or makes up a promise" and
+  "exact, every time" are absolutes `claims-policy.json` bans. The behaviour is unchanged; only the promise
+  is now one the bot can keep on its worst day._
 
 ### Theme 2 — "It feels like a real, modern experience"
 
@@ -565,7 +568,7 @@ two demo bots `m.me/cushlabs` and `m.me/nyenglishteacher`).
 1. **Free discovery call** — 30 min; honest fit assessment; "no hard sell, ever."
 2. **Free 1-week trial** — no setup fee, no deposit; client pays nothing until it works as agreed.
 3. **Month-to-month, cancel anytime** — no lock-in; 30 days' notice; no penalty.
-4. **Client owns their data & system** — full documentation, access credentials, code where applicable; fully portable.
+4. **Your accounts stay yours** — business accounts, phone number, customer data and documentation stay in the client's name; if they leave, all of it goes with them. _(Reconciled 2026-10-09: the ES card still promised "código si aplica"; EN and ES and /about/ now say the same thing.)_
 
 > **Reconciled to the live site 2026-08-30.** Item 2 said "Free 2-week trial" — the same drift the
 > 2026-08-05 note in §2.2 caught in the pricing block, surviving here because that reconciliation
@@ -578,7 +581,7 @@ two demo bots `m.me/cushlabs` and `m.me/nyenglishteacher`).
 
 - **Pricing:** "$1,990 MXN/mo (Basic) … up to $5,490 (Ultra)"; monthly; no setup/contract; free trial; free discovery call.
 - **Speed to launch:** productized setups (Messenger, website chatbot, reviews) **live within days** of a completed intake; complex custom builds take weeks.
-- **Accuracy:** answers **grounded in approved content, not the open internet**; when not confident, **hands off** instead of guessing; monitoring surfaces gaps.
+- **Accuracy:** **answers only from the information the client approves**; when not sure, **hands the customer to the owner** instead of guessing; monitoring surfaces gaps. _(2026-10-09: "so it can't invent a price or make up a promise" removed from FAQ.astro EN + ES.)_
 - **Data security:** controlled environments, access controls, encryption, logging; **"I don't use your data to train models"**; practices documented and handed over.
 - **Market:** Guadalajara-based; serves **Mexico, US, LATAM**; all systems output **bilingual EN/ES**; project comms English-first, Spanish for stakeholder conversations.
 - **Honesty:** "If AI isn't the right move — or the timing isn't right — I'll tell you directly."

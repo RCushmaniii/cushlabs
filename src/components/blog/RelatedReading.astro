@@ -1,0 +1,38 @@
+---
+/**
+ * A short "Related reading" block that links a service page to blog posts on the
+ * same subject. Added 2026-10-09 to give Google an internal path to posts it had
+ * not indexed (local Guadalajara posts, the WhatsApp-cost posts, the Facebook-
+ * storefront post). Same-language links only: an EN page links EN posts, an ES
+ * page links ES posts. Hrefs are full paths with the trailing slash the SEO audit
+ * expects.
+ */
+import Container from "../layout/Container.astro";
+
+interface Props {
+  locale: "en" | "es";
+  links: { href: string; title: string; blurb?: string }[];
+}
+
+const { locale, links } = Astro.props;
+const heading = locale === "es" ? "Lectura relacionada" : "Related reading";
+---
+
+<section class="py-12 md:py-16 border-t border-gray-200 dark:border-gray-800" aria-labelledby="related-reading-heading">
+  <Container size="md">
+    <h2 id="related-reading-heading" class="font-display text-sm font-semibold uppercase tracking-wider text-accent-text mb-5">
+      {heading}
+    </h2>
+    <ul class="space-y-4">
+      {links.map((link) => (
+        <li>
+          <a
+            href={link.href}
+            class="font-display text-lg font-semibold text-gray-900 dark:text-white underline underline-offset-4 decoration-cush-orange/40 hover:decoration-cush-orange transition-colors"
+          >{link.title}</a>
+          {link.blurb && <p class="mt-1 text-gray-600 dark:text-gray-400">{link.blurb}</p>}
+        </li>
+      ))}
+    </ul>
+  </Container>
+</section>

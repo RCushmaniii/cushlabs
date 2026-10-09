@@ -2,6 +2,7 @@
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import Container from "../../../components/layout/Container.astro";
 import FinalCTA from "../../../components/services2/FinalCTA.astro";
+import RelatedReading from "../../../components/blog/RelatedReading.astro";
 
 const locale = "es" as const;
 
@@ -9,7 +10,7 @@ const included = [
   { title: "Hecho a la medida de tu negocio", desc: "Productos, precios, horarios, políticas, tono — responde con lo que realmente vendes y cómo realmente hablas" },
   { title: "Conversaciones bilingües (EN/ES)", desc: "Español e inglés con fluidez, cambia automáticamente según el idioma del cliente" },
   { title: "Recomendaciones inteligentes de productos", desc: "Guía al cliente al producto o servicio correcto en vez de tirarle el catálogo encima" },
-  { title: "Agendado de citas y captura de leads", desc: "Recoge los datos que necesitas — nombre, contacto, intención — y los enruta donde corresponde" },
+  { title: "Captura de prospectos y enlace para agendar", desc: "Recoge los datos que necesitas — nombre, contacto, intención — le manda tu enlace para agendar y te avisa por WhatsApp. No agenda en tu calendario por sí solo" },
   { title: "Transferencia a humano", desc: "Te pasa la conversación con todo el contexto cuando realmente se necesita una persona" },
   { title: "Reporte semanal de desempeño", desc: "Qué te están preguntando los clientes, qué está convirtiendo, qué mejorar — cada lunes" },
   { title: "Ajuste mensual", desc: "Refino el asistente conforme tu negocio evoluciona — nuevos productos, nuevos precios, nuevas temporadas" },
@@ -46,13 +47,13 @@ const liveDemos = messengerDemos.es;
 const themes = [
   {
     title: "Responde al instante — y con precisión",
-    promise: "Cada mensaje recibe una respuesta real en segundos — y la respuesta es correcta, porque solo habla desde tu negocio real.",
+    promise: "Cada mensaje recibe una respuesta real en segundos, sacada de tu negocio real y no de una suposición.",
     icon: "M13 10V3L4 14h7v7l9-11h-7z",
     points: [
       "Responde en menos de 5 segundos, 24/7 — noches, fines de semana y días festivos incluidos",
       "Responde con tus productos, precios, horarios, políticas y tono reales",
-      "Solo respuestas basadas en tu contenido — nunca inventa un precio ni promete de más",
-      "Los datos duros como horarios y precios salen exactos, siempre",
+      "Contesta solo con la información que tú apruebas — cuando no está seguro, te pasa al cliente a ti",
+      "Los datos duros como horarios y precios salen tal cual del registro que tú aprobaste",
     ],
   },
   {
@@ -63,7 +64,7 @@ const themes = [
       "Habla español e inglés automáticamente, siguiendo el idioma en que escribe el cliente",
       "Envía fotos y visuales en el chat — menús, antes y después, mini-lecciones",
       "Lee las fotos que envían los clientes y responde según lo que hay en ellas",
-      "Recuerda la conversación para que el cliente nunca tenga que repetirse",
+      "Recuerda la conversación para que el cliente no tenga que repetirse",
       "Preguntas sugeridas para tocar y un menú fijo guían a la gente a lo que necesita",
     ],
   },
@@ -139,7 +140,7 @@ const themes = [
 
 <BaseLayout
   title="Asistente IA Messenger | CushLabs.ai"
-  description="Un asistente de ventas con IA disponible 24/7 en tu Facebook Messenger — creado con la información de tu negocio, activo en semanas. Bilingüe EN/ES."
+  description="Un asistente de ventas con IA 24/7 en tu Facebook Messenger, con la información y los precios de tu negocio. Las configuraciones simples se lanzan en días."
 >
 
   <section class="ma-hero relative flex items-center text-slate-50">
@@ -155,7 +156,7 @@ const themes = [
         </h1>
 
         <p class="ma-sub">
-          Un asistente de ventas con IA disponible 24/7 en tu Facebook Messenger — creado con el contenido de tu negocio, activo en semanas.
+          Un asistente de ventas con IA disponible 24/7 en tu Facebook Messenger — creado con el contenido de tu negocio. Las configuraciones simples se lanzan en días; las integraciones más complejas suelen tomar de 2 a 6 semanas.
         </p>
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
@@ -297,7 +298,7 @@ const themes = [
             <div class="prose prose-lg dark:prose-invert max-w-none">
               <div class="text-gray-900 dark:text-gray-200 bg-cush-orange/5 border-l-4 border-cush-orange pl-6 py-4 rounded-r-lg space-y-3">
                 <p>Un asistente de IA a la medida que vive en tu Facebook Messenger y realmente conoce tu negocio. Un asistente creado a partir de tus servicios, tus precios, tu voz — que contesta como lo harías tú, a cualquier hora, en el idioma que hablan tus clientes.</p>
-                <p>Recomienda el producto correcto. Agenda la cita. Contesta las preguntas frecuentes cien veces al día sin quejarse. Y cuando se necesita un humano de verdad, te pasa la conversación con todo el contexto ya levantado.</p>
+                <p>Recomienda el producto correcto. Cuando alguien quiere agendar, toma sus datos, le manda tu enlace para agendar y te avisa por WhatsApp. Contesta las preguntas frecuentes cien veces al día sin quejarse. Y cuando se necesita un humano de verdad, te pasa la conversación con todo el contexto ya levantado.</p>
                 <p>Ya lo desplegué para un cliente real. Está activo, en producción, manejando consultas ahora mismo mientras el dueño del negocio duerme.</p>
               </div>
             </div>
@@ -500,6 +501,11 @@ const themes = [
     </Container>
   </section>
 
+  <RelatedReading locale="es" links={[
+    { href: "/es/blog/tu-pagina-de-facebook-es-tu-tienda/", title: "Tu página de Facebook ya es tu tienda", blurb: "Por qué un negocio local en México casi nunca necesita un sitio web, y qué hacer en su lugar." },
+    { href: "/es/blog/asistente-ia-clinicas-dentales-zapopan/", title: "Son las 8:40 p.m. y alguien pregunta por horarios en tu clínica de Zapopan", blurb: "Cómo una clínica dental en Zapopan deja de perder pacientes por mensajes sin contestar fuera de horario." },
+    { href: "/es/blog/asistente-ia-negocios-santa-teresita-guadalajara/", title: "Santa Tere: cuando todo el negocio vive en la cabeza de la dueña", blurb: "Cómo un negocio de barrio en Santa Teresita contesta a sus clientes sin contratar a nadie." },
+  ]} />
   <FinalCTA locale={locale} />
 
   <script type="application/ld+json" is:inline set:html={JSON.stringify({
@@ -519,7 +525,7 @@ const themes = [
         "@type": "HowToStep",
         "position": 2,
         "name": "Construyo y entreno tu asistente de IA",
-        "text": "Tu asistente de Messenger se entrena con el conocimiento específico de tu negocio y se conecta a tu página de Facebook. Me encargo de toda la configuración técnica. Tiempo de entrega típico: 5–7 días hábiles."
+        "text": "Tu asistente de Messenger se entrena con el conocimiento específico de tu negocio y se conecta a tu página de Facebook. Me encargo de toda la configuración técnica. Las configuraciones simples se lanzan en días; las integraciones más complejas suelen tomar de 2 a 6 semanas."
       },
       {
         "@type": "HowToStep",

@@ -2,6 +2,7 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Container from "../../components/layout/Container.astro";
 import FinalCTA from "../../components/services2/FinalCTA.astro";
+import RelatedReading from "../../components/blog/RelatedReading.astro";
 
 const locale = "en" as const;
 
@@ -46,7 +47,7 @@ const included = [
   { title: "Comment replies on your posts and Reels", desc: "Answered in seconds, in your voice, in the language the customer wrote in" },
   { title: "Direct message follow-up", desc: "Moves the real answer — pricing, availability, next step — off the public feed and into a private conversation" },
   { title: "Instagram DMs answered too", desc: "Not just comments. Someone who messages your account directly gets the same assistant" },
-  { title: "Built from your business", desc: "Your products, prices, hours and policies. It answers from what you actually sell, and it does not invent a price" },
+  { title: "Built from your business", desc: "Your products, prices, hours and policies. It answers only from the information you approve, and when it isn't sure it hands the customer to you" },
   { title: "Bilingual (EN/ES)", desc: "Switches automatically based on what the customer writes — no setting to toggle" },
   { title: "Human handoff", desc: "Escalates to you with the whole thread when the conversation genuinely needs a person" },
   { title: "The same assistant you already have", desc: "One brain across Messenger, Instagram and your website. Update it once and every channel changes" },
@@ -257,6 +258,9 @@ const bestFor = [
     </Container>
   </section>
 
+  <RelatedReading locale="en" links={[
+    { href: "/blog/ai-assistant-chapalita-boutiques-guadalajara/", title: "Your Chapalita boutique doesn't stop. Your answers shouldn't either", blurb: "How a boutique in Chapalita answers customers on Instagram and Messenger without hiring anyone." },
+  ]} />
   <FinalCTA locale={locale} />
 </BaseLayout>
 

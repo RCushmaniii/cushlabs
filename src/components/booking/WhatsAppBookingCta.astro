@@ -9,35 +9,33 @@
  * claim: the capability registry has the WhatsApp approvals as robert_only,
  * and "AI on WhatsApp" stays off the offer (docs/AI-ASSISTANT-ONBOARDING.md).
  *
- * The pre-typed text must keep matching bookingIntent() in cushlabs-whatsapp
- * src/flows/booking.ts ("agendar … consulta" / "book … consultation"), or the
- * message falls through instead of opening the Flow.
+ * The pre-typed text and the number live in src/lib/whatsapp-booking.ts, shared
+ * with the Spanish homepage hero, and must keep matching bookingIntent() in
+ * cushlabs-whatsapp src/flows/booking.ts.
  */
+import { whatsappBookingHref } from "../../lib/whatsapp-booking";
+
 interface Props {
   locale: "en" | "es";
 }
 const { locale } = Astro.props;
-
-const CUSHLABS_WA = "13072842785"; // +1 307 284 2785 — CushLabs sender number
 
 const S = {
   es: {
     title: "Agenda por WhatsApp",
     body: "Elige día y hora sin salir de WhatsApp. Toma menos de un minuto y el enlace de Google Meet te llega ahí mismo.",
     button: "Agendar por WhatsApp",
-    message: "Quiero agendar una consulta",
     or: "¿Estás en la computadora? Elige tu horario en el calendario.",
   },
   en: {
     title: "Book on WhatsApp",
     body: "Pick a day and time without leaving WhatsApp. It takes under a minute and the Google Meet link arrives right in the chat.",
     button: "Book on WhatsApp",
-    message: "I'd like to book a consultation",
     or: "On a computer? Pick your time on the calendar.",
   },
 }[locale];
 
-const href = `https://wa.me/${CUSHLABS_WA}?text=${encodeURIComponent(S.message)}`;
+const href = whatsappBookingHref(locale);
 ---
 
 <div class="rounded-2xl border border-border bg-surface p-5">

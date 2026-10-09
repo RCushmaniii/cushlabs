@@ -110,7 +110,7 @@ export const messengerDemos: Record<Locale, LiveDemo[]> = {
       badge: "Cliente real en producción",
       name: "New York English",
       tagline: "Coaching de inglés ejecutivo — mi primer cliente en producción",
-      copy: "Atiende clientes reales en español e inglés desde abril. Pregunta precios, horarios o cómo reservar y mira cómo responde con los datos del propio negocio — la pregunta de confianza incluso llega con una mini-lección en imagen.",
+      copy: "Atiende clientes reales en español e inglés desde abril. Pregunta precios, horarios o cómo agendar y mira cómo responde con los datos del propio negocio — la pregunta de confianza incluso llega con una mini-lección en imagen.",
       questions: [
         "¿Cómo me ayudan con la confianza al hablar inglés?",
         "¿Cuánto cuesta una sesión?",

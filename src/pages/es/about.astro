@@ -7,7 +7,7 @@ const locale = "es" as const;
 const content = {
   meta: {
     title: "Acerca — Por Qué las Empresas Confían en CushLabs.ai",
-    description: "Una sólida trayectoria en TI, 500+ conexiones profesionales y soluciones de IA que realmente funcionan. Descubre por qué los negocios eligen CushLabs.",
+    description: "Liderazgo de TI en Fortune 500 (Praxair/Linde), ahora creando asistentes con IA para pequeños negocios desde Guadalajara. Conoce cómo trabajo con cada negocio.",
   },
   hero: {
     badge: "Por Qué CushLabs",
@@ -23,10 +23,10 @@ const content = {
   trust: {
     title: "Construido sobre Experiencia, No Promesas",
     stats: [
-      { value: "Nativo en IA", label: "Raíces en TI empresarial", sublabel: "Desarrollador → Gerente → Consultor" },
-      { value: "500+", label: "Conexiones en LinkedIn", sublabel: "Red Establecida en TI" },
-      { value: "100%", label: "Bilingüe", sublabel: "Inglés y Español" },
-      { value: "2", label: "Mercados Atendidos", sublabel: "EE.UU. y México" },
+      { value: "100+", label: "Iniciativas globales de tecnología", sublabel: "Liderazgo de TI en Fortune 500, Praxair/Linde" },
+      { value: "26,000", label: "Empleados atendidos", sublabel: "En 42 países, Praxair/Linde" },
+      { value: "Guadalajara", label: "Donde estoy", sublabel: "Atiendo México, EE.UU. y LatAm" },
+      { value: "ES + EN", label: "Asistentes probados en ambos", sublabel: "Español e inglés" },
     ],
   },
   problem: {
@@ -47,7 +47,7 @@ const content = {
       { title: "Práctico Sobre Perfecto", description: "Construyo soluciones que funcionan en el mundo real, no demos impresionantes que fallan en producción. Obtienes herramientas que tu equipo realmente usará." },
       { title: "Precios Mensuales Simples, Sin Sorpresas", description: "Un precio mensual fijo que conoces desde el inicio — sin facturación por hora que se dispara, sin cambios de alcance, sin facturas misteriosas. Empieza con una prueba gratis de 1 semana antes de comprometerte." },
       { title: "Entrega Rápida", description: "Las configuraciones simples se lanzan en días; las integraciones más complejas suelen tomar de 2 a 6 semanas. Verás software funcionando rápidamente — no meses de planeación y reuniones." },
-      { title: "Tú Eres Dueño de Todo", description: "Documentación completa, código limpio, sin dependencia de proveedor. Si nos separamos, te quedas con todo lo que construí." },
+      { title: "Tus Cuentas Siguen Siendo Tuyas", description: "Tus cuentas, tu número de teléfono, los datos de tus clientes y la documentación quedan a tu nombre, no dentro de una cuenta que yo controlo. Si nos separamos, se van contigo." },
     ],
   },
   about: {
@@ -64,7 +64,7 @@ const content = {
       "Un dueño de pequeño negocio cansado de tareas repetitivas que consumen tu semana",
       "Un fundador que quiere IA trabajando para ti, no otra herramienta que administrar",
       "Un líder de operaciones buscando reducir volumen de soporte sin contratar",
-      "Un equipo en EE.UU. o México que valora la comunicación bilingüe",
+      "Un negocio en EE.UU. o México cuyos clientes escriben en español y en inglés",
       "Alguien que quiere hablar directo, no jerga técnica",
     ],
     notFor: "¿No es para ti? Si necesitas infraestructura a escala empresarial, un gran equipo de desarrollo, o investigación de IA de vanguardia — con gusto te refiero a alguien mejor preparado.",
@@ -128,7 +128,7 @@ const t = content;
       <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
         {t.trust.stats.map((stat) => (
           <div class="text-center">
-            <div class="font-display text-4xl md:text-5xl font-bold text-accent-text mb-2">{stat.value}</div>
+            <div class:list={["font-display font-bold text-accent-text mb-2", stat.value.length > 7 ? "text-2xl md:text-4xl leading-[2.5rem] md:leading-[3rem]" : "text-4xl md:text-5xl"]}>{stat.value}</div>
             <div class="font-display font-semibold text-gray-900 dark:text-white">{stat.label}</div>
             <div class="text-sm text-gray-500 dark:text-gray-400">{stat.sublabel}</div>
           </div>
