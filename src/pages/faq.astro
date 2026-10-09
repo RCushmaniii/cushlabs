@@ -2,83 +2,167 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 const content = {
-  title: "Frequently Asked Questions | CushLabs.ai",
-  description: "Get answers to common questions about AI consulting, implementation timelines, pricing, data security, and working with CushLabs.ai.",
+  title: "FAQ: Plans, WhatsApp Automation & Billing | CushLabs.ai",
+  description: "Straight answers on CushLabs plans and prices, WhatsApp automation, Instagram and Messenger, invoices and PayPal, setup time, and who owns your accounts.",
   heading: "Frequently Asked Questions",
-  subheading: "Everything you need to know about working with me",
+  subheading: "Straight answers about what we do, what it costs, and what we don't do",
+  // Every answer here restates something already published or canonical:
+  // PricingSection / PricingComparison (features, FAQ wording) and
+  // operating-system/cushlabs/commercial-terms.json (price, trial,
+  // cancellation, billing, invoicing, delivery timing). Change those first,
+  // then this page — never the other way round. Rebuilt 2026-10-08 after the
+  // Messenger bot told a prospect WhatsApp automation "isn't live yet".
   categories: [
     {
-      name: "Pricing & Process",
+      name: "Plans & pricing",
       faqs: [
         {
-          question: "How much does this cost? Is it SMB-affordable?",
-          answer: "Plans start at $1,990 MXN/mo (Basic) and go up to $5,490 (Ultra), plus IVA — see the full breakdown on the Pricing page. Everything's a simple monthly subscription: no setup fees, no contracts, and a free 1-week trial. The discovery call is free — I'll recommend the right plan before you commit to anything."
+          question: "How much does it cost?",
+          answer: "Three monthly plans, per business. In Mexico and Latin America: Basic $1,990, Premium $3,490 and Ultra $5,490 MXN a month, plus IVA. In the US and Canada: $129, $229 and $349 USD a month. Every plan includes up to 2 locations; each extra location is +$690 MXN (+$49 USD) a month. The full side-by-side is on the Pricing page."
         },
         {
-          question: "How long does implementation take? Do we need engineers?",
-          answer: "Most productized setups go live within days of your completed intake form; more complex custom builds can take a few weeks. You don't need engineers—just an English-speaking point of contact (Ops/Sales/IT lead) to coordinate. I handle the build, integration, testing, and handoff."
+          question: "What's in each plan?",
+          answer: "Basic: an AI assistant on your Facebook Messenger, 24/7; Google reviews answered (you approve the reply, it posts itself); every lead captured, with an instant WhatsApp alert to you; fully managed. Premium adds Instagram (the same assistant answers comments and follows up in DMs), a website chatbot, WhatsApp reminders, confirmations and promotions sent from your own number, and a weekly local SEO and competitor report. Ultra adds an AI Voice Agent that answers your phone (300 answered minutes per location a month included), priority support, and tuning to your industry's vocabulary."
         },
         {
-          question: "What's included in a project?",
-          answer: "Every project includes: knowledge audit and source structure, assistant personality and tone rules, validation and human handoff paths, analytics dashboard, performance-conscious deployment, and full documentation with an operational runbook."
+          question: "Is there a setup fee, a contract, or a trial?",
+          answer: "No setup fee and no contract — it's month to month. Every plan starts with a 1-week free trial, and the week starts when your assistant actually goes live, not when you sign. Cancel whenever you want: it takes effect at the end of the month you have already paid for, and there is nothing else to settle."
+        },
+        {
+          question: "Can I switch plans later?",
+          answer: "Anytime, up or down, with no penalty. Start on Basic, move to Premium when you want Instagram, WhatsApp automation and the website chatbot, add Ultra's voice agent when you're ready. Changes take effect the next billing cycle."
+        },
+        {
+          question: "What does \"unlimited conversations (fair use)\" mean?",
+          answer: "We don't meter or bill you per message — talk to as many customers as you want. \"Fair use\" is just a guardrail against automated abuse; a normal small business will never come close. If your volume ever grows to enterprise scale, we'll reach out and figure out the right setup together — no surprise charges."
         },
       ]
     },
     {
-      name: "Quality & Security",
+      name: "WhatsApp automation",
       faqs: [
         {
-          question: "What if the AI gives wrong answers and damages our reputation?",
-          answer: "I build with validation and source attribution. Every answer is grounded in your approved knowledge sources, and the system hands off to a human when it's uncertain. No prompt spaghetti—just tested, production-grade systems."
+          question: "Do you do WhatsApp?",
+          answer: "Yes — WhatsApp automation, in three ways, and the direction of the message is what separates them. (1) Owner alerts: we message YOU the moment a conversation shows real buying intent — live on every plan. (2) Reminders and confirmations: appointment reminders, confirmations and order updates your business sends to customers who opted in — live on Premium and Ultra. (3) Promotions: marketing messages to your consented list — live on Premium and Ultra. In short: #1 alerts you, #2 reminds them, #3 promotes to them."
         },
         {
-          question: "How do you handle data security and privacy?",
-          answer: "Privacy-aware design with least-privilege access controls, audit logs, and clear data boundaries. Your internal documents stay private. I document data handling before launch and follow the enterprise IT discipline I carried out of Fortune 500 IT leadership at Praxair/Linde — 100+ global technology initiatives supporting 26,000 employees across 42 countries."
+          question: "Can your AI answer my customers on WhatsApp?",
+          answer: "No, and that's deliberate. When your customers reply on WhatsApp, the reply comes to you, not to a bot — a number that annoys people is a number Meta can restrict, and on WhatsApp your customers expect a person. The AI does the answering on Facebook Messenger, Instagram and your website; on WhatsApp we automate what your business sends and alert you the moment someone is ready to talk."
         },
         {
-          question: "Will this slow down our website or hurt SEO?",
-          answer: "No. I design performance-conscious deployments that respect site speed and SEO. Minimal footprint approach—no conversion-killing heavy embeds. I validate page speed and offer dedicated pages if an embed would be too heavy."
+          question: "On WhatsApp, who bills me for what?",
+          answer: "Two separate bills, and they never overlap. We bill you for the monthly plan, which covers setup, writing your message templates and getting them approved by Meta, running campaigns, and reporting. Meta bills you directly for each message your business sends — on your own account, at Meta's published rate. Messages your customers send to you are free. We're a Meta Tech Provider, so we're paid for the automation, not for your message volume, and we never add anything on top of Meta's rate."
+        },
+        {
+          question: "What does it cost to send a promotion to my customers?",
+          answer: "Nothing extra from us. Writing it, getting Meta to approve the template and sending it are part of your plan, the same as your appointment reminders. The only cost is Meta's, for delivering each message, on your own WhatsApp account at Meta's published rate — promotional messages cost more per message than reminders do. The account is in your name, so you can see exactly what Meta charged."
+        },
+        {
+          question: "Why does it matter how my WhatsApp templates are categorized?",
+          answer: "Because Meta charges roughly 3.5× more for a marketing template than a utility one, and Meta decides which is which from the content of the message, not from the label you give it. One promotional line in an appointment reminder and the whole template is re-priced as marketing. Writing your templates so they genuinely qualify as utility, keeping promotion in its own message, and watching for a re-categorization is part of what we do. We won't dress up marketing as utility — it's your account Meta would restrict."
+        },
+        {
+          question: "Can I message anyone, or a list I bought?",
+          answer: "Consented lists only. Reminders go to customers who opted in, and promotions go to people who agreed to hear from you. We don't work with purchased lists — that protects your number's reputation as much as ours."
+        },
+        {
+          question: "Can I add a second WhatsApp number?",
+          answer: "Yes: an extra WhatsApp number is +$690 MXN (+$49 USD) a month, because every number carries its own registration, templates and quality rating."
         },
       ]
     },
     {
-      name: "Working Together",
+      name: "Facebook, Instagram, website, reviews and phone",
       faqs: [
+        {
+          question: "I don't have a website. Is this still for me?",
+          answer: "Yes. For many businesses the Facebook page is the storefront, and that's exactly where the assistant works: it answers Messenger 24/7, captures the lead, and alerts you on WhatsApp when someone is ready to buy. You don't need a website, Meta Business Suite or any new app to use it."
+        },
+        {
+          question: "Which plans include Instagram?",
+          answer: "Premium and Ultra. The same assistant that answers on Messenger answers comments on your Instagram posts in public, then follows up in DMs."
+        },
+        {
+          question: "How do I hear about a new lead?",
+          answer: "The moment a lead is ready — or a conversation needs a person — you get an instant WhatsApp alert, plus email and a note inside Messenger. Included on every plan."
+        },
+        {
+          question: "How do Google reviews work?",
+          answer: "We read your reviews straight from Google, so a new one shows up within hours, not days. We draft a reply, you approve it, and it posts back to Google automatically. Facebook recommendations, TripAdvisor and other review sites we don't manage today — Google is the one that moves local search."
+        },
+        {
+          question: "What happens if I go over the 300 voice minutes on Ultra?",
+          answer: "Nothing breaks — the agent keeps answering. Extra answered minutes bill at $8.50 MXN ($0.59 USD) per minute, and we flag it for you as you approach the included 300 so there are no surprises."
+        },
+        {
+          question: "Can't I just use ChatGPT or a chatbot builder myself?",
+          answer: "You can, and then you're the one running it. With us it's fully managed: the assistant only answers from information you approved, hands the conversation to a person when it doesn't know, alerts you on WhatsApp when a lead is ready, and someone accountable fixes it when something needs fixing. You never have to learn or run the software."
+        },
+      ]
+    },
+    {
+      name: "Billing & invoices",
+      faqs: [
+        {
+          question: "How do I pay?",
+          answer: "Monthly, in advance, by bank transfer or PayPal. Card payments aren't available yet."
+        },
+        {
+          question: "Do prices include IVA? Will I get a CFDI?",
+          answer: "In Mexico, prices are plus IVA, like any business service, and every payment comes with a CFDI with the IVA itemized, so it's deductible. Clients outside Mexico don't receive a CFDI (it's a Mexican tax receipt); you get an itemized commercial invoice instead."
+        },
+        {
+          question: "Why are the dollar prices not a conversion of the peso prices?",
+          answer: "Because they're two separate price lists: MXN for Mexico and Latin America, USD for the US and Canada. Each is set on its own, so the price you see doesn't move with the exchange rate."
+        },
+      ]
+    },
+    {
+      name: "Setup & ownership",
+      faqs: [
+        {
+          question: "How long does setup take?",
+          answer: "Simple setups launch in days; more complex integrations typically take 2 to 6 weeks. Your free week only starts once your assistant is live."
+        },
+        {
+          question: "Who owns my Facebook Page, WhatsApp number and Google profile?",
+          answer: "You do, always. We work as a collaborator on accounts that stay in your name — we never take ownership of a page, a number, a profile or a domain. Your WhatsApp Business account is opened in your name with your own payment method, and if you ever leave, the number and every template Meta approved go with you. We also hand you your knowledge base: your information, your tone, your FAQs."
+        },
+        {
+          question: "What counts as a \"location\"?",
+          answer: "One physical business address — a storefront, clinic or office with its own Google Business Profile. Every plan includes up to two; beyond that it's +$690 MXN (+$49 USD) per location a month, at any tier."
+        },
+        {
+          question: "I have two websites for the same business. Does that cost extra?",
+          answer: "One plan covers one brand and one knowledge base. Premium includes one website and Ultra includes two. An extra same-brand surface beyond that — another site, another Instagram account, another Page — is +$490 MXN (+$35 USD) a month. A genuinely different brand with different information is a separate plan, and we'll tell you that up front."
+        },
+      ]
+    },
+    {
+      name: "Quality, privacy & working together",
+      faqs: [
+        {
+          question: "What if the assistant gets something wrong?",
+          answer: "Tell us and we fix it the same day — with a named person accountable, not an anonymous support queue. We won't promise zero errors; anyone promising that hasn't run one of these in production. The assistant only answers from information you approved, and when it doesn't know something it says so and hands the conversation to a person rather than inventing an answer."
+        },
+        {
+          question: "What happens to my customers' conversations?",
+          answer: "They're used to serve your business and nothing else. Never sold, never used to train anything for another client."
+        },
+        {
+          question: "Does the assistant speak Spanish and English?",
+          answer: "Yes. Your assistant answers in both, and it's checked in both languages before it goes live."
+        },
         {
           question: "Who will I be working with?",
-          answer: "You work directly with me—Robert Cushman. I'm not a big agency with account managers and handoffs. I do the discovery, development, project management, and I'm personally responsible for your project's success. Direct communication, no middlemen."
-        },
-        {
-          question: "Do you work with companies in Mexico?",
-          answer: "Yes. I'm fully bilingual (English/Spanish) and serve clients in both the US and Mexico. Your assistant outputs are fully bilingual, and I offer flexible hours for both time zones."
-        },
-        {
-          question: "We don't have anyone fluent in English. Can you work with Spanish-only teams?",
-          answer: "Project delivery runs in English for speed and clarity, but your assistant outputs are fully bilingual (EN/ES). If you don't have an English-speaking champion, I offer a bilingual partner add-on to bridge coordination. Either way, your customers get professional Spanish support."
-        },
-      ]
-    },
-    {
-      name: "Alternatives & Comparisons",
-      faqs: [
-        {
-          question: "Can't we just use ChatGPT, Intercom, Zendesk, or hire a freelancer?",
-          answer: "Generic tools don't validate answers against your knowledge base, provide bilingual tone control, or connect to business outcomes. Freelancers rarely ship systems with testing, monitoring, and iteration loops. I deliver outcome systems—not demos."
-        },
-        {
-          question: "What makes you different from other AI consultants?",
-          answer: "Discovery-first methodology (I don't start with tools, I start with your business problem), production-grade engineering (not just demos), outcome systems tied to business KPIs, cross-border ready for US/Mexico markets, and enterprise discipline with solo speed."
-        },
-        {
-          question: "What if it doesn't work or we're not satisfied?",
-          answer: "We test extensively before launch. If something isn't performing, I optimize it during the 30-day support window included in every project. My goal is systems that deliver measurable ROI—typically within 60-90 days of launch."
+          answer: "Robert Cushman, directly — not an agency with account managers and handoffs. Robert held IT leadership roles at Praxair/Linde, a Fortune 500 company: 100+ global technology initiatives supporting 26,000 employees across 42 countries. He's based in Guadalajara and works with businesses in Mexico, the US and Latin America."
         },
       ]
     },
   ],
   cta: {
     heading: "Still have questions?",
-    text: "Book a free 30-minute call. No commitment, no pressure—just honest answers about whether I can help.",
+    text: "Book a free 30-minute call. No commitment, no pressure — just honest answers about whether we can help.",
     button: "Book a Free 30-Min Call",
     href: "/consultation/"
   }
