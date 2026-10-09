@@ -19,7 +19,10 @@ const content = {
       faqs: [
         {
           question: "¿Cuánto cuesta?",
-          answer: "Tres planes mensuales, por negocio. En México y Latinoamérica: Básico $1,990, Premium $3,490 y Ultra $5,490 MXN al mes, más IVA. En Estados Unidos y Canadá: $129, $229 y $349 USD al mes. Todos los planes incluyen hasta 2 sucursales; cada sucursal adicional son +$690 MXN (+$49 USD) al mes. La comparación completa está en la página de Precios."
+          answer: {
+            mxn: "Tres planes mensuales, por negocio: Básico $1,990, Premium $3,490 y Ultra $5,490 MXN al mes, más IVA. Todos los planes incluyen hasta 2 sucursales; cada sucursal adicional son +$690 MXN al mes. Sin cuota de instalación y sin contrato. La comparación completa está en la página de Precios.",
+            usd: "Tres planes mensuales, por negocio: Básico $129, Premium $229 y Ultra $349 USD al mes. Todos los planes incluyen hasta 2 sucursales; cada sucursal adicional son +$49 USD al mes. Sin cuota de instalación y sin contrato. La comparación completa está en la página de Precios.",
+          }
         },
         {
           question: "¿Qué incluye cada plan?",
@@ -68,7 +71,10 @@ const content = {
         },
         {
           question: "¿Puedo agregar un segundo número de WhatsApp?",
-          answer: "Sí: un número de WhatsApp adicional son +$690 MXN (+$49 USD) al mes, porque cada número carga con su propio registro, sus plantillas y su calificación de calidad."
+          answer: {
+            mxn: "Sí: un número de WhatsApp adicional son +$690 MXN al mes, porque cada número carga con su propio registro, sus plantillas y su calificación de calidad.",
+            usd: "Sí: un número de WhatsApp adicional son +$49 USD al mes, porque cada número carga con su propio registro, sus plantillas y su calificación de calidad.",
+          }
         },
       ]
     },
@@ -93,7 +99,10 @@ const content = {
         },
         {
           question: "¿Qué pasa si me paso de los 300 minutos de voz en Ultra?",
-          answer: "Nada se detiene — el agente sigue contestando. Los minutos contestados extra se cobran a $8.50 MXN ($0.59 USD) por minuto, y te avisamos conforme te acercas a los 300 incluidos para que no haya sorpresas."
+          answer: {
+            mxn: "Nada se detiene — el agente sigue contestando. Los minutos contestados extra se cobran a $8.50 MXN por minuto, y te avisamos conforme te acercas a los 300 incluidos para que no haya sorpresas.",
+            usd: "Nada se detiene — el agente sigue contestando. Los minutos contestados extra se cobran a $0.59 USD por minuto, y te avisamos conforme te acercas a los 300 incluidos para que no haya sorpresas.",
+          }
         },
         {
           question: "¿No puedo usar ChatGPT o armar un chatbot yo mismo?",
@@ -106,14 +115,20 @@ const content = {
       faqs: [
         {
           question: "¿Cómo pago?",
-          answer: "Mes a mes, por adelantado, por transferencia bancaria o PayPal. El pago con tarjeta todavía no está disponible."
+          answer: {
+            mxn: "Mes a mes, por adelantado, por transferencia bancaria (SPEI) o PayPal. El pago con tarjeta todavía no está disponible.",
+            usd: "Mes a mes, por adelantado, por PayPal o transferencia bancaria — sin enviar dinero al extranjero. El pago con tarjeta todavía no está disponible.",
+          }
         },
         {
-          question: "¿Los precios incluyen IVA? ¿Me dan factura (CFDI)?",
-          answer: "En México los precios son más IVA, como cualquier servicio empresarial, y cada pago incluye tu factura (CFDI) con el IVA desglosado, así que es deducible. Los clientes fuera de México no reciben CFDI (es un comprobante fiscal mexicano); en su lugar reciben una factura comercial desglosada."
+          question: "¿Qué factura recibo y los precios incluyen impuestos?",
+          answer: {
+            mxn: "Los precios son más IVA, como cualquier servicio empresarial en México, y cada pago incluye tu factura (CFDI) con el IVA desglosado, así que es deducible y tu contabilidad queda en orden desde el primer día.",
+            usd: "Recibes una factura comercial desglosada con cada pago — servicios, monto y condiciones de pago, lista para tu contabilidad. Los impuestos que apliquen se definen en tu contrato de servicio.",
+          }
         },
         {
-          question: "¿Por qué los precios en dólares no son una conversión de los precios en pesos?",
+          question: "¿Por qué los precios son distintos en pesos y en dólares?",
           answer: "Porque son dos listas de precios distintas: MXN para México y Latinoamérica, USD para Estados Unidos y Canadá. Cada una se fija por separado, así que el precio que ves no se mueve con el tipo de cambio."
         },
       ]
@@ -131,11 +146,17 @@ const content = {
         },
         {
           question: "¿Qué cuenta como una \"sucursal\"?",
-          answer: "Una dirección física del negocio — un local, clínica u oficina con su propio perfil de Google. Todos los planes incluyen hasta dos; después son +$690 MXN (+$49 USD) por sucursal al mes, en cualquier nivel."
+          answer: {
+            mxn: "Una dirección física del negocio — un local, clínica u oficina con su propio perfil de Google. Todos los planes incluyen hasta dos; después son +$690 MXN por sucursal al mes, en cualquier nivel.",
+            usd: "Una dirección física del negocio — un local, clínica u oficina con su propio perfil de Google. Todos los planes incluyen hasta dos; después son +$49 USD por sucursal al mes, en cualquier nivel.",
+          }
         },
         {
           question: "Tengo dos sitios web del mismo negocio. ¿Eso cuesta extra?",
-          answer: "Un plan cubre una marca y una base de conocimiento. Premium incluye un sitio web y Ultra incluye dos. Una superficie adicional de la misma marca — otro sitio, otra cuenta de Instagram, otra página — son +$490 MXN (+$35 USD) al mes. Una marca realmente distinta, con información distinta, es un plan aparte, y te lo decimos desde el principio."
+          answer: {
+            mxn: "Un plan cubre una marca y una base de conocimiento. Premium incluye un sitio web y Ultra incluye dos. Una superficie adicional de la misma marca — otro sitio, otra cuenta de Instagram, otra página — son +$490 MXN al mes. Una marca realmente distinta, con información distinta, es un plan aparte, y te lo decimos desde el principio.",
+            usd: "Un plan cubre una marca y una base de conocimiento. Premium incluye un sitio web y Ultra incluye dos. Una superficie adicional de la misma marca — otro sitio, otra cuenta de Instagram, otra página — son +$35 USD al mes. Una marca realmente distinta, con información distinta, es un plan aparte, y te lo decimos desde el principio.",
+          }
         },
       ]
     },
@@ -168,6 +189,16 @@ const content = {
     href: "/es/reservar/"
   }
 };
+// Answers that depend on the market are { mxn, usd } pairs. The page opens on
+// the visitor's language (English → US & Canada, Spanish → México & LatAm) and
+// a currency picked here or on /pricing/ wins afterwards — same rule and same
+// stored key ("pricingCurrency") as PricingSection.astro, so the two pages
+// never disagree about which market the visitor is in.
+type Answer = string | { mxn: string; usd: string };
+const defaultCurrency: "mxn" | "usd" = "mxn";
+const hideIf = (cur: "mxn" | "usd") => (cur === defaultCurrency ? "" : "hidden");
+const forSchema = (a: Answer) => (typeof a === "string" ? a : a[defaultCurrency]);
+const cur = { aria: "Selecciona tu región y moneda", mxn: "México & LatAm · MXN", usd: "EE.UU. & Canadá · USD" };
 ---
 
 <BaseLayout title={content.title} description={content.description}>
@@ -178,7 +209,7 @@ const content = {
     "mainEntity": content.categories.flatMap(cat => cat.faqs.map(faq => ({
       "@type": "Question",
       "name": faq.question,
-      "acceptedAnswer": { "@type": "Answer", "text": faq.answer }
+      "acceptedAnswer": { "@type": "Answer", "text": forSchema(faq.answer) }
     })))
   })} />
 
@@ -196,6 +227,22 @@ const content = {
         <p class="mt-4 text-lg text-gray-600 dark:text-gray-400">
           {content.subheading}
         </p>
+        <div
+          class="mt-8 inline-flex items-center gap-1 rounded-lg border border-gray-200 dark:border-gray-700 p-1 bg-white dark:bg-gray-800/40"
+          role="group"
+          aria-label={cur.aria}
+        >
+          {(["mxn", "usd"] as const).map((c) => (
+            <button
+              type="button"
+              data-cur-btn={c}
+              aria-pressed={defaultCurrency === c ? "true" : "false"}
+              class={`px-4 py-2 rounded-md text-sm font-display font-semibold transition-colors ${defaultCurrency === c ? "bg-cush-orange text-black" : "text-gray-600 dark:text-gray-300"}`}
+            >
+              {cur[c]}
+            </button>
+          ))}
+        </div>
       </div>
     </section>
 
@@ -225,7 +272,12 @@ const content = {
                   </summary>
                   <div class="px-6 pb-6 pt-2 bg-white dark:bg-gray-900">
                     <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
-                      {faq.answer}
+                      {typeof faq.answer === "string" ? faq.answer : (
+                        <>
+                          <span data-cur="mxn" class={hideIf("mxn")}>{faq.answer.mxn}</span>
+                          <span data-cur="usd" class={hideIf("usd")}>{faq.answer.usd}</span>
+                        </>
+                      )}
                     </p>
                   </div>
                 </details>
@@ -260,3 +312,41 @@ const content = {
     </section>
   </div>
 </BaseLayout>
+
+<script>
+  // Same behaviour and storage key as the toggle in PricingSection.astro.
+  (function () {
+    const KEY = "pricingCurrency";
+    function apply(c: string) {
+      const isUsd = c === "usd";
+      document.querySelectorAll('[data-cur="mxn"]').forEach((el) => el.classList.toggle("hidden", isUsd));
+      document.querySelectorAll('[data-cur="usd"]').forEach((el) => el.classList.toggle("hidden", !isUsd));
+      document.querySelectorAll("[data-cur-btn]").forEach((btn) => {
+        const active = btn.getAttribute("data-cur-btn") === c;
+        btn.setAttribute("aria-pressed", String(active));
+        btn.classList.toggle("bg-cush-orange", active);
+        btn.classList.toggle("text-black", active);
+        btn.classList.toggle("text-gray-600", !active);
+        btn.classList.toggle("dark:text-gray-300", !active);
+      });
+    }
+    let saved: string | null = null;
+    try {
+      saved = localStorage.getItem(KEY);
+    } catch (e) {
+      /* no-op */
+    }
+    if (saved === "usd" || saved === "mxn") apply(saved);
+    document.querySelectorAll("[data-cur-btn]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const c = btn.getAttribute("data-cur-btn") || "mxn";
+        try {
+          localStorage.setItem(KEY, c);
+        } catch (e) {
+          /* no-op */
+        }
+        apply(c);
+      });
+    });
+  })();
+</script>
