@@ -268,6 +268,23 @@ America; USD = US + Canada. Rationale: `operating-system/strategy/from-marketing
 
 - **WhatsApp — THE APPROVAL GATE NAMED ABOVE HAS BEEN CLEARED. Updated 2026-08-02.**
 
+  > **CURRENT STATE — 2026-10-08, Robert's decision. Read this before anything below.**
+  > WhatsApp **automation** is advertised as **live**: owner alerts on every plan; reminders /
+  > confirmations and promotions on **Premium and Ultra** (site since the 2026-09-19 pricing
+  > correction; both CushLabs assistants since 2026-10-08). Meta bills the client directly for
+  > delivery; no message allowances. An **AI agent answering the client's customers on WhatsApp is
+  > NOT offered and NOT "coming"** — customer replies go to the owner, deliberately.
+  >
+  > The registry still marks client onboarding `robert_only` (`meta-connect-whatsapp-advanced-access`):
+  > no unrelated outside user has completed Embedded Signup unaided. Robert accepted that risk on
+  > 2026-10-08 (`commercial_decision_2026_10_08` on that registry entry): until the external-user
+  > acceptance test passes, **each WhatsApp client is onboarded by hand**, with Robert running Embedded
+  > Signup alongside them. Run the test with the first real WhatsApp client and flip the registry on
+  > pass. Do not re-introduce "not live" / "coming" wording for WhatsApp automation anywhere.
+  >
+  > The older text below is history. Its line "WhatsApp still may not be described as included,
+  > working, or available today" is **superseded** by this note.
+
   This entry previously grouped WhatsApp with Instagram as "held until Meta approves." **That is no
   longer accurate and had been inaccurate for eleven days.** The gate it named was satisfied on
   **2026-07-22**; this document was last reconciled **2026-07-08** and nobody carried the change
