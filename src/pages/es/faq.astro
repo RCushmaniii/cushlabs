@@ -5,83 +5,165 @@ import type { Locale } from "../../i18n";
 const locale: Locale = "es";
 
 const content = {
-  title: "Preguntas Frecuentes | CushLabs.ai",
-  description: "Obtén respuestas a preguntas comunes sobre consultoría de IA, tiempos de implementación, precios, seguridad de datos y trabajar con CushLabs.ai.",
+  title: "Preguntas: Planes, WhatsApp y Facturación | CushLabs.ai",
+  description: "Respuestas claras sobre planes y precios de CushLabs, automatización de WhatsApp, Instagram y Messenger, factura y CFDI, tiempos y de quién son tus cuentas.",
   heading: "Preguntas Frecuentes",
-  subheading: "Todo lo que necesitas saber sobre trabajar conmigo",
+  subheading: "Respuestas claras sobre lo que hacemos, lo que cuesta y lo que no hacemos",
+  // Cada respuesta repite algo ya publicado o canónico: PricingSection /
+  // PricingComparison y operating-system/cushlabs/commercial-terms.json.
+  // Se cambian primero esos y luego esta página. Reconstruida 2026-10-08,
+  // en paralelo con /faq/.
   categories: [
     {
-      name: "Precios y Proceso",
+      name: "Planes y precios",
       faqs: [
         {
-          question: "¿Cuánto cuesta? ¿Es accesible para PyMEs?",
-          answer: "Los planes comienzan en $1,990 MXN/mes (Básico) y llegan hasta $5,490 (Ultra), más IVA — puedes ver el desglose completo en la página de Precios. Todo es una suscripción mensual simple: sin cuotas de instalación, sin contratos y con prueba gratis de 1 semana. La llamada de descubrimiento es gratuita — te recomiendo el plan correcto antes de que te comprometas a nada."
+          question: "¿Cuánto cuesta?",
+          answer: "Tres planes mensuales, por negocio. En México y Latinoamérica: Básico $1,990, Premium $3,490 y Ultra $5,490 MXN al mes, más IVA. En Estados Unidos y Canadá: $129, $229 y $349 USD al mes. Todos los planes incluyen hasta 2 sucursales; cada sucursal adicional son +$690 MXN (+$49 USD) al mes. La comparación completa está en la página de Precios."
         },
         {
-          question: "¿Cuánto tiempo toma la implementación? ¿Necesitamos ingenieros?",
-          answer: "La mayoría de las configuraciones productizadas entran en vivo pocos días después de completar tu formulario; los desarrollos a la medida más complejos pueden tomar unas semanas. No necesitas ingenieros—solo un punto de contacto que hable inglés (líder de Ops/Ventas/TI) para coordinar. Yo manejo la construcción, integración, pruebas y entrega."
+          question: "¿Qué incluye cada plan?",
+          answer: "Básico: un asistente de IA en tu Facebook Messenger, 24/7; respuesta a tus reseñas de Google (tú apruebas la respuesta y se publica sola); cada prospecto capturado, con alerta al instante por WhatsApp para ti; todo administrado por nosotros. Premium agrega Instagram (el mismo asistente responde comentarios y da seguimiento por mensaje directo), un chatbot para tu sitio web, recordatorios, confirmaciones y promociones por WhatsApp desde tu propio número, y un reporte semanal de SEO local y competencia. Ultra agrega un Agente de Voz con IA que contesta tu teléfono (300 minutos contestados por sucursal al mes incluidos), soporte prioritario y ajuste al vocabulario de tu giro."
         },
         {
-          question: "¿Qué está incluido en un proyecto?",
-          answer: "Cada proyecto incluye: auditoría de conocimiento y estructura de fuentes, personalidad del asistente y reglas de tono, validación y rutas de transferencia humana, panel de análisis, despliegue consciente del rendimiento, y documentación completa con un manual operativo."
+          question: "¿Hay cuota de instalación, contrato o prueba gratis?",
+          answer: "Sin cuota de instalación y sin contrato — es mes a mes. Todos los planes empiezan con una prueba gratis de 1 semana, y la semana empieza cuando tu asistente entra en línea, no cuando firmas. Cancela cuando quieras: aplica al terminar el mes que ya pagaste, y no queda nada más por saldar."
+        },
+        {
+          question: "¿Puedo cambiar de plan después?",
+          answer: "Cuando quieras, hacia arriba o hacia abajo, sin penalización. Empieza en Básico, pásate a Premium cuando quieras Instagram, la automatización de WhatsApp y el chatbot web, y agrega el agente de voz de Ultra cuando estés listo. Los cambios aplican en el siguiente ciclo de facturación."
+        },
+        {
+          question: "¿Qué significa \"conversaciones ilimitadas (uso justo)\"?",
+          answer: "No medimos ni te cobramos por mensaje — atiende a todos los clientes que quieras. El \"uso justo\" es solo una protección contra el abuso automatizado; un negocio normal nunca se acerca al límite. Si algún día tu volumen crece a escala empresarial, te buscamos y definimos juntos la configuración correcta — sin cargos sorpresa."
         },
       ]
     },
     {
-      name: "Calidad y Seguridad",
+      name: "Automatización de WhatsApp",
       faqs: [
         {
-          question: "¿Qué pasa si la IA da respuestas incorrectas y daña nuestra reputación?",
-          answer: "Construyo con validación y atribución de fuentes. Cada respuesta está basada en tus fuentes de conocimiento aprobadas, y el sistema transfiere a un humano cuando hay incertidumbre. Sin código espagueti—solo sistemas probados y de grado de producción."
+          question: "¿Trabajan con WhatsApp?",
+          answer: "Sí — automatización de WhatsApp, de tres formas, y lo que las separa es la dirección del mensaje. (1) Alertas al dueño: nosotros TE escribimos en cuanto una conversación muestra intención real de compra — activo en todos los planes. (2) Recordatorios y confirmaciones: recordatorios de cita, confirmaciones y avisos de pedido que tu negocio envía a clientes que lo autorizaron — activo en Premium y Ultra. (3) Promociones: mensajes de marketing a tu lista con consentimiento — activo en Premium y Ultra. En corto: la 1 te avisa, la 2 les recuerda, la 3 les promociona."
         },
         {
-          question: "¿Cómo manejas la seguridad de datos y privacidad?",
-          answer: "Diseño consciente de la privacidad con controles de acceso de mínimo privilegio, registros de auditoría y límites claros de datos. Tus documentos internos permanecen privados. Documento el manejo de datos antes del lanzamiento y aplico la disciplina de TI empresarial que traigo del liderazgo de TI Fortune 500 en Praxair/Linde: más de 100 iniciativas tecnológicas globales para 26,000 empleados en 42 países."
+          question: "¿Su IA puede contestarles a mis clientes por WhatsApp?",
+          answer: "No, y es a propósito. Cuando tus clientes responden por WhatsApp, la respuesta te llega a ti, no a un bot — un número que molesta a la gente es un número que Meta puede restringir, y en WhatsApp tus clientes esperan a una persona. La IA contesta en Facebook Messenger, Instagram y tu sitio web; en WhatsApp automatizamos lo que tu negocio envía y te avisamos en cuanto alguien está listo para hablar."
         },
         {
-          question: "¿Esto ralentizará nuestro sitio web o afectará el SEO?",
-          answer: "No. Diseño despliegues conscientes del rendimiento que respetan la velocidad del sitio y el SEO. Enfoque de huella mínima—sin embeds pesados que maten conversiones. Valido la velocidad de página y ofrezco páginas dedicadas si un embed sería muy pesado."
+          question: "En WhatsApp, ¿quién me cobra qué?",
+          answer: "Son dos cobros distintos y nunca se enciman. Nosotros te cobramos la mensualidad, que cubre la configuración, la redacción de tus plantillas y su aprobación con Meta, las campañas y los reportes. Meta te cobra directo cada mensaje que tu negocio envía — en tu propia cuenta, a la tarifa que Meta publica. Los mensajes que tus clientes te envían son gratis. Somos Tech Provider de Meta, así que nos pagas por la automatización, no por tu volumen de mensajes, y nunca le agregamos nada a la tarifa de Meta."
+        },
+        {
+          question: "¿Cuánto me cuesta mandarles una promoción a mis clientes?",
+          answer: "Nada extra de nuestra parte. Redactarla, conseguir que Meta apruebe la plantilla y enviarla ya vienen en tu plan, igual que tus recordatorios de cita. El único costo es el de Meta por entregar cada mensaje, en tu propia cuenta de WhatsApp y a la tarifa que Meta publica — los mensajes promocionales cuestan más por mensaje que los recordatorios. La cuenta está a nombre de tu negocio, así que puedes ver exactamente cuánto cobró Meta."
+        },
+        {
+          question: "¿Por qué importa cómo se clasifican mis plantillas de WhatsApp?",
+          answer: "Porque Meta cobra alrededor de 3.5 veces más por una plantilla de marketing que por una de utilidad, y Meta decide cuál es cuál según el contenido del mensaje, no según la etiqueta que le pongas. Basta una línea promocional en un recordatorio de cita para que toda la plantilla se cobre como marketing. Redactar tus plantillas para que de verdad califiquen como utilidad, dejar la promoción en su propio mensaje y vigilar una reclasificación es parte de lo que hacemos. No disfrazamos marketing de utilidad — la cuenta que Meta restringiría sería la tuya."
+        },
+        {
+          question: "¿Puedo mandarle mensajes a cualquiera, o a una lista comprada?",
+          answer: "Solo listas con consentimiento. Los recordatorios van a clientes que lo autorizaron y las promociones a personas que aceptaron saber de ti. No trabajamos con listas compradas — eso protege la reputación de tu número tanto como la nuestra."
+        },
+        {
+          question: "¿Puedo agregar un segundo número de WhatsApp?",
+          answer: "Sí: un número de WhatsApp adicional son +$690 MXN (+$49 USD) al mes, porque cada número carga con su propio registro, sus plantillas y su calificación de calidad."
         },
       ]
     },
     {
-      name: "Trabajando Juntos",
+      name: "Facebook, Instagram, sitio web, reseñas y teléfono",
       faqs: [
         {
-          question: "¿Con quién estaré trabajando?",
-          answer: "Trabajas directamente conmigo—Robert Cushman. No soy una agencia grande con gerentes de cuenta y traspasos. Hago el descubrimiento, desarrollo, gestión de proyecto, y soy personalmente responsable del éxito de tu proyecto. Comunicación directa, sin intermediarios."
+          question: "No tengo sitio web. ¿Esto es para mí?",
+          answer: "Sí. Para muchos negocios la página de Facebook es su tienda, y ahí es justo donde trabaja el asistente: contesta Messenger 24/7, captura al prospecto y te avisa por WhatsApp cuando alguien está listo para comprar. No necesitas sitio web, Meta Business Suite ni ninguna app nueva."
         },
         {
-          question: "¿Trabajas con empresas en México?",
-          answer: "Sí. Soy totalmente bilingüe (inglés/español) y sirvo a clientes tanto en EE.UU. como en México. Las salidas de tu asistente son totalmente bilingües, y ofrezco horarios flexibles para ambas zonas horarias."
+          question: "¿Qué planes incluyen Instagram?",
+          answer: "Premium y Ultra. El mismo asistente que contesta en Messenger responde en público los comentarios de tus publicaciones de Instagram y luego da seguimiento por mensaje directo."
         },
         {
-          question: "No tenemos a nadie que hable inglés fluido. ¿Puedes trabajar con equipos solo de español?",
-          answer: "La entrega del proyecto se hace en inglés para velocidad y claridad, pero las salidas de tu asistente son totalmente bilingües (EN/ES). Si no tienes un campeón que hable inglés, ofrezco un complemento de socio bilingüe para facilitar la coordinación. De cualquier manera, tus clientes reciben soporte profesional en español."
+          question: "¿Cómo me entero de un nuevo prospecto?",
+          answer: "En cuanto un prospecto está listo — o una conversación necesita a una persona — recibes una alerta al instante por WhatsApp, además de correo y un aviso dentro de Messenger. Incluido en todos los planes."
+        },
+        {
+          question: "¿Cómo funcionan las reseñas de Google?",
+          answer: "Leemos tus reseñas directamente de Google, así que una nueva aparece en cuestión de horas, no días. Redactamos una respuesta, tú la apruebas y se publica de vuelta en Google automáticamente. Las recomendaciones de Facebook, TripAdvisor y otros sitios de reseñas no los atendemos hoy — Google es el que mueve la búsqueda local."
+        },
+        {
+          question: "¿Qué pasa si me paso de los 300 minutos de voz en Ultra?",
+          answer: "Nada se detiene — el agente sigue contestando. Los minutos contestados extra se cobran a $8.50 MXN ($0.59 USD) por minuto, y te avisamos conforme te acercas a los 300 incluidos para que no haya sorpresas."
+        },
+        {
+          question: "¿No puedo usar ChatGPT o armar un chatbot yo mismo?",
+          answer: "Puedes, y entonces el que lo opera eres tú. Con nosotros está todo administrado: el asistente solo responde con información que tú aprobaste, pasa la conversación a una persona cuando no sabe, te avisa por WhatsApp cuando un prospecto está listo, y alguien con nombre lo corrige cuando hace falta. Nunca tienes que aprender ni operar el software."
         },
       ]
     },
     {
-      name: "Alternativas y Comparaciones",
+      name: "Pagos y facturación",
       faqs: [
         {
-          question: "¿No podemos simplemente usar ChatGPT, Intercom, Zendesk, o contratar un freelancer?",
-          answer: "Las herramientas genéricas no validan respuestas contra tu base de conocimiento, no proporcionan control de tono bilingüe, ni se conectan a resultados de negocio. Los freelancers rara vez entregan sistemas con pruebas, monitoreo y ciclos de iteración. Yo entrego sistemas de resultados—no demos."
+          question: "¿Cómo pago?",
+          answer: "Mes a mes, por adelantado, por transferencia bancaria o PayPal. El pago con tarjeta todavía no está disponible."
         },
         {
-          question: "¿Qué te hace diferente de otros consultores de IA?",
-          answer: "Metodología de descubrimiento primero (no empiezo con herramientas, empiezo con tu problema de negocio), ingeniería de grado de producción (no solo demos), sistemas de resultados atados a KPIs de negocio, listo para cruces fronterizos para mercados de EE.UU./México, y disciplina empresarial con velocidad de solista."
+          question: "¿Los precios incluyen IVA? ¿Me dan factura (CFDI)?",
+          answer: "En México los precios son más IVA, como cualquier servicio empresarial, y cada pago incluye tu factura (CFDI) con el IVA desglosado, así que es deducible. Los clientes fuera de México no reciben CFDI (es un comprobante fiscal mexicano); en su lugar reciben una factura comercial desglosada."
         },
         {
-          question: "¿Qué pasa si no funciona o no estamos satisfechos?",
-          answer: "Probamos extensivamente antes del lanzamiento. Si algo no está funcionando, lo optimizo durante la ventana de soporte de 30 días incluida en cada proyecto. Mi objetivo son sistemas que entreguen ROI medible—típicamente dentro de 60-90 días del lanzamiento."
+          question: "¿Por qué los precios en dólares no son una conversión de los precios en pesos?",
+          answer: "Porque son dos listas de precios distintas: MXN para México y Latinoamérica, USD para Estados Unidos y Canadá. Cada una se fija por separado, así que el precio que ves no se mueve con el tipo de cambio."
+        },
+      ]
+    },
+    {
+      name: "Configuración y propiedad",
+      faqs: [
+        {
+          question: "¿Cuánto tarda la configuración?",
+          answer: "Las configuraciones simples se lanzan en días; las integraciones más complejas suelen tomar de 2 a 6 semanas. Tu semana gratis empieza hasta que tu asistente está en línea."
+        },
+        {
+          question: "¿De quién son mi página de Facebook, mi número de WhatsApp y mi perfil de Google?",
+          answer: "Tuyos, siempre. Trabajamos como colaboradores en cuentas que quedan a tu nombre — nunca tomamos la propiedad de una página, un número, un perfil ni un dominio. Tu cuenta de WhatsApp Business se abre a tu nombre y con tu propio método de pago, y si algún día te vas, el número y cada plantilla que Meta aprobó se van contigo. También te entregamos tu base de conocimiento: tu información, tu tono, tus preguntas frecuentes."
+        },
+        {
+          question: "¿Qué cuenta como una \"sucursal\"?",
+          answer: "Una dirección física del negocio — un local, clínica u oficina con su propio perfil de Google. Todos los planes incluyen hasta dos; después son +$690 MXN (+$49 USD) por sucursal al mes, en cualquier nivel."
+        },
+        {
+          question: "Tengo dos sitios web del mismo negocio. ¿Eso cuesta extra?",
+          answer: "Un plan cubre una marca y una base de conocimiento. Premium incluye un sitio web y Ultra incluye dos. Una superficie adicional de la misma marca — otro sitio, otra cuenta de Instagram, otra página — son +$490 MXN (+$35 USD) al mes. Una marca realmente distinta, con información distinta, es un plan aparte, y te lo decimos desde el principio."
+        },
+      ]
+    },
+    {
+      name: "Calidad, privacidad y cómo trabajamos",
+      faqs: [
+        {
+          question: "¿Y si el asistente contesta algo mal?",
+          answer: "Nos avisas y lo corregimos el mismo día — con una persona con nombre y apellido que responde por ello, no un centro de soporte anónimo. No vamos a prometer cero errores; quien lo promete no ha operado uno de estos en producción. El asistente solo responde con información que tú aprobaste, y cuando no sabe algo lo dice y pasa la conversación a una persona en lugar de inventar una respuesta."
+        },
+        {
+          question: "¿Qué pasa con las conversaciones de mis clientes?",
+          answer: "Se usan para atender a tu negocio y para nada más. Nunca se venden ni entrenan nada para otro cliente."
+        },
+        {
+          question: "¿El asistente habla español e inglés?",
+          answer: "Sí. Tu asistente contesta en los dos idiomas, y se revisa en ambos antes de entrar en línea."
+        },
+        {
+          question: "¿Con quién voy a trabajar?",
+          answer: "Directamente con Robert Cushman — no con una agencia de ejecutivos de cuenta y traspasos. Robert ocupó puestos de liderazgo de TI en Praxair/Linde, una empresa Fortune 500: más de 100 iniciativas tecnológicas globales para 26,000 empleados en 42 países. Vive en Guadalajara y trabaja con negocios en México, Estados Unidos y Latinoamérica."
         },
       ]
     },
   ],
   cta: {
     heading: "¿Aún tienes preguntas?",
-    text: "Agenda una llamada gratuita de 30 minutos. Sin compromiso, sin presión—solo respuestas honestas sobre si puedo ayudar.",
+    text: "Agenda una llamada gratuita de 30 minutos. Sin compromiso, sin presión — solo respuestas honestas sobre si podemos ayudarte.",
     button: "Agenda una Llamada Gratis de 30 Min",
     href: "/es/reservar/"
   }
