@@ -68,7 +68,7 @@ const copy: Record<
     groups: Group[];
     faqHeading: string;
     faqSub: string;
-    faqs: { q: string; a: string }[];
+    faqs: { q: string; a: string | CurPair }[];
   }
 > = {
   en: {
@@ -314,8 +314,12 @@ const copy: Record<
         a: "Correct — no setup fee, no contract, month-to-month, cancel anytime. The 1-week free trial starts when your assistant actually goes live, not when you sign, so the week you get is a week of it working. Cancel and it's effective at the end of the period you've paid for.",
       },
       {
-        q: "Do prices include IVA?",
-        a: "MXN prices are plus IVA, like any business service in Mexico. Every payment comes with a CFDI invoice with the IVA itemized, so it's deductible and your accounting stays clean from day one.",
+        // By market: a USD reader gets the US answer, never a CFDI they won't receive.
+        q: "Are taxes included, and what invoice do I get?",
+        a: {
+          mxn: "MXN prices are plus IVA, like any business service in Mexico. Every payment comes with a CFDI invoice with the IVA itemized, so it's deductible and your accounting stays clean from day one.",
+          usd: "You get an itemized commercial invoice with every payment — services, amount and payment terms, ready for your bookkeeping. Any applicable taxes are set out in your service agreement.",
+        },
       },
       {
         q: "What does it cost to send a promotion to my customers?",
@@ -574,8 +578,11 @@ const copy: Record<
         a: "Así es — sin cuota de instalación, sin contrato, mes a mes, cancela cuando quieras. La prueba gratis de 1 semana empieza cuando tu asistente entra en línea, no cuando firmas, para que la semana que recibas sea una semana de verlo funcionando. Si cancelas, aplica al final del periodo que ya pagaste.",
       },
       {
-        q: "¿Los precios incluyen IVA?",
-        a: "Los precios en MXN son más IVA, como cualquier servicio empresarial en México. Cada pago incluye tu factura (CFDI) con el IVA desglosado, así que es deducible y tu contabilidad queda en orden desde el primer día.",
+        q: "¿Los precios incluyen impuestos y qué factura recibo?",
+        a: {
+          mxn: "Los precios en MXN son más IVA, como cualquier servicio empresarial en México. Cada pago incluye tu factura (CFDI) con el IVA desglosado, así que es deducible y tu contabilidad queda en orden desde el primer día.",
+          usd: "Recibes una factura comercial desglosada con cada pago — servicios, monto y condiciones de pago, lista para tu contabilidad. Los impuestos que apliquen se definen en tu contrato de servicio.",
+        },
       },
       {
         q: "¿Cuánto me cuesta mandarles una promoción a mis clientes?",
@@ -860,7 +867,14 @@ const t = copy[locale];
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v14M5 12h14" />
                 </svg>
               </summary>
-              <p class="pb-5 -mt-1 text-gray-600 dark:text-gray-300 leading-relaxed">{faq.a}</p>
+              <p class="pb-5 -mt-1 text-gray-600 dark:text-gray-300 leading-relaxed">
+                {typeof faq.a === "string" ? faq.a : (
+                  <>
+                    <span data-cur="mxn">{faq.a.mxn}</span>
+                    <span data-cur="usd" class="hidden">{faq.a.usd}</span>
+                  </>
+                )}
+              </p>
             </details>
           ))
         }
