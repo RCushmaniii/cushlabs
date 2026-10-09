@@ -8,7 +8,7 @@ const content = {
   en: {
     meta: {
       title: "About — Why Businesses Trust CushLabs.ai",
-      description: "A senior IT background, 500+ professional connections, and a track record of AI solutions that work. See why small businesses choose CushLabs.",
+      description: "Fortune 500 IT leadership at Praxair/Linde, now building AI assistants for small businesses from Guadalajara. See how I work and why owners choose CushLabs.",
     },
     hero: {
       badge: "Why CushLabs",
@@ -24,10 +24,13 @@ const content = {
     trust: {
       title: "Built on Experience, Not Hype",
       stats: [
-        { value: "AI-native", label: "Enterprise IT roots", sublabel: "Developer → Manager → Consultant" },
-        { value: "500+", label: "LinkedIn Connections", sublabel: "Established IT Network" },
-        { value: "100%", label: "Bilingual", sublabel: "English & Spanish" },
-        { value: "2", label: "Markets Served", sublabel: "US & Mexico" },
+        // Approved facts only (claims-policy.json → claims_ladder level 1 + biographical_facts).
+        // Replaced 2026-10-09: "AI-native", "500+ LinkedIn Connections", "100% Bilingual" (bilingual
+        // describes the product, never Robert) and "2 Markets" were unverifiable or off-policy.
+        { value: "100+", label: "Global technology initiatives", sublabel: "Fortune 500 IT leadership, Praxair/Linde" },
+        { value: "26,000", label: "Employees supported", sublabel: "Across 42 countries, Praxair/Linde" },
+        { value: "Guadalajara", label: "Where I'm based", sublabel: "Serving Mexico, the US & LatAm" },
+        { value: "EN + ES", label: "Assistants tested in both", sublabel: "Spanish and English" },
       ],
     },
     problem: {
@@ -58,8 +61,8 @@ const content = {
           description: "Simple setups go live in days; more complex integrations typically take 2–6 weeks. You'll see working software quickly — not months of planning and meetings.",
         },
         {
-          title: "You Own Everything",
-          description: "Full documentation, clean code, no vendor lock-in. If we part ways, you keep everything I built.",
+          title: "Your Accounts Stay Yours",
+          description: "Your accounts, phone number, customer data, and documentation stay in your name, not inside an account I control. If we part ways, they go with you.",
         },
       ],
     },
@@ -77,7 +80,7 @@ const content = {
         "A small business owner tired of repetitive tasks eating up your week",
         "A founder who wants AI working for you, not another tool to manage",
         "An operations lead looking to cut support volume without hiring",
-        "A team in the US or Mexico who values bilingual communication",
+        "A business in the US or Mexico whose customers write in Spanish and English",
         "Someone who wants straight talk, not tech jargon",
       ],
       notFor: "Not a fit? If you need enterprise-scale infrastructure, a large development team, or cutting-edge AI research — I'll happily refer you to someone better suited.",
@@ -92,7 +95,7 @@ const content = {
   es: {
     meta: {
       title: "Acerca — Por Qué las Empresas Confían en CushLabs.ai",
-      description: "Una sólida trayectoria en TI, 500+ conexiones profesionales y soluciones de IA que realmente funcionan. Descubre por qué los negocios eligen CushLabs.",
+      description: "Liderazgo de TI en Fortune 500 (Praxair/Linde), ahora creando asistentes con IA para pequeños negocios desde Guadalajara. Conoce cómo trabajo con cada negocio.",
     },
     hero: {
       badge: "Por Qué CushLabs",
@@ -108,10 +111,10 @@ const content = {
     trust: {
       title: "Construido sobre Experiencia, No Promesas",
       stats: [
-        { value: "Nativo en IA", label: "Raíces en TI empresarial", sublabel: "Desarrollador → Gerente → Consultor" },
-        { value: "500+", label: "Conexiones en LinkedIn", sublabel: "Red Establecida en TI" },
-        { value: "100%", label: "Bilingüe", sublabel: "Inglés y Español" },
-        { value: "2", label: "Mercados Atendidos", sublabel: "EE.UU. y México" },
+        { value: "100+", label: "Iniciativas globales de tecnología", sublabel: "Liderazgo de TI en Fortune 500, Praxair/Linde" },
+        { value: "26,000", label: "Empleados atendidos", sublabel: "En 42 países, Praxair/Linde" },
+        { value: "Guadalajara", label: "Donde estoy", sublabel: "Atiendo México, EE.UU. y LatAm" },
+        { value: "ES + EN", label: "Asistentes probados en ambos", sublabel: "Español e inglés" },
       ],
     },
     problem: {
@@ -142,8 +145,8 @@ const content = {
           description: "Las configuraciones simples se lanzan en días; las integraciones más complejas suelen tomar de 2 a 6 semanas. Verás software funcionando rápidamente — no meses de planeación y reuniones.",
         },
         {
-          title: "Tú Eres Dueño de Todo",
-          description: "Documentación completa, código limpio, sin dependencia de proveedor. Si nos separamos, te quedas con todo lo que construí.",
+          title: "Tus Cuentas Siguen Siendo Tuyas",
+          description: "Tus cuentas, tu número de teléfono, los datos de tus clientes y la documentación quedan a tu nombre, no dentro de una cuenta que yo controlo. Si nos separamos, se van contigo.",
         },
       ],
     },
@@ -161,7 +164,7 @@ const content = {
         "Un dueño de pequeño negocio cansado de tareas repetitivas que consumen tu semana",
         "Un fundador que quiere IA trabajando para ti, no otra herramienta que administrar",
         "Un líder de operaciones buscando reducir volumen de soporte sin contratar",
-        "Un equipo en EE.UU. o México que valora la comunicación bilingüe",
+        "Un negocio en EE.UU. o México cuyos clientes escriben en español y en inglés",
         "Alguien que quiere hablar directo, no jerga técnica",
       ],
       notFor: "¿No es para ti? Si necesitas infraestructura a escala empresarial, un gran equipo de desarrollo, o investigación de IA de vanguardia — con gusto te refiero a alguien mejor preparado.",
@@ -256,7 +259,7 @@ const t = content[locale];
       <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
         {t.trust.stats.map((stat) => (
           <div class="text-center">
-            <div class="font-display text-4xl md:text-5xl font-bold text-accent-text mb-2">{stat.value}</div>
+            <div class:list={["font-display font-bold text-accent-text mb-2", stat.value.length > 7 ? "text-2xl md:text-4xl leading-[2.5rem] md:leading-[3rem]" : "text-4xl md:text-5xl"]}>{stat.value}</div>
             <div class="font-display font-semibold text-gray-900 dark:text-white">{stat.label}</div>
             <div class="text-sm text-gray-500 dark:text-gray-400">{stat.sublabel}</div>
           </div>

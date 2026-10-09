@@ -2,6 +2,7 @@
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import Container from "../../../components/layout/Container.astro";
 import FinalCTA from "../../../components/services2/FinalCTA.astro";
+import RelatedReading from "../../../components/blog/RelatedReading.astro";
 
 const locale = "es" as const;
 
@@ -38,7 +39,7 @@ const included = [
   { title: "Respuestas a comentarios en publicaciones y Reels", desc: "Contestados en segundos, con tu voz, en el idioma en que te escribieron" },
   { title: "Seguimiento por mensaje directo", desc: "Lleva la respuesta de verdad — precio, disponibilidad, siguiente paso — fuera del muro público y a una conversación privada" },
   { title: "También contesta tus mensajes directos", desc: "No solo comentarios. Quien te escriba directo a la cuenta recibe al mismo asistente" },
-  { title: "Hecho con tu negocio", desc: "Tus productos, precios, horarios y políticas. Responde con lo que realmente vendes, y no se inventa un precio" },
+  { title: "Hecho con tu negocio", desc: "Tus productos, precios, horarios y políticas. Contesta solo con la información que tú apruebas, y cuando no está seguro te pasa al cliente a ti" },
   { title: "Bilingüe (EN/ES)", desc: "Cambia solo, según el idioma en que te escriba el cliente — no hay nada que configurar" },
   { title: "Transferencia a una persona", desc: "Te pasa la conversación completa cuando de verdad se necesita un humano" },
   { title: "Es el mismo asistente que ya tienes", desc: "Un solo cerebro en Messenger, Instagram y tu sitio web. Lo actualizas una vez y cambia en todos lados" },
@@ -251,6 +252,9 @@ const bestFor = [
     </Container>
   </section>
 
+  <RelatedReading locale="es" links={[
+    { href: "/es/blog/asistente-ia-boutiques-chapalita-guadalajara/", title: "Tu boutique en Chapalita no se detiene. Tus respuestas tampoco deberían", blurb: "Cómo una boutique en Chapalita contesta a sus clientes en Instagram y Messenger sin contratar a nadie." },
+  ]} />
   <FinalCTA locale={locale} />
 </BaseLayout>
 

@@ -8,12 +8,12 @@ const locale = "en" as const;
 const included = [
   { title: "Custom voice and personality", desc: "Natural-sounding voice matched to your brand — professional, warm, bilingual. Not a robotic IVR menu" },
   { title: "Knows your business", desc: "Answers from your services, pricing, hours, locations, and FAQs — gives accurate answers, not generic scripts" },
-  { title: "Appointment booking", desc: "Books directly into your calendar (Google Calendar, Calendly, or your booking system)" },
+  { title: "Appointment booking", desc: "Books directly into your Google Calendar. On a different booking system, it takes the caller's details so you can confirm" },
   { title: "Lead capture and routing", desc: "Captures caller name, number, intent, and urgency — texts you a summary instantly" },
   { title: "Call transfer with context", desc: "When a call needs you, it transfers with a brief of what the caller wants — no cold handoffs" },
   { title: "Bilingual (EN/ES)", desc: "Handles calls in English and Spanish, switching naturally based on the caller" },
   { title: "Monthly call report", desc: "Volume, top questions, bookings made, missed-call recovery stats" },
-  { title: "Up to 300 answered minutes included", desc: "Overage at $0.59 USD/min ($8.50 MXN in Mexico). Most small businesses use 150–250 minutes/month" },
+  { title: "Up to 300 answered minutes included", desc: "Overage at $0.59 USD/min ($8.50 MXN in Mexico). I'll alert you before you get close to the cap" },
 ];
 
 const notIncluded = [
@@ -54,7 +54,7 @@ const bestFor = [
         </h1>
 
         <p class="va-sub">
-          A 24/7 AI voice agent that answers your business phone with a natural, conversational voice — books appointments, captures leads, and never sends a caller to voicemail.
+          A 24/7 AI voice agent that answers your business phone with a natural, conversational voice — books appointments, captures leads, and picks up when you can't.
         </p>
 
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -153,7 +153,7 @@ const bestFor = [
                 { title: "You stop losing after-hours leads.", body: "A caller at 9 PM gets a real conversation — answers, a booking, a callback request — not your voicemail greeting." },
                 { title: "You stop answering the same questions.", body: "Hours, pricing, services, directions — your agent handles all of it. You only hear from callers when they're ready to book or buy." },
                 { title: "It speaks their language.", body: "Spanish-speaking caller? Spanish. English? English. Automatic detection, fluent both ways, every call." },
-                { title: "It books appointments while you work.", body: "Direct to your Google Calendar, Calendly, or booking system. The customer hangs up with a confirmed time. You see the entry on your phone." },
+                { title: "It books appointments while you work.", body: "Direct to your Google Calendar. The customer hangs up with a confirmed time, and you see the entry on your phone. On a different booking system, it takes their details so you can confirm." },
                 { title: "It knows when to get you.", body: "When a call genuinely needs you, it transfers with a brief — what they want, what's been discussed, what they need to hear next. No cold handoffs." },
               ].map(item => (
                 <div class="flex gap-4">

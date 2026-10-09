@@ -2,12 +2,18 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import IndustryMessengerDemo from "../components/demos/IndustryMessengerDemo.astro";
 import LiveDemoStrip from "../components/demos/LiveDemoStrip.astro";
+import RelatedReading from "../components/blog/RelatedReading.astro";
 ---
 
 <BaseLayout
   title="See a Messenger AI Demo for Your Business | CushLabs.ai"
-  description="Pick your industry and watch a CushLabs AI assistant answer customers and book sales right inside Facebook Messenger — bilingual, 24/7."
+  description="Pick your industry and watch a CushLabs AI assistant answer customers and capture leads right inside Facebook Messenger — bilingual, 24/7."
 >
   <LiveDemoStrip locale="en" />
   <IndustryMessengerDemo locale="en" />
+  <RelatedReading locale="en" links={[
+    { href: "/blog/ai-assistant-chapalita-boutiques-guadalajara/", title: "Your Chapalita boutique doesn't stop. Your answers shouldn't either", blurb: "How a boutique in Chapalita answers customers on Instagram and Messenger without hiring anyone." },
+    { href: "/blog/ai-assistant-dental-clinics-zapopan/", title: "It's 8:40 PM and someone's asking about your Zapopan clinic's hours", blurb: "How a dental clinic in Zapopan stops losing patients to unanswered after-hours messages." },
+    { href: "/blog/ai-assistant-santa-teresita-guadalajara/", title: "Santa Tere: when the whole business lives in the owner's head", blurb: "How a neighborhood business in Santa Teresita answers its customers without hiring anyone." },
+  ]} />
 </BaseLayout>
