@@ -916,6 +916,16 @@ cost question the WhatsApp demo-swap decision has been waiting on.
 
 ## Session History
 
+## Session: 2026-10-09/10 — Reviews article, demos page rebuilt, "in seconds", agendar, Meta trademark line
+
+- **Blog:** "How to reply to Google reviews" EN + ES (#384); Robert's EN/ES hero photos, illustration moved mid-article; sitemap re-submitted via the GSC API (sitemaps only — the Indexing API is for job postings, never use it for pages).
+- **Copy decisions (Robert):** homepage hero keeps "10 p.m." everywhere (#387); competitor report is a **weekly email**, no immediate competitor alerts (#386, #390, services card `30d3998`); replies/alerts arrive **"in seconds"**, never "instantly", and no "every lead captured" (#389); booking wording on client-facing pages = "captures their details, sends your booking link, alerts you on WhatsApp" (kept on 2026-10-09; WhatsApp booking does work for CushLabs' own consultations).
+- **Spanish vocabulary:** "agendar" for calls/appointments (natural Mexican usage, Diccionario de americanismos); "reservar" only for restaurant tables/hotel rooms; "apartar" for holding products. The `/es/reservar/` URL stays (shared links, WhatsApp templates, Google).
+- **/demos/:** cards = picture + name + one line + one button (#388, #390, #391) with Robert's EN/ES screenshots, bottom fade, phone height cap; NY English is Robert's own business — never a "client". Pass 2 (#392): Messenger logo and blue bubbles removed from the illustrated phone (neutral chat), single h1, unsourced stats softened ("70%" → "Many questions repeat"), **Meta trademark line in the footer of every page**.
+- **Fast path for wording-only edits** (Robert): local build, commit straight to main, CI after. Code/prices/layout keep the PR path.
+- **Bots:** CushLabs Messenger bot — bullet opener, sales-conversation style, booking link inline (no extra bubble, per-tenant flag), "en segundos", "agendar", weekly-email competitor answer (bot PRs #528–#536). Converso widget — chips send on tap (#118) and website ingest (#116). Messenger bot website ingest runs daily with `CLOUDFLARE_INGEST_TOKEN` (verified scheduled run 2026-10-10).
+- **Open:** Meta logo usages elsewhere on the site (list in PR #392's report: connect pages' Facebook button, messenger-assistant demo buttons, WhatsApp buttons, ES Facebook-storefront blog hero, messenger hero image); voice card could use an in-call screenshot; About page revision in progress.
+
 ## Session: 2026-10-09 — Marketing batch: risky claims out, new homepage hero, blog internal links, Messenger demo tracking
 
 **Branch:** `feat/marketing-batch-2026-10-09` (PR open, not merged — Robert reviews).
