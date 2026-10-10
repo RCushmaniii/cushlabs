@@ -20,7 +20,7 @@ const content = {
         { label: "WhatsApp Reminders", href: "/services/whatsapp/" },
         { label: "Local SEO & Competitor Report", href: "/services/competitive-intelligence/" },
         { label: "AI Voice Agent", href: "/services/voice-agent/" },
-        { label: "Recepción Digital", href: "/pricing/" },
+        { label: "Digital Reception", href: "/pricing/" },
         { label: "Pricing", href: "/pricing/" },
       ],
     },
@@ -31,7 +31,7 @@ const content = {
         { label: "Blog", href: "/blog/" },
         { label: "Portfolio", href: "/portfolio/" },
         { label: "Industry Demos", href: "/demos/" },
-        { label: "Watch", href: "/video/" },
+        { label: "Video demos", href: "/video/" },
         { label: "Contact", href: "/contact/" },
       ],
     },
@@ -58,6 +58,7 @@ const content = {
     },
     copyrightPrefix: `© ${new Date().getFullYear()}`,
     copyrightSuffix: "All rights reserved.",
+    trademarks: "Facebook, Messenger, Instagram and WhatsApp are trademarks of Meta Platforms, Inc. CushLabs is an independent provider and is not affiliated with or endorsed by Meta.",
   },
   es: {
     tagline: "Chatbots de IA, agentes de voz y automatización de procesos para equipos de pequeñas empresas en EE.UU. y México. Bilingüe EN/ES. Las configuraciones simples se lanzan en días.",
@@ -82,7 +83,7 @@ const content = {
         { label: "Blog", href: "/es/blog/" },
         { label: "Portafolio", href: "/es/portfolio/" },
         { label: "Demos por Industria", href: "/es/demos/" },
-        { label: "Ver Video", href: "/es/video/" },
+        { label: "Videos", href: "/es/video/" },
         { label: "Contacto", href: "/es/contact/" },
       ],
     },
@@ -109,6 +110,7 @@ const content = {
     },
     copyrightPrefix: `© ${new Date().getFullYear()}`,
     copyrightSuffix: "Todos los derechos reservados.",
+    trademarks: "Facebook, Messenger, Instagram y WhatsApp son marcas de Meta Platforms, Inc. CushLabs es un proveedor independiente, sin afiliación ni respaldo de Meta.",
   },
 };
 
@@ -245,9 +247,14 @@ const t = content[locale];
 
     <!-- Bottom Bar -->
     <div class="mt-12 pt-8 border-t border-gray-200 dark:border-gray-800 flex flex-col sm:flex-row justify-between items-center gap-4">
-      <p class="text-sm text-gray-500 dark:text-gray-400">
-        {t.copyrightPrefix} <a href="https://www.cushlabs.ai" class="hover:text-accent-text transition-colors">CushLabs.ai</a> {t.copyrightSuffix}
-      </p>
+      <div class="text-center sm:text-left">
+        <p class="text-sm text-gray-500 dark:text-gray-400">
+          {t.copyrightPrefix} <a href="https://www.cushlabs.ai" class="hover:text-accent-text transition-colors">CushLabs.ai</a> {t.copyrightSuffix}
+        </p>
+        {/* Meta trademark attribution — every page shows Meta product names, so every
+            page carries it. LandingLayout (/salons, /salones) repeats the same line. */}
+        <p class="mt-1 max-w-2xl text-xs leading-relaxed text-gray-500 dark:text-gray-400">{t.trademarks}</p>
+      </div>
       <div class="flex items-center gap-4">
         <!-- Facebook -->
         <a

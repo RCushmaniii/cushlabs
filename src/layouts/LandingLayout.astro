@@ -150,6 +150,12 @@ const privacyLabel = isEn ? "Privacy Policy" : "Aviso de privacidad";
       class="relative z-10 border-t border-gray-100 dark:border-gray-800 py-8 text-center text-sm text-gray-500 dark:text-gray-500"
     >
       <p>© 2026 CushLabs AI Services · Guadalajara, {isEn ? "Mexico" : "México"}</p>
+      {/* Same Meta trademark line as the global Footer.astro — keep the two in sync. */}
+      <p class="mx-auto mt-1 max-w-2xl px-4 text-xs leading-relaxed">
+        {isEn
+          ? "Facebook, Messenger, Instagram and WhatsApp are trademarks of Meta Platforms, Inc. CushLabs is an independent provider and is not affiliated with or endorsed by Meta."
+          : "Facebook, Messenger, Instagram y WhatsApp son marcas de Meta Platforms, Inc. CushLabs es un proveedor independiente, sin afiliación ni respaldo de Meta."}
+      </p>
       <p class="mt-1">
         <a href={privacyHref} class="hover:text-accent-text underline underline-offset-4"
           >{privacyLabel}</a

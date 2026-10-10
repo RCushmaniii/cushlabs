@@ -25,18 +25,17 @@ const { locale } = Astro.props;
 
 const STRINGS = {
   en: {
-    brandSub: "Sales demo",
     h1a: "This is what your business looks like ",
     h1em: "inside Messenger",
     h1b: ".",
-    lede: "Pick an industry. You'll see the same conversation one of your customers would have — a question, a reply in seconds, and a carousel where they book or reserve from the chat. In English and Spanish, 24/7.",
+    lede: "Pick your industry. See the conversation your customer would have — in English and Spanish, 24/7.",
     chipsLabel: "Choose an industry",
     bizStatus: "Replies in seconds",
     inputPlaceholder: "Type a message…",
     phoneAria: "Preview of a Messenger conversation",
     facts: [
       ["Replies in seconds", ", even while you're with a customer or already closed."],
-      ["Sends them to book and captures the lead", " — the customer won't go looking elsewhere."],
+      ["Sends them to book and captures the lead", " — before the customer goes looking elsewhere."],
       ["The important stuff reaches you", " — it hands off to a person the moment a customer asks."],
     ],
     note: "Illustrative demo. Products, copy, and prices are customized with your business's own.",
@@ -46,23 +45,19 @@ const STRINGS = {
     voiceLink: "Hear the AI voice agent answer",
     watch: "Watch the 20-second video",
     closeVideo: "Close video",
-    footBrand: "CushLabs AI Services",
-    footMid: "AI Assistant on Messenger · Bilingual 24/7",
-    footLoc: "Guadalajara, Mexico",
   },
   es: {
-    brandSub: "Demo de ventas",
     h1a: "Así se ve tu negocio ",
     h1em: "dentro de Messenger",
     h1b: ".",
-    lede: "Elige un giro. Verás la misma conversación que tendría un cliente tuyo — una pregunta, respuesta en segundos y un carrusel donde reserva o aparta desde el chat. En español, 24/7.",
+    lede: "Elige tu giro. Mira la conversación que tendría tu cliente — en inglés y español, 24/7.",
     chipsLabel: "Elige un giro de negocio",
     bizStatus: "Responde en segundos",
     inputPlaceholder: "Escribe un mensaje…",
     phoneAria: "Vista previa de una conversación de Messenger",
     facts: [
       ["Responde en segundos", ", aunque estés atendiendo o ya cerraste."],
-      ["Los lleva a agendar, reservar o apartar, y capta sus datos", " — el cliente no se va a buscar a otro."],
+      ["Los lleva a agendar, reservar o apartar, y capta sus datos", " — antes de que el cliente se vaya a buscar a otro."],
       ["Lo importante llega a ti", " — pasa la conversación a una persona en cuanto el cliente lo pide."],
     ],
     note: "Demo con fines ilustrativos. Los productos, textos y precios se personalizan con los de tu negocio.",
@@ -72,9 +67,6 @@ const STRINGS = {
     voiceLink: "Escucha al agente de voz con IA",
     watch: "Ver el video de 20 segundos",
     closeVideo: "Cerrar video",
-    footBrand: "CushLabs AI Services",
-    footMid: "Asistente de IA en Messenger · Español 24/7",
-    footLoc: "Guadalajara, México",
   },
 } as const;
 const S = STRINGS[locale];
@@ -97,7 +89,7 @@ const CATALOG = [
       lead: "Of course! These are this season's most-wanted 👗",
       kick: "Clothing boutique",
       title: "She messages at 10 p.m. You still make the sale.",
-      desc: "70% of questions are the same: sizes, prices, availability. Your assistant answers them in seconds and shows the pieces to reserve — so you don't lose the sale by missing a message.",
+      desc: "Many questions repeat: sizes, prices, availability. Your assistant answers them in seconds and shows the pieces to reserve — so you don't lose the sale by missing a message.",
       cards: [
         { t: 'Long "Marbella" dress', tag: "New", p: "$2,150", b: "Reserve" },
         { t: "Linen set", p: "$1,240", b: "Reserve" },
@@ -110,7 +102,7 @@ const CATALOG = [
       lead: "¡Claro! Estos son los más pedidos de esta temporada 👗",
       kick: "Boutique de ropa",
       title: "La clienta pregunta a las 10 de la noche. Tú vendes igual.",
-      desc: "El 70% de las dudas son las mismas: tallas, precios, disponibilidad. Tu asistente las contesta en segundos y muestra las prendas para apartar, sin que pierdas la venta por no ver el mensaje a tiempo.",
+      desc: "Muchas preguntas se repiten: tallas, precios, disponibilidad. Tu asistente las contesta en segundos y muestra las prendas para apartar, sin que pierdas la venta por no ver el mensaje a tiempo.",
       cards: [
         { t: 'Vestido largo "Marbella"', tag: "Nuevo", p: "$2,150", b: "Apartar" },
         { t: "Conjunto de lino", p: "$1,240", b: "Apartar" },
@@ -126,7 +118,7 @@ const CATALOG = [
       open: "What women's swimwear do you carry?",
       lead: "Our Summer '26 collection just dropped 🌴 Take a look:",
       kick: "Swimwear boutique",
-      title: "New collection, a reply in seconds, no sale lost to a slow answer.",
+      title: "New collection, a reply in seconds, fewer sales lost to a slow answer.",
       desc: "Every season brings the same size-and-color questions. The assistant answers in seconds, shows the collection, and takes the customer's contact so you can let them know when it's back in stock — all inside Messenger.",
       cards: [
         { t: '"Tulum" bikini', tag: "Summer '26", p: "$650", b: "Reserve" },
@@ -139,7 +131,7 @@ const CATALOG = [
       open: "¿Qué trajes de baño manejan para dama?",
       lead: "Ya tenemos lista la colección Verano '26 🌴 Mira:",
       kick: "Boutique de trajes de baño",
-      title: "Colección nueva, respuesta en segundos, sin ventas perdidas por tardar.",
+      title: "Colección nueva, respuesta en segundos, menos ventas perdidas por tardar.",
       desc: "Cada temporada llegan las mismas preguntas por talla y color. El asistente contesta en segundos, muestra la colección y capta el contacto del cliente para que tú le avises cuando vuelva a haber existencia — todo dentro de Messenger.",
       cards: [
         { t: 'Bikini "Tulum"', tag: "Verano '26", p: "$650", b: "Apartar" },
@@ -157,7 +149,7 @@ const CATALOG = [
       lead: "Yes, we supply businesses by volume. Here are the wholesale options ☕",
       kick: "Coffee distributor (B2B)",
       title: "Quote wholesale without leaving the buyer waiting.",
-      desc: "In B2B, whoever replies first wins the account. The assistant answers in seconds, gathers the volume and the details, and hands the lead to your sales team while interest is hot.",
+      desc: "In B2B, replying first often wins the account. The assistant answers in seconds, gathers the volume and the details, and hands the lead to your sales team while interest is hot.",
       cards: [
         { t: "Green beans · 25 kg sack", p: "$4,200", b: "Get quote" },
         { t: "Medium roast · 5 kg", p: "$980", b: "Get quote" },
@@ -170,7 +162,7 @@ const CATALOG = [
       lead: "Sí, manejamos volumen para negocios. Estas son las opciones de mayoreo ☕",
       kick: "Distribuidora de café (B2B)",
       title: "Cotiza al mayoreo sin dejar esperando al comprador.",
-      desc: "En venta de negocio a negocio, quien responde primero gana la cuenta. El asistente contesta en segundos, reúne el volumen y los datos, y pasa el prospecto a tu equipo comercial mientras el interés está caliente.",
+      desc: "En venta de negocio a negocio, responder primero muchas veces gana la cuenta. El asistente contesta en segundos, reúne el volumen y los datos, y pasa el prospecto a tu equipo comercial mientras el interés está caliente.",
       cards: [
         { t: "Grano oro · saco 25 kg", p: "$4,200", b: "Cotizar" },
         { t: "Tueste medio · 5 kg", p: "$980", b: "Cotizar" },
@@ -186,8 +178,8 @@ const CATALOG = [
       open: "Can I reserve a table for 4 on Saturday?",
       lead: "Happy to! I'll reserve it and show you our most-loved picks 👇",
       kick: "Coffee shop",
-      title: "Never miss a table or a to-go order while you work the bar.",
-      desc: "You don't have to step away from the espresso machine to answer a DM. The assistant answers in seconds, shares the weekend menu, and sends table reservations and to-go requests straight to your team — none slip through.",
+      title: "Keep catching table and to-go requests while you work the bar.",
+      desc: "You don't have to step away from the espresso machine to answer a DM. The assistant answers in seconds, shares the weekend menu, and sends table reservations and to-go requests straight to your team instead of leaving them waiting in your inbox.",
       cards: [
         { t: "Reserve table · Sat 6:00 pm", p: "For 4 people", b: "Reserve" },
         { t: "Weekend brunch", p: "$220", b: "See menu" },
@@ -199,8 +191,8 @@ const CATALOG = [
       open: "¿Puedo apartar mesa para 4 el sábado?",
       lead: "¡Con gusto! Te ayudo a apartar y de paso te muestro lo más pedido 👇",
       kick: "Cafetería",
-      title: "No pierdas ni una mesa ni un pedido para llevar mientras atiendes la barra.",
-      desc: "No tienes que soltar la máquina de espresso para contestar un DM. El asistente responde en segundos, comparte el menú del fin y manda las reservaciones y los pedidos para llevar directo a tu equipo — sin que se pierda ninguno.",
+      title: "Sigue recibiendo reservaciones y pedidos para llevar mientras atiendes la barra.",
+      desc: "No tienes que soltar la máquina de espresso para contestar un DM. El asistente responde en segundos, comparte el menú del fin y manda las reservaciones y los pedidos para llevar directo a tu equipo, en vez de dejarlos esperando en tu bandeja.",
       cards: [
         { t: "Apartar mesa · Sáb 6:00 pm", p: "Para 4 personas", b: "Reservar" },
         { t: "Brunch de fin de semana", p: "$220", b: "Ver menú" },
@@ -216,8 +208,8 @@ const CATALOG = [
       open: "Do you have a table for tonight?",
       lead: "Yes, we still have room 🍽️ Here are tonight's options:",
       kick: "Restaurant",
-      title: "Fill the terrace by answering reservations the moment they land.",
-      desc: "Reservations come in over Messenger right at service time, when no one can answer. The assistant replies in seconds, offers open times, and sends the reservation request to you — handing bigger parties straight to your team.",
+      title: "Fill the terrace by answering reservations in seconds.",
+      desc: "Reservations come in over Messenger right at service time, when no one can answer. The assistant replies in seconds, offers open times, and sends the reservation request to you.",
       cards: [
         { t: "Reservation 8:30 pm", p: "Table for 2", b: "Reserve" },
         { t: "Tasting menu", tag: "Chef", p: "$890 / person", b: "See menu" },
@@ -229,8 +221,8 @@ const CATALOG = [
       open: "¿Tienen mesa para hoy en la noche?",
       lead: "Sí, todavía hay lugar 🍽️ Estas son las opciones para esta noche:",
       kick: "Restaurante",
-      title: "Llena la terraza contestando las reservaciones al momento.",
-      desc: "Las reservaciones llegan por Messenger a la hora del servicio, justo cuando nadie puede contestar. El asistente responde en segundos, ofrece horarios disponibles y te manda la solicitud de reservación — pasando los grupos grandes directo a tu equipo.",
+      title: "Llena la terraza contestando las reservaciones en segundos.",
+      desc: "Las reservaciones llegan por Messenger a la hora del servicio, justo cuando nadie puede contestar. El asistente responde en segundos, ofrece horarios disponibles y te manda la solicitud de reservación.",
       cards: [
         { t: "Reservación 8:30 pm", p: "Mesa para 2", b: "Reservar" },
         { t: "Menú degustación", tag: "Chef", p: "$890 / persona", b: "Ver menú" },
@@ -277,7 +269,7 @@ const CATALOG = [
       lead: "Happy to explain 😁 Here are the treatment options:",
       kick: "Orthodontics",
       title: "Turn “how much does it cost?” into a booked evaluation.",
-      desc: "Price is the first question and the one that loses the most patients when you're slow. The assistant explains the treatments, offers the free evaluation, and books it — leaving the plan close to you.",
+      desc: "Price is usually the first question, and a slow answer can cost you the patient. The assistant explains the treatments, offers the free evaluation, and books it — leaving the plan close to you.",
       cards: [
         { t: "Orthodontic evaluation", tag: "Free", p: "No cost", b: "Book" },
         { t: "Metal braces", p: "from $12,000", b: "Get quote" },
@@ -290,7 +282,7 @@ const CATALOG = [
       lead: "Con gusto te explico 😁 Estas son las opciones de tratamiento:",
       kick: "Ortodoncia",
       title: "Convierte la pregunta de “¿cuánto cuesta?” en una valoración agendada.",
-      desc: "El precio es la primera pregunta y la que más pacientes pierde por tardar. El asistente explica los tratamientos, ofrece la valoración gratis y agenda — dejando el cierre del plan para ti.",
+      desc: "El precio suele ser la primera pregunta, y tardar en contestarla puede costarte al paciente. El asistente explica los tratamientos, ofrece la valoración gratis y agenda — dejando el cierre del plan para ti.",
       cards: [
         { t: "Valoración de ortodoncia", tag: "Gratis", p: "Sin costo", b: "Agendar" },
         { t: "Brackets metálicos", p: "desde $12,000", b: "Cotizar" },
@@ -337,7 +329,7 @@ const CATALOG = [
       lead: "Of course! 💇‍♀️ These are the services you can book:",
       kick: "Beauty salon & studio",
       title: "Fill the salon's calendar while your hands are busy.",
-      desc: "Between cuts you can't pick up the phone. The assistant answers in seconds, shows the services, and books through your link — so no client leaves for a competitor over an unanswered message.",
+      desc: "Between cuts you can't pick up the phone. The assistant answers in seconds, shows the services, and books through your link — so clients aren't left waiting on an unanswered message.",
       cards: [
         { t: "Cut + style", p: "$350", b: "Book" },
         { t: "Root color", p: "$650", b: "Book" },
@@ -350,7 +342,7 @@ const CATALOG = [
       lead: "¡Claro! 💇‍♀️ Estos son los servicios que puedes apartar:",
       kick: "Salón de belleza y estética",
       title: "Llena la agenda del salón mientras tienes las manos ocupadas.",
-      desc: "Entre corte y corte no puedes contestar el teléfono. El asistente responde en segundos, muestra los servicios y agenda por tu liga — para que ninguna clienta se vaya con la competencia por no recibir respuesta.",
+      desc: "Entre corte y corte no puedes contestar el teléfono. El asistente responde en segundos, muestra los servicios y agenda por tu liga — para que tus clientas no se queden esperando respuesta.",
       cards: [
         { t: "Corte + peinado", p: "$350", b: "Apartar" },
         { t: "Tinte de raíz", p: "$650", b: "Apartar" },
@@ -367,7 +359,7 @@ const CATALOG = [
       lead: "Yes! 🏨 Here are the rooms available for those dates:",
       kick: "Boutique hotel",
       title: "Win the direct booking — no platform commission.",
-      desc: "Every guest who books with you on Messenger is a commission you don't pay a platform. The assistant answers in seconds, shows the rooms, and sends them to your direct-booking link — in Spanish, so the reservation stays yours.",
+      desc: "Every guest who books with you on Messenger is a commission you don't pay a platform. The assistant answers in seconds, shows the rooms, and sends them to your direct-booking link — in English or Spanish, so the booking stays yours.",
       cards: [
         { t: "Deluxe room", p: "$2,400 / night", b: "Reserve" },
         { t: "Suite with terrace", tag: "View", p: "$3,600 / night", b: "Reserve" },
@@ -380,7 +372,7 @@ const CATALOG = [
       lead: "¡Sí! 🏨 Estas son las habitaciones disponibles para esas fechas:",
       kick: "Hotel boutique",
       title: "Gana la reservación directa, sin comisión de plataformas.",
-      desc: "Cada huésped que reserva contigo por Messenger es una comisión que no le pagas a la plataforma. El asistente responde en segundos, muestra las habitaciones y los manda a tu liga de reservación directa — en español, para que la reservación siga siendo tuya.",
+      desc: "Cada huésped que reserva contigo por Messenger es una comisión que no le pagas a la plataforma. El asistente responde en segundos, muestra las habitaciones y los manda a tu liga de reservación directa — en español o inglés, para que la reservación siga siendo tuya.",
       cards: [
         { t: "Habitación Deluxe", p: "$2,400 / noche", b: "Reservar" },
         { t: "Suite con terraza", tag: "Vista", p: "$3,600 / noche", b: "Reservar" },
@@ -398,21 +390,11 @@ const industries = CATALOG.map((c) => ({
 
 <section class="clmd">
   <div class="wrap">
-    <div class="top">
-      <div class="brand">
-        <div class="mark"><span>C</span></div>
-        <div>
-          <b>CushLabs</b>
-          <div class="sub">{S.brandSub}</div>
-        </div>
-      </div>
-      <span class="msgr-badge" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 4.974 0 11.111c0 3.498 1.744 6.614 4.469 8.654V24l4.088-2.242c1.092.301 2.246.464 3.443.464 6.627 0 12-4.975 12-11.111C24 4.974 18.627 0 12 0zm1.191 14.963l-3.055-3.26-5.963 3.26L10.732 8l3.131 3.259L19.752 8l-6.561 6.963z"></path></svg>
-      </span>
-    </div>
-
+    {/* 2026-10-10: the "CushLabs · Sales demo" mini-header (with the Messenger logo)
+        is gone. No Meta logos in this illustration — the phone is a neutral chat UI,
+        and the page's <h1> lives in LiveDemoStrip above, so this headline is an h2. */}
     <div class="lede">
-      <h1>{S.h1a}<em>{S.h1em}</em>{S.h1b}</h1>
+      <h2>{S.h1a}<em>{S.h1em}</em>{S.h1b}</h2>
       <p>{S.lede}</p>
     </div>
 
@@ -434,8 +416,8 @@ const industries = CATALOG.map((c) => ({
             <b id="clmd-bizname">—</b>
             <span id="clmd-bizstatus">{S.bizStatus}</span>
           </div>
-          <span class="msgr" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 4.974 0 11.111c0 3.498 1.744 6.614 4.469 8.654V24l4.088-2.242c1.092.301 2.246.464 3.443.464 6.627 0 12-4.975 12-11.111C24 4.974 18.627 0 12 0zm1.191 14.963l-3.055-3.26-5.963 3.26L10.732 8l3.131 3.259L19.752 8l-6.561 6.963z"></path></svg>
+          <span class="chat-ic" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5Z"></path></svg>
           </span>
         </div>
         <div class="thread" id="clmd-thread"></div>
@@ -449,7 +431,7 @@ const industries = CATALOG.map((c) => ({
 
       <div class="read">
         <div class="kick" id="clmd-kick">{industries[0].kick}</div>
-        <h2 id="clmd-title">{industries[0].title}</h2>
+        <h3 id="clmd-title">{industries[0].title}</h3>
         <p id="clmd-desc">{industries[0].desc}</p>
         <ul class="facts">
           {S.facts.map((f) => (
@@ -492,12 +474,6 @@ const industries = CATALOG.map((c) => ({
       <button type="button" class="vid-close" id="clmd-video-close" aria-label={S.closeVideo}>×</button>
       <video id="clmd-video-el" controls playsinline preload="none"></video>
     </dialog>
-
-    <div class="foot">
-      <b>{S.footBrand}</b>
-      <span>{S.footMid}</span>
-      <span>{S.footLoc}</span>
-    </div>
   </div>
 </section>
 
@@ -512,7 +488,10 @@ const industries = CATALOG.map((c) => ({
     --line: #e2ded7; --panel: #ffffff;
     --phone: #ffffff; --phone-frame: #d9d5cd;
     --bubble-in: #eceef1; --bubble-in-ink: #14181f;
-    --msgr: #0084ff; --bubble-out-ink: #ffffff;
+    /* Neutral chat UI, not a Messenger clone (2026-10-10): customer bubbles are dark
+       grey, assistant bubbles light grey, the send button is brand orange. No
+       Messenger blue anywhere in the mockup. White on #1e293b is 14.6:1. */
+    --bubble-out: #1e293b; --bubble-out-ink: #ffffff;
     --card: #ffffff; --card-line: #e7e3db;
     /* --accent-ink was #ffffff on the orange fill: 2.85:1, failing AA. Black on that
        same orange is 7.38:1 — the same fix applied site-wide to the CTA buttons. */
@@ -533,7 +512,8 @@ const industries = CATALOG.map((c) => ({
     --line: #232a37; --panel: #141a25;
     --phone: #0f141d; --phone-frame: #232a37;
     --bubble-in: #242c3a; --bubble-in-ink: #eef1f6;
-    --msgr: #0a90ff; --bubble-out-ink: #ffffff;
+    /* White on #475569 is 7.6:1, and it reads apart from the #242c3a assistant bubble. */
+    --bubble-out: #475569; --bubble-out-ink: #ffffff;
     --card: #161d29; --card-line: #263042;
     --accent: #ff7a4f; --accent-ink: #1a0e08;
     --shadow: 0 26px 70px -24px rgba(0,0,0,.7), 0 8px 22px -14px rgba(0,0,0,.6);
@@ -543,17 +523,9 @@ const industries = CATALOG.map((c) => ({
   .clmd * { box-sizing: border-box; }
   .clmd .wrap { max-width: 940px; margin: 0 auto; padding: clamp(20px,4vw,48px) clamp(16px,4vw,32px) 64px; }
 
-  .clmd .top { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
-  .clmd .brand { display: flex; align-items: center; gap: 11px; }
-  .clmd .brand .mark { width: 34px; height: 34px; border-radius: 9px; background: linear-gradient(150deg, var(--ink), #2a3446); display: grid; place-items: center; box-shadow: var(--shadow-card); }
-  .clmd .brand .mark span { color: var(--accent); font-weight: 800; font-size: 18px; line-height: 1; }
-  .clmd .brand b { font-weight: 800; letter-spacing: -.02em; font-size: 17px; }
-  .clmd .brand .sub { color: var(--ink-faint); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; margin-top: 1px; }
-  .clmd .msgr-badge svg { width: 26px; height: 26px; color: var(--msgr); display: block; }
-
   .clmd .lede { margin: clamp(22px,4vw,40px) 0 6px; }
-  .clmd .lede h1 { font-size: clamp(26px,4.4vw,40px); line-height: 1.06; letter-spacing: -.03em; font-weight: 800; margin: 0; text-wrap: balance; max-width: 20ch; }
-  .clmd .lede h1 em { font-style: normal; color: var(--accent); }
+  .clmd .lede h2 { font-size: clamp(26px,4.4vw,40px); line-height: 1.06; letter-spacing: -.03em; font-weight: 800; margin: 0; text-wrap: balance; max-width: 20ch; }
+  .clmd .lede h2 em { font-style: normal; color: var(--accent); }
   .clmd .lede p { margin: 12px 0 0; color: var(--ink-soft); font-size: clamp(14px,1.6vw,16px); max-width: 58ch; text-wrap: pretty; }
 
   .clmd .chips-label { margin: 30px 0 10px; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-faint); font-weight: 700; }
@@ -577,22 +549,22 @@ const industries = CATALOG.map((c) => ({
   .clmd .status .bars svg { width: 15px; height: 15px; display: block; }
 
   .clmd .mhead { display: flex; align-items: center; gap: 11px; padding: 8px 14px 12px; border-bottom: 1px solid var(--line); }
-  .clmd .mhead .back { color: var(--msgr); font-weight: 700; font-size: 22px; line-height: 1; }
+  .clmd .mhead .back { color: var(--ink-soft); font-weight: 700; font-size: 22px; line-height: 1; }
   .clmd .avatar { width: 38px; height: 38px; border-radius: 50%; display: grid; place-items: center; color: #fff; font-weight: 700; font-size: 14px; flex: 0 0 auto; letter-spacing: -.01em; }
   .clmd .mhead .who { display: flex; flex-direction: column; min-width: 0; }
   .clmd .mhead .who b { font-size: 15px; letter-spacing: -.01em; }
   .clmd .mhead .who span { font-size: 11.5px; color: var(--ink-faint); display: flex; align-items: center; gap: 5px; }
   .clmd .mhead .who span::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #29c26a; }
-  .clmd .mhead .msgr { margin-left: auto; }
-  .clmd .mhead .msgr svg { width: 22px; height: 22px; color: var(--msgr); display: block; }
+  .clmd .mhead .chat-ic { margin-left: auto; }
+  .clmd .mhead .chat-ic svg { width: 22px; height: 22px; color: var(--accent); display: block; }
 
-  .clmd .thread { padding: 16px 12px 12px; display: flex; flex-direction: column; gap: 9px; min-height: 442px; background: linear-gradient(0deg, color-mix(in srgb, var(--msgr) 4%, transparent), transparent 30%); }
+  .clmd .thread { padding: 16px 12px 12px; display: flex; flex-direction: column; gap: 9px; min-height: 442px; background: linear-gradient(0deg, color-mix(in srgb, var(--ink) 3%, transparent), transparent 30%); }
   .clmd .row { display: flex; }
   .clmd .row.in { justify-content: flex-start; }
   .clmd .row.out { justify-content: flex-end; }
   .clmd .bubble { max-width: 78%; padding: 9px 13px; border-radius: 19px; font-size: 14.5px; line-height: 1.35; word-wrap: break-word; }
   .clmd .in .bubble { background: var(--bubble-in); color: var(--bubble-in-ink); border-bottom-left-radius: 6px; }
-  .clmd .out .bubble { background: linear-gradient(180deg, #2b9dff, #0064e0); color: var(--bubble-out-ink); border-bottom-right-radius: 6px; }
+  .clmd .out .bubble { background: var(--bubble-out); color: var(--bubble-out-ink); border-bottom-right-radius: 6px; }
 
   .clmd .carousel { display: flex; gap: 9px; overflow-x: auto; padding: 4px 2px 8px; margin: 0 -2px; scroll-snap-type: x mandatory; scrollbar-width: none; }
   .clmd .carousel::-webkit-scrollbar { display: none; }
@@ -609,12 +581,12 @@ const industries = CATALOG.map((c) => ({
 
   .clmd .input { display: flex; align-items: center; gap: 10px; padding: 10px 14px 14px; border-top: 1px solid var(--line); }
   .clmd .input .field { flex: 1; background: var(--bubble-in); color: var(--ink-faint); border-radius: 999px; padding: 9px 14px; font-size: 13.5px; }
-  .clmd .input .send { width: 34px; height: 34px; border-radius: 50%; background: var(--msgr); display: grid; place-items: center; flex: 0 0 auto; }
-  .clmd .input .send svg { width: 17px; height: 17px; color: #fff; }
+  .clmd .input .send { width: 34px; height: 34px; border-radius: 50%; background: var(--accent); display: grid; place-items: center; flex: 0 0 auto; }
+  .clmd .input .send svg { width: 17px; height: 17px; color: var(--accent-ink); }
 
   .clmd .read { align-self: center; }
   .clmd .read .kick { font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--accent); font-weight: 800; }
-  .clmd .read h2 { font-size: clamp(20px,2.6vw,26px); letter-spacing: -.02em; margin: 8px 0 0; text-wrap: balance; }
+  .clmd .read h3 { font-size: clamp(20px,2.6vw,26px); letter-spacing: -.02em; margin: 8px 0 0; text-wrap: balance; }
   .clmd .read p { color: var(--ink-soft); margin: 12px 0 0; font-size: 15px; max-width: 44ch; }
   .clmd .facts { list-style: none; margin: 20px 0 0; padding: 0; display: flex; flex-direction: column; gap: 11px; }
   .clmd .facts li { display: flex; gap: 11px; align-items: flex-start; font-size: 14px; color: var(--ink); }
@@ -650,9 +622,6 @@ const industries = CATALOG.map((c) => ({
   .clmd .vid-close { position: absolute; top: -14px; right: -14px; width: 36px; height: 36px; border-radius: 999px; border: 0; background: #fff; color: #111; font-size: 22px; line-height: 1; cursor: pointer; box-shadow: 0 2px 8px rgb(0 0 0 / .3); }
   .clmd .voice a { color: var(--ink); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
   .clmd .note { margin-top: 22px; font-size: 12.5px; color: var(--ink-faint); border-top: 1px solid var(--line); padding-top: 14px; max-width: 46ch; }
-
-  .clmd .foot { margin-top: 44px; padding-top: 18px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 8px 18px; align-items: baseline; font-size: 12.5px; color: var(--ink-faint); }
-  .clmd .foot b { color: var(--ink-soft); font-weight: 700; }
 
   @media (prefers-reduced-motion: reduce) {
     .clmd * { transition: none !important; scroll-behavior: auto !important; }
