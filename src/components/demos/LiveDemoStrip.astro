@@ -25,14 +25,14 @@ const STRINGS = {
   en: {
     kicker: "Live, right now",
     heading: "Stop reading. Go talk to one.",
-    sub: "These are production assistants answering real customers — not mockups. Message them, call them, ask them anything you would ask a business you were about to buy from.",
-    tryAsking: "Try asking",
+    sub: "Real assistants answering real customers. Not mockups.",
+    live: "Live",
   },
   es: {
     kicker: "En vivo, ahora mismo",
     heading: "Deja de leer. Ve y habla con uno.",
-    sub: "Estos son asistentes en producción atendiendo clientes reales — no son maquetas. Escríbeles, márcales y pregúntales lo que le preguntarías a un negocio al que estás por comprarle.",
-    tryAsking: "Pregúntale",
+    sub: "Asistentes reales atendiendo clientes reales. No son maquetas.",
+    live: "En vivo",
   },
 } as const;
 
@@ -64,33 +64,25 @@ const S = STRINGS[locale];
     <ul class="mt-12 grid gap-6 md:grid-cols-3">
       {
         demos.map((d) => (
-          <li class="flex flex-col rounded-xl border border-gray-700 bg-black/40 p-6 transition-colors duration-300 hover:border-cush-orange">
-            <span class="font-display text-[11px] font-bold uppercase tracking-[0.14em] text-accent-text">
-              {d.badge}
+          <li class="relative flex flex-col rounded-xl border border-gray-700 bg-black/40 p-6 transition-colors duration-300 hover:border-cush-orange focus-within:border-cush-orange">
+            {/* 2026-10-10: name + one line + one button. The section headline says
+                "Stop reading", so the cards must not make people read; the longer
+                copy (badge, tagline, paragraph, ice breakers) stays in liveDemos.ts
+                for /messenger-assistant/. Screenshots go above the name once Robert
+                supplies real ones — never placeholders or invented chats. */}
+            <span class="inline-flex items-center gap-2 font-display text-[11px] font-bold uppercase tracking-[0.14em] text-accent-text">
+              <span class="relative flex h-2 w-2" aria-hidden="true">
+                <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-cush-orange opacity-75 motion-reduce:animate-none"></span>
+                <span class="relative inline-flex h-2 w-2 rounded-full bg-cush-orange"></span>
+              </span>
+              {S.live}
             </span>
-            <h3 class="mt-3 font-display text-xl font-bold text-white">
+            <h3 class="mt-3 font-display text-2xl font-bold text-white">
               {d.name}
             </h3>
-            <p class="mt-1 text-sm text-gray-400">{d.tagline}</p>
-            <p class="mt-4 flex-grow text-sm leading-relaxed text-gray-300">
-              {d.copy}
+            <p class="mt-2 flex-grow text-base leading-relaxed text-gray-300">
+              {d.line ?? d.tagline}
             </p>
-
-            {d.questions && (
-              <div class="mt-5">
-                <p class="font-display text-[11px] font-bold uppercase tracking-[0.14em] text-gray-500">
-                  {S.tryAsking}
-                </p>
-                <ul class="mt-2 flex flex-wrap gap-2">
-                  {d.questions.slice(0, 3).map((q) => (
-                    <li class="rounded-full border border-gray-700 px-3 py-1 text-xs text-gray-300">
-                      {q}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-
             <a
               href={d.ownBot ? `${d.href}?ref=demos-page` : d.href}
               data-analytics-event="live_demo_opened"
@@ -98,9 +90,9 @@ const S = STRINGS[locale];
               data-analytics-placement="demos-strip"
               target="_blank"
               rel="noopener noreferrer"
-              class="mt-6 block rounded-lg bg-cush-orange px-5 py-3 text-center font-display text-sm font-semibold text-black transition-opacity duration-300 hover:opacity-90"
+              class="mt-6 block rounded-lg bg-cush-orange px-5 py-3 text-center font-display text-sm font-semibold text-black transition-opacity duration-300 hover:opacity-90 after:absolute after:inset-0 after:content-[''] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
             >
-              {d.cta}
+              {d.ctaShort ?? d.cta}
             </a>
           </li>
         ))
