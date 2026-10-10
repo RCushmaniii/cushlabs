@@ -50,6 +50,9 @@ export interface LiveDemo {
   line?: string;
   /** /demos/ strip only: short button label. */
   ctaShort?: string;
+  /** /demos/ strip only: card picture (600x800 WebP under public/images/demos/) and its alt text. */
+  image?: string;
+  imageAlt?: string;
   /**
    * True only for CushLabs' OWN Messenger bot: links to it get `?ref=<placement>`
    * so its webhook can tell a demo visitor from an organic message. Never set it
@@ -77,6 +80,8 @@ export const messengerDemos: Record<Locale, LiveDemo[]> = {
       ownBot: true,
       cta: "Message CushLabs",
       line: "Ask it anything. It's selling itself.",
+      image: "/images/demos/cushlabs-chat-en.webp",
+      imageAlt: "The CushLabs assistant in Facebook Messenger answering how it can help a business.",
       ctaShort: "Message it →",
     },
     {
@@ -96,6 +101,8 @@ export const messengerDemos: Record<Locale, LiveDemo[]> = {
       href: "https://m.me/nyenglishteacher",
       cta: "Message New York English",
       line: "Live since April. Answers in English and Spanish.",
+      image: "/images/demos/nyenglish-chat-en.webp",
+      imageAlt: "The New York English assistant coaching a learner who freezes when speaking English in meetings.",
       ctaShort: "Try it →",
     },
   ],
@@ -116,6 +123,8 @@ export const messengerDemos: Record<Locale, LiveDemo[]> = {
       ownBot: true,
       cta: "Escribir a CushLabs",
       line: "Pregúntale lo que sea. Se vende solo.",
+      image: "/images/demos/cushlabs-chat-es.webp",
+      imageAlt: "El asistente de CushLabs en Facebook Messenger explicando cómo puede ayudar a un negocio.",
       ctaShort: "Escríbele →",
     },
     {
@@ -133,6 +142,8 @@ export const messengerDemos: Record<Locale, LiveDemo[]> = {
       href: "https://m.me/nyenglishteacher",
       cta: "Escribir a New York English",
       line: "Activo desde abril. Responde en inglés y español.",
+      image: "/images/demos/nyenglish-chat-es.webp",
+      imageAlt: "El asistente de New York English dando consejos a alguien que se bloquea al hablar inglés en reuniones.",
       ctaShort: "Pruébalo →",
     },
   ],
@@ -153,6 +164,8 @@ export const voiceDemo: Record<Locale, LiveDemo> = {
     cta: "Try the demos at voice.cushlabs.ai",
     // A web call ("Click to talk with Clara"), not a phone number — so no tel: link.
     line: "Talk to it. It answers like a receptionist.",
+    image: "/images/demos/voice-agent-en.webp",
+    imageAlt: "The CushLabs voice agent demo page on a phone, with a glowing microphone listening.",
     ctaShort: "Try the voice demo →",
   },
   es: {
@@ -164,6 +177,8 @@ export const voiceDemo: Record<Locale, LiveDemo> = {
     href: "https://voice.cushlabs.ai",
     cta: "Prueba los demos en voice.cushlabs.ai",
     line: "Háblale. Contesta como una recepcionista.",
+    image: "/images/demos/voice-agent-es.webp",
+    imageAlt: "La página del demo del agente de voz de CushLabs en un celular, con un micrófono encendido escuchando.",
     ctaShort: "Prueba el demo de voz →",
   },
 };
