@@ -26,15 +26,30 @@ const STRINGS = {
     kicker: "Live, right now",
     heading: "Stop reading. Go talk to one.",
     sub: "Real assistants answering real customers. Not mockups.",
+    srH1: " Live AI assistant demos for Messenger and phone",
+    onMessenger: "assistant on Messenger",
+    newTab: "(opens in new tab)",
   },
   es: {
     kicker: "En vivo, ahora mismo",
     heading: "Deja de leer. Ve y habla con uno.",
     sub: "Asistentes reales atendiendo clientes reales. No son maquetas.",
+    srH1: " Demos en vivo de asistentes de IA para Messenger y teléfono",
+    onMessenger: "en Messenger",
+    newTab: "(se abre en una pestaña nueva)",
   },
 } as const;
 
 const S = STRINGS[locale];
+
+// Screen-reader name for each card link. It starts with the visible button text
+// (WCAG 2.5.3, label in name) and then says where it goes and that it opens a tab.
+const visible = (d: (typeof demos)[number]) => (d.ctaShort ?? d.cta).replace(/\s*→\s*$/, "");
+const linkLabel = (d: (typeof demos)[number]) => {
+  if (d.channel === "voice") return `${visible(d)} ${S.newTab}`;
+  const who = locale === "es" ? `el asistente de ${d.name} ${S.onMessenger}` : `the ${d.name} ${S.onMessenger}`;
+  return `${visible(d)}: ${who} ${S.newTab}`;
+};
 ---
 
 {/* `on-dark` — this band stays dark inside a light page, so the accent has to revert
@@ -51,18 +66,20 @@ const S = STRINGS[locale];
         ></span>
         {S.kicker}
       </p>
-      <h2
+      {/* The page's single <h1> (2026-10-10). The sr-only tail gives search engines and
+          screen readers what the page is about without changing what people see. */}
+      <h1
         class="mt-4 font-display text-3xl font-bold text-white sm:text-4xl"
       >
-        {S.heading}
-      </h2>
+        {S.heading}<span class="sr-only">{S.srH1}</span>
+      </h1>
       <p class="mt-4 text-lg leading-relaxed text-gray-300">{S.sub}</p>
     </div>
 
     <ul class="mt-12 grid gap-6 md:grid-cols-3">
       {
-        demos.map((d) => (
-          <li class="relative flex flex-col overflow-hidden rounded-xl border border-gray-700 bg-black/40 transition-colors duration-300 hover:border-cush-orange focus-within:border-cush-orange">
+        demos.map((d, i) => (
+          <li class="relative flex flex-col overflow-hidden rounded-xl border border-gray-700 bg-black/40 transition duration-300 hover:-translate-y-1 hover:border-cush-orange focus-within:border-cush-orange motion-reduce:transform-none motion-reduce:transition-none has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-cush-orange has-[a:focus-visible]:ring-offset-2 has-[a:focus-visible]:ring-offset-cush-gray-900">
             {/* Picture first, then name, then button — the scanning order. On phones
                 the cards stack, so the picture is capped (~300px) to keep the button
                 on screen; the bottom fade makes the crop look deliberate. */}
@@ -73,7 +90,8 @@ const S = STRINGS[locale];
                   alt={d.imageAlt ?? ""}
                   width="600"
                   height="800"
-                  loading="lazy"
+                  loading="eager"
+                  fetchpriority={i === 0 ? "high" : undefined}
                   decoding="async"
                   class="block aspect-[3/4] max-h-[300px] w-full object-cover object-top md:max-h-none"
                 />
@@ -91,9 +109,11 @@ const S = STRINGS[locale];
                 for /messenger-assistant/. Pictures (2026-10-10) are Robert's own screenshots,
                 cropped to the top 3:4 — never placeholders or invented chats. The one
                 "Live" kicker sits above the headline; the cards don't repeat it. */}
-            <h3 class="font-display text-2xl font-bold text-white">
+            {/* h2, not h3: the section heading above is now the page h1, and h1 → h3
+                would skip a level (Lighthouse heading-order). Classes keep the look. */}
+            <h2 class="font-display text-2xl font-bold text-white">
               {d.name}
-            </h3>
+            </h2>
             <p class="mt-2 flex-grow text-base leading-relaxed text-gray-300">
               {d.line ?? d.tagline}
             </p>
@@ -104,7 +124,8 @@ const S = STRINGS[locale];
               data-analytics-placement="demos-strip"
               target="_blank"
               rel="noopener noreferrer"
-              class="mt-6 block rounded-lg bg-cush-orange px-5 py-3 text-center font-display text-sm font-semibold text-black transition-opacity duration-300 hover:opacity-90 after:absolute after:inset-0 after:content-[''] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+              aria-label={linkLabel(d)}
+              class="mt-6 block rounded-lg bg-cush-orange px-5 py-3 text-center font-display text-sm font-semibold text-black transition-opacity duration-300 hover:opacity-90 after:absolute after:inset-0 after:content-[''] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cush-orange"
             >
               {d.ctaShort ?? d.cta}
             </a>
