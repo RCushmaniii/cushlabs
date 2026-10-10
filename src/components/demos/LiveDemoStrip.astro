@@ -64,12 +64,24 @@ const S = STRINGS[locale];
     <ul class="mt-12 grid gap-6 md:grid-cols-3">
       {
         demos.map((d) => (
-          <li class="relative flex flex-col rounded-xl border border-gray-700 bg-black/40 p-6 transition-colors duration-300 hover:border-cush-orange focus-within:border-cush-orange">
+          <li class="relative flex flex-col overflow-hidden rounded-xl border border-gray-700 bg-black/40 transition-colors duration-300 hover:border-cush-orange focus-within:border-cush-orange">
+            {d.image && (
+              <img
+                src={d.image}
+                alt={d.imageAlt ?? ""}
+                width="600"
+                height="800"
+                loading="lazy"
+                decoding="async"
+                class="block aspect-[3/4] w-full object-cover object-top"
+              />
+            )}
+            <div class="flex flex-1 flex-col p-6">
             {/* 2026-10-10: name + one line + one button. The section headline says
                 "Stop reading", so the cards must not make people read; the longer
                 copy (badge, tagline, paragraph, ice breakers) stays in liveDemos.ts
-                for /messenger-assistant/. Screenshots go above the name once Robert
-                supplies real ones — never placeholders or invented chats. */}
+                for /messenger-assistant/. Pictures (2026-10-10) are Robert's own screenshots,
+                cropped to the top 3:4 — never placeholders or invented chats. */}
             <span class="inline-flex items-center gap-2 font-display text-[11px] font-bold uppercase tracking-[0.14em] text-accent-text">
               <span class="relative flex h-2 w-2" aria-hidden="true">
                 <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-cush-orange opacity-75 motion-reduce:animate-none"></span>
@@ -94,6 +106,7 @@ const S = STRINGS[locale];
             >
               {d.ctaShort ?? d.cta}
             </a>
+            </div>
           </li>
         ))
       }
