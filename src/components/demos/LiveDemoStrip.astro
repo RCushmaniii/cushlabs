@@ -26,13 +26,11 @@ const STRINGS = {
     kicker: "Live, right now",
     heading: "Stop reading. Go talk to one.",
     sub: "Real assistants answering real customers. Not mockups.",
-    live: "Live",
   },
   es: {
     kicker: "En vivo, ahora mismo",
     heading: "Deja de leer. Ve y habla con uno.",
     sub: "Asistentes reales atendiendo clientes reales. No son maquetas.",
-    live: "En vivo",
   },
 } as const;
 
@@ -65,31 +63,35 @@ const S = STRINGS[locale];
       {
         demos.map((d) => (
           <li class="relative flex flex-col overflow-hidden rounded-xl border border-gray-700 bg-black/40 transition-colors duration-300 hover:border-cush-orange focus-within:border-cush-orange">
+            {/* Picture first, then name, then button — the scanning order. On phones
+                the cards stack, so the picture is capped (~300px) to keep the button
+                on screen; the bottom fade makes the crop look deliberate. */}
             {d.image && (
-              <img
-                src={d.image}
-                alt={d.imageAlt ?? ""}
-                width="600"
-                height="800"
-                loading="lazy"
-                decoding="async"
-                class="block aspect-[3/4] w-full object-cover object-top"
-              />
+              <div class="relative">
+                <img
+                  src={d.image}
+                  alt={d.imageAlt ?? ""}
+                  width="600"
+                  height="800"
+                  loading="lazy"
+                  decoding="async"
+                  class="block aspect-[3/4] max-h-[300px] w-full object-cover object-top md:max-h-none"
+                />
+                <div
+                  class="pointer-events-none absolute inset-x-0 bottom-0 h-10"
+                  style="background: linear-gradient(to bottom, rgb(6 6 6 / 0), rgb(6 6 6));"
+                  aria-hidden="true"
+                ></div>
+              </div>
             )}
             <div class="flex flex-1 flex-col p-6">
             {/* 2026-10-10: name + one line + one button. The section headline says
                 "Stop reading", so the cards must not make people read; the longer
                 copy (badge, tagline, paragraph, ice breakers) stays in liveDemos.ts
                 for /messenger-assistant/. Pictures (2026-10-10) are Robert's own screenshots,
-                cropped to the top 3:4 — never placeholders or invented chats. */}
-            <span class="inline-flex items-center gap-2 font-display text-[11px] font-bold uppercase tracking-[0.14em] text-accent-text">
-              <span class="relative flex h-2 w-2" aria-hidden="true">
-                <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-cush-orange opacity-75 motion-reduce:animate-none"></span>
-                <span class="relative inline-flex h-2 w-2 rounded-full bg-cush-orange"></span>
-              </span>
-              {S.live}
-            </span>
-            <h3 class="mt-3 font-display text-2xl font-bold text-white">
+                cropped to the top 3:4 — never placeholders or invented chats. The one
+                "Live" kicker sits above the headline; the cards don't repeat it. */}
+            <h3 class="font-display text-2xl font-bold text-white">
               {d.name}
             </h3>
             <p class="mt-2 flex-grow text-base leading-relaxed text-gray-300">
