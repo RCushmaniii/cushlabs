@@ -45,6 +45,11 @@ export interface LiveDemo {
   questions?: string[];
   href: string;
   cta: string;
+  /** /demos/ strip only: the one line under the name (≤10 words). The strip shows
+   *  name + line + button and nothing else — visitors scan these cards in ~2 s. */
+  line?: string;
+  /** /demos/ strip only: short button label. */
+  ctaShort?: string;
   /**
    * True only for CushLabs' OWN Messenger bot: links to it get `?ref=<placement>`
    * so its webhook can tell a demo visitor from an organic message. Never set it
@@ -71,12 +76,16 @@ export const messengerDemos: Record<Locale, LiveDemo[]> = {
       href: "https://m.me/cushlabs",
       ownBot: true,
       cta: "Message CushLabs",
+      line: "Ask it anything. It's selling itself.",
+      ctaShort: "Message it →",
     },
     {
       channel: "messenger",
-      badge: "Live client deployment",
+      badge: "Live in production",
       name: "New York English",
-      tagline: "Executive English coaching — my first production client",
+      // Robert's own business ("Client #0" in the bot repo), NOT an outside client —
+      // never call it a client on a public page.
+      tagline: "Executive English coaching — Robert's own business",
       copy: "Answering real customers in English and Spanish since April. Ask about pricing, hours, or booking and watch it answer from the business's own data — the confidence question even comes back with a mini-lesson image.",
       questions: [
         "How do you help with confidence when speaking English?",
@@ -86,6 +95,8 @@ export const messengerDemos: Record<Locale, LiveDemo[]> = {
       ],
       href: "https://m.me/nyenglishteacher",
       cta: "Message New York English",
+      line: "Live since April. Answers in English and Spanish.",
+      ctaShort: "Try it →",
     },
   ],
   es: [
@@ -104,12 +115,14 @@ export const messengerDemos: Record<Locale, LiveDemo[]> = {
       href: "https://m.me/cushlabs",
       ownBot: true,
       cta: "Escribir a CushLabs",
+      line: "Pregúntale lo que sea. Se vende solo.",
+      ctaShort: "Escríbele →",
     },
     {
       channel: "messenger",
-      badge: "Cliente real en producción",
+      badge: "En producción",
       name: "New York English",
-      tagline: "Coaching de inglés ejecutivo — mi primer cliente en producción",
+      tagline: "Coaching de inglés ejecutivo — el negocio propio de Robert",
       copy: "Atiende clientes reales en español e inglés desde abril. Pregunta precios, horarios o cómo agendar y mira cómo responde con los datos del propio negocio — la pregunta de confianza incluso llega con una mini-lección en imagen.",
       questions: [
         "¿Cómo me ayudan con la confianza al hablar inglés?",
@@ -119,6 +132,8 @@ export const messengerDemos: Record<Locale, LiveDemo[]> = {
       ],
       href: "https://m.me/nyenglishteacher",
       cta: "Escribir a New York English",
+      line: "Activo desde abril. Responde en inglés y español.",
+      ctaShort: "Pruébalo →",
     },
   ],
 };
@@ -136,6 +151,9 @@ export const voiceDemo: Record<Locale, LiveDemo> = {
     copy: "Live demo agents you can talk to right now. Call one and ask it what you would ask a receptionist — hours, price, whether it can book you in.",
     href: "https://voice.cushlabs.ai",
     cta: "Try the demos at voice.cushlabs.ai",
+    // A web call ("Click to talk with Clara"), not a phone number — so no tel: link.
+    line: "Talk to it. It answers like a receptionist.",
+    ctaShort: "Try the voice demo →",
   },
   es: {
     channel: "voice",
@@ -145,6 +163,8 @@ export const voiceDemo: Record<Locale, LiveDemo> = {
     copy: "Agentes demo en vivo que puedes llamar ahora mismo. Márcale y pregúntale lo que le preguntarías a una recepcionista — horarios, precio, si te puede agendar.",
     href: "https://voice.cushlabs.ai",
     cta: "Prueba los demos en voice.cushlabs.ai",
+    line: "Háblale. Contesta como una recepcionista.",
+    ctaShort: "Prueba el demo de voz →",
   },
 };
 
