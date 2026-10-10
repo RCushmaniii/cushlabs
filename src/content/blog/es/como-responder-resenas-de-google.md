@@ -7,7 +7,7 @@ categories:
   - "small-business"
 readingTime: "8 min de lectura"
 featuredImage: "../../../assets/blog/como-responder-resenas-de-google.webp"
-imageAlt: "Ilustración de una reseña de cinco estrellas en un celular, con una respuesta redactada debajo y un botón de aprobar marcado con una palomita."
+imageAlt: "Una mano sostiene un celular con una reseña de Google de cinco estrellas, una respuesta redactada debajo y el pulgar a punto de tocar Aprobar."
 translations:
   en: "how-to-reply-to-google-reviews"
 seo:
@@ -115,6 +115,8 @@ Mucha gente deja solo las estrellas. Una línea basta, pero que no sea la misma 
 **Una o dos estrellas sin texto (salón):**
 
 > Lamentamos que tu visita no haya sido lo que esperabas. Nos gustaría saber qué pasó para mejorar; si puedes, escríbenos por Messenger o llámanos. — Lucía
+
+![Ilustración: una reseña de cinco estrellas en un celular, una respuesta redactada debajo y un botón de aprobar con una palomita — tú decides qué se publica.](/images/blog/google-reviews/figure-draft-approve.webp)
 
 ## Lo que nunca debes escribir
 

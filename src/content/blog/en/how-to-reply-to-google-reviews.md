@@ -6,8 +6,8 @@ categories:
   - "local-seo"
   - "small-business"
 readingTime: "8 min read"
-featuredImage: "../../../assets/blog/como-responder-resenas-de-google.webp"
-imageAlt: "Illustration of a five-star review on a phone, with a drafted reply underneath and an approve button marked with a check."
+featuredImage: "../../../assets/blog/how-to-reply-to-google-reviews.webp"
+imageAlt: "A hand holding a phone showing a five-star Google review, a drafted reply underneath, and a thumb about to tap Approve."
 translations:
   es: "como-responder-resenas-de-google"
 seo:
@@ -115,6 +115,8 @@ Lots of people leave stars and nothing else. One line is enough, as long as it i
 **One or two stars, no text (salon):**
 
 > We're sorry your visit wasn't what you expected. We'd really like to know what happened so we can do better; if you can, message or call us. — Lisa
+
+![Illustration: a five-star review on a phone, a drafted reply underneath, and an approve button with a check mark — the owner decides what gets posted.](/images/blog/google-reviews/figure-draft-approve.webp)
 
 ## What you should never write
 
