@@ -1,0 +1,523 @@
+---
+/**
+ * The whole About page, both languages. src/pages/about.astro and
+ * src/pages/es/about.astro are thin wrappers around this so EN and ES can't drift
+ * apart again (they had: the old ES file carried the trial line, the EN file's ES
+ * block did not).
+ *
+ * BIOGRAPHICAL HARD RULES (operating-system/cushlabs/claims-policy.json →
+ * rules.biographical_facts) apply to every string below:
+ *   - never a total career-year count ("20 years", "a 25-year career", ...)
+ *   - never fuse Praxair/Linde with the Kodak/Corning era; no Kodak/Corning duration
+ *   - career ladder is exactly Senior Developer → Project Manager → Senior IT Manager
+ *   - "bilingual" describes the product, never Robert
+ * Trial wording must match commercial-terms.json → trial.label_en / label_es.
+ */
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Container from "../layout/Container.astro";
+import { testimonials } from "../../data/testimonials";
+
+interface Props {
+  locale: "en" | "es";
+}
+
+const { locale } = Astro.props;
+
+const SITE = "https://www.cushlabs.ai";
+const PHOTO = "/images/about/me-blue-shirt.webp";
+const LINKEDIN = "https://www.linkedin.com/in/robert-cushman3/";
+// CushLabs' own Messenger bot. The bot logs and ignores any ref other than
+// "demos-page", so this ref only labels the click; it doesn't change the reply.
+const MESSENGER = "https://m.me/cushlabs?ref=about-page";
+
+const content = {
+  en: {
+    meta: {
+      title: "Robert Cushman — AI Consultant in Guadalajara | CushLabs.ai",
+      description: "Fortune 500 IT leadership at Praxair/Linde, now building AI assistants for small businesses from Guadalajara. See how I work and why owners choose CushLabs.",
+    },
+    bookingHref: "/consultation/",
+    portfolioHref: "/portfolio/",
+    hero: {
+      badge: "About Robert",
+      headline: "Fortune 500 IT leadership. Now building AI for small businesses.",
+      subheadline: "I'm Robert. I build AI assistants that answer your customers in English and Spanish — and I'm the one you talk to, start to finish.",
+      ctaPrimary: "Book a free 30-min call",
+      ctaSecondary: "Message my AI assistant",
+      photoAlt: "Robert Cushman, Founder of CushLabs.ai",
+    },
+    statement: `CushLabs is an AI consulting and full-stack development practice based in Guadalajara, serving small and mid-sized businesses on both sides of the US–Mexico border. Founded by Robert after a full career in enterprise IT, CushLabs takes a <span class="text-accent-text font-semibold">diagnosis-first</span> approach — understanding what's actually broken before prescribing a fix, instead of pushing pre-packaged solutions.`,
+    trust: {
+      title: "Built on Experience, Not Hype",
+      // Approved facts only (claims-policy.json → claims_ladder level 1 + biographical_facts).
+      stats: [
+        { value: "100+", label: "Global technology initiatives", sublabel: "Praxair/Linde, Fortune 500" },
+        { value: "26,000", label: "Employees across 42 countries", sublabel: "Praxair/Linde" },
+        { value: "Dev → IT Manager", label: "Career path", sublabel: "Senior Developer → Project Manager → Senior IT Manager" },
+        { value: "2", label: "Languages, every assistant", sublabel: "Spanish & English" },
+      ],
+    },
+    problem: {
+      title: "The Problem I Solve",
+      intro: "You've probably seen AI promises everywhere. But most small businesses face the same frustrations:",
+      items: [
+        "Enterprise AI tools are expensive and overkill for your needs",
+        "DIY chatbots feel robotic and frustrate your customers",
+        "Tech consultants speak jargon and over-engineer everything",
+        "You're spending hours on repetitive tasks that should be automated",
+        "You're not sure what AI can actually do for your business",
+      ],
+      conclusion: "Sound familiar? That's exactly why I started CushLabs.",
+    },
+    approach: {
+      title: "How I Work Differently",
+      items: [
+        {
+          title: "Practical Over Perfect",
+          description: "I build solutions that work in the real world, not impressive demos that fall apart in production. You get tools your team will actually use.",
+        },
+        {
+          title: "Simple Monthly Pricing, No Surprises",
+          description: "One flat monthly price you know upfront — no hourly billing that spirals, no scope creep, no mystery invoices. Start with a 1-week free trial before you commit.",
+        },
+        {
+          title: "Fast Delivery",
+          description: "Simple setups go live in days; more complex integrations typically take 2–6 weeks. You'll see working software quickly — not months of planning and meetings.",
+        },
+        {
+          title: "Your Accounts Stay Yours",
+          description: "Your accounts, phone number, customer data, and documentation stay in your name, not inside an account I control. If we part ways, they go with you.",
+        },
+      ],
+      portfolioLink: "See projects I've built",
+    },
+    about: {
+      title: "About Robert",
+      intro: "I started CushLabs after a full career in IT, watching businesses struggle with technology that was supposed to make things easier.",
+      body: "I've been a developer, a project manager, and a senior IT manager. I've seen what works and what doesn't — from the inside. Now I work directly with founders and small teams from my base in Guadalajara, Mexico. No layers, no account managers, no handoffs. The person you talk to is the person building your solution.",
+      highlight: "If AI won't save you time or win you customers, I'll tell you — and I won't sell it to you.",
+      linkedin: "Connect on LinkedIn",
+    },
+    clients: {
+      title: "Who I Work With",
+      intro: "CushLabs is a great fit if you're:",
+      items: [
+        "A small business owner tired of repetitive tasks eating up your week",
+        "A founder who wants AI working for you, not another tool to manage",
+        "An operations lead looking to cut support volume without hiring",
+        "A business in the US or Mexico whose customers write in Spanish and English",
+        "Someone who wants straight talk, not tech jargon",
+      ],
+      notFor: "Not a fit? If you need enterprise-scale infrastructure, a large development team, or cutting-edge AI research — I'll happily refer you to someone better suited.",
+    },
+    testimonials: {
+      title: "In Their Words",
+    },
+    cta: {
+      title: "Ready to Talk?",
+      subtitle: "Book a free discovery call. Tell me what's eating up your time, and I'll tell you honestly whether AI can help — and what it would take.",
+      button: "Book a free 30-min call",
+      reassurance: "No pitch. No pressure. Just clarity.",
+    },
+  },
+  es: {
+    meta: {
+      title: "Robert Cushman, consultor de IA en Guadalajara | CushLabs.ai",
+      description: "Liderazgo de TI en Fortune 500 (Praxair/Linde), ahora creando asistentes con IA para pequeños negocios desde Guadalajara. Conoce cómo trabajo con cada negocio.",
+    },
+    bookingHref: "/es/reservar/",
+    portfolioHref: "/es/portfolio/",
+    hero: {
+      badge: "Sobre mí",
+      headline: "Liderazgo de TI en empresas Fortune 500. Ahora creo IA para pequeños negocios.",
+      subheadline: "Soy Robert. Creo asistentes de IA que atienden a tus clientes en español e inglés — y soy yo quien te atiende de principio a fin.",
+      ctaPrimary: "Agenda una llamada gratis de 30 min",
+      ctaSecondary: "Escríbele a mi asistente",
+      photoAlt: "Robert Cushman, fundador de CushLabs.ai",
+    },
+    statement: `CushLabs es una consultoría de IA y desarrollo full-stack con base en Guadalajara, que atiende a pequeñas y medianas empresas en ambos lados de la frontera entre México y Estados Unidos. Fundada por Robert tras una carrera completa en TI empresarial, CushLabs trabaja con un enfoque de <span class="text-accent-text font-semibold">diagnóstico primero</span>: entender qué está realmente fallando antes de recetar una solución, en lugar de vender paquetes prearmados.`,
+    trust: {
+      title: "Construido sobre experiencia, no promesas",
+      stats: [
+        { value: "100+", label: "Iniciativas globales de tecnología", sublabel: "Praxair/Linde, Fortune 500" },
+        { value: "26,000", label: "Empleados en 42 países", sublabel: "Praxair/Linde" },
+        { value: "Dev → Gerente de TI", label: "Trayectoria", sublabel: "Desarrollador senior → Gerente de proyectos → Gerente senior de TI" },
+        { value: "2", label: "Idiomas en cada asistente", sublabel: "Español e inglés" },
+      ],
+    },
+    problem: {
+      title: "El problema que resuelvo",
+      intro: "Probablemente has visto promesas de IA en todas partes. Pero la mayoría de los pequeños negocios enfrentan las mismas frustraciones:",
+      items: [
+        "Las herramientas de IA empresariales son caras y excesivas para tus necesidades",
+        "Los chatbots caseros se sienten robóticos y frustran a tus clientes",
+        "Los consultores de tecnología hablan jerga y sobre-diseñan todo",
+        "Pasas horas en tareas repetitivas que deberían estar automatizadas",
+        "No estás seguro de qué puede hacer realmente la IA por tu negocio",
+      ],
+      conclusion: "¿Te suena? Exactamente por eso fundé CushLabs.",
+    },
+    approach: {
+      title: "Cómo trabajo diferente",
+      items: [
+        {
+          title: "Lo práctico antes que lo perfecto",
+          description: "Construyo soluciones que funcionan en el mundo real, no demos impresionantes que fallan en producción. Obtienes herramientas que tu equipo realmente usará.",
+        },
+        {
+          title: "Precios mensuales simples, sin sorpresas",
+          description: "Un precio mensual fijo que conoces desde el inicio — sin facturación por hora que se dispara, sin cambios de alcance, sin facturas misteriosas. Empieza con una prueba gratis de 1 semana antes de comprometerte.",
+        },
+        {
+          title: "Entrega rápida",
+          description: "Las configuraciones simples se lanzan en días; las integraciones más complejas suelen tomar de 2 a 6 semanas. Verás software funcionando rápidamente — no meses de planeación y reuniones.",
+        },
+        {
+          title: "Tus cuentas siguen siendo tuyas",
+          description: "Tus cuentas, tu número de teléfono, los datos de tus clientes y la documentación quedan a tu nombre, no dentro de una cuenta que yo controlo. Si dejamos de trabajar juntos, todo se va contigo.",
+        },
+      ],
+      portfolioLink: "Ver proyectos que he construido",
+    },
+    about: {
+      title: "Sobre Robert",
+      intro: "Empecé CushLabs después de toda una carrera en TI, viendo negocios luchar con tecnología que se suponía debía facilitar las cosas.",
+      body: "He sido desarrollador, gerente de proyectos y gerente senior de TI. He visto qué funciona y qué no — desde adentro. Ahora trabajo directamente con fundadores y equipos pequeños desde mi base en Guadalajara, México. Sin intermediarios ni ejecutivos de cuenta. La persona con quien hablas es la persona que construye tu solución.",
+      highlight: "Si la IA no te va a ahorrar tiempo ni traer clientes, te lo digo — y no te la vendo.",
+      linkedin: "Conectar en LinkedIn",
+    },
+    clients: {
+      title: "Con quién trabajo",
+      intro: "CushLabs es ideal si eres:",
+      items: [
+        "Un dueño de pequeño negocio cansado de tareas repetitivas que consumen tu semana",
+        "Un fundador que quiere IA trabajando para ti, no otra herramienta que administrar",
+        "Un líder de operaciones buscando reducir volumen de soporte sin contratar",
+        "Un negocio en EE.UU. o México cuyos clientes escriben en español y en inglés",
+        "Alguien que quiere hablar directo, no jerga técnica",
+      ],
+      notFor: "¿No es para ti? Si necesitas infraestructura a escala empresarial, un gran equipo de desarrollo, o investigación de IA de vanguardia — con gusto te refiero a alguien mejor preparado.",
+    },
+    testimonials: {
+      title: "En sus palabras",
+    },
+    cta: {
+      title: "¿Listo para hablar?",
+      subtitle: "Agenda una llamada de diagnóstico gratuita. Cuéntame qué te está consumiendo el tiempo, y te diré honestamente si la IA puede ayudar — y qué implicaría.",
+      button: "Agenda una llamada gratis de 30 min",
+      reassurance: "Sin rollo de ventas. Sin presión. Solo claridad.",
+    },
+  },
+};
+
+const t = content[locale];
+
+// Person node for Robert. Reuses the site-wide @id from BaseLayout's graph, so
+// search engines read this as MORE facts about the same person, not a second one.
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": `${SITE}/#person`,
+  name: "Robert Cushman",
+  jobTitle: "Founder",
+  image: `${SITE}${PHOTO}`,
+  sameAs: [LINKEDIN],
+  worksFor: { "@id": `${SITE}/#organization` },
+};
+---
+
+<BaseLayout title={t.meta.title} description={t.meta.description}>
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(personJsonLd)} />
+
+  <!-- Hero: the person first -->
+  <section class="relative pt-24 pb-16 overflow-hidden">
+    <div class="absolute inset-0 -z-20">
+      <img
+        src="/images/hero/about-hero.webp"
+        alt=""
+        width="1920"
+        height="1080"
+        class="w-full h-full object-cover opacity-[0.05] dark:opacity-[0.03]"
+      />
+      <div class="absolute inset-0 bg-linear-to-b from-white/50 via-transparent to-white dark:from-gray-950/50 dark:via-transparent dark:to-gray-950"></div>
+    </div>
+    <div class="absolute inset-0 -z-10">
+      <div class="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-cush-orange/15 rounded-full blur-[120px]"></div>
+      <div class="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-cush-orange/10 rounded-full blur-[100px]"></div>
+    </div>
+
+    <Container>
+      <div class="grid lg:grid-cols-5 gap-10 lg:gap-12 items-center max-w-6xl mx-auto">
+        <!-- Photo: first on phones, right column (~40%) on desktop -->
+        <div class="lg:col-span-2 lg:order-2">
+          <div class="relative max-w-md mx-auto rounded-2xl overflow-hidden shadow-2xl">
+            <img
+              src={PHOTO}
+              alt={t.hero.photoAlt}
+              loading="eager"
+              fetchpriority="high"
+              width="1000"
+              height="1000"
+              class="w-full max-h-64 lg:max-h-none lg:aspect-square object-cover object-top"
+            />
+          </div>
+        </div>
+
+        <div class="lg:col-span-3 lg:order-1">
+          <span class="inline-block px-3 py-1 text-xs font-display font-semibold text-accent-text bg-cush-orange/10 rounded-full mb-4">
+            {t.hero.badge}
+          </span>
+          <h1 class="font-display text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+            {t.hero.headline}
+          </h1>
+          <p class="text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-2xl">
+            {t.hero.subheadline}
+          </p>
+
+          <div class="flex flex-col sm:flex-row sm:items-center gap-4">
+            <a
+              href={t.bookingHref}
+              data-analytics-placement="about-hero"
+              class="group inline-flex items-center justify-center gap-2 px-6 py-3 bg-cush-orange text-black font-display font-semibold rounded-lg hover:bg-cush-orange/90 transition-all shadow-lg shadow-cush-orange/25"
+            >
+              {t.hero.ctaPrimary}
+              <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+            <a
+              href={MESSENGER}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-analytics-placement="about-hero"
+              data-analytics-label={t.hero.ctaSecondary}
+              class="group inline-flex items-center justify-center gap-2 px-6 py-3 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 font-display font-semibold rounded-lg hover:border-cush-orange hover:text-accent-text transition-all"
+            >
+              {t.hero.ctaSecondary}
+              <span aria-hidden="true" class="group-hover:translate-x-1 transition-transform">→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </section>
+
+  <!-- Trust signals -->
+  <section class="py-16 border-y border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900/50">
+    <Container>
+      <h2 class="text-center font-display text-2xl font-bold text-gray-900 dark:text-white mb-10">
+        {t.trust.title}
+      </h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-10">
+        {t.trust.stats.map((stat) => (
+          <div class="text-center">
+            <div class="min-h-12 md:min-h-15 flex items-center justify-center mb-2">
+              <div
+                class:list={[
+                  "font-display font-bold text-accent-text leading-tight",
+                  stat.value.length > 12
+                    ? "text-xl md:text-2xl"
+                    : stat.value.length > 7
+                      ? "text-2xl md:text-4xl"
+                      : "text-4xl md:text-5xl",
+                ]}
+              >
+                {stat.value}
+              </div>
+            </div>
+            <div class="font-display font-semibold text-gray-900 dark:text-white">{stat.label}</div>
+            <div class="text-sm text-gray-500 dark:text-gray-400">{stat.sublabel}</div>
+          </div>
+        ))}
+      </div>
+
+      <!-- In plain English -->
+      <p class="mt-12 max-w-2xl mx-auto text-center text-base leading-relaxed text-slate-600 dark:text-slate-400" set:html={t.statement} />
+    </Container>
+  </section>
+
+  <!-- The problem I solve -->
+  <section class="py-20 lg:py-28">
+    <Container>
+      <div class="max-w-3xl mx-auto">
+        <h2 class="font-display text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
+          {t.problem.title}
+        </h2>
+        <p class="text-lg text-gray-600 dark:text-gray-400 mb-8">
+          {t.problem.intro}
+        </p>
+        <ul class="space-y-4 mb-8">
+          {t.problem.items.map((item) => (
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-slate-400 dark:text-slate-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span class="text-gray-700 dark:text-gray-300">{item}</span>
+            </li>
+          ))}
+        </ul>
+        <p class="text-xl font-display font-semibold text-accent-text">
+          {t.problem.conclusion}
+        </p>
+      </div>
+    </Container>
+  </section>
+
+  <!-- How I work differently -->
+  <section class="py-20 lg:py-28 bg-gray-50 dark:bg-gray-900/50">
+    <Container>
+      <h2 class="font-display text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-12 text-center">
+        {t.approach.title}
+      </h2>
+      <div class="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+        {t.approach.items.map((item, index) => (
+          <div class="p-6 md:p-8 rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800/50">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 rounded-lg bg-cush-orange/10 flex items-center justify-center shrink-0">
+                <span class="font-display font-bold text-accent-text">{String(index + 1).padStart(2, "0")}</span>
+              </div>
+              <h3 class="font-display text-xl font-bold text-gray-900 dark:text-white">
+                {item.title}
+              </h3>
+            </div>
+            <p class="text-gray-600 dark:text-gray-400">
+              {item.description}
+            </p>
+          </div>
+        ))}
+      </div>
+      <p class="mt-10 text-center">
+        <a href={t.portfolioHref} class="font-display font-semibold text-accent-text hover:underline">
+          {t.approach.portfolioLink} <span aria-hidden="true">→</span>
+        </a>
+      </p>
+    </Container>
+  </section>
+
+  <!-- About Robert -->
+  <section class="py-20 lg:py-28">
+    <Container>
+      <div class="max-w-2xl mx-auto">
+        <h2 class="font-display text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
+          {t.about.title}
+        </h2>
+        <p class="text-lg text-gray-600 dark:text-gray-400 mb-4">
+          {t.about.intro}
+        </p>
+        <p class="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
+          {t.about.body}
+        </p>
+        <blockquote class="border-l-4 border-cush-orange pl-6 py-2 mb-8">
+          <p class="text-xl font-display font-medium text-gray-900 dark:text-white italic">
+            "{t.about.highlight}"
+          </p>
+        </blockquote>
+        <a
+          href={LINKEDIN}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 text-accent-text font-display font-semibold hover:underline"
+        >
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+          </svg>
+          {t.about.linkedin}
+        </a>
+      </div>
+    </Container>
+  </section>
+
+  <!-- Who I work with -->
+  <section class="py-20 lg:py-28 bg-gray-50 dark:bg-gray-900/50">
+    <Container>
+      <div class="max-w-3xl mx-auto">
+        <h2 class="font-display text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
+          {t.clients.title}
+        </h2>
+        <p class="text-lg text-gray-600 dark:text-gray-400 mb-8">
+          {t.clients.intro}
+        </p>
+        <ul class="space-y-4 mb-8">
+          {t.clients.items.map((item) => (
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-green-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span class="text-gray-700 dark:text-gray-300">{item}</span>
+            </li>
+          ))}
+        </ul>
+        <p class="text-sm text-gray-500 dark:text-gray-400 italic">
+          {t.clients.notFor}
+        </p>
+      </div>
+    </Container>
+  </section>
+
+  <!-- Testimonials: renders ONLY when src/data/testimonials.ts holds real quotes -->
+  {testimonials.length > 0 && (
+    <section class="py-20 lg:py-28" aria-labelledby="about-testimonials-heading">
+      <Container>
+        <div class="max-w-3xl mx-auto">
+          <h2 id="about-testimonials-heading" class="font-display text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-10 text-center">
+            {t.testimonials.title}
+          </h2>
+          <div class="space-y-6">
+            {testimonials.map((item) => (
+              <figure class="p-6 md:p-8 rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900">
+                <blockquote class="text-gray-700 dark:text-gray-300 leading-relaxed">
+                  &ldquo;{item.quote[locale]}&rdquo;
+                </blockquote>
+                <figcaption class="flex items-center gap-3 mt-5 pt-5 border-t border-gray-100 dark:border-gray-800">
+                  <div class="w-10 h-10 rounded-full bg-cush-orange/15 flex items-center justify-center shrink-0 font-display font-bold text-sm text-accent-text" aria-hidden="true">
+                    {item.initials}
+                  </div>
+                  <div>
+                    <div class="font-display font-semibold text-sm text-gray-900 dark:text-white">{item.name}</div>
+                    {item.org && (item.orgUrl ? (
+                      <a href={item.orgUrl} target="_blank" rel="noopener noreferrer" class="block text-xs text-gray-500 dark:text-gray-400 underline decoration-dotted underline-offset-2 hover:text-accent-text">{item.org}</a>
+                    ) : (
+                      <div class="text-xs text-gray-500 dark:text-gray-400">{item.org}</div>
+                    ))}
+                    <div class="text-xs text-accent-text">{item.source[locale]}</div>
+                  </div>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
+      </Container>
+    </section>
+  )}
+
+  <!-- Final CTA -->
+  <section class="py-24 lg:py-32 relative overflow-hidden">
+    <div class="absolute inset-0 -z-10">
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cush-orange/20 rounded-full blur-[120px]"></div>
+    </div>
+
+    <Container>
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="font-display text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+          {t.cta.title}
+        </h2>
+        <p class="text-xl text-gray-600 dark:text-gray-400 mb-8">
+          {t.cta.subtitle}
+        </p>
+        <a
+          href={t.bookingHref}
+          data-analytics-placement="about-final-cta"
+          class="inline-flex items-center gap-3 px-8 py-4 bg-cush-orange text-black font-display font-bold text-lg rounded-xl hover:bg-cush-orange/90 transition-all shadow-lg shadow-cush-orange/25 hover:shadow-xl hover:shadow-cush-orange/30"
+        >
+          {t.cta.button}
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+        <p class="mt-4 text-sm text-gray-500 dark:text-gray-400">
+          {t.cta.reassurance}
+        </p>
+      </div>
+    </Container>
+  </section>
+</BaseLayout>

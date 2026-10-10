@@ -916,6 +916,22 @@ cost question the WhatsApp demo-swap decision has been waiting on.
 
 ## Session History
 
+## Session: 2026-10-10 — About page leads with Robert; one file for EN + ES
+
+**Branch:** `feat/about-revision` (PR open, not merged — Robert reviews).
+
+- **/about/ + /es/about/** now render from one component, `src/components/about/AboutPage.astro`;
+  the two page files are thin wrappers (the old ES file and the EN file's ES block had already
+  drifted apart on the trial line). Hero leads with Robert's photo and approved copy; secondary CTA
+  opens the CushLabs Messenger bot (`?ref=about-page`, fires `messenger_demo_opened`, placement
+  `about-hero`). Stats strip is Praxair/Linde facts + the exact career ladder; no year totals.
+- **Testimonials** moved to `src/data/testimonials.ts` (single source). The homepage SocialProof and
+  the new About section both read it; the About section renders nothing if the list is empty.
+- **Person JSON-LD** on /about/ reuses the site-wide `#person` @id (jobTitle "Founder", his photo).
+- **ES nav/footer:** "Acerca de"/"Acerca" → "Sobre mí"; footer "Sirviendo" → "Al servicio de".
+- **Confirmed, not changed:** `landing_page` on booking links is the first page of the visit, by design.
+- **Flagged:** most other ES headings/buttons are still Title Case (list in the PR description).
+
 ## Session: 2026-10-09/10 — Reviews article, demos page rebuilt, "in seconds", agendar, Meta trademark line
 
 - **Blog:** "How to reply to Google reviews" EN + ES (#384); Robert's EN/ES hero photos, illustration moved mid-article; sitemap re-submitted via the GSC API (sitemaps only — the Indexing API is for job postings, never use it for pages).

@@ -1,5 +1,6 @@
 ---
 import Container from '../layout/Container.astro';
+import { getTestimonial } from '../../data/testimonials';
 
 interface Props {
   locale: 'en' | 'es';
@@ -7,24 +8,28 @@ interface Props {
 
 const { locale } = Astro.props;
 
+// Quotes live in src/data/testimonials.ts (single source, shared with /about/).
+const azucena = getTestimonial('azucena-carrillo');
+const julio = getTestimonial('julio-cesar-aldana-gomez');
+const lead = (l: 'en' | 'es') => ({
+  quote: azucena.quote[l],
+  name: azucena.name,
+  initials: azucena.initials,
+  title: azucena.org!,
+  url: azucena.orgUrl!,
+  source: azucena.source[l],
+});
+const second = (l: 'en' | 'es') => ({
+  quote: julio.quote[l],
+  name: julio.name,
+  source: julio.source[l],
+});
+
 const content = {
   en: {
     heading: "Don't Take My Word for It.",
-    // Lead quote is from a small-business client, the buyer this page is for.
-    // Given in English (her preference with Robert); approved with this name 2026-09-30.
-    testimonial: {
-      quote: "We've given Robert the opportunity to work with our business to develop and adapt an automated AI system to the real needs of our stores and customers. It has been a collaborative process of testing, feedback, and continuous improvement, and we're excited to see how the system continues to evolve.",
-      name: "Azucena Carrillo",
-      initials: "AC",
-      title: "Azúcar Trajes de Baño",
-      url: "https://www.facebook.com/azucarenguadalajara/",
-      source: "Client",
-    },
-    secondary: {
-      quote: "Robert is one of the few people who can truly bridge the gap between 'this sounds promising' and 'this is already creating value'.",
-      name: "Julio Cesar Aldana Gomez",
-      source: "LinkedIn Recommendation",
-    },
+    testimonial: lead('en'),
+    secondary: second('en'),
     caseStudy: {
       label: "Case Study — My Own Business",
       title: "NY English Teacher",
@@ -39,19 +44,8 @@ const content = {
   },
   es: {
     heading: 'No Tienes que Creerme a Mí.',
-    testimonial: {
-      quote: "Le dimos a Robert la oportunidad de trabajar con nuestro negocio para desarrollar y adaptar un sistema automatizado de IA a las necesidades reales de nuestras tiendas y clientes. Ha sido un proceso colaborativo de pruebas, retroalimentación y mejora continua, y nos entusiasma ver cómo el sistema sigue evolucionando.",
-      name: "Azucena Carrillo",
-      initials: "AC",
-      title: "Azúcar Trajes de Baño",
-      url: "https://www.facebook.com/azucarenguadalajara/",
-      source: "Cliente",
-    },
-    secondary: {
-      quote: "Robert es una de las pocas personas que puede cerrar la brecha entre 'esto suena prometedor' y 'esto ya está generando valor'.",
-      name: "Julio Cesar Aldana Gomez",
-      source: "Recomendación en LinkedIn",
-    },
+    testimonial: lead('es'),
+    secondary: second('es'),
     caseStudy: {
       label: "Caso de Estudio — Mi Propio Negocio",
       title: "NY English Teacher",
