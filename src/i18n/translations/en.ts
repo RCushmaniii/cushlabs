@@ -33,7 +33,7 @@ export const en = {
     intelligence: {
       title: "Competitive Intelligence",
       description:
-        "Track competitors on Google Maps — rankings, reviews, and moves — with weekly WhatsApp reports and one clear action item.",
+        "Track competitors on Google Maps — rankings, reviews, and moves — with a weekly email report and one clear action item.",
     },
     voice: {
       title: "AI Voice Agent",
