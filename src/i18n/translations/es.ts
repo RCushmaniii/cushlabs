@@ -33,7 +33,7 @@ export const es = {
     intelligence: {
       title: "Inteligencia Competitiva",
       description:
-        "Rastrea competidores en Google Maps — rankings, reseñas y movimientos — con reportes semanales por WhatsApp y una acción clara.",
+        "Rastrea competidores en Google Maps — rankings, reseñas y movimientos — con un reporte semanal por correo y una acción clara.",
     },
     voice: {
       title: "Agente de Voz IA",
