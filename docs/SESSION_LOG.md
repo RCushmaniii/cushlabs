@@ -454,9 +454,39 @@ Planned but not started. Bundle related items into single PRs per CLAUDE.md.
 - ~~Booking: topic quick-picks~~ and ~~grey out days with no openings~~ — built 2026-10-08 (see
   that session entry).
 - ~~Messenger bot: read `ref=demos-page`~~ — built 2026-10-08 as cushlabs-messenger-bot PR #492;
-  merges (= deploys) in a 09:00–11:00 window with Robert present.
+  merged and deployed 2026-10-08 (Robert approved outside the window).
+- **Spanish sentence case, site-wide (~200 strings).** Spanish headings/buttons use English Title Case
+  ("Agenda una Llamada Gratis de 30 Min", "Qué Incluye") — reads as machine-translated to Mexican readers.
+  /about/ is done (#393); the full file:line list is in PR #393's description (home2/*, services2/*,
+  es/services/*, es/contact|portfolio|video|faq|privacy|terms, Footer, pricing components, es.ts,
+  projectDetails.ts, projectCardsEs.ts). One batch, spot-check home/pricing/services in Chrome.
+  Robert asked for this on 2026-10-10 but the session closed before starting.
+- **Meta logos on other pages.** /demos/ is clean and the footer trademark line is live (#392). Still
+  to review with Robert (list in PR #392's report): Facebook "f" on the blue "Connect with Facebook"
+  button (connect pages — likely fine, it's a real login button), Messenger logo inside the demo
+  buttons on /services/messenger-assistant/ (+ES), WhatsApp logos on WhatsApp buttons (contact,
+  salones, WhatsAppBookingCta), the ES blog hero `tu-pagina-de-facebook-es-tu-tienda.webp` (Facebook
+  page clone + logos — heaviest use) and `public/images/messenger-hero-v1.webp` (Messenger avatars).
+- **Send the Growth Agent outbox (Robert).** 99 first-touch DMs generated 2026-10-09, none sent —
+  `cushlabs-growth-agent/outbox.md`, queue at https://growth.cushlabs.ai/queue, ~10/day. This is the
+  biggest revenue lever (one paying client; organic search ~3 clicks/week). KPI: DMs → demo opened →
+  trial → paid.
 
 ### Medium priority
+
+- **Demo-card screenshots (Robert supplies, Claude swaps).** The CushLabs Messenger screenshots on
+  /demos/ show the bot's OLD answer ("On higher plans…", "ayudamos") — the live bot now gives the
+  four-bullet opener. The voice card shows the landing page; an in-call screen ("Hi, how can I
+  help?") would match the other cards. Process: crop top 3:4, 600×800 WebP, `public/images/demos/`.
+- **Ask Azucena for a result quote** (one line about an outcome, not the process) + photo. Strongest
+  possible proof for the homepage/About testimonials (`src/data/testimonials.ts`).
+- **Bot repo follow-up:** the pricing card now says "a WhatsApp alert to you in seconds" (#389), so the
+  documented exception in `cushlabs-messenger-bot/scripts/lib/pricing-drift.ts` can be deleted, and the
+  `/services/` skip rules in `scripts/ingest-website.ts` can go now that ServiceBlock no longer says
+  "alert the moment a competitor moves" (`30d3998`).
+- **Two new Dependabot PRs** (#373 sharp, #374 source-map-js) — batch them like #372.
+- **Voice site (voice.cushlabs.ai) brand mismatch:** different fonts/wordmark and "Start Free Trial"
+  wording vs the main site. Lives in the voice repo.
 
 - **Teach the homepage assistant the September site restructure** — its knowledge base was last
   reconciled 2026-08-27, before the six capability pages moved under `/services/` (PR #341), before
@@ -940,7 +970,10 @@ cost question the WhatsApp demo-swap decision has been waiting on.
 - **/demos/:** cards = picture + name + one line + one button (#388, #390, #391) with Robert's EN/ES screenshots, bottom fade, phone height cap; NY English is Robert's own business — never a "client". Pass 2 (#392): Messenger logo and blue bubbles removed from the illustrated phone (neutral chat), single h1, unsourced stats softened ("70%" → "Many questions repeat"), **Meta trademark line in the footer of every page**.
 - **Fast path for wording-only edits** (Robert): local build, commit straight to main, CI after. Code/prices/layout keep the PR path.
 - **Bots:** CushLabs Messenger bot — bullet opener, sales-conversation style, booking link inline (no extra bubble, per-tenant flag), "en segundos", "agendar", weekly-email competitor answer (bot PRs #528–#536). Converso widget — chips send on tap (#118) and website ingest (#116). Messenger bot website ingest runs daily with `CLOUDFLARE_INGEST_TOKEN` (verified scheduled run 2026-10-10).
-- **Open:** Meta logo usages elsewhere on the site (list in PR #392's report: connect pages' Facebook button, messenger-assistant demo buttons, WhatsApp buttons, ES Facebook-storefront blog hero, messenger hero image); voice card could use an in-call screenshot; About page revision in progress.
+- **/about/ revision (#393):** Robert's photo + "Fortune 500 IT leadership. Now building AI for small businesses." at the top; secondary CTA opens the live CushLabs bot (`m.me/cushlabs?ref=about-page`, logged and ignored by the bot); stats = 100+ initiatives / 26,000 employees across 42 countries / career ladder / 2 languages — **no career-year totals** (the review's "25 years" was refused under claims-policy `no_total_career_year_counts`). Both language pages now render one shared component (`src/components/about/AboutPage.astro`); testimonials live in `src/data/testimonials.ts` (homepage reads it too). ES nav "Acerca de" → "Sobre mí" site-wide. `landing_page` on booking links = first page of the visit, intentional.
+- **Footer (`a7cc791`):** "Bilingual EN/ES Delivery" → "Assistants in English & Spanish" / "Asistentes en español e inglés" (bilingual describes the product).
+- **Ops:** sitemap re-submitted; Search Console manual "Request indexing" is **not** something Robert will do — don't ask. Worker tripwire: `cushlabs-ig-staging` allowlisted (cushlabs-whatsapp #141); the duplicate GitHub Actions tripwire retired (bot #513). Capability registry note `commercial_decision_2026_10_08`: WhatsApp automation sold as live, onboarded by hand until the external-user test; all 12 consumers re-stamped.
+- **Not ours, flagged:** 2026-10-09 evening Robert reported Azúcar's bot answering after staff had taken over a thread (screenshot, Lizbth Jimenez). Belongs to the cushlabs-messenger-bot session; lead: `message_echoes` is not subscribed at the app level.
 
 ## Session: 2026-10-09 — Marketing batch: risky claims out, new homepage hero, blog internal links, Messenger demo tracking
 
