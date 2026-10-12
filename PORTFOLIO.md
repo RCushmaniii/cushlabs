@@ -40,8 +40,8 @@ hero_images:
 demo_video_url: "/images/portfolio/cushlabs-brief.mp4"
 demo_video_poster: "/images/portfolio/cushlabs-brief-poster.webp"
 
-live_url: "https://cushlabs.ai"
-demo_url: "https://cushlabs.ai"
+live_url: "https://www.cushlabs.ai/"
+demo_url: "https://www.cushlabs.ai/"
 case_study_url: ""
 
 problem: "Bilingual marketing sites go stale the moment you stop hand-updating them. Portfolio pages die after three or four projects because the maintenance cost multiplies across languages. Third-party booking widgets break design consistency and add a monthly fee."

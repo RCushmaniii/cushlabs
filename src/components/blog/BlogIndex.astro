@@ -26,6 +26,7 @@ const copy = {
     empty: "No posts yet — check back soon.",
     prev: "← Newer",
     next: "Older →",
+    pageLabel: "Page",
   },
   es: {
     title: "Blog de CushLabs | IA y Crecimiento para Negocios Locales",
@@ -37,13 +38,20 @@ const copy = {
     empty: "Aún no hay artículos — vuelve pronto.",
     prev: "← Más nuevos",
     next: "Más antiguos →",
+    pageLabel: "Página",
   },
 }[locale];
+
+// Page 2+ must not share page 1's title and description — search engines treat
+// that as duplicate content (Ahrefs flagged /blog/2/ and /es/blog/2/, 2026-10-12).
+const pageNumber = page && page.current > 1 ? page.current : null;
+const metaTitle = pageNumber ? `${copy.heading} — ${copy.pageLabel} ${pageNumber} | CushLabs.ai` : copy.title;
+const metaDescription = pageNumber ? `${copy.description} ${copy.pageLabel} ${pageNumber}.` : copy.description;
 ---
 
 <BaseLayout
-  title={copy.title}
-  description={copy.description}
+  title={metaTitle}
+  description={metaDescription}
   canonical={canonical}
   rssHref={locale === "es" ? "/es/blog/rss.xml" : "/blog/rss.xml"}
 >

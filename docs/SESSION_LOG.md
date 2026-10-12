@@ -12,7 +12,7 @@
 > Resolved items collapse to one line under [Resolved](#resolved-technical-debt); the trail stays so a
 > future session does not re-litigate a settled decision.
 
-**16 open** · 24 resolved · last reconciled 2026-09-30
+**18 open** · 24 resolved · last reconciled 2026-10-12
 
 ### ~~#31~~ — The homepage chat widget answers prospects and records nothing at all — **RESOLVED 2026-09-23**
 
@@ -46,8 +46,8 @@ handoff prompt recorded in the 2026-09-23 session entry.
 
 `app/api/embed/chat/route.ts:241` reads
 `(await getBusinessPersona(effectiveBusinessId)) ?? regularPrompt`. `regularPrompt`
-(`lib/ai/prompts.ts:35`) begins *"I am an AI assistant for New York English Teacher
-(nyenglishteacher.com), a professional English coaching service run by Robert Cushman"* and goes on
+(`lib/ai/prompts.ts:35`) begins _"I am an AI assistant for New York English Teacher
+(nyenglishteacher.com), a professional English coaching service run by Robert Cushman"_ and goes on
 to hand out `nyenglishteacher.com/en/book/` as the booking link.
 
 It resolves correctly today — the CushLabs tenant has a `bot_settings` row with an 8,123-character
@@ -181,6 +181,32 @@ someone is watching and worthless the moment nobody is.
 Minimum worth having: require `build` (49s) on `main` for the deployed repos, leave the long
 Playwright job advisory, and never require a check that a fork PR cannot run. Applies fleet-wide, not
 just to this repo — check before assuming any repo gates anything.
+
+### #41 — `astro check` has 6 type errors, so `npm run audit:predeploy` always ends FAILED
+
+**Low** · opened 2026-10-12 · blocks: nothing deployed (CI `build` does not run `astro check`); hides new type errors behind old ones
+
+Present on `main` before the 2026-10-12 SEO pass, not introduced by it. Four in
+`src/components/pricing/PricingSection.astro` (lines 224, 308, 352, 390: implicit `any` on `tier`,
+`f`, `s`, and an `any` index into the copy object) and two in
+`src/components/services2/ServiceBlock.astro:362-363` (`learnMore2Url` / `learnMore2Label` are read
+but are not on the `ServiceEntry` type). Because the audit always fails on this, a real new failure
+in it reads as the usual noise.
+
+**Next:** type the four PricingSection callbacks from the tier data's own type, and either add
+`learnMore2Url?` / `learnMore2Label?` to `ServiceEntry` or delete the dead read. Then `npx astro check`
+must print `0 errors`. Pricing surface — check both `/pricing/` and `/es/precios/` render unchanged.
+
+### #42 — `/projects/cushlabs-connect/` links to `/whatsapp/`, which is a redirect
+
+**Low** · opened 2026-10-12 · costs: one Ahrefs "link to redirect" notice on EN + ES
+
+The link is the `liveUrl` that `generate-projects` reads from the **cushlabs-connect** repo's
+`PORTFOLIO.md` (`https://www.cushlabs.ai/whatsapp/`); `vercel.json` 301s that path to
+`/services/whatsapp/`. Fixing it here would be overwritten by the next sync.
+
+**Next:** in a cushlabs-connect session, set its `PORTFOLIO.md` `live_url` to
+`https://www.cushlabs.ai/services/whatsapp/`, then `npm run sync:portfolio -- --skip-r2` here.
 
 ### ~~#38~~ — **RESOLVED 2026-09-25** — `website_content` has no tenant column, and an orphaned route reads it unscoped
 
@@ -417,7 +443,7 @@ ES privacy names LFPDPPP / derechos ARCO (PR #86); EN still says generic "depend
 
 Kept for the trail. Newest numbers first.
 
-- **#28 Pain-point cards had a hover state but no click** — Resolved 2026-09-30. Removed the border/shadow hover and the `group-hover` icon fill from the card and icon tile in `src/components/home2/PainPoints.astro`, matching `WhyMe.astro` (PR #318). One component serves EN and ES. (The *other* #28, the `SUPABASE_SECRET` history item, is unrelated and still open.)
+- **#28 Pain-point cards had a hover state but no click** — Resolved 2026-09-30. Removed the border/shadow hover and the `group-hover` icon fill from the card and icon tile in `src/components/home2/PainPoints.astro`, matching `WhyMe.astro` (PR #318). One component serves EN and ES. (The _other_ #28, the `SUPABASE_SECRET` history item, is unrelated and still open.)
 - **#8 Self-portfolio `demoUrl` pointed at the non-www apex** — Resolved 2026-09-02 (PR #300). `src/data/projectDetails.ts:146` now `https://www.cushlabs.ai/`, which removes the only redirecting internal link on the site (a 307 on 4 pages, Ahrefs 3XX warning). IndexNow submitted after merge.
 - **#19 Booking success announced without verification** — Resolved 2026-08-20 (PR #270). `data.ok` was the entire success test, so a worker replying ok without creating an event still rendered "You're Booked." `eventId` and `meetLink` had been in `BookingResponse` since the worker was written and neither was ever read. Now a missing `eventId` throws instead of claiming success, and the Meet link plus a booking reference render when returned — the join link is built in JS rather than shipping a dead `href="#"`. Verified by driving the real wizard with a mocked API in both directions. Two things found while in there: the summary said **"Central Time (GMT-6)"**, which is ambiguous and wrong for half the year for a US visitor (US Central shifts; Mexico City is UTC−6 year-round) — now "Mexico City time (UTC−6)" in both languages; and `PUBLIC_BOOKING_API_URL` was missing from `.env.example`, so an unset value silently disabled the primary conversion page with no build error.
 - **#18 Imported docs describing a different site** — Resolved 2026-08-20 (PR #271). 16 files deleted, 9 bannered with a `NOT THIS REPO` block naming exactly what is wrong. Inbound references were checked first: every link came from another doc in the same imported cluster or from SESSION_LOG, nothing in code, config or CI. Deleted the quiz system, free-assets router, Supabase migration, Netlify/Hostinger deployment guides, the Next.js/shadcn toolkit, WindsurfRules, and `BOOKING-SYSTEM.md` (which claimed a Cal.com widget). Kept, with banners, the bilingual and SEO docs whose reasoning generalises. Also fixed `docs/templates/readme-instructions.md`, which was seeding every new repo's README with "Node.js 18.17+" while Astro 7 requires >= 22.12. New `npm run audit:docs` flags foreign-stack markers in unbannered docs and `npm run` references to scripts that do not exist — advisory, not a gate, since a legitimate mention of another project is not a defect. 43 flagged docs → 27, every remaining heavy offender bannered.
@@ -457,7 +483,7 @@ Planned but not started. Bundle related items into single PRs per CLAUDE.md.
   merged and deployed 2026-10-08 (Robert approved outside the window).
 - **Spanish sentence case, site-wide (~200 strings).** Spanish headings/buttons use English Title Case
   ("Agenda una Llamada Gratis de 30 Min", "Qué Incluye") — reads as machine-translated to Mexican readers.
-  /about/ is done (#393); the full file:line list is in PR #393's description (home2/*, services2/*,
+  /about/ is done (#393); the full file:line list is in PR #393's description (home2/_, services2/_,
   es/services/*, es/contact|portfolio|video|faq|privacy|terms, Footer, pricing components, es.ts,
   projectDetails.ts, projectCardsEs.ts). One batch, spot-check home/pricing/services in Chrome.
   Robert asked for this on 2026-10-10 but the session closed before starting.
@@ -599,7 +625,7 @@ The actual cause: **every request was being answered with a `403 Vercel Security
 Checkpoint` page.** The word was missing because the page was a bot challenge, not the
 pricing page. The evidence was sitting there the whole time — 33,992 bytes against the
 deployment's 103,698 — and went unread for several rounds because each round tested
-*absence of the string* rather than *identity of the page*.
+_absence of the string_ rather than _identity of the page_.
 
 Then the same class of error again: the toggle screenshot showed "Pay by bank transfer"
 and looked like the change had not landed. It had. The screenshot was the **MXN** view,
@@ -657,8 +683,8 @@ nothing and credited for the bug it created.
 
 **What happened, 2026-09-23.** The day before, this log recorded that Converso's admin UI was a
 second write path to the homepage assistant's knowledge base, able to silently overwrite it. That
-was filed as tech debt #30 at 90% confidence, and the named 10% was *"I confirmed `ADMIN_EMAIL`
-exists but did not read its value."*
+was filed as tech debt #30 at 90% confidence, and the named 10% was _"I confirmed `ADMIN_EMAIL`
+exists but did not read its value."_
 
 **The uncertainty was named in the wrong place, so naming it bought nothing.** The question was
 never whether Robert's email matched `ADMIN_EMAIL` — it did, and `/admin` opened exactly as
@@ -679,7 +705,7 @@ committed as proof the hazard was live. It proved only that a page rendered.
    opens is not a dashboard that is pointed at your data.
 2. **State the uncertainty at the level of the claim.** A confidence note attached to a detail the
    claim does not rest on reads as rigor and defends nothing. Ask what single fact would flip the
-   conclusion, and name *that*.
+   conclusion, and name _that_.
 3. **When a database can answer it, ask the database.** This was one read-only query against the
    production database and it replaced a day of inference. It was available the whole time.
 4. **A screenshot confirms rendering, not identity.** Before treating "it opened" as verification,
@@ -734,8 +760,8 @@ to act on.
 **Rule.** Any per-client cost, margin or capacity model must be computed from **what that client
 actually pays**, never from their nominal tier. Most of the target market is multi-location, so a
 flat-tier model will manufacture false alarms on the majority of clients. Prefer a rule that
-self-adjusts — the one adopted here is *"a tenant's AI cost should not exceed ~15% of what that
-tenant pays"* — over any table of per-tier numbers, and if numbers are published internally, mark
+self-adjusts — the one adopted here is _"a tenant's AI cost should not exceed ~15% of what that
+tenant pays"_ — over any table of per-tier numbers, and if numbers are published internally, mark
 them explicitly as the rule expressed at one configuration rather than as the rule.
 
 **Corollary.** Robert caught this one. Two AI sessions agreeing did not make it true; they shared a
@@ -875,7 +901,6 @@ that gets bypassed with `--no-verify`.
 
 ---
 
-
 ## Session: 2026-09-24/25 — The chat widget was living in a client's database
 
 Almost none of this is in this repo's code, and all of it decides what this site
@@ -893,7 +918,7 @@ PR. Recorded as [#40](#40--two-production-apps-shared-one-database-for-eight-mon
 Split and verified the same day.
 
 **The retraining pipeline had never seen a real page change.** The sitemap
-scanner used a bare `<loc>` regex, which cannot tell a sitemap *index* from a
+scanner used a bare `<loc>` regex, which cannot tell a sitemap _index_ from a
 sitemap — it reported `pages_found: 1` for cushlabs.ai's 133 pages, the "page"
 being `sitemap-0.xml`. It had also left a pending suggestion in the admin UI,
 one click from scraping XML into the assistant's knowledge.
@@ -918,7 +943,7 @@ the peso market would push them toward the worse option.
 
 **Card is still not live in any currency**, and is not claimed anywhere. The
 request that prompted this described a "hosted Stripe/PayPal page"; only the
-PayPal half exists, and the verified Stripe Mexico *account* is not the same
+PayPal half exists, and the verified Stripe Mexico _account_ is not the same
 thing as checkout being live — `commercial-terms.json` says so explicitly.
 
 **The guardrail had been checking a stale answer.** `src/data/commercialTerms.json`
@@ -927,8 +952,8 @@ synced since PayPal was added. Ran `sync:terms` first; 140 pages now check clean
 
 ### The assistant was arguing with this website
 
-Its persona carried a hard rule — *"Payment is bank transfer only… Never mention
-paying by card, OXXO, or any payment method other than bank transfer"* — so the
+Its persona carried a hard rule — _"Payment is bank transfer only… Never mention
+paying by card, OXXO, or any payment method other than bank transfer"_ — so the
 widget embedded on the page offering PayPal was **telling US prospects PayPal was
 unavailable**. Fixed in `ai-chatbot-saas` and verified live in both languages.
 
@@ -945,6 +970,26 @@ In-window utility templates and service messages start being charged. This is th
 cost question the WhatsApp demo-swap decision has been waiting on.
 
 ## Session History
+
+## Session: 2026-10-12 — Mobile Lighthouse 75 → ~90; Ahrefs-style SEO pass
+
+- **PR #394 (merged, `4a80891`)** — mobile Performance on `/` and `/es/` went from 73–79 to 84–94
+  (Lighthouse 12.8 mobile, measured on production). Fonts self-hosted from `public/fonts/` (Google
+  Fonts' two extra connections were the main cost — blocking them alone moved 87 → 98); Inter italic
+  dropped (browser synthesizes it); phone-sized hero crop `home-hero-mobile-v1.webp` preloaded by
+  media query; headline no longer fades in from opacity 0; `build.inlineStylesheets: "always"`.
+  CLAUDE.md fonts section rewritten to match.
+- **SEO pass (this PR)** — a full crawl of `dist/` (titles, descriptions, H1, canonical, hreflang
+  reciprocity, OG, alt, broken/redirecting links, JSON-LD, sitemap) found the site clean apart from:
+  five titles outside 30–60 chars (EN + ES voice agent, ES Instagram, ES CushLabs project, privacy,
+  ES video), `/blog/2/` duplicating `/blog/`'s title and description, links that land on redirects
+  (X share button, LinkedIn profile, the CushLabs portfolio entry pointing at the bare domain). All
+  fixed. `audit-predeploy.ts` no longer cries wolf: it measured `&amp;` as five characters, flagged
+  588 `favicon.ico?v=2` links as missing a slash, and listed the noindex outreach pages as orphans.
+  (The file was also reformatted by Prettier — the logic diff is in the three helpers.)
+- **Vercel:** `cushlabs.ai` → `www` redirect changed from 307 (temporary, Vercel's default) to 308
+  via the API; verified live.
+- **Logged, not fixed:** #41 (`astro check` errors on main), #42 (cushlabs-connect link to a redirect).
 
 ## Session: 2026-10-10 — About page leads with Robert; one file for EN + ES
 
@@ -1108,7 +1153,7 @@ Triggered by two outside reviews (the demos page, the booking page). Both checke
 - **Industry deep links.** `/demos/?industry=<id>` (and `/es/demos/?industry=<id>`) opens that
   industry and jumps to it. Ids were renamed to stable, readable slugs because they will be printed on
   QR cards — **never rename one again**: `boutique, swimwear, coffee-distributor, coffee-shop,
-  restaurant, dental, orthodontics, spa, salon, hotel`.
+restaurant, dental, orthodontics, spa, salon, hotel`.
 - **The page's first ask.** "Get this for my business →" / "Lo quiero para mi negocio →" under the
   industry copy, linking to the booking page with `intent_source=demos&industry=<id>`, plus a
   "See plans and prices" link. No price restated. On phones the button sits above the fact list.
@@ -1181,6 +1226,7 @@ paired Premium's bullets with Ultra's price. Checked 320–1024px EN + ES, no ov
 ## Session: 2026-09-29 — Portfolio demo links pointed at vercel.app, and bookings had no attendance confirmation
 
 ### Portfolio links
+
 Six projects linked to temporary `*.vercel.app` / `*.netlify.app` addresses although a production
 domain existed (the gallery login fails on vercel.app because Clerk is bound to gallery.cushlabs.ai).
 Fixed at the source — PORTFOLIO.md `demo_url`, GitHub homepage field, `projectDetails.ts`
@@ -1188,6 +1234,7 @@ overrides — then regenerated. Commit b81d6b8. `aifilesense.com` and `aiideaval
 resolve; Robert confirmed both are retired, so those projects keep their temporary addresses.
 
 ### Booking confirmation (both booking Workers)
+
 A NY English consultation no-show had no warning. New `workers/lib/booking-confirm.js` (shared
 verbatim with `ny-eng/lib/`): every booking is stored in D1 with a random token; a 30-min cron emails
 anyone whose meeting is 2-26h away via **Brevo** with Confirm / Cancel links. Confirm prefixes the
@@ -1199,6 +1246,7 @@ end to end on nyenglishteacher.com. Commits 06cc00b, 41ecba0.
 `BREVO_SMTP_KEY` in .env is SMTP-only; the Worker needs a v3 API key (`BREVO_API_KEY` secret).
 
 ### WhatsApp reminder + morning summary (same day, parts 2 and 3)
+
 - Booking forms (cushlabs + ny-eng, EN/ES) gained a WhatsApp opt-in checkbox. ny-eng's form had been
   collecting a phone and never sending it to /book — fixed.
 - Opted-in bookings get the Meta template `consultation_reminder` the day before, sent through
@@ -1363,14 +1411,14 @@ returned a `conversationId` — **the first one ever** — and the database now 
 
 ### The bot refused to quote its own price when you named the company
 
-Asking the live assistant **"What does CushLabs cost?"** produced *"I can't provide specific pricing
-details here… book a free call"* while the complete price list sat in the database. Measured against
+Asking the live assistant **"What does CushLabs cost?"** produced _"I can't provide specific pricing
+details here… book a free call"_ while the complete price list sat in the database. Measured against
 the live embeddings:
 
-| Question | Pricing chunk |
-| --- | --- |
-| "How much does it cost?" | rank 1, 0.461 ✅ |
-| "¿Cuánto cuesta?" | rank 1, 0.557 ✅ |
+| Question                       | Pricing chunk             |
+| ------------------------------ | ------------------------- |
+| "How much does it cost?"       | rank 1, 0.461 ✅          |
+| "¿Cuánto cuesta?"              | rank 1, 0.557 ✅          |
 | **"What does CushLabs cost?"** | **not in the top six** ❌ |
 
 All five chunks retrieved for the brand-named query were brand-overview text. The persona then did
@@ -1379,7 +1427,7 @@ answer was correct behaviour on top of a failed retrieval**, which is the shape 
 
 **The cause is structural.** Only the title and the retrieval questions are embedded, never the
 prose. The overview chunk's questions are full of "CushLabs"; the pricing chunk's contained the token
-nowhere at all. The brand name in a query therefore pulled hard toward whichever chunk was *about*
+nowhere at all. The brand name in a query therefore pulled hard toward whichever chunk was _about_
 the brand, and topic words could not out-vote it. This is the worst phrasing to lose, because the
 widget lives on cushlabs.ai and **naming the company whose site you are standing on is the most
 natural way to ask.**
@@ -1403,7 +1451,7 @@ policy. Regression checked in the same pass — "How much does it cost?" still a
 "What is CushLabs?" still returns the overview rather than the price list.
 
 **No claim text was changed.** The diff on the knowledge content array is a single indentation change
-to a field reference. This changed only how chunks are *found*.
+to a field reference. This changed only how chunks are _found_.
 
 ### A reprovision used to empty the live bot for as long as it ran
 
@@ -1420,7 +1468,7 @@ delete and inserts run in one transaction. Readers see the old base or the new o
 ### And the merge gate does not exist
 
 `gh pr merge --auto` merged #102 and #103 **immediately, with their Playwright jobs still running**.
-Checked directly: `gh api repos/…/branches/main/protection` returns *Branch not protected* for both
+Checked directly: `gh api repos/…/branches/main/protection` returns _Branch not protected_ for both
 `ai-chatbot-saas` and `cushlabs`. With no required status checks there is nothing for `--auto` to
 wait on. Both jobs passed, which is luck rather than process. Recorded as
 [#37](#37--no-repo-has-required-status-checks-so-gh-pr-merge---auto-merges-immediately).
@@ -1636,7 +1684,7 @@ before asserting what does or does not exist in a repo.
    Premium, given Voice is deliberately de-prioritised in sales? Basic can be written without
    input; Ultra cannot.
 3. **Is marketing-template authoring a service sold today?** Robert said CushLabs can create
-   utility *and* marketing templates. Every WhatsApp surface currently says reminders-only.
+   utility _and_ marketing templates. Every WhatsApp surface currently says reminders-only.
 4. **Services dropdown** — explicitly sequenced to follow the page move, which is now done.
 5. **The per-service "Included in: Basic · Premium · Ultra" rewrite** on Services. Direction
    agreed; the price lines carry real upgrade arguments, so it needs deliberate rewriting
@@ -1703,7 +1751,6 @@ before asserting what does or does not exist in a repo.
 - `cushlabs-messenger-bot` card renderers still use Space Grotesk and its `fonts/` directory has
   neither new font.
 - ~94% of AI replies route to Sonnet; Haiku is 2.1× cheaper. Largest untested margin lever.
-
 
 ## Session: 2026-09-15 — The type system changed, and the homepage stopped reading as seven separate pages
 
@@ -1788,7 +1835,7 @@ deployment per Dependabot rebase, against the 100/day Hobby ceiling. Closing the
 **For the next session that sees this reappear:** do not re-diagnose it. Check
 `npm view eslint-plugin-jsx-a11y@latest peerDependencies` first. If the range still stops at `^9`,
 the bump is still blocked and the PR gets closed again. The unblock condition is a jsx-a11y release
-accepting `eslint@^10` — at which point #293 and #294 must land *together*, in one PR, and
+accepting `eslint@^10` — at which point #293 and #294 must land _together_, in one PR, and
 `eslint-plugin-astro@3.x` may require rewriting `eslint.config.js` for the newer
 `typescript-eslint` flat-config API rather than a straight version bump.
 
