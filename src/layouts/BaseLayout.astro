@@ -77,26 +77,24 @@ const ogLocaleAlternate = locale === "es" ? "en_US" : "es_MX";
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Preconnect to external origins for faster resource loading -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="dns-prefetch" href="https://raw.githubusercontent.com" />
     <link rel="dns-prefetch" href="https://voice.cushlabs.ai" />
     <link rel="dns-prefetch" href="https://analytics.ahrefs.com" />
-
-    <!-- Google Fonts — non-blocking via media swap trick -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500..800&family=Inter:ital,wght@0,400..700;1,400..700&display=swap" media="print" onload="this.media='all'" />
-    <noscript>
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500..800&family=Inter:ital,wght@0,400..700;1,400..700&display=swap" />
-    </noscript>
+    {/* Fonts are self-hosted and declared in global.css — no Google Fonts link here. */}
 
     {/* Preload the LCP hero image on the homepage.
         This pointed at /images/hero/home-hero3.webp until 2026-08-22 — a file the hero
         has never painted and nothing else references. Every homepage visitor fetched
         107 KB at high priority, on the critical path, for an image they never saw,
         while the image actually behind the headline was not preloaded at all.
-        Keep this path in sync with the background-image in home2/Hero.astro. */}
+        Keep both paths and the 640px breakpoint in sync with home2/Hero.astro. Phones
+        get home-hero-mobile-v1.webp, a portrait crop of the same photo (41 KB vs 119 KB)
+        framed so the 42% 48% background-position shows the same slice. */}
     {(pathname === '/' || pathname === '/es' || pathname === '/es/') && (
-      <link rel="preload" as="image" href="/images/home-hero-v1.webp" fetchpriority="high" />
+      <>
+        <link rel="preload" as="image" href="/images/home-hero-mobile-v1.webp" media="(max-width: 640px)" fetchpriority="high" />
+        <link rel="preload" as="image" href="/images/home-hero-v1.webp" media="(min-width: 641px)" fetchpriority="high" />
+      </>
     )}
 
     <title>{title}</title>

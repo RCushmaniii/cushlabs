@@ -138,6 +138,13 @@ export default defineConfig({
       },
     }),
   ],
+  // Inline the site stylesheet into every page. As a separate file it was the one
+  // render-blocking request on the homepage (~430 ms on Lighthouse mobile,
+  // 2026-10-12): the phone had to fetch the HTML, then make a second trip for
+  // the CSS before it could paint anything.
+  build: {
+    inlineStylesheets: "always",
+  },
   output: "static",
   trailingSlash: "always",
   site: "https://www.cushlabs.ai",
