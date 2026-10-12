@@ -116,7 +116,7 @@ const waHref = whatsappBookingHref('es');
           mid-line ("...your business. I put AI to...") and the parallel disappeared.
           A plain \n would not survive HTML whitespace collapsing, so the two halves are
           separate spans. Reads as one sentence to a screen reader either way. */}
-      <h1 id="hero-heading" class="home-h1 font-display font-bold text-white mb-6 animate-fade-in-up">
+      <h1 id="hero-heading" class="home-h1 font-display font-bold text-white mb-6">
         {t.headline.split(" | ").map((part, i) => (
           <span class:list={["block", i > 0 && "text-white/90"]}>{part}</span>
         ))}
@@ -126,7 +126,7 @@ const waHref = whatsappBookingHref('es');
       {/* Bottom spacing lives in the .home-sub rule below, NOT in a Tailwind mb-*
           class — the scoped `margin` shorthand outranks it and silently zeroes it out.
           A mb-8 here looks like it works and does nothing. Measured, 2026-09-15. */}
-      <div class="home-sub animate-fade-in-up" style="animation-delay: 0.1s;">
+      <div class="home-sub">
         <p class="font-medium text-white">{t.subheadline1}</p>
       </div>
 
@@ -309,7 +309,7 @@ const waHref = whatsappBookingHref('es');
           rgba(20, 17, 13, 0.82) 45%,
           rgba(20, 17, 13, 0.93) 100%
         ),
-        url("/images/home-hero-v1.webp");
+        url("/images/home-hero-mobile-v1.webp");
     }
   }
 
@@ -334,6 +334,11 @@ const waHref = whatsappBookingHref('es');
     text-shadow: 0 1px 14px rgba(0, 0, 0, 0.55);
   }
 
+  /* The headline and subheadline deliberately do NOT use these. They are the
+     Largest Contentful Paint on the homepage, and an element that starts at
+     opacity 0 does not count as painted until it fades in, so the entrance
+     animation added its whole duration to mobile LCP (2026-10-12, Lighthouse
+     mobile 79). Below-the-headline rows can keep them. */
   @keyframes fade-in {
     from { opacity: 0; }
     to { opacity: 1; }

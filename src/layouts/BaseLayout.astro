@@ -94,9 +94,14 @@ const ogLocaleAlternate = locale === "es" ? "en_US" : "es_MX";
         has never painted and nothing else references. Every homepage visitor fetched
         107 KB at high priority, on the critical path, for an image they never saw,
         while the image actually behind the headline was not preloaded at all.
-        Keep this path in sync with the background-image in home2/Hero.astro. */}
+        Keep both paths and the 640px breakpoint in sync with home2/Hero.astro. Phones
+        get home-hero-mobile-v1.webp, a portrait crop of the same photo (41 KB vs 119 KB)
+        framed so the 42% 48% background-position shows the same slice. */}
     {(pathname === '/' || pathname === '/es' || pathname === '/es/') && (
-      <link rel="preload" as="image" href="/images/home-hero-v1.webp" fetchpriority="high" />
+      <>
+        <link rel="preload" as="image" href="/images/home-hero-mobile-v1.webp" media="(max-width: 640px)" fetchpriority="high" />
+        <link rel="preload" as="image" href="/images/home-hero-v1.webp" media="(min-width: 641px)" fetchpriority="high" />
+      </>
     )}
 
     <title>{title}</title>
