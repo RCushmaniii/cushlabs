@@ -62,7 +62,10 @@ function getEnv(name: string) {
   return typeof raw === "string" ? raw.trim() : "";
 }
 
-async function walkFiles(root: string, ignores: Set<string>): Promise<string[]> {
+async function walkFiles(
+  root: string,
+  ignores: Set<string>,
+): Promise<string[]> {
   const entries = await readdir(root, { withFileTypes: true });
   const files: string[] = [];
 
@@ -127,13 +130,15 @@ function keyPaths(obj: unknown, prefix = ""): string[] {
 async function checkEnv() {
   // generate-projects.ts uses PROJECT_SYNC_TOKEN || GITHUB_TOKEN for auth
   // and defaults GITHUB_OWNER to 'RCushmaniii' if unset
-  const hasGitHubToken = !!(getEnv("PROJECT_SYNC_TOKEN") || getEnv("GITHUB_TOKEN"));
+  const hasGitHubToken = !!(
+    getEnv("PROJECT_SYNC_TOKEN") || getEnv("GITHUB_TOKEN")
+  );
 
   if (!hasGitHubToken) {
     log(
       "FAIL",
       "Missing GitHub token",
-      "Set PROJECT_SYNC_TOKEN or GITHUB_TOKEN for portfolio sync"
+      "Set PROJECT_SYNC_TOKEN or GITHUB_TOKEN for portfolio sync",
     );
     return false;
   }
@@ -146,7 +151,7 @@ async function checkEnv() {
     log(
       "WARN",
       "No consultation booking URL is set",
-      "Set PUBLIC_CONSULTATION_URL (or PUBLIC_CONSULTATION_URL_30/_60) so the scheduling flow can embed the booking calendar."
+      "Set PUBLIC_CONSULTATION_URL (or PUBLIC_CONSULTATION_URL_30/_60) so the scheduling flow can embed the booking calendar.",
     );
   } else {
     log("OK", "Consultation booking URL is set");
@@ -158,7 +163,7 @@ async function checkEnv() {
     log(
       "WARN",
       "PUBLIC_WHATSAPP_NUMBER is not set",
-      "The site will fall back to WHATSAPP_NUMBER, but Astro expects PUBLIC_ vars for client-safe usage."
+      "The site will fall back to WHATSAPP_NUMBER, but Astro expects PUBLIC_ vars for client-safe usage.",
     );
   } else if (!waPublic && !waPrivate) {
     log("WARN", "No WhatsApp number configured");
@@ -203,19 +208,16 @@ async function checkI18nParity() {
 }
 
 async function checkSecretLeaks() {
-  const ignores = new Set([
-    ".git",
-    "node_modules",
-    "dist",
-    ".astro",
-    "backup",
-  ]);
+  const ignores = new Set([".git", "node_modules", "dist", ".astro", "backup"]);
 
   const files = (await walkFiles(cwd, ignores)).filter(isTextFile);
 
   const patterns: { name: string; re: RegExp }[] = [
     { name: "GitHub classic token", re: /\bghp_[A-Za-z0-9]{20,}\b/ },
-    { name: "GitHub fine-grained token", re: /\bgithub_pat_[A-Za-z0-9_]{20,}\b/ },
+    {
+      name: "GitHub fine-grained token",
+      re: /\bgithub_pat_[A-Za-z0-9_]{20,}\b/,
+    },
     { name: "OpenAI-style key", re: /\bsk-[A-Za-z0-9]{20,}\b/ },
   ];
 
@@ -244,7 +246,11 @@ async function checkSecretLeaks() {
     const details = violations
       .map((v) => `- ${path.relative(cwd, v.file)} (${v.pattern})`)
       .join("\n");
-    log("FAIL", "Potential secret leak detected in tracked source files", details);
+    log(
+      "FAIL",
+      "Potential secret leak detected in tracked source files",
+      details,
+    );
     return false;
   }
 
@@ -255,7 +261,7 @@ async function checkSecretLeaks() {
     log(
       "WARN",
       "Secrets detected in env files",
-      `${details}\nEnsure .env files remain gitignored and never committed.`
+      `${details}\nEnsure .env files remain gitignored and never committed.`,
     );
   } else {
     log("OK", "No obvious secret patterns found");
@@ -321,7 +327,7 @@ async function checkStaticArtifacts() {
     log(
       "WARN",
       "Some expected static outputs were not found in dist/",
-      missing.map((m) => `- ${m}`).join("\n")
+      missing.map((m) => `- ${m}`).join("\n"),
     );
   } else {
     log("OK", "Expected dist/ pages exist");
@@ -337,7 +343,7 @@ async function checkStaticArtifacts() {
     log(
       "WARN",
       "robots.txt exists in both repo root and public/",
-      "Astro will publish the public/ version. Consider removing the root copy to avoid confusion."
+      "Astro will publish the public/ version. Consider removing the root copy to avoid confusion.",
     );
   }
 
@@ -376,37 +382,75 @@ async function collectHtmlFiles(dir: string): Promise<string[]> {
   return htmlFiles;
 }
 
+// Titles and descriptions are measured as a visitor and Google see them, not as
+// HTML source: "&amp;" is one character, not five. Measuring the raw source
+// failed four in-limit titles on 2026-10-12.
+function decodeEntities(text: string): string {
+  return text
+    .replace(/&#(\d+);/g, (_, n) => String.fromCodePoint(Number(n)))
+    .replace(/&#x([0-9a-f]+);/gi, (_, n) =>
+      String.fromCodePoint(parseInt(n, 16)),
+    )
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;|&apos;/g, "'")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/&amp;/g, "&");
+}
+
 function extractTag(html: string, tag: string): string | null {
   // <title>...</title>
   if (tag === "title") {
     const m = html.match(/<title[^>]*>(.*?)<\/title>/is);
-    return m ? m[1].trim() : null;
+    return m ? decodeEntities(m[1].trim()) : null;
   }
   // <meta name="description" content="...">
   // Use a backreference for the closing quote so apostrophes inside the content
   // (e.g. "Driver's License") don't truncate the match early.
   if (tag === "description") {
-    const m = html.match(/<meta\s[^>]*name=["']description["'][^>]*content=(["'])(.*?)\1[^>]*\/?>/is)
-           || html.match(/<meta\s[^>]*content=(["'])(.*?)\1[^>]*name=["']description["'][^>]*\/?>/is);
-    return m ? m[2].trim() : null;
+    const m =
+      html.match(
+        /<meta\s[^>]*name=["']description["'][^>]*content=(["'])(.*?)\1[^>]*\/?>/is,
+      ) ||
+      html.match(
+        /<meta\s[^>]*content=(["'])(.*?)\1[^>]*name=["']description["'][^>]*\/?>/is,
+      );
+    return m ? decodeEntities(m[2].trim()) : null;
   }
   return null;
 }
 
 function extractInternalHrefs(html: string): string[] {
-  const staticExts = /\.(css|js|mjs|ico|png|jpg|jpeg|webp|avif|svg|gif|woff2?|ttf|eot|xml|json|txt|webmanifest|pdf)$/i;
+  const staticExts =
+    /\.(css|js|mjs|ico|png|jpg|jpeg|webp|avif|svg|gif|woff2?|ttf|eot|xml|json|txt|webmanifest|pdf)$/i;
   const matches = [...html.matchAll(/href=["'](\/[^"'#]*?)["']/g)];
-  return matches.map(m => m[1]).filter(h => !h.startsWith("//") && !h.startsWith("/_astro/") && !staticExts.test(h));
+  // Test the extension on the path alone: "/favicon.ico?v=2" is a file, and the
+  // query string used to hide its extension and flag 588 false trailing-slash links.
+  return matches
+    .map((m) => m[1])
+    .filter(
+      (h) =>
+        !h.startsWith("//") &&
+        !h.startsWith("/_astro/") &&
+        !staticExts.test(h.split(/[?#]/)[0]),
+    )
+    .map((h) => h.split(/[?#]/)[0]);
 }
 
 function extractCanonical(html: string): string | null {
-  const m = html.match(/<link\s[^>]*rel=["']canonical["'][^>]*href=["'](.*?)["']/i);
+  const m = html.match(
+    /<link\s[^>]*rel=["']canonical["'][^>]*href=["'](.*?)["']/i,
+  );
   return m ? m[1] : null;
 }
 
 function extractHreflang(html: string): string[] {
-  const matches = [...html.matchAll(/<link\s[^>]*rel=["']alternate["'][^>]*href=["'](.*?)["']/gi)];
-  return matches.map(m => m[1]);
+  const matches = [
+    ...html.matchAll(
+      /<link\s[^>]*rel=["']alternate["'][^>]*href=["'](.*?)["']/gi,
+    ),
+  ];
+  return matches.map((m) => m[1]);
 }
 
 async function checkSeoOnBuild() {
@@ -432,24 +476,42 @@ async function checkSeoOnBuild() {
   const allPages = new Set<string>();
 
   for (const file of htmlFiles) {
-    const rel = path.relative(dist, file).replace(/\\/g, "/").replace(/index\.html$/, "");
+    const rel = path
+      .relative(dist, file)
+      .replace(/\\/g, "/")
+      .replace(/index\.html$/, "");
     const pagePath = `/${rel}`;
-    allPages.add(pagePath);
 
     let html: string;
     try {
       html = await readFile(file, "utf8");
-    } catch {
-      continue;
+    } catch (err) {
+      throw new Error(
+        `Could not read built page ${file}: ${(err as Error).message}`,
+      );
+    }
+
+    // Noindex pages (DM-driven landing pages, connect flows) are unlinked on purpose,
+    // so they are left out of orphan detection rather than reported every run.
+    if (
+      !/<meta\s[^>]*name=["']robots["'][^>]*content=["'][^"']*noindex/i.test(
+        html,
+      )
+    ) {
+      allPages.add(pagePath);
     }
 
     // ── Title length check ──
     const title = extractTag(html, "title");
     if (title) {
       if (title.length > SEO_LIMITS.titleMax) {
-        titleIssues.push(`- ${pagePath} → ${title.length} chars: "${title.slice(0, 70)}..."`);
+        titleIssues.push(
+          `- ${pagePath} → ${title.length} chars: "${title.slice(0, 70)}..."`,
+        );
       } else if (title.length < SEO_LIMITS.titleMin) {
-        titleIssues.push(`- ${pagePath} → ${title.length} chars (too short): "${title}"`);
+        titleIssues.push(
+          `- ${pagePath} → ${title.length} chars (too short): "${title}"`,
+        );
       }
     }
 
@@ -457,7 +519,9 @@ async function checkSeoOnBuild() {
     const desc = extractTag(html, "description");
     if (desc && !pagePath.includes("404")) {
       if (desc.length > SEO_LIMITS.descMax) {
-        descIssues.push(`- ${pagePath} → ${desc.length} chars: "${desc.slice(0, 80)}..."`);
+        descIssues.push(
+          `- ${pagePath} → ${desc.length} chars: "${desc.slice(0, 80)}..."`,
+        );
       } else if (desc.length < SEO_LIMITS.descMin) {
         descIssues.push(`- ${pagePath} → ${desc.length} chars (too short)`);
       }
@@ -467,7 +531,9 @@ async function checkSeoOnBuild() {
     const hrefs = extractInternalHrefs(html);
     for (const href of hrefs) {
       if (href !== "/" && !href.endsWith("/")) {
-        trailingSlashIssues.push(`- ${pagePath} → href="${href}" (missing trailing slash)`);
+        trailingSlashIssues.push(
+          `- ${pagePath} → href="${href}" (missing trailing slash)`,
+        );
       }
       // Track linked paths for orphan detection
       const normalized = href.endsWith("/") ? href : `${href}/`;
@@ -483,16 +549,26 @@ async function checkSeoOnBuild() {
         try {
           const hlPath = new URL(hl).pathname;
           if (hlPath !== "/" && !hlPath.endsWith("/")) {
-            trailingSlashIssues.push(`- ${pagePath} → hreflang "${hlPath}" missing trailing slash`);
+            trailingSlashIssues.push(
+              `- ${pagePath} → hreflang "${hlPath}" missing trailing slash`,
+            );
           }
-        } catch { /* skip malformed URLs */ }
+        } catch {
+          /* skip malformed URLs */
+        }
       }
     }
   }
 
   // ── Orphan page detection (pages with no incoming internal links) ──
   for (const page of allPages) {
-    if (page === "/" || page === "/es/" || page === "/404/" || page === "/404.html") continue;
+    if (
+      page === "/" ||
+      page === "/es/" ||
+      page === "/404/" ||
+      page === "/404.html"
+    )
+      continue;
     if (!linkedPaths.has(page)) {
       orphanCandidates.add(page);
     }
@@ -502,22 +578,43 @@ async function checkSeoOnBuild() {
 
   // Report results
   if (titleIssues.length) {
-    log("FAIL", `Title length issues (${titleIssues.length} pages, limit: ${SEO_LIMITS.titleMax} chars)`, titleIssues.join("\n"));
+    log(
+      "FAIL",
+      `Title length issues (${titleIssues.length} pages, limit: ${SEO_LIMITS.titleMax} chars)`,
+      titleIssues.join("\n"),
+    );
     ok = false;
   } else {
-    log("OK", `All page titles within ${SEO_LIMITS.titleMin}-${SEO_LIMITS.titleMax} chars`);
+    log(
+      "OK",
+      `All page titles within ${SEO_LIMITS.titleMin}-${SEO_LIMITS.titleMax} chars`,
+    );
   }
 
   if (descIssues.length) {
-    log("FAIL", `Meta description length issues (${descIssues.length} pages, limit: ${SEO_LIMITS.descMax} chars)`, descIssues.join("\n"));
+    log(
+      "FAIL",
+      `Meta description length issues (${descIssues.length} pages, limit: ${SEO_LIMITS.descMax} chars)`,
+      descIssues.join("\n"),
+    );
     ok = false;
   } else {
-    log("OK", `All meta descriptions within ${SEO_LIMITS.descMin}-${SEO_LIMITS.descMax} chars`);
+    log(
+      "OK",
+      `All meta descriptions within ${SEO_LIMITS.descMin}-${SEO_LIMITS.descMax} chars`,
+    );
   }
 
   if (trailingSlashIssues.length) {
     const dedupedIssues = [...new Set(trailingSlashIssues)].slice(0, 20);
-    log("FAIL", `Trailing slash issues (${trailingSlashIssues.length} links)`, dedupedIssues.join("\n") + (trailingSlashIssues.length > 20 ? `\n  ... and ${trailingSlashIssues.length - 20} more` : ""));
+    log(
+      "FAIL",
+      `Trailing slash issues (${trailingSlashIssues.length} links)`,
+      dedupedIssues.join("\n") +
+        (trailingSlashIssues.length > 20
+          ? `\n  ... and ${trailingSlashIssues.length - 20} more`
+          : ""),
+    );
     ok = false;
   } else {
     log("OK", "All internal links have trailing slashes");
@@ -525,7 +622,14 @@ async function checkSeoOnBuild() {
 
   if (orphanCandidates.size > 0) {
     const orphanList = [...orphanCandidates].slice(0, 15);
-    log("WARN", `${orphanCandidates.size} pages with no incoming internal links`, orphanList.map(p => `- ${p}`).join("\n") + (orphanCandidates.size > 15 ? `\n  ... and ${orphanCandidates.size - 15} more` : ""));
+    log(
+      "WARN",
+      `${orphanCandidates.size} pages with no incoming internal links`,
+      orphanList.map((p) => `- ${p}`).join("\n") +
+        (orphanCandidates.size > 15
+          ? `\n  ... and ${orphanCandidates.size - 15} more`
+          : ""),
+    );
   } else {
     log("OK", "All pages have incoming internal links");
   }
@@ -547,7 +651,11 @@ async function main() {
   ok = (await checkI18nParity()) && ok;
 
   try {
-    await run("npm", ["run", "astro", "--", "check"], "Typecheck (astro check)");
+    await run(
+      "npm",
+      ["run", "astro", "--", "check"],
+      "Typecheck (astro check)",
+    );
   } catch (e) {
     log("FAIL", "astro check failed", String(e));
     ok = false;
