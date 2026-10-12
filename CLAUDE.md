@@ -614,16 +614,21 @@ don't get re-proposed. `#ff6a3d` below is canonical and the mark was recoloured 
 **Canonical in `operating-system/cushlabs/brand-kit.md` § Typography — do not restate the spec
 here.** This section carried Space Grotesk + Source Serif 4 for three days after the brand moved to
 Manrope + Inter on 2026-09-15, which is exactly the drift the brand-kit pointer above exists to
-prevent. What this repo owns is the wiring, and there are only three places:
+prevent. What this repo owns is the wiring, and since 2026-10-12 it is two places:
 
 - `--font-display` / `--font-body` in the `@theme` block of `src/styles/global.css`
-- the Google Fonts `<link>` in `src/layouts/BaseLayout.astro`
-- the same `<link>` in `src/layouts/LandingLayout.astro` (`/salons`, `/salones`)
+- the self-hosted `@font-face` rules at the top of the same file, pointing at `public/fonts/*.woff2`
 
-**All three must change together.** When LandingLayout was left behind, it requested one family
-while `global.css` named another, so both landing pages silently rendered in the system UI font.
-Load variable ranges (`Manrope:wght@500..800`), never a discrete weight list — a discrete list snaps
-a 750 request to 700 without warning.
+**Fonts are self-hosted. Never re-add a Google Fonts `<link>`** to `BaseLayout.astro` or
+`LandingLayout.astro`. The two extra connections it needed (fonts.googleapis.com, then
+fonts.gstatic.com) were what held the mobile Lighthouse score in the 70s–80s; blocking them moved
+the homepage from 87 to 98 locally. Both layouts import `global.css`, so one declaration covers
+every page and the layouts can no longer drift apart (LandingLayout once requested a different
+family than `global.css` named, and `/salons` silently rendered in the system font).
+To change a family or weight range, download the new variable woff2 files under a **new filename**
+(`-v2`) — `/fonts/` is cached as immutable for a year. Keep variable ranges
+(`font-weight: 500 800`), never a discrete weight list — a discrete list snaps a 750 request to 700
+without warning.
 
 ---
 
