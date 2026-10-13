@@ -116,8 +116,8 @@ export default defineConfig({
         if (partner) {
           const isEs = url.includes("/es/") || url.endsWith("/es");
           item.links = [
-            { lang: "en-US", url: isEs ? partner : url },
-            { lang: "es-MX", url: isEs ? url : partner },
+            { lang: "en", url: isEs ? partner : url },
+            { lang: "es", url: isEs ? url : partner },
           ];
           return item;
         }
@@ -131,9 +131,11 @@ export default defineConfig({
       },
       i18n: {
         defaultLocale: "en",
+        // Language-only hreflang codes, matching BaseLayout.astro — see the comment
+        // there for why es-MX alone sent Spanish speakers outside Mexico to English.
         locales: {
-          en: "en-US",
-          es: "es-MX",
+          en: "en",
+          es: "es",
         },
       },
     }),

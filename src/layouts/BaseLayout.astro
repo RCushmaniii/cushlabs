@@ -3,6 +3,7 @@ import "../styles/global.css";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import ThemeScript from "../components/ThemeScript.astro";
+import LanguageSuggestion from "../components/LanguageSuggestion.astro";
 import type { Locale } from "../i18n";
 import { getLocaleFromPathname, getLocalizedPath } from "../i18n";
 
@@ -60,6 +61,18 @@ const canonicalURL = new URL(canonicalPath, Astro.site);
 const enURL = new URL(altLocaleHref?.en ?? getLocalizedPath(pathname, "en"), Astro.site);
 const esURL = new URL(altLocaleHref?.es ?? getLocalizedPath(pathname, "es"), Astro.site);
 
+// The twin page in the other language, for the language suggestion card. Blog
+// posts declare their alternates explicitly; a single-language post has no twin
+// (its switcher goes to the other blog index, which is not "this page in Spanish").
+// The 404 page has no twin either.
+const otherLocale = locale === "es" ? "en" : "es";
+const twinHref = hreflangAlternates
+  ? (hreflangAlternates.find((a) => a.lang.startsWith(otherLocale))?.href ?? null)
+  : pathname.includes("404")
+    ? null
+    : (locale === "es" ? enURL : esURL).href;
+const languageSuggestionHref = twinHref ? stripOrigin(twinHref) : null;
+
 // OG Image - use custom if provided, otherwise default
 const defaultOgImage = `${Astro.site}images/og/cushlabs-og.png`;
 const resolvedOgImage = ogImage ? `${Astro.site}${ogImage.replace(/^\//, '')}` : defaultOgImage;
@@ -103,7 +116,11 @@ const ogLocaleAlternate = locale === "es" ? "en_US" : "es_MX";
     <meta name="robots" content={noindex ? "noindex, nofollow" : "index, follow"} />
     <link rel="canonical" href={canonicalURL} />
 
-    <!-- Hreflang for bilingual SEO — locale codes match sitemap i18n config (en-US / es-MX) -->
+    <!-- Hreflang for bilingual SEO — language-only codes, matching the sitemap i18n config.
+         They were en-US / es-MX until 2026-10-12. A regional code only matches users in that
+         region: a Spanish speaker in the US, Colombia or Spain matched neither alternate and
+         was sent the x-default, which is English. The content is not region-specific, so
+         "es" serves every Spanish speaker and Mexico is still covered. -->
     {hreflangAlternates ? (
       <>
         {hreflangAlternates.map((a) => (
@@ -113,8 +130,8 @@ const ogLocaleAlternate = locale === "es" ? "en_US" : "es_MX";
       </>
     ) : (
       <>
-        <link rel="alternate" hreflang="en-US" href={enURL} />
-        <link rel="alternate" hreflang="es-MX" href={esURL} />
+        <link rel="alternate" hreflang="en" href={enURL} />
+        <link rel="alternate" hreflang="es" href={esURL} />
         <link rel="alternate" hreflang="x-default" href={enURL} />
       </>
     )}
@@ -271,6 +288,7 @@ const ogLocaleAlternate = locale === "es" ? "en_US" : "es_MX";
       <slot />
     </main>
     <Footer locale={locale} />
+    <LanguageSuggestion locale={locale} targetHref={languageSuggestionHref} />
     <script>
       import { initConversionAnalytics } from '../lib/conversion-analytics';
       initConversionAnalytics();
@@ -302,7 +320,8 @@ const ogLocaleAlternate = locale === "es" ? "en_US" : "es_MX";
       style.textContent = `
         #cl-chat-btn {
           position: fixed;
-          bottom: 24px;
+          /* --cl-lang-offset lifts the launcher above the language suggestion card on phones. */
+          bottom: calc(24px + var(--cl-lang-offset, 0px));
           right: 24px;
           z-index: 9998;
           width: 56px;
@@ -317,7 +336,7 @@ const ogLocaleAlternate = locale === "es" ? "en_US" : "es_MX";
           display: flex;
           align-items: center;
           justify-content: center;
-          transition: transform 0.2s, box-shadow 0.2s;
+          transition: transform 0.2s, box-shadow 0.2s, bottom 0.25s ease;
           animation: clPulse 2.5s ease-in-out infinite;
         }
         #cl-chat-btn svg { width: 26px; height: 26px; }

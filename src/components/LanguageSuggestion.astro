@@ -1,0 +1,256 @@
+---
+// Offers the other language to a visitor whose browser prefers it. It never
+// redirects: Googlebot crawls as a US-English browser, so a language redirect on
+// "/" would hide the Spanish pages from the index. Google's own guidance is to
+// suggest, not redirect (developers.google.com/search/docs/specialty/international/managing-multi-regional-sites).
+//
+// How it decides (client-side only, after the page has painted):
+//   1. An explicit choice wins: clicking EN/ES in the header, or "Ver en español"
+//      here, stores `cl-lang`. A visitor on the page matching it sees nothing.
+//   2. Otherwise the first English or Spanish entry in navigator.languages.
+//   3. "Seguir en inglés" / "Stay in Spanish" (or Escape) stores `cl-lang-dismissed`
+//      and the suggestion never comes back, in either direction.
+//
+// Placement: under the header switcher on desktop, a bottom sheet on phones.
+// Performance: the markup ships inside a <template>, so it is not rendered, not
+// part of LCP, and not page text. It is inserted ~1s after `load` as a
+// fixed-position card, which cannot cause layout shift.
+import type { Locale } from "../i18n";
+import { t } from "../i18n";
+
+interface Props {
+  locale: Locale;
+  // Path of this page's twin in the other language; null when there is none.
+  targetHref: string | null;
+}
+
+const { locale, targetHref } = Astro.props;
+const target: Locale = locale === "en" ? "es" : "en";
+
+// The card speaks the language it offers, so its strings come from that dictionary.
+const copy = t(target).language.suggestion;
+---
+
+{targetHref && (
+  <template id="cl-lang-suggest">
+    <aside class="lang-suggest" aria-label={copy.region} lang={target} data-nosnippet data-lang-suggest>
+      <span class="lang-suggest__icon" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m5 8 6 6"></path><path d="m4 14 6-6 2-3"></path><path d="M2 5h12"></path><path d="M7 2h1"></path><path d="m22 22-5-10-5 10"></path><path d="M14 18h6"></path>
+        </svg>
+      </span>
+      <p class="lang-suggest__message">{copy.message}</p>
+      <div class="lang-suggest__actions">
+        <a
+          class="lang-suggest__accept"
+          href={targetHref}
+          hreflang={target}
+          data-lang-choice={target}
+          data-analytics-event="language_suggestion_accepted"
+          data-analytics-placement="language-suggestion"
+        >{copy.accept}</a>
+        <button
+          type="button"
+          class="lang-suggest__stay"
+          data-lang-stay
+          data-analytics-event="language_suggestion_dismissed"
+          data-analytics-placement="language-suggestion"
+        >{copy.stay}</button>
+      </div>
+    </aside>
+  </template>
+)}
+
+<script is:inline>
+(function () {
+  var PREF = "cl-lang";
+  var DISMISSED = "cl-lang-dismissed";
+  function read(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+  function write(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+
+  // Remember every explicit language choice on the site (header switcher + this card).
+  document.addEventListener("click", function (e) {
+    var a = e.target instanceof Element ? e.target.closest("a[data-lang-choice]") : null;
+    if (a) write(PREF, a.getAttribute("data-lang-choice"));
+  });
+
+  var tpl = document.getElementById("cl-lang-suggest");
+  if (!tpl || read(DISMISSED)) return;
+  // Crawlers render JS; keep the suggestion out of their snapshot entirely.
+  if (/bot|crawl|spider|slurp|preview/i.test(navigator.userAgent)) return;
+
+  var page = document.documentElement.lang === "es" ? "es" : "en";
+  var wanted = read(PREF);
+  if (wanted !== "en" && wanted !== "es") {
+    wanted = null;
+    var langs = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ""];
+    for (var i = 0; i < langs.length; i++) {
+      var l = String(langs[i] || "").toLowerCase().slice(0, 2);
+      if (l === "en" || l === "es") { wanted = l; break; }
+    }
+  }
+  if (!wanted || wanted === page) return;
+
+  var mobile = window.matchMedia("(max-width: 640px)");
+  var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  function show() {
+    var card = tpl.content.firstElementChild.cloneNode(true);
+    var accept = card.querySelector(".lang-suggest__accept");
+    // Carry campaign parameters and the section anchor across the switch.
+    accept.setAttribute("href", accept.getAttribute("href") + location.search + location.hash);
+    document.body.appendChild(card);
+
+    // On phones the card spans the bottom edge; lift the chat launcher above it.
+    function syncOffset() {
+      document.documentElement.style.setProperty("--cl-lang-offset", mobile.matches ? card.offsetHeight + 12 + "px" : "0px");
+    }
+    syncOffset();
+    mobile.addEventListener("change", syncOffset);
+
+    requestAnimationFrame(function () { card.classList.add("is-visible"); });
+    if (window.cushlabsTrack) window.cushlabsTrack("language_suggestion_shown", { from: page, to: wanted });
+
+    function close() {
+      write(DISMISSED, "1");
+      var hadFocus = card.contains(document.activeElement);
+      card.classList.remove("is-visible");
+      document.documentElement.style.removeProperty("--cl-lang-offset");
+      mobile.removeEventListener("change", syncOffset);
+      setTimeout(function () { card.remove(); }, reduced ? 0 : 250);
+      // Hand focus to the header switcher, so keyboard users land on the control
+      // that changes language later.
+      if (hadFocus) {
+        var sw = document.querySelector('header a[data-lang-choice="' + page + '"]');
+        if (sw) sw.focus();
+      }
+    }
+    card.querySelector("[data-lang-stay]").addEventListener("click", close);
+    card.addEventListener("keydown", function (e) { if (e.key === "Escape") close(); });
+  }
+
+  function schedule() { setTimeout(show, 1000); }
+  if (document.readyState === "complete") schedule();
+  else window.addEventListener("load", schedule, { once: true });
+})();
+</script>
+
+<style is:global>
+  /* Desktop: directly under the header's EN/ES switcher, so the card points at the
+     control that changes language later, and it stays clear of the hero CTAs (a
+     bottom-left card covered the primary button at 1366×820). Phones: a bottom
+     sheet within thumb reach; the chat launcher is lifted above it. */
+  .lang-suggest {
+    position: fixed;
+    top: 84px;
+    /* Align with the header container (max-w-7xl = 80rem, px-4) on wide screens. */
+    right: max(16px, calc((100vw - 80rem) / 2 + 1rem));
+    z-index: 9990;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 12px 14px;
+    width: min(400px, calc(100vw - 48px));
+    padding: 16px;
+    border: 1px solid rgb(var(--border));
+    border-radius: 16px;
+    background: rgb(var(--bg));
+    color: rgb(var(--fg));
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.14), 0 2px 6px rgba(0, 0, 0, 0.06);
+    font-family: var(--font-body);
+    opacity: 0;
+    transform: translateY(-8px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+  }
+  .dark .lang-suggest__stay {
+    border-color: rgb(255 255 255 / 0.16);
+  }
+  .dark .lang-suggest {
+    background: rgb(var(--surface));
+    border-color: rgb(255 255 255 / 0.1);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+  }
+  .lang-suggest.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+  .lang-suggest__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    background: var(--color-orange-soft);
+    color: rgb(var(--accent-text));
+  }
+  .lang-suggest__icon svg {
+    width: 20px;
+    height: 20px;
+  }
+  .lang-suggest__message {
+    margin: 0;
+    font-size: 0.9375rem;
+    line-height: 1.45;
+    font-weight: 500;
+  }
+  .lang-suggest__actions {
+    grid-column: 1 / -1;
+    display: flex;
+    gap: 8px;
+  }
+  .lang-suggest__accept,
+  .lang-suggest__stay {
+    flex: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 0 16px;
+    border-radius: 10px;
+    font-family: var(--font-display);
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+  }
+  .lang-suggest__accept {
+    background: #ff6a3d;
+    color: #000;
+    border: 1px solid #ff6a3d;
+  }
+  .lang-suggest__accept:hover {
+    background: #ff7f58;
+  }
+  .lang-suggest__stay {
+    background: transparent;
+    color: rgb(var(--muted));
+    border: 1px solid rgb(var(--border));
+  }
+  .lang-suggest__stay:hover {
+    color: rgb(var(--fg));
+    border-color: rgb(var(--muted));
+  }
+  .lang-suggest__accept:focus-visible,
+  .lang-suggest__stay:focus-visible {
+    outline: 2px solid #ff6a3d;
+    outline-offset: 2px;
+  }
+  @media (max-width: 640px) {
+    .lang-suggest {
+      top: auto;
+      left: 12px;
+      right: 12px;
+      bottom: 12px;
+      width: auto;
+      padding: 14px;
+      transform: translateY(12px);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .lang-suggest {
+      transition: none;
+    }
+  }
+</style>

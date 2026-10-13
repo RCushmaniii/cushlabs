@@ -899,6 +899,12 @@ that gets bypassed with `--no-verify`.
 1. **Never gate on repo visibility instead.** 10 of the 36 published projects are private on purpose (marketsignal, messenger-bot, OS-dashboard). Private ≠ unpublishable; the signal is an authored `PORTFOLIO.md`, nothing else.
 2. **After ANY `generate-projects` run, diff the project list before committing** — `REMOVED` and `ADDED` both matter. The dangerous half of that diff is what got added while you were looking at what got removed.
 
+### 10. An `overflow-x-auto` scroller does not clip absolute children it does not contain
+
+**What happened (2026-10-12):** the pricing comparison table sits in an `overflow-x-auto` wrapper, so it looked phone-safe. But Tailwind's `sr-only` is `position: absolute`, and an absolute element is clipped only by an overflow ancestor that is _also_ its containing block. The wrapper was not positioned, so every hidden cell label anchored to the `<section>` and widened the whole document to ~655 px. Phones zoomed out, and fixed UI (chat launcher, language card) landed off-screen. Nothing in the build or the smoke tests noticed.
+
+**Rule:** any `overflow-*` scroller that can hold `sr-only` text, tooltips or badges gets `relative`. To check a page, load it at 390 px and compare `document.documentElement.scrollWidth` to the viewport width; anything above 390 is a sideways-scrolling page.
+
 ---
 
 ## Session: 2026-09-24/25 — The chat widget was living in a client's database
@@ -970,6 +976,34 @@ In-window utility templates and service messages start being charged. This is th
 cost question the WhatsApp demo-swap decision has been waiting on.
 
 ## Session History
+
+## Session: 2026-10-12 (later) — Language suggestion card, hreflang en/es, pricing page wider than a phone
+
+- **Language suggestion card** (`src/components/LanguageSuggestion.astro`, strings in
+  `language.suggestion` of both `en.ts` and `es.ts`). A visitor whose browser prefers the other
+  language is offered this page's twin; nothing ever redirects, because Googlebot crawls as a US-English
+  browser and a language redirect on `/` would hide the Spanish pages. Under the header EN/ES switcher on
+  desktop (a bottom-left card covered the hero CTA at 1366×820), a bottom sheet on phones with the chat
+  launcher lifted above it (`--cl-lang-offset`). Explicit choices (header switcher, the card) are stored
+  as `cl-lang`; "Seguir en inglés" / "Stay in Spanish" / Escape store `cl-lang-dismissed` and it never
+  returns. Ships in a `<template>` (not rendered, not page text, `data-nosnippet`), inserted 1 s after
+  `load`, fixed-position so it cannot shift layout; skipped for crawler user agents. Carries the query
+  string and hash across, so UTM tags survive. Shown on 136 of 141 pages; not on the three
+  single-language blog posts (no twin to offer) or the LandingLayout outreach pages `/salones/` and
+  `/salons/` (single-language, DM-driven, a second CTA there only competes with the booking button).
+  Verified with Playwright: es-MX and en-US on home + an inner page in each language, keyboard, Escape,
+  focus return, dismissal persistence, Googlebot UA, CLS.
+- **hreflang codes `en-US`/`es-MX` → `en`/`es`** (BaseLayout, `src/lib/blog.ts`, sitemap config).
+  A regional code matches only that region: a Spanish speaker in the US, Colombia or Spain matched
+  neither alternate and Google served them the x-default, which is English.
+- **`/pricing/` and `/es/precios/` were 655 px wide on phones.** The comparison table's `sr-only` cell
+  labels are `position: absolute`; with no positioned ancestor inside the scroller they anchored to the
+  `<section>` and escaped the `overflow-x-auto` clip. Phones zoomed the page out and the chat launcher
+  sat off-screen. One word: the scroller is now `relative`.
+- **Not caused by this work:** `/es/` measures CLS 0.03 on desktop (header/hero font swap at ~120 ms),
+  identical with and without the card; below Google's 0.1 "good" line.
+- **`docs/seo/directory-listings.json`** — bilingual copy for Google Business Profile, Bing, Apple and
+  six directories, for the backlink work (Domain Rating 5 = one referring domain).
 
 ## Session: 2026-10-12 — Mobile Lighthouse 75 → ~90; Ahrefs-style SEO pass
 

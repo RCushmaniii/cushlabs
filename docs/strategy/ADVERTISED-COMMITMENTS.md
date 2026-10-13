@@ -567,7 +567,7 @@ two demo bots `m.me/cushlabs` and `m.me/nyenglishteacher`).
 
 1. **Free discovery call** — 30 min; honest fit assessment; "no hard sell, ever."
 2. **Free 1-week trial** — no setup fee, no deposit; client pays nothing until it works as agreed.
-3. **Month-to-month, cancel anytime** — no lock-in; 30 days' notice; no penalty.
+3. **Month-to-month, cancel anytime** — no lock-in; no notice period (cancellation takes effect at the end of the month already paid); no penalty. _(Reconciled 2026-10-12: this line said "30 days' notice", which `commercial-terms.json` → `cancellation.never_say` bans and `notice_period_days: 0` contradicts.)_
 4. **Your accounts stay yours** — business accounts, phone number, customer data and documentation stay in the client's name; if they leave, all of it goes with them. _(Reconciled 2026-10-09: the ES card still promised "código si aplica"; EN and ES and /about/ now say the same thing.)_
 
 > **Reconciled to the live site 2026-08-30.** Item 2 said "Free 2-week trial" — the same drift the

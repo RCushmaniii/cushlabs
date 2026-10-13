@@ -130,10 +130,12 @@ const isActiveLink = (href: string) => pathname === href || pathname === href.re
           class={`px-2.5 py-1.5 text-xs font-display font-semibold transition-colors ${locale === "en" ? "bg-cush-orange text-black rounded-l-md" : "text-muted hover:text-foreground"}`}
           href={toEn}
           hreflang="en"
+          data-lang-choice="en"
         >EN</a><a
           class={`px-2.5 py-1.5 text-xs font-display font-semibold transition-colors ${locale === "es" ? "bg-cush-orange text-black rounded-r-md" : "text-muted hover:text-foreground"}`}
           href={toEs}
           hreflang="es"
+          data-lang-choice="es"
         >ES</a>
       </div>
 
