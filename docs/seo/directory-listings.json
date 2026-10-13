@@ -1,0 +1,366 @@
+{
+  "_meta": {
+    "purpose": "Paste-ready business listing copy for Google Business Profile and the directories that give cushlabs.ai its first backlinks. English and Mexican Professional Spanish (es-MX) for every text field.",
+    "created": "2026-10-12",
+    "why": "Ahrefs Domain Rating 5 = one referring domain. Each published listing that links to https://www.cushlabs.ai/ is one more. Google Business Profile is the one most likely to bring Mexican local search traffic.",
+    "authorities": {
+      "services_and_channels": "docs/strategy/ADVERTISED-COMMITMENTS.md (sections 2-4)",
+      "trial_contract_setup_fee": "operating-system/cushlabs/commercial-terms.json",
+      "founder_claims": "operating-system/cushlabs/claims-policy.json -> rules.biographical_facts",
+      "contact_details": "src/layouts/BaseLayout.astro JSON-LD (Organization block)"
+    },
+    "rules_applied": [
+      "Only Facebook Messenger is named without a plan qualifier. Instagram, website chat and the voice agent are named only as 'on higher plans', because they start at Premium or Ultra.",
+      "WhatsApp is named only as the owner alert, never as a channel the assistant answers on.",
+      "No prices in descriptions: they go stale on sites nobody re-checks. Price lives in 'pricing_for_forms', used only where a form insists.",
+      "'Bilingual' describes the assistant, never Robert. No career-year totals.",
+      "No 'trained on'. The assistant answers from information the client approves."
+    ],
+    "language_note": "Google Business Profile, Bing and Apple each allow ONE description. Use the Spanish (es) text there: the target customer searches in Spanish and Google translates for English speakers. Use English where the directory audience is US buyers (Clutch, GoodFirms, DesignRush, Sortlist, Crunchbase). LinkedIn allows both: set English as the primary language and add Spanish as a second language."
+  },
+
+  "nap": {
+    "_note": "Name, address and phone must be IDENTICAL on every listing, character for character. Inconsistent NAP weakens local ranking.",
+    "business_name": "CushLabs.ai",
+    "website": "https://www.cushlabs.ai/",
+    "website_es": "https://www.cushlabs.ai/es/",
+    "phone": "+52 33 1559 0572",
+    "email": "info@cushlabs.ai",
+    "city": "Guadalajara",
+    "state": "Jalisco",
+    "country": "Mexico",
+    "address_visibility": "Hide the street address. Register as a service-area business (you visit or serve customers; they do not come to you).",
+    "founded": "2025",
+    "team_size": "1 (founder-led)",
+    "languages": ["English", "Spanish"],
+    "booking_url": "https://www.cushlabs.ai/consultation/",
+    "booking_url_es": "https://www.cushlabs.ai/es/reservar/",
+    "logo": "https://www.cushlabs.ai/images/logo/cushlabs-logo-on-light-v3.webp",
+    "cover_image": "https://www.cushlabs.ai/images/og/cushlabs-og.png",
+    "social": {
+      "facebook": "https://www.facebook.com/cushlabs",
+      "instagram": "https://www.instagram.com/cushlabs.ai/",
+      "linkedin_founder": "https://www.linkedin.com/in/robert-cushman3",
+      "github": "https://github.com/RCushmaniii"
+    }
+  },
+
+  "shared_copy": {
+    "tagline": {
+      "en": "AI assistants that answer your customers 24/7 on Facebook Messenger, fully managed for you.",
+      "es": "Asistentes con IA que contestan a tus clientes 24/7 en Facebook Messenger, y nosotros nos encargamos de todo."
+    },
+    "short_description": {
+      "_limit": "160 characters",
+      "en": "CushLabs.ai sets up AI assistants that answer customer messages 24/7 and alert you on WhatsApp when someone is ready to buy. Based in Guadalajara.",
+      "es": "CushLabs.ai configura asistentes con IA que contestan los mensajes de tus clientes 24/7 y te avisan por WhatsApp cuando alguien quiere comprar."
+    },
+    "long_description": {
+      "_limit": "about 1,500 characters; fits Clutch, GoodFirms, DesignRush, Sortlist, LinkedIn",
+      "en": "CushLabs.ai sets up AI assistants that answer your customers for you, 24/7. It starts with Facebook Messenger, where most small businesses in Mexico already get their messages. On higher plans, the same assistant also answers Instagram comments and DMs, chats on your website, and picks up your phone line.\n\nThe assistant answers only from the information you approve: your services, prices, hours and policies. It replies in English or Spanish, following whatever language the customer writes in. When a customer is ready to book, or asks for a person, it captures their details and sends you a WhatsApp alert, so you can follow up from the app you already use.\n\nWe also help you answer your Google reviews, with your approval on every reply.\n\nEverything is fully managed. We handle setup, load your business information, send weekly reports and tune the assistant every month. You don't have to learn new software. There is no setup fee and no contract, and you start with a 1-week free trial.\n\nCushLabs.ai was founded by Robert Cushman, who led technology projects at Fortune 500 company Praxair (now Linde): more than 100 global initiatives supporting 26,000 employees in 42 countries. Today he applies that same discipline to small and local businesses. CushLabs.ai is based in Guadalajara and serves businesses in Mexico and the United States.",
+      "es": "CushLabs.ai configura asistentes con IA que contestan a tus clientes por ti, 24/7. Empezamos por Facebook Messenger, que es donde la mayoría de los negocios en México ya reciben sus mensajes. En los planes más completos, el mismo asistente también responde comentarios y mensajes directos en Instagram, atiende el chat de tu sitio web y contesta tu línea telefónica.\n\nEl asistente responde solo con la información que tú apruebas: tus servicios, precios, horarios y políticas. Contesta en español o en inglés, según el idioma en que te escriba el cliente. Cuando alguien está listo para agendar, o pide hablar con una persona, toma sus datos y te avisa por WhatsApp para que le des seguimiento desde la app que ya usas.\n\nTambién te ayudamos a responder tus reseñas de Google, siempre con tu aprobación en cada respuesta.\n\nNosotros nos encargamos de todo: la configuración, la carga de la información de tu negocio, los reportes semanales y los ajustes de cada mes. No tienes que aprender a usar otra aplicación. No hay costo de instalación ni contrato, y empiezas con una prueba gratis de 1 semana.\n\nCushLabs.ai fue fundada por Robert Cushman, quien dirigió proyectos de tecnología en Praxair (hoy Linde), empresa de Fortune 500: más de 100 iniciativas globales para 26,000 empleados en 42 países. Hoy aplica esa misma disciplina a negocios pequeños y locales. CushLabs.ai está en Guadalajara y atiende negocios en México y Estados Unidos."
+    },
+    "services": [
+      {
+        "name": {
+          "en": "AI assistant for Facebook Messenger",
+          "es": "Asistente con IA para Facebook Messenger"
+        },
+        "description": {
+          "en": "Answers your Facebook Page messages 24/7 in English or Spanish, using only the information you approve. Captures leads and alerts you on WhatsApp. Included in every plan.",
+          "es": "Contesta los mensajes de tu página de Facebook 24/7, en español o inglés, solo con la información que tú apruebas. Toma los datos del cliente y te avisa por WhatsApp. Incluido en todos los planes."
+        }
+      },
+      {
+        "name": {
+          "en": "Google review management",
+          "es": "Gestión de reseñas de Google"
+        },
+        "description": {
+          "en": "Drafts replies to your Google reviews and publishes them only after you approve each one. Included in every plan.",
+          "es": "Prepara respuestas a tus reseñas de Google y las publica solo después de que tú apruebas cada una. Incluido en todos los planes."
+        }
+      },
+      {
+        "name": {
+          "en": "AI assistant for Instagram",
+          "es": "Asistente con IA para Instagram"
+        },
+        "description": {
+          "en": "Answers Instagram comments in public, then follows up by direct message. Set up for you by CushLabs. Included in the Premium and Ultra plans.",
+          "es": "Responde comentarios de Instagram en público y da seguimiento por mensaje directo. Lo configuramos por ti. Incluido en los planes Premium y Ultra."
+        }
+      },
+      {
+        "name": { "en": "Website chatbot", "es": "Chatbot para tu sitio web" },
+        "description": {
+          "en": "The same assistant as a chat window on your website, answering visitors 24/7. Included in the Premium and Ultra plans.",
+          "es": "El mismo asistente como ventana de chat en tu sitio web, atendiendo a tus visitantes 24/7. Incluido en los planes Premium y Ultra."
+        }
+      },
+      {
+        "name": {
+          "en": "Weekly local SEO and competitor report",
+          "es": "Reporte semanal de SEO local y competencia"
+        },
+        "description": {
+          "en": "Tracks where you appear on Google Maps and what nearby competitors are doing, with one recommended action each week. Included in the Premium and Ultra plans.",
+          "es": "Revisa dónde apareces en Google Maps y qué hace tu competencia cercana, con una acción recomendada cada semana. Incluido en los planes Premium y Ultra."
+        }
+      },
+      {
+        "name": {
+          "en": "AI voice agent for missed calls",
+          "es": "Agente de voz con IA para llamadas perdidas"
+        },
+        "description": {
+          "en": "Answers your phone when you can't, takes the caller's details and passes the lead to you. 300 answered minutes per location each month. Included in the Ultra plan.",
+          "es": "Contesta tu teléfono cuando tú no puedes, toma los datos de quien llama y te pasa el contacto. 300 minutos atendidos por sucursal al mes. Incluido en el plan Ultra."
+        }
+      }
+    ],
+    "pricing_for_forms": {
+      "_use": "ONLY when a directory form requires a price. Source: operating-system/cushlabs/commercial-terms.json. Re-check that file before pasting; never type these from memory later.",
+      "mxn": "Desde $1,990 MXN al mes + IVA. Sin costo de instalación, sin contrato, prueba gratis de 1 semana.",
+      "usd": "From $129 USD per month. No setup fee, no contract, 1-week free trial."
+    }
+  },
+
+  "listings": [
+    {
+      "id": "google-business-profile",
+      "priority": 1,
+      "why": "Puts CushLabs.ai in Google Maps and local results for Guadalajara searches. The strongest single action for a local service business.",
+      "url": "https://www.google.com/business/",
+      "language_to_use": "es",
+      "fields": {
+        "business_name": "CushLabs.ai",
+        "primary_category": "Software company",
+        "primary_category_es": "Compañía de software",
+        "additional_categories": [
+          "Internet marketing service",
+          "Computer consultant"
+        ],
+        "additional_categories_es": [
+          "Servicio de marketing por Internet",
+          "Consultor informático"
+        ],
+        "do_you_want_to_add_a_location_customers_can_visit": "No",
+        "service_areas": [
+          "Guadalajara, Jalisco",
+          "Zapopan, Jalisco",
+          "San Pedro Tlaquepaque, Jalisco",
+          "Tlajomulco de Zúñiga, Jalisco",
+          "Tonalá, Jalisco"
+        ],
+        "phone": "+52 33 1559 0572",
+        "website": "https://www.cushlabs.ai/es/",
+        "appointment_link": "https://www.cushlabs.ai/es/reservar/",
+        "opening_date": "January 2025",
+        "hours": "Monday-Friday 09:00-18:00 (edit to your real availability)",
+        "description_limit": "750 characters",
+        "description": {
+          "es": "CushLabs.ai configura asistentes con IA que contestan a tus clientes 24/7 en Facebook Messenger y, en los planes más completos, también en Instagram, tu sitio web y tu teléfono. El asistente responde solo con la información que tú apruebas: servicios, precios, horarios y políticas. Cuando un cliente quiere agendar o pide hablar con una persona, toma sus datos y te avisa por WhatsApp. También te ayudamos a responder tus reseñas de Google, con tu aprobación. Nosotros nos encargamos de todo, sin que aprendas otra aplicación. Sin costo de instalación, sin contrato y con prueba gratis de 1 semana. Estamos en Guadalajara y atendemos negocios en México y Estados Unidos.",
+          "en": "CushLabs.ai sets up AI assistants that answer your customers 24/7 on Facebook Messenger and, on higher plans, on Instagram, your website and your phone. The assistant answers only from the information you approve: services, prices, hours and policies. When a customer wants to book or asks for a person, it captures their details and alerts you on WhatsApp. We also help you reply to your Google reviews, with your approval. We handle everything, so you don't have to learn new software. No setup fee, no contract, and a 1-week free trial. Based in Guadalajara, serving businesses in Mexico and the United States."
+        },
+        "services": "Add each item from shared_copy.services, using the es name and es description.",
+        "attributes": [
+          "Online appointments",
+          "Onsite services: No",
+          "Language assistance: English, Spanish"
+        ],
+        "photos": ["Logo: nap.logo", "Cover: nap.cover_image"],
+        "verification_note": "Google may ask for a video verification showing you work from Guadalajara (your workspace, equipment, a document with the business name). Have that ready before you start."
+      }
+    },
+    {
+      "id": "bing-places",
+      "priority": 2,
+      "why": "Feeds Bing, DuckDuckGo, Yahoo and ChatGPT search. Imports directly from Google Business Profile.",
+      "url": "https://www.bing.com/forbusiness/",
+      "language_to_use": "es",
+      "fields": {
+        "method": "Choose 'Import from Google Business Profile' after the Google profile is verified. Then check that the description matches google-business-profile.fields.description.es.",
+        "description_limit": "750 characters",
+        "description": "Same as google-business-profile.fields.description"
+      }
+    },
+    {
+      "id": "apple-business-connect",
+      "priority": 3,
+      "why": "Apple Maps and Siri. iPhone owners in Mexico search there directly.",
+      "url": "https://business.apple.com/",
+      "language_to_use": "es",
+      "fields": {
+        "business_name": "CushLabs.ai",
+        "category": "Software Company",
+        "location_type": "Service area, address hidden",
+        "phone": "+52 33 1559 0572",
+        "website": "https://www.cushlabs.ai/es/",
+        "about_limit": "500 characters",
+        "about": {
+          "es": "CushLabs.ai configura asistentes con IA que contestan a tus clientes 24/7 en Facebook Messenger. Responden solo con la información que tú apruebas y te avisan por WhatsApp cuando alguien quiere agendar. También te ayudamos con tus reseñas de Google. Nosotros nos encargamos de todo. Sin costo de instalación, sin contrato y con prueba gratis de 1 semana. Desde Guadalajara, para negocios en México y Estados Unidos.",
+          "en": "CushLabs.ai sets up AI assistants that answer your customers 24/7 on Facebook Messenger. They answer only from the information you approve and alert you on WhatsApp when someone wants to book. We also help with your Google reviews. We handle everything. No setup fee, no contract, and a 1-week free trial. From Guadalajara, for businesses in Mexico and the United States."
+        }
+      }
+    },
+    {
+      "id": "linkedin-company-page",
+      "priority": 4,
+      "why": "Gives the business its own LinkedIn presence, separate from your personal profile, and links the website from a high-authority domain.",
+      "url": "https://www.linkedin.com/company/setup/new/",
+      "language_to_use": "en primary, es secondary",
+      "fields": {
+        "page_type": "Company",
+        "name": "CushLabs.ai",
+        "linkedin_public_url": "linkedin.com/company/cushlabs",
+        "website": "https://www.cushlabs.ai/",
+        "industry": "IT Services and IT Consulting",
+        "organization_size": "0-1 employees",
+        "organization_type": "Privately held",
+        "logo": "nap.logo",
+        "tagline_limit": "120 characters",
+        "tagline": "Use shared_copy.tagline",
+        "overview_limit": "2,000 characters",
+        "overview": "Use shared_copy.long_description",
+        "location": "Guadalajara, Jalisco, Mexico (primary)",
+        "founded": "2025",
+        "specialties": [
+          "AI chatbots",
+          "Facebook Messenger automation",
+          "Instagram automation",
+          "AI voice agents",
+          "Google review management",
+          "Local SEO"
+        ],
+        "after_creating": "On your personal profile, set your current position's company to the new CushLabs.ai page so it shows the logo and links both."
+      }
+    },
+    {
+      "id": "clutch",
+      "priority": 5,
+      "why": "Largest B2B agency directory; US buyers browse it. Reviews from clients here carry weight.",
+      "url": "https://clutch.co/get-listed",
+      "url_verified": false,
+      "language_to_use": "en",
+      "fields": {
+        "company_name": "CushLabs.ai",
+        "website": "https://www.cushlabs.ai/",
+        "tagline": "Use shared_copy.tagline.en",
+        "description": "Use shared_copy.long_description.en",
+        "founded": "2025",
+        "employees": "Freelancer / 1",
+        "headquarters": "Guadalajara, Jalisco, Mexico",
+        "service_lines": [
+          "AI Development: 60%",
+          "Chatbot Development: 30%",
+          "Local SEO: 10%"
+        ],
+        "industries": [
+          "Small business",
+          "Beauty and wellness",
+          "Healthcare",
+          "Professional services"
+        ],
+        "client_size": "Small business (<$10M)",
+        "min_project_size": "$1,000+",
+        "hourly_rate": "Pick 'Undisclosed' if offered; otherwise '$25 - $49 / hr'. You sell monthly plans, not hours, so this is the closest honest bracket.",
+        "pricing": "Use shared_copy.pricing_for_forms.usd"
+      }
+    },
+    {
+      "id": "goodfirms",
+      "priority": 6,
+      "why": "Agency directory with strong Latin America coverage.",
+      "url": "https://www.goodfirms.co/get-listed",
+      "url_verified": false,
+      "language_to_use": "en",
+      "fields": {
+        "company_name": "CushLabs.ai",
+        "website": "https://www.cushlabs.ai/",
+        "tagline": "Use shared_copy.tagline.en",
+        "description": "Use shared_copy.long_description.en",
+        "founded": "2025",
+        "employees": "Less than 10",
+        "location": "Guadalajara, Jalisco, Mexico",
+        "services": ["Artificial Intelligence", "Chatbot Development", "SEO"],
+        "min_project_size": "$1,000+",
+        "hourly_rate": "< $25 / hr or $25 - $49 / hr (same reasoning as Clutch)"
+      }
+    },
+    {
+      "id": "designrush",
+      "priority": 7,
+      "why": "Agency directory; free basic listing.",
+      "url": "https://www.designrush.com/",
+      "url_note": "Open the site and click 'Get Listed' in the top menu or footer.",
+      "url_verified": false,
+      "language_to_use": "en",
+      "fields": {
+        "agency_name": "CushLabs.ai",
+        "website": "https://www.cushlabs.ai/",
+        "short_description": "Use shared_copy.short_description.en",
+        "description": "Use shared_copy.long_description.en",
+        "services": [
+          "Artificial Intelligence",
+          "Chatbot Development",
+          "Local SEO"
+        ],
+        "location": "Guadalajara, Mexico",
+        "team_size": "1-10",
+        "min_budget": "$1,000+"
+      }
+    },
+    {
+      "id": "sortlist",
+      "priority": 8,
+      "why": "European and Latin American agency marketplace with a Mexico section.",
+      "url": "https://www.sortlist.com/",
+      "url_note": "Open the site and click 'Join as an agency' (or 'Registra tu agencia' on the Spanish site).",
+      "url_verified": false,
+      "language_to_use": "en and es (Sortlist accepts both)",
+      "fields": {
+        "agency_name": "CushLabs.ai",
+        "website": "https://www.cushlabs.ai/",
+        "tagline": "Use shared_copy.tagline",
+        "description": "Use shared_copy.long_description",
+        "services": ["Artificial Intelligence", "Chatbot", "Local SEO"],
+        "location": "Guadalajara, Jalisco, Mexico",
+        "languages": ["English", "Spanish"],
+        "min_budget": "$1,000"
+      }
+    },
+    {
+      "id": "crunchbase",
+      "priority": 9,
+      "why": "Company database that Google and AI search tools treat as a reference for company facts.",
+      "url": "https://www.crunchbase.com/add-new",
+      "url_verified": false,
+      "language_to_use": "en",
+      "fields": {
+        "organization_name": "CushLabs.ai",
+        "website": "https://www.cushlabs.ai/",
+        "short_description": "Use shared_copy.short_description.en",
+        "full_description": "Use shared_copy.long_description.en",
+        "founded_date": "2025",
+        "founders": "Robert Cushman",
+        "headquarters": "Guadalajara, Jalisco, Mexico",
+        "industries": [
+          "Artificial Intelligence (AI)",
+          "Customer Service",
+          "Small and Medium Businesses"
+        ],
+        "number_of_employees": "1-10",
+        "operating_status": "Active",
+        "company_type": "For Profit",
+        "linkedin": "Your new LinkedIn company page URL",
+        "facebook": "https://www.facebook.com/cushlabs"
+      }
+    }
+  ],
+
+  "after_publishing": {
+    "track_here": "Add the live profile URL to each listing as 'live_url' once it is published, so the next audit can check it.",
+    "check_link_counts": "Ahrefs re-crawls new backlinks within a few weeks. Expect Domain Rating to move only after 5+ listings are live and indexed."
+  }
+}

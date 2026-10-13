@@ -57,7 +57,7 @@ export function postHreflangs(
   const siteBase = site.replace(/\/$/, "");
   const lang = postLang(post);
   const selfHref = `${siteBase}${postUrl(lang, postSlug(post))}`;
-  const selfLang = lang === "es" ? "es-MX" : "en-US";
+  const selfLang = lang === "es" ? "es" : "en";
 
   const twinSlug =
     lang === "en"
@@ -78,8 +78,8 @@ export function postHreflangs(
 
   return {
     alternates: [
-      { lang: "en-US", href: lang === "en" ? selfHref : twinHref },
-      { lang: "es-MX", href: lang === "es" ? selfHref : twinHref },
+      { lang: "en", href: lang === "en" ? selfHref : twinHref },
+      { lang: "es", href: lang === "es" ? selfHref : twinHref },
     ],
     xDefault: enHref,
   };

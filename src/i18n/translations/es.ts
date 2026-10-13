@@ -131,6 +131,14 @@ export const es = {
     label: "Idioma",
     en: "EN",
     es: "ES",
+    // Se muestra en las páginas en inglés a quien tiene el navegador en español
+    // (src/components/LanguageSuggestion.astro). Escrito en español a propósito.
+    suggestion: {
+      region: "Sugerencia de idioma",
+      message: "Este sitio también está disponible en español.",
+      accept: "Ver en español",
+      stay: "Seguir en inglés",
+    },
   },
   contact: {
     title: "Contacto",

@@ -134,6 +134,14 @@ export const en = {
     label: "Language",
     en: "EN",
     es: "ES",
+    // Shown on Spanish pages to visitors whose browser prefers English
+    // (src/components/LanguageSuggestion.astro). Written in English on purpose.
+    suggestion: {
+      region: "Language suggestion",
+      message: "This site is also available in English.",
+      accept: "View in English",
+      stay: "Stay in Spanish",
+    },
   },
   contact: {
     title: "Contact",

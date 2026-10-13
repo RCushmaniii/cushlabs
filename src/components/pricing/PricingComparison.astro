@@ -657,8 +657,12 @@ const hasSoon = t.groups.some((g) => g.rows.some((r) => r.cells.some(isSoon)));
       </div>
     </div>
 
-    <!-- Matrix: horizontally scrollable on small screens, sticky first column -->
-    <div class="overflow-x-auto -mx-6 px-6 pb-2">
+    <!-- Matrix: horizontally scrollable on small screens, sticky first column.
+         `relative` is load-bearing: the sr-only labels in the cells are position:absolute,
+         and without a positioned scroller they anchored to the <section>, escaped the
+         overflow clip and widened the whole page to ~655px on phones. Mobile browsers
+         then zoomed out, and the chat launcher sat off-screen (found 2026-10-12). -->
+    <div class="relative overflow-x-auto -mx-6 px-6 pb-2">
       <table class="w-full min-w-[720px] border-collapse text-left">
         <caption class="sr-only">{t.heading}</caption>
         <thead>
