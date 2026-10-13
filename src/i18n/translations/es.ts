@@ -8,30 +8,30 @@ export const es = {
   },
   home: {
     brand: "CushLabs.ai",
-    headline: "IA Que Realmente\nTrabaja Para Ti",
+    headline: "IA que realmente\ntrabaja para ti",
     subheadline:
       "Ayudo a pequeños negocios a poner la IA a trabajar — chatbots, automatización y apps a medida que se entregan rápido y resuelven problemas reales.",
-    ctaConsultation: "Agendar Llamada Gratis",
-    ctaWork: "Ver Mi Trabajo",
+    ctaConsultation: "Agendar llamada gratis",
+    ctaWork: "Ver mi trabajo",
     ctaContact: "Hablemos",
     launchingSoon: "Próximamente",
   },
   clients: {
-    title: "Clientes Felices",
+    title: "Clientes felices",
     subtitle: "Negocios que he ayudado a lanzar",
   },
   services: {
-    title: "Cómo Puedo Ayudarte",
+    title: "Cómo puedo ayudarte",
     subtitle:
       "IA que trabaja 24/7 para que tu equipo no tenga que hacerlo — empieza con una prueba gratis",
     learnMore: "Ver todos los servicios",
     assistants: {
-      title: "Chatbot Inteligente de Atención al Cliente",
+      title: "Chatbot inteligente de atención al cliente",
       description:
         "IA que responde con TU conocimiento — atiende clientes en inglés y español, captura leads fuera de horario y transfiere a humanos cuando se necesita.",
     },
     intelligence: {
-      title: "Inteligencia Competitiva",
+      title: "Inteligencia competitiva",
       description:
         "Rastrea competidores en Google Maps — rankings, reseñas y movimientos — con un reporte semanal por correo y una acción clara.",
     },
@@ -42,7 +42,7 @@ export const es = {
     },
   },
   process: {
-    title: "Cómo Trabajo",
+    title: "Cómo trabajo",
     subtitle: "Proceso simple, sin sorpresas. Siempre vas a saber dónde vamos.",
     step1: {
       number: "01",
@@ -69,9 +69,9 @@ export const es = {
     },
   },
   featuredWork: {
-    title: "Trabajo Reciente",
+    title: "Trabajo reciente",
     subtitle: "Trabajo reciente en producción",
-    viewAll: "Ver Todos los Proyectos",
+    viewAll: "Ver todos los proyectos",
   },
   // Sin bloque `testimonials` a propósito — ver la nota equivalente en `en.ts`.
   // Contenía cuatro personas inventadas con citas inventadas y fotos de stock; se
@@ -79,13 +79,13 @@ export const es = {
   // La prueba social real es una recomendación verificable de LinkedIn en
   // `src/components/home2/SocialProof.astro`.
   cta: {
-    title: "Construyamos Algo",
+    title: "Construyamos algo",
     subtitle:
       "Agenda una llamada gratis y cuéntame qué tienes en mente. Sin pitch, sin presión — solo una conversación real sobre lo que es posible.",
-    button: "Agendar Llamada Gratis",
+    button: "Agendar llamada gratis",
   },
   work: {
-    title: "Mi Trabajo",
+    title: "Mi trabajo",
     subtitle: "Proyectos, experimentos y cosas que he construido",
     back: "Volver al inicio",
     filterAll: "Todo",
@@ -99,7 +99,7 @@ export const es = {
   project: {
     backToWork: "Volver al Portafolio",
     overview: "Resumen",
-    theSolution: "La Solución",
+    theSolution: "La solución",
     highlights: "Puntos clave",
     goodFor: "Ideal para",
     notFor: "No resuelve por completo",
@@ -115,12 +115,12 @@ export const es = {
     forks: "Forks",
     tech: "Tecnología",
     topics: "Temas",
-    videoWalkthrough: "Video Demostrativo",
-    screenshots: "Capturas de Pantalla",
+    videoWalkthrough: "Video demostrativo",
+    screenshots: "Capturas de pantalla",
     ctaHeadline: "¿Tienes un desafío similar?",
     ctaBody:
       "Hablemos sobre cómo una solución así podría funcionar para tu equipo. Llamada gratis, sin compromiso.",
-    ctaButton: "Agendar Llamada Gratis",
+    ctaButton: "Agendar llamada gratis",
   },
   theme: {
     label: "Tema",
@@ -149,8 +149,8 @@ export const es = {
     infoSubtitle:
       "Mándame un mensaje aquí o por WhatsApp — lo que te sea más fácil.",
     whatsapp: "Enviar WhatsApp",
-    sendEmail: "Enviar Email",
-    timezone: "Zona Horaria",
+    sendEmail: "Enviar email",
+    timezone: "Zona horaria",
     timezoneValue: "Guadalajara, México (UTC−6)",
     email: "Email",
     emailValue: "info@cushlabs.ai",
@@ -166,66 +166,66 @@ export const es = {
     formConsentTerms: "Términos de Servicio",
     formConsentAnd: "y la",
     formConsentPrivacy: "Aviso de Privacidad",
-    formSubmit: "Enviar Mensaje",
+    formSubmit: "Enviar mensaje",
     formError: "Completa los campos requeridos y acepta los términos.",
   },
   about: {
     title: "Acerca",
-    headline: "Hola, Soy Robert",
+    headline: "Hola, soy Robert",
     subheadline:
       "Ayudo a pequeños negocios a poner la IA a trabajar — soluciones prácticas que se entregan rápido y realmente se usan.",
     mission: {
-      title: "Por Qué Hago Esto",
+      title: "Por qué hago esto",
       description:
         "Creo que la IA debería ser accesible para todos, no solo para grandes empresas con grandes presupuestos. Mi meta es simple: ayudarte a obtener valor real de la IA sin la complejidad empresarial ni los costos de consultores.",
     },
     story: {
-      title: "Mi Historia",
+      title: "Mi historia",
       intro: "Empecé CushLabs después de notar algo:",
       highlight:
         "La mayoría de los negocios no necesitan investigación de IA de vanguardia — necesitan soluciones funcionales que encajen con sus operaciones actuales.",
       body: "De desarrollador a gerente senior de TI a gerente de proyectos — he visto qué funciona y qué no, y ahora trabajo con IA de forma práctica todos los días. Trabajo directamente con fundadores y equipos pequeños desde mi base en Guadalajara, México. Sin capas, sin handoffs. Solo yo, construyendo cosas que importan.",
     },
     values: {
-      title: "Cómo Trabajo",
+      title: "Cómo trabajo",
       items: [
         {
-          title: "Entregar Primero",
+          title: "Entregar primero",
           description:
             "El software funcionando supera a los planes perfectos. Prefiero darte algo real y funcional rápido que pasar semanas en especificaciones.",
         },
         {
-          title: "Mantenerlo Simple",
+          title: "Mantenerlo simple",
           description:
             'Construyo soluciones que realmente puedes entender y mantener. Nada de arquitecturas "inteligentes" que necesitan atención constante.',
         },
         {
-          title: "Línea Directa",
+          title: "Línea directa",
           description:
             "Hablas conmigo. Sin ejecutivos de cuenta, sin reuniones interminables. La persona que contratas es la que escribe el código.",
         },
         {
-          title: "Consejos Honestos",
+          title: "Consejos honestos",
           description:
             "Si la IA no es la solución correcta para tu problema, te lo digo — y te señalo qué sí lo es.",
         },
       ],
     },
     skills: {
-      title: "Con Qué Trabajo",
+      title: "Con qué trabajo",
       categories: [
         {
           name: "IA y Machine Learning",
           items: [
             "Integración de LLM",
             "Sistemas RAG",
-            "Chatbots Personalizados",
-            "Bases de Datos Vectoriales",
+            "Chatbots personalizados",
+            "Bases de datos vectoriales",
             "Prompt Engineering",
           ],
         },
         {
-          name: "Desarrollo Web",
+          name: "Desarrollo web",
           items: [
             "React",
             "Next.js",
@@ -245,11 +245,11 @@ export const es = {
       title: "¿Platicamos?",
       subtitle:
         "¿Tienes un proyecto en mente? Agenda una llamada gratis y veamos si puedo ayudarte.",
-      button: "Agendar Llamada Gratis",
+      button: "Agendar llamada gratis",
     },
   },
   consultation: {
-    title: "Consulta Gratis de IA",
+    title: "Consulta gratis de IA",
     description:
       "Agenda una llamada gratuita de 30 minutos para hablar de tu proyecto. Sin pitch, sin presión — solo consejos honestos sobre cómo la IA puede ayudar.",
     kicker: "Llamada gratis",
@@ -327,7 +327,7 @@ export const es = {
     step1: "Fecha y hora",
     step2: "Detalles",
     step3: "Reservado",
-    sessionTitle: "Consulta de Estrategia de IA",
+    sessionTitle: "Consulta de estrategia de IA",
     sessionDuration: "Consulta de 30 min",
     sessionMeet:
       "Información de videoconferencia de Google Meet agregada después de la reserva",
@@ -336,7 +336,7 @@ export const es = {
     selectDateTime: "Selecciona una fecha y hora",
     selectTime: "Selecciona una hora",
     changeTime: "Cambiar",
-    selectedDate: "Fecha Seleccionada",
+    selectedDate: "Fecha seleccionada",
     selectDateBelow: "Selecciona una fecha abajo",
     addDetails: "Cuéntame un poco de ti",
     fullName: "Nombre completo",
@@ -356,7 +356,7 @@ export const es = {
     notesLabel: "¿Algo más que deba saber?",
     notesPlaceholder: "ej. Queremos automatizar nuestro soporte al cliente...",
     notesHint: "Opcional — me ayuda a preparar nuestra conversación",
-    confirmAppointment: "Confirmar Cita",
+    confirmAppointment: "Confirmar cita",
     processing: "Procesando...",
     next: "Siguiente",
     back: "Atrás",
@@ -365,15 +365,15 @@ export const es = {
     errorRequired: "Por favor completa los campos requeridos.",
     errorDateTime: "Por favor selecciona una fecha y hora primero.",
     errorGeneric: "Hubo un error. Por favor intenta de nuevo.",
-    successTitle: "Sesión Confirmada.",
+    successTitle: "Sesión confirmada.",
     successMessage:
       "Te he enviado una invitación de calendario a tu correo. Por favor revísala ahora y da clic en 'Sí' o 'Aceptar' para asegurar tu espacio.",
-    summaryDateTime: "Fecha y Hora",
+    summaryDateTime: "Fecha y hora",
     // Ver la nota en en.ts: "Hora del Centro" es ambigua — el Centro de EE.UU. cambia
     // con el horario de verano. La Ciudad de México es UTC−6 todo el año desde 2022.
     summaryTimezone: "Hora de Ciudad de México (UTC−6)",
-    summaryDetails: "Tus Detalles",
-    summaryMeetingType: "Tipo de Reunión",
+    summaryDetails: "Tus detalles",
+    summaryMeetingType: "Tipo de reunión",
     summaryMeetingValue: "Videollamada por Google Meet",
     summaryMeetingHint: "El enlace se enviará a tu correo",
     joinLink: "Unirse a la videollamada",

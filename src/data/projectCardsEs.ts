@@ -2,7 +2,7 @@
 //
 // The generated portfolio data (`projects.generated.json`, built from each repo's
 // PORTFOLIO.md) only carries English `title`/`tagline`. As a result, Spanish project
-// cards — both the `/es/portfolio` grid and the "Proyectos Relacionados" rail on
+// cards — both the `/es/portfolio` grid and the "Proyectos relacionados" rail on
 // `/es/projects/[slug]` — rendered English text on the Spanish site.
 //
 // This map provides es-MX overrides keyed by project `name` (slug). Proper brand and
@@ -25,12 +25,12 @@ export interface EsCardCopy {
 
 export const esCardCopy: Record<string, EsCardCopy> = {
   "ai-chatbot-saas": {
-    title: "Converso AI — Recepción y Ventas con IA Bilingüe",
+    title: "Converso AI — Recepción y ventas con IA bilingüe",
     tagline:
       "Plataforma de chatbot con IA bilingüe para negocios de servicios — atiende recepción y ventas las 24 horas",
   },
   "ny-ai-chatbot": {
-    title: "Chatbot con IA para Sitios Web de PYMES",
+    title: "Chatbot con IA para sitios web de PYMES",
     tagline:
       "Chatbot con IA para un negocio de coaching — convierte a los visitantes del sitio en llamadas agendadas; reemplazó 4 roles",
   },
@@ -39,7 +39,7 @@ export const esCardCopy: Record<string, EsCardCopy> = {
   // single entry owned by cushlabs-messenger-bot. Without this key the Spanish
   // card and its meta description fell back to the English GitHub description.
   "cushlabs-messenger-bot": {
-    title: "CushLabs Messenger — Asistente Bilingüe con IA",
+    title: "CushLabs Messenger — Asistente bilingüe con IA",
     tagline:
       "El asistente de IA bilingüe 24/7 para Facebook Messenger — construido con el contenido de tu propio negocio, para que ningún prospecto se enfríe.",
   },
@@ -57,7 +57,7 @@ export const esCardCopy: Record<string, EsCardCopy> = {
   // service that was described in the body of the entry but absent from the card.
   "cushlabs-marketsignal": {
     title:
-      "MarketSignal — Gestión de Reseñas de Google e Inteligencia Competitiva Local",
+      "MarketSignal — Gestión de reseñas de Google e inteligencia competitiva local",
     tagline:
       "Gestión de reseñas de Google y monitoreo de competidores — respuestas redactadas con IA y una acción clave por semana, directo a tu WhatsApp",
   },
@@ -73,7 +73,7 @@ export const esCardCopy: Record<string, EsCardCopy> = {
       "Sitio de generación de prospectos para un negocio de coaching de inglés — reemplazó 4 roles y opera por $0 al mes",
   },
   "biojalisco-species-id": {
-    title: "Identificador de Especies BioJalisco",
+    title: "Identificador de especies BioJalisco",
     tagline:
       "Identificación de especies con IA para investigadores de conservación en México — tomas la foto y obtienes datos verificados de la especie",
   },
@@ -82,7 +82,7 @@ export const esCardCopy: Record<string, EsCardCopy> = {
       "Centro de comando operativo full-stack con 7 rutas API, 7 vistas de panel e integración en vivo con GitHub para la salud del portafolio, metas, tareas y desarrollo de negocio",
   },
   "context-writing-system": {
-    title: "Sistema de Escritura con IA",
+    title: "Sistema de escritura con IA",
     tagline:
       "Clona la voz de tu marca una sola vez — la IA escribe como tú en cada canal, sin desviarse",
   },
@@ -107,12 +107,12 @@ export const esCardCopy: Record<string, EsCardCopy> = {
       "Evaluación implacable de la defensibilidad de una startup, con detección de contradicciones por IA",
   },
   "cushlabs-ai-marketing": {
-    title: "Suite de Marketing con IA para Claude Code",
+    title: "Suite de marketing con IA para Claude Code",
     tagline:
       "15 comandos que convierten Claude Code en una plataforma completa de análisis de marketing",
   },
   "ai-build-vs-outsource": {
-    title: "Framework de Decisión: Construir vs. Subcontratar",
+    title: "Framework de decisión: construir vs. subcontratar",
     tagline:
       "Herramientas de decisión interactivas con puntuación ponderada, modelado de costos y resultados listos para el consejo directivo",
   },
@@ -121,12 +121,12 @@ export const esCardCopy: Record<string, EsCardCopy> = {
       "Organizador de archivos con IA, local — privado, seguro y sin configuración",
   },
   "freelance-income-planner": {
-    title: "Planificador de Ingresos Freelance",
+    title: "Planificador de ingresos freelance",
     tagline:
       "Simulador de ingresos con enfoque en privacidad — observa cómo las tarifas, los impuestos y las monedas impactan lo que te llevas a casa",
   },
   "expat-driver-license-prep": {
-    title: "ExpatDrive — Preparación Bilingüe para el Examen de Licencia",
+    title: "ExpatDrive — Preparación bilingüe para el examen de licencia",
     tagline:
       "Aprueba el examen de licencia de conducir en cualquier país — aunque todavía no hables el idioma.",
   },
@@ -135,7 +135,7 @@ export const esCardCopy: Record<string, EsCardCopy> = {
       "App de escritorio para Windows con alertas de acciones en tiempo real vía WhatsApp y notificaciones de Windows",
   },
   "comp-plan-simulator": {
-    title: "Simulador de Planes de Compensación",
+    title: "Simulador de planes de compensación",
     tagline:
       "Modela en tiempo real los cambios a un plan de compensación de venta directa antes de implementarlos",
   },
@@ -160,17 +160,17 @@ export const esCardCopy: Record<string, EsCardCopy> = {
       "Galería de imágenes autenticada con lightbox, compartir por WhatsApp, conversión automática a WebP y soporte PWA",
   },
   "ai-filesense-website": {
-    title: "Sitio Web de AI FileSense",
+    title: "Sitio web de AI FileSense",
     tagline:
       "Sitio de marketing bilingüe con Lighthouse 100 y captura de prospectos",
   },
   "ai-stock-alert-website": {
-    title: "Sitio Web de AI StockAlert",
+    title: "Sitio web de AI StockAlert",
     tagline:
       "Sitio de marketing SaaS bilingüe — 18 rutas, probado de extremo a extremo, cero costo de servidor",
   },
   "mazebreak-trello": {
-    title: "Automatización de Tablero Trello — MazeBreak",
+    title: "Automatización de tablero Trello — MazeBreak",
     tagline:
       "Aprovisionamiento idempotente de tableros de sprint vía API REST de Trello para desarrollo de juegos en Roblox",
   },
@@ -188,7 +188,7 @@ export const esCardCopy: Record<string, EsCardCopy> = {
       "Monitorea tu portafolio y tu plan de retiro mientras la IA orienta las decisiones — cada cifra en dólares la calcula código determinista, no el modelo",
   },
   "ai-webscraper": {
-    title: "Rastreador Web y Analizador SEO con IA",
+    title: "Rastreador web y analizador SEO con IA",
     tagline:
       "Rastrea sitios web, detecta problemas de SEO y genera reportes de análisis con IA sobre lo que conviene corregir primero",
   },
