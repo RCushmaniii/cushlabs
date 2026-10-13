@@ -160,9 +160,10 @@
         "opening_date": "January 2025",
         "hours": "Monday-Friday 09:00-18:00 (edit to your real availability)",
         "description_limit": "750 characters",
+        "description_note": "Google rejects a description containing CushLabs.ai (Valor no valido): it reads .ai as a link. Start with CushLabs. Saved on the live profile 2026-10-12.",
         "description": {
-          "es": "CushLabs.ai configura asistentes con IA que contestan a tus clientes 24/7 en Facebook Messenger y, en los planes más completos, también en Instagram, tu sitio web y tu teléfono. El asistente responde solo con la información que tú apruebas: servicios, precios, horarios y políticas. Cuando un cliente quiere agendar o pide hablar con una persona, toma sus datos y te avisa por WhatsApp. También te ayudamos a responder tus reseñas de Google, con tu aprobación. Nosotros nos encargamos de todo, sin que aprendas otra aplicación. Sin costo de instalación, sin contrato y con prueba gratis de 1 semana. Estamos en Guadalajara y atendemos negocios en México y Estados Unidos.",
-          "en": "CushLabs.ai sets up AI assistants that answer your customers 24/7 on Facebook Messenger and, on higher plans, on Instagram, your website and your phone. The assistant answers only from the information you approve: services, prices, hours and policies. When a customer wants to book or asks for a person, it captures their details and alerts you on WhatsApp. We also help you reply to your Google reviews, with your approval. We handle everything, so you don't have to learn new software. No setup fee, no contract, and a 1-week free trial. Based in Guadalajara, serving businesses in Mexico and the United States."
+          "es": "CushLabs configura asistentes con IA que contestan a tus clientes 24/7 en Facebook Messenger y, en los planes más completos, también en Instagram, tu sitio web y tu teléfono. El asistente responde solo con la información que tú apruebas: servicios, precios, horarios y políticas. Cuando un cliente quiere agendar o pide hablar con una persona, toma sus datos y te avisa por WhatsApp. También te ayudamos a responder tus reseñas de Google, con tu aprobación. Nosotros nos encargamos de todo, sin que aprendas otra aplicación. Sin costo de instalación, sin contrato y con prueba gratis de 1 semana. Estamos en Guadalajara y atendemos negocios en México y Estados Unidos.",
+          "en": "CushLabs sets up AI assistants that answer your customers 24/7 on Facebook Messenger and, on higher plans, on Instagram, your website and your phone. The assistant answers only from the information you approve: services, prices, hours and policies. When a customer wants to book or asks for a person, it captures their details and alerts you on WhatsApp. We also help you reply to your Google reviews, with your approval. We handle everything, so you don't have to learn new software. No setup fee, no contract, and a 1-week free trial. Based in Guadalajara, serving businesses in Mexico and the United States."
         },
         "services": "Add each item from shared_copy.services, using the es name and es description.",
         "attributes": [
@@ -200,8 +201,8 @@
         "website": "https://www.cushlabs.ai/es/",
         "about_limit": "500 characters",
         "about": {
-          "es": "CushLabs.ai configura asistentes con IA que contestan a tus clientes 24/7 en Facebook Messenger. Responden solo con la información que tú apruebas y te avisan por WhatsApp cuando alguien quiere agendar. También te ayudamos con tus reseñas de Google. Nosotros nos encargamos de todo. Sin costo de instalación, sin contrato y con prueba gratis de 1 semana. Desde Guadalajara, para negocios en México y Estados Unidos.",
-          "en": "CushLabs.ai sets up AI assistants that answer your customers 24/7 on Facebook Messenger. They answer only from the information you approve and alert you on WhatsApp when someone wants to book. We also help with your Google reviews. We handle everything. No setup fee, no contract, and a 1-week free trial. From Guadalajara, for businesses in Mexico and the United States."
+          "es": "CushLabs configura asistentes con IA que contestan a tus clientes 24/7 en Facebook Messenger. Responden solo con la información que tú apruebas y te avisan por WhatsApp cuando alguien quiere agendar. También te ayudamos con tus reseñas de Google. Nosotros nos encargamos de todo. Sin costo de instalación, sin contrato y con prueba gratis de 1 semana. Desde Guadalajara, para negocios en México y Estados Unidos.",
+          "en": "CushLabs sets up AI assistants that answer your customers 24/7 on Facebook Messenger. They answer only from the information you approve and alert you on WhatsApp when someone wants to book. We also help with your Google reviews. We handle everything. No setup fee, no contract, and a 1-week free trial. From Guadalajara, for businesses in Mexico and the United States."
         }
       }
     },
@@ -242,20 +243,24 @@
       "priority": 5,
       "why": "Largest B2B agency directory; US buyers browse it. Reviews from clients here carry weight.",
       "url": "https://clutch.co/get-listed",
+      "vendor_dashboard": "https://vendor.clutch.co/",
+      "status": "Submitted 2026-10-12, under Clutch review",
       "url_verified": false,
       "language_to_use": "en",
       "fields": {
         "company_name": "CushLabs.ai",
         "website": "https://www.cushlabs.ai/",
-        "tagline": "Use shared_copy.tagline.en",
+        "tagline": "Managed AI assistants that answer customers 24/7",
+        "tagline_limit": "50 characters",
+        "sales_email": "info@cushlabs.ai",
+        "goal": "Collect reviews and improve my reputation",
         "description": "Use shared_copy.long_description.en",
         "founded": "2025",
-        "employees": "Freelancer / 1",
+        "employees": "Freelancer (1 employee)",
         "headquarters": "Guadalajara, Jalisco, Mexico",
         "service_lines": [
-          "AI Development: 60%",
-          "Chatbot Development: 30%",
-          "Local SEO: 10%"
+          "AI Development (Clutch has no chatbot line, so the chatbot share went here)",
+          "Search Engine Optimization"
         ],
         "industries": [
           "Small business",
@@ -265,7 +270,8 @@
         ],
         "client_size": "Small business (<$10M)",
         "min_project_size": "$1,000+",
-        "hourly_rate": "Pick 'Undisclosed' if offered; otherwise '$25 - $49 / hr'. You sell monthly plans, not hours, so this is the closest honest bracket.",
+        "hourly_rate": "N/A (Clutch has no Undisclosed option)",
+        "address_note": "Clutch shows the street address publicly and verifies it in 7-10 business days.",
         "pricing": "Use shared_copy.pricing_for_forms.usd"
       }
     },
