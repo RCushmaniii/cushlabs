@@ -481,12 +481,12 @@ Planned but not started. Bundle related items into single PRs per CLAUDE.md.
   that session entry).
 - ~~Messenger bot: read `ref=demos-page`~~ — built 2026-10-08 as cushlabs-messenger-bot PR #492;
   merged and deployed 2026-10-08 (Robert approved outside the window).
-- **Spanish sentence case, site-wide (~200 strings).** Spanish headings/buttons use English Title Case
-  ("Agenda una Llamada Gratis de 30 Min", "Qué Incluye") — reads as machine-translated to Mexican readers.
-  /about/ is done (#393); the full file:line list is in PR #393's description (home2/_, services2/_,
-  es/services/*, es/contact|portfolio|video|faq|privacy|terms, Footer, pricing components, es.ts,
-  projectDetails.ts, projectCardsEs.ts). One batch, spot-check home/pricing/services in Chrome.
-  Robert asked for this on 2026-10-10 but the session closed before starting.
+- ~~**Spanish sentence case, site-wide.**~~ — done 2026-10-13 (`fix/es-sentence-case`): 329 strings
+  across 50 files. Deliberately left capitalized: brand-kit product names ("Agente de Voz IA",
+  "Asistente de Messenger IA", "Recepción Digital", plan names), Google's "Perfil de Negocio",
+  the legal document names "Aviso de Privacidad" / "Términos de Servicio" / "Aviso Legal" (also
+  used as defined terms in running legal text), demo business names, and tech/product names.
+  Rule for new copy: Spanish headings and buttons are sentence case; only proper nouns keep capitals.
 - **Meta logos on other pages.** /demos/ is clean and the footer trademark line is live (#392). Still
   to review with Robert (list in PR #392's report): Facebook "f" on the blue "Connect with Facebook"
   button (connect pages — likely fine, it's a real login button), Messenger logo inside the demo

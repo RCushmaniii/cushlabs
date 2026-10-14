@@ -95,7 +95,7 @@ const details: Record<string, ProjectDetailOverride> = {
         "CushLabs Messenger — El asistente con IA bilingüe 24/7 para Facebook Messenger",
       subheadline:
         "Un asistente con IA personalizado que responde a tus clientes al instante en español o inglés, creado a partir de tu propio sitio web, tus preguntas frecuentes y tus precios — para que cada mensaje en Messenger reciba una respuesta real, de día o de noche, y ningún prospecto se enfríe.",
-      overallVerdictTitle: "La Solución",
+      overallVerdictTitle: "La solución",
       overallVerdictBody:
         "CushLabs Messenger convierte la bandeja de entrada de Facebook de un negocio en un asistente de ventas 24/7. Toma el contenido real del cliente — sitio web, preguntas frecuentes, metodología, precios — y lo indexa para recuperación; luego responde los mensajes de Messenger con Claude, apoyándose en ese contenido para nunca inventar datos. El idioma se detecta en el primer mensaje y se mantiene durante toda la conversación, así cada cliente — en español o en inglés — recibe un intercambio natural y nativo, sin cambios manuales. Los saludos sencillos se atienden con un modelo rápido y económico, mientras que las preguntas reales pasan al modelo más potente, manteniendo las respuestas ágiles y a bajo costo. Cuando una conversación necesita a una persona, el asistente le entrega la conversación al negocio y se hace a un lado, y luego retoma automáticamente. Toda la plataforma es multi-cliente desde el primer día: un solo Cloudflare Worker atiende a cada cliente por su ID de página de Facebook, sin despliegues por cliente que administrar.",
       whatItDoesWellTitle: "Lo que hace bien",
@@ -128,7 +128,7 @@ const details: Record<string, ProjectDetailOverride> = {
         "Una encuesta de incorporación bilingüe y guiada que captura tu voz, tus límites, tus preguntas frecuentes y tus reglas de escalamiento",
         "Hospedaje de nivel producción en la red de Cloudflare, con monitoreo de errores y webhooks verificados por firma",
       ],
-      problemTitle: "El Reto",
+      problemTitle: "El reto",
       problemBody:
         "Los negocios en Facebook reciben un flujo constante de preguntas por Messenger — precios, disponibilidad, horarios, servicios — y en mercados bilingües como México llegan tanto en español como en inglés. Ningún negocio puede vigilar la bandeja 24/7, las respuestas automáticas genéricas pierden al prospecto en silencio mientras sigue buscando, y los chatbots de plantilla suenan robóticos e inventan respuestas que no pueden sostener. El negocio que responde primero gana; el que está dormido pierde la conversación.",
       resultsTitle: "Resultados",
@@ -152,49 +152,49 @@ const details: Record<string, ProjectDetailOverride> = {
         src: "/images/portfolio/cushlabs-01.webp",
         alt: {
           en: "CushLabs AI Services — The Self-Maintaining Bilingual Portfolio",
-          es: "CushLabs AI Services — El Portafolio Bilingüe Auto-Mantenido",
+          es: "CushLabs AI Services — El portafolio bilingüe auto-mantenido",
         },
       },
       {
         src: "/images/portfolio/cushlabs-02.webp",
         alt: {
           en: "Not Just a Website, But a System — bilingual, automated sync, serverless booking",
-          es: "No Solo un Sitio Web, Sino un Sistema — bilingüe, sincronización automatizada, reservas serverless",
+          es: "No solo un sitio web, sino un sistema — bilingüe, sincronización automatizada, reservas serverless",
         },
       },
       {
         src: "/images/portfolio/cushlabs-03.webp",
         alt: {
           en: "Premium Design is About Behavior — zero-flash theming, time-based dark mode, micro-interactions",
-          es: "El Diseño Premium es Sobre Comportamiento — temas sin flash, modo oscuro basado en hora, micro-interacciones",
+          es: "El diseño premium es sobre comportamiento — temas sin flash, modo oscuro basado en hora, micro-interacciones",
         },
       },
       {
         src: "/images/portfolio/cushlabs-04.webp",
         alt: {
           en: "Engineering Visibility — the enterprise SEO stack with JSON-LD, hreflang, and lazy loading",
-          es: "Visibilidad de Ingeniería — el stack SEO empresarial con JSON-LD, hreflang y carga lazy",
+          es: "Visibilidad de ingeniería — el stack SEO empresarial con JSON-LD, hreflang y carga lazy",
         },
       },
       {
         src: "/images/portfolio/cushlabs-05.webp",
         alt: {
           en: "True Bilingual Architecture — 24-line custom TypeScript i18n vs 40KB+ i18next",
-          es: "Arquitectura Bilingüe Real — i18n TypeScript personalizado de 24 líneas vs i18next de 40KB+",
+          es: "Arquitectura bilingüe real — i18n TypeScript personalizado de 24 líneas vs i18next de 40KB+",
         },
       },
       {
         src: "/images/portfolio/cushlabs-06.webp",
         alt: {
           en: "The Serverless Booking Wizard — Cloudflare Worker to Google Calendar API, 3-step flow",
-          es: "El Asistente de Reservas Serverless — Cloudflare Worker a Google Calendar API, flujo de 3 pasos",
+          es: "El asistente de reservas serverless — Cloudflare Worker a Google Calendar API, flujo de 3 pasos",
         },
       },
       {
         src: "/images/portfolio/cushlabs-07.webp",
         alt: {
           en: "Localization Beyond Language — WhatsApp integration with locale-aware pre-filled messages",
-          es: "Localización Más Allá del Idioma — integración WhatsApp con mensajes prellenados según el idioma",
+          es: "Localización más allá del idioma — integración WhatsApp con mensajes prellenados según el idioma",
         },
       },
       {
@@ -208,14 +208,14 @@ const details: Record<string, ProjectDetailOverride> = {
         src: "/images/portfolio/cushlabs-09.webp",
         alt: {
           en: "Fluid Typography and Responsive Design — clamp()-based scaling across all viewports",
-          es: "Tipografía Fluida y Diseño Responsivo — escalado con clamp() en todas las pantallas",
+          es: "Tipografía fluida y diseño responsivo — escalado con clamp() en todas las pantallas",
         },
       },
       {
         src: "/images/portfolio/cushlabs-10.webp",
         alt: {
           en: "Modern Services Page — scenario-based navigation with SVG icons and conversion-focused layout",
-          es: "Página de Servicios Moderna — navegación por escenarios con íconos SVG y diseño orientado a conversión",
+          es: "Página de servicios moderna — navegación por escenarios con íconos SVG y diseño orientado a conversión",
         },
       },
     ],
@@ -272,13 +272,13 @@ const details: Record<string, ProjectDetailOverride> = {
       ],
     },
     es: {
-      headline: "CushLabs.ai — El Portafolio Bilingüe Auto-Mantenido",
+      headline: "CushLabs.ai — El portafolio bilingüe auto-mantenido",
       subheadline:
         "Un sitio de marketing estático que supera sus expectativas: sincronización automática de portafolio desde GitHub, asistente de reservas serverless personalizado, sistema i18n de 24 lineas y SEO empresarial — todo desplegado como HTML estático en Vercel.",
-      overallVerdictTitle: "La Solución",
+      overallVerdictTitle: "La solución",
       overallVerdictBody:
         "CushLabs.ai no es solo un sitio de marketing — es un sistema de portafolio auto-mantenido. Un pipeline de GitHub Actions sincroniza todos los repos públicos semanalmente, extrayendo metadatos, URLs de demo de los READMEs y desgloses de lenguajes. Las sobrecargas de contenido enriquecido agregan copy de marketing curado sobre los datos auto-sincronizados. Un Cloudflare Worker personalizado consulta la API FreeBusy de Google Calendar para disponibilidad de reservas en tiempo real. Un sistema i18n TypeScript de 24 lineas reemplaza i18next sin overhead en runtime. Y una auditoria pre-deploy detecta traducciones faltantes, secretos filtrados y builds rotos antes de que algo llegue a producción.",
-      whatItDoesWellTitle: "Destacados Técnicos",
+      whatItDoesWellTitle: "Destacados técnicos",
       whatItDoesWell: [
         "Pipeline automatizado GitHub-a-sitio vía Actions + Octokit — cero entrada manual de datos",
         "i18n TypeScript personalizado de 24 lineas con tree-shaking en build — sin i18next, sin bloat en runtime",
@@ -310,7 +310,7 @@ const details: Record<string, ProjectDetailOverride> = {
         "Script de auditoria pre-deploy con 6 verificaciones de validación",
         "Diseño premium: textura SVG de ruido, orbes de gradiente, animaciones escalonadas, micro-interacciones",
       ],
-      problemTitle: "El Desafío",
+      problemTitle: "El desafío",
       problemBody:
         "Construir un sitio de marketing bilingüe para una consultoría que sirve a EE.UU. y México introduce complejidad acumulada: cada pagina necesita paridad completa de contenido en dos idiomas, el portafolio se vuelve obsoleto en el momento en que dejas de actualizarlo manualmente, los widgets de reservas de terceros rompen la consistencia del diseño, y el SEO para sitios bilingües es notoriamente complicado con hreflang, URLs canónicas y sitemaps que deben cubrir ambos idiomas correctamente. La mayoría de las soluciones involucran bibliotecas i18n pesadas, plataformas CMS y widgets de terceros embebidos — agregando costo, complejidad y overhead en runtime a lo que debería ser un sitio estático rápido.",
       resultsTitle: "Resultados",
@@ -382,10 +382,10 @@ const details: Record<string, ProjectDetailOverride> = {
       headline: "MazeBreak GDD Wiki",
       subheadline:
         "Wiki privado y buscable del documento de diseño de juego para un equipo de desarrollo en Roblox — 24 capítulos, búsqueda fuzzy, navegación por teclado y autenticación con Clerk.",
-      overallVerdictTitle: "La Solución",
+      overallVerdictTitle: "La solución",
       overallVerdictBody:
         "El MazeBreak GDD Wiki aborda cada punto de fricción con decisiones de diseño específicas: Ctrl+K abre un modal de búsqueda tipo command-palette con coincidencia fuzzy de Fuse.js. 24 capítulos organizados en 7 grupos lógicos con sidebar colapsable, navegación anterior/siguiente, y tabla de contenidos con seguimiento de scroll. Las actualizaciones de contenido se despliegan en 60 segundos vía Git push. La autenticación Clerk restringe el acceso a usuarios aprovisionados sin costo. Interfaz en modo oscuro inspirada en Linear, Raycast y Stripe Docs con tipografía JetBrains Mono, bloques de código Luau con resaltado de sintaxis, y tablas de estadísticas con estilo apropiado.",
-      whatItDoesWellTitle: "Destacados Técnicos",
+      whatItDoesWellTitle: "Destacados técnicos",
       whatItDoesWell: [
         "React 19 + Vite 7 con reemplazo de módulos en caliente y características modernas de React",
         "Búsqueda del lado del cliente vía Fuse.js — sin servidor, respuesta sub-50ms, funciona offline después de la carga inicial",
@@ -416,7 +416,7 @@ const details: Record<string, ProjectDetailOverride> = {
         "Layout responsivo de tres columnas: sidebar + contenido + tabla de contenidos",
         "Despliegue en Vercel con builds automatizados y enrutamiento SPA",
       ],
-      problemTitle: "El Desafío",
+      problemTitle: "El desafío",
       problemBody:
         "Los equipos de desarrollo de juegos que trabajan con documentos de diseño tradicionales enfrentan fricción acumulada: un documento Word de más de 30 páginas requiere scroll y Ctrl+F para encontrar cualquier cosa, rompiendo el flujo durante el desarrollo activo. Sistemas relacionados (ej. daño de enemigos y tablas de loot) viven en secciones separadas sin vinculación. La búsqueda de Word solo encuentra texto exacto — sin coincidencia fuzzy, sin ranking de relevancia, sin previews de fragmentos. Los desarrolladores trabajando en Roblox Studio necesitan alt-tab a una aplicación separada y localizar manualmente la sección relevante. Sin una herramienta de referencia construida a propósito, los documentos de diseño se convierten en artefactos que se escriben una vez y el equipo evita consultar.",
       resultsTitle: "Resultados",
@@ -519,7 +519,7 @@ const details: Record<string, ProjectDetailOverride> = {
         "Despliegue en Vercel con configuración de enrutamiento apropiada",
         "Implementación SEO completa (JSON-LD, Open Graph, Twitter Cards)",
       ],
-      problemTitle: "El Desafío",
+      problemTitle: "El desafío",
       problemBody:
         "Configurar un tablero sprint manualmente en Trello es lento, propenso a errores y no es repetible. Las tarjetas carecen de estructura consistente — algunas tienen checklists, otras no. Las dependencias entre tarjetas existen solo en la cabeza de las personas. Cuando un tablero necesita reconstruirse para un nuevo sprint, toda esa estructura se tiene que recrear desde cero.",
       resultsTitle: "Resultados",
@@ -590,10 +590,10 @@ const details: Record<string, ProjectDetailOverride> = {
       headline: "NY English Teacher",
       subheadline:
         "Una plataforma de generación de leads y reservas para coaching premium: cubre el trabajo de cuatro funciones de agencia con $0/mes de infraestructura. SDR, marketing, asistente ejecutiva y brand manager.",
-      overallVerdictTitle: "La Solución",
+      overallVerdictTitle: "La solución",
       overallVerdictBody:
         "NY English Teacher es una plataforma de generación de leads y conversión de clientes en producción, construida para un negocio de coaching premium operado por una sola persona en Guadalajara, México. La plataforma cubre el trabajo que una agencia tradicional repartiría entre cuatro roles, con sistemas automatizados que corren en infraestructura de nivel gratuito. Cuatro quizzes diagnósticos precalifican leads con brechas de comunicación mapeadas. Un flujo de reservas de 3 pasos vía Cloudflare Workers crea sesiones confirmadas de Google Meet en menos de 60 segundos. Un espejo bilingüe completo EN/ES con enrutamiento localizado duplica el mercado alcanzable desde una sola base de código. Y el posicionamiento premium está integrado en la UX con testimonios ejecutivos reales de Driscoll's, CEVA Logistics y más — sin códigos de descuento, sin plan de entrada.",
-      whatItDoesWellTitle: "Destacados Técnicos",
+      whatItDoesWellTitle: "Destacados técnicos",
       whatItDoesWell: [
         "Arquitectura static-first: Astro 5.5 pre-renderiza cada pagina a HTML estático — cero consultas a base de datos, cero errores runtime, Lighthouse 100",
         "API de reservas en el edge: Cloudflare Workers manejan Google Calendar OAuth con cache de tokens de 1 hora, resolución de conflictos dual-calendario y rate limiting por IP",
@@ -624,7 +624,7 @@ const details: Record<string, ProjectDetailOverride> = {
         "80 memes compartibles, 15+ plantillas descargables y 13+ artículos de blog para marketing de contenido",
         "Sistema de posicionamiento premium con testimonios ejecutivos reales y sin señales de precios commodity",
       ],
-      problemTitle: "El Desafío",
+      problemTitle: "El desafío",
       problemBody:
         "Los proveedores de servicios profesionales independientes enfrentan una desventaja estructural contra agencias staffeadas: la calificación manual quema 10-15 horas/semana de trabajo no remunerado, la fricción de agendamiento mata la conversión, los sitios web genéricos no pueden justificar precios premium, y el mercado profesional hispanohablante está desatendido. En el mercado de Guadalajara específicamente, el mercado local de tutoría de inglés está saturado a precios commodity ($5-10/hora) con prácticamente cero competencia en el segmento premium de coaching especifico por industria.",
       resultsTitle: "Resultados",
@@ -770,13 +770,13 @@ const details: Record<string, ProjectDetailOverride> = {
       ],
     },
     es: {
-      headline: "CushLabs OS — El Centro de Comando Operacional",
+      headline: "CushLabs OS — El centro de comando operacional",
       subheadline:
         "Un dashboard full-stack en Next.js que reemplaza el malabarismo de pestañas y auditorias en hojas de cálculo con una sola interfaz autenticada — 7 rutas API agregan repos de GitHub, pipeline de negocios, metas, tareas, logros y salud de infraestructura en 7 vistas especializadas.",
-      overallVerdictTitle: "La Solución",
+      overallVerdictTitle: "La solución",
       overallVerdictBody:
         "CushLabs OS es una aplicación full-stack Next.js 15 que se autentica vía GitHub OAuth y funciona como el sistema nervioso central de una consultoría multi-proyecto. Siete rutas API del lado del servidor manejan autenticación, agregación de datos, cache y health checks — todos los secretos permanecen en el servidor, toda la fusión de datos ocurre en tiempo de solicitud. El frontend renderiza siete vistas de dashboard especializadas, cada una diseñada para una preocupación operacional especifica: salud del portafolio, pipeline de desarrollo de negocios, seguimiento de metas en cuatro horizontes temporales, ejecución de tareas, registro de logros, monitoreo de infraestructura y documentación del sistema. Una arquitectura de enriquecimiento superpuesto mantiene las métricas en vivo de GitHub y el contexto de negocio curado en repos separados, fusionandolos en tiempo de solicitud para que ninguna fuente quede obsoleta.",
-      whatItDoesWellTitle: "Destacados Técnicos",
+      whatItDoesWellTitle: "Destacados técnicos",
       whatItDoesWell: [
         "7 rutas API del lado del servidor con cache de 2 horas y bypass manual — los secretos nunca llegan al navegador",
         "Arquitectura de enriquecimiento superpuesto: métricas en vivo de GitHub fusionadas con metadatos de negocio en tiempo de solicitud, sin duplicación",
@@ -808,7 +808,7 @@ const details: Record<string, ProjectDetailOverride> = {
         "Monitoreo de salud de infraestructura con gráficas de tiempo de respuesta y seguimiento SSL",
         "Sistema de temas claro/oscuro con detección de preferencia del sistema y persistencia en localStorage",
       ],
-      problemTitle: "El Desafío",
+      problemTitle: "El desafío",
       problemBody:
         "Operar una consultoría independiente con 15+ repositorios de GitHub crea puntos ciegos operacionales que se acumulan silenciosamente. GitHub muestra repos individuales pero no patrones a nivel de portafolio — tendencias de velocidad de commits, riesgos de concentración de ingresos, brechas de cobertura de despliegues, o que repos se están volviendo obsoletos. Metas estratégicas en cuatro horizontes (diario, semanal, trimestral, anual) viven en archivos JSON sin visualización. Pipelines de desarrollo de negocios — aplicaciones, propuestas, alcance — no tienen vista de embudo para análisis de conversión. Los logros se publican y desaparecen en el historial de commits sin registro buscable. La salud de infraestructura en múltiples dominios requiere verificación manual. El resultado: fatiga por cambio de contexto, riesgos ocultos, deuda de decisiones acumulada, y un operador que siempre reacciona en vez de comandar.",
       resultsTitle: "Resultados",
@@ -868,10 +868,10 @@ const details: Record<string, ProjectDetailOverride> = {
       headline: ES_TITLE_BIOJALISCO_PITCH,
       subheadline:
         "Sitio de scrollytelling cinemático presentando una plataforma de biodiversidad de ciencia ciudadana para el occidente de México",
-      overallVerdictTitle: "El Veredicto",
+      overallVerdictTitle: "El veredicto",
       overallVerdictBody:
         "Un artefacto de persuasión construido como un archivo HTML autocontenido con imágenes embebidas, cambio de contenido bilingüe, audio procedural y animaciones activadas por scroll. Demuestra que la narración de alto impacto no requiere React ni un sistema de compilación.",
-      whatItDoesWellTitle: "Lo Que Hace Bien",
+      whatItDoesWellTitle: "Lo que hace bien",
       whatItDoesWell: [
         "Arco narrativo de 5 actos (Gancho → Problema → Visión → Evidencia → Llamado) diseñado para persuasión de stakeholders",
         "Cambio instantáneo de idioma ES/EN sin recarga de página usando toggles de visibilidad CSS",
@@ -879,21 +879,21 @@ const details: Record<string, ProjectDetailOverride> = {
         "Paisaje sonoro de bosque procedural vía Web Audio API (no se necesitan archivos de audio)",
         "Reducción del 92% en tamaño de imágenes mediante conversión PNG→WebP + codificación base64",
       ],
-      goodForTitle: "Bueno Para",
+      goodForTitle: "Bueno para",
       goodFor: [
         "Organizaciones de conservación presentando a socios académicos y financiadores",
         "Proyectos que necesitan sitios de presentación capaces de funcionar offline con cero infraestructura",
         "Narración bilingüe donde ambos idiomas deben estar igualmente pulidos",
         "Demostrar restricción técnica — JS vanilla para proyectos que no necesitan frameworks",
       ],
-      notForTitle: "No Es Para",
+      notForTitle: "No es para",
       notFor: [
         "Proyectos que requieren actualizaciones dinámicas de contenido (todo está integrado en el HTML)",
         "Sitios con cambios frecuentes de contenido (editar requiere modificación del archivo HTML)",
         "Galerías de imágenes grandes (la incrustación base64 infla el tamaño del archivo)",
         "Landing pages críticas para SEO (el enfoque de archivo único limita la optimización)",
       ],
-      whatYouGetTitle: "Lo Que Obtienes",
+      whatYouGetTitle: "Lo que obtienes",
       whatYouGet: [
         "Archivo HTML único de 1.8MB con 9 imágenes WebP embebidas",
         "Bilingüe ES/EN con cambio instantáneo vía CSS",
@@ -959,13 +959,13 @@ const details: Record<string, ProjectDetailOverride> = {
     },
     es: {
       headline:
-        "Converso AI — Asistente Bilingüe de IA para Recepción y Ventas",
+        "Converso AI — Asistente bilingüe de IA para recepción y ventas",
       subheadline:
         "Una plataforma SaaS multi-tenant que da a negocios de servicio un asistente de IA bilingüe 24/7 — respuestas basadas en conocimiento, calificación de leads, constructor visual de flujos y facturación con Stripe. Un script para desplegar.",
-      overallVerdictTitle: "La Solución",
+      overallVerdictTitle: "La solución",
       overallVerdictBody:
         "Converso AI es un SaaS multi-tenant en producción que resuelve el problema central de negocios de servicio en mercados bilingües: leads que desaparecen fuera de horario porque nadie está para responder. Cada tenant sube su base de conocimiento — archivos, scraping de sitio web o entradas manuales — y obtiene un chatbot de IA que responde en inglés o español desde hechos verificados, nunca desde alucinaciones. Un constructor visual de playbooks permite a dueños no técnicos diseñar flujos de conversación con ramificación condicional y captura de leads. Stripe maneja suscripciones y medición de uso. Un solo script tag despliega el widget en cualquier sitio web. Todo el stack corre en Next.js 16 con aislamiento total por tenant, RBAC y headers de seguridad en el edge.",
-      whatItDoesWellTitle: "Destacados Técnicos",
+      whatItDoesWellTitle: "Destacados técnicos",
       whatItDoesWell: [
         "Aislamiento de datos multi-tenant — cada consulta se limita a businessId con RBAC en la capa API",
         "Pipeline RAG: ingestion, chunking, embedding vía indices HNSW de pgvector para búsqueda de similitud sub-lineal",
@@ -997,7 +997,7 @@ const details: Record<string, ProjectDetailOverride> = {
         "Soporte bilingüe nativo EN/ES con detección automática de idioma",
         "Gestión de suscripciones integrada con Stripe con seguimiento de uso por tenant",
       ],
-      problemTitle: "El Desafío",
+      problemTitle: "El desafío",
       problemBody:
         "Los negocios de servicio en mercados bilingües pierden 30-50% de consultas que llegan fuera de horario o en fines de semana. Contratar recepcionistas bilingües es caro y no escala. Los chatbots genéricos alucinan respuestas — información incorrecta sobre precios o disponibilidad es peor que no responder. Y la mayoría de plataformas de chatbot requieren participación de desarrolladores para la configuración, haciéndolas inaccesibles para dueños de pequeños negocios que no tienen equipos de desarrollo.",
       resultsTitle: "Resultados",
@@ -1065,13 +1065,13 @@ const details: Record<string, ProjectDetailOverride> = {
       ],
     },
     es: {
-      headline: "NY AI Chatbot — El Motor Conversacional Orientado a Ingresos",
+      headline: "NY AI Chatbot — El motor conversacional orientado a ingresos",
       subheadline:
         "Un chatbot de IA diseñado como agente de ventas automatizado, no como deflector de soporte. Cada capa — prompts del sistema, citaciones RAG, manejo de errores, límites de uso — está diseñada para convertir visitantes anónimos en sesiones de estrategia agendadas.",
-      overallVerdictTitle: "La Solución",
+      overallVerdictTitle: "La solución",
       overallVerdictBody:
         "NY AI Chatbot cambia las reglas de para que sirven los chatbots. La mayoría de empresas despliegan chatbots para reducir tickets de soporte — un centro de costos por diseño. Este sistema está arquitectado como un agente de ventas automatizado. Los prompts del sistema tienen CTAs para sesiones de estrategia gratuitas integrados en el código. Las citaciones RAG enlazan a paginas de servicio de alto valor, aumentando el tiempo en sitio. Los mensajes de error incluyen links de reserva. Los límites de uso crean urgencia. Un pipeline RAG de doble fuente combina contenido scrapeado del sitio web con mensajería de ventas curada, y los 5 mejores resultados por similitud coseno se inyectan en cada respuesta con URLs de fuente completas. El resultado: un chatbot que no solo responde preguntas — agenda ingresos.",
-      whatItDoesWellTitle: "Destacados Técnicos",
+      whatItDoesWellTitle: "Destacados técnicos",
       whatItDoesWell: [
         "Arquitectura de prompts orientada a ingresos — CTAs para sesiones de estrategia integrados en el ADN del prompt del sistema",
         "RAG de doble fuente: contenido web scrapeado (umbral 0.5) + docs de ventas curados (umbral 0.6) combinados por similitud coseno",
@@ -1103,7 +1103,7 @@ const details: Record<string, ProjectDetailOverride> = {
         "Dashboard de admin para gestión de conocimiento, analíticas y configuración del bot",
         "Bilingüe completo EN/ES con adaptación de personalidad por idioma",
       ],
-      problemTitle: "El Desafío",
+      problemTitle: "El desafío",
       problemBody:
         "Las escuelas de idiomas y negocios de servicio tratan a los chatbots como herramientas de deflexión — reducir volumen de tickets, acelerar respuestas FAQ, terminar la conversación. El resultado es un centro de costos que nunca genera ingresos. Mientras tanto, visitantes anónimos se van sin convertir porque no hay sistema con conciencia de ventas guiándolos hacia acciones de alto valor como agendar una sesión pagada.",
       resultsTitle: "Resultados",
@@ -1172,13 +1172,13 @@ const details: Record<string, ProjectDetailOverride> = {
       ],
     },
     es: {
-      headline: "Plataforma de Agentes de Voz IA — Tu Equipo Telefónico 24/7",
+      headline: "Plataforma de Agentes de Voz IA — Tu equipo telefónico 24/7",
       subheadline:
         "Agentes de voz IA en producción que contestan llamadas, califican leads, agendan citas en Google Calendar y manejan soporte — con tiempos de respuesta sub-500ms y conversación natural en 5 demos por industria.",
-      overallVerdictTitle: "La Solución",
+      overallVerdictTitle: "La solución",
       overallVerdictBody:
         "La Plataforma de Agentes de Voz despliega agentes de IA conversacional que manejan llamadas telefónicas reales — tanto entrantes como salientes. Construida sobre la infraestructura de voz en tiempo real de Vapi, cada agente combina un cerebro LLM (Claude Sonnet o Groq Llama 3.1), speech-to-text (Deepgram Nova-2/3), text-to-speech (Cartesia) y un backend Express con webhooks que ejecuta acciones reales durante llamadas en vivo. Cinco agentes demo en producción sirven diferentes industrias: Clara califica leads para CushLabs, James agenda citas de coaching ejecutivo con integración Google Calendar en tiempo real, Sophia atiende la recepción de un spa medico, Mike despacha llamadas de servicios del hogar, y David — el primer agente de llamadas salientes de la plataforma — llama proactivamente a prospectos inmobiliarios vía Twilio PSTN para calificar compradores y agendar tours de propiedades.",
-      whatItDoesWellTitle: "Destacados Técnicos",
+      whatItDoesWellTitle: "Destacados técnicos",
       whatItDoesWell: [
         "Respuesta de voz sub-500ms vía Vapi WebRTC: micrófono → Deepgram STT → LLM → Cartesia TTS → bocina",
         "Llamadas PSTN salientes — David llama prospectos vía Twilio con validación E.164 y rate limiting por IP",
@@ -1210,7 +1210,7 @@ const details: Record<string, ProjectDetailOverride> = {
         "Sitio de marketing bilingüe EN/ES con acceso a demos en vivo",
         "Despliegue vía Render Blueprint para infraestructura reproducible",
       ],
-      problemTitle: "El Desafío",
+      problemTitle: "El desafío",
       problemBody:
         "Los negocios pierden leads por llamadas sin contestar, buzones de voz que nadie revisa y abandono por tiempos de espera. Contratar recepcionistas es caro ($30-50K/año) y aún así deja huecos fuera de horario. Los sistemas IVR existentes frustran a quienes llaman con menús rígidos que nunca resuelven el problema. No hay capa de inteligencia — los sistemas telefónicos tradicionales rutean llamadas pero no pueden calificar, puntuar ni actuar sobre lo que el llamante necesita.",
       resultsTitle: "Resultados",
@@ -1286,13 +1286,13 @@ const details: Record<string, ProjectDetailOverride> = {
     },
     es: {
       headline:
-        "MarketSignal — Gestión de Reseñas de Google e Inteligencia Competitiva Local",
+        "MarketSignal — Gestión de reseñas de Google e inteligencia competitiva local",
       subheadline:
         "Gestiona tus reseñas de Google y vigila a la competencia en un solo lugar — respuestas a reseñas sin contestar redactadas con IA, más monitoreo de rankings en Google Maps y una acción clara por semana, directo a tu WhatsApp.",
-      overallVerdictTitle: "La Solución",
+      overallVerdictTitle: "La solución",
       overallVerdictBody:
         "MarketSignal hace dos trabajos para un negocio local. Gestiona sus reseñas de Google — detecta las que siguen sin contestar, redacta respuestas con el tono adecuado según la calificación y las publica en vivo a través de la API de Google Business Profile una vez que el dueño las aprueba, para que las reseñas dejen de quedarse sin respuesta durante semanas. Y monitorea el panorama competitivo a su alrededor: rankings en Google Maps, velocidad de reseñas, tendencias de calificación y movimientos de la competencia, que Claude destila en un reporte semanal por WhatsApp con una acción específica y de alto impacto. Sin dashboards que revisar, sin reportes que descargar — el insight llega en el hilo de conversación donde los dueños de negocio en México ya operan. La arquitectura está construida para go-to-market por fases: Fase 1 valida disposición a pagar con un modelo de servicio manual, Fase 2 agrega recolección automatizada y entrega por WhatsApp, Fase 3 abre onboarding autoservicio.",
-      whatItDoesWellTitle: "Destacados Técnicos",
+      whatItDoesWellTitle: "Destacados técnicos",
       whatItDoesWell: [
         "Gestión de reseñas con IA — detecta reseñas de Google sin contestar, redacta respuestas con el tono adecuado según la calificación y maneja el ciclo borrador → aprobación → publicación, publicando en vivo con la API de Google Business Profile",
         "Arquitectura de snapshots append-only — los datos históricos nunca se sobreescriben, habilitando re-análisis y trazabilidad",
@@ -1327,7 +1327,7 @@ const details: Record<string, ProjectDetailOverride> = {
         "Soporte multi-organización con aislamiento completo de datos desde el día uno",
         "Arquitectura go-to-market por fases que escala de servicio manual a SaaS autoservicio",
       ],
-      problemTitle: "El Desafío",
+      problemTitle: "El desafío",
       problemBody:
         "Los negocios locales en México no tienen forma accesible de rastrear sistemáticamente sus rankings en Google Maps o monitorear la actividad de competidores. Herramientas enterprise como BrightLocal y Whitespark no sirven bien al mercado mexicano — los precios están en dólares, el soporte es en inglés, y las herramientas asumen patrones de búsqueda centrados en EE.UU. Un competidor puede ganar 20 reseñas en una semana y saltar 3 posiciones en Maps, y sin rastreo sistemático, los negocios no se enteran hasta que su teléfono deja de sonar. La mayoría de herramientas de ranking muestran datos pero no te dicen que hacer. Y en México, los reportes por email se ignoran — WhatsApp es donde sucede el negocio.",
       resultsTitle: "Resultados",
@@ -1399,13 +1399,13 @@ const details: Record<string, ProjectDetailOverride> = {
     },
     es: {
       headline:
-        "Sistema de Escritura IA — Clona Tu Voz de Marca Una Vez, Escribe en Todos Lados",
+        "Sistema de Escritura IA — Clona tu voz de marca una vez, escribe en todos lados",
       subheadline:
         "Un framework estructurado que hace que la IA escriba como tú en vez de como IA. Archivos JSON persistentes bloquean tu voz, audiencia, hechos de negocio y reglas de claims — luego los aplican en cada canal de contenido sin drift.",
-      overallVerdictTitle: "La Solución",
+      overallVerdictTitle: "La solución",
       overallVerdictBody:
         "El Sistema de Escritura IA resuelve la causa raíz de por que el contenido generado por IA suena genérico: cada sesión de chat arranca desde cero. Este framework almacena tu realidad en cuatro archivos JSON persistentes de verdad — ADN de Voz, Perfil de Negocio, Perfil de Cliente Ideal y Política de Claims — cargados antes de cada generación. Archivos de habilidades por formato proveen estructura para cada tipo de contenido. Un stack de control jerárquico (Verdad > Voz > Audiencia > Formato) elimina instrucciones conflictivas. El resultado: primeros borradores listos para revisión en vez de reescritura, cero claims alucinados, y una voz consistente en cada plataforma. El sistema es agnóstico de herramientas — funciona con Claude, ChatGPT, Cursor o cualquier sistema capaz de RAG.",
-      whatItDoesWellTitle: "Destacados Técnicos",
+      whatItDoesWellTitle: "Destacados técnicos",
       whatItDoesWell: [
         "Cuatro archivos JSON de verdad como infraestructura — voz, negocio, audiencia y claims cargados antes de cada generación",
         "Motor de Política de Claims bloquea métricas alucinadas, testimonios fabricados y afirmaciones sin respaldo a nivel de sistema",
@@ -1437,7 +1437,7 @@ const details: Record<string, ProjectDetailOverride> = {
         "Base de conocimiento de ejemplos gold-standard que se acumula con cada pieza exitosa",
         "Arquitectura agnóstica de herramientas — funciona con Claude, ChatGPT, Cursor o cualquier sistema RAG",
       ],
-      problemTitle: "El Desafío",
+      problemTitle: "El desafío",
       problemBody:
         "El contenido generado por IA arranca fuerte pero se desliza hacia relleno corporativo genérico en minutos. Los equipos gastan más tiempo editando output de IA del que ahorraron generandolo — matando entusiasmo, restaurando voz y verificando claims alucinados. Cada nueva sesión de chat arranca desde cero porque no hay memoria persistente de quien eres, que vendes o que tienes permitido decir. El resultado: prompt engineering desechable, instrucciones dispersas en docenas de pestañas de chat, y una herramienta de productividad que se convirtió en una carga de edición.",
       resultsTitle: "Resultados",
@@ -1508,13 +1508,13 @@ const details: Record<string, ProjectDetailOverride> = {
     },
     es: {
       headline:
-        "CushLabs Scrollytelling — Pitch Decks Cinemáticos Que Capturan Atención",
+        "CushLabs Scrollytelling — Pitch decks cinemáticos que capturan atención",
       subheadline:
         "Template Astro dirigido por configuración con interacción dual: modo presentación auto-narrado para juntas directivas y modo navegación libre para due diligence. Nuevos pitch decks se entregan en horas, no semanas.",
-      overallVerdictTitle: "La Solución",
+      overallVerdictTitle: "La solución",
       overallVerdictBody:
         "Los pitch decks tradicionales son olvidables — los inversionistas ven cientos de presentaciones estáticas cada mes. CushLabs Scrollytelling los reemplaza con experiencias web cinemáticas que capturan atención. La interacción dual permite a los presentadores avanzar automáticamente a través de una secuencia narrada para juntas directivas, o dejar que los inversionistas naveguen libremente para due diligence. Toda la experiencia está dirigida por configuración — colores, fuentes, contenido y estructura de secciones vienen de un solo archivo TypeScript, para que nuevos pitch decks se entreguen en horas en vez de semanas. Construido sobre Astro 5 con islas Svelte 5, el template puntúa 98 en Lighthouse mientras entrega efectos Matrix rain, animaciones typewriter y audio procedural.",
-      whatItDoesWellTitle: "Destacados Técnicos",
+      whatItDoesWellTitle: "Destacados técnicos",
       whatItDoesWell: [
         "Modo presentación con scroll-lock, auto-avance y narración sincronizada para juntas directivas",
         "Cambio instantáneo de idioma EN/ES sin recarga de pagina vía toggles de visibilidad CSS",
@@ -1546,7 +1546,7 @@ const details: Record<string, ProjectDetailOverride> = {
         "Flujo de reserva de consultoría integrado con integración de calendario",
         "98 en Lighthouse — el rendimiento no se sacrifica por el impacto visual",
       ],
-      problemTitle: "El Desafío",
+      problemTitle: "El desafío",
       problemBody:
         "Los pitch decks tradicionales son olvidables. Los inversionistas ven cientos de presentaciones estáticas cada mes, y la mayoría se difuminan entre si. Las experiencias scrollytelling personalizadas toman semanas en construirse y producen código de un solo uso que no se puede reutilizar. El resultado: o envías diapositivas olvidables, o inviertes semanas en un build personalizado que solo funciona una vez. Los mercados bilingües agregan otra capa — mantener dos versiones igualmente pulidas de un pitch duplica el esfuerzo de producción.",
       resultsTitle: "Resultados",
@@ -1618,13 +1618,13 @@ const details: Record<string, ProjectDetailOverride> = {
     },
     es: {
       headline:
-        "Unwatermark — Detección y Eliminación de Marcas de Agua con IA",
+        "Unwatermark — Detección y eliminación de marcas de agua con IA",
       subheadline:
         "Un pipeline de IA en capas que detecta y elimina marcas de agua incrustadas en imágenes, PDFs y presentaciones usando EasyOCR, Florence-2, Grounded SAM, Claude Vision e inpainting neuronal LaMa — con precisión pixel-perfect.",
-      overallVerdictTitle: "La Solución",
+      overallVerdictTitle: "La solución",
       overallVerdictBody:
         "Unwatermark resuelve un problema que ningún modelo de IA puede manejar solo: marcas de agua incrustadas donde los pixeles reemplazan el contenido original — no hay capa que borrar, no hay metadata que eliminar. La solución es un pipeline de detección en capas que arranca barato y escala: EasyOCR atrapa marcas de agua de texto gratis, Florence-2 maneja detección visual, Grounded SAM produce mascaras binarias pixel-perfect, y Claude Vision sirve como respaldo para casos no estándar. La eliminación la maneja LaMa inpainting neuronal, que reconstruye lo que estaba debajo de la marca de agua en vez de clonar o difuminar. El procesamiento multi-pasada atrapa marcas residuales en hasta 3 ciclos detectar-eliminar. La herramienta corre como app web en producción y CLI, procesando exportaciones PPTX de 14 slides en menos de 60 segundos.",
-      whatItDoesWellTitle: "Destacados Técnicos",
+      whatItDoesWellTitle: "Destacados técnicos",
       whatItDoesWell: [
         "Detección en capas: EasyOCR → Florence-2 → Grounded SAM → Claude Vision → heuristico — cada nivel agrega costo solo cuando métodos más baratos fallan",
         "Mascaras pixel-perfect de SAM aíslan exactamente los pixeles de la marca de agua, previniendo daño colateral al contenido adyacente",
@@ -1657,7 +1657,7 @@ const details: Record<string, ProjectDetailOverride> = {
         "Handlers específicos por formato para imágenes, PDFs y presentaciones PowerPoint",
         "Despliegue Docker con reverse proxy Caddy y HTTPS",
       ],
-      problemTitle: "El Desafío",
+      problemTitle: "El desafío",
       problemBody:
         "Los decks de diapositivas y documentos exportados incrustan marcas de agua directamente en imágenes raster — no hay capa que borrar. NotebookLM, sitios de fotos stock y PDFs borrador producen archivos donde los pixeles de la marca de agua reemplazan el contenido original. La limpieza manual en Photoshop no escala para docenas de slides. La detección es difícil porque las marcas de agua van desde etiquetas de texto pequeñas hasta logos semi-transparentes hasta overlays diagonales rotados. Y la eliminación agresiva destruye el contenido circundante mientras la eliminación conservadora deja restos visibles.",
       resultsTitle: "Resultados",
@@ -1727,13 +1727,13 @@ const details: Record<string, ProjectDetailOverride> = {
       ],
     },
     es: {
-      headline: "AI Resume Tailor — Vence la Caja Negra del ATS",
+      headline: "AI Resume Tailor — Vence la caja negra del ATS",
       subheadline:
         "Un SaaS bilingüe que muestra a buscadores de empleo exactamente por que sus CVs son rechazados por los Sistemas de Rastreo de Candidatos — feedback ATS estructurado en menos de 10 segundos, 5 análisis gratis, cero datos almacenados.",
-      overallVerdictTitle: "La Solución",
+      overallVerdictTitle: "La solución",
       overallVerdictBody:
         "AI Resume Tailor abre la caja negra. Más del 75% de los CVs son rechazados por sistemas ATS antes de que un humano los vea, y los buscadores de empleo no tienen visibilidad de por que. Esta aplicación toma un CV y una descripción de puesto, los procesa con GPT-4 con salida JSON estructurada y prompts enfocados en ATS, y devuelve un score de match, keywords faltantes y sugerencias codificadas por severidad — todo en menos de 10 segundos. El producto está diseñado alrededor de cero fricción: los invitados obtienen 5 análisis gratis sin registro. La privacidad se aplica por arquitectura — ningún dato de CV se almacena, nunca. Soporte bilingüe completo EN/ES sirve al mercado laboral latinoamericano desatendido. Stripe maneja la conversión de invitado a usuario de pago con checkout embebido.",
-      whatItDoesWellTitle: "Destacados Técnicos",
+      whatItDoesWellTitle: "Destacados técnicos",
       whatItDoesWell: [
         "GPT-4 con modo JSON estricto y temperatura baja (0.1) para análisis ATS estructurado y deterministico",
         "Contrato API type-safe — interfaces TypeScript con union types y funciones de transformación",
@@ -1766,7 +1766,7 @@ const details: Record<string, ProjectDetailOverride> = {
         "Bilingüe completo EN/ES en cada elemento de UI y análisis generado por IA",
         "Stripe checkout embebido con autenticación Clerk y Neon PostgreSQL",
       ],
-      problemTitle: "El Desafío",
+      problemTitle: "El desafío",
       problemBody:
         "Más del 75% de los CVs son rechazados por Sistemas de Rastreo de Candidatos antes de que un humano los vea. Los buscadores de empleo envían a una caja negra sin visibilidad de por que son filtrados. Las herramientas existentes cobran por adelantado, requieren cuentas o dan consejos genéricos no vinculados al puesto especifico. El mercado latinoamericano está aún más desatendido — herramientas solo en inglés no sirven a profesionales hispanohablantes, y las interfaces traducidas por máquina se sienten como ocurrencias tardías.",
       resultsTitle: "Resultados",

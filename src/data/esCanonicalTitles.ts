@@ -11,4 +11,4 @@
 // cannot drift. Add new entries here as ES titles need to be pinned across surfaces.
 
 export const ES_TITLE_BIOJALISCO_PITCH =
-  "BioJalisco — Sitio de Presentación Cinematográfico";
+  "BioJalisco — Sitio de presentación cinematográfico";
