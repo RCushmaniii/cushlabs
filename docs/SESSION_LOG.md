@@ -977,6 +977,18 @@ cost question the WhatsApp demo-swap decision has been waiting on.
 
 ## Session History
 
+## Session: 2026-10-14 — Vercel deployment rules written into CLAUDE.md
+
+- PR #396 (language card) merged 2026-10-13 05:33 UTC as `d53d5da`; verified live on
+  https://www.cushlabs.ai/ (card template and `hreflang="en"`/`"es"`/`"x-default"` present).
+- Preview builds were already off on `main` (#398, `5b9db3e`). New CLAUDE.md section
+  "Vercel Deployments — Hobby plan limits" records the rules: one merge = one production deploy,
+  bundle and push once per PR, never remove the preview guard, 256-character limit, docs-only commits
+  skip, no preview URLs.
+- **Found:** a branch cut before #398 has no guard, because Vercel reads `vercel.json` from the
+  pushed commit. Draft PR #397 (`fix/es-sentence-case`) is such a branch: merge `origin/main` into
+  it before its next push.
+
 ## Session: 2026-10-12 (later) — Language suggestion card, hreflang en/es, pricing page wider than a phone
 
 - **Language suggestion card** (`src/components/LanguageSuggestion.astro`, strings in
