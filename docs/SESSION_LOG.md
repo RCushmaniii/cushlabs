@@ -977,6 +977,38 @@ cost question the WhatsApp demo-swap decision has been waiting on.
 
 ## Session History
 
+## Session: 2026-10-14 — Spanish polish parked in a draft PR; directory copy for US buyers; pronoun split
+
+### Accomplished
+
+- **US-facing English directory copy** — `docs/seo/directory-listings.json` tagline, short and long description now lead with "answer your Spanish-speaking customers" for US buyers. Spanish fields untouched. No claim about the language of the WhatsApp owner alert (unverified; noted in the file's `rules_applied`). Shipped in PR #396 (`d53d5da`).
+- **Pronoun split decided** — "we" for service/product copy, "I" for Robert's personal channels. Codified in `voice-dna.json` by an operating-system session; this repo re-stamped in `9cb09ca`.
+- **PR #397 parked as DRAFT, not merged** (Robert: park it, add more later, not urgent). Branch `fix/es-sentence-case` holds:
+  - `6873955` — 329 Spanish headings/buttons to sentence case across 50 files; added missing "¿" in "¿Aún tienes dudas? Hablemos".
+  - `876c4ee` — services FAQ usted → tú ("¿Firmas…?", "¿Trabajas…?"); calque "Feliz de firmar" → "Con gusto firmo".
+  - **Staged, NOT committed (Robert's instruction):** booking step-1 fallback label `sessionTimezone` in `en.ts`/`es.ts` said "Central Standard Time" / "Hora Central"; now "Mexico City time (UTC−6)" / "Hora de Ciudad de México (UTC−6)". The browser replaced it on load, so only no-JS visitors and crawlers saw it. The confirmation summary was already correct.
+
+### Decisions Made
+
+- Sentence-case keep-list: brand-kit product and plan names, "Perfil de Negocio en Google", legal document names (Aviso de Privacidad, Términos de Servicio/Uso, Aviso Legal), demo business names, places, tech names.
+- Spanish terms page keeps usted on purpose (legal register).
+
+### Immediate Next Steps
+
+- [ ] Revenue first (operating-vision: revenue proximity): Robert sends the outbox DMs at https://growth.cushlabs.ai/queue and publishes directory listings (Clutch, GoodFirms first) from `docs/seo/directory-listings.json`.
+- [ ] When Robert says "merge" on PR #397: check out `fix/es-sentence-case`, commit the staged timezone label if still staged, rebase on main, `npm run check` + build + vitest, `gh pr ready 397`, squash-merge.
+- [ ] ny-eng has the same "Central Time (GMT-6)" label on its booking confirmation page — fix in a session opened in ny-eng.
+
+### Technical Debt
+
+- Sentence-case scan heuristic misses long accent-free headings with no common Spanish words (~10% residual risk).
+
+### Open Questions / Blockers
+
+- None
+
+---
+
 ## Session: 2026-10-14 — Vercel deployment rules written into CLAUDE.md
 
 - PR #396 (language card) merged 2026-10-13 05:33 UTC as `d53d5da`; verified live on
