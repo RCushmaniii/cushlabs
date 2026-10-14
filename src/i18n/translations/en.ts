@@ -333,8 +333,9 @@ export const en = {
     sessionTitle: "AI Strategy Consultation",
     sessionDuration: "30 min consultation",
     sessionMeet: "Google Meet video conference info added after booking",
-    sessionTimezone:
-      "Time slots are (GMT-06:00) Central Standard Time - Mexico City",
+    // Replaced in the browser by the visitor-aware line in BookingFormSteps.astro.
+    // Never "Central Time": see summaryTimezone below.
+    sessionTimezone: "Times are in Mexico City time (UTC−6)",
     selectDateTime: "Select a date & time",
     selectTime: "Select a time",
     changeTime: "Change",

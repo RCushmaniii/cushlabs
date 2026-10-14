@@ -331,8 +331,9 @@ export const es = {
     sessionDuration: "Consulta de 30 min",
     sessionMeet:
       "Información de videoconferencia de Google Meet agregada después de la reserva",
-    sessionTimezone:
-      "Los horarios son (GMT-06:00) Hora Central - Ciudad de México",
+    // El navegador lo reemplaza con la línea según la zona del visitante (BookingFormSteps.astro).
+    // Nunca "Hora Central": ver summaryTimezone más abajo.
+    sessionTimezone: "Horarios en hora de Ciudad de México (UTC−6)",
     selectDateTime: "Selecciona una fecha y hora",
     selectTime: "Selecciona una hora",
     changeTime: "Cambiar",
