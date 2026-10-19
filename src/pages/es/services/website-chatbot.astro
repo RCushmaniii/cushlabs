@@ -58,8 +58,10 @@ const comparison = [
           En tu sitio web, 24/7 · Bilingüe EN/ES
         </div>
 
+        {/* H1 alineado con el <title> el 2026-10-19: el anterior no decía DÓNDE corre el
+            chatbot. El encabezado del bloque en la página de servicios no cambia. */}
         <h1 class="wc-h1 font-display font-bold text-white">
-          Chatbot Inteligente de Atención al Cliente
+          Chatbot de atención al cliente con IA para tu sitio web
         </h1>
 
         <p class="wc-sub">
@@ -124,7 +126,7 @@ const comparison = [
             <div class="prose prose-lg dark:prose-invert max-w-none">
               <div class="text-gray-900 dark:text-gray-200 bg-cush-orange/5 border-l-4 border-cush-orange pl-6 py-4 rounded-r-lg space-y-3">
                 <p>Un asistente de IA que responde con EL conocimiento de TU negocio — tus documentos, tus políticas, tus precios, la información de tus productos — que responde las preguntas de tus clientes con precisión, en inglés y español, las 24 horas.</p>
-                <p>No es un chatbot genérico. Es un sistema que conoce tu negocio, valida sus respuestas contra tus fuentes aprobadas y transfiere a tu equipo cuando se necesita criterio humano.</p>
+                <p>Es un sistema que conoce tu negocio, valida sus respuestas contra tus fuentes aprobadas y transfiere a tu equipo cuando se necesita criterio humano.</p>
               </div>
             </div>
           </div>
@@ -277,16 +279,22 @@ const comparison = [
             Ya resolví los problemas difíciles: soporte bilingüe, respuestas precisas basadas en el contenido real de tu negocio, transferencia elegante a humanos, uptime 24/7 con monitoreo de errores. No pagas para que yo lo descubra — ya lo descubrí.
           </p>
         </div>
+        {/* Etiqueta cambiada el 2026-10-19: decía "Empieza Tu Prueba Gratis de 1 Semana" y
+            llevaba al calendario, donde no empieza nada — la prueba inicia el día que el
+            asistente entra en operación (commercial-terms.json → trial.starts). */}
         <div class="mt-10">
           <a
             href="/es/reservar/"
+            data-analytics-event="booking_cta_clicked"
+            data-analytics-placement="chatbot-why-cushlabs"
             class="inline-flex items-center gap-2 px-8 py-4 bg-cush-orange text-black font-display font-semibold rounded-lg hover:bg-cush-orange/90 transition-all duration-300 shadow-lg shadow-cush-orange/25 hover:shadow-xl text-lg"
           >
-            Empieza Tu Prueba Gratis de 1 Semana
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            Agenda una llamada gratis de 30 min
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
           </a>
+          <p class="mt-4 text-sm text-gray-500 dark:text-gray-400">Sin cuota de instalación · Sin contrato · Prueba gratis de 1 semana a partir de que tu asistente esté funcionando</p>
         </div>
       </div>
     </Container>

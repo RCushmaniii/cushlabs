@@ -80,6 +80,44 @@ const resolvedOgImage = ogImage ? `${Astro.site}${ogImage.replace(/^\//, '')}` :
 // Locale mapping for OG
 const ogLocale = locale === "es" ? "es_MX" : "en_US";
 const ogLocaleAlternate = locale === "es" ? "en_US" : "es_MX";
+
+// ---- Structured data helpers (added 2026-10-19) ----
+// The graph below used to hold only Organization + Person, so every page was described as
+// "the company" with no node for the page itself. WebSite and WebPage are the two nodes a
+// crawler expects to find on every page; a BreadcrumbList is emitted for service pages,
+// which are the only two-level pages without one (blog posts and project pages already
+// carry their own). Blog posts set their own WebPage @id in ArticleSchema; that node
+// merges with this one by @id, so there is no duplicate.
+const SITE_ID = "https://www.cushlabs.ai/#website";
+const ORG_ID = "https://www.cushlabs.ai/#organization";
+const pageName = title.replace(/\s*[|—–-]\s*CushLabs(\.ai)?\s*$/i, "").trim();
+const inLanguage = locale === "es" ? "es-MX" : "en";
+const servicesMatch = pathname.replace(/^\/es(?=\/|$)/, "").match(/^\/services\/[^/]+\/?$/);
+const breadcrumbItems = servicesMatch
+  ? [
+      { name: locale === "es" ? "Inicio" : "Home", item: new URL(locale === "es" ? "/es/" : "/", Astro.site).href },
+      { name: locale === "es" ? "Servicios" : "Services", item: new URL(locale === "es" ? "/es/services/" : "/services/", Astro.site).href },
+      { name: pageName },
+    ]
+  : null;
+const breadcrumbNode = breadcrumbItems
+  ? {
+      "@type": "BreadcrumbList",
+      "@id": `${canonicalURL.href}#breadcrumb`,
+      itemListElement: breadcrumbItems.map((c, i) => ({ "@type": "ListItem", position: i + 1, ...c })),
+    }
+  : null;
+const webPageNode = {
+  "@type": "WebPage",
+  "@id": canonicalURL.href,
+  url: canonicalURL.href,
+  name: pageName,
+  description,
+  inLanguage,
+  isPartOf: { "@id": SITE_ID },
+  about: { "@id": ORG_ID },
+  ...(breadcrumbNode ? { breadcrumb: { "@id": breadcrumbNode["@id"] } } : {}),
+};
 ---
 
 <!doctype html>
@@ -200,7 +238,7 @@ const ogLocaleAlternate = locale === "es" ? "en_US" : "es_MX";
             name: "CushLabs.ai",
             url: "https://www.cushlabs.ai",
             description:
-              "AI consulting and modern software development for SMBs. Production-ready chatbots, automation, and custom applications.",
+              "One fully managed AI assistant that answers your customers on Facebook Messenger, Instagram, your website, and the phone, in English and Spanish. Based in Guadalajara, serving Mexico and the US.",
             email: "info@cushlabs.ai",
             telephone: "+523315590572",
             priceRange: "$$",
@@ -228,13 +266,21 @@ const ogLocaleAlternate = locale === "es" ? "en_US" : "es_MX";
               "https://github.com/RCushmaniii",
             ],
             founder: { "@id": "https://www.cushlabs.ai/#person" },
+            // Rewritten 2026-10-19. The catalog named three services the site no longer sells
+            // ("AI Chatbot Development", "Business Process Automation", "Custom Software
+            // Development"). It now lists the productized offers, one per service page, so
+            // the Service nodes a schema audit looks for exist and point at real URLs.
+            // Names only — prices live in PricingSection.astro and must not be restated here.
             hasOfferCatalog: {
               "@type": "OfferCatalog",
               name: "AI Services",
               itemListElement: [
-                { "@type": "Offer", itemOffered: { "@type": "Service", name: "AI Chatbot Development" } },
-                { "@type": "Offer", itemOffered: { "@type": "Service", name: "Business Process Automation" } },
-                { "@type": "Offer", itemOffered: { "@type": "Service", name: "Custom Software Development" } },
+                { "@type": "Offer", itemOffered: { "@type": "Service", name: "AI Messenger Assistant", url: "https://www.cushlabs.ai/services/messenger-assistant/", provider: { "@id": ORG_ID } } },
+                { "@type": "Offer", itemOffered: { "@type": "Service", name: "AI Assistant on Instagram", url: "https://www.cushlabs.ai/services/instagram/", provider: { "@id": ORG_ID } } },
+                { "@type": "Offer", itemOffered: { "@type": "Service", name: "AI Website Chatbot", url: "https://www.cushlabs.ai/services/website-chatbot/", provider: { "@id": ORG_ID } } },
+                { "@type": "Offer", itemOffered: { "@type": "Service", name: "WhatsApp Appointment Reminders", url: "https://www.cushlabs.ai/services/whatsapp/", provider: { "@id": ORG_ID } } },
+                { "@type": "Offer", itemOffered: { "@type": "Service", name: "Google Maps Competitive Intelligence", url: "https://www.cushlabs.ai/services/competitive-intelligence/", provider: { "@id": ORG_ID } } },
+                { "@type": "Offer", itemOffered: { "@type": "Service", name: "AI Voice Agent", url: "https://www.cushlabs.ai/services/voice-agent/", provider: { "@id": ORG_ID } } },
               ],
             },
           },
@@ -242,7 +288,7 @@ const ogLocaleAlternate = locale === "es" ? "en_US" : "es_MX";
             "@type": "Person",
             "@id": "https://www.cushlabs.ai/#person",
             name: "Robert Cushman",
-            jobTitle: "AI Consultant & Full-Stack Developer",
+            jobTitle: "Founder & AI Developer",
             url: "https://www.cushlabs.ai",
             image: "https://www.cushlabs.ai/images/og/cushlabs-og.png",
             sameAs: [
@@ -259,6 +305,16 @@ const ogLocaleAlternate = locale === "es" ? "en_US" : "es_MX";
             ],
             knowsLanguage: ["en", "es"],
           },
+          {
+            "@type": "WebSite",
+            "@id": SITE_ID,
+            url: "https://www.cushlabs.ai/",
+            name: "CushLabs.ai",
+            inLanguage: ["en", "es-MX"],
+            publisher: { "@id": ORG_ID },
+          },
+          webPageNode,
+          ...(breadcrumbNode ? [breadcrumbNode] : []),
         ],
       })}
     />
