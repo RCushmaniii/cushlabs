@@ -69,7 +69,17 @@ const t = {
 <BaseLayout title={title} description={description}>
   <section class="relative pt-24 pb-16 overflow-hidden">
     <div class="absolute inset-0 -z-20">
-      <img src="/images/hero/solutuions-hero.webp" alt="CushLabs portfolio of AI and software development projects" loading="eager" fetchpriority="high" width="1920" height="1080" class="w-full h-full object-cover opacity-[0.05] dark:opacity-[0.03]" />
+      {/* Decorative texture, not content: a 5% opacity graphic behind the hero. It was an <img>
+          whose alt was keyword text on an image nobody can see — spam to an auditor, noise to a
+          screen reader — and Ahrefs flagged the pattern site-wide (2026-10-19). A decorative
+          background belongs in CSS, invisible to assistive tech and image audits alike.
+          File: /images/hero/solutuions-hero.webp */}
+      {/* Same change as portfolio.astro; the old alt was English keyword text on the Spanish page. */}
+      <div
+        class="absolute inset-0 bg-cover bg-center opacity-[0.05] dark:opacity-[0.03]"
+        style="background-image: url('/images/hero/solutuions-hero.webp');"
+        aria-hidden="true"
+      ></div>
       <div class="absolute inset-0 bg-linear-to-b from-white/50 via-transparent to-white dark:from-gray-950/50 dark:via-transparent dark:to-gray-950"></div>
     </div>
     <div class="absolute inset-0 -z-10">
