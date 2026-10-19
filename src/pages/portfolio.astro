@@ -27,14 +27,20 @@ function getThumbnail(project: typeof projects[number]): string {
 }
 const locale = (Astro.currentLocale === "es" ? "es" : "en") as "en" | "es";
 
+// Meta rewritten 2026-10-19. The old description promised "document processing" (not a
+// service CushLabs sells — see docs/AI-ASSISTANT-ONBOARDING.md) and "measurable ROI" that no
+// card on the page backs with a number (claims-policy.json bans "guaranteed ROI"; an
+// unmeasured "measurable" is the same promise in softer clothes). It now says what the
+// hero subheadline says. The title was 40 characters; Ahrefs' ideal range is 50–60.
+// Keep this block and the consts in src/pages/es/portfolio.astro identical.
 const meta = {
   en: {
-    title: "AI Projects & Case Studies — CushLabs.ai",
-    description: "Production-ready AI systems for support automation, document processing, and operations. Real projects delivering measurable ROI for small businesses.",
+    title: "AI Projects & Case Studies for Small Business | CushLabs.ai",
+    description: "Chatbots, voice agents, automation and competitor tracking, built and deployed for small teams in the US and Mexico. Browse the projects and try the live demos.",
   },
   es: {
-    title: "Proyectos de IA y Casos de Estudio — CushLabs.ai",
-    description: "Sistemas de IA listos para producción: automatización de soporte, procesamiento de documentos y operaciones. Proyectos reales con ROI medible.",
+    title: "Proyectos de IA y casos de estudio para pymes | CushLabs.ai",
+    description: "Chatbots, agentes de voz, automatización y monitoreo de competidores, hechos para pequeños negocios en EE.UU. y México. Ve los proyectos y las demos en vivo.",
   },
 };
 
