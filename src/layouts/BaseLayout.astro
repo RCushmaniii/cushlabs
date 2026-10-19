@@ -102,7 +102,9 @@ const ogLocaleAlternate = locale === "es" ? "en_US" : "es_MX";
         while the image actually behind the headline was not preloaded at all.
         Keep both paths and the 640px breakpoint in sync with home2/Hero.astro. Phones
         get home-hero-mobile-v1.webp, a portrait crop of the same photo (41 KB vs 119 KB)
-        framed so the 42% 48% background-position shows the same slice. */}
+        framed so the 42% 48% object-position shows the same slice. Since 2026-10-19 the
+        hero is a real <picture>/<img> (alt text, indexable), so these preloads are a
+        belt-and-braces LCP hint, not the only discovery path. */}
     {(pathname === '/' || pathname === '/es' || pathname === '/es/') && (
       <>
         <link rel="preload" as="image" href="/images/home-hero-mobile-v1.webp" media="(max-width: 640px)" fetchpriority="high" />
