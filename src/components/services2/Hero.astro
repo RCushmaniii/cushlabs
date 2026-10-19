@@ -7,19 +7,27 @@ interface Props {
 
 const { locale } = Astro.props;
 
+// CTA label changed 2026-10-19. It read "Start Your Free 1-Week Trial" and linked to the
+// booking form, but nothing starts there: the trial begins the day the assistant goes live,
+// after a discovery call (commercial-terms.json → trial.starts). A reader who clicked
+// expecting a trial got a calendar instead. The homepage, pricing and about pages all label
+// this same destination "Book a Free 30-Min Call", so the services hero now does too, and
+// the trial moves to a note under the button with the wording from commercial-terms.json.
 const content = {
   en: {
     headline: "One Assistant for Your Customer Messages, Set Up and Managed for You.",
     subheadline1: "Messenger, Instagram, your website, WhatsApp reminders and your phone: one assistant that knows your business, in English and Spanish.",
     subheadline2: "",
-    cta: "Start Your Free 1-Week Trial",
+    cta: "Book a Free 30-Min Call",
+    note: "No setup fee · No contract · 1-week free trial once your assistant goes live",
     ctaLink: "/consultation/"
   },
   es: {
     headline: "Un Asistente para los Mensajes de Tus Clientes, Configurado y Administrado para Ti.",
     subheadline1: "Messenger, Instagram, tu sitio web, recordatorios por WhatsApp y tu teléfono: un solo asistente que conoce tu negocio, en español y en inglés.",
     subheadline2: "",
-    cta: "Empieza Tu Prueba Gratis de 1 Semana",
+    cta: "Agenda una llamada gratis de 30 min",
+    note: "Sin cuota de instalación · Sin contrato · Prueba gratis de 1 semana a partir de que tu asistente esté funcionando",
     ctaLink: "/es/reservar/"
   }
 };
@@ -30,13 +38,16 @@ const t = content[locale];
 <section class="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden">
   <!-- Background Image (subtle) -->
   <div class="absolute inset-0 -z-20">
-    <img
-      src="/images/hero/services-hero2.webp"
-      alt="AI-powered business solutions and automation services"
-      width="1920"
-      height="1080"
-      class="w-full h-full object-cover opacity-[0.05] dark:opacity-[0.03]"
-    />
+    {/* Decorative texture, not content: a 5% opacity graphic behind the hero. It was an <img>
+        whose alt was keyword text on an image nobody can see — spam to an auditor, noise to a
+        screen reader — and Ahrefs flagged the pattern site-wide (2026-10-19). A decorative
+        background belongs in CSS, invisible to assistive tech and image audits alike.
+        File: /images/hero/services-hero2.webp */}
+    <div
+      class="absolute inset-0 bg-cover bg-center opacity-[0.05] dark:opacity-[0.03]"
+      style="background-image: url('/images/hero/services-hero2.webp');"
+      aria-hidden="true"
+    ></div>
     <div class="absolute inset-0 bg-linear-to-b from-white/50 via-transparent to-white dark:from-gray-950/50 dark:via-transparent dark:to-gray-950"></div>
   </div>
   <!-- Gradient Orbs -->
@@ -55,16 +66,19 @@ const t = content[locale];
         <p class="leading-relaxed">{t.subheadline1}</p>
       </div>
 
-      <div class="flex justify-center">
+      <div class="flex flex-col items-center gap-4">
         <a
           href={t.ctaLink}
+          data-analytics-event="booking_cta_clicked"
+          data-analytics-placement="services-hero"
           class="group inline-flex items-center gap-2 px-8 py-4 bg-cush-orange text-black font-display font-semibold rounded-lg hover:bg-cush-orange/90 transition-all duration-300 shadow-lg shadow-cush-orange/25 hover:shadow-xl hover:shadow-cush-orange/30 text-lg"
         >
           {t.cta}
-          <svg class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
           </svg>
         </a>
+        <p class="text-sm text-gray-500 dark:text-gray-400">{t.note}</p>
       </div>
     </div>
   </Container>

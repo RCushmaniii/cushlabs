@@ -12,7 +12,23 @@
 > Resolved items collapse to one line under [Resolved](#resolved-technical-debt); the trail stays so a
 > future session does not re-litigate a settled decision.
 
-**18 open** · 24 resolved · last reconciled 2026-10-12
+**19 open** · 24 resolved · last reconciled 2026-10-19
+
+### #43 — The services page speaks as "I" on a site whose product copy is "we"
+
+**Medium** · opened 2026-10-19 · costs: one page contradicting the voice rule decided 2026-10-12
+
+`voice-dna.json` (pronoun_choice, codified 2026-10-12) sets first-person plural for website and
+service copy and first-person singular for Robert's personal channels. `/services/` predates the
+rule: `HowIWork.astro` ("How I Work"), `WhoItIsFor.astro` ("I work best with"), `FAQ.astro`,
+`FinalCTA.astro` and every `ServiceBlock.astro` entry are "I" — roughly sixty strings per language.
+The WhatsApp page, the pricing closing block and the 2026-10-19 CTA notes are "we", so the site now
+mixes both, and `FinalCTA` ("I'll assess your situation") renders at the foot of the "we"-voiced
+WhatsApp, Messenger and chatbot pages. The About page is "I" by rule and is not part of this.
+
+**Next:** one PR that rewrites the five services2 components to "we" through the `copywriting`
+router (`services-page` skill), keeping "I'm one person" in the not-for list as a stated fact rather
+than a voice. Read the diff as a whole; do not fold it into an unrelated PR.
 
 ### ~~#31~~ — The homepage chat widget answers prospects and records nothing at all — **RESOLVED 2026-09-23**
 
@@ -976,6 +992,76 @@ In-window utility templates and service messages start being charged. This is th
 cost question the WhatsApp demo-swap decision has been waiting on.
 
 ## Session History
+
+## Session: 2026-10-19 — Audit pass: hero alt, honest CTAs, proof blocks, schema graph (PR #400)
+
+### Accomplished
+
+One branch (`fix/hero-img-alt`), five local commits, one push, PR #400 squash-merged. Everything
+applied to EN and ES. Source of the work: Robert pasted page audits one at a time (homepage,
+pricing, services, about, portfolio, WhatsApp, Messenger, website chatbot, structured data); each
+was triaged against the live source, the real defect implemented, the rest rejected on the record.
+
+- **Homepage hero** — the LCP photo was a CSS background with no alt. Now a real `<picture>`/`<img>`
+  with descriptive alt in both languages; preloads in `BaseLayout` unchanged and in sync with the
+  640px breakpoint. `10478f5`
+- **Six decorative hero textures** (about, contact ×2, services, portfolio ×2) were `<img>` at 5%
+  opacity with empty or keyword alts, flagged by Ahrefs on every crawl. Now CSS backgrounds on
+  `aria-hidden` divs. `bd99cae`
+- **Pricing page** gained a closing CTA block after the FAQ (`PricingComparison.astro`,
+  `data-analytics-placement="pricing-closing"`). `10478f5`
+- **Homepage pain-points button** ("See What AI Could Handle for You") linked to the booking form.
+  Now scrolls to `#solutions` (`SolutionOverview.astro` gained the id and `scroll-mt-24`). `3304bd9`
+- **"Start Your Free 1-Week Trial" buttons** on the services hero, Messenger page and chatbot page
+  all linked to the booking calendar, where nothing starts (trial begins at go-live). Now "Book a
+  Free 30-Min Call" with the trial in a note underneath, wording from `commercial-terms.json`.
+  `823d706`, `f1fda4f`
+- **WhatsApp page** — hero CTA repointed from `/contact/` to the booking page (the page promises
+  "no form to fill out"); "How to start" section got a booking button and a one-line "included in
+  Premium and Ultra" pointer to pricing; both files' header comments still said the page must never
+  imply WhatsApp is in a plan (stale since the 2026-09-19 pricing correction) — rewritten. `823d706`
+- **New `services2/ClientQuote.astro`** — one real quote from `testimonials.ts`, on the services
+  page (before the FAQ) and the Messenger page (before related reading). Neither had a customer voice.
+- **Website chatbot H1** "Intelligent Customer Support AI Chatbot" → "AI Customer Support Chatbot for
+  Your Website" (matches the title tag; the services-page block heading unchanged). Duplicate "Not a
+  generic chatbot" line removed. `f1fda4f`
+- **Portfolio meta** described "document processing" and "measurable ROI"; rewritten to match the
+  page. Portfolio and Messenger titles lengthened from 40/36 to 59 characters. `823d706`, `f1fda4f`
+- **Schema graph in `BaseLayout`** — added `WebSite`, a per-page `WebPage`, and an automatic
+  `BreadcrumbList` on `/services/<slug>/` (EN/ES). The Organization offer catalog listed three
+  services the site no longer sells; now the six productized offers with URLs. Person jobTitle
+  aligned to the About page. `f1fda4f`
+
+### Decisions Made
+
+- **Decorative vs content imagery:** a content photo is a real `<img>` with alt; a decorative
+  texture is a CSS background on an `aria-hidden` div. Never `alt=""` on a texture again — Ahrefs
+  counts it as missing even though Lighthouse accepts it.
+- **A CTA label must name what happens on click.** "Start your trial" may not point at a calendar.
+  The trial goes in a note under the button, in `commercial-terms.json` wording.
+- **Audit suggestions rejected as a class:** competitor-comparison sections, invented statistics or
+  per-project ROI, exclamation-mark heading rewrites, "more first person" on product pages, Product /
+  SiteNavigationElement schema, and every suggested title/meta (each dropped the brand or channels).
+- Testimonials stay between pain points and solution on the homepage (source marks it deliberate).
+
+### Immediate Next Steps
+
+- [ ] Debt #43 (services page "I" → "we") as its own PR via the `copywriting` router.
+- [ ] Debt #41 (6 `astro check` errors in `PricingSection.astro` / `ServiceBlock.astro`) still
+      open; `npm run audit:predeploy` still ends FAILED because of it.
+- [ ] PR #397 (Spanish sentence case) is still a parked draft; it will conflict with the ES strings
+      this PR touched in `services2/Hero.astro`, `whatsapp.astro`, `messenger-assistant.astro`,
+      `website-chatbot.astro` — merge `origin/main` into it before its next push.
+
+### Open Questions / Blockers
+
+- **`npm run build` is blocked locally by a sibling repo:** `validate-portfolio-md` fails on
+  `ny-eng-stories/portfolio.md` (must be uppercase `PORTFOLIO.md`). Vercel is unaffected (it uses
+  the committed JSON under `CI`). Fix in a session opened in ny-eng-stories:
+  `git mv portfolio.md tmp.md && git mv tmp.md PORTFOLIO.md`. Until then, build locally from the
+  blog-translations step onward (the command sequence is in `package.json` → `build`).
+
+---
 
 ## Session: 2026-10-14 — Spanish polish parked in a draft PR; directory copy for US buyers; pronoun split
 

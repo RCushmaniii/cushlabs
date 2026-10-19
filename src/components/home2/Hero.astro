@@ -63,6 +63,12 @@ const content = {
     ctaWhatsApp: 'Book on WhatsApp — under a minute',
     ctaDemo: 'See a Demo for Your Business ↓',
     scrollHint: 'Scroll to explore',
+    // Alt text for the hero photo (a real <img> since 2026-10-19 — see the markup note).
+    // Describes what is IN the picture, which is also the pitch; it is not a keyword slot.
+    // "Beauty-business", not "salon": the tote reads "Belleza que te conecta" and nothing
+    // in the frame says salon. No price, no claim — those live in the headline.
+    heroAlt:
+      'Beauty-business owner on her couch at night checks her phone, where an AI assistant already answered a customer on Messenger and offered to book her appointment.',
   },
   es: {
     badge: 'IA para Pequeños Negocios · Español + Inglés · 24/7',
@@ -86,6 +92,10 @@ const content = {
     ctaWhatsApp: 'Agenda por WhatsApp — menos de un minuto',
     ctaDemo: 'Ve una Demo para Tu Negocio ↓',
     scrollHint: 'Explorar',
+    // es-MX vocabulary per the spanish-es-mx skill: "celular", "agendar"; "clienta" because the
+    // customer on screen is María González.
+    heroAlt:
+      'Dueña de un negocio de belleza revisa su celular en el sofá por la noche; un asistente de IA ya respondió a una clienta en Messenger y le ofreció agendar su cita.',
   },
 };
 
@@ -95,6 +105,29 @@ const waHref = whatsappBookingHref('es');
 ---
 
 <section aria-labelledby="hero-heading" class="home-hero relative flex items-center text-slate-50">
+  {/* The photo is a real <img>, not a CSS background-image (changed 2026-10-19). As a
+      background it had no alt text: screen readers skipped the page's primary image,
+      Google Images could not index it, and Lighthouse could not even flag the gap.
+      The <picture> swaps to the portrait crop at the same 640px breakpoint the two
+      preload links in BaseLayout.astro use — keep all three in sync. The dark veil that
+      keeps white text legible moved from the section's background-image to
+      .home-hero__media::after with the same stops, so SESSION_LOG debt #24's contrast
+      maths still hold. object-position carries the old background-position values.
+      Paint order: media (z-0, first in DOM) → Container (relative z-0, later in DOM)
+      → fade (z-1). Container MUST stay positioned or the photo paints over the text. */}
+  <div class="home-hero__media">
+    <picture>
+      <source media="(max-width: 640px)" srcset="/images/home-hero-mobile-v1.webp" width="706" height="941" />
+      <img
+        src="/images/home-hero-v1.webp"
+        alt={t.heroAlt}
+        width="1672"
+        height="941"
+        fetchpriority="high"
+        decoding="async"
+      />
+    </picture>
+  </div>
   {/* The hand-off to the demo section. The photo used to end on a hard edge against
       white, which read as two different websites stacked. This fades the bottom 160px
       into the exact colour the next section is painted in — they share
@@ -102,7 +135,7 @@ const waHref = whatsappBookingHref('es');
       aria-hidden + pointer-events-none: decorative, and it must not eat clicks on the
       scroll chevron that sits inside it. */}
   <div class="home-hero__fade" aria-hidden="true"></div>
-  <Container size="lg">
+  <Container size="lg" class="relative z-0">
     <div class="text-center max-w-4xl mx-auto">
       <!-- Trust Badge -->
       <div class="home-badge inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm mb-5 animate-fade-in">
@@ -274,42 +307,73 @@ const waHref = whatsappBookingHref('es');
 
   .home-hero {
     min-height: 100svh;
+    /* Paints until the photo decodes, and behind any letterboxing object-fit leaves. */
     background-color: #14110d;
-    /* Middle stop is the DARKEST here (not the lightest, like the other three heroes) —
-       this photo has no clean empty zone for text, so the headline band needs solid
-       backing wherever it lands rather than dodging around the subject. */
-    background-image:
-      linear-gradient(
-        to bottom,
-        rgba(20, 17, 13, 0.62) 0%,
-        rgba(20, 17, 13, 0.72) 45%,
-        rgba(20, 17, 13, 0.88) 100%
-      ),
-      url("/images/home-hero-v1.webp");
-    background-size: cover;
-    background-position: 32% 58%;
-    background-repeat: no-repeat;
+  }
+
+  /* The photo layer. Which file renders is decided by the <picture> in the markup
+     (640px breakpoint); this block only decides how it is cropped and veiled. */
+  .home-hero__media {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  .home-hero__media picture,
+  .home-hero__media img {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .home-hero__media img {
+    object-fit: cover;
+    object-position: 32% 58%;
+  }
+
+  /* Middle stop is the DARKEST here (not the lightest, like the other three heroes) —
+     this photo has no clean empty zone for text, so the headline band needs solid
+     backing wherever it lands rather than dodging around the subject. */
+  .home-hero__media::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(20, 17, 13, 0.62) 0%,
+      rgba(20, 17, 13, 0.72) 45%,
+      rgba(20, 17, 13, 0.88) 100%
+    );
   }
 
   @media (max-aspect-ratio: 1 / 1) {
     .home-hero {
       min-height: 86svh;
-      background-position: 38% 50%;
+    }
+
+    .home-hero__media img {
+      object-position: 38% 50%;
     }
   }
 
   @media (max-width: 640px) {
     .home-hero {
       min-height: 96svh;
-      background-position: 42% 48%;
-      background-image:
-        linear-gradient(
-          to bottom,
-          rgba(20, 17, 13, 0.76) 0%,
-          rgba(20, 17, 13, 0.82) 45%,
-          rgba(20, 17, 13, 0.93) 100%
-        ),
-        url("/images/home-hero-mobile-v1.webp");
+    }
+
+    .home-hero__media img {
+      object-position: 42% 48%;
+    }
+
+    .home-hero__media::after {
+      background: linear-gradient(
+        to bottom,
+        rgba(20, 17, 13, 0.76) 0%,
+        rgba(20, 17, 13, 0.82) 45%,
+        rgba(20, 17, 13, 0.93) 100%
+      );
     }
   }
 

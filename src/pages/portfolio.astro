@@ -27,14 +27,20 @@ function getThumbnail(project: typeof projects[number]): string {
 }
 const locale = (Astro.currentLocale === "es" ? "es" : "en") as "en" | "es";
 
+// Meta rewritten 2026-10-19. The old description promised "document processing" (not a
+// service CushLabs sells — see docs/AI-ASSISTANT-ONBOARDING.md) and "measurable ROI" that no
+// card on the page backs with a number (claims-policy.json bans "guaranteed ROI"; an
+// unmeasured "measurable" is the same promise in softer clothes). It now says what the
+// hero subheadline says. The title was 40 characters; Ahrefs' ideal range is 50–60.
+// Keep this block and the consts in src/pages/es/portfolio.astro identical.
 const meta = {
   en: {
-    title: "AI Projects & Case Studies — CushLabs.ai",
-    description: "Production-ready AI systems for support automation, document processing, and operations. Real projects delivering measurable ROI for small businesses.",
+    title: "AI Projects & Case Studies for Small Business | CushLabs.ai",
+    description: "Chatbots, voice agents, automation and competitor tracking, built and deployed for small teams in the US and Mexico. Browse the projects and try the live demos.",
   },
   es: {
-    title: "Proyectos de IA y Casos de Estudio — CushLabs.ai",
-    description: "Sistemas de IA listos para producción: automatización de soporte, procesamiento de documentos y operaciones. Proyectos reales con ROI medible.",
+    title: "Proyectos de IA y casos de estudio para pymes | CushLabs.ai",
+    description: "Chatbots, agentes de voz, automatización y monitoreo de competidores, hechos para pequeños negocios en EE.UU. y México. Ve los proyectos y las demos en vivo.",
   },
 };
 
@@ -113,15 +119,18 @@ const t = content[locale];
   <section class="relative pt-24 pb-16 overflow-hidden">
     <!-- Background Image (very subtle) -->
     <div class="absolute inset-0 -z-20">
-      <img
-        src="/images/hero/solutuions-hero.webp"
-        alt="CushLabs portfolio of AI and software development projects"
-        loading="eager"
-        fetchpriority="high"
-        width="1920"
-        height="1080"
-        class="w-full h-full object-cover opacity-[0.05] dark:opacity-[0.03]"
-      />
+      {/* Decorative texture, not content: a 5% opacity graphic behind the hero. It was an <img>
+          whose alt was keyword text on an image nobody can see — spam to an auditor, noise to a
+          screen reader — and Ahrefs flagged the pattern site-wide (2026-10-19). A decorative
+          background belongs in CSS, invisible to assistive tech and image audits alike.
+          File: /images/hero/solutuions-hero.webp */}
+      {/* It also carried fetchpriority="high": the browser fetched an invisible 1920px image
+          ahead of the project cards. As a CSS background it loads after layout, which is right. */}
+      <div
+        class="absolute inset-0 bg-cover bg-center opacity-[0.05] dark:opacity-[0.03]"
+        style="background-image: url('/images/hero/solutuions-hero.webp');"
+        aria-hidden="true"
+      ></div>
       <div class="absolute inset-0 bg-linear-to-b from-white/50 via-transparent to-white dark:from-gray-950/50 dark:via-transparent dark:to-gray-950"></div>
     </div>
     <!-- Gradient Orbs -->

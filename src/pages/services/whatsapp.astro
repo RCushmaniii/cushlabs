@@ -15,9 +15,14 @@
 //   /admin                  operator console
 // Do not repoint or remove those without re-checking the Meta app settings.
 //
-// CLAIMS BOUNDARY (docs/strategy/ADVERTISED-COMMITMENTS.md): this page sells
-// WhatsApp as its OWN offer and must never imply it is included in Basic /
-// Premium / Ultra. Those cards carry it under a separate "Coming" pill.
+// CLAIMS BOUNDARY (docs/strategy/ADVERTISED-COMMITMENTS.md, the "CURRENT STATE —
+// 2026-10-08" note under WhatsApp): reminders and confirmations are LIVE and
+// included in the Premium and Ultra plans; Meta bills the client directly for
+// delivery, and no message allowance may ever be published. Until 2026-10-19
+// this comment said the opposite — that the page must never imply WhatsApp is
+// in a plan — which was true before the 2026-09-19 pricing correction and
+// stale after it. The plan line in the "How to start" section must stay in
+// step with PricingSection.astro.
 //
 // UPDATED 2026-08-22. This comment used to say the framing was accurate
 // because "the Meta app is approved but not yet flipped to Live." The app IS
@@ -104,11 +109,16 @@ const trust = [
         </p>
 
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          {/* Hero CTA repointed 2026-10-19: it sent people to the contact form, and the
+              "How to start" section below promises "there is no form to fill out". The
+              booking page is the one destination every other page on the site uses. */}
           <a
-            href="/contact/"
+            href="/consultation/"
+            data-analytics-event="booking_cta_clicked"
+            data-analytics-placement="whatsapp-hero"
             class="group inline-flex items-center gap-2 px-8 py-4 bg-cush-orange text-black font-display font-semibold rounded-lg hover:bg-cush-orange/90 transition-all duration-300 shadow-lg shadow-cush-orange/25 hover:shadow-xl hover:shadow-cush-orange/30 text-lg"
           >
-            Get in touch
+            Book a free 30-min call
             <svg class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
@@ -234,6 +244,23 @@ const trust = [
           Meta charges for message delivery, billed to your own account at Meta's rate. We tell you what to expect before you commit — not on your first invoice.
           For the full breakdown, read <a href="/blog/what-whatsapp-actually-costs-in-mexico/" class="font-medium text-accent-text underline underline-offset-4 decoration-cush-orange/40 hover:decoration-cush-orange">what WhatsApp actually costs a small business in Mexico</a>.
         </p>
+        <!-- Booking button added 2026-10-19. This section told the reader exactly how to
+             start and gave them nothing to click: the only booking CTAs were the hero and the
+             footer block, two screens away. -->
+        <p class="mt-5 text-fluid-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+          Reminders and confirmations are included in the Premium and Ultra plans. <a href="/pricing/" class="font-medium text-accent-text underline underline-offset-4 decoration-cush-orange/40 hover:decoration-cush-orange">See the plans</a>.
+        </p>
+        <a
+          href="/consultation/"
+          data-analytics-event="booking_cta_clicked"
+          data-analytics-placement="whatsapp-how-to-start"
+          class="mt-8 group inline-flex items-center gap-2 px-8 py-4 bg-cush-orange text-black font-display font-semibold rounded-lg hover:bg-cush-orange/90 transition-all duration-300 shadow-lg shadow-cush-orange/25 hover:shadow-xl hover:shadow-cush-orange/30 text-lg"
+        >
+          Book a free 30-min call
+          <svg class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
       </div>
     </Container>
   </section>
