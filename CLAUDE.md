@@ -545,7 +545,17 @@ npm run check            # Lint + TypeScript check
 npm run generate-projects # Sync GitHub repos to JSON
 npm run preview          # Preview production build
 npm run audit:predeploy  # Pre-deployment validation
+node scripts/perf-check.mjs  # Measure the LIVE site: status, TTFB, HTML weight, edge cache, every sitemap URL
 ```
+
+**The CI workflow tests `dist/` on the runner and nothing else.** What a visitor or a crawler
+gets from production is measured by `scripts/perf-check.mjs`, which
+`.github/workflows/production-check.yml` runs after every production deploy (and
+`tests/page-weight.test.ts` guards HTML weight before one). Added 2026-10-20 after a live crawl
+reported `/pricing/` at 3.8 s while CI was green: on this low-traffic site 120 of 135 pages are
+a Vercel edge MISS on first contact, the DNS is proxied through Cloudflare (which does not cache
+HTML), and the scraper's "response time" is its own fetch-and-parse clock. Full analysis in the
+2026-10-20 session log entry.
 
 ---
 
@@ -773,19 +783,19 @@ Before ending any session, verify:
 > A doc here asserting a price, a client count, a trial length or an approval status is a bug,
 > even when it happens to be correct today. Link to the file instead.
 
-| Canonical file | Owns | Reconciled at |
-| --- | --- | --- |
-| `operating-system/cushlabs/operating-vision.json` | How the business is run - the operations vision, the six operating principles, and the precedence order that settles conflicts between them. | `eea191dbd2c5` |
-| `operating-system/strategy/clients.json` | Who is paying, what they bill, what they cost to serve. **(internal — never quote to a client)** | `1a63031453e1` |
-| `operating-system/cushlabs/capability-registry.json` | Every platform approval, entitlement and quota, and whether a client can actually reach it. **(internal — never quote to a client)** | `1ce15f092e89` |
-| `operating-system/cushlabs/commercial-terms.json` | Price, trial, cancellation, billing, invoicing and delivery timing. | `b4581efc2c95` |
-| `operating-system/cushlabs/claims-policy.json` | The claims ladder and the banned absolutes. | `86104fc2fa46` |
-| `operating-system/cushlabs/brand-kit.md` | Color, type, logo, product naming, currency, and the precedence table that settles conflicts. | `5ea30911fcc5` |
-| `operating-system/cushlabs/service-reference.md` | The client-facing bilingual what-your-plan-includes document. | `4dcd6607b0af` |
-| `operating-system/cushlabs/voice-dna.json` | Tone authority for all CushLabs content. | `71d7e804a13f` |
-| `operating-system/cushlabs/icp.json` | Ideal customer profile, segments, objection rebuttals. | `2259c5d825da` |
-| `operating-system/cushlabs/business-profile.json` | Positioning, offers, delivery model. | `80ef7bc8d735` |
-| `operating-system/cushlabs/tech-standard.json` | The sanctioned technology lanes, the gate a new technology must pass, and the baseline every deployed repo must meet. | `913dded097dc` |
+| Canonical file                                       | Owns                                                                                                                                         | Reconciled at  |
+| ---------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- | -------------- |
+| `operating-system/cushlabs/operating-vision.json`    | How the business is run - the operations vision, the six operating principles, and the precedence order that settles conflicts between them. | `eea191dbd2c5` |
+| `operating-system/strategy/clients.json`             | Who is paying, what they bill, what they cost to serve. **(internal — never quote to a client)**                                             | `1a63031453e1` |
+| `operating-system/cushlabs/capability-registry.json` | Every platform approval, entitlement and quota, and whether a client can actually reach it. **(internal — never quote to a client)**         | `1ce15f092e89` |
+| `operating-system/cushlabs/commercial-terms.json`    | Price, trial, cancellation, billing, invoicing and delivery timing.                                                                          | `b4581efc2c95` |
+| `operating-system/cushlabs/claims-policy.json`       | The claims ladder and the banned absolutes.                                                                                                  | `86104fc2fa46` |
+| `operating-system/cushlabs/brand-kit.md`             | Color, type, logo, product naming, currency, and the precedence table that settles conflicts.                                                | `5ea30911fcc5` |
+| `operating-system/cushlabs/service-reference.md`     | The client-facing bilingual what-your-plan-includes document.                                                                                | `4dcd6607b0af` |
+| `operating-system/cushlabs/voice-dna.json`           | Tone authority for all CushLabs content.                                                                                                     | `71d7e804a13f` |
+| `operating-system/cushlabs/icp.json`                 | Ideal customer profile, segments, objection rebuttals.                                                                                       | `2259c5d825da` |
+| `operating-system/cushlabs/business-profile.json`    | Positioning, offers, delivery model.                                                                                                         | `80ef7bc8d735` |
+| `operating-system/cushlabs/tech-standard.json`       | The sanctioned technology lanes, the gate a new technology must pass, and the baseline every deployed repo must meet.                        | `913dded097dc` |
 
 If a revision above no longer matches what `operating-system` holds, this repo is reading a
 stale assumption. Re-read the file before acting on anything it covers. To check:

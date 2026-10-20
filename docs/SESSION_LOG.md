@@ -12,7 +12,29 @@
 > Resolved items collapse to one line under [Resolved](#resolved-technical-debt); the trail stays so a
 > future session does not re-litigate a settled decision.
 
-**19 open** · 24 resolved · last reconciled 2026-10-19
+**20 open** · 24 resolved · last reconciled 2026-10-20
+
+### #44 — Nothing between CI and the visitor: production was never measured, and the edge is cold for 120 of 135 pages
+
+**Medium** · opened 2026-10-20 · costs: a live crawl scored `/pricing/` at 3.8 s while CI was green; every first visitor in a region fetches HTML from Vercel's origin
+
+The Vercel edge keeps a static page only while a region keeps asking for it. With this site's
+traffic, 13 hours after a deploy 120 of 135 sitemap URLs were a `MISS` in the region serving
+Guadalajara (measured 2026-10-20 10:05 local). `www.cushlabs.ai` resolves to Cloudflare proxy
+addresses, so every request is Cloudflare colo → Vercel region (`cle1`, Cleveland) → origin on a
+miss, and Cloudflare itself does not cache HTML (`cf-cache-status: DYNAMIC`). Warm, the numbers
+are fine (TTFB p95 130 ms from Guadalajara); cold they are 340–500 ms here plus whatever a
+far-away crawler's own clock adds. The post-deploy check (PR #402) now measures this after every
+deploy, but measuring is not fixing.
+
+**Next:** a Cloudflare Cache Rule for `text/html` on `www.cushlabs.ai` with a 1-hour edge TTL,
+plus a cache-purge step in `.github/workflows/production-check.yml` right after the alias
+settles — then every page is served from the Cloudflare colo nearest the visitor (Guadalajara
+has one) and a deploy still shows within a minute. Needs a Cloudflare API token scoped to
+Zone › Cache Purge + Cache Rules Edit, stored as a GitHub Actions secret; run the `pre-mortem`
+skill first, because a failed purge would hold a stale price for up to an hour. Do not inline
+less CSS to "fix" this — the 116 KB inline stylesheet is the deliberate 2026-10-12 first-paint
+trade (PR #394) and costs 17 KB gzipped.
 
 ### #43 — The services page speaks as "I" on a site whose product copy is "we"
 
@@ -628,6 +650,27 @@ Directional ideas with a longer horizon than the Backlog. Themes, not tickets �
 
 Patterns that have bitten this project before. Re-read before shipping any change to the listed surfaces.
 
+### 14. A green harness that never touched production is not evidence about production
+
+**What happened (2026-10-20):** Robert's own crawler scored the live site 89/100, "critical" on
+response time, with `/pricing/` at 3,788 ms. Every check in this repo was green, because every
+check runs against `dist/` on a GitHub runner — titles, descriptions, parity, smoke tests, the
+booking flow — and none of them had ever fetched a production URL. Three things stacked that no
+local test can see: the Vercel edge was cold for 120 of 135 pages (low traffic evicts static pages
+between deploys, and three deploys the day before had purged everything); DNS is proxied through
+Cloudflare, which forwards HTML uncached to a Vercel region in Cleveland; and the crawler hit the
+bare domain, paying a 308 to `www` before the page, with its clock running through its own HTML
+parse on a shared container. Measured from Guadalajara the same minute: 0.4–0.5 s cold,
+0.1–0.3 s warm.
+
+**Rule:** anything called a production harness measures production. `scripts/perf-check.mjs`
+runs after every production deploy from `.github/workflows/production-check.yml` and fails on a
+non-200, a page over 350 KB, or warm TTFB/total p95 over 1,000/1,500 ms; `tests/page-weight.test.ts`
+fails CI if a page or its inline CSS grows past budget. When a third-party score drops, reproduce
+the number with `curl -w` or the script before touching code — the number's clock, origin and URL
+(apex vs `www`) decide what it means. And read the deploy log first: a score taken the morning
+after three deploys is a cold-cache score.
+
 ### 13. A page that does not contain your string is not the same as a page that is not your page
 
 **What happened, 2026-09-25.** After merging the PayPal copy, `curl` against
@@ -992,6 +1035,62 @@ In-window utility templates and service messages start being charged. This is th
 cost question the WhatsApp demo-swap decision has been waiting on.
 
 ## Session History
+
+## Session: 2026-10-20 — A live crawl said 3.8 s; the harness had never measured production
+
+### What the report said and what was true
+
+Robert's AI WebScraper scored www.cushlabs.ai 89/100 with a "critical" response-time finding:
+`/pricing/` 3,788 ms, `/portfolio/` 2,598 ms, five more service pages over 1,000 ms, 30 % of pages
+under the 1 s target. Reproduced from Guadalajara within the hour (curl, then
+`scripts/perf-check.mjs` across all 135 sitemap URLs):
+
+| Measurement               | Cold (edge MISS) | Warm (edge HIT) |
+| ------------------------- | ---------------- | --------------- |
+| TTFB p50 / p95            | 238 / 334 ms     | 91 / 130 ms     |
+| Total p50 / p95           | 241 / 337 ms     | 95 / 136 ms     |
+| First-contact edge status | 120 of 135 MISS  | —               |
+
+Nothing in the build changed between the good score and the bad one that could cost seconds: the
+three 2026-10-19 deploys (#400, #397, #401) were copy and schema. What the crawler measured was its
+own clock around an HTTP fetch of the bare domain (`https://cushlabs.ai/...`, a 308 to `www`
+first), the full 170–300 KB body, and the HTML parse, on its backend container, against a Vercel
+edge that was cold for nearly every page. The scraper's `response_time` field is `render_ms` in
+its crawler, which spans the fetch and the parse, not a server response.
+
+Structural facts established, all verified live:
+
+- `www.cushlabs.ai` resolves to Cloudflare proxy addresses; `cf-cache-status: DYNAMIC` on every
+  page, so Cloudflare forwards HTML without caching it; `x-vercel-id` shows `cle1` (Cleveland)
+  serving Mexico.
+- Vercel serves static HTML with `Cache-Control: public, max-age=0, must-revalidate`; the first
+  request per region after a deploy or an idle stretch is a MISS to origin.
+- Every page inlines the full 116 KB stylesheet (17.5 KB gzipped) — `build.inlineStylesheets:
+"always"`, PR #394, 2026-10-12, a deliberate first-paint trade. HTML is 166–306 KB raw,
+  38–45 KB compressed. Left as is.
+- Nothing in CI fetched a production URL. The harness tested `dist/` and stopped.
+
+### Shipped (branch `fix/production-perf-check`, PR #402)
+
+- `scripts/perf-check.mjs` — fetches every sitemap URL twice (as found, then warm), reports
+  TTFB/total p50/p95, HTML weight, `x-vercel-cache`; fails on non-200, a page over 350 KB, or warm
+  p95 over 1,000 ms TTFB / 1,500 ms total; warns when cold p95 exceeds 2.5 s. Node built-ins only.
+- `.github/workflows/production-check.yml` — runs it on `deployment_status: success` for the
+  `Production` environment (the Vercel GitHub app emits these) and on manual dispatch;
+  `concurrency` + `timeout-minutes: 5`; waits 30 s for the alias. About one Actions minute per
+  production deploy.
+- `tests/page-weight.test.ts` — CI tripwire: no page over 350 KB raw / 60 KB gzip, inline CSS
+  under 130 KB.
+- CLAUDE.md: the harness boundary spelled out under Development Commands.
+- Debt #44 and failure mode #14.
+
+### Not done, and why
+
+Making the edge warm for real — a Cloudflare HTML cache rule with purge-on-deploy — is debt #44
+with its exact next step. It changes what a prospect sees after a price change if the purge
+fails, so it goes through the `pre-mortem` skill and needs a purge-scoped Cloudflare token in
+GitHub secrets first. Pointing the scraper at `https://www.cushlabs.ai` instead of the bare domain
+is a one-field change in that tool, not in this repo.
 
 ## Session: 2026-10-19 — Audit pass: hero alt, honest CTAs, proof blocks, schema graph (PR #400)
 
@@ -1370,7 +1469,7 @@ checked against the code first; all were real.
 - **Currency:** English service pages showed MXN while /pricing/ opens English on USD (PR #343).
   English pages now read USD first with the Mexico price labelled, e.g. "$229 USD/mo ($3,490 MXN +
   IVA in Mexico)". Spanish pages unchanged. JSON-LD on English pages switched to USD.
-- **Missed-call math** was off about 4x (3–5 calls a day at $500 is per *week*, not per month) in
+- **Missed-call math** was off about 4x (3–5 calls a day at $500 is per _week_, not per month) in
   four places, EN and ES. Replaced with "even one $500 customer a week ≈ $2,000 a month".
 - **"Callers don't know it's AI"** removed, EN and ES. The replacement says the agent answers plainly
   when asked — verified against `cushlabs-ai-voice-agent/scripts/update-all-assistants.js:79`, which
