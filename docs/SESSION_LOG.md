@@ -1031,6 +1031,14 @@ was triaged against the live source, the real defect implemented, the rest rejec
   `BreadcrumbList` on `/services/<slug>/` (EN/ES). The Organization offer catalog listed three
   services the site no longer sells; now the six productized offers with URLs. Person jobTitle
   aligned to the About page. `f1fda4f`
+- **PR #397 (Spanish sentence case, parked since 2026-10-14) merged the same day**, after Robert asked
+  that open PRs not be left to go stale. `origin/main` merged into `fix/es-sentence-case`: six conflict
+  hunks in five files, every one the same shape (the draft had sentence-cased a string that PR #400
+  then replaced with a new string already in sentence case), so main's side won in all six. One
+  button the 2026-10-14 heuristic missed ("Agenda una Llamada Gratis de 30 Min de Descubrimiento" on
+  the ES Messenger hero) fixed to match its English twin. The merge also gave the branch the preview
+  guard in `vercel.json`, so the single push built nothing. Checks: lint 0 errors, `tsc` clean, 141
+  pages, meta gate 140/140, terms + tier gates, vitest 86/86, every PR #400 change present in the build.
 
 ### Decisions Made
 
@@ -1049,9 +1057,13 @@ was triaged against the live source, the real defect implemented, the rest rejec
 - [ ] Debt #43 (services page "I" → "we") as its own PR via the `copywriting` router.
 - [ ] Debt #41 (6 `astro check` errors in `PricingSection.astro` / `ServiceBlock.astro`) still
       open; `npm run audit:predeploy` still ends FAILED because of it.
-- [ ] PR #397 (Spanish sentence case) is still a parked draft; it will conflict with the ES strings
-      this PR touched in `services2/Hero.astro`, `whatsapp.astro`, `messenger-assistant.astro`,
-      `website-chatbot.astro` — merge `origin/main` into it before its next push.
+- [x] PR #397 (Spanish sentence case) — merged 2026-10-19 after merging `origin/main` into it (see
+      Accomplished above).
+- [ ] Two more "Empieza tu prueba gratis de 1 semana" buttons link to the booking calendar, on
+      `/es/services/competitive-intelligence/` and `/es/services/voice-agent/` (and their EN twins).
+      Same defect PR #400 fixed on three pages; same fix (book-a-call label + trial note). Goes in the
+      next audit branch, which covers those pages. `/salones/` has the label too but links to
+      WhatsApp, not the calendar — leave it until that page is audited.
 
 ### Open Questions / Blockers
 
@@ -1082,7 +1094,7 @@ was triaged against the live source, the real defect implemented, the rest rejec
 ### Immediate Next Steps
 
 - [ ] Revenue first (operating-vision: revenue proximity): Robert sends the outbox DMs at https://growth.cushlabs.ai/queue and publishes directory listings (Clutch, GoodFirms first) from `docs/seo/directory-listings.json`.
-- [ ] When Robert says "merge" on PR #397: check out `fix/es-sentence-case`, commit the staged timezone label if still staged, rebase on main, `npm run check` + build + vitest, `gh pr ready 397`, squash-merge.
+- [x] PR #397 merged 2026-10-19 (the timezone label had been committed as `2096e20` on the branch; main was merged in rather than rebased so the conflict resolution is on the record).
 - [ ] ny-eng has the same "Central Time (GMT-6)" label on its booking confirmation page — fix in a session opened in ny-eng.
 
 ### Technical Debt
