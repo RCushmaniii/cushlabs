@@ -1092,6 +1092,24 @@ fails, so it goes through the `pre-mortem` skill and needs a purge-scoped Cloudf
 GitHub secrets first. Pointing the scraper at `https://www.cushlabs.ai` instead of the bare domain
 is a one-field change in that tool, not in this repo.
 
+### Decisions made
+
+- **The scraper's Content & Brand tab is an opinion, not a score.** Six of ten pages received
+  the identical 75/80/70 triple, no rubric is shown, and the pricing-page advice asked for things
+  already on the page (hero value line, closing CTA). Treat it as a prompt to look, never a number
+  to chase. Robert agreed and will change the tool's reporting (its repo, not this one).
+- **Inline CSS stays.** The 116 KB inline stylesheet is 17 KB gzipped and was a measured
+  first-paint win on 2026-10-12. Reversing it to shave page weight would be the two-steps-back move.
+
+### Immediate next steps (ordered by the operating ladder)
+
+- [ ] **Don't break what pays:** the post-deploy check now runs on every production deploy — read
+      its result before calling any future "site is slow" report a regression.
+- [ ] **Revenue proximity:** pricing page has no proof block; one client quote near the plan cards,
+      through the `copywriting` skill. The only Content-tab finding that survived verification.
+- [ ] **Leverage:** debt #44 — Cloudflare HTML cache rule + purge-on-deploy, after the `pre-mortem`
+      skill and a purge-scoped token in GitHub secrets.
+
 ## Session: 2026-10-19 — Audit pass: hero alt, honest CTAs, proof blocks, schema graph (PR #400)
 
 ### Accomplished
