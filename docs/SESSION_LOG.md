@@ -1059,11 +1059,22 @@ was triaged against the live source, the real defect implemented, the rest rejec
 
 ### Immediate Next Steps
 
-- [ ] Debt #43 (services page "I" → "we") as its own PR via the `copywriting` router.
-- [ ] Debt #41 (6 `astro check` errors in `PricingSection.astro` / `ServiceBlock.astro`) still
-      open; `npm run audit:predeploy` still ends FAILED because of it.
-- [x] PR #397 (Spanish sentence case) — merged 2026-10-19 after merging `origin/main` into it (see
-      Accomplished above).
+Ordered by the operating ladder (`operating-vision.json` → `when_principles_collide`):
+
+- [ ] Debt #41 (6 `astro check` errors in `PricingSection.astro` / `ServiceBlock.astro`) —
+      first because `npm run audit:predeploy` ends FAILED on it, so the pre-deploy gate on the page
+      that sells everything is red (don't break what pays).
+- [ ] Debt #43 (services page "I" → "we") as its own PR via the `copywriting` router — brand
+      consistency, tidiness tier.
+- [x] PR #397 (Spanish sentence case) — merged 2026-10-19 after merging `origin/main` into it.
+- [x] PR #401 — trial label restored on three buttons at Robert's direction, merged and live 2026-10-19.
+
+### Technical Debt
+
+- None new. Lesson recorded instead: `git worktree remove --force` on Windows FOLLOWS a
+  `node_modules` junction and deletes through it into the real folder (it took 264 packages and
+  all of `.bin` on 2026-10-19; restored with `npm ci`, no tracked file touched). Unlink the junction
+  with `cmd /c rmdir` BEFORE removing a worktree, or give the worktree its own install.
 
 ### Open Questions / Blockers
 
