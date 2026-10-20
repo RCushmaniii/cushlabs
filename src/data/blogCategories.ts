@@ -14,9 +14,9 @@ export const blogCategories: BlogCategory[] = [
     es: "Facebook y Messenger",
   },
   { key: "ai-chatbots", en: "AI Chatbots", es: "Chatbots con IA" },
-  { key: "local-seo", en: "Local SEO", es: "SEO Local" },
-  { key: "lead-generation", en: "Lead Generation", es: "Generación de Leads" },
-  { key: "small-business", en: "Small Business", es: "Negocios Pequeños" },
+  { key: "local-seo", en: "Local SEO", es: "SEO local" },
+  { key: "lead-generation", en: "Lead Generation", es: "Generación de leads" },
+  { key: "small-business", en: "Small Business", es: "Negocios pequeños" },
   { key: "automation", en: "Automation", es: "Automatización" },
 ];
 

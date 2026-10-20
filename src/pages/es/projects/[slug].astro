@@ -27,27 +27,27 @@ const esCard = getEsCardCopy(project.name);
 // the GitHub title is too long or too short for search snippets
 const metaTitles: Record<string, string> = {
   'ai-chatbot-saas': 'Converso AI — Chatbot Bilingüe SaaS',
-  'ny-ai-chatbot': 'Chatbot IA para Sitios Web de PYMES',
+  'ny-ai-chatbot': 'Chatbot IA para sitios web de PYMES',
   // NOT the canonical ES title here. `ES_TITLE_BIOJALISCO_PITCH` (esCanonicalTitles.ts)
   // is right for the card
   // and the page headline, where length is free, but with " · CushLabs.ai" appended it
   // renders at 64 chars and Google truncates it. The SEO tag is the one surface with a
   // hard ~60-char budget, so it gets a shortened variant while the canonical string
   // still drives the other two.
-  'biojalisco-pitch': 'BioJalisco — Presentación Cinematográfica',
-  'expat-driver-license-prep': 'ExpatDrive — Examen de Licencia Bilingüe',
+  'biojalisco-pitch': 'BioJalisco — Presentación cinematográfica',
+  'expat-driver-license-prep': 'ExpatDrive — Examen de licencia bilingüe',
   // Acortados 2026-08-20: con " · CushLabs.ai" llegaban a 65-70 caracteres y Google los
   // cortaba en los resultados.
-  'cushlabs-marketsignal': 'MarketSignal — Gestión de Reseñas de Google',
+  'cushlabs-marketsignal': 'MarketSignal — Gestión de reseñas de Google',
   // Differentiated from the EN title — an identical string on both language variants is
   // reported as a duplicate title even though hreflang marks them as alternates.
   'cushlabs-connect': 'CushLabs Connect — WhatsApp Multi-Cuenta',
   // Añadidos 2026-08-20: se renderizaban con menos de 30 caracteres, sólo el nombre del
   // repo más la marca. `/es/projects/cushlabs/` decía "CushLabs.ai · CushLabs.ai".
-  'ai-filesense': 'AI FileSense — Organizador de Archivos con IA',
+  'ai-filesense': 'AI FileSense — Organizador de archivos con IA',
   'ai-portfolio': 'AI Portfolio — Portafolio desde GitHub',
   cushlabs: 'CushLabs.ai — Sitio bilingüe y agenda en línea',
-  'cushlabs-ai-unwatermark': 'Unwatermark — Quita Marcas de Agua por Lote',
+  'cushlabs-ai-unwatermark': 'Unwatermark — Quita marcas de agua por lote',
   'stock-alert': 'AI StockAlert — Alertas por WhatsApp',
 };
 
@@ -137,11 +137,11 @@ const videoUrl = override?.videoUrl ?? project.videoUrl ?? null;
 const videoPoster = override?.videoPoster ?? project.videoPoster ?? images[0]?.src ?? undefined;
 
 // Portfolio.md fallbacks for rich content sections
-const problemTitle = detail?.problemTitle ?? (project.problem ? "El Desafío" : null);
+const problemTitle = detail?.problemTitle ?? (project.problem ? "El desafío" : null);
 const problemBody = detail?.problemBody ?? project.problem ?? null;
 const solutionBody = detail?.overallVerdictBody ?? project.solution ?? null;
 const features = detail?.whatItDoesWell ?? (project.keyFeatures?.length ? project.keyFeatures : null);
-const featuresTitle = detail?.whatItDoesWellTitle ?? (features ? "Características Clave" : null);
+const featuresTitle = detail?.whatItDoesWellTitle ?? (features ? "Características clave" : null);
 const results = detail?.results ?? (project.metrics?.length ? project.metrics : null);
 const resultsTitle = detail?.resultsTitle ?? (results ? "Resultados" : null);
 const hasRichContent = !!(detail || project.problem || project.solution || project.keyFeatures?.length);
@@ -569,7 +569,7 @@ const relatedProjects = scored.slice(0, 3).map(s => s.project);
       {relatedProjects.length > 0 && (
         <section class="mt-16">
           <h2 class="font-display text-2xl font-bold text-gray-900 dark:text-white mb-8">
-            Proyectos Relacionados
+            Proyectos relacionados
           </h2>
           <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {relatedProjects.map((rp: any) => {
