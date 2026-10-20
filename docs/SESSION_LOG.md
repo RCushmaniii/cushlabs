@@ -24,7 +24,7 @@ Guadalajara (measured 2026-10-20 10:05 local). `www.cushlabs.ai` resolves to Clo
 addresses, so every request is Cloudflare colo → Vercel region (`cle1`, Cleveland) → origin on a
 miss, and Cloudflare itself does not cache HTML (`cf-cache-status: DYNAMIC`). Warm, the numbers
 are fine (TTFB p95 130 ms from Guadalajara); cold they are 340–500 ms here plus whatever a
-far-away crawler's own clock adds. The post-deploy check (PR #TBD) now measures this after every
+far-away crawler's own clock adds. The post-deploy check (PR #402) now measures this after every
 deploy, but measuring is not fixing.
 
 **Next:** a Cloudflare Cache Rule for `text/html` on `www.cushlabs.ai` with a 1-hour edge TTL,
@@ -1070,7 +1070,7 @@ Structural facts established, all verified live:
   38–45 KB compressed. Left as is.
 - Nothing in CI fetched a production URL. The harness tested `dist/` and stopped.
 
-### Shipped (branch `fix/production-perf-check`, PR #TBD)
+### Shipped (branch `fix/production-perf-check`, PR #402)
 
 - `scripts/perf-check.mjs` — fetches every sitemap URL twice (as found, then warm), reports
   TTFB/total p50/p95, HTML weight, `x-vercel-cache`; fails on non-200, a page over 350 KB, or warm
