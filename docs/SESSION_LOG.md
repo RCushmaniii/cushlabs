@@ -1012,10 +1012,12 @@ was triaged against the live source, the real defect implemented, the rest rejec
   `data-analytics-placement="pricing-closing"`). `10478f5`
 - **Homepage pain-points button** ("See What AI Could Handle for You") linked to the booking form.
   Now scrolls to `#solutions` (`SolutionOverview.astro` gained the id and `scroll-mt-24`). `3304bd9`
-- **"Start Your Free 1-Week Trial" buttons** on the services hero, Messenger page and chatbot page
-  all linked to the booking calendar, where nothing starts (trial begins at go-live). Now "Book a
-  Free 30-Min Call" with the trial in a note underneath, wording from `commercial-terms.json`.
-  `823d706`, `f1fda4f`
+- **Trial buttons on the services hero, Messenger page and chatbot page** were relabelled "Book a
+  Free 30-Min Call" in PR #400 (`823d706`, `f1fda4f`) on the theory that a trial label must not
+  point at a calendar. **Reversed the same day in PR #401 at Robert's direction**: this is a managed
+  service, the only way to start the trial is a conversation, so "Start Your Free 1-Week Trial" →
+  calendar is honest. A note under each button now says the week begins at go-live
+  (`commercial-terms.json` → `trial.starts`). Net change from PR #400 on these three: the note.
 - **WhatsApp page** — hero CTA repointed from `/contact/` to the booking page (the page promises
   "no form to fill out"); "How to start" section got a booking button and a one-line "included in
   Premium and Ultra" pointer to pricing; both files' header comments still said the page must never
@@ -1045,8 +1047,11 @@ was triaged against the live source, the real defect implemented, the rest rejec
 - **Decorative vs content imagery:** a content photo is a real `<img>` with alt; a decorative
   texture is a CSS background on an `aria-hidden` div. Never `alt=""` on a texture again — Ahrefs
   counts it as missing even though Lighthouse accepts it.
-- **A CTA label must name what happens on click.** "Start your trial" may not point at a calendar.
-  The trial goes in a note under the button, in `commercial-terms.json` wording.
+- **A trial CTA may point at the booking calendar.** For a managed service the conversation is how
+  the trial starts, so the label names the offer and a note under it says when the week begins
+  (`commercial-terms.json` wording). Decided by Robert 2026-10-19, reversing a same-day change.
+  The other trial-labelled buttons on the site (competitive intelligence, voice agent, salones)
+  are correct as they are.
 - **Audit suggestions rejected as a class:** competitor-comparison sections, invented statistics or
   per-project ROI, exclamation-mark heading rewrites, "more first person" on product pages, Product /
   SiteNavigationElement schema, and every suggested title/meta (each dropped the brand or channels).
@@ -1059,11 +1064,6 @@ was triaged against the live source, the real defect implemented, the rest rejec
       open; `npm run audit:predeploy` still ends FAILED because of it.
 - [x] PR #397 (Spanish sentence case) — merged 2026-10-19 after merging `origin/main` into it (see
       Accomplished above).
-- [ ] Two more "Empieza tu prueba gratis de 1 semana" buttons link to the booking calendar, on
-      `/es/services/competitive-intelligence/` and `/es/services/voice-agent/` (and their EN twins).
-      Same defect PR #400 fixed on three pages; same fix (book-a-call label + trial note). Goes in the
-      next audit branch, which covers those pages. `/salones/` has the label too but links to
-      WhatsApp, not the calendar — leave it until that page is audited.
 
 ### Open Questions / Blockers
 

@@ -7,27 +7,28 @@ interface Props {
 
 const { locale } = Astro.props;
 
-// CTA label changed 2026-10-19. It read "Start Your Free 1-Week Trial" and linked to the
-// booking form, but nothing starts there: the trial begins the day the assistant goes live,
-// after a discovery call (commercial-terms.json → trial.starts). A reader who clicked
-// expecting a trial got a calendar instead. The homepage, pricing and about pages all label
-// this same destination "Book a Free 30-Min Call", so the services hero now does too, and
-// the trial moves to a note under the button with the wording from commercial-terms.json.
+// CTA label decided 2026-10-19 (Robert): "Start Your Free 1-Week Trial", linking to the
+// booking calendar. This is a managed service, so the only way to start the trial IS a
+// conversation; the calendar is the honest first step. The note under the button carries
+// the one expectation the label alone would miss: the week begins the day the assistant
+// goes live (commercial-terms.json → trial.starts). Earlier the same day the label had been
+// changed to "Book a Free 30-Min Call" to match the homepage and pricing pages; reversed,
+// because this page sells the trial and those pages do not.
 const content = {
   en: {
     headline: "One Assistant for Your Customer Messages, Set Up and Managed for You.",
     subheadline1: "Messenger, Instagram, your website, WhatsApp reminders and your phone: one assistant that knows your business, in English and Spanish.",
     subheadline2: "",
-    cta: "Book a Free 30-Min Call",
-    note: "No setup fee · No contract · 1-week free trial once your assistant goes live",
+    cta: "Start Your Free 1-Week Trial",
+    note: "Starts with a free 30-min call · No setup fee · No contract · The week begins the day your assistant goes live",
     ctaLink: "/consultation/"
   },
   es: {
     headline: "Un asistente para los mensajes de tus clientes, configurado y administrado para ti.",
     subheadline1: "Messenger, Instagram, tu sitio web, recordatorios por WhatsApp y tu teléfono: un solo asistente que conoce tu negocio, en español y en inglés.",
     subheadline2: "",
-    cta: "Agenda una llamada gratis de 30 min",
-    note: "Sin cuota de instalación · Sin contrato · Prueba gratis de 1 semana a partir de que tu asistente esté funcionando",
+    cta: "Empieza tu prueba gratis de 1 semana",
+    note: "Empieza con una llamada gratis de 30 min · Sin cuota de instalación · Sin contrato · La semana comienza el día que tu asistente esté funcionando",
     ctaLink: "/es/reservar/"
   }
 };
