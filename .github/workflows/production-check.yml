@@ -1,0 +1,41 @@
+name: Production check
+
+# Measures the LIVE site after every production deploy. The CI workflow only
+# ever tests dist/ on the runner; this is the step that sees what a visitor or a
+# crawler sees: status codes, time-to-first-byte, HTML weight, edge cache state.
+# Added 2026-10-20 after a live crawl reported /pricing/ at 3.8 s while CI was green.
+#
+# The Vercel GitHub app creates a GitHub deployment for each build and reports its
+# status, which is the event this listens for. Docs-only pushes are cancelled by
+# the ignoreCommand in vercel.json and never reach `success`, so they cost nothing here.
+
+on:
+  deployment_status:
+  workflow_dispatch:
+
+concurrency:
+  # Two deploys minutes apart only need the newer one measured.
+  group: production-check
+  cancel-in-progress: true
+
+jobs:
+  perf:
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (github.event.deployment_status.state == 'success' &&
+       github.event.deployment.environment == 'Production')
+    runs-on: ubuntu-latest
+    # Two passes over ~135 URLs take about a minute. Default would be 360.
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+      # The production alias moves to the new deployment right around the
+      # `success` status; a short wait keeps the check from measuring the old one.
+      - name: Wait for the alias to settle
+        if: github.event_name == 'deployment_status'
+        run: sleep 30
+      - name: Measure the live site
+        run: node scripts/perf-check.mjs --base https://www.cushlabs.ai
