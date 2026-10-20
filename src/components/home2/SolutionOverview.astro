@@ -140,7 +140,10 @@ const t = content[locale];
 
 {/* Top padding is deliberately small — see the note on SocialProof above, which is
     the section immediately before this one. Together they used to stack 256px. */}
-<section aria-labelledby="solutions-heading" class="pt-10 pb-14 md:pt-12 md:pb-16 relative">
+{/* id="solutions" is the target of the Pain Points button ("See What AI Could Handle for
+    You") one section up — the label promises the solution, so it has to land here, not on
+    the booking form. scroll-mt clears the sticky header, same as ChatDemo. */}
+<section id="solutions" aria-labelledby="solutions-heading" class="pt-10 pb-14 md:pt-12 md:pb-16 relative scroll-mt-24">
   <Container size="lg">
     {/* items-START, not items-center. Centring a short column against a tall one
         drops the headline below the fold of the section and the reader enters at the

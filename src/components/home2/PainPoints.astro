@@ -124,13 +124,20 @@ const t = content[locale];
         {t.closing}
       </p>
       <a
-        href={locale === 'es' ? '/es/reservar/' : '/consultation/'}
+        href="#solutions"
         class="inline-flex items-center gap-2 px-6 py-3 bg-cush-orange text-black font-display font-semibold rounded-lg hover:bg-cush-orange/90 transition-all duration-300 shadow-lg shadow-cush-orange/25 group"
       >
         {/* Was "Let's Talk About Your Business" — generic, and disconnected from the six
             problems the reader just recognised themselves in. This label answers the
             question the section just raised. Localised via the dictionary rather than a
-            ternary so the two languages cannot drift apart. */}
+            ternary so the two languages cannot drift apart.
+            TARGET FIXED 2026-10-19: the label promised "see what AI could handle" but the
+            href went to the booking form. A reader not ready to book clicked an
+            informational label and got a form — and the testimonials sit between this
+            section and the solution, so the problem→solution hand-off was broken on both
+            counts. Now an in-page jump to SolutionOverview (id="solutions"), which is the
+            section that answers the question. The booking CTA has not been lost: it is
+            the hero, SolutionOverview, WhyMe, Guarantee and FinalCTA. */}
         {t.ctaLabel}
         <svg class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />

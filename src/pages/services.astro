@@ -5,6 +5,7 @@ import ScenarioQualifier from "../components/services2/ScenarioQualifier.astro";
 import ServiceBlock from "../components/services2/ServiceBlock.astro";
 import HowIWork from "../components/services2/HowIWork.astro";
 import WhoItIsFor from "../components/services2/WhoItIsFor.astro";
+import ClientQuote from "../components/services2/ClientQuote.astro";
 import PricingSection from "../components/pricing/PricingSection.astro";
 import FAQ from "../components/services2/FAQ.astro";
 import FinalCTA from "../components/services2/FinalCTA.astro";
@@ -58,6 +59,10 @@ const meta = {
   <HowIWork locale={locale} />
   
   <WhoItIsFor locale={locale} />
+
+  {/* Proof sits after the fit check and before the objections: the reader has just
+      decided "this is for me" and the FAQ is where they look for reasons not to. */}
+  <ClientQuote locale={locale} />
 
   <FAQ locale={locale} />
   

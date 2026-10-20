@@ -300,5 +300,5 @@
       ]
     }
   ],
-  "ignoreCommand": "git rev-parse --verify HEAD^ > /dev/null 2>&1 && git diff --quiet HEAD^ HEAD -- . ':!docs/' ':!README.md' ':!CLAUDE.md' ':!LICENSE' ':!PORTFOLIO.md' ':!.gitignore' ':!.github/'"
+  "ignoreCommand": "if [ \"$VERCEL_ENV\" = \"preview\" ]; then exit 0; fi; git rev-parse --verify HEAD^ > /dev/null 2>&1 && git diff --quiet HEAD^ HEAD -- . ':!docs/' ':!README.md' ':!CLAUDE.md' ':!LICENSE' ':!PORTFOLIO.md' ':!.gitignore' ':!.github/'"
 }

@@ -549,6 +549,33 @@ npm run audit:predeploy  # Pre-deployment validation
 
 ---
 
+## Vercel Deployments — Hobby plan limits (CRITICAL)
+
+The Hobby plan allows 100 deployments a day and 10 GB of deployment storage across every project
+Robert owns. Hitting either has already blocked a production deploy. This repo is one of the
+biggest projects, so these rules hold for every push:
+
+- **Production is `main` only, squash-merge only.** Every PR merged into `main` is one production
+  deployment. Three small PRs merged separately cost three; the same changes as one PR cost one.
+- **Bundle related fixes into one branch and one PR.** Commit locally as often as you like; push
+  once per PR, when it is done. Never push micro-commits.
+- **Preview builds are off.** The `ignoreCommand` in `vercel.json` starts with
+  `if [ "$VERCEL_ENV" = "preview" ]; then exit 0; fi;` (added in #398). **Never remove it.** Vercel
+  rejects an `ignoreCommand` longer than 256 characters with a failed deploy; it is 227 today, so
+  check the length after any edit.
+- **A branch cut before 2026-10-13 does not have the guard.** Vercel reads `vercel.json` from the
+  commit being built, so an older branch still builds a preview on push. Run `git merge origin/main`
+  on any such branch before its first push.
+- **Docs-only commits do not deploy.** The same `ignoreCommand` skips a commit that only changes
+  `docs/`, `README.md`, `CLAUDE.md`, `LICENSE`, `PORTFOLIO.md`, `.gitignore` or `.github/`.
+- **No preview URLs.** Robert does not use them. Verify locally (`npm run build`, then
+  `npx astro preview`), merge, and send the production URL with its full path.
+- **Merge ready PRs in one sitting**, one after another, rather than spread through the day.
+
+Fleet-wide mechanism and the exact JSON: the global `vercel-deploy-hygiene` skill.
+
+---
+
 ## Environment Variables
 
 Create `.env` from `.env.example`:

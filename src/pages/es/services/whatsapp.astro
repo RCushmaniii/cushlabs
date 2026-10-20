@@ -15,9 +15,14 @@
 //   /admin                  consola de operación
 // No las redirijas ni las elimines sin revisar antes la configuración de la app en Meta.
 //
-// LÍMITE DE CLAIMS (docs/strategy/ADVERTISED-COMMITMENTS.md): esta página vende
-// WhatsApp como su PROPIA oferta y nunca debe dar a entender que está incluido
-// en Basic / Premium / Ultra.
+// LÍMITE DE CLAIMS (docs/strategy/ADVERTISED-COMMITMENTS.md, nota "CURRENT STATE —
+// 2026-10-08" bajo WhatsApp): los recordatorios y confirmaciones están EN VIVO e
+// incluidos en los planes Premium y Ultra; Meta le cobra directo al cliente por la
+// entrega y nunca se publica una cantidad de mensajes incluidos. Hasta el
+// 2026-10-19 este comentario decía lo contrario — que la página nunca debía dar a
+// entender que WhatsApp viene en un plan — lo cual era cierto antes de la
+// corrección de precios del 2026-09-19 y quedó obsoleto después. La línea de
+// planes en la sección "Cómo empezar" debe coincidir con PricingSection.astro.
 //
 // ACTUALIZADO 2026-08-22. Este comentario decía que "Próximamente" era correcto
 // porque la app de Meta "todavía no está en Live". La app SÍ está en live —
@@ -104,11 +109,16 @@ const trust = [
         </p>
 
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          {/* CTA del hero redirigido el 2026-10-19: mandaba al formulario de contacto, y la
+              sección "Cómo empezar" promete que "no hay formulario que llenar". La página
+              para agendar es el destino que usa el resto del sitio. */}
           <a
-            href="/es/contact/"
+            href="/es/reservar/"
+            data-analytics-event="booking_cta_clicked"
+            data-analytics-placement="whatsapp-hero"
             class="group inline-flex items-center gap-2 px-8 py-4 bg-cush-orange text-black font-display font-semibold rounded-lg hover:bg-cush-orange/90 transition-all duration-300 shadow-lg shadow-cush-orange/25 hover:shadow-xl hover:shadow-cush-orange/30 text-lg"
           >
-            Escríbenos
+            Agenda una llamada gratis de 30 min
             <svg class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
@@ -234,6 +244,23 @@ const trust = [
           Meta cobra por la entrega de mensajes y lo factura a tu propia cuenta, a su tarifa. Te decimos cuánto esperar antes de que te comprometas, no en tu primera factura.
           Si quieres el desglose completo, lee <a href="/es/blog/cuanto-cuesta-whatsapp-para-un-negocio-en-mexico/" class="font-medium text-accent-text underline underline-offset-4 decoration-cush-orange/40 hover:decoration-cush-orange">cuánto cuesta realmente WhatsApp para un negocio en México</a>.
         </p>
+        <!-- Botón para agendar, agregado el 2026-10-19. Esta sección explicaba exactamente
+             cómo empezar y no daba nada en qué hacer clic: los únicos botones para agendar
+             estaban en el hero y en el bloque final, a dos pantallas de distancia. -->
+        <p class="mt-5 text-fluid-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+          Los recordatorios y confirmaciones vienen incluidos en los planes Premium y Ultra. <a href="/es/precios/" class="font-medium text-accent-text underline underline-offset-4 decoration-cush-orange/40 hover:decoration-cush-orange">Ve los planes</a>.
+        </p>
+        <a
+          href="/es/reservar/"
+          data-analytics-event="booking_cta_clicked"
+          data-analytics-placement="whatsapp-how-to-start"
+          class="mt-8 group inline-flex items-center gap-2 px-8 py-4 bg-cush-orange text-black font-display font-semibold rounded-lg hover:bg-cush-orange/90 transition-all duration-300 shadow-lg shadow-cush-orange/25 hover:shadow-xl hover:shadow-cush-orange/30 text-lg"
+        >
+          Agenda una llamada gratis de 30 min
+          <svg class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
       </div>
     </Container>
   </section>
