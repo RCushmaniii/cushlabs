@@ -787,11 +787,11 @@ Before ending any session, verify:
 | --- | --- | --- |
 | `operating-system/cushlabs/operating-vision.json` | How the business is run - the operations vision, the six operating principles, and the precedence order that settles conflicts between them. | `eea191dbd2c5` |
 | `operating-system/strategy/clients.json` | Who is paying, what they bill, what they cost to serve. **(internal — never quote to a client)** | `1a63031453e1` |
-| `operating-system/cushlabs/capability-registry.json` | Every platform approval, entitlement and quota, and whether a client can actually reach it. **(internal — never quote to a client)** | `9fd2fd986f25` |
+| `operating-system/cushlabs/capability-registry.json` | Every platform approval, entitlement and quota, and whether a client can actually reach it. **(internal — never quote to a client)** | `7e5e4e1f217e` |
 | `operating-system/cushlabs/commercial-terms.json` | Price, trial, cancellation, billing, invoicing and delivery timing. | `b4581efc2c95` |
 | `operating-system/cushlabs/claims-policy.json` | The claims ladder and the banned absolutes. | `86104fc2fa46` |
-| `operating-system/cushlabs/brand-kit.md` | Color, type, logo, product naming, currency, and the precedence table that settles conflicts. | `5ea30911fcc5` |
-| `operating-system/cushlabs/service-reference.md` | The client-facing bilingual what-your-plan-includes document. | `4dcd6607b0af` |
+| `operating-system/cushlabs/brand-kit.md` | Color, type, logo, product naming, currency, and the precedence table that settles conflicts. | `a84f37fead42` |
+| `operating-system/cushlabs/service-reference.md` | The client-facing bilingual what-your-plan-includes document. | `17fb9985d47d` |
 | `operating-system/cushlabs/voice-dna.json` | Tone authority for all CushLabs content. | `71d7e804a13f` |
 | `operating-system/cushlabs/icp.json` | Ideal customer profile, segments, objection rebuttals. | `2259c5d825da` |
 | `operating-system/cushlabs/business-profile.json` | Positioning, offers, delivery model. | `80ef7bc8d735` |
