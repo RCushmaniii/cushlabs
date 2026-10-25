@@ -26,17 +26,12 @@ const includes = [
     title: "Recordatorios y confirmaciones por WhatsApp, desde tu propio número",
     desc: "Las confirmaciones de cita y los recordatorios salen solos, en el canal que tus clientes sí abren. Menos inasistencias, y nadie de tu equipo persiguiendo a nadie.",
   },
-  {
-    title: "Un correo a la semana con lo que cambió tu competencia",
-    desc: "La búsqueda local se mueve y te enteras por un correo semanal, no por un mes flojo. Qué cambió, qué significa y qué hacer al respecto — no otro tablero al que tengas que entrar.",
-  },
 ];
 
 const basicToo = [
   "El asistente de Facebook Messenger, contestando 24/7",
-  "Respuestas a reseñas de Google — tú apruebas y se publica solo",
   "Prospectos capturados, con alerta por WhatsApp en segundos",
-  "Todo gestionado: configuración, entrenamiento, reportes semanales y ajuste mensual",
+  "Todo gestionado: configuración, pruebas, ajuste mensual y las respuestas a tus reseñas de Google redactadas para que las apruebes",
 ];
 
 const forYou = [
@@ -56,7 +51,7 @@ const notForYou = [
 const faqs = [
   {
     q: "¿Por qué cuesta $1,500 más que Basic?",
-    a: "Tres canales más y un reporte semanal de inteligencia, todo sobre el mismo asistente. Basic contesta Facebook Messenger. Premium contesta los comentarios y mensajes de Instagram, tu sitio web, y manda recordatorios por WhatsApp desde tu propio número — más el reporte de búsqueda local y competencia cada lunes. Si de verdad tus clientes están en un solo canal, Basic es la respuesta correcta y te lo voy a decir en la llamada.",
+    a: "Tres canales más, todo sobre el mismo asistente. Basic contesta Facebook Messenger. Premium contesta los comentarios y mensajes de Instagram, tu sitio web, y manda recordatorios por WhatsApp desde tu propio número. Si de verdad tus clientes están en un solo canal, Basic es la respuesta correcta y te lo voy a decir en la llamada.",
   },
   {
     q: "¿Qué me cobra Meta aparte?",
@@ -80,14 +75,14 @@ const faqs = [
   },
   {
     q: "Ya tengo Basic. ¿Qué cambia en la práctica?",
-    a: "Tu asistente deja de ser un asistente de Messenger y se vuelve el que tus clientes se encuentran en todos lados — el mismo cerebro, las mismas respuestas, también en Instagram y en tu sitio web. Empiezan a salir los recordatorios por WhatsApp. Y empieza a llegar el reporte de competencia. Nada de lo que ya tienes se reconstruye ni se vuelve a entrenar.",
+    a: "Tu asistente deja de ser un asistente de Messenger y se vuelve el que tus clientes se encuentran en todos lados — el mismo cerebro, las mismas respuestas, también en Instagram y en tu sitio web. Empiezan a salir los recordatorios por WhatsApp. Nada de lo que ya tienes se reconstruye ni se vuelve a entrenar.",
   },
 ];
 ---
 
 <BaseLayout
   title="Plan Premium — Todos los canales contestados | CushLabs"
-  description="Comentarios y mensajes de Instagram, tu sitio web, recordatorios por WhatsApp desde tu propio número y un reporte semanal de competencia. $3,490 MXN/mes + IVA."
+  description="Instagram, tu sitio web y recordatorios por WhatsApp desde tu propio número, sobre el mismo asistente. Gestionado por nosotros. $3,490 MXN/mes + IVA."
 >
   <!-- ══ HÉROE ══ -->
   <section class="pr-hero relative flex items-center text-slate-50">
@@ -148,8 +143,8 @@ const faqs = [
   <section class="py-6 bg-gray-900 text-gray-300 border-y border-gray-800">
     <Container size="lg">
       <p class="text-center text-sm">
-        Liderazgo de TI en Fortune 500 (Praxair/Linde) &middot; m&aacute;s de 100 iniciativas globales de tecnolog&iacute;a
-        &middot; asistentes probados en espa&ntilde;ol e ingl&eacute;s &middot; trabajas directo con quien lo construye
+        Lo ves funcionando antes de pagar &middot; asistentes probados en espa&ntilde;ol e ingl&eacute;s
+        &middot; trabajas directo con quien lo construye
       </p>
     </Container>
   </section>
@@ -214,7 +209,7 @@ const faqs = [
         </p>
       </div>
 
-      <div class="grid gap-6 md:grid-cols-2 max-w-4xl mx-auto">
+      <div class="grid gap-6 md:grid-cols-3 max-w-4xl mx-auto">
         {includes.map((item, i) => (
           <div class="p-7 rounded-xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800">
             <div class="font-display font-bold text-cush-orange text-sm mb-3">
@@ -272,9 +267,9 @@ const faqs = [
           </p>
           <p>
             <span class="font-semibold text-gray-900 dark:text-white">Es gestionado, no entregado.</span>
-            Configuraci&oacute;n, entrenamiento, pruebas, el reporte semanal, el ajuste
-            mensual. Nunca tienes que aprender otro software para sacarle provecho a
-            este.
+            Configuraci&oacute;n, pruebas, el ajuste mensual, y una persona que contesta
+            cuando algo necesita atenci&oacute;n. Nunca tienes que aprender otro software
+            para sacarle provecho a este.
           </p>
         </div>
       </div>

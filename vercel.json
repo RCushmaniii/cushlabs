@@ -216,6 +216,26 @@
       "source": "/es/premium/",
       "destination": "/es/services/premium/",
       "permanent": true
+    },
+    {
+      "source": "/services/competitive-intelligence",
+      "destination": "/services/premium/",
+      "permanent": true
+    },
+    {
+      "source": "/services/competitive-intelligence/",
+      "destination": "/services/premium/",
+      "permanent": true
+    },
+    {
+      "source": "/es/services/competitive-intelligence",
+      "destination": "/es/services/premium/",
+      "permanent": true
+    },
+    {
+      "source": "/es/services/competitive-intelligence/",
+      "destination": "/es/services/premium/",
+      "permanent": true
     }
   ],
   "rewrites": [

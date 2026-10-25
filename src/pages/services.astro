@@ -15,11 +15,11 @@ const locale = (Astro.currentLocale === "es" ? "es" : "en") as "en" | "es";
 const meta = {
   en: {
     title: "AI Services — Messenger, Voice, Automation | CushLabs.ai",
-    description: "Facebook Messenger AI assistant, Google Maps competitive intelligence, website chatbots, and AI voice agents. Bilingual EN/ES. Free 1-week trial.",
+    description: "Facebook Messenger AI assistant, Instagram and website chatbots, WhatsApp reminders, and AI voice agents. Fully managed, bilingual EN/ES. Free 1-week trial.",
   },
   es: {
     title: "Servicios de IA — Messenger, voz y automatización | CushLabs",
-    description: "Asistente de IA para Facebook Messenger, inteligencia competitiva en Google Maps, chatbots web y agentes de voz. Bilingüe. Prueba gratis 1 semana.",
+    description: "Asistente de IA para Facebook Messenger, Instagram y tu sitio web, recordatorios por WhatsApp y agentes de voz. Todo gestionado. Prueba gratis 1 semana.",
   },
 };
 ---
@@ -53,7 +53,6 @@ const meta = {
       existing inbound link or ad still lands. */}
   <ServiceBlock locale={locale} id="messenger-ai" />
   <ServiceBlock locale={locale} id="whatsapp" isAlternate={true} />
-  <ServiceBlock locale={locale} id="intelligence" />
   <ServiceBlock locale={locale} id="voice-agent" isAlternate={true} />
 
   <HowIWork locale={locale} />

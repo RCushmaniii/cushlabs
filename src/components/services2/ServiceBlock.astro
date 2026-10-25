@@ -9,7 +9,9 @@ interface Props {
 
 const { locale, id, isAlternate = false } = Astro.props;
 
-// This component handles the rendering logic for all 5 services by selecting the right ID.
+// This component handles the rendering logic for the services on /services/ by selecting the right ID.
+// The 'intelligence' (weekly local SEO & competitor report) block was removed 2026-10-25 when
+// the report was withdrawn from the offer. Do not reintroduce it.
 const data = {
   'support-assistants': {
     learnMoreUrl: { en: '/services/website-chatbot/', es: '/es/services/website-chatbot/' },
@@ -134,69 +136,6 @@ const data = {
         "Dueños ahogados en preguntas repetitivas en Facebook Messenger",
         "Negocios con clientes bilingües (español + inglés)",
         "Cualquiera cuyos competidores están respondiendo más rápido"
-      ]
-    }
-  },
-  'intelligence': {
-    learnMore2Url: { en: '/services/premium/', es: '/es/services/premium/' },
-    learnMore2Label: { en: 'What else is in Premium →', es: 'Qué más trae Premium →' },
-    // Trimmed for /services/ per Robert's call (2026-08-10): this block was the dense
-    // wall-of-text example that prompted giving every service its own landing page.
-    // Full detail (all 7 included items, full problem narrative, comparison table,
-    // MarketSignal live link) now lives on /competitive-intelligence/ — this teaser
-    // stays short on purpose. Don't re-expand it; add detail to the dedicated page instead.
-    learnMoreUrl: { en: '/services/competitive-intelligence/', es: '/es/services/competitive-intelligence/' },
-    learnMoreLabel: { en: 'Full service details →', es: 'Ver detalles completos →' },
-    liveUrl: 'https://marketsignal.cushlabs.ai',
-    liveLabel: { en: 'See MarketSignal Live →', es: 'Ver MarketSignal en vivo →' },
-    en: {
-      heading: "I Track Your Competitors and Tell You Exactly What to Do — Every Week",
-      subheading: "Rankings, reviews, and Google Business Profile gaps — turned into one clear action in your inbox every Monday.",
-      problem: "You don't know who's beating you on Google Maps, why, or what changed this week — and by the time you notice, it's already cost you customers.",
-      whatIBuild: "An AI-powered system that tracks your Google Maps rankings, your competitors, and your Google Business Profile — then emails you one clear action every Monday. No dashboard, no spreadsheet.",
-      included: [
-        { title: "Weekly ranking monitoring", desc: "Your position tracked across keywords and locations, automatically every week" },
-        { title: "Competitor tracking", desc: "Up to 5 competitors monitored for rank, reviews, and profile changes" },
-        { title: "Google Business Profile audit", desc: "Weekly scoring against competitors — photos, hours, reviews, categories" },
-        { title: "One priority action per week", desc: "The single highest-leverage thing to do — emailed to you every Monday" },
-        { title: "Review intelligence & competitor changes", desc: "What customers are saying, and what your competitors changed, in your weekly email report" },
-      ],
-      notIncluded: [
-        "Social media monitoring (Google Maps and Google Business Profile only)"
-      ],
-      timeline: "First report in 1 week. Discovery call → setup → first Monday delivery.",
-      investment: "Included from the **Premium plan — $229 USD/mo ($3,490 MXN + IVA in Mexico)**. Fully managed. No setup fee. No contract.",
-      investmentDisclaimer: "Free 1-week trial. Cancel anytime.",
-      bestFor: [
-        "Businesses with 2+ locations competing on Google Maps",
-        "Owners who want their competitive position without becoming an SEO expert",
-        "Anyone whose Google Maps ranking directly drives foot traffic or calls",
-        "Businesses watching competitors pull ahead with no idea why",
-      ]
-    },
-    es: {
-      heading: "Monitoreo a tus competidores y te digo exactamente qué hacer — cada semana",
-      subheading: "Posicionamiento, reseñas y brechas en tu Perfil de Google — convertidos en una acción clara en tu correo cada lunes.",
-      problem: "No sabes quién te está ganando en Google Maps, por qué, ni qué cambió esta semana — y para cuando te das cuenta, ya te costó clientes.",
-      whatIBuild: "Un sistema con IA que monitorea tus posiciones en Google Maps, a tus competidores y tu Perfil de Negocio en Google — y te envía una acción clara por correo cada lunes. Sin dashboard, sin hojas de cálculo.",
-      included: [
-        { title: "Monitoreo semanal de posicionamiento", desc: "Tu posición rastreada en palabras clave y ubicaciones, automáticamente cada semana" },
-        { title: "Seguimiento de competidores", desc: "Hasta 5 competidores monitoreados: posición, reseñas y cambios de perfil" },
-        { title: "Auditoría del Perfil de Negocio en Google", desc: "Puntuación semanal contra la competencia — fotos, horarios, reseñas, categorías" },
-        { title: "Una acción prioritaria por semana", desc: "Lo de mayor impacto que puedes hacer — enviado por correo cada lunes" },
-        { title: "Inteligencia de reseñas y cambios de la competencia", desc: "Qué dicen tus clientes y qué cambió tu competencia, en tu reporte semanal por correo" },
-      ],
-      notIncluded: [
-        "Monitoreo de redes sociales (solo Google Maps y Perfil de Negocio en Google)"
-      ],
-      timeline: "Primer reporte en 1 semana. Llamada de descubrimiento → configuración → primera entrega el lunes.",
-      investment: "Incluido desde el **plan Premium — $3,490 MXN/mes + IVA**. Totalmente gestionado. Sin cuota de instalación. Sin contrato.",
-      investmentDisclaimer: "Prueba gratis de 1 semana. Cancela cuando quieras.",
-      bestFor: [
-        "Negocios con 2+ ubicaciones compitiendo en Google Maps",
-        "Dueños que quieren su posición competitiva sin volverse expertos en SEO",
-        "Cualquier negocio donde el posicionamiento en Google Maps genera tráfico o llamadas",
-        "Negocios que ven a la competencia avanzar sin entender por qué",
       ]
     }
   },

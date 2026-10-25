@@ -37,8 +37,13 @@ const content = {
         desc: 'We go live with real conversations and track what matters: response time, leads captured, appointments booked, and hours saved. Your free week starts here — the day the assistant goes live, not the day you sign.'
       }
     ],
-    addonTitle: 'Ongoing support available',
-    addonBody: 'Monthly optimization and maintenance are available as your business evolves.'
+    // 2026-10-25: was "Ongoing support available / ...are available as your business
+    // evolves". "Available" read as a paid add-on, but tier-feature-spec §5 lists
+    // "Fully managed: KB build, connection, testing, monitoring; routine updates within
+    // 1 business day" INSIDE Basic. Saying what is included is also the clearest
+    // services-not-software signal on the page (see the Hero note of the same date).
+    addonTitle: 'Included in every plan',
+    addonBody: "I keep the assistant current as your prices, hours, and services change, and I'm the one you message when something needs attention. No ticket queue, no add-on fee."
   },
   es: {
     // Ver las notas en la versión EN: el encabezado ya no promete un plazo, y
@@ -61,8 +66,9 @@ const content = {
         desc: 'Probamos con conversaciones reales, lanzamos y medimos tiempos de respuesta, prospectos captados, citas agendadas y horas ahorradas.'
       }
     ],
-    addonTitle: 'Soporte continuo disponible',
-    addonBody: 'Optimización y mantenimiento mensuales, conforme tu negocio evoluciona.'
+    // 2026-10-25: ver la nota en EN. "Disponible" sonaba a extra con costo; está incluido.
+    addonTitle: 'Incluido en todos los planes',
+    addonBody: 'Mantengo el asistente al día cuando cambian tus precios, horarios o servicios, y soy yo a quien le escribes cuando algo necesita atención. Sin mesa de tickets, sin cargo extra.'
   }
 };
 

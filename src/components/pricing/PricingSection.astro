@@ -88,9 +88,13 @@ const copy = {
         featured: false,
         features: [
           "AI assistant on Facebook Messenger, 24/7 — the 10pm question gets answered before they book elsewhere",
-          "Google reviews answered — you approve the reply, it posts itself, nothing sits ignored",
           "Leads captured, with a WhatsApp alert to you in seconds — you hear about it while it's still warm",
-          "Fully managed — you never have to run the software yourself",
+          // 2026-10-25: Google review replies moved from their own bullet into this one
+          // (Robert: one product, one story). Still Basic, still delivered — see
+          // tier-feature-spec §5 and the Azúcar bundle in clients.json.
+          // "You never run the software yourself" (2026-10-25, Robert): contradicted "drafted for your
+          // approval" one clause earlier — approving IS using it. Replaced with what is literally true.
+          "Fully managed — setup, ongoing support, and your Google review replies drafted for your approval. Nothing to configure, nothing to maintain",
         ],
         cta: "Get started",
       },
@@ -106,7 +110,7 @@ const copy = {
           "Instagram — the same assistant answers comments in public, then follows up in DMs",
           "Website chatbot — the visitor who would have bounced gets an answer instead",
           "WhatsApp reminders and confirmations from your own number — fewer no-shows, no chasing",
-          "Weekly local SEO & competitor report",
+          // "Weekly local SEO & competitor report" withdrawn 2026-10-25 — ADVERTISED-COMMITMENTS §2.
         ],
         cta: "Get started",
       },
@@ -163,9 +167,8 @@ const copy = {
         featured: false,
         features: [
           "Asistente con IA en Facebook Messenger, 24/7 — la pregunta de las 10 de la noche se contesta antes de que reserven con otro",
-          "Reseñas de Google contestadas — apruebas la respuesta y se publica sola, nada se queda sin atender",
           "Prospectos capturados, con alerta por WhatsApp en segundos — te enteras mientras todavía está caliente",
-          "Todo gestionado — nunca tienes que operar el software tú",
+          "Todo gestionado — configuración, soporte continuo y las respuestas a tus reseñas de Google redactadas para que las apruebes. Nada que configurar, nada que mantener",
         ],
         cta: "Empieza",
       },
@@ -181,7 +184,6 @@ const copy = {
           "Instagram — el mismo asistente responde el comentario en público y luego da seguimiento por mensaje directo",
           "Chatbot para tu sitio web — quien se iba a ir sin preguntar, recibe respuesta",
           "Recordatorios y confirmaciones por WhatsApp desde tu propio número — menos inasistencias, sin andar persiguiendo a nadie",
-          "Reporte semanal de SEO local y competencia",
         ],
         cta: "Empieza",
       },

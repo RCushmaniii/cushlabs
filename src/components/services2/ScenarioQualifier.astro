@@ -33,13 +33,6 @@ const content = {
         href: "/services/messenger-assistant/"
       },
       {
-        iconKey: "eye",
-        title: "I have no idea what my competitors are doing on Google Maps",
-        body: "A new competitor appeared in your area last month with 40 five-star reviews. They're outranking you in local search and you didn't even notice. By the time you react, they've already taken your customers.",
-        linkText: "→ Competitive Monitoring — Premium plan $229 USD/mo ($3,490 MXN + IVA in Mexico)",
-        href: "/services/competitive-intelligence/"
-      },
-      {
         iconKey: "chat",
         title: "My phone rings and nobody picks up",
         body: "You miss calls while you're with clients, driving, or at lunch, and most callers don't leave a message. If even one $500 customer a week calls someone else instead, that's about $2,000 a month walking away.",
@@ -66,13 +59,6 @@ const content = {
         href: "/es/services/messenger-assistant/"
       },
       {
-        iconKey: "eye",
-        title: "No tengo idea qué hacen mis competidores en Google Maps",
-        body: "Un nuevo competidor apareció en tu zona el mes pasado con 40 reseñas de cinco estrellas. Te está superando en búsqueda local y ni te enteraste. Cuando reacciones, ya se llevó a tus clientes.",
-        linkText: "→ Monitoreo Competitivo — plan Premium $3,490 MXN/mes + IVA",
-        href: "/es/services/competitive-intelligence/"
-      },
-      {
         iconKey: "chat",
         title: "Suena mi teléfono y nadie contesta",
         body: "Pierdes llamadas mientras estás con clientes, manejando o comiendo, y casi nadie deja mensaje. Si aunque sea un cliente de $5,000 MXN a la semana le llama a alguien más, son unos $20,000 MXN al mes que se van.",
@@ -94,7 +80,7 @@ const t = content[locale];
       </h2>
     </div>
 
-    <div class="grid md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">
+    <div class="grid md:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto">
       {t.scenarios.map((scenario) => (
         <a href={scenario.href} class="group block p-8 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/80 hover:border-cush-orange/50 hover:shadow-xl hover:shadow-cush-orange/10 transition-all duration-300 relative overflow-hidden">
           <div class="w-10 h-10 rounded-lg bg-cush-orange/10 dark:bg-cush-orange/15 flex items-center justify-center text-accent-text mb-4 group-hover:bg-cush-orange/20 transition-colors">
