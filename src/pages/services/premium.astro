@@ -39,17 +39,12 @@ const includes = [
     title: "WhatsApp reminders and confirmations, from your own number",
     desc: "Appointment confirmations and reminders go out on their own, on the channel your customers actually open. Fewer no-shows, and nobody on your team chasing anybody.",
   },
-  {
-    title: "One email a week on what your competitors changed",
-    desc: "Local search moves and you find out from a weekly email, not from a quiet month. What changed, what it means, and what to do about it — not another dashboard to log into.",
-  },
 ];
 
 const basicToo = [
   "The Facebook Messenger assistant, answering 24/7",
-  "Google review replies — you approve, it posts itself",
   "Leads captured, with a WhatsApp alert to you in seconds",
-  "Fully managed: setup, training, weekly reports, monthly tuning",
+  "Fully managed: setup, testing, monthly tuning, and your Google review replies drafted for your approval",
 ];
 
 const forYou = [
@@ -69,7 +64,7 @@ const notForYou = [
 const faqs = [
   {
     q: "Why is it $1,500 more than Basic?",
-    a: "Three more channels and a weekly intelligence report, all running on the same assistant. Basic answers Facebook Messenger. Premium answers Instagram comments and DMs, your website, and sends WhatsApp reminders from your own number — plus the local search and competitor report every Monday. If one channel is genuinely where your customers are, Basic is the right answer and I will say so on the call.",
+    a: "Three more channels, all running on the same assistant. Basic answers Facebook Messenger. Premium answers Instagram comments and DMs, your website, and sends WhatsApp reminders from your own number. If one channel is genuinely where your customers are, Basic is the right answer and I will say so on the call.",
   },
   {
     q: "What does Meta charge me on top?",
@@ -93,14 +88,14 @@ const faqs = [
   },
   {
     q: "I already have Basic. What actually changes?",
-    a: "Your assistant stops being a Messenger assistant and becomes the one your customers meet everywhere — the same brain, the same answers, on Instagram and your website too. Reminders start going out on WhatsApp. And the competitor report starts arriving. Nothing you have is rebuilt or relearned.",
+    a: "Your assistant stops being a Messenger assistant and becomes the one your customers meet everywhere — the same brain, the same answers, on Instagram and your website too. Reminders start going out on WhatsApp. Nothing you have is rebuilt or relearned.",
   },
 ];
 ---
 
 <BaseLayout
   title="Premium Plan — Every Channel Answered | CushLabs.ai"
-  description="Instagram comments and DMs, your website, WhatsApp reminders from your own number, and a weekly competitor report. One managed assistant, $229 USD/mo."
+  description="Instagram comments and DMs, your website, and WhatsApp reminders from your own number. One managed assistant, built and run for you. $229 USD/mo."
 >
   <!-- ══ HERO ══ -->
   <section class="pr-hero relative flex items-center text-slate-50">
@@ -161,8 +156,8 @@ const faqs = [
   <section class="py-6 bg-gray-900 text-gray-300 border-y border-gray-800">
     <Container size="lg">
       <p class="text-center text-sm">
-        Fortune 500 IT leadership at Praxair/Linde &middot; 100+ global technology initiatives
-        &middot; assistants tested in Spanish and English &middot; you work directly with the person who builds it
+        You see it working before you pay &middot; assistants tested in Spanish and English
+        &middot; you work directly with the person who builds it
       </p>
     </Container>
   </section>
@@ -227,7 +222,7 @@ const faqs = [
         </p>
       </div>
 
-      <div class="grid gap-6 md:grid-cols-2 max-w-4xl mx-auto">
+      <div class="grid gap-6 md:grid-cols-3 max-w-4xl mx-auto">
         {includes.map((item, i) => (
           <div class="p-7 rounded-xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800">
             <div class="font-display font-bold text-cush-orange text-sm mb-3">
@@ -285,7 +280,7 @@ const faqs = [
           </p>
           <p>
             <span class="font-semibold text-gray-900 dark:text-white">It is managed, not handed to you.</span>
-            Setup, training, testing, the weekly report, the monthly tuning. You never
+            Setup, testing, the monthly tuning, the person who answers when something needs attention. You never
             have to learn another piece of software to get the value out of this one.
           </p>
         </div>

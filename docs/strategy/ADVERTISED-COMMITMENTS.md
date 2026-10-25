@@ -89,7 +89,7 @@ Three tiers. One flat monthly price each. **Per business, includes up to 2 locat
 | Tier                         | MXN/mo     | USD/mo   | Positioning                            | Adds over previous tier                                              |
 | ---------------------------- | ---------- | -------- | -------------------------------------- | -------------------------------------------------------------------- |
 | **Basic** (Básico)           | **$1,990** | **$129** | "For getting started"                  | — (see full list below)                                              |
-| **Premium** _(Most popular)_ | **$3,490** | **$229** | "For growing businesses"               | Website chatbot · Weekly local SEO & competitor report               |
+| **Premium** _(Most popular)_ | **$3,490** | **$229** | "For growing businesses"               | Instagram · Website chatbot · WhatsApp reminders                     |
 | **Ultra**                    | **$5,490** | **$349** | "For clinics & high-volume businesses" | AI Voice Agent (300 min/loc/mo) · Priority support · Industry tuning |
 
 ### 2.1 What each tier includes (verbatim from the live cards)
@@ -105,7 +105,16 @@ Three tiers. One flat monthly price each. **Per business, includes up to 2 locat
 
 - Everything in Basic, plus:
 - **Website chatbot** (same assistant tech, deployed on the client's website).
-- **Weekly local SEO & competitor report.**
+- ~~Weekly local SEO & competitor report~~ — **WITHDRAWN 2026-10-25, Robert's decision.** Nobody on
+  Premium or Ultra had bought it, it cost Places API spend and a weekly human hour, and it diluted the
+  one-product story (one assistant, more channels as you grow). Removed from every card, grid, page,
+  footer link, JSON-LD offer and directory listing; `/services/competitive-intelligence/` (both locales)
+  301s to the Premium tier page. **Never reintroduce it on a surface or in a bot reply.** The Messenger
+  product's weekly _performance_ report (what customers asked, what converted) is a different
+  deliverable and is unaffected — see the naming-trap note in §3.
+- **Google review management stays in Basic** but, same date, is no longer a headline bullet: it is
+  named inside the "Fully managed" bullet on the cards and the comparison grid keeps its row. Azúcar's
+  locked bundle includes it (clients.json) and MarketSignal keeps delivering it.
 
 **Ultra — $5,490 MXN / $349 USD**:
 
@@ -494,12 +503,13 @@ describe "what's included at my price" accurately.
 | **Google Review Management**             | Monitors/queues review responses, owner-approved                                        | **Basic+**       | `PricingSection.astro` Basic card                                                                               |
 | **Owner Lead Alerts**                    | Owner pinged **via WhatsApp** the moment a lead is hot — **LIVE 2026-07-09** (see §8.2) | **Basic+**       | `PricingSection.astro`; Messenger page theme 3                                                                  |
 | **Website Chatbot**                      | Same assistant tech on the client's website                                             | **Premium+**     | `PricingSection.astro`; `ServiceBlock.astro` (`support-assistants`)                                             |
-| **Weekly Local SEO & Competitor Report** | Google Maps ranking + competitor watch, one action/wk                                   | **Premium+**     | `PricingSection.astro`; `src/components/home2/SolutionOverview.astro` (pillar 2)                                |
+| ~~Weekly Local SEO & Competitor Report~~ | **WITHDRAWN 2026-10-25** (§2.1). Any surface or bot reply that names it is drift.      | —                | none — removed everywhere                                                                                       |
 | **AI Voice Agent**                       | Inbound phone agent, 300 answered min/loc/mo                                            | **Ultra**        | `PricingSection.astro`; `SolutionOverview.astro` (pillar 3); live at `voice.cushlabs.ai`                        |
 | **Industry Tuning**                      | Vertical-specific tuning (e.g. healthcare)                                              | **Ultra**        | `PricingSection.astro` Ultra card                                                                               |
 | **Fully-managed wrapper**                | Setup, training, weekly reports, monthly tuning                                         | **All**          | `Guarantee.astro`, Messenger page "What's Included", `ServiceBlock.astro`                                       |
 
-> ⚠️ **Report naming trap (reconcile carefully):** there are **two different "weekly reports."**
+> ⚠️ **Report naming trap (reconcile carefully):** there WERE **two different "weekly reports,"** and as
+> of 2026-10-25 only (a) is sold. If the bot or any page describes (b), that is drift to remove.
 > (a) The Messenger product's **"weekly performance report"** = what customers asked / what converted
 > (part of the managed Messenger service, Basic+). (b) The Premium **"weekly local SEO & competitor
 > report"** = Google Maps rankings + competitor moves (a _different_ deliverable, Premium+). The bot

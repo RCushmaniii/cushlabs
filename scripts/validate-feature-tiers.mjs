@@ -90,11 +90,6 @@ const TIERS = {
         pattern:
           /whatsapp (?:reminders|appointment reminders)|recordatorios (?:y confirmaciones )?por whatsapp/,
       },
-      {
-        name: "Local SEO & competitor report",
-        pattern:
-          /(?:weekly )?local seo|competitor report|seo local|reporte semanal de seo/,
-      },
     ],
   },
   ultra: {

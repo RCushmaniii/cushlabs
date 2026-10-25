@@ -48,13 +48,24 @@ const content = {
     headline: 'Your customers get an answer in seconds — | even at 10 p.m.',
     subheadline1:
       "I put an AI assistant on your Facebook Page that answers with your real prices and hours, in Spanish or English, and sends you a WhatsApp alert when someone's ready to book. From $129 USD/mo · free 1-week trial.",
+    // DELIVERY MODEL, added 2026-10-25. Clutch rejected the listing as "software / SaaS"
+    // after reading this hero: "$129/mo", "free trial" and "try the demo" are the vocabulary
+    // of self-serve software, and nothing above the fold said a person builds and runs it.
+    // The How It Works section already says so; this line says it where a reviewer looks.
+    // Backed by tier-feature-spec §5 Basic "Fully managed" and the no-self-serve rule.
+    subheadline2:
+      "This isn't software you set up yourself. I build it around your business, connect it to your Page, and keep it running for you.",
     // THREE items, not four — four wrapped to two rows at laptop width. Cut before you add.
-    // "35+ Projects Delivered" was replaced 2026-10-09: unverifiable. The Praxair/Linde line
-    // is claims-policy biographical_facts approved wording.
+    // "35+ Projects Delivered" was replaced 2026-10-09: unverifiable. Praxair/Linde left
+    // 2026-10-25 on Robert's call: the buyer does not know the names, and voice-dna says
+    // credibility comes through delivery, not a résumé. The line lives on /about/.
+    // "Free 1-Week Trial" left the same day: it already appears in the subheadline.
+    // All three items are now things the BUYER gets, and each is backed on this page:
+    // "see it working before you pay" = How It Works step 2 (you test it before go-live)
+    // + step 3 (the free week starts the day it goes live, not the day you sign).
     trustStrip: [
-      'Fortune 500 IT leadership (Praxair/Linde)',
-      // "1-week", not "7-day", to match /pricing/ and ADVERTISED-COMMITMENTS verbatim.
-      'Free 1-Week Trial',
+      'See It Working Before You Pay',
+      'Built and Managed for You',
       'No Long-Term Contract',
     ],
     ctaPrimary: 'Try the Live Demo',
@@ -79,10 +90,14 @@ const content = {
     headline: 'Tus clientes reciben respuesta en segundos — | aunque te escriban a las 10 de la noche.',
     subheadline1:
       'Pongo un asistente con IA en tu página de Facebook que contesta con tus precios y horarios reales, en español o inglés, y te avisa por WhatsApp cuando alguien está listo para agendar. Desde $1,990 MXN/mes + IVA · prueba gratis de 1 semana.',
+    // Modelo de entrega (2026-10-25) — ver la nota en la versión EN.
+    subheadline2:
+      'No es un software que configuras tú solo. Lo construyo alrededor de tu negocio, lo conecto a tu página y lo mantengo funcionando por ti.',
+    // Mismos tres puntos que la versión EN (2026-10-25): lo que recibe el cliente, no
+    // el currículum. "Lo ves funcionando antes de pagar" = pasos 2 y 3 de Cómo funciona.
     trustStrip: [
-      'Liderazgo de TI en Fortune 500 (Praxair/Linde)',
-      // "1 semana", no "7 días", para que coincida con /es/precios/ palabra por palabra.
-      'Prueba gratis de 1 semana',
+      'Lo ves funcionando antes de pagar',
+      'Construido y gestionado por nosotros',
       'Sin contrato forzoso',
     ],
     ctaPrimary: 'Prueba la demo en vivo',
@@ -161,6 +176,10 @@ const waHref = whatsappBookingHref('es');
           A mb-8 here looks like it works and does nothing. Measured, 2026-09-15. */}
       <div class="home-sub">
         <p class="font-medium text-white">{t.subheadline1}</p>
+        {/* Delivery-model line (2026-10-25). Slightly quieter than the offer line above it
+            so the price stays the thing the eye lands on; same block so the two read as
+            one paragraph. */}
+        <p class="mt-3 text-white/85">{t.subheadline2}</p>
       </div>
 
       <!-- Trust Strip -->

@@ -57,20 +57,26 @@ const content: Record<'en' | 'es', LocaleContent> = {
         id: 'basic',
         name: 'Basic',
         tagline: 'Your Facebook Page, covered',
+        // 2026-10-25, Robert's call: one product, one story. Google review replies stay
+        // in Basic (tier-feature-spec §5, and Azúcar's locked bundle includes them) but
+        // move from a headline bullet to a line inside "fully managed".
         bullets: [
           'AI assistant on Facebook Messenger, 24/7',
-          'Google review replies — you approve, it posts',
           'Leads captured, with a WhatsApp alert to you',
+          'Fully managed, including your Google review replies',
         ],
       },
       {
         id: 'premium',
         name: 'Premium',
         tagline: 'Everywhere your customers write',
+        // The weekly local SEO & competitor report was withdrawn from the offer
+        // 2026-10-25 (Robert's decision; no client was on Premium or Ultra). Do not
+        // reintroduce it here or anywhere — see ADVERTISED-COMMITMENTS §2.
         bullets: [
           'Everything in Basic, plus Instagram and your website',
           'WhatsApp reminders from your own number',
-          'Weekly local SEO & competitor report',
+          'One assistant, the same answers, on every channel',
         ],
       },
       {
@@ -104,8 +110,8 @@ const content: Record<'en' | 'es', LocaleContent> = {
         tagline: 'Tu página de Facebook, cubierta',
         bullets: [
           'Asistente con IA en Facebook Messenger, 24/7',
-          'Respuestas a reseñas de Google — tú apruebas, se publica sola',
           'Prospectos capturados, con alerta por WhatsApp',
+          'Todo gestionado, incluidas las respuestas a tus reseñas de Google',
         ],
       },
       {
@@ -115,7 +121,7 @@ const content: Record<'en' | 'es', LocaleContent> = {
         bullets: [
           'Todo lo de Básico, más Instagram y tu sitio web',
           'Recordatorios por WhatsApp desde tu propio número',
-          'Reporte semanal de SEO local y competencia',
+          'Un solo asistente, las mismas respuestas, en todos los canales',
         ],
       },
       {
