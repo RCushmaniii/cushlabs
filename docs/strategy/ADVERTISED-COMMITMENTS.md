@@ -8,7 +8,15 @@
 > **Owner:** the marketing repo (`cushlabs`). **Audience:** humans doing GTM/pricing work **and**
 > the AI assistant building the bot in the sibling repo (`cushlabs-messenger-bot`).
 >
-> **Last reconciled against the live components:** 2026-09-19 (WhatsApp Tech Provider billing said
+> **Last reconciled against the live components:** 2026-10-28 (confirmation pass after the 2026-10-25
+> offer simplification in PR #404/#405: four surviving mentions of the withdrawn SEO & competitor
+> report removed from the pricing comparison FAQ and both Premium tier pages; the Premium "these four
+> start" heading corrected to three; the priority-support "4-business-hour" SLA, the "5-7 business
+> days" and "1-2 weeks" turnaround figures dropped because no canonical file carries them; the
+> Messenger block hero no longer promises comment-to-DM, which List 1 does not carry; the salons
+> pages tie WhatsApp reminders to Premium; "zero manual work" / "100% automático" and "bilingual
+> service" phrasings replaced per claims-policy; Spanish tier name is Básico site-wide.)
+> Previously 2026-09-19 (WhatsApp Tech Provider billing said
 > plainly on the pricing FAQ — who bills what, WABA ownership, template-category advisory, all
 > EN+ES; the rate basis in §2.6 marked unverified and the site set to link Meta's card rather than
 > print figures; the held WhatsApp material moved out of chat into
@@ -393,8 +401,8 @@ covering two businesses.
 
 **Other boundaries now published** (all on `/pricing/` and `/es/precios/`): owner alerts to up to
 **3 recipients per location** · routine content updates included with a **~10/month** guideline,
-daily-changing data quoted as an integration · SEO report scoped to **10 keywords + 5 competitors
-per location** · **Spanish and English** included, a third language quoted · **Google only** for
+daily-changing data quoted as an integration · ~~SEO report scoped to 10 keywords + 5 competitors
+per location~~ (withdrawn 2026-10-25, §2.1) · **Spanish and English** included, a third language quoted · **Google only** for
 reviews, with Facebook recommendations and TripAdvisor named as not offered rather than left
 implied · the free trial starts **at go-live, not at signature** · price protected **12 months** ·
 the client keeps ownership of every page, number, profile and domain.
