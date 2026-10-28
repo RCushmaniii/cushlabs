@@ -1036,6 +1036,83 @@ cost question the WhatsApp demo-swap decision has been waiting on.
 
 ## Session History
 
+## Session: 2026-10-28 — Confirmation pass after the 2026-10-25 offer simplification (PR #406)
+
+### What was asked
+
+Not a redesign: verify that the live site, in both languages, says exactly what is sold after
+PR #404 (managed-service hero, SEO & competitor report withdrawn, reviews folded into "fully
+managed") and #405, and that every claim traces to its canonical file. Audit production, not
+source.
+
+### How it was audited
+
+Every URL in the live sitemap (133) plus `/salons/`, `/salones/` and the two
+`competitive-intelligence` 301s was fetched and flattened to text with title, description, Open
+Graph and every JSON-LD block, then grepped for the hot list: the withdrawn report, review-reply
+automation wording, WhatsApp attached to Basic, comment-to-DM as a commitment, every number,
+claims-policy absolutes, the biographical hard rules, "trained on", and the es-MX Iberian marker
+list. Booking email body (`workers/booking-worker.js`) and form confirmations carry no claims.
+Canonical inputs: ADVERTISED-COMMITMENTS, commercial-terms.json, claims-policy.json,
+capability-registry.json, business-profile.json, brand-kit.md, the copywriting router and its
+landing-page / services-page / faq / es-mx-register skills. The 2026-10-25 decision has no
+DECISION-LOG entry; the record is the #404 body and ADVERTISED-COMMITMENTS §2.1.
+
+### What was still wrong on production, and the fix (PR #406, squash `b60fc60`)
+
+| Surface                                               | Was                                                                      | Conflict                                                     | Now                                                                            |
+| ----------------------------------------------------- | ------------------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| `PricingComparison.astro` FAQ "switch plans" EN + ES  | "…when you want the website chatbot and SEO reports"                     | §2.1 withdrawal                                              | Instagram, WhatsApp automation, website chatbot (matches `/faq/`)              |
+| `/services/premium/` + ES hero bullets                | "One weekly email on what your competitors changed"                      | §2.1                                                         | website-chatbot bullet from the pricing card                                   |
+| same pages                                            | "These four start" above three cards                                     | §2.1                                                         | "These three start" / "Estos tres empiezan"                                    |
+| comparison grid EN + ES                               | "Priority support — 4-business-hour response"                            | no SLA in any canonical file                                 | card wording, "front of the queue"                                             |
+| HowTo JSON-LD, website-chatbot + voice-agent, EN + ES | "Typical turnaround: 5-7 business days"                                  | commercial-terms `delivery_timing`                           | the canonical combined statement                                               |
+| voice-agent table EN + ES                             | "Goes live: 1–2 weeks"                                                   | same                                                         | "Days for a simple setup"                                                      |
+| Premium FAQ EN + ES                                   | "Why is it $1,500 more than Basic?" under a USD price                    | derived number in prose                                      | "Why does it cost more than Basic?"                                            |
+| `ServiceBlock.astro` Messenger hero EN + ES           | "Every comment turned into a conversation"                               | §4 List 1 has no comment-to-DM; registry leaves it unclaimed | "Every hot lead sent to your WhatsApp"                                         |
+| `/salons/`, `/salones/` FAQ                           | "WhatsApp is live too" on a Basic-priced page                            | §2.1: reminders are Premium                                  | tied to Premium                                                                |
+| WhatsApp page + block EN + ES                         | "zero manual work" / "cero trabajo manual" / "100% automático"           | claims-policy absolutes                                      | "nothing to send by hand" / "nada que enviar a mano" / "Totalmente automático" |
+| contact meta EN + ES                                  | "Bilingual EN/ES" attached to "I"; "Servicio bilingüe"                   | claims-policy `spanish_is_basic`                             | "Assistants in English and Spanish" / "Asistentes en español e inglés"         |
+| salons FAQ, ES demo note, two ES HowTo steps          | "train it on" / "se entrena con"                                         | router rule, EN twins already "built around"                 | "set it up with" / "se construye alrededor" / "responde con"                   |
+| Spanish pages, 9 places                               | "Basic"                                                                  | brand-kit §07 naming                                         | "Básico"                                                                       |
+| ADVERTISED-COMMITMENTS §2.5 + stamp                   | report scope still listed as published; stamp left at 2026-09-19 by #404 | the file's own rules                                         | struck through; stamp 2026-10-28                                               |
+
+Verified before merge: build green (meta-description gate, validate-terms, validate-feature-tiers on
+140 pages), lint 0 errors, typecheck clean, `dist/` sweep for every removed phrase 0 hits,
+operating-system sync-check in sync 16/16. Verified after merge: production live in ~90 s, the
+same sweep against the 18 affected live URLs returns nothing.
+
+### Clean, confirmed on production
+
+Review replies are "drafted for your approval" on every card and both FAQ pages; Basic names
+WhatsApp only as the owner alert; Instagram comment-to-DM is scoped to Premium everywhere; no
+7-day / 2-week trial, notice period, card, OXXO, "days not weeks" or "no extra cost" wording; the
+Organization JSON-LD offer catalog lists five services and no report; the sitemap carries no
+withdrawn URL; the Iberian-marker grep returns only false positives.
+
+### Left on purpose (each with its next action)
+
+- `/portfolio/` meta, hero and the MarketSignal card say "competitor tracking". They describe
+  built software, not an offer. Robert says "remove" and three strings change.
+- Voice-agent and website-chatbot pages compare against receptionist / community-manager salaries
+  ($18,000–$25,000 MXN, $15,000–$40,000 MXN) with no source; claims-policy requires attribution.
+  Needs a source URL or a removal decision.
+- Voice overage, surface fee, WhatsApp-number fee, 300 minutes, 3 alert recipients and 12-month
+  price protection are in ADVERTISED-COMMITMENTS but absent from `commercial-terms.json`. Fix
+  from an operating-system session.
+- The registry marks Facebook public comment replies `any_client`; List 1 does not carry them.
+  Selling it needs the bot repo's inventory and §4 updated first; until then the claim is off.
+- `PricingSection.astro` hard-codes the six tier prices (it is the rank-2 owner); 27 source files
+  restate a price in prose and the three build gates are what keep them honest. The literal
+  "nothing restates them in prose" is not true of this repo.
+
+### Recurring failure mode confirmed
+
+#404 withdrew the report from every surface it listed and still missed four sentences, because
+they lived in a comparison-FAQ answer and a tier-page hero list rather than in a card or grid
+row, and the sweep searched for the product name, not for "SEO" and "competitors". When a
+product is withdrawn, grep the built HTML for its vocabulary, not its name.
+
 ## Session: 2026-10-20 — A live crawl said 3.8 s; the harness had never measured production
 
 ### What the report said and what was true
