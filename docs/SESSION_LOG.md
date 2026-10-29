@@ -1092,8 +1092,12 @@ withdrawn URL; the Iberian-marker grep returns only false positives.
 
 ### Left on purpose (each with its next action)
 
-- `/portfolio/` meta, hero and the MarketSignal card say "competitor tracking". They describe
-  built software, not an offer. Robert says "remove" and three strings change.
+- ~~`/portfolio/` meta, hero and the MarketSignal card say "competitor tracking".~~ **Removed
+  2026-10-29, PR #407** on Robert's instruction: portfolio meta/OG/hero (EN + ES), both card
+  taglines, both MarketSignal detail-page meta descriptions, and the banned "no competitor offers
+  this" line on that page. The EN card tagline is sourced from `PORTFOLIO.md` in
+  `cushlabs-marketsignal`; the committed JSON was edited here, and that line must change there
+  before the next `npm run sync:portfolio` or the old tagline comes back.
 - Voice-agent and website-chatbot pages compare against receptionist / community-manager salaries
   ($18,000–$25,000 MXN, $15,000–$40,000 MXN) with no source; claims-policy requires attribution.
   Needs a source URL or a removal decision.
