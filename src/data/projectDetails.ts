@@ -1281,7 +1281,7 @@ const details: Record<string, ProjectDetailOverride> = {
         "WhatsApp delivery achieves higher read rates than email-based alternatives",
         "AI-generated analysis turns raw ranking data into business language that owners understand",
         "Phased architecture validates market demand before investing in full automation",
-        "Most differentiated offering in the CushLabs portfolio — no competitor offers this in the Mexican market",
+        "The most differentiated offering in the CushLabs portfolio, built for the Mexican market",
       ],
     },
     es: {
@@ -1338,7 +1338,7 @@ const details: Record<string, ProjectDetailOverride> = {
         "Entrega por WhatsApp logra tasas de lectura superiores a alternativas basadas en email",
         "Análisis generado por IA convierte datos crudos de ranking en lenguaje de negocio que los dueños entienden",
         "Arquitectura por fases valida demanda de mercado antes de invertir en automatización completa",
-        "Oferta más diferenciada en el portafolio de CushLabs — ningún competidor ofrece esto en el mercado mexicano",
+        "La oferta más diferenciada del portafolio de CushLabs, construida para el mercado mexicano",
       ],
     },
   },

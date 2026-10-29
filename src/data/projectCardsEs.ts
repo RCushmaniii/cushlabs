@@ -59,7 +59,7 @@ export const esCardCopy: Record<string, EsCardCopy> = {
     title:
       "MarketSignal — Gestión de reseñas de Google e inteligencia competitiva local",
     tagline:
-      "Gestión de reseñas de Google y monitoreo de competidores — respuestas redactadas con IA y una acción clave por semana, directo a tu WhatsApp",
+      "Gestión de reseñas de Google — respuestas redactadas con IA, aprobadas por ti, y una acción clave por semana, directo a tu WhatsApp",
   },
   "cushlabs-sticker-gen": {
     tagline:
