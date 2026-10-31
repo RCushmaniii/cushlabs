@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-31T17:26:28.340Z",
+  "generatedAt": "2026-10-31T18:13:42.748Z",
   "count": 36,
   "projects": [
     {
@@ -965,6 +965,120 @@
       "videoPoster": "https://cdn.cushlabs.ai/biojalisco-species-id/images/portfolio/biojalisco-brief-poster.webp"
     },
     {
+      "id": 1433640730,
+      "name": "marketsignal",
+      "title": "MarketSignal — Local Competitive Intelligence for Google Maps",
+      "description": "MarketSignal — local competitive intelligence for small businesses (hobby project)",
+      "summary": "> Your competitor moved above you in Google Maps three weeks ago and nobody told you. MarketSignal watches that every week and tells you what to do about it.",
+      "url": "https://github.com/RCushmaniii/marketsignal",
+      "demoUrl": "https://marketsignal.cushlabs.ai/lumiere-demo/overview",
+      "liveUrl": "https://marketsignal.cushlabs.ai",
+      "homepage": "https://marketsignal-ivory.vercel.app",
+      "topics": [],
+      "categories": [
+        "AI Automation"
+      ],
+      "tags": [
+        "competitive-intelligence",
+        "google-maps",
+        "ai-analysis",
+        "local-seo",
+        "multi-location",
+        "next-js",
+        "drizzle-orm"
+      ],
+      "stack": [
+        "Next.js 16 (App Router)",
+        "React 19",
+        "Tailwind CSS 4",
+        "Neon (serverless PostgreSQL)",
+        "Drizzle ORM",
+        "Clerk",
+        "Claude API",
+        "DataForSEO API (Google Maps + reviews)",
+        "Google Places API",
+        "Vercel Cron",
+        "Sentry",
+        "TypeScript"
+      ],
+      "status": null,
+      "language": "TypeScript",
+      "languages": {
+        "TypeScript": 1922405,
+        "JavaScript": 93462,
+        "HTML": 29745,
+        "CSS": 17107,
+        "Shell": 6070,
+        "Dockerfile": 2796
+      },
+      "stars": 0,
+      "forks": 0,
+      "lastPushed": "2026-10-31T17:20:54Z",
+      "createdAt": "2026-10-25T21:28:46Z",
+      "isFeatured": true,
+      "isArchived": false,
+      "isPrivate": true,
+      "tagline": "Weekly Google Maps rank and competitor tracking, with an AI-written report that ends in one action per location",
+      "thumbnail": "https://cdn.cushlabs.ai/marketsignal/portfolio/marketsignal/thumb-en.webp",
+      "problem": "For a business people find on a map, position and reviews are the storefront.\nA competitor can pick up twenty reviews in a week and move above you in Google\nMaps, and nothing announces it — it shows up months later as a quiet drop in\nenquiries. Checking by hand stops happening by week three, and rank trackers\nshow charts when an owner needs one clear recommendation.\n",
+      "solution": "MarketSignal runs every week on its own. It scrapes Google Maps rankings for\neach tracked keyword and location, along with the competitors that appear\naround you, reads your reviews and theirs, audits the Google Business Profile\nagainst the competition, and has Claude write a report — in Spanish, English\nor both — that says what moved, why, and the one thing to do about it per\nlocation. A public demo organization shows the full dashboard without a\nsign-in.\n",
+      "keyFeatures": [
+        "Fully automated weekly pipeline: a scheduled job scrapes, analyzes and writes the report with no one remembering to run it",
+        "Week-over-week ranking and review deltas for every keyword and location pair",
+        "Review intelligence on your locations and your competitors — themes, sentiment and recurring complaints",
+        "Google Business Profile completeness audit against the local competition",
+        "AI-written weekly report in Spanish, English or both, ending in one action per location",
+        "Public demo organization prospects can open without signing in"
+      ],
+      "metrics": [
+        "One recommendation per location per week instead of a dashboard full of charts",
+        "Per-organization dashboards with data isolation — members see only their own organization",
+        "37 automated test files across the pipeline, reporting and access paths",
+        "Available as a custom build for a business that wants its own competitive watch"
+      ],
+      "priority": 8,
+      "dateCompleted": null,
+      "slides": [
+        {
+          "src": "https://cdn.cushlabs.ai/marketsignal/portfolio/marketsignal/marketsignal-01.webp",
+          "altEn": "MarketSignal dashboard — competitive intelligence overview",
+          "altEs": "Dashboard MarketSignal — resumen de inteligencia competitiva"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/marketsignal/portfolio/marketsignal/marketsignal-02.webp",
+          "altEn": "Google Maps ranking tracker with week-over-week deltas",
+          "altEs": "Rastreador de rankings en Google Maps con deltas semana a semana"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/marketsignal/portfolio/marketsignal/marketsignal-03.webp",
+          "altEn": "AI-generated weekly intelligence report",
+          "altEs": "Reporte semanal de inteligencia generado por IA"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/marketsignal/portfolio/marketsignal/marketsignal-04.webp",
+          "altEn": "Competitor review velocity monitoring",
+          "altEs": "Monitoreo de velocidad de reseñas de competidores"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/marketsignal/portfolio/marketsignal/marketsignal-06.webp",
+          "altEn": "Multi-location competitive landscape view",
+          "altEs": "Vista del panorama competitivo multiubicación"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/marketsignal/portfolio/marketsignal/marketsignal-07.webp",
+          "altEn": "Organization management and data isolation",
+          "altEs": "Gestión de organizaciones y aislamiento de datos"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/marketsignal/portfolio/marketsignal/marketsignal-09.webp",
+          "altEn": "AI analysis configuration and Claude API integration",
+          "altEs": "Configuración del análisis con IA e integración con la API de Claude"
+        }
+      ],
+      "videoUrl": null,
+      "videoPoster": null
+    },
+    {
       "id": 1279696759,
       "name": "cushlabs-investment-model",
       "title": "CushLabs Investment Desk",
@@ -1049,7 +1163,7 @@
         "Three integrated surfaces in one app: daily tracker, Decision Desk, 401(k) monitor",
         "$0 for daily tracking; one cached Opus call for deep analysis"
       ],
-      "priority": 8,
+      "priority": 9,
       "dateCompleted": null,
       "slides": [
         {
@@ -1187,7 +1301,7 @@
         "65+ repositories monitored, rolled up into ~24 real applications",
         "Sub-second client-side filtering across all interactive views"
       ],
-      "priority": 9,
+      "priority": 10,
       "dateCompleted": "2026-03",
       "slides": [
         {
@@ -1307,7 +1421,7 @@
         "One voice identity stays consistent across every channel",
         "First drafts arrive review-ready instead of rewrite-ready"
       ],
-      "priority": 10,
+      "priority": 11,
       "dateCompleted": null,
       "slides": [
         {
@@ -1368,120 +1482,6 @@
       ],
       "videoUrl": "https://cdn.cushlabs.ai/context-writing-system/videos/context-writing-system-brief.mp4",
       "videoPoster": "https://cdn.cushlabs.ai/context-writing-system/images/context-writing-system-brief-poster.webp"
-    },
-    {
-      "id": 1433640730,
-      "name": "marketsignal",
-      "title": "MarketSignal — Local Competitive Intelligence for Google Maps",
-      "description": "MarketSignal — local competitive intelligence for small businesses (hobby project)",
-      "summary": "> Your competitor moved above you in Google Maps three weeks ago and nobody told you. MarketSignal watches that every week and tells you what to do about it.",
-      "url": "https://github.com/RCushmaniii/marketsignal",
-      "demoUrl": "https://marketsignal.cushlabs.ai/lumiere-demo/overview",
-      "liveUrl": "https://marketsignal.cushlabs.ai",
-      "homepage": "https://marketsignal-ivory.vercel.app",
-      "topics": [],
-      "categories": [
-        "AI Automation"
-      ],
-      "tags": [
-        "competitive-intelligence",
-        "google-maps",
-        "ai-analysis",
-        "local-seo",
-        "multi-location",
-        "next-js",
-        "drizzle-orm"
-      ],
-      "stack": [
-        "Next.js 16 (App Router)",
-        "React 19",
-        "Tailwind CSS 4",
-        "Neon (serverless PostgreSQL)",
-        "Drizzle ORM",
-        "Clerk",
-        "Claude API",
-        "DataForSEO API (Google Maps + reviews)",
-        "Google Places API",
-        "Vercel Cron",
-        "Sentry",
-        "TypeScript"
-      ],
-      "status": null,
-      "language": "TypeScript",
-      "languages": {
-        "TypeScript": 1922405,
-        "JavaScript": 93462,
-        "HTML": 29745,
-        "CSS": 17107,
-        "Shell": 6070,
-        "Dockerfile": 2796
-      },
-      "stars": 0,
-      "forks": 0,
-      "lastPushed": "2026-10-31T17:20:54Z",
-      "createdAt": "2026-10-25T21:28:46Z",
-      "isFeatured": false,
-      "isArchived": false,
-      "isPrivate": true,
-      "tagline": "Weekly Google Maps rank and competitor tracking, with an AI-written report that ends in one action per location",
-      "thumbnail": "https://cdn.cushlabs.ai/marketsignal/portfolio/marketsignal/thumb-en.webp",
-      "problem": "For a business people find on a map, position and reviews are the storefront.\nA competitor can pick up twenty reviews in a week and move above you in Google\nMaps, and nothing announces it — it shows up months later as a quiet drop in\nenquiries. Checking by hand stops happening by week three, and rank trackers\nshow charts when an owner needs one clear recommendation.\n",
-      "solution": "MarketSignal runs every week on its own. It scrapes Google Maps rankings for\neach tracked keyword and location, along with the competitors that appear\naround you, reads your reviews and theirs, audits the Google Business Profile\nagainst the competition, and has Claude write a report — in Spanish, English\nor both — that says what moved, why, and the one thing to do about it per\nlocation. A public demo organization shows the full dashboard without a\nsign-in.\n",
-      "keyFeatures": [
-        "Fully automated weekly pipeline: a scheduled job scrapes, analyzes and writes the report with no one remembering to run it",
-        "Week-over-week ranking and review deltas for every keyword and location pair",
-        "Review intelligence on your locations and your competitors — themes, sentiment and recurring complaints",
-        "Google Business Profile completeness audit against the local competition",
-        "AI-written weekly report in Spanish, English or both, ending in one action per location",
-        "Public demo organization prospects can open without signing in"
-      ],
-      "metrics": [
-        "One recommendation per location per week instead of a dashboard full of charts",
-        "Per-organization dashboards with data isolation — members see only their own organization",
-        "37 automated test files across the pipeline, reporting and access paths",
-        "Available as a custom build for a business that wants its own competitive watch"
-      ],
-      "priority": 11,
-      "dateCompleted": null,
-      "slides": [
-        {
-          "src": "https://cdn.cushlabs.ai/marketsignal/portfolio/marketsignal/marketsignal-01.webp",
-          "altEn": "MarketSignal dashboard — competitive intelligence overview",
-          "altEs": "Dashboard MarketSignal — resumen de inteligencia competitiva"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/marketsignal/portfolio/marketsignal/marketsignal-02.webp",
-          "altEn": "Google Maps ranking tracker with week-over-week deltas",
-          "altEs": "Rastreador de rankings en Google Maps con deltas semana a semana"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/marketsignal/portfolio/marketsignal/marketsignal-03.webp",
-          "altEn": "AI-generated weekly intelligence report",
-          "altEs": "Reporte semanal de inteligencia generado por IA"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/marketsignal/portfolio/marketsignal/marketsignal-04.webp",
-          "altEn": "Competitor review velocity monitoring",
-          "altEs": "Monitoreo de velocidad de reseñas de competidores"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/marketsignal/portfolio/marketsignal/marketsignal-06.webp",
-          "altEn": "Multi-location competitive landscape view",
-          "altEs": "Vista del panorama competitivo multiubicación"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/marketsignal/portfolio/marketsignal/marketsignal-07.webp",
-          "altEn": "Organization management and data isolation",
-          "altEs": "Gestión de organizaciones y aislamiento de datos"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/marketsignal/portfolio/marketsignal/marketsignal-09.webp",
-          "altEn": "AI analysis configuration and Claude API integration",
-          "altEs": "Configuración del análisis con IA e integración con la API de Claude"
-        }
-      ],
-      "videoUrl": null,
-      "videoPoster": null
     },
     {
       "id": 1174674268,
@@ -3373,15 +3373,15 @@
       "status": null,
       "language": "Astro",
       "languages": {
-        "Astro": 1123434,
-        "TypeScript": 457139,
+        "Astro": 1123381,
+        "TypeScript": 454904,
         "JavaScript": 242354,
         "CSS": 11054,
         "Python": 6606
       },
       "stars": 3,
       "forks": 0,
-      "lastPushed": "2026-10-30T09:19:14Z",
+      "lastPushed": "2026-10-31T17:26:57Z",
       "createdAt": "2026-01-08T03:52:43Z",
       "isFeatured": false,
       "isArchived": false,

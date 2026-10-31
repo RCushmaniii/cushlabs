@@ -41,24 +41,24 @@
       "featured": true
     },
     {
-      "name": "cushlabs-investment-model",
+      "name": "marketsignal",
       "priority": 8,
-      "featured": false
+      "featured": true
     },
     {
-      "name": "cushlabs-OS-dashboard",
+      "name": "cushlabs-investment-model",
       "priority": 9,
       "featured": false
     },
     {
-      "name": "context-writing-system",
+      "name": "cushlabs-OS-dashboard",
       "priority": 10,
-      "featured": true
+      "featured": false
     },
     {
-      "name": "marketsignal",
+      "name": "context-writing-system",
       "priority": 11,
-      "featured": false
+      "featured": true
     },
     {
       "name": "cushlabs-scrollytelling",
