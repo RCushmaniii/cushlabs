@@ -53,13 +53,13 @@ export const esCardCopy: Record<string, EsCardCopy> = {
     tagline:
       "Plataforma de WhatsApp como Meta Tech Provider — un negocio conecta su propia cuenta en minutos y envía recordatorios de citas que sus clientes sí leen",
   },
-  // Updated 2026-08-07 to surface Google review management, a core CushLabs
-  // service that was described in the body of the entry but absent from the card.
-  "cushlabs-marketsignal": {
-    title:
-      "MarketSignal — Gestión de reseñas de Google e inteligencia competitiva local",
+  // Re-keyed 2026-10-31 from "cushlabs-marketsignal": MarketSignal now lives in its
+  // own repo, narrowed to competitive analysis. Review management stayed with the
+  // CushLabs client portal and is not claimed on this card.
+  marketsignal: {
+    title: "MarketSignal — Inteligencia competitiva local para Google Maps",
     tagline:
-      "Gestión de reseñas de Google — respuestas redactadas con IA, aprobadas por ti, y una acción clave por semana, directo a tu WhatsApp",
+      "Seguimiento semanal de rankings y competidores en Google Maps, con un reporte escrito con IA que cierra con una acción por sucursal",
   },
   "cushlabs-sticker-gen": {
     tagline:

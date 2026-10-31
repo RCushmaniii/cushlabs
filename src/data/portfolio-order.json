@@ -23,13 +23,8 @@
       "featured": true
     },
     {
-      "name": "cushlabs-marketsignal",
-      "priority": 5,
-      "featured": true
-    },
-    {
       "name": "ny-eng",
-      "priority": 6,
+      "priority": 5,
       "featured": true,
       "categories": [
         "Client Work"
@@ -37,28 +32,33 @@
     },
     {
       "name": "cushlabs-connect",
-      "priority": 7,
+      "priority": 6,
       "featured": true
     },
     {
       "name": "biojalisco-species-id",
-      "priority": 8,
+      "priority": 7,
       "featured": true
     },
     {
       "name": "cushlabs-investment-model",
-      "priority": 9,
+      "priority": 8,
       "featured": false
     },
     {
       "name": "cushlabs-OS-dashboard",
-      "priority": 10,
+      "priority": 9,
       "featured": false
     },
     {
       "name": "context-writing-system",
-      "priority": 11,
+      "priority": 10,
       "featured": true
+    },
+    {
+      "name": "marketsignal",
+      "priority": 11,
+      "featured": false
     },
     {
       "name": "cushlabs-scrollytelling",

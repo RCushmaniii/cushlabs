@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-28T16:41:26.197Z",
+  "generatedAt": "2026-10-31T17:26:28.340Z",
   "count": 36,
   "projects": [
     {
@@ -51,7 +51,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-10-26T16:48:09Z",
+      "lastPushed": "2026-10-31T17:20:43Z",
       "createdAt": "2025-12-02T07:09:31Z",
       "isFeatured": true,
       "isArchived": false,
@@ -185,7 +185,7 @@
       },
       "stars": 1,
       "forks": 0,
-      "lastPushed": "2026-10-21T01:26:44Z",
+      "lastPushed": "2026-10-31T17:20:52Z",
       "createdAt": "2025-11-23T00:24:28Z",
       "isFeatured": true,
       "isArchived": false,
@@ -314,7 +314,7 @@
       "status": "Production",
       "language": "TypeScript",
       "languages": {
-        "TypeScript": 2598581,
+        "TypeScript": 2617350,
         "JavaScript": 400255,
         "PowerShell": 8895,
         "CSS": 6629,
@@ -322,7 +322,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-10-27T06:04:12Z",
+      "lastPushed": "2026-10-31T17:25:04Z",
       "createdAt": "2026-04-06T23:20:56Z",
       "isFeatured": true,
       "isArchived": false,
@@ -476,7 +476,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-10-27T01:23:08Z",
+      "lastPushed": "2026-10-30T01:37:28Z",
       "createdAt": "2026-02-23T01:31:09Z",
       "isFeatured": true,
       "isArchived": false,
@@ -562,154 +562,6 @@
       ],
       "videoUrl": "https://cdn.cushlabs.ai/cushlabs-ai-voice-agent/video/voice-cushlabs-brief.mp4",
       "videoPoster": "https://cdn.cushlabs.ai/cushlabs-ai-voice-agent/video/voice-cushlabs-brief-poster.webp"
-    },
-    {
-      "id": 1196535593,
-      "name": "cushlabs-marketsignal",
-      "title": "MarketSignal — Google Review Management & Local Competitive Intelligence",
-      "description": "Google review management and local competitive intelligence for multi-location businesses in Mexico — AI-drafted review replies via the Google Business Profile API, plus Google Maps rank and competitor tracking delivered weekly over WhatsApp.",
-      "summary": "> Your competitor moved above you in Google Maps three weeks ago and nobody told you.",
-      "url": "https://github.com/RCushmaniii/cushlabs-marketsignal",
-      "demoUrl": null,
-      "liveUrl": "https://marketsignal.cushlabs.ai",
-      "homepage": null,
-      "topics": [
-        "ai-analytics",
-        "business-intelligence",
-        "competitive-intelligence",
-        "google-business-profile",
-        "google-maps",
-        "local-seo",
-        "mexico",
-        "neon-postgres",
-        "nextjs",
-        "playwright",
-        "review-monitoring",
-        "saas",
-        "whatsapp-api"
-      ],
-      "categories": [
-        "AI Automation"
-      ],
-      "tags": [
-        "ai-analytics",
-        "business-intelligence",
-        "competitive-intelligence",
-        "google-business-profile",
-        "google-maps",
-        "local-seo",
-        "mexico",
-        "neon-postgres",
-        "nextjs",
-        "playwright",
-        "review-monitoring",
-        "saas",
-        "whatsapp-api",
-        "ai-analysis",
-        "whatsapp",
-        "multi-location",
-        "next-js",
-        "drizzle-orm"
-      ],
-      "stack": [
-        "Next.js 16 (App Router)",
-        "React 19",
-        "Tailwind CSS 4",
-        "Neon (serverless PostgreSQL)",
-        "Drizzle ORM",
-        "Claude API (Sonnet)",
-        "WhatsApp Business API",
-        "DataForSEO API (Google Maps + reviews)",
-        "Google Business Profile API (review replies)",
-        "TypeScript"
-      ],
-      "status": null,
-      "language": "TypeScript",
-      "languages": {
-        "TypeScript": 1864229,
-        "JavaScript": 112201,
-        "HTML": 29745,
-        "CSS": 17107,
-        "Shell": 6070,
-        "Dockerfile": 2796
-      },
-      "stars": 0,
-      "forks": 0,
-      "lastPushed": "2026-10-27T01:58:53Z",
-      "createdAt": "2026-03-30T19:46:00Z",
-      "isFeatured": true,
-      "isArchived": false,
-      "isPrivate": true,
-      "tagline": "Google review management — AI-drafted replies, approved by you, plus one weekly action item, delivered to WhatsApp",
-      "thumbnail": "https://cdn.cushlabs.ai/cushlabs-marketsignal/portfolio/marketsignal/thumb-en.webp",
-      "problem": "Local businesses in Mexico have no affordable way to systematically track their\nGoogle Maps rankings, monitor competitor activity, or receive actionable insights.\nThey rely on gut instinct or expensive enterprise tools that don't support the\nMexican market. MarketSignal fills that gap with AI-powered weekly reports\ndelivered directly to WhatsApp.\n",
-      "solution": "MarketSignal captures weekly snapshots of Google Maps position, review count,\nand rating for every tracked location, then surfaces week-over-week deltas\nautomatically. Claude (Sonnet) turns that raw delta data into plain-language\ninsight and one specific, high-impact action item per location — not just a\ndashboard of charts. Reports are formatted for WhatsApp readability and land\nin the channel where Mexican business owners already operate, so insights get\nread instead of ignored.\n",
-      "keyFeatures": [
-        "Weekly competitive intelligence reports for 3-5 pilot clients",
-        "Week-over-week ranking and review delta tracking per location",
-        "AI-generated action items with specific, high-impact recommendations",
-        "WhatsApp delivery — reports land where clients already communicate",
-        "AI review manager — drafts tone-matched replies to unanswered Google reviews for one-click owner approval"
-      ],
-      "metrics": [
-        "Structured competitive intelligence multi-location businesses previously had no access to",
-        "One actionable recommendation per week cuts decision fatigue for owners",
-        "Delivered into the WhatsApp thread owners already use — no dashboard to remember to open",
-        "33 automated test cases covering the reply drafting and ranking paths",
-        "Replies publish live through the Google Business Profile API, owner-approved before they post",
-        "Phased architecture validates willingness-to-pay before automation is built"
-      ],
-      "priority": 5,
-      "dateCompleted": null,
-      "slides": [
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-marketsignal/portfolio/marketsignal/marketsignal-01.webp",
-          "altEn": "MarketSignal dashboard — competitive intelligence overview",
-          "altEs": "Dashboard MarketSignal — resumen de inteligencia competitiva"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-marketsignal/portfolio/marketsignal/marketsignal-02.webp",
-          "altEn": "Google Maps ranking tracker with week-over-week deltas",
-          "altEs": "Rastreador de rankings en Google Maps con deltas semana a semana"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-marketsignal/portfolio/marketsignal/marketsignal-03.webp",
-          "altEn": "AI-generated weekly intelligence report",
-          "altEs": "Reporte semanal de inteligencia generado por IA"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-marketsignal/portfolio/marketsignal/marketsignal-04.webp",
-          "altEn": "Competitor review velocity monitoring",
-          "altEs": "Monitoreo de velocidad de resenas de competidores"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-marketsignal/portfolio/marketsignal/marketsignal-05.webp",
-          "altEn": "WhatsApp report delivery with actionable recommendations",
-          "altEs": "Entrega de reportes por WhatsApp con recomendaciones accionables"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-marketsignal/portfolio/marketsignal/marketsignal-06.webp",
-          "altEn": "Multi-location competitive landscape view",
-          "altEs": "Vista del panorama competitivo multi-ubicacion"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-marketsignal/portfolio/marketsignal/marketsignal-07.webp",
-          "altEn": "Organization management and data isolation",
-          "altEs": "Gestion de organizaciones y aislamiento de datos"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-marketsignal/portfolio/marketsignal/marketsignal-08.webp",
-          "altEn": "Report status flow — Draft to Delivered tracking",
-          "altEs": "Flujo de estado de reportes — seguimiento de Borrador a Entregado"
-        },
-        {
-          "src": "https://cdn.cushlabs.ai/cushlabs-marketsignal/portfolio/marketsignal/marketsignal-09.webp",
-          "altEn": "AI analysis configuration and Claude API integration",
-          "altEs": "Configuracion de analisis IA e integracion con API de Claude"
-        }
-      ],
-      "videoUrl": "https://cdn.cushlabs.ai/cushlabs-marketsignal/portfolio/marketsignal/brief.mp4",
-      "videoPoster": "https://cdn.cushlabs.ai/cushlabs-marketsignal/portfolio/marketsignal/brief-poster.webp"
     },
     {
       "id": 953305892,
@@ -810,7 +662,7 @@
         "2x addressable market from a single codebase via bilingual system",
         "10-15 hours/week of administrative and sales work automated away"
       ],
-      "priority": 6,
+      "priority": 5,
       "dateCompleted": "2026-04-27",
       "slides": [
         {
@@ -925,7 +777,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-10-26T20:02:14Z",
+      "lastPushed": "2026-10-30T01:37:23Z",
       "createdAt": "2026-06-13T19:20:38Z",
       "isFeatured": true,
       "isArchived": false,
@@ -953,7 +805,7 @@
         "One Worker and one approved Meta app serve every tenant — zero per-client deployments",
         "60-day credential expiry solved server-side: the clock resets automatically and the client never sees it"
       ],
-      "priority": 7,
+      "priority": 6,
       "dateCompleted": null,
       "slides": [
         {
@@ -1029,7 +881,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-10-09T17:34:12Z",
+      "lastPushed": "2026-10-31T17:20:45Z",
       "createdAt": "2026-03-06T18:20:23Z",
       "isFeatured": true,
       "isArchived": false,
@@ -1055,7 +907,7 @@
         "Dual-mode interface serves both casual explorers and working scientists from one result",
         "Production deployment runs on any camera phone with zero-config minimum setup (OpenAI key only)"
       ],
-      "priority": 8,
+      "priority": 7,
       "dateCompleted": null,
       "slides": [
         {
@@ -1174,7 +1026,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-10-09T14:38:51Z",
+      "lastPushed": "2026-10-29T16:24:16Z",
       "createdAt": "2026-06-24T23:58:40Z",
       "isFeatured": false,
       "isArchived": false,
@@ -1197,7 +1049,7 @@
         "Three integrated surfaces in one app: daily tracker, Decision Desk, 401(k) monitor",
         "$0 for daily tracking; one cached Opus call for deep analysis"
       ],
-      "priority": 9,
+      "priority": 8,
       "dateCompleted": null,
       "slides": [
         {
@@ -1310,7 +1162,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-10-09T14:52:38Z",
+      "lastPushed": "2026-10-31T10:00:59Z",
       "createdAt": "2026-03-17T18:08:51Z",
       "isFeatured": false,
       "isArchived": false,
@@ -1335,7 +1187,7 @@
         "65+ repositories monitored, rolled up into ~24 real applications",
         "Sub-second client-side filtering across all interactive views"
       ],
-      "priority": 10,
+      "priority": 9,
       "dateCompleted": "2026-03",
       "slides": [
         {
@@ -1433,7 +1285,7 @@
       },
       "stars": 1,
       "forks": 0,
-      "lastPushed": "2026-10-26T20:02:25Z",
+      "lastPushed": "2026-10-31T17:20:46Z",
       "createdAt": "2025-12-20T10:31:00Z",
       "isFeatured": true,
       "isArchived": false,
@@ -1455,7 +1307,7 @@
         "One voice identity stays consistent across every channel",
         "First drafts arrive review-ready instead of rewrite-ready"
       ],
-      "priority": 11,
+      "priority": 10,
       "dateCompleted": null,
       "slides": [
         {
@@ -1518,6 +1370,120 @@
       "videoPoster": "https://cdn.cushlabs.ai/context-writing-system/images/context-writing-system-brief-poster.webp"
     },
     {
+      "id": 1433640730,
+      "name": "marketsignal",
+      "title": "MarketSignal — Local Competitive Intelligence for Google Maps",
+      "description": "MarketSignal — local competitive intelligence for small businesses (hobby project)",
+      "summary": "> Your competitor moved above you in Google Maps three weeks ago and nobody told you. MarketSignal watches that every week and tells you what to do about it.",
+      "url": "https://github.com/RCushmaniii/marketsignal",
+      "demoUrl": "https://marketsignal.cushlabs.ai/lumiere-demo/overview",
+      "liveUrl": "https://marketsignal.cushlabs.ai",
+      "homepage": "https://marketsignal-ivory.vercel.app",
+      "topics": [],
+      "categories": [
+        "AI Automation"
+      ],
+      "tags": [
+        "competitive-intelligence",
+        "google-maps",
+        "ai-analysis",
+        "local-seo",
+        "multi-location",
+        "next-js",
+        "drizzle-orm"
+      ],
+      "stack": [
+        "Next.js 16 (App Router)",
+        "React 19",
+        "Tailwind CSS 4",
+        "Neon (serverless PostgreSQL)",
+        "Drizzle ORM",
+        "Clerk",
+        "Claude API",
+        "DataForSEO API (Google Maps + reviews)",
+        "Google Places API",
+        "Vercel Cron",
+        "Sentry",
+        "TypeScript"
+      ],
+      "status": null,
+      "language": "TypeScript",
+      "languages": {
+        "TypeScript": 1922405,
+        "JavaScript": 93462,
+        "HTML": 29745,
+        "CSS": 17107,
+        "Shell": 6070,
+        "Dockerfile": 2796
+      },
+      "stars": 0,
+      "forks": 0,
+      "lastPushed": "2026-10-31T17:20:54Z",
+      "createdAt": "2026-10-25T21:28:46Z",
+      "isFeatured": false,
+      "isArchived": false,
+      "isPrivate": true,
+      "tagline": "Weekly Google Maps rank and competitor tracking, with an AI-written report that ends in one action per location",
+      "thumbnail": "https://cdn.cushlabs.ai/marketsignal/portfolio/marketsignal/thumb-en.webp",
+      "problem": "For a business people find on a map, position and reviews are the storefront.\nA competitor can pick up twenty reviews in a week and move above you in Google\nMaps, and nothing announces it — it shows up months later as a quiet drop in\nenquiries. Checking by hand stops happening by week three, and rank trackers\nshow charts when an owner needs one clear recommendation.\n",
+      "solution": "MarketSignal runs every week on its own. It scrapes Google Maps rankings for\neach tracked keyword and location, along with the competitors that appear\naround you, reads your reviews and theirs, audits the Google Business Profile\nagainst the competition, and has Claude write a report — in Spanish, English\nor both — that says what moved, why, and the one thing to do about it per\nlocation. A public demo organization shows the full dashboard without a\nsign-in.\n",
+      "keyFeatures": [
+        "Fully automated weekly pipeline: a scheduled job scrapes, analyzes and writes the report with no one remembering to run it",
+        "Week-over-week ranking and review deltas for every keyword and location pair",
+        "Review intelligence on your locations and your competitors — themes, sentiment and recurring complaints",
+        "Google Business Profile completeness audit against the local competition",
+        "AI-written weekly report in Spanish, English or both, ending in one action per location",
+        "Public demo organization prospects can open without signing in"
+      ],
+      "metrics": [
+        "One recommendation per location per week instead of a dashboard full of charts",
+        "Per-organization dashboards with data isolation — members see only their own organization",
+        "37 automated test files across the pipeline, reporting and access paths",
+        "Available as a custom build for a business that wants its own competitive watch"
+      ],
+      "priority": 11,
+      "dateCompleted": null,
+      "slides": [
+        {
+          "src": "https://cdn.cushlabs.ai/marketsignal/portfolio/marketsignal/marketsignal-01.webp",
+          "altEn": "MarketSignal dashboard — competitive intelligence overview",
+          "altEs": "Dashboard MarketSignal — resumen de inteligencia competitiva"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/marketsignal/portfolio/marketsignal/marketsignal-02.webp",
+          "altEn": "Google Maps ranking tracker with week-over-week deltas",
+          "altEs": "Rastreador de rankings en Google Maps con deltas semana a semana"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/marketsignal/portfolio/marketsignal/marketsignal-03.webp",
+          "altEn": "AI-generated weekly intelligence report",
+          "altEs": "Reporte semanal de inteligencia generado por IA"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/marketsignal/portfolio/marketsignal/marketsignal-04.webp",
+          "altEn": "Competitor review velocity monitoring",
+          "altEs": "Monitoreo de velocidad de reseñas de competidores"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/marketsignal/portfolio/marketsignal/marketsignal-06.webp",
+          "altEn": "Multi-location competitive landscape view",
+          "altEs": "Vista del panorama competitivo multiubicación"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/marketsignal/portfolio/marketsignal/marketsignal-07.webp",
+          "altEn": "Organization management and data isolation",
+          "altEs": "Gestión de organizaciones y aislamiento de datos"
+        },
+        {
+          "src": "https://cdn.cushlabs.ai/marketsignal/portfolio/marketsignal/marketsignal-09.webp",
+          "altEn": "AI analysis configuration and Claude API integration",
+          "altEs": "Configuración del análisis con IA e integración con la API de Claude"
+        }
+      ],
+      "videoUrl": null,
+      "videoPoster": null
+    },
+    {
       "id": 1174674268,
       "name": "cushlabs-scrollytelling",
       "title": "CushLabs Scrollytelling",
@@ -1576,7 +1542,7 @@
       },
       "stars": 1,
       "forks": 1,
-      "lastPushed": "2026-10-09T14:52:42Z",
+      "lastPushed": "2026-10-28T17:51:50Z",
       "createdAt": "2026-03-06T17:57:40Z",
       "isFeatured": false,
       "isArchived": false,
@@ -1732,7 +1698,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-10-27T05:46:21Z",
+      "lastPushed": "2026-10-28T17:54:17Z",
       "createdAt": "2026-03-09T19:14:08Z",
       "isFeatured": false,
       "isArchived": false,
@@ -1845,7 +1811,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-10-27T01:28:34Z",
+      "lastPushed": "2026-10-28T17:58:58Z",
       "createdAt": "2025-11-05T18:11:38Z",
       "isFeatured": false,
       "isArchived": false,
@@ -1969,7 +1935,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-10-09T14:52:48Z",
+      "lastPushed": "2026-10-28T17:52:01Z",
       "createdAt": "2026-03-04T22:07:57Z",
       "isFeatured": false,
       "isArchived": false,
@@ -2221,7 +2187,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-10-13T05:39:14Z",
+      "lastPushed": "2026-10-28T17:54:13Z",
       "createdAt": "2026-03-08T19:31:57Z",
       "isFeatured": false,
       "isArchived": false,
@@ -2512,7 +2478,7 @@
       },
       "stars": 1,
       "forks": 1,
-      "lastPushed": "2026-10-09T14:38:15Z",
+      "lastPushed": "2026-10-28T17:58:55Z",
       "createdAt": "2026-01-12T02:37:39Z",
       "isFeatured": false,
       "isArchived": false,
@@ -2653,7 +2619,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-10-09T14:39:03Z",
+      "lastPushed": "2026-10-28T17:50:19Z",
       "createdAt": "2025-12-11T17:38:35Z",
       "isFeatured": false,
       "isArchived": false,
@@ -2788,7 +2754,7 @@
       },
       "stars": 1,
       "forks": 0,
-      "lastPushed": "2026-10-26T20:36:39Z",
+      "lastPushed": "2026-10-28T17:54:11Z",
       "createdAt": "2025-12-16T02:09:11Z",
       "isFeatured": false,
       "isArchived": false,
@@ -2916,7 +2882,7 @@
       },
       "stars": 1,
       "forks": 1,
-      "lastPushed": "2026-10-09T14:52:55Z",
+      "lastPushed": "2026-10-29T16:24:22Z",
       "createdAt": "2026-03-03T07:21:12Z",
       "isFeatured": false,
       "isArchived": false,
@@ -3033,7 +2999,7 @@
       },
       "stars": 1,
       "forks": 0,
-      "lastPushed": "2026-10-09T14:53:14Z",
+      "lastPushed": "2026-10-29T16:25:04Z",
       "createdAt": "2025-10-23T22:24:30Z",
       "isFeatured": false,
       "isArchived": false,
@@ -3172,7 +3138,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-10-09T14:53:19Z",
+      "lastPushed": "2026-10-28T17:54:32Z",
       "createdAt": "2026-06-06T19:37:00Z",
       "isFeatured": false,
       "isArchived": false,
@@ -3285,7 +3251,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-10-09T14:53:16Z",
+      "lastPushed": "2026-10-28T17:51:42Z",
       "createdAt": "2026-02-13T19:55:19Z",
       "isFeatured": false,
       "isArchived": false,
@@ -3407,15 +3373,15 @@
       "status": null,
       "language": "Astro",
       "languages": {
-        "Astro": 1122954,
-        "TypeScript": 457186,
+        "Astro": 1123434,
+        "TypeScript": 457139,
         "JavaScript": 242354,
         "CSS": 11054,
         "Python": 6606
       },
       "stars": 3,
       "forks": 0,
-      "lastPushed": "2026-10-26T20:02:07Z",
+      "lastPushed": "2026-10-30T09:19:14Z",
       "createdAt": "2026-01-08T03:52:43Z",
       "isFeatured": false,
       "isArchived": false,
@@ -3552,7 +3518,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-10-09T14:52:57Z",
+      "lastPushed": "2026-10-28T17:51:56Z",
       "createdAt": "2026-01-05T15:06:48Z",
       "isFeatured": false,
       "isArchived": false,
@@ -3697,7 +3663,7 @@
       },
       "stars": 1,
       "forks": 0,
-      "lastPushed": "2026-10-09T14:52:59Z",
+      "lastPushed": "2026-10-28T17:59:01Z",
       "createdAt": "2025-09-23T19:15:28Z",
       "isFeatured": false,
       "isArchived": false,
@@ -3815,7 +3781,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-10-09T14:53:18Z",
+      "lastPushed": "2026-10-28T17:51:32Z",
       "createdAt": "2026-01-04T03:47:35Z",
       "isFeatured": false,
       "isArchived": false,
@@ -3938,7 +3904,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-10-09T14:53:00Z",
+      "lastPushed": "2026-10-29T16:24:14Z",
       "createdAt": "2026-03-22T07:49:29Z",
       "isFeatured": false,
       "isArchived": false,
@@ -4062,7 +4028,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-10-09T14:53:03Z",
+      "lastPushed": "2026-10-28T17:51:39Z",
       "createdAt": "2026-01-13T22:16:37Z",
       "isFeatured": false,
       "isArchived": false,
@@ -4186,7 +4152,7 @@
       },
       "stars": 1,
       "forks": 0,
-      "lastPushed": "2026-10-09T14:53:05Z",
+      "lastPushed": "2026-10-28T17:54:08Z",
       "createdAt": "2026-01-23T00:50:02Z",
       "isFeatured": false,
       "isArchived": false,
@@ -4408,7 +4374,7 @@
       },
       "stars": 0,
       "forks": 0,
-      "lastPushed": "2026-10-09T14:53:09Z",
+      "lastPushed": "2026-10-28T17:51:35Z",
       "createdAt": "2026-02-10T04:11:19Z",
       "isFeatured": false,
       "isArchived": false,

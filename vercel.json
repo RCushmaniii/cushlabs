@@ -236,6 +236,26 @@
       "source": "/es/services/competitive-intelligence/",
       "destination": "/es/services/premium/",
       "permanent": true
+    },
+    {
+      "source": "/projects/cushlabs-marketsignal",
+      "destination": "/projects/marketsignal/",
+      "permanent": true
+    },
+    {
+      "source": "/projects/cushlabs-marketsignal/",
+      "destination": "/projects/marketsignal/",
+      "permanent": true
+    },
+    {
+      "source": "/es/projects/cushlabs-marketsignal",
+      "destination": "/es/projects/marketsignal/",
+      "permanent": true
+    },
+    {
+      "source": "/es/projects/cushlabs-marketsignal/",
+      "destination": "/es/projects/marketsignal/",
+      "permanent": true
     }
   ],
   "rewrites": [
@@ -320,5 +340,5 @@
       ]
     }
   ],
-  "ignoreCommand": "if [ \"$VERCEL_ENV\" = \"preview\" ]; then exit 0; fi; git rev-parse --verify HEAD^ > /dev/null 2>&1 && git diff --quiet HEAD^ HEAD -- . ':!docs/' ':!README.md' ':!CLAUDE.md' ':!LICENSE' ':!PORTFOLIO.md' ':!.gitignore' ':!.github/'"
+  "ignoreCommand": "if [ \"$VERCEL_ENV\" = \"preview\" ]; then exit 0; fi; git rev-parse --verify HEAD^ > /dev/null 2>&1 && git diff --quiet HEAD^ HEAD -- . ':!docs/' ':!README.md' ':!CLAUDE.md' ':!AGENTS.md' ':!LICENSE' ':!PORTFOLIO.md' ':!.gitignore' ':!.github/'"
 }
