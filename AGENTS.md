@@ -1,0 +1,724 @@
+# CushLabs.ai — agent instructions
+
+## Why this matters before you change anything
+
+cushlabs.ai -- where the capabilities are sold and the prices are published.
+
+**If this breaks:** The front door of the business breaks in public. Every other product is sold through this page, and a wrong price or an unsupportable claim here is a commitment made to a prospect.
+
+Its risk class and revenue proximity are recorded in `operating-system/portfolio/repo-metadata.json`, and are read from there rather than restated here -- the same rule that governs prices, client facts and platform approvals.
+
+## Client & revenue state — read the registry, never restate it
+
+**Canonical source:** `C:/Users/Robert Cushman/Projects/operating-system/strategy/clients.json`
+
+This repo does **not** record who is paying, what they pay, what stage a client is at, or when they
+were last invoiced. Anything here that asserts a client count, a price, a trial state, or a billing
+status is a **bug** — it will drift. It already has: on 2026-08-18 a doc marked "READ THIS FIRST" in
+`cushlabs-marketsignal` still asserted a paying-client count of zero two weeks after the first client went live,
+and the session that read it recommended invoicing a client who had already paid. Ask the registry
+instead:
+
+```powershell
+node -e "const c=require('C:/Users/Robert Cushman/Projects/operating-system/strategy/clients.json');console.log('as of '+c.last_updated);for(const x of c.clients)console.log([x.id,x.status,x.billing.amount+' '+x.billing.currency+'/'+x.billing.cadence,'since '+x.since].join(' | '))"
+```
+
+A dated snapshot is not an exception — "verified against production on DATE" reads as rigor and ages
+into false authority. If a doc here needs a commercial fact, it links the registry; it does not
+quote it. Enforced by `operating-system/scripts/validate-client-registry.mjs`, which fails when this
+clause is removed or a known drift phrase appears in this repo's markdown.
+
+<!-- capability-registry-pointer -->
+
+## Platform approvals — read the registry, never restate it
+
+**Canonical source:** `C:/Users/Robert Cushman/Projects/operating-system/cushlabs/capability-registry.json`
+
+This repo does **not** record platform approval status in prose. Anything here that states whether
+Meta, Google, or any other platform has approved something is a **bug** — it will drift, and it has,
+four separate times in one week. Ask the registry instead:
+
+```powershell
+node "C:/Users/Robert Cushman/Projects/operating-system/scripts/validate-capability-registry.mjs"
+```
+
+**What this repo depends on:**
+
+- EVERY approval marked `reachable_by: any_client` — this repo is the advertising surface.
+- `ADVERTISED-COMMITMENTS.md` in this repo is checked against the registry by the validator.
+
+**The distinction that keeps causing errors:** `status: approved` and `reachable_by: any_client` are
+different facts. An approval can be granted and still unusable by a paying client. Only
+`reachable_by: any_client` makes a capability sellable.
+
+Deep-dive how-to docs in this repo stay where they are — the registry owns _state_, not procedure.
+
+---
+
+> This file provides essential context for AI assistants working on this codebase.
+
+> **🚨 READ FIRST — before ANY offer / pricing / proposal / demo / sales / client-facing work:**
+> **[`docs/AI-ASSISTANT-ONBOARDING.md`](docs/AI-ASSISTANT-ONBOARDING.md)**
+> It tells you exactly what CushLabs sells (three tiers, real prices), what we do and do
+> **not** offer (we do **not** do AI-on-WhatsApp, build/run Facebook pages, or build
+> websites), and points to the canonical source of truth,
+> [`docs/strategy/ADVERTISED-COMMITMENTS.md`](docs/strategy/ADVERTISED-COMMITMENTS.md).
+> Do not invent services or prices — read the primer, then the canonical docs.
+
+> **IMPORTANT: Be a PROACTIVE Product Advisor!**
+> Don't just implement what's asked - think like a product designer:
+>
+> - **Simplify UX**: If a feature adds complexity users don't need, suggest removing it
+> - **"It Just Works"**: Modern apps don't ask users to configure things that should be automatic
+> - **Fewer Choices = Better**: Don't expose settings users shouldn't need to think about
+> - **Challenge Requirements**: If something seems over-engineered, say so and propose simpler alternatives
+> - **Think Like a User**: Would your mom understand this UI? If not, simplify it
+>
+> Examples of good advice:
+>
+> - "Do users really need a Start/Stop button, or should the service just always run?"
+> - "This setting adds complexity - can we just pick a sensible default?"
+> - "Instead of 3 options, what if we just did the right thing automatically?"
+
+---
+
+## Business Context
+
+**Owner:** Robert Cushman
+**Business:** CushLabs.ai - AI Integration & Software Development Consulting
+**Launch Target:** 2026
+**Location:** Based in Guadalajara, Mexico. Serves clients across Mexico, the US, and LATAM.
+**Delivery:** Bilingual EN/ES product output — assistants, apps, and content validated in both languages; project execution is English-first
+
+**Robert's Background:**
+
+- Fortune 500 IT leadership at Praxair/Linde: Senior Developer → Project Manager → Senior IT Manager
+- 100+ global technology initiatives, 26,000 employees, 42 countries
+- Earlier IT consulting work with Kodak and Corning (a separate, pre-Praxair period — no duration attaches to it)
+- 2.5 years intensive work with AI tools and premium LLMs
+- Current focus: Claude Code, AI agents, and automation
+
+> **Biographical hard rules — this block seeds generated copy, so violations regenerate.**
+> NEVER state an aggregate career-year total here or in any asset ("20 years," "17 years," "20+ years").
+> NEVER fuse Praxair/Linde with the Kodak/Corning era, and never attach a duration to Kodak/Corning.
+> "Bilingual" attaches to the product, never to Robert — his Spanish is basic.
+> Canonical: `operating-system/cushlabs/claims-policy.json` → `rules.biographical_facts`.
+
+**Business Model:** Help businesses transform through AI with:
+
+- AI Chatbots & Conversational Agents
+- Automation & Integration Services
+- Custom Development (full-stack apps, dashboards)
+- AI Strategy & Consulting
+
+**Current Productized Offerings (what Robert actively sells and can deliver):**
+
+- **AI Messenger Assistant** — AI chatbot deployed to Facebook Messenger (or website). Live with real client in production. Standalone service page: `/messenger-assistant/`
+- **AI Voice Agent** — Inbound voice agent for missed calls. Live at `voice.cushlabs.ai`. No standalone service page yet (planned).
+- **AI Customer Support Chatbot** — Website chat widget. Same underlying tech as Messenger, different surface.
+
+**NOT offered yet (do not mention on site):**
+
+- Outbound auto-dialing / cold calling campaigns
+
+---
+
+## Messenger AI — Mexican Market Positioning (IMPORTANT)
+
+When working on copy or pages for the Facebook Messenger AI service, keep this framing in mind:
+
+**The key insight:** Many small Mexican businesses (family-owned, local) have NO website. Their entire business presence is their Facebook page. The Messenger AI is not "another channel" for them — it IS their storefront.
+
+**Strong pitch for this market:**
+
+> "Most of your competitors have no website. You don't need one either. We put your sales assistant where your customers already are — Facebook — and alert you on WhatsApp when someone's ready to talk."
+
+**Handover approach for non-tech clients:**
+
+- Business owner does NOT need Meta Business Suite or any new app
+- When the AI detects a human is needed, it captures the customer's phone number and sends the owner a **WhatsApp message**: "New lead from Facebook: [Name], [Number], wants [X]. Ready to book."
+- Owner calls or messages the customer directly — channel they already live in
+- This is a feature, not a workaround: faster than inbox monitoring, works on any phone
+
+**Robert's own preferred workflow (dog-fooding this):**
+
+- WhatsApp desktop (always open, taskbar notifications with blinking)
+- See the WhatsApp alert with conversation summary
+- Switch to Facebook Messenger desktop app (available in Microsoft Store) or browser tab
+- Handle the conversation directly
+
+**What the product lineup is NOT:**
+
+- Not a multi-channel inbox tool
+- Not a bot builder platform
+- Not anything that requires the client to learn new software
+
+---
+
+## Technical Architecture
+
+**Framework:** Astro 7 (Static Site Generation) — requires Node >= 22.12
+**Styling:** Tailwind CSS 4 (CSS-first config via @tailwindcss/vite; there is no `tailwind.config.*`)
+**Deployment:** Vercel-ready (Edge Functions for forms)
+**Output:** Static HTML
+
+### Key Configuration
+
+```javascript
+// astro.config.mjs
+{
+  output: 'static',
+  site: 'https://www.cushlabs.ai',
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en', 'es'],
+    routing: { prefixDefaultLocale: false }  // EN has no prefix
+  }
+}
+```
+
+### URL Structure
+
+| English (default) | Spanish         |
+| ----------------- | --------------- |
+| `/`               | `/es`           |
+| `/about`          | `/es/about`     |
+| `/portfolio`      | `/es/portfolio` |
+| `/blog`           | `/es/blog`      |
+| `/contact`        | `/es/contact`   |
+| `/consultation`   | `/es/reservar`  |
+
+`/work` and `/es/work` no longer exist — `vercel.json` 301s them to `/portfolio/`. Do not
+re-create a `work.astro`.
+
+---
+
+## Project Structure
+
+```
+cushlabs/
+├── src/
+│   ├── components/           # Reusable Astro components
+│   │   ├── Header.astro      # Nav with language switcher
+│   │   ├── Footer.astro
+│   │   ├── PageHero.astro    # Hero sections with parallax
+│   │   ├── ServicesSection.astro
+│   │   ├── ProcessSection.astro
+│   │   └── ...
+│   ├── layouts/
+│   │   └── BaseLayout.astro  # Master layout (SEO, hreflang, schema)
+│   ├── pages/                # File-based routing
+│   │   ├── index.astro       # Home (EN)
+│   │   ├── portfolio.astro
+│   │   ├── blog/             # Live — see the blog warning under "Resolved"
+│   │   ├── contact.astro
+│   │   └── es/               # Spanish versions
+│   │       ├── index.astro
+│   │       └── ...
+│   ├── i18n/
+│   │   ├── index.ts          # i18n utilities
+│   │   └── translations/
+│   │       ├── en.ts         # English strings
+│   │       └── es.ts         # Spanish strings
+│   ├── data/
+│   │   ├── projectDetails.ts # Rich project content overrides
+│   │   └── projects.generated.json # Auto-synced from GitHub
+│   ├── content/
+│   │   └── config.ts         # Content collections schema
+│   └── styles/
+│       └── global.css        # Tailwind + CSS variables
+├── api/
+│   └── consultation-intake.ts # Edge function for forms
+├── scripts/
+│   ├── generate-projects.ts  # GitHub API sync → projects.generated.json
+│   ├── upload-to-r2.ts       # Sync local assets → Cloudflare R2 CDN
+│   └── audit-predeploy.ts    # Pre-deployment checks
+├── public/
+│   ├── images/
+│   └── robots.txt
+└── docs/                     # Reference documentation
+```
+
+---
+
+## i18n System
+
+### Getting Translations
+
+```astro
+---
+import { t } from '../i18n';
+const locale = Astro.currentLocale === 'es' ? 'es' : 'en';
+const dict = t(locale);
+---
+
+<h1>{dict.home.headline}</h1>
+```
+
+### Key Utilities
+
+```typescript
+// src/i18n/index.ts
+getLocaleFromPathname(pathname); // Returns 'en' or 'es'
+getLocalizedPath(pathname, to); // Converts path to target locale
+t(locale); // Returns translation dictionary
+```
+
+### Translation Structure
+
+Both `en.ts` and `es.ts` follow the same structure:
+
+- `nav` - Navigation labels
+- `home` - Homepage content
+- `services` - Service descriptions
+- `process` - Process steps
+
+- `work` - Portfolio section
+- `project` - Project detail pages
+- `contact` - Contact form
+- `about` - About page
+- `consultation` - Booking flow
+
+---
+
+## Critical SEO Requirements
+
+### Bilingual Parity Rule
+
+**"There is no such thing as fixing just the English side. There is only fixing BOTH sides or fixing NOTHING."**
+
+When modifying ANY page:
+
+1. Make the change to the English version
+2. Make the equivalent change to the Spanish version
+3. Verify both work
+4. Check translations are updated in both `en.ts` and `es.ts`
+
+### Hreflang Implementation
+
+BaseLayout.astro automatically generates hreflang tags:
+
+```html
+<link rel="alternate" hreflang="en" href="..." />
+<link rel="alternate" hreflang="es" href="..." />
+<link rel="alternate" hreflang="x-default" href="..." />
+```
+
+### Sitemap
+
+@astrojs/sitemap is installed and configured with i18n locales. Generates `sitemap-index.xml` automatically at build time.
+
+### Meta Tags (Ahrefs Standards)
+
+- **Title:** 50-60 characters ideal
+- **Description:** 150-160 characters ideal
+- Include target keywords naturally
+
+---
+
+## Known Issues & TODOs
+
+### Low Priority
+
+1. Additional structured data (HowTo schema — FAQPage already implemented on both EN/ES FAQ pages)
+
+### Resolved
+
+- ~~Astro 4 + Tailwind 3~~ — Migrated to Astro 7 + Tailwind CSS 4 with @tailwindcss/vite plugin, CSS-first @theme config
+- ~~Booking "No available times"~~ — CSP connect-src was missing the Cloudflare Worker domain; also added Sentry US region wildcard
+- ~~Pre-deploy audit script incomplete~~ — Fully working: env checks, i18n parity, typecheck, build, SEO audit (titles, descriptions, trailing slashes, orphan detection)
+- ~~Blog needs migration~~ — **The blog is LIVE. Never add `/blog` redirects to `vercel.json`.**
+  This line used to say the blog was removed with 301 redirects in place. It was, briefly — then it
+  was relaunched, and the leftover redirects hijacked the blog index and BOTH RSS feeds until they
+  were deleted in PR #172. Live surfaces: `src/pages/blog/` and `src/pages/es/blog/` (index
+  pagination, `[slug]`, `rss.xml.js`), 9 posts under `src/content/blog/{en,es}`,
+  `scripts/validate-blog-translations.mjs` gating every build. `vercel.json` correctly contains no
+  `/blog` rule — that absence is deliberate, not an oversight.
+- ~~No error monitoring~~ — Sentry integrated with client-side tracking, source maps, and Crons monitoring for weekly sync
+- ~~No analytics~~ — Vercel Web Analytics installed and configured
+- ~~No tests~~ — 20 smoke tests (vitest) running in CI after every build
+- ~~Placeholder testimonials~~ — Real LinkedIn recommendation from Julio Cesar Aldana Gomez, bilingual EN/ES
+- ~~Dependabot vulnerabilities~~ — yaml CVE fixed via override, Astro/esbuild CVEs dismissed (static site, SSR-only vulnerabilities)
+- ~~Sitemap broken~~ — @astrojs/sitemap installed and configured with i18n locales
+- ~~No og-image~~ — OG image is `public/images/og/cushlabs-og.png`, set in `BaseLayout.astro:64`
+  and `LandingLayout.astro:22`. (This line used to name `cushlabs_logo_lt.jpg`, which was never the
+  OG image and was a stock circuit-brain graphic nothing referenced — deleted 2026-08-10.)
+- ~~Image optimization~~ — All portfolio/logo/client images converted to WebP, lazy loading added
+- ~~Broken portfolio images~~ — Project pages migrated to Cloudflare R2 CDN (`cdn.cushlabs.ai`). The
+  "28/28 verified clean" count that used to sit here was true on the day it was written and has since
+  been outgrown; for the current number ask `projects.generated.json`, not this file.
+
+---
+
+## Portfolio Pipeline — Adding or Updating a Project
+
+The portfolio system has **three layers** that must all be in sync for a project to render correctly on the site (card on `/portfolio` + detail page at `/projects/[slug]`).
+
+### PORTFOLIO.md — Required Fields
+
+Every project repo needs a `PORTFOLIO.md` in its root. These frontmatter fields control what appears on the site:
+
+| Field                     | Required for       | What it controls                                             |
+| ------------------------- | ------------------ | ------------------------------------------------------------ |
+| `portfolio_enabled: true` | Visibility         | Project appears in portfolio at all                          |
+| `portfolio_priority`      | Card ordering      | Lower number = higher position (99 = hidden from cards)      |
+| `portfolio_featured`      | Badge              | "Featured" badge on card                                     |
+| `title`                   | Card + detail      | Display name                                                 |
+| `tagline`                 | Card               | Description text under the title                             |
+| `thumbnail`               | **Card image**     | Path to card thumbnail (e.g. `/images/portfolio/thumb.webp`) |
+| `slides`                  | Detail page slider | Array of `{src, alt_en, alt_es}` objects                     |
+| `demo_video_url`          | Detail page video  | Path to walkthrough video                                    |
+| `video_poster`            | Detail page        | Poster image for video player                                |
+| `category`                | Card badge         | Category label (e.g. "Tools", "AI Automation")               |
+| `tech_stack`              | Card + detail      | Technology badges                                            |
+| `problem`                 | Detail page        | "The Challenge" section                                      |
+| `key_features`            | Detail page        | Feature bullet list                                          |
+| `metrics`                 | Detail page        | Results section                                              |
+| `status`                  | Card badge         | e.g. "Production"                                            |
+
+**If `thumbnail` is missing, the card falls back to first slide → default SVG placeholder.**
+
+### Thumbnail Resolution Chain
+
+`portfolio.astro` → `getThumbnail()` resolves card images in this order:
+
+1. **`projectDetails.ts` override** (`override.thumbnail`) — for cushlabs self-repo
+2. **Generated JSON `thumbnail`** — from PORTFOLIO.md, resolved to CDN URL (`https://cdn.cushlabs.ai/...`) or local `/images/` path
+3. **First slide** (`project.slides[0].src`) — fallback if no thumbnail
+4. **Default SVG** (`/images/portfolio/default-card.svg`)
+
+### Preferred: One-Shot Sync Command
+
+**For any portfolio sync work, prefer this single command:**
+
+```bash
+npm run sync:portfolio
+```
+
+It runs the full pipeline in order, fails loudly at any step, and prints a structured diff showing exactly what changed (which thumbnails were restored, which projects gained taglines, etc.). Designed for AI-assistant invocation — no flags to remember, no step-skipping risk.
+
+Flags:
+
+- `npm run sync:portfolio -- --dry-run` — preview without writing
+- `npm run sync:portfolio -- --skip-r2` — skip R2 upload (use when only PORTFOLIO.md text changed, no asset changes)
+- `npm run sync:portfolio -- --repo <name>` — restrict R2 upload to one repo
+
+The pipeline:
+
+1. `validate-portfolio-md --fix` — auto-fixes duplicate top-level YAML keys
+2. `upload-to-r2` — hash-diffed asset upload
+3. `generate-projects` — regen `projects.generated.json`
+4. Diff old vs new and print structured summary
+
+After it finishes, stage `src/data/projects.generated.json` explicitly, commit, and push (or open a PR).
+
+### Listing portfolio repos & their URLs (read-only)
+
+`scripts/list-portfolio.mjs` reads the committed `src/data/projects.generated.json` (no GitHub API calls) and lists every project with its URLs. Run from the repo root:
+
+```bash
+node scripts/list-portfolio.mjs          # grouped table: POSTED vs HIDDEN
+node scripts/list-portfolio.mjs --csv     # writes portfolio-urls.csv (gitignored)
+node scripts/list-portfolio.mjs --json    # machine-readable, pipe to jq
+```
+
+- **POSTED** = live on `/portfolio` (priority < 99).
+- **HIDDEN** = synced into the JSON but not surfaced (priority >= 99).
+- **Excluded** repos (`portfolio_enabled: false` in their PORTFOLIO.md) are dropped before the JSON is built, so they never appear here. Find them with: `Select-String -Path "..\*\PORTFOLIO.md" -Pattern "portfolio_enabled:\s*false"`.
+
+Per-repo URLs surfaced: portfolio page (`/projects/<name>/`), GitHub, demo, live, homepage. If the data looks stale, run `npm run generate-projects` first to refresh it.
+
+### Listing ALL repos & their URLs (full GitHub inventory)
+
+`list-portfolio.mjs` (above) only covers projects that made it into the portfolio data. To inventory **every** repo on the GitHub account — including ones with no PORTFOLIO.md, `portfolio_enabled: false`, experiments, starters, backend/infra, and archived repos — use `scripts/list-all-repos.mjs`. It pulls the full repo list **live** via the `gh` CLI and merges in portfolio page/demo URLs for the ones that are published.
+
+```bash
+node scripts/list-all-repos.mjs          # grouped table: posted / hidden / not-listed
+node scripts/list-all-repos.mjs --csv     # writes all-repos-urls.csv (gitignored)
+node scripts/list-all-repos.mjs --json    # machine-readable
+```
+
+- **posted** = live on `/portfolio` (in the JSON, priority < 99).
+- **hidden** = synced into the JSON but priority >= 99 (no listing tile).
+- **not-listed** = not in the portfolio at all (no PORTFOLIO.md, or `portfolio_enabled: false`).
+
+Per-repo fields: name, status, archived, visibility, GitHub URL, best live URL (portfolio demo/live → GitHub homepage fallback), homepage, portfolio page. Requires `gh` authenticated (`gh auth status`); uses live GitHub data, so no refresh step is needed.
+
+**Which one to use:** `list-portfolio.mjs` answers "what's on the site"; `list-all-repos.mjs` answers "everything I own" (it's the superset). Both print live counts — read them from the script output rather than quoting a number here, which is how the previous "65 vs 38" line went stale.
+
+### Manual Three-Step Sync (legacy / debugging)
+
+If you need to run individual steps for debugging:
+
+```bash
+# 0. (Automatic) Validate every sibling PORTFOLIO.md before sync.
+#    Wired into `npm run generate-projects` — fails loudly on YAML errors,
+#    duplicate top-level keys, or missing thumbnails. Run standalone via:
+#    npm run validate:portfolio-md           # check
+#    npm run validate:portfolio-md -- --fix  # auto-fix duplicate keys
+
+# 1. Upload assets to R2 CDN (auto-detects diffs via MD5 hash)
+npx tsx scripts/upload-to-r2.ts <repo-name>
+
+# 2. Regenerate the portfolio JSON (pulls PORTFOLIO.md → projects.generated.json)
+npm run generate-projects
+
+# 3. Build, commit, and push (stage files explicitly — DO NOT git add -A
+#    blindly because the build regenerates projects.generated.json and you
+#    will sweep it into unrelated PRs)
+npm run build
+git add src/path/to/intentional/changes src/data/projects.generated.json
+git commit -m "chore: refresh projects data" && git push
+```
+
+**All three steps are required.** Skipping step 1 = broken images. Skipping step 2 = stale data. The JSON was last regenerated at the `generatedAt` timestamp in `projects.generated.json`.
+
+### Recurring Failure: Silent YAML Corruption (CRITICAL)
+
+**Symptom:** Portfolio cards render the default `CUSHLABS.AI` placeholder for projects that should have thumbnails. `projects.generated.json` shows `thumbnail: null` for affected projects.
+
+**Root cause:** PORTFOLIO.md files in sibling repos can accumulate duplicate top-level YAML keys (most commonly `health_status:`, added by separate audit passes that didn't dedupe). YAML rejects duplicate keys → gray-matter throws → the previous version of `tryLocalPortfolioMd()` in `scripts/generate-projects.ts` caught the throw silently and wrote the project with `thumbnail: null`. No log, no CI failure.
+
+**Permanent fix in place:**
+
+1. `scripts/validate-portfolio-md.ts` runs automatically before `generate-projects.ts` (wired in package.json). It scans every sibling PORTFOLIO.md, detects duplicate top-level keys, fails the build with clear errors. `--fix` flag auto-deletes the second duplicate block.
+2. The catch block in `tryLocalPortfolioMd()` now logs the error AND throws — silent failure is impossible.
+
+**If you see broken portfolio cards in production:**
+
+1. `npm run validate:portfolio-md` — locates the bad files
+2. `npm run validate:portfolio-md -- --fix` — auto-fixes duplicate keys
+3. `npm run generate-projects` — regen JSON
+4. Visual check, commit, ship
+
+**Never let this regress.** Any change to `generate-projects.ts` that touches the catch block must preserve loud-failure semantics.
+
+For a full sync of all projects: `npx tsx scripts/upload-to-r2.ts` (no args).
+
+### Optional: Rich Detail Page Copy (projectDetails.ts)
+
+For projects that deserve better copy than the raw PORTFOLIO.md text, add a bilingual entry to `src/data/projectDetails.ts`. This controls:
+
+- Headline, subheadline, challenge/solution narrative
+- "Good For" / "Not For" / "What You Get" sections
+- Results with checkmark styling
+
+**Only use for rich text content and `demoUrl`.** Do NOT put image/video URLs here — they come from the generated JSON via PORTFOLIO.md.
+
+### Cloudflare R2 CDN Details
+
+All portfolio assets are served from **Cloudflare R2** (`cdn.cushlabs.ai`), not from individual project deployments.
+
+- **R2 bucket:** `cushlabs-assets` with custom domain `cdn.cushlabs.ai`
+- **Hash detection:** Compares local MD5 against R2 ETag — only re-uploads changed files
+- **Repo aliases:** Some local clones differ from GitHub names (e.g., `stock-alert` clone is `ai-stock-alert`) — mapped in `REPO_ALIASES` in the upload script
+- **Path resolution:** Searches `public/`, `assets/`, `client/public/`, `dist/` and scans `public/portfolio/`, `public/images/portfolio/`, `public/video/`, etc.
+- **CI/Vercel skip:** `generate-projects.ts` detects `VERCEL`/`CI` env vars and uses committed JSON instead of regenerating (avoids stale GitHub API data)
+
+### Upload Script Flags
+
+```bash
+npx tsx scripts/upload-to-r2.ts                # upload all (skip unchanged via hash)
+npx tsx scripts/upload-to-r2.ts ny-eng         # upload one project only
+npx tsx scripts/upload-to-r2.ts --dry-run      # preview without uploading
+npx tsx scripts/upload-to-r2.ts --force         # re-upload all (ignore hash cache)
+npx tsx scripts/upload-to-r2.ts ny-eng --force  # force re-upload one project
+```
+
+### Required .env Vars for R2
+
+```
+R2_ACCESS_KEY_ID=         # Cloudflare R2 API token (Object Read & Write)
+R2_SECRET_ACCESS_KEY=     # Cloudflare R2 API secret
+S3_API=                   # R2 S3-compatible endpoint URL
+```
+
+---
+
+## Development Commands
+
+```powershell
+npm run dev              # Start dev server
+npm run build            # Full build (syncs GitHub projects first)
+npm run check            # Lint + TypeScript check
+npm run generate-projects # Sync GitHub repos to JSON
+npm run preview          # Preview production build
+npm run audit:predeploy  # Pre-deployment validation
+node scripts/perf-check.mjs  # Measure the LIVE site: status, TTFB, HTML weight, edge cache, every sitemap URL
+```
+
+**The CI workflow tests `dist/` on the runner and nothing else.** What a visitor or a crawler
+gets from production is measured by `scripts/perf-check.mjs`, which
+`.github/workflows/production-check.yml` runs after every production deploy (and
+`tests/page-weight.test.ts` guards HTML weight before one). Added 2026-10-20 after a live crawl
+reported `/pricing/` at 3.8 s while CI was green: on this low-traffic site 120 of 135 pages are
+a Vercel edge MISS on first contact, the DNS is proxied through Cloudflare (which does not cache
+HTML), and the scraper's "response time" is its own fetch-and-parse clock. Full analysis in the
+2026-10-20 session log entry.
+
+---
+
+## Vercel Deployments — Hobby plan limits (CRITICAL)
+
+The Hobby plan allows 100 deployments a day and 10 GB of deployment storage across every project
+Robert owns. Hitting either has already blocked a production deploy. This repo is one of the
+biggest projects, so these rules hold for every push:
+
+- **Production is `main` only, squash-merge only.** Every PR merged into `main` is one production
+  deployment. Three small PRs merged separately cost three; the same changes as one PR cost one.
+- **Bundle related fixes into one branch and one PR.** Commit locally as often as you like; push
+  once per PR, when it is done. Never push micro-commits.
+- **Preview builds are off.** The `ignoreCommand` in `vercel.json` starts with
+  `if [ "$VERCEL_ENV" = "preview" ]; then exit 0; fi;` (added in #398). **Never remove it.** Vercel
+  rejects an `ignoreCommand` longer than 256 characters with a failed deploy; it is 227 today, so
+  check the length after any edit.
+- **A branch cut before 2026-10-13 does not have the guard.** Vercel reads `vercel.json` from the
+  commit being built, so an older branch still builds a preview on push. Run `git merge origin/main`
+  on any such branch before its first push.
+- **Docs-only commits do not deploy.** The same `ignoreCommand` skips a commit that only changes
+  `docs/`, `README.md`, `CLAUDE.md`, `LICENSE`, `PORTFOLIO.md`, `.gitignore` or `.github/`.
+- **No preview URLs.** Robert does not use them. Verify locally (`npm run build`, then
+  `npx astro preview`), merge, and send the production URL with its full path.
+- **Merge ready PRs in one sitting**, one after another, rather than spread through the day.
+
+Fleet-wide mechanism and the exact JSON: the global `vercel-deploy-hygiene` skill.
+
+---
+
+## Environment Variables
+
+Create `.env` from `.env.example`:
+
+```
+GITHUB_TOKEN=             # For project sync
+GITHUB_OWNER=RCushmaniii
+PUBLIC_WHATSAPP_NUMBER=   # WhatsApp contact
+PUBLIC_CONSULTATION_URL=  # Calendly/Cal.com booking links
+R2_ACCESS_KEY_ID=         # Cloudflare R2 access key
+R2_SECRET_ACCESS_KEY=     # Cloudflare R2 secret key
+S3_API=                   # R2 S3-compatible endpoint
+```
+
+---
+
+## Adding New Pages
+
+1. Create `src/pages/pagename.astro` (English)
+2. Create `src/pages/es/pagename.astro` (Spanish)
+3. Add translations to both `en.ts` and `es.ts`
+4. Use BaseLayout with proper title/description
+5. Test both language versions
+6. Verify language switcher works
+
+---
+
+## Component Patterns
+
+All locale-aware components accept a `locale` prop:
+
+```astro
+---
+interface Props {
+  locale: 'en' | 'es';
+}
+const { locale } = Astro.props;
+const dict = t(locale);
+---
+```
+
+---
+
+## Brand Colors
+
+**The brand kit is canonical in `operating-system`, NOT here** — `cushlabs/brand-kit.md` (colour,
+type, voice, claims) and `cushlabs/brand-mark.md` (the mark, specs, and the three rules for shipping
+a logo change to a web surface). [`docs/BRAND-KIT.md`](docs/BRAND-KIT.md) is a pointer; do not let it
+grow back into a copy. Read `brand-mark.md` before replacing any logo asset.
+Read it before touching any logo asset — it records what was rejected and why, so retired directions
+don't get re-proposed. `#ff6a3d` below is canonical and the mark was recoloured to match it.
+
+```css
+--cush-orange: #ff6a3d; /* Primary accent */
+--cush-black: #000000; /* Primary text */
+--cush-gray-900: #0a0a0a; /* Dark backgrounds */
+```
+
+---
+
+## Fonts
+
+**Canonical in `operating-system/cushlabs/brand-kit.md` § Typography — do not restate the spec
+here.** This section carried Space Grotesk + Source Serif 4 for three days after the brand moved to
+Manrope + Inter on 2026-09-15, which is exactly the drift the brand-kit pointer above exists to
+prevent. What this repo owns is the wiring, and since 2026-10-12 it is two places:
+
+- `--font-display` / `--font-body` in the `@theme` block of `src/styles/global.css`
+- the self-hosted `@font-face` rules at the top of the same file, pointing at `public/fonts/*.woff2`
+
+**Fonts are self-hosted. Never re-add a Google Fonts `<link>`** to `BaseLayout.astro` or
+`LandingLayout.astro`. The two extra connections it needed (fonts.googleapis.com, then
+fonts.gstatic.com) were what held the mobile Lighthouse score in the 70s–80s; blocking them moved
+the homepage from 87 to 98 locally. Both layouts import `global.css`, so one declaration covers
+every page and the layouts can no longer drift apart (LandingLayout once requested a different
+family than `global.css` named, and `/salons` silently rendered in the system font).
+To change a family or weight range, download the new variable woff2 files under a **new filename**
+(`-v2`) — `/fonts/` is cached as immutable for a year. Keep variable ranges
+(`font-weight: 500 800`), never a discrete weight list — a discrete list snaps a 750 request to 700
+without warning.
+
+---
+
+## Quick Reference
+
+| Task             | Command/Location                   |
+| ---------------- | ---------------------------------- |
+| Add translation  | `src/i18n/translations/{en,es}.ts` |
+| Create component | `src/components/`                  |
+| Add page         | `src/pages/` + `src/pages/es/`     |
+| Edit layout      | `src/layouts/BaseLayout.astro`     |
+| Project data     | `src/data/projectDetails.ts`       |
+| Global styles    | `src/styles/global.css`            |
+| SEO settings     | BaseLayout.astro head section      |
+
+---
+
+## Documentation Reference
+
+> **Not every file under `docs/` describes THIS site.** A batch of documents was imported from the
+> nyenglishteacher.com repo and never re-scoped. They describe a Next.js/Netlify/Supabase stack, an
+> `/en/` URL prefix, a `src/lib/i18n.ts` module, category pages, and a quiz system — **none of which
+> exist here.** Before trusting any doc in this folder, check that the files it names actually exist.
+> Files carrying a `> ⚠️ NOT THIS REPO` banner at the top are kept only for their reusable
+> reasoning; never follow their instructions literally. The three below are the ones verified
+> against this codebase.
+
+- `docs/REPO_PURPOSE.md` - **What this repo is, what it is not, and where it sits in the CushLabs
+  family.** Read it before writing or removing any capability claim — it holds the overclaiming /
+  underclaiming rules and explains why a single `reachable_by` field is not a verdict on whether
+  something works.
+- `docs/SESSION_LOG.md` - **Living session log + tech debt + roadmap. READ THIS FIRST when starting work; update at the end of every substantive session.**
+- `docs/AI-ASSISTANT-ONBOARDING.md` - What CushLabs sells. Read before any pricing or sales work.
+- `docs/BOOKING-CONFIRMATIONS.md` - How consultation bookings get confirm emails, WhatsApp reminders and
+  Robert's 08:00 summary (shared with ny-eng). Read before touching the booking form or
+  `workers/booking-worker.js`.
+
+**This repo's actual i18n system** is `src/i18n/index.ts` + `translations/{en,es}.ts` with a `t(locale)`
+dictionary, and English is **unprefixed** (`prefixDefaultLocale: false`). Any doc describing
+`src/lib/i18n.ts`, a `TKey` union, or `/en/` routes is describing the other site.
+
+- `docs/SESSION_LOG.md` - **Living session log + tech debt + roadmap. READ THIS FIRST when starting work; update at the end of every substantive session.**
+
+---
+
+## Session Checklist
+
+Before ending any session, verify:
+
+- [ ] All changes applied to BOTH EN and ES versions
+- [ ] Translations updated in both language files
+- [ ] No TypeScript errors (`npm run check`)
+- [ ] Dev server runs without errors
+- [ ] Language switcher works on modified pages
+- [ ] **`docs/SESSION_LOG.md` updated** with this session's accomplishments, new tech debt, new backlog/roadmap items, and any new recurring failure modes
+
+---
