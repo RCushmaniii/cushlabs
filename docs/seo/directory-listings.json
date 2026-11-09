@@ -225,8 +225,7 @@
           "Facebook Messenger automation",
           "Instagram automation",
           "AI voice agents",
-          "Google review management",
-          "Local SEO"
+          "Google review management"
         ],
         "after_creating": "On your personal profile, set your current position's company to the new CushLabs.ai page so it shows the logo and links both."
       }
@@ -252,15 +251,15 @@
         "employees": "Freelancer (1 employee)",
         "headquarters": "Guadalajara, Jalisco, Mexico",
         "service_lines": [
-          "AI Development (Clutch has no chatbot line, so the chatbot share went here)",
-          "Search Engine Optimization"
+          "AI Development 100% (Clutch has no chatbot line, so the chatbot share went here). No SEO: the SEO offer was withdrawn 2026-10-25 and removed from Clutch 2026-11-09."
         ],
         "industries": [
-          "Small business",
-          "Beauty and wellness",
-          "Healthcare",
-          "Professional services"
+          "Health Care & Medical 34%",
+          "Business services 33%",
+          "Other industries 33% (beauty and wellness has no Clutch category)"
         ],
+        "industries_note": "Set 2026-11-09 to match GoodFirms exactly. Before that the Clutch Industries section was empty.",
+        "street": "Use nap.street_when_required and nap.postal_code_when_required. Live and verified as C. Cuautitlán, 44500.",
         "client_size": "Small business (<$10M)",
         "min_project_size": "$1,000+",
         "hourly_rate": "N/A (Clutch has no Undisclosed option)",
@@ -273,7 +272,9 @@
       "priority": 6,
       "why": "Agency directory with strong Latin America coverage.",
       "url": "https://www.goodfirms.co/get-listed",
-      "url_verified": false,
+      "vendor_dashboard": "https://myaccount.goodfirms.co/users/update-listing?edit=1&step=1",
+      "status": "Submitted 2026-11-09, under GoodFirms review",
+      "url_verified": true,
       "language_to_use": "en",
       "fields": {
         "company_name": "CushLabs.ai",
@@ -281,9 +282,18 @@
         "tagline": "Use shared_copy.tagline.en",
         "description": "Use shared_copy.long_description.en",
         "founded": "2025",
-        "employees": "Less than 10",
-        "location": "Guadalajara, Jalisco, Mexico",
-        "services": ["Artificial Intelligence", "Chatbot Development", "SEO"],
+        "employees": "Freelancer (matches Clutch)",
+        "location": "Guadalajara, Jalisco, Mexico; street C. Cuautitlan (GoodFirms rejects the accent), postal code 44500",
+        "services": [
+          "Bot Development 60% (focus: Chatbot Development 100%)",
+          "Artificial Intelligence 40% (focus: NLP 100%)"
+        ],
+        "client_focus": "Small Business 100%",
+        "industries": [
+          "Healthcare 34%",
+          "Business Services 33%",
+          "Other Industries 33%"
+        ],
         "min_project_size": "$1,000+",
         "hourly_rate": "< $25 / hr or $25 - $49 / hr (same reasoning as Clutch)"
       }
@@ -301,11 +311,7 @@
         "website": "https://www.cushlabs.ai/",
         "short_description": "Use shared_copy.short_description.en",
         "description": "Use shared_copy.long_description.en",
-        "services": [
-          "Artificial Intelligence",
-          "Chatbot Development",
-          "Local SEO"
-        ],
+        "services": ["Artificial Intelligence", "Chatbot Development"],
         "location": "Guadalajara, Mexico",
         "team_size": "1-10",
         "min_budget": "$1,000+"
@@ -324,7 +330,7 @@
         "website": "https://www.cushlabs.ai/",
         "tagline": "Use shared_copy.tagline",
         "description": "Use shared_copy.long_description",
-        "services": ["Artificial Intelligence", "Chatbot", "Local SEO"],
+        "services": ["Artificial Intelligence", "Chatbot"],
         "location": "Guadalajara, Jalisco, Mexico",
         "languages": ["English", "Spanish"],
         "min_budget": "$1,000"
