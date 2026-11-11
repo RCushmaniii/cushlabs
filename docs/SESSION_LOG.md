@@ -1036,6 +1036,21 @@ cost question the WhatsApp demo-swap decision has been waiting on.
 
 ## Session History
 
+## Session: 2026-11-09/11 — Directory listings: Bing Places and GoodFirms submitted (no code shipped)
+
+Session was opened in this repo but was mostly Robert's personal IT (phone, Jellyfin media server). The only CushLabs work was the directory-listing kit:
+
+- **Clutch:** live (profile version 4).
+- **Bing Places:** submitted, pending Bing verification.
+- **GoodFirms:** submitted, pending GoodFirms review.
+- Listing state is tracked in the listing-kit artifact's `progress` collection, not here. Copy source remains `docs/seo/directory-listings.json`.
+
+### Immediate Next Steps
+
+- [ ] Revenue proximity (operating-vision): after 2026-11-19, check whether Bing Places verified the listing; if not, follow up from the Bing Places dashboard.
+- [ ] When GoodFirms approves, log the win with `log-accomplishment` (same precedent as Clutch: logged on approval, not on submission).
+- [ ] Clutch focus areas still unanswered by Robert; a LinkedIn company page was offered and not yet taken up.
+
 ## Session: 2026-10-28 — Confirmation pass after the 2026-10-25 offer simplification (PR #406)
 
 ### What was asked
