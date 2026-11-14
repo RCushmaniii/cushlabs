@@ -46,7 +46,7 @@
     "@tailwindcss/typography": "^0.5.20",
     "@tailwindcss/vite": "^4.3.3",
     "@vercel/analytics": "^2.0.1",
-    "astro": "^7.3.5",
+    "astro": "^7.4.12",
     "googleapis": "^178.1.1",
     "tailwindcss": "^4.3.3"
   },
