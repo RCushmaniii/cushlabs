@@ -62,7 +62,7 @@ SESSION_LOG.md updates can ride along with the session's main feature PR (one br
 | Canonical file | Owns | Reconciled at |
 | --- | --- | --- |
 | `operating-system/cushlabs/operating-vision.json` | How the business is run - the operations vision, the six operating principles, and the precedence order that settles conflicts between them. | `eea191dbd2c5` |
-| `operating-system/strategy/clients.json` | Who is paying, what they bill, what they cost to serve. **(internal — never quote to a client)** | `63158564f08e` |
+| `operating-system/strategy/clients.json` | Who is paying, what they bill, what they cost to serve. **(internal — never quote to a client)** | `748fb7b48e3a` |
 | `operating-system/cushlabs/capability-registry.json` | Every platform approval, entitlement and quota, and whether a client can actually reach it. **(internal — never quote to a client)** | `f93024f8642c` |
 | `operating-system/cushlabs/commercial-terms.json` | Price, trial, cancellation, billing, invoicing and delivery timing. | `b4581efc2c95` |
 | `operating-system/cushlabs/claims-policy.json` | The claims ladder and the banned absolutes. | `86104fc2fa46` |
